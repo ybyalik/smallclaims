@@ -93,6 +93,9 @@ Cover, at a minimum, every category below:
 - Identity theft / fraud-related money damages
 - Statutory damages under wage / labor laws
 
+### Other state-specific claim types
+**Mandatory open-ended sweep.** After covering all the categories above, list any additional claim type, statutory cause of action, or common real-world dispute that is eligible in this state's small claims division and does not fit cleanly into the categories above. Do **not** skip a claim type just because it isn't on the list. If a non-lawyer in this state would realistically bring it in small claims — niche tenant rights (e.g., right-to-cure statutes, mold remediation reimbursement), state-specific consumer protections (e.g., automatic-renewal cancellation refunds, towing-without-authorization claims, debt-collector violations under state FDCPA analogs), HOA / condo-association disputes, agricultural / farm disputes, fishing / hunting license disputes, ride-share / gig-economy disputes, cell-phone early-termination fees, ticket scalping, AirBnB deposit holds, anything else — include it with the same depth (eligibility, examples, statute citation).
+
 ### Counterclaims
 - Whether defendants can counter-sue in the same hearing
 - Counterclaim dollar limit (often the same as the main cap, sometimes different)
@@ -113,7 +116,8 @@ Cover, at a minimum, every category below:
 - Workers' compensation (separate administrative system)
 - Patent / trademark / copyright (federal jurisdiction)
 - Cases against parties protected by automatic stay (in bankruptcy)
-- Anything else this state explicitly excludes from small claims jurisdiction
+
+**Plus: every other state-specific exclusion.** Do not stop at the generic list above. Enumerate every additional carve-out unique to this state — e.g., arbitration-required disputes (mandatory pre-suit arbitration under specific state acts), matters with exclusive jurisdiction elsewhere (admiralty, probate, juvenile, tax court, public-utilities-commission), claim categories explicitly carved out by statute or court rule, claims subject to administrative-exhaustion requirements (state human-rights commission, labor board, insurance commissioner) that prevent direct filing in small claims. Be specific to this state. Do not just repeat the generic exclusions list.
 
 ### Damages — what you can and cannot recover in small claims
 - Compensatory (out-of-pocket loss)
