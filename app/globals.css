@@ -310,6 +310,167 @@ footer { padding: 80px 0 40px; }
 .legal-disclaimer { margin-top: 24px; padding: 18px 22px; background: var(--bg-2); border-radius: 10px; color: var(--muted); font-size: 13.5px; line-height: 1.55; }
 .legal-disclaimer b { color: var(--ink-2); }
 
+/* USE CASES (tabbed examples) ─────────────────────────────────────── */
+.usecases { padding: 0; }
+.usecases-shell {
+  border-radius: 24px;
+  overflow: hidden;
+  background: var(--bg-2);
+  border: 1px solid var(--hairline);
+}
+.usecases-head {
+  background: var(--ink);
+  color: #fef9f1;
+  padding: 56px 56px 32px;
+  text-align: center;
+}
+.usecases-head h2 {
+  font-family: "Newsreader", Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: #fef9f1;
+  margin: 14px auto 28px;
+  max-width: 22ch;
+}
+.usecases-head h2 em {
+  font-style: italic;
+  color: #f4c84b;
+  font-weight: 600;
+}
+.usecases-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+.usecases-tab {
+  appearance: none;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #fef9f1;
+  padding: 12px 20px;
+  border-radius: 999px;
+  font: inherit;
+  font-size: 14.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.usecases-tab:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.24);
+}
+.usecases-tab[data-active="true"] {
+  background: #f4c84b;
+  border-color: #f4c84b;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.usecases-body {
+  padding: 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.usecases-image {
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 1;
+  background: #222;
+}
+.usecases-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: usecases-fade 0.4s ease;
+}
+@keyframes usecases-fade {
+  from { opacity: 0; transform: scale(1.02); }
+  to { opacity: 1; transform: scale(1); }
+}
+.usecases-content h3 {
+  font-family: "Newsreader", Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(28px, 3vw, 38px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0 0 16px;
+  max-width: 18ch;
+}
+.usecases-content > p {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--ink-2);
+  margin: 0 0 28px;
+  max-width: 50ch;
+}
+.usecases-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.usecases-bullets li {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  font-size: 15.5px;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+.usecases-bullet-icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  color: var(--accent);
+  margin-top: 1px;
+}
+.usecases-bullet-icon svg { width: 100%; height: 100%; }
+
+.usecases-callout {
+  background: var(--bg-2);
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  padding: 18px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+}
+.usecases-callout-label {
+  font-size: 14px;
+  color: var(--muted);
+  font-weight: 500;
+}
+.usecases-callout-value {
+  font-family: "Newsreader", Georgia, serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--accent);
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 960px) {
+  .usecases-head { padding: 40px 28px 24px; }
+  .usecases-body { grid-template-columns: 1fr; padding: 32px; gap: 32px; }
+  .usecases-tabs { gap: 8px; }
+  .usecases-tab { padding: 10px 16px; font-size: 13.5px; }
+}
+@media (max-width: 560px) {
+  .usecases-shell { border-radius: 18px; }
+  .usecases-head { padding: 32px 20px 20px; }
+  .usecases-body { padding: 24px; gap: 24px; }
+  .usecases-callout { flex-direction: column; gap: 4px; align-items: flex-start; }
+}
+
 /* Breadcrumbs (used on all non-home pages) */
 .breadcrumbs { padding: 28px 0 8px; font-size: 13px; color: var(--muted); }
 .breadcrumbs ol { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }

@@ -1,4 +1,5 @@
 import ProcessFlow from "./ProcessFlow";
+import UseCases from "../components/UseCases";
 
 const faqs = [
   {
@@ -574,6 +575,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* USE CASES (tabbed) */}
+      <UseCases />
 
       {/* STATS */}
       <section>
