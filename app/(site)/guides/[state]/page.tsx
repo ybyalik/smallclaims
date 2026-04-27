@@ -447,7 +447,7 @@ export default async function StateGuide({ params }: Params) {
           <header className="g-section-head">
             <span className="eyebrow">Forms</span>
             <h2>Every form you might need.</h2>
-            <p>All free at the California Courts website. Use the latest revision.</p>
+            <p>All free at your state's courts website. Use the latest revision.</p>
           </header>
           <GroupedForms forms={g.forms} />
         </section>
