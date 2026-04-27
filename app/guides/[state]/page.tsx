@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Link from "next/link";
-import { STATES, getStateBySlug } from "../../../lib/states";
+import { getStateBySlug } from "../../../lib/states";
 import { availableStateSlugs, loadStateGuide } from "../../../lib/state-data";
 import Breadcrumbs from "../../../components/Breadcrumbs";
 import StatuteChecker from "../../../components/widgets/StatuteChecker";
 import FeeCalculator from "../../../components/widgets/FeeCalculator";
+import ClaimExplorer from "../../../components/widgets/ClaimExplorer";
+import GroupedForms from "../../../components/widgets/GroupedForms";
 
 export function generateStaticParams() {
   return availableStateSlugs().map((slug) => ({ state: slug }));
@@ -39,6 +40,8 @@ export default async function StateGuide({ params }: Params) {
   if (!state) notFound();
   const g = await loadStateGuide(params.state);
   if (!g) notFound();
+
+  const totalClaims = g.whatYouCanSueFor.reduce((n, c) => n + c.claims.length, 0);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -123,71 +126,41 @@ export default async function StateGuide({ params }: Params) {
         <section id="what-to-sue-for" className="g-section">
           <header className="g-section-head">
             <span className="eyebrow">What you can sue for</span>
-            <h2>Find your situation in this list.</h2>
+            <h2>Find your situation.</h2>
             <p>
               {g.state} small claims handles money disputes up to {fmtMoney(g.limits.individual)} (or{" "}
-              {fmtMoney(g.limits.business)} if you're a business). If you recognize your situation below, you can probably file.
+              {fmtMoney(g.limits.business)} if you're a business). Browse {g.whatYouCanSueFor.length} categories
+              and {totalClaims} specific claim types below.
             </p>
           </header>
-          <div className="g-categories">
-            {g.whatYouCanSueFor.map((cat) => (
-              <details key={cat.id} className="g-category" id={`cat-${cat.id}`}>
-                <summary>
-                  <span className="cat-title">{cat.title}</span>
-                  <span className="cat-count">
-                    {cat.claims.length} {cat.claims.length === 1 ? "claim type" : "claim types"}
-                  </span>
-                </summary>
-                <p className="cat-blurb">{cat.blurb}</p>
-                <ul className="cat-claims">
-                  {cat.claims.map((c) => (
-                    <li key={c.id} className="claim">
-                      <h4>{c.name}</h4>
-                      <p className="claim-example">
-                        <strong>Example:</strong> {c.example}
-                      </p>
-                      {c.notes && <p className="claim-notes">{c.notes}</p>}
-                      {c.damageBoost && (
-                        <p className="claim-boost">
-                          <span className="boost-tag">Bonus damages</span>
-                          {c.damageBoost}
-                        </p>
-                      )}
-                      {c.statute && <p className="claim-statute">{c.statute}</p>}
-                    </li>
-                  ))}
-                </ul>
-              </details>
-            ))}
-          </div>
+          <ClaimExplorer categories={g.whatYouCanSueFor} />
+
+          <details className="g-exclusions-toggle">
+            <summary>
+              <span className="eyebrow-inline">Wrong court for these</span>
+              <span>{g.whatYouCannotSueFor.length} situations small claims can&rsquo;t handle</span>
+            </summary>
+            <ul className="g-exclusions">
+              {g.whatYouCannotSueFor.map((ex) => (
+                <li key={ex.category}>
+                  <h4>{ex.category}</h4>
+                  <p>{ex.explanation}</p>
+                  {ex.whereToGoInstead && (
+                    <p className="exclusion-redirect">
+                      <strong>Try instead:</strong> {ex.whereToGoInstead}
+                    </p>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </details>
         </section>
 
-        {/* WHAT YOU CANNOT SUE FOR */}
-        <section className="g-section">
-          <header className="g-section-head">
-            <span className="eyebrow">What small claims can't do</span>
-            <h2>Wrong court for these.</h2>
-          </header>
-          <ul className="g-exclusions">
-            {g.whatYouCannotSueFor.map((ex) => (
-              <li key={ex.category}>
-                <h4>{ex.category}</h4>
-                <p>{ex.explanation}</p>
-                {ex.whereToGoInstead && (
-                  <p className="exclusion-redirect">
-                    <strong>Try instead:</strong> {ex.whereToGoInstead}
-                  </p>
-                )}
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        {/* THE PROCESS WITH WIDGETS */}
+        {/* THE PROCESS */}
         <section id="process" className="g-section">
           <header className="g-section-head">
             <span className="eyebrow">The process</span>
-            <h2>From owed to paid in <em>5 steps.</em></h2>
+            <h2>From owed to paid in <em>6 steps.</em></h2>
           </header>
 
           <div className="g-step">
@@ -200,7 +173,7 @@ export default async function StateGuide({ params }: Params) {
                   : "Not required, but always do it."}{" "}
                 {g.preFiling.demandLetterNotes}
               </p>
-              {g.preFiling.governmentClaimRequired && (
+              {g.preFiling.governmentClaimRequired && g.preFiling.governmentClaimNotes && (
                 <div className="g-callout">
                   <strong>Government defendant?</strong> {g.preFiling.governmentClaimNotes}
                 </div>
@@ -213,21 +186,19 @@ export default async function StateGuide({ params }: Params) {
             <div className="g-step-body">
               <h3>Check your deadline</h3>
               <p>
-                Every claim has a statute of limitations. Miss it by a day and your case is dead. Use the checker:
+                Every claim has a statute of limitations. Miss it by a day and your case is dead.
               </p>
               <div id="statute-checker">
                 <StatuteChecker entries={g.statuteOfLimitations.entries} stateName={g.state} />
               </div>
-              <p className="step-footnote">
-                {g.statuteOfLimitations.discoveryRuleNotes}
-              </p>
+              <p className="step-footnote">{g.statuteOfLimitations.discoveryRuleNotes}</p>
             </div>
           </div>
 
           <div className="g-step">
             <div className="g-step-num">3</div>
             <div className="g-step-body">
-              <h3>File your case (and check the fee)</h3>
+              <h3>File your case</h3>
               <p>
                 File at the {g.whereToFile.courtName}. Most cases go in the county where the defendant lives or
                 where the dispute happened.
@@ -235,8 +206,11 @@ export default async function StateGuide({ params }: Params) {
               <div id="fee-calculator">
                 <FeeCalculator fees={g.fees} limits={g.limits} stateName={g.state} />
               </div>
+              {g.fees.feesRecoverableNotes && (
+                <p className="step-footnote">{g.fees.feesRecoverableNotes}</p>
+              )}
               <p className="step-footnote">
-                E-filing in {g.state}: {g.whereToFile.eFilingNotes}
+                <strong>E-filing in {g.state}:</strong> {g.whereToFile.eFilingNotes}
               </p>
             </div>
           </div>
@@ -251,7 +225,7 @@ export default async function StateGuide({ params }: Params) {
                 (in the same county) or <strong>{g.service.timing.outOfCountyDays} days</strong>{" "}
                 (out of county). You cannot serve them yourself.
               </p>
-              <h4 style={{ marginTop: 18, marginBottom: 8 }}>Allowed methods</h4>
+              <h4>Allowed methods</h4>
               <ul className="g-methods">
                 {g.service.methods.map((m) => (
                   <li key={m.name}>
@@ -260,8 +234,14 @@ export default async function StateGuide({ params }: Params) {
                 ))}
               </ul>
               <p className="step-footnote">
-                File the proof of service ({g.service.proofForm.number}) at least {g.response.motionToVacateDeadlineDays > 30 ? "5" : "5"} days before the hearing.
+                File the proof of service ({g.service.proofForm.number}) at least{" "}
+                {g.service.proofFilingDeadlineDays} days before the hearing.
               </p>
+              <details className="g-extra">
+                <summary>What if you can&rsquo;t find the defendant?</summary>
+                <p>{g.service.cantFindDefendant}</p>
+                <p>{g.service.avoidingService}</p>
+              </details>
             </div>
           </div>
 
@@ -274,12 +254,52 @@ export default async function StateGuide({ params }: Params) {
                 <strong>Lawyers at trial:</strong>{" "}
                 {g.hearing.attorneysAllowed ? "Allowed" : "Not allowed"}. {g.hearing.attorneysAllowedNotes}
               </p>
-              <h4 style={{ marginTop: 18, marginBottom: 8 }}>What to bring</h4>
+              <p>
+                <strong>When you&rsquo;ll get the decision:</strong> {g.hearing.decisionTiming}
+              </p>
+              {g.hearing.mediationOnHearingDay.offered && (
+                <div className="g-callout">
+                  <strong>Free mediation on hearing day.</strong> {g.hearing.mediationOnHearingDay.notes}
+                </div>
+              )}
+              <h4>What to bring</h4>
               <ul className="g-checklist">
                 {g.hearing.whatToBring.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>
+              <details className="g-extra">
+                <summary>If the defendant doesn&rsquo;t show up</summary>
+                <p>{g.response.defaultProcess}</p>
+                {g.response.proveUpRequired && (
+                  <p>
+                    <strong>You still have to prove your case.</strong> {g.response.proveUpNotes}
+                  </p>
+                )}
+              </details>
+              <details className="g-extra">
+                <summary>If you&rsquo;re the defendant being sued</summary>
+                <p>{g.response.responseNotes}</p>
+                <p>
+                  <strong>Counter-suing the plaintiff:</strong> {g.counterclaim.allowed ? "Allowed" : "Not allowed"}
+                  {g.counterclaim.allowed && (
+                    <>
+                      {" "}using {g.counterclaim.form.number} ({g.counterclaim.form.name}). Serve the plaintiff
+                      at least {g.counterclaim.serviceDeadlineSameCountyDays} days before trial (same county) or{" "}
+                      {g.counterclaim.serviceDeadlineOutOfCountyDays} days (out of county).
+                    </>
+                  )}
+                </p>
+                {g.counterclaim.transferToHigherCourt.available && (
+                  <p>
+                    <strong>Counterclaim bigger than the cap?</strong>{" "}
+                    {g.counterclaim.transferToHigherCourt.notes}{" "}
+                    {g.counterclaim.transferToHigherCourt.statute && (
+                      <span className="cite">{g.counterclaim.transferToHigherCourt.statute}</span>
+                    )}
+                  </p>
+                )}
+              </details>
             </div>
           </div>
 
@@ -288,9 +308,9 @@ export default async function StateGuide({ params }: Params) {
             <div className="g-step-body">
               <h3>If you win, collect</h3>
               <p>
-                <strong>This is where most people stop and lose.</strong> The court doesn't collect for you. The
-                loser has {g.collection.paymentDeadline} to pay. If they don't, you have to use one of the
-                enforcement tools below. Judgments accrue {g.collection.interestRate}% interest per year while unpaid.
+                <strong>This is where most people stop and lose.</strong> The court doesn&rsquo;t collect for you.
+                The loser has {g.collection.paymentDeadline} to pay. Judgments accrue {g.collection.interestRate}%
+                interest per year while unpaid.
               </p>
               <ul className="g-collection-methods">
                 {g.collection.methods.map((m) => (
@@ -313,7 +333,7 @@ export default async function StateGuide({ params }: Params) {
                       {m.exemptions && m.exemptions.length > 0 && (
                         <>
                           <p>
-                            <strong>What's protected from collection:</strong>
+                            <strong>What&rsquo;s protected:</strong>
                           </p>
                           <ul>
                             {m.exemptions.map((e) => (
@@ -326,6 +346,10 @@ export default async function StateGuide({ params }: Params) {
                   </li>
                 ))}
               </ul>
+              <details className="g-extra">
+                <summary>Multiple creditors? Priority rules.</summary>
+                <p>{g.collection.priorityNotes}</p>
+              </details>
             </div>
           </div>
         </section>
@@ -338,11 +362,39 @@ export default async function StateGuide({ params }: Params) {
           </header>
           <p>{g.appeals.whoCanAppeal}</p>
           <p>
-            Deadline: <strong>{g.appeals.deadlineDays} days</strong> from the judgment notice.{" "}
-            Filing fee: <strong>${g.appeals.fee}</strong>. Form: <strong>{g.appeals.notice.form}</strong>.{" "}
-            {g.appeals.automaticStayOnFiling && "Filing the appeal automatically pauses any collection efforts."}
+            <strong>Deadline:</strong> {g.appeals.deadlineDays} days from the judgment notice.{" "}
+            <strong>Filing fee:</strong> ${g.appeals.fee}. <strong>Form:</strong> {g.appeals.notice.form}.
           </p>
           <p>{g.appeals.typeNotes}</p>
+          {g.appeals.automaticStayOnFiling && (
+            <p>
+              Filing the appeal automatically pauses any collection efforts until the appeal is resolved.
+            </p>
+          )}
+          {g.appeals.defaultJudgmentNotAppealable && (
+            <details className="g-extra">
+              <summary>Default judgment? Different rules.</summary>
+              <p>{g.appeals.defaultJudgmentNotes}</p>
+              <p>
+                Motion to vacate (Form {g.response.motionToVacateForm.number}): file within{" "}
+                {g.response.motionToVacateDeadlineDays} days of the judgment notice. If you never received notice,
+                you have up to {g.response.motionToVacateLackOfNoticeDays} days.
+              </p>
+              <p>
+                If the motion is denied, you have {g.response.motionToVacateAppealDeadlineDays} days to appeal the
+                denial. {g.response.motionToVacateAppealNotes}
+              </p>
+            </details>
+          )}
+          {g.appeals.frivolousPenalty?.available && (
+            <details className="g-extra">
+              <summary>Frivolous appeal? Up to ${g.appeals.frivolousPenalty.cap} in attorney fees.</summary>
+              <p>{g.appeals.frivolousPenalty.notes}</p>
+              {g.appeals.frivolousPenalty.statute && (
+                <p className="cite">{g.appeals.frivolousPenalty.statute}</p>
+              )}
+            </details>
+          )}
         </section>
 
         {/* FORMS HUB */}
@@ -350,27 +402,9 @@ export default async function StateGuide({ params }: Params) {
           <header className="g-section-head">
             <span className="eyebrow">Forms</span>
             <h2>Every form you might need.</h2>
-            <p>All forms are free at the California Courts website. Use the latest revision.</p>
+            <p>All free at the California Courts website. Use the latest revision.</p>
           </header>
-          <ul className="g-forms">
-            {g.forms.map((f) => (
-              <li key={f.number} className="g-form">
-                <div className="form-num">{f.number}</div>
-                <div className="form-body">
-                  <h4>{f.name}</h4>
-                  <p>{f.description}</p>
-                  <span className="form-meta">
-                    Filed by: {f.whoFiles}. {f.required ? "Required" : "Optional"}.
-                  </span>
-                </div>
-                {f.url && (
-                  <a className="form-link" href={f.url} target="_blank" rel="noopener noreferrer">
-                    Open PDF →
-                  </a>
-                )}
-              </li>
-            ))}
-          </ul>
+          <GroupedForms forms={g.forms} />
         </section>
 
         {/* COUNTY DIFFERENCES */}
@@ -379,7 +413,7 @@ export default async function StateGuide({ params }: Params) {
             <header className="g-section-head">
               <span className="eyebrow">County differences</span>
               <h2>Local rules that matter.</h2>
-              <p>State law sets the rules, but each county handles small claims a little differently.</p>
+              <p>State law sets the rules. Each county handles small claims a little differently.</p>
             </header>
             <div className="g-counties">
               {g.countyDifferences.map((c) => (
@@ -401,7 +435,7 @@ export default async function StateGuide({ params }: Params) {
         {/* PITFALLS */}
         <section className="g-section">
           <header className="g-section-head">
-            <span className="eyebrow">Don't make these mistakes</span>
+            <span className="eyebrow">Don&rsquo;t make these mistakes</span>
             <h2>Why cases get dismissed.</h2>
           </header>
           <ul className="g-pitfalls">
@@ -463,7 +497,7 @@ export default async function StateGuide({ params }: Params) {
         <section className="g-section">
           <details className="g-sources">
             <summary>
-              <span className="eyebrow">Sources</span>
+              <span className="eyebrow-inline">Sources</span>
               <span>{g.sources.length} citations and statutes</span>
             </summary>
             <ul>

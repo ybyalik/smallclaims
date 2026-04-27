@@ -757,6 +757,8 @@ export const data: StateGuide = {
       { name: "Issue an Abstract of Judgment (for collections)", amount: "$40", notes: "Form EJ-001 from the clerk." },
       { name: "Issue a Writ of Execution (for collections)", amount: "$40", notes: "Form EJ-130 from the clerk." },
     ],
+    feesRecoverableNotes:
+      "If you win, the loser pays back your filing fee and service fees as part of the judgment. One catch: if you paid the $100 frequent-filer fee, the court only reimburses you the standard tier fee (between $30 and $75), not the full $100. The frequent-filer surcharge is your problem, not the defendant's.",
   },
 
   statuteOfLimitations: {
@@ -856,6 +858,7 @@ export const data: StateGuide = {
       description: "Your main lawsuit form. Tells the court who you're suing, how much you want, and why.",
       whoFiles: "plaintiff",
       required: true,
+      group: "starting",
       url: "https://courts.ca.gov/sites/default/files/courts/default/2024-11/sc100.pdf",
     },
     {
@@ -864,27 +867,31 @@ export const data: StateGuide = {
       description: "Use this if you have more than one plaintiff or more than one defendant.",
       whoFiles: "plaintiff",
       required: false,
+      group: "starting",
     },
     {
       number: "SC-103",
       name: "Fictitious Business Name (Declaration)",
-      description: "Required if you're suing under a DBA (doing-business-as) name. Confirms you've registered the name.",
+      description: "Required when YOU are suing under a DBA. Not for naming a defendant's DBA.",
       whoFiles: "plaintiff",
       required: false,
+      group: "starting",
     },
     {
       number: "SC-104",
-      name: "Proof of Service (Small Claims)",
+      name: "Proof of Service",
       description: "Documents how the defendant was served. Must be filed at least 5 days before the hearing.",
       whoFiles: "plaintiff",
       required: true,
+      group: "service",
     },
     {
       number: "SC-107",
       name: "Small Claims Subpoena",
-      description: "Compel a witness to attend the hearing or produce documents. $35 per day witness fee plus mileage.",
+      description: "Compel a witness to attend the hearing or produce documents. $35 per day plus mileage.",
       whoFiles: "either",
       required: false,
+      group: "hearing",
     },
     {
       number: "SC-109",
@@ -892,13 +899,15 @@ export const data: StateGuide = {
       description: "Lets a non-lawyer (employee, family member) appear on behalf of a business or unavailable individual.",
       whoFiles: "either",
       required: false,
+      group: "hearing",
     },
     {
       number: "SC-120",
-      name: "Defendant's Claim (Counterclaim)",
-      description: "If you're being sued and you have your own claim against the plaintiff, file this to counter-sue.",
+      name: "Defendant's Claim",
+      description: "If you're being sued and have your own claim against the plaintiff, file this to counter-sue.",
       whoFiles: "defendant",
       required: false,
+      group: "counterclaim",
     },
     {
       number: "SC-130",
@@ -906,41 +915,47 @@ export const data: StateGuide = {
       description: "The court mails this after a decision. Triggers the 30-day appeal clock.",
       whoFiles: "court",
       required: false,
+      group: "after-judgment",
     },
     {
       number: "SC-133",
       name: "Judgment Debtor's Statement of Assets",
-      description: "If you win and the loser doesn't pay in 30 days, they're supposed to fill this out and send it to you. Most don't.",
+      description: "If you win and the loser doesn't pay in 30 days, they're supposed to fill this out and send it to you.",
       whoFiles: "defendant",
       required: false,
+      group: "after-judgment",
     },
     {
       number: "SC-134",
       name: "Application for Judgment Debtor Examination",
-      description: "Forces the loser into court to answer questions about their income and assets so you can collect.",
+      description: "Forces the loser into court to answer questions about their income and assets.",
       whoFiles: "plaintiff",
       required: false,
+      group: "after-judgment",
     },
     {
       number: "SC-135",
       name: "Notice of Motion to Vacate Judgment",
-      description: "If you missed a hearing and got a default judgment against you, file this within 30 days to ask the court to reopen the case.",
+      description: "Missed your hearing? File this within 30 days to ask the court to reopen the case.",
       whoFiles: "defendant",
       required: false,
+      group: "after-judgment",
     },
     {
       number: "SC-140",
       name: "Notice of Appeal",
-      description: "Defendants only. Files an appeal to the regular Superior Court. 30-day deadline. $75 fee.",
+      description: "Defendants only. Appeals to the regular Superior Court. 30-day deadline. $75 fee.",
       whoFiles: "defendant",
       required: false,
+      group: "appeal",
     },
     {
       number: "SC-150",
       name: "Request to Postpone Trial",
-      description: "Reschedule the hearing. $10 fee unless you have a waiver. File at least 10 days before the hearing.",
+      description: "Reschedule the hearing. $10 fee unless you have a waiver. File at least 10 days before.",
       whoFiles: "either",
       required: false,
+      group: "hearing",
     },
     {
       number: "SC-220",
@@ -948,6 +963,7 @@ export const data: StateGuide = {
       description: "If you lost and can't pay in a lump sum, ask the court to approve a payment plan.",
       whoFiles: "defendant",
       required: false,
+      group: "after-judgment",
     },
     {
       number: "FW-001",
@@ -955,6 +971,7 @@ export const data: StateGuide = {
       description: "Asks the court to waive your filing fee and other court costs based on income or hardship.",
       whoFiles: "either",
       required: false,
+      group: "fee-waiver",
     },
     {
       number: "FW-003",
@@ -962,20 +979,23 @@ export const data: StateGuide = {
       description: "The court's response to your fee waiver request.",
       whoFiles: "court",
       required: false,
+      group: "fee-waiver",
     },
     {
       number: "EJ-001",
       name: "Abstract of Judgment",
-      description: "Records a lien on the loser's real estate so you eventually get paid when they sell.",
+      description: "Records a lien on the loser's real estate so you get paid when they sell.",
       whoFiles: "plaintiff",
       required: false,
+      group: "after-judgment",
     },
     {
       number: "EJ-100",
       name: "Satisfaction of Judgment",
-      description: "Tells the court the loser paid. You're required to file this within 14 days of full payment.",
+      description: "Tells the court the loser paid. Required within 14 days of full payment.",
       whoFiles: "plaintiff",
       required: false,
+      group: "after-judgment",
     },
     {
       number: "EJ-130",
@@ -983,6 +1003,7 @@ export const data: StateGuide = {
       description: "Authorizes the sheriff to garnish wages, levy bank accounts, or seize property.",
       whoFiles: "plaintiff",
       required: false,
+      group: "after-judgment",
     },
     {
       number: "EJ-190",
@@ -990,6 +1011,15 @@ export const data: StateGuide = {
       description: "Renews your judgment for another 10 years if you haven't collected by year 10.",
       whoFiles: "plaintiff",
       required: false,
+      group: "after-judgment",
+    },
+    {
+      number: "JL-1",
+      name: "Notice of Judgment Lien (Personal Property)",
+      description: "Filed with the California Secretary of State to create a statewide lien on the loser's business equipment, accounts receivable, and other personal property.",
+      whoFiles: "plaintiff",
+      required: false,
+      group: "after-judgment",
     },
     {
       number: "WG-001",
@@ -997,6 +1027,7 @@ export const data: StateGuide = {
       description: "Starts the wage garnishment process. Sent to the sheriff who serves it on the employer.",
       whoFiles: "plaintiff",
       required: false,
+      group: "after-judgment",
     },
     {
       number: "MC-012",
@@ -1004,6 +1035,7 @@ export const data: StateGuide = {
       description: "Adds collection costs and accrued interest to what the loser owes you.",
       whoFiles: "plaintiff",
       required: false,
+      group: "after-judgment",
     },
   ],
 
@@ -1044,6 +1076,10 @@ export const data: StateGuide = {
       "For a corporation or LLC, serve the registered agent (search the California Secretary of State's website for the name). Serving a receptionist counts only as substituted service and requires the follow-up mailing. For partnerships, serve any general partner. For sole proprietorships, serve the owner.",
     outOfStateNotes:
       "If your defendant is out of state, you can usually still sue here as long as the dispute happened in California. But you have to serve them out of state, which means hiring a process server in their state or sending a personal service via someone there. The court clerk can't do certified mail outside California. Account for extra time when scheduling.",
+    cantFindDefendant:
+      "If you've made honest attempts and can't find them, you can ask the court for permission to serve by posting (taping the papers to the property and mailing a copy) or by publishing a notice in a newspaper. The judge will require a declaration showing what you tried first. This is a last resort and is rarely granted in small claims.",
+    avoidingService:
+      "If your defendant runs from the door, the server can leave the papers in their presence after identifying themselves. That counts as valid \"drop service.\" If they're consistently dodging at home, try service at work, at gym, or anywhere else they regularly go. A registered process server has database tools to find current addresses and is worth the cost when the defendant is uncooperative.",
   },
 
   response: {
@@ -1052,9 +1088,29 @@ export const data: StateGuide = {
       "Unlike formal civil cases, the defendant doesn't file a written answer. They just show up at the hearing. The summons (built into your SC-100) tells them when and where.",
     defaultProcess:
       "If the defendant doesn't show up and you served them properly (with proof on file), the judge will likely award you a default judgment. You still have to briefly prove your case under oath. Bring your evidence even if the defendant skips.",
+    proveUpRequired: true,
+    proveUpNotes:
+      "Even on a default, the judge will swear you in and ask you to walk through what happened, why the defendant owes you money, and how you calculated the amount. Bring contracts, invoices, photos, and any other proof of damages just like you would for a contested hearing. Show up empty-handed and the judge can award less than you asked, or dismiss for lack of proof.",
     motionToVacateForm: { number: "SC-135", name: "Notice of Motion to Vacate Judgment" },
     motionToVacateDeadlineDays: 30,
     motionToVacateLackOfNoticeDays: 180,
+    motionToVacateAppealDeadlineDays: 10,
+    motionToVacateAppealNotes:
+      "If the small claims judge denies your motion to vacate, you have a separate 10-day window to appeal that denial to the appellate division. This is not a do-over of the original case. It's a narrow appeal arguing the judge wrongly refused to reopen.",
+  },
+
+  counterclaim: {
+    allowed: true,
+    form: { number: "SC-120", name: "Defendant's Claim" },
+    sameMonetaryLimit: true,
+    serviceDeadlineSameCountyDays: 5,
+    serviceDeadlineOutOfCountyDays: 15,
+    transferToHigherCourt: {
+      available: true,
+      statute: "Cal. Code Civ. Proc. § 116.390",
+      notes:
+        "If you're a defendant and your counterclaim against the plaintiff is bigger than the small claims cap, file a motion to move the entire case up to regular civil court. Both sides then can hire lawyers and the case follows formal civil rules. Use this when the stakes justify the extra cost.",
+    },
   },
 
   hearing: {
@@ -1083,6 +1139,13 @@ export const data: StateGuide = {
     interpreterNotes:
       "California provides free interpreters for small claims. Request one in advance through the court's website or self-help center, ideally at least 5 to 10 days before your hearing.",
     juryAllowed: false,
+    decisionTiming:
+      "The judge usually does NOT decide on the spot. Most decisions are mailed to both sides as a Notice of Entry of Judgment (Form SC-130) within 1 to 4 weeks of the hearing. Don't expect a verdict that day, and don't ask for an explanation after the judge announces a result.",
+    mediationOnHearingDay: {
+      offered: true,
+      notes:
+        "Most California courts offer free mediation on hearing day. A trained mediator sits with both sides in a hallway or side room and helps you negotiate. If you reach a settlement, it can be put in writing and made into an enforceable judgment. Mediation is voluntary, but if both sides agree to try, it often resolves cases in 30 to 60 minutes and saves you the courtroom uncertainty.",
+    },
   },
 
   appeals: {
@@ -1097,6 +1160,16 @@ export const data: StateGuide = {
     bondRequired: false,
     automaticStayOnFiling: true,
     notice: { form: "SC-140", name: "Notice of Appeal" },
+    frivolousPenalty: {
+      available: true,
+      cap: 150,
+      statute: "Cal. Code Civ. Proc. § 116.790",
+      notes:
+        "If a defendant's appeal is meritless and you (the plaintiff respondent) hired a lawyer, the appeals court can order the defendant to pay you up to $150 in attorney fees. This is the only attorney fee award available in California small claims and it's intentionally small. Don't count on it as a recovery strategy.",
+    },
+    defaultJudgmentNotAppealable: true,
+    defaultJudgmentNotes:
+      "If you skipped the original hearing and got a default judgment against you, you cannot appeal it directly. Your only path is to file a Motion to Vacate (SC-135) within 30 days of the judgment notice. If the judge denies that motion, you then have 10 days to appeal the denial. The original case never gets a direct appeal.",
   },
 
   collection: {
@@ -1183,6 +1256,15 @@ export const data: StateGuide = {
           "The sheriff can seize valuable property like a vehicle and auction it. Less common because of upfront costs (towing, storage, auction fees) and broad exemptions (basic furniture, tools of trade, up to $3,325 in vehicle equity).",
       },
       {
+        id: "secretary-of-state-lien",
+        name: "Personal property judgment lien (JL-1)",
+        blurb: "A statewide lien on the loser's business equipment, accounts receivable, and other personal property.",
+        description:
+          "If the loser is a business or owns valuable personal property (equipment, accounts receivable, intellectual property), file a Notice of Judgment Lien (Form JL-1) with the California Secretary of State. This works like a UCC filing: it puts every potential buyer on notice that you have a claim on their assets. If they sell the business or its collateral, you get paid out of the proceeds.",
+        forms: [{ number: "JL-1", name: "Notice of Judgment Lien" }],
+        effectivenessNotes: "Especially useful for collecting from businesses. Less useful against individuals without business assets.",
+      },
+      {
         id: "installment-payment",
         name: "Negotiated installment plan",
         blurb: "Sometimes a steady $200 a month is better than $0.",
@@ -1208,16 +1290,22 @@ export const data: StateGuide = {
     bankruptcyNotes:
       "If the loser files bankruptcy, an automatic stay halts all your collection. Most small-claims judgments get discharged in bankruptcy unless the underlying debt was incurred through fraud (then file a non-dischargeability complaint with the bankruptcy court). Talk to a bankruptcy lawyer if this happens.",
     satisfactionForm: { number: "EJ-100", name: "Satisfaction of Judgment" },
+    priorityNotes:
+      "When multiple creditors are chasing the same loser, priority matters. Real-estate liens follow first-in-time-first-in-right: whoever recorded their abstract first gets paid first from any sale. Wage garnishments run one at a time, with child support ahead of consumer judgments. Bank levies are first-come-first-served by service date. If you suspect other creditors, move fast on whichever method fits.",
   },
 
   businesses: {
     representation:
-      "Businesses cannot use a hired outside lawyer in small claims. The business has to send a regular employee, officer, or director (or a partner if it's a partnership). The person must have actual knowledge of the dispute.",
+      "Businesses cannot use a hired outside lawyer in small claims. The business has to send a regular employee, officer, or director (or a partner if it's a partnership). The person must have actual knowledge of the dispute. An in-house lawyer who is a full-time employee CAN appear, but only as an employee, not as outside counsel.",
     canSendEmployee: true,
     canSendAttorney: false,
     representationForm: { number: "SC-109", name: "Authorization to Appear" },
     insuranceAdjusterAllowed: true,
     fictitiousNameForm: { number: "SC-103", name: "Fictitious Business Name (Declaration)" },
+    fictitiousNameNotes:
+      "SC-103 is only required when YOU (the plaintiff) are suing under a DBA. You do NOT file SC-103 to name a defendant's DBA. To sue a defendant who uses a fictitious name, name the actual legal owner with the DBA appended (for example, \"John Smith dba John's Plumbing\" or the LLC's exact registered name).",
+    soleProprietorEmployeeException:
+      "If you're a sole proprietor and the case is on an account (unpaid invoices, store credit, etc.), and you can't attend the hearing yourself, a regular employee with knowledge of the account (such as your bookkeeper) can appear with an SC-109 Authorization to Appear. This narrow exception only applies to account cases, not all small claims.",
     outOfStateNotes:
       "If your business is out of state and you regularly do business in California, you may need a Certificate of Qualification from the California Secretary of State before you can sue here. For one-off transactions this is rarely enforced, but for ongoing California operations you should be registered.",
     licensingNotes:

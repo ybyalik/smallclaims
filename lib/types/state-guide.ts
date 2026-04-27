@@ -70,6 +70,7 @@ export interface StateGuide {
       coverageNotes: string;
     };
     otherFees: { name: string; amount: string; notes?: string }[];
+    feesRecoverableNotes?: string;
   };
 
   /** Section 5: SOL by claim type. Drives the SOL checker widget. */
@@ -103,6 +104,8 @@ export interface StateGuide {
     proofForm: { number: string; name: string };
     businessServiceRules: string;
     outOfStateNotes: string;
+    cantFindDefendant: string;
+    avoidingService: string;
   };
 
   /** Section 9: defendant response and default. */
@@ -110,9 +113,27 @@ export interface StateGuide {
     defendantMustFileAnswer: boolean;
     responseNotes: string;
     defaultProcess: string;
+    proveUpRequired: boolean;
+    proveUpNotes: string;
     motionToVacateForm: { number: string; name: string };
     motionToVacateDeadlineDays: number;
     motionToVacateLackOfNoticeDays: number;
+    motionToVacateAppealDeadlineDays: number;
+    motionToVacateAppealNotes: string;
+  };
+
+  /** Counterclaim mechanics (defendant suing back). */
+  counterclaim: {
+    allowed: boolean;
+    form: { number: string; name: string };
+    sameMonetaryLimit: boolean;
+    serviceDeadlineSameCountyDays: number;
+    serviceDeadlineOutOfCountyDays: number;
+    transferToHigherCourt: {
+      available: boolean;
+      statute?: string;
+      notes: string;
+    };
   };
 
   /** Section 10: hearing. */
@@ -127,6 +148,8 @@ export interface StateGuide {
     interpretersFree: boolean;
     interpreterNotes: string;
     juryAllowed: boolean;
+    decisionTiming: string; // "Usually mailed within 1 to 4 weeks"
+    mediationOnHearingDay: { offered: boolean; notes: string };
   };
 
   /** Section 11: appeals. */
@@ -140,6 +163,9 @@ export interface StateGuide {
     bondRequired: boolean;
     automaticStayOnFiling: boolean;
     notice: { form: string; name: string };
+    frivolousPenalty?: { available: boolean; cap: Money; statute?: string; notes: string };
+    defaultJudgmentNotAppealable: boolean;
+    defaultJudgmentNotes: string;
   };
 
   /** Section 12: post-judgment collection. The most-skipped section. */
@@ -154,6 +180,7 @@ export interface StateGuide {
     exemptions: string[];
     bankruptcyNotes: string;
     satisfactionForm: { number: string; name: string };
+    priorityNotes: string;
   };
 
   /** Section 13: business-specific rules. */
@@ -164,6 +191,8 @@ export interface StateGuide {
     representationForm?: { number: string; name: string };
     insuranceAdjusterAllowed: boolean;
     fictitiousNameForm?: { number: string; name: string };
+    fictitiousNameNotes?: string;
+    soleProprietorEmployeeException?: string;
     outOfStateNotes: string;
     licensingNotes?: string;
   };
@@ -246,12 +275,22 @@ export interface StatuteOfLimitationsEntry {
   notes?: string;
 }
 
+export type FormGroup =
+  | "starting"
+  | "service"
+  | "hearing"
+  | "counterclaim"
+  | "after-judgment"
+  | "fee-waiver"
+  | "appeal";
+
 export interface Form {
   number: string; // "SC-100"
   name: string; // "Plaintiff's Claim and ORDER to Go to Small Claims Court"
   description: string; // plain-English: what this form does
   whoFiles: "plaintiff" | "defendant" | "either" | "court";
   required: boolean;
+  group: FormGroup;
   url?: string;
 }
 
