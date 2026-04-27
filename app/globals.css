@@ -242,17 +242,17 @@ section { padding: var(--section-pad) 0; }
 .receipts-head h2 { font-family: "Newsreader", Georgia, serif; font-weight: var(--headline-weight); font-size: var(--h2-size); line-height: 1.05; letter-spacing: var(--headline-tracking); color: var(--ink); margin: 0; max-width: 14ch; }
 .receipts-head h2 em { font-style: italic; color: var(--accent); font-weight: var(--headline-italic-weight); letter-spacing: var(--headline-italic-tracking); }
 .receipts-head p { color: var(--muted); font-size: 16px; max-width: 36ch; margin: 0; line-height: 1.6; }
-.receipt { background: #fff; border: 1px solid var(--hairline); border-radius: 6px; padding: 14px 16px; box-shadow: 0 18px 36px -20px rgba(35, 33, 30, .25), 0 3px 8px -3px rgba(35, 33, 30, .05); position: relative; display: flex; flex-direction: column; gap: 10px; transition: transform .35s cubic-bezier(.7, 0, .3, 1), box-shadow .35s ease; }
+.receipt { background: #fff; border: 1px solid var(--hairline); border-radius: 6px; padding: 12px 14px; box-shadow: 0 14px 28px -18px rgba(35, 33, 30, .22), 0 2px 6px -2px rgba(35, 33, 30, .05); position: relative; display: flex; flex-direction: column; gap: 7px; transition: transform .35s cubic-bezier(.7, 0, .3, 1), box-shadow .35s ease; }
 .receipt:hover { transform: translateY(-6px) rotate(0deg) !important; box-shadow: 0 32px 60px -24px rgba(35, 33, 30, .4), 0 6px 14px -4px rgba(35, 33, 30, .08); z-index: 5; }
 .receipt::before { content: ""; position: absolute; top: -9px; left: 50%; transform: translateX(-50%); width: 18px; height: 18px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #e8c977, #9c7228); box-shadow: 0 1px 2px rgba(0, 0, 0, .3), inset -1px -1px 2px rgba(0, 0, 0, .2); }
 .receipt .top { display: flex; justify-content: space-between; align-items: flex-start; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
 .receipt .top .case-id { font-family: "Geist"; color: #a8a095; }
 .receipt .top .tag { padding: 3px 8px; border-radius: 4px; background: #f4efe5; color: var(--ink); letter-spacing: 0.1em; }
-.receipt .amount { font-family: "Newsreader", Georgia, serif; font-weight: 700; font-style: italic; font-size: 36px; line-height: 1; color: var(--accent); letter-spacing: -0.025em; margin: 2px 0; }
-.receipt .amount .lbl { font-family: "Geist"; font-style: normal; font-weight: 500; font-size: 11px; color: var(--muted); letter-spacing: 0.16em; text-transform: uppercase; display: block; margin-top: 6px; }
-.receipt .quote { font-family: "Newsreader", Georgia, serif; font-weight: 400; font-style: italic; font-size: 15px; line-height: 1.4; color: var(--ink); letter-spacing: -0.005em; }
-.receipt .who { display: flex; align-items: center; gap: 10px; padding-top: 14px; border-top: 1px dashed var(--hairline); }
-.receipt .who img { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; }
+.receipt .amount { font-family: "Newsreader", Georgia, serif; font-weight: 700; font-style: italic; font-size: 28px; line-height: 1; color: var(--accent); letter-spacing: -0.025em; margin: 0; }
+.receipt .amount .lbl { font-family: "Geist"; font-style: normal; font-weight: 500; font-size: 10px; color: var(--muted); letter-spacing: 0.14em; text-transform: uppercase; display: block; margin-top: 4px; }
+.receipt .quote { font-family: "Newsreader", Georgia, serif; font-weight: 400; font-style: italic; font-size: 14px; line-height: 1.4; color: var(--ink); letter-spacing: -0.005em; }
+.receipt .who { display: flex; align-items: center; gap: 8px; padding-top: 10px; border-top: 1px dashed var(--hairline); }
+.receipt .who img { width: 24px; height: 24px; border-radius: 50%; object-fit: cover; }
 .receipt .who > div { display: flex; flex-direction: column; min-width: 0; }
 .receipt .who .name { font-size: 13px; font-weight: 600; color: var(--ink); }
 .receipt .who .meta { font-size: 11px; color: var(--muted); margin-top: 1px; }
