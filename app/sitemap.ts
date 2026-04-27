@@ -1,15 +1,12 @@
 import type { MetadataRoute } from "next";
 import { STATES } from "../lib/states";
-import { availableReportSlugs } from "../lib/reports";
+import { availableStateSlugs } from "../lib/state-data";
 
 const BASE = "https://smallclaims.vercel.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const ready = new Set(availableReportSlugs());
-  const stateUrls: MetadataRoute.Sitemap = STATES.filter((s) => {
-    const variants = [s.slug, s.slug.replace(/-/g, "")];
-    return variants.some((v) => ready.has(v));
-  }).map((s) => ({
+  const ready = new Set(availableStateSlugs());
+  const stateUrls: MetadataRoute.Sitemap = STATES.filter((s) => ready.has(s.slug)).map((s) => ({
     url: `${BASE}/guides/${s.slug}`,
     lastModified: new Date(),
     changeFrequency: "monthly",

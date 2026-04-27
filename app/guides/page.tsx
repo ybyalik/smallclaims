@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { STATES } from "../../lib/states";
-import { availableReportSlugs } from "../../lib/reports";
+import { availableStateSlugs } from "../../lib/state-data";
 import Breadcrumbs from "../../components/Breadcrumbs";
 
 export const metadata: Metadata = {
@@ -12,10 +12,8 @@ export const metadata: Metadata = {
 };
 
 export default function GuidesIndex() {
-  const ready = new Set(availableReportSlugs());
-  const slugVariants = (slug: string) => [slug, slug.replace(/-/g, "")];
-  const isReady = (slug: string) =>
-    slugVariants(slug).some((v) => ready.has(v));
+  const ready = new Set(availableStateSlugs());
+  const isReady = (slug: string) => ready.has(slug);
 
   return (
     <main className="wrap" style={{ paddingBottom: 80 }}>
