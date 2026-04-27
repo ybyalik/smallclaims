@@ -4,6 +4,7 @@ import type { StateGuide } from "./types/state-guide";
 // Add new states here as their /data/<slug>.ts files land.
 const REGISTRY: Record<string, () => Promise<{ data: StateGuide }>> = {
   california: () => import("../data/california"),
+  delaware: () => import("../data/delaware"),
   texas: () => import("../data/texas"),
 };
 
