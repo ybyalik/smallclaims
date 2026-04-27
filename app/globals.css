@@ -350,10 +350,10 @@ footer { padding: 80px 0 40px; }
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.12);
   color: #fef9f1;
-  padding: 12px 20px;
-  border-radius: 999px;
+  padding: 14px 22px;
+  border-radius: 10px;
   font: inherit;
-  font-size: 14.5px;
+  font-size: 16px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.15s ease;
@@ -462,7 +462,7 @@ footer { padding: 80px 0 40px; }
   .usecases-head { padding: 40px 28px 24px; }
   .usecases-body { grid-template-columns: 1fr; padding: 32px; gap: 32px; }
   .usecases-tabs { gap: 8px; }
-  .usecases-tab { padding: 10px 16px; font-size: 13.5px; }
+  .usecases-tab { padding: 12px 18px; font-size: 14.5px; }
 }
 @media (max-width: 560px) {
   .usecases-shell { border-radius: 18px; }
