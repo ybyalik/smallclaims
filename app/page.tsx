@@ -64,7 +64,7 @@ export default function Home() {
 
       {/* HERO */}
       <section className="hero">
-        <div className="wrap hero-inner">
+        <div className="wrap-wide hero-inner">
           <div className="hero-grid">
             <div className="hero-copy">
               <h1>
@@ -325,7 +325,7 @@ export default function Home() {
       {/* WHY */}
       <section
         id="why"
-        style={{ background: "#F5EFE3", margin: "0 24px", borderRadius: 24 }}
+        style={{ background: "#F5EFE3", borderRadius: 24, marginInline: "max(24px, calc((100vw - 1440px) / 2 + 24px))" }}
       >
         <div className="wrap">
           <div className="dh-grid">
@@ -401,7 +401,7 @@ export default function Home() {
 
       {/* DASHBOARD */}
       <section>
-        <div className="wrap">
+        <div className="wrap-wide">
           <div className="sec-head" style={{ marginBottom: 36 }}>
             <span className="eyebrow">Inside the product</span>
             <h2>
@@ -493,7 +493,7 @@ export default function Home() {
 
       {/* WHAT YOU CAN DO */}
       <section id="do">
-        <div className="wrap">
+        <div className="wrap-wide">
           <div className="sec-head">
             <span className="eyebrow">What you can do</span>
             <h2>
@@ -577,7 +577,7 @@ export default function Home() {
 
       {/* STATS */}
       <section>
-        <div className="wrap">
+        <div className="wrap-wide">
           <div className="stats-grid">
             <div>
               <span className="eyebrow">By the numbers</span>
@@ -859,7 +859,7 @@ export default function Home() {
       </section>
 
       {/* FINAL CTA */}
-      <section style={{ paddingBottom: 40 }}>
+      <section style={{ paddingTop: 60, paddingBottom: 40 }}>
         <div className="wrap">
           <div className="final">
             <span className="eyebrow">Get clarity in minutes</span>
