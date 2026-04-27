@@ -1,0 +1,19 @@
+{
+  "id": "resp_0a440627308824200069eeec71adec8195b8ff5cc2221ca44b",
+  "state": "California",
+  "model": "o3-deep-research-2025-06-26",
+  "usage": {
+    "input_tokens": 106711,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens": 76713,
+    "output_tokens_details": {
+      "reasoning_tokens": 32192
+    },
+    "total_tokens": 183424
+  },
+  "annotationCount": 222,
+  "outputSteps": 330,
+  "completedAt": "2026-04-27T06:00:50.377Z"
+}

@@ -8,10 +8,120 @@ Cover all of the following, with citations to official `.gov` sources (state cou
 - Limits on number of cases per plaintiff per year over a certain dollar amount, if any
 - Whether you can split a claim into multiple filings to get under the cap (and whether that's allowed)
 
-## 2. What types of cases qualify
-- Money disputes that are eligible (security deposits, unpaid invoices, contractor disputes, refunds, wage claims, property damage, etc.)
-- What is explicitly NOT eligible (evictions, defamation, family law, real-estate title, federal claims, class actions, equitable relief)
-- Whether counterclaims are allowed and limits on counterclaim amount
+## 2. What types of cases qualify — EVERYTHING YOU CAN SUE FOR
+
+This section must be **exhaustive**. The goal is that a non-lawyer reading this can recognize their situation in this list and know with certainty whether small claims is the right venue. For each claim type below, state whether it is eligible in this state, give 2-3 concrete real-life example scenarios, cite the controlling statute or court rule when one exists, and note any state-specific quirks, special pre-suit requirements, or damage caps.
+
+Cover, at a minimum, every category below:
+
+### Contract & money-owed disputes
+- Breach of written contract (services not delivered, work not done, terms violated)
+- Breach of oral / handshake agreements
+- Unpaid personal loans (friends, family, informal IOUs)
+- Unpaid promissory notes
+- Unpaid commercial invoices / accounts receivable
+- Unpaid rent (residential and commercial)
+- Bounced / dishonored checks (and any state-specific multi-damage statutes for NSF checks)
+- Open book accounts / running tabs
+- Co-signer / guarantor disputes
+
+### Consumer disputes
+- Refunds for defective products
+- Refunds for services not performed or done poorly
+- Auto repair overcharges or shoddy work
+- Home repair / contractor disputes (incomplete work, defects, abandonment)
+- Appliance / electronics warranty failures
+- Cancelled or no-show service providers (photographers, caterers, movers, event venues)
+- Dry cleaning / property loss in custody (hotels, valets, repair shops, storage)
+- Gym / subscription / membership cancellation refunds
+- Auto dealer / used-car disputes (lemon-law where eligible, fraudulent odometer, undisclosed defects)
+- False advertising / deceptive trade practices (cite state UDAP statute if applicable, and note treble or statutory damages)
+
+### Property damage
+- Vehicle collisions (where damages are within the cap)
+- Damage to personal property by another person
+- Damage by a tenant to a landlord's property
+- Damage by a landlord to a tenant's property
+- Tree / fence / boundary disputes resulting in damage
+- Pet damage (your dog bit theirs, their dog damaged your stuff)
+- Damage during a move (movers, friends helping)
+
+### Landlord–tenant (financial only — possession/eviction is separate)
+- Unreturned security deposits (almost always the #1 small-claims case nationally; state any per-state penalties for bad-faith withholding, like 2× or 3× damages, and the deadline rules that trigger them)
+- Refund of prepaid last month's rent
+- Habitability / repair-and-deduct counter-claims
+- Unpaid rent or damages by landlord against a former tenant
+- Wrongful retention of tenant property after move-out
+- Dispute over fees (cleaning, late, pet, key, parking)
+
+### Employment & wages
+- Unpaid final paycheck / earned wages (and any state penalty wages, e.g., California's "waiting time penalty")
+- Unpaid commissions or bonuses
+- Unreimbursed business expenses
+- Misclassification disputes (only if recoverable as a money claim, not as an administrative finding)
+- Note when the state Labor Commissioner / Department of Labor is the better forum and why
+
+### Personal services / professional disputes
+- Disputes with hairdressers / barbers / nail salons (botched service)
+- Tutoring / lessons / coaching not delivered
+- Pet boarding / grooming / training disputes
+- Medical billing disputes (when not subject to insurance / surprise-billing carve-outs)
+- Daycare / preschool refund disputes
+
+### Loans, debts, and financial
+- Recovery of money lent to a friend or family member
+- Disputes over jointly-paid expenses (roommates, ex-partners, group trips)
+- Disputes over wedding / engagement gifts and rings on cancellation
+- Disputes over jointly-titled property after a breakup (where state allows in small claims)
+- Recovery of cash deposits / earnest money
+- Whether a creditor (bank, collection agency, credit union) can sue a consumer in small claims here, or is barred
+
+### Vehicle-specific
+- Accident damage where insurance won't cover or denies
+- Mechanic / body shop disputes
+- Dealership disputes
+- Towing / impound disputes
+- Parking damage when you can identify the responsible driver
+
+### Personal injury (small / minor)
+- Minor injury cases where damages fit under the cap (most personal injury cases exceed small claims caps and belong in regular civil court — state when and how the cap intersects)
+
+### Specific statutory claims (state-specific — research and list each that applies)
+- Bad-check statute multipliers
+- Consumer protection / UDAP statutes (e.g., California's CLRA, Texas's DTPA) and how they interact with small claims
+- Lemon law (where filing in small claims is possible)
+- Identity theft / fraud-related money damages
+- Statutory damages under wage / labor laws
+
+### Counterclaims
+- Whether defendants can counter-sue in the same hearing
+- Counterclaim dollar limit (often the same as the main cap, sometimes different)
+- What happens if the counterclaim exceeds the cap (transfer up? waive excess?)
+- Form name / number for filing a counterclaim
+
+### What you CANNOT sue for in small claims (be specific to this state)
+- Eviction / unlawful detainer (separate court / docket)
+- Family law (divorce, child support, custody)
+- Defamation / libel / slander above the small-claims cap
+- Title disputes over real estate
+- Malpractice claims (medical, legal — usually exceeds cap and requires expert witnesses)
+- Federal claims (bankruptcy, federal civil rights, ERISA)
+- Class actions / mass torts
+- Specific performance (forcing someone to do something) — small claims is money-only
+- Injunctions / restraining orders
+- Cases where the defendant is the federal government, or a state immune by sovereign immunity
+- Workers' compensation (separate administrative system)
+- Patent / trademark / copyright (federal jurisdiction)
+- Cases against parties protected by automatic stay (in bankruptcy)
+- Anything else this state explicitly excludes from small claims jurisdiction
+
+### Damages — what you can and cannot recover in small claims
+- Compensatory (out-of-pocket loss)
+- Whether punitive / exemplary damages are available
+- Whether statutory multipliers apply (treble damages, double damages, penalty wages)
+- Whether attorney's fees and costs are recoverable (relevant even though attorneys may be barred at trial)
+- Whether interest (pre-judgment and post-judgment) is recoverable, and at what rate
+- Filing fees and service fees as recoverable costs
 
 ## 3. Where to file
 - Name of the court that hears small claims (e.g., "Small Claims Court", "Justice Court", "Magistrate Court", "District Court")
