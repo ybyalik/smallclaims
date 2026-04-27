@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import SiteHeader from "../components/SiteHeader";
+import SiteFooter from "../components/SiteFooter";
 
 const SITE_URL = "https://smallclaims.vercel.app";
 
@@ -55,7 +57,11 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;0,6..72,700;0,6..72,800;1,6..72,500;1,6..72,600;1,6..72,700;1,6..72,800&family=Geist:wght@400;500;600;700;800&display=swap"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <SiteHeader />
+        {children}
+        <SiteFooter />
+      </body>
     </html>
   );
 }

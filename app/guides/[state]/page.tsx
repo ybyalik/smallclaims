@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { STATES, getStateBySlug } from "../../../lib/states";
 import { availableReportSlugs, loadReport } from "../../../lib/reports";
+import Breadcrumbs from "../../../components/Breadcrumbs";
 
 export function generateStaticParams() {
   const ready = new Set(availableReportSlugs());
@@ -41,21 +41,20 @@ export default function StateGuide({ params }: Params) {
   if (!report) notFound();
 
   return (
-    <main className="wrap" style={{ paddingTop: 40, paddingBottom: 80, maxWidth: 820 }}>
-      <nav style={{ marginBottom: 24, display: "flex", gap: 16, fontSize: 13 }}>
-        <Link href="/" style={{ color: "var(--muted)" }}>CivilCase</Link>
-        <span style={{ color: "var(--hairline)" }}>/</span>
-        <Link href="/guides" style={{ color: "var(--muted)" }}>Guides</Link>
-        <span style={{ color: "var(--hairline)" }}>/</span>
-        <span style={{ color: "var(--ink)" }}>{state.name}</span>
-      </nav>
+    <main className="wrap" style={{ paddingBottom: 80, maxWidth: 820 }}>
+      <Breadcrumbs
+        items={[
+          { href: "/guides", label: "Guides" },
+          { label: state.name },
+        ]}
+      />
 
       {report.meta.completedAt && (
         <div
           style={{
             fontSize: 12,
             color: "var(--muted)",
-            marginBottom: 16,
+            margin: "16px 0",
             padding: "10px 14px",
             background: "var(--bg-2)",
             borderRadius: 8,

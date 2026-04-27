@@ -306,6 +306,15 @@ footer { padding: 80px 0 40px; }
 .legal-disclaimer { margin-top: 24px; padding: 16px 20px; background: var(--bg-2); border-radius: 10px; color: var(--muted); font-size: 12.5px; line-height: 1.5; }
 .legal-disclaimer b { color: var(--ink-2); }
 
+/* Breadcrumbs (used on all non-home pages) */
+.breadcrumbs { padding: 28px 0 8px; font-size: 13px; color: var(--muted); }
+.breadcrumbs ol { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.breadcrumbs li { display: inline-flex; align-items: center; gap: 8px; }
+.breadcrumbs a { color: var(--muted); transition: color .2s ease; }
+.breadcrumbs a:hover { color: var(--ink); }
+.breadcrumbs span[aria-current="page"] { color: var(--ink); font-weight: 500; }
+.breadcrumbs .sep { color: var(--hairline); }
+
 /* Responsive (basic) */
 @media (max-width: 960px) {
   :root { --section-pad: 60px; --hero-pad-y: 60px; --h1-size: 40px; --h2-size: 40px; }

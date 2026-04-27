@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { STATES } from "../../lib/states";
 import { availableReportSlugs } from "../../lib/reports";
+import Breadcrumbs from "../../components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Small Claims Guides — Every State",
@@ -17,11 +18,9 @@ export default function GuidesIndex() {
     slugVariants(slug).some((v) => ready.has(v));
 
   return (
-    <main className="wrap" style={{ paddingTop: 60, paddingBottom: 80 }}>
-      <header style={{ marginBottom: 36 }}>
-        <Link href="/" className="eyebrow" style={{ display: "inline-block", marginBottom: 12 }}>
-          ← CivilCase
-        </Link>
+    <main className="wrap" style={{ paddingBottom: 80 }}>
+      <Breadcrumbs items={[{ label: "Guides" }]} />
+      <header style={{ margin: "16px 0 36px" }}>
         <h1
           style={{
             fontFamily: '"Newsreader", Georgia, serif',
