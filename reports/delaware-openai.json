@@ -1,0 +1,18 @@
+{
+  "id": "resp_0a1c5ae5b7743c3c0069ef0fc6e7f481978cb16483a9176979",
+  "state": "Delaware",
+  "model": "o3-deep-research-2025-06-26",
+  "usage": {
+    "input_tokens": 150971,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens": 73012,
+    "output_tokens_details": {
+      "reasoning_tokens": 41408
+    },
+    "total_tokens": 223983
+  },
+  "outputSteps": 324,
+  "completedAt": "2026-04-27T09:14:07.132Z"
+}

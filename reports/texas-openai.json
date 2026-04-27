@@ -1,0 +1,18 @@
+{
+  "id": "resp_01ffdede797713b40069ef0ff824f481939a72f80b70b226ad",
+  "state": "Texas",
+  "model": "o3-deep-research-2025-06-26",
+  "usage": {
+    "input_tokens": 188625,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens": 46737,
+    "output_tokens_details": {
+      "reasoning_tokens": 38848
+    },
+    "total_tokens": 235362
+  },
+  "outputSteps": 340,
+  "completedAt": "2026-04-27T09:25:27.656Z"
+}

@@ -146,21 +146,16 @@ async function poll(id) {
 }
 
 function extractText(result) {
-  // Per docs, the final report text lives at output[-1].content[0].text
-  const outputs = result.output || [];
-  for (let i = outputs.length - 1; i >= 0; i--) {
-    const o = outputs[i];
-    if (o.type === "message" && Array.isArray(o.content)) {
-      const t = o.content.find((c) => (c.type === "output_text" || c.type === "text") && c.text);
-      if (t) return t.text;
-    }
-  }
-  // Fallback: aggregate any output_text fields
+  // Concat ALL message text outputs in order. Deep Research can self-continue
+  // across multiple messages on long runs (model hits a per-response output
+  // cap and continues itself).
   const parts = [];
-  for (const o of outputs) {
-    if (Array.isArray(o.content)) {
+  for (const o of result.output || []) {
+    if (o.type === "message" && Array.isArray(o.content)) {
       for (const c of o.content) {
-        if ((c.type === "output_text" || c.type === "text") && c.text) parts.push(c.text);
+        if ((c.type === "output_text" || c.type === "text") && c.text) {
+          parts.push(c.text);
+        }
       }
     }
   }

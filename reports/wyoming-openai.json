@@ -1,0 +1,18 @@
+{
+  "id": "resp_001d9d4a38e1a2670069ef100326088193983a3c1ff73f62c8",
+  "state": "Wyoming",
+  "model": "o3-deep-research-2025-06-26",
+  "usage": {
+    "input_tokens": 151032,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens": 73384,
+    "output_tokens_details": {
+      "reasoning_tokens": 41024
+    },
+    "total_tokens": 224416
+  },
+  "outputSteps": 289,
+  "completedAt": "2026-04-27T09:49:20.362Z"
+}

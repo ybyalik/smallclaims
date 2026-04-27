@@ -1,0 +1,18 @@
+{
+  "id": "resp_0b68117e5f5fccda0069ef0fbf4110819095df1e7a11d77d96",
+  "state": "Alabama",
+  "model": "o3-deep-research-2025-06-26",
+  "usage": {
+    "input_tokens": 179010,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens": 48895,
+    "output_tokens_details": {
+      "reasoning_tokens": 46528
+    },
+    "total_tokens": 227905
+  },
+  "outputSteps": 210,
+  "completedAt": "2026-04-27T09:02:39.719Z"
+}

@@ -1,0 +1,18 @@
+{
+  "id": "resp_0e5d87421a7e3a3d0069ef100197448193af96189500a42d2e",
+  "state": "Wisconsin",
+  "model": "o3-deep-research-2025-06-26",
+  "usage": {
+    "input_tokens": 178327,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens": 43854,
+    "output_tokens_details": {
+      "reasoning_tokens": 43854
+    },
+    "total_tokens": 222181
+  },
+  "outputSteps": 257,
+  "completedAt": "2026-04-27T09:06:51.681Z"
+}

@@ -94,19 +94,16 @@ async function api(method, path, body) {
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 function extractText(result) {
-  const outputs = result.output || [];
-  for (let i = outputs.length - 1; i >= 0; i--) {
-    const o = outputs[i];
-    if (o.type === "message" && Array.isArray(o.content)) {
-      const t = o.content.find((c) => (c.type === "output_text" || c.type === "text") && c.text);
-      if (t) return t.text;
-    }
-  }
+  // Deep Research can produce MULTIPLE message outputs when the response runs
+  // long (model hits a per-response cap and continues itself). We need ALL of
+  // them concatenated in order, not just the last one.
   const parts = [];
-  for (const o of outputs) {
-    if (Array.isArray(o.content)) {
+  for (const o of result.output || []) {
+    if (o.type === "message" && Array.isArray(o.content)) {
       for (const c of o.content) {
-        if ((c.type === "output_text" || c.type === "text") && c.text) parts.push(c.text);
+        if ((c.type === "output_text" || c.type === "text") && c.text) {
+          parts.push(c.text);
+        }
       }
     }
   }
