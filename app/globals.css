@@ -258,7 +258,7 @@ section { padding: var(--section-pad) 0; }
 .receipt .who .meta { font-size: 11px; color: var(--muted); margin-top: 1px; }
 .receipt .footer { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); font-family: "Geist"; letter-spacing: 0.04em; }
 .receipt .footer strong { color: var(--ink); font-weight: 600; }
-.receipt.r-photo { padding: 0; overflow: hidden; border-radius: 8px; background: #222; }
+.receipt.r-photo { padding: 0; overflow: hidden; border-radius: 8px; background: #222; aspect-ratio: 5/4; }
 .receipt.r-photo::before { display: none; }
 .receipt.r-photo img { width: 100%; height: 100%; object-fit: cover; }
 .receipt.r-photo .overlay { position: absolute; left: 0; right: 0; bottom: 0; padding: 18px; background: linear-gradient(0deg, rgba(35, 33, 30, .92) 0%, rgba(35, 33, 30, 0) 100%); color: #fff; display: flex; flex-direction: column; gap: 6px; }
@@ -272,7 +272,7 @@ section { padding: var(--section-pad) 0; }
 .receipt.r-mark .who .name { color: #fff; }
 .receipt.r-mark .who { border-top-color: rgba(255, 255, 255, .12); }
 .receipt.r-mark .footer strong { color: #fff; }
-.receipts-grid-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 0 auto 16px; max-width: 1080px; }
+.receipts-grid-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 0 auto 16px; max-width: 1080px; align-items: start; }
 .r-1, .r-2, .r-3, .r-4, .r-5, .r-6 { grid-column: span 1; }
 .receipts-foot { margin: 36px auto 0; padding-top: 28px; border-top: 1px dashed var(--hairline); display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--muted); max-width: 1080px; }
 .receipts-foot strong { color: var(--ink); font-family: "Newsreader", Georgia, serif; font-style: italic; font-weight: 600; font-size: 18px; }

@@ -1,0 +1,18 @@
+{
+  "id": "resp_0110aa8066d4882e0069ef0fcae61c8196bdf3abb017e5fc5a",
+  "state": "Georgia",
+  "model": "o3-deep-research-2025-06-26",
+  "usage": {
+    "input_tokens": 134737,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens": 25559,
+    "output_tokens_details": {
+      "reasoning_tokens": 20480
+    },
+    "total_tokens": 160296
+  },
+  "outputSteps": 161,
+  "completedAt": "2026-04-27T08:05:10.129Z"
+}

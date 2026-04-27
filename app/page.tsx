@@ -725,7 +725,7 @@ export default function Home() {
 
             <div
               className="receipt r-3 r-photo"
-              style={{ transform: "rotate(-0.6deg)", minHeight: 170 }}
+              style={{ transform: "rotate(-0.6deg)" }}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -744,7 +744,7 @@ export default function Home() {
           <div className="receipts-grid-row">
             <div
               className="receipt r-4 r-photo"
-              style={{ transform: "rotate(1.2deg)", minHeight: 170 }}
+              style={{ transform: "rotate(1.2deg)" }}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img

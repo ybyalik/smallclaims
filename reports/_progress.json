@@ -1,8 +1,9 @@
 {
-  "updatedAt": "2026-04-27T08:02:06.250Z",
+  "updatedAt": "2026-04-27T08:14:23.761Z",
   "counts": {
-    "submitted": 17,
-    "failed": 33
+    "submitted": 16,
+    "failed": 33,
+    "completed": 1
   },
   "states": {
     "alabama": "submitted",
@@ -14,7 +15,7 @@
     "delaware": "submitted",
     "district-of-columbia": "failed",
     "florida": "failed",
-    "georgia": "submitted",
+    "georgia": "completed",
     "hawaii": "failed",
     "idaho": "submitted",
     "illinois": "failed",
