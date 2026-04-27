@@ -1,0 +1,18 @@
+{
+  "id": "resp_05a82409f8c461f10069ef0fdd1550819693e8df17e5fac4f4",
+  "state": "Minnesota",
+  "model": "o3-deep-research-2025-06-26",
+  "usage": {
+    "input_tokens": 150006,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens": 50947,
+    "output_tokens_details": {
+      "reasoning_tokens": 36992
+    },
+    "total_tokens": 200953
+  },
+  "outputSteps": 193,
+  "completedAt": "2026-04-27T08:24:36.905Z"
+}

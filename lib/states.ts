@@ -1,4 +1,8 @@
-export type State = { slug: string; name: string; abbr: string };
+export interface State {
+  slug: string;
+  name: string;
+  abbr: string;
+}
 
 export const STATES: State[] = [
   { slug: "alabama", name: "Alabama", abbr: "AL" },

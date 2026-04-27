@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getStateBySlug } from "../../../lib/states";
+import { STATES, getStateBySlug } from "../../../lib/states";
 import { availableStateSlugs, loadStateGuide } from "../../../lib/state-data";
 import Breadcrumbs from "../../../components/Breadcrumbs";
 import StatuteChecker from "../../../components/widgets/StatuteChecker";
@@ -8,8 +9,9 @@ import FeeCalculator from "../../../components/widgets/FeeCalculator";
 import ClaimExplorer from "../../../components/widgets/ClaimExplorer";
 import GroupedForms from "../../../components/widgets/GroupedForms";
 
+// Pre-generate every state. States without data render a "coming soon" placeholder.
 export function generateStaticParams() {
-  return availableStateSlugs().map((slug) => ({ state: slug }));
+  return STATES.map((s) => ({ state: s.slug }));
 }
 
 export const dynamicParams = false;
@@ -18,8 +20,15 @@ type Params = { params: { state: string } };
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const state = getStateBySlug(params.state);
+  if (!state) return {};
   const guide = await loadStateGuide(params.state);
-  if (!state || !guide) return {};
+  if (!guide) {
+    return {
+      title: `Small Claims in ${state.name}: Guide Coming Soon`,
+      description: `Our plain-English small claims guide for ${state.name} is in research. We're publishing every state.`,
+      alternates: { canonical: `/guides/${state.slug}` },
+    };
+  }
   return {
     title: `Small Claims in ${state.name}: Filing, Fees, Forms, Collecting (${new Date().getFullYear()})`,
     description: `How to file a small claims case in ${state.name}. Sue for up to $${guide.limits.individual.toLocaleString()}, with fees from $${guide.fees.tiers[0].amount}. Plain-English guide for individuals and small businesses.`,
@@ -35,11 +44,47 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 
 const fmtMoney = (n: number) => "$" + n.toLocaleString("en-US");
 
+function ComingSoon({ stateName }: { stateName: string }) {
+  const ready = new Set(availableStateSlugs());
+  const readyStates = STATES.filter((s) => ready.has(s.slug));
+  return (
+    <main className="wrap" style={{ paddingBottom: 96 }}>
+      <Breadcrumbs items={[{ href: "/guides", label: "Guides" }, { label: stateName }]} />
+      <section className="coming-soon">
+        <span className="eyebrow">Coming soon</span>
+        <h1>
+          We&rsquo;re researching <em>{stateName}.</em>
+        </h1>
+        <p>
+          Our small-claims guide for {stateName} is under research. We&rsquo;re working through every
+          state with the same depth: filing limits, fees, forms, deadlines, service rules, and
+          collection methods. We&rsquo;ll publish {stateName} as soon as it&rsquo;s ready.
+        </p>
+        {readyStates.length > 0 && (
+          <div className="coming-soon-ready">
+            <h3>Available now</h3>
+            <ul>
+              {readyStates.map((s) => (
+                <li key={s.slug}>
+                  <Link href={`/guides/${s.slug}`}>{s.name} →</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+        <p className="coming-soon-back">
+          <Link href="/guides">← Back to all states</Link>
+        </p>
+      </section>
+    </main>
+  );
+}
+
 export default async function StateGuide({ params }: Params) {
   const state = getStateBySlug(params.state);
   if (!state) notFound();
   const g = await loadStateGuide(params.state);
-  if (!g) notFound();
+  if (!g) return <ComingSoon stateName={state.name} />;
 
   const totalClaims = g.whatYouCanSueFor.reduce((n, c) => n + c.claims.length, 0);
 

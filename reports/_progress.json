@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-04-27T08:23:34.107Z",
+  "updatedAt": "2026-04-27T08:27:40.403Z",
   "counts": {
-    "submitted": 16,
+    "submitted": 15,
     "failed": 33,
-    "completed": 1
+    "completed": 2
   },
   "states": {
     "alabama": "submitted",
@@ -28,7 +28,7 @@
     "maryland": "failed",
     "massachusetts": "submitted",
     "michigan": "failed",
-    "minnesota": "submitted",
+    "minnesota": "completed",
     "mississippi": "failed",
     "missouri": "failed",
     "montana": "failed",

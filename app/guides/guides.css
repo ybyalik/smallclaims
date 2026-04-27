@@ -3,6 +3,275 @@
    Reads tokens from app/globals.css.
    ──────────────────────────────────────────────────────────────────── */
 
+/* GUIDES INDEX (map + search) ────────────────────────────────────── */
+.guides-hero { margin: 24px 0 36px; max-width: 720px; }
+.guides-hero .eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+}
+.guides-hero h1 {
+  font-family: "Newsreader", Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(36px, 5vw, 60px);
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  color: var(--ink);
+  margin: 0 0 14px;
+}
+.guides-hero h1 em {
+  font-style: italic;
+  color: var(--accent);
+  font-weight: 600;
+}
+.guides-hero p {
+  font-size: 17px;
+  color: var(--ink-2);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* StateSearch */
+.statesearch {
+  position: relative;
+  max-width: 720px;
+  margin: 0 0 32px;
+}
+.statesearch-field {
+  position: relative;
+  background: #fff;
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.statesearch-field:focus-within {
+  border-color: var(--ink);
+  box-shadow: 0 0 0 4px rgba(14, 14, 14, 0.06);
+}
+.statesearch-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--muted);
+  margin: 0 8px 0 18px;
+  flex-shrink: 0;
+}
+.statesearch-field input {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  flex: 1;
+  font: inherit;
+  font-size: 17px;
+  padding: 18px 12px 18px 0;
+  color: var(--ink);
+  outline: none;
+  min-width: 0;
+}
+.statesearch-clear {
+  appearance: none;
+  background: var(--bg-2);
+  border: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  color: var(--ink-2);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.statesearch-clear:hover { background: var(--hairline); }
+
+.statesearch-results {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  box-shadow: 0 16px 40px -16px rgba(31, 27, 22, 0.2);
+  list-style: none;
+  padding: 6px;
+  margin: 0;
+  z-index: 20;
+  max-height: 360px;
+  overflow-y: auto;
+}
+.statesearch-results li {
+  padding: 12px 14px;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 14px;
+  align-items: center;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+}
+.statesearch-results li[data-active="true"] { background: var(--bg-2); }
+.ssr-name { color: var(--ink); font-weight: 500; }
+.ssr-abbr {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  color: var(--muted);
+  background: var(--card);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+.ssr-status {
+  font-size: 12px;
+  font-weight: 600;
+}
+.ssr-status.ready { color: var(--accent); }
+.ssr-status.soon { color: var(--muted); font-weight: 500; }
+.statesearch-empty {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  padding: 16px;
+  z-index: 20;
+  font-size: 14px;
+  color: var(--muted);
+  box-shadow: 0 16px 40px -16px rgba(31, 27, 22, 0.2);
+}
+
+/* UsMap */
+.usmap-shell {
+  position: relative;
+  background: var(--card);
+  border: 1px solid var(--hairline);
+  border-radius: 18px;
+  padding: 36px 24px 20px;
+  margin-top: 8px;
+}
+.usmap-tooltip {
+  position: fixed;
+  z-index: 30;
+  background: var(--ink);
+  color: #fef9f1;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  pointer-events: none;
+  box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  white-space: nowrap;
+}
+.usmap-tooltip-name { font-weight: 600; font-size: 13.5px; }
+.usmap-tooltip-status { font-size: 11.5px; opacity: 0.8; }
+.usmap-tooltip-status.ready { color: #f4c84b; opacity: 1; }
+.usmap-legend {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.usmap-legend span { display: inline-flex; align-items: center; gap: 8px; }
+.usmap-legend i {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+@media (max-width: 720px) {
+  .usmap-shell { padding: 20px 12px 16px; }
+  .statesearch-results li { grid-template-columns: 1fr auto; }
+  .statesearch-results li .ssr-status { grid-column: span 2; font-size: 11.5px; }
+}
+
+/* COMING SOON */
+.coming-soon {
+  margin: 24px 0;
+  padding: 56px 56px 64px;
+  background: var(--card);
+  border: 1px solid var(--hairline);
+  border-radius: 18px;
+  max-width: 760px;
+}
+.coming-soon .eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+}
+.coming-soon h1 {
+  font-family: "Newsreader", Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(32px, 4.5vw, 52px);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--ink);
+  margin: 0 0 16px;
+}
+.coming-soon h1 em { font-style: italic; color: var(--accent); font-weight: 600; }
+.coming-soon > p {
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--ink-2);
+  margin: 0 0 32px;
+  max-width: 60ch;
+}
+.coming-soon-ready {
+  margin-top: 24px;
+  padding: 22px 24px;
+  background: #fff;
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+}
+.coming-soon-ready h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 12px;
+  color: var(--ink);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.coming-soon-ready ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+}
+.coming-soon-ready a {
+  color: var(--accent);
+  font-weight: 500;
+  font-size: 15.5px;
+}
+.coming-soon-ready a:hover { text-decoration: underline; }
+.coming-soon-back {
+  margin-top: 24px !important;
+  font-size: 14px;
+}
+.coming-soon-back a { color: var(--muted); }
+.coming-soon-back a:hover { color: var(--ink); }
+
+@media (max-width: 720px) {
+  .coming-soon { padding: 36px 24px 40px; }
+}
+
 .guide { padding-bottom: 80px; }
 .guide .wrap { max-width: 920px; }
 
