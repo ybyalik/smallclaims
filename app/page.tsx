@@ -725,7 +725,7 @@ export default function Home() {
 
             <div
               className="receipt r-3 r-photo"
-              style={{ transform: "rotate(-0.6deg)", minHeight: 340 }}
+              style={{ transform: "rotate(-0.6deg)", minHeight: 240 }}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -744,7 +744,7 @@ export default function Home() {
           <div className="receipts-grid-row">
             <div
               className="receipt r-4 r-photo"
-              style={{ transform: "rotate(1.2deg)", minHeight: 280 }}
+              style={{ transform: "rotate(1.2deg)", minHeight: 220 }}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -853,38 +853,6 @@ export default function Home() {
                   <div className="a">{f.a}</div>
                 </details>
               ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FINAL CTA */}
-      <section style={{ paddingTop: 60, paddingBottom: 40 }}>
-        <div className="wrap">
-          <div className="final">
-            <span className="eyebrow">Get clarity in minutes</span>
-            <h2>
-              Is your case <em>worth pursuing?</em>
-            </h2>
-            <p>
-              Three minutes. Six questions. One honest answer. No signup required to see
-              your case score.
-            </p>
-            <div className="ctas">
-              <a className="btn btn-cream" href="#">
-                Check Your Case →
-              </a>
-              <a
-                className="btn"
-                style={{
-                  background: "transparent",
-                  color: "#FEF9F1",
-                  border: "1px solid rgba(255,255,255,.2)",
-                }}
-                href="#"
-              >
-                Talk to a human
-              </a>
             </div>
           </div>
         </div>

@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-04-27T07:38:34.349Z",
+  "updatedAt": "2026-04-27T07:45:44.448Z",
   "counts": {
-    "submitted": 18,
-    "failed": 32
+    "submitted": 17,
+    "failed": 33
   },
   "states": {
     "alabama": "submitted",
@@ -32,7 +32,7 @@
     "missouri": "failed",
     "montana": "failed",
     "nebraska": "failed",
-    "nevada": "submitted",
+    "nevada": "failed",
     "new-hampshire": "submitted",
     "new-jersey": "failed",
     "new-mexico": "failed",
