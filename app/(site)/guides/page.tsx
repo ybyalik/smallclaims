@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { availableStateSlugs } from "../../lib/state-data";
-import Breadcrumbs from "../../components/Breadcrumbs";
-import UsMap from "../../components/widgets/UsMap";
-import StateSearch from "../../components/widgets/StateSearch";
+import { availableStateSlugs } from "../../../lib/state-data";
+import Breadcrumbs from "../../../components/Breadcrumbs";
+import UsMap from "../../../components/widgets/UsMap";
+import StateSearch from "../../../components/widgets/StateSearch";
 
 export const metadata: Metadata = {
   title: "Small Claims Guides — Every State",

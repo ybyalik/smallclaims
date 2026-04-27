@@ -1,5 +1,5 @@
 import ProcessFlow from "./ProcessFlow";
-import UseCases from "../components/UseCases";
+import UseCases from "../../components/UseCases";
 
 const faqs = [
   {
