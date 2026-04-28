@@ -89,6 +89,12 @@ export default function SectionsPage() {
       <Label id="05">Integration orbit — concentric arcs with floating app logos</Label>
       <SectionIntegrationOrbit />
 
+      {/* ============================================================
+           6. Split hero — copy left, vertical step list right + logo bar
+           ============================================================ */}
+      <Label id="06">Split hero — vertical step list, floating avatars, gradient blob, logo bar</Label>
+      <SectionSplitHero />
+
       <div style={{ padding: "60px 0", background: "var(--bg-2)", textAlign: "center" }}>
         <p style={{ color: "var(--muted)", fontSize: 13 }}>
           End of library. <Link href="/" style={{ color: "var(--ink)" }}>Back home</Link>
@@ -1134,4 +1140,415 @@ function Logo({ kind, size }: { kind: string; size: number }) {
     default:
       return <span style={{ fontSize: size, fontWeight: 700 }}>?</span>;
   }
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   06. Split hero with vertical step list + logo bar
+   ───────────────────────────────────────────────────────────────────── */
+function SectionSplitHero() {
+  return (
+    <>
+      <section
+        style={{
+          background: "#fff",
+          padding: "100px 24px 120px",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        {/* Gradient blob in the right side */}
+        <div
+          style={{
+            position: "absolute",
+            right: -200,
+            top: -120,
+            width: 900,
+            height: 900,
+            borderRadius: "50%",
+            background:
+              "radial-gradient(circle at 30% 30%, rgba(245,178,159,0.55), rgba(150,120,255,0) 50%), radial-gradient(circle at 70% 70%, rgba(110,92,246,0.4), rgba(255,255,255,0) 60%)",
+            filter: "blur(40px)",
+            pointerEvents: "none",
+            zIndex: 0,
+          }}
+        />
+
+        <div
+          style={{
+            maxWidth: 1280,
+            margin: "0 auto",
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: 56,
+            alignItems: "center",
+            position: "relative",
+            zIndex: 1,
+          }}
+        >
+          {/* LEFT — copy + CTAs */}
+          <div>
+            <h2
+              style={{
+                fontSize: "clamp(40px, 4.6vw, 60px)",
+                fontWeight: 800,
+                lineHeight: 1.05,
+                letterSpacing: "-0.02em",
+                color: "#0c1019",
+                margin: "0 0 28px",
+                fontFamily: "Geist, system-ui, sans-serif",
+              }}
+            >
+              Customer support<br />
+              based on the AI<br />
+              <span style={{ color: "#bfc4cf" }}>technology</span>
+            </h2>
+            <p
+              style={{
+                fontSize: 16,
+                lineHeight: 1.6,
+                color: "#4b5563",
+                maxWidth: "44ch",
+                margin: "0 0 36px",
+              }}
+            >
+              Powerful natural language processing capabilities, that can understand and respond
+              to customer inquiries in real-time &amp; improve customer satisfaction.
+            </p>
+
+            {/* CTAs */}
+            <div style={{ display: "flex", gap: 12, marginBottom: 36 }}>
+              <a
+                href="#"
+                style={{
+                  background: "#6e5cf6",
+                  color: "#fff",
+                  padding: "14px 32px",
+                  borderRadius: 8,
+                  fontSize: 14.5,
+                  fontWeight: 600,
+                  textDecoration: "none",
+                }}
+              >
+                Get started free
+              </a>
+              <a
+                href="#"
+                style={{
+                  background: "#fff",
+                  color: "#0c1019",
+                  padding: "14px 32px",
+                  borderRadius: 8,
+                  fontSize: 14.5,
+                  fontWeight: 600,
+                  textDecoration: "none",
+                  border: "1.5px solid #0c1019",
+                }}
+              >
+                Book a demo
+              </a>
+            </div>
+
+            {/* Specialist row */}
+            <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=120&h=120&fit=crop&crop=face"
+                alt=""
+                style={{ width: 44, height: 44, borderRadius: "50%", objectFit: "cover" }}
+              />
+              <div>
+                <div style={{ fontSize: 13, color: "#6b7280" }}>15 min discovery call</div>
+                <a
+                  href="#"
+                  style={{
+                    fontSize: 14,
+                    color: "#0c1019",
+                    fontWeight: 500,
+                    textDecoration: "none",
+                  }}
+                >
+                  Talk with a{" "}
+                  <span style={{ textDecoration: "underline", textDecorationThickness: 2, textUnderlineOffset: 3 }}>
+                    specialist
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* RIGHT — vertical step diagram with floating avatars */}
+          <div style={{ position: "relative", height: 460 }}>
+            {/* Avatar bubble top-right with heart */}
+            <div
+              style={{
+                position: "absolute",
+                right: 60,
+                top: 0,
+                width: 80,
+                height: 80,
+                borderRadius: "50%",
+                overflow: "hidden",
+                boxShadow: "0 14px 30px -12px rgba(31,27,22,0.25)",
+              }}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=200&h=200&fit=crop&crop=face"
+                alt=""
+                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              />
+            </div>
+            <FloatingIcon top={-12} right={48} bg="#fff" color="#ec4899" emoji="❤" />
+
+            {/* Avatar bottom-left with star rating */}
+            <div
+              style={{
+                position: "absolute",
+                left: 8,
+                bottom: 30,
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                gap: 0,
+              }}
+            >
+              <div
+                style={{
+                  width: 80,
+                  height: 80,
+                  borderRadius: "50%",
+                  overflow: "hidden",
+                  boxShadow: "0 14px 30px -12px rgba(31,27,22,0.25)",
+                }}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&crop=face"
+                  alt=""
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                />
+              </div>
+              <div
+                style={{
+                  background: "#fff",
+                  borderRadius: 999,
+                  padding: "6px 14px",
+                  marginTop: -10,
+                  display: "inline-flex",
+                  gap: 2,
+                  boxShadow: "0 6px 18px -8px rgba(31,27,22,0.2)",
+                }}
+              >
+                {[0, 1, 2, 3, 4].map((i) => (
+                  <span key={i} style={{ color: "#fbbf24", fontSize: 14 }}>★</span>
+                ))}
+              </div>
+            </div>
+
+            {/* Avatar bottom-right with thumbs up */}
+            <div
+              style={{
+                position: "absolute",
+                right: 16,
+                bottom: 30,
+                width: 70,
+                height: 70,
+                borderRadius: "50%",
+                overflow: "hidden",
+                boxShadow: "0 14px 30px -12px rgba(31,27,22,0.25)",
+              }}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face"
+                alt=""
+                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              />
+            </div>
+            <FloatingIcon bottom={88} right={6} bg="#fff" color="#6e5cf6" emoji="👍" />
+
+            {/* Three step rows */}
+            <div
+              style={{
+                position: "absolute",
+                left: 110,
+                top: 50,
+                bottom: 50,
+                width: 380,
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+              }}
+            >
+              <StepRow
+                icon={
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#fff" strokeWidth="1.8">
+                    <rect x="3" y="5" width="18" height="14" rx="2" />
+                    <path d="M3 7l9 6 9-6" />
+                  </svg>
+                }
+                title="New message from"
+                detail={
+                  <span style={{ display: "inline-flex", alignItems: "center", gap: 8, marginTop: 4 }}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&crop=face"
+                      alt=""
+                      style={{ width: 22, height: 22, borderRadius: "50%" }}
+                    />
+                    <strong style={{ fontSize: 14, color: "#0c1019" }}>Anna Wilson</strong>
+                  </span>
+                }
+              />
+              <StepRow
+                icon={
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#fff" strokeWidth="1.8">
+                    <rect x="5" y="7" width="14" height="11" rx="3" />
+                    <circle cx="9" cy="12" r="1" fill="#fff" />
+                    <circle cx="15" cy="12" r="1" fill="#fff" />
+                    <path d="M12 4v3M9 18v2M15 18v2" />
+                  </svg>
+                }
+                title={<>Identifying the request and<br />finding the solution</>}
+              />
+              <StepRow
+                icon={
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#fff" strokeWidth="1.8">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                  </svg>
+                }
+                title={<>Reply to the client and engage<br />into a conversation</>}
+              />
+            </div>
+
+            {/* Vertical dotted connector */}
+            <div
+              style={{
+                position: "absolute",
+                left: 130,
+                top: 90,
+                bottom: 90,
+                width: 1,
+                background:
+                  "repeating-linear-gradient(to bottom, #d1d5db 0 4px, transparent 4px 8px)",
+              }}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* LOGO STRIP */}
+      <section
+        style={{
+          background: "#0a0a0a",
+          padding: "32px 24px",
+          overflow: "hidden",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            gap: 56,
+            alignItems: "center",
+            justifyContent: "space-around",
+            maxWidth: 1400,
+            margin: "0 auto",
+            color: "#fff",
+            fontFamily: "Geist, system-ui, sans-serif",
+            fontWeight: 700,
+            fontSize: 22,
+            letterSpacing: "-0.01em",
+            flexWrap: "wrap",
+          }}
+        >
+          <FakeLogo>Wise</FakeLogo>
+          <FakeLogo>◐ Invert</FakeLogo>
+          <FakeLogo>⚡ Proline</FakeLogo>
+          <FakeLogo>ℎ Hitech</FakeLogo>
+          <FakeLogo>⚡ Flash</FakeLogo>
+          <FakeLogo>❄ Snowflake</FakeLogo>
+          <FakeLogo>☰ DevWise</FakeLogo>
+          <FakeLogo>◐ Invert</FakeLogo>
+          <FakeLogo>⚡ Proline</FakeLogo>
+          <FakeLogo>ℎ Hitech</FakeLogo>
+          <FakeLogo>⚡ Flash</FakeLogo>
+        </div>
+      </section>
+    </>
+  );
+}
+
+function StepRow({ icon, title, detail }: { icon: React.ReactNode; title: React.ReactNode; detail?: React.ReactNode }) {
+  return (
+    <div style={{ display: "flex", alignItems: "center", gap: 16, position: "relative", zIndex: 2 }}>
+      <div
+        style={{
+          width: 44,
+          height: 44,
+          borderRadius: "50%",
+          background: "#0c1019",
+          display: "grid",
+          placeItems: "center",
+          flexShrink: 0,
+          boxShadow: "0 4px 14px rgba(0,0,0,0.18)",
+        }}
+      >
+        {icon}
+      </div>
+      <div style={{ fontSize: 14, lineHeight: 1.4, color: "#0c1019" }}>
+        {title}
+        {detail}
+      </div>
+    </div>
+  );
+}
+
+function FloatingIcon({
+  top,
+  right,
+  bottom,
+  left,
+  bg,
+  color,
+  emoji,
+}: {
+  top?: number;
+  right?: number;
+  bottom?: number;
+  left?: number;
+  bg: string;
+  color: string;
+  emoji: string;
+}) {
+  return (
+    <div
+      style={{
+        position: "absolute",
+        top,
+        right,
+        bottom,
+        left,
+        width: 32,
+        height: 32,
+        borderRadius: "50%",
+        background: bg,
+        boxShadow: "0 4px 12px rgba(31,27,22,0.18)",
+        display: "grid",
+        placeItems: "center",
+        color,
+        fontSize: 16,
+        zIndex: 3,
+      }}
+    >
+      {emoji}
+    </div>
+  );
+}
+
+function FakeLogo({ children }: { children: React.ReactNode }) {
+  return (
+    <span style={{ display: "inline-flex", alignItems: "center", gap: 8, opacity: 0.95 }}>
+      {children}
+    </span>
+  );
 }
