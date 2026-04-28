@@ -119,7 +119,7 @@ section { padding: var(--section-pad) 0; }
 .ps-col.right .ps-item .t { color: #fff; }
 .ps-item .d { font-size: 15px; color: var(--muted); line-height: 1.55; }
 .ps-col.right .ps-item .d { color: #a8a095; }
-.ps-orb { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 96px; height: auto; display: grid; place-items: center; z-index: 5; filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.18)); }
+.ps-orb { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 72px; height: auto; display: grid; place-items: center; z-index: 5; filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.18)); }
 .ps-orb img { width: 100%; height: auto; display: block; }
 .ps-grid { gap: 32px; }
 .ps-foot { text-align: center; margin-top: 24px; }
