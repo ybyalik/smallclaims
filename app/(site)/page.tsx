@@ -228,10 +228,13 @@ export default function Home() {
               </div>
 
               <div className="ps-orb">
-                <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
-                  <path d="m12 3 3.5 6.5 7 1-5 5 1 7-6.5-3.5-6.5 3.5 1-7-5-5 7-1z" />
-                </svg>
-                CivilCase
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/civilcase-shield.webp"
+                  alt="CivilCase"
+                  width={200}
+                  height={228}
+                />
               </div>
 
               <div className="ps-col right">
