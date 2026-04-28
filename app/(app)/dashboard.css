@@ -137,18 +137,42 @@
   text-overflow: ellipsis;
 }
 
-.app-signout {
-  display: block;
-  text-align: left;
-  font-size: 12px;
-  color: #7a7770;
-  text-decoration: none;
-  padding: 4px 0;
+.app-foot-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  margin-top: 4px;
 }
 
-.app-signout:hover {
+.app-foot-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 10px;
+  border-radius: 6px;
+  color: #5a574e;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.app-foot-link:hover {
+  background: #f3f1ec;
   color: var(--ink, #111);
 }
+
+.app-foot-link.active {
+  background: var(--ink, #111);
+  color: #fff;
+}
+
+.app-foot-link svg {
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+
+.app-foot-link.active svg { opacity: 1; }
 
 .app-main {
   padding: 32px 40px 64px;
