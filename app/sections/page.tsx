@@ -83,6 +83,12 @@ export default function SectionsPage() {
       <Label id="04">Feature mosaic — copy left, stacked product cards right (dark)</Label>
       <SectionFeatureMosaic />
 
+      {/* ============================================================
+           5. Integration orbit — centered headline, app logos on concentric arcs
+           ============================================================ */}
+      <Label id="05">Integration orbit — concentric arcs with floating app logos</Label>
+      <SectionIntegrationOrbit />
+
       <div style={{ padding: "60px 0", background: "var(--bg-2)", textAlign: "center" }}>
         <p style={{ color: "var(--muted)", fontSize: 13 }}>
           End of library. <Link href="/" style={{ color: "var(--ink)" }}>Back home</Link>
@@ -866,4 +872,266 @@ function TaskRow({ accent, tag, title, struck }: { accent: string; tag: string; 
       <div style={{ width: 16, height: 16, borderRadius: 4, border: "1.5px solid #d8d0bf" }} />
     </div>
   );
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   05. Integration orbit
+   ───────────────────────────────────────────────────────────────────── */
+function SectionIntegrationOrbit() {
+  // Each logo positioned along one of three concentric arcs.
+  // Coordinates are percentages relative to the orbit container.
+  const logos = [
+    // outer-most arc (furthest)
+    { x: 12,  y: 70, size: 60, kind: "biz",   tilt: 6 },
+    { x: 88,  y: 70, size: 60, kind: "wave",  tilt: -4 },
+    { x: 22,  y: 80, size: 56, kind: "p",     tilt: -3 },
+    { x: 78,  y: 78, size: 56, kind: "pin",   tilt: 4 },
+    // middle arc
+    { x: 28,  y: 50, size: 64, kind: "x",     tilt: 0 },
+    { x: 72,  y: 52, size: 64, kind: "ps",    tilt: 0 },
+    { x: 33,  y: 62, size: 50, kind: "tile",  tilt: 0 },
+    { x: 67,  y: 64, size: 50, kind: "x",     tilt: 0 },
+    // inner arc / closer to center
+    { x: 50,  y: 28, size: 70, kind: "chev",  tilt: 0 },
+    { x: 50,  y: 60, size: 44, kind: "pin",   tilt: 0 },
+    { x: 41,  y: 75, size: 48, kind: "wave",  tilt: 0 },
+    // bottom inner cluster
+    { x: 35,  y: 90, size: 56, kind: "ps",    tilt: 0 },
+  ];
+
+  return (
+    <section
+      style={{
+        background: "#faf6e9",
+        padding: "80px 24px 60px",
+        position: "relative",
+        overflow: "hidden",
+        backgroundImage:
+          "linear-gradient(to right, rgba(60,40,30,0.04) 1px, transparent 1px)",
+        backgroundSize: "calc(100%/12) 100%",
+      }}
+    >
+      {/* decorative top-left crescent */}
+      <svg style={{ position: "absolute", left: 110, top: 200, width: 56, height: 60 }} viewBox="0 0 60 60" fill="none">
+        <path d="M 16 8 C 5 22, 5 38, 18 52" stroke="#143a30" strokeWidth="6" strokeLinecap="round" />
+        <path d="M 22 12 C 12 24, 12 36, 22 48" stroke="#e85d3e" strokeWidth="2" strokeLinecap="round" opacity="0.85" />
+      </svg>
+      {/* decorative bottom-right rings */}
+      <div style={{ position: "absolute", right: 80, bottom: 90, display: "flex", gap: 8 }}>
+        <div style={{ width: 32, height: 32, border: "2px solid #e85d3e", borderRadius: "50%" }} />
+        <div style={{ width: 28, height: 28, border: "2px solid #143a30", borderRadius: "50%", marginLeft: -14, marginTop: 6 }} />
+      </div>
+
+      {/* HEADER */}
+      <div style={{ position: "relative", textAlign: "center", maxWidth: 760, margin: "0 auto 40px" }}>
+        <span
+          style={{
+            display: "inline-block",
+            background: "#0c2a26",
+            color: "#fef9f1",
+            padding: "10px 22px",
+            borderRadius: 999,
+            fontSize: 13.5,
+            fontWeight: 600,
+            marginBottom: 28,
+          }}
+        >
+          Integration
+        </span>
+        <h2
+          style={{
+            fontFamily: "Newsreader, Georgia, serif",
+            fontWeight: 700,
+            fontSize: "clamp(34px, 4.4vw, 56px)",
+            lineHeight: 1.05,
+            letterSpacing: "-0.025em",
+            color: "#0c2a26",
+            margin: "0 0 22px",
+          }}
+        >
+          One-click to integration with any of your favorite <em style={{ fontStyle: "italic", color: "var(--accent)", fontWeight: 700 }}>apps and tools</em>
+        </h2>
+        <p
+          style={{
+            fontSize: 16,
+            lineHeight: 1.65,
+            color: "#475a55",
+            maxWidth: "62ch",
+            margin: "0 auto",
+          }}
+        >
+          Achieve seamless integration with your favorite apps and tools through a single click,
+          enhancing the efficiency and functionality of our SaaS-based project management solution.
+        </p>
+      </div>
+
+      {/* ORBIT */}
+      <div
+        style={{
+          position: "relative",
+          maxWidth: 1100,
+          margin: "0 auto",
+          height: 480,
+        }}
+      >
+        {/* arcs */}
+        <svg
+          viewBox="0 0 1100 480"
+          preserveAspectRatio="none"
+          style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}
+        >
+          {[180, 250, 320].map((r, i) => (
+            <path
+              key={i}
+              d={`M ${550 - r} 480 A ${r} ${r} 0 0 1 ${550 + r} 480`}
+              stroke="#cbc4af"
+              strokeWidth="0.8"
+              strokeDasharray="2 4"
+              fill="none"
+              opacity={0.7}
+            />
+          ))}
+        </svg>
+
+        {/* logo bubbles */}
+        {logos.map((l, i) => (
+          <LogoBubble key={i} {...l} />
+        ))}
+
+        {/* center CTAs */}
+        <div
+          style={{
+            position: "absolute",
+            left: "50%",
+            bottom: 32,
+            transform: "translateX(-50%)",
+            display: "flex",
+            gap: 14,
+            zIndex: 5,
+          }}
+        >
+          <a
+            href="#"
+            style={{
+              background: "var(--accent)",
+              color: "#fff",
+              padding: "14px 26px",
+              borderRadius: 999,
+              fontSize: 14,
+              fontWeight: 600,
+              textDecoration: "none",
+              border: 0,
+            }}
+          >
+            All integrations
+          </a>
+          <a
+            href="#"
+            style={{
+              background: "#fff",
+              color: "#0c2a26",
+              padding: "14px 26px",
+              borderRadius: 999,
+              fontSize: 14,
+              fontWeight: 600,
+              textDecoration: "none",
+              border: "1.5px solid #0c2a26",
+            }}
+          >
+            Start free trial
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function LogoBubble({ x, y, size, kind }: { x: number; y: number; size: number; kind: string; tilt?: number }) {
+  return (
+    <div
+      style={{
+        position: "absolute",
+        left: `${x}%`,
+        top: `${y}%`,
+        transform: "translate(-50%, -50%)",
+        width: size,
+        height: size,
+        background: "#fff",
+        borderRadius: "50%",
+        boxShadow: "0 8px 22px -8px rgba(31,27,22,0.16), 0 2px 4px rgba(31,27,22,0.05)",
+        display: "grid",
+        placeItems: "center",
+        zIndex: 2,
+      }}
+    >
+      <Logo kind={kind} size={Math.round(size * 0.5)} />
+    </div>
+  );
+}
+
+function Logo({ kind, size }: { kind: string; size: number }) {
+  switch (kind) {
+    case "chev":
+      return (
+        <svg viewBox="0 0 24 24" width={size} height={size}>
+          <path d="M6 4 L18 4 L12 12 L18 20 L6 20 L12 12 Z" fill="#1e6cf7" />
+        </svg>
+      );
+    case "x":
+      return (
+        <svg viewBox="0 0 24 24" width={size} height={size}>
+          <text x="12" y="18" textAnchor="middle" fontFamily="Newsreader, serif" fontSize="20" fontWeight="700" fill="#e85d3e">X</text>
+        </svg>
+      );
+    case "ps":
+      return (
+        <svg viewBox="0 0 24 24" width={size} height={size}>
+          <text x="6" y="18" fontFamily="Newsreader, serif" fontSize="18" fontWeight="700" fill="#3a2f1f">P</text>
+          <text x="14" y="18" fontFamily="Newsreader, serif" fontSize="18" fontWeight="700" fill="#b8975c" fontStyle="italic">S</text>
+        </svg>
+      );
+    case "p":
+      return (
+        <svg viewBox="0 0 24 24" width={size} height={size}>
+          <text x="12" y="18" textAnchor="middle" fontFamily="Newsreader, serif" fontSize="20" fontWeight="700" fontStyle="italic" fill="#3a2f1f">p</text>
+          <circle cx="17" cy="6" r="2" fill="#e85d3e" />
+        </svg>
+      );
+    case "pin":
+      return (
+        <svg viewBox="0 0 24 24" width={size} height={size}>
+          <path d="M12 2 C 8 2, 5 5, 5 9 c 0 5 7 13 7 13 s 7-8 7-13 c 0-4-3-7-7-7 z" fill="#e85d3e" />
+          <circle cx="12" cy="9" r="2" fill="#fff" />
+        </svg>
+      );
+    case "tile":
+      return (
+        <svg viewBox="0 0 24 24" width={size} height={size}>
+          <rect x="2" y="2" width="20" height="20" rx="3" fill="none" stroke="#0c2a26" strokeWidth="1.4" />
+          <circle cx="8" cy="8" r="1.5" fill="#15614b" />
+          <circle cx="16" cy="8" r="1.5" fill="#e85d3e" />
+          <circle cx="12" cy="12" r="1.5" fill="#f5b660" />
+          <circle cx="8" cy="16" r="1.5" fill="#1e6cf7" />
+          <circle cx="16" cy="16" r="1.5" fill="#0c2a26" />
+        </svg>
+      );
+    case "wave":
+      return (
+        <svg viewBox="0 0 24 24" width={size} height={size}>
+          <path d="M3 14 L9 8 L11 12 L17 4 L19 8" stroke="#e85d3e" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M3 20 L9 14 L11 18 L17 10 L19 14" stroke="#e85d3e" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" opacity="0.5" />
+        </svg>
+      );
+    case "biz":
+      return (
+        <svg viewBox="0 0 24 24" width={size} height={size}>
+          <path
+            d="M5 7 c 0-2 2-4 4-4 c 2 0 3 1 4 2 c 1-1 2-2 4-2 c 2 0 4 2 4 4 c 0 4-7 9-8 12 c -1-3-8-8-8-12 z"
+            fill="#c0322a"
+          />
+        </svg>
+      );
+    default:
+      return <span style={{ fontSize: size, fontWeight: 700 }}>?</span>;
+  }
 }
