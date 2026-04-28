@@ -107,6 +107,12 @@ export default function SectionsPage() {
       <Label id="08">Image + accordion — services list with +/− toggles next to a photo</Label>
       <SectionImageAccordion />
 
+      {/* ============================================================
+           9. Bento case study — stacked cards left + photo card with chart overlay right
+           ============================================================ */}
+      <Label id="09">Bento case study — copy + stat card left, photo with chart overlay right</Label>
+      <SectionBentoCaseStudy />
+
       <div style={{ padding: "60px 0", background: "var(--bg-2)", textAlign: "center" }}>
         <p style={{ color: "var(--muted)", fontSize: 13 }}>
           End of library. <Link href="/" style={{ color: "var(--ink)" }}>Back home</Link>
@@ -2094,5 +2100,255 @@ function SectionImageAccordion() {
         </div>
       </div>
     </section>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   09. Bento case study
+   ───────────────────────────────────────────────────────────────────── */
+function SectionBentoCaseStudy() {
+  return (
+    <section style={{ background: "#f1eadc", padding: "32px 24px 96px" }}>
+      <div
+        style={{
+          maxWidth: 1320,
+          margin: "0 auto",
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr",
+          gap: 18,
+          alignItems: "stretch",
+        }}
+      >
+        {/* LEFT column — stacked cards */}
+        <div style={{ display: "grid", gridTemplateRows: "1fr auto", gap: 18 }}>
+          {/* Top white card */}
+          <div
+            style={{
+              background: "#fff",
+              borderRadius: 18,
+              padding: "44px 44px 32px",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              minHeight: 420,
+            }}
+          >
+            <div>
+              <h2
+                style={{
+                  fontFamily: "Geist, system-ui, sans-serif",
+                  fontWeight: 700,
+                  fontSize: "clamp(34px, 3.6vw, 46px)",
+                  lineHeight: 1.05,
+                  letterSpacing: "-0.02em",
+                  color: "#0c0c0c",
+                  margin: "0 0 24px",
+                  maxWidth: "16ch",
+                }}
+              >
+                Making every business move a confident one
+              </h2>
+              <p
+                style={{
+                  fontSize: 15,
+                  lineHeight: 1.6,
+                  color: "#4a4a4a",
+                  maxWidth: "52ch",
+                  margin: 0,
+                }}
+              >
+                While accounting focuses more on the past and present financial performance,
+                management consulting is often future-oriented, helping businesses plan and
+                implement improvements.
+              </p>
+            </div>
+
+            {/* Two small features */}
+            <div style={{ display: "flex", gap: 36, marginTop: 28 }}>
+              <div style={{ display: "inline-flex", alignItems: "center", gap: 10 }}>
+                <span
+                  style={{
+                    width: 28,
+                    height: 28,
+                    borderRadius: 8,
+                    background: "rgba(217,64,46,0.1)",
+                    color: "#d9402e",
+                    display: "grid",
+                    placeItems: "center",
+                  }}
+                >
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M3 17l6-6 4 4 8-8M21 7v6h-6" />
+                  </svg>
+                </span>
+                <span style={{ fontSize: 14.5, fontWeight: 500, color: "#0c0c0c" }}>Decision-making support</span>
+              </div>
+              <div style={{ display: "inline-flex", alignItems: "center", gap: 10 }}>
+                <span
+                  style={{
+                    width: 28,
+                    height: 28,
+                    borderRadius: 8,
+                    background: "rgba(217,64,46,0.1)",
+                    color: "#d9402e",
+                    display: "grid",
+                    placeItems: "center",
+                  }}
+                >
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2">
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M12 7v5l3 2" />
+                  </svg>
+                </span>
+                <span style={{ fontSize: 14.5, fontWeight: 500, color: "#0c0c0c" }}>Time &amp; resource savings</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom yellow case-study card */}
+          <div
+            style={{
+              background: "#fcd38a",
+              borderRadius: 18,
+              padding: "28px 36px 36px",
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 28 }}>
+              {/* KOBE logo */}
+              <div style={{ display: "flex", alignItems: "center", gap: 10, color: "#d9402e", fontWeight: 800, fontSize: 18, letterSpacing: "0.05em" }}>
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2.4">
+                  <path d="M3 7h18M5 7v12M19 7v12M5 19h14M9 11l3-2 3 2v6H9z" />
+                </svg>
+                <span style={{ fontFamily: "Geist, system-ui, sans-serif" }}>KOBE</span>
+              </div>
+              <a
+                href="#"
+                style={{
+                  background: "#fff",
+                  color: "#0c0c0c",
+                  padding: "10px 20px",
+                  borderRadius: 10,
+                  fontSize: 13.5,
+                  fontWeight: 600,
+                  textDecoration: "none",
+                  fontFamily: "Geist, system-ui, sans-serif",
+                }}
+              >
+                View case study
+              </a>
+            </div>
+
+            {/* 3 stats */}
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 24 }}>
+              <CaseStat n="30%" label="Reduction in operating costs" />
+              <CaseStat n="$120,000" label="Reduction in tax liability" />
+              <CaseStat n="35%" label="Improve debt-to-equity ratio" />
+            </div>
+          </div>
+        </div>
+
+        {/* RIGHT — full photo card with chart overlay */}
+        <div
+          style={{
+            background: "#000",
+            borderRadius: 18,
+            overflow: "hidden",
+            position: "relative",
+            minHeight: 600,
+          }}
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1100&h=1300&fit=crop"
+            alt=""
+            style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
+          />
+
+          {/* Bottom dark gradient + chart */}
+          <div
+            style={{
+              position: "absolute",
+              left: 0,
+              right: 0,
+              bottom: 0,
+              height: "55%",
+              background:
+                "linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.55) 40%, rgba(0,0,0,0.85) 100%)",
+            }}
+          />
+
+          {/* Chart overlay (SVG) */}
+          <svg
+            viewBox="0 0 600 240"
+            preserveAspectRatio="none"
+            style={{
+              position: "absolute",
+              left: 0,
+              right: 0,
+              bottom: 110,
+              width: "100%",
+              height: 240,
+              opacity: 0.95,
+            }}
+          >
+            {/* Subtle line chart */}
+            <path
+              d="M 30 200 L 130 130 L 230 80 L 330 100 L 430 60 L 530 30"
+              fill="none"
+              stroke="rgba(255,255,255,0.45)"
+              strokeWidth="1"
+            />
+            {/* Data point labels */}
+            <text x="30" y="220" fill="rgba(255,255,255,0.5)" fontSize="13" fontFamily="Geist, system-ui">02-</text>
+            <text x="130" y="150" fill="rgba(255,255,255,0.5)" fontSize="13" fontFamily="Geist, system-ui">03-</text>
+            <text x="230" y="100" fill="rgba(255,255,255,0.5)" fontSize="13" fontFamily="Geist, system-ui">04-</text>
+            <text x="330" y="120" fill="rgba(255,255,255,0.5)" fontSize="13" fontFamily="Geist, system-ui">05-</text>
+            <text x="430" y="80" fill="rgba(255,255,255,0.5)" fontSize="13" fontFamily="Geist, system-ui">06-</text>
+            <text x="530" y="50" fill="rgba(255,255,255,0.5)" fontSize="13" fontFamily="Geist, system-ui">07-</text>
+          </svg>
+
+          {/* Bottom-right cash callout */}
+          <div
+            style={{
+              position: "absolute",
+              right: 28,
+              bottom: 28,
+              color: "#fff",
+              fontFamily: "Geist, system-ui, sans-serif",
+              textAlign: "right",
+            }}
+          >
+            <div style={{ fontSize: 14, fontWeight: 600, opacity: 0.95 }}>Cash on hand</div>
+            <div style={{ fontSize: 30, fontWeight: 800, letterSpacing: "-0.02em", marginTop: 2, display: "inline-flex", alignItems: "center", gap: 6 }}>
+              $3,073
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#3edd6e" strokeWidth="2.4">
+                <path d="M12 19V5M5 12l7-7 7 7" />
+              </svg>
+            </div>
+            <div style={{ fontSize: 12.5, opacity: 0.7, marginTop: 4 }}>this month</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function CaseStat({ n, label }: { n: string; label: string }) {
+  return (
+    <div>
+      <div
+        style={{
+          fontFamily: "Geist, system-ui, sans-serif",
+          fontWeight: 700,
+          fontSize: 28,
+          letterSpacing: "-0.02em",
+          color: "#0c0c0c",
+          marginBottom: 6,
+        }}
+      >
+        {n}
+      </div>
+      <div style={{ fontSize: 13.5, color: "#3d3120", lineHeight: 1.4, maxWidth: "16ch" }}>{label}</div>
+    </div>
   );
 }
