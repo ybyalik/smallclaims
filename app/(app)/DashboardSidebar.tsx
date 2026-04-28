@@ -11,9 +11,7 @@ interface SidebarProps {
 }
 
 const NAV = [
-  { label: "Dashboard", href: "/dashboard", match: /^\/dashboard$/ },
-  { label: "Cases", href: "/dashboard/cases", match: /^\/dashboard\/cases/ },
-  { label: "Documents", href: "/dashboard/documents", match: /^\/dashboard\/documents/ },
+  { label: "Cases", href: "/dashboard", match: /^\/dashboard(\/cases.*)?$/ },
   { label: "Billing", href: "/dashboard/billing", match: /^\/dashboard\/billing/ },
 ];
 
