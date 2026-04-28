@@ -327,6 +327,32 @@ export interface AttorneyReviewRequest {
 }
 
 // ============================================================================
+// Profiles
+// ============================================================================
+
+export interface Profile {
+  user_id: string;
+  full_name: string | null;
+  avatar_url: string | null;
+  is_admin: boolean;
+  stripe_customer_id: string | null;
+  notification_preferences: Record<string, unknown>;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface ProfileInsert {
+  user_id: string;
+  full_name?: string | null;
+  avatar_url?: string | null;
+  is_admin?: boolean;
+  stripe_customer_id?: string | null;
+  notification_preferences?: Record<string, unknown>;
+}
+
+export type ProfileUpdate = Partial<Omit<ProfileInsert, "user_id">>;
+
+// ============================================================================
 // Database type for createClient<Database>()
 // ============================================================================
 
@@ -385,6 +411,12 @@ export interface Database {
         Row: AttorneyReviewRequest;
         Insert: Partial<AttorneyReviewRequest>;
         Update: Partial<AttorneyReviewRequest>;
+        Relationships: [];
+      };
+      profiles: {
+        Row: Profile;
+        Insert: ProfileInsert;
+        Update: ProfileUpdate;
         Relationships: [];
       };
     };
