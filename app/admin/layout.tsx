@@ -1,6 +1,5 @@
 import "./admin.css";
 import Link from "next/link";
-import { headers } from "next/headers";
 import { createClient } from "../../lib/supabase/server";
 import SignOutButton from "../../components/admin/SignOutButton";
 
@@ -10,16 +9,8 @@ export const metadata = {
 };
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
-  // Read pathname so we can hide the chrome on /admin/login
-  const h = headers();
-  const pathname =
-    h.get("x-invoke-path") || h.get("x-next-pathname") || h.get("x-pathname") || "";
-
-  // For login page, render a minimal shell with no nav
-  if (pathname.endsWith("/admin/login")) {
-    return <>{children}</>;
-  }
-
+  // Auth + is_admin check happens in middleware. By the time this layout
+  // renders we know the user is authenticated and admin.
   const supabase = createClient();
   const { data } = await supabase.auth.getUser();
   const email = data.user?.email;

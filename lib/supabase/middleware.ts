@@ -37,22 +37,32 @@ export async function updateSession(request: NextRequest) {
     return NextResponse.redirect(redirectUrl);
   }
 
-  // Gate /admin/* on authentication. /admin/login still works as a legacy entry
-  // point until Commit 6 deletes it; redirects unauthenticated requests there.
-  if (url.pathname.startsWith("/admin") && url.pathname !== "/admin/login" && !user) {
-    const redirectUrl = url.clone();
-    redirectUrl.pathname = "/login";
-    redirectUrl.searchParams.set("next", url.pathname);
-    return NextResponse.redirect(redirectUrl);
+  // Gate /admin/* on authentication AND admin role.
+  if (url.pathname.startsWith("/admin")) {
+    if (!user) {
+      const redirectUrl = url.clone();
+      redirectUrl.pathname = "/login";
+      redirectUrl.searchParams.set("next", url.pathname);
+      return NextResponse.redirect(redirectUrl);
+    }
+    // Check admin role via profiles table. RLS allows the user to read their
+    // own profile.
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const { data: profile } = await (supabase as any)
+      .from("profiles")
+      .select("is_admin")
+      .eq("user_id", user.id)
+      .single();
+    if (!profile?.is_admin) {
+      const redirectUrl = url.clone();
+      redirectUrl.pathname = "/dashboard";
+      redirectUrl.search = "";
+      return NextResponse.redirect(redirectUrl);
+    }
   }
 
-  // If logged in and visiting /admin/login or /login or /signup, send to dashboard.
-  if (
-    user &&
-    (url.pathname === "/admin/login" ||
-      url.pathname === "/login" ||
-      url.pathname === "/signup")
-  ) {
+  // Logged-in users hitting /login or /signup go to /dashboard.
+  if (user && (url.pathname === "/login" || url.pathname === "/signup")) {
     const redirectUrl = url.clone();
     redirectUrl.pathname = "/dashboard";
     redirectUrl.search = "";
