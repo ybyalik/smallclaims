@@ -7,7 +7,7 @@
 
 const OPENROUTER_BASE = "https://openrouter.ai/api/v1";
 
-const DEFAULT_MODEL = "anthropic/claude-3.5-sonnet";
+const DEFAULT_MODEL = "anthropic/claude-sonnet-4.5";
 
 export interface ChatMessage {
   role: "system" | "user" | "assistant";
