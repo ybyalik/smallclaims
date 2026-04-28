@@ -26,8 +26,14 @@ export default async function SignupPage({
   return (
     <main className="auth-page">
       <div className="auth-card">
-        <a href="/" className="auth-logo">
-          CivilCase
+        <a href="/" className="auth-logo" aria-label="CivilCase home">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/civilcase-logo.webp"
+            alt="CivilCase"
+            width={600}
+            height={204}
+          />
         </a>
         <h1>Create your account</h1>
         <p className="auth-sub">Free to start. Pay only when you&apos;re ready to send your letter.</p>

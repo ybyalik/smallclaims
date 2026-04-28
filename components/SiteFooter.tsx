@@ -6,11 +6,18 @@ export default function SiteFooter() {
       <div className="wrap">
         <div className="foot-grid">
           <div className="foot-brand">
-            <Link className="brand" href="/">
-              <span className="brand-mark">C</span>CivilCase
+            <Link className="brand" href="/" aria-label="CivilCase home">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/civilcase-logo.webp"
+                alt="CivilCase"
+                width={600}
+                height={204}
+                className="brand-logo brand-logo-foot"
+              />
             </Link>
             <p style={{ marginTop: 14 }}>
-              An operating system for civil disputes. Built for real people, not law firms.
+              Resolve small claims and civil disputes, from demand to resolution.
             </p>
           </div>
           <div className="foot-col">

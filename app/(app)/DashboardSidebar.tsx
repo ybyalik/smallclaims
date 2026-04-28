@@ -22,9 +22,15 @@ export default function DashboardSidebar({ displayName, email, avatarUrl, isAdmi
   return (
     <aside className="app-side">
       <div className="app-side-brand">
-        <Link href="/dashboard">
-          <span className="app-brand-mark">C</span>
-          <span>CivilCase</span>
+        <Link href="/dashboard" aria-label="CivilCase dashboard">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/civilcase-logo.webp"
+            alt="CivilCase"
+            width={600}
+            height={204}
+            className="app-brand-logo"
+          />
         </Link>
       </div>
 

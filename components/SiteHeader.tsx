@@ -3,8 +3,15 @@ import Link from "next/link";
 export default function SiteHeader() {
   return (
     <header className="nav wrap">
-      <Link className="brand" href="/">
-        <span className="brand-mark">C</span>CivilCase
+      <Link className="brand" href="/" aria-label="CivilCase home">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/civilcase-logo.webp"
+          alt="CivilCase"
+          width={600}
+          height={204}
+          className="brand-logo"
+        />
       </Link>
       <nav className="nav-links">
         <Link href="/#how">How it works</Link>
@@ -13,12 +20,12 @@ export default function SiteHeader() {
         <Link href="/#faq">FAQ</Link>
       </nav>
       <div className="nav-cta">
-        <a className="btn btn-cream btn-sm" href="#">
+        <Link className="btn btn-cream btn-sm" href="/login">
           Sign in
-        </a>
-        <a className="btn btn-dark btn-sm" href="#">
-          Check Your Case
-        </a>
+        </Link>
+        <Link className="btn btn-dark btn-sm" href="/signup?next=/dashboard/cases/new">
+          Get Started
+        </Link>
       </div>
     </header>
   );

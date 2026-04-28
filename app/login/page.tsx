@@ -26,8 +26,14 @@ export default async function LoginPage({
   return (
     <main className="auth-page">
       <div className="auth-card">
-        <a href="/" className="auth-logo">
-          CivilCase
+        <a href="/" className="auth-logo" aria-label="CivilCase home">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/civilcase-logo.webp"
+            alt="CivilCase"
+            width={600}
+            height={204}
+          />
         </a>
         <h1>Welcome back</h1>
         <p className="auth-sub">Sign in to access your cases.</p>
