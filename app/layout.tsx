@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-const SITE_URL = "https://smallclaims.vercel.app";
+const SITE_URL = "https://civilcase.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "CivilCase — Get your money back without a lawyer",
+    default: "CivilCase — Get Your Money Back Without a Lawyer",
     template: "%s · CivilCase",
   },
   description:
-    "CivilCase surfaces what matters, drafts the demand, files the claim — and walks you through collecting. Small claims and consumer disputes in all 50 states.",
+    "Resolve small claims and civil disputes, from demand to resolution. CivilCase drafts the demand letter, mails it certified, and walks you through filing and collection in all 50 states.",
   keywords: [
     "small claims",
     "demand letter",
@@ -27,15 +27,15 @@ export const metadata: Metadata = {
     type: "website",
     url: SITE_URL,
     siteName: "CivilCase",
-    title: "CivilCase — Get your money back without a lawyer",
+    title: "CivilCase — Get Your Money Back Without a Lawyer",
     description:
-      "Case score in minutes. Court-specific guidance. Collection that closes. $18M+ recovered for users.",
+      "Resolve small claims and civil disputes, from demand to resolution. All 50 states.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "CivilCase — Get your money back without a lawyer",
+    title: "CivilCase — Get Your Money Back Without a Lawyer",
     description:
-      "Case score in minutes. Court-specific guidance. Collection that closes.",
+      "Resolve small claims and civil disputes, from demand to resolution.",
   },
   robots: { index: true, follow: true },
 };

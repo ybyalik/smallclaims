@@ -35,13 +35,13 @@ const jsonLd = {
     {
       "@type": "Organization",
       name: "CivilCase",
-      url: "https://smallclaims.vercel.app",
+      url: "https://civilcase.com",
       description:
-        "An operating system for civil disputes. Built for real people, not law firms.",
+        "Resolve small claims and civil disputes, from demand to resolution.",
     },
     {
       "@type": "WebSite",
-      url: "https://smallclaims.vercel.app",
+      url: "https://civilcase.com",
       name: "CivilCase",
     },
     {
@@ -69,18 +69,17 @@ export default function Home() {
           <div className="hero-grid">
             <div className="hero-copy">
               <h1>
-                Get your money back, <em>without</em> a lawyer.
+                Get Your Money Back <em>Without</em> a Lawyer.
               </h1>
               <p>
-                CivilCase surfaces what matters, drafts the demand, files the
-                claim — and keeps you moving with intention.
+                Resolve small claims and civil disputes, from demand to resolution.
               </p>
               <div className="hero-ctas">
-                <a className="btn btn-dark" href="#">
-                  Check Your Case
-                </a>
-                <a className="btn btn-cream" href="#">
+                <a className="btn btn-dark" href="/demand-letter">
                   Send a Demand Letter
+                </a>
+                <a className="btn btn-cream" href="/guides">
+                  Browse State Guides
                 </a>
               </div>
               <div className="hero-logos">
