@@ -101,6 +101,12 @@ export default function SectionsPage() {
       <Label id="07">Process + testimonial — 3 colored step cards left, big quote right</Label>
       <SectionProcessTestimonial />
 
+      {/* ============================================================
+           8. Image + accordion — split header, photo card with services accordion
+           ============================================================ */}
+      <Label id="08">Image + accordion — services list with +/− toggles next to a photo</Label>
+      <SectionImageAccordion />
+
       <div style={{ padding: "60px 0", background: "var(--bg-2)", textAlign: "center" }}>
         <p style={{ color: "var(--muted)", fontSize: 13 }}>
           End of library. <Link href="/" style={{ color: "var(--ink)" }}>Back home</Link>
@@ -1882,4 +1888,211 @@ function positionToOffset(pos: "top-left" | "top-right" | "bottom-left" | "botto
     case "bottom-right":
       return { bottom: inset, right: inset };
   }
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   08. Image + accordion
+   ───────────────────────────────────────────────────────────────────── */
+function SectionImageAccordion() {
+  const services = [
+    {
+      title: "Compliance advisory",
+      icon: (
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6">
+          <path d="M12 2l8 4v6c0 4.5-3.5 8.5-8 9.5C7.5 20.5 4 16.5 4 12V6l8-4z" />
+          <path d="M9 12l2 2 4-4" />
+        </svg>
+      ),
+      body:
+        "Expert guidance to help your business meet regulatory requirements, minimize risks, and maintain industry compliance with confidence.",
+      open: true,
+    },
+    {
+      title: "Bookkeeping",
+      icon: (
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6">
+          <path d="M3 7a2 2 0 0 1 2-2h4l2 3h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z" />
+        </svg>
+      ),
+      body:
+        "Day-to-day record-keeping done right. Bank reconciliations, expense categorization, monthly close, and clean books ready for tax season.",
+    },
+    {
+      title: "Financial planning",
+      icon: (
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6">
+          <path d="M3 21V5M3 21h18M7 17V11M12 17V8M17 17V13" />
+        </svg>
+      ),
+      body:
+        "Forecasts, cash-flow models, and scenario planning so leadership knows where the business is heading and what to do about it.",
+    },
+    {
+      title: "Tax consulting",
+      icon: (
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6">
+          <rect x="6" y="3" width="12" height="18" rx="2" />
+          <path d="M9 7h6M9 11h6M9 15h4" />
+        </svg>
+      ),
+      body:
+        "Quarterly estimates, year-end planning, entity structure, and audit-ready documentation. We work with your CPA or stand in as one.",
+    },
+    {
+      title: "Risk management",
+      icon: (
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6">
+          <circle cx="12" cy="12" r="3" />
+          <path d="M19.4 15a7.97 7.97 0 0 0 0-6l2-1.2-2-3.5L17 5.4a8 8 0 0 0-5.2-3L11.6 0h-4l-.2 2.4a8 8 0 0 0-5.2 3L0 4.3l-2 3.5L0 9a7.97 7.97 0 0 0 0 6L-2 16.2 0 19.7l2.4-1.4a8 8 0 0 0 5.2 3l.2 2.4h4l.2-2.4a8 8 0 0 0 5.2-3l2.4 1.4 2-3.5L19.4 15z" />
+        </svg>
+      ),
+      body:
+        "Identify, quantify, and mitigate the financial risks that could derail growth — from FX exposure to vendor concentration to insurance gaps.",
+    },
+  ];
+
+  return (
+    <section style={{ background: "#f0e7d6", padding: "80px 24px" }}>
+      <div style={{ maxWidth: 1280, margin: "0 auto" }}>
+        {/* Two-column header */}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1.4fr 1fr",
+            gap: 64,
+            marginBottom: 36,
+            alignItems: "start",
+          }}
+        >
+          <h2
+            style={{
+              fontFamily: "Geist, system-ui, sans-serif",
+              fontWeight: 700,
+              fontSize: "clamp(36px, 4vw, 52px)",
+              lineHeight: 1.05,
+              letterSpacing: "-0.02em",
+              color: "#0c0c0c",
+              margin: 0,
+              maxWidth: "16ch",
+            }}
+          >
+            Unlocking growth through purposeful problem solving
+          </h2>
+          <p
+            style={{
+              fontSize: 15,
+              lineHeight: 1.6,
+              color: "#4a4a4a",
+              margin: "8px 0 0",
+              maxWidth: "44ch",
+            }}
+          >
+            Advanced consulting and accounting solutions that transform challenges into
+            opportunities for growth. From compliance to growth strategy — everything your
+            business needs to succeed, under one expert roof.
+          </p>
+        </div>
+
+        {/* Big card: image + accordion */}
+        <div
+          style={{
+            background: "#fff",
+            borderRadius: 22,
+            overflow: "hidden",
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            border: "1px solid #ece4d3",
+          }}
+        >
+          {/* Photo */}
+          <div style={{ position: "relative", minHeight: 580 }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=900&h=1100&fit=crop"
+              alt=""
+              style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
+            />
+          </div>
+
+          {/* Accordion */}
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            {services.map((s, i) => (
+              <details key={i} className="sec-acc" open={s.open}>
+                <summary>
+                  <span className="sec-acc-icon">{s.icon}</span>
+                  <span className="sec-acc-title">{s.title}</span>
+                  <span className="sec-acc-toggle" aria-hidden="true" />
+                </summary>
+                <div className="sec-acc-body">{s.body}</div>
+              </details>
+            ))}
+          </div>
+        </div>
+
+        {/* Card footer: trust + CTA */}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr auto",
+            alignItems: "center",
+            gap: 32,
+            padding: "20px 24px 0",
+          }}
+        >
+          <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&h=120&fit=crop&crop=face"
+              alt=""
+              style={{
+                width: 44,
+                height: 44,
+                borderRadius: "50%",
+                objectFit: "cover",
+                background: "#fff",
+                padding: 3,
+                boxShadow: "0 0 0 1px #ece4d3 inset",
+              }}
+            />
+            <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+              <span
+                style={{
+                  fontFamily: "Geist, system-ui, sans-serif",
+                  fontWeight: 700,
+                  fontSize: 15,
+                  color: "#0c0c0c",
+                }}
+              >
+                110+ CFOs
+              </span>
+              <span style={{ fontSize: 14.5, color: "#4a4a4a" }}>
+                Over 120 businesses trust us to manage and optimize their financial operations.
+              </span>
+            </div>
+          </div>
+          <a
+            href="#"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 10,
+              background: "#d9402e",
+              color: "#fff",
+              padding: "16px 28px",
+              borderRadius: 10,
+              fontSize: 15,
+              fontWeight: 600,
+              textDecoration: "none",
+              fontFamily: "Geist, system-ui, sans-serif",
+            }}
+          >
+            Let&rsquo;s get started
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.2">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  );
 }

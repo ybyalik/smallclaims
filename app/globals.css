@@ -955,3 +955,19 @@ footer { padding: 80px 0 40px; }
   .ep-fix-card { grid-template-columns: 1fr; }
   .tp-cta-card { padding: 44px 28px; }
 }
+
+/* ============ /sections — accordion CSS for section 08 ============ */
+.sec-acc { background: #fff; border-radius: 0; }
+.sec-acc + .sec-acc { border-top: 1px solid #ece4d3; }
+.sec-acc summary { list-style: none; cursor: pointer; padding: 26px 28px; display: flex; align-items: center; gap: 16px; }
+.sec-acc summary::-webkit-details-marker { display: none; }
+.sec-acc summary .sec-acc-icon { width: 26px; height: 26px; flex-shrink: 0; color: #d9402e; display: grid; place-items: center; }
+.sec-acc summary .sec-acc-title { flex: 1; font-family: "Geist", system-ui, sans-serif; font-weight: 700; font-size: 18px; letter-spacing: -0.015em; color: #0c0c0c; }
+.sec-acc summary .sec-acc-toggle { width: 22px; height: 22px; position: relative; flex-shrink: 0; }
+.sec-acc summary .sec-acc-toggle::before, .sec-acc summary .sec-acc-toggle::after {
+  content: ""; position: absolute; background: #0c0c0c; transition: transform .25s ease, opacity .25s ease;
+}
+.sec-acc summary .sec-acc-toggle::before { left: 0; top: 50%; width: 100%; height: 2px; transform: translateY(-50%); }
+.sec-acc summary .sec-acc-toggle::after { top: 0; left: 50%; width: 2px; height: 100%; transform: translateX(-50%); }
+.sec-acc[open] summary .sec-acc-toggle::after { transform: translateX(-50%) scaleY(0); opacity: 0; }
+.sec-acc-body { padding: 0 28px 28px 70px; font-size: 15px; line-height: 1.6; color: #4a4a4a; }
