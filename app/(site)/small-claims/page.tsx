@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Small Claims Guides — Every State",
   description:
     "Step-by-step small claims guides for every U.S. state. Filing limits, fees, forms, deadlines, service of process, and post-judgment collection.",
-  alternates: { canonical: "/guides" },
+  alternates: { canonical: "/small-claims" },
 };
 
 export default function GuidesIndex() {

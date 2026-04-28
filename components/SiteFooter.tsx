@@ -22,37 +22,29 @@ export default function SiteFooter() {
           </div>
           <div className="foot-col">
             <h5>Product</h5>
-            <a href="#">Case review</a>
-            <a href="#">Demand letters</a>
-            <a href="#">Filing assistance</a>
-            <a href="#">Collections</a>
-          </div>
-          <div className="foot-col">
-            <h5>Resources</h5>
-            <Link href="/guides">By state</Link>
-            <a href="#">Case studies</a>
-            <a href="#">Help center</a>
-            <a href="#">Glossary</a>
+            <Link href="/demand-letter">Demand letters</Link>
+            <Link href="/small-claims">Small claims by state</Link>
+            <Link href="/blog">Blog</Link>
           </div>
           <div className="foot-col">
             <h5>Company</h5>
-            <a href="#">About</a>
-            <a href="#">Careers</a>
-            <a href="#">Press</a>
-            <a href="#">Contact</a>
+            <Link href="/about">About</Link>
+            <Link href="/contact">Contact</Link>
+            <Link href="/editorial-policy">Editorial policy</Link>
+          </div>
+          <div className="foot-col">
+            <h5>Legal</h5>
+            <Link href="/disclaimer">Disclaimer</Link>
+            <a href="mailto:legal@civilcase.com">legal@civilcase.com</a>
           </div>
         </div>
         <div className="legal-disclaimer">
           <b>CivilCase is not a law firm</b> and does not provide legal advice. The
           information on this site is for general informational purposes and is not a
-          substitute for the advice of a licensed attorney. Use is governed by our{" "}
-          <a href="#" style={{ color: "var(--ink-2)", textDecoration: "underline" }}>
-            Terms
-          </a>{" "}
-          and{" "}
-          <a href="#" style={{ color: "var(--ink-2)", textDecoration: "underline" }}>
-            Privacy
-          </a>
+          substitute for the advice of a licensed attorney. See our{" "}
+          <Link href="/disclaimer" style={{ color: "var(--ink-2)", textDecoration: "underline" }}>
+            disclaimer
+          </Link>
           .
         </div>
         <div className="foot-bottom">

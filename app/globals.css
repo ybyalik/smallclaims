@@ -658,3 +658,58 @@ footer { padding: 80px 0 40px; }
 .auth-foot { text-align: center; font-size: 14px; color: var(--muted, #666); margin: 24px 0 0; }
 .auth-foot a { color: var(--ink, #111); font-weight: 500; }
 .auth-tos { font-size: 12px; color: var(--muted, #888); line-height: 1.5; margin: 18px 0 0; padding-top: 18px; border-top: 1px solid var(--hairline, #f0f0f0); }
+
+/* ============ TRUST PAGES (about, contact, disclaimer, editorial-policy) ============ */
+.trust-hero { padding: 72px 0 36px; background: linear-gradient(180deg, #fff 0%, var(--bg-2) 100%); border-bottom: 1px solid var(--hairline); }
+.trust-hero .eyebrow { display: inline-block; margin-bottom: 18px; }
+.trust-hero h1 { font-family: "Newsreader", Georgia, serif; font-weight: var(--headline-weight); font-size: clamp(38px, 4.6vw, 60px); line-height: 1.04; letter-spacing: var(--headline-tracking); color: var(--ink); margin: 0 0 22px; max-width: 18ch; }
+.trust-hero h1 em { font-style: italic; color: var(--accent); font-weight: var(--headline-italic-weight); letter-spacing: var(--headline-italic-tracking); }
+.trust-lede { font-size: 19px; line-height: 1.55; color: var(--ink-2); max-width: 60ch; margin: 0; }
+
+.trust-section { padding: 56px 0; }
+.trust-section + .trust-section { padding-top: 0; }
+.trust-content h2 { font-family: "Newsreader", Georgia, serif; font-weight: var(--headline-weight); font-size: clamp(26px, 2.4vw, 34px); line-height: 1.15; letter-spacing: var(--headline-tracking); color: var(--ink); margin: 44px 0 16px; }
+.trust-content h2:first-child { margin-top: 0; }
+.trust-content h2 em { font-style: italic; color: var(--accent); font-weight: var(--headline-italic-weight); }
+.trust-content p { font-size: 16.5px; line-height: 1.7; color: var(--ink-2); margin: 0 0 16px; max-width: 68ch; }
+.trust-content strong { color: var(--ink); font-weight: 600; }
+.trust-content em { font-style: italic; }
+.trust-link { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.trust-link:hover { color: var(--accent); }
+
+.trust-callout { background: var(--card); border-left: 3px solid var(--accent); padding: 18px 22px; border-radius: 8px; margin: 18px 0 24px; font-size: 16.5px; line-height: 1.65; color: var(--ink-2); max-width: 68ch; }
+.trust-callout strong { color: var(--ink); }
+
+.trust-list, .trust-ol { padding-left: 22px; margin: 0 0 22px; max-width: 68ch; color: var(--ink-2); }
+.trust-list li, .trust-ol li { margin: 0 0 12px; line-height: 1.65; font-size: 16.5px; }
+.trust-list li strong, .trust-ol li strong { color: var(--ink); }
+.trust-ol { list-style: decimal; }
+.trust-list { list-style: disc; }
+
+/* Contact-specific */
+.contact-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin: 4px 0 0; }
+.contact-card { position: relative; display: block; background: var(--card); border: 1px solid var(--hairline); border-radius: 14px; padding: 22px 24px; text-decoration: none; color: var(--ink); transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease; }
+.contact-card:hover { transform: translateY(-2px); border-color: var(--ink); box-shadow: 0 8px 24px rgba(14,14,14,0.06); }
+.contact-card-title { font-family: "Newsreader", Georgia, serif; font-weight: 700; font-size: 21px; letter-spacing: -0.015em; color: var(--ink); margin-bottom: 6px; }
+.contact-card-email { font-family: "Geist", system-ui, sans-serif; font-size: 14px; color: var(--accent); margin-bottom: 10px; }
+.contact-card-desc { font-size: 14.5px; line-height: 1.55; color: var(--ink-2); }
+.contact-card-arrow { position: absolute; top: 22px; right: 24px; font-size: 18px; color: var(--muted); transition: transform .15s ease, color .15s ease; }
+.contact-card:hover .contact-card-arrow { color: var(--accent); transform: translateX(4px); }
+
+/* Trust CTA at bottom of every trust page */
+.trust-cta { padding: 0 0 96px; }
+.trust-cta-card { background: var(--ink); color: #fef9f1; border-radius: 18px; padding: 56px 56px; text-align: center; }
+.trust-cta-card h2 { font-family: "Newsreader", Georgia, serif; font-weight: var(--headline-weight); font-size: clamp(30px, 3vw, 42px); line-height: 1.08; letter-spacing: var(--headline-tracking); color: #fef9f1; margin: 0 0 14px; }
+.trust-cta-card h2 em { font-style: italic; color: #f5b29f; font-weight: var(--headline-italic-weight); }
+.trust-cta-card p { font-size: 17px; line-height: 1.55; color: rgba(254,249,241,0.78); max-width: 56ch; margin: 0 auto 28px; }
+.trust-cta-card .hero-ctas { justify-content: center; }
+.trust-cta-card .btn-cream { background: rgba(254,249,241,0.1); color: #fef9f1; border-color: rgba(254,249,241,0.25); }
+.trust-cta-card .btn-cream:hover { background: rgba(254,249,241,0.18); }
+.trust-cta-card a { color: #f5b29f; }
+
+@media (max-width: 720px) {
+  .trust-hero { padding: 52px 0 28px; }
+  .trust-section { padding: 40px 0; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .trust-cta-card { padding: 40px 28px; }
+}

@@ -26,17 +26,17 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     return {
       title: `Small Claims in ${state.name}: Guide Coming Soon`,
       description: `Our plain-English small claims guide for ${state.name} is in research. We're publishing every state.`,
-      alternates: { canonical: `/guides/${state.slug}` },
+      alternates: { canonical: `/small-claims/${state.slug}` },
     };
   }
   return {
     title: `Small Claims in ${state.name}: Filing, Fees, Forms, Collecting (${new Date().getFullYear()})`,
     description: `How to file a small claims case in ${state.name}. Sue for up to $${guide.limits.individual.toLocaleString()}, with fees from $${guide.fees.tiers[0].amount}. Plain-English guide for individuals and small businesses.`,
-    alternates: { canonical: `/guides/${state.slug}` },
+    alternates: { canonical: `/small-claims/${state.slug}` },
     openGraph: {
       title: `Small Claims in ${state.name}: Plain-English Guide`,
       description: `Sue for up to $${guide.limits.individual.toLocaleString()} in ${state.name} small claims. Filing, forms, fees, deadlines, and how to actually collect.`,
-      url: `/guides/${state.slug}`,
+      url: `/small-claims/${state.slug}`,
       type: "article",
     },
   };
@@ -49,7 +49,7 @@ function ComingSoon({ stateName }: { stateName: string }) {
   const readyStates = STATES.filter((s) => ready.has(s.slug));
   return (
     <main className="wrap" style={{ paddingBottom: 96 }}>
-      <Breadcrumbs items={[{ href: "/guides", label: "Guides" }, { label: stateName }]} />
+      <Breadcrumbs items={[{ href: "/small-claims", label: "Small Claims" }, { label: stateName }]} />
       <section className="coming-soon">
         <span className="eyebrow">Coming soon</span>
         <h1>
@@ -66,14 +66,14 @@ function ComingSoon({ stateName }: { stateName: string }) {
             <ul>
               {readyStates.map((s) => (
                 <li key={s.slug}>
-                  <Link href={`/guides/${s.slug}`}>{s.name} →</Link>
+                  <Link href={`/small-claims/${s.slug}`}>{s.name} →</Link>
                 </li>
               ))}
             </ul>
           </div>
         )}
         <p className="coming-soon-back">
-          <Link href="/guides">← Back to all states</Link>
+          <Link href="/small-claims">← Back to all states</Link>
         </p>
       </section>
     </main>
@@ -119,7 +119,7 @@ export default async function StateGuide({ params }: Params) {
       />
 
       <div className="wrap">
-        <Breadcrumbs items={[{ href: "/guides", label: "Guides" }, { label: g.state }]} />
+        <Breadcrumbs items={[{ href: "/small-claims", label: "Small Claims" }, { label: g.state }]} />
 
         {/* HERO */}
         <section className="g-hero">

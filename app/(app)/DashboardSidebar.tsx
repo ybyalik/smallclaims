@@ -48,7 +48,7 @@ export default function DashboardSidebar({ displayName, email, avatarUrl, isAdmi
       <div className="app-side-divider" />
 
       <nav className="app-nav app-nav-secondary">
-        <Link href="/guides" target="_blank" rel="noopener noreferrer">
+        <Link href="/small-claims" target="_blank" rel="noopener noreferrer">
           State guides ↗
         </Link>
         {isAdmin && (

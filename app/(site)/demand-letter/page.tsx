@@ -2,9 +2,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Send a Demand Letter — CivilCase",
+  title: "Send a Demand Letter",
   description:
     "Generate a professional demand letter in minutes. CivilCase drafts it, you review, then download for $39.",
+  alternates: { canonical: "/demand-letter" },
+  openGraph: {
+    title: "Send a Demand Letter — CivilCase",
+    description:
+      "A professional demand letter resolves about half of small-claims disputes without filing.",
+    url: "/demand-letter",
+    type: "website",
+  },
 };
 
 export default function DemandLetterTeaserPage() {

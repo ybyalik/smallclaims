@@ -48,7 +48,7 @@ export default function UsMap({ readySlugs }: { readySlugs: string[] }) {
                 <Geography
                   key={geo.rsmKey}
                   geography={geo}
-                  onClick={() => router.push(`/guides/${state.slug}`)}
+                  onClick={() => router.push(`/small-claims/${state.slug}`)}
                   onMouseEnter={() => setHover({ name: state.name, abbr: state.abbr, isReady })}
                   onMouseMove={(e: React.MouseEvent) => setPos({ x: e.clientX, y: e.clientY })}
                   style={{

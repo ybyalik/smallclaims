@@ -26,7 +26,7 @@ export default function StateSearch({ readySlugs }: { readySlugs: string[] }) {
   }, [matches]);
 
   function go(slug: string) {
-    router.push(`/guides/${slug}`);
+    router.push(`/small-claims/${slug}`);
   }
 
   function onKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {

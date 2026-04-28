@@ -78,7 +78,7 @@ export default function Home() {
                 <a className="btn btn-dark" href="/demand-letter">
                   Send a Demand Letter
                 </a>
-                <a className="btn btn-cream" href="/guides">
+                <a className="btn btn-cream" href="/small-claims">
                   Browse State Guides
                 </a>
               </div>
