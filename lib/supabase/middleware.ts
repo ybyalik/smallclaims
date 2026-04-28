@@ -27,19 +27,34 @@ export async function updateSession(request: NextRequest) {
   // Required to refresh the session cookie.
   const { data: { user } } = await supabase.auth.getUser();
 
-  // Gate /admin/* on authentication.
   const url = request.nextUrl;
-  if (url.pathname.startsWith("/admin") && url.pathname !== "/admin/login" && !user) {
+
+  // Gate /dashboard/* on authentication.
+  if (url.pathname.startsWith("/dashboard") && !user) {
     const redirectUrl = url.clone();
-    redirectUrl.pathname = "/admin/login";
+    redirectUrl.pathname = "/login";
     redirectUrl.searchParams.set("next", url.pathname);
     return NextResponse.redirect(redirectUrl);
   }
 
-  // If logged in and visiting /admin/login, send to /admin.
-  if (url.pathname === "/admin/login" && user) {
+  // Gate /admin/* on authentication. /admin/login still works as a legacy entry
+  // point until Commit 6 deletes it; redirects unauthenticated requests there.
+  if (url.pathname.startsWith("/admin") && url.pathname !== "/admin/login" && !user) {
     const redirectUrl = url.clone();
-    redirectUrl.pathname = "/admin";
+    redirectUrl.pathname = "/login";
+    redirectUrl.searchParams.set("next", url.pathname);
+    return NextResponse.redirect(redirectUrl);
+  }
+
+  // If logged in and visiting /admin/login or /login or /signup, send to dashboard.
+  if (
+    user &&
+    (url.pathname === "/admin/login" ||
+      url.pathname === "/login" ||
+      url.pathname === "/signup")
+  ) {
+    const redirectUrl = url.clone();
+    redirectUrl.pathname = "/dashboard";
     redirectUrl.search = "";
     return NextResponse.redirect(redirectUrl);
   }

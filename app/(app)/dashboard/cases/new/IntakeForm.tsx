@@ -2,9 +2,9 @@
 
 import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
-import { STATES } from "../../../lib/states";
-import { DISPUTE_OPTIONS } from "../../../lib/demand-letter/types";
-import type { DisputeType } from "../../../lib/supabase/types";
+import { STATES } from "../../../../../lib/states";
+import { DISPUTE_OPTIONS } from "../../../../../lib/demand-letter/types";
+import type { DisputeType } from "../../../../../lib/supabase/types";
 
 type Step = "dispute" | "parties" | "facts";
 
@@ -149,7 +149,7 @@ export default function IntakeForm() {
           setError(data?.error || "Something went wrong. Try again.");
           return;
         }
-        router.push(`/demand-letter/${data.case_id}/preview`);
+        router.push(`/dashboard/cases/${data.case_id}/letter`);
       } catch (e) {
         setError(e instanceof Error ? e.message : "Network error. Try again.");
       }

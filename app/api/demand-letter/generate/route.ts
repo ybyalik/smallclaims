@@ -77,25 +77,14 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  // Get or mint a user session.
-  // For MVP: if not signed in, create an anonymous Supabase user tied to email.
+  // Auth required. Pay-first model: dashboard pages are gated by middleware,
+  // and this API route enforces the same gate at the data layer.
   const supabase = createClient();
   const { data: { user } } = await supabase.auth.getUser();
-
-  let userId = user?.id ?? null;
-  if (!userId) {
-    // Sign in anonymously and capture the email on the user_metadata for later claim
-    const { data, error } = await supabase.auth.signInAnonymously({
-      options: { data: { email_pending_claim: body.plaintiff_email } },
-    });
-    if (error || !data.user) {
-      return NextResponse.json(
-        { error: "Could not establish session. Try again." },
-        { status: 500 }
-      );
-    }
-    userId = data.user.id;
+  if (!user) {
+    return NextResponse.json({ error: "auth_required" }, { status: 401 });
   }
+  const userId = user.id;
 
   // Generate the letter via OpenRouter
   let draft;

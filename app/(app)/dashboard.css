@@ -325,3 +325,43 @@
 @media (max-width: 768px) {
   .app-detail-grid { grid-template-columns: 1fr; }
 }
+
+/* Letter editor — paid card */
+.dl-paid-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px 24px;
+  background: #f0f8f3;
+  border: 1px solid #c7e5d4;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+.dl-paid-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #1f6e3a;
+  margin-bottom: 4px;
+}
+.dl-paid-title {
+  font-family: "Newsreader", serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 4px;
+}
+.dl-paid-sub {
+  font-size: 14px;
+  color: #5a574e;
+  margin: 0;
+}
+.dl-pricing-single {
+  display: flex;
+  justify-content: center;
+}
+.dl-pricing-single .dl-price-card {
+  max-width: 420px;
+  width: 100%;
+}
