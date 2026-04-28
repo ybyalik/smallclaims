@@ -9,7 +9,7 @@ export default function SiteHeader() {
           src="/civilcase-logo.webp"
           alt="CivilCase"
           width={600}
-          height={204}
+          height={198}
           className="brand-logo"
         />
       </Link>

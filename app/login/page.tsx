@@ -32,7 +32,7 @@ export default async function LoginPage({
             src="/civilcase-logo.webp"
             alt="CivilCase"
             width={600}
-            height={204}
+            height={198}
           />
         </a>
         <h1>Welcome back</h1>

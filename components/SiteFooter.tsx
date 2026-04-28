@@ -12,7 +12,7 @@ export default function SiteFooter() {
                 src="/civilcase-logo.webp"
                 alt="CivilCase"
                 width={600}
-                height={204}
+                height={198}
                 className="brand-logo brand-logo-foot"
               />
             </Link>
