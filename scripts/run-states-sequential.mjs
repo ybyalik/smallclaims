@@ -11,7 +11,7 @@
 //   node scripts/run-states-sequential.mjs --skip texas,new-york
 //   node scripts/run-states-sequential.mjs --states texas,florida   (only these)
 
-import { readFileSync, writeFileSync, existsSync, mkdirSync } from "node:fs";
+import { readFileSync, writeFileSync, existsSync, mkdirSync, unlinkSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -33,13 +33,13 @@ if (!API_KEY) {
   process.exit(1);
 }
 
-const MODEL = "o3-deep-research-2025-06-26";
+const MODEL = "o3-deep-research";
 const API = "https://api.openai.com/v1";
 const headers = { "Content-Type": "application/json", Authorization: `Bearer ${API_KEY}` };
 
 const args = process.argv.slice(2);
 const skipFlagIdx = args.indexOf("--skip");
-const skips = new Set(["california", ...(skipFlagIdx >= 0 && args[skipFlagIdx + 1] ? args[skipFlagIdx + 1].split(",") : [])]);
+const skips = new Set(skipFlagIdx >= 0 && args[skipFlagIdx + 1] ? args[skipFlagIdx + 1].split(",") : []);
 const onlyFlagIdx = args.indexOf("--states");
 const onlyStates = onlyFlagIdx >= 0 && args[onlyFlagIdx + 1] ? new Set(args[onlyFlagIdx + 1].split(",")) : null;
 
@@ -120,6 +120,7 @@ async function submitState(slug) {
       { type: "web_search_preview" },
       { type: "code_interpreter", container: { type: "auto" } },
     ],
+    max_output_tokens: 100000,
     background: true,
     store: true,
   };
@@ -144,7 +145,7 @@ async function submitState(slug) {
 
 async function pollUntilDone(id, slug) {
   const start = Date.now();
-  const TIMEOUT = 110 * 60 * 1000; // 110 minutes per state, generous
+  const TIMEOUT = 240 * 60 * 1000; // 4 hours per state — Deep Research can take >2 hours on long runs
   let lastStatus = "";
   let dots = 0;
   while (true) {
@@ -170,17 +171,91 @@ async function pollUntilDone(id, slug) {
       }
     }
     if (r.status === "completed") return r;
-    if (r.status === "failed" || r.status === "cancelled" || r.status === "expired") {
+    if (
+      r.status === "failed" ||
+      r.status === "cancelled" ||
+      r.status === "expired" ||
+      r.status === "incomplete"
+    ) {
       throw new Error(`${r.status}: ${JSON.stringify(r.error || r.incomplete_details || {}).slice(0, 300)}`);
     }
     await sleep(45000); // 45s polls (slightly slower than batch script since we're not in a hurry)
   }
 }
 
+// Detect partial reports. Model sometimes returns status=completed but the
+// output is incomplete or has degraded structure. Detection signals:
+//   1. low output_tokens
+//   2. fewer than 14 unique numbered sections (1-16)
+//   3. missing Sources section
+//   4. "restart" pattern: a section number much lower than max seen so far,
+//      indicating the model lost context and started over (e.g. Rhode Island
+//      wrote 1-10, then 1-6 again, then Sources — restart at section 1)
+//   5. excessive duplication: any single section appearing 3+ times
+function checkCompleteness(result, text) {
+  const outTokens = result.usage?.output_tokens ?? 0;
+  if (outTokens < 45000) {
+    return { ok: false, reason: `only ${outTokens} output tokens (full reports are 45K+)` };
+  }
+
+  // Pull every "## N." header in source order
+  const seq = [];
+  const re = /^## (\d+)\./gm;
+  let m;
+  while ((m = re.exec(text)) !== null) {
+    seq.push(parseInt(m[1], 10));
+  }
+
+  const uniqueSections = new Set(seq);
+  if (uniqueSections.size < 14) {
+    return { ok: false, reason: `only ${uniqueSections.size} of 16 sections found` };
+  }
+
+  // Restart detection. We tolerate exact duplicates (n == maxSeen) and small
+  // back-steps of 1 (e.g. accidental rewrite of immediately preceding section).
+  // A drop of >1 from the max seen indicates the model lost context.
+  let maxSeen = 0;
+  for (const n of seq) {
+    if (n < maxSeen - 1) {
+      return {
+        ok: false,
+        reason: `section restart detected: section ${n} appears after section ${maxSeen} was already written`,
+      };
+    }
+    if (n > maxSeen) maxSeen = n;
+  }
+
+  // Excessive duplication: any one section heading appearing 3+ times signals
+  // the model thrashed on it.
+  const counts = {};
+  for (const n of seq) counts[n] = (counts[n] || 0) + 1;
+  for (const [n, count] of Object.entries(counts)) {
+    if (count >= 3) {
+      return { ok: false, reason: `section ${n} appears ${count} times (heavy duplication)` };
+    }
+  }
+
+  if (!/^## Sources/m.test(text)) {
+    return { ok: false, reason: "missing Sources section" };
+  }
+
+  return { ok: true };
+}
+
 function saveResult(slug, result) {
   const stateTitle = titleCase(slug);
   const text = extractText(result);
   if (!text) throw new Error("no text in response");
+  const completeness = checkCompleteness(result, text);
+  if (!completeness.ok) {
+    // Archive .id as .partial for forensics, then unlink so the next run resubmits fresh
+    const p = paths(slug);
+    if (existsSync(p.id)) {
+      try { writeFileSync(p.id + ".partial", readFileSync(p.id, "utf8")); } catch {}
+      try { unlinkSync(p.id); } catch {}
+    }
+    throw new Error(`PARTIAL: ${completeness.reason}`);
+  }
   const p = paths(slug);
   writeFileSync(p.raw, JSON.stringify(result, null, 2));
   const header = `# Small Claims in ${stateTitle} (${MODEL})\n\n_Generated on ${new Date().toISOString()}_\n\n---\n\n`;
@@ -241,10 +316,14 @@ function writeProgress(state) {
       if (existsSync(paths(slug).id)) {
         id = readFileSync(paths(slug).id, "utf8").trim();
         console.log(`    resuming with existing id ${id.slice(0, 16)}...`);
-        // Check status: if terminal-failed, clear and resubmit
         try {
           const r = await api("GET", `/responses/${id}`);
-          if (r.status === "failed" || r.status === "cancelled" || r.status === "expired") {
+          if (
+            r.status === "failed" ||
+            r.status === "cancelled" ||
+            r.status === "expired" ||
+            r.status === "incomplete"
+          ) {
             console.log(`    previous run ${r.status}, resubmitting`);
             id = await submitState(slug);
           } else if (r.status === "completed") {

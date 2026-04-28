@@ -1,3 +1,31 @@
+## OUTPUT REQUIREMENTS — READ FIRST
+
+This report has SEVENTEEN required sections. Your output is INCOMPLETE if any are missing:
+
+1. Jurisdictional limits
+2. What types of cases qualify
+3. Where to file
+4. Filing fees
+5. Statute of limitations
+6. Pre-filing requirements
+7. Forms required
+8. Service of process
+9. Defendant's response and default
+10. Hearing procedure
+11. Appeals
+12. Post-judgment collection
+13. Special rules for businesses
+14. County-level differences
+15. Common pitfalls and dismissal reasons
+16. Recent changes
+17. Sources
+
+**DO NOT STOP UNTIL ALL 17 SECTIONS ARE WRITTEN.** Each section uses the heading `## N. <name>` exactly. Coverage of every section is the primary success criterion — a report that ends at Section 6 or Section 10 is a failure even if those sections are excellent. Write the full outline first, then expand depth where space allows.
+
+Each section should be roughly 2,500–4,000 visible tokens. If you find a section growing past ~5,000 visible tokens, conclude it and move on. The full report should land around 30,000–50,000 visible tokens distributed across all 17 sections.
+
+---
+
 Produce a comprehensive guide to the small claims court process in **{STATE}**, USA, current as of 2026. The audience is non-lawyers — individuals and small business owners — who want to recover money owed to them and need to understand exactly how the small claims process works in this state.
 
 Cover all of the following, with citations to official `.gov` sources (state courts, statutes, judicial council) wherever possible. Where a number, deadline, fee, or form is mentioned, cite the specific statute, court rule, or local rule (e.g., "Cal. Code Civ. Proc. § 116.220").
@@ -10,7 +38,7 @@ Cover all of the following, with citations to official `.gov` sources (state cou
 
 ## 2. What types of cases qualify — EVERYTHING YOU CAN SUE FOR
 
-This section must be **exhaustive**. The goal is that a non-lawyer reading this can recognize their situation in this list and know with certainty whether small claims is the right venue. For each claim type below, state whether it is eligible in this state, give 2-3 concrete real-life example scenarios, cite the controlling statute or court rule when one exists, and note any state-specific quirks, special pre-suit requirements, or damage caps.
+A non-lawyer should be able to scan this section and find their situation. For each claim type below, state eligibility (yes / no / conditional), give ONE concrete example in a single sentence, and cite the controlling statute when it materially affects eligibility or damages. Skip examples for unremarkable types — a one-line "Yes, eligible under standard contract rules" is enough.
 
 Cover, at a minimum, every category below:
 
@@ -94,7 +122,7 @@ Cover, at a minimum, every category below:
 - Statutory damages under wage / labor laws
 
 ### Other state-specific claim types
-**Mandatory open-ended sweep.** After covering all the categories above, list any additional claim type, statutory cause of action, or common real-world dispute that is eligible in this state's small claims division and does not fit cleanly into the categories above. Do **not** skip a claim type just because it isn't on the list. If a non-lawyer in this state would realistically bring it in small claims — niche tenant rights (e.g., right-to-cure statutes, mold remediation reimbursement), state-specific consumer protections (e.g., automatic-renewal cancellation refunds, towing-without-authorization claims, debt-collector violations under state FDCPA analogs), HOA / condo-association disputes, agricultural / farm disputes, fishing / hunting license disputes, ride-share / gig-economy disputes, cell-phone early-termination fees, ticket scalping, AirBnB deposit holds, anything else — include it with the same depth (eligibility, examples, statute citation).
+**Open-ended sweep.** After covering the categories above, list any additional claim type or statutory cause of action specific to this state that a non-lawyer would realistically pursue in small claims — niche tenant rights, state-specific consumer protections (automatic-renewal refunds, towing claims, state FDCPA analogs), HOA / condo disputes, agricultural / farm claims, ride-share / gig-economy disputes, cell-phone early-termination fees, etc. Brief one-line entries with statute citation are fine.
 
 ### Counterclaims
 - Whether defendants can counter-sue in the same hearing
@@ -224,3 +252,14 @@ Cover, at a minimum, every category below:
 - For every concrete number/deadline/form name, cite the source inline using a footnote-style reference like `[¹]` and list all sources at the bottom in a `## Sources` section with full URLs
 - If something is genuinely uncertain, ambiguous, or recently changed, flag it explicitly with a "⚠️ Verify" note rather than guessing
 - Where official guidance is silent on a question that matters for non-lawyers (e.g., "what happens if defendant moves out of state mid-case"), say so plainly
+
+---
+
+## SELF-CHECK BEFORE YOU FINISH (do not skip)
+
+Before emitting your final response, scan your output and verify:
+
+- Section 1 through Section 16 are all present, each with the correct numbered heading (`## N. <name>`)
+- A `## Sources` section exists at the end
+
+If any section is missing, write it now under the correct heading before stopping. Do not output a final summary or sign-off; just write the missing content. The report is INCOMPLETE until all 17 sections (1–16 + Sources) appear in your output.
