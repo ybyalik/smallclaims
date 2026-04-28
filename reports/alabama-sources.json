@@ -1,0 +1,110 @@
+{
+  "state": "Alabama",
+  "as_of": "2024-06-16",
+  "state_judiciary_pages": [
+    {
+      "label": "Alabama Unified Judicial System — Small Claims Information",
+      "url": "https://judicial.alabama.gov/Library/SmallClaims",
+      "scope": "small_claims"
+    },
+    {
+      "label": "Alabama Unified Judicial System — District Court Overview",
+      "url": "https://judicial.alabama.gov/Courts/District",
+      "scope": "court_directory"
+    },
+    {
+      "label": "Alabama Unified Judicial System — Self Help",
+      "url": "https://judicial.alabama.gov/SelfHelp/Default.aspx",
+      "scope": "self_help"
+    }
+  ],
+  "statutes": [
+    {
+      "label": "Ala. Code § 12-12-31 (Small claims court; jurisdiction; representation)",
+      "url": "https://alisondb.legislature.state.al.us/alison/CodeOfAlabama/1975/Coatoc.htm",
+      "section_or_chapter": "§ 12-12-31"
+    },
+    {
+      "label": "Ala. Code § 12-12-30 (Organization of district courts; divisions; special district court judges)",
+      "url": "https://alisondb.legislature.state.al.us/alison/CodeOfAlabama/1975/Coatoc.htm",
+      "section_or_chapter": "§ 12-12-30"
+    },
+    {
+      "label": "Ala. Code § 6-6-340 (Small claims procedure; right to jury trial)",
+      "url": "https://alisondb.legislature.state.al.us/alison/CodeOfAlabama/1975/Coatoc.htm",
+      "section_or_chapter": "§ 6-6-340"
+    },
+    {
+      "label": "Ala. Code § 12-12-70 (Appeal from district court to circuit court)",
+      "url": "https://alisondb.legislature.state.al.us/alison/CodeOfAlabama/1975/Coatoc.htm",
+      "section_or_chapter": "§ 12-12-70"
+    },
+    {
+      "label": "Ala. Code § 6-10-7 (Wage garnishment exemptions)",
+      "url": "https://alisondb.legislature.state.al.us/alison/CodeOfAlabama/1975/Coatoc.htm",
+      "section_or_chapter": "§ 6-10-7"
+    }
+  ],
+  "court_rules": [
+    {
+      "label": "Alabama Rules of Civil Procedure — Rule 81 (Applicability to small claims)",
+      "url": "https://judicial.alabama.gov/docs/library/rules/civ.pdf",
+      "rule_or_chapter": "Rule 81"
+    },
+    {
+      "label": "Alabama Rules of Small Claims Procedure",
+      "url": "https://judicial.alabama.gov/docs/library/rules/sclaims.pdf",
+      "rule_or_chapter": "Full document"
+    }
+  ],
+  "forms_pages": [
+    {
+      "label": "Alabama small claims forms (Statement of Claim, Subpoena, etc.)",
+      "url": "https://judicial.alabama.gov/Library/Forms#small_claims"
+    }
+  ],
+  "fee_schedules": [
+    {
+      "label": "Alabama district court filing fees",
+      "url": "https://judicial.alabama.gov/Library/FeeSchedules"
+    }
+  ],
+  "service_rules": [
+    {
+      "label": "Service of process — Alabama Rules of Civil Procedure, Rule 4",
+      "url": "https://judicial.alabama.gov/docs/library/rules/civ.pdf"
+    }
+  ],
+  "appeal_rules": [
+    {
+      "label": "Appeals from district court — Ala. Code § 12-12-70",
+      "url": "https://alisondb.legislature.state.al.us/alison/CodeOfAlabama/1975/Coatoc.htm"
+    }
+  ],
+  "post_judgment_collection": [
+    {
+      "label": "Wage garnishment exemptions — Ala. Code § 6-10-7",
+      "url": "https://alisondb.legislature.state.al.us/alison/CodeOfAlabama/1975/Coatoc.htm"
+    }
+  ],
+  "county_specific": [],
+  "notes": "Alabama uses unified district courts with dedicated small-claims procedures; all forms and rules are centralized on the state judiciary website.",
+  "_meta": {
+    "state": "Alabama",
+    "slug": "alabama",
+    "model": "gpt-4.1",
+    "response_id": "resp_05a594682fc6c9260069f079c1b3bc8196b9799e3171c3713f",
+    "generated_at": "2026-04-28T09:11:39.155Z",
+    "usage": {
+      "input_tokens": 1793,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 1011,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 2804
+    }
+  }
+}

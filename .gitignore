@@ -9,5 +9,16 @@ build/
 *.tsbuildinfo
 next-env.d.ts
 
-# Deep Research transient state — keep .md and .json reports, ignore in-flight ids
+# Research pipeline transient state — keep -sources.json, -evidence.json, -draft.md;
+# ignore in-flight ids, raw API dumps, failures, and per-cluster intermediates.
 reports/*.id
+reports/*.id.partial
+reports/*.raw.json
+reports/*.failure.json
+reports/_drafts/
+reports/_progress.json
+reports/_sequential_progress.json
+reports/_source_discovery_progress.json
+reports/_evidence_extraction_progress.json
+reports/_draft_pass_progress.json
+reports/_research_pass_progress.json
