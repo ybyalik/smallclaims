@@ -547,10 +547,15 @@ footer { padding: 80px 0 40px; }
 
 .dl-form { background: #fff; border: 1px solid var(--hairline, #e5e5e5); border-radius: 12px; padding: 36px; }
 
-.dl-progress { display: flex; gap: 12px; margin-bottom: 28px; padding-bottom: 18px; border-bottom: 1px solid var(--hairline, #e5e5e5); }
+.dl-progress { display: flex; gap: 12px; align-items: center; margin-bottom: 28px; padding-bottom: 18px; border-bottom: 1px solid var(--hairline, #e5e5e5); }
 .dl-prog-step { flex: 1; padding: 10px 14px; font-size: 13px; font-weight: 500; color: var(--muted); border: 1px solid var(--hairline, #e5e5e5); border-radius: 8px; background: #fafafa; }
 .dl-prog-step.active { color: var(--ink); background: #fff; border-color: var(--ink, #111); font-weight: 600; }
 .dl-prog-step.done { color: var(--ink); background: #f5f5f0; }
+.dl-save-indicator { display: inline-flex; align-items: center; gap: 6px; min-width: 80px; padding: 4px 10px; font-size: 12px; font-weight: 500; color: var(--muted); border-radius: 999px; opacity: 0; transition: opacity .25s ease, color .25s ease, background .25s ease; }
+.dl-save-saving { opacity: 1; color: var(--muted); background: #f5f3ee; }
+.dl-save-saved { opacity: 1; color: #2c7a3f; background: #e9f3ec; }
+.dl-save-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; animation: dl-save-pulse 1s ease-in-out infinite; }
+@keyframes dl-save-pulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
 
 .dl-step h2 { font-family: "Newsreader", serif; font-size: 28px; font-weight: 600; margin: 0 0 6px; }
 .dl-step h3.dl-subhead { font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 32px 0 12px; }

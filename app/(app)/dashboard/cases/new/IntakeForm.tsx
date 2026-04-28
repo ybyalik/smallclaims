@@ -1,12 +1,17 @@
 "use client";
 
-import { useState, useTransition } from "react";
+import { useEffect, useRef, useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { STATES } from "../../../../../lib/states";
 import { DISPUTE_OPTIONS } from "../../../../../lib/demand-letter/types";
 import type { DisputeType } from "../../../../../lib/supabase/types";
 
 type Step = "dispute" | "parties" | "facts";
+
+// Auto-save state to localStorage so a refresh, accidental nav, or paid-flow
+// redirect doesn't lose intake. Cleared on successful generate.
+const DRAFT_KEY = "civilcase:newcase:draft:v1";
+type SaveStatus = "idle" | "saving" | "saved";
 
 interface FormState {
   // dispute
@@ -66,6 +71,56 @@ export default function IntakeForm() {
   const [form, setForm] = useState<FormState>(INITIAL);
   const [error, setError] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
+  const [saveStatus, setSaveStatus] = useState<SaveStatus>("idle");
+  const hydratedRef = useRef(false);
+  const saveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const savedFlashTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Restore draft on mount
+  useEffect(() => {
+    try {
+      const raw = window.localStorage.getItem(DRAFT_KEY);
+      if (raw) {
+        const parsed = JSON.parse(raw) as { form?: FormState; step?: Step };
+        if (parsed.form) setForm({ ...INITIAL, ...parsed.form });
+        if (parsed.step === "dispute" || parsed.step === "parties" || parsed.step === "facts") {
+          setStep(parsed.step);
+        }
+      }
+    } catch {
+      // ignore corrupt drafts
+    } finally {
+      hydratedRef.current = true;
+    }
+  }, []);
+
+  // Debounced auto-save on every form / step change after hydration
+  useEffect(() => {
+    if (!hydratedRef.current) return;
+    setSaveStatus("saving");
+    if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
+    saveTimerRef.current = setTimeout(() => {
+      try {
+        window.localStorage.setItem(DRAFT_KEY, JSON.stringify({ form, step }));
+        setSaveStatus("saved");
+        if (savedFlashTimerRef.current) clearTimeout(savedFlashTimerRef.current);
+        savedFlashTimerRef.current = setTimeout(() => setSaveStatus("idle"), 1800);
+      } catch {
+        setSaveStatus("idle");
+      }
+    }, 350);
+    return () => {
+      if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
+    };
+  }, [form, step]);
+
+  function clearDraft() {
+    try {
+      window.localStorage.removeItem(DRAFT_KEY);
+    } catch {
+      // ignore
+    }
+  }
 
   function set<K extends keyof FormState>(key: K, value: FormState[K]) {
     setForm((f) => ({ ...f, [key]: value }));
@@ -149,6 +204,7 @@ export default function IntakeForm() {
           setError(data?.error || "Something went wrong. Try again.");
           return;
         }
+        clearDraft();
         router.push(`/dashboard/cases/${data.case_id}/letter`);
       } catch (e) {
         setError(e instanceof Error ? e.message : "Network error. Try again.");
@@ -187,6 +243,21 @@ export default function IntakeForm() {
           2. Parties
         </div>
         <div className={`dl-prog-step ${step === "facts" ? "active" : ""}`}>3. What happened</div>
+        <div className={`dl-save-indicator dl-save-${saveStatus}`} aria-live="polite">
+          {saveStatus === "saving" && (
+            <>
+              <span className="dl-save-dot" /> Saving…
+            </>
+          )}
+          {saveStatus === "saved" && (
+            <>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="14" height="14">
+                <path d="M5 12l4 4 10-10" />
+              </svg>{" "}
+              Saved
+            </>
+          )}
+        </div>
       </div>
 
       {error && <div className="dl-error">{error}</div>}
