@@ -95,6 +95,12 @@ export default function SectionsPage() {
       <Label id="06">Split hero — vertical step list, floating avatars, gradient blob, logo bar</Label>
       <SectionSplitHero />
 
+      {/* ============================================================
+           7. Process + testimonial — dark band, 3 colored step cards left, quote right
+           ============================================================ */}
+      <Label id="07">Process + testimonial — 3 colored step cards left, big quote right</Label>
+      <SectionProcessTestimonial />
+
       <div style={{ padding: "60px 0", background: "var(--bg-2)", textAlign: "center" }}>
         <p style={{ color: "var(--muted)", fontSize: 13 }}>
           End of library. <Link href="/" style={{ color: "var(--ink)" }}>Back home</Link>
@@ -1553,4 +1559,327 @@ function FakeLogo({ children }: { children: React.ReactNode }) {
       {children}
     </span>
   );
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   07. Process + testimonial — dark band
+   ───────────────────────────────────────────────────────────────────── */
+function SectionProcessTestimonial() {
+  return (
+    <section
+      style={{
+        background: "#0d0d0d",
+        color: "#fff",
+        padding: "80px 0",
+        position: "relative",
+        overflow: "hidden",
+      }}
+    >
+      <div
+        style={{
+          maxWidth: 1440,
+          margin: "0 auto",
+          display: "grid",
+          gridTemplateColumns: "1.85fr 1fr",
+          gap: 0,
+        }}
+      >
+        {/* LEFT — title + 3 step cards */}
+        <div style={{ padding: "20px 48px 40px" }}>
+          <span
+            style={{
+              display: "inline-block",
+              background: "rgba(232,93,62,0.15)",
+              color: "#e85d3e",
+              padding: "5px 14px",
+              borderRadius: 999,
+              fontSize: 12,
+              fontWeight: 600,
+              marginBottom: 22,
+            }}
+          >
+            Working Step
+          </span>
+          <h2
+            style={{
+              fontFamily: "Geist, system-ui, sans-serif",
+              fontSize: "clamp(40px, 4.4vw, 56px)",
+              fontWeight: 800,
+              letterSpacing: "-0.02em",
+              lineHeight: 1.05,
+              margin: "0 0 56px",
+            }}
+          >
+            Solution of Process.
+          </h2>
+
+          {/* 3-card row with connectors */}
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr 1fr",
+              gap: 18,
+              alignItems: "stretch",
+              position: "relative",
+            }}
+          >
+            {/* Connector lines (under cards) */}
+            <svg
+              style={{
+                position: "absolute",
+                inset: 0,
+                width: "100%",
+                height: "100%",
+                pointerEvents: "none",
+              }}
+              preserveAspectRatio="none"
+              viewBox="0 0 100 100"
+            >
+              <path
+                d="M 33 25 H 36"
+                stroke="#3a3a3a"
+                strokeWidth="0.3"
+                fill="none"
+              />
+              <path
+                d="M 64 75 H 67"
+                stroke="#3a3a3a"
+                strokeWidth="0.3"
+                fill="none"
+              />
+            </svg>
+
+            {/* Card 1 — Green */}
+            <StepCard
+              bg="#4ad96a"
+              tone="dark"
+              stepNum="01"
+              stepPos="top-left"
+              title="Initial Consultation"
+              titlePos="bottom-left"
+            />
+
+            {/* Card 2 — White with peach gradient */}
+            <StepCard
+              bg="#fff"
+              tone="dark"
+              stepNum="02"
+              stepPos="bottom-right"
+              title="Strategy Development"
+              titlePos="top-left"
+              gradient
+            />
+
+            {/* Card 3 — Purple */}
+            <StepCard
+              bg="#7344ee"
+              tone="light"
+              stepNum="03"
+              stepPos="top-right"
+              title={<>Execution &amp; Launch</>}
+              titlePos="bottom-right"
+            />
+          </div>
+        </div>
+
+        {/* RIGHT — testimonial */}
+        <div
+          style={{
+            borderLeft: "1px solid #1f1f1f",
+            padding: "40px 48px 60px",
+            position: "relative",
+          }}
+        >
+          {/* Big quote marks */}
+          <div
+            style={{
+              fontFamily: "Geist, system-ui, sans-serif",
+              fontWeight: 900,
+              fontSize: 110,
+              lineHeight: 0.6,
+              color: "#2a2a2a",
+              marginBottom: 28,
+              letterSpacing: "-0.06em",
+            }}
+            aria-hidden="true"
+          >
+            &rdquo;&rdquo;
+          </div>
+
+          {/* Horizontal divider */}
+          <div style={{ width: 60, height: 1, background: "#3a3a3a", marginBottom: 22 }} />
+
+          <p
+            style={{
+              fontFamily: "Geist, system-ui, sans-serif",
+              fontSize: 22,
+              fontWeight: 700,
+              lineHeight: 1.35,
+              letterSpacing: "-0.01em",
+              color: "#fff",
+              margin: "0 0 36px",
+            }}
+          >
+            We specializes in providing a range of services aimed at helping companies
+            establish and enhance their presence in the digital world.
+          </p>
+
+          <div>
+            <div
+              style={{
+                fontFamily: "Geist, system-ui, sans-serif",
+                fontWeight: 700,
+                fontSize: 16,
+                color: "#fff",
+                marginBottom: 4,
+              }}
+            >
+              Mr. David Milar
+            </div>
+            <div style={{ fontSize: 13.5, color: "#9aa0a6" }}>CEO &amp; Founder</div>
+          </div>
+
+          {/* Decorative bars bottom right */}
+          <div
+            style={{
+              position: "absolute",
+              right: 24,
+              bottom: 0,
+              display: "flex",
+              gap: 6,
+              alignItems: "flex-end",
+            }}
+          >
+            <div style={{ width: 18, height: 60, background: "#1c1c1c" }} />
+            <div style={{ width: 18, height: 80, background: "#1c1c1c" }} />
+            <div style={{ width: 18, height: 100, background: "#1c1c1c" }} />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function StepCard({
+  bg,
+  tone,
+  stepNum,
+  stepPos,
+  title,
+  titlePos,
+  gradient,
+}: {
+  bg: string;
+  tone: "dark" | "light";
+  stepNum: string;
+  stepPos: "top-left" | "top-right" | "bottom-left" | "bottom-right";
+  title: React.ReactNode;
+  titlePos: "top-left" | "top-right" | "bottom-left" | "bottom-right";
+  gradient?: boolean;
+}) {
+  const txtColor = tone === "dark" ? "#0c0c0c" : "#fff";
+  const stepBg = tone === "dark" ? "#0c0c0c" : "rgba(0,0,0,0.85)";
+  const stepText = "#fff";
+
+  // Position helpers
+  const stepStyle: React.CSSProperties = { position: "absolute", ...positionToOffset(stepPos) };
+  const titleStyle: React.CSSProperties = { position: "absolute", ...positionToOffset(titlePos) };
+
+  return (
+    <div
+      style={{
+        background: bg,
+        borderRadius: 20,
+        height: 280,
+        position: "relative",
+        overflow: "hidden",
+        backgroundImage: tone === "dark" || tone === "light"
+          ? "radial-gradient(circle, rgba(0,0,0,0.06) 1px, transparent 1px)"
+          : undefined,
+        backgroundSize: tone === "dark" || tone === "light" ? "10px 10px" : undefined,
+      }}
+    >
+      {/* Optional peach gradient blob */}
+      {gradient && (
+        <div
+          style={{
+            position: "absolute",
+            left: -30,
+            bottom: -30,
+            width: 200,
+            height: 200,
+            borderRadius: "50%",
+            background:
+              "radial-gradient(circle at 50% 50%, rgba(245,116,76,0.95), rgba(245,116,76,0) 65%)",
+            backgroundImage:
+              "radial-gradient(circle, rgba(245,116,76,0.7) 1px, transparent 1.5px)",
+            backgroundSize: "6px 6px",
+            filter: "blur(0.4px)",
+          }}
+        />
+      )}
+
+      {/* Step pill */}
+      <div style={stepStyle}>
+        <span
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: 6,
+            background: stepBg,
+            color: stepText,
+            padding: "5px 5px 5px 12px",
+            borderRadius: 999,
+            fontSize: 11.5,
+            fontWeight: 600,
+            fontFamily: "Geist, system-ui, sans-serif",
+          }}
+        >
+          Step
+          <span
+            style={{
+              background: "#fff",
+              color: stepBg,
+              padding: "2px 8px",
+              borderRadius: 999,
+              fontWeight: 700,
+              fontSize: 11.5,
+            }}
+          >
+            {stepNum}
+          </span>
+        </span>
+      </div>
+
+      {/* Title */}
+      <div style={{ ...titleStyle, position: "absolute", maxWidth: "85%" }}>
+        <div
+          style={{
+            fontFamily: "Geist, system-ui, sans-serif",
+            fontWeight: 800,
+            fontSize: 22,
+            lineHeight: 1.15,
+            letterSpacing: "-0.015em",
+            color: txtColor,
+          }}
+        >
+          {title}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function positionToOffset(pos: "top-left" | "top-right" | "bottom-left" | "bottom-right"): React.CSSProperties {
+  const inset = 22;
+  switch (pos) {
+    case "top-left":
+      return { top: inset, left: inset };
+    case "top-right":
+      return { top: inset, right: inset };
+    case "bottom-left":
+      return { bottom: inset, left: inset };
+    case "bottom-right":
+      return { bottom: inset, right: inset };
+  }
 }
