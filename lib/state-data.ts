@@ -6,6 +6,7 @@ const REGISTRY: Record<string, () => Promise<{ data: StateGuide }>> = {
   delaware: () => import("../data/delaware"),
   minnesota: () => import("../data/minnesota"),
   texas: () => import("../data/texas"),
+  wyoming: () => import("../data/wyoming"),
 };
 
 export async function loadStateGuide(slug: string): Promise<StateGuide | null> {
