@@ -113,6 +113,12 @@ export default function SectionsPage() {
       <Label id="09">Bento case study — copy + stat card left, photo with chart overlay right</Label>
       <SectionBentoCaseStudy />
 
+      {/* ============================================================
+           10. Case study split — carousel + solution-result card
+           ============================================================ */}
+      <Label id="10">Case study split — carousel card + Solution &amp; Result card</Label>
+      <SectionCaseStudySplit />
+
       <div style={{ padding: "60px 0", background: "var(--bg-2)", textAlign: "center" }}>
         <p style={{ color: "var(--muted)", fontSize: 13 }}>
           End of library. <Link href="/" style={{ color: "var(--ink)" }}>Back home</Link>
@@ -2349,6 +2355,228 @@ function CaseStat({ n, label }: { n: string; label: string }) {
         {n}
       </div>
       <div style={{ fontSize: 13.5, color: "#3d3120", lineHeight: 1.4, maxWidth: "16ch" }}>{label}</div>
+    </div>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   10. Case study split — carousel card + Solution & Result card
+   ───────────────────────────────────────────────────────────────────── */
+function SectionCaseStudySplit() {
+  return (
+    <section style={{ background: "#f1eadc", padding: "32px 24px 96px" }}>
+      <div style={{ maxWidth: 1320, margin: "0 auto" }}>
+        {/* Header row */}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1.5fr 1fr",
+            gap: 64,
+            alignItems: "start",
+            marginBottom: 36,
+          }}
+        >
+          <h2
+            style={{
+              fontFamily: "Geist, system-ui, sans-serif",
+              fontWeight: 700,
+              fontSize: "clamp(34px, 3.6vw, 48px)",
+              lineHeight: 1.05,
+              letterSpacing: "-0.02em",
+              color: "#0c0c0c",
+              margin: 0,
+              maxWidth: "20ch",
+            }}
+          >
+            Real-World case studies that showcase our strategic impact
+          </h2>
+          <p
+            style={{
+              fontSize: 15,
+              lineHeight: 1.6,
+              color: "#4a4a4a",
+              margin: "8px 0 0",
+              maxWidth: "44ch",
+            }}
+          >
+            Discover how our tailored accounting and consulting solutions delivered real-world
+            business improvements.
+          </p>
+        </div>
+
+        {/* Two cards side by side */}
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18 }}>
+          {/* LEFT — Case study card */}
+          <div
+            style={{
+              background: "#fff",
+              borderRadius: 18,
+              overflow: "hidden",
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            <div style={{ background: "#fcd38a", padding: "16px 28px", fontSize: 14, fontWeight: 600, color: "#0c0c0c" }}>
+              Case study
+            </div>
+            <div style={{ padding: "28px 32px", display: "flex", flexDirection: "column", gap: 22, flex: 1 }}>
+              <div style={{ borderRadius: 10, overflow: "hidden", aspectRatio: "16/9" }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1100&h=620&fit=crop"
+                  alt=""
+                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                />
+              </div>
+              <div>
+                <h3
+                  style={{
+                    fontFamily: "Geist, system-ui, sans-serif",
+                    fontWeight: 700,
+                    fontSize: 26,
+                    lineHeight: 1.15,
+                    letterSpacing: "-0.015em",
+                    color: "#0c0c0c",
+                    margin: "0 0 10px",
+                    maxWidth: "20ch",
+                  }}
+                >
+                  Operational strategy for a manufacturing firm
+                </h3>
+                <div style={{ fontSize: 14.5, color: "#5b5b5b" }}>Client: Mid-sized Manufacturing</div>
+              </div>
+            </div>
+            {/* Carousel arrows */}
+            <div
+              style={{
+                borderTop: "1px solid #ece4d3",
+                padding: "18px 32px",
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
+            >
+              <button aria-label="Previous" style={arrowBtn}>
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#d9402e" strokeWidth="2">
+                  <path d="M19 12H5M11 18l-6-6 6-6" />
+                </svg>
+              </button>
+              <button aria-label="Next" style={arrowBtn}>
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#d9402e" strokeWidth="2">
+                  <path d="M5 12h14M13 18l6-6-6-6" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          {/* RIGHT — Solution & Result */}
+          <div
+            style={{
+              background: "#fff",
+              borderRadius: 18,
+              overflow: "hidden",
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            <div style={{ background: "#fcd38a", padding: "16px 28px", fontSize: 14, fontWeight: 600, color: "#0c0c0c" }}>
+              Solution &amp; Result
+            </div>
+            <div style={{ padding: "28px 32px", display: "flex", flexDirection: "column", flex: 1 }}>
+              <p
+                style={{
+                  fontSize: 15,
+                  lineHeight: 1.6,
+                  color: "#0c0c0c",
+                  margin: "0 0 36px",
+                  maxWidth: "60ch",
+                }}
+              >
+                We streamlined production workflows, introduced lean management practices, and
+                aligned operations with demand forecasting boosting.
+              </p>
+
+              {/* Stat rows */}
+              <ResultRow pct="22%" label="Increase in Production Efficiency" />
+              <div style={{ height: 1, background: "#ece4d3" }} />
+              <ResultRow pct="18%" label="Reduction in Operating Costs" />
+              <div style={{ height: 1, background: "#ece4d3", marginBottom: 36 }} />
+
+              <a
+                href="#"
+                style={{
+                  alignSelf: "flex-start",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 10,
+                  background: "#d9402e",
+                  color: "#fff",
+                  padding: "14px 24px",
+                  borderRadius: 10,
+                  fontSize: 14.5,
+                  fontWeight: 600,
+                  textDecoration: "none",
+                  fontFamily: "Geist, system-ui, sans-serif",
+                  marginTop: "auto",
+                }}
+              >
+                View full case study
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.2">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const arrowBtn: React.CSSProperties = {
+  width: 40,
+  height: 40,
+  borderRadius: "50%",
+  background: "transparent",
+  border: 0,
+  display: "grid",
+  placeItems: "center",
+  cursor: "pointer",
+};
+
+function ResultRow({ pct, label }: { pct: string; label: string }) {
+  return (
+    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "18px 0" }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+        <span
+          style={{
+            width: 22,
+            height: 22,
+            borderRadius: "50%",
+            background: "#3dba6a",
+            color: "#fff",
+            display: "grid",
+            placeItems: "center",
+            flexShrink: 0,
+          }}
+        >
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="3">
+            <path d="M5 12l4 4 10-10" />
+          </svg>
+        </span>
+        <span
+          style={{
+            fontFamily: "Geist, system-ui, sans-serif",
+            fontWeight: 700,
+            fontSize: 22,
+            color: "#0c0c0c",
+            letterSpacing: "-0.015em",
+          }}
+        >
+          {pct}
+        </span>
+      </div>
+      <div style={{ fontSize: 14.5, color: "#0c0c0c", fontWeight: 500, textAlign: "right" }}>{label}</div>
     </div>
   );
 }
