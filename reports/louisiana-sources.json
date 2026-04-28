@@ -1,0 +1,126 @@
+{
+  "state": "Louisiana",
+  "as_of": "2026-04-28",
+  "state_judiciary_pages": [
+    {
+      "label": "Louisiana Supreme Court",
+      "url": "https://www.lasc.org/",
+      "scope": "statewide judiciary"
+    },
+    {
+      "label": "Louisiana State Bar Association — Self-help",
+      "url": "https://www.lsba.org/Public/SelfHelp.aspx",
+      "scope": "self-help"
+    }
+  ],
+  "statutes": [
+    {
+      "label": "Louisiana Code of Civil Procedure Title V (City and Parish Courts)",
+      "url": "https://www.legis.la.gov/legis/Laws_Toc.aspx?folder=72&title=CCP",
+      "section_or_chapter": "CCP Title V"
+    },
+    {
+      "label": "La. Code Civ. Proc. art. 4831 et seq. (Small claims)",
+      "url": "https://www.legis.la.gov/legis/Law.aspx?d=112379",
+      "section_or_chapter": "art. 4831"
+    },
+    {
+      "label": "Louisiana Revised Statutes — index",
+      "url": "https://www.legis.la.gov/legis/LawSearchList.aspx",
+      "section_or_chapter": "all titles"
+    },
+    {
+      "label": "Louisiana Civil Code (general civil law)",
+      "url": "https://www.legis.la.gov/legis/Laws_Toc.aspx?folder=67&title=CC",
+      "section_or_chapter": "Civil Code"
+    }
+  ],
+  "court_rules": [
+    {
+      "label": "Louisiana Code of Civil Procedure",
+      "url": "https://www.legis.la.gov/legis/Laws_Toc.aspx?folder=72&title=CCP",
+      "rule_or_chapter": "Code of Civil Procedure"
+    }
+  ],
+  "forms_pages": [
+    {
+      "label": "Louisiana civil court forms (sample parish)",
+      "url": "https://orleanscivildistrict.org/forms",
+      "scope": "forms"
+    }
+  ],
+  "fee_schedules": [
+    {
+      "label": "La. Rev. Stat. § 13:841 et seq. (Court fees)",
+      "url": "https://www.legis.la.gov/legis/Law.aspx?d=78793",
+      "section_or_chapter": "§ 13:841"
+    }
+  ],
+  "service_rules": [
+    {
+      "label": "La. Code Civ. Proc. art. 1231 et seq. (Citation and service)",
+      "url": "https://www.legis.la.gov/legis/Law.aspx?d=110971",
+      "section_or_chapter": "art. 1231"
+    }
+  ],
+  "appeal_rules": [
+    {
+      "label": "La. Code Civ. Proc. art. 4924 (Small claims appeal)",
+      "url": "https://www.legis.la.gov/legis/Law.aspx?d=112437",
+      "section_or_chapter": "art. 4924"
+    }
+  ],
+  "post_judgment_collection": [
+    {
+      "label": "La. Code Civ. Proc. Book V Title II (Execution)",
+      "url": "https://www.legis.la.gov/legis/Laws_Toc.aspx?folder=72&title=CCP",
+      "section_or_chapter": "execution"
+    },
+    {
+      "label": "La. Rev. Stat. § 13:3881 (Wage exemption)",
+      "url": "https://www.legis.la.gov/legis/Law.aspx?d=80162",
+      "section_or_chapter": "§ 13:3881"
+    }
+  ],
+  "consumer_protection_statutes": [
+    {
+      "label": "La. Rev. Stat. § 51:1401 et seq. (Unfair Trade Practices Act)",
+      "url": "https://www.legis.la.gov/legis/Law.aspx?d=104864",
+      "section_or_chapter": "§ 51:1401"
+    },
+    {
+      "label": "La. Rev. Stat. § 9:2782 (Bad check)",
+      "url": "https://www.legis.la.gov/legis/Law.aspx?d=109189",
+      "section_or_chapter": "§ 9:2782"
+    }
+  ],
+  "landlord_tenant_statutes": [
+    {
+      "label": "La. Rev. Stat. § 9:3251 (Lessee deposit)",
+      "url": "https://www.legis.la.gov/legis/Law.aspx?d=109252",
+      "section_or_chapter": "§ 9:3251"
+    }
+  ],
+  "wage_and_employment_statutes": [
+    {
+      "label": "La. Rev. Stat. § 23:631 (Final wages)",
+      "url": "https://www.legis.la.gov/legis/Law.aspx?d=83840",
+      "section_or_chapter": "§ 23:631"
+    }
+  ],
+  "civil_remedies_statutes": [
+    {
+      "label": "La. Rev. Stat. § 9:3500 (Legal interest rate)",
+      "url": "https://www.legis.la.gov/legis/Law.aspx?d=109485",
+      "section_or_chapter": "§ 9:3500"
+    }
+  ],
+  "county_specific": [],
+  "notes": "Manually curated source list (Pass 1 model defaulted to commercial mirrors).",
+  "_meta": {
+    "state": "Louisiana",
+    "slug": "louisiana",
+    "model": "manually-curated",
+    "generated_at": "2026-04-28T13:20:48.079Z"
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "state": "Ohio",
+  "as_of": "2026-04-28",
+  "state_judiciary_pages": [
+    {
+      "label": "Supreme Court of Ohio",
+      "url": "https://www.supremecourt.ohio.gov/",
+      "scope": "statewide judiciary"
+    },
+    {
+      "label": "Ohio Courts — Small Claims help",
+      "url": "https://www.supremecourt.ohio.gov/JCS/disputeResolution/",
+      "scope": "self-help"
+    }
+  ],
+  "statutes": [
+    {
+      "label": "Ohio Rev. Code Chapter 1925 (Small Claims Division)",
+      "url": "https://codes.ohio.gov/ohio-revised-code/chapter-1925",
+      "section_or_chapter": "Ch. 1925"
+    },
+    {
+      "label": "Ohio Rev. Code Chapter 1923 (Forcible Entry)",
+      "url": "https://codes.ohio.gov/ohio-revised-code/chapter-1923",
+      "section_or_chapter": "Ch. 1923"
+    },
+    {
+      "label": "Ohio Rev. Code Chapter 2305 (Limitation of actions)",
+      "url": "https://codes.ohio.gov/ohio-revised-code/chapter-2305",
+      "section_or_chapter": "Ch. 2305"
+    },
+    {
+      "label": "Ohio Revised Code — index",
+      "url": "https://codes.ohio.gov/ohio-revised-code",
+      "section_or_chapter": "all titles"
+    }
+  ],
+  "court_rules": [
+    {
+      "label": "Ohio Rules of Civil Procedure",
+      "url": "https://www.supremecourt.ohio.gov/LegalResources/Rules/civil/civil.pdf",
+      "rule_or_chapter": "Civil Procedure"
+    }
+  ],
+  "forms_pages": [
+    {
+      "label": "Ohio Supreme Court — forms",
+      "url": "https://www.supremecourt.ohio.gov/courts/services-to-courts/forms/",
+      "scope": "forms"
+    }
+  ],
+  "fee_schedules": [
+    {
+      "label": "Ohio Rev. Code § 1925.01 et seq. (Small claims fees)",
+      "url": "https://codes.ohio.gov/ohio-revised-code/section-1925.01",
+      "section_or_chapter": "§ 1925.01"
+    }
+  ],
+  "service_rules": [
+    {
+      "label": "Ohio Civ. R. 4 (Service of process)",
+      "url": "https://www.supremecourt.ohio.gov/LegalResources/Rules/civil/civil.pdf",
+      "rule_or_chapter": "Rule 4"
+    }
+  ],
+  "appeal_rules": [
+    {
+      "label": "Ohio Rev. Code § 1925.16 (Small claims appeal)",
+      "url": "https://codes.ohio.gov/ohio-revised-code/section-1925.16",
+      "section_or_chapter": "§ 1925.16"
+    }
+  ],
+  "post_judgment_collection": [
+    {
+      "label": "Ohio Rev. Code Chapter 2329 (Execution)",
+      "url": "https://codes.ohio.gov/ohio-revised-code/chapter-2329",
+      "section_or_chapter": "Ch. 2329"
+    },
+    {
+      "label": "Ohio Rev. Code § 2329.66 (Exemptions)",
+      "url": "https://codes.ohio.gov/ohio-revised-code/section-2329.66",
+      "section_or_chapter": "§ 2329.66"
+    }
+  ],
+  "consumer_protection_statutes": [
+    {
+      "label": "Ohio Rev. Code Chapter 1345 (Consumer Sales Practices Act)",
+      "url": "https://codes.ohio.gov/ohio-revised-code/chapter-1345",
+      "section_or_chapter": "Ch. 1345"
+    },
+    {
+      "label": "Ohio Rev. Code § 2307.61 (Theft and bad check civil penalty)",
+      "url": "https://codes.ohio.gov/ohio-revised-code/section-2307.61",
+      "section_or_chapter": "§ 2307.61"
+    }
+  ],
+  "landlord_tenant_statutes": [
+    {
+      "label": "Ohio Rev. Code § 5321.16 (Security deposit)",
+      "url": "https://codes.ohio.gov/ohio-revised-code/section-5321.16",
+      "section_or_chapter": "§ 5321.16"
+    }
+  ],
+  "wage_and_employment_statutes": [
+    {
+      "label": "Ohio Rev. Code § 4113.15 (Wage payment)",
+      "url": "https://codes.ohio.gov/ohio-revised-code/section-4113.15",
+      "section_or_chapter": "§ 4113.15"
+    }
+  ],
+  "civil_remedies_statutes": [
+    {
+      "label": "Ohio Rev. Code § 1343.03 (Judgment interest)",
+      "url": "https://codes.ohio.gov/ohio-revised-code/section-1343.03",
+      "section_or_chapter": "§ 1343.03"
+    }
+  ],
+  "county_specific": [],
+  "notes": "Manually curated source list (Pass 1 model defaulted to commercial mirrors).",
+  "_meta": {
+    "state": "Ohio",
+    "slug": "ohio",
+    "model": "manually-curated",
+    "generated_at": "2026-04-28T13:20:48.081Z"
+  }
+}

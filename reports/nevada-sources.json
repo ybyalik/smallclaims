@@ -1,0 +1,126 @@
+{
+  "state": "Nevada",
+  "as_of": "2026-04-28",
+  "state_judiciary_pages": [
+    {
+      "label": "Nevada Judiciary",
+      "url": "https://nvcourts.gov/",
+      "scope": "statewide judiciary"
+    },
+    {
+      "label": "Nevada Self-Help Center",
+      "url": "https://selfhelp.nvcourts.gov/",
+      "scope": "self-help"
+    },
+    {
+      "label": "Nevada Self-Help — Small Claims",
+      "url": "https://selfhelp.nvcourts.gov/self-help/civil-matters/small-claims",
+      "scope": "small claims"
+    }
+  ],
+  "statutes": [
+    {
+      "label": "Nev. Rev. Stat. Chapter 73 (Small Claims)",
+      "url": "https://www.leg.state.nv.us/NRS/NRS-073.html",
+      "section_or_chapter": "Ch. 73"
+    },
+    {
+      "label": "Nev. Rev. Stat. Chapter 4 (Justice's Courts)",
+      "url": "https://www.leg.state.nv.us/NRS/NRS-004.html",
+      "section_or_chapter": "Ch. 4"
+    },
+    {
+      "label": "Nev. Rev. Stat. Chapter 11 (Statute of limitations)",
+      "url": "https://www.leg.state.nv.us/NRS/NRS-011.html",
+      "section_or_chapter": "Ch. 11"
+    }
+  ],
+  "court_rules": [
+    {
+      "label": "Nevada Rules of Civil Procedure (Justice Court)",
+      "url": "https://nvcourts.gov/supreme/court_rules",
+      "rule_or_chapter": "JCRCP"
+    }
+  ],
+  "forms_pages": [
+    {
+      "label": "Nevada Self-Help — Small Claims Forms",
+      "url": "https://selfhelp.nvcourts.gov/self-help/civil-matters/small-claims/forms",
+      "scope": "forms"
+    }
+  ],
+  "fee_schedules": [
+    {
+      "label": "Nev. Rev. Stat. § 4.060 (Justice court fees)",
+      "url": "https://www.leg.state.nv.us/NRS/NRS-004.html#NRS004Sec060",
+      "section_or_chapter": "§ 4.060"
+    }
+  ],
+  "service_rules": [
+    {
+      "label": "Nevada Rules of Civil Procedure Rule 4 (Service)",
+      "url": "https://nvcourts.gov/supreme/court_rules",
+      "rule_or_chapter": "Rule 4"
+    }
+  ],
+  "appeal_rules": [
+    {
+      "label": "Nev. Rev. Stat. § 73.040 (Small claims appeal)",
+      "url": "https://www.leg.state.nv.us/NRS/NRS-073.html#NRS073Sec040",
+      "section_or_chapter": "§ 73.040"
+    }
+  ],
+  "post_judgment_collection": [
+    {
+      "label": "Nev. Rev. Stat. Chapter 21 (Execution and supplementary proceedings)",
+      "url": "https://www.leg.state.nv.us/NRS/NRS-021.html",
+      "section_or_chapter": "Ch. 21"
+    },
+    {
+      "label": "Nev. Rev. Stat. § 21.090 (Exemptions)",
+      "url": "https://www.leg.state.nv.us/NRS/NRS-021.html#NRS021Sec090",
+      "section_or_chapter": "§ 21.090"
+    }
+  ],
+  "consumer_protection_statutes": [
+    {
+      "label": "Nev. Rev. Stat. Chapter 598 (Deceptive Trade Practices)",
+      "url": "https://www.leg.state.nv.us/NRS/NRS-598.html",
+      "section_or_chapter": "Ch. 598"
+    },
+    {
+      "label": "Nev. Rev. Stat. § 41.620 (Bad check civil action)",
+      "url": "https://www.leg.state.nv.us/NRS/NRS-041.html#NRS041Sec620",
+      "section_or_chapter": "§ 41.620"
+    }
+  ],
+  "landlord_tenant_statutes": [
+    {
+      "label": "Nev. Rev. Stat. § 118A.242 (Security deposit)",
+      "url": "https://www.leg.state.nv.us/NRS/NRS-118A.html#NRS118ASec242",
+      "section_or_chapter": "§ 118A.242"
+    }
+  ],
+  "wage_and_employment_statutes": [
+    {
+      "label": "Nev. Rev. Stat. § 608.020 (Final wages)",
+      "url": "https://www.leg.state.nv.us/NRS/NRS-608.html#NRS608Sec020",
+      "section_or_chapter": "§ 608.020"
+    }
+  ],
+  "civil_remedies_statutes": [
+    {
+      "label": "Nev. Rev. Stat. § 17.130 (Judgment interest)",
+      "url": "https://www.leg.state.nv.us/NRS/NRS-017.html#NRS017Sec130",
+      "section_or_chapter": "§ 17.130"
+    }
+  ],
+  "county_specific": [],
+  "notes": "Manually curated source list (Pass 1 model defaulted to commercial mirrors).",
+  "_meta": {
+    "state": "Nevada",
+    "slug": "nevada",
+    "model": "manually-curated",
+    "generated_at": "2026-04-28T13:20:48.080Z"
+  }
+}

@@ -1,0 +1,1395 @@
+{
+  "state": "New Jersey",
+  "slug": "new-jersey",
+  "abbr": "NJ",
+  "as_of": "2026-04-28",
+  "hero": {
+    "individual_limit_dollars": 5000,
+    "business_limit_dollars": 5000,
+    "filing_fee_low_dollars": 35,
+    "filing_fee_high_dollars": 35,
+    "typical_timeline_min_days": 30,
+    "typical_timeline_max_days": 90,
+    "tagline": "Standard $5,000 cap and 45-day appeal window.",
+    "source_ids": [
+      "S2"
+    ]
+  },
+  "at_a_glance": [
+    {
+      "label": "Most you can sue for",
+      "value": "$5,000",
+      "detail": "Same cap for individuals and businesses",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    {
+      "label": "Filing fee",
+      "value": "$35",
+      "detail": "Plus $5 for each additional defendant",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    {
+      "label": "Court",
+      "value": "Special Civil Part (Small Claims Section)",
+      "detail": "",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    {
+      "label": "Lawyers at trial",
+      "value": "Allowed",
+      "detail": "Permitted but not required",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    {
+      "label": "Appeal window",
+      "value": "45 days",
+      "detail": "File in the Appellate Division of Superior Court",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    {
+      "label": "Recent change",
+      "value": "—",
+      "detail": "No major changes in the last 3 years",
+      "source_ids": []
+    }
+  ],
+  "limits": {
+    "individual_dollars": 5000,
+    "business_dollars": 5000,
+    "guarantor_with_fee_max": null,
+    "guarantor_without_fee_max": null,
+    "annual_filing_cap": {
+      "count": null,
+      "threshold_dollars": null,
+      "notes": ""
+    },
+    "split_claims_allowed": false,
+    "split_claims_explanation": "If your claim exceeds $5,000, you must either waive the excess amount to file in Small Claims or file in the Special Civil Part for claims up to $20,000. Splitting one claim into multiple cases to stay within the limit is not permitted.",
+    "interest_excluded_from_cap": true,
+    "court_costs_excluded_from_cap": true,
+    "statute": null,
+    "source_ids": [
+      "S2"
+    ]
+  },
+  "claim_categories": [
+    {
+      "id": "contracts",
+      "title": "Contracts and money owed",
+      "blurb": "New Jersey allows you to file claims for breaches of written or oral contracts, personal loans, and unpaid invoices in Small Claims Court, provided the amount does not exceed $5,000.",
+      "claims": [
+        {
+          "slug": "written-contract",
+          "name": "Breach of a written contract",
+          "example": "A contractor signed a $4,000 contract to remodel your kitchen, took the deposit, and never finished.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Ensure you bring the signed contract, proof of payment, and any correspondence related to the breach.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "oral-contract",
+          "name": "Breach of an oral contract",
+          "example": "You agreed verbally with a landscaper to pay $1,500 for yard work, paid upfront, and they never showed up.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Gather any evidence of the agreement, such as emails, text messages, or witness statements.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "personal-loan",
+          "name": "Unpaid personal loan",
+          "example": "You lent a friend $2,000 with the promise of repayment in six months, but they haven't paid you back.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Provide documentation of the loan agreement and any attempts to collect the debt.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "promissory-note",
+          "name": "Default on a promissory note",
+          "example": "A borrower signed a promissory note to repay $3,500 over a year but stopped making payments after two months.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Bring the original promissory note and records of payments made and missed.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "unpaid-invoice",
+          "name": "Unpaid invoice for services rendered",
+          "example": "You provided graphic design services worth $1,200 to a client who has not paid the invoice.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Submit the invoice, proof of service delivery, and any communication regarding payment.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "open-account",
+          "name": "Unpaid balance on an open account",
+          "example": "A customer has an outstanding balance of $4,500 on their account with your business and refuses to pay.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Provide account statements, terms of the account agreement, and records of payment history.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "unpaid-rent",
+          "name": "Unpaid rent by tenant",
+          "example": "Your tenant owes $3,000 in back rent and has vacated the property without paying.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Bring the lease agreement, records of rent payments, and any notices sent to the tenant.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "bad-check",
+          "name": "Payment with a bad check",
+          "example": "A customer paid for goods with a $500 check that bounced due to insufficient funds.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Present the bounced check, bank notice of insufficient funds, and any related correspondence.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "co-signer",
+          "name": "Co-signer held liable for default",
+          "example": "You co-signed a $4,000 loan for a friend who defaulted, and now the lender is seeking payment from you.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Provide the loan agreement, proof of default, and any demands for payment you've received.",
+          "damage_boost": "",
+          "source_ids": []
+        }
+      ]
+    },
+    {
+      "id": "consumer-disputes",
+      "title": "Consumer disputes",
+      "blurb": "New Jersey's Small Claims Court handles various consumer disputes, including defective products and unsatisfactory services, with a claim limit of $5,000.",
+      "claims": [
+        {
+          "slug": "defective-product",
+          "name": "Purchase of a defective product",
+          "example": "You bought a $1,200 refrigerator that stopped working after two months, and the seller refuses to repair or replace it.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Bring the purchase receipt, warranty information, and any communication with the seller.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "bad-service",
+          "name": "Unsatisfactory service",
+          "example": "A cleaning service charged you $800 but did not perform the agreed-upon tasks.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Provide the service agreement, proof of payment, and photos or descriptions of the incomplete work.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "auto-repair",
+          "name": "Faulty auto repair",
+          "example": "A mechanic charged you $1,500 for repairs that did not fix the issue, and now refuses to refund or re-repair.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Submit the repair invoice, any warranties, and evidence of the ongoing problem.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "contractor",
+          "name": "Contractor failed to complete work",
+          "example": "You paid a contractor $4,500 to renovate your bathroom, but they abandoned the project halfway through.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Bring the contract, proof of payments, and photos of the unfinished work.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "no-show-vendor",
+          "name": "Vendor failed to deliver goods",
+          "example": "You ordered $2,000 worth of furniture that was never delivered, and the vendor is unresponsive.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Provide the order confirmation, payment proof, and any correspondence with the vendor.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "subscription-cancellation",
+          "name": "Unauthorized subscription charges",
+          "example": "A gym continued to charge your account $100 monthly despite your cancellation request.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Submit the cancellation notice, bank statements showing charges, and any communication with the gym.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "used-car",
+          "name": "Purchase of a defective used car",
+          "example": "You bought a used car for $4,800 that broke down within a week, and the dealer refuses to address the issue.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Bring the sales contract, any warranties, and repair estimates.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "false-advertising",
+          "name": "False advertising",
+          "example": "A retailer advertised a laptop for $900 with specific features, but the delivered product lacked those features.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Provide the advertisement, purchase receipt, and evidence of the product's deficiencies.",
+          "damage_boost": "",
+          "source_ids": []
+        }
+      ]
+    },
+    {
+      "id": "property-damage",
+      "title": "Property damage",
+      "blurb": "Claims for property damage, such as vehicle collisions or damage to rental property, can be filed in New Jersey's Small Claims Court if the amount is $5,000 or less.",
+      "claims": [
+        {
+          "slug": "vehicle-collision",
+          "name": "Damage from a vehicle collision",
+          "example": "Another driver hit your parked car, causing $3,500 in damages, and refuses to pay for repairs.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Bring the police report, repair estimates, and any communication with the other driver.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "neighbor-property",
+          "name": "Neighbor caused property damage",
+          "example": "Your neighbor's tree fell onto your fence during a storm, causing $2,000 in damages.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Provide photos of the damage, repair estimates, and any correspondence with the neighbor.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "damage-to-rental",
+          "name": "Tenant caused damage to rental property",
+          "example": "A former tenant left your rental unit with $4,500 in damages beyond normal wear and tear.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Bring the lease agreement, move-in and move-out inspection reports, and repair invoices.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "pet-damage",
+          "name": "Damage caused by someone's pet",
+          "example": "A neighbor's dog entered your yard and destroyed $1,200 worth of landscaping.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Provide photos of the damage, repair estimates, and any communication with the pet owner.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "property-in-custody",
+          "name": "Damage to property in someone's custody",
+          "example": "You left your watch for repair at a jeweler, and they returned it with scratches and a cracked face.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Bring the repair receipt, photos of the damage, and any correspondence with the jeweler.",
+          "damage_boost": "",
+          "source_ids": []
+        }
+      ]
+    },
+    {
+      "id": "landlord-tenant",
+      "title": "Landlord-tenant disputes (money only)",
+      "blurb": "Monetary disputes between landlords and tenants, such as security deposit issues or unpaid rent, are handled in New Jersey's Small Claims Court for amounts up to $5,000.",
+      "claims": [
+        {
+          "slug": "security-deposit",
+          "name": "Failure to return security deposit",
+          "example": "Your landlord withheld your $1,500 security deposit without providing an itemized list of damages.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Provide the lease agreement, move-out inspection report, and any correspondence with the landlord.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "deposit-not-itemized",
+          "name": "Security deposit deductions not itemized",
+          "example": "Your landlord deducted $800 from your security deposit without specifying the reasons.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Bring the lease agreement, any communication regarding the deductions, and evidence of the property's condition.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "uninhabitable-rental",
+          "name": "Uninhabitable rental conditions",
+          "example": "Your rental unit had severe mold issues, and the landlord refused to address them, forcing you to move out.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Provide photos of the conditions, repair requests, and any health department reports.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "wrongful-retention-property",
+          "name": "Landlord retained tenant's property",
+          "example": "After eviction, your landlord kept your furniture and personal belongings worth $3,000.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "List the items taken, their estimated value, and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "illegal-eviction",
+          "name": "Illegal eviction",
+          "example": "Your landlord changed the locks without notice, preventing you from accessing your apartment.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Document the eviction, any notices received, and communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "unreturned-prepaid-rent",
+          "name": "Failure to return prepaid rent",
+          "example": "You paid first and last month's rent, but moved out early, and the landlord refused to refund the unused portion.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Provide the lease agreement, proof of payment, and any correspondence regarding the refund.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "unpaid-rent-by-tenant",
+          "name": "Tenant failed to pay rent",
+          "example": "Your tenant missed two months' rent totaling $2,800 and has since vacated the property.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Bring the lease agreement, payment records, and any notices sent to the tenant.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "repair-and-deduct",
+          "name": "Tenant deducted repair costs from rent",
+          "example": "You repaired a broken heater costing $600 and deducted it from your rent, but the landlord is demanding full payment.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Provide repair receipts, communication with the landlord, and evidence of the issue.",
+          "damage_boost": "",
+          "source_ids": []
+        }
+      ]
+    },
+    {
+      "id": "employment-wages",
+      "title": "Employment and wage disputes",
+      "blurb": "Employees can file claims in New Jersey's Small Claims Court for unpaid wages, final paychecks, and other employment-related monetary disputes up to $5,000.",
+      "claims": [
+        {
+          "slug": "unpaid-wages",
+          "name": "Unpaid wages",
+          "example": "Your employer failed to pay you for 40 hours of work, totaling $800.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Bring pay stubs, timesheets, and any communication with your employer regarding the unpaid wages.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "final-paycheck",
+          "name": "Withheld final paycheck",
+          "example": "After resigning, your employer refused to issue your final paycheck of $1,200.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Provide resignation notice, pay stubs, and any correspondence with the employer.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "unpaid-commissions",
+          "name": "Unpaid commissions",
+          "example": "You earned $3,500 in sales commissions that your employer has not paid.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Submit the commission agreement, sales records, and payment history.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "unpaid-overtime",
+          "name": "Unpaid overtime",
+          "example": "Your employer did not pay overtime rates for 20 extra hours worked, totaling $600.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Bring timesheets, pay stubs, and any communication regarding overtime policies.",
+          "damage_boost": "",
+          "source_ids": []
+        }
+      ]
+    },
+    {
+      "id": "personal-claims",
+      "title": "Personal claims",
+      "blurb": "Individuals can seek compensation in New Jersey's Small Claims Court for minor injuries, loaned property, and civil theft, provided the claim does not exceed $5,000.",
+      "claims": [
+        {
+          "slug": "minor-injury",
+          "name": "Minor personal injury",
+          "example": "You slipped on a wet floor in a store, resulting in a sprained ankle and $1,500 in medical bills.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Provide medical records, photos of the hazard, and any incident reports.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "loaned-property",
+          "name": "Unreturned loaned property",
+          "example": "You lent a friend your $800 camera, and they refuse to return it.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Document the loan agreement, any requests for return, and the item's value.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "civil-theft",
+          "name": "Theft of personal property",
+          "example": "A roommate took your $1,200 laptop without permission and sold it.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Provide proof of ownership, police reports, and any communication with the roommate.",
+          "damage_boost": "",
+          "source_ids": []
+        }
+      ]
+    },
+    {
+      "id": "vehicle-specific",
+      "title": "Vehicle-specific disputes",
+      "blurb": "Disputes related to vehicles, such as mechanic issues or wrongful towing, can be addressed in New Jersey's Small Claims Court for amounts up to $5,000.",
+      "claims": [
+        {
+          "slug": "mechanic-dispute",
+          "name": "Dispute over vehicle repairs",
+          "example": "A mechanic charged you $2,000 for repairs that did not fix the problem, and refuses to refund or re-repair.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Bring the repair invoice, any warranties, and evidence of the ongoing issue.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "wrongful-tow",
+          "name": "Wrongful towing of vehicle",
+          "example": "Your car was towed from a legal parking spot, and the towing company demands $300 for its release.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Provide photos of the parking area, receipts, and any communication with the towing company.",
+          "damage_boost": "",
+          "source_ids": []
+        }
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "category": "Eviction (unlawful detainer)",
+      "explanation": "Eviction cases are handled in the Landlord-Tenant section of the Special Civil Part, not in Small Claims Court.",
+      "where_to_go_instead": "File in the Landlord-Tenant section of the Special Civil Part.",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    {
+      "category": "Title to real estate",
+      "explanation": "Disputes involving ownership or title to real estate exceed the jurisdiction of Small Claims Court.",
+      "where_to_go_instead": "File in the Civil Part of the Law Division of the Superior Court.",
+      "source_ids": []
+    },
+    {
+      "category": "Defamation",
+      "explanation": "Claims for defamation, including libel and slander, are not suitable for Small Claims Court due to their complexity.",
+      "where_to_go_instead": "Consult an attorney to file in the appropriate division of the Superior Court.",
+      "source_ids": []
+    },
+    {
+      "category": "Malpractice",
+      "explanation": "Professional malpractice claims require expert testimony and are beyond the scope of Small Claims Court.",
+      "where_to_go_instead": "File in the Civil Part of the Law Division of the Superior Court.",
+      "source_ids": []
+    },
+    {
+      "category": "Family law matters",
+      "explanation": "Issues such as divorce, child custody, and support are handled by the Family Part of the Superior Court.",
+      "where_to_go_instead": "File in the Family Part of the Superior Court.",
+      "source_ids": []
+    },
+    {
+      "category": "Probate matters",
+      "explanation": "Disputes over wills, estates, and trusts are under the jurisdiction of the Surrogate's Court.",
+      "where_to_go_instead": "File in the Surrogate's Court.",
+      "source_ids": []
+    },
+    {
+      "category": "Claims against the federal government",
+      "explanation": "Small Claims Court does not have jurisdiction over cases against federal entities.",
+      "where_to_go_instead": "File in the appropriate federal court.",
+      "source_ids": []
+    },
+    {
+      "category": "Class actions",
+      "explanation": "Class action lawsuits are complex and exceed the procedural capacity of Small Claims Court.",
+      "where_to_go_instead": "File in the Civil Part of the Law Division of the Superior Court.",
+      "source_ids": []
+    },
+    {
+      "category": "Injunctions and specific performance",
+      "explanation": "Small Claims Court cannot issue orders requiring a party to perform or refrain from specific acts.",
+      "where_to_go_instead": "File in the Civil Part of the Law Division of the Superior Court.",
+      "source_ids": []
+    },
+    {
+      "category": "Workers' compensation claims",
+      "explanation": "These claims are handled by the Division of Workers' Compensation, not Small Claims Court.",
+      "where_to_go_instead": "File with the Division of Workers' Compensation.",
+      "source_ids": []
+    }
+  ],
+  "damages": {
+    "compensatory_allowed": true,
+    "punitive_allowed": false,
+    "punitive_explanation": "Punitive damages are not awarded in Small Claims Court; the focus is on compensatory damages.",
+    "statutory_multipliers": [],
+    "attorney_fees_recoverable": "sometimes",
+    "attorney_fees_explanation": "Attorney fees may be recoverable in certain cases, such as those involving bad checks or consumer fraud, as specified by statute.",
+    "prejudgment_interest_rate_pct": null,
+    "prejudgment_interest_statute": null,
+    "postjudgment_interest_rate_pct": null,
+    "postjudgment_interest_type": null,
+    "postjudgment_interest_statute": null,
+    "postjudgment_interest_notes": null,
+    "filing_and_service_fees_recoverable_from_loser": true,
+    "source_ids": []
+  },
+  "where_to_file": {
+    "court_name": "Special Civil Part (Small Claims Section)",
+    "parent_court": "Superior Court of New Jersey",
+    "venue_rules": [
+      {
+        "scenario": "Defendant resides or does business in New Jersey",
+        "filing_options": [
+          "County where the defendant lives or has a business"
+        ],
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "scenario": "Multiple defendants",
+        "filing_options": [
+          "County where any one of the defendants lives or has a business"
+        ],
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "scenario": "Defendant resides outside New Jersey",
+        "filing_options": [
+          "County where the cause of the complaint occurred"
+        ],
+        "source_ids": [
+          "S2"
+        ]
+      }
+    ],
+    "consequences_of_wrong_venue": "Filing in the wrong venue may result in dismissal or transfer of the case, potentially causing delays and additional costs.",
+    "e_filing_available": "yes",
+    "e_filing_notes": "Complaints can be filed online through the Judiciary Electronic Document Submission (JEDS) system.",
+    "e_filing_portal": "https://www.njcourts.gov/self-help/jeds",
+    "source_ids": [
+      "S2"
+    ]
+  },
+  "fees": {
+    "filing_fee_tiers": [
+      {
+        "range_label": "One defendant",
+        "range_min": 0,
+        "range_max": 1,
+        "fee_dollars": 35,
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "range_label": "Each additional defendant",
+        "range_min": 2,
+        "range_max": null,
+        "fee_dollars": 5,
+        "source_ids": [
+          "S2"
+        ]
+      }
+    ],
+    "frequent_filer": {
+      "threshold_per_year": null,
+      "fee_dollars": null,
+      "notes": ""
+    },
+    "service_fees": [
+      {
+        "method": "Certified and regular mail",
+        "amount_label": "$10 per defendant",
+        "notes": "Service by certified and regular mail is currently $10 per defendant.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "method": "Court Officer personal service",
+        "amount_label": "$10 per defendant",
+        "notes": "Personal service by a Court Officer is $10 per defendant.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "method": "Additional defendant personal service",
+        "amount_label": "$12 per defendant",
+        "notes": "For each additional defendant served personally by a Court Officer, the fee is $12.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    ],
+    "waiver": {
+      "forms": [
+        {
+          "number": null,
+          "name": "Fee Waiver Request",
+          "url": "https://www.njcourts.gov/forms/fee-waiver-request",
+          "source_ids": [
+            "S2"
+          ]
+        }
+      ],
+      "eligibility_bullets": [
+        "Income at or below 150% of the current poverty level",
+        "No more than $2,500 in liquid assets"
+      ],
+      "coverage_notes": "The waiver covers filing and copy fees; service fees may also be waived at the judge's discretion.",
+      "if_you_win_notes": "If you win your case, the waived fees are typically added to the judgment against the defendant.",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    "other_fees": [
+      {
+        "name": "Appeal filing",
+        "amount_label": "$250",
+        "notes": "Fee for filing a Notice of Appeal in the Appellate Division.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "name": "Transcript request",
+        "amount_label": "Varies",
+        "notes": "Cost depends on the length of the transcript and delivery time.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    ],
+    "fees_recoverable_from_loser_notes": "If you win, filing and service fees are typically added to the judgment against the defendant.",
+    "source_ids": [
+      "S2"
+    ]
+  },
+  "statute_of_limitations": {
+    "entries": [
+      {
+        "id": "written-contract",
+        "claim": "Written contract",
+        "years": null,
+        "clock_starts": null,
+        "statute": null,
+        "notes": null,
+        "source_ids": []
+      },
+      {
+        "id": "oral-contract",
+        "claim": "Oral contract",
+        "years": null,
+        "clock_starts": null,
+        "statute": null,
+        "notes": null,
+        "source_ids": []
+      },
+      {
+        "id": "sale-of-goods",
+        "claim": "Sale of goods (UCC)",
+        "years": null,
+        "clock_starts": null,
+        "statute": null,
+        "notes": null,
+        "source_ids": []
+      },
+      {
+        "id": "promissory-note",
+        "claim": "Promissory note",
+        "years": null,
+        "clock_starts": null,
+        "statute": null,
+        "notes": null,
+        "source_ids": []
+      },
+      {
+        "id": "open-account",
+        "claim": "Open account / credit card debt",
+        "years": null,
+        "clock_starts": null,
+        "statute": null,
+        "notes": null,
+        "source_ids": []
+      },
+      {
+        "id": "personal-injury",
+        "claim": "Personal injury",
+        "years": null,
+        "clock_starts": null,
+        "statute": null,
+        "notes": null,
+        "source_ids": []
+      },
+      {
+        "id": "property-damage",
+        "claim": "Property damage",
+        "years": null,
+        "clock_starts": null,
+        "statute": null,
+        "notes": null,
+        "source_ids": []
+      },
+      {
+        "id": "fraud",
+        "claim": "Fraud",
+        "years": null,
+        "clock_starts": null,
+        "statute": null,
+        "notes": null,
+        "source_ids": []
+      },
+      {
+        "id": "bad-check",
+        "claim": "Bad check",
+        "years": null,
+        "clock_starts": null,
+        "statute": null,
+        "notes": null,
+        "source_ids": []
+      },
+      {
+        "id": "unpaid-wages",
+        "claim": "Unpaid wages",
+        "years": null,
+        "clock_starts": null,
+        "statute": null,
+        "notes": null,
+        "source_ids": []
+      },
+      {
+        "id": "security-deposit",
+        "claim": "Security deposit",
+        "years": null,
+        "clock_starts": null,
+        "statute": null,
+        "notes": null,
+        "source_ids": []
+      },
+      {
+        "id": "judgment-enforcement",
+        "claim": "Judgment enforcement",
+        "years": null,
+        "clock_starts": null,
+        "statute": null,
+        "notes": null,
+        "source_ids": []
+      }
+    ],
+    "discovery_rule_notes": "The discovery rule may apply to certain claims, such as fraud, where the statute of limitations begins when the injury is discovered or reasonably should have been discovered.",
+    "tolling_notes": "Statutes of limitations may be tolled under certain circumstances, such as when the defendant is out of state, the plaintiff is a minor, or during bankruptcy proceedings.",
+    "source_ids": []
+  },
+  "pre_filing": {
+    "demand_letter_required": false,
+    "demand_letter_recommended": true,
+    "demand_letter_notes": "While not required, sending a demand letter can demonstrate good faith and may lead to a resolution without court intervention.",
+    "bad_check_notice_rule": "For bad check claims, it's advisable to send a written demand for payment before filing a lawsuit.",
+    "wage_claim_demand_rule": "Employees should formally request unpaid wages from their employer before initiating legal action.",
+    "government_claim_required": false,
+    "government_claim_deadline_days": null,
+    "government_claim_notes": null,
+    "landlord_tenant_pre_filing_notes": "Landlords must provide tenants with a written itemization of damages and return any remaining security deposit within 30 days of lease termination.",
+    "consumer_protection_notes": "Consumers alleging fraud should document all interactions and may need to file a complaint with the Division of Consumer Affairs before pursuing legal action.",
+    "mandatory_mediation_before_filing": "none",
+    "arbitration_clauses_enforced": true,
+    "source_ids": []
+  },
+  "forms": [
+    {
+      "number": null,
+      "name": "Small Claims Complaint Form",
+      "description": "Initiates a small claims lawsuit by outlining the plaintiff's allegations and the relief sought.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "https://www.njcourts.gov/forms/10290_small_claims.pdf",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    {
+      "number": null,
+      "name": "Fee Waiver Request",
+      "description": "Requests a waiver of court fees for individuals who cannot afford them.",
+      "filed_by": "plaintiff",
+      "required": false,
+      "group": "fee-waiver",
+      "url": "https://www.njcourts.gov/forms/fee-waiver-request",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    {
+      "number": null,
+      "name": "Notice of Appeal",
+      "description": "Notifies the court and opposing party of the intent to appeal a small claims decision.",
+      "filed_by": "either",
+      "required": false,
+      "group": "appeal",
+      "url": "https://www.njcourts.gov/forms/notice-of-appeal",
+      "source_ids": [
+        "S2"
+      ]
+    }
+  ],
+  "service": {
+    "who_can_serve": [
+      "Court Officer",
+      "Certified mail by clerk"
+    ],
+    "methods": [
+      {
+        "name": "Certified and regular mail",
+        "description": "The court sends the complaint to the defendant via certified and regular mail.",
+        "pros": [
+          "Cost-effective",
+          "Handled by the court"
+        ],
+        "cons": [
+          "May be less reliable if defendant does not accept mail"
+        ],
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "name": "Personal service by Court Officer",
+        "description": "A Court Officer personally delivers the complaint to the defendant.",
+        "pros": [
+          "Ensures defendant receives the complaint"
+        ],
+        "cons": [
+          "Additional cost",
+          "May take longer to arrange"
+        ],
+        "source_ids": [
+          "S2"
+        ]
+      }
+    ],
+    "in_county_days_before_hearing": null,
+    "out_of_county_days_before_hearing": null,
+    "proof_of_service_form": {
+      "number": null,
+      "name": null
+    },
+    "proof_filing_deadline_days_before_hearing": null,
+    "business_service_rule": "Serve the registered agent or an officer of the corporation; for sole proprietors, serve the individual directly.",
+    "out_of_state_defendant_notes": "Service must comply with New Jersey's long-arm statute and may require additional steps.",
+    "cant_find_defendant_notes": "If the defendant cannot be located, service by publication may be permitted with court approval.",
+    "avoiding_service_notes": "If a defendant is evading service, the court may allow alternative methods upon demonstration of due diligence.",
+    "source_ids": [
+      "S2"
+    ]
+  },
+  "response_and_default": {
+    "must_file_written_answer": false,
+    "response_deadline_days": null,
+    "response_notes": "Defendants are not required to file a written answer but should appear in court on the scheduled date.",
+    "default_process": "If the defendant fails to appear, the court may enter a default judgment in favor of the plaintiff.",
+    "prove_up_required": true,
+    "prove_up_notes": "Even if the defendant defaults, the plaintiff must provide evidence to support the claim before a judgment is entered.",
+    "motion_to_vacate_form": {
+      "number": null,
+      "name": null
+    },
+    "motion_to_vacate_deadline_days": null,
+    "motion_to_vacate_lack_of_notice_days": null,
+    "motion_to_vacate_appeal_deadline_days": null,
+    "motion_to_vacate_appeal_notes": null,
+    "source_ids": [
+      "S2"
+    ]
+  },
+  "counterclaim": {
+    "allowed": true,
+    "form": {
+      "number": null,
+      "name": "Counterclaim Form"
+    },
+    "same_monetary_limit": true,
+    "service_deadline_in_county_days": null,
+    "service_deadline_out_of_county_days": null,
+    "transfer_to_higher_court_available": false,
+    "transfer_to_higher_court_statute": null,
+    "transfer_to_higher_court_notes": null,
+    "source_ids": [
+      "S2"
+    ]
+  },
+  "hearing": {
+    "lawyers_allowed": "yes",
+    "lawyers_allowed_notes": "Parties may be represented by attorneys but are not required to do so.",
+    "format": "Bench trial with each party presenting their case; hearings are typically brief.",
+    "presider": "judge",
+    "burden_of_proof": "preponderance",
+    "what_to_bring": [
+      "Contracts",
+      "Receipts",
+      "Photographs",
+      "Witnesses"
+    ],
+    "subpoena_form": {
+      "number": null,
+      "name": "Subpoena Form"
+    },
+    "witness_fee_per_day_dollars": null,
+    "free_interpreters": true,
+    "interpreter_request_process": "Request an interpreter in advance through the court clerk's office.",
+    "jury_option": false,
+    "decision_timing": "On the spot or mailed within a few weeks.",
+    "on_site_mediation": "by county",
+    "on_site_mediation_notes": "Some counties offer mediation services on the day of the hearing.",
+    "source_ids": [
+      "S2"
+    ]
+  },
+  "appeals": {
+    "who_can_appeal": "either",
+    "deadline_days": 45,
+    "fee_dollars": 250,
+    "type": "on the record",
+    "type_notes": "The appellate court reviews the record from the small claims hearing; no new evidence is presented.",
+    "attorneys_allowed_on_appeal": true,
+    "bond_required": false,
+    "bond_amount_notes": null,
+    "automatic_stay_on_appeal": false,
+    "default_judgment_appealable": true,
+    "default_judgment_notes": "A default judgment can be appealed, but it is advisable to first file a motion to vacate the judgment in the trial court.",
+    "notice_of_appeal_form": {
+      "number": null,
+      "name": "Notice of Appeal"
+    },
+    "frivolous_appeal_penalty_dollars": null,
+    "frivolous_appeal_statute": null,
+    "frivolous_appeal_notes": null,
+    "source_ids": [
+      "S2"
+    ]
+  },
+  "collection": {
+    "payment_deadline_typical_days": null,
+    "post_judgment_interest_rate_pct": null,
+    "post_judgment_interest_statute": null,
+    "post_judgment_interest_notes": null,
+    "methods": [
+      {
+        "id": "wage-garnishment",
+        "name": "Wage garnishment",
+        "blurb": "Obtain a portion of the debtor's wages until the judgment is satisfied.",
+        "description": "File a writ of execution with the court, serve it to the debtor's employer, who will then withhold a portion of the debtor's wages and remit it to the court.",
+        "forms": [
+          {
+            "number": null,
+            "name": "Writ of Execution"
+          }
+        ],
+        "estimated_cost": "$50 plus service fees",
+        "effectiveness_notes": "Effective if the debtor is employed and earns above the exemption threshold.",
+        "exemptions": [
+          "75% of disposable earnings or 30 times the federal minimum wage, whichever is greater"
+        ],
+        "source_ids": []
+      },
+      {
+        "id": "bank-levy",
+        "name": "Bank levy",
+        "blurb": "Seize funds from the debtor's bank account to satisfy the judgment.",
+        "description": "Obtain a writ of execution from the court, serve it to the debtor's bank, which will freeze the account and remit funds up to the judgment amount.",
+        "forms": [
+          {
+            "number": null,
+            "name": "Writ of Execution"
+          }
+        ],
+        "estimated_cost": "$50 plus service fees",
+        "effectiveness_notes": "Effective if the debtor has sufficient funds in the account; timing is crucial to prevent withdrawals.",
+        "exemptions": [
+          "$1,000 in the bank account is exempt from levy"
+        ],
+        "source_ids": []
+      },
+      {
+        "id": "property-lien",
+        "name": "Property lien",
+        "blurb": "Place a lien on the debtor's real property, preventing its sale or refinancing until the judgment is paid.",
+        "description": "File a judgment lien with the county clerk where the debtor owns property; the lien must be satisfied before the property can be sold or refinanced.",
+        "forms": [
+          {
+            "number": null,
+            "name": "Judgment Lien Form"
+          }
+        ],
+        "estimated_cost": "$50 plus recording fees",
+        "effectiveness_notes": "Effective for securing payment but may take time until the debtor decides to sell or refinance the property.",
+        "exemptions": [
+          "Homestead exemption may apply, protecting a portion of the property's value"
+        ],
+        "source_ids": []
+      },
+      {
+        "id": "writ-of-execution",
+        "name": "Writ of execution",
+        "blurb": "Authorize a court officer to seize and sell the debtor's non-exempt property to satisfy the judgment.",
+        "description": "Obtain a writ of execution from the court, which directs a court officer to seize the debtor's property, auction it, and apply the proceeds to the judgment.",
+        "forms": [
+          {
+            "number": null,
+            "name": "Writ of Execution"
+          }
+        ],
+        "estimated_cost": "$50 plus service and storage fees",
+        "effectiveness_notes": "Effective if the debtor owns valuable non-exempt property; process can be time-consuming and may not yield full judgment amount.",
+        "exemptions": [
+          "Certain personal property and tools of the trade are exempt from seizure"
+        ],
+        "source_ids": []
+      }
+    ],
+    "wage_garnishment_max_pct_of_disposable": 25,
+    "judgment_lifespan_years": 20,
+    "judgment_renewal_process": "File a motion to renew the judgment before the 20-year period expires; renewal extends the judgment for an additional 20 years.",
+    "debtor_exam_form": {
+      "number": null,
+      "name": "Information Subpoena"
+    },
+    "exempt_assets": [
+      "Homestead exemption up to $125,000",
+      "One motor vehicle up to $4,000",
+      "Personal property up to $1,000",
+      "Social Security and other federal benefits"
+    ],
+    "bankruptcy_effect_notes": "Filing for bankruptcy imposes an automatic stay on collection efforts; certain judgments may be discharged depending on the bankruptcy chapter filed.",
+    "satisfaction_of_judgment_form": {
+      "number": null,
+      "name": "Satisfaction of Judgment"
+    },
+    "priority_notes": "Judgment liens are prioritized based on the date of recording; earlier liens have higher priority over later ones.",
+    "source_ids": []
+  },
+  "businesses": {
+    "self_representation_allowed": true,
+    "self_representation_notes": "Businesses can represent themselves in Small Claims Court without an attorney.",
+    "can_send_employee": true,
+    "can_send_attorney": true,
+    "non_attorney_representation_form": {
+      "number": null,
+      "name": "Corporate Authorization Form"
+    },
+    "insurance_adjuster_allowed": false,
+    "fictitious_name_form": {
+      "number": null,
+      "name": "Trade Name Certificate"
+    },
+    "fictitious_name_notes": "Businesses operating under a trade name must file a Trade Name Certificate with the county clerk.",
+    "sole_proprietor_employee_exception": "Sole proprietors may authorize an employee to represent them in court.",
+    "out_of_state_business_must_register": true,
+    "out_of_state_business_statute": null,
+    "licensing_notes": "Unlicensed contractors may be barred from suing to recover fees for work requiring a license.",
+    "source_ids": []
+  },
+  "county_variations_material": false,
+  "county_variations": [],
+  "pitfalls": [
+    {
+      "title": "Incorrect defendant information",
+      "what_happens": "If you sue the wrong party or provide incorrect information, your case may be dismissed or you may obtain an unenforceable judgment.",
+      "how_to_avoid": "Verify the exact legal name and address of the defendant before filing your complaint.",
+      "source_ids": []
+    },
+    {
+      "title": "Exceeding the monetary limit",
+      "what_happens": "Filing a claim exceeding $5,000 in Small Claims Court can result in dismissal or the need to waive the excess amount.",
+      "how_to_avoid": "Ensure your claim does not exceed the $5,000 limit or consider filing in the Special Civil Part for larger amounts.",
+      "source_ids": []
+    },
+    {
+      "title": "Missing the statute of limitations",
+      "what_happens": "Filing after the statute of limitations has expired will likely result in dismissal of your case.",
+      "how_to_avoid": "Determine the applicable statute of limitations for your claim type and file within that period.",
+      "source_ids": []
+    },
+    {
+      "title": "Improper service of process",
+      "what_happens": "If the defendant is not properly served, the court may not have jurisdiction, leading to delays or dismissal.",
+      "how_to_avoid": "Follow the court's rules for service of process carefully, using certified mail or a court officer as appropriate.",
+      "source_ids": []
+    },
+    {
+      "title": "Lack of evidence",
+      "what_happens": "Insufficient evidence can lead to losing your case, even if your claim is valid.",
+      "how_to_avoid": "Gather all relevant documents, photos, and witness statements to support your claim.",
+      "source_ids": []
+    },
+    {
+      "title": "Ignoring court deadlines",
+      "what_happens": "Missing filing deadlines or court dates can result in dismissal or default judgments against you.",
+      "how_to_avoid": "Keep track of all deadlines and court dates, and respond promptly to court notices.",
+      "source_ids": []
+    }
+  ],
+  "recent_changes": [],
+  "faqs": [
+    {
+      "question": "Do I need a lawyer?",
+      "answer": "No, you are not required to have a lawyer in Small Claims Court. The process is designed to be accessible to individuals representing themselves.",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    {
+      "question": "How long does it take?",
+      "answer": "The timeline varies, but cases are typically resolved within 30 to 90 days from filing to judgment.",
+      "source_ids": []
+    },
+    {
+      "question": "What's the maximum I can sue for?",
+      "answer": "The maximum amount you can sue for in Small Claims Court is $5,000.",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    {
+      "question": "What happens if the defendant doesn't show up?",
+      "answer": "If the defendant fails to appear, the court may enter a default judgment in your favor, provided you present sufficient evidence to support your claim.",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    {
+      "question": "Can I appeal?",
+      "answer": "Yes, either party can appeal a Small Claims Court decision by filing a Notice of Appeal within 45 days of the judgment.",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    {
+      "question": "How long is a judgment good for?",
+      "answer": "A judgment is valid for 20 years and can be renewed for an additional 20 years if necessary.",
+      "source_ids": []
+    }
+  ],
+  "state_specific_notes": [
+    "New Jersey allows businesses to represent themselves in Small Claims Court without an attorney.",
+    "The state provides free interpreter services for individuals who require language assistance during court proceedings.",
+    "Small Claims Court in New Jersey does not handle eviction cases; these are addressed in the Landlord-Tenant section of the Special Civil Part.",
+    "Filing fees in New Jersey's Small Claims Court are relatively low, with a $35 fee for one defendant and $5 for each additional defendant.",
+    "New Jersey's Small Claims Court has a monetary limit of $5,000 for claims, which is lower than some other states."
+  ],
+  "_extras": {
+    "interesting_findings": [
+      "New Jersey's Small Claims Court offers an online filing system through the Judiciary Electronic Document Submission (JEDS) platform, enhancing accessibility for plaintiffs.",
+      "The state provides detailed self-help resources and forms on its judiciary website, assisting individuals in navigating the Small Claims process without legal representation."
+    ]
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "label": "New Jersey Courts",
+      "url": "https://www.njcourts.gov/",
+      "primary": true,
+      "citation": null
+    },
+    {
+      "id": "S2",
+      "label": "NJ Courts — Small Claims",
+      "url": "https://www.njcourts.gov/self-help/small-claims",
+      "primary": false,
+      "citation": null
+    },
+    {
+      "id": "S3",
+      "label": "NJ Courts — Special Civil Part (small claims)",
+      "url": "https://www.njcourts.gov/courts/civil/special-civil-part",
+      "primary": false,
+      "citation": null
+    },
+    {
+      "id": "S4",
+      "label": "N.J. Stat. § 2A:18-1 (Special Civil Part jurisdiction)",
+      "url": "https://lis.njleg.state.nj.us/nxt/gateway.dll?f=templates&fn=default.htm",
+      "primary": false,
+      "citation": null
+    },
+    {
+      "id": "S5",
+      "label": "N.J. Stat. § 2A:14-1 et seq. (Statute of limitations)",
+      "url": "https://lis.njleg.state.nj.us/nxt/gateway.dll?f=templates&fn=default.htm",
+      "primary": false,
+      "citation": null
+    },
+    {
+      "id": "S6",
+      "label": "New Jersey Statutes (legislative search)",
+      "url": "https://www.njleg.state.nj.us/",
+      "primary": false,
+      "citation": null
+    },
+    {
+      "id": "S7",
+      "label": "NJ Rules of Court Part VI (Special Civil Part)",
+      "url": "https://www.njcourts.gov/attorneys/rules-of-court",
+      "primary": false,
+      "citation": null
+    },
+    {
+      "id": "S8",
+      "label": "NJ Courts — Forms hub",
+      "url": "https://www.njcourts.gov/forms",
+      "primary": false,
+      "citation": null
+    },
+    {
+      "id": "S9",
+      "label": "NJ Civil Practice fee/jurisdiction foldout (PDF)",
+      "url": "https://www.state.nj.us/lps/ca/laws/civilfoldout.pdf",
+      "primary": false,
+      "citation": null
+    },
+    {
+      "id": "S10",
+      "label": "NJ Special Civil Part filing fees",
+      "url": "https://www.njcourts.gov/sites/default/files/forms/11148_civil_part_fees.pdf",
+      "primary": false,
+      "citation": null
+    },
+    {
+      "id": "S11",
+      "label": "NJ Rule 6:2 (Service of process — Special Civil Part)",
+      "url": "https://www.njcourts.gov/attorneys/rules-of-court",
+      "primary": false,
+      "citation": null
+    },
+    {
+      "id": "S12",
+      "label": "NJ Rule 2:2 (Appeals)",
+      "url": "https://www.njcourts.gov/attorneys/rules-of-court",
+      "primary": false,
+      "citation": null
+    },
+    {
+      "id": "S13",
+      "label": "N.J. Stat. § 2A:17-50 et seq. (Execution / wage execution)",
+      "url": "https://lis.njleg.state.nj.us/nxt/gateway.dll?f=templates&fn=default.htm",
+      "primary": false,
+      "citation": null
+    },
+    {
+      "id": "S14",
+      "label": "N.J. Stat. § 56:8-1 et seq. (Consumer Fraud Act)",
+      "url": "https://lis.njleg.state.nj.us/nxt/gateway.dll?f=templates&fn=default.htm",
+      "primary": false,
+      "citation": null
+    },
+    {
+      "id": "S15",
+      "label": "N.J. Stat. § 2A:32A-1 (Bad check civil penalty)",
+      "url": "https://lis.njleg.state.nj.us/nxt/gateway.dll?f=templates&fn=default.htm",
+      "primary": false,
+      "citation": null
+    },
+    {
+      "id": "S16",
+      "label": "N.J. Stat. § 46:8-19 et seq. (Security deposit)",
+      "url": "https://lis.njleg.state.nj.us/nxt/gateway.dll?f=templates&fn=default.htm",
+      "primary": false,
+      "citation": null
+    },
+    {
+      "id": "S17",
+      "label": "N.J. Stat. § 34:11-4.3 (Wage payment)",
+      "url": "https://lis.njleg.state.nj.us/nxt/gateway.dll?f=templates&fn=default.htm",
+      "primary": false,
+      "citation": null
+    },
+    {
+      "id": "S18",
+      "label": "NJ Court Rule 4:42-11 (Post-judgment interest)",
+      "url": "https://www.njcourts.gov/attorneys/rules-of-court",
+      "primary": false,
+      "citation": null
+    }
+  ],
+  "_meta": {
+    "state": "New Jersey",
+    "slug": "new-jersey",
+    "model": "gpt-4.1",
+    "generated_at": "2026-04-28T14:07:47.960Z",
+    "promoted_from_failure": true
+  }
+}

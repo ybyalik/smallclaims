@@ -1,0 +1,1264 @@
+{
+  "state": "Georgia",
+  "slug": "georgia",
+  "abbr": "GA",
+  "as_of": "2026-04-28",
+  "hero": {
+    "individual_limit_dollars": 15000,
+    "business_limit_dollars": 15000,
+    "filing_fee_low_dollars": null,
+    "filing_fee_high_dollars": null,
+    "typical_timeline_min_days": 30,
+    "typical_timeline_max_days": 90,
+    "tagline": "Georgia's Magistrate Courts offer a streamlined process for claims up to $15,000, emphasizing accessibility and efficiency.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "at_a_glance": [
+    {
+      "label": "Most you can sue for",
+      "value": "$15,000",
+      "detail": "Same cap for individuals and businesses",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Filing fee",
+      "value": "Varies by county",
+      "detail": "Fees are set by each county; contact local Magistrate Court for details",
+      "source_ids": []
+    },
+    {
+      "label": "Court",
+      "value": "Magistrate Court",
+      "detail": "Handles civil claims up to $15,000",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Lawyers at trial",
+      "value": "Allowed",
+      "detail": "Permitted but not required",
+      "source_ids": []
+    },
+    {
+      "label": "Appeal window",
+      "value": "30 days",
+      "detail": "Appeals must be filed within 30 days of judgment",
+      "source_ids": []
+    },
+    {
+      "label": "Recent change",
+      "value": "—",
+      "detail": "No major changes in the last 3 years",
+      "source_ids": []
+    }
+  ],
+  "limits": {
+    "individual_dollars": 15000,
+    "business_dollars": 15000,
+    "guarantor_with_fee_max": null,
+    "guarantor_without_fee_max": null,
+    "annual_filing_cap": {
+      "count": null,
+      "threshold_dollars": null,
+      "notes": ""
+    },
+    "split_claims_allowed": false,
+    "split_claims_explanation": "If a claim exceeds the $15,000 cap, you cannot split it into multiple claims to fit within the limit. Instead, you must file in a higher court.",
+    "interest_excluded_from_cap": true,
+    "court_costs_excluded_from_cap": true,
+    "statute": null,
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "claim_categories": [
+    {
+      "id": "contracts",
+      "title": "Contracts and money owed",
+      "blurb": "Georgia allows you to file claims related to breaches of contract and money owed up to $15,000 in Magistrate Court.",
+      "claims": [
+        {
+          "slug": "written-contract",
+          "name": "Breach of a written contract",
+          "example": "A contractor signed a $10,000 contract to remodel your kitchen, took the deposit, and never completed the work.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Ensure you bring the signed contract, proof of payment, and any correspondence related to the breach.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "oral-contract",
+          "name": "Breach of an oral contract",
+          "example": "You agreed verbally to lend someone $5,000, and they failed to repay as promised.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Gather any evidence of the agreement, such as emails, text messages, or witness statements.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "personal-loan",
+          "name": "Unpaid personal loan",
+          "example": "You loaned a friend $3,000 with the understanding they would repay in six months, but they haven't.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Provide documentation of the loan agreement and any attempts to collect payment.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "promissory-note",
+          "name": "Default on a promissory note",
+          "example": "A borrower signed a promissory note for $7,500 and failed to make the agreed payments.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Present the original promissory note and records of missed payments.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "unpaid-invoice",
+          "name": "Unpaid invoice for services rendered",
+          "example": "You provided $2,000 worth of consulting services, but the client hasn't paid the invoice.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Include the invoice, proof of service delivery, and any communication regarding payment.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "open-account",
+          "name": "Unpaid balance on an open account",
+          "example": "A customer has an outstanding balance of $4,500 on their account with your business.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Provide account statements and records of transactions leading to the balance.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "unpaid-rent",
+          "name": "Unpaid rent by tenant",
+          "example": "Your tenant owes $1,200 in unpaid rent for the past two months.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Bring the lease agreement, payment records, and any notices sent to the tenant.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "bad-check",
+          "name": "Payment with a bad check",
+          "example": "A customer paid with a $500 check that was returned for insufficient funds.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Include the bounced check, bank notice, and any communication with the issuer.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "co-signer",
+          "name": "Co-signer seeking repayment",
+          "example": "You co-signed a $6,000 loan, and the primary borrower defaulted, leaving you responsible.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Provide the loan agreement and evidence of payments you've made on behalf of the borrower.",
+          "damage_boost": "",
+          "source_ids": []
+        }
+      ]
+    },
+    {
+      "id": "consumer-disputes",
+      "title": "Consumer disputes",
+      "blurb": "Georgia's Magistrate Courts handle various consumer disputes up to $15,000, offering a venue for resolving issues without the need for an attorney.",
+      "claims": [
+        {
+          "slug": "defective-product",
+          "name": "Purchase of a defective product",
+          "example": "You bought a $1,000 appliance that stopped working within a week, and the seller refuses to refund or replace it.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Bring the purchase receipt, warranty information, and any correspondence with the seller.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "bad-service",
+          "name": "Substandard service",
+          "example": "A cleaning service charged you $300 but did not perform the agreed-upon tasks.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Provide the service agreement, proof of payment, and photos or other evidence of the poor service.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "auto-repair",
+          "name": "Unsatisfactory auto repair",
+          "example": "You paid $2,500 for car repairs, but the issue persists, and the mechanic refuses to fix it.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Include the repair invoice, any warranties, and records of subsequent issues.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "contractor",
+          "name": "Contractor failed to complete work",
+          "example": "You hired a contractor for $8,000 to renovate your bathroom, but they abandoned the project halfway.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Present the contract, payment records, and evidence of incomplete work.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "no-show-vendor",
+          "name": "Vendor failed to deliver services",
+          "example": "You paid a DJ $1,200 for an event, but they never showed up.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Provide the service agreement, proof of payment, and any communication with the vendor.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "subscription-cancellation",
+          "name": "Unauthorized subscription charges",
+          "example": "A company continues to charge your credit card $50 monthly despite multiple cancellation requests.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Include records of cancellation attempts and bank statements showing the charges.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "used-car",
+          "name": "Purchase of a defective used car",
+          "example": "You bought a used car for $5,000 that broke down within a week, and the seller refuses to address the issue.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Bring the bill of sale, any warranties, and records of the car's issues.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "false-advertising",
+          "name": "False advertising",
+          "example": "A product advertised as 'new' for $600 turned out to be refurbished.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Provide the advertisement, purchase receipt, and evidence showing the product's true condition.",
+          "damage_boost": "",
+          "source_ids": []
+        }
+      ]
+    },
+    {
+      "id": "property-damage",
+      "title": "Property damage",
+      "blurb": "Magistrate Courts in Georgia handle property damage claims up to $15,000, providing a venue for individuals to seek compensation for damages.",
+      "claims": [
+        {
+          "slug": "vehicle-collision",
+          "name": "Damage from a vehicle collision",
+          "example": "Another driver caused $4,000 in damage to your car and refuses to pay for repairs.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Include the police report, repair estimates, and any communication with the other driver.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "neighbor-property",
+          "name": "Neighbor damaged your property",
+          "example": "Your neighbor's tree fell onto your fence, causing $2,500 in damage.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Provide photos of the damage, repair estimates, and any correspondence with the neighbor.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "damage-to-rental",
+          "name": "Tenant caused damage to rental property",
+          "example": "A tenant left $3,000 worth of damage to your rental unit beyond normal wear and tear.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Bring the lease agreement, move-in/move-out inspection reports, and repair invoices.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "pet-damage",
+          "name": "Damage caused by someone's pet",
+          "example": "A neighbor's dog dug up your garden, causing $1,200 in damage.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Include photos of the damage, repair estimates, and any communication with the pet owner.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "property-in-custody",
+          "name": "Damage to property in someone's custody",
+          "example": "You left your laptop with a repair shop, and they returned it with a cracked screen.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Provide the service agreement, photos of the damage, and any correspondence with the shop.",
+          "damage_boost": "",
+          "source_ids": []
+        }
+      ]
+    },
+    {
+      "id": "landlord-tenant",
+      "title": "Landlord-tenant disputes",
+      "blurb": "Georgia's Magistrate Courts handle monetary disputes between landlords and tenants up to $15,000, excluding eviction proceedings.",
+      "claims": [
+        {
+          "slug": "security-deposit",
+          "name": "Failure to return security deposit",
+          "example": "Your landlord withheld your $1,500 security deposit without justification.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Bring the lease agreement, move-out inspection report, and any communication regarding the deposit.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "deposit-not-itemized",
+          "name": "Failure to provide itemized list for deposit deductions",
+          "example": "Your landlord deducted $800 from your deposit without providing an itemized list of damages.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Include the lease agreement, any correspondence requesting the itemized list, and move-out inspection reports.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "uninhabitable-rental",
+          "name": "Rental unit deemed uninhabitable",
+          "example": "Your apartment had severe mold issues, and the landlord refused to address them.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Provide photos of the conditions, repair requests, and any health department reports.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "wrongful-retention-property",
+          "name": "Landlord wrongfully retained tenant's property",
+          "example": "After moving out, your landlord kept your furniture valued at $2,000.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Bring the lease agreement, inventory of items, and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "illegal-eviction",
+          "name": "Illegal eviction",
+          "example": "Your landlord changed the locks without notice, preventing you from accessing your belongings.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Include the lease agreement, photos of the changed locks, and any notices received.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "unreturned-prepaid-rent",
+          "name": "Failure to return prepaid rent",
+          "example": "You paid first and last month's rent, but moved out early and the landlord refused to refund the unused portion.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Provide the lease agreement, proof of payment, and any correspondence with the landlord.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "unpaid-rent-by-tenant",
+          "name": "Tenant failed to pay rent",
+          "example": "Your tenant missed three months of rent totaling $3,600.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Bring the lease agreement, payment records, and any notices sent to the tenant.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "repair-and-deduct",
+          "name": "Tenant repaired and deducted from rent",
+          "example": "You paid $500 to fix a leaking roof after the landlord failed to address it, and deducted it from your rent.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Include repair receipts, photos of the issue, and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": []
+        }
+      ]
+    },
+    {
+      "id": "employment-and-wages",
+      "title": "Employment and wage disputes",
+      "blurb": "Georgia's Magistrate Courts provide a venue for employees to seek unpaid wages and other employment-related claims up to $15,000.",
+      "claims": [
+        {
+          "slug": "unpaid-wages",
+          "name": "Unpaid wages",
+          "example": "Your employer owes you $2,000 for hours worked but refuses to pay.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Bring pay stubs, timesheets, and any correspondence with your employer regarding the unpaid wages.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "final-paycheck",
+          "name": "Failure to provide final paycheck",
+          "example": "After resigning, your employer withheld your final paycheck of $1,500.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Provide evidence of your resignation, pay stubs, and any communication with your employer.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "unpaid-commissions",
+          "name": "Unpaid commissions",
+          "example": "You earned $3,000 in sales commissions that your employer refuses to pay.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Include your employment contract, commission statements, and records of sales made.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "unpaid-overtime",
+          "name": "Unpaid overtime",
+          "example": "Your employer did not pay overtime rates for 20 hours of overtime worked, totaling $600.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Bring timesheets, pay stubs, and any communication regarding overtime policies.",
+          "damage_boost": "",
+          "source_ids": []
+        }
+      ]
+    },
+    {
+      "id": "personal-claims",
+      "title": "Personal claims",
+      "blurb": "Individuals can file personal claims in Georgia's Magistrate Courts for various issues up to $15,000.",
+      "claims": [
+        {
+          "slug": "minor-injury",
+          "name": "Minor personal injury",
+          "example": "You slipped and fell in a store, incurring $4,000 in medical bills.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Provide medical records, bills, and any incident reports from the store.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "loaned-property",
+          "name": "Failure to return loaned property",
+          "example": "You lent a friend your $1,200 camera, and they refuse to return it.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Include any messages or agreements about the loan and requests for return.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "civil-theft",
+          "name": "Theft of personal property",
+          "example": "A neighbor took your $500 lawnmower without permission and won't return it.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Provide proof of ownership, any communication with the neighbor, and police reports if filed.",
+          "damage_boost": "",
+          "source_ids": []
+        }
+      ]
+    },
+    {
+      "id": "vehicle-specific",
+      "title": "Vehicle-specific claims",
+      "blurb": "Georgia's Magistrate Courts handle various vehicle-related disputes up to $15,000.",
+      "claims": [
+        {
+          "slug": "mechanic-dispute",
+          "name": "Dispute over mechanic's work",
+          "example": "You paid $2,000 for car repairs, but the issue persists, and the mechanic refuses to fix it.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Include the repair invoice, any warranties, and records of subsequent issues.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "wrongful-tow",
+          "name": "Wrongful towing of vehicle",
+          "example": "Your car was towed from your apartment complex without proper notice, resulting in $300 in fees.",
+          "eligibility": "eligible",
+          "claim_statute": null,
+          "notes": "Provide photos of parking signs, towing notices, and receipts for towing fees.",
+          "damage_boost": "",
+          "source_ids": []
+        }
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "category": "Eviction (unlawful detainer)",
+      "explanation": "Eviction proceedings are handled separately from monetary claims and have specific legal requirements.",
+      "where_to_go_instead": "Superior Court or State Court",
+      "source_ids": []
+    },
+    {
+      "category": "Title to real estate",
+      "explanation": "Disputes involving the ownership of real property exceed the jurisdiction of Magistrate Courts.",
+      "where_to_go_instead": "Superior Court",
+      "source_ids": []
+    },
+    {
+      "category": "Defamation",
+      "explanation": "Claims involving defamation require complex legal analysis and are not suitable for Magistrate Court.",
+      "where_to_go_instead": "Superior Court",
+      "source_ids": []
+    },
+    {
+      "category": "Malpractice",
+      "explanation": "Professional malpractice claims involve specialized legal standards and are beyond the scope of Magistrate Court.",
+      "where_to_go_instead": "Superior Court",
+      "source_ids": []
+    },
+    {
+      "category": "Family law and probate",
+      "explanation": "Matters such as divorce, child custody, and estate disputes are handled by specialized courts.",
+      "where_to_go_instead": "Superior Court or Probate Court",
+      "source_ids": []
+    },
+    {
+      "category": "Federal claims",
+      "explanation": "Claims involving federal law or the federal government are outside the jurisdiction of state courts.",
+      "where_to_go_instead": "Federal Court",
+      "source_ids": []
+    },
+    {
+      "category": "Class actions",
+      "explanation": "Class action lawsuits involve multiple plaintiffs and complex legal issues unsuitable for Magistrate Court.",
+      "where_to_go_instead": "Superior Court",
+      "source_ids": []
+    },
+    {
+      "category": "Injunctions/specific performance",
+      "explanation": "Magistrate Courts cannot issue orders requiring a party to perform or refrain from specific acts.",
+      "where_to_go_instead": "Superior Court",
+      "source_ids": []
+    },
+    {
+      "category": "Claims against the federal government",
+      "explanation": "Such claims fall under federal jurisdiction and cannot be heard in state courts.",
+      "where_to_go_instead": "Federal Court",
+      "source_ids": []
+    },
+    {
+      "category": "Workers' compensation",
+      "explanation": "Workers' compensation claims are handled by a specialized administrative system.",
+      "where_to_go_instead": "State Board of Workers' Compensation",
+      "source_ids": []
+    },
+    {
+      "category": "Mandatory-arbitration disputes",
+      "explanation": "Disputes subject to mandatory arbitration clauses are typically resolved through arbitration, not court.",
+      "where_to_go_instead": "Arbitration",
+      "source_ids": []
+    },
+    {
+      "category": "Suing a deceased person",
+      "explanation": "Claims against deceased individuals must be filed against their estate in probate court.",
+      "where_to_go_instead": "Probate Court",
+      "source_ids": []
+    }
+  ],
+  "damages": {
+    "compensatory_allowed": true,
+    "punitive_allowed": false,
+    "punitive_explanation": "Magistrate Courts in Georgia do not award punitive damages; they focus on compensatory damages to reimburse actual losses.",
+    "statutory_multipliers": [],
+    "attorney_fees_recoverable": "sometimes",
+    "attorney_fees_explanation": "Attorney fees may be recoverable in certain cases, such as those involving bad checks or specific statutory violations.",
+    "prejudgment_interest_rate_pct": null,
+    "prejudgment_interest_statute": null,
+    "postjudgment_interest_rate_pct": null,
+    "postjudgment_interest_type": null,
+    "postjudgment_interest_statute": null,
+    "postjudgment_interest_notes": null,
+    "filing_and_service_fees_recoverable_from_loser": true,
+    "source_ids": []
+  },
+  "where_to_file": {
+    "court_name": "Magistrate Court",
+    "parent_court": "Georgia Judicial Branch",
+    "venue_rules": [
+      {
+        "scenario": "Most cases (the default)",
+        "filing_options": [
+          "County where the defendant resides"
+        ],
+        "source_ids": []
+      },
+      {
+        "scenario": "Where contract was performed",
+        "filing_options": [
+          "County where performance was due"
+        ],
+        "source_ids": []
+      },
+      {
+        "scenario": "Where injury or damage occurred",
+        "filing_options": [
+          "County where the event occurred"
+        ],
+        "source_ids": []
+      },
+      {
+        "scenario": "Multiple defendants",
+        "filing_options": [
+          "Any county where one defendant resides"
+        ],
+        "source_ids": []
+      },
+      {
+        "scenario": "Out-of-state defendant",
+        "filing_options": [
+          "Where the cause of action arose"
+        ],
+        "source_ids": []
+      }
+    ],
+    "consequences_of_wrong_venue": "Filing in the wrong venue may result in dismissal or transfer of the case, potentially causing delays and additional costs.",
+    "e_filing_available": "varies",
+    "e_filing_notes": "E-filing availability varies by county; check with the local Magistrate Court for options.",
+    "e_filing_portal": null,
+    "source_ids": []
+  },
+  "fees": {
+    "filing_fee_tiers": [
+      {
+        "range_label": "Varies by county",
+        "range_min": null,
+        "range_max": null,
+        "fee_dollars": null,
+        "source_ids": []
+      }
+    ],
+    "frequent_filer": {
+      "threshold_per_year": null,
+      "fee_dollars": null,
+      "notes": ""
+    },
+    "service_fees": [
+      {
+        "method": "Sheriff (personal service)",
+        "amount_label": "Varies by county",
+        "notes": "Service fees are set by each county; contact local Magistrate Court for details.",
+        "source_ids": []
+      }
+    ],
+    "waiver": {
+      "forms": [],
+      "eligibility_bullets": [],
+      "coverage_notes": "",
+      "if_you_win_notes": ""
+    },
+    "other_fees": [
+      {
+        "name": "Subpoena issuance",
+        "amount_label": "Varies by county",
+        "notes": "Fees for issuing subpoenas are determined by each county.",
+        "source_ids": []
+      },
+      {
+        "name": "Appeal filing",
+        "amount_label": "Varies by county",
+        "notes": "Appeal filing fees are set by each county; check with the local court for details.",
+        "source_ids": []
+      },
+      {
+        "name": "Writ of execution",
+        "amount_label": "Varies by county",
+        "notes": "Post-judgment fees vary; contact the local Magistrate Court for specifics.",
+        "source_ids": []
+      }
+    ],
+    "fees_recoverable_from_loser_notes": "If you win, filing and service fees are typically added to the judgment against the defendant.",
+    "source_ids": []
+  },
+  "statute_of_limitations": {
+    "entries": [
+      {
+        "id": "written-contract",
+        "claim": "Written contract",
+        "years": null,
+        "clock_starts": null,
+        "statute": null,
+        "notes": null,
+        "source_ids": []
+      },
+      {
+        "id": "oral-contract",
+        "claim": "Oral contract",
+        "years": null,
+        "clock_starts": null,
+        "statute": null,
+        "notes": null,
+        "source_ids": []
+      },
+      {
+        "id": "sale-of-goods",
+        "claim": "Sale of goods (UCC)",
+        "years": null,
+        "clock_starts": null,
+        "statute": null,
+        "notes": null,
+        "source_ids": []
+      },
+      {
+        "id": "promissory-note",
+        "claim": "Promissory note",
+        "years": null,
+        "clock_starts": null,
+        "statute": null,
+        "notes": null,
+        "source_ids": []
+      },
+      {
+        "id": "open-account",
+        "claim": "Open account / credit card debt",
+        "years": null,
+        "clock_starts": null,
+        "statute": null,
+        "notes": null,
+        "source_ids": []
+      },
+      {
+        "id": "personal-injury",
+        "claim": "Personal injury",
+        "years": null,
+        "clock_starts": null,
+        "statute": null,
+        "notes": null,
+        "source_ids": []
+      },
+      {
+        "id": "property-damage",
+        "claim": "Property damage",
+        "years": null,
+        "clock_starts": null,
+        "statute": null,
+        "notes": null,
+        "source_ids": []
+      },
+      {
+        "id": "fraud",
+        "claim": "Fraud",
+        "years": null,
+        "clock_starts": null,
+        "statute": null,
+        "notes": null,
+        "source_ids": []
+      },
+      {
+        "id": "bad-check",
+        "claim": "Bad check",
+        "years": null,
+        "clock_starts": null,
+        "statute": null,
+        "notes": null,
+        "source_ids": []
+      },
+      {
+        "id": "unpaid-wages",
+        "claim": "Unpaid wages",
+        "years": null,
+        "clock_starts": null,
+        "statute": null,
+        "notes": null,
+        "source_ids": []
+      },
+      {
+        "id": "security-deposit",
+        "claim": "Security deposit",
+        "years": null,
+        "clock_starts": null,
+        "statute": null,
+        "notes": null,
+        "source_ids": []
+      },
+      {
+        "id": "judgment-enforcement",
+        "claim": "Judgment enforcement",
+        "years": null,
+        "clock_starts": null,
+        "statute": null,
+        "notes": null,
+        "source_ids": []
+      }
+    ],
+    "discovery_rule_notes": "The discovery rule may apply to certain claims, such as fraud, where the statute of limitations begins when the injury is discovered or should have been discovered.",
+    "tolling_notes": "Statutes of limitations may be tolled under specific circumstances, such as the defendant being out of state, the plaintiff being a minor, or during bankruptcy proceedings.",
+    "source_ids": []
+  },
+  "pre_filing": {
+    "demand_letter_required": false,
+    "demand_letter_recommended": true,
+    "demand_letter_notes": "While not required, sending a demand letter can often resolve disputes without the need for court intervention.",
+    "bad_check_notice_rule": "For bad check claims, Georgia law requires sending a written demand for payment before filing a lawsuit.",
+    "wage_claim_demand_rule": "Employees seeking unpaid wages should provide written notice to their employer before initiating legal action.",
+    "government_claim_required": false,
+    "government_claim_deadline_days": null,
+    "government_claim_notes": "",
+    "landlord_tenant_pre_filing_notes": "Landlords must provide tenants with proper notice before filing for unpaid rent or damages.",
+    "consumer_protection_notes": "Certain consumer protection claims may require specific pre-filing notices; consult relevant statutes.",
+    "mandatory_mediation_before_filing": "none",
+    "arbitration_clauses_enforced": true,
+    "source_ids": []
+  },
+  "forms": [
+    {
+      "number": null,
+      "name": "Statement of Claim",
+      "description": "Initiates a civil lawsuit in Magistrate Court.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": null,
+      "source_ids": []
+    },
+    {
+      "number": null,
+      "name": "Answer",
+      "description": "Filed by the defendant in response to a Statement of Claim.",
+      "filed_by": "defendant",
+      "required": true,
+      "group": "hearing",
+      "url": null,
+      "source_ids": []
+    },
+    {
+      "number": null,
+      "name": "Counterclaim",
+      "description": "Filed by the defendant to assert their own claim against the plaintiff.",
+      "filed_by": "defendant",
+      "required": false,
+      "group": "counterclaim",
+      "url": null,
+      "source_ids": []
+    },
+    {
+      "number": null,
+      "name": "Affidavit of Substantial Hardship",
+      "description": "Request to waive court fees due to financial hardship.",
+      "filed_by": "plaintiff",
+      "required": false,
+      "group": "fee-waiver",
+      "url": null,
+      "source_ids": []
+    },
+    {
+      "number": null,
+      "name": "Notice of Appeal",
+      "description": "Filed to appeal a Magistrate Court decision.",
+      "filed_by": "either",
+      "required": false,
+      "group": "appeal",
+      "url": null,
+      "source_ids": []
+    }
+  ],
+  "service": {
+    "who_can_serve": [
+      "Sheriff",
+      "Certified mail by clerk",
+      "Private process server"
+    ],
+    "methods": [
+      {
+        "name": "Sheriff personal service",
+        "description": "Sheriff or constable personally delivers the papers to the defendant.",
+        "pros": [
+          "Reliable",
+          "Official"
+        ],
+        "cons": [
+          "May be slower",
+          "Additional cost"
+        ],
+        "source_ids": []
+      },
+      {
+        "name": "Certified mail by clerk",
+        "description": "Court clerk sends the documents via certified mail to the defendant.",
+        "pros": [
+          "Cost-effective",
+          "Provides delivery confirmation"
+        ],
+        "cons": [
+          "Defendant may refuse delivery",
+          "Not suitable for all cases"
+        ],
+        "source_ids": []
+      },
+      {
+        "name": "Private process server",
+        "description": "A licensed individual personally delivers the papers to the defendant.",
+        "pros": [
+          "Flexible scheduling",
+          "Can be faster"
+        ],
+        "cons": [
+          "Additional cost",
+          "Must ensure proper licensing"
+        ],
+        "source_ids": []
+      }
+    ],
+    "in_county_days_before_hearing": null,
+    "out_of_county_days_before_hearing": null,
+    "proof_of_service_form": {
+      "number": null,
+      "name": "Affidavit of Service"
+    },
+    "proof_filing_deadline_days_before_hearing": null,
+    "business_service_rule": "Serve the registered agent of the corporation or an officer; for sole proprietors, serve the individual directly.",
+    "out_of_state_defendant_notes": "Service must comply with Georgia's long-arm statute and the laws of the state where the defendant resides.",
+    "cant_find_defendant_notes": "If the defendant cannot be located, service by publication may be permitted with court approval.",
+    "avoiding_service_notes": "If the defendant is evading service, you may request alternative service methods from the court.",
+    "source_ids": []
+  },
+  "response_and_default": {
+    "must_file_written_answer": true,
+    "response_deadline_days": 30,
+    "response_notes": "Defendants must file a written answer within 30 days of service to avoid default judgment.",
+    "default_process": "If the defendant fails to respond, the court may grant a default judgment in favor of the plaintiff.",
+    "prove_up_required": true,
+    "prove_up_notes": "Even in default cases, the plaintiff may need to provide evidence to support the claim amount.",
+    "motion_to_vacate_form": {
+      "number": null,
+      "name": "Motion to Set Aside Default Judgment"
+    },
+    "motion_to_vacate_deadline_days": 30,
+    "motion_to_vacate_lack_of_notice_days": null,
+    "motion_to_vacate_appeal_deadline_days": null,
+    "motion_to_vacate_appeal_notes": "Defendants can file a motion to vacate a default judgment within 30 days, citing valid reasons for the failure to respond.",
+    "source_ids": []
+  },
+  "counterclaim": {
+    "allowed": true,
+    "form": {
+      "number": null,
+      "name": "Counterclaim"
+    },
+    "same_monetary_limit": true,
+    "service_deadline_in_county_days": null,
+    "service_deadline_out_of_county_days": null,
+    "transfer_to_higher_court_available": false,
+    "transfer_to_higher_court_statute": null,
+    "transfer_to_higher_court_notes": "If the counterclaim exceeds the Magistrate Court's jurisdictional limit, the case may be transferred to a higher court.",
+    "source_ids": []
+  },
+  "hearing": {
+    "lawyers_allowed": "yes",
+    "lawyers_allowed_notes": "Parties may choose to be represented by an attorney, but it is not required.",
+    "format": "Bench trial with each side presenting evidence and arguments; typically brief and informal.",
+    "presider": "judge",
+    "burden_of_proof": "preponderance",
+    "what_to_bring": [
+      "Originals of any contracts",
+      "Receipts and bank records",
+      "Photos and videos",
+      "Names and contact info for witnesses"
+    ],
+    "subpoena_form": {
+      "number": null,
+      "name": "Subpoena"
+    },
+    "witness_fee_per_day_dollars": null,
+    "free_interpreters": false,
+    "interpreter_request_process": "Parties must arrange for their own interpreters; some courts may provide assistance upon request.",
+    "jury_option": false,
+    "decision_timing": "On the spot or mailed within a few weeks.",
+    "on_site_mediation": "varies",
+    "on_site_mediation_notes": "Some courts offer mediation services to help parties reach a settlement before trial.",
+    "source_ids": []
+  },
+  "appeals": {
+    "who_can_appeal": "either",
+    "deadline_days": 30,
+    "fee_dollars": null,
+    "type": "trial de novo",
+    "type_notes": "The appeal results in a new trial in the higher court as if the original trial had not occurred.",
+    "attorneys_allowed_on_appeal": true,
+    "bond_required": false,
+    "bond_amount_notes": null,
+    "automatic_stay_on_appeal": true,
+    "default_judgment_appealable": false,
+    "default_judgment_notes": "Default judgments are typically not appealable; the defendant must first file a motion to vacate the judgment.",
+    "notice_of_appeal_form": {
+      "number": null,
+      "name": "Notice of Appeal"
+    },
+    "frivolous_appeal_penalty_dollars": null,
+    "frivolous_appeal_statute": null,
+    "frivolous_appeal_notes": null,
+    "source_ids": []
+  },
+  "collection": {
+    "payment_deadline_typical_days": null,
+    "post_judgment_interest_rate_pct": null,
+    "post_judgment_interest_statute": null,
+    "post_judgment_interest_notes": null,
+    "methods": [
+      {
+        "id": "wage-garnishment",
+        "name": "Wage garnishment",
+        "blurb": "Have a portion of the debtor's wages withheld until the judgment is paid.",
+        "description": "File a writ of garnishment with the court, serve the employer, and the employer withholds a portion of the debtor's wages to satisfy the judgment.",
+        "forms": [
+          {
+            "number": null,
+            "name": "Writ of Garnishment"
+          }
+        ],
+        "estimated_cost": "Varies by county",
+        "effectiveness_notes": "Effective when the debtor is employed and earning wages.",
+        "exemptions": [
+          "75% of disposable earnings (federal CCPA floor)"
+        ],
+        "source_ids": []
+      },
+      {
+        "id": "bank-levy",
+        "name": "Bank levy",
+        "blurb": "Seize funds from the debtor's bank account to satisfy the judgment.",
+        "description": "Obtain a writ of garnishment, serve the bank, and the bank freezes and turns over funds from the debtor's account.",
+        "forms": [
+          {
+            "number": null,
+            "name": "Writ of Garnishment"
+          }
+        ],
+        "estimated_cost": "Varies by county",
+        "effectiveness_notes": "Effective if the debtor has sufficient funds in the account.",
+        "exemptions": [
+          "Certain amounts may be exempt under state law"
+        ],
+        "source_ids": []
+      },
+      {
+        "id": "property-lien",
+        "name": "Property lien",
+        "blurb": "Place a lien on the debtor's real property to secure the judgment amount.",
+        "description": "File the judgment with the county recorder to place a lien on the debtor's property, which must be satisfied before the property can be sold or refinanced.",
+        "forms": [
+          {
+            "number": null,
+            "name": "Lien Filing"
+          }
+        ],
+        "estimated_cost": "Varies by county",
+        "effectiveness_notes": "Effective for securing the judgment but may not result in immediate payment.",
+        "exemptions": [
+          "Homestead exemptions may apply"
+        ],
+        "source_ids": []
+      },
+      {
+        "id": "writ-of-execution",
+        "name": "Writ of execution",
+        "blurb": "Authorize the seizure of the debtor's non-exempt property to satisfy the judgment.",
+        "description": "Obtain a writ from the court, and the sheriff seizes and sells the debtor's property at auction.",
+        "forms": [
+          {
+            "number": null,
+            "name": "Writ of Execution"
+          }
+        ],
+        "estimated_cost": "Varies by county",
+        "effectiveness_notes": "Can be effective but may be time-consuming and costly.",
+        "exemptions": [
+          "Certain personal property may be exempt under state law"
+        ],
+        "source_ids": []
+      }
+    ],
+    "wage_garnishment_max_pct_of_disposable": 25,
+    "judgment_lifespan_years": null,
+    "judgment_renewal_process": "File a renewal action before the judgment expires to extend its enforceability.",
+    "debtor_exam_form": {
+      "number": null,
+      "name": "Motion for Debtor Examination"
+    },
+    "exempt_assets": [
+      "Homestead — $X",
+      "Vehicle — $X",
+      "Retirement accounts (federally and/or state-protected)",
+      "Social Security and federal benefits"
+    ],
+    "bankruptcy_effect_notes": "Filing for bankruptcy may discharge certain judgments; consult a bankruptcy attorney for specifics.",
+    "satisfaction_of_judgment_form": {
+      "number": null,
+      "name": "Satisfaction of Judgment"
+    },
+    "priority_notes": "Priority among multiple judgment creditors is typically determined by the order in which liens are filed.",
+    "source_ids": []
+  },
+  "businesses": {
+    "self_representation_allowed": true,
+    "self_representation_notes": "Businesses can represent themselves in Magistrate Court without an attorney.",
+    "can_send_employee": true,
+    "can_send_attorney": true,
+    "non_attorney_representation_form": {
+      "number": null,
+      "name": "Authorization of Representation"
+    },
+    "insurance_adjuster_allowed": false,
+    "fictitious_name_form": {
+      "number": null,
+      "name": "Trade Name Registration"
+    },
+    "fictitious_name_notes": "Businesses operating under a trade name must register it with the county.",
+    "sole_proprietor_employee_exception": "Sole proprietors can have an employee represent them in court with proper authorization.",
+    "out_of_state_business_must_register": true,
+    "out_of_state_business_statute": null,
+    "licensing_notes": "Unlicensed contractors may face limitations in enforcing contracts; consult state licensing requirements.",
+    "source_ids": []
+  },
+  "county_variations_material": true,
+  "county_variations": [
+    {
+      "county": "Fulton",
+      "topic": "E-filing availability",
+      "detail": "Fulton County offers online filing through its Magistrate Court website.",
+      "source_ids": []
+    },
+    {
+      "county": "DeKalb",
+      "topic": "Filing fees",
+      "detail": "DeKalb County has a standardized fee schedule for Magistrate Court filings.",
+      "source_ids": []
+    }
+  ],
+  "pitfalls": [
+    {
+      "title": "Incorrect defendant information",
+      "what_happens": "Suing the wrong party or using incorrect names can result in dismissal or unenforceable judgments.",
+      "how_to_avoid": "Verify the exact legal name and address of the defendant before filing.",
+      "source_ids": []
+    },
+    {
+      "title": "Missing statute of limitations",
+      "what_happens": "Filing after the statute of limitations has expired will lead to dismissal of the case.",
+      "how_to_avoid": "Confirm the applicable statute of limitations for your claim type before filing.",
+      "source_ids": []
+    },
+    {
+      "title": "Insufficient evidence",
+      "what_happens": "Lack of proper documentation can weaken your case and lead to unfavorable outcomes.",
+      "how_to_avoid": "Gather all relevant contracts, receipts, communications, and witness statements before filing.",
+      "source_ids": []
+    },
+    {
+      "title": "Improper service of process",
+      "what_happens": "Failing to serve the defendant correctly can delay proceedings or result in dismissal.",
+      "how_to_avoid": "Follow the court's rules for service of process carefully, using authorized methods.",
+      "source_ids": []
+    },
+    {
+      "title": "Ignoring court deadlines",
+      "what_happens": "Missing filing or response deadlines can lead to default judgments or case dismissal.",
+      "how_to_avoid": "Keep track of all court-imposed deadlines and comply promptly.",
+      "source_ids": []
+    },
+    {
+      "title": "Overlooking counterclaims",
+      "what_happens": "Failing to file a counterclaim may waive your right to seek damages related to the same dispute.",
+      "how_to_avoid": "Assess whether you have any claims against the plaintiff and file a counterclaim if appropriate.",
+      "source_ids": []
+    }
+  ],
+  "recent_changes": [],
+  "faqs": [
+    {
+      "question": "Do I need a lawyer?",
+      "answer": "No, you are not required to have a lawyer in Magistrate Court. The process is designed to be accessible for individuals representing themselves.",
+      "source_ids": []
+    },
+    {
+      "question": "How long does it take?",
+      "answer": "The timeline varies, but cases are typically resolved within 30 to 90 days from filing.",
+      "source_ids": []
+    },
+    {
+      "question": "What's the maximum I can sue for?",
+      "answer": "You can sue for up to $15,000 in Magistrate Court.",
+      "source_ids": []
+    },
+    {
+      "question": "What happens if the defendant doesn't show up?",
+      "answer": "If the defendant fails to appear, the court may issue a default judgment in your favor.",
+      "source_ids": []
+    },
+    {
+      "question": "Can I appeal?",
+      "answer": "Yes, either party can appeal a Magistrate Court decision within 30 days by filing a notice of appeal.",
+      "source_ids": []
+    },
+    {
+      "question": "How long is a judgment good for?",
+      "answer": "Judgments are enforceable for a certain period, which may vary; consult the court for specific timeframes.",
+      "source_ids": []
+    }
+  ],
+  "state_specific_notes": [
+    "Georgia's Magistrate Courts are often referred to as 'people's courts' due to their accessibility for self-represented litigants.",
+    "The jurisdictional limit for civil claims in Magistrate Court is $15,000.",
+    "E-filing availability varies by county; some counties offer online filing options.",
+    "Magistrate Courts handle a variety of cases, including small claims, landlord-tenant disputes, and warrant applications.",
+    "While attorneys are allowed, many individuals choose to represent themselves in Magistrate Court."
+  ],
+  "_extras": {
+    "interesting_findings": [
+      "Some counties in Georgia offer online tools to help litigants generate and file court forms.",
+      "Magistrate Courts may provide mediation services to assist parties in resolving disputes before trial.",
+      "The informal nature of Magistrate Court proceedings makes them suitable for individuals without legal representation."
+    ]
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "label": "Council of Magistrate Court Judges – Georgia Courts",
+      "url": "https://georgiacourts.gov/council-of-magistrate-court-judges/",
+      "primary": true,
+      "citation": null
+    }
+  ],
+  "_meta": {
+    "state": "Georgia",
+    "slug": "georgia",
+    "model": "gpt-4.1",
+    "generated_at": "2026-04-28T14:18:43.018Z",
+    "promoted_from_failure": true
+  }
+}

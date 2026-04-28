@@ -1,0 +1,1658 @@
+{
+  "state": "Louisiana",
+  "slug": "louisiana",
+  "abbr": "LA",
+  "as_of": "2026-04-28",
+  "hero": {
+    "individual_limit_dollars": 5000,
+    "business_limit_dollars": 5000,
+    "filing_fee_low_dollars": 35,
+    "filing_fee_high_dollars": 100,
+    "typical_timeline_min_days": 30,
+    "typical_timeline_max_days": 90,
+    "tagline": "Standard $5,000 cap and 15-day appeal window.",
+    "source_ids": [
+      "S3",
+      "S9"
+    ]
+  },
+  "at_a_glance": [
+    {
+      "label": "Most you can sue for",
+      "value": "$5,000",
+      "detail": "Same cap for individuals and businesses",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    {
+      "label": "Filing fee",
+      "value": "$35-$100",
+      "detail": "Varies by court and claim amount",
+      "source_ids": [
+        "S9"
+      ]
+    },
+    {
+      "label": "Court",
+      "value": "City Court or Justice of the Peace Court",
+      "detail": "",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Lawyers at trial",
+      "value": "Allowed",
+      "detail": "Permitted but not required",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Appeal window",
+      "value": "15 days",
+      "detail": "Appeal to District Court",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "label": "Recent change",
+      "value": "—",
+      "detail": "No major changes in the last 3 years",
+      "source_ids": []
+    }
+  ],
+  "limits": {
+    "individual_dollars": 5000,
+    "business_dollars": 5000,
+    "guarantor_with_fee_max": null,
+    "guarantor_without_fee_max": null,
+    "annual_filing_cap": {
+      "count": null,
+      "threshold_dollars": null,
+      "notes": ""
+    },
+    "split_claims_allowed": false,
+    "split_claims_explanation": "If your claim exceeds $5,000, you cannot split it into multiple claims to fit within the small claims limit. You must either waive the excess amount or file in a higher court.",
+    "interest_excluded_from_cap": true,
+    "court_costs_excluded_from_cap": true,
+    "statute": "La. R.S. § 13:5202",
+    "source_ids": [
+      "S3"
+    ]
+  },
+  "claim_categories": [
+    {
+      "id": "contracts",
+      "title": "Contracts and money owed",
+      "blurb": "Louisiana allows you to file claims for breaches of contract and money owed up to $5,000 in small claims court. The statute of limitations varies depending on the type of contract.",
+      "claims": [
+        {
+          "slug": "written-contract",
+          "name": "Breach of a written contract",
+          "example": "A contractor signed a $4,000 contract to remodel your kitchen, took the deposit, and never finished.",
+          "eligibility": "eligible",
+          "claim_statute": "La. Civ. Code art. 3499",
+          "notes": "10-year deadline from breach. Bring the signed contract, payment proof, and any correspondence showing the breach.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "oral-contract",
+          "name": "Breach of an oral contract",
+          "example": "You agreed verbally to lend someone $2,000, and they failed to repay it.",
+          "eligibility": "eligible",
+          "claim_statute": "La. Civ. Code art. 3494",
+          "notes": "3-year deadline from breach. Provide evidence of the agreement and any partial payments.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "personal-loan",
+          "name": "Unpaid personal loan",
+          "example": "You loaned a friend $1,500 with the understanding they'd repay in six months, but they haven't.",
+          "eligibility": "eligible",
+          "claim_statute": "La. Civ. Code art. 3494",
+          "notes": "3-year deadline from due date. Document the loan agreement and any communications regarding repayment.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "promissory-note",
+          "name": "Default on a promissory note",
+          "example": "A borrower signed a promissory note for $3,000 and failed to make the agreed payments.",
+          "eligibility": "eligible",
+          "claim_statute": "La. Civ. Code art. 3498",
+          "notes": "5-year deadline from due date. Present the original promissory note and records of missed payments.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "unpaid-invoice",
+          "name": "Unpaid invoice for services rendered",
+          "example": "You provided $2,500 worth of consulting services, invoiced the client, and they haven't paid.",
+          "eligibility": "eligible",
+          "claim_statute": "La. Civ. Code art. 3494",
+          "notes": "3-year deadline from invoice date. Keep copies of the invoice, service agreement, and any correspondence.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "open-account",
+          "name": "Unpaid balance on an open account",
+          "example": "A customer has an outstanding balance of $4,000 on their account with your business.",
+          "eligibility": "eligible",
+          "claim_statute": "La. Civ. Code art. 3494",
+          "notes": "3-year deadline from last charge or payment. Maintain detailed account statements and records of transactions.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "unpaid-rent",
+          "name": "Unpaid rent by tenant",
+          "example": "Your tenant owes $3,500 in unpaid rent over the past three months.",
+          "eligibility": "eligible",
+          "claim_statute": "La. Civ. Code art. 3494",
+          "notes": "3-year deadline from due date. Provide the lease agreement and records of missed payments.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "bad-check",
+          "name": "Payment with a bad check",
+          "example": "A customer paid for $1,200 worth of goods with a check that bounced.",
+          "eligibility": "eligible",
+          "claim_statute": "La. Rev. Stat. § 9:2782",
+          "notes": "30-day notice required before filing. Include the dishonored check and notice sent to the issuer.",
+          "damage_boost": "Check amount + service charge up to $25 + civil penalty up to $100 OR 2x check amount, whichever is greater.",
+          "source_ids": [
+            "S15"
+          ]
+        },
+        {
+          "slug": "co-signer",
+          "name": "Co-signer seeking repayment",
+          "example": "You co-signed a $4,500 loan, and the primary borrower defaulted, leaving you responsible.",
+          "eligibility": "eligible",
+          "claim_statute": "La. Civ. Code art. 3499",
+          "notes": "10-year deadline from default. Show the co-signed agreement and evidence of payments made on behalf of the borrower.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "consumer-disputes",
+      "title": "Consumer disputes",
+      "blurb": "Louisiana's small claims court handles various consumer disputes up to $5,000, including issues with products and services. The statute of limitations varies by claim type.",
+      "claims": [
+        {
+          "slug": "defective-product",
+          "name": "Purchase of a defective product",
+          "example": "You bought a $1,000 appliance that stopped working within a month, and the seller refuses to refund or replace it.",
+          "eligibility": "eligible",
+          "claim_statute": "La. Rev. Stat. § 51:1401 et seq.",
+          "notes": "1-year deadline from discovery of defect. Bring the purchase receipt, warranty, and any communication with the seller.",
+          "damage_boost": "Possible attorney fees and damages up to three times actual damages for knowing violations.",
+          "source_ids": [
+            "S14"
+          ]
+        },
+        {
+          "slug": "bad-service",
+          "name": "Substandard service provided",
+          "example": "A cleaning service charged you $800 but did not perform the agreed-upon tasks.",
+          "eligibility": "eligible",
+          "claim_statute": "La. Rev. Stat. § 51:1401 et seq.",
+          "notes": "1-year deadline from service date. Document the service agreement and evidence of poor service.",
+          "damage_boost": "Possible attorney fees and damages up to three times actual damages for knowing violations.",
+          "source_ids": [
+            "S14"
+          ]
+        },
+        {
+          "slug": "auto-repair",
+          "name": "Unsatisfactory auto repair",
+          "example": "You paid $2,500 for car repairs, but the problem persists, and the mechanic refuses to fix it.",
+          "eligibility": "eligible",
+          "claim_statute": "La. Rev. Stat. § 51:1401 et seq.",
+          "notes": "1-year deadline from repair date. Provide repair invoices and any correspondence with the mechanic.",
+          "damage_boost": "Possible attorney fees and damages up to three times actual damages for knowing violations.",
+          "source_ids": [
+            "S14"
+          ]
+        },
+        {
+          "slug": "contractor",
+          "name": "Contractor failed to complete work",
+          "example": "You hired a contractor for $4,000 to renovate your bathroom, but they abandoned the project halfway.",
+          "eligibility": "eligible",
+          "claim_statute": "La. Rev. Stat. § 51:1401 et seq.",
+          "notes": "1-year deadline from breach. Present the contract, payment records, and evidence of incomplete work.",
+          "damage_boost": "Possible attorney fees and damages up to three times actual damages for knowing violations.",
+          "source_ids": [
+            "S14"
+          ]
+        },
+        {
+          "slug": "no-show-vendor",
+          "name": "Vendor failed to deliver goods",
+          "example": "You paid $1,200 for furniture that was never delivered, and the vendor is unresponsive.",
+          "eligibility": "eligible",
+          "claim_statute": "La. Rev. Stat. § 51:1401 et seq.",
+          "notes": "1-year deadline from expected delivery date. Keep the purchase agreement and proof of payment.",
+          "damage_boost": "Possible attorney fees and damages up to three times actual damages for knowing violations.",
+          "source_ids": [
+            "S14"
+          ]
+        },
+        {
+          "slug": "subscription-cancellation",
+          "name": "Unauthorized subscription charges",
+          "example": "A company continues to charge your credit card $50 monthly despite your cancellation request.",
+          "eligibility": "eligible",
+          "claim_statute": "La. Rev. Stat. § 51:1401 et seq.",
+          "notes": "1-year deadline from unauthorized charge. Document cancellation attempts and bank statements.",
+          "damage_boost": "Possible attorney fees and damages up to three times actual damages for knowing violations.",
+          "source_ids": [
+            "S14"
+          ]
+        },
+        {
+          "slug": "used-car",
+          "name": "Purchase of a defective used car",
+          "example": "You bought a used car for $4,500 that broke down within a week, and the seller refuses to address the issue.",
+          "eligibility": "eligible",
+          "claim_statute": "La. Rev. Stat. § 51:1401 et seq.",
+          "notes": "1-year deadline from purchase. Provide the bill of sale and any communication with the seller.",
+          "damage_boost": "Possible attorney fees and damages up to three times actual damages for knowing violations.",
+          "source_ids": [
+            "S14"
+          ]
+        },
+        {
+          "slug": "false-advertising",
+          "name": "Misleading advertising leading to loss",
+          "example": "A store advertised a product for $500, but charged you $700 at checkout without honoring the advertised price.",
+          "eligibility": "eligible",
+          "claim_statute": "La. Rev. Stat. § 51:1401 et seq.",
+          "notes": "1-year deadline from transaction. Keep the advertisement and receipt.",
+          "damage_boost": "Possible attorney fees and damages up to three times actual damages for knowing violations.",
+          "source_ids": [
+            "S14"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "property-damage",
+      "title": "Property damage",
+      "blurb": "Louisiana's small claims court addresses property damage claims up to $5,000. The statute of limitations is generally one year from the date of damage.",
+      "claims": [
+        {
+          "slug": "vehicle-collision",
+          "name": "Damage from a vehicle collision",
+          "example": "Another driver hit your parked car, causing $3,000 in damages, and refuses to pay.",
+          "eligibility": "eligible",
+          "claim_statute": "La. Civ. Code art. 3492",
+          "notes": "1-year deadline from accident date. Provide police reports, repair estimates, and photos.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "neighbor-property",
+          "name": "Neighbor's tree damaged your property",
+          "example": "A neighbor's tree fell onto your fence during a storm, causing $2,500 in damages.",
+          "eligibility": "eligible",
+          "claim_statute": "La. Civ. Code art. 3492",
+          "notes": "1-year deadline from damage date. Document the damage with photos and repair estimates.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "damage-to-rental",
+          "name": "Tenant caused damage to rental property",
+          "example": "A former tenant left $4,000 worth of damage to your rental unit beyond normal wear and tear.",
+          "eligibility": "eligible",
+          "claim_statute": "La. Civ. Code art. 3492",
+          "notes": "1-year deadline from discovery of damage. Present the lease agreement, photos, and repair bills.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "pet-damage",
+          "name": "Neighbor's pet damaged your property",
+          "example": "A neighbor's dog dug up your garden, causing $1,500 in damages.",
+          "eligibility": "eligible",
+          "claim_statute": "La. Civ. Code art. 3492",
+          "notes": "1-year deadline from damage date. Provide photos and any communication with the pet owner.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "property-in-custody",
+          "name": "Damage to property left in someone's care",
+          "example": "You left your laptop with a repair shop, and they returned it with a cracked screen.",
+          "eligibility": "eligible",
+          "claim_statute": "La. Civ. Code art. 3492",
+          "notes": "1-year deadline from discovery of damage. Keep the service agreement and photos of the damage.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "landlord-tenant",
+      "title": "Landlord-tenant disputes",
+      "blurb": "Louisiana's small claims court handles monetary disputes between landlords and tenants up to $5,000. Eviction cases are handled separately.",
+      "claims": [
+        {
+          "slug": "security-deposit",
+          "name": "Failure to return security deposit",
+          "example": "Your landlord withheld your $1,200 security deposit without justification after you moved out.",
+          "eligibility": "eligible",
+          "claim_statute": "La. Rev. Stat. § 9:3251",
+          "notes": "30-day deadline for landlord to return deposit. Provide the lease agreement and move-out inspection report.",
+          "damage_boost": "Possible damages up to $200 or actual damages, whichever is greater.",
+          "source_ids": [
+            "S16"
+          ]
+        },
+        {
+          "slug": "deposit-not-itemized",
+          "name": "Landlord failed to itemize deposit deductions",
+          "example": "Your landlord deducted $500 from your deposit without providing an itemized list of damages.",
+          "eligibility": "eligible",
+          "claim_statute": "La. Rev. Stat. § 9:3251",
+          "notes": "Landlord must provide itemized list within 30 days. Keep records of all communications.",
+          "damage_boost": "Possible damages up to $200 or actual damages, whichever is greater.",
+          "source_ids": [
+            "S16"
+          ]
+        },
+        {
+          "slug": "uninhabitable-rental",
+          "name": "Landlord failed to maintain habitable premises",
+          "example": "Your apartment had no running water for two weeks, and the landlord did not address the issue.",
+          "eligibility": "eligible",
+          "claim_statute": "La. Civ. Code art. 2691",
+          "notes": "Landlord must maintain premises in a habitable condition. Document the issues and repair requests.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "wrongful-retention-property",
+          "name": "Landlord wrongfully retained tenant's property",
+          "example": "After eviction, your landlord kept your furniture valued at $3,000.",
+          "eligibility": "eligible",
+          "claim_statute": "La. Civ. Code art. 2315",
+          "notes": "Landlord must return tenant's property. Provide inventory and proof of ownership.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "illegal-eviction",
+          "name": "Landlord conducted an illegal eviction",
+          "example": "Your landlord changed the locks without notice, preventing you from accessing your apartment.",
+          "eligibility": "eligible",
+          "claim_statute": "La. Civ. Code art. 2315",
+          "notes": "Self-help evictions are illegal. Document the eviction and any damages incurred.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "unreturned-prepaid-rent",
+          "name": "Landlord failed to return prepaid rent",
+          "example": "You paid last month's rent in advance, but moved out early, and the landlord refused to refund the unused portion.",
+          "eligibility": "eligible",
+          "claim_statute": "La. Civ. Code art. 2691",
+          "notes": "Landlord must return unearned rent. Provide the lease agreement and proof of payment.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "unpaid-rent-by-tenant",
+          "name": "Tenant failed to pay rent",
+          "example": "Your tenant owes $4,500 in unpaid rent over the past three months.",
+          "eligibility": "eligible",
+          "claim_statute": "La. Civ. Code art. 3494",
+          "notes": "3-year deadline from due date. Provide the lease agreement and records of missed payments.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "repair-and-deduct",
+          "name": "Tenant repaired and deducted from rent",
+          "example": "You paid $800 to fix a leaking roof after the landlord failed to address it, and deducted the cost from rent.",
+          "eligibility": "eligible",
+          "claim_statute": "La. Civ. Code art. 2694",
+          "notes": "Tenant may repair and deduct if landlord fails to act. Keep repair receipts and communication records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "employment-wages",
+      "title": "Employment and wages",
+      "blurb": "Louisiana's small claims court addresses wage disputes up to $5,000. The statute of limitations for wage claims is generally three years.",
+      "claims": [
+        {
+          "slug": "unpaid-wages",
+          "name": "Employer failed to pay earned wages",
+          "example": "Your employer owes you $2,000 for hours worked but refuses to pay.",
+          "eligibility": "eligible",
+          "claim_statute": "La. Rev. Stat. § 23:631",
+          "notes": "Employer must pay within 15 days of demand. Document hours worked and payment records.",
+          "damage_boost": "Possible penalty of 90 days' wages or full wages from demand until payment, whichever is less.",
+          "source_ids": [
+            "S17"
+          ]
+        },
+        {
+          "slug": "final-paycheck",
+          "name": "Employer withheld final paycheck",
+          "example": "After resigning, your employer failed to provide your final paycheck of $1,500.",
+          "eligibility": "eligible",
+          "claim_statute": "La. Rev. Stat. § 23:631",
+          "notes": "Employer must pay within 15 days of termination. Keep resignation letter and payroll records.",
+          "damage_boost": "Possible penalty of 90 days' wages or full wages from demand until payment, whichever is less.",
+          "source_ids": [
+            "S17"
+          ]
+        },
+        {
+          "slug": "unpaid-commissions",
+          "name": "Employer failed to pay earned commissions",
+          "example": "You earned $3,000 in sales commissions, but your employer refuses to pay.",
+          "eligibility": "eligible",
+          "claim_statute": "La. Rev. Stat. § 23:631",
+          "notes": "Employer must pay within 15 days of demand. Provide sales records and commission agreements.",
+          "damage_boost": "Possible penalty of 90 days' wages or full wages from demand until payment, whichever is less.",
+          "source_ids": [
+            "S17"
+          ]
+        },
+        {
+          "slug": "unpaid-overtime",
+          "name": "Employer failed to pay overtime wages",
+          "example": "You worked 10 hours of overtime but were paid only your regular rate.",
+          "eligibility": "eligible",
+          "claim_statute": "La. Rev. Stat. § 23:631",
+          "notes": "Employer must pay within 15 days of demand. Document hours worked and pay received.",
+          "damage_boost": "Possible penalty of 90 days' wages or full wages from demand until payment, whichever is less.",
+          "source_ids": [
+            "S17"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "personal-claims",
+      "title": "Personal claims",
+      "blurb": "Louisiana's small claims court handles personal claims up to $5,000. The statute of limitations varies by claim type.",
+      "claims": [
+        {
+          "slug": "minor-injury",
+          "name": "Minor personal injury",
+          "example": "You slipped and fell in a store, resulting in $4,000 in medical bills.",
+          "eligibility": "eligible",
+          "claim_statute": "La. Civ. Code art. 3492",
+          "notes": "1-year deadline from injury date. Provide medical records and incident reports.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "loaned-property",
+          "name": "Failure to return loaned property",
+          "example": "You lent a friend your $1,500 camera, and they refuse to return it.",
+          "eligibility": "eligible",
+          "claim_statute": "La. Civ. Code art. 3492",
+          "notes": "1-year deadline from demand for return. Document the loan agreement and demand for return.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "civil-theft",
+          "name": "Theft of personal property",
+          "example": "Someone stole your bicycle valued at $800, and you have evidence of their involvement.",
+          "eligibility": "eligible",
+          "claim_statute": "La. Civ. Code art. 3492",
+          "notes": "1-year deadline from theft date. Provide police reports and evidence of ownership.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vehicle-specific",
+      "title": "Vehicle-specific claims",
+      "blurb": "Louisiana's small claims court addresses vehicle-related disputes up to $5,000. The statute of limitations varies by claim type.",
+      "claims": [
+        {
+          "slug": "mechanic-dispute",
+          "name": "Dispute over vehicle repairs",
+          "example": "A mechanic charged you $2,000 for repairs that did not fix the issue.",
+          "eligibility": "eligible",
+          "claim_statute": "La. Rev. Stat. § 51:1401 et seq.",
+          "notes": "1-year deadline from repair date. Provide repair invoices and any correspondence with the mechanic.",
+          "damage_boost": "Possible attorney fees and damages up to three times actual damages for knowing violations.",
+          "source_ids": [
+            "S14"
+          ]
+        },
+        {
+          "slug": "wrongful-tow",
+          "name": "Vehicle was wrongfully towed",
+          "example": "Your car was towed from a legal parking spot, resulting in $500 in fees.",
+          "eligibility": "eligible",
+          "claim_statute": "La. Rev. Stat. § 51:1401 et seq.",
+          "notes": "1-year deadline from tow date. Keep towing receipts and photos of the parking area.",
+          "damage_boost": "Possible attorney fees and damages up to three times actual damages for knowing violations.",
+          "source_ids": [
+            "S14"
+          ]
+        }
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "category": "Eviction (unlawful detainer)",
+      "explanation": "Eviction cases are handled separately from small claims and may not be subject to the $5,000 limit.",
+      "where_to_go_instead": "City Court or Justice of the Peace Court eviction proceedings",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Title to real estate",
+      "explanation": "Disputes involving ownership of real property are beyond the jurisdiction of small claims court.",
+      "where_to_go_instead": "District Court",
+      "source_ids": []
+    },
+    {
+      "category": "Defamation",
+      "explanation": "Claims involving defamation are complex and exceed the scope of small claims court.",
+      "where_to_go_instead": "District Court",
+      "source_ids": []
+    },
+    {
+      "category": "Malpractice",
+      "explanation": "Professional malpractice claims require expert testimony and are not suitable for small claims court.",
+      "where_to_go_instead": "District Court",
+      "source_ids": []
+    },
+    {
+      "category": "Family law and probate",
+      "explanation": "Matters such as divorce, child custody, and wills are handled by specialized courts.",
+      "where_to_go_instead": "Family Court or Probate Court",
+      "source_ids": []
+    },
+    {
+      "category": "Federal claims",
+      "explanation": "Claims against the federal government or involving federal law are outside the jurisdiction of state small claims courts.",
+      "where_to_go_instead": "Federal Court",
+      "source_ids": []
+    },
+    {
+      "category": "Class actions",
+      "explanation": "Small claims court does not handle class action lawsuits.",
+      "where_to_go_instead": "District Court",
+      "source_ids": []
+    },
+    {
+      "category": "Injunctions/specific performance",
+      "explanation": "Small claims court cannot issue injunctions or orders for specific performance.",
+      "where_to_go_instead": "District Court",
+      "source_ids": []
+    },
+    {
+      "category": "Workers' compensation",
+      "explanation": "Claims for workers' compensation benefits are handled by specialized administrative courts.",
+      "where_to_go_instead": "Louisiana Workforce Commission",
+      "source_ids": []
+    },
+    {
+      "category": "Suing a deceased person",
+      "explanation": "Claims against deceased individuals must be filed against their estate in probate court.",
+      "where_to_go_instead": "Probate Court",
+      "source_ids": []
+    }
+  ],
+  "damages": {
+    "compensatory_allowed": true,
+    "punitive_allowed": false,
+    "punitive_explanation": "Louisiana does not allow punitive damages in small claims court. However, statutory penalties may apply in certain cases, such as bad checks or consumer protection violations.",
+    "statutory_multipliers": [
+      {
+        "claim": "Bad check (after 30-day notice)",
+        "multiplier": "2x check amount",
+        "explanation": "Check amount + service charge up to $25 + civil penalty up to $100 OR 2x check amount, whichever is greater.",
+        "statute": "La. Rev. Stat. § 9:2782",
+        "source_ids": [
+          "S15"
+        ]
+      },
+      {
+        "claim": "Consumer protection violations",
+        "multiplier": "Up to 3x actual damages",
+        "explanation": "Actual damages plus attorney fees and damages up to three times actual damages for knowing violations.",
+        "statute": "La. Rev. Stat. § 51:1409",
+        "source_ids": [
+          "S14"
+        ]
+      }
+    ],
+    "attorney_fees_recoverable": "sometimes",
+    "attorney_fees_explanation": "Attorney fees may be recoverable in cases involving bad checks or consumer protection violations.",
+    "prejudgment_interest_rate_pct": null,
+    "prejudgment_interest_statute": "",
+    "postjudgment_interest_rate_pct": null,
+    "postjudgment_interest_type": "simple",
+    "postjudgment_interest_statute": "",
+    "postjudgment_interest_notes": "",
+    "filing_and_service_fees_recoverable_from_loser": true,
+    "source_ids": [
+      "S15",
+      "S14"
+    ]
+  },
+  "where_to_file": {
+    "court_name": "City Court or Justice of the Peace Court",
+    "parent_court": "Louisiana Judicial System",
+    "venue_rules": [
+      {
+        "scenario": "Most cases (the default)",
+        "filing_options": [
+          "Parish where the defendant resides"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Where contract was performed",
+        "filing_options": [
+          "Parish where performance was due"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Where injury or damage occurred",
+        "filing_options": [
+          "Parish where the event occurred"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Multiple defendants",
+        "filing_options": [
+          "Any parish where one defendant resides"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Out-of-state defendant",
+        "filing_options": [
+          "Parish where the cause of action arose"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "consequences_of_wrong_venue": "The defendant can request the court to transfer or dismiss the case if filed in the wrong venue.",
+    "e_filing_available": "varies",
+    "e_filing_notes": "Availability of e-filing depends on the specific court; check with the local clerk's office.",
+    "e_filing_portal": null,
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "fees": {
+    "filing_fee_tiers": [
+      {
+        "range_label": "All claims",
+        "range_min": 0,
+        "range_max": 5000,
+        "fee_dollars": 35,
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "frequent_filer": {
+      "threshold_per_year": null,
+      "fee_dollars": null,
+      "notes": ""
+    },
+    "service_fees": [
+      {
+        "method": "Sheriff (personal service)",
+        "amount_label": "$25-50",
+        "notes": "Required for most cases.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "method": "Certified mail",
+        "amount_label": "$10-20",
+        "notes": "Available in some courts.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "waiver": {
+      "forms": [
+        {
+          "number": "",
+          "name": "In Forma Pauperis Affidavit",
+          "url": "",
+          "source_ids": [
+            "S2"
+          ]
+        }
+      ],
+      "eligibility_bullets": [
+        "Receiving need-based public assistance (SNAP, TANF, SSI)",
+        "Household income below 125% federal poverty line"
+      ],
+      "coverage_notes": "Waiver covers filing fees and may cover service fees; check with the court.",
+      "if_you_win_notes": "Waived fees may be added to the judgment against the losing party."
+    },
+    "other_fees": [
+      {
+        "name": "Subpoena issuance",
+        "amount_label": "$10",
+        "notes": "Plus witness fee per day.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "name": "Appeal filing",
+        "amount_label": "$200",
+        "notes": "",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "name": "Writ of execution",
+        "amount_label": "varies",
+        "notes": "Post-judgment.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "fees_recoverable_from_loser_notes": "If you win, filing fee and reasonable service costs are added to the judgment.",
+    "source_ids": [
+      "S9"
+    ]
+  },
+  "statute_of_limitations": {
+    "entries": [
+      {
+        "id": "written-contract",
+        "claim": "Written contract",
+        "years": 10,
+        "clock_starts": "Date of breach",
+        "statute": "La. Civ. Code art. 3499",
+        "notes": "",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "id": "oral-contract",
+        "claim": "Oral contract",
+        "years": 3,
+        "clock_starts": "Date of breach",
+        "statute": "La. Civ. Code art. 3494",
+        "notes": "",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "id": "sale-of-goods",
+        "claim": "Sale of goods (UCC)",
+        "years": 4,
+        "clock_starts": "Date of breach",
+        "statute": "La. Civ. Code art. 2534",
+        "notes": "",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "id": "promissory-note",
+        "claim": "Promissory note",
+        "years": 5,
+        "clock_starts": "Date payment is due",
+        "statute": "La. Civ. Code art. 3498",
+        "notes": "",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "id": "open-account",
+        "claim": "Open account / credit card debt",
+        "years": 3,
+        "clock_starts": "Date of last charge or payment",
+        "statute": "La. Civ. Code art. 3494",
+        "notes": "",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "id": "personal-injury",
+        "claim": "Personal injury",
+        "years": 1,
+        "clock_starts": "Date of injury",
+        "statute": "La. Civ. Code art. 3492",
+        "notes": "",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "id": "property-damage",
+        "claim": "Property damage",
+        "years": 1,
+        "clock_starts": "Date of damage",
+        "statute": "La. Civ. Code art. 3492",
+        "notes": "",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "id": "fraud",
+        "claim": "Fraud",
+        "years": 1,
+        "clock_starts": "Date fraud is discovered",
+        "statute": "La. Civ. Code art. 3492",
+        "notes": "",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "id": "bad-check",
+        "claim": "Bad check",
+        "years": 1,
+        "clock_starts": "Date check is dishonored",
+        "statute": "La. Rev. Stat. § 9:2782",
+        "notes": "",
+        "source_ids": [
+          "S15"
+        ]
+      },
+      {
+        "id": "unpaid-wages",
+        "claim": "Unpaid wages",
+        "years": 3,
+        "clock_starts": "Date wages are due",
+        "statute": "La. Rev. Stat. § 23:631",
+        "notes": "",
+        "source_ids": [
+          "S17"
+        ]
+      },
+      {
+        "id": "security-deposit",
+        "claim": "Security deposit",
+        "years": 1,
+        "clock_starts": "Date deposit is due",
+        "statute": "La. Rev. Stat. § 9:3251",
+        "notes": "",
+        "source_ids": [
+          "S16"
+        ]
+      },
+      {
+        "id": "judgment-enforcement",
+        "claim": "Judgment enforcement",
+        "years": 10,
+        "clock_starts": "Date judgment is signed",
+        "statute": "La. Civ. Code art. 3501",
+        "notes": "",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "discovery_rule_notes": "The discovery rule applies to fraud claims, starting the clock when the fraud is discovered.",
+    "tolling_notes": "The statute of limitations may be tolled if the defendant is out of state, the plaintiff is a minor, or in cases of bankruptcy.",
+    "source_ids": [
+      "S6"
+    ]
+  },
+  "pre_filing": {
+    "demand_letter_required": false,
+    "demand_letter_recommended": true,
+    "demand_letter_notes": "While not required, sending a demand letter can facilitate settlement and demonstrate good faith.",
+    "bad_check_notice_rule": "A 30-day written notice is required before filing a claim for a bad check.",
+    "wage_claim_demand_rule": "Employers must pay wages within 15 days of a written demand; failure to do so may result in penalties.",
+    "government_claim_required": false,
+    "government_claim_deadline_days": null,
+    "government_claim_notes": "",
+    "landlord_tenant_pre_filing_notes": "Landlords must return security deposits or provide an itemized list of deductions within 30 days.",
+    "consumer_protection_notes": "Claims under the Unfair Trade Practices Act require filing within one year of the violation.",
+    "mandatory_mediation_before_filing": "none",
+    "arbitration_clauses_enforced": true,
+    "source_ids": [
+      "S15",
+      "S17",
+      "S16",
+      "S14"
+    ]
+  },
+  "forms": [
+    {
+      "number": "",
+      "name": "Statement of Claim",
+      "description": "Initiates a small claims case by outlining the plaintiff's allegations and desired relief.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "",
+      "source_ids": [
+        "S8"
+      ]
+    },
+    {
+      "number": "",
+      "name": "Affidavit of Service",
+      "description": "Proof that the defendant was properly served with court documents.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "service",
+      "url": "",
+      "source_ids": [
+        "S8"
+      ]
+    },
+    {
+      "number": "",
+      "name": "Answer",
+      "description": "The defendant's formal response to the plaintiff's claim.",
+      "filed_by": "defendant",
+      "required": false,
+      "group": "hearing",
+      "url": "",
+      "source_ids": [
+        "S8"
+      ]
+    },
+    {
+      "number": "",
+      "name": "Counterclaim",
+      "description": "Filed by the defendant if they have a claim against the plaintiff.",
+      "filed_by": "defendant",
+      "required": false,
+      "group": "counterclaim",
+      "url": "",
+      "source_ids": [
+        "S8"
+      ]
+    },
+    {
+      "number": "",
+      "name": "Motion to Vacate Judgment",
+      "description": "Request to set aside a default judgment.",
+      "filed_by": "defendant",
+      "required": false,
+      "group": "after-judgment",
+      "url": "",
+      "source_ids": [
+        "S8"
+      ]
+    },
+    {
+      "number": "",
+      "name": "Notice of Appeal",
+      "description": "Notifies the court and opposing party of intent to appeal the judgment.",
+      "filed_by": "either",
+      "required": false,
+      "group": "appeal",
+      "url": "",
+      "source_ids": [
+        "S8"
+      ]
+    },
+    {
+      "number": "",
+      "name": "In Forma Pauperis Affidavit",
+      "description": "Request to waive court fees due to financial hardship.",
+      "filed_by": "plaintiff",
+      "required": false,
+      "group": "fee-waiver",
+      "url": "",
+      "source_ids": [
+        "S2"
+      ]
+    }
+  ],
+  "service": {
+    "who_can_serve": [
+      "Sheriff",
+      "Certified mail by clerk",
+      "Private process server"
+    ],
+    "methods": [
+      {
+        "name": "Sheriff personal service",
+        "description": "Sheriff or constable personally hands the papers to the defendant.",
+        "pros": [
+          "Most reliable",
+          "Official"
+        ],
+        "cons": [
+          "May be slower",
+          "Additional cost"
+        ],
+        "source_ids": [
+          "S10"
+        ]
+      },
+      {
+        "name": "Certified mail",
+        "description": "Court clerk sends documents via certified mail with return receipt.",
+        "pros": [
+          "Less expensive",
+          "Proof of delivery"
+        ],
+        "cons": [
+          "Defendant may refuse delivery",
+          "Not available in all cases"
+        ],
+        "source_ids": [
+          "S10"
+        ]
+      },
+      {
+        "name": "Private process server",
+        "description": "A licensed individual delivers the documents to the defendant.",
+        "pros": [
+          "Flexible timing",
+          "Can locate evasive defendants"
+        ],
+        "cons": [
+          "More expensive",
+          "Requires verification of service"
+        ],
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "in_county_days_before_hearing": 15,
+    "out_of_county_days_before_hearing": 30,
+    "proof_of_service_form": {
+      "number": "",
+      "name": "Affidavit of Service"
+    },
+    "proof_filing_deadline_days_before_hearing": 5,
+    "business_service_rule": "Serve the registered agent; if none, serve an officer or manager.",
+    "out_of_state_defendant_notes": "Service must comply with Louisiana's long-arm statute.",
+    "cant_find_defendant_notes": "May request court approval for alternative service methods, including publication.",
+    "avoiding_service_notes": "Document attempts and seek court permission for alternative service.",
+    "source_ids": [
+      "S10"
+    ]
+  },
+  "response_and_default": {
+    "must_file_written_answer": false,
+    "response_deadline_days": 10,
+    "response_notes": "Defendant should file an answer within 10 days of service; failure to do so may result in a default judgment.",
+    "default_process": "If the defendant does not appear, the court may grant a default judgment in favor of the plaintiff.",
+    "prove_up_required": true,
+    "prove_up_notes": "Plaintiff must provide evidence to support the claim even if the defendant defaults.",
+    "motion_to_vacate_form": {
+      "number": "",
+      "name": "Motion to Vacate Judgment"
+    },
+    "motion_to_vacate_deadline_days": 30,
+    "motion_to_vacate_lack_of_notice_days": 180,
+    "motion_to_vacate_appeal_deadline_days": 30,
+    "motion_to_vacate_appeal_notes": "Defendant may appeal the denial of a motion to vacate within 30 days.",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "counterclaim": {
+    "allowed": true,
+    "form": {
+      "number": "",
+      "name": "Counterclaim"
+    },
+    "same_monetary_limit": true,
+    "service_deadline_in_county_days": 10,
+    "service_deadline_out_of_county_days": 20,
+    "transfer_to_higher_court_available": true,
+    "transfer_to_higher_court_statute": "La. Rev. Stat. § 13:5206",
+    "transfer_to_higher_court_notes": "If the counterclaim exceeds the small claims limit, the case may be transferred to a court of competent jurisdiction.",
+    "source_ids": [
+      "S11"
+    ]
+  },
+  "hearing": {
+    "lawyers_allowed": "yes",
+    "lawyers_allowed_notes": "Parties may be represented by attorneys but are not required to do so.",
+    "format": "Bench trial with informal procedures; each side presents evidence and arguments.",
+    "presider": "judge",
+    "burden_of_proof": "preponderance",
+    "what_to_bring": [
+      "Originals of any contracts",
+      "Receipts and bank records",
+      "Photos and videos",
+      "Names and contact info for witnesses"
+    ],
+    "subpoena_form": {
+      "number": "",
+      "name": "Subpoena"
+    },
+    "witness_fee_per_day_dollars": 25,
+    "free_interpreters": false,
+    "interpreter_request_process": "Parties must arrange for their own interpreters; some courts may provide assistance upon request.",
+    "jury_option": false,
+    "decision_timing": "On the spot or mailed within 30 days",
+    "on_site_mediation": "varies",
+    "on_site_mediation_notes": "Some courts offer mediation services; check with the local court.",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "appeals": {
+    "who_can_appeal": "either",
+    "deadline_days": 15,
+    "fee_dollars": 200,
+    "type": "trial de novo",
+    "type_notes": "The appeal is a new trial in the District Court.",
+    "attorneys_allowed_on_appeal": true,
+    "bond_required": false,
+    "bond_amount_notes": "",
+    "automatic_stay_on_appeal": true,
+    "default_judgment_appealable": false,
+    "default_judgment_notes": "A default judgment may be set aside by filing a motion to vacate; if denied, the denial can be appealed.",
+    "notice_of_appeal_form": {
+      "number": "",
+      "name": "Notice of Appeal"
+    },
+    "frivolous_appeal_penalty_dollars": null,
+    "frivolous_appeal_statute": "",
+    "frivolous_appeal_notes": "",
+    "source_ids": [
+      "S11"
+    ]
+  },
+  "collection": {
+    "payment_deadline_typical_days": 30,
+    "post_judgment_interest_rate_pct": null,
+    "post_judgment_interest_statute": "",
+    "post_judgment_interest_notes": "",
+    "methods": [
+      {
+        "id": "wage-garnishment",
+        "name": "Wage garnishment",
+        "blurb": "Have a portion of debtor's wages withheld until the judgment is paid.",
+        "description": "File a writ of garnishment with the court, serve the employer, and the employer withholds a portion of the debtor's wages to satisfy the judgment.",
+        "forms": [
+          {
+            "number": "",
+            "name": "Writ of Garnishment"
+          }
+        ],
+        "estimated_cost": "$30-50 plus sheriff fees",
+        "effectiveness_notes": "Most effective when debtor is W-2 employed at a stable job.",
+        "exemptions": [
+          "75% of disposable earnings (federal CCPA floor)"
+        ],
+        "source_ids": [
+          "S12"
+        ]
+      },
+      {
+        "id": "bank-levy",
+        "name": "Bank levy",
+        "blurb": "Seize funds from debtor's bank account to satisfy the judgment.",
+        "description": "Obtain a writ of execution, serve the bank, and the bank freezes and transfers funds to the court.",
+        "forms": [
+          {
+            "number": "",
+            "name": "Writ of Fieri Facias"
+          }
+        ],
+        "estimated_cost": "$50-100 plus sheriff fees",
+        "effectiveness_notes": "Effective if debtor has sufficient funds in the account.",
+        "exemptions": [
+          "Social Security and federal benefits"
+        ],
+        "source_ids": [
+          "S12"
+        ]
+      },
+      {
+        "id": "property-lien",
+        "name": "Property lien",
+        "blurb": "Place a lien on debtor's real property to secure the judgment.",
+        "description": "File the judgment with the parish clerk to create a lien; debtor cannot sell or refinance without satisfying the lien.",
+        "forms": [
+          {
+            "number": "",
+            "name": "Notice of Judgment"
+          }
+        ],
+        "estimated_cost": "$50-100",
+        "effectiveness_notes": "Effective for securing payment but may take time until property is sold.",
+        "exemptions": [
+          "Homestead exemption"
+        ],
+        "source_ids": [
+          "S12"
+        ]
+      },
+      {
+        "id": "writ-of-execution",
+        "name": "Writ of execution",
+        "blurb": "Seize and sell debtor's non-exempt property to satisfy the judgment.",
+        "description": "Obtain a writ from the court, sheriff seizes property, and it is sold at auction.",
+        "forms": [
+          {
+            "number": "",
+            "name": "Writ of Fieri Facias"
+          }
+        ],
+        "estimated_cost": "$100-200 plus sheriff fees",
+        "effectiveness_notes": "Effective if debtor owns valuable non-exempt property.",
+        "exemptions": [
+          "Personal property exemptions"
+        ],
+        "source_ids": [
+          "S12"
+        ]
+      }
+    ],
+    "wage_garnishment_max_pct_of_disposable": 25,
+    "judgment_lifespan_years": 10,
+    "judgment_renewal_process": "File a motion to revive the judgment before it expires; no additional fee required.",
+    "debtor_exam_form": {
+      "number": "",
+      "name": "Motion for Judgment Debtor Examination"
+    },
+    "exempt_assets": [
+      "Homestead — $35,000",
+      "Vehicle — $7,500",
+      "Retirement accounts (federally and state-protected)",
+      "Social Security and federal benefits"
+    ],
+    "bankruptcy_effect_notes": "Filing for bankruptcy may discharge the judgment; certain debts are non-dischargeable.",
+    "satisfaction_of_judgment_form": {
+      "number": "",
+      "name": "Satisfaction of Judgment"
+    },
+    "priority_notes": "First to record the judgment has priority among creditors.",
+    "source_ids": [
+      "S12"
+    ]
+  },
+  "businesses": {
+    "self_representation_allowed": true,
+    "self_representation_notes": "Businesses can appear without an attorney in small claims court.",
+    "can_send_employee": true,
+    "can_send_attorney": true,
+    "non_attorney_representation_form": {
+      "number": "",
+      "name": "Authorization to Represent"
+    },
+    "insurance_adjuster_allowed": false,
+    "fictitious_name_form": {
+      "number": "",
+      "name": "Trade Name Registration"
+    },
+    "fictitious_name_notes": "Businesses must use their legal entity name; trade names should be registered.",
+    "sole_proprietor_employee_exception": "Sole proprietors can send a designated employee with written authorization.",
+    "out_of_state_business_must_register": true,
+    "out_of_state_business_statute": "La. Rev. Stat. § 12:304",
+    "licensing_notes": "Unlicensed contractors may face challenges in enforcing contracts.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "county_variations_material": true,
+  "county_variations": [
+    {
+      "county": "East St. Tammany",
+      "topic": "Online Dispute Resolution Pilot Project",
+      "detail": "Parties are required to participate in the Online Dispute Resolution Pilot Project process.",
+      "source_ids": [
+        "S10"
+      ]
+    }
+  ],
+  "pitfalls": [
+    {
+      "title": "Wrong defendant naming",
+      "what_happens": "If you sue 'John's Garage' but the legal entity is 'JG Auto Repair LLC', the judgment may be unenforceable against the LLC's assets.",
+      "how_to_avoid": "Search the Secretary of State business records before filing and use the exact registered name; for sole proprietors use the individual's full legal name.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Missed statute of limitations",
+      "what_happens": "Filing one day after the deadline gets the case dismissed with prejudice.",
+      "how_to_avoid": "Check the statute of limitations for your specific claim type before filing; for fraud, the discovery rule applies but be prepared to prove when you reasonably could have discovered it.",
+      "source_ids": [
+        "S6"
+      ]
+    },
+    {
+      "title": "Improper service of process",
+      "what_happens": "If the defendant isn't properly served, the case can be delayed or dismissed.",
+      "how_to_avoid": "Follow Louisiana's service rules carefully; consider using the sheriff for service to ensure compliance.",
+      "source_ids": [
+        "S10"
+      ]
+    },
+    {
+      "title": "Filing in the wrong venue",
+      "what_happens": "The defendant can request the court to transfer or dismiss the case if filed in the wrong venue.",
+      "how_to_avoid": "File in the correct parish based on the defendant's residence or where the cause of action arose.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Ignoring counterclaims",
+      "what_happens": "If the defendant files a counterclaim exceeding the small claims limit, the case may be transferred to a higher court.",
+      "how_to_avoid": "Be prepared to address potential counterclaims and understand the implications for your case.",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "title": "Failing to collect judgment",
+      "what_happens": "Winning a judgment doesn't guarantee payment; you must take steps to collect.",
+      "how_to_avoid": "Familiarize yourself with collection methods like wage garnishment and property liens.",
+      "source_ids": [
+        "S12"
+      ]
+    }
+  ],
+  "recent_changes": [
+    {
+      "date": "2021-06-11",
+      "title": "Online Dispute Resolution Pilot Project",
+      "description": "East St. Tammany City Court implemented an Online Dispute Resolution Pilot Project requiring parties to participate in online dispute resolution processes.",
+      "bill_or_rule_citation": "La. Rev. Stat. § 13:5201",
+      "source_ids": [
+        "S10"
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Do I need a lawyer?",
+      "answer": "No, you are not required to have a lawyer in Louisiana small claims court. The process is designed to be accessible for individuals representing themselves, though you may choose to hire an attorney if you prefer.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "How long does it take?",
+      "answer": "The typical timeline for a small claims case in Louisiana ranges from 30 to 90 days from filing to resolution, depending on the court's schedule and complexity of the case.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "What's the maximum I can sue for?",
+      "answer": "In Louisiana small claims court, you can sue for up to $5,000, excluding interest, court costs, and attorney fees.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    {
+      "question": "What happens if the defendant doesn't show up?",
+      "answer": "If the defendant fails to appear in court, the judge may grant a default judgment in your favor. However, you must still present evidence to support your claim.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "question": "Can I appeal?",
+      "answer": "Yes, either party can appeal a small claims judgment to the District Court within 15 days. The appeal is conducted as a new trial (trial de novo).",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "question": "How long is a judgment good for?",
+      "answer": "A judgment in Louisiana is valid for 10 years and can be renewed before it expires to extend its enforceability.",
+      "source_ids": [
+        "S6"
+      ]
+    }
+  ],
+  "state_specific_notes": [
+    "Louisiana allows for the recovery of attorney fees and treble damages in certain consumer protection cases.",
+    "Eviction cases in Justice of the Peace Courts are not subject to the $5,000 jurisdictional limit.",
+    "Small claims courts in Louisiana do not handle cases involving title to real estate.",
+    "The statute of limitations for personal injury claims in Louisiana is one year from the date of injury.",
+    "Louisiana's small claims courts do not permit jury trials; all cases are decided by a judge."
+  ],
+  "_extras": {
+    "interesting_findings": [
+      "Louisiana's small claims courts can grant equitable relief, including specific performance, in addition to monetary damages.",
+      "The Online Dispute Resolution Pilot Project in East St. Tammany City Court represents a significant modernization effort in Louisiana's small claims process."
+    ]
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "label": "Louisiana Supreme Court",
+      "url": "https://www.lasc.org/",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S2",
+      "label": "Louisiana State Bar Association — Self-help",
+      "url": "https://www.lsba.org/Public/SelfHelp.aspx",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S3",
+      "label": "Louisiana Code of Civil Procedure Title V (City and Parish Courts)",
+      "url": "https://www.legis.la.gov/legis/Laws_Toc.aspx?folder=72&title=CCP",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S4",
+      "label": "La. Code Civ. Proc. art. 4831 et seq. (Small claims)",
+      "url": "https://www.legis.la.gov/legis/Law.aspx?d=112379",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S5",
+      "label": "Louisiana Revised Statutes — index",
+      "url": "https://www.legis.la.gov/legis/LawSearchList.aspx",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S6",
+      "label": "Louisiana Civil Code (general civil law)",
+      "url": "https://www.legis.la.gov/legis/Laws_Toc.aspx?folder=67&title=CC",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S7",
+      "label": "Louisiana Code of Civil Procedure",
+      "url": "https://www.legis.la.gov/legis/Laws_Toc.aspx?folder=72&title=CCP",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S8",
+      "label": "Louisiana civil court forms (sample parish)",
+      "url": "https://orleanscivildistrict.org/forms",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S9",
+      "label": "La. Rev. Stat. § 13:841 et seq. (Court fees)",
+      "url": "https://www.legis.la.gov/legis/Law.aspx?d=78793",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S10",
+      "label": "La. Code Civ. Proc. art. 1231 et seq. (Citation and service)",
+      "url": "https://www.legis.la.gov/legis/Law.aspx?d=110971",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S11",
+      "label": "La. Code Civ. Proc. art. 4924 (Small claims appeal)",
+      "url": "https://www.legis.la.gov/legis/Law.aspx?d=112437",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S12",
+      "label": "La. Code Civ. Proc. Book V Title II (Execution)",
+      "url": "https://www.legis.la.gov/legis/Laws_Toc.aspx?folder=72&title=CCP",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S13",
+      "label": "La. Rev. Stat. § 13:3881 (Wage exemption)",
+      "url": "https://www.legis.la.gov/legis/Law.aspx?d=80162",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S14",
+      "label": "La. Rev. Stat. § 51:1401 et seq. (Unfair Trade Practices Act)",
+      "url": "https://www.legis.la.gov/legis/Law.aspx?d=104864",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S15",
+      "label": "La. Rev. Stat. § 9:2782 (Bad check)",
+      "url": "https://www.legis.la.gov/legis/Law.aspx?d=109189",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S16",
+      "label": "La. Rev. Stat. § 9:3251 (Lessee deposit)",
+      "url": "https://www.legis.la.gov/legis/Law.aspx?d=109252",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S17",
+      "label": "La. Rev. Stat. § 23:631 (Final wages)",
+      "url": "https://www.legis.la.gov/legis/Law.aspx?d=83840",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S18",
+      "label": "La. Rev. Stat. § 9:3500 (Legal interest rate)",
+      "url": "https://www.legis.la.gov/legis/Law.aspx?d=109485",
+      "primary": true,
+      "citation": ""
+    }
+  ],
+  "_meta": {
+    "state": "Louisiana",
+    "slug": "louisiana",
+    "model": "gpt-4.1",
+    "sources_response_id": null,
+    "extraction_response_id": "resp_0d40ff87ac9f36290069f0b631852081909f790d89dbbe03de",
+    "generated_at": "2026-04-28T13:31:13.819Z",
+    "usage": {
+      "input_tokens": 7304,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 14069,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 21373
+    }
+  }
+}

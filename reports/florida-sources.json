@@ -1,0 +1,141 @@
+{
+  "state": "Florida",
+  "as_of": "2026-04-28",
+  "state_judiciary_pages": [
+    {
+      "label": "Florida State Courts",
+      "url": "https://www.flcourts.gov/",
+      "scope": "statewide judiciary"
+    },
+    {
+      "label": "Florida Courts Help — Small Claims",
+      "url": "https://help.flcourts.gov/Get-Help-By-Topic/Small-Claims",
+      "scope": "self-help small claims"
+    },
+    {
+      "label": "Filing a Small Claims Case (step-by-step)",
+      "url": "https://help.flcourts.gov/Get-Help-By-Topic/Small-Claims/Filing-a-Small-Claims-Case",
+      "scope": "walkthrough"
+    }
+  ],
+  "statutes": [
+    {
+      "label": "Fla. Stat. Chapter 34 (County Courts)",
+      "url": "https://www.flsenate.gov/Laws/Statutes/2024/Chapter34",
+      "section_or_chapter": "Ch. 34"
+    },
+    {
+      "label": "Fla. Stat. § 34.01 (County Court jurisdiction — small claims)",
+      "url": "https://www.flsenate.gov/Laws/Statutes/2024/34.01",
+      "section_or_chapter": "§ 34.01"
+    },
+    {
+      "label": "Fla. Stat. Chapter 95 (Statute of limitations)",
+      "url": "https://www.flsenate.gov/Laws/Statutes/2024/Chapter95",
+      "section_or_chapter": "Ch. 95"
+    },
+    {
+      "label": "Fla. Stat. Chapter 55 (Judgments)",
+      "url": "https://www.flsenate.gov/Laws/Statutes/2024/Chapter55",
+      "section_or_chapter": "Ch. 55"
+    }
+  ],
+  "court_rules": [
+    {
+      "label": "Florida Small Claims Rules",
+      "url": "https://www.flcourts.gov/Resources-Services/Court-Improvement/Court-Rules/Small-Claims-Rules",
+      "rule_or_chapter": "Florida Small Claims Rules"
+    },
+    {
+      "label": "Florida Rules of Civil Procedure",
+      "url": "https://www.flcourts.gov/Resources-Services/Court-Improvement/Court-Rules",
+      "rule_or_chapter": "Civil Procedure"
+    }
+  ],
+  "forms_pages": [
+    {
+      "label": "Florida Courts Help — Small Claims Forms",
+      "url": "https://help.flcourts.gov/Find-Resources/Forms/Small-Claims-Forms",
+      "scope": "forms"
+    },
+    {
+      "label": "Florida Courts Help — Forms hub",
+      "url": "https://help.flcourts.gov/Find-Resources/Forms",
+      "scope": "all forms"
+    }
+  ],
+  "fee_schedules": [
+    {
+      "label": "Florida court fees (clerk of court)",
+      "url": "https://www.flclerks.com/page/CourtFees",
+      "scope": "filing fees"
+    }
+  ],
+  "service_rules": [
+    {
+      "label": "Fla. Stat. Chapter 48 (Process and service)",
+      "url": "https://www.flsenate.gov/Laws/Statutes/2024/Chapter48",
+      "section_or_chapter": "Ch. 48"
+    }
+  ],
+  "appeal_rules": [
+    {
+      "label": "Fla. Stat. Chapter 26 (Circuit Court — appeals)",
+      "url": "https://www.flsenate.gov/Laws/Statutes/2024/Chapter26",
+      "section_or_chapter": "Ch. 26"
+    }
+  ],
+  "post_judgment_collection": [
+    {
+      "label": "Fla. Stat. Chapter 77 (Garnishment)",
+      "url": "https://www.flsenate.gov/Laws/Statutes/2024/Chapter77",
+      "section_or_chapter": "Ch. 77"
+    },
+    {
+      "label": "Fla. Stat. Chapter 222 (Exemptions)",
+      "url": "https://www.flsenate.gov/Laws/Statutes/2024/Chapter222",
+      "section_or_chapter": "Ch. 222"
+    }
+  ],
+  "consumer_protection_statutes": [
+    {
+      "label": "Fla. Stat. Chapter 501 Part II (FDUTPA — Consumer Fraud)",
+      "url": "https://www.flsenate.gov/Laws/Statutes/2024/Chapter501/PART_II",
+      "section_or_chapter": "Ch. 501 Pt. II"
+    },
+    {
+      "label": "Fla. Stat. § 832.07 (Bad check civil penalty)",
+      "url": "https://www.flsenate.gov/Laws/Statutes/2024/832.07",
+      "section_or_chapter": "§ 832.07"
+    }
+  ],
+  "landlord_tenant_statutes": [
+    {
+      "label": "Fla. Stat. § 83.49 (Security deposit)",
+      "url": "https://www.flsenate.gov/Laws/Statutes/2024/83.49",
+      "section_or_chapter": "§ 83.49"
+    }
+  ],
+  "wage_and_employment_statutes": [
+    {
+      "label": "Fla. Stat. § 448.08 (Attorney's fees for unpaid wages)",
+      "url": "https://www.flsenate.gov/Laws/Statutes/2024/448.08",
+      "section_or_chapter": "§ 448.08"
+    }
+  ],
+  "civil_remedies_statutes": [
+    {
+      "label": "Fla. Stat. § 55.03 (Judgment interest rate)",
+      "url": "https://www.flsenate.gov/Laws/Statutes/2024/55.03",
+      "section_or_chapter": "§ 55.03"
+    }
+  ],
+  "county_specific": [],
+  "notes": "Manually curated source list (Pass 1 model defaulted to commercial mirrors).",
+  "_meta": {
+    "state": "Florida",
+    "slug": "florida",
+    "model": "manually-curated",
+    "generated_at": "2026-04-28T13:20:48.078Z"
+  }
+}

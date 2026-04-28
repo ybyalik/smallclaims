@@ -1,0 +1,126 @@
+{
+  "state": "New Jersey",
+  "as_of": "2026-04-28",
+  "state_judiciary_pages": [
+    {
+      "label": "New Jersey Courts (njcourts.gov)",
+      "url": "https://www.njcourts.gov/",
+      "scope": "statewide judiciary"
+    },
+    {
+      "label": "NJ Courts — Small Claims",
+      "url": "https://www.njcourts.gov/self-help/small-claims",
+      "scope": "self-help small claims"
+    },
+    {
+      "label": "NJ Courts — Special Civil Part (small claims)",
+      "url": "https://www.njcourts.gov/courts/civil/special-civil-part",
+      "scope": "court info"
+    }
+  ],
+  "statutes": [
+    {
+      "label": "N.J. Stat. § 2A:18-1 (Special Civil Part jurisdiction)",
+      "url": "https://lis.njleg.state.nj.us/nxt/gateway.dll?f=templates&fn=default.htm",
+      "section_or_chapter": "§ 2A:18-1"
+    },
+    {
+      "label": "N.J. Stat. § 2A:14-1 et seq. (Statute of limitations)",
+      "url": "https://lis.njleg.state.nj.us/nxt/gateway.dll?f=templates&fn=default.htm",
+      "section_or_chapter": "§ 2A:14-1"
+    },
+    {
+      "label": "New Jersey Statutes (legislative search)",
+      "url": "https://www.njleg.state.nj.us/",
+      "section_or_chapter": "all titles"
+    }
+  ],
+  "court_rules": [
+    {
+      "label": "NJ Rules of Court Part VI (Special Civil Part)",
+      "url": "https://www.njcourts.gov/attorneys/rules-of-court",
+      "rule_or_chapter": "Part VI"
+    }
+  ],
+  "forms_pages": [
+    {
+      "label": "NJ Courts — Forms hub",
+      "url": "https://www.njcourts.gov/forms",
+      "scope": "forms"
+    },
+    {
+      "label": "NJ Civil Practice fee/jurisdiction foldout (PDF)",
+      "url": "https://www.state.nj.us/lps/ca/laws/civilfoldout.pdf",
+      "scope": "civil practice"
+    }
+  ],
+  "fee_schedules": [
+    {
+      "label": "NJ Special Civil Part filing fees",
+      "url": "https://www.njcourts.gov/sites/default/files/forms/11148_civil_part_fees.pdf",
+      "scope": "fees"
+    }
+  ],
+  "service_rules": [
+    {
+      "label": "NJ Rule 6:2 (Service of process — Special Civil Part)",
+      "url": "https://www.njcourts.gov/attorneys/rules-of-court",
+      "rule_or_chapter": "Rule 6:2"
+    }
+  ],
+  "appeal_rules": [
+    {
+      "label": "NJ Rule 2:2 (Appeals)",
+      "url": "https://www.njcourts.gov/attorneys/rules-of-court",
+      "rule_or_chapter": "Rule 2:2"
+    }
+  ],
+  "post_judgment_collection": [
+    {
+      "label": "N.J. Stat. § 2A:17-50 et seq. (Execution / wage execution)",
+      "url": "https://lis.njleg.state.nj.us/nxt/gateway.dll?f=templates&fn=default.htm",
+      "section_or_chapter": "§ 2A:17-50"
+    }
+  ],
+  "consumer_protection_statutes": [
+    {
+      "label": "N.J. Stat. § 56:8-1 et seq. (Consumer Fraud Act)",
+      "url": "https://lis.njleg.state.nj.us/nxt/gateway.dll?f=templates&fn=default.htm",
+      "section_or_chapter": "§ 56:8-1"
+    },
+    {
+      "label": "N.J. Stat. § 2A:32A-1 (Bad check civil penalty)",
+      "url": "https://lis.njleg.state.nj.us/nxt/gateway.dll?f=templates&fn=default.htm",
+      "section_or_chapter": "§ 2A:32A-1"
+    }
+  ],
+  "landlord_tenant_statutes": [
+    {
+      "label": "N.J. Stat. § 46:8-19 et seq. (Security deposit)",
+      "url": "https://lis.njleg.state.nj.us/nxt/gateway.dll?f=templates&fn=default.htm",
+      "section_or_chapter": "§ 46:8-19"
+    }
+  ],
+  "wage_and_employment_statutes": [
+    {
+      "label": "N.J. Stat. § 34:11-4.3 (Wage payment)",
+      "url": "https://lis.njleg.state.nj.us/nxt/gateway.dll?f=templates&fn=default.htm",
+      "section_or_chapter": "§ 34:11-4.3"
+    }
+  ],
+  "civil_remedies_statutes": [
+    {
+      "label": "NJ Court Rule 4:42-11 (Post-judgment interest)",
+      "url": "https://www.njcourts.gov/attorneys/rules-of-court",
+      "section_or_chapter": "Rule 4:42-11"
+    }
+  ],
+  "county_specific": [],
+  "notes": "Manually curated source list (Pass 1 model defaulted to commercial mirrors).",
+  "_meta": {
+    "state": "New Jersey",
+    "slug": "new-jersey",
+    "model": "manually-curated",
+    "generated_at": "2026-04-28T13:20:48.080Z"
+  }
+}

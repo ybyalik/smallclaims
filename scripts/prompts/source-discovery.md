@@ -80,6 +80,30 @@ Return one JSON object matching this exact shape. Use empty arrays for categorie
       "url": "https://..."
     }
   ],
+  "consumer_protection_statutes": [
+    {
+      "label": "string — UDAP / Consumer Fraud Act / Lemon law / Used-car warranty / Auto repair statute / Bad-check statutory penalty",
+      "url": "https://..."
+    }
+  ],
+  "landlord_tenant_statutes": [
+    {
+      "label": "string — security-deposit return rule with penalty multiplier, repair-and-deduct, illegal lockout",
+      "url": "https://..."
+    }
+  ],
+  "wage_and_employment_statutes": [
+    {
+      "label": "string — final paycheck rule, waiting-time penalty, unpaid commissions",
+      "url": "https://..."
+    }
+  ],
+  "civil_remedies_statutes": [
+    {
+      "label": "string — civil theft, fraud damages, attorney-fee shifting statutes",
+      "url": "https://..."
+    }
+  ],
   "county_specific": [
     {
       "county": "Jefferson",
@@ -101,6 +125,10 @@ Return one JSON object matching this exact shape. Use empty arrays for categorie
 - `service_rules`: 1-2 URLs.
 - `appeal_rules`: 1-2 URLs.
 - `post_judgment_collection`: 2-4 URLs.
+- `consumer_protection_statutes`: 2-5 URLs (UDAP, Consumer Fraud Act, Lemon Law, used-car warranty, auto repair, bad-check civil penalty).
+- `landlord_tenant_statutes`: 2-4 URLs (security deposit return + penalty, repair-and-deduct, illegal lockout, prepaid rent rules).
+- `wage_and_employment_statutes`: 1-3 URLs (final paycheck deadline, waiting-time penalty, commission protection).
+- `civil_remedies_statutes`: 1-3 URLs (civil theft multipliers, fraud damages, attorney-fee shifting).
 - `county_specific`: only populate if the state has materially different small-claims rules by county; otherwise empty.
 
 If the state has fewer authoritative sources than the target (rare — usually means the state hosts everything on one judicial-branch portal), return what exists. Don't pad.

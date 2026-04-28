@@ -1,0 +1,1577 @@
+{
+  "state": "Idaho",
+  "slug": "idaho",
+  "abbr": "ID",
+  "as_of": "2026-04-28",
+  "hero": {
+    "individual_limit_dollars": 5000,
+    "business_limit_dollars": 5000,
+    "filing_fee_low_dollars": 69,
+    "filing_fee_high_dollars": 69,
+    "typical_timeline_min_days": 30,
+    "typical_timeline_max_days": 90,
+    "tagline": "Standard $5,000 cap with informal proceedings and no counterclaims allowed.",
+    "source_ids": [
+      "S4",
+      "S12"
+    ]
+  },
+  "at_a_glance": [
+    {
+      "label": "Most you can sue for",
+      "value": "$5,000",
+      "detail": "Same cap for individuals and businesses",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    {
+      "label": "Filing fee",
+      "value": "$69",
+      "detail": "Flat fee for all claims",
+      "source_ids": [
+        "S14"
+      ]
+    },
+    {
+      "label": "Court",
+      "value": "Small Claims Department of the Magistrate's Division",
+      "detail": "",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Lawyers at trial",
+      "value": "Not allowed",
+      "detail": "Parties must represent themselves",
+      "source_ids": [
+        "S12"
+      ]
+    },
+    {
+      "label": "Appeal window",
+      "value": "30 days",
+      "detail": "Trial de novo in district court",
+      "source_ids": [
+        "S16"
+      ]
+    },
+    {
+      "label": "Recent change",
+      "value": "—",
+      "detail": "No major changes in the last 3 years",
+      "source_ids": []
+    }
+  ],
+  "limits": {
+    "individual_dollars": 5000,
+    "business_dollars": 5000,
+    "guarantor_with_fee_max": null,
+    "guarantor_without_fee_max": null,
+    "annual_filing_cap": {
+      "count": null,
+      "threshold_dollars": null,
+      "notes": ""
+    },
+    "split_claims_allowed": false,
+    "split_claims_explanation": "If a claim exceeds the $5,000 cap, you cannot split it into multiple claims to fit within the limit. Instead, you must file in a higher court.",
+    "interest_excluded_from_cap": true,
+    "court_costs_excluded_from_cap": true,
+    "statute": "Idaho Code § 1-2301",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "claim_categories": [
+    {
+      "id": "contracts",
+      "title": "Contracts and money owed",
+      "blurb": "Idaho allows you to file claims for breaches of contract and money owed up to $5,000. The statute of limitations varies depending on the type of contract.",
+      "claims": [
+        {
+          "slug": "written-contract",
+          "name": "Breach of a written contract",
+          "example": "A contractor signed a $4,000 contract to remodel your kitchen, took the deposit, and never finished.",
+          "eligibility": "eligible",
+          "claim_statute": "Idaho Code § 5-216",
+          "notes": "5-year deadline from breach. Bring the signed contract, payment proof, and any correspondence showing the breach.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "oral-contract",
+          "name": "Breach of an oral contract",
+          "example": "You agreed verbally to lend someone $1,000, and they failed to repay it.",
+          "eligibility": "eligible",
+          "claim_statute": "Idaho Code § 5-217",
+          "notes": "4-year deadline from breach. Provide evidence of the agreement and any partial payments.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "personal-loan",
+          "name": "Unpaid personal loan",
+          "example": "You loaned a friend $2,500 with the understanding they'd repay in six months, but they haven't.",
+          "eligibility": "eligible",
+          "claim_statute": "Idaho Code § 5-216",
+          "notes": "5-year deadline from breach. Document the loan agreement and any repayment attempts.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "promissory-note",
+          "name": "Default on a promissory note",
+          "example": "Someone signed a promissory note to repay $3,000 but missed payments.",
+          "eligibility": "eligible",
+          "claim_statute": "Idaho Code § 5-216",
+          "notes": "5-year deadline from breach. Present the original promissory note and payment records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unpaid-invoice",
+          "name": "Unpaid invoice for services rendered",
+          "example": "You provided $1,200 worth of consulting services, but the client hasn't paid the invoice.",
+          "eligibility": "eligible",
+          "claim_statute": "Idaho Code § 5-216",
+          "notes": "5-year deadline from breach. Include the invoice, service agreement, and communication records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "open-account",
+          "name": "Unpaid balance on an open account",
+          "example": "A customer has an outstanding balance of $4,500 on their account with your business.",
+          "eligibility": "eligible",
+          "claim_statute": "Idaho Code § 5-216",
+          "notes": "5-year deadline from breach. Provide account statements and records of transactions.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unpaid-rent",
+          "name": "Unpaid rent by tenant",
+          "example": "Your tenant owes $3,000 in back rent and has vacated the property.",
+          "eligibility": "eligible",
+          "claim_statute": "Idaho Code § 5-216",
+          "notes": "5-year deadline from breach. Bring the lease agreement and records of missed payments.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "bad-check",
+          "name": "Payment with a bad check",
+          "example": "A customer paid with a $500 check that bounced due to insufficient funds.",
+          "eligibility": "eligible",
+          "claim_statute": "Idaho Code § 28-22-105",
+          "notes": "3-year deadline from date of check. Provide the bounced check and any bank notices.",
+          "damage_boost": "Check amount + service charge up to $40 + civil penalty up to $100 OR 2x check amount, whichever is greater.",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "co-signer",
+          "name": "Co-signer seeking repayment",
+          "example": "You co-signed a $4,000 loan, and the primary borrower defaulted, leaving you responsible.",
+          "eligibility": "eligible",
+          "claim_statute": "Idaho Code § 5-216",
+          "notes": "5-year deadline from breach. Present the loan agreement and proof of your payments.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "consumer-disputes",
+      "title": "Consumer disputes",
+      "blurb": "Idaho allows consumers to file claims up to $5,000 for issues like defective products or poor services. The statute of limitations varies by claim type.",
+      "claims": [
+        {
+          "slug": "defective-product",
+          "name": "Purchase of a defective product",
+          "example": "You bought a $1,200 appliance that stopped working within a month, and the seller refuses to repair or replace it.",
+          "eligibility": "eligible",
+          "claim_statute": "Idaho Code § 28-2-725",
+          "notes": "4-year deadline from date of purchase. Bring the purchase receipt and any warranty information.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "bad-service",
+          "name": "Substandard service provided",
+          "example": "You paid $800 for a home cleaning service that did not perform as agreed.",
+          "eligibility": "eligible",
+          "claim_statute": "Idaho Code § 5-216",
+          "notes": "5-year deadline from service date. Provide the service agreement and evidence of poor service.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "auto-repair",
+          "name": "Faulty auto repair work",
+          "example": "A mechanic charged you $1,500 for repairs that didn't fix the issue.",
+          "eligibility": "eligible",
+          "claim_statute": "Idaho Code § 5-216",
+          "notes": "5-year deadline from repair date. Bring repair invoices and any expert evaluations.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "contractor",
+          "name": "Contractor failed to complete work",
+          "example": "You paid a contractor $4,000 to remodel your bathroom, but they abandoned the project halfway.",
+          "eligibility": "eligible",
+          "claim_statute": "Idaho Code § 5-216",
+          "notes": "5-year deadline from breach. Provide the contract, payment records, and photos of incomplete work.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "no-show-vendor",
+          "name": "Vendor failed to deliver goods",
+          "example": "You paid $2,000 for furniture that was never delivered.",
+          "eligibility": "eligible",
+          "claim_statute": "Idaho Code § 5-216",
+          "notes": "5-year deadline from breach. Bring the purchase agreement and payment proof.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "subscription-cancellation",
+          "name": "Unauthorized subscription charges",
+          "example": "A company continued to charge your credit card $50 monthly after you canceled the subscription.",
+          "eligibility": "eligible",
+          "claim_statute": "Idaho Code § 5-216",
+          "notes": "5-year deadline from unauthorized charge. Provide cancellation confirmation and billing statements.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "used-car",
+          "name": "Purchase of a defective used car",
+          "example": "You bought a used car for $4,500 that broke down within a week, and the seller refuses to refund.",
+          "eligibility": "eligible",
+          "claim_statute": "Idaho Code § 28-2-725",
+          "notes": "4-year deadline from purchase. Bring the bill of sale and any repair records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "false-advertising",
+          "name": "False advertising leading to financial loss",
+          "example": "A company advertised a product for $300 with features it didn't have, leading you to purchase it under false pretenses.",
+          "eligibility": "eligible",
+          "claim_statute": "Idaho Code § 48-603",
+          "notes": "2-year deadline from discovery. Provide the advertisement and purchase records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "property-damage",
+      "title": "Property damage",
+      "blurb": "Claims for property damage up to $5,000 can be filed in Idaho's small claims court. The statute of limitations is generally 3 years.",
+      "claims": [
+        {
+          "slug": "vehicle-collision",
+          "name": "Damage from a vehicle collision",
+          "example": "Another driver hit your parked car, causing $2,500 in damages.",
+          "eligibility": "eligible",
+          "claim_statute": "Idaho Code § 5-218",
+          "notes": "3-year deadline from date of accident. Bring the police report and repair estimates.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "neighbor-property",
+          "name": "Neighbor damaged your property",
+          "example": "Your neighbor's tree fell onto your fence, causing $1,200 in damages.",
+          "eligibility": "eligible",
+          "claim_statute": "Idaho Code § 5-218",
+          "notes": "3-year deadline from date of damage. Provide photos and repair estimates.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "damage-to-rental",
+          "name": "Tenant caused damage to rental property",
+          "example": "A tenant left your rental unit with $3,000 in damages beyond normal wear and tear.",
+          "eligibility": "eligible",
+          "claim_statute": "Idaho Code § 5-218",
+          "notes": "3-year deadline from discovery. Bring the lease agreement and photos of damages.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "pet-damage",
+          "name": "Damage caused by someone's pet",
+          "example": "A neighbor's dog dug up your garden, causing $800 in damages.",
+          "eligibility": "eligible",
+          "claim_statute": "Idaho Code § 5-218",
+          "notes": "3-year deadline from date of damage. Provide photos and repair estimates.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "property-in-custody",
+          "name": "Damage to property left in someone's care",
+          "example": "You left your bicycle with a friend, and they returned it with $600 in damages.",
+          "eligibility": "eligible",
+          "claim_statute": "Idaho Code § 5-218",
+          "notes": "3-year deadline from discovery. Document the condition before and after.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "landlord-tenant",
+      "title": "Landlord-tenant disputes",
+      "blurb": "Monetary disputes between landlords and tenants up to $5,000 can be addressed in small claims court. Eviction proceedings are excluded.",
+      "claims": [
+        {
+          "slug": "security-deposit",
+          "name": "Failure to return security deposit",
+          "example": "Your landlord withheld your $1,000 security deposit without justification.",
+          "eligibility": "eligible",
+          "claim_statute": "Idaho Code § 6-321",
+          "notes": "1-year deadline from lease termination. Provide the lease agreement and move-out inspection report.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "deposit-not-itemized",
+          "name": "Landlord didn't provide itemized deductions",
+          "example": "Your landlord deducted $500 from your deposit without providing an itemized list of damages.",
+          "eligibility": "eligible",
+          "claim_statute": "Idaho Code § 6-321",
+          "notes": "1-year deadline from lease termination. Bring correspondence requesting the itemization.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "uninhabitable-rental",
+          "name": "Rental unit deemed uninhabitable",
+          "example": "Your apartment had severe mold issues, making it unlivable, and the landlord refused to address it.",
+          "eligibility": "eligible",
+          "claim_statute": "Idaho Code § 6-320",
+          "notes": "1-year deadline from discovery. Provide photos and health department reports.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "wrongful-retention-property",
+          "name": "Landlord kept personal property after move-out",
+          "example": "After moving out, your landlord refused to return your $2,000 worth of furniture left behind.",
+          "eligibility": "eligible",
+          "claim_statute": "Idaho Code § 6-321",
+          "notes": "1-year deadline from lease termination. Document the items left and any communication.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "illegal-eviction",
+          "name": "Landlord conducted an illegal eviction",
+          "example": "Your landlord changed the locks without notice, preventing you from accessing your belongings.",
+          "eligibility": "eligible",
+          "claim_statute": "Idaho Code § 6-320",
+          "notes": "1-year deadline from eviction. Provide evidence of the lockout and any police reports.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unreturned-prepaid-rent",
+          "name": "Landlord didn't return prepaid rent after early termination",
+          "example": "You paid first and last month's rent but moved out early, and the landlord kept the last month's rent.",
+          "eligibility": "eligible",
+          "claim_statute": "Idaho Code § 6-321",
+          "notes": "1-year deadline from lease termination. Bring the lease agreement and payment records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unpaid-rent-by-tenant",
+          "name": "Tenant failed to pay rent",
+          "example": "Your tenant owes $4,500 in unpaid rent and has vacated the property.",
+          "eligibility": "eligible",
+          "claim_statute": "Idaho Code § 5-216",
+          "notes": "5-year deadline from breach. Provide the lease agreement and records of missed payments.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "repair-and-deduct",
+          "name": "Tenant repaired and deducted from rent",
+          "example": "You repaired a broken heater for $600 and deducted it from rent, but the landlord disputes this.",
+          "eligibility": "eligible",
+          "claim_statute": "Idaho Code § 6-320",
+          "notes": "1-year deadline from repair. Provide repair receipts and communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "employment-wages",
+      "title": "Employment and wage disputes",
+      "blurb": "Employees can file claims up to $5,000 for unpaid wages or final paychecks. The statute of limitations is generally 2 years.",
+      "claims": [
+        {
+          "slug": "unpaid-wages",
+          "name": "Employer failed to pay earned wages",
+          "example": "Your employer owes you $2,000 for hours worked but hasn't paid.",
+          "eligibility": "eligible",
+          "claim_statute": "Idaho Code § 45-614",
+          "notes": "2-year deadline from date wages were due. Provide timesheets and pay stubs.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "final-paycheck",
+          "name": "Employer didn't provide final paycheck",
+          "example": "After quitting, your employer withheld your final paycheck of $1,500.",
+          "eligibility": "eligible",
+          "claim_statute": "Idaho Code § 45-614",
+          "notes": "2-year deadline from termination. Document your termination date and owed wages.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unpaid-commissions",
+          "name": "Unpaid sales commissions",
+          "example": "Your employer owes you $3,000 in earned commissions but refuses to pay.",
+          "eligibility": "eligible",
+          "claim_statute": "Idaho Code § 45-614",
+          "notes": "2-year deadline from date commissions were due. Provide sales records and commission agreements.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unpaid-overtime",
+          "name": "Employer didn't pay overtime wages",
+          "example": "You worked 10 hours of overtime but weren't compensated at the overtime rate.",
+          "eligibility": "eligible",
+          "claim_statute": "Idaho Code § 45-614",
+          "notes": "2-year deadline from date overtime was worked. Provide timesheets and pay stubs.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "personal-claims",
+      "title": "Personal claims",
+      "blurb": "Individuals can file claims up to $5,000 for minor injuries or property disputes. The statute of limitations varies by claim type.",
+      "claims": [
+        {
+          "slug": "minor-injury",
+          "name": "Minor personal injury",
+          "example": "You slipped on a wet floor in a store, resulting in $2,000 in medical bills.",
+          "eligibility": "eligible",
+          "claim_statute": "Idaho Code § 5-219",
+          "notes": "2-year deadline from date of injury. Provide medical records and incident reports.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "loaned-property",
+          "name": "Failure to return loaned property",
+          "example": "You lent a friend your $1,000 camera, and they refuse to return it.",
+          "eligibility": "eligible",
+          "claim_statute": "Idaho Code § 5-218",
+          "notes": "3-year deadline from demand for return. Document the loan agreement and requests for return.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "civil-theft",
+          "name": "Theft of personal property",
+          "example": "Someone stole your bicycle worth $800, and you know their identity.",
+          "eligibility": "eligible",
+          "claim_statute": "Idaho Code § 5-218",
+          "notes": "3-year deadline from date of theft. Provide police reports and proof of ownership.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vehicle-specific",
+      "title": "Vehicle-specific disputes",
+      "blurb": "Claims related to vehicles up to $5,000 can be filed in small claims court. The statute of limitations varies by claim type.",
+      "claims": [
+        {
+          "slug": "mechanic-dispute",
+          "name": "Dispute over mechanic's charges",
+          "example": "A mechanic charged you $1,200 for unauthorized repairs.",
+          "eligibility": "eligible",
+          "claim_statute": "Idaho Code § 5-216",
+          "notes": "5-year deadline from repair date. Provide repair invoices and communication records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "wrongful-tow",
+          "name": "Vehicle was wrongfully towed",
+          "example": "Your car was towed from a legal parking spot, and you incurred $500 in fees.",
+          "eligibility": "eligible",
+          "claim_statute": "Idaho Code § 5-218",
+          "notes": "3-year deadline from date of tow. Provide towing receipts and photos of the parking area.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "category": "Eviction (unlawful detainer)",
+      "explanation": "Eviction proceedings are not handled in small claims court and must be filed in the district court.",
+      "where_to_go_instead": "District Court eviction process",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Title to real estate",
+      "explanation": "Disputes involving the title to real estate are beyond the jurisdiction of small claims court.",
+      "where_to_go_instead": "District Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Defamation",
+      "explanation": "Claims for defamation, including libel and slander, are not permitted in small claims court.",
+      "where_to_go_instead": "District Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Malpractice",
+      "explanation": "Professional malpractice claims exceed the jurisdictional limits of small claims court.",
+      "where_to_go_instead": "District Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Family law matters",
+      "explanation": "Issues such as divorce, child custody, and support are not handled in small claims court.",
+      "where_to_go_instead": "Family Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Probate matters",
+      "explanation": "Disputes involving wills and estates are outside the jurisdiction of small claims court.",
+      "where_to_go_instead": "Probate Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Claims against the federal government",
+      "explanation": "Small claims court does not have jurisdiction over claims against federal entities.",
+      "where_to_go_instead": "Federal Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Class actions",
+      "explanation": "Class action lawsuits are not permitted in small claims court.",
+      "where_to_go_instead": "District Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Injunctions and specific performance",
+      "explanation": "Small claims court cannot issue injunctions or orders for specific performance.",
+      "where_to_go_instead": "District Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Workers' compensation claims",
+      "explanation": "Claims related to workers' compensation are handled by the Industrial Commission.",
+      "where_to_go_instead": "Idaho Industrial Commission",
+      "source_ids": [
+        "S1"
+      ]
+    }
+  ],
+  "damages": {
+    "compensatory_allowed": true,
+    "punitive_allowed": false,
+    "punitive_explanation": "Punitive damages are not permitted in small claims court; only actual damages can be awarded.",
+    "statutory_multipliers": [
+      {
+        "claim": "Bad check (after 30-day notice)",
+        "multiplier": "2x check amount",
+        "explanation": "Check amount + service charge up to $40 + civil penalty up to $100 OR 2x check amount, whichever is greater.",
+        "statute": "Idaho Code § 28-22-105",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "attorney_fees_recoverable": "no",
+    "attorney_fees_explanation": "Attorney fees are not recoverable in small claims court as attorneys are not permitted to represent parties.",
+    "prejudgment_interest_rate_pct": null,
+    "prejudgment_interest_statute": "",
+    "postjudgment_interest_rate_pct": null,
+    "postjudgment_interest_type": "simple",
+    "postjudgment_interest_statute": "",
+    "postjudgment_interest_notes": "",
+    "filing_and_service_fees_recoverable_from_loser": true,
+    "source_ids": [
+      "S12"
+    ]
+  },
+  "where_to_file": {
+    "court_name": "Small Claims Department of the Magistrate's Division",
+    "parent_court": "Idaho Judicial Branch",
+    "venue_rules": [
+      {
+        "scenario": "Most cases (the default)",
+        "filing_options": [
+          "County where the defendant resides"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Where contract was performed",
+        "filing_options": [
+          "County where performance was due"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Where injury or damage occurred",
+        "filing_options": [
+          "County where the event occurred"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Multiple defendants",
+        "filing_options": [
+          "Any county where one defendant resides"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Out-of-state defendant",
+        "filing_options": [
+          "Where the cause of action arose"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "consequences_of_wrong_venue": "Filing in the wrong venue may result in dismissal or transfer of the case, potentially causing delays and additional costs.",
+    "e_filing_available": "yes",
+    "e_filing_notes": "E-filing is available through the Idaho Guide & File system for self-represented litigants.",
+    "e_filing_portal": "https://isc.idaho.gov/efile",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "fees": {
+    "filing_fee_tiers": [
+      {
+        "range_label": "All claims",
+        "range_min": 0,
+        "range_max": 5000,
+        "fee_dollars": 69,
+        "source_ids": [
+          "S14"
+        ]
+      }
+    ],
+    "frequent_filer": {
+      "threshold_per_year": null,
+      "fee_dollars": null,
+      "notes": ""
+    },
+    "service_fees": [
+      {
+        "method": "Certified mail (small claims service only)",
+        "amount_label": "$10.10",
+        "notes": "Fee for certified mail service in small claims cases.",
+        "source_ids": [
+          "S14"
+        ]
+      },
+      {
+        "method": "Restricted delivery (optional; small claims service only)",
+        "amount_label": "$12.75",
+        "notes": "Optional fee for restricted delivery service in small claims cases.",
+        "source_ids": [
+          "S14"
+        ]
+      },
+      {
+        "method": "Registered mail",
+        "amount_label": "$18.60",
+        "notes": "Fee for registered mail service.",
+        "source_ids": [
+          "S14"
+        ]
+      }
+    ],
+    "waiver": {
+      "forms": [
+        {
+          "number": "CAO FW 1",
+          "name": "Application for Waiver of Court Fees",
+          "url": "https://isc.idaho.gov/CAO_FW_1.pdf",
+          "source_ids": [
+            "S14"
+          ]
+        }
+      ],
+      "eligibility_bullets": [
+        "Receiving need-based public assistance (SNAP, TANF, SSI)",
+        "Household income below 125% federal poverty line"
+      ],
+      "coverage_notes": "The waiver covers filing fees and service fees.",
+      "if_you_win_notes": "If you win, the waived fees are added to the judgment against the loser."
+    },
+    "other_fees": [
+      {
+        "name": "Subpoena issuance",
+        "amount_label": "$10",
+        "notes": "Plus witness fee per day.",
+        "source_ids": [
+          "S14"
+        ]
+      },
+      {
+        "name": "Appeal filing",
+        "amount_label": "$94",
+        "notes": "",
+        "source_ids": [
+          "S14"
+        ]
+      },
+      {
+        "name": "Writ of execution",
+        "amount_label": "Varies",
+        "notes": "Post-judgment.",
+        "source_ids": [
+          "S14"
+        ]
+      }
+    ],
+    "fees_recoverable_from_loser_notes": "If you win, filing fee and reasonable service costs are added to the judgment.",
+    "source_ids": [
+      "S14"
+    ]
+  },
+  "statute_of_limitations": {
+    "entries": [
+      {
+        "id": "written-contract",
+        "claim": "Written contract",
+        "years": 5,
+        "clock_starts": "Date of breach",
+        "statute": "Idaho Code § 5-216",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "oral-contract",
+        "claim": "Oral contract",
+        "years": 4,
+        "clock_starts": "Date of breach",
+        "statute": "Idaho Code § 5-217",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "sale-of-goods",
+        "claim": "Sale of goods (UCC)",
+        "years": 4,
+        "clock_starts": "Date of breach",
+        "statute": "Idaho Code § 28-2-725",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "promissory-note",
+        "claim": "Promissory note",
+        "years": 5,
+        "clock_starts": "Date of default",
+        "statute": "Idaho Code § 5-216",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "open-account",
+        "claim": "Open account / credit card debt",
+        "years": 5,
+        "clock_starts": "Date of last payment",
+        "statute": "Idaho Code § 5-216",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "personal-injury",
+        "claim": "Personal injury",
+        "years": 2,
+        "clock_starts": "Date of injury",
+        "statute": "Idaho Code § 5-219",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "property-damage",
+        "claim": "Property damage",
+        "years": 3,
+        "clock_starts": "Date of damage",
+        "statute": "Idaho Code § 5-218",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "fraud",
+        "claim": "Fraud",
+        "years": 3,
+        "clock_starts": "Date of discovery",
+        "statute": "Idaho Code § 5-218",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "bad-check",
+        "claim": "Bad check",
+        "years": 3,
+        "clock_starts": "Date of check",
+        "statute": "Idaho Code § 28-22-105",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "unpaid-wages",
+        "claim": "Unpaid wages",
+        "years": 2,
+        "clock_starts": "Date wages were due",
+        "statute": "Idaho Code § 45-614",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "security-deposit",
+        "claim": "Security deposit",
+        "years": 1,
+        "clock_starts": "Date of lease termination",
+        "statute": "Idaho Code § 6-321",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "judgment-enforcement",
+        "claim": "Judgment enforcement",
+        "years": 5,
+        "clock_starts": "Date of judgment",
+        "statute": "Idaho Code § 10-1110",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "discovery_rule_notes": "The discovery rule applies to fraud claims, starting the clock when the fraud is discovered.",
+    "tolling_notes": "The statute of limitations may be tolled if the defendant is out of state, the plaintiff is a minor, or in cases of bankruptcy.",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "pre_filing": {
+    "demand_letter_required": false,
+    "demand_letter_recommended": true,
+    "demand_letter_notes": "While not required, sending a demand letter can often resolve disputes without court intervention.",
+    "bad_check_notice_rule": "A 30-day written notice is required before pursuing a bad check claim, allowing the issuer to make the check good.",
+    "wage_claim_demand_rule": "A written demand for unpaid wages is recommended before filing a claim, as it may facilitate resolution.",
+    "government_claim_required": false,
+    "government_claim_deadline_days": null,
+    "government_claim_notes": "",
+    "landlord_tenant_pre_filing_notes": "Landlords must provide an itemized list of deductions from the security deposit within 21 days of lease termination.",
+    "consumer_protection_notes": "Claims under the Idaho Consumer Protection Act require a written demand for relief before filing.",
+    "mandatory_mediation_before_filing": "none",
+    "arbitration_clauses_enforced": true,
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "forms": [
+    {
+      "number": "SC-1",
+      "name": "Complaint",
+      "description": "Initiates a small claims case by outlining the plaintiff's claim against the defendant.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "https://isc.idaho.gov/SC-1.pdf",
+      "source_ids": [
+        "S13"
+      ]
+    },
+    {
+      "number": "SC-2",
+      "name": "Summons",
+      "description": "Notifies the defendant of the lawsuit and the requirement to respond.",
+      "filed_by": "court",
+      "required": true,
+      "group": "service",
+      "url": "https://isc.idaho.gov/SC-2.pdf",
+      "source_ids": [
+        "S13"
+      ]
+    },
+    {
+      "number": "SC-3",
+      "name": "Answer",
+      "description": "Allows the defendant to respond to the plaintiff's complaint.",
+      "filed_by": "defendant",
+      "required": false,
+      "group": "response",
+      "url": "https://isc.idaho.gov/SC-3.pdf",
+      "source_ids": [
+        "S13"
+      ]
+    },
+    {
+      "number": "SC-4",
+      "name": "Affidavit of Service",
+      "description": "Proof that the defendant was properly served with the complaint and summons.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "service",
+      "url": "https://isc.idaho.gov/SC-4.pdf",
+      "source_ids": [
+        "S13"
+      ]
+    },
+    {
+      "number": "SC-5",
+      "name": "Request for Default Judgment",
+      "description": "Filed when the defendant fails to respond, requesting the court to grant judgment in favor of the plaintiff.",
+      "filed_by": "plaintiff",
+      "required": false,
+      "group": "after-judgment",
+      "url": "https://isc.idaho.gov/SC-5.pdf",
+      "source_ids": [
+        "S13"
+      ]
+    },
+    {
+      "number": "SC-6",
+      "name": "Satisfaction of Judgment",
+      "description": "Filed to indicate that the judgment has been paid in full.",
+      "filed_by": "plaintiff",
+      "required": false,
+      "group": "after-judgment",
+      "url": "https://isc.idaho.gov/SC-6.pdf",
+      "source_ids": [
+        "S13"
+      ]
+    },
+    {
+      "number": "SC-7",
+      "name": "Notice of Appeal",
+      "description": "Filed to appeal the small claims court's decision to a higher court.",
+      "filed_by": "either",
+      "required": false,
+      "group": "appeal",
+      "url": "https://isc.idaho.gov/SC-7.pdf",
+      "source_ids": [
+        "S13"
+      ]
+    }
+  ],
+  "service": {
+    "who_can_serve": [
+      "Sheriff",
+      "Certified mail by clerk",
+      "Private process server"
+    ],
+    "methods": [
+      {
+        "name": "Certified mail by clerk",
+        "description": "The court clerk sends the summons and complaint to the defendant via certified mail.",
+        "pros": [
+          "Cost-effective",
+          "Handled by the court"
+        ],
+        "cons": [
+          "Defendant may refuse delivery"
+        ],
+        "source_ids": [
+          "S15"
+        ]
+      },
+      {
+        "name": "Sheriff personal service",
+        "description": "A sheriff or constable personally delivers the summons and complaint to the defendant.",
+        "pros": [
+          "Reliable",
+          "Official service"
+        ],
+        "cons": [
+          "More expensive"
+        ],
+        "source_ids": [
+          "S15"
+        ]
+      },
+      {
+        "name": "Private process server",
+        "description": "A private individual authorized to serve legal documents delivers the summons and complaint.",
+        "pros": [
+          "Flexible scheduling",
+          "Can locate evasive defendants"
+        ],
+        "cons": [
+          "Additional cost"
+        ],
+        "source_ids": [
+          "S15"
+        ]
+      }
+    ],
+    "in_county_days_before_hearing": 5,
+    "out_of_county_days_before_hearing": 10,
+    "proof_of_service_form": {
+      "number": "SC-4",
+      "name": "Affidavit of Service"
+    },
+    "proof_filing_deadline_days_before_hearing": 3,
+    "business_service_rule": "Serve the registered agent of the corporation or an officer of the company.",
+    "out_of_state_defendant_notes": "Service must comply with Idaho's long-arm statute and the laws of the state where the defendant resides.",
+    "cant_find_defendant_notes": "If the defendant cannot be located, service by publication may be permitted with court approval.",
+    "avoiding_service_notes": "If the defendant is evading service, document attempts and seek court permission for alternative methods.",
+    "source_ids": [
+      "S15"
+    ]
+  },
+  "response_and_default": {
+    "must_file_written_answer": true,
+    "response_deadline_days": 21,
+    "response_notes": "The defendant must file a written answer within 21 days of service to avoid default judgment.",
+    "default_process": "If the defendant fails to respond, the plaintiff can request a default judgment by filing the appropriate form.",
+    "prove_up_required": true,
+    "prove_up_notes": "Even if the defendant defaults, the plaintiff must provide evidence to support the claim before judgment is granted.",
+    "motion_to_vacate_form": {
+      "number": "SC-8",
+      "name": "Motion to Vacate Default Judgment"
+    },
+    "motion_to_vacate_deadline_days": 30,
+    "motion_to_vacate_lack_of_notice_days": 180,
+    "motion_to_vacate_appeal_deadline_days": 30,
+    "motion_to_vacate_appeal_notes": "A motion to vacate must be filed within 30 days; if denied, an appeal can be filed within 30 days of the denial.",
+    "source_ids": [
+      "S12"
+    ]
+  },
+  "counterclaim": {
+    "allowed": false,
+    "form": null,
+    "same_monetary_limit": null,
+    "service_deadline_in_county_days": null,
+    "service_deadline_out_of_county_days": null,
+    "transfer_to_higher_court_available": false,
+    "transfer_to_higher_court_statute": "",
+    "transfer_to_higher_court_notes": "",
+    "source_ids": [
+      "S12"
+    ]
+  },
+  "hearing": {
+    "lawyers_allowed": "no",
+    "lawyers_allowed_notes": "Attorneys are not permitted to represent parties in small claims court; parties must represent themselves.",
+    "format": "Informal bench trial, typically lasting 30-60 minutes.",
+    "presider": "judge",
+    "burden_of_proof": "preponderance",
+    "what_to_bring": [
+      "Originals of any contracts",
+      "Receipts and bank records",
+      "Photos and videos",
+      "Names and contact info for witnesses"
+    ],
+    "subpoena_form": {
+      "number": "SC-9",
+      "name": "Subpoena"
+    },
+    "witness_fee_per_day_dollars": 20,
+    "free_interpreters": true,
+    "interpreter_request_process": "Request an interpreter from the court clerk at least 5 days before the hearing.",
+    "jury_option": false,
+    "decision_timing": "On the spot or mailed within 2 weeks",
+    "on_site_mediation": "no",
+    "on_site_mediation_notes": "",
+    "source_ids": [
+      "S12"
+    ]
+  },
+  "appeals": {
+    "who_can_appeal": "either",
+    "deadline_days": 30,
+    "fee_dollars": 94,
+    "type": "trial de novo",
+    "type_notes": "The appeal is a new trial in the district court, not a review of the small claims court's decision.",
+    "attorneys_allowed_on_appeal": true,
+    "bond_required": false,
+    "bond_amount_notes": "",
+    "automatic_stay_on_appeal": true,
+    "default_judgment_appealable": false,
+    "default_judgment_notes": "A default judgment cannot be appealed directly; the defendant must first file a motion to vacate the judgment.",
+    "notice_of_appeal_form": {
+      "number": "SC-7",
+      "name": "Notice of Appeal"
+    },
+    "frivolous_appeal_penalty_dollars": null,
+    "frivolous_appeal_statute": "",
+    "frivolous_appeal_notes": "",
+    "source_ids": [
+      "S16"
+    ]
+  },
+  "collection": {
+    "payment_deadline_typical_days": 30,
+    "post_judgment_interest_rate_pct": 5,
+    "post_judgment_interest_statute": "Idaho Code § 28-22-104",
+    "post_judgment_interest_notes": "Interest accrues on unpaid judgments at a rate of 5% per annum.",
+    "methods": [
+      {
+        "id": "wage-garnishment",
+        "name": "Wage garnishment",
+        "blurb": "Have a portion of debtor's wages withheld until the judgment is paid.",
+        "description": "File a writ of garnishment with the court, serve the employer, and the employer withholds a portion of the debtor's wages to satisfy the judgment.",
+        "forms": [
+          {
+            "number": "SC-10",
+            "name": "Writ of Garnishment"
+          }
+        ],
+        "estimated_cost": "$30-50 plus sheriff fees",
+        "effectiveness_notes": "Most effective when debtor is W-2 employed at a stable job.",
+        "exemptions": [
+          "75% of disposable earnings (federal CCPA floor)"
+        ],
+        "source_ids": [
+          "S17"
+        ]
+      },
+      {
+        "id": "bank-levy",
+        "name": "Bank levy",
+        "blurb": "Seize funds from debtor's bank account to satisfy the judgment.",
+        "description": "Obtain a writ of execution from the court, serve the bank, and the bank freezes and transfers funds from the debtor's account.",
+        "forms": [
+          {
+            "number": "SC-11",
+            "name": "Writ of Execution"
+          }
+        ],
+        "estimated_cost": "$30-50 plus sheriff fees",
+        "effectiveness_notes": "Effective if debtor has sufficient funds in the account.",
+        "exemptions": [
+          "$1,000 in bank account is exempt"
+        ],
+        "source_ids": [
+          "S17"
+        ]
+      },
+      {
+        "id": "property-lien",
+        "name": "Property lien",
+        "blurb": "Place a lien on debtor's real property to secure the judgment.",
+        "description": "File a certified copy of the judgment with the county recorder to place a lien on the debtor's property.",
+        "forms": [
+          {
+            "number": "SC-12",
+            "name": "Abstract of Judgment"
+          }
+        ],
+        "estimated_cost": "$10-20 recording fee",
+        "effectiveness_notes": "Effective if debtor owns real property; lien must be satisfied before property can be sold.",
+        "exemptions": [
+          "Homestead exemption up to $100,000"
+        ],
+        "source_ids": [
+          "S17"
+        ]
+      },
+      {
+        "id": "writ-of-execution",
+        "name": "Writ of execution",
+        "blurb": "Authorize the sheriff to seize and sell debtor's non-exempt property.",
+        "description": "Obtain a writ of execution from the court, and the sheriff seizes and sells the debtor's non-exempt property to satisfy the judgment.",
+        "forms": [
+          {
+            "number": "SC-11",
+            "name": "Writ of Execution"
+          }
+        ],
+        "estimated_cost": "$30-50 plus sheriff fees",
+        "effectiveness_notes": "Effective if debtor owns valuable non-exempt property.",
+        "exemptions": [
+          "Various personal property exemptions apply"
+        ],
+        "source_ids": [
+          "S17"
+        ]
+      }
+    ],
+    "wage_garnishment_max_pct_of_disposable": 25,
+    "judgment_lifespan_years": 5,
+    "judgment_renewal_process": "File a motion to renew the judgment before it expires; renewal extends the judgment for another 5 years.",
+    "debtor_exam_form": {
+      "number": "SC-13",
+      "name": "Order for Examination of Judgment Debtor"
+    },
+    "exempt_assets": [
+      "Homestead — $100,000",
+      "Vehicle — $7,000",
+      "Retirement accounts (federally and state-protected)",
+      "Social Security and federal benefits"
+    ],
+    "bankruptcy_effect_notes": "Filing for bankruptcy imposes an automatic stay on collection efforts; certain judgments may be discharged in bankruptcy.",
+    "satisfaction_of_judgment_form": {
+      "number": "SC-6",
+      "name": "Satisfaction of Judgment"
+    },
+    "priority_notes": "Priority among multiple judgment creditors is generally determined by the order in which liens are recorded.",
+    "source_ids": [
+      "S17"
+    ]
+  },
+  "businesses": {
+    "self_representation_allowed": true,
+    "self_representation_notes": "Businesses can appear without an attorney in small claims court; an employee may sign pleadings on behalf of the business.",
+    "can_send_employee": true,
+    "can_send_attorney": false,
+    "non_attorney_representation_form": {
+      "number": "SC-14",
+      "name": "Authorization for Non-Attorney Representation"
+    },
+    "insurance_adjuster_allowed": false,
+    "fictitious_name_form": {
+      "number": "SC-15",
+      "name": "Fictitious Name Statement"
+    },
+    "fictitious_name_notes": "Businesses operating under a fictitious name must file a statement with the Secretary of State.",
+    "sole_proprietor_employee_exception": "A sole proprietor may authorize an employee to represent the business in small claims court.",
+    "out_of_state_business_must_register": true,
+    "out_of_state_business_statute": "Idaho Code § 30-21-501",
+    "licensing_notes": "Unlicensed contractors may be barred from recovering fees for services requiring a license.",
+    "source_ids": [
+      "S12"
+    ]
+  },
+  "county_variations_material": false,
+  "county_variations": [],
+  "pitfalls": [
+    {
+      "title": "Wrong defendant naming",
+      "what_happens": "If you sue 'John's Garage' but the legal entity is 'JG Auto Repair LLC', the judgment may be unenforceable against the LLC's assets.",
+      "how_to_avoid": "Search the Secretary of State business records before filing and use the exact registered name; for sole proprietors use the individual's full legal name.",
+      "source_ids": [
+        "S12"
+      ]
+    },
+    {
+      "title": "Missed statute of limitations",
+      "what_happens": "Filing one day after the deadline gets the case dismissed with prejudice.",
+      "how_to_avoid": "Check the SOL for your specific claim type before filing; for fraud, the discovery rule applies but be prepared to prove when you reasonably could have discovered it.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "title": "Improper service of process",
+      "what_happens": "If the defendant isn't properly served, the case may be dismissed or delayed.",
+      "how_to_avoid": "Follow Idaho's service rules carefully; consider using the sheriff or a professional process server.",
+      "source_ids": [
+        "S15"
+      ]
+    },
+    {
+      "title": "Failing to appear at hearing",
+      "what_happens": "If you don't show up, the court may dismiss your case or enter a default judgment against you.",
+      "how_to_avoid": "Mark your calendar and set reminders; if you can't attend, notify the court in advance to reschedule.",
+      "source_ids": [
+        "S12"
+      ]
+    },
+    {
+      "title": "Insufficient evidence",
+      "what_happens": "Without enough evidence, the court may rule against you even if you're in the right.",
+      "how_to_avoid": "Gather all relevant documents, photos, and witness statements before the hearing.",
+      "source_ids": [
+        "S12"
+      ]
+    },
+    {
+      "title": "Suing for more than the limit",
+      "what_happens": "Claims exceeding $5,000 are not allowed in small claims court and will be dismissed.",
+      "how_to_avoid": "If your claim exceeds the limit, consider waiving the excess or filing in a higher court.",
+      "source_ids": [
+        "S4"
+      ]
+    }
+  ],
+  "recent_changes": [],
+  "faqs": [
+    {
+      "question": "Do I need a lawyer?",
+      "answer": "No, attorneys are not permitted to represent parties in Idaho's small claims court; you must represent yourself.",
+      "source_ids": [
+        "S12"
+      ]
+    },
+    {
+      "question": "How long does it take?",
+      "answer": "The typical timeline for a small claims case in Idaho is between 30 to 90 days from filing to resolution.",
+      "source_ids": [
+        "S12"
+      ]
+    },
+    {
+      "question": "What's the maximum I can sue for?",
+      "answer": "You can sue for up to $5,000 in Idaho's small claims court.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "question": "What happens if the defendant doesn't show up?",
+      "answer": "If the defendant fails to appear or respond, you can request a default judgment; however, you must still provide evidence to support your claim.",
+      "source_ids": [
+        "S12"
+      ]
+    },
+    {
+      "question": "Can I appeal?",
+      "answer": "Yes, either party can appeal a small claims court decision within 30 days by filing a notice of appeal and paying the required fee.",
+      "source_ids": [
+        "S16"
+      ]
+    },
+    {
+      "question": "How long is a judgment good for?",
+      "answer": "A judgment in Idaho is valid for 5 years and can be renewed before it expires to extend its enforceability.",
+      "source_ids": [
+        "S17"
+      ]
+    }
+  ],
+  "state_specific_notes": [
+    "Idaho's small claims court does not allow counterclaims; defendants must file a separate action if they have a claim against the plaintiff.",
+    "Attorneys are not permitted to represent parties in small claims court; self-representation is required.",
+    "The maximum amount you can sue for in small claims court is $5,000, including both individuals and businesses.",
+    "Filing fees for small claims cases are a flat $69, regardless of the claim amount.",
+    "Appeals from small claims court decisions are conducted as a trial de novo in the district court."
+  ],
+  "_extras": {
+    "interesting_findings": [
+      "Idaho's small claims court emphasizes informal proceedings to allow individuals to resolve disputes without legal representation.",
+      "The prohibition of counterclaims in Idaho's small claims court is unique compared to many other states.",
+      "Idaho provides a comprehensive set of forms and instructions to assist self-represented litigants in navigating the small claims process."
+    ]
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "label": "Idaho Courts - Small Claims",
+      "url": "https://isc.idaho.gov/self-help/small-claims",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S4",
+      "label": "Idaho Code § 1-2301 (Small Claims Department Created)",
+      "url": "https://legislature.idaho.gov/statutesrules/idstat/Title1/T1CH23/SECT1-2301/",
+      "primary": true,
+      "citation": "Idaho Code § 1-2301"
+    },
+    {
+      "id": "S12",
+      "label": "Idaho Rules of Small Claims Procedure",
+      "url": "https://isc.idaho.gov/irsca",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S14",
+      "label": "Idaho Court Fee Schedule",
+      "url": "https://isc.idaho.gov/fees",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S15",
+      "label": "Service of Process — Idaho Rules of Small Claims Procedure",
+      "url": "https://isc.idaho.gov/irsca#rule3",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S16",
+      "label": "Idaho Code § 1-2310 (Appeals from Small Claims Department)",
+      "url": "https://legislature.idaho.gov/statutesrules/idstat/Title1/T1CH23/SECT1-2310/",
+      "primary": true,
+      "citation": "Idaho Code § 1-2310"
+    },
+    {
+      "id": "S17",
+      "label": "Enforcement of Judgment — Idaho Code Title 8, Chapter 3",
+      "url": "https://legislature.idaho.gov/statutesrules/idstat/Title8/T8CH3/",
+      "primary": true,
+      "citation": "Idaho Code Title 8, Chapter 3"
+    },
+    {
+      "id": "S13",
+      "label": "Idaho Small Claims Forms",
+      "url": "https://isc.idaho.gov/self-help/small-claims#forms",
+      "primary": true,
+      "citation": ""
+    }
+  ],
+  "_meta": {
+    "state": "Idaho",
+    "slug": "idaho",
+    "model": "gpt-4.1",
+    "sources_response_id": "resp_0c6792c0df2d4ee80069f08970312881969caa259b931085e0",
+    "extraction_response_id": "resp_0f4e8314276cdeb00069f0b5752c408193ba567a1f37a81772",
+    "generated_at": "2026-04-28T13:27:40.548Z",
+    "usage": {
+      "input_tokens": 7556,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 12928,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 20484
+    }
+  }
+}

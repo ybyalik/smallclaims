@@ -1,0 +1,126 @@
+{
+  "state": "Kansas",
+  "as_of": "2026-04-28",
+  "state_judiciary_pages": [
+    {
+      "label": "Kansas Judicial Branch",
+      "url": "https://www.kscourts.gov/",
+      "scope": "statewide judiciary"
+    },
+    {
+      "label": "Kansas District Court — small claims",
+      "url": "https://www.kscourts.gov/Public/Self-Help-(Pro-Se)/Small-Claims",
+      "scope": "self-help"
+    }
+  ],
+  "statutes": [
+    {
+      "label": "Kan. Stat. Chapter 61 Art. 27 (Small Claims Procedure Act)",
+      "url": "https://www.kslegislature.gov/li/b2025_26/statute/061_000_0000_chapter/061_027_0000_article/",
+      "section_or_chapter": "Ch. 61 Art. 27"
+    },
+    {
+      "label": "Kan. Stat. Chapter 61 (Limited actions)",
+      "url": "https://www.kslegislature.gov/li/b2025_26/statute/061_000_0000_chapter/",
+      "section_or_chapter": "Ch. 61"
+    },
+    {
+      "label": "Kan. Stat. Chapter 60 (Code of Civil Procedure)",
+      "url": "https://www.kslegislature.gov/li/b2025_26/statute/060_000_0000_chapter/",
+      "section_or_chapter": "Ch. 60"
+    },
+    {
+      "label": "Kan. Stat. § 60-501 et seq. (Statute of limitations)",
+      "url": "https://www.kslegislature.gov/li/b2025_26/statute/060_000_0000_chapter/060_005_0000_article/",
+      "section_or_chapter": "Ch. 60 Art. 5"
+    }
+  ],
+  "court_rules": [
+    {
+      "label": "Kansas Rules of the Supreme Court — Civil",
+      "url": "https://www.kscourts.gov/Rules-Orders",
+      "rule_or_chapter": "civil rules"
+    }
+  ],
+  "forms_pages": [
+    {
+      "label": "Kansas court forms — Small Claims",
+      "url": "https://www.kscourts.gov/Public/Forms",
+      "scope": "forms"
+    }
+  ],
+  "fee_schedules": [
+    {
+      "label": "Kan. Stat. § 28-170 (District Court fees)",
+      "url": "https://www.kslegislature.gov/li/b2025_26/statute/028_000_0000_chapter/028_001_0000_article/028_001_0070_section/",
+      "section_or_chapter": "§ 28-170"
+    }
+  ],
+  "service_rules": [
+    {
+      "label": "Kan. Stat. § 60-303 et seq. (Service of process)",
+      "url": "https://www.kslegislature.gov/li/b2025_26/statute/060_000_0000_chapter/060_003_0000_article/",
+      "section_or_chapter": "§ 60-303"
+    }
+  ],
+  "appeal_rules": [
+    {
+      "label": "Kan. Stat. § 61-2709 (Small claims appeal)",
+      "url": "https://www.kslegislature.gov/li/b2025_26/statute/061_000_0000_chapter/061_027_0000_article/061_027_0009_section/",
+      "section_or_chapter": "§ 61-2709"
+    }
+  ],
+  "post_judgment_collection": [
+    {
+      "label": "Kan. Stat. § 60-734 et seq. (Garnishment)",
+      "url": "https://www.kslegislature.gov/li/b2025_26/statute/060_000_0000_chapter/060_007_0000_article/",
+      "section_or_chapter": "§ 60-734"
+    },
+    {
+      "label": "Kan. Stat. § 60-2301 (Homestead)",
+      "url": "https://www.kslegislature.gov/li/b2025_26/statute/060_000_0000_chapter/060_023_0000_article/060_023_0001_section/",
+      "section_or_chapter": "§ 60-2301"
+    }
+  ],
+  "consumer_protection_statutes": [
+    {
+      "label": "Kan. Stat. § 50-623 et seq. (Consumer Protection Act)",
+      "url": "https://www.kslegislature.gov/li/b2025_26/statute/050_000_0000_chapter/050_006a_0000_article/",
+      "section_or_chapter": "§ 50-623"
+    },
+    {
+      "label": "Kan. Stat. § 60-2610 (Bad check civil penalty)",
+      "url": "https://www.kslegislature.gov/li/b2025_26/statute/060_000_0000_chapter/060_026_0000_article/060_026_0010_section/",
+      "section_or_chapter": "§ 60-2610"
+    }
+  ],
+  "landlord_tenant_statutes": [
+    {
+      "label": "Kan. Stat. § 58-2550 (Security deposit)",
+      "url": "https://www.kslegislature.gov/li/b2025_26/statute/058_000_0000_chapter/058_025_0000_article/058_025_0050_section/",
+      "section_or_chapter": "§ 58-2550"
+    }
+  ],
+  "wage_and_employment_statutes": [
+    {
+      "label": "Kan. Stat. § 44-315 (Final wages)",
+      "url": "https://www.kslegislature.gov/li/b2025_26/statute/044_000_0000_chapter/044_003_0000_article/044_003_0015_section/",
+      "section_or_chapter": "§ 44-315"
+    }
+  ],
+  "civil_remedies_statutes": [
+    {
+      "label": "Kan. Stat. § 16-204 (Judgment interest)",
+      "url": "https://www.kslegislature.gov/li/b2025_26/statute/016_000_0000_chapter/016_002_0000_article/016_002_0004_section/",
+      "section_or_chapter": "§ 16-204"
+    }
+  ],
+  "county_specific": [],
+  "notes": "Manually curated source list (Pass 1 model defaulted to commercial mirrors).",
+  "_meta": {
+    "state": "Kansas",
+    "slug": "kansas",
+    "model": "manually-curated",
+    "generated_at": "2026-04-28T13:20:48.079Z"
+  }
+}

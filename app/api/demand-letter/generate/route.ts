@@ -106,7 +106,16 @@ export async function POST(req: NextRequest) {
       state_specific_enhanced: false, // determined inside generate()
     });
   } catch (err) {
-    console.error("[demand-letter] generate failed:", err);
+    // Verbose log so the surfaced error in Vercel logs is actionable. The
+    // generic 502 response stays safe for the client.
+    const detail =
+      err instanceof Error
+        ? `${err.name}: ${err.message}` +
+          // OpenRouterError carries status + body
+          ((err as { status?: number }).status ? ` [status=${(err as { status?: number }).status}]` : "") +
+          ((err as { body?: string }).body ? ` body=${String((err as { body?: string }).body).slice(0, 400)}` : "")
+        : String(err);
+    console.error("[demand-letter] generate failed:", detail);
     return NextResponse.json(
       { error: "Could not draft the letter. Try again in a moment." },
       { status: 502 }

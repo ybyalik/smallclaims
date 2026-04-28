@@ -1,0 +1,136 @@
+{
+  "state": "Maryland",
+  "as_of": "2026-04-28",
+  "state_judiciary_pages": [
+    {
+      "label": "Maryland Judiciary",
+      "url": "https://mdcourts.gov/",
+      "scope": "statewide judiciary"
+    },
+    {
+      "label": "Maryland District Court",
+      "url": "https://www.courts.state.md.us/district",
+      "scope": "district court (small claims)"
+    },
+    {
+      "label": "Maryland Courts — Small Claims self-help",
+      "url": "https://www.courts.state.md.us/district/civil/smallclaims",
+      "scope": "self-help"
+    }
+  ],
+  "statutes": [
+    {
+      "label": "Md. Code Cts. & Jud. Proc. § 4-405 (Small claims jurisdiction)",
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=gcj&section=4-405&enactments=false",
+      "section_or_chapter": "CJP § 4-405"
+    },
+    {
+      "label": "Md. Code Cts. & Jud. Proc. § 4-401 (District Court jurisdiction)",
+      "url": "https://mgaleg.maryland.gov/2025RS/Statute_Web/gcj/4-401.pdf",
+      "section_or_chapter": "CJP § 4-401"
+    },
+    {
+      "label": "Maryland Code statute search",
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Laws/Statute",
+      "section_or_chapter": "all articles"
+    },
+    {
+      "label": "Md. Code Cts. & Jud. Proc. § 5-101 (Statute of limitations)",
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=gcj&section=5-101&enactments=false",
+      "section_or_chapter": "CJP § 5-101"
+    }
+  ],
+  "court_rules": [
+    {
+      "label": "Maryland Rules — Title 3 (District Court civil)",
+      "url": "https://www.courts.state.md.us/rules",
+      "rule_or_chapter": "Title 3"
+    }
+  ],
+  "forms_pages": [
+    {
+      "label": "Maryland Court Forms (mdcourts.gov)",
+      "url": "https://mdcourts.gov/courtforms",
+      "scope": "all forms"
+    },
+    {
+      "label": "Maryland District Court Forms",
+      "url": "https://www.courts.state.md.us/district/forms",
+      "scope": "district court forms"
+    }
+  ],
+  "fee_schedules": [
+    {
+      "label": "Md. Code Cts. & Jud. Proc. § 7-301 (District Court fees)",
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=gcj&section=7-301",
+      "section_or_chapter": "CJP § 7-301"
+    }
+  ],
+  "service_rules": [
+    {
+      "label": "Maryland Rules Rule 3-121 (Process service)",
+      "url": "https://www.courts.state.md.us/rules",
+      "rule_or_chapter": "Rule 3-121"
+    }
+  ],
+  "appeal_rules": [
+    {
+      "label": "Md. Code Cts. & Jud. Proc. § 12-401 (District Court appeals)",
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=gcj&section=12-401",
+      "section_or_chapter": "CJP § 12-401"
+    }
+  ],
+  "post_judgment_collection": [
+    {
+      "label": "Maryland Rules Title 3 Ch. 600 (Judgment enforcement)",
+      "url": "https://www.courts.state.md.us/rules",
+      "section_or_chapter": "Title 3 Ch. 600"
+    },
+    {
+      "label": "Md. Code Cts. & Jud. Proc. § 11-504 (Exemptions)",
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=gcj&section=11-504",
+      "section_or_chapter": "CJP § 11-504"
+    }
+  ],
+  "consumer_protection_statutes": [
+    {
+      "label": "Md. Code Com. Law § 13-101 et seq. (Consumer Protection Act)",
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=gcl&section=13-101",
+      "section_or_chapter": "CL § 13-101"
+    },
+    {
+      "label": "Md. Code Com. Law § 15-802 (Bad check civil penalty)",
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=gcl&section=15-802",
+      "section_or_chapter": "CL § 15-802"
+    }
+  ],
+  "landlord_tenant_statutes": [
+    {
+      "label": "Md. Code Real Prop. § 8-203 (Security deposit)",
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=grp&section=8-203",
+      "section_or_chapter": "RP § 8-203"
+    }
+  ],
+  "wage_and_employment_statutes": [
+    {
+      "label": "Md. Code Lab. & Empl. § 3-505 (Final wages)",
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=gle&section=3-505",
+      "section_or_chapter": "LE § 3-505"
+    }
+  ],
+  "civil_remedies_statutes": [
+    {
+      "label": "Md. Code Cts. & Jud. Proc. § 11-107 (Judgment interest)",
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=gcj&section=11-107",
+      "section_or_chapter": "CJP § 11-107"
+    }
+  ],
+  "county_specific": [],
+  "notes": "Manually curated source list (Pass 1 model defaulted to commercial mirrors).",
+  "_meta": {
+    "state": "Maryland",
+    "slug": "maryland",
+    "model": "manually-curated",
+    "generated_at": "2026-04-28T13:20:48.080Z"
+  }
+}

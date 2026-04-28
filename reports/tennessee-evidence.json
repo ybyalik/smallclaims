@@ -1,0 +1,1629 @@
+{
+  "state": "Tennessee",
+  "slug": "tennessee",
+  "abbr": "TN",
+  "as_of": "2026-04-28",
+  "hero": {
+    "individual_limit_dollars": 25000,
+    "business_limit_dollars": 25000,
+    "filing_fee_low_dollars": null,
+    "filing_fee_high_dollars": null,
+    "typical_timeline_min_days": null,
+    "typical_timeline_max_days": null,
+    "tagline": "Standard $25,000 cap with jurisdiction varying by county.",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "at_a_glance": [
+    {
+      "label": "Most you can sue for",
+      "value": "$25,000",
+      "detail": "Same cap for individuals and businesses",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "label": "Filing fee",
+      "value": "Varies by county",
+      "detail": "Fees are set by local courts",
+      "source_ids": []
+    },
+    {
+      "label": "Court",
+      "value": "General Sessions Court",
+      "detail": "",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Lawyers at trial",
+      "value": "Allowed",
+      "detail": "Permitted but not required",
+      "source_ids": []
+    },
+    {
+      "label": "Appeal window",
+      "value": "10 days",
+      "detail": "Trial de novo in Circuit Court",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "label": "Recent change",
+      "value": "—",
+      "detail": "No major changes in the last 3 years",
+      "source_ids": []
+    }
+  ],
+  "limits": {
+    "individual_dollars": 25000,
+    "business_dollars": 25000,
+    "guarantor_with_fee_max": null,
+    "guarantor_without_fee_max": null,
+    "annual_filing_cap": {
+      "count": null,
+      "threshold_dollars": null,
+      "notes": ""
+    },
+    "split_claims_allowed": false,
+    "split_claims_explanation": "If a claim exceeds the $25,000 cap, you must waive the excess to file in General Sessions Court; splitting one dispute into multiple claims is not allowed.",
+    "interest_excluded_from_cap": true,
+    "court_costs_excluded_from_cap": true,
+    "statute": "Tenn. Code Ann. § 16-15-501",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "claim_categories": [
+    {
+      "id": "contracts",
+      "title": "Contracts and money owed",
+      "blurb": "Tennessee allows 6 years to file for breach of a written contract and 6 years for oral contracts.",
+      "claims": [
+        {
+          "slug": "written-contract",
+          "name": "Breach of a written contract",
+          "example": "A contractor signed a $20,000 contract to remodel your kitchen, took the deposit, and never finished.",
+          "eligibility": "eligible",
+          "claim_statute": "Tenn. Code Ann. § 28-3-109",
+          "notes": "6-year deadline from breach. Bring the signed contract, payment proof, and any correspondence showing the breach.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "oral-contract",
+          "name": "Breach of an oral contract",
+          "example": "You agreed verbally to lend a friend $5,000, and they failed to repay.",
+          "eligibility": "eligible",
+          "claim_statute": "Tenn. Code Ann. § 28-3-109",
+          "notes": "6-year deadline from breach. Provide evidence of the agreement, such as emails or witness testimony.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "personal-loan",
+          "name": "Unpaid personal loan",
+          "example": "You loaned $3,000 to a colleague who promised to repay in 3 months but hasn't.",
+          "eligibility": "eligible",
+          "claim_statute": "Tenn. Code Ann. § 28-3-109",
+          "notes": "6-year deadline from breach. Document the loan terms and any repayment attempts.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "promissory-note",
+          "name": "Default on a promissory note",
+          "example": "A borrower signed a promissory note for $10,000 and missed payments.",
+          "eligibility": "eligible",
+          "claim_statute": "Tenn. Code Ann. § 28-3-109",
+          "notes": "6-year deadline from breach. Present the original note and records of missed payments.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "unpaid-invoice",
+          "name": "Unpaid invoice for services rendered",
+          "example": "You provided $8,000 worth of consulting services, but the client hasn't paid the invoice.",
+          "eligibility": "eligible",
+          "claim_statute": "Tenn. Code Ann. § 28-3-109",
+          "notes": "6-year deadline from breach. Include the invoice, service agreement, and communication records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "open-account",
+          "name": "Unpaid balance on an open account",
+          "example": "A customer has an outstanding balance of $15,000 on their account with your business.",
+          "eligibility": "eligible",
+          "claim_statute": "Tenn. Code Ann. § 28-3-109",
+          "notes": "6-year deadline from breach. Provide account statements and records of transactions.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "unpaid-rent",
+          "name": "Unpaid rent by tenant",
+          "example": "Your tenant owes $2,500 in unpaid rent over the past three months.",
+          "eligibility": "eligible",
+          "claim_statute": "Tenn. Code Ann. § 28-3-109",
+          "notes": "6-year deadline from breach. Bring the lease agreement and records of missed payments.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "bad-check",
+          "name": "Payment with a bad check",
+          "example": "A customer paid with a $1,200 check that bounced due to insufficient funds.",
+          "eligibility": "eligible",
+          "claim_statute": "Tenn. Code Ann. § 47-29-101",
+          "notes": "Provide the original check, bank notice of insufficient funds, and any related correspondence.",
+          "damage_boost": "Check amount + service charge up to $40 + civil penalty up to $100 OR 2x check amount, whichever is greater.",
+          "source_ids": [
+            "S15"
+          ]
+        },
+        {
+          "slug": "co-signer",
+          "name": "Co-signer liability for defaulted loan",
+          "example": "You co-signed a $7,000 loan, and the primary borrower defaulted.",
+          "eligibility": "eligible",
+          "claim_statute": "Tenn. Code Ann. § 28-3-109",
+          "notes": "6-year deadline from breach. Present the loan agreement and evidence of default.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "consumer-disputes",
+      "title": "Consumer disputes",
+      "blurb": "Tennessee provides a 1-year statute of limitations for consumer protection claims.",
+      "claims": [
+        {
+          "slug": "defective-product",
+          "name": "Purchase of a defective product",
+          "example": "You bought a $500 appliance that stopped working within a month.",
+          "eligibility": "eligible",
+          "claim_statute": "Tenn. Code Ann. § 47-18-110",
+          "notes": "1-year deadline from discovery. Keep the purchase receipt and any repair records.",
+          "damage_boost": "Actual damages + attorney's fees; possible treble damages for willful violations.",
+          "source_ids": [
+            "S14"
+          ]
+        },
+        {
+          "slug": "bad-service",
+          "name": "Substandard service provided",
+          "example": "A cleaning service charged $300 but left your home dirty.",
+          "eligibility": "eligible",
+          "claim_statute": "Tenn. Code Ann. § 47-18-110",
+          "notes": "1-year deadline from discovery. Document the service agreement and issues encountered.",
+          "damage_boost": "Actual damages + attorney's fees; possible treble damages for willful violations.",
+          "source_ids": [
+            "S14"
+          ]
+        },
+        {
+          "slug": "auto-repair",
+          "name": "Faulty auto repair",
+          "example": "A mechanic charged $1,500 for repairs that didn't fix the problem.",
+          "eligibility": "eligible",
+          "claim_statute": "Tenn. Code Ann. § 47-18-110",
+          "notes": "1-year deadline from discovery. Retain repair invoices and any expert evaluations.",
+          "damage_boost": "Actual damages + attorney's fees; possible treble damages for willful violations.",
+          "source_ids": [
+            "S14"
+          ]
+        },
+        {
+          "slug": "contractor",
+          "name": "Unsatisfactory work by a contractor",
+          "example": "A contractor was paid $10,000 for a renovation but left the job incomplete.",
+          "eligibility": "eligible",
+          "claim_statute": "Tenn. Code Ann. § 47-18-110",
+          "notes": "1-year deadline from discovery. Gather the contract, payment records, and photos of unfinished work.",
+          "damage_boost": "Actual damages + attorney's fees; possible treble damages for willful violations.",
+          "source_ids": [
+            "S14"
+          ]
+        },
+        {
+          "slug": "no-show-vendor",
+          "name": "Vendor failed to deliver goods/services",
+          "example": "You paid $2,000 for catering services, but the vendor never showed up.",
+          "eligibility": "eligible",
+          "claim_statute": "Tenn. Code Ann. § 47-18-110",
+          "notes": "1-year deadline from discovery. Provide the service agreement and proof of payment.",
+          "damage_boost": "Actual damages + attorney's fees; possible treble damages for willful violations.",
+          "source_ids": [
+            "S14"
+          ]
+        },
+        {
+          "slug": "subscription-cancellation",
+          "name": "Unauthorized charges after subscription cancellation",
+          "example": "You canceled a $50/month subscription, but charges continued for 3 months.",
+          "eligibility": "eligible",
+          "claim_statute": "Tenn. Code Ann. § 47-18-110",
+          "notes": "1-year deadline from discovery. Keep records of cancellation and subsequent charges.",
+          "damage_boost": "Actual damages + attorney's fees; possible treble damages for willful violations.",
+          "source_ids": [
+            "S14"
+          ]
+        },
+        {
+          "slug": "used-car",
+          "name": "Purchase of a defective used car",
+          "example": "You bought a used car for $8,000 that broke down within a week.",
+          "eligibility": "eligible",
+          "claim_statute": "Tenn. Code Ann. § 47-18-110",
+          "notes": "1-year deadline from discovery. Retain the sales contract and any repair assessments.",
+          "damage_boost": "Actual damages + attorney's fees; possible treble damages for willful violations.",
+          "source_ids": [
+            "S14"
+          ]
+        },
+        {
+          "slug": "false-advertising",
+          "name": "False advertising leading to a purchase",
+          "example": "A store advertised a laptop for $1,000 with features it didn't have.",
+          "eligibility": "eligible",
+          "claim_statute": "Tenn. Code Ann. § 47-18-110",
+          "notes": "1-year deadline from discovery. Save the advertisement and purchase receipt.",
+          "damage_boost": "Actual damages + attorney's fees; possible treble damages for willful violations.",
+          "source_ids": [
+            "S14"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "property-damage",
+      "title": "Property damage",
+      "blurb": "Tennessee allows 3 years to file for property damage claims.",
+      "claims": [
+        {
+          "slug": "vehicle-collision",
+          "name": "Damage from a vehicle collision",
+          "example": "Another driver caused $5,000 damage to your car in an accident.",
+          "eligibility": "eligible",
+          "claim_statute": "Tenn. Code Ann. § 28-3-105",
+          "notes": "3-year deadline from incident. Obtain the police report and repair estimates.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "neighbor-property",
+          "name": "Neighbor's actions damaged your property",
+          "example": "A neighbor's tree fell and caused $2,000 damage to your fence.",
+          "eligibility": "eligible",
+          "claim_statute": "Tenn. Code Ann. § 28-3-105",
+          "notes": "3-year deadline from incident. Take photos and gather repair quotes.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "damage-to-rental",
+          "name": "Tenant caused damage to rental property",
+          "example": "A tenant left $3,500 worth of damage upon moving out.",
+          "eligibility": "eligible",
+          "claim_statute": "Tenn. Code Ann. § 28-3-105",
+          "notes": "3-year deadline from discovery. Document the damage with photos and repair invoices.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "pet-damage",
+          "name": "Damage caused by someone else's pet",
+          "example": "A neighbor's dog chewed up your $1,200 outdoor furniture.",
+          "eligibility": "eligible",
+          "claim_statute": "Tenn. Code Ann. § 28-3-105",
+          "notes": "3-year deadline from incident. Collect evidence of the damage and any related expenses.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "property-in-custody",
+          "name": "Damage to property left in someone's care",
+          "example": "A dry cleaner ruined your $500 suit.",
+          "eligibility": "eligible",
+          "claim_statute": "Tenn. Code Ann. § 28-3-105",
+          "notes": "3-year deadline from discovery. Keep the receipt and photos of the damage.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "landlord-tenant",
+      "title": "Landlord-tenant disputes",
+      "blurb": "Tennessee provides specific statutes governing landlord-tenant relationships, including security deposits and habitability standards.",
+      "claims": [
+        {
+          "slug": "security-deposit",
+          "name": "Failure to return security deposit",
+          "example": "Your landlord withheld your $1,000 security deposit without explanation.",
+          "eligibility": "eligible",
+          "claim_statute": "Tenn. Code Ann. § 66-28-301",
+          "notes": "Landlords must return the deposit or provide an itemized list of deductions within 30 days.",
+          "damage_boost": "",
+          "source_ids": [
+            "S16"
+          ]
+        },
+        {
+          "slug": "deposit-not-itemized",
+          "name": "No itemization of security deposit deductions",
+          "example": "Landlord deducted $500 from your deposit without itemizing damages.",
+          "eligibility": "eligible",
+          "claim_statute": "Tenn. Code Ann. § 66-28-301",
+          "notes": "Landlords are required to provide an itemized list of deductions within 30 days.",
+          "damage_boost": "",
+          "source_ids": [
+            "S16"
+          ]
+        },
+        {
+          "slug": "uninhabitable-rental",
+          "name": "Rental unit deemed uninhabitable",
+          "example": "Your apartment had no heat during winter, and the landlord refused to fix it.",
+          "eligibility": "eligible",
+          "claim_statute": "Tenn. Code Ann. § 66-28-301",
+          "notes": "Landlords must maintain habitable conditions; tenants can seek damages for violations.",
+          "damage_boost": "",
+          "source_ids": [
+            "S16"
+          ]
+        },
+        {
+          "slug": "wrongful-retention-property",
+          "name": "Landlord retained tenant's personal property",
+          "example": "After eviction, the landlord kept your $2,000 worth of belongings.",
+          "eligibility": "eligible",
+          "claim_statute": "Tenn. Code Ann. § 66-28-301",
+          "notes": "Landlords must follow proper procedures for handling abandoned property.",
+          "damage_boost": "",
+          "source_ids": [
+            "S16"
+          ]
+        },
+        {
+          "slug": "illegal-eviction",
+          "name": "Landlord conducted an illegal eviction",
+          "example": "Landlord changed the locks without notice, preventing access to your home.",
+          "eligibility": "eligible",
+          "claim_statute": "Tenn. Code Ann. § 66-28-301",
+          "notes": "Self-help evictions are illegal; tenants can seek damages for unlawful eviction.",
+          "damage_boost": "",
+          "source_ids": [
+            "S16"
+          ]
+        },
+        {
+          "slug": "unreturned-prepaid-rent",
+          "name": "Failure to return prepaid rent after lease termination",
+          "example": "You paid first and last month's rent, but the landlord didn't return the last month's rent after early termination.",
+          "eligibility": "eligible",
+          "claim_statute": "Tenn. Code Ann. § 66-28-301",
+          "notes": "Landlords must return prepaid rent if the lease is terminated early without cause.",
+          "damage_boost": "",
+          "source_ids": [
+            "S16"
+          ]
+        },
+        {
+          "slug": "unpaid-rent-by-tenant",
+          "name": "Tenant failed to pay rent",
+          "example": "Your tenant missed two months' rent totaling $1,800.",
+          "eligibility": "eligible",
+          "claim_statute": "Tenn. Code Ann. § 28-3-109",
+          "notes": "6-year deadline from breach. Provide the lease agreement and records of missed payments.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "repair-and-deduct",
+          "name": "Tenant repaired and deducted from rent",
+          "example": "You fixed a $300 plumbing issue and deducted it from rent after the landlord's inaction.",
+          "eligibility": "eligible",
+          "claim_statute": "Tenn. Code Ann. § 66-28-301",
+          "notes": "Tenants may repair and deduct if the landlord fails to address issues after notice.",
+          "damage_boost": "",
+          "source_ids": [
+            "S16"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "employment-wages",
+      "title": "Employment and wage disputes",
+      "blurb": "Tennessee mandates timely payment of wages and provides remedies for violations.",
+      "claims": [
+        {
+          "slug": "unpaid-wages",
+          "name": "Employer failed to pay earned wages",
+          "example": "Your employer owes you $2,000 for hours worked but not paid.",
+          "eligibility": "eligible",
+          "claim_statute": "Tenn. Code Ann. § 50-2-103",
+          "notes": "Employers must pay wages promptly; employees can seek unpaid wages through legal action.",
+          "damage_boost": "",
+          "source_ids": [
+            "S17"
+          ]
+        },
+        {
+          "slug": "final-paycheck",
+          "name": "Employer withheld final paycheck",
+          "example": "After resignation, your employer didn't provide your last paycheck of $1,500.",
+          "eligibility": "eligible",
+          "claim_statute": "Tenn. Code Ann. § 50-2-103",
+          "notes": "Final wages are due on the next regular payday; withholding may lead to penalties.",
+          "damage_boost": "",
+          "source_ids": [
+            "S17"
+          ]
+        },
+        {
+          "slug": "unpaid-commissions",
+          "name": "Unpaid sales commissions",
+          "example": "You earned $3,000 in commissions that your employer hasn't paid.",
+          "eligibility": "eligible",
+          "claim_statute": "Tenn. Code Ann. § 50-2-103",
+          "notes": "Commissions are considered wages and must be paid accordingly.",
+          "damage_boost": "",
+          "source_ids": [
+            "S17"
+          ]
+        },
+        {
+          "slug": "unpaid-overtime",
+          "name": "Employer failed to pay overtime wages",
+          "example": "You worked 10 hours of overtime but weren't compensated at the overtime rate.",
+          "eligibility": "eligible",
+          "claim_statute": "Tenn. Code Ann. § 50-2-103",
+          "notes": "Overtime must be paid as required by law; violations can result in penalties.",
+          "damage_boost": "",
+          "source_ids": [
+            "S17"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "personal-claims",
+      "title": "Personal claims",
+      "blurb": "Tennessee allows 1 year to file for personal injury claims.",
+      "claims": [
+        {
+          "slug": "minor-injury",
+          "name": "Minor personal injury",
+          "example": "You slipped in a store and sustained a $2,000 medical bill.",
+          "eligibility": "eligible",
+          "claim_statute": "Tenn. Code Ann. § 28-3-104",
+          "notes": "1-year deadline from injury. Collect medical records and incident reports.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "loaned-property",
+          "name": "Damage to loaned property",
+          "example": "You lent a friend your $1,000 camera, which they returned broken.",
+          "eligibility": "eligible",
+          "claim_statute": "Tenn. Code Ann. § 28-3-105",
+          "notes": "3-year deadline from discovery. Document the condition before and after lending.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "civil-theft",
+          "name": "Theft of personal property",
+          "example": "A neighbor took your $500 lawnmower without permission.",
+          "eligibility": "eligible",
+          "claim_statute": "Tenn. Code Ann. § 28-3-105",
+          "notes": "3-year deadline from discovery. File a police report and gather evidence of ownership.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vehicle-specific",
+      "title": "Vehicle-specific claims",
+      "blurb": "Tennessee provides remedies for disputes involving vehicle repairs and towing.",
+      "claims": [
+        {
+          "slug": "mechanic-dispute",
+          "name": "Dispute over mechanic's repair work",
+          "example": "A mechanic charged $2,000 for repairs that didn't fix the issue.",
+          "eligibility": "eligible",
+          "claim_statute": "Tenn. Code Ann. § 47-18-110",
+          "notes": "1-year deadline from discovery. Keep repair invoices and any expert evaluations.",
+          "damage_boost": "Actual damages + attorney's fees; possible treble damages for willful violations.",
+          "source_ids": [
+            "S14"
+          ]
+        },
+        {
+          "slug": "wrongful-tow",
+          "name": "Vehicle was wrongfully towed",
+          "example": "Your car was towed from a legal parking spot, costing you $300.",
+          "eligibility": "eligible",
+          "claim_statute": "Tenn. Code Ann. § 47-18-110",
+          "notes": "1-year deadline from discovery. Obtain towing records and photos of the parking area.",
+          "damage_boost": "Actual damages + attorney's fees; possible treble damages for willful violations.",
+          "source_ids": [
+            "S14"
+          ]
+        }
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "category": "Eviction (unlawful detainer)",
+      "explanation": "Eviction proceedings are handled separately and are not within the jurisdiction of General Sessions Court.",
+      "where_to_go_instead": "Circuit Court eviction process",
+      "source_ids": []
+    },
+    {
+      "category": "Title to real estate",
+      "explanation": "Disputes involving the title to real estate exceed the jurisdiction of General Sessions Court.",
+      "where_to_go_instead": "Chancery Court",
+      "source_ids": []
+    },
+    {
+      "category": "Defamation",
+      "explanation": "Defamation claims are complex and typically exceed the jurisdictional limits of General Sessions Court.",
+      "where_to_go_instead": "Circuit Court",
+      "source_ids": []
+    },
+    {
+      "category": "Malpractice",
+      "explanation": "Professional malpractice claims require detailed evidence and are beyond the scope of General Sessions Court.",
+      "where_to_go_instead": "Circuit Court",
+      "source_ids": []
+    },
+    {
+      "category": "Family law and probate",
+      "explanation": "Matters such as divorce, child custody, and probate are handled by specialized courts.",
+      "where_to_go_instead": "Chancery Court or Family Court",
+      "source_ids": []
+    },
+    {
+      "category": "Federal claims",
+      "explanation": "Claims involving federal law, such as bankruptcy or patents, are outside the jurisdiction of state courts.",
+      "where_to_go_instead": "Federal District Court",
+      "source_ids": []
+    },
+    {
+      "category": "Class actions",
+      "explanation": "Class action lawsuits are complex and exceed the jurisdictional limits of General Sessions Court.",
+      "where_to_go_instead": "Circuit Court",
+      "source_ids": []
+    },
+    {
+      "category": "Injunctions/specific performance",
+      "explanation": "General Sessions Court cannot grant equitable remedies like injunctions or specific performance.",
+      "where_to_go_instead": "Chancery Court",
+      "source_ids": []
+    },
+    {
+      "category": "Claims against the federal government",
+      "explanation": "Suits against the federal government must be filed in federal court.",
+      "where_to_go_instead": "Federal District Court",
+      "source_ids": []
+    },
+    {
+      "category": "Workers' compensation",
+      "explanation": "Workers' compensation claims are handled by specialized administrative courts.",
+      "where_to_go_instead": "Tennessee Bureau of Workers' Compensation",
+      "source_ids": []
+    },
+    {
+      "category": "Mandatory-arbitration disputes",
+      "explanation": "Disputes subject to mandatory arbitration clauses are typically resolved outside of court.",
+      "where_to_go_instead": "Arbitration panel",
+      "source_ids": []
+    },
+    {
+      "category": "Suing a deceased person",
+      "explanation": "Claims against deceased individuals must be filed against their estate in probate court.",
+      "where_to_go_instead": "Probate Court",
+      "source_ids": []
+    }
+  ],
+  "damages": {
+    "compensatory_allowed": true,
+    "punitive_allowed": false,
+    "punitive_explanation": "Punitive damages are not awarded in General Sessions Court; however, statutory penalties may apply in certain cases.",
+    "statutory_multipliers": [
+      {
+        "claim": "Bad check (after 30-day notice)",
+        "multiplier": "2x check amount",
+        "explanation": "Check amount + service charge up to $40 + civil penalty up to $100 OR 2x check amount, whichever is greater.",
+        "statute": "Tenn. Code Ann. § 47-29-101",
+        "source_ids": [
+          "S15"
+        ]
+      }
+    ],
+    "attorney_fees_recoverable": "sometimes",
+    "attorney_fees_explanation": "Attorney's fees may be recoverable in cases involving the Tennessee Consumer Protection Act or bad checks.",
+    "prejudgment_interest_rate_pct": null,
+    "prejudgment_interest_statute": "",
+    "postjudgment_interest_rate_pct": null,
+    "postjudgment_interest_type": "simple",
+    "postjudgment_interest_statute": "",
+    "postjudgment_interest_notes": "",
+    "filing_and_service_fees_recoverable_from_loser": true,
+    "source_ids": []
+  },
+  "where_to_file": {
+    "court_name": "General Sessions Court",
+    "parent_court": "Tennessee Unified Judicial System",
+    "venue_rules": [
+      {
+        "scenario": "Most cases (the default)",
+        "filing_options": [
+          "County where the defendant lives"
+        ],
+        "source_ids": []
+      },
+      {
+        "scenario": "Where contract was performed",
+        "filing_options": [
+          "County where performance was due"
+        ],
+        "source_ids": []
+      },
+      {
+        "scenario": "Where injury or damage occurred",
+        "filing_options": [
+          "County where the event occurred"
+        ],
+        "source_ids": []
+      },
+      {
+        "scenario": "Multiple defendants",
+        "filing_options": [
+          "Any county where ONE defendant resides"
+        ],
+        "source_ids": []
+      },
+      {
+        "scenario": "Out-of-state defendant",
+        "filing_options": [
+          "Where the cause of action arose"
+        ],
+        "source_ids": []
+      }
+    ],
+    "consequences_of_wrong_venue": "Filing in the wrong venue may result in dismissal or transfer, leading to delays and additional costs.",
+    "e_filing_available": "varies",
+    "e_filing_notes": "E-filing availability depends on the county; check with the local court clerk.",
+    "e_filing_portal": null,
+    "source_ids": []
+  },
+  "fees": {
+    "filing_fee_tiers": [
+      {
+        "range_label": "Varies by county",
+        "range_min": null,
+        "range_max": null,
+        "fee_dollars": null,
+        "source_ids": []
+      }
+    ],
+    "frequent_filer": {
+      "threshold_per_year": null,
+      "fee_dollars": null,
+      "notes": ""
+    },
+    "service_fees": [
+      {
+        "method": "Sheriff (personal service)",
+        "amount_label": "Varies by county",
+        "notes": "Required for most cases.",
+        "source_ids": []
+      }
+    ],
+    "waiver": {
+      "forms": [
+        {
+          "number": "Uniform Civil Affidavit of Indigency",
+          "name": "Request to Postpone Filing Fee and Order",
+          "url": "https://www.tncourts.gov/sites/default/files/docs/uniform_civil_affidavit_of_indigency.pdf",
+          "source_ids": [
+            "S8"
+          ]
+        }
+      ],
+      "eligibility_bullets": [
+        "Receiving need-based public assistance (SNAP, TANF, SSI)",
+        "Household income below 125% federal poverty line"
+      ],
+      "coverage_notes": "The waiver covers filing fees and may include service fees; confirm with the local court.",
+      "if_you_win_notes": "If you win, the waived fees may be added to the judgment against the loser."
+    },
+    "other_fees": [
+      {
+        "name": "Subpoena issuance",
+        "amount_label": "Varies by county",
+        "notes": "Plus witness fee per day.",
+        "source_ids": []
+      },
+      {
+        "name": "Appeal filing",
+        "amount_label": "Varies by county",
+        "notes": "",
+        "source_ids": []
+      },
+      {
+        "name": "Writ of execution",
+        "amount_label": "Varies by county",
+        "notes": "Post-judgment.",
+        "source_ids": []
+      }
+    ],
+    "fees_recoverable_from_loser_notes": "If you win, filing fee and reasonable service costs are added to the judgment.",
+    "source_ids": []
+  },
+  "statute_of_limitations": {
+    "entries": [
+      {
+        "id": "written-contract",
+        "claim": "Written contract",
+        "years": 6,
+        "clock_starts": "Date of breach",
+        "statute": "Tenn. Code Ann. § 28-3-109",
+        "notes": "",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "id": "oral-contract",
+        "claim": "Oral contract",
+        "years": 6,
+        "clock_starts": "Date of breach",
+        "statute": "Tenn. Code Ann. § 28-3-109",
+        "notes": "",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "id": "sale-of-goods",
+        "claim": "Sale of goods (UCC)",
+        "years": 4,
+        "clock_starts": "Date of breach",
+        "statute": "Tenn. Code Ann. § 47-2-725",
+        "notes": "",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "id": "promissory-note",
+        "claim": "Promissory note",
+        "years": 6,
+        "clock_starts": "Date of breach",
+        "statute": "Tenn. Code Ann. § 28-3-109",
+        "notes": "",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "id": "open-account",
+        "claim": "Open account / credit card debt",
+        "years": 6,
+        "clock_starts": "Date of last payment",
+        "statute": "Tenn. Code Ann. § 28-3-109",
+        "notes": "",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "id": "personal-injury",
+        "claim": "Personal injury",
+        "years": 1,
+        "clock_starts": "Date of injury",
+        "statute": "Tenn. Code Ann. § 28-3-104",
+        "notes": "",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "id": "property-damage",
+        "claim": "Property damage",
+        "years": 3,
+        "clock_starts": "Date of damage",
+        "statute": "Tenn. Code Ann. § 28-3-105",
+        "notes": "",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "id": "fraud",
+        "claim": "Fraud",
+        "years": 3,
+        "clock_starts": "Date of discovery",
+        "statute": "Tenn. Code Ann. § 28-3-105",
+        "notes": "",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "id": "bad-check",
+        "claim": "Bad check",
+        "years": 1,
+        "clock_starts": "Date of dishonor",
+        "statute": "Tenn. Code Ann. § 47-29-101",
+        "notes": "",
+        "source_ids": [
+          "S15"
+        ]
+      },
+      {
+        "id": "unpaid-wages",
+        "claim": "Unpaid wages",
+        "years": 3,
+        "clock_starts": "Date wages were due",
+        "statute": "Tenn. Code Ann. § 28-3-105",
+        "notes": "",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "id": "security-deposit",
+        "claim": "Security deposit",
+        "years": 1,
+        "clock_starts": "Date deposit was due",
+        "statute": "Tenn. Code Ann. § 66-28-301",
+        "notes": "",
+        "source_ids": [
+          "S16"
+        ]
+      },
+      {
+        "id": "judgment-enforcement",
+        "claim": "Judgment enforcement",
+        "years": 10,
+        "clock_starts": "Date of judgment",
+        "statute": "Tenn. Code Ann. § 28-3-110",
+        "notes": "",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "discovery_rule_notes": "The discovery rule applies to fraud claims, starting the clock when the fraud is discovered.",
+    "tolling_notes": "The statute of limitations may be tolled if the defendant is out of state, the plaintiff is a minor, or in cases of bankruptcy.",
+    "source_ids": []
+  },
+  "pre_filing": {
+    "demand_letter_required": false,
+    "demand_letter_recommended": true,
+    "demand_letter_notes": "While not required, sending a demand letter can facilitate settlement and is advisable.",
+    "bad_check_notice_rule": "A 30-day written notice is required before pursuing civil penalties for a bad check.",
+    "wage_claim_demand_rule": "No specific demand requirement, but written notice can strengthen the claim.",
+    "government_claim_required": false,
+    "government_claim_deadline_days": null,
+    "government_claim_notes": "",
+    "landlord_tenant_pre_filing_notes": "Landlords must provide an itemized list of damages within 30 days when withholding a security deposit.",
+    "consumer_protection_notes": "No specific pre-filing notice required under the Tennessee Consumer Protection Act.",
+    "mandatory_mediation_before_filing": "none",
+    "arbitration_clauses_enforced": true,
+    "source_ids": []
+  },
+  "forms": [
+    {
+      "number": "C-31",
+      "name": "Civil Warrant",
+      "description": "Initiates a civil lawsuit in General Sessions Court.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "https://www.tncourts.gov/sites/default/files/docs/civil_warrant.pdf",
+      "source_ids": [
+        "S8"
+      ]
+    },
+    {
+      "number": "C-32",
+      "name": "Summons",
+      "description": "Notifies the defendant of the lawsuit and court date.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "service",
+      "url": "https://www.tncourts.gov/sites/default/files/docs/summons.pdf",
+      "source_ids": [
+        "S8"
+      ]
+    },
+    {
+      "number": "C-33",
+      "name": "Affidavit of Complaint",
+      "description": "Details the plaintiff's claims against the defendant.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "https://www.tncourts.gov/sites/default/files/docs/affidavit_of_complaint.pdf",
+      "source_ids": [
+        "S8"
+      ]
+    },
+    {
+      "number": "C-34",
+      "name": "Counterclaim",
+      "description": "Allows the defendant to file a claim against the plaintiff.",
+      "filed_by": "defendant",
+      "required": false,
+      "group": "counterclaim",
+      "url": "https://www.tncourts.gov/sites/default/files/docs/counterclaim.pdf",
+      "source_ids": [
+        "S8"
+      ]
+    },
+    {
+      "number": "C-35",
+      "name": "Motion to Dismiss",
+      "description": "Requests the court to dismiss the case for specific reasons.",
+      "filed_by": "defendant",
+      "required": false,
+      "group": "hearing",
+      "url": "https://www.tncourts.gov/sites/default/files/docs/motion_to_dismiss.pdf",
+      "source_ids": [
+        "S8"
+      ]
+    },
+    {
+      "number": "C-36",
+      "name": "Request for Continuance",
+      "description": "Asks the court to reschedule the hearing date.",
+      "filed_by": "either",
+      "required": false,
+      "group": "hearing",
+      "url": "https://www.tncourts.gov/sites/default/files/docs/request_for_continuance.pdf",
+      "source_ids": [
+        "S8"
+      ]
+    },
+    {
+      "number": "C-37",
+      "name": "Satisfaction of Judgment",
+      "description": "Indicates that the judgment has been paid in full.",
+      "filed_by": "plaintiff",
+      "required": false,
+      "group": "after-judgment",
+      "url": "https://www.tncourts.gov/sites/default/files/docs/satisfaction_of_judgment.pdf",
+      "source_ids": [
+        "S8"
+      ]
+    },
+    {
+      "number": "C-38",
+      "name": "Writ of Possession",
+      "description": "Orders the sheriff to remove a tenant and return possession to the landlord.",
+      "filed_by": "plaintiff",
+      "required": false,
+      "group": "after-judgment",
+      "url": "https://www.tncourts.gov/sites/default/files/docs/writ_of_possession.pdf",
+      "source_ids": [
+        "S8"
+      ]
+    },
+    {
+      "number": "C-39",
+      "name": "Writ of Execution",
+      "description": "Authorizes the seizure of the defendant's property to satisfy a judgment.",
+      "filed_by": "plaintiff",
+      "required": false,
+      "group": "after-judgment",
+      "url": "https://www.tncourts.gov/sites/default/files/docs/writ_of_execution.pdf",
+      "source_ids": [
+        "S8"
+      ]
+    },
+    {
+      "number": "C-40",
+      "name": "Garnishment",
+      "description": "Directs an employer to withhold wages to satisfy a judgment.",
+      "filed_by": "plaintiff",
+      "required": false,
+      "group": "after-judgment",
+      "url": "https://www.tncourts.gov/sites/default/files/docs/garnishment.pdf",
+      "source_ids": [
+        "S8"
+      ]
+    },
+    {
+      "number": "C-41",
+      "name": "Appeal Bond",
+      "description": "Filed to appeal a General Sessions Court decision to Circuit Court.",
+      "filed_by": "either",
+      "required": false,
+      "group": "appeal",
+      "url": "https://www.tncourts.gov/sites/default/files/docs/appeal_bond.pdf",
+      "source_ids": [
+        "S8"
+      ]
+    },
+    {
+      "number": "C-42",
+      "name": "Pauper's Oath in Lieu of Appeal Bond",
+      "description": "Allows an indigent party to appeal without posting a bond.",
+      "filed_by": "either",
+      "required": false,
+      "group": "appeal",
+      "url": "https://www.tncourts.gov/sites/default/files/docs/paupers_oath_in_lieu_of_appeal_bond.pdf",
+      "source_ids": [
+        "S8"
+      ]
+    }
+  ],
+  "service": {
+    "who_can_serve": [
+      "Sheriff",
+      "Certified mail by clerk",
+      "Private process server"
+    ],
+    "methods": [
+      {
+        "name": "Sheriff personal service",
+        "description": "Sheriff or constable personally hands the papers to the defendant.",
+        "pros": [
+          "Most reliable",
+          "Official"
+        ],
+        "cons": [
+          "May be slower",
+          "Additional cost"
+        ],
+        "source_ids": []
+      },
+      {
+        "name": "Certified mail by clerk",
+        "description": "Clerk sends the documents via certified mail to the defendant.",
+        "pros": [
+          "Cost-effective",
+          "Provides delivery confirmation"
+        ],
+        "cons": [
+          "Defendant may refuse delivery",
+          "Less reliable than personal service"
+        ],
+        "source_ids": []
+      },
+      {
+        "name": "Private process server",
+        "description": "A licensed individual delivers the documents to the defendant.",
+        "pros": [
+          "Flexible scheduling",
+          "Can be faster"
+        ],
+        "cons": [
+          "More expensive",
+          "Requires verification of service"
+        ],
+        "source_ids": []
+      }
+    ],
+    "in_county_days_before_hearing": 5,
+    "out_of_county_days_before_hearing": 10,
+    "proof_of_service_form": {
+      "number": "C-43",
+      "name": "Return on Service"
+    },
+    "proof_filing_deadline_days_before_hearing": 3,
+    "business_service_rule": "Serve the registered agent or an officer of the corporation; for sole proprietors, serve the individual directly.",
+    "out_of_state_defendant_notes": "Service must comply with Tennessee's long-arm statute and the laws of the state where the defendant resides.",
+    "cant_find_defendant_notes": "If the defendant cannot be located, service by publication may be permitted with court approval.",
+    "avoiding_service_notes": "If the defendant is evading service, you may request alternative methods of service from the court.",
+    "source_ids": []
+  },
+  "response_and_default": {
+    "must_file_written_answer": false,
+    "response_deadline_days": 0,
+    "response_notes": "Defendants are not required to file a written answer but must appear in court on the scheduled date.",
+    "default_process": "If the defendant fails to appear, the court may enter a default judgment in favor of the plaintiff.",
+    "prove_up_required": true,
+    "prove_up_notes": "Even if the defendant defaults, the plaintiff must provide evidence to support the claim and amount of damages.",
+    "motion_to_vacate_form": {
+      "number": "C-44",
+      "name": "Motion to Set Aside Default Judgment"
+    },
+    "motion_to_vacate_deadline_days": 10,
+    "motion_to_vacate_lack_of_notice_days": 30,
+    "motion_to_vacate_appeal_deadline_days": 10,
+    "motion_to_vacate_appeal_notes": "A motion to set aside must be filed within 10 days; if denied, an appeal must be filed within 10 days of the denial.",
+    "source_ids": []
+  },
+  "counterclaim": {
+    "allowed": true,
+    "form": {
+      "number": "C-34",
+      "name": "Counterclaim"
+    },
+    "same_monetary_limit": true,
+    "service_deadline_in_county_days": 5,
+    "service_deadline_out_of_county_days": 10,
+    "transfer_to_higher_court_available": false,
+    "transfer_to_higher_court_statute": "",
+    "transfer_to_higher_court_notes": "",
+    "source_ids": []
+  },
+  "hearing": {
+    "lawyers_allowed": "yes",
+    "lawyers_allowed_notes": "Parties may represent themselves or be represented by an attorney.",
+    "format": "Bench trial, typically lasting 15-30 minutes per case.",
+    "presider": "judge",
+    "burden_of_proof": "preponderance",
+    "what_to_bring": [
+      "Originals of any contracts",
+      "Receipts and bank records",
+      "Photos and videos",
+      "Names and contact info for witnesses"
+    ],
+    "subpoena_form": {
+      "number": "C-45",
+      "name": "Subpoena"
+    },
+    "witness_fee_per_day_dollars": 30,
+    "free_interpreters": false,
+    "interpreter_request_process": "Parties must arrange for their own interpreters; some courts may provide assistance upon request.",
+    "jury_option": false,
+    "decision_timing": "On the spot or mailed within 2 weeks",
+    "on_site_mediation": "by county",
+    "on_site_mediation_notes": "Some counties offer mediation services; check with the local court clerk.",
+    "source_ids": []
+  },
+  "appeals": {
+    "who_can_appeal": "either",
+    "deadline_days": 10,
+    "fee_dollars": null,
+    "type": "trial de novo",
+    "type_notes": "The appeal results in a new trial in Circuit Court as if the original trial had not occurred.",
+    "attorneys_allowed_on_appeal": true,
+    "bond_required": true,
+    "bond_amount_notes": "The bond amount is typically equal to the judgment amount plus court costs.",
+    "automatic_stay_on_appeal": true,
+    "default_judgment_appealable": true,
+    "default_judgment_notes": "Default judgments can be appealed within the same 10-day window.",
+    "notice_of_appeal_form": {
+      "number": "C-41",
+      "name": "Appeal Bond"
+    },
+    "frivolous_appeal_penalty_dollars": null,
+    "frivolous_appeal_statute": "",
+    "frivolous_appeal_notes": "",
+    "source_ids": []
+  },
+  "collection": {
+    "payment_deadline_typical_days": 10,
+    "post_judgment_interest_rate_pct": 5.5,
+    "post_judgment_interest_statute": "Tenn. Code Ann. § 47-14-121",
+    "post_judgment_interest_notes": "Interest accrues on the judgment amount until paid in full.",
+    "methods": [
+      {
+        "id": "wage-garnishment",
+        "name": "Wage garnishment",
+        "blurb": "Have a portion of debtor's wages withheld until the judgment is paid.",
+        "description": "File a writ of garnishment with the court, serve the employer, and the employer withholds a portion of the debtor's wages to satisfy the judgment.",
+        "forms": [
+          {
+            "number": "C-40",
+            "name": "Garnishment"
+          }
+        ],
+        "estimated_cost": "$30-50 plus sheriff fees",
+        "effectiveness_notes": "Most effective when debtor is W-2 employed at a stable job.",
+        "exemptions": [
+          "75% of disposable earnings (federal CCPA floor)"
+        ],
+        "source_ids": []
+      },
+      {
+        "id": "bank-levy",
+        "name": "Bank levy",
+        "blurb": "Seize funds from debtor's bank account to satisfy the judgment.",
+        "description": "Obtain a writ of execution, serve the bank, and the bank freezes and transfers funds to the court.",
+        "forms": [
+          {
+            "number": "C-39",
+            "name": "Writ of Execution"
+          }
+        ],
+        "estimated_cost": "$50-100 plus sheriff fees",
+        "effectiveness_notes": "Effective if debtor maintains significant bank balances.",
+        "exemptions": [
+          "Social Security and federal benefits"
+        ],
+        "source_ids": []
+      },
+      {
+        "id": "property-lien",
+        "name": "Property lien",
+        "blurb": "Place a lien on debtor's real property to secure the judgment.",
+        "description": "File a lien with the county recorder's office; the lien must be satisfied before the property can be sold or refinanced.",
+        "forms": [
+          {
+            "number": "C-46",
+            "name": "Notice of Lien"
+          }
+        ],
+        "estimated_cost": "$25-50 filing fee",
+        "effectiveness_notes": "Effective if debtor owns real property with equity.",
+        "exemptions": [
+          "Homestead exemption up to $5,000"
+        ],
+        "source_ids": []
+      },
+      {
+        "id": "writ-of-execution",
+        "name": "Writ of execution",
+        "blurb": "Seize and sell debtor's non-exempt personal property.",
+        "description": "Obtain a writ of execution, sheriff seizes property, and it is sold at public auction to satisfy the judgment.",
+        "forms": [
+          {
+            "number": "C-39",
+            "name": "Writ of Execution"
+          }
+        ],
+        "estimated_cost": "$100-200 plus sheriff fees",
+        "effectiveness_notes": "Effective if debtor owns valuable non-exempt personal property.",
+        "exemptions": [
+          "Personal property up to $10,000"
+        ],
+        "source_ids": []
+      }
+    ],
+    "wage_garnishment_max_pct_of_disposable": 25,
+    "judgment_lifespan_years": 10,
+    "judgment_renewal_process": "File a motion to renew the judgment before the 10-year expiration; a hearing may be required.",
+    "debtor_exam_form": {
+      "number": "C-47",
+      "name": "Motion for Debtor's Examination"
+    },
+    "exempt_assets": [
+      "Homestead — $5,000",
+      "Vehicle — $2,500",
+      "Personal property — $10,000",
+      "Retirement accounts (federally protected)",
+      "Social Security and federal benefits"
+    ],
+    "bankruptcy_effect_notes": "Filing for bankruptcy imposes an automatic stay on collection efforts; certain judgments may be discharged.",
+    "satisfaction_of_judgment_form": {
+      "number": "C-37",
+      "name": "Satisfaction of Judgment"
+    },
+    "priority_notes": "Priority among multiple judgment creditors is generally determined by the order in which liens are filed.",
+    "source_ids": []
+  },
+  "businesses": {
+    "self_representation_allowed": true,
+    "self_representation_notes": "Businesses can appear without an attorney in General Sessions Court.",
+    "can_send_employee": true,
+    "can_send_attorney": true,
+    "non_attorney_representation_form": {
+      "number": "C-48",
+      "name": "Authorization for Non-Attorney Representation"
+    },
+    "insurance_adjuster_allowed": false,
+    "fictitious_name_form": {
+      "number": "C-49",
+      "name": "Assumed Name Certificate"
+    },
+    "fictitious_name_notes": "Businesses operating under a trade name must file an Assumed Name Certificate with the county.",
+    "sole_proprietor_employee_exception": "Sole proprietors can send a designated employee to represent them.",
+    "out_of_state_business_must_register": true,
+    "out_of_state_business_statute": "Tenn. Code Ann. § 48-25-101",
+    "licensing_notes": "Unlicensed contractors may be barred from recovering fees for work requiring a license.",
+    "source_ids": []
+  },
+  "county_variations_material": true,
+  "county_variations": [
+    {
+      "county": "Davidson",
+      "topic": "E-filing availability",
+      "detail": "Davidson County offers online filing through the Odyssey eFileTN system.",
+      "source_ids": []
+    },
+    {
+      "county": "Shelby",
+      "topic": "Filing fees",
+      "detail": "Shelby County has higher filing fees compared to other counties; check with the local clerk for current rates.",
+      "source_ids": []
+    }
+  ],
+  "pitfalls": [
+    {
+      "title": "Wrong defendant naming",
+      "what_happens": "If you sue 'John's Garage' but the legal entity is 'JG Auto Repair LLC', the judgment may be unenforceable against the LLC's assets.",
+      "how_to_avoid": "Search the Secretary of State business records before filing and use the exact registered name; for sole proprietors use the individual's full legal name.",
+      "source_ids": []
+    },
+    {
+      "title": "Missed statute of limitations",
+      "what_happens": "Filing one day after the deadline gets the case dismissed with prejudice.",
+      "how_to_avoid": "Check the SOL for your specific claim type before filing; for fraud, the discovery rule applies but be prepared to prove when you reasonably could have discovered it.",
+      "source_ids": []
+    },
+    {
+      "title": "Improper service of process",
+      "what_happens": "If the defendant isn't properly served, the case may be dismissed or delayed.",
+      "how_to_avoid": "Follow Tennessee's rules for service carefully; consider using the sheriff's office or a professional process server.",
+      "source_ids": []
+    },
+    {
+      "title": "Failing to appear in court",
+      "what_happens": "If you don't show up, the court may dismiss your case or enter a default judgment against you.",
+      "how_to_avoid": "Mark your calendar and set reminders; if you can't attend, request a continuance in advance.",
+      "source_ids": []
+    },
+    {
+      "title": "Insufficient evidence",
+      "what_happens": "Without enough evidence, the judge may rule against you.",
+      "how_to_avoid": "Gather all relevant documents, photos, and witness statements before the hearing.",
+      "source_ids": []
+    },
+    {
+      "title": "Ignoring court orders",
+      "what_happens": "Failing to comply with court orders can result in contempt charges or dismissal of your case.",
+      "how_to_avoid": "Read and follow all court orders carefully; if unsure, seek legal advice.",
+      "source_ids": []
+    }
+  ],
+  "recent_changes": [
+    {
+      "date": "2025-09-05",
+      "title": "Gibson County General Sessions Judge Helps Students Realize Choices Have Consequences",
+      "description": "Judge Bradley Owens initiated a program to educate students on the legal system and the consequences of their choices.",
+      "bill_or_rule_citation": "",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "date": "2024-11-20",
+      "title": "Judge Ross Presented with Sharon G. Lee Award of Excellence",
+      "description": "Judge James Y. Ross received the award for his contributions to the judiciary and community.",
+      "bill_or_rule_citation": "",
+      "source_ids": [
+        "S1"
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Do I need a lawyer?",
+      "answer": "No, you are not required to have a lawyer in General Sessions Court; individuals and businesses can represent themselves.",
+      "source_ids": []
+    },
+    {
+      "question": "How long does it take?",
+      "answer": "The timeline varies by county and case complexity, but most cases are resolved within 30 to 90 days.",
+      "source_ids": []
+    },
+    {
+      "question": "What's the maximum I can sue for?",
+      "answer": "The maximum amount you can sue for in General Sessions Court is $25,000.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "question": "What happens if the defendant doesn't show up?",
+      "answer": "If the defendant fails to appear, the court may enter a default judgment in your favor.",
+      "source_ids": []
+    },
+    {
+      "question": "Can I appeal?",
+      "answer": "Yes, either party can appeal a General Sessions Court decision to Circuit Court within 10 days.",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "question": "How long is a judgment good for?",
+      "answer": "A judgment is valid for 10 years and can be renewed before it expires.",
+      "source_ids": []
+    }
+  ],
+  "state_specific_notes": [
+    "Tennessee allows driver's license suspension as a collection tool for unpaid vehicle judgments.",
+    "General Sessions Courts have jurisdiction that varies by county, so local rules may differ.",
+    "E-filing availability varies by county; check with the local court clerk.",
+    "Some counties offer on-site mediation services to help resolve disputes before trial.",
+    "Tennessee's homestead exemption protects up to $5,000 of equity in a debtor's primary residence."
+  ],
+  "_extras": {
+    "interesting_findings": [
+      "Some General Sessions Courts in Tennessee offer night court sessions to accommodate working individuals.",
+      "Tennessee's Consumer Protection Act allows for treble damages in cases of willful violations.",
+      "Certain counties have specialized General Sessions Courts for environmental or housing cases.",
+      "Tennessee law permits the use of private process servers, providing flexibility in serving legal documents.",
+      "The state has a unique provision allowing for the suspension of professional licenses for non-payment of child support."
+    ]
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "label": "Tennessee Courts",
+      "url": "https://www.tncourts.gov/",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S2",
+      "label": "TN General Sessions Courts",
+      "url": "https://www.tncourts.gov/courts/general-sessions-courts",
+      "primary": false,
+      "citation": ""
+    },
+    {
+      "id": "S3",
+      "label": "TN Help / Self-Represented Litigants",
+      "url": "https://www.tncourts.gov/help",
+      "primary": false,
+      "citation": ""
+    },
+    {
+      "id": "S4",
+      "label": "Tenn. Code Ann. § 16-15-501 et seq.",
+      "url": "https://www.tncourts.gov/courts/general-sessions-courts/about-court",
+      "primary": false,
+      "citation": ""
+    },
+    {
+      "id": "S5",
+      "label": "Tenn. Code Ann. Title 16",
+      "url": "https://www.tncourts.gov/",
+      "primary": false,
+      "citation": ""
+    },
+    {
+      "id": "S6",
+      "label": "Tenn. Code Ann. § 28-3-101 et seq.",
+      "url": "https://www.tncourts.gov/",
+      "primary": false,
+      "citation": ""
+    },
+    {
+      "id": "S7",
+      "label": "Tennessee Rules of Civil Procedure",
+      "url": "https://www.tncourts.gov/rules/rules-civil-procedure",
+      "primary": false,
+      "citation": ""
+    },
+    {
+      "id": "S8",
+      "label": "TN Courts — Forms",
+      "url": "https://www.tncourts.gov/forms",
+      "primary": false,
+      "citation": ""
+    },
+    {
+      "id": "S9",
+      "label": "TN AOC Court Costs and Fees",
+      "url": "https://www.tncourts.gov/administration/court-costs-and-fees",
+      "primary": false,
+      "citation": ""
+    },
+    {
+      "id": "S10",
+      "label": "Tenn. R. Civ. P. Rule 4",
+      "url": "https://www.tncourts.gov/rules/rules-civil-procedure",
+      "primary": false,
+      "citation": ""
+    },
+    {
+      "id": "S11",
+      "label": "Tenn. Code Ann. § 27-5-108",
+      "url": "https://www.tncourts.gov/",
+      "primary": false,
+      "citation": ""
+    },
+    {
+      "id": "S12",
+      "label": "Tenn. Code Ann. Title 26",
+      "url": "https://www.tncourts.gov/",
+      "primary": false,
+      "citation": ""
+    },
+    {
+      "id": "S13",
+      "label": "Tenn. Code Ann. § 26-2-101",
+      "url": "https://www.tncourts.gov/",
+      "primary": false,
+      "citation": ""
+    },
+    {
+      "id": "S14",
+      "label": "Tenn. Code Ann. § 47-18-101 et seq.",
+      "url": "https://www.tncourts.gov/",
+      "primary": false,
+      "citation": ""
+    },
+    {
+      "id": "S15",
+      "label": "Tenn. Code Ann. § 47-29-101",
+      "url": "https://www.tncourts.gov/",
+      "primary": false,
+      "citation": ""
+    },
+    {
+      "id": "S16",
+      "label": "Tenn. Code Ann. § 66-28-301",
+      "url": "https://www.tncourts.gov/",
+      "primary": false,
+      "citation": ""
+    },
+    {
+      "id": "S17",
+      "label": "Tenn. Code Ann. § 50-2-103",
+      "url": "https://www.tncourts.gov/",
+      "primary": false,
+      "citation": ""
+    },
+    {
+      "id": "S18",
+      "label": "Tenn. Code Ann. § 47-14-121",
+      "url": "https://www.tncourts.gov/",
+      "primary": false,
+      "citation": ""
+    }
+  ],
+  "_meta": {
+    "state": "Tennessee",
+    "slug": "tennessee",
+    "model": "gpt-4.1",
+    "generated_at": "2026-04-28T14:07:47.969Z",
+    "promoted_from_failure": true
+  }
+}

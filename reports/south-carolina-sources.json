@@ -1,0 +1,131 @@
+{
+  "state": "South Carolina",
+  "as_of": "2026-04-28",
+  "state_judiciary_pages": [
+    {
+      "label": "South Carolina Judicial Branch",
+      "url": "https://www.sccourts.org/",
+      "scope": "statewide judiciary"
+    },
+    {
+      "label": "SC Magistrate's Court info",
+      "url": "https://www.sccourts.org/courts/magistrate.cfm",
+      "scope": "magistrate (small claims)"
+    },
+    {
+      "label": "SC Self-Represented Litigant resources",
+      "url": "https://www.sccourts.org/selfHelp/",
+      "scope": "self-help"
+    }
+  ],
+  "statutes": [
+    {
+      "label": "S.C. Code Title 22 (Magistrates and Constables)",
+      "url": "https://www.scstatehouse.gov/code/title22.php",
+      "section_or_chapter": "Title 22"
+    },
+    {
+      "label": "S.C. Code Title 22 Chapter 3 (Magistrate civil jurisdiction)",
+      "url": "https://www.scstatehouse.gov/code/t22c003.php",
+      "section_or_chapter": "T22 C3"
+    },
+    {
+      "label": "S.C. Code — Statute master index",
+      "url": "https://www.scstatehouse.gov/code/statmast.php",
+      "section_or_chapter": "all titles"
+    },
+    {
+      "label": "S.C. Code § 15-3-530 (Statute of limitations)",
+      "url": "https://www.scstatehouse.gov/code/t15c003.php",
+      "section_or_chapter": "§ 15-3-530"
+    }
+  ],
+  "court_rules": [
+    {
+      "label": "S.C. Rules of Civil Procedure (Magistrate)",
+      "url": "https://www.sccourts.org/courtReg/displayRule.cfm?ruleID=1",
+      "rule_or_chapter": "magistrate civil rules"
+    }
+  ],
+  "forms_pages": [
+    {
+      "label": "SC Judicial — Magistrate forms",
+      "url": "https://www.sccourts.org/forms/",
+      "scope": "forms"
+    }
+  ],
+  "fee_schedules": [
+    {
+      "label": "S.C. Code § 8-21-1010 (Magistrate fees)",
+      "url": "https://www.scstatehouse.gov/code/t08c021.php",
+      "section_or_chapter": "§ 8-21-1010"
+    }
+  ],
+  "service_rules": [
+    {
+      "label": "S.C. Magistrate Civil Rule 4 (Service)",
+      "url": "https://www.sccourts.org/courtReg/",
+      "rule_or_chapter": "Rule 4"
+    }
+  ],
+  "appeal_rules": [
+    {
+      "label": "S.C. Code § 18-7-10 (Magistrate appeal)",
+      "url": "https://www.scstatehouse.gov/code/t18c007.php",
+      "section_or_chapter": "§ 18-7-10"
+    }
+  ],
+  "post_judgment_collection": [
+    {
+      "label": "S.C. Code Title 15 Ch. 39 (Executions)",
+      "url": "https://www.scstatehouse.gov/code/title15.php",
+      "section_or_chapter": "Title 15 Ch. 39"
+    },
+    {
+      "label": "S.C. Code § 15-41-30 (Exemptions)",
+      "url": "https://www.scstatehouse.gov/code/t15c041.php",
+      "section_or_chapter": "§ 15-41-30"
+    }
+  ],
+  "consumer_protection_statutes": [
+    {
+      "label": "S.C. Code § 39-5-10 et seq. (Unfair Trade Practices)",
+      "url": "https://www.scstatehouse.gov/code/t39c005.php",
+      "section_or_chapter": "§ 39-5-10"
+    },
+    {
+      "label": "S.C. Code § 34-11-70 (Bad check civil)",
+      "url": "https://www.scstatehouse.gov/code/t34c011.php",
+      "section_or_chapter": "§ 34-11-70"
+    }
+  ],
+  "landlord_tenant_statutes": [
+    {
+      "label": "S.C. Code § 27-40-410 (Security deposit)",
+      "url": "https://www.scstatehouse.gov/code/t27c040.php",
+      "section_or_chapter": "§ 27-40-410"
+    }
+  ],
+  "wage_and_employment_statutes": [
+    {
+      "label": "S.C. Code § 41-10-50 (Final wages)",
+      "url": "https://www.scstatehouse.gov/code/t41c010.php",
+      "section_or_chapter": "§ 41-10-50"
+    }
+  ],
+  "civil_remedies_statutes": [
+    {
+      "label": "S.C. Code § 34-31-20 (Judgment interest)",
+      "url": "https://www.scstatehouse.gov/code/t34c031.php",
+      "section_or_chapter": "§ 34-31-20"
+    }
+  ],
+  "county_specific": [],
+  "notes": "Manually curated source list (Pass 1 model defaulted to commercial mirrors).",
+  "_meta": {
+    "state": "South Carolina",
+    "slug": "south-carolina",
+    "model": "manually-curated",
+    "generated_at": "2026-04-28T13:20:48.082Z"
+  }
+}

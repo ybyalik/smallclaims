@@ -1,0 +1,126 @@
+{
+  "state": "Georgia",
+  "as_of": "2026-04-28",
+  "state_judiciary_pages": [
+    {
+      "label": "Georgia Judicial Branch (Council of Magistrate Court Judges)",
+      "url": "https://www.georgiacourts.gov/",
+      "scope": "statewide judiciary"
+    },
+    {
+      "label": "Georgia Council of Magistrate Court Judges",
+      "url": "https://georgiamagistratecouncil.com/",
+      "scope": "magistrate court (small claims)"
+    }
+  ],
+  "statutes": [
+    {
+      "label": "Georgia General Assembly — Code (OCGA)",
+      "url": "https://www.legis.ga.gov/laws",
+      "section_or_chapter": "all titles"
+    },
+    {
+      "label": "OCGA Title 15 (Courts)",
+      "url": "https://www.legis.ga.gov/laws/15",
+      "section_or_chapter": "Title 15 Ch. 10 (Magistrate Court small claims)"
+    },
+    {
+      "label": "OCGA Title 9 (Civil Practice)",
+      "url": "https://www.legis.ga.gov/laws/9",
+      "section_or_chapter": "Title 9"
+    },
+    {
+      "label": "OCGA Title 18 (Debtor and Creditor)",
+      "url": "https://www.legis.ga.gov/laws/18",
+      "section_or_chapter": "Title 18"
+    }
+  ],
+  "court_rules": [
+    {
+      "label": "Uniform Magistrate Court Rules",
+      "url": "https://www.georgiacourts.gov/files/Uniform_Magistrate_Court_Rules.pdf",
+      "rule_or_chapter": "Uniform Magistrate Court Rules"
+    }
+  ],
+  "forms_pages": [
+    {
+      "label": "Magistrate Court forms (sample county: Fulton)",
+      "url": "https://magistratefulton.org/forms",
+      "scope": "forms"
+    }
+  ],
+  "fee_schedules": [
+    {
+      "label": "OCGA § 15-10-80 (Magistrate Court costs and fees)",
+      "url": "https://www.legis.ga.gov/laws/15-10-80",
+      "section_or_chapter": "§ 15-10-80"
+    }
+  ],
+  "service_rules": [
+    {
+      "label": "OCGA § 9-11-4 (Service of process)",
+      "url": "https://www.legis.ga.gov/laws/9-11-4",
+      "section_or_chapter": "§ 9-11-4"
+    }
+  ],
+  "appeal_rules": [
+    {
+      "label": "OCGA § 15-10-41 (Magistrate Court appeals)",
+      "url": "https://www.legis.ga.gov/laws/15-10-41",
+      "section_or_chapter": "§ 15-10-41"
+    }
+  ],
+  "post_judgment_collection": [
+    {
+      "label": "OCGA Title 18 Ch. 4 (Garnishment)",
+      "url": "https://www.legis.ga.gov/laws/18",
+      "section_or_chapter": "Title 18 Ch. 4"
+    },
+    {
+      "label": "OCGA § 44-13-1 (Homestead exemption)",
+      "url": "https://www.legis.ga.gov/laws/44-13-1",
+      "section_or_chapter": "§ 44-13-1"
+    }
+  ],
+  "consumer_protection_statutes": [
+    {
+      "label": "OCGA Title 10 Ch. 1 Art. 15 (Fair Business Practices Act)",
+      "url": "https://www.legis.ga.gov/laws/10",
+      "section_or_chapter": "Title 10 Ch. 1 Art. 15"
+    },
+    {
+      "label": "OCGA § 13-6-15 (Bad check civil penalty)",
+      "url": "https://www.legis.ga.gov/laws/13-6-15",
+      "section_or_chapter": "§ 13-6-15"
+    }
+  ],
+  "landlord_tenant_statutes": [
+    {
+      "label": "OCGA § 44-7-30 et seq. (Security deposits)",
+      "url": "https://www.legis.ga.gov/laws/44",
+      "section_or_chapter": "§ 44-7-30"
+    }
+  ],
+  "wage_and_employment_statutes": [
+    {
+      "label": "OCGA § 34-7-2 (Final wages)",
+      "url": "https://www.legis.ga.gov/laws/34-7-2",
+      "section_or_chapter": "§ 34-7-2"
+    }
+  ],
+  "civil_remedies_statutes": [
+    {
+      "label": "OCGA § 7-4-12 (Post-judgment interest)",
+      "url": "https://www.legis.ga.gov/laws/7-4-12",
+      "section_or_chapter": "§ 7-4-12"
+    }
+  ],
+  "county_specific": [],
+  "notes": "Manually curated source list (Pass 1 model defaulted to commercial mirrors).",
+  "_meta": {
+    "state": "Georgia",
+    "slug": "georgia",
+    "model": "manually-curated",
+    "generated_at": "2026-04-28T13:20:48.079Z"
+  }
+}

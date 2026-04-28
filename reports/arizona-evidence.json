@@ -1,0 +1,1656 @@
+{
+  "state": "Arizona",
+  "slug": "arizona",
+  "abbr": "AZ",
+  "as_of": "2026-04-28",
+  "hero": {
+    "individual_limit_dollars": 5000,
+    "business_limit_dollars": 5000,
+    "filing_fee_low_dollars": 24,
+    "filing_fee_high_dollars": 97,
+    "typical_timeline_min_days": 30,
+    "typical_timeline_max_days": 90,
+    "tagline": "Arizona's small claims courts offer a streamlined process for disputes up to $5,000, emphasizing speed and simplicity.",
+    "source_ids": [
+      "S6"
+    ]
+  },
+  "at_a_glance": [
+    {
+      "label": "Most you can sue for",
+      "value": "$5,000",
+      "detail": "Same cap for individuals and businesses",
+      "source_ids": [
+        "S6"
+      ]
+    },
+    {
+      "label": "Filing fee",
+      "value": "$24-$97",
+      "detail": "Varies by court and claim amount",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "label": "Court",
+      "value": "Justice Court (Small Claims Division)",
+      "detail": "",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Lawyers at trial",
+      "value": "Not allowed",
+      "detail": "Unless both parties agree in writing",
+      "source_ids": [
+        "S8"
+      ]
+    },
+    {
+      "label": "Appeal window",
+      "value": "No appeals",
+      "detail": "Decisions are final and binding",
+      "source_ids": [
+        "S8"
+      ]
+    },
+    {
+      "label": "Recent change",
+      "value": "—",
+      "detail": "No major changes in the last 3 years",
+      "source_ids": []
+    }
+  ],
+  "limits": {
+    "individual_dollars": 5000,
+    "business_dollars": 5000,
+    "guarantor_with_fee_max": null,
+    "guarantor_without_fee_max": null,
+    "annual_filing_cap": {
+      "count": null,
+      "threshold_dollars": null,
+      "notes": ""
+    },
+    "split_claims_allowed": false,
+    "split_claims_explanation": "If a claim exceeds $5,000, you cannot split it into multiple claims to fit within the small claims limit. Instead, you must file in a higher court.",
+    "interest_excluded_from_cap": true,
+    "court_costs_excluded_from_cap": true,
+    "statute": "Ariz. Rev. Stat. § 22-503",
+    "source_ids": [
+      "S6"
+    ]
+  },
+  "claim_categories": [
+    {
+      "id": "contracts",
+      "title": "Contracts and money owed",
+      "blurb": "Arizona allows you 6 years to file a claim for breach of a written contract and 3 years for an oral contract.",
+      "claims": [
+        {
+          "slug": "written-contract",
+          "name": "Breach of a written contract",
+          "example": "A contractor signed a $4,000 contract to remodel your kitchen, took the deposit, and never finished.",
+          "eligibility": "eligible",
+          "claim_statute": "Ariz. Rev. Stat. § 12-548",
+          "notes": "6-year deadline from breach. Bring the signed contract, payment proof, and any correspondence showing the breach.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "oral-contract",
+          "name": "Breach of an oral contract",
+          "example": "You agreed verbally to lend a friend $2,000, which they promised to repay in 6 months, but they haven't.",
+          "eligibility": "eligible",
+          "claim_statute": "Ariz. Rev. Stat. § 12-543",
+          "notes": "3-year deadline from breach. Provide evidence of the agreement, such as emails or witness statements.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "personal-loan",
+          "name": "Unpaid personal loan",
+          "example": "You lent $3,500 to a colleague who agreed to repay in installments but has defaulted.",
+          "eligibility": "eligible",
+          "claim_statute": "Ariz. Rev. Stat. § 12-548",
+          "notes": "6-year deadline from breach. Gather any written agreements, payment records, and communication regarding the loan.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "promissory-note",
+          "name": "Default on a promissory note",
+          "example": "A borrower signed a promissory note for $5,000 but failed to make any payments.",
+          "eligibility": "eligible",
+          "claim_statute": "Ariz. Rev. Stat. § 12-548",
+          "notes": "6-year deadline from breach. Present the original promissory note and any records of payments made.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "unpaid-invoice",
+          "name": "Unpaid invoice for services rendered",
+          "example": "You provided $4,500 worth of consulting services, but the client hasn't paid the invoice.",
+          "eligibility": "eligible",
+          "claim_statute": "Ariz. Rev. Stat. § 12-548",
+          "notes": "6-year deadline from breach. Bring the invoice, service agreement, and any communication regarding payment.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "open-account",
+          "name": "Unpaid balance on an open account",
+          "example": "A customer has an outstanding balance of $3,000 on their store credit account.",
+          "eligibility": "eligible",
+          "claim_statute": "Ariz. Rev. Stat. § 12-543",
+          "notes": "3-year deadline from last payment or charge. Provide account statements and records of transactions.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "unpaid-rent",
+          "name": "Unpaid rent by tenant",
+          "example": "Your tenant owes $2,500 in back rent and has vacated the property.",
+          "eligibility": "eligible",
+          "claim_statute": "Ariz. Rev. Stat. § 12-541",
+          "notes": "1-year deadline from when rent was due. Bring the lease agreement and records of unpaid rent.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "bad-check",
+          "name": "Payment with a bad check",
+          "example": "A customer paid for $1,200 worth of goods with a check that bounced.",
+          "eligibility": "eligible",
+          "claim_statute": "Ariz. Rev. Stat. § 12-671",
+          "notes": "1-year deadline from the date of the check. Provide the bounced check and any bank notices.",
+          "damage_boost": "Check amount + service charge up to $25 + twice the check amount or $50, whichever is greater.",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "co-signer",
+          "name": "Co-signer seeking repayment",
+          "example": "You co-signed a $4,000 loan, and the primary borrower defaulted, leaving you to pay.",
+          "eligibility": "eligible",
+          "claim_statute": "Ariz. Rev. Stat. § 12-548",
+          "notes": "6-year deadline from breach. Bring the loan agreement and proof of payments made on behalf of the borrower.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "consumer-disputes",
+      "title": "Consumer disputes",
+      "blurb": "Arizona provides avenues for consumers to seek redress for various disputes, with specific statutes of limitations depending on the claim type.",
+      "claims": [
+        {
+          "slug": "defective-product",
+          "name": "Purchase of a defective product",
+          "example": "You bought a $1,500 appliance that stopped working within a month, and the seller refuses to repair or replace it.",
+          "eligibility": "eligible",
+          "claim_statute": "Ariz. Rev. Stat. § 12-542",
+          "notes": "2-year deadline from discovery of defect. Bring purchase receipts, warranty information, and any communication with the seller.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "bad-service",
+          "name": "Substandard service provided",
+          "example": "A cleaning service charged $800 but did not perform the agreed-upon tasks.",
+          "eligibility": "eligible",
+          "claim_statute": "Ariz. Rev. Stat. § 12-543",
+          "notes": "3-year deadline from service date. Provide service agreements, receipts, and evidence of substandard work.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "auto-repair",
+          "name": "Faulty auto repair",
+          "example": "A mechanic charged $2,000 for repairs that didn't fix the issue and caused further damage.",
+          "eligibility": "eligible",
+          "claim_statute": "Ariz. Rev. Stat. § 12-542",
+          "notes": "2-year deadline from repair date. Bring repair invoices, receipts, and any expert evaluations.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "contractor",
+          "name": "Unsatisfactory work by a contractor",
+          "example": "A contractor was paid $4,500 for home renovations but left the work incomplete and subpar.",
+          "eligibility": "eligible",
+          "claim_statute": "Ariz. Rev. Stat. § 12-548",
+          "notes": "6-year deadline from breach. Provide the contract, payment records, and photos of incomplete work.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "no-show-vendor",
+          "name": "Vendor failed to deliver services",
+          "example": "You paid a DJ $1,000 for an event, but they never showed up.",
+          "eligibility": "eligible",
+          "claim_statute": "Ariz. Rev. Stat. § 12-543",
+          "notes": "3-year deadline from service date. Bring the service agreement and proof of payment.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "subscription-cancellation",
+          "name": "Unauthorized charges after subscription cancellation",
+          "example": "You canceled a $50/month gym membership, but they continued to charge your card for 3 months.",
+          "eligibility": "eligible",
+          "claim_statute": "Ariz. Rev. Stat. § 12-543",
+          "notes": "3-year deadline from unauthorized charge. Provide cancellation confirmation and bank statements showing charges.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "used-car",
+          "name": "Purchase of a defective used car",
+          "example": "You bought a used car for $4,000 that broke down within a week due to undisclosed issues.",
+          "eligibility": "eligible",
+          "claim_statute": "Ariz. Rev. Stat. § 12-542",
+          "notes": "2-year deadline from purchase. Bring the sales agreement, any warranties, and repair records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "false-advertising",
+          "name": "False advertising leading to financial loss",
+          "example": "A company advertised a product for $500 with features it didn't have, leading to your financial loss.",
+          "eligibility": "eligible",
+          "claim_statute": "Ariz. Rev. Stat. § 44-1522",
+          "notes": "1-year deadline from discovery. Provide the advertisement, purchase records, and communication with the company.",
+          "damage_boost": "",
+          "source_ids": [
+            "S16"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "property-damage",
+      "title": "Property damage",
+      "blurb": "Arizona allows 2 years to file claims for property damage, including vehicle collisions and damage caused by others.",
+      "claims": [
+        {
+          "slug": "vehicle-collision",
+          "name": "Damage from a vehicle collision",
+          "example": "Another driver hit your parked car, causing $3,000 in damages.",
+          "eligibility": "eligible",
+          "claim_statute": "Ariz. Rev. Stat. § 12-542",
+          "notes": "2-year deadline from accident date. Bring police reports, repair estimates, and photos of the damage.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "neighbor-property",
+          "name": "Neighbor's actions damaged your property",
+          "example": "A neighbor's tree fell onto your fence, causing $2,500 in damages.",
+          "eligibility": "eligible",
+          "claim_statute": "Ariz. Rev. Stat. § 12-542",
+          "notes": "2-year deadline from damage date. Provide photos, repair estimates, and any communication with the neighbor.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "damage-to-rental",
+          "name": "Tenant caused damage to rental property",
+          "example": "A tenant left your rental unit with $4,000 in damages beyond normal wear and tear.",
+          "eligibility": "eligible",
+          "claim_statute": "Ariz. Rev. Stat. § 12-542",
+          "notes": "2-year deadline from discovery. Bring the lease agreement, photos of damage, and repair invoices.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "pet-damage",
+          "name": "Damage caused by someone else's pet",
+          "example": "A neighbor's dog entered your yard and destroyed $1,500 worth of landscaping.",
+          "eligibility": "eligible",
+          "claim_statute": "Ariz. Rev. Stat. § 12-542",
+          "notes": "2-year deadline from damage date. Provide photos, repair estimates, and any communication with the pet owner.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "property-in-custody",
+          "name": "Damage to property while in someone else's custody",
+          "example": "You left your laptop for repair, and the technician damaged it, causing $800 in losses.",
+          "eligibility": "eligible",
+          "claim_statute": "Ariz. Rev. Stat. § 12-542",
+          "notes": "2-year deadline from damage date. Bring service agreements, photos of damage, and repair estimates.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "landlord-tenant",
+      "title": "Landlord-tenant disputes",
+      "blurb": "Arizona provides specific statutes for landlord-tenant disputes, with varying statutes of limitations depending on the claim.",
+      "claims": [
+        {
+          "slug": "security-deposit",
+          "name": "Failure to return security deposit",
+          "example": "Your landlord withheld your $1,200 security deposit without justification.",
+          "eligibility": "eligible",
+          "claim_statute": "Ariz. Rev. Stat. § 33-1321",
+          "notes": "1-year deadline from lease termination. Provide the lease agreement, move-out inspection reports, and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S18"
+          ]
+        },
+        {
+          "slug": "deposit-not-itemized",
+          "name": "Landlord didn't provide itemized list for deposit deductions",
+          "example": "Your landlord deducted $500 from your deposit without providing an itemized list of damages.",
+          "eligibility": "eligible",
+          "claim_statute": "Ariz. Rev. Stat. § 33-1321",
+          "notes": "1-year deadline from lease termination. Bring the lease agreement and any communication regarding the deposit.",
+          "damage_boost": "",
+          "source_ids": [
+            "S18"
+          ]
+        },
+        {
+          "slug": "uninhabitable-rental",
+          "name": "Landlord failed to maintain habitable conditions",
+          "example": "Your rental had no heating during winter, and the landlord refused to fix it.",
+          "eligibility": "eligible",
+          "claim_statute": "Ariz. Rev. Stat. § 33-1361",
+          "notes": "1-year deadline from issue. Provide photos, repair requests, and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S18"
+          ]
+        },
+        {
+          "slug": "wrongful-retention-property",
+          "name": "Landlord wrongfully retained personal property",
+          "example": "After moving out, your landlord kept your furniture worth $2,000.",
+          "eligibility": "eligible",
+          "claim_statute": "Ariz. Rev. Stat. § 33-1370",
+          "notes": "1-year deadline from lease termination. Bring the lease agreement and any communication regarding the property.",
+          "damage_boost": "",
+          "source_ids": [
+            "S18"
+          ]
+        },
+        {
+          "slug": "illegal-eviction",
+          "name": "Landlord conducted an illegal eviction",
+          "example": "Your landlord changed the locks without notice, preventing you from accessing your rental.",
+          "eligibility": "eligible",
+          "claim_statute": "Ariz. Rev. Stat. § 33-1367",
+          "notes": "1-year deadline from eviction. Provide the lease agreement and any communication regarding the eviction.",
+          "damage_boost": "",
+          "source_ids": [
+            "S18"
+          ]
+        },
+        {
+          "slug": "unreturned-prepaid-rent",
+          "name": "Landlord didn't return prepaid rent after early termination",
+          "example": "You paid first and last month's rent but moved out early, and the landlord kept the last month's rent.",
+          "eligibility": "eligible",
+          "claim_statute": "Ariz. Rev. Stat. § 33-1368",
+          "notes": "1-year deadline from lease termination. Bring the lease agreement and any communication regarding the rent.",
+          "damage_boost": "",
+          "source_ids": [
+            "S18"
+          ]
+        },
+        {
+          "slug": "unpaid-rent-by-tenant",
+          "name": "Tenant failed to pay rent",
+          "example": "Your tenant owes $3,000 in unpaid rent and has vacated the property.",
+          "eligibility": "eligible",
+          "claim_statute": "Ariz. Rev. Stat. § 12-541",
+          "notes": "1-year deadline from when rent was due. Bring the lease agreement and records of unpaid rent.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "repair-and-deduct",
+          "name": "Tenant repaired and deducted from rent, landlord disputes",
+          "example": "You paid $600 to fix a leaky roof and deducted it from rent, but the landlord disagrees.",
+          "eligibility": "eligible",
+          "claim_statute": "Ariz. Rev. Stat. § 33-1363",
+          "notes": "1-year deadline from repair. Provide repair receipts and communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S18"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "employment-wages",
+      "title": "Employment and wage disputes",
+      "blurb": "Arizona allows 1 year to file claims for unpaid wages and related employment disputes.",
+      "claims": [
+        {
+          "slug": "unpaid-wages",
+          "name": "Employer failed to pay earned wages",
+          "example": "Your employer owes you $2,000 for hours worked but hasn't paid.",
+          "eligibility": "eligible",
+          "claim_statute": "Ariz. Rev. Stat. § 23-355",
+          "notes": "1-year deadline from when wages were due. Provide pay stubs and any communication regarding unpaid wages.",
+          "damage_boost": "Wages owed + 3 times the amount as liquidated damages.",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "final-paycheck",
+          "name": "Employer didn't provide final paycheck",
+          "example": "After termination, your employer withheld your final paycheck of $1,500.",
+          "eligibility": "eligible",
+          "claim_statute": "Ariz. Rev. Stat. § 23-355",
+          "notes": "1-year deadline from termination. Bring employment records and any communication regarding the final paycheck.",
+          "damage_boost": "Wages owed + 3 times the amount as liquidated damages.",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "unpaid-commissions",
+          "name": "Employer failed to pay earned commissions",
+          "example": "You earned $3,000 in sales commissions, but your employer hasn't paid.",
+          "eligibility": "eligible",
+          "claim_statute": "Ariz. Rev. Stat. § 23-355",
+          "notes": "1-year deadline from when commissions were due. Provide sales records and any communication regarding unpaid commissions.",
+          "damage_boost": "Wages owed + 3 times the amount as liquidated damages.",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "unpaid-overtime",
+          "name": "Employer didn't pay overtime wages",
+          "example": "You worked 20 hours of overtime but weren't paid the additional $800 owed.",
+          "eligibility": "eligible",
+          "claim_statute": "Ariz. Rev. Stat. § 23-355",
+          "notes": "1-year deadline from when overtime was due. Provide timesheets and any communication regarding unpaid overtime.",
+          "damage_boost": "Wages owed + 3 times the amount as liquidated damages.",
+          "source_ids": [
+            "S19"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "personal-claims",
+      "title": "Personal claims",
+      "blurb": "Arizona allows 2 years to file claims for personal injury and related personal disputes.",
+      "claims": [
+        {
+          "slug": "minor-injury",
+          "name": "Minor personal injury",
+          "example": "You slipped in a store due to a wet floor and incurred $2,500 in medical bills.",
+          "eligibility": "eligible",
+          "claim_statute": "Ariz. Rev. Stat. § 12-542",
+          "notes": "2-year deadline from injury date. Provide medical records and any incident reports.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "loaned-property",
+          "name": "Failure to return loaned property",
+          "example": "You lent a friend your $1,000 camera, and they refuse to return it.",
+          "eligibility": "eligible",
+          "claim_statute": "Ariz. Rev. Stat. § 12-542",
+          "notes": "2-year deadline from demand for return. Provide evidence of the loan and any communication regarding the return.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "civil-theft",
+          "name": "Theft of personal property",
+          "example": "Someone stole your bicycle worth $800, and you have evidence of their involvement.",
+          "eligibility": "eligible",
+          "claim_statute": "Ariz. Rev. Stat. § 12-542",
+          "notes": "2-year deadline from theft date. Provide police reports and any evidence of the theft.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vehicle-specific",
+      "title": "Vehicle-specific disputes",
+      "blurb": "Arizona allows 2 years to file claims related to vehicle disputes, including mechanic issues and wrongful towing.",
+      "claims": [
+        {
+          "slug": "mechanic-dispute",
+          "name": "Dispute over mechanic's work",
+          "example": "A mechanic charged $2,500 for repairs that didn't fix the issue.",
+          "eligibility": "eligible",
+          "claim_statute": "Ariz. Rev. Stat. § 12-542",
+          "notes": "2-year deadline from repair date. Provide repair invoices and any communication with the mechanic.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "wrongful-tow",
+          "name": "Vehicle was wrongfully towed",
+          "example": "Your car was towed from your apartment complex without proper notice, costing you $300 in fees.",
+          "eligibility": "eligible",
+          "claim_statute": "Ariz. Rev. Stat. § 12-542",
+          "notes": "2-year deadline from tow date. Provide towing receipts and any communication regarding the tow.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        }
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "category": "Eviction (unlawful detainer)",
+      "explanation": "Small claims courts in Arizona do not have jurisdiction over eviction cases.",
+      "where_to_go_instead": "Justice Court's regular civil division",
+      "source_ids": [
+        "S6"
+      ]
+    },
+    {
+      "category": "Defamation (libel or slander)",
+      "explanation": "Claims involving defamation are excluded from small claims court jurisdiction.",
+      "where_to_go_instead": "Superior Court",
+      "source_ids": [
+        "S6"
+      ]
+    },
+    {
+      "category": "Malpractice",
+      "explanation": "Professional malpractice claims exceed the small claims jurisdictional limit.",
+      "where_to_go_instead": "Superior Court",
+      "source_ids": []
+    },
+    {
+      "category": "Family law matters",
+      "explanation": "Divorce, child custody, and related matters are not handled in small claims court.",
+      "where_to_go_instead": "Family Court",
+      "source_ids": []
+    },
+    {
+      "category": "Claims against the state",
+      "explanation": "Small claims courts do not have jurisdiction over claims against the state or its subdivisions.",
+      "where_to_go_instead": "Superior Court",
+      "source_ids": [
+        "S6"
+      ]
+    }
+  ],
+  "damages": {
+    "compensatory_allowed": true,
+    "punitive_allowed": false,
+    "punitive_explanation": "Punitive damages are not awarded in Arizona small claims court; however, statutory penalties may apply in certain cases.",
+    "statutory_multipliers": [
+      {
+        "claim": "Bad check (after 30-day notice)",
+        "multiplier": "2x check amount or $50, whichever is greater",
+        "explanation": "Check amount + service charge up to $25 + twice the check amount or $50, whichever is greater.",
+        "statute": "Ariz. Rev. Stat. § 12-671",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "Unpaid wages",
+        "multiplier": "3x wages owed",
+        "explanation": "Wages owed + 3 times the amount as liquidated damages.",
+        "statute": "Ariz. Rev. Stat. § 23-355",
+        "source_ids": [
+          "S19"
+        ]
+      }
+    ],
+    "attorney_fees_recoverable": "sometimes",
+    "attorney_fees_explanation": "Attorney fees are generally not recoverable in small claims court unless provided by statute or contract.",
+    "prejudgment_interest_rate_pct": 10,
+    "prejudgment_interest_statute": "Ariz. Rev. Stat. § 44-1201",
+    "postjudgment_interest_rate_pct": 10,
+    "postjudgment_interest_type": "simple",
+    "postjudgment_interest_statute": "Ariz. Rev. Stat. § 44-1201",
+    "postjudgment_interest_notes": "Interest accrues at a rate of 10% per annum on judgments.",
+    "filing_and_service_fees_recoverable_from_loser": true,
+    "source_ids": [
+      "S20"
+    ]
+  },
+  "where_to_file": {
+    "court_name": "Justice Court (Small Claims Division)",
+    "parent_court": "Arizona Judicial Branch",
+    "venue_rules": [
+      {
+        "scenario": "Most cases (the default)",
+        "filing_options": [
+          "County where the defendant resides"
+        ],
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "scenario": "Where contract was performed",
+        "filing_options": [
+          "County where performance was due"
+        ],
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "scenario": "Where injury or damage occurred",
+        "filing_options": [
+          "County where the event occurred"
+        ],
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "scenario": "Multiple defendants",
+        "filing_options": [
+          "Any county where one defendant resides"
+        ],
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "scenario": "Out-of-state defendant",
+        "filing_options": [
+          "Where the cause of action arose"
+        ],
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "consequences_of_wrong_venue": "If filed in the wrong venue, the defendant may file a motion to change venue, potentially delaying the case.",
+    "e_filing_available": "varies",
+    "e_filing_notes": "Availability of e-filing depends on the specific Justice Court; check with the local court for options.",
+    "e_filing_portal": null,
+    "source_ids": [
+      "S6"
+    ]
+  },
+  "fees": {
+    "filing_fee_tiers": [
+      {
+        "range_label": "$0 to $1,500",
+        "range_min": 0,
+        "range_max": 1500,
+        "fee_dollars": 24,
+        "source_ids": [
+          "S11"
+        ]
+      },
+      {
+        "range_label": "$1,501 to $3,500",
+        "range_min": 1501,
+        "range_max": 3500,
+        "fee_dollars": 47,
+        "source_ids": [
+          "S11"
+        ]
+      },
+      {
+        "range_label": "$3,501 to $5,000",
+        "range_min": 3501,
+        "range_max": 5000,
+        "fee_dollars": 97,
+        "source_ids": [
+          "S11"
+        ]
+      }
+    ],
+    "frequent_filer": {
+      "threshold_per_year": null,
+      "fee_dollars": null,
+      "notes": ""
+    },
+    "service_fees": [
+      {
+        "method": "Sheriff (personal service)",
+        "amount_label": "$16-$25",
+        "notes": "Varies by county; check with local sheriff's office.",
+        "source_ids": [
+          "S11"
+        ]
+      },
+      {
+        "method": "Certified mail",
+        "amount_label": "$10-$15",
+        "notes": "Cost depends on postal rates.",
+        "source_ids": [
+          "S11"
+        ]
+      },
+      {
+        "method": "Private process server",
+        "amount_label": "$50-$100",
+        "notes": "Fees vary; contact local process servers for rates.",
+        "source_ids": [
+          "S11"
+        ]
+      }
+    ],
+    "waiver": {
+      "forms": [
+        {
+          "number": "AOC-DFW1",
+          "name": "Application for Deferral or Waiver of Court Fees",
+          "url": "https://www.azcourts.gov/Portals/34/Forms/Forms%20for%20the%20Public/Deferral%20or%20Waiver%20of%20Court%20Fees%20and%20Costs.pdf",
+          "source_ids": [
+            "S11"
+          ]
+        }
+      ],
+      "eligibility_bullets": [
+        "Receiving need-based public assistance (e.g., SNAP, TANF, SSI)",
+        "Household income below 150% of the federal poverty level",
+        "Demonstrating financial hardship"
+      ],
+      "coverage_notes": "Waiver covers filing fees and may cover service fees; check with the court for specifics.",
+      "if_you_win_notes": "If fees were deferred and you win, the court may order the losing party to pay the fees."
+    },
+    "other_fees": [
+      {
+        "name": "Subpoena issuance",
+        "amount_label": "$10",
+        "notes": "Plus witness fee per day.",
+        "source_ids": [
+          "S11"
+        ]
+      },
+      {
+        "name": "Writ of execution",
+        "amount_label": "$25",
+        "notes": "Post-judgment enforcement.",
+        "source_ids": [
+          "S11"
+        ]
+      }
+    ],
+    "fees_recoverable_from_loser_notes": "If you win, filing fees and reasonable service costs are typically added to the judgment against the loser.",
+    "source_ids": [
+      "S11"
+    ]
+  },
+  "statute_of_limitations": {
+    "entries": [
+      {
+        "id": "written-contract",
+        "claim": "Written contract",
+        "years": 6,
+        "clock_starts": "Date of breach",
+        "statute": "Ariz. Rev. Stat. § 12-548",
+        "notes": "Applies to actions for debt founded on a written contract.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "oral-contract",
+        "claim": "Oral contract",
+        "years": 3,
+        "clock_starts": "Date of breach",
+        "statute": "Ariz. Rev. Stat. § 12-543",
+        "notes": "Applies to debt not evidenced by a written contract.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "sale-of-goods",
+        "claim": "Sale of goods (UCC)",
+        "years": 4,
+        "clock_starts": "Date of breach",
+        "statute": "Ariz. Rev. Stat. § 47-2725",
+        "notes": "Applies to contracts for the sale of goods under the Uniform Commercial Code.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "promissory-note",
+        "claim": "Promissory note",
+        "years": 6,
+        "clock_starts": "Date of default",
+        "statute": "Ariz. Rev. Stat. § 12-548",
+        "notes": "Applies to actions for debt founded on a written contract.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "open-account",
+        "claim": "Open account / credit card debt",
+        "years": 3,
+        "clock_starts": "Date of last payment or charge",
+        "statute": "Ariz. Rev. Stat. § 12-543",
+        "notes": "Applies to debt not evidenced by a written contract.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "personal-injury",
+        "claim": "Personal injury",
+        "years": 2,
+        "clock_starts": "Date of injury",
+        "statute": "Ariz. Rev. Stat. § 12-542",
+        "notes": "Applies to actions for personal injuries.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "property-damage",
+        "claim": "Property damage",
+        "years": 2,
+        "clock_starts": "Date of damage",
+        "statute": "Ariz. Rev. Stat. § 12-542",
+        "notes": "Applies to actions for injury to property.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "fraud",
+        "claim": "Fraud",
+        "years": 3,
+        "clock_starts": "Date of discovery",
+        "statute": "Ariz. Rev. Stat. § 12-543",
+        "notes": "Applies to relief on the ground of fraud or mistake.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "bad-check",
+        "claim": "Bad check",
+        "years": 1,
+        "clock_starts": "Date of check",
+        "statute": "Ariz. Rev. Stat. § 12-671",
+        "notes": "Applies to actions to recover on a dishonored check.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "unpaid-wages",
+        "claim": "Unpaid wages",
+        "years": 1,
+        "clock_starts": "Date wages were due",
+        "statute": "Ariz. Rev. Stat. § 23-355",
+        "notes": "Applies to actions for the recovery of unpaid wages.",
+        "source_ids": [
+          "S19"
+        ]
+      },
+      {
+        "id": "security-deposit",
+        "claim": "Security deposit",
+        "years": 1,
+        "clock_starts": "Date of lease termination",
+        "statute": "Ariz. Rev. Stat. § 33-1321",
+        "notes": "Applies to actions for the return of security deposits.",
+        "source_ids": [
+          "S18"
+        ]
+      },
+      {
+        "id": "judgment-enforcement",
+        "claim": "Judgment enforcement",
+        "years": 5,
+        "clock_starts": "Date of judgment",
+        "statute": "Ariz. Rev. Stat. § 12-1551",
+        "notes": "Applies to actions to enforce a judgment.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "discovery_rule_notes": "The discovery rule applies to fraud claims, starting the clock when the fraud is discovered.",
+    "tolling_notes": "The statute of limitations may be tolled if the defendant is out of state, the plaintiff is a minor, or in cases of bankruptcy.",
+    "source_ids": [
+      "S5"
+    ]
+  },
+  "pre_filing": {
+    "demand_letter_required": false,
+    "demand_letter_recommended": true,
+    "demand_letter_notes": "While not required, sending a demand letter can often resolve disputes without court intervention.",
+    "bad_check_notice_rule": "For bad check claims, a 30-day written notice demanding payment is required before filing suit.",
+    "wage_claim_demand_rule": "For unpaid wage claims, a written demand is recommended to establish the claim before filing.",
+    "government_claim_required": false,
+    "government_claim_deadline_days": null,
+    "government_claim_notes": "",
+    "landlord_tenant_pre_filing_notes": "Landlords must provide an itemized list of deductions from security deposits within 14 days of lease termination.",
+    "consumer_protection_notes": "For consumer fraud claims, a written demand for relief is recommended before filing.",
+    "mandatory_mediation_before_filing": "none",
+    "arbitration_clauses_enforced": true,
+    "source_ids": [
+      "S5"
+    ]
+  },
+  "forms": [
+    {
+      "number": "SC-1",
+      "name": "Small Claims Complaint",
+      "description": "Initiates a small claims lawsuit by outlining the plaintiff's claim against the defendant.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "https://www.azcourts.gov/Portals/34/Forms/Forms%20for%20the%20Public/Small%20Claims%20Complaint.pdf",
+      "source_ids": [
+        "S10"
+      ]
+    },
+    {
+      "number": "SC-2",
+      "name": "Small Claims Answer",
+      "description": "Allows the defendant to respond to the plaintiff's complaint.",
+      "filed_by": "defendant",
+      "required": true,
+      "group": "starting",
+      "url": "https://www.azcourts.gov/Portals/34/Forms/Forms%20for%20the%20Public/Small%20Claims%20Answer.pdf",
+      "source_ids": [
+        "S10"
+      ]
+    },
+    {
+      "number": "SC-3",
+      "name": "Counterclaim",
+      "description": "Filed by the defendant if they have a claim against the plaintiff.",
+      "filed_by": "defendant",
+      "required": false,
+      "group": "counterclaim",
+      "url": "https://www.azcourts.gov/Portals/34/Forms/Forms%20for%20the%20Public/Small%20Claims%20Counterclaim.pdf",
+      "source_ids": [
+        "S10"
+      ]
+    },
+    {
+      "number": "SC-4",
+      "name": "Request for Transfer to Civil Division",
+      "description": "Used to transfer a small claims case to the civil division for a jury trial or attorney representation.",
+      "filed_by": "either",
+      "required": false,
+      "group": "starting",
+      "url": "https://www.azcourts.gov/Portals/34/Forms/Forms%20for%20the%20Public/Request%20for%20Transfer%20to%20Civil%20Division.pdf",
+      "source_ids": [
+        "S10"
+      ]
+    },
+    {
+      "number": "SC-5",
+      "name": "Motion to Vacate Judgment",
+      "description": "Filed to request the court to set aside a judgment.",
+      "filed_by": "either",
+      "required": false,
+      "group": "after-judgment",
+      "url": "https://www.azcourts.gov/Portals/34/Forms/Forms%20for%20the%20Public/Motion%20to%20Vacate%20Judgment.pdf",
+      "source_ids": [
+        "S10"
+      ]
+    },
+    {
+      "number": "SC-6",
+      "name": "Satisfaction of Judgment",
+      "description": "Filed by the prevailing party to indicate that the judgment has been paid in full.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "after-judgment",
+      "url": "https://www.azcourts.gov/Portals/34/Forms/Forms%20for%20the%20Public/Satisfaction%20of%20Judgment.pdf",
+      "source_ids": [
+        "S10"
+      ]
+    }
+  ],
+  "service": {
+    "who_can_serve": [
+      "Sheriff",
+      "Certified mail by clerk",
+      "Private process server"
+    ],
+    "methods": [
+      {
+        "name": "Sheriff personal service",
+        "description": "Sheriff or constable personally hands the papers to the defendant.",
+        "pros": [
+          "Reliable",
+          "Official"
+        ],
+        "cons": [
+          "May be slower",
+          "Fees vary by county"
+        ],
+        "source_ids": [
+          "S12"
+        ]
+      },
+      {
+        "name": "Certified mail",
+        "description": "Court clerk sends documents via certified mail with return receipt requested.",
+        "pros": [
+          "Cost-effective",
+          "Proof of service"
+        ],
+        "cons": [
+          "Defendant may refuse delivery"
+        ],
+        "source_ids": [
+          "S12"
+        ]
+      },
+      {
+        "name": "Private process server",
+        "description": "A licensed individual serves the documents to the defendant.",
+        "pros": [
+          "Flexible timing",
+          "Can locate evasive defendants"
+        ],
+        "cons": [
+          "More expensive"
+        ],
+        "source_ids": [
+          "S12"
+        ]
+      }
+    ],
+    "in_county_days_before_hearing": 20,
+    "out_of_county_days_before_hearing": 30,
+    "proof_of_service_form": {
+      "number": "SC-7",
+      "name": "Proof of Service"
+    },
+    "proof_filing_deadline_days_before_hearing": 5,
+    "business_service_rule": "Serve the registered agent; if none, serve an officer or managing agent.",
+    "out_of_state_defendant_notes": "Service must comply with Arizona rules and the rules of the state where the defendant is located.",
+    "cant_find_defendant_notes": "If the defendant cannot be located, service by publication may be permitted with court approval.",
+    "avoiding_service_notes": "If the defendant is evading service, document attempts and consider alternative methods like service by publication.",
+    "source_ids": [
+      "S12"
+    ]
+  },
+  "response_and_default": {
+    "must_file_written_answer": true,
+    "response_deadline_days": 20,
+    "response_notes": "The defendant must file a written answer within 20 days of being served.",
+    "default_process": "If the defendant fails to respond, the plaintiff may request a default judgment.",
+    "prove_up_required": true,
+    "prove_up_notes": "Even if the defendant defaults, the plaintiff must provide evidence to support the claim.",
+    "motion_to_vacate_form": {
+      "number": "SC-5",
+      "name": "Motion to Vacate Judgment"
+    },
+    "motion_to_vacate_deadline_days": 30,
+    "motion_to_vacate_lack_of_notice_days": 180,
+    "motion_to_vacate_appeal_deadline_days": 10,
+    "motion_to_vacate_appeal_notes": "If the motion to vacate is denied, the party may appeal the denial within 10 days.",
+    "source_ids": [
+      "S8"
+    ]
+  },
+  "counterclaim": {
+    "allowed": true,
+    "form": {
+      "number": "SC-3",
+      "name": "Counterclaim"
+    },
+    "same_monetary_limit": true,
+    "service_deadline_in_county_days": 20,
+    "service_deadline_out_of_county_days": 30,
+    "transfer_to_higher_court_available": true,
+    "transfer_to_higher_court_statute": "Ariz. Rev. Stat. § 22-504",
+    "transfer_to_higher_court_notes": "If a counterclaim exceeds $5,000, the case must be transferred to the civil division.",
+    "source_ids": [
+      "S6"
+    ]
+  },
+  "hearing": {
+    "lawyers_allowed": "restricted",
+    "lawyers_allowed_notes": "Attorneys are not allowed unless both parties agree in writing.",
+    "format": "Bench trial with informal procedures; each party presents their case to the judge or hearing officer.",
+    "presider": "judge or hearing officer",
+    "burden_of_proof": "preponderance",
+    "what_to_bring": [
+      "Contracts",
+      "Receipts",
+      "Photos",
+      "Witnesses"
+    ],
+    "subpoena_form": {
+      "number": "SC-8",
+      "name": "Subpoena"
+    },
+    "witness_fee_per_day_dollars": 12,
+    "free_interpreters": true,
+    "interpreter_request_process": "Request an interpreter at least 10 days before the hearing.",
+    "jury_option": false,
+    "decision_timing": "On the spot or within 10 days",
+    "on_site_mediation": "by court",
+    "on_site_mediation_notes": "Some courts may offer mediation services before the hearing.",
+    "source_ids": [
+      "S8"
+    ]
+  },
+  "appeals": {
+    "who_can_appeal": "none",
+    "deadline_days": null,
+    "fee_dollars": null,
+    "type": null,
+    "type_notes": "Decisions in small claims court are final and cannot be appealed.",
+    "attorneys_allowed_on_appeal": null,
+    "bond_required": null,
+    "bond_amount_notes": null,
+    "automatic_stay_on_appeal": null,
+    "default_judgment_appealable": null,
+    "default_judgment_notes": null,
+    "notice_of_appeal_form": {
+      "number": null,
+      "name": null
+    },
+    "frivolous_appeal_penalty_dollars": null,
+    "frivolous_appeal_statute": null,
+    "frivolous_appeal_notes": null,
+    "source_ids": [
+      "S8"
+    ]
+  },
+  "collection": {
+    "payment_deadline_typical_days": 30,
+    "post_judgment_interest_rate_pct": 10,
+    "post_judgment_interest_statute": "Ariz. Rev. Stat. § 44-1201",
+    "post_judgment_interest_notes": "Interest accrues at 10% per annum on unpaid judgments.",
+    "methods": [
+      {
+        "id": "wage-garnishment",
+        "name": "Wage garnishment",
+        "blurb": "Have a portion of the debtor's wages withheld until the judgment is paid.",
+        "description": "File an application for a writ of garnishment, serve the employer, and the employer will withhold a portion of the debtor's wages.",
+        "forms": [
+          {
+            "number": "SC-9",
+            "name": "Application for Writ of Garnishment"
+          }
+        ],
+        "estimated_cost": "$30-$50 plus service fees",
+        "effectiveness_notes": "Effective if the debtor is employed and earns above the exemption threshold.",
+        "exemptions": [
+          "75% of disposable earnings or 30 times the federal minimum wage, whichever is greater."
+        ],
+        "source_ids": [
+          "S14"
+        ]
+      },
+      {
+        "id": "bank-levy",
+        "name": "Bank levy",
+        "blurb": "Seize funds from the debtor's bank account to satisfy the judgment.",
+        "description": "Obtain a writ of garnishment, serve the bank, and the bank will freeze and remit funds from the debtor's account.",
+        "forms": [
+          {
+            "number": "SC-9",
+            "name": "Application for Writ of Garnishment"
+          }
+        ],
+        "estimated_cost": "$30-$50 plus service fees",
+        "effectiveness_notes": "Effective if the debtor has sufficient funds in the account.",
+        "exemptions": [
+          "$300 is exempt from levy."
+        ],
+        "source_ids": [
+          "S14"
+        ]
+      },
+      {
+        "id": "property-lien",
+        "name": "Property lien",
+        "blurb": "Place a lien on the debtor's real property to secure the judgment.",
+        "description": "Record the judgment with the county recorder to create a lien on the debtor's property.",
+        "forms": [
+          {
+            "number": "SC-10",
+            "name": "Notice of Judgment Lien"
+          }
+        ],
+        "estimated_cost": "$10-$30 recording fee",
+        "effectiveness_notes": "Effective if the debtor owns real property; lien must be satisfied before property can be sold or refinanced.",
+        "exemptions": [
+          "Homestead exemption up to $150,000."
+        ],
+        "source_ids": [
+          "S15"
+        ]
+      },
+      {
+        "id": "writ-of-execution",
+        "name": "Writ of execution",
+        "blurb": "Seize and sell the debtor's non-exempt property to satisfy the judgment.",
+        "description": "Obtain a writ of execution, have the sheriff seize property, and sell it at auction.",
+        "forms": [
+          {
+            "number": "SC-11",
+            "name": "Application for Writ of Execution"
+          }
+        ],
+        "estimated_cost": "$50-$100 plus sheriff's fees",
+        "effectiveness_notes": "Effective if the debtor owns valuable non-exempt property.",
+        "exemptions": [
+          "Various personal property exemptions apply."
+        ],
+        "source_ids": [
+          "S14"
+        ]
+      }
+    ],
+    "wage_garnishment_max_pct_of_disposable": 25,
+    "judgment_lifespan_years": 5,
+    "judgment_renewal_process": "File an application for renewal before the judgment expires; no fee required.",
+    "debtor_exam_form": {
+      "number": "SC-12",
+      "name": "Application for Order to Appear for Examination"
+    },
+    "exempt_assets": [
+      "Homestead — $150,000",
+      "Vehicle — $6,000",
+      "Household goods — $6,000",
+      "Tools of trade — $5,000",
+      "Social Security and federal benefits"
+    ],
+    "bankruptcy_effect_notes": "Filing for bankruptcy may discharge the judgment; certain debts are non-dischargeable.",
+    "satisfaction_of_judgment_form": {
+      "number": "SC-6",
+      "name": "Satisfaction of Judgment"
+    },
+    "priority_notes": "Judgment liens are prioritized by the date of recording; earlier liens have higher priority.",
+    "source_ids": [
+      "S14"
+    ]
+  },
+  "businesses": {
+    "self_representation_allowed": true,
+    "self_representation_notes": "Businesses can represent themselves in small claims court without an attorney.",
+    "can_send_employee": true,
+    "can_send_attorney": false,
+    "non_attorney_representation_form": {
+      "number": "SC-13",
+      "name": "Authorization to Appear"
+    },
+    "insurance_adjuster_allowed": false,
+    "fictitious_name_form": {
+      "number": "SC-14",
+      "name": "Fictitious Name Statement"
+    },
+    "fictitious_name_notes": "Businesses operating under a fictitious name must file a statement with the court.",
+    "sole_proprietor_employee_exception": "Sole proprietors may authorize an employee to appear on their behalf.",
+    "out_of_state_business_must_register": true,
+    "out_of_state_business_statute": "Ariz. Rev. Stat. § 10-1501",
+    "licensing_notes": "Unlicensed contractors may be barred from recovering fees for unlicensed work.",
+    "source_ids": [
+      "S6"
+    ]
+  },
+  "county_variations_material": true,
+  "county_variations": [
+    {
+      "county": "Maricopa",
+      "topic": "E-filing availability",
+      "detail": "Maricopa County offers e-filing for small claims cases through its online portal.",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    {
+      "county": "Pima",
+      "topic": "Mediation services",
+      "detail": "Pima County provides free mediation services for small claims disputes.",
+      "source_ids": [
+        "S2"
+      ]
+    }
+  ],
+  "pitfalls": [
+    {
+      "title": "Exceeding the monetary limit",
+      "what_happens": "If your claim exceeds $5,000, the court will dismiss the case or require you to waive the excess amount.",
+      "how_to_avoid": "Ensure your claim, excluding interest and costs, does not exceed the $5,000 limit.",
+      "source_ids": [
+        "S6"
+      ]
+    },
+    {
+      "title": "Improper service of process",
+      "what_happens": "Failure to properly serve the defendant can result in delays or dismissal of your case.",
+      "how_to_avoid": "Follow Arizona's rules for service of process carefully, using authorized methods.",
+      "source_ids": [
+        "S12"
+      ]
+    },
+    {
+      "title": "Missing the statute of limitations",
+      "what_happens": "Filing after the statute of limitations has expired will lead to dismissal of your claim.",
+      "how_to_avoid": "Verify the applicable statute of limitations for your claim type before filing.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    {
+      "title": "Not bringing necessary evidence",
+      "what_happens": "Lack of evidence can result in losing your case, even if your claim is valid.",
+      "how_to_avoid": "Gather all relevant documents, photos, and witness statements before the hearing.",
+      "source_ids": [
+        "S8"
+      ]
+    },
+    {
+      "title": "Failing to appear at the hearing",
+      "what_happens": "If you don't show up, the court may dismiss your case or enter a default judgment against you.",
+      "how_to_avoid": "Mark your calendar and ensure you attend the scheduled hearing.",
+      "source_ids": [
+        "S8"
+      ]
+    },
+    {
+      "title": "Ignoring post-judgment procedures",
+      "what_happens": "Winning a judgment doesn't guarantee payment; you must take steps to collect.",
+      "how_to_avoid": "Familiarize yourself with collection methods like garnishment and liens.",
+      "source_ids": [
+        "S14"
+      ]
+    }
+  ],
+  "recent_changes": [
+    {
+      "date": "2025-01-01",
+      "title": "Increase in small claims monetary limit",
+      "description": "The jurisdictional limit for small claims cases increased from $3,500 to $5,000, allowing more disputes to be resolved in small claims court.",
+      "bill_or_rule_citation": "Ariz. Rev. Stat. § 22-503",
+      "source_ids": [
+        "S6"
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Do I need a lawyer?",
+      "answer": "No, attorneys are not allowed in Arizona small claims court unless both parties agree in writing.",
+      "source_ids": [
+        "S8"
+      ]
+    },
+    {
+      "question": "How long does it take?",
+      "answer": "Small claims cases are typically resolved within 30 to 90 days from filing to judgment.",
+      "source_ids": [
+        "S8"
+      ]
+    },
+    {
+      "question": "What's the maximum I can sue for?",
+      "answer": "The maximum amount you can sue for in Arizona small claims court is $5,000, excluding interest and costs.",
+      "source_ids": [
+        "S6"
+      ]
+    },
+    {
+      "question": "What happens if the defendant doesn't show up?",
+      "answer": "If the defendant fails to appear, the court may enter a default judgment in favor of the plaintiff.",
+      "source_ids": [
+        "S8"
+      ]
+    },
+    {
+      "question": "Can I appeal?",
+      "answer": "No, decisions in Arizona small claims court are final and cannot be appealed.",
+      "source_ids": [
+        "S8"
+      ]
+    },
+    {
+      "question": "How long is a judgment good for?",
+      "answer": "A judgment in Arizona is valid for 5 years and can be renewed before it expires.",
+      "source_ids": [
+        "S5"
+      ]
+    }
+  ],
+  "state_specific_notes": [
+    "Arizona small claims courts do not allow jury trials; all cases are decided by a judge or hearing officer.",
+    "Attorneys are prohibited from representing parties in small claims court unless both parties agree in writing.",
+    "There is no right to appeal a small claims court decision in Arizona; the judgment is final.",
+    "The statute of limitations for written contracts is 6 years, while for oral contracts, it is 3 years.",
+    "Small claims courts in Arizona do not have jurisdiction over eviction cases; these must be filed in the regular civil division."
+  ],
+  "_extras": {
+    "interesting_findings": [
+      "Arizona's small claims courts emphasize informal procedures to allow individuals to represent themselves effectively.",
+      "The recent increase in the monetary limit to $5,000 aims to make the court accessible for a broader range of disputes.",
+      "Despite the informal nature, strict adherence to procedural rules is essential to avoid case dismissal."
+    ]
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "label": "Arizona Judicial Branch",
+      "url": "https://www.azcourts.gov/",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S2",
+      "label": "Maricopa County Superior Court — Justice Courts",
+      "url": "https://www.superiorcourt.maricopa.gov/",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S3",
+      "label": "Arizona Justice Courts directory",
+      "url": "https://www.azcourts.gov/justicecourts/",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S4",
+      "label": "Ariz. Rev. Stat. Title 22 (Justice and Municipal Courts)",
+      "url": "https://www.azleg.gov/arsDetail/?title=22",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S5",
+      "label": "Ariz. Rev. Stat. Title 12 (Courts and Civil Proceedings)",
+      "url": "https://www.azleg.gov/arsDetail/?title=12",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S6",
+      "label": "Ariz. Rev. Stat. § 22-503 (Small Claims jurisdictional limit)",
+      "url": "https://www.azleg.gov/viewdocument/?docName=https://www.azleg.gov/ars/22/00503.htm",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S7",
+      "label": "Arizona Revised Statutes — Title index",
+      "url": "https://www.azleg.gov/arstitle/",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S8",
+      "label": "Arizona Rules of Procedure for the Justice Courts",
+      "url": "https://www.azcourts.gov/rules",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S9",
+      "label": "Rules of Small Claims Procedure",
+      "url": "https://govt.westlaw.com/azrules/Browse/Home/Arizona/ArizonaCourtRules",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S10",
+      "label": "Maricopa Justice Court small-claims forms",
+      "url": "https://justicecourts.maricopa.gov/forms/",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S11",
+      "label": "Arizona Justice Court fee schedules",
+      "url": "https://www.azcourts.gov/cscommittees/Limited-Jurisdiction-Courts-Committee",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S12",
+      "label": "Arizona Rules of Civil Procedure Rule 4 (service)",
+      "url": "https://www.azcourts.gov/rules/Rules-of-Civil-Procedure",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S13",
+      "label": "Ariz. Rev. Stat. § 22-261 (Justice Court appeals)",
+      "url": "https://www.azleg.gov/ars/22/00261.htm",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S14",
+      "label": "Ariz. Rev. Stat. Title 12 Ch. 11 (Garnishment)",
+      "url": "https://www.azleg.gov/arsDetail/?title=12",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S15",
+      "label": "Ariz. Rev. Stat. § 33-1101 (Homestead exemption)",
+      "url": "https://www.azleg.gov/ars/33/01101.htm",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S16",
+      "label": "Ariz. Rev. Stat. § 44-1521 (Consumer Fraud Act)",
+      "url": "https://www.azleg.gov/ars/44/01521.htm",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S17",
+      "label": "Ariz. Rev. Stat. § 44-1522 (Consumer fraud — definitions)",
+      "url": "https://www.azleg.gov/ars/44/01522.htm",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S18",
+      "label": "Ariz. Rev. Stat. § 33-1321 (Security deposit)",
+      "url": "https://www.azleg.gov/ars/33/01321.htm",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S19",
+      "label": "Ariz. Rev. Stat. § 23-355 (Final wages — penalty)",
+      "url": "https://www.azleg.gov/ars/23/00355.htm",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S20",
+      "label": "Ariz. Rev. Stat. § 44-1201 (Interest rate)",
+      "url": "https://www.azleg.gov/ars/44/01201.htm",
+      "primary": true,
+      "citation": ""
+    }
+  ],
+  "_meta": {
+    "state": "Arizona",
+    "slug": "arizona",
+    "model": "gpt-4.1",
+    "sources_response_id": null,
+    "extraction_response_id": "resp_06ab09d951eb18a60069f0b468c22081949942d3905c94430d",
+    "generated_at": "2026-04-28T13:23:13.128Z",
+    "usage": {
+      "input_tokens": 7268,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 14225,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 21493
+    }
+  }
+}

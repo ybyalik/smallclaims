@@ -1,0 +1,1530 @@
+{
+  "state": "Maryland",
+  "slug": "maryland",
+  "abbr": "MD",
+  "as_of": "2026-04-28",
+  "hero": {
+    "individual_limit_dollars": 5000,
+    "business_limit_dollars": 5000,
+    "filing_fee_low_dollars": 34,
+    "filing_fee_high_dollars": 51,
+    "typical_timeline_min_days": 30,
+    "typical_timeline_max_days": 60,
+    "tagline": "Maryland's small claims court offers a simplified process for claims up to $5,000, with informal procedures and expedited timelines.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "at_a_glance": [
+    {
+      "label": "Most you can sue for",
+      "value": "$5,000",
+      "detail": "Same cap for individuals and businesses",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "label": "Filing fee",
+      "value": "$34-$51",
+      "detail": "Varies by claim amount",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "label": "Court",
+      "value": "District Court (small claims docket)",
+      "detail": "",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Lawyers at trial",
+      "value": "Allowed",
+      "detail": "Permitted but not required",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Appeal window",
+      "value": "30 days",
+      "detail": "Trial de novo in circuit court",
+      "source_ids": [
+        "S13"
+      ]
+    },
+    {
+      "label": "Recent change",
+      "value": "—",
+      "detail": "No major changes in the last 3 years",
+      "source_ids": []
+    }
+  ],
+  "limits": {
+    "individual_dollars": 5000,
+    "business_dollars": 5000,
+    "guarantor_with_fee_max": null,
+    "guarantor_without_fee_max": null,
+    "annual_filing_cap": {
+      "count": null,
+      "threshold_dollars": null,
+      "notes": ""
+    },
+    "split_claims_allowed": false,
+    "split_claims_explanation": "If your claim exceeds $5,000, you cannot split it into multiple small claims cases. Instead, you must file in the District Court's regular civil docket or the Circuit Court, depending on the amount.",
+    "interest_excluded_from_cap": true,
+    "court_costs_excluded_from_cap": true,
+    "statute": "Md. Code Cts. & Jud. Proc. § 4-405",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "claim_categories": [
+    {
+      "id": "contracts",
+      "title": "Contracts and money owed",
+      "blurb": "Maryland allows you 3 years to file claims related to contracts and debts. This includes written and oral agreements, personal loans, and unpaid invoices.",
+      "claims": [
+        {
+          "slug": "written-contract",
+          "name": "Breach of a written contract",
+          "example": "A contractor signed a $4,000 contract to remodel your kitchen, took the deposit, and never finished.",
+          "eligibility": "eligible",
+          "claim_statute": "Md. Code Cts. & Jud. Proc. § 5-101",
+          "notes": "You have 3 years from the date of breach to file. Bring the signed contract, payment proof, and any correspondence showing the breach.",
+          "damage_boost": "",
+          "source_ids": [
+            "S7"
+          ]
+        },
+        {
+          "slug": "oral-contract",
+          "name": "Breach of an oral contract",
+          "example": "You agreed verbally to lend a friend $2,000, which they promised to repay in six months, but they haven't.",
+          "eligibility": "eligible",
+          "claim_statute": "Md. Code Cts. & Jud. Proc. § 5-101",
+          "notes": "You have 3 years from the date of breach to file. Gather any evidence of the agreement, such as emails or witness statements.",
+          "damage_boost": "",
+          "source_ids": [
+            "S7"
+          ]
+        },
+        {
+          "slug": "personal-loan",
+          "name": "Unpaid personal loan",
+          "example": "You loaned a colleague $3,500 with the understanding they'd repay in a year, but they haven't.",
+          "eligibility": "eligible",
+          "claim_statute": "Md. Code Cts. & Jud. Proc. § 5-101",
+          "notes": "You have 3 years from the date repayment was due to file. Provide any written agreement or proof of the loan.",
+          "damage_boost": "",
+          "source_ids": [
+            "S7"
+          ]
+        },
+        {
+          "slug": "promissory-note",
+          "name": "Default on a promissory note",
+          "example": "A borrower signed a promissory note to repay $4,500 over two years but stopped making payments after six months.",
+          "eligibility": "eligible",
+          "claim_statute": "Md. Code Cts. & Jud. Proc. § 5-101",
+          "notes": "You have 3 years from the date of default to file. Present the original promissory note and records of payments made.",
+          "damage_boost": "",
+          "source_ids": [
+            "S7"
+          ]
+        },
+        {
+          "slug": "unpaid-invoice",
+          "name": "Unpaid invoice for services rendered",
+          "example": "You provided graphic design services worth $2,800 to a client who hasn't paid the invoice issued three months ago.",
+          "eligibility": "eligible",
+          "claim_statute": "Md. Code Cts. & Jud. Proc. § 5-101",
+          "notes": "You have 3 years from the date the payment was due to file. Bring the invoice, service agreement, and any communication regarding payment.",
+          "damage_boost": "",
+          "source_ids": [
+            "S7"
+          ]
+        },
+        {
+          "slug": "open-account",
+          "name": "Unpaid balance on an open account",
+          "example": "A customer has an outstanding balance of $4,200 on their account with your business and has ignored payment requests.",
+          "eligibility": "eligible",
+          "claim_statute": "Md. Code Cts. & Jud. Proc. § 5-101",
+          "notes": "You have 3 years from the date of the last payment or charge to file. Provide account statements and records of transactions.",
+          "damage_boost": "",
+          "source_ids": [
+            "S7"
+          ]
+        },
+        {
+          "slug": "unpaid-rent",
+          "name": "Unpaid rent by tenant",
+          "example": "Your tenant owes $3,000 in unpaid rent over the past three months and has vacated the property.",
+          "eligibility": "eligible",
+          "claim_statute": "Md. Code Cts. & Jud. Proc. § 5-101",
+          "notes": "You have 3 years from the date rent was due to file. Bring the lease agreement, rent ledger, and any notices sent to the tenant.",
+          "damage_boost": "",
+          "source_ids": [
+            "S7"
+          ]
+        },
+        {
+          "slug": "bad-check",
+          "name": "Payment with a bad check",
+          "example": "A customer paid for $1,500 worth of goods with a check that was returned for insufficient funds.",
+          "eligibility": "eligible",
+          "claim_statute": "Md. Code Com. Law § 15-802",
+          "notes": "You have 3 years from the date the check was dishonored to file. Provide the original check, bank notice of dishonor, and any related correspondence.",
+          "damage_boost": "Check amount + service charge up to $35 + civil penalty up to $500 or 2x check amount, whichever is greater.",
+          "source_ids": [
+            "S17"
+          ]
+        },
+        {
+          "slug": "co-signer",
+          "name": "Co-signer seeking repayment",
+          "example": "You co-signed a $4,000 loan for a friend who defaulted, and you had to pay the lender. Now you're seeking repayment from your friend.",
+          "eligibility": "eligible",
+          "claim_statute": "Md. Code Cts. & Jud. Proc. § 5-101",
+          "notes": "You have 3 years from the date you made the payment to file. Bring the loan agreement, proof of your payment, and any communication with the borrower.",
+          "damage_boost": "",
+          "source_ids": [
+            "S7"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "consumer-disputes",
+      "title": "Consumer disputes",
+      "blurb": "Maryland provides a 3-year statute of limitations for most consumer-related claims, including defective products and false advertising.",
+      "claims": [
+        {
+          "slug": "defective-product",
+          "name": "Purchase of a defective product",
+          "example": "You bought a $1,200 refrigerator that stopped working after two months, and the seller refuses to repair or replace it.",
+          "eligibility": "eligible",
+          "claim_statute": "Md. Code Com. Law § 13-101 et seq.",
+          "notes": "You have 3 years from the date of purchase to file. Bring the purchase receipt, warranty information, and any communication with the seller.",
+          "damage_boost": "",
+          "source_ids": [
+            "S16"
+          ]
+        },
+        {
+          "slug": "bad-service",
+          "name": "Substandard service provided",
+          "example": "You paid $800 for a home cleaning service that left your house in worse condition, and the company refuses to refund.",
+          "eligibility": "eligible",
+          "claim_statute": "Md. Code Com. Law § 13-101 et seq.",
+          "notes": "You have 3 years from the date of service to file. Provide the service agreement, payment proof, and photos of the substandard work.",
+          "damage_boost": "",
+          "source_ids": [
+            "S16"
+          ]
+        },
+        {
+          "slug": "auto-repair",
+          "name": "Faulty auto repair",
+          "example": "A mechanic charged you $2,500 for repairs that didn't fix the issue, and now refuses to address the problem.",
+          "eligibility": "eligible",
+          "claim_statute": "Md. Code Com. Law § 13-101 et seq.",
+          "notes": "You have 3 years from the date of repair to file. Bring the repair invoice, payment proof, and any subsequent repair assessments.",
+          "damage_boost": "",
+          "source_ids": [
+            "S16"
+          ]
+        },
+        {
+          "slug": "contractor",
+          "name": "Unsatisfactory work by a contractor",
+          "example": "You hired a contractor for $4,500 to renovate your bathroom, but the work was incomplete and subpar.",
+          "eligibility": "eligible",
+          "claim_statute": "Md. Code Com. Law § 13-101 et seq.",
+          "notes": "You have 3 years from the date of completion to file. Provide the contract, payment records, and photos of the work.",
+          "damage_boost": "",
+          "source_ids": [
+            "S16"
+          ]
+        },
+        {
+          "slug": "no-show-vendor",
+          "name": "Vendor failed to deliver services",
+          "example": "You paid a DJ $1,000 in advance for your wedding, but they never showed up and refuse to refund.",
+          "eligibility": "eligible",
+          "claim_statute": "Md. Code Com. Law § 13-101 et seq.",
+          "notes": "You have 3 years from the event date to file. Bring the contract, payment proof, and any communication with the vendor.",
+          "damage_boost": "",
+          "source_ids": [
+            "S16"
+          ]
+        },
+        {
+          "slug": "subscription-cancellation",
+          "name": "Unauthorized charges after subscription cancellation",
+          "example": "You canceled a $50/month gym membership, but they continued to charge your card for three months.",
+          "eligibility": "eligible",
+          "claim_statute": "Md. Code Com. Law § 13-101 et seq.",
+          "notes": "You have 3 years from the first unauthorized charge to file. Provide cancellation confirmation and bank statements showing the charges.",
+          "damage_boost": "",
+          "source_ids": [
+            "S16"
+          ]
+        },
+        {
+          "slug": "used-car",
+          "name": "Purchase of a defective used car",
+          "example": "You bought a used car for $4,800 that broke down within a week, and the dealer refuses to address the issue.",
+          "eligibility": "eligible",
+          "claim_statute": "Md. Code Com. Law § 13-101 et seq.",
+          "notes": "You have 3 years from the purchase date to file. Bring the sales contract, payment proof, and any repair assessments.",
+          "damage_boost": "",
+          "source_ids": [
+            "S16"
+          ]
+        },
+        {
+          "slug": "false-advertising",
+          "name": "Misleading advertising leading to financial loss",
+          "example": "A store advertised a 'buy one, get one free' offer, but charged you full price for both items totaling $200.",
+          "eligibility": "eligible",
+          "claim_statute": "Md. Code Com. Law § 13-101 et seq.",
+          "notes": "You have 3 years from the date of purchase to file. Provide the advertisement, receipt, and any communication with the store.",
+          "damage_boost": "",
+          "source_ids": [
+            "S16"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "property-damage",
+      "title": "Property damage",
+      "blurb": "Maryland allows 3 years to file claims related to property damage, including vehicle collisions and damage to rental properties.",
+      "claims": [
+        {
+          "slug": "vehicle-collision",
+          "name": "Damage from a vehicle collision",
+          "example": "Another driver ran a red light and caused $4,500 in damages to your car.",
+          "eligibility": "eligible",
+          "claim_statute": "Md. Code Cts. & Jud. Proc. § 5-101",
+          "notes": "You have 3 years from the date of the accident to file. Bring the police report, repair estimates, and photos of the damage.",
+          "damage_boost": "",
+          "source_ids": [
+            "S7"
+          ]
+        },
+        {
+          "slug": "neighbor-property",
+          "name": "Neighbor's actions damaged your property",
+          "example": "Your neighbor's tree fell onto your fence, causing $2,000 in damages.",
+          "eligibility": "eligible",
+          "claim_statute": "Md. Code Cts. & Jud. Proc. § 5-101",
+          "notes": "You have 3 years from the date of damage to file. Provide photos, repair estimates, and any communication with the neighbor.",
+          "damage_boost": "",
+          "source_ids": [
+            "S7"
+          ]
+        },
+        {
+          "slug": "damage-to-rental",
+          "name": "Tenant caused damage to rental property",
+          "example": "A tenant left your rental unit with $3,500 in damages beyond normal wear and tear.",
+          "eligibility": "eligible",
+          "claim_statute": "Md. Code Cts. & Jud. Proc. § 5-101",
+          "notes": "You have 3 years from the date of discovery to file. Bring the lease agreement, photos of the damage, and repair invoices.",
+          "damage_boost": "",
+          "source_ids": [
+            "S7"
+          ]
+        },
+        {
+          "slug": "pet-damage",
+          "name": "Damage caused by someone else's pet",
+          "example": "A neighbor's dog entered your yard and destroyed $1,200 worth of landscaping.",
+          "eligibility": "eligible",
+          "claim_statute": "Md. Code Cts. & Jud. Proc. § 5-101",
+          "notes": "You have 3 years from the date of damage to file. Provide photos, repair estimates, and any communication with the pet owner.",
+          "damage_boost": "",
+          "source_ids": [
+            "S7"
+          ]
+        },
+        {
+          "slug": "property-in-custody",
+          "name": "Damage to property left in someone's care",
+          "example": "You left your laptop with a repair shop, and they returned it with a cracked screen.",
+          "eligibility": "eligible",
+          "claim_statute": "Md. Code Cts. & Jud. Proc. § 5-101",
+          "notes": "You have 3 years from the date of damage to file. Bring the service agreement, photos of the damage, and repair estimates.",
+          "damage_boost": "",
+          "source_ids": [
+            "S7"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "landlord-tenant",
+      "title": "Landlord-tenant disputes",
+      "blurb": "Maryland provides specific statutes for landlord-tenant disputes, including security deposits and uninhabitable rental conditions.",
+      "claims": [
+        {
+          "slug": "security-deposit",
+          "name": "Failure to return security deposit",
+          "example": "Your landlord withheld your $1,500 security deposit without providing an itemized list of damages.",
+          "eligibility": "eligible",
+          "claim_statute": "Md. Code Real Prop. § 8-203",
+          "notes": "You have 3 years from the end of tenancy to file. Bring the lease agreement, move-out inspection report, and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S18"
+          ]
+        },
+        {
+          "slug": "deposit-not-itemized",
+          "name": "Security deposit deductions not itemized",
+          "example": "Your landlord deducted $800 from your deposit without providing an itemized list of damages.",
+          "eligibility": "eligible",
+          "claim_statute": "Md. Code Real Prop. § 8-203",
+          "notes": "You have 3 years from the end of tenancy to file. Provide the lease agreement, move-out inspection report, and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S18"
+          ]
+        },
+        {
+          "slug": "uninhabitable-rental",
+          "name": "Rental unit deemed uninhabitable",
+          "example": "Your apartment had no heating during winter, and the landlord refused to make repairs.",
+          "eligibility": "eligible",
+          "claim_statute": "Md. Code Real Prop. § 8-211",
+          "notes": "You have 3 years from the date of issue to file. Bring photos, repair requests, and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "wrongful-retention-property",
+          "name": "Landlord wrongfully retained tenant's property",
+          "example": "After eviction, your landlord kept your furniture worth $2,000.",
+          "eligibility": "eligible",
+          "claim_statute": "Md. Code Real Prop. § 8-208",
+          "notes": "You have 3 years from the date of retention to file. Provide the lease agreement, inventory of items, and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "illegal-eviction",
+          "name": "Landlord conducted an illegal eviction",
+          "example": "Your landlord changed the locks without notice, preventing you from accessing your apartment.",
+          "eligibility": "eligible",
+          "claim_statute": "Md. Code Real Prop. § 8-216",
+          "notes": "You have 3 years from the date of eviction to file. Bring the lease agreement, photos of the changed locks, and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "unreturned-prepaid-rent",
+          "name": "Failure to return prepaid rent after lease termination",
+          "example": "You paid first and last month's rent, but the landlord didn't return the last month's rent after you moved out early.",
+          "eligibility": "eligible",
+          "claim_statute": "Md. Code Real Prop. § 8-208",
+          "notes": "You have 3 years from the end of tenancy to file. Provide the lease agreement, proof of payment, and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "unpaid-rent-by-tenant",
+          "name": "Tenant failed to pay rent",
+          "example": "Your tenant owes $4,000 in unpaid rent over the past four months.",
+          "eligibility": "eligible",
+          "claim_statute": "Md. Code Cts. & Jud. Proc. § 4-401",
+          "notes": "You have 3 years from the date rent was due to file. Bring the lease agreement, rent ledger, and any notices sent to the tenant.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "repair-and-deduct",
+          "name": "Tenant repaired and deducted from rent",
+          "example": "You paid $1,200 to fix a leaking roof after the landlord ignored repair requests and deducted it from your rent.",
+          "eligibility": "eligible",
+          "claim_statute": "Md. Code Real Prop. § 8-211",
+          "notes": "You have 3 years from the date of repair to file. Provide repair invoices, photos, and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": []
+        }
+      ]
+    },
+    {
+      "id": "employment-wages",
+      "title": "Employment and wages",
+      "blurb": "Maryland allows 3 years to file claims related to unpaid wages, including final paychecks and overtime.",
+      "claims": [
+        {
+          "slug": "unpaid-wages",
+          "name": "Employer failed to pay wages",
+          "example": "Your employer owes you $4,500 in unpaid wages over the past two months.",
+          "eligibility": "eligible",
+          "claim_statute": "Md. Code Lab. & Empl. § 3-505",
+          "notes": "You have 3 years from the date wages were due to file. Bring pay stubs, employment contract, and any communication with the employer.",
+          "damage_boost": "",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "final-paycheck",
+          "name": "Employer withheld final paycheck",
+          "example": "After resigning, your employer refused to pay your final paycheck of $2,000.",
+          "eligibility": "eligible",
+          "claim_statute": "Md. Code Lab. & Empl. § 3-505",
+          "notes": "You have 3 years from the date the final paycheck was due to file. Provide resignation letter, pay stubs, and any communication with the employer.",
+          "damage_boost": "",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "unpaid-commissions",
+          "name": "Employer failed to pay earned commissions",
+          "example": "You earned $3,500 in sales commissions that your employer refuses to pay.",
+          "eligibility": "eligible",
+          "claim_statute": "Md. Code Lab. & Empl. § 3-505",
+          "notes": "You have 3 years from the date commissions were due to file. Bring the commission agreement, sales records, and any communication with the employer.",
+          "damage_boost": "",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "unpaid-overtime",
+          "name": "Employer failed to pay overtime wages",
+          "example": "You worked 20 hours of overtime last month, but your employer didn't pay the additional $1,000 owed.",
+          "eligibility": "eligible",
+          "claim_statute": "Md. Code Lab. & Empl. § 3-505",
+          "notes": "You have 3 years from the date overtime was due to file. Provide timesheets, pay stubs, and any communication with the employer.",
+          "damage_boost": "",
+          "source_ids": [
+            "S19"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "personal-claims",
+      "title": "Personal claims",
+      "blurb": "Maryland allows 3 years to file claims related to personal injuries and property disputes.",
+      "claims": [
+        {
+          "slug": "minor-injury",
+          "name": "Minor personal injury",
+          "example": "You slipped on an unmarked wet floor in a store, resulting in $4,000 in medical bills.",
+          "eligibility": "eligible",
+          "claim_statute": "Md. Code Cts. & Jud. Proc. § 5-101",
+          "notes": "You have 3 years from the date of injury to file. Bring medical records, bills, and any incident reports.",
+          "damage_boost": "",
+          "source_ids": [
+            "S7"
+          ]
+        },
+        {
+          "slug": "loaned-property",
+          "name": "Damage to loaned property",
+          "example": "You lent a friend your camera worth $1,500, and they returned it broken.",
+          "eligibility": "eligible",
+          "claim_statute": "Md. Code Cts. & Jud. Proc. § 5-101",
+          "notes": "You have 3 years from the date of damage to file. Provide proof of ownership, photos of the damage, and any communication with the friend.",
+          "damage_boost": "",
+          "source_ids": [
+            "S7"
+          ]
+        },
+        {
+          "slug": "civil-theft",
+          "name": "Theft of personal property",
+          "example": "A neighbor took your bicycle worth $800 without permission and refuses to return it.",
+          "eligibility": "eligible",
+          "claim_statute": "Md. Code Cts. & Jud. Proc. § 5-101",
+          "notes": "You have 3 years from the date of theft to file. Bring proof of ownership, police report, and any communication with the neighbor.",
+          "damage_boost": "",
+          "source_ids": [
+            "S7"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vehicle-specific",
+      "title": "Vehicle-specific claims",
+      "blurb": "Maryland allows 3 years to file claims related to vehicle disputes, including mechanic issues and wrongful towing.",
+      "claims": [
+        {
+          "slug": "mechanic-dispute",
+          "name": "Dispute over vehicle repairs",
+          "example": "A mechanic charged you $3,000 for repairs that didn't fix the issue, and now refuses to address the problem.",
+          "eligibility": "eligible",
+          "claim_statute": "Md. Code Com. Law § 13-101 et seq.",
+          "notes": "You have 3 years from the date of repair to file. Bring the repair invoice, payment proof, and any subsequent repair assessments.",
+          "damage_boost": "",
+          "source_ids": [
+            "S16"
+          ]
+        },
+        {
+          "slug": "wrongful-tow",
+          "name": "Vehicle was wrongfully towed",
+          "example": "Your car was towed from a legal parking spot, and you had to pay $500 to retrieve it.",
+          "eligibility": "eligible",
+          "claim_statute": "Md. Code Com. Law § 13-101 et seq.",
+          "notes": "You have 3 years from the date of towing to file. Provide towing receipts, photos of the parking spot, and any communication with the towing company.",
+          "damage_boost": "",
+          "source_ids": [
+            "S16"
+          ]
+        }
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "category": "Eviction (unlawful detainer)",
+      "explanation": "Eviction cases are handled separately from small claims and have specific procedures.",
+      "where_to_go_instead": "District Court landlord-tenant process",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Title to real estate",
+      "explanation": "Disputes involving ownership of real estate are beyond the jurisdiction of small claims court.",
+      "where_to_go_instead": "Circuit Court",
+      "source_ids": []
+    },
+    {
+      "category": "Defamation",
+      "explanation": "Claims involving defamation require more formal procedures and are not suitable for small claims court.",
+      "where_to_go_instead": "Circuit Court",
+      "source_ids": []
+    },
+    {
+      "category": "Malpractice",
+      "explanation": "Professional malpractice claims are complex and exceed the jurisdiction of small claims court.",
+      "where_to_go_instead": "Circuit Court",
+      "source_ids": []
+    },
+    {
+      "category": "Family law matters",
+      "explanation": "Issues such as divorce, child custody, and support are handled by family courts.",
+      "where_to_go_instead": "Family Division of Circuit Court",
+      "source_ids": []
+    },
+    {
+      "category": "Probate matters",
+      "explanation": "Estate and will disputes are managed by probate courts.",
+      "where_to_go_instead": "Orphans' Court",
+      "source_ids": []
+    },
+    {
+      "category": "Federal claims",
+      "explanation": "Claims against the federal government are outside the jurisdiction of state courts.",
+      "where_to_go_instead": "Federal District Court",
+      "source_ids": []
+    },
+    {
+      "category": "Class actions",
+      "explanation": "Class action lawsuits are complex and not suitable for small claims court.",
+      "where_to_go_instead": "Circuit Court",
+      "source_ids": []
+    },
+    {
+      "category": "Injunctions/specific performance",
+      "explanation": "Small claims court cannot issue orders requiring someone to do or stop doing something.",
+      "where_to_go_instead": "Circuit Court",
+      "source_ids": []
+    },
+    {
+      "category": "Workers' compensation",
+      "explanation": "Claims for workplace injuries are handled by the Workers' Compensation Commission.",
+      "where_to_go_instead": "Maryland Workers' Compensation Commission",
+      "source_ids": []
+    },
+    {
+      "category": "Mandatory arbitration disputes",
+      "explanation": "Disputes subject to mandatory arbitration clauses are not handled in small claims court.",
+      "where_to_go_instead": "Arbitration panel or Circuit Court",
+      "source_ids": []
+    },
+    {
+      "category": "Suing a deceased person",
+      "explanation": "Claims against deceased individuals must be filed against their estate.",
+      "where_to_go_instead": "Orphans' Court",
+      "source_ids": []
+    }
+  ],
+  "damages": {
+    "compensatory_allowed": true,
+    "punitive_allowed": false,
+    "punitive_explanation": "Punitive damages are not awarded in small claims court; however, statutory penalties may apply in certain cases, such as bad check claims.",
+    "statutory_multipliers": [
+      {
+        "claim": "Bad check (after 30-day notice)",
+        "multiplier": "2x check amount",
+        "explanation": "Check amount + service charge up to $35 + civil penalty up to $500 or 2x check amount, whichever is greater.",
+        "statute": "Md. Code Com. Law § 15-802",
+        "source_ids": [
+          "S17"
+        ]
+      }
+    ],
+    "attorney_fees_recoverable": "sometimes",
+    "attorney_fees_explanation": "Attorney fees may be recoverable if specified by statute or contract; otherwise, each party bears their own costs.",
+    "prejudgment_interest_rate_pct": null,
+    "prejudgment_interest_statute": "",
+    "postjudgment_interest_rate_pct": null,
+    "postjudgment_interest_type": "simple",
+    "postjudgment_interest_statute": "",
+    "postjudgment_interest_notes": "",
+    "filing_and_service_fees_recoverable_from_loser": true,
+    "source_ids": []
+  },
+  "where_to_file": {
+    "court_name": "District Court of Maryland",
+    "parent_court": "Maryland Judiciary",
+    "venue_rules": [
+      {
+        "scenario": "Most cases (the default)",
+        "filing_options": [
+          "County where the defendant lives"
+        ],
+        "source_ids": []
+      },
+      {
+        "scenario": "Where contract was performed",
+        "filing_options": [
+          "County where performance was due"
+        ],
+        "source_ids": []
+      },
+      {
+        "scenario": "Where injury or damage occurred",
+        "filing_options": [
+          "County where the event occurred"
+        ],
+        "source_ids": []
+      },
+      {
+        "scenario": "Multiple defendants",
+        "filing_options": [
+          "Any county where ONE defendant resides"
+        ],
+        "source_ids": []
+      },
+      {
+        "scenario": "Out-of-state defendant",
+        "filing_options": [
+          "Where the cause of action arose"
+        ],
+        "source_ids": []
+      }
+    ],
+    "consequences_of_wrong_venue": "Filing in the wrong venue may result in dismissal or transfer of the case, potentially causing delays and additional costs.",
+    "e_filing_available": "varies",
+    "e_filing_notes": "E-filing availability varies by county; check with the local District Court for specific information.",
+    "e_filing_portal": null,
+    "source_ids": []
+  },
+  "fees": {
+    "filing_fee_tiers": [
+      {
+        "range_label": "$0 to $5,000",
+        "range_min": 0,
+        "range_max": 5000,
+        "fee_dollars": 34,
+        "source_ids": [
+          "S11"
+        ]
+      }
+    ],
+    "frequent_filer": {
+      "threshold_per_year": null,
+      "fee_dollars": null,
+      "notes": ""
+    },
+    "service_fees": [
+      {
+        "method": "Sheriff (personal service)",
+        "amount_label": "$40",
+        "notes": "Required for most cases.",
+        "source_ids": [
+          "S11"
+        ]
+      },
+      {
+        "method": "Certified mail",
+        "amount_label": "$10",
+        "notes": "Alternative service method.",
+        "source_ids": [
+          "S11"
+        ]
+      }
+    ],
+    "waiver": {
+      "forms": [
+        {
+          "number": "CC-DC-089",
+          "name": "Request for Waiver of Prepaid Costs",
+          "url": "",
+          "source_ids": [
+            "S9"
+          ]
+        }
+      ],
+      "eligibility_bullets": [
+        "Receiving need-based public assistance (SNAP, TANF, SSI)",
+        "Household income below 125% federal poverty line"
+      ],
+      "coverage_notes": "The waiver covers filing fees and service costs.",
+      "if_you_win_notes": "If you win, the waived fees are added to the judgment against the loser."
+    },
+    "other_fees": [
+      {
+        "name": "Subpoena issuance",
+        "amount_label": "$5",
+        "notes": "Plus witness fee per day.",
+        "source_ids": [
+          "S11"
+        ]
+      },
+      {
+        "name": "Appeal filing",
+        "amount_label": "$10",
+        "notes": "",
+        "source_ids": [
+          "S11"
+        ]
+      },
+      {
+        "name": "Writ of execution",
+        "amount_label": "$40",
+        "notes": "Post-judgment.",
+        "source_ids": [
+          "S11"
+        ]
+      }
+    ],
+    "fees_recoverable_from_loser_notes": "If you win, filing fees and reasonable service costs are added to the judgment.",
+    "source_ids": [
+      "S11"
+    ]
+  },
+  "statute_of_limitations": {
+    "entries": [
+      {
+        "id": "written-contract",
+        "claim": "Written contract",
+        "years": 3,
+        "clock_starts": "Date of breach",
+        "statute": "Md. Code Cts. & Jud. Proc. § 5-101",
+        "notes": "",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "id": "oral-contract",
+        "claim": "Oral contract",
+        "years": 3,
+        "clock_starts": "Date of breach",
+        "statute": "Md. Code Cts. & Jud. Proc. § 5-101",
+        "notes": "",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "id": "sale-of-goods",
+        "claim": "Sale of goods (UCC)",
+        "years": 4,
+        "clock_starts": "Date of breach",
+        "statute": "Md. Code Com. Law § 2-725",
+        "notes": "",
+        "source_ids": []
+      },
+      {
+        "id": "promissory-note",
+        "claim": "Promissory note",
+        "years": 3,
+        "clock_starts": "Date of default",
+        "statute": "Md. Code Cts. & Jud. Proc. § 5-101",
+        "notes": "",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "id": "open-account",
+        "claim": "Open account / credit card debt",
+        "years": 3,
+        "clock_starts": "Date of last payment or charge",
+        "statute": "Md. Code Cts. & Jud. Proc. § 5-101",
+        "notes": "",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "id": "personal-injury",
+        "claim": "Personal injury",
+        "years": 3,
+        "clock_starts": "Date of injury",
+        "statute": "Md. Code Cts. & Jud. Proc. § 5-101",
+        "notes": "",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "id": "property-damage",
+        "claim": "Property damage",
+        "years": 3,
+        "clock_starts": "Date of damage",
+        "statute": "Md. Code Cts. & Jud. Proc. § 5-101",
+        "notes": "",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "id": "fraud",
+        "claim": "Fraud",
+        "years": 3,
+        "clock_starts": "Date of discovery",
+        "statute": "Md. Code Cts. & Jud. Proc. § 5-101",
+        "notes": "",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "id": "bad-check",
+        "claim": "Bad check",
+        "years": 3,
+        "clock_starts": "Date check was dishonored",
+        "statute": "Md. Code Com. Law § 15-802",
+        "notes": "",
+        "source_ids": [
+          "S17"
+        ]
+      },
+      {
+        "id": "unpaid-wages",
+        "claim": "Unpaid wages",
+        "years": 3,
+        "clock_starts": "Date wages were due",
+        "statute": "Md. Code Lab. & Empl. § 3-507.2",
+        "notes": "",
+        "source_ids": []
+      },
+      {
+        "id": "security-deposit",
+        "claim": "Security deposit",
+        "years": 3,
+        "clock_starts": "End of tenancy",
+        "statute": "Md. Code Real Prop. § 8-203",
+        "notes": "",
+        "source_ids": [
+          "S18"
+        ]
+      },
+      {
+        "id": "judgment-enforcement",
+        "claim": "Judgment enforcement",
+        "years": 12,
+        "clock_starts": "Date of judgment",
+        "statute": "Md. Code Cts. & Jud. Proc. § 5-102",
+        "notes": "",
+        "source_ids": []
+      }
+    ],
+    "discovery_rule_notes": "The discovery rule applies to fraud claims, starting the clock when the fraud is discovered.",
+    "tolling_notes": "The statute of limitations may be tolled if the defendant is out of state, the plaintiff is a minor, or in cases of bankruptcy stays."
+  },
+  "pre_filing": {
+    "demand_letter_required": false,
+    "demand_letter_recommended": true,
+    "demand_letter_notes": "While not required, sending a demand letter can often resolve disputes without court intervention.",
+    "bad_check_notice_rule": "A 30-day written notice is required before seeking civil penalties for a bad check.",
+    "wage_claim_demand_rule": "No specific demand requirement for wage claims, but written demand may support your case.",
+    "government_claim_required": false,
+    "government_claim_deadline_days": null,
+    "government_claim_notes": "",
+    "landlord_tenant_pre_filing_notes": "Landlords must provide an itemized list of damages within 45 days of lease termination when withholding a security deposit.",
+    "consumer_protection_notes": "No specific pre-filing requirements for consumer protection claims.",
+    "mandatory_mediation_before_filing": "none",
+    "arbitration_clauses_enforced": true,
+    "source_ids": []
+  },
+  "forms": [
+    {
+      "number": "DC-CV-001",
+      "name": "Complaint",
+      "description": "Initiates a small claims case by outlining the plaintiff's allegations and desired relief.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "",
+      "source_ids": [
+        "S9"
+      ]
+    },
+    {
+      "number": "DC-CV-002",
+      "name": "Affidavit of Service",
+      "description": "Proof that the defendant has been properly served with court documents.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "service",
+      "url": "",
+      "source_ids": [
+        "S9"
+      ]
+    },
+    {
+      "number": "DC-CV-031",
+      "name": "Request for Judgment",
+      "description": "Filed when seeking a default judgment due to defendant's failure to respond.",
+      "filed_by": "plaintiff",
+      "required": false,
+      "group": "after-judgment",
+      "url": "",
+      "source_ids": [
+        "S9"
+      ]
+    },
+    {
+      "number": "DC-CV-036",
+      "name": "Notice of Intention to Defend",
+      "description": "Filed by the defendant to indicate their intention to contest the claim.",
+      "filed_by": "defendant",
+      "required": false,
+      "group": "hearing",
+      "url": "",
+      "source_ids": [
+        "S9"
+      ]
+    },
+    {
+      "number": "DC-CV-040",
+      "name": "Counterclaim",
+      "description": "Filed by the defendant to assert their own claim against the plaintiff.",
+      "filed_by": "defendant",
+      "required": false,
+      "group": "counterclaim",
+      "url": "",
+      "source_ids": [
+        "S9"
+      ]
+    },
+    {
+      "number": "CC-DC-089",
+      "name": "Request for Waiver of Prepaid Costs",
+      "description": "Request to waive filing and service fees due to financial hardship.",
+      "filed_by": "plaintiff",
+      "required": false,
+      "group": "fee-waiver",
+      "url": "",
+      "source_ids": [
+        "S9"
+      ]
+    },
+    {
+      "number": "DC-CV-037",
+      "name": "Notice of Appeal",
+      "description": "Filed to appeal the District Court's decision to the Circuit Court.",
+      "filed_by": "either",
+      "required": false,
+      "group": "appeal",
+      "url": "",
+      "source_ids": [
+        "S9"
+      ]
+    }
+  ],
+  "service": {
+    "who_can_serve": [
+      "Sheriff",
+      "Certified mail by clerk",
+      "Private process server"
+    ],
+    "methods": [
+      {
+        "name": "Sheriff personal service",
+        "description": "Sheriff or constable personally hands the papers to the defendant.",
+        "pros": [
+          "Reliable",
+          "Official"
+        ],
+        "cons": [
+          "May be slower",
+          "Additional cost"
+        ],
+        "source_ids": [
+          "S12"
+        ]
+      },
+      {
+        "name": "Certified mail",
+        "description": "Court clerk sends documents via certified mail to the defendant.",
+        "pros": [
+          "Cost-effective",
+          "Proof of delivery"
+        ],
+        "cons": [
+          "Defendant may refuse delivery"
+        ],
+        "source_ids": [
+          "S12"
+        ]
+      },
+      {
+        "name": "Private process server",
+        "description": "A private individual or company delivers the documents to the defendant.",
+        "pros": [
+          "Flexible timing",
+          "Can be faster"
+        ],
+        "cons": [
+          "Additional cost",
+          "Must ensure proper documentation"
+        ],
+        "source_ids": [
+          "S12"
+        ]
+      }
+    ],
+    "in_county_days_before_hearing": 30,
+    "out_of_county_days_before_hearing": 60,
+    "proof_of_service_form": {
+      "number": "DC-CV-002",
+      "name": "Affidavit of Service"
+    },
+    "proof_filing_deadline_days_before_hearing": 10,
+    "business_service_rule": "Serve the registered agent or an officer of the corporation at the business's principal office.",
+    "out_of_state_defendant_notes": "Service must comply with Maryland rules and the laws of the state where the defendant is located.",
+    "cant_find_defendant_notes": "If the defendant cannot be located, you may request alternative service methods, such as posting or publication, with court approval.",
+    "avoiding_service_notes": "If the defendant is evading service, document your attempts and request alternative service methods from the court.",
+    "source_ids": [
+      "S12"
+    ]
+  },
+  "response_and_default": {
+    "must_file_written_answer": false,
+    "response_deadline_days": 15,
+    "response_notes": "Defendants are encouraged to file a Notice of Intention to Defend within 15 days of service to contest the claim.",
+    "default_process": "If the defendant does not respond or appear, the court may enter a default judgment in favor of the plaintiff.",
+    "prove_up_required": true,
+    "prove_up_notes": "Even in default cases, the plaintiff must provide evidence to support the claim before a judgment is entered.",
+    "motion_to_vacate_form": {
+      "number": "DC-CV-036",
+      "name": "Motion to Vacate Judgment"
+    },
+    "motion_to_vacate_deadline_days": 30,
+    "motion_to_vacate_lack_of_notice_days": 60,
+    "motion_to_vacate_appeal_deadline_days": 30,
+    "motion_to_vacate_appeal_notes": "If the motion to vacate is denied, you may appeal the decision within 30 days.",
+    "source_ids": []
+  },
+  "counterclaim": {
+    "allowed": true,
+    "form": {
+      "number": "DC-CV-040",
+      "name": "Counterclaim"
+    },
+    "same_monetary_limit": true,
+    "service_deadline_in_county_days": 15,
+    "service_deadline_out_of_county_days": 30,
+    "transfer_to_higher_court_available": true,
+    "transfer_to_higher_court_statute": "Md. Code Cts. & Jud. Proc. § 4-402",
+    "transfer_to_higher_court_notes": "If the counterclaim exceeds $5,000, the case may be transferred to the Circuit Court.",
+    "source_ids": []
+  },
+  "hearing": {
+    "lawyers_allowed": "yes",
+    "lawyers_allowed_notes": "Parties may choose to be represented by an attorney, but it is not required.",
+    "format": "Bench trial with informal procedures; each side presents their case directly to the judge.",
+    "presider": "judge",
+    "burden_of_proof": "preponderance",
+    "what_to_bring": [
+      "Originals of any contracts",
+      "Receipts and bank records",
+      "Photos and videos",
+      "Names and contact info for witnesses"
+    ],
+    "subpoena_form": {
+      "number": "DC-CV-032",
+      "name": "Subpoena"
+    },
+    "witness_fee_per_day_dollars": 5,
+    "free_interpreters": true,
+    "interpreter_request_process": "Request an interpreter at least 30 days before the hearing by contacting the court clerk.",
+    "jury_option": false,
+    "decision_timing": "On the spot or mailed within 30 days",
+    "on_site_mediation": "by county",
+    "on_site_mediation_notes": "Some counties offer mediation services on-site; check with the local court for availability.",
+    "source_ids": []
+  },
+  "appeals": {
+    "who_can_appeal": "either",
+    "deadline_days": 30,
+    "fee_dollars": 10,
+    "type": "trial de novo",
+    "type_notes": "The case is retried in the Circuit Court as if the original trial had not occurred.",
+    "attorneys_allowed_on_appeal": true,
+    "bond_required": false,
+    "bond_amount_notes": "",
+    "automatic_stay_on_appeal": true,
+    "default_judgment_appealable": true,
+    "default_judgment_notes": "A default judgment can be appealed within 30 days; however, filing a motion to vacate may be a more efficient first step.",
+    "notice_of_appeal_form": {
+      "number": "DC-CV-037",
+      "name": "Notice of Appeal"
+    },
+    "frivolous_appeal_penalty_dollars": null,
+    "frivolous_appeal_statute": "",
+    "frivolous_appeal_notes": "",
+    "source_ids": []
+  },
+  "collection": {
+    "payment_deadline_typical_days": 30,
+    "post_judgment_interest_rate_pct": 10,
+    "post_judgment_interest_statute": "Md. Code Cts. & Jud. Proc. § 11-107",
+    "post_judgment_interest_notes": "Interest accrues on the unpaid judgment amount until fully paid.",
+    "methods": [
+      {
+        "id": "wage-garnishment",
+        "name": "Wage garnishment",
+        "blurb": "Have a portion of the debtor's wages withheld until the judgment is paid.",
+        "description": "File a Request for Writ of Garnishment of Wages (DC-CV-065) with the court. Once issued, serve the writ on the debtor's employer, who will withhold a portion of the debtor's wages and remit them to the court until the judgment is satisfied.",
+        "forms": [
+          {
+            "number": "DC-CV-065",
+            "name": "Request for Writ of Garnishment of Wages"
+          }
+        ],
+        "estimated_cost": "$30 plus service fees",
+        "effectiveness_notes": "Effective if the debtor is employed and earns above the exemption threshold.",
+        "exemptions": [
+          "75% of disposable earnings per week or 30 times the federal minimum hourly wage, whichever is greater."
+        ],
+        "source_ids": []
+      },
+      {
+        "id": "bank-garnishment",
+        "name": "Bank account garnishment",
+        "blurb": "Seize funds from the debtor's bank account to satisfy the judgment.",
+        "description": "File a Request for Writ of Garnishment of Property (DC-CV-060) with the court. Once issued, serve the writ on the debtor's bank, which will freeze the account up to the amount of the judgment. The bank will then remit the funds to the court.",
+        "forms": [
+          {
+            "number": "DC-CV-060",
+            "name": "Request for Writ of Garnishment of Property"
+          }
+        ],
+        "estimated_cost": "$30 plus service fees",
+        "effectiveness_notes": "Effective if the debtor has sufficient funds in the account; joint accounts may present challenges.",
+        "exemptions": [
+          "$6,000 in a bank account is exempt from garnishment."
+        ],
+        "source_ids": []
+      },
+      {
+        "id": "property-lien",
+        "name": "Lien on real property",
+        "blurb": "Place a lien on the debtor's real property to secure the judgment debt.",
+        "description": "File a Notice of Lien (DC-CV-035) with the court. Once recorded, the lien attaches to the debtor's real property, potentially preventing its sale or refinancing until the judgment is satisfied.",
+        "forms": [
+          {
+            "number": "DC-CV-035",
+            "name": "Notice of Lien"
+          }
+        ],
+        "estimated_cost": "$20 plus recording fees",
+        "effectiveness_notes": "Effective in securing the debt, but may not result in immediate payment unless the property is sold or refinanced.",
+        "exemptions": [
+          "Homestead exemption up to $25,150."
+        ],
+        "source_ids": []
+      },
+      {
+        "id": "writ-of-execution",
+        "name": "Writ of execution",
+        "blurb": "Seize and sell the debtor's non-exempt personal property to satisfy the judgment.",
+        "description": "File a Request for Writ of Execution (DC-CV-040) with the court. Once issued, the sheriff will seize the debtor's non-exempt property and sell it at public auction, applying the proceeds to the judgment.",
+        "forms": [
+          {
+            "number": "DC-CV-040",
+            "name": "Request for Writ of Execution"
+          }
+        ],
+        "estimated_cost": "$40 plus sheriff's fees",
+        "effectiveness_notes": "Effective if the debtor owns valuable non-exempt property; process can be time-consuming.",
+        "exemptions": [
+          "Personal property up to $5,000 is exempt from execution."
+        ],
+        "source_ids": []
+      }
+    ],
+    "wage_garnishment_max_pct_of_disposable": 25,
+    "judgment_lifespan_years": 12,
+    "judgment_renewal_process": "File a motion to renew the judgment before the 12-year period expires; no additional fee required.",
+    "debtor_exam_form": {
+      "number": "DC-CV-033",
+      "name": "Request for Order Directing Defendant to Appear for Examination in Aid of Enforcement of Judgment"
+    },
+    "exempt_assets": [
+      "Homestead — $25,150",
+      "Vehicle — $5,000",
+      "Retirement accounts (federally and state-protected)",
+      "Social Security and federal benefits"
+    ],
+    "bankruptcy_effect_notes": "Filing for bankruptcy imposes an automatic stay on collection efforts; certain judgments may be discharged in bankruptcy.",
+    "satisfaction_of_judgment_form": {
+      "number": "DC-CV-031",
+      "name": "Satisfaction of Judgment"
+    },
+    "priority_notes": "Priority among multiple judgment creditors is generally determined by the order in which liens are recorded.",
+    "source_ids": []
+  },
+  "businesses": {
+    "self_representation_allowed": true,
+    "self_representation_notes": "Businesses may represent themselves in small claims court without an attorney.",
+    "can_send_employee": true,
+    "can_send_attorney": true,
+    "non_attorney_representation_form": {
+      "number": "DC-CV-048",
+      "name": "Corporate Resolution"
+    },
+    "insurance_adjuster_allowed": false,
+    "fictitious_name_form": {
+      "number": "NA",
+      "name": "NA"
+    },
+    "fictitious_name_notes": "Businesses must use their legal entity name when filing or defending a case; trade names alone are insufficient.",
+    "sole_proprietor_employee_exception": "Sole proprietors may represent themselves or be represented by an employee with proper authorization.",
+    "out_of_state_business_must_register": true,
+    "out_of_state_business_statute": "Md. Code Corps. & Ass'ns § 7-202",
+    "licensing_notes": "Unlicensed contractors may face challenges in enforcing contracts; consult legal counsel for specific situations.",
+    "source_ids": []
+  },
+  "county_variations_material": false,
+  "county_variations": [],
+  "pitfalls": [
+    {
+      "title": "Incorrect defendant information",
+      "what_happens": "Suing the wrong party or using incorrect names can result in dismissal or unenforceable judgments.",
+      "how_to_avoid": "Verify the exact legal name and address of the defendant before filing; for businesses, check the State Department of Assessments and Taxation records.",
+      "source_ids": []
+    },
+    {
+      "title": "Missing statute of limitations",
+      "what_happens": "Filing after the statute of limitations has expired will lead to dismissal of your case.",
+      "how_to_avoid": "Confirm the applicable statute of limitations for your claim type and file within the allowed time frame.",
+      "source_ids": []
+    },
+    {
+      "title": "Improper service of process",
+      "what_happens": "Failure to properly serve the defendant can delay your case or result in dismissal.",
+      "how_to_avoid": "Follow Maryland's rules for service of process carefully, using authorized methods and documenting service properly.",
+      "source_ids": []
+    },
+    {
+      "title": "Insufficient evidence",
+      "what_happens": "Lack of evidence can lead to losing your case, even if your claim is valid.",
+      "how_to_avoid": "Gather all relevant documents, photos, and witness statements before filing and bring them to court.",
+      "source_ids": []
+    },
+    {
+      "title": "Ignoring counterclaims",
+      "what_happens": "If the defendant files a counterclaim and you don't respond, you could lose by default.",
+      "how_to_avoid": "Respond promptly to any counterclaims and prepare your defense accordingly.",
+      "source_ids": []
+    },
+    {
+      "title": "Overlooking collection challenges",
+      "what_happens": "Winning a judgment doesn't guarantee payment; collection can be difficult.",
+      "how_to_avoid": "Before filing, consider the defendant's ability to pay and be prepared to take additional steps to collect if necessary.",
+      "source_ids": []
+    }
+  ],
+  "recent_changes": [],
+  "faqs": [
+    {
+      "question": "Do I need a lawyer?",
+      "answer": "No, you are not required to have a lawyer in small claims court. The procedures are simplified to allow individuals to represent themselves effectively.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "How long does it take?",
+      "answer": "Small claims cases are typically scheduled for trial within 60 days of filing, but the exact timeline can vary depending on the court's schedule.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "What's the maximum I can sue for?",
+      "answer": "In Maryland's small claims court, you can sue for up to $5,000, excluding interest, costs, and attorney's fees.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "question": "What happens if the defendant doesn't show up?",
+      "answer": "If the defendant fails to appear, the court may enter a default judgment in your favor, provided you present sufficient evidence to support your claim.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "Can I appeal?",
+      "answer": "Yes, either party can appeal a small claims judgment to the Circuit Court within 30 days. The appeal is heard as a new trial (trial de novo).",
+      "source_ids": [
+        "S13"
+      ]
+    },
+    {
+      "question": "How long is a judgment good for?",
+      "answer": "A judgment in Maryland is valid for 12 years and can be renewed for another 12 years if necessary.",
+      "source_ids": [
+        "S11"
+      ]
+    }
+  ],
+  "state_specific_notes": [
+    "Maryland's small claims court has a jurisdictional limit of $5,000, excluding interest, costs, and attorney's fees.",
+    "The District Court has exclusive jurisdiction over small claims cases, meaning they cannot be filed in Circuit Court.",
+    "Small claims procedures are designed to be informal, allowing individuals to represent themselves without an attorney.",
+    "Discovery procedures, such as interrogatories and depositions, are not permitted in small claims cases.",
+    "Appeals from small claims judgments are heard de novo in the Circuit Court, meaning the case is retried as if the original trial had not occurred."
+  ],
+  "_extras": {
+    "interesting_findings": [
+      "Maryland's small claims court emphasizes informal procedures to facilitate self-representation.",
+      "The state provides specific statutory penalties for bad check claims, including potential civil penalties up to $500.",
+      "Maryland allows for the recovery of attorney's fees in certain cases, particularly when specified by statute or contract.",
+      "The state's small claims court does not permit pre-trial discovery, streamlining the litigation process.",
+      "Maryland's post-judgment interest rate is set at 10%, providing a significant incentive for timely payment of judgments."
+    ]
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "label": "Maryland Judiciary - Small Claims",
+      "url": "https://www.mdcourts.gov/legalhelp/smallclaims",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S4",
+      "label": "Md. Code Cts. & Jud. Proc. § 4-405",
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=gcj&section=4-405",
+      "primary": true,
+      "citation": "Md. Code Cts. & Jud. Proc. § 4-405"
+    },
+    {
+      "id": "S7",
+      "label": "Md. Code Cts. & Jud. Proc. § 5-101",
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=gcj&section=5-101",
+      "primary": true,
+      "citation": "Md. Code Cts. & Jud. Proc. § 5-101"
+    },
+    {
+      "id": "S11",
+      "label": "Md. Code Cts. & Jud. Proc. § 7-301",
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=gcj&section=7-301",
+      "primary": true,
+      "citation": "Md. Code Cts. & Jud. Proc. § 7-301"
+    },
+    {
+      "id": "S13",
+      "label": "Md. Code Cts. & Jud. Proc. § 12-401",
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=gcj&section=12-401",
+      "primary": true,
+      "citation": "Md. Code Cts. & Jud. Proc. § 12-401"
+    },
+    {
+      "id": "S17",
+      "label": "Md. Code Com. Law § 15-802",
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=gcl&section=15-802",
+      "primary": true,
+      "citation": "Md. Code Com. Law § 15-802"
+    },
+    {
+      "id": "S18",
+      "label": "Md. Code Real Prop. § 8-203",
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=grp&section=8-203",
+      "primary": true,
+      "citation": "Md. Code Real Prop. § 8-203"
+    },
+    {
+      "id": "S19",
+      "label": "Md. Code Lab. & Empl. § 3-505",
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=gle&section=3-505",
+      "primary": true,
+      "citation": "Md. Code Lab. & Empl. § 3-505"
+    },
+    {
+      "id": "S16",
+      "label": "Md. Code Com. Law § 13-101 et seq.",
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=gcl&section=13-101",
+      "primary": true,
+      "citation": "Md. Code Com. Law § 13-101 et seq."
+    },
+    {
+      "id": "S5",
+      "label": "Md. Code Cts. & Jud. Proc. § 4-401",
+      "url": "https://mgaleg.maryland.gov/2025RS/Statute_Web/gcj/4-401.pdf",
+      "primary": true,
+      "citation": "Md. Code Cts. & Jud. Proc. § 4-401"
+    },
+    {
+      "id": "S12",
+      "label": "Maryland Rules Rule 3-121",
+      "url": "https://www.courts.state.md.us/rules",
+      "primary": true,
+      "citation": "Maryland Rules Rule 3-121"
+    },
+    {
+      "id": "S9",
+      "label": "Maryland Court Forms",
+      "url": "https://mdcourts.gov/courtforms",
+      "primary": true,
+      "citation": ""
+    }
+  ],
+  "_meta": {
+    "state": "Maryland",
+    "slug": "maryland",
+    "model": "gpt-4.1",
+    "sources_response_id": null,
+    "extraction_response_id": "resp_0491228edab9d0f90069f0b6a208c08193a9583d2e54598726",
+    "generated_at": "2026-04-28T13:33:03.755Z",
+    "usage": {
+      "input_tokens": 7445,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 14412,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 21857
+    }
+  }
+}

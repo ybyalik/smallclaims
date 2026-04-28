@@ -1,0 +1,1528 @@
+{
+  "state": "Nevada",
+  "slug": "nevada",
+  "abbr": "NV",
+  "as_of": "2026-04-28",
+  "hero": {
+    "individual_limit_dollars": 10000,
+    "business_limit_dollars": 10000,
+    "filing_fee_low_dollars": 30,
+    "filing_fee_high_dollars": 50,
+    "typical_timeline_min_days": 30,
+    "typical_timeline_max_days": 60,
+    "tagline": "Nevada's small claims courts offer a streamlined process for disputes up to $10,000, with hearings typically scheduled within 30 to 60 days.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "at_a_glance": [
+    {
+      "label": "Most you can sue for",
+      "value": "$10,000",
+      "detail": "Same cap for individuals and businesses",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Filing fee",
+      "value": "$30-$50",
+      "detail": "Varies by claim amount",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Court",
+      "value": "Justice Court",
+      "detail": "",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Lawyers at trial",
+      "value": "Allowed",
+      "detail": "Permitted but not required",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Appeal window",
+      "value": "5 business days",
+      "detail": "Trial de novo in District Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Recent change",
+      "value": "—",
+      "detail": "No major changes in the last 3 years",
+      "source_ids": []
+    }
+  ],
+  "limits": {
+    "individual_dollars": 10000,
+    "business_dollars": 10000,
+    "guarantor_with_fee_max": null,
+    "guarantor_without_fee_max": null,
+    "annual_filing_cap": {
+      "count": null,
+      "threshold_dollars": null,
+      "notes": ""
+    },
+    "split_claims_allowed": false,
+    "split_claims_explanation": "If your claim exceeds $10,000, you cannot split it into multiple claims to fit within the small claims limit. Instead, you must file in a higher court.",
+    "interest_excluded_from_cap": true,
+    "court_costs_excluded_from_cap": true,
+    "statute": "NRS 73.010",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "claim_categories": [
+    {
+      "id": "contracts",
+      "title": "Contracts and money owed",
+      "blurb": "Nevada allows you to file claims for breaches of contract and money owed up to $10,000. The statute of limitations varies: 6 years for written contracts and 4 years for oral contracts.",
+      "claims": [
+        {
+          "slug": "written-contract",
+          "name": "Breach of a written contract",
+          "example": "A contractor signed a $4,000 contract to remodel your kitchen, took the deposit, and never finished.",
+          "eligibility": "eligible",
+          "claim_statute": "NRS 11.190(1)(b)",
+          "notes": "6-year deadline from breach. Bring the signed contract, payment proof, and any correspondence showing the breach.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "oral-contract",
+          "name": "Breach of an oral contract",
+          "example": "You agreed verbally to lend a friend $2,000, which they promised to repay in 6 months, but they haven't.",
+          "eligibility": "eligible",
+          "claim_statute": "NRS 11.190(2)(c)",
+          "notes": "4-year deadline from breach. Gather any evidence of the agreement, such as emails or witness statements.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "personal-loan",
+          "name": "Unpaid personal loan",
+          "example": "You lent $5,000 to a colleague with the understanding they'd repay in a year, but they haven't.",
+          "eligibility": "eligible",
+          "claim_statute": "NRS 11.190(1)(b)",
+          "notes": "6-year deadline if documented in writing; 4 years if oral. Provide any written agreement or proof of the loan.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "promissory-note",
+          "name": "Default on a promissory note",
+          "example": "A borrower signed a promissory note to repay $8,000 over 12 months but stopped after 3 payments.",
+          "eligibility": "eligible",
+          "claim_statute": "NRS 11.190(1)(b)",
+          "notes": "6-year deadline from default. Present the original promissory note and records of payments made.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "unpaid-invoice",
+          "name": "Unpaid invoice for services rendered",
+          "example": "You provided graphic design services worth $3,500, invoiced the client, but haven't received payment.",
+          "eligibility": "eligible",
+          "claim_statute": "NRS 11.190(1)(b)",
+          "notes": "6-year deadline from when payment was due. Include the invoice, service agreement, and any communication regarding payment.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "open-account",
+          "name": "Unpaid balance on an open account",
+          "example": "A customer has an outstanding balance of $2,000 on their store credit account and refuses to pay.",
+          "eligibility": "eligible",
+          "claim_statute": "NRS 11.190(2)(a)",
+          "notes": "4-year deadline from the last charge or payment. Provide account statements and records of transactions.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "unpaid-rent",
+          "name": "Unpaid rent by tenant",
+          "example": "Your tenant missed 3 months of rent totaling $4,500 and has since vacated the property.",
+          "eligibility": "eligible",
+          "claim_statute": "NRS 11.190(1)(b)",
+          "notes": "6-year deadline from when rent was due. Bring the lease agreement, payment records, and any notices sent.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "bad-check",
+          "name": "Payment with a bad check",
+          "example": "A customer paid for $1,200 worth of goods with a check that bounced due to insufficient funds.",
+          "eligibility": "eligible",
+          "claim_statute": "NRS 41.620",
+          "notes": "After a 30-day written notice, you may recover the check amount plus damages. Provide the bounced check and notice sent.",
+          "damage_boost": "Check amount + service charge up to $25 + civil penalty up to $500 OR 3x check amount, whichever is greater.",
+          "source_ids": [
+            "S15"
+          ]
+        },
+        {
+          "slug": "co-signer",
+          "name": "Co-signer held liable for default",
+          "example": "You co-signed a $6,000 loan for a friend who defaulted, and now the lender is seeking payment from you.",
+          "eligibility": "eligible",
+          "claim_statute": "NRS 11.190(1)(b)",
+          "notes": "6-year deadline from default. Present the loan agreement and any correspondence from the lender.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "consumer-disputes",
+      "title": "Consumer disputes",
+      "blurb": "Nevada's small claims courts handle various consumer disputes up to $10,000, including issues with products, services, and false advertising.",
+      "claims": [
+        {
+          "slug": "defective-product",
+          "name": "Purchase of a defective product",
+          "example": "You bought a $900 appliance that stopped working after a week, and the seller refuses to refund or replace it.",
+          "eligibility": "eligible",
+          "claim_statute": "NRS 598.0923",
+          "notes": "4-year deadline from purchase. Bring the receipt, warranty, and any communication with the seller.",
+          "damage_boost": "",
+          "source_ids": [
+            "S14"
+          ]
+        },
+        {
+          "slug": "bad-service",
+          "name": "Substandard service provided",
+          "example": "A cleaning service charged $500 but left your home in poor condition, and they refuse to redo the work.",
+          "eligibility": "eligible",
+          "claim_statute": "NRS 598.0923",
+          "notes": "4-year deadline from service date. Provide the service agreement, photos of the work, and correspondence.",
+          "damage_boost": "",
+          "source_ids": [
+            "S14"
+          ]
+        },
+        {
+          "slug": "auto-repair",
+          "name": "Unsatisfactory auto repair",
+          "example": "A mechanic charged $1,200 for repairs that didn't fix the issue, and they refuse to refund or correct the work.",
+          "eligibility": "eligible",
+          "claim_statute": "NRS 598.0923",
+          "notes": "4-year deadline from repair date. Bring the repair invoice, any warranties, and records of subsequent issues.",
+          "damage_boost": "",
+          "source_ids": [
+            "S14"
+          ]
+        },
+        {
+          "slug": "contractor",
+          "name": "Contractor failed to complete work",
+          "example": "You paid a contractor $7,500 to renovate your bathroom, but they abandoned the project halfway through.",
+          "eligibility": "eligible",
+          "claim_statute": "NRS 11.190(1)(b)",
+          "notes": "6-year deadline from breach. Provide the contract, payment records, and evidence of incomplete work.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "no-show-vendor",
+          "name": "Vendor failed to deliver services",
+          "example": "You hired a DJ for $1,000 for your wedding, but they never showed up and won't refund your payment.",
+          "eligibility": "eligible",
+          "claim_statute": "NRS 11.190(1)(b)",
+          "notes": "6-year deadline from breach. Bring the service agreement, payment proof, and any communication.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "subscription-cancellation",
+          "name": "Unauthorized charges after subscription cancellation",
+          "example": "You canceled a $50/month gym membership, but they continued to charge your card for 3 months.",
+          "eligibility": "eligible",
+          "claim_statute": "NRS 598.0923",
+          "notes": "4-year deadline from unauthorized charge. Provide cancellation confirmation and bank statements.",
+          "damage_boost": "",
+          "source_ids": [
+            "S14"
+          ]
+        },
+        {
+          "slug": "used-car",
+          "name": "Purchase of a defective used car",
+          "example": "You bought a used car for $9,000 that broke down within a week, and the dealer refuses to address the issue.",
+          "eligibility": "eligible",
+          "claim_statute": "NRS 598.0923",
+          "notes": "4-year deadline from purchase. Bring the sales contract, any warranties, and repair records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S14"
+          ]
+        },
+        {
+          "slug": "false-advertising",
+          "name": "False advertising leading to financial loss",
+          "example": "A store advertised a 'buy one, get one free' deal, but charged you full price for both items totaling $200.",
+          "eligibility": "eligible",
+          "claim_statute": "NRS 598.0915",
+          "notes": "4-year deadline from purchase. Provide the advertisement and receipt.",
+          "damage_boost": "",
+          "source_ids": [
+            "S14"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "property-damage",
+      "title": "Property damage",
+      "blurb": "Nevada's small claims courts address property damage claims up to $10,000, including vehicle collisions and damage to personal property.",
+      "claims": [
+        {
+          "slug": "vehicle-collision",
+          "name": "Damage from a vehicle collision",
+          "example": "Another driver hit your parked car, causing $3,000 in damages, and refuses to pay for repairs.",
+          "eligibility": "eligible",
+          "claim_statute": "NRS 11.190(4)(e)",
+          "notes": "3-year deadline from accident date. Bring the police report, repair estimates, and photos.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "neighbor-property",
+          "name": "Neighbor caused damage to your property",
+          "example": "Your neighbor's tree fell onto your fence, causing $2,500 in damages, and they won't cover the cost.",
+          "eligibility": "eligible",
+          "claim_statute": "NRS 11.190(4)(e)",
+          "notes": "3-year deadline from damage date. Provide photos, repair estimates, and any communication with the neighbor.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "damage-to-rental",
+          "name": "Tenant caused damage to rental property",
+          "example": "A tenant left your rental unit with $4,000 in damages beyond normal wear and tear.",
+          "eligibility": "eligible",
+          "claim_statute": "NRS 11.190(4)(e)",
+          "notes": "3-year deadline from discovery of damage. Bring the lease agreement, move-in/move-out inspection reports, and repair invoices.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "pet-damage",
+          "name": "Damage caused by someone's pet",
+          "example": "A neighbor's dog entered your yard and destroyed $1,200 worth of landscaping.",
+          "eligibility": "eligible",
+          "claim_statute": "NRS 11.190(4)(e)",
+          "notes": "3-year deadline from damage date. Provide photos, repair estimates, and any communication with the pet owner.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "property-in-custody",
+          "name": "Damage to property left in someone's care",
+          "example": "You left your laptop with a repair shop, and they returned it with a cracked screen, refusing to take responsibility.",
+          "eligibility": "eligible",
+          "claim_statute": "NRS 11.190(4)(e)",
+          "notes": "3-year deadline from damage date. Bring the service agreement, photos of the damage, and any correspondence.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "landlord-tenant",
+      "title": "Landlord-tenant disputes",
+      "blurb": "Nevada's small claims courts handle monetary disputes between landlords and tenants up to $10,000, excluding eviction cases.",
+      "claims": [
+        {
+          "slug": "security-deposit",
+          "name": "Failure to return security deposit",
+          "example": "Your landlord withheld your $1,500 security deposit without providing an itemized list of deductions.",
+          "eligibility": "eligible",
+          "claim_statute": "NRS 118A.242",
+          "notes": "1-year deadline from lease termination. Landlords must provide an itemized list of deductions within 30 days.",
+          "damage_boost": "",
+          "source_ids": [
+            "S16"
+          ]
+        },
+        {
+          "slug": "deposit-not-itemized",
+          "name": "Security deposit deductions not itemized",
+          "example": "Your landlord deducted $800 from your deposit but didn't provide an itemized statement.",
+          "eligibility": "eligible",
+          "claim_statute": "NRS 118A.242",
+          "notes": "1-year deadline from lease termination. Landlords are required to itemize deductions within 30 days.",
+          "damage_boost": "",
+          "source_ids": [
+            "S16"
+          ]
+        },
+        {
+          "slug": "uninhabitable-rental",
+          "name": "Rental unit deemed uninhabitable",
+          "example": "Your apartment had no heating during winter, and the landlord refused to make repairs.",
+          "eligibility": "eligible",
+          "claim_statute": "NRS 118A.290",
+          "notes": "1-year deadline from discovery. Tenants may withhold rent or terminate the lease if the landlord fails to maintain habitable conditions.",
+          "damage_boost": "",
+          "source_ids": [
+            "S16"
+          ]
+        },
+        {
+          "slug": "wrongful-retention-property",
+          "name": "Landlord wrongfully retained tenant's property",
+          "example": "After eviction, your landlord kept your furniture worth $3,000 and refuses to return it.",
+          "eligibility": "eligible",
+          "claim_statute": "NRS 118A.460",
+          "notes": "1-year deadline from property retention. Landlords must store abandoned property and provide notice before disposal.",
+          "damage_boost": "",
+          "source_ids": [
+            "S16"
+          ]
+        },
+        {
+          "slug": "illegal-eviction",
+          "name": "Landlord conducted an illegal eviction",
+          "example": "Your landlord changed the locks without notice, preventing you from accessing your apartment.",
+          "eligibility": "eligible",
+          "claim_statute": "NRS 118A.390",
+          "notes": "1-year deadline from eviction. Self-help evictions are illegal; landlords must follow formal eviction procedures.",
+          "damage_boost": "",
+          "source_ids": [
+            "S16"
+          ]
+        },
+        {
+          "slug": "unreturned-prepaid-rent",
+          "name": "Failure to return prepaid rent after lease termination",
+          "example": "You paid first and last month's rent, but after moving out, the landlord didn't return the last month's rent.",
+          "eligibility": "eligible",
+          "claim_statute": "NRS 118A.242",
+          "notes": "1-year deadline from lease termination. Landlords must return prepaid rent within 30 days unless lawfully withheld.",
+          "damage_boost": "",
+          "source_ids": [
+            "S16"
+          ]
+        },
+        {
+          "slug": "unpaid-rent-by-tenant",
+          "name": "Tenant failed to pay rent",
+          "example": "Your tenant missed 2 months of rent totaling $2,800 and has since vacated the property.",
+          "eligibility": "eligible",
+          "claim_statute": "NRS 11.190(1)(b)",
+          "notes": "6-year deadline from when rent was due. Provide the lease agreement and payment records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "repair-and-deduct",
+          "name": "Tenant repaired and deducted from rent",
+          "example": "You paid $600 to fix a broken heater after the landlord ignored repair requests and deducted it from rent.",
+          "eligibility": "eligible",
+          "claim_statute": "NRS 118A.355",
+          "notes": "1-year deadline from repair. Tenants must provide notice and allow the landlord 14 days to make repairs before deducting costs.",
+          "damage_boost": "",
+          "source_ids": [
+            "S16"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "employment-wages",
+      "title": "Employment and wage disputes",
+      "blurb": "Nevada's small claims courts handle wage disputes up to $10,000, including unpaid wages and final paychecks.",
+      "claims": [
+        {
+          "slug": "unpaid-wages",
+          "name": "Employer failed to pay earned wages",
+          "example": "Your employer owes you $2,000 for hours worked but hasn't issued payment.",
+          "eligibility": "eligible",
+          "claim_statute": "NRS 608.020",
+          "notes": "2-year deadline from when wages were due. Employers must pay all wages due at the end of each pay period.",
+          "damage_boost": "",
+          "source_ids": [
+            "S17"
+          ]
+        },
+        {
+          "slug": "final-paycheck",
+          "name": "Employer failed to provide final paycheck",
+          "example": "After resigning, your employer didn't pay your final wages totaling $1,500.",
+          "eligibility": "eligible",
+          "claim_statute": "NRS 608.020",
+          "notes": "2-year deadline from termination. Final wages are due immediately upon termination.",
+          "damage_boost": "",
+          "source_ids": [
+            "S17"
+          ]
+        },
+        {
+          "slug": "unpaid-commissions",
+          "name": "Employer failed to pay earned commissions",
+          "example": "You earned $3,000 in sales commissions, but your employer refuses to pay.",
+          "eligibility": "eligible",
+          "claim_statute": "NRS 608.020",
+          "notes": "2-year deadline from when commissions were due. Commissions are considered wages and must be paid accordingly.",
+          "damage_boost": "",
+          "source_ids": [
+            "S17"
+          ]
+        },
+        {
+          "slug": "unpaid-overtime",
+          "name": "Employer failed to pay overtime wages",
+          "example": "You worked 10 hours of overtime but weren't compensated at the overtime rate.",
+          "eligibility": "eligible",
+          "claim_statute": "NRS 608.018",
+          "notes": "2-year deadline from when overtime was due. Nevada law requires overtime pay for hours worked over 40 in a week.",
+          "damage_boost": "",
+          "source_ids": [
+            "S17"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "personal-claims",
+      "title": "Personal claims",
+      "blurb": "Nevada's small claims courts address personal claims up to $10,000, including minor injuries and property disputes.",
+      "claims": [
+        {
+          "slug": "minor-injury",
+          "name": "Minor personal injury",
+          "example": "You slipped on a wet floor in a store, resulting in a $2,500 medical bill.",
+          "eligibility": "eligible",
+          "claim_statute": "NRS 11.190(4)(e)",
+          "notes": "2-year deadline from injury date. Provide medical records and any incident reports.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "loaned-property",
+          "name": "Failure to return loaned property",
+          "example": "You lent a friend your $1,200 camera, and they refuse to return it.",
+          "eligibility": "eligible",
+          "claim_statute": "NRS 11.190(4)(e)",
+          "notes": "3-year deadline from demand for return. Provide evidence of the loan and any communication.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "civil-theft",
+          "name": "Theft of personal property",
+          "example": "A neighbor took your $800 bicycle without permission and won't return it.",
+          "eligibility": "eligible",
+          "claim_statute": "NRS 11.190(4)(e)",
+          "notes": "3-year deadline from theft date. Provide proof of ownership and any evidence of the theft.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vehicle-specific",
+      "title": "Vehicle-specific disputes",
+      "blurb": "Nevada's small claims courts handle vehicle-related disputes up to $10,000, including mechanic issues and wrongful towing.",
+      "claims": [
+        {
+          "slug": "mechanic-dispute",
+          "name": "Dispute over mechanic's work",
+          "example": "A mechanic charged $2,000 for repairs that didn't fix the problem, and refuses to refund.",
+          "eligibility": "eligible",
+          "claim_statute": "NRS 598.0923",
+          "notes": "4-year deadline from repair date. Provide the repair invoice and any communication.",
+          "damage_boost": "",
+          "source_ids": [
+            "S14"
+          ]
+        },
+        {
+          "slug": "wrongful-tow",
+          "name": "Vehicle wrongfully towed",
+          "example": "Your car was towed from your apartment complex without proper notice, resulting in $500 in fees.",
+          "eligibility": "eligible",
+          "claim_statute": "NRS 487.038",
+          "notes": "3-year deadline from tow date. Provide towing receipts and any evidence of improper notice.",
+          "damage_boost": "",
+          "source_ids": [
+            "S14"
+          ]
+        }
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "category": "Eviction (unlawful detainer)",
+      "explanation": "Small claims courts in Nevada do not handle eviction cases; these must be filed in Justice Court under standard civil procedures.",
+      "where_to_go_instead": "Justice Court",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    {
+      "category": "Title to real estate",
+      "explanation": "Disputes involving the title to real property are beyond the jurisdiction of small claims courts.",
+      "where_to_go_instead": "District Court",
+      "source_ids": []
+    },
+    {
+      "category": "Defamation",
+      "explanation": "Claims involving defamation, libel, or slander are not suitable for small claims court due to their complexity.",
+      "where_to_go_instead": "District Court",
+      "source_ids": []
+    },
+    {
+      "category": "Malpractice",
+      "explanation": "Professional malpractice claims require expert testimony and are not handled in small claims court.",
+      "where_to_go_instead": "District Court",
+      "source_ids": []
+    },
+    {
+      "category": "Family law matters",
+      "explanation": "Issues such as divorce, child custody, and support are outside the jurisdiction of small claims courts.",
+      "where_to_go_instead": "Family Court",
+      "source_ids": []
+    },
+    {
+      "category": "Probate matters",
+      "explanation": "Disputes involving wills, estates, and trusts are not handled in small claims court.",
+      "where_to_go_instead": "Probate Court",
+      "source_ids": []
+    },
+    {
+      "category": "Claims against the federal government",
+      "explanation": "Small claims courts do not have jurisdiction over cases against federal agencies.",
+      "where_to_go_instead": "Federal Court",
+      "source_ids": []
+    },
+    {
+      "category": "Class actions",
+      "explanation": "Class action lawsuits are complex and exceed the procedural scope of small claims courts.",
+      "where_to_go_instead": "District Court",
+      "source_ids": []
+    },
+    {
+      "category": "Injunctions and specific performance",
+      "explanation": "Small claims courts cannot issue injunctions or orders for specific performance.",
+      "where_to_go_instead": "District Court",
+      "source_ids": []
+    },
+    {
+      "category": "Workers' compensation claims",
+      "explanation": "Disputes over workers' compensation benefits are handled by the Nevada Department of Business and Industry.",
+      "where_to_go_instead": "Nevada Department of Business and Industry",
+      "source_ids": []
+    },
+    {
+      "category": "Bankruptcy proceedings",
+      "explanation": "Bankruptcy cases are under federal jurisdiction and not handled in small claims court.",
+      "where_to_go_instead": "Federal Bankruptcy Court",
+      "source_ids": []
+    },
+    {
+      "category": "Mandatory arbitration disputes",
+      "explanation": "Disputes subject to mandatory arbitration clauses are not suitable for small claims court.",
+      "where_to_go_instead": "Arbitration",
+      "source_ids": []
+    },
+    {
+      "category": "Suing a deceased person",
+      "explanation": "Claims against deceased individuals must be filed against their estate in probate court.",
+      "where_to_go_instead": "Probate Court",
+      "source_ids": []
+    }
+  ],
+  "damages": {
+    "compensatory_allowed": true,
+    "punitive_allowed": false,
+    "punitive_explanation": "Punitive damages are not awarded in small claims court; however, statutory penalties may apply in certain cases, such as bad check claims.",
+    "statutory_multipliers": [
+      {
+        "claim": "Bad check (after 30-day notice)",
+        "multiplier": "3x check amount",
+        "explanation": "Check amount + service charge up to $25 + civil penalty up to $500 OR 3x check amount, whichever is greater.",
+        "statute": "NRS 41.620",
+        "source_ids": [
+          "S15"
+        ]
+      }
+    ],
+    "attorney_fees_recoverable": "sometimes",
+    "attorney_fees_explanation": "Attorney fees may be recoverable if specified by statute or contract; however, small claims court is designed for self-representation.",
+    "prejudgment_interest_rate_pct": null,
+    "prejudgment_interest_statute": "",
+    "postjudgment_interest_rate_pct": null,
+    "postjudgment_interest_type": "simple",
+    "postjudgment_interest_statute": "",
+    "postjudgment_interest_notes": "",
+    "filing_and_service_fees_recoverable_from_loser": true,
+    "source_ids": []
+  },
+  "where_to_file": {
+    "court_name": "Justice Court",
+    "parent_court": "Nevada Judiciary",
+    "venue_rules": [
+      {
+        "scenario": "Most cases (the default)",
+        "filing_options": [
+          "County where the defendant resides"
+        ],
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "scenario": "Where contract was performed",
+        "filing_options": [
+          "County where performance was due"
+        ],
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "scenario": "Where injury or damage occurred",
+        "filing_options": [
+          "County where the event occurred"
+        ],
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "scenario": "Multiple defendants",
+        "filing_options": [
+          "Any county where one defendant resides"
+        ],
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "scenario": "Out-of-state defendant",
+        "filing_options": [
+          "Where the cause of action arose"
+        ],
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "consequences_of_wrong_venue": "Filing in the wrong venue may result in dismissal or transfer of the case, potentially causing delays and additional costs.",
+    "e_filing_available": "varies",
+    "e_filing_notes": "Availability of e-filing depends on the specific Justice Court; check with the local court for options.",
+    "e_filing_portal": null,
+    "source_ids": [
+      "S3"
+    ]
+  },
+  "fees": {
+    "filing_fee_tiers": [
+      {
+        "range_label": "$0 to $2,500",
+        "range_min": 0,
+        "range_max": 2500,
+        "fee_dollars": 30,
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "range_label": "$2,501 to $10,000",
+        "range_min": 2501,
+        "range_max": 10000,
+        "fee_dollars": 50,
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "frequent_filer": {
+      "threshold_per_year": null,
+      "fee_dollars": null,
+      "notes": ""
+    },
+    "service_fees": [
+      {
+        "method": "Sheriff (personal service)",
+        "amount_label": "$25-50",
+        "notes": "Required for most cases.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "waiver": {
+      "forms": [
+        {
+          "number": "",
+          "name": "Application to Proceed In Forma Pauperis",
+          "url": "",
+          "source_ids": [
+            "S3"
+          ]
+        }
+      ],
+      "eligibility_bullets": [
+        "Receiving need-based public assistance (SNAP, TANF, SSI)",
+        "Household income below 125% federal poverty line"
+      ],
+      "coverage_notes": "The waiver covers filing fees and may cover service fees; check with the court for specifics.",
+      "if_you_win_notes": "If you win, the waived fees may be added to the judgment against the loser."
+    },
+    "other_fees": [
+      {
+        "name": "Subpoena issuance",
+        "amount_label": "$10",
+        "notes": "Plus witness fee per day.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "name": "Appeal filing",
+        "amount_label": "$200",
+        "notes": "",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "name": "Writ of execution",
+        "amount_label": "varies",
+        "notes": "Post-judgment.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "fees_recoverable_from_loser_notes": "If you win, filing fee and reasonable service costs are added to the judgment.",
+    "source_ids": [
+      "S3"
+    ]
+  },
+  "statute_of_limitations": {
+    "entries": [
+      {
+        "id": "written-contract",
+        "claim": "Written contract",
+        "years": 6,
+        "clock_starts": "Date of breach",
+        "statute": "NRS 11.190(1)(b)",
+        "notes": "",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "id": "oral-contract",
+        "claim": "Oral contract",
+        "years": 4,
+        "clock_starts": "Date of breach",
+        "statute": "NRS 11.190(2)(c)",
+        "notes": "",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "id": "sale-of-goods",
+        "claim": "Sale of goods (UCC)",
+        "years": 4,
+        "clock_starts": "Date of breach",
+        "statute": "NRS 104.2725",
+        "notes": "",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "id": "promissory-note",
+        "claim": "Promissory note",
+        "years": 6,
+        "clock_starts": "Date of default",
+        "statute": "NRS 11.190(1)(b)",
+        "notes": "",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "id": "open-account",
+        "claim": "Open account / credit card debt",
+        "years": 4,
+        "clock_starts": "Date of last charge or payment",
+        "statute": "NRS 11.190(2)(a)",
+        "notes": "",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "id": "personal-injury",
+        "claim": "Personal injury",
+        "years": 2,
+        "clock_starts": "Date of injury",
+        "statute": "NRS 11.190(4)(e)",
+        "notes": "",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "id": "property-damage",
+        "claim": "Property damage",
+        "years": 3,
+        "clock_starts": "Date of damage",
+        "statute": "NRS 11.190(4)(e)",
+        "notes": "",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "id": "fraud",
+        "claim": "Fraud",
+        "years": 3,
+        "clock_starts": "Date of discovery",
+        "statute": "NRS 11.190(3)(d)",
+        "notes": "",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "id": "bad-check",
+        "claim": "Bad check",
+        "years": 3,
+        "clock_starts": "Date of dishonor",
+        "statute": "NRS 11.190(4)(e)",
+        "notes": "",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "id": "unpaid-wages",
+        "claim": "Unpaid wages",
+        "years": 2,
+        "clock_starts": "Date wages were due",
+        "statute": "NRS 608.260",
+        "notes": "",
+        "source_ids": [
+          "S17"
+        ]
+      },
+      {
+        "id": "security-deposit",
+        "claim": "Security deposit",
+        "years": 1,
+        "clock_starts": "Date of lease termination",
+        "statute": "NRS 118A.242",
+        "notes": "",
+        "source_ids": [
+          "S16"
+        ]
+      },
+      {
+        "id": "judgment-enforcement",
+        "claim": "Judgment enforcement",
+        "years": 6,
+        "clock_starts": "Date of judgment",
+        "statute": "NRS 17.214",
+        "notes": "",
+        "source_ids": [
+          "S18"
+        ]
+      }
+    ],
+    "discovery_rule_notes": "The discovery rule applies to fraud claims, starting the statute of limitations when the fraud is discovered.",
+    "tolling_notes": "The statute of limitations may be tolled if the defendant is out of state, the plaintiff is a minor, or in cases of bankruptcy.",
+    "source_ids": [
+      "S6"
+    ]
+  },
+  "pre_filing": {
+    "demand_letter_required": false,
+    "demand_letter_recommended": true,
+    "demand_letter_notes": "While not required, sending a demand letter can often resolve disputes without court intervention and serves as evidence of your attempt to settle.",
+    "bad_check_notice_rule": "For bad check claims, a 30-day written notice demanding payment is required before filing suit.",
+    "wage_claim_demand_rule": "No specific pre-filing demand required for wage claims, but it's advisable to formally request payment before filing.",
+    "government_claim_required": false,
+    "government_claim_deadline_days": null,
+    "government_claim_notes": "",
+    "landlord_tenant_pre_filing_notes": "Landlords must provide an itemized list of deductions from the security deposit within 30 days; failure to do so may entitle the tenant to the full deposit.",
+    "consumer_protection_notes": "No specific pre-filing requirements for consumer protection claims, but documenting all communications is beneficial.",
+    "mandatory_mediation_before_filing": "none",
+    "arbitration_clauses_enforced": true,
+    "source_ids": [
+      "S3"
+    ]
+  },
+  "forms": [
+    {
+      "number": "",
+      "name": "Small Claims Affidavit of Complaint",
+      "description": "Initiates a small claims case by outlining the plaintiff's claim and the amount sought.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "",
+      "source_ids": [
+        "S8"
+      ]
+    },
+    {
+      "number": "",
+      "name": "Application to Proceed In Forma Pauperis",
+      "description": "Requests a waiver of court fees due to financial hardship.",
+      "filed_by": "plaintiff",
+      "required": false,
+      "group": "fee-waiver",
+      "url": "",
+      "source_ids": [
+        "S8"
+      ]
+    },
+    {
+      "number": "",
+      "name": "Notice of Appeal",
+      "description": "Filed to appeal a small claims judgment to the District Court.",
+      "filed_by": "either",
+      "required": false,
+      "group": "appeal",
+      "url": "",
+      "source_ids": [
+        "S8"
+      ]
+    }
+  ],
+  "service": {
+    "who_can_serve": [
+      "Sheriff",
+      "Private process server"
+    ],
+    "methods": [
+      {
+        "name": "Sheriff personal service",
+        "description": "Sheriff or constable personally hands the papers to the defendant.",
+        "pros": [
+          "Official and reliable",
+          "Cost-effective"
+        ],
+        "cons": [
+          "May take longer to schedule"
+        ],
+        "source_ids": [
+          "S10"
+        ]
+      },
+      {
+        "name": "Private process server",
+        "description": "A licensed individual delivers the papers to the defendant.",
+        "pros": [
+          "Faster service",
+          "Flexible scheduling"
+        ],
+        "cons": [
+          "Higher cost"
+        ],
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "in_county_days_before_hearing": 10,
+    "out_of_county_days_before_hearing": 20,
+    "proof_of_service_form": {
+      "number": "",
+      "name": "Affidavit of Service"
+    },
+    "proof_filing_deadline_days_before_hearing": 5,
+    "business_service_rule": "Serve the registered agent; if none, serve an officer or managing agent.",
+    "out_of_state_defendant_notes": "Service must comply with Nevada Rules of Civil Procedure and the laws of the state where service is made.",
+    "cant_find_defendant_notes": "If the defendant cannot be located, you may request permission for alternative service methods, such as publication.",
+    "avoiding_service_notes": "If the defendant is evading service, document your attempts and seek court approval for alternative service.",
+    "source_ids": [
+      "S10"
+    ]
+  },
+  "response_and_default": {
+    "must_file_written_answer": false,
+    "response_deadline_days": 20,
+    "response_notes": "Defendants are not required to file a written answer but must appear at the hearing; failure to appear may result in a default judgment.",
+    "default_process": "If the defendant fails to appear, the court may grant a default judgment in favor of the plaintiff.",
+    "prove_up_required": true,
+    "prove_up_notes": "Even if the defendant defaults, the plaintiff must provide evidence to support the claim and amount sought.",
+    "motion_to_vacate_form": {
+      "number": "",
+      "name": "Motion to Set Aside Default Judgment"
+    },
+    "motion_to_vacate_deadline_days": 10,
+    "motion_to_vacate_lack_of_notice_days": 180,
+    "motion_to_vacate_appeal_deadline_days": 5,
+    "motion_to_vacate_appeal_notes": "If the motion to vacate is denied, the defendant may appeal the denial within 5 business days.",
+    "source_ids": [
+      "S3"
+    ]
+  },
+  "counterclaim": {
+    "allowed": true,
+    "form": {
+      "number": "",
+      "name": "Defendant's Counterclaim"
+    },
+    "same_monetary_limit": true,
+    "service_deadline_in_county_days": 10,
+    "service_deadline_out_of_county_days": 20,
+    "transfer_to_higher_court_available": true,
+    "transfer_to_higher_court_statute": "NRS 73.050",
+    "transfer_to_higher_court_notes": "If the counterclaim exceeds $10,000, the case may be transferred to District Court.",
+    "source_ids": [
+      "S3"
+    ]
+  },
+  "hearing": {
+    "lawyers_allowed": "yes",
+    "lawyers_allowed_notes": "Parties may choose to be represented by an attorney, but it is not required.",
+    "format": "Bench trial with relaxed rules of evidence; each party presents their case directly to the judge.",
+    "presider": "judge",
+    "burden_of_proof": "preponderance",
+    "what_to_bring": [
+      "Contracts",
+      "Receipts",
+      "Photographs",
+      "Witness statements"
+    ],
+    "subpoena_form": {
+      "number": "",
+      "name": "Subpoena"
+    },
+    "witness_fee_per_day_dollars": 25,
+    "free_interpreters": false,
+    "interpreter_request_process": "Parties must arrange for their own interpreters; some courts may provide a list of certified interpreters.",
+    "jury_option": false,
+    "decision_timing": "On the spot or mailed within a few weeks",
+    "on_site_mediation": "by county",
+    "on_site_mediation_notes": "Some courts offer mediation services to help parties reach a settlement before the hearing.",
+    "source_ids": [
+      "S3"
+    ]
+  },
+  "appeals": {
+    "who_can_appeal": "either",
+    "deadline_days": 5,
+    "fee_dollars": 200,
+    "type": "trial de novo",
+    "type_notes": "The District Court conducts a new trial as if the small claims trial had not occurred.",
+    "attorneys_allowed_on_appeal": true,
+    "bond_required": false,
+    "bond_amount_notes": "",
+    "automatic_stay_on_appeal": true,
+    "default_judgment_appealable": false,
+    "default_judgment_notes": "A default judgment cannot be appealed; the defendant must first file a motion to vacate the judgment.",
+    "notice_of_appeal_form": {
+      "number": "",
+      "name": "Notice of Appeal"
+    },
+    "frivolous_appeal_penalty_dollars": null,
+    "frivolous_appeal_statute": "",
+    "frivolous_appeal_notes": "",
+    "source_ids": [
+      "S3"
+    ]
+  },
+  "collection": {
+    "payment_deadline_typical_days": 30,
+    "post_judgment_interest_rate_pct": 5.25,
+    "post_judgment_interest_statute": "NRS 17.130",
+    "post_judgment_interest_notes": "Interest accrues on the judgment amount from the date of entry until paid.",
+    "methods": [
+      {
+        "id": "wage-garnishment",
+        "name": "Wage garnishment",
+        "blurb": "Have a portion of debtor's wages withheld until the judgment is paid.",
+        "description": "File a writ of garnishment with the court, serve the employer, and the employer withholds a portion of the debtor's wages to satisfy the judgment.",
+        "forms": [
+          {
+            "number": "",
+            "name": "Writ of Garnishment"
+          }
+        ],
+        "estimated_cost": "$30-50 plus sheriff fees",
+        "effectiveness_notes": "Most effective when debtor is W-2 employed at a stable job.",
+        "exemptions": [
+          "75% of disposable earnings (federal CCPA floor)"
+        ],
+        "source_ids": [
+          "S12"
+        ]
+      },
+      {
+        "id": "bank-levy",
+        "name": "Bank levy",
+        "blurb": "Seize funds from debtor's bank account to satisfy the judgment.",
+        "description": "Obtain a writ of execution, serve the bank, and the bank freezes and transfers funds to the court.",
+        "forms": [
+          {
+            "number": "",
+            "name": "Writ of Execution"
+          }
+        ],
+        "estimated_cost": "$30-50 plus sheriff fees",
+        "effectiveness_notes": "Effective if debtor maintains sufficient funds in bank accounts.",
+        "exemptions": [
+          "$2,000 in bank account is exempt"
+        ],
+        "source_ids": [
+          "S12"
+        ]
+      },
+      {
+        "id": "property-lien",
+        "name": "Property lien",
+        "blurb": "Place a lien on debtor's real property, preventing sale or refinancing until judgment is paid.",
+        "description": "Record the judgment with the county recorder's office to create a lien on the debtor's property.",
+        "forms": [
+          {
+            "number": "",
+            "name": "Abstract of Judgment"
+          }
+        ],
+        "estimated_cost": "$20-30 recording fee",
+        "effectiveness_notes": "Effective if debtor owns real property; lien must be satisfied before property can be sold or refinanced.",
+        "exemptions": [
+          "Homestead exemption up to $605,000"
+        ],
+        "source_ids": [
+          "S12"
+        ]
+      },
+      {
+        "id": "writ-of-execution",
+        "name": "Writ of execution",
+        "blurb": "Authorize the sheriff to seize and sell debtor's non-exempt property to satisfy the judgment.",
+        "description": "Obtain a writ from the court, and the sheriff seizes and sells debtor's property at auction.",
+        "forms": [
+          {
+            "number": "",
+            "name": "Writ of Execution"
+          }
+        ],
+        "estimated_cost": "$30-50 plus sheriff fees",
+        "effectiveness_notes": "Effective if debtor owns valuable non-exempt personal property.",
+        "exemptions": [
+          "Various personal property exemptions apply"
+        ],
+        "source_ids": [
+          "S12"
+        ]
+      }
+    ],
+    "wage_garnishment_max_pct_of_disposable": 25,
+    "judgment_lifespan_years": 6,
+    "judgment_renewal_process": "File an affidavit of renewal with the court before the judgment expires to extend its enforceability.",
+    "debtor_exam_form": {
+      "number": "",
+      "name": "Application for Order of Examination"
+    },
+    "exempt_assets": [
+      "Homestead — $605,000",
+      "Vehicle — $15,000",
+      "Retirement accounts (federally and state-protected)",
+      "Social Security and federal benefits"
+    ],
+    "bankruptcy_effect_notes": "Filing for bankruptcy may discharge the judgment; certain debts are non-dischargeable.",
+    "satisfaction_of_judgment_form": {
+      "number": "",
+      "name": "Satisfaction of Judgment"
+    },
+    "priority_notes": "Priority among multiple judgment creditors is generally determined by the order of recording or service.",
+    "source_ids": [
+      "S12"
+    ]
+  },
+  "businesses": {
+    "self_representation_allowed": true,
+    "self_representation_notes": "Businesses may represent themselves in small claims court; however, some courts may require attorney representation for corporations or LLCs.",
+    "can_send_employee": false,
+    "can_send_attorney": true,
+    "non_attorney_representation_form": {
+      "number": "",
+      "name": ""
+    },
+    "insurance_adjuster_allowed": false,
+    "fictitious_name_form": {
+      "number": "",
+      "name": ""
+    },
+    "fictitious_name_notes": "Businesses operating under a fictitious name (DBA) must ensure the name is properly registered.",
+    "sole_proprietor_employee_exception": "Sole proprietors may represent themselves but cannot send an employee in their place.",
+    "out_of_state_business_must_register": true,
+    "out_of_state_business_statute": "NRS 80.010",
+    "licensing_notes": "Unlicensed contractors may be barred from recovering fees for work requiring a license.",
+    "source_ids": [
+      "S3"
+    ]
+  },
+  "county_variations_material": false,
+  "county_variations": [],
+  "pitfalls": [
+    {
+      "title": "Exceeding the monetary limit",
+      "what_happens": "If your claim exceeds $10,000, the case may be dismissed or you may be required to waive the excess amount.",
+      "how_to_avoid": "Ensure your claim, including damages and costs, does not exceed the $10,000 limit for small claims court.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    {
+      "title": "Improper service of process",
+      "what_happens": "Failure to properly serve the defendant can result in delays or dismissal of your case.",
+      "how_to_avoid": "Follow Nevada's rules for service of process carefully, using authorized methods and ensuring timely service.",
+      "source_ids": [
+        "S10"
+      ]
+    },
+    {
+      "title": "Missing the statute of limitations",
+      "what_happens": "Filing a claim after the statute of limitations has expired will lead to dismissal.",
+      "how_to_avoid": "Be aware of the specific statute of limitations for your claim type and file within the allowed time frame.",
+      "source_ids": [
+        "S6"
+      ]
+    },
+    {
+      "title": "Insufficient evidence",
+      "what_happens": "Lack of evidence can result in losing your case, even if your claim is valid.",
+      "how_to_avoid": "Gather all relevant documents, photos, and witness statements to support your claim.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    {
+      "title": "Ignoring counterclaims",
+      "what_happens": "If the defendant files a counterclaim and you are unprepared, you could lose more than you anticipated.",
+      "how_to_avoid": "Be prepared to address potential counterclaims by understanding the defendant's possible arguments.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    {
+      "title": "Failing to collect judgment",
+      "what_happens": "Winning a judgment does not guarantee payment; you may need to take additional steps to collect.",
+      "how_to_avoid": "Familiarize yourself with Nevada's collection methods and be prepared to pursue them if necessary.",
+      "source_ids": [
+        "S12"
+      ]
+    }
+  ],
+  "recent_changes": [],
+  "faqs": [
+    {
+      "question": "Do I need a lawyer?",
+      "answer": "No, you are not required to have a lawyer in Nevada's small claims court. The process is designed for individuals to represent themselves, though you may choose to hire an attorney if you prefer.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    {
+      "question": "How long does it take?",
+      "answer": "Small claims cases in Nevada are typically scheduled for a hearing within 30 to 60 days after filing, aiming for a prompt resolution.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    {
+      "question": "What's the maximum I can sue for?",
+      "answer": "The maximum amount you can sue for in Nevada's small claims court is $10,000. Claims exceeding this amount must be filed in a higher court.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    {
+      "question": "What happens if the defendant doesn't show up?",
+      "answer": "If the defendant fails to appear at the hearing, the court may grant a default judgment in your favor. However, you must still present evidence to support your claim.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    {
+      "question": "Can I appeal?",
+      "answer": "Yes, either party can appeal a small claims judgment to the District Court within 5 business days. The appeal is a trial de novo, meaning the case is heard anew.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    {
+      "question": "How long is a judgment good for?",
+      "answer": "In Nevada, a small claims judgment is valid for 6 years. You can renew the judgment before it expires to extend its enforceability.",
+      "source_ids": [
+        "S12"
+      ]
+    }
+  ],
+  "state_specific_notes": [
+    "Nevada's small claims courts are part of the Justice Court system, handling cases up to $10,000.",
+    "Eviction cases are not handled in small claims court and must be filed in Justice Court under standard civil procedures.",
+    "The statute of limitations varies by claim type; for example, 6 years for written contracts and 4 years for oral contracts.",
+    "Small claims judgments accrue interest at a rate of 5.25% per annum until paid.",
+    "Businesses may represent themselves in small claims court, but some courts may require attorney representation for corporations or LLCs."
+  ],
+  "_extras": {
+    "interesting_findings": [
+      "Nevada allows for statutory penalties in bad check cases, potentially awarding up to three times the check amount.",
+      "The state provides a self-help center with resources and forms for individuals pursuing small claims cases.",
+      "Some Justice Courts in Nevada offer mediation services to help parties resolve disputes before proceeding to a hearing."
+    ]
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "label": "Nevada Judiciary — Small Claims Court",
+      "url": "https://nvcourts.gov/aoc/discover_nevada_justice/small_claims_court",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S3",
+      "label": "Nevada Self-Help — Small Claims",
+      "url": "https://selfhelp.nvcourts.gov/self-help/civil-matters/small-claims",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S4",
+      "label": "Nev. Rev. Stat. Chapter 73 (Small Claims)",
+      "url": "https://www.leg.state.nv.us/NRS/NRS-073.html",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S6",
+      "label": "Nev. Rev. Stat. Chapter 11 (Statute of Limitations)",
+      "url": "https://www.leg.state.nv.us/NRS/NRS-011.html",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S10",
+      "label": "Nevada Rules of Civil Procedure Rule 4 (Service)",
+      "url": "https://nvcourts.gov/supreme/court_rules",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S12",
+      "label": "Nev. Rev. Stat. Chapter 21 (Execution and Supplementary Proceedings)",
+      "url": "https://www.leg.state.nv.us/NRS/NRS-021.html",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S14",
+      "label": "Nev. Rev. Stat. Chapter 598 (Deceptive Trade Practices)",
+      "url": "https://www.leg.state.nv.us/NRS/NRS-598.html",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S15",
+      "label": "Nev. Rev. Stat. § 41.620 (Bad Check Civil Action)",
+      "url": "https://www.leg.state.nv.us/NRS/NRS-041.html#NRS041Sec620",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S16",
+      "label": "Nev. Rev. Stat. § 118A.242 (Security Deposit)",
+      "url": "https://www.leg.state.nv.us/NRS/NRS-118A.html#NRS118ASec242",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S17",
+      "label": "Nev. Rev. Stat. § 608.020 (Final Wages)",
+      "url": "https://www.leg.state.nv.us/NRS/NRS-608.html#NRS608Sec020",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S18",
+      "label": "Nev. Rev. Stat. § 17.130 (Judgment Interest)",
+      "url": "https://www.leg.state.nv.us/NRS/NRS-017.html#NRS017Sec130",
+      "primary": true,
+      "citation": ""
+    }
+  ],
+  "_meta": {
+    "state": "Nevada",
+    "slug": "nevada",
+    "model": "gpt-4.1",
+    "sources_response_id": null,
+    "extraction_response_id": "resp_065b97aa2cc065680069f0b70ff9f881948d84804068fbf173",
+    "generated_at": "2026-04-28T13:34:22.086Z",
+    "usage": {
+      "input_tokens": 7275,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 13064,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 20339
+    }
+  }
+}

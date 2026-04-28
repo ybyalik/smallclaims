@@ -1,0 +1,131 @@
+{
+  "state": "Vermont",
+  "as_of": "2026-04-28",
+  "state_judiciary_pages": [
+    {
+      "label": "Vermont Judiciary",
+      "url": "https://www.vermontjudiciary.org/",
+      "scope": "statewide judiciary"
+    },
+    {
+      "label": "VT Judiciary — Civil Division",
+      "url": "https://www.vermontjudiciary.org/civil",
+      "scope": "civil court"
+    },
+    {
+      "label": "VT Courts — Self-Help",
+      "url": "https://www.vermontjudiciary.org/self-help",
+      "scope": "self-help"
+    }
+  ],
+  "statutes": [
+    {
+      "label": "Vt. Stat. Ann. Title 12 Chapter 187 (Small Claims)",
+      "url": "https://legislature.vermont.gov/statutes/chapter/12/187",
+      "section_or_chapter": "Title 12 Ch. 187"
+    },
+    {
+      "label": "Vt. Stat. Ann. Title 12 Chapter 23 (Limitation of actions)",
+      "url": "https://legislature.vermont.gov/statutes/chapter/12/023",
+      "section_or_chapter": "Title 12 Ch. 23"
+    },
+    {
+      "label": "Vermont Statutes — index",
+      "url": "https://legislature.vermont.gov/statutes/",
+      "section_or_chapter": "all titles"
+    }
+  ],
+  "court_rules": [
+    {
+      "label": "Vermont Rules of Small Claims Procedure",
+      "url": "https://www.vermontjudiciary.org/sites/default/files/documents/PROMULGATEDVRSCP.pdf",
+      "rule_or_chapter": "VRSCP"
+    },
+    {
+      "label": "Vermont Rules of Civil Procedure",
+      "url": "https://www.vermontjudiciary.org/about-vermont-judiciary/court-rules",
+      "rule_or_chapter": "VRCP"
+    }
+  ],
+  "forms_pages": [
+    {
+      "label": "VT Judiciary — Small Claims forms",
+      "url": "https://www.vermontjudiciary.org/civil/small-claims-court",
+      "scope": "forms"
+    }
+  ],
+  "fee_schedules": [
+    {
+      "label": "Vt. Stat. Ann. Title 32 § 1431 (Court filing fees)",
+      "url": "https://legislature.vermont.gov/statutes/section/32/025/01431",
+      "section_or_chapter": "§ 1431"
+    }
+  ],
+  "service_rules": [
+    {
+      "label": "Vermont Rule of Civil Procedure 4 (Service)",
+      "url": "https://www.vermontjudiciary.org/about-vermont-judiciary/court-rules",
+      "rule_or_chapter": "Rule 4"
+    }
+  ],
+  "appeal_rules": [
+    {
+      "label": "Vt. Stat. Ann. Title 12 § 5538 (Small claims appeal)",
+      "url": "https://legislature.vermont.gov/statutes/section/12/187/05538",
+      "section_or_chapter": "§ 5538"
+    }
+  ],
+  "post_judgment_collection": [
+    {
+      "label": "Vt. Stat. Ann. Title 12 Chapter 113 (Execution)",
+      "url": "https://legislature.vermont.gov/statutes/chapter/12/113",
+      "section_or_chapter": "Title 12 Ch. 113"
+    },
+    {
+      "label": "Vt. Stat. Ann. Title 12 § 2740 (Exemptions)",
+      "url": "https://legislature.vermont.gov/statutes/section/12/111/02740",
+      "section_or_chapter": "§ 2740"
+    }
+  ],
+  "consumer_protection_statutes": [
+    {
+      "label": "Vt. Stat. Ann. Title 9 Ch. 63 (Consumer Protection Act)",
+      "url": "https://legislature.vermont.gov/statutes/chapter/09/063",
+      "section_or_chapter": "Title 9 Ch. 63"
+    },
+    {
+      "label": "Vt. Stat. Ann. Title 9 § 2311 (Bad check civil penalty)",
+      "url": "https://legislature.vermont.gov/statutes/section/09/063/02311",
+      "section_or_chapter": "§ 2311"
+    }
+  ],
+  "landlord_tenant_statutes": [
+    {
+      "label": "Vt. Stat. Ann. Title 9 § 4461 (Security deposit)",
+      "url": "https://legislature.vermont.gov/statutes/section/09/137/04461",
+      "section_or_chapter": "§ 4461"
+    }
+  ],
+  "wage_and_employment_statutes": [
+    {
+      "label": "Vt. Stat. Ann. Title 21 § 342 (Wage payment)",
+      "url": "https://legislature.vermont.gov/statutes/section/21/005/00342",
+      "section_or_chapter": "§ 342"
+    }
+  ],
+  "civil_remedies_statutes": [
+    {
+      "label": "Vt. Stat. Ann. Title 12 § 2903 (Judgment interest)",
+      "url": "https://legislature.vermont.gov/statutes/section/12/121/02903",
+      "section_or_chapter": "§ 2903"
+    }
+  ],
+  "county_specific": [],
+  "notes": "Manually curated source list (Pass 1 model defaulted to commercial mirrors).",
+  "_meta": {
+    "state": "Vermont",
+    "slug": "vermont",
+    "model": "manually-curated",
+    "generated_at": "2026-04-28T13:20:48.082Z"
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "state": "Arizona",
+  "as_of": "2026-04-28",
+  "state_judiciary_pages": [
+    {
+      "label": "Arizona Judicial Branch",
+      "url": "https://www.azcourts.gov/",
+      "scope": "statewide judiciary"
+    },
+    {
+      "label": "Maricopa County Superior Court — Justice Courts",
+      "url": "https://www.superiorcourt.maricopa.gov/",
+      "scope": "trial court self-help"
+    },
+    {
+      "label": "Arizona Justice Courts directory",
+      "url": "https://www.azcourts.gov/justicecourts/",
+      "scope": "court directory"
+    }
+  ],
+  "statutes": [
+    {
+      "label": "Ariz. Rev. Stat. Title 22 (Justice and Municipal Courts)",
+      "url": "https://www.azleg.gov/arsDetail/?title=22",
+      "section_or_chapter": "Title 22, Ch. 5 (Small Claims)"
+    },
+    {
+      "label": "Ariz. Rev. Stat. Title 12 (Courts and Civil Proceedings)",
+      "url": "https://www.azleg.gov/arsDetail/?title=12",
+      "section_or_chapter": "Title 12"
+    },
+    {
+      "label": "Ariz. Rev. Stat. § 22-501 (Small Claims jurisdictional limit)",
+      "url": "https://www.azleg.gov/viewdocument/?docName=https://www.azleg.gov/ars/22/00501.htm",
+      "section_or_chapter": "§ 22-501"
+    },
+    {
+      "label": "Arizona Revised Statutes — Title index",
+      "url": "https://www.azleg.gov/arstitle/",
+      "section_or_chapter": "all titles"
+    }
+  ],
+  "court_rules": [
+    {
+      "label": "Arizona Rules of Procedure for the Justice Courts",
+      "url": "https://www.azcourts.gov/rules",
+      "rule_or_chapter": "Justice Court rules"
+    },
+    {
+      "label": "Rules of Small Claims Procedure",
+      "url": "https://govt.westlaw.com/azrules/Browse/Home/Arizona/ArizonaCourtRules",
+      "rule_or_chapter": "JCRSCP"
+    }
+  ],
+  "forms_pages": [
+    {
+      "label": "Maricopa Justice Court small-claims forms",
+      "url": "https://justicecourts.maricopa.gov/forms/",
+      "scope": "forms"
+    }
+  ],
+  "fee_schedules": [
+    {
+      "label": "Arizona Justice Court fee schedules",
+      "url": "https://www.azcourts.gov/cscommittees/Limited-Jurisdiction-Courts-Committee",
+      "scope": "fees"
+    }
+  ],
+  "service_rules": [
+    {
+      "label": "Arizona Rules of Civil Procedure Rule 4 (service)",
+      "url": "https://www.azcourts.gov/rules/Rules-of-Civil-Procedure",
+      "rule_or_chapter": "Rule 4"
+    }
+  ],
+  "appeal_rules": [
+    {
+      "label": "Ariz. Rev. Stat. § 22-261 (Justice Court appeals)",
+      "url": "https://www.azleg.gov/ars/22/00261.htm",
+      "section_or_chapter": "§ 22-261"
+    }
+  ],
+  "post_judgment_collection": [
+    {
+      "label": "Ariz. Rev. Stat. Title 12 Ch. 11 (Garnishment)",
+      "url": "https://www.azleg.gov/arsDetail/?title=12",
+      "section_or_chapter": "Title 12 Ch. 11"
+    },
+    {
+      "label": "Ariz. Rev. Stat. § 33-1101 (Homestead exemption)",
+      "url": "https://www.azleg.gov/ars/33/01101.htm",
+      "section_or_chapter": "§ 33-1101"
+    }
+  ],
+  "consumer_protection_statutes": [
+    {
+      "label": "Ariz. Rev. Stat. § 44-1521 (Consumer Fraud Act)",
+      "url": "https://www.azleg.gov/ars/44/01521.htm",
+      "section_or_chapter": "§ 44-1521 et seq."
+    },
+    {
+      "label": "Ariz. Rev. Stat. § 44-1522 (Consumer fraud — definitions)",
+      "url": "https://www.azleg.gov/ars/44/01522.htm",
+      "section_or_chapter": "§ 44-1522"
+    }
+  ],
+  "landlord_tenant_statutes": [
+    {
+      "label": "Ariz. Rev. Stat. § 33-1321 (Security deposit)",
+      "url": "https://www.azleg.gov/ars/33/01321.htm",
+      "section_or_chapter": "§ 33-1321"
+    }
+  ],
+  "wage_and_employment_statutes": [
+    {
+      "label": "Ariz. Rev. Stat. § 23-355 (Final wages — penalty)",
+      "url": "https://www.azleg.gov/ars/23/00355.htm",
+      "section_or_chapter": "§ 23-355"
+    }
+  ],
+  "civil_remedies_statutes": [
+    {
+      "label": "Ariz. Rev. Stat. § 44-1201 (Interest rate)",
+      "url": "https://www.azleg.gov/ars/44/01201.htm",
+      "section_or_chapter": "§ 44-1201"
+    }
+  ],
+  "county_specific": [],
+  "notes": "Manually curated source list (Pass 1 model defaulted to commercial mirrors).",
+  "_meta": {
+    "state": "Arizona",
+    "slug": "arizona",
+    "model": "manually-curated",
+    "generated_at": "2026-04-28T13:20:48.076Z"
+  }
+}

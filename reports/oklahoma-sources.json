@@ -1,0 +1,126 @@
+{
+  "state": "Oklahoma",
+  "as_of": "2026-04-28",
+  "state_judiciary_pages": [
+    {
+      "label": "Oklahoma State Courts Network (OSCN)",
+      "url": "https://www.oscn.net/",
+      "scope": "statewide judiciary"
+    },
+    {
+      "label": "Oklahoma Supreme Court",
+      "url": "https://www.oscn.net/applications/oscn/start.asp?viewType=COURT",
+      "scope": "court info"
+    }
+  ],
+  "statutes": [
+    {
+      "label": "Okla. Stat. Title 12 § 1751 et seq. (Small Claims Procedure Act)",
+      "url": "https://www.oscn.net/applications/oscn/index.asp?ftdb=STOKST12&level=1",
+      "section_or_chapter": "Title 12 § 1751"
+    },
+    {
+      "label": "Oklahoma Statutes — Title index",
+      "url": "https://www.oklegislature.gov/osStatuesTitle.html",
+      "section_or_chapter": "all titles"
+    },
+    {
+      "label": "Okla. Stat. Title 12 (Civil Procedure)",
+      "url": "https://oksenate.gov/sites/default/files/2019-12/os12.pdf",
+      "section_or_chapter": "Title 12"
+    },
+    {
+      "label": "Okla. Stat. Title 12 § 95 (Statute of limitations)",
+      "url": "https://www.oscn.net/applications/oscn/DeliverDocument.asp?CiteID=434813",
+      "section_or_chapter": "§ 95"
+    }
+  ],
+  "court_rules": [
+    {
+      "label": "Oklahoma Rules of Civil Procedure (via OSCN)",
+      "url": "https://www.oscn.net/applications/oscn/index.asp?ftdb=STOKRU12&level=1",
+      "rule_or_chapter": "civil procedure"
+    }
+  ],
+  "forms_pages": [
+    {
+      "label": "Oklahoma small claims forms (OSCN)",
+      "url": "https://www.oscn.net/applications/oscn/start.asp?viewType=FORMS",
+      "scope": "forms"
+    }
+  ],
+  "fee_schedules": [
+    {
+      "label": "Okla. Stat. Title 28 (Court fees)",
+      "url": "https://www.oscn.net/applications/oscn/index.asp?ftdb=STOKST28&level=1",
+      "section_or_chapter": "Title 28"
+    }
+  ],
+  "service_rules": [
+    {
+      "label": "Okla. Stat. Title 12 § 2004 (Service of process)",
+      "url": "https://www.oscn.net/applications/oscn/DeliverDocument.asp?CiteID=435097",
+      "section_or_chapter": "§ 2004"
+    }
+  ],
+  "appeal_rules": [
+    {
+      "label": "Okla. Stat. Title 12 § 1761 (Small claims appeal)",
+      "url": "https://www.oscn.net/applications/oscn/DeliverDocument.asp?CiteID=437159",
+      "section_or_chapter": "§ 1761"
+    }
+  ],
+  "post_judgment_collection": [
+    {
+      "label": "Okla. Stat. Title 12 § 1171 et seq. (Execution)",
+      "url": "https://www.oscn.net/applications/oscn/index.asp?ftdb=STOKST12&level=1",
+      "section_or_chapter": "Title 12 § 1171"
+    },
+    {
+      "label": "Okla. Stat. Title 31 § 1 (Exemptions)",
+      "url": "https://www.oscn.net/applications/oscn/index.asp?ftdb=STOKST31&level=1",
+      "section_or_chapter": "Title 31 § 1"
+    }
+  ],
+  "consumer_protection_statutes": [
+    {
+      "label": "Okla. Stat. Title 15 § 751 et seq. (Consumer Protection Act)",
+      "url": "https://www.oscn.net/applications/oscn/index.asp?ftdb=STOKST15&level=1",
+      "section_or_chapter": "Title 15 § 751"
+    },
+    {
+      "label": "Okla. Stat. Title 21 § 1541.4 (Bad check civil)",
+      "url": "https://www.oscn.net/applications/oscn/index.asp?ftdb=STOKST21&level=1",
+      "section_or_chapter": "§ 1541.4"
+    }
+  ],
+  "landlord_tenant_statutes": [
+    {
+      "label": "Okla. Stat. Title 41 § 115 (Security deposit)",
+      "url": "https://www.oscn.net/applications/oscn/DeliverDocument.asp?CiteID=78207",
+      "section_or_chapter": "§ 115"
+    }
+  ],
+  "wage_and_employment_statutes": [
+    {
+      "label": "Okla. Stat. Title 40 § 165.3 (Final wages)",
+      "url": "https://www.oscn.net/applications/oscn/index.asp?ftdb=STOKST40&level=1",
+      "section_or_chapter": "§ 165.3"
+    }
+  ],
+  "civil_remedies_statutes": [
+    {
+      "label": "Okla. Stat. Title 12 § 727 (Post-judgment interest)",
+      "url": "https://www.oscn.net/applications/oscn/DeliverDocument.asp?CiteID=434965",
+      "section_or_chapter": "§ 727"
+    }
+  ],
+  "county_specific": [],
+  "notes": "Manually curated source list (Pass 1 model defaulted to commercial mirrors).",
+  "_meta": {
+    "state": "Oklahoma",
+    "slug": "oklahoma",
+    "model": "manually-curated",
+    "generated_at": "2026-04-28T13:20:48.082Z"
+  }
+}

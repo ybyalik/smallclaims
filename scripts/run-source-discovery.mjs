@@ -39,6 +39,7 @@ function takeFlag(flag) {
   return i >= 0 && args[i + 1] ? args[i + 1] : null;
 }
 const onlyStates = takeFlag("--states") ? new Set(takeFlag("--states").split(",")) : null;
+const skips = new Set(takeFlag("--skip")?.split(",") ?? []);
 const resubmit = new Set(takeFlag("--resubmit")?.split(",") ?? []);
 const MODEL = takeFlag("--model") || "gpt-4.1";
 
@@ -139,7 +140,9 @@ function validateSources(pack) {
 
   const requiredTop = [
     "state","as_of","state_judiciary_pages","statutes","court_rules","forms_pages",
-    "fee_schedules","service_rules","appeal_rules","post_judgment_collection","county_specific",
+    "fee_schedules","service_rules","appeal_rules","post_judgment_collection",
+    "consumer_protection_statutes","landlord_tenant_statutes","wage_and_employment_statutes",
+    "civil_remedies_statutes","county_specific",
   ];
   for (const k of requiredTop) {
     if (!(k in pack)) errors.push(`missing top-level key: ${k}`);
@@ -149,7 +152,9 @@ function validateSources(pack) {
   // URL whitelist enforcement across every entry that has a `url`
   const arrayKeys = [
     "state_judiciary_pages","statutes","court_rules","forms_pages","fee_schedules",
-    "service_rules","appeal_rules","post_judgment_collection","county_specific",
+    "service_rules","appeal_rules","post_judgment_collection",
+    "consumer_protection_statutes","landlord_tenant_statutes","wage_and_employment_statutes",
+    "civil_remedies_statutes","county_specific",
   ];
   let totalUrls = 0;
   let rejected = [];
@@ -179,7 +184,7 @@ function validateSources(pack) {
   // Coverage minimums — partial discovery is acceptable, total absence is not.
   if ((pack.statutes?.length ?? 0) < 1) errors.push("no statutes found (need at least 1)");
   if ((pack.state_judiciary_pages?.length ?? 0) < 1) errors.push("no state_judiciary_pages found");
-  if (totalUrls < 6) warnings.push(`only ${totalUrls} total URLs (typical states have 12+)`);
+  if (totalUrls < 12) warnings.push(`only ${totalUrls} total URLs (typical states have 18+)`);
 
   return { errors, warnings };
 }
@@ -194,7 +199,7 @@ async function runOne(slug) {
       { role: "user", content: [{ type: "input_text", text: userPrompt }] },
     ],
     tools: [{ type: "web_search_preview" }],
-    max_output_tokens: 8000,
+    max_output_tokens: 16000,
   };
   // Foreground call — gpt-4.1 returns in seconds-minutes, no need for background mode
   const result = await api("POST", "/responses", body);
@@ -233,6 +238,7 @@ function writeProgress(state) {
 
 (async () => {
   const todo = ALL_SLUGS.filter((slug) => {
+    if (skips.has(slug)) return false;
     if (onlyStates && !onlyStates.has(slug)) return false;
     if (existsSync(paths(slug).sources) && !resubmit.has(slug)) return false;
     return true;

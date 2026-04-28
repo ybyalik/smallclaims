@@ -1,0 +1,126 @@
+{
+  "state": "Tennessee",
+  "as_of": "2026-04-28",
+  "state_judiciary_pages": [
+    {
+      "label": "Tennessee Courts (tncourts.gov)",
+      "url": "https://www.tncourts.gov/",
+      "scope": "statewide judiciary"
+    },
+    {
+      "label": "TN General Sessions Courts (small claims jurisdiction)",
+      "url": "https://www.tncourts.gov/courts/general-sessions-courts",
+      "scope": "court info"
+    },
+    {
+      "label": "TN Help / Self-Represented Litigants",
+      "url": "https://www.tncourts.gov/help",
+      "scope": "self-help"
+    }
+  ],
+  "statutes": [
+    {
+      "label": "Tenn. Code Ann. § 16-15-501 et seq. (General Sessions civil jurisdiction)",
+      "url": "https://www.tncourts.gov/courts/general-sessions-courts/about-court",
+      "section_or_chapter": "§ 16-15-501"
+    },
+    {
+      "label": "Tenn. Code Ann. Title 16 (Courts)",
+      "url": "https://www.tncourts.gov/",
+      "section_or_chapter": "Title 16"
+    },
+    {
+      "label": "Tenn. Code Ann. § 28-3-101 et seq. (Statute of limitations)",
+      "url": "https://www.tncourts.gov/",
+      "section_or_chapter": "§ 28-3-101"
+    }
+  ],
+  "court_rules": [
+    {
+      "label": "Tennessee Rules of Civil Procedure",
+      "url": "https://www.tncourts.gov/rules/rules-civil-procedure",
+      "rule_or_chapter": "Civil Procedure"
+    }
+  ],
+  "forms_pages": [
+    {
+      "label": "TN Courts — Forms",
+      "url": "https://www.tncourts.gov/forms",
+      "scope": "forms"
+    }
+  ],
+  "fee_schedules": [
+    {
+      "label": "TN AOC Court Costs and Fees",
+      "url": "https://www.tncourts.gov/administration/court-costs-and-fees",
+      "scope": "fees"
+    }
+  ],
+  "service_rules": [
+    {
+      "label": "Tenn. R. Civ. P. Rule 4 (Process)",
+      "url": "https://www.tncourts.gov/rules/rules-civil-procedure",
+      "rule_or_chapter": "Rule 4"
+    }
+  ],
+  "appeal_rules": [
+    {
+      "label": "Tenn. Code Ann. § 27-5-108 (General Sessions appeal)",
+      "url": "https://www.tncourts.gov/",
+      "section_or_chapter": "§ 27-5-108"
+    }
+  ],
+  "post_judgment_collection": [
+    {
+      "label": "Tenn. Code Ann. Title 26 (Execution)",
+      "url": "https://www.tncourts.gov/",
+      "section_or_chapter": "Title 26"
+    },
+    {
+      "label": "Tenn. Code Ann. § 26-2-101 (Exemptions)",
+      "url": "https://www.tncourts.gov/",
+      "section_or_chapter": "§ 26-2-101"
+    }
+  ],
+  "consumer_protection_statutes": [
+    {
+      "label": "Tenn. Code Ann. § 47-18-101 et seq. (Consumer Protection Act)",
+      "url": "https://www.tncourts.gov/",
+      "section_or_chapter": "§ 47-18-101"
+    },
+    {
+      "label": "Tenn. Code Ann. § 47-29-101 (Bad check civil)",
+      "url": "https://www.tncourts.gov/",
+      "section_or_chapter": "§ 47-29-101"
+    }
+  ],
+  "landlord_tenant_statutes": [
+    {
+      "label": "Tenn. Code Ann. § 66-28-301 (Security deposit)",
+      "url": "https://www.tncourts.gov/",
+      "section_or_chapter": "§ 66-28-301"
+    }
+  ],
+  "wage_and_employment_statutes": [
+    {
+      "label": "Tenn. Code Ann. § 50-2-103 (Final wages)",
+      "url": "https://www.tncourts.gov/",
+      "section_or_chapter": "§ 50-2-103"
+    }
+  ],
+  "civil_remedies_statutes": [
+    {
+      "label": "Tenn. Code Ann. § 47-14-121 (Judgment interest)",
+      "url": "https://www.tncourts.gov/",
+      "section_or_chapter": "§ 47-14-121"
+    }
+  ],
+  "county_specific": [],
+  "notes": "Manually curated source list (Pass 1 model defaulted to commercial mirrors).",
+  "_meta": {
+    "state": "Tennessee",
+    "slug": "tennessee",
+    "model": "manually-curated",
+    "generated_at": "2026-04-28T13:20:48.082Z"
+  }
+}
