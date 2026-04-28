@@ -1,0 +1,1652 @@
+{
+  "state": "Utah",
+  "slug": "utah",
+  "abbr": "UT",
+  "as_of": "2026-04-28",
+  "hero": {
+    "individual_limit_dollars": 20000,
+    "business_limit_dollars": 20000,
+    "filing_fee_low_dollars": 60,
+    "filing_fee_high_dollars": 185,
+    "typical_timeline_min_days": 45,
+    "typical_timeline_max_days": 90,
+    "tagline": "Utah's small claims courts offer a streamlined process for resolving monetary disputes up to $20,000, with simplified procedures and no requirement for legal representation.",
+    "source_ids": [
+      "S4",
+      "S13"
+    ]
+  },
+  "at_a_glance": [
+    {
+      "label": "Most you can sue for",
+      "value": "$20,000",
+      "detail": "Same cap for individuals and businesses",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "label": "Filing fee",
+      "value": "$60-$185",
+      "detail": "Tiered by claim amount",
+      "source_ids": [
+        "S13"
+      ]
+    },
+    {
+      "label": "Court",
+      "value": "Justice Court",
+      "detail": "",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Lawyers at trial",
+      "value": "Allowed",
+      "detail": "Permitted but not required",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Appeal window",
+      "value": "10 days",
+      "detail": "Trial de novo in district court",
+      "source_ids": [
+        "S15"
+      ]
+    },
+    {
+      "label": "Recent change",
+      "value": "Increased claim limit",
+      "detail": "As of January 1, 2025, the maximum claim amount increased to $20,000",
+      "source_ids": [
+        "S4"
+      ]
+    }
+  ],
+  "limits": {
+    "individual_dollars": 20000,
+    "business_dollars": 20000,
+    "guarantor_with_fee_max": null,
+    "guarantor_without_fee_max": null,
+    "annual_filing_cap": {
+      "count": null,
+      "threshold_dollars": null,
+      "notes": ""
+    },
+    "split_claims_allowed": false,
+    "split_claims_explanation": "If your claim exceeds $20,000, you cannot split it into multiple claims to fit within the small claims limit. You must either reduce your claim to $20,000 or file in a higher court.",
+    "interest_excluded_from_cap": true,
+    "court_costs_excluded_from_cap": true,
+    "statute": "Utah Code § 78A-8-102",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "claim_categories": [
+    {
+      "id": "contracts",
+      "title": "Contracts and money owed",
+      "blurb": "Utah allows you to file claims for breaches of contract and money owed, with a statute of limitations of 6 years for written contracts and 4 years for oral contracts.",
+      "claims": [
+        {
+          "slug": "written-contract",
+          "name": "Breach of a written contract",
+          "example": "A contractor signed a $15,000 contract to remodel your kitchen, took the deposit, and never completed the work.",
+          "eligibility": "eligible",
+          "claim_statute": "Utah Code § 78B-2-309",
+          "notes": "6-year deadline from breach. Bring the signed contract, payment proof, and any correspondence showing the breach.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "oral-contract",
+          "name": "Breach of an oral contract",
+          "example": "You agreed verbally to lend a friend $5,000, which they promised to repay in a year, but they failed to do so.",
+          "eligibility": "eligible",
+          "claim_statute": "Utah Code § 78B-2-307",
+          "notes": "4-year deadline from breach. Provide evidence of the agreement, such as emails or witness testimony.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "personal-loan",
+          "name": "Unpaid personal loan",
+          "example": "You lent $10,000 to a colleague with the understanding it would be repaid in 6 months, but they haven't paid you back.",
+          "eligibility": "eligible",
+          "claim_statute": "Utah Code § 78B-2-309",
+          "notes": "6-year deadline from breach. Bring any written agreement or proof of the loan and attempts to collect.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "promissory-note",
+          "name": "Default on a promissory note",
+          "example": "A borrower signed a promissory note to repay $8,000 over 12 months but stopped making payments after 3 months.",
+          "eligibility": "eligible",
+          "claim_statute": "Utah Code § 78B-2-309",
+          "notes": "6-year deadline from breach. Present the original promissory note and records of payments made.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unpaid-invoice",
+          "name": "Unpaid invoice for services rendered",
+          "example": "You provided consulting services worth $7,500 to a client who has not paid the invoice issued 3 months ago.",
+          "eligibility": "eligible",
+          "claim_statute": "Utah Code § 78B-2-309",
+          "notes": "6-year deadline from breach. Provide the invoice, service agreement, and any communication regarding payment.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "open-account",
+          "name": "Unpaid balance on an open account",
+          "example": "A customer has an outstanding balance of $3,000 on their account with your business and has ignored payment requests.",
+          "eligibility": "eligible",
+          "claim_statute": "Utah Code § 78B-2-309",
+          "notes": "6-year deadline from breach. Bring account statements, terms of agreement, and records of payment attempts.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unpaid-rent",
+          "name": "Unpaid rent by tenant",
+          "example": "Your tenant owes $4,500 in unpaid rent over the past 3 months and has vacated the property without notice.",
+          "eligibility": "eligible",
+          "claim_statute": "Utah Code § 78B-2-309",
+          "notes": "6-year deadline from breach. Provide the lease agreement, rent ledger, and any communication with the tenant.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "bad-check",
+          "name": "Payment with a bad check",
+          "example": "A customer paid for goods worth $2,000 with a check that was returned for insufficient funds.",
+          "eligibility": "eligible",
+          "claim_statute": "Utah Code § 7-15-1",
+          "notes": "Demand letter required. 30-day notice to the issuer before filing. Bring the bounced check and notice of dishonor.",
+          "damage_boost": "Check amount + service charge up to $40 + civil penalty up to $100 OR 2x check amount, whichever is greater.",
+          "source_ids": [
+            "S21"
+          ]
+        },
+        {
+          "slug": "co-signer",
+          "name": "Co-signer seeking repayment",
+          "example": "You co-signed a $12,000 loan for a friend who defaulted, and now you're seeking repayment from them.",
+          "eligibility": "eligible",
+          "claim_statute": "Utah Code § 78B-2-309",
+          "notes": "6-year deadline from breach. Provide the loan agreement and proof of payments you've made on their behalf.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "consumer-disputes",
+      "title": "Consumer disputes",
+      "blurb": "Utah's small claims courts handle various consumer disputes, with specific statutes providing remedies and protections.",
+      "claims": [
+        {
+          "slug": "defective-product",
+          "name": "Purchase of a defective product",
+          "example": "You bought a $1,500 appliance that stopped working within a month, and the seller refuses to repair or replace it.",
+          "eligibility": "eligible",
+          "claim_statute": "Utah Code § 13-11-1 et seq.",
+          "notes": "4-year deadline from purchase. Bring the purchase receipt, warranty, and any communication with the seller.",
+          "damage_boost": "Possible recovery of attorney fees and up to 3x actual damages under the Utah Consumer Sales Practices Act.",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "bad-service",
+          "name": "Substandard service provided",
+          "example": "A cleaning service charged you $500 but failed to perform the agreed-upon tasks satisfactorily.",
+          "eligibility": "eligible",
+          "claim_statute": "Utah Code § 13-11-1 et seq.",
+          "notes": "4-year deadline from service date. Provide the service agreement, payment proof, and evidence of poor service.",
+          "damage_boost": "Possible recovery of attorney fees and up to 3x actual damages under the Utah Consumer Sales Practices Act.",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "auto-repair",
+          "name": "Unsatisfactory auto repair",
+          "example": "A mechanic charged you $3,000 for repairs that didn't fix the issue, and they refuse to refund or redo the work.",
+          "eligibility": "eligible",
+          "claim_statute": "Utah Code § 13-11-1 et seq.",
+          "notes": "4-year deadline from repair date. Bring the repair invoice, payment proof, and any communication with the mechanic.",
+          "damage_boost": "Possible recovery of attorney fees and up to 3x actual damages under the Utah Consumer Sales Practices Act.",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "contractor",
+          "name": "Contractor failed to complete work",
+          "example": "You paid a contractor $10,000 to renovate your bathroom, but they abandoned the project halfway through.",
+          "eligibility": "eligible",
+          "claim_statute": "Utah Code § 13-11-1 et seq.",
+          "notes": "4-year deadline from breach. Provide the contract, payment records, and evidence of incomplete work.",
+          "damage_boost": "Possible recovery of attorney fees and up to 3x actual damages under the Utah Consumer Sales Practices Act.",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "no-show-vendor",
+          "name": "Vendor failed to deliver goods/services",
+          "example": "You paid $2,500 for catering services for an event, but the vendor never showed up and refuses to refund.",
+          "eligibility": "eligible",
+          "claim_statute": "Utah Code § 13-11-1 et seq.",
+          "notes": "4-year deadline from service date. Bring the service agreement, payment proof, and any communication with the vendor.",
+          "damage_boost": "Possible recovery of attorney fees and up to 3x actual damages under the Utah Consumer Sales Practices Act.",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "subscription-cancellation",
+          "name": "Unauthorized subscription charges",
+          "example": "A company continues to charge your credit card $50 monthly despite multiple cancellation requests.",
+          "eligibility": "eligible",
+          "claim_statute": "Utah Code § 13-11-1 et seq.",
+          "notes": "4-year deadline from first unauthorized charge. Provide bank statements, cancellation requests, and company responses.",
+          "damage_boost": "Possible recovery of attorney fees and up to 3x actual damages under the Utah Consumer Sales Practices Act.",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "used-car",
+          "name": "Purchase of a defective used car",
+          "example": "You bought a used car for $8,000 that broke down within a week, and the dealer refuses to address the issue.",
+          "eligibility": "eligible",
+          "claim_statute": "Utah Code § 13-11-1 et seq.",
+          "notes": "4-year deadline from purchase. Bring the sales contract, payment proof, and any communication with the dealer.",
+          "damage_boost": "Possible recovery of attorney fees and up to 3x actual damages under the Utah Consumer Sales Practices Act.",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "false-advertising",
+          "name": "Misleading advertising leading to loss",
+          "example": "A retailer advertised a product for $500, but charged you $700 at checkout without honoring the advertised price.",
+          "eligibility": "eligible",
+          "claim_statute": "Utah Code § 13-11-1 et seq.",
+          "notes": "4-year deadline from purchase. Provide the advertisement, receipt, and any communication with the retailer.",
+          "damage_boost": "Possible recovery of attorney fees and up to 3x actual damages under the Utah Consumer Sales Practices Act.",
+          "source_ids": [
+            "S19"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "property-damage",
+      "title": "Property damage",
+      "blurb": "Utah's small claims courts address various property damage claims, with specific statutes outlining the procedures and limitations.",
+      "claims": [
+        {
+          "slug": "vehicle-collision",
+          "name": "Damage from a vehicle collision",
+          "example": "Another driver ran a red light and caused $6,000 in damage to your car.",
+          "eligibility": "eligible",
+          "claim_statute": "Utah Code § 78B-2-305",
+          "notes": "3-year deadline from accident date. Bring the police report, repair estimates, and any witness statements.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "neighbor-property",
+          "name": "Neighbor damaged your property",
+          "example": "Your neighbor's tree fell onto your fence, causing $2,500 in damage.",
+          "eligibility": "eligible",
+          "claim_statute": "Utah Code § 78B-2-305",
+          "notes": "3-year deadline from damage date. Provide photos of the damage, repair estimates, and any communication with the neighbor.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "damage-to-rental",
+          "name": "Tenant caused damage to rental property",
+          "example": "A tenant left your rental unit with $4,000 in damages beyond normal wear and tear.",
+          "eligibility": "eligible",
+          "claim_statute": "Utah Code § 78B-2-305",
+          "notes": "3-year deadline from discovery of damage. Bring the lease agreement, move-in/move-out inspection reports, and repair estimates.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "pet-damage",
+          "name": "Damage caused by someone's pet",
+          "example": "A neighbor's dog entered your yard and destroyed $1,500 worth of landscaping.",
+          "eligibility": "eligible",
+          "claim_statute": "Utah Code § 78B-2-305",
+          "notes": "3-year deadline from damage date. Provide photos of the damage, repair estimates, and any communication with the pet owner.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "property-in-custody",
+          "name": "Damage to property left in someone's care",
+          "example": "You left your laptop with a repair shop, and they returned it with a cracked screen, causing $800 in damage.",
+          "eligibility": "eligible",
+          "claim_statute": "Utah Code § 78B-2-305",
+          "notes": "3-year deadline from damage date. Bring the service agreement, photos of the damage, and any communication with the shop.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "landlord-tenant",
+      "title": "Landlord-tenant disputes",
+      "blurb": "Utah's small claims courts handle monetary disputes between landlords and tenants, excluding eviction proceedings.",
+      "claims": [
+        {
+          "slug": "security-deposit",
+          "name": "Failure to return security deposit",
+          "example": "Your landlord withheld your $1,200 security deposit without providing an itemized list of damages.",
+          "eligibility": "eligible",
+          "claim_statute": "Utah Code § 57-17-3",
+          "notes": "4-year deadline from lease termination. Provide the lease agreement, move-out inspection report, and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S22"
+          ]
+        },
+        {
+          "slug": "deposit-not-itemized",
+          "name": "No itemized list for deposit deductions",
+          "example": "Your landlord deducted $500 from your deposit but didn't provide an itemized list of damages.",
+          "eligibility": "eligible",
+          "claim_statute": "Utah Code § 57-17-3",
+          "notes": "4-year deadline from lease termination. Bring the lease agreement, move-out inspection report, and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S22"
+          ]
+        },
+        {
+          "slug": "uninhabitable-rental",
+          "name": "Landlord failed to maintain habitable premises",
+          "example": "Your apartment had no heating during winter, and the landlord refused to fix it, forcing you to spend $2,000 on alternative accommodations.",
+          "eligibility": "eligible",
+          "claim_statute": "Utah Code § 57-22-4",
+          "notes": "4-year deadline from issue occurrence. Provide the lease agreement, photos of the issue, and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S22"
+          ]
+        },
+        {
+          "slug": "wrongful-retention-property",
+          "name": "Landlord retained tenant's personal property",
+          "example": "After moving out, your landlord kept your furniture worth $3,000, claiming it was abandoned.",
+          "eligibility": "eligible",
+          "claim_statute": "Utah Code § 57-17-3",
+          "notes": "4-year deadline from lease termination. Bring the lease agreement, inventory of items, and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S22"
+          ]
+        },
+        {
+          "slug": "illegal-eviction",
+          "name": "Landlord conducted an illegal eviction",
+          "example": "Your landlord changed the locks without notice, preventing you from accessing your belongings.",
+          "eligibility": "eligible",
+          "claim_statute": "Utah Code § 57-17-3",
+          "notes": "4-year deadline from eviction date. Provide the lease agreement, photos of the changed locks, and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S22"
+          ]
+        },
+        {
+          "slug": "unreturned-prepaid-rent",
+          "name": "Landlord failed to return prepaid rent",
+          "example": "You paid the last month's rent in advance, but after moving out early, the landlord refused to refund the unused portion.",
+          "eligibility": "eligible",
+          "claim_statute": "Utah Code § 57-17-3",
+          "notes": "4-year deadline from lease termination. Bring the lease agreement, payment records, and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S22"
+          ]
+        },
+        {
+          "slug": "unpaid-rent-by-tenant",
+          "name": "Tenant failed to pay rent",
+          "example": "Your tenant missed two months of rent totaling $3,000 and has since vacated the property.",
+          "eligibility": "eligible",
+          "claim_statute": "Utah Code § 78B-2-309",
+          "notes": "6-year deadline from breach. Provide the lease agreement, rent ledger, and any communication with the tenant.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "repair-and-deduct",
+          "name": "Tenant deducted repair costs from rent",
+          "example": "You repaired a broken heater costing $600 and deducted it from your rent, but the landlord is now demanding full payment.",
+          "eligibility": "eligible",
+          "claim_statute": "Utah Code § 57-22-4",
+          "notes": "4-year deadline from repair date. Provide the lease agreement, repair receipts, and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S22"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "employment-and-wages",
+      "title": "Employment and wage disputes",
+      "blurb": "Utah's small claims courts handle various employment-related disputes, with specific statutes outlining the procedures and limitations.",
+      "claims": [
+        {
+          "slug": "unpaid-wages",
+          "name": "Employer failed to pay wages",
+          "example": "Your employer owes you $2,000 for hours worked but has refused to pay.",
+          "eligibility": "eligible",
+          "claim_statute": "Utah Code § 34-28-5",
+          "notes": "1-year deadline from wage due date. Provide pay stubs, timesheets, and any communication with the employer.",
+          "damage_boost": "",
+          "source_ids": [
+            "S24"
+          ]
+        },
+        {
+          "slug": "final-paycheck",
+          "name": "Employer withheld final paycheck",
+          "example": "After resigning, your employer failed to provide your final paycheck of $1,500.",
+          "eligibility": "eligible",
+          "claim_statute": "Utah Code § 34-28-5",
+          "notes": "1-year deadline from wage due date. Bring resignation letter, pay stubs, and any communication with the employer.",
+          "damage_boost": "",
+          "source_ids": [
+            "S24"
+          ]
+        },
+        {
+          "slug": "unpaid-commissions",
+          "name": "Employer failed to pay earned commissions",
+          "example": "You earned $3,000 in sales commissions, but your employer refuses to pay.",
+          "eligibility": "eligible",
+          "claim_statute": "Utah Code § 34-28-5",
+          "notes": "1-year deadline from commission due date. Provide sales records, commission agreements, and any communication with the employer.",
+          "damage_boost": "",
+          "source_ids": [
+            "S24"
+          ]
+        },
+        {
+          "slug": "unpaid-overtime",
+          "name": "Employer failed to pay overtime wages",
+          "example": "You worked 10 hours of overtime last month but were only paid your regular hourly rate.",
+          "eligibility": "eligible",
+          "claim_statute": "Utah Code § 34-28-5",
+          "notes": "1-year deadline from wage due date. Bring timesheets, pay stubs, and any communication with the employer.",
+          "damage_boost": "",
+          "source_ids": [
+            "S24"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "personal-claims",
+      "title": "Personal claims",
+      "blurb": "Utah's small claims courts address various personal claims, with specific statutes outlining the procedures and limitations.",
+      "claims": [
+        {
+          "slug": "minor-injury",
+          "name": "Minor personal injury",
+          "example": "You slipped on an unmarked wet floor in a store, resulting in $5,000 in medical bills.",
+          "eligibility": "eligible",
+          "claim_statute": "Utah Code § 78B-2-307",
+          "notes": "4-year deadline from injury date. Provide medical records, bills, and any incident reports.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "loaned-property",
+          "name": "Failure to return loaned property",
+          "example": "You lent a friend your $1,200 camera, and they refuse to return it.",
+          "eligibility": "eligible",
+          "claim_statute": "Utah Code § 78B-2-307",
+          "notes": "4-year deadline from demand for return. Provide proof of ownership, loan agreement, and any communication with the borrower.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "civil-theft",
+          "name": "Theft of personal property",
+          "example": "A neighbor took your $800 bicycle without permission and refuses to return it.",
+          "eligibility": "eligible",
+          "claim_statute": "Utah Code § 78B-2-307",
+          "notes": "4-year deadline from theft date. Provide proof of ownership, police report, and any communication with the neighbor.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vehicle-specific",
+      "title": "Vehicle-specific claims",
+      "blurb": "Utah's small claims courts handle various vehicle-related disputes, with specific statutes outlining the procedures and limitations.",
+      "claims": [
+        {
+          "slug": "mechanic-dispute",
+          "name": "Dispute over mechanic's charges",
+          "example": "A mechanic charged you $2,500 for repairs you didn't authorize.",
+          "eligibility": "eligible",
+          "claim_statute": "Utah Code § 13-11-1 et seq.",
+          "notes": "4-year deadline from repair date. Provide the repair invoice, payment proof, and any communication with the mechanic.",
+          "damage_boost": "Possible recovery of attorney fees and up to 3x actual damages under the Utah Consumer Sales Practices Act.",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "wrongful-tow",
+          "name": "Vehicle was wrongfully towed",
+          "example": "Your car was towed from a legal parking spot, and the towing company charged you $300 for its return.",
+          "eligibility": "eligible",
+          "claim_statute": "Utah Code § 13-11-1 et seq.",
+          "notes": "4-year deadline from tow date. Provide photos of the parking spot, tow notice, and any communication with the towing company.",
+          "damage_boost": "Possible recovery of attorney fees and up to 3x actual damages under the Utah Consumer Sales Practices Act.",
+          "source_ids": [
+            "S19"
+          ]
+        }
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "category": "Eviction (unlawful detainer)",
+      "explanation": "Small claims courts in Utah do not have jurisdiction over eviction proceedings.",
+      "where_to_go_instead": "District Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Title to real estate",
+      "explanation": "Disputes involving the title to real property are beyond the jurisdiction of small claims courts.",
+      "where_to_go_instead": "District Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Defamation",
+      "explanation": "Claims involving defamation, such as libel or slander, are not handled in small claims courts.",
+      "where_to_go_instead": "District Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Malpractice",
+      "explanation": "Professional malpractice claims require more complex proceedings than small claims courts can provide.",
+      "where_to_go_instead": "District Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Family law matters",
+      "explanation": "Issues such as divorce, child custody, and support are outside the jurisdiction of small claims courts.",
+      "where_to_go_instead": "Family Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Probate matters",
+      "explanation": "Disputes involving wills, estates, and trusts are not handled in small claims courts.",
+      "where_to_go_instead": "Probate Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Claims against the federal government",
+      "explanation": "Small claims courts do not have jurisdiction over claims against federal entities.",
+      "where_to_go_instead": "Federal Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Class actions",
+      "explanation": "Class action lawsuits are beyond the scope of small claims courts.",
+      "where_to_go_instead": "District Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Injunctions and specific performance",
+      "explanation": "Small claims courts can only award monetary damages, not equitable relief.",
+      "where_to_go_instead": "District Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Workers' compensation claims",
+      "explanation": "These claims are handled by the Utah Labor Commission, not small claims courts.",
+      "where_to_go_instead": "Utah Labor Commission",
+      "source_ids": [
+        "S1"
+      ]
+    }
+  ],
+  "damages": {
+    "compensatory_allowed": true,
+    "punitive_allowed": false,
+    "punitive_explanation": "Punitive damages are not awarded in Utah's small claims courts; however, statutory penalties may apply in certain cases, such as bad check claims.",
+    "statutory_multipliers": [
+      {
+        "claim": "Bad check (after 30-day notice)",
+        "multiplier": "2x check amount",
+        "explanation": "Check amount + service charge up to $40 + civil penalty up to $100 OR 2x check amount, whichever is greater.",
+        "statute": "Utah Code § 7-15-1",
+        "source_ids": [
+          "S21"
+        ]
+      }
+    ],
+    "attorney_fees_recoverable": "sometimes",
+    "attorney_fees_explanation": "Attorney fees may be recoverable in cases involving violations of the Utah Consumer Sales Practices Act or bad check claims.",
+    "prejudgment_interest_rate_pct": null,
+    "prejudgment_interest_statute": "",
+    "postjudgment_interest_rate_pct": null,
+    "postjudgment_interest_type": "simple",
+    "postjudgment_interest_statute": "",
+    "postjudgment_interest_notes": "",
+    "filing_and_service_fees_recoverable_from_loser": true,
+    "source_ids": [
+      "S21"
+    ]
+  },
+  "where_to_file": {
+    "court_name": "Justice Court",
+    "parent_court": "Utah State Courts",
+    "venue_rules": [
+      {
+        "scenario": "Most cases (the default)",
+        "filing_options": [
+          "County where the defendant resides",
+          "County where the claim arose"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Where contract was performed",
+        "filing_options": [
+          "County where performance was due"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Where injury or damage occurred",
+        "filing_options": [
+          "County where the event occurred"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Multiple defendants",
+        "filing_options": [
+          "Any county where one defendant resides"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Out-of-state defendant",
+        "filing_options": [
+          "Where the cause of action arose"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "consequences_of_wrong_venue": "Filing in the wrong venue may result in dismissal or transfer of the case, potentially causing delays and additional costs.",
+    "e_filing_available": "varies",
+    "e_filing_notes": "Availability of e-filing depends on the specific Justice Court; check with the court where you plan to file.",
+    "e_filing_portal": null,
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "fees": {
+    "filing_fee_tiers": [
+      {
+        "range_label": "$0 to $2,000",
+        "range_min": 0,
+        "range_max": 2000,
+        "fee_dollars": 60,
+        "source_ids": [
+          "S13"
+        ]
+      },
+      {
+        "range_label": "$2,001 to $7,500",
+        "range_min": 2001,
+        "range_max": 7500,
+        "fee_dollars": 100,
+        "source_ids": [
+          "S13"
+        ]
+      },
+      {
+        "range_label": "$7,501 to $20,000",
+        "range_min": 7501,
+        "range_max": 20000,
+        "fee_dollars": 185,
+        "source_ids": [
+          "S13"
+        ]
+      }
+    ],
+    "frequent_filer": {
+      "threshold_per_year": null,
+      "fee_dollars": null,
+      "notes": ""
+    },
+    "service_fees": [
+      {
+        "method": "Sheriff (personal service)",
+        "amount_label": "Varies",
+        "notes": "Fees vary by county; contact the local sheriff's office for exact amounts.",
+        "source_ids": [
+          "S13"
+        ]
+      },
+      {
+        "method": "Certified mail by clerk",
+        "amount_label": "Varies",
+        "notes": "Fees depend on current postal rates.",
+        "source_ids": [
+          "S13"
+        ]
+      },
+      {
+        "method": "Private process server",
+        "amount_label": "Varies",
+        "notes": "Fees vary by provider; contact local process servers for quotes.",
+        "source_ids": [
+          "S13"
+        ]
+      }
+    ],
+    "waiver": {
+      "forms": [
+        {
+          "number": "AOC-IFP",
+          "name": "Affidavit of Impecuniosity",
+          "url": "",
+          "source_ids": [
+            "S13"
+          ]
+        }
+      ],
+      "eligibility_bullets": [
+        "Receiving need-based public assistance (SNAP, TANF, SSI)",
+        "Household income below 125% federal poverty line"
+      ],
+      "coverage_notes": "The waiver covers filing fees; service fees may still apply.",
+      "if_you_win_notes": "If you win, the waived fee is added to the judgment against the loser."
+    },
+    "other_fees": [
+      {
+        "name": "Subpoena issuance",
+        "amount_label": "$10",
+        "notes": "Plus witness fee per day.",
+        "source_ids": [
+          "S13"
+        ]
+      },
+      {
+        "name": "Appeal filing",
+        "amount_label": "$225",
+        "notes": "An additional $10 fee is payable to the justice court at the time the small claims notice of appeal is filed.",
+        "source_ids": [
+          "S13"
+        ]
+      },
+      {
+        "name": "Writ of garnishment",
+        "amount_label": "$50",
+        "notes": "Post-judgment.",
+        "source_ids": [
+          "S13"
+        ]
+      }
+    ],
+    "fees_recoverable_from_loser_notes": "If you win, filing fee and reasonable service costs are added to the judgment.",
+    "source_ids": [
+      "S13"
+    ]
+  },
+  "statute_of_limitations": {
+    "entries": [
+      {
+        "id": "written-contract",
+        "claim": "Written contract",
+        "years": 6,
+        "clock_starts": "Date of breach",
+        "statute": "Utah Code § 78B-2-309",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "oral-contract",
+        "claim": "Oral contract",
+        "years": 4,
+        "clock_starts": "Date of breach",
+        "statute": "Utah Code § 78B-2-307",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "sale-of-goods",
+        "claim": "Sale of goods (UCC)",
+        "years": 4,
+        "clock_starts": "Date of breach",
+        "statute": "Utah Code § 70A-2-725",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "promissory-note",
+        "claim": "Promissory note",
+        "years": 6,
+        "clock_starts": "Date of default",
+        "statute": "Utah Code § 78B-2-309",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "open-account",
+        "claim": "Open account / credit card debt",
+        "years": 4,
+        "clock_starts": "Date of last payment or charge",
+        "statute": "Utah Code § 78B-2-307",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "personal-injury",
+        "claim": "Personal injury",
+        "years": 4,
+        "clock_starts": "Date of injury",
+        "statute": "Utah Code § 78B-2-307",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "property-damage",
+        "claim": "Property damage",
+        "years": 3,
+        "clock_starts": "Date of damage",
+        "statute": "Utah Code § 78B-2-305",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "fraud",
+        "claim": "Fraud",
+        "years": 3,
+        "clock_starts": "Date of discovery",
+        "statute": "Utah Code § 78B-2-305",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "bad-check",
+        "claim": "Bad check",
+        "years": 1,
+        "clock_starts": "Date of dishonor",
+        "statute": "Utah Code § 7-15-1",
+        "notes": "",
+        "source_ids": [
+          "S21"
+        ]
+      },
+      {
+        "id": "unpaid-wages",
+        "claim": "Unpaid wages",
+        "years": 1,
+        "clock_starts": "Date wages were due",
+        "statute": "Utah Code § 34-28-5",
+        "notes": "",
+        "source_ids": [
+          "S24"
+        ]
+      },
+      {
+        "id": "security-deposit",
+        "claim": "Security deposit",
+        "years": 4,
+        "clock_starts": "Date of lease termination",
+        "statute": "Utah Code § 57-17-3",
+        "notes": "",
+        "source_ids": [
+          "S22"
+        ]
+      },
+      {
+        "id": "judgment-enforcement",
+        "claim": "Judgment enforcement",
+        "years": 8,
+        "clock_starts": "Date of judgment",
+        "statute": "Utah Code § 78B-2-311",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "discovery_rule_notes": "The discovery rule applies to fraud claims, starting the clock when the fraud is discovered.",
+    "tolling_notes": "The statute of limitations may be tolled if the defendant is out of state, the plaintiff is a minor, or in cases of bankruptcy.",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "pre_filing": {
+    "demand_letter_required": false,
+    "demand_letter_recommended": true,
+    "demand_letter_notes": "While not required, sending a demand letter can often resolve disputes without court intervention. For bad check claims, a 30-day notice is required before filing.",
+    "bad_check_notice_rule": "A 30-day written notice must be sent to the issuer of a bad check before filing a claim, demanding payment of the check amount plus applicable fees.",
+    "wage_claim_demand_rule": "No specific demand requirement for wage claims, but it's advisable to request payment in writing before filing.",
+    "government_claim_required": false,
+    "government_claim_deadline_days": null,
+    "government_claim_notes": "",
+    "landlord_tenant_pre_filing_notes": "Landlords must provide an itemized list of damages within 30 days of lease termination when withholding any portion of a security deposit.",
+    "consumer_protection_notes": "Under the Utah Consumer Sales Practices Act, consumers may recover attorney fees and up to three times actual damages for deceptive practices.",
+    "mandatory_mediation_before_filing": "none",
+    "arbitration_clauses_enforced": true,
+    "source_ids": [
+      "S21"
+    ]
+  },
+  "forms": [
+    {
+      "number": "SC-1",
+      "name": "Affidavit and Summons",
+      "description": "Initiates a small claims case by stating the claim and summoning the defendant to court.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "",
+      "source_ids": [
+        "S12"
+      ]
+    },
+    {
+      "number": "SC-2",
+      "name": "Counter Affidavit",
+      "description": "Allows the defendant to file a counterclaim against the plaintiff.",
+      "filed_by": "defendant",
+      "required": false,
+      "group": "counterclaim",
+      "url": "",
+      "source_ids": [
+        "S12"
+      ]
+    },
+    {
+      "number": "SC-3",
+      "name": "Notice of Appeal",
+      "description": "Filed to appeal a small claims judgment to the district court.",
+      "filed_by": "either",
+      "required": false,
+      "group": "appeal",
+      "url": "",
+      "source_ids": [
+        "S12"
+      ]
+    },
+    {
+      "number": "SC-4",
+      "name": "Satisfaction of Judgment",
+      "description": "Filed by the plaintiff to indicate that the judgment has been paid in full.",
+      "filed_by": "plaintiff",
+      "required": false,
+      "group": "after-judgment",
+      "url": "",
+      "source_ids": [
+        "S12"
+      ]
+    },
+    {
+      "number": "SC-5",
+      "name": "Motion to Set Aside Judgment",
+      "description": "Filed to request the court to vacate or modify a judgment.",
+      "filed_by": "either",
+      "required": false,
+      "group": "after-judgment",
+      "url": "",
+      "source_ids": [
+        "S12"
+      ]
+    },
+    {
+      "number": "SC-6",
+      "name": "Writ of Garnishment",
+      "description": "Filed to initiate garnishment of the defendant's wages or bank accounts to satisfy a judgment.",
+      "filed_by": "plaintiff",
+      "required": false,
+      "group": "after-judgment",
+      "url": "",
+      "source_ids": [
+        "S12"
+      ]
+    },
+    {
+      "number": "SC-7",
+      "name": "Writ of Execution",
+      "description": "Filed to authorize the seizure of the defendant's property to satisfy a judgment.",
+      "filed_by": "plaintiff",
+      "required": false,
+      "group": "after-judgment",
+      "url": "",
+      "source_ids": [
+        "S12"
+      ]
+    },
+    {
+      "number": "SC-8",
+      "name": "Affidavit of Impecuniosity",
+      "description": "Filed to request a waiver of court fees due to financial hardship.",
+      "filed_by": "plaintiff",
+      "required": false,
+      "group": "fee-waiver",
+      "url": "",
+      "source_ids": [
+        "S12"
+      ]
+    }
+  ],
+  "service": {
+    "who_can_serve": [
+      "Sheriff",
+      "Certified mail by clerk",
+      "Private process server"
+    ],
+    "methods": [
+      {
+        "name": "Sheriff personal service",
+        "description": "Sheriff or constable personally hands the papers to the defendant.",
+        "pros": [
+          "Reliable",
+          "Official"
+        ],
+        "cons": [
+          "May be more expensive",
+          "Potential delays"
+        ],
+        "source_ids": [
+          "S14"
+        ]
+      },
+      {
+        "name": "Certified mail by clerk",
+        "description": "Court clerk sends the papers via certified mail to the defendant.",
+        "pros": [
+          "Cost-effective",
+          "Proof of delivery"
+        ],
+        "cons": [
+          "Defendant may refuse delivery",
+          "Less personal"
+        ],
+        "source_ids": [
+          "S14"
+        ]
+      },
+      {
+        "name": "Private process server",
+        "description": "A licensed individual serves the papers to the defendant.",
+        "pros": [
+          "Flexible scheduling",
+          "Can locate evasive defendants"
+        ],
+        "cons": [
+          "Additional cost",
+          "Varies in reliability"
+        ],
+        "source_ids": [
+          "S14"
+        ]
+      }
+    ],
+    "in_county_days_before_hearing": 30,
+    "out_of_county_days_before_hearing": 30,
+    "proof_of_service_form": {
+      "number": "SC-9",
+      "name": "Proof of Service"
+    },
+    "proof_filing_deadline_days_before_hearing": 5,
+    "business_service_rule": "Serve the registered agent or an officer of the corporation; for sole proprietors, serve the individual directly.",
+    "out_of_state_defendant_notes": "Service must comply with Utah's long-arm statute and the laws of the state where the defendant resides.",
+    "cant_find_defendant_notes": "If the defendant cannot be located, the court may allow service by publication as a last resort.",
+    "avoiding_service_notes": "If the defendant is evading service, document all attempts and consider alternative methods like service by publication.",
+    "source_ids": [
+      "S14"
+    ]
+  },
+  "response_and_default": {
+    "must_file_written_answer": false,
+    "response_deadline_days": 0,
+    "response_notes": "Defendants are not required to file a written answer but must appear at the scheduled hearing.",
+    "default_process": "If the defendant fails to appear, the court may enter a default judgment in favor of the plaintiff.",
+    "prove_up_required": true,
+    "prove_up_notes": "Even if the defendant defaults, the plaintiff must present evidence to support the claim before a judgment is entered.",
+    "motion_to_vacate_form": {
+      "number": "SC-5",
+      "name": "Motion to Set Aside Judgment"
+    },
+    "motion_to_vacate_deadline_days": 15,
+    "motion_to_vacate_lack_of_notice_days": 180,
+    "motion_to_vacate_appeal_deadline_days": 10,
+    "motion_to_vacate_appeal_notes": "If the motion to vacate is denied, the defendant may appeal the decision within 10 days.",
+    "source_ids": [
+      "S11"
+    ]
+  },
+  "counterclaim": {
+    "allowed": true,
+    "form": {
+      "number": "SC-2",
+      "name": "Counter Affidavit"
+    },
+    "same_monetary_limit": true,
+    "service_deadline_in_county_days": 15,
+    "service_deadline_out_of_county_days": 15,
+    "transfer_to_higher_court_available": false,
+    "transfer_to_higher_court_statute": "",
+    "transfer_to_higher_court_notes": "",
+    "source_ids": [
+      "S11"
+    ]
+  },
+  "hearing": {
+    "lawyers_allowed": "yes",
+    "lawyers_allowed_notes": "Parties may be represented by attorneys, but it is not required.",
+    "format": "Bench trial with each side presenting their case; typically lasts 30-60 minutes.",
+    "presider": "judge",
+    "burden_of_proof": "preponderance",
+    "what_to_bring": [
+      "Originals of any contracts",
+      "Receipts and bank records",
+      "Photos and videos",
+      "Names and contact info for witnesses"
+    ],
+    "subpoena_form": {
+      "number": "SC-10",
+      "name": "Subpoena"
+    },
+    "witness_fee_per_day_dollars": 18.5,
+    "free_interpreters": true,
+    "interpreter_request_process": "Request an interpreter from the court clerk as soon as possible before the hearing.",
+    "jury_option": false,
+    "decision_timing": "On the spot or mailed within a few weeks.",
+    "on_site_mediation": "by county",
+    "on_site_mediation_notes": "Some counties offer mediation services on the day of the hearing; check with the local court.",
+    "source_ids": [
+      "S11"
+    ]
+  },
+  "appeals": {
+    "who_can_appeal": "either",
+    "deadline_days": 10,
+    "fee_dollars": 225,
+    "type": "trial de novo",
+    "type_notes": "The appeal is a new trial in the district court, as if the original trial had not occurred.",
+    "attorneys_allowed_on_appeal": true,
+    "bond_required": false,
+    "bond_amount_notes": "",
+    "automatic_stay_on_appeal": true,
+    "default_judgment_appealable": true,
+    "default_judgment_notes": "A default judgment can be appealed within the same 10-day window.",
+    "notice_of_appeal_form": {
+      "number": "SC-3",
+      "name": "Notice of Appeal"
+    },
+    "frivolous_appeal_penalty_dollars": null,
+    "frivolous_appeal_statute": "",
+    "frivolous_appeal_notes": "",
+    "source_ids": [
+      "S15"
+    ]
+  },
+  "collection": {
+    "payment_deadline_typical_days": 30,
+    "post_judgment_interest_rate_pct": null,
+    "post_judgment_interest_statute": "",
+    "post_judgment_interest_notes": "",
+    "methods": [
+      {
+        "id": "wage-garnishment",
+        "name": "Wage garnishment",
+        "blurb": "Have a portion of debtor's wages withheld until the judgment is paid.",
+        "description": "File a writ of garnishment with the court, serve the employer, and the employer withholds and remits a portion of the debtor's wages to satisfy the judgment.",
+        "forms": [
+          {
+            "number": "SC-6",
+            "name": "Writ of Garnishment"
+          }
+        ],
+        "estimated_cost": "$50 plus service fees",
+        "effectiveness_notes": "Most effective when debtor is W-2 employed at a stable job.",
+        "exemptions": [
+          "75% of disposable earnings (federal CCPA floor)"
+        ],
+        "source_ids": [
+          "S18"
+        ]
+      },
+      {
+        "id": "bank-levy",
+        "name": "Bank levy",
+        "blurb": "Seize funds from debtor's bank account to satisfy the judgment.",
+        "description": "File a writ of garnishment targeting the debtor's bank account, serve the bank, and the bank freezes and remits funds to satisfy the judgment.",
+        "forms": [
+          {
+            "number": "SC-6",
+            "name": "Writ of Garnishment"
+          }
+        ],
+        "estimated_cost": "$50 plus service fees",
+        "effectiveness_notes": "Effective if debtor maintains sufficient funds in bank accounts.",
+        "exemptions": [
+          "Certain amounts may be exempt under state law"
+        ],
+        "source_ids": [
+          "S18"
+        ]
+      },
+      {
+        "id": "property-lien",
+        "name": "Property lien",
+        "blurb": "Place a lien on debtor's real property to secure the judgment.",
+        "description": "File an abstract of judgment with the county recorder to place a lien on the debtor's real property, which must be satisfied upon sale or refinancing.",
+        "forms": [
+          {
+            "number": "SC-11",
+            "name": "Abstract of Judgment"
+          }
+        ],
+        "estimated_cost": "$50 plus recording fees",
+        "effectiveness_notes": "Effective if debtor owns real property and intends to sell or refinance.",
+        "exemptions": [
+          "Homestead exemptions may apply"
+        ],
+        "source_ids": [
+          "S17"
+        ]
+      },
+      {
+        "id": "writ-of-execution",
+        "name": "Writ of execution",
+        "blurb": "Seize and sell debtor's non-exempt property to satisfy the judgment.",
+        "description": "File a writ of execution with the court, serve the debtor, and law enforcement seizes and sells non-exempt property to satisfy the judgment.",
+        "forms": [
+          {
+            "number": "SC-7",
+            "name": "Writ of Execution"
+          }
+        ],
+        "estimated_cost": "$50 plus sheriff fees",
+        "effectiveness_notes": "Effective if debtor owns valuable non-exempt property.",
+        "exemptions": [
+          "Certain personal property may be exempt under state law"
+        ],
+        "source_ids": [
+          "S17"
+        ]
+      }
+    ],
+    "wage_garnishment_max_pct_of_disposable": 25,
+    "judgment_lifespan_years": 8,
+    "judgment_renewal_process": "File a motion to renew the judgment before it expires; renewal extends the judgment for another 8 years.",
+    "debtor_exam_form": {
+      "number": "SC-12",
+      "name": "Order to Show Cause"
+    },
+    "exempt_assets": [
+      "Homestead — $42,000",
+      "Vehicle — $3,000",
+      "Retirement accounts (federally and state-protected)",
+      "Social Security and federal benefits"
+    ],
+    "bankruptcy_effect_notes": "Filing for bankruptcy imposes an automatic stay on collection efforts; certain judgments may be discharged in bankruptcy.",
+    "satisfaction_of_judgment_form": {
+      "number": "SC-4",
+      "name": "Satisfaction of Judgment"
+    },
+    "priority_notes": "Priority among multiple judgment creditors is generally determined by the order in which liens are recorded.",
+    "source_ids": [
+      "S17"
+    ]
+  },
+  "businesses": {
+    "self_representation_allowed": true,
+    "self_representation_notes": "Businesses can represent themselves in small claims court without an attorney.",
+    "can_send_employee": true,
+    "can_send_attorney": true,
+    "non_attorney_representation_form": {
+      "number": "SC-13",
+      "name": "Authorization to Appear"
+    },
+    "insurance_adjuster_allowed": false,
+    "fictitious_name_form": {
+      "number": "SC-14",
+      "name": "Fictitious Business Name Statement"
+    },
+    "fictitious_name_notes": "Businesses operating under a fictitious name must file a statement with the state.",
+    "sole_proprietor_employee_exception": "Sole proprietors can send a designated employee to represent them in court.",
+    "out_of_state_business_must_register": true,
+    "out_of_state_business_statute": "Utah Code § 16-10a-1501",
+    "licensing_notes": "Unlicensed contractors may face limitations in enforcing contracts in court.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "county_variations_material": false,
+  "county_variations": [],
+  "pitfalls": [
+    {
+      "title": "Filing in the wrong venue",
+      "what_happens": "Filing in the incorrect court can lead to dismissal or transfer, causing delays and additional costs.",
+      "how_to_avoid": "Ensure you file in the county where the defendant resides or where the claim arose.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Exceeding the monetary limit",
+      "what_happens": "Claims exceeding $20,000 are not eligible for small claims court and must be filed in a higher court.",
+      "how_to_avoid": "Verify that your claim amount, excluding interest and court costs, does not exceed $20,000.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "title": "Missing the statute of limitations",
+      "what_happens": "Filing after the statute of limitations has expired will result in dismissal of your case.",
+      "how_to_avoid": "Be aware of the specific time limits for your type of claim and file accordingly.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "title": "Improper service of process",
+      "what_happens": "Failure to properly serve the defendant can delay proceedings or result in dismissal.",
+      "how_to_avoid": "Follow the court's rules for service of process carefully, using approved methods.",
+      "source_ids": [
+        "S14"
+      ]
+    },
+    {
+      "title": "Not bringing necessary evidence",
+      "what_happens": "Lack of evidence can weaken your case and lead to an unfavorable outcome.",
+      "how_to_avoid": "Gather and bring all relevant documents, photos, and witness information to court.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Failing to collect on a judgment",
+      "what_happens": "Winning a judgment does not guarantee payment; you may need to take additional steps to collect.",
+      "how_to_avoid": "Familiarize yourself with post-judgment collection methods and be prepared to use them.",
+      "source_ids": [
+        "S17"
+      ]
+    }
+  ],
+  "recent_changes": [
+    {
+      "date": "2025-01-01",
+      "title": "Increase in small claims monetary limit",
+      "description": "The maximum amount for small claims cases increased from $15,000 to $20,000.",
+      "bill_or_rule_citation": "Utah Code § 78A-8-102",
+      "source_ids": [
+        "S4"
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Do I need a lawyer?",
+      "answer": "No, you are not required to have a lawyer in small claims court. The process is designed to be accessible for individuals representing themselves.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "How long does it take?",
+      "answer": "It typically takes at least 45 days to get a judgment in small claims court, depending on the court's schedule and the specifics of your case.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "What's the maximum I can sue for?",
+      "answer": "As of January 1, 2025, the maximum amount you can sue for in Utah's small claims court is $20,000, excluding interest and court costs.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "question": "What happens if the defendant doesn't show up?",
+      "answer": "If the defendant fails to appear at the scheduled hearing, the court may enter a default judgment in favor of the plaintiff.",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "question": "Can I appeal?",
+      "answer": "Yes, either party can appeal a small claims judgment by filing a notice of appeal within 10 days of the judgment.",
+      "source_ids": [
+        "S15"
+      ]
+    },
+    {
+      "question": "How long is a judgment good for?",
+      "answer": "A small claims judgment in Utah is valid for 8 years and can be renewed before it expires.",
+      "source_ids": [
+        "S4"
+      ]
+    }
+  ],
+  "state_specific_notes": [
+    "Utah's small claims courts have jurisdiction over monetary disputes up to $20,000.",
+    "Eviction proceedings are not handled in small claims court and must be filed in district court.",
+    "The statute of limitations for written contracts is 6 years, while for oral contracts it is 4 years.",
+    "Attorney fees may be recoverable in cases involving violations of the Utah Consumer Sales Practices Act.",
+    "A 30-day written notice is required before filing a claim for a bad check."
+  ],
+  "_extras": {
+    "interesting_findings": [
+      "Utah's small claims courts offer a streamlined process for resolving monetary disputes up to $20,000, with simplified procedures and no requirement for legal representation."
+    ]
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "label": "Utah Courts Small Claims Overview",
+      "url": "https://www.utcourts.gov/en/self-help/case-categories/small-claims.html",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S4",
+      "label": "Utah Code § 78A-8-102 (Small Claims Jurisdiction)",
+      "url": "https://le.utah.gov/xcode/Title78A/Chapter8/78A-8-S102.html",
+      "primary": true,
+      "citation": "Utah Code § 78A-8-102"
+    },
+    {
+      "id": "S11",
+      "label": "Utah Rules of Small Claims Procedure",
+      "url": "https://www.utcourts.gov/en/rules-regulations/rules/small-claims-procedure.html",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S13",
+      "label": "Utah Court Fees (including Small Claims)",
+      "url": "https://www.utcourts.gov/en/self-help/resources/fees.html",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S14",
+      "label": "Service of Process — Utah Rules of Civil Procedure Rule 4",
+      "url": "https://www.utcourts.gov/en/rules-regulations/rules/civil-procedure.html#rule_4",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S15",
+      "label": "Appeals from Small Claims — Utah Rules of Small Claims Procedure Rule 12",
+      "url": "https://www.utcourts.gov/en/rules-regulations/rules/small-claims-procedure.html#rule_12",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S17",
+      "label": "Utah Code § 78B-5-301 (Execution Upon Judgment)",
+      "url": "https://le.utah.gov/xcode/Title78B/Chapter5/78B-5-S301.html",
+      "primary": true,
+      "citation": "Utah Code § 78B-5-301"
+    },
+    {
+      "id": "S18",
+      "label": "Utah Code § 78B-5-302 (Writ of Garnishment — Procedures)",
+      "url": "https://le.utah.gov/xcode/Title78B/Chapter5/78B-5-S302.html",
+      "primary": true,
+      "citation": "Utah Code § 78B-5-302"
+    },
+    {
+      "id": "S19",
+      "label": "Utah Consumer Sales Practices Act, Utah Code § 13-11-1 et seq.",
+      "url": "https://le.utah.gov/xcode/Title13/Chapter11/13-11.html",
+      "primary": true,
+      "citation": "Utah Code § 13-11-1 et seq."
+    },
+    {
+      "id": "S21",
+      "label": "Civil Liability for Dishonored Checks — Utah Code § 7-15-1 et seq.",
+      "url": "https://le.utah.gov/xcode/Title7/Chapter15/7-15.html",
+      "primary": true,
+      "citation": "Utah Code § 7-15-1 et seq."
+    },
+    {
+      "id": "S22",
+      "label": "Utah Fit Premises Act (Security Deposit, Repairs, Lockout) — Utah Code § 57-22-1 et seq.",
+      "url": "https://le.utah.gov/xcode/Title57/Chapter22/57-22.html",
+      "primary": true,
+      "citation": "Utah Code § 57-22-1 et seq."
+    },
+    {
+      "id": "S24",
+      "label": "Utah Payment of Wages Act — Utah Code § 34-28-1 et seq.",
+      "url": "https://le.utah.gov/xcode/Title34/Chapter28/34-28.html",
+      "primary": true,
+      "citation": "Utah Code § 34-28-1 et seq."
+    }
+  ],
+  "_meta": {
+    "state": "Utah",
+    "slug": "utah",
+    "model": "gpt-4.1",
+    "sources_response_id": "resp_02eda5a298d4cd0d0069f08b675d7881938646ff3d81a23efb",
+    "extraction_response_id": "resp_0801ff4f1d27d6be0069f098194dd08194a92a42894773c44f",
+    "generated_at": "2026-04-28T11:22:33.521Z",
+    "usage": {
+      "input_tokens": 7650,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 14255,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 21905
+    }
+  }
+}

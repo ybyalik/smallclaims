@@ -1,0 +1,1720 @@
+{
+  "state": "Illinois",
+  "slug": "illinois",
+  "abbr": "IL",
+  "as_of": "2026-04-28",
+  "hero": {
+    "individual_limit_dollars": 10000,
+    "business_limit_dollars": 10000,
+    "filing_fee_low_dollars": 40,
+    "filing_fee_high_dollars": 200,
+    "typical_timeline_min_days": 30,
+    "typical_timeline_max_days": 90,
+    "tagline": "Illinois small claims courts handle disputes up to $10,000 with streamlined procedures and optional attorney representation.",
+    "source_ids": [
+      "S1",
+      "S12"
+    ]
+  },
+  "at_a_glance": [
+    {
+      "label": "Most you can sue for",
+      "value": "$10,000",
+      "detail": "Same cap for individuals and businesses",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Filing fee",
+      "value": "$40-$200",
+      "detail": "Varies by county and claim amount",
+      "source_ids": [
+        "S12"
+      ]
+    },
+    {
+      "label": "Court",
+      "value": "Circuit Court (Small Claims Division)",
+      "detail": "",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Lawyers at trial",
+      "value": "Allowed",
+      "detail": "Permitted but not required",
+      "source_ids": [
+        "S8"
+      ]
+    },
+    {
+      "label": "Appeal window",
+      "value": "30 days",
+      "detail": "Appeal must be filed within 30 days of judgment",
+      "source_ids": [
+        "S15"
+      ]
+    },
+    {
+      "label": "Recent change",
+      "value": "Appearance fees eliminated",
+      "detail": "As of October 1, 2025, appearance fees in small claims cases have been eliminated",
+      "source_ids": [
+        "S12"
+      ]
+    }
+  ],
+  "limits": {
+    "individual_dollars": 10000,
+    "business_dollars": 10000,
+    "guarantor_with_fee_max": null,
+    "guarantor_without_fee_max": null,
+    "annual_filing_cap": {
+      "count": null,
+      "threshold_dollars": null,
+      "notes": ""
+    },
+    "split_claims_allowed": false,
+    "split_claims_explanation": "If your claim exceeds $10,000, you cannot split it into multiple small claims cases. You must either waive the amount over $10,000 to file in small claims court or file your case in a higher court.",
+    "interest_excluded_from_cap": true,
+    "court_costs_excluded_from_cap": true,
+    "statute": "735 ILCS 5/2-1301",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "claim_categories": [
+    {
+      "id": "contracts",
+      "title": "Contracts and Money Owed",
+      "blurb": "Illinois allows you 10 years to file a lawsuit for breach of a written contract and 5 years for an oral contract. Ensure you file within these timeframes to preserve your claim.",
+      "claims": [
+        {
+          "slug": "written-contract",
+          "name": "Breach of a Written Contract",
+          "example": "A contractor signed a $4,000 contract to remodel your kitchen, took the deposit, and never finished.",
+          "eligibility": "eligible",
+          "claim_statute": "735 ILCS 5/13-206",
+          "notes": "You have 10 years from the date of breach to file your claim. Bring the signed contract, payment proof, and any correspondence showing the breach.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "oral-contract",
+          "name": "Breach of an Oral Contract",
+          "example": "You agreed verbally to lend someone $2,000, and they failed to repay as promised.",
+          "eligibility": "eligible",
+          "claim_statute": "735 ILCS 5/13-205",
+          "notes": "You have 5 years from the date of breach to file your claim. Gather any evidence of the agreement, such as emails, texts, or witness statements.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "personal-loan",
+          "name": "Unpaid Personal Loan",
+          "example": "You loaned a friend $3,000 with the understanding they would repay in six months, but they haven't.",
+          "eligibility": "eligible",
+          "claim_statute": "735 ILCS 5/13-206",
+          "notes": "If the loan was documented in writing, you have 10 years to file; if it was an oral agreement, you have 5 years. Provide any documentation or communications regarding the loan.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "promissory-note",
+          "name": "Default on a Promissory Note",
+          "example": "Someone signed a promissory note to repay $5,000 but has defaulted on payments.",
+          "eligibility": "eligible",
+          "claim_statute": "735 ILCS 5/13-206",
+          "notes": "You have 10 years from the date of default to file your claim. Present the original promissory note and any records of payments made.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unpaid-invoice",
+          "name": "Unpaid Invoice for Services Rendered",
+          "example": "You provided graphic design services worth $1,500, but the client hasn't paid the invoice.",
+          "eligibility": "eligible",
+          "claim_statute": "735 ILCS 5/13-206",
+          "notes": "For written agreements, you have 10 years to file; for oral agreements, 5 years. Include the invoice, any contracts, and communication records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "open-account",
+          "name": "Unpaid Credit Card Debt",
+          "example": "A customer owes $8,000 on a credit card and has stopped making payments.",
+          "eligibility": "eligible",
+          "claim_statute": "735 ILCS 5/13-206",
+          "notes": "Credit card debts are typically considered written contracts, giving you 10 years to file. Provide account statements and records of communication.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unpaid-rent",
+          "name": "Unpaid Rent by Tenant",
+          "example": "A tenant moved out owing $2,500 in unpaid rent.",
+          "eligibility": "eligible",
+          "claim_statute": "735 ILCS 5/13-206",
+          "notes": "You have 10 years to file for unpaid rent under a written lease. Bring the lease agreement, payment records, and any notices sent to the tenant.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "bad-check",
+          "name": "Recovery for a Bad Check",
+          "example": "A customer paid with a $500 check that bounced due to insufficient funds.",
+          "eligibility": "eligible",
+          "claim_statute": "810 ILCS 5/3-806",
+          "notes": "You can recover the amount of the check plus damages. Provide the original check, bank notices, and any related correspondence.",
+          "damage_boost": "Check amount + service charge up to $25 + civil penalty up to $1,500 or triple the check amount, whichever is greater.",
+          "source_ids": [
+            "S21"
+          ]
+        },
+        {
+          "slug": "co-signer",
+          "name": "Co-signer Seeking Repayment",
+          "example": "You co-signed a $7,000 loan, and the primary borrower defaulted, leaving you responsible.",
+          "eligibility": "eligible",
+          "claim_statute": "735 ILCS 5/13-206",
+          "notes": "As a co-signer, you have 10 years to seek repayment from the primary borrower. Present the loan agreement and records of payments you've made.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "consumer-disputes",
+      "title": "Consumer Disputes",
+      "blurb": "Illinois provides strong consumer protections, including the Consumer Fraud and Deceptive Business Practices Act, which allows for recovery of damages and attorney's fees.",
+      "claims": [
+        {
+          "slug": "defective-product",
+          "name": "Purchase of a Defective Product",
+          "example": "You bought a $900 appliance that stopped working after two weeks, and the seller refuses to refund or replace it.",
+          "eligibility": "eligible",
+          "claim_statute": "815 ILCS 505/",
+          "notes": "You have 3 years to file under the Consumer Fraud Act. Bring the purchase receipt, warranty information, and any communication with the seller.",
+          "damage_boost": "Possible recovery of attorney's fees and punitive damages if the violation was willful or reckless.",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "bad-service",
+          "name": "Substandard Service",
+          "example": "A cleaning service charged $600 but did not perform the agreed-upon tasks.",
+          "eligibility": "eligible",
+          "claim_statute": "815 ILCS 505/",
+          "notes": "File within 3 years under the Consumer Fraud Act. Provide the service agreement, payment proof, and evidence of the substandard service.",
+          "damage_boost": "Potential recovery of attorney's fees and punitive damages for willful or reckless violations.",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "auto-repair",
+          "name": "Unsatisfactory Auto Repair",
+          "example": "You paid $1,200 for car repairs, but the problem persists, and the mechanic refuses to fix it.",
+          "eligibility": "eligible",
+          "claim_statute": "815 ILCS 505/",
+          "notes": "You have 3 years to file under the Consumer Fraud Act. Bring repair invoices, payment records, and any communication with the mechanic.",
+          "damage_boost": "Attorney's fees and punitive damages may be awarded for willful or reckless violations.",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "contractor",
+          "name": "Home Contractor Fraud",
+          "example": "A contractor took a $5,000 deposit for home improvements but never started the work.",
+          "eligibility": "eligible",
+          "claim_statute": "815 ILCS 505/",
+          "notes": "File within 3 years under the Consumer Fraud Act. Provide the contract, payment proof, and any correspondence.",
+          "damage_boost": "Possible recovery of attorney's fees and punitive damages for willful or reckless conduct.",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "no-show-vendor",
+          "name": "Vendor Fails to Deliver Services",
+          "example": "You paid $2,000 for a wedding photographer who never showed up and refuses to refund.",
+          "eligibility": "eligible",
+          "claim_statute": "815 ILCS 505/",
+          "notes": "You have 3 years to file under the Consumer Fraud Act. Bring the service contract, payment records, and any communication.",
+          "damage_boost": "Attorney's fees and punitive damages may be available for willful or reckless violations.",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "subscription-cancellation",
+          "name": "Unauthorized Subscription Charges",
+          "example": "A company continues to charge your credit card $50 monthly despite multiple cancellation requests.",
+          "eligibility": "eligible",
+          "claim_statute": "815 ILCS 505/",
+          "notes": "File within 3 years under the Consumer Fraud Act. Provide records of cancellation requests and billing statements.",
+          "damage_boost": "Potential recovery of attorney's fees and punitive damages for willful or reckless violations.",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "used-car",
+          "name": "Purchase of a Defective Used Car",
+          "example": "You bought a used car for $9,000 that broke down within a week, and the dealer refuses to address the issue.",
+          "eligibility": "eligible",
+          "claim_statute": "815 ILCS 505/",
+          "notes": "You have 3 years to file under the Consumer Fraud Act. Bring the sales contract, payment proof, and any communication with the dealer.",
+          "damage_boost": "Attorney's fees and punitive damages may be awarded for willful or reckless violations.",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "false-advertising",
+          "name": "False Advertising Claims",
+          "example": "A store advertised a product for $100, but charged you $150 at checkout without honoring the advertised price.",
+          "eligibility": "eligible",
+          "claim_statute": "815 ILCS 505/",
+          "notes": "File within 3 years under the Consumer Fraud Act. Provide the advertisement, receipt, and any communication with the store.",
+          "damage_boost": "Possible recovery of attorney's fees and punitive damages for willful or reckless conduct.",
+          "source_ids": [
+            "S19"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "property-damage",
+      "title": "Property Damage",
+      "blurb": "Claims for property damage in Illinois must be filed within 5 years. Ensure you document all damages and related expenses thoroughly.",
+      "claims": [
+        {
+          "slug": "vehicle-collision",
+          "name": "Damage from a Vehicle Collision",
+          "example": "Another driver caused $4,000 in damage to your car and refuses to pay for repairs.",
+          "eligibility": "eligible",
+          "claim_statute": "735 ILCS 5/13-205",
+          "notes": "You have 5 years from the date of the accident to file. Provide the police report, repair estimates, and any communication with the other driver.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "neighbor-property",
+          "name": "Neighbor's Actions Damaging Your Property",
+          "example": "A neighbor's tree fell onto your property, causing $3,500 in damage to your fence.",
+          "eligibility": "eligible",
+          "claim_statute": "735 ILCS 5/13-205",
+          "notes": "File within 5 years of the incident. Bring photos of the damage, repair estimates, and any communication with your neighbor.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "damage-to-rental",
+          "name": "Tenant Causing Damage to Rental Property",
+          "example": "A tenant caused $2,000 in damages beyond normal wear and tear and refuses to pay.",
+          "eligibility": "eligible",
+          "claim_statute": "735 ILCS 5/13-205",
+          "notes": "You have 5 years to file. Provide the lease agreement, photos of the damage, repair estimates, and any communication with the tenant.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "pet-damage",
+          "name": "Damage Caused by Someone Else's Pet",
+          "example": "A neighbor's dog entered your yard and destroyed $1,500 worth of landscaping.",
+          "eligibility": "eligible",
+          "claim_statute": "735 ILCS 5/13-205",
+          "notes": "File within 5 years of the incident. Bring photos of the damage, repair estimates, and any communication with the pet owner.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "property-in-custody",
+          "name": "Damage to Property Left in Someone's Care",
+          "example": "You left a $2,000 watch with a jeweler for repair, and they damaged it.",
+          "eligibility": "eligible",
+          "claim_statute": "735 ILCS 5/13-205",
+          "notes": "You have 5 years to file. Provide the repair agreement, photos of the damage, and any communication with the jeweler.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "landlord-tenant",
+      "title": "Landlord-Tenant Disputes",
+      "blurb": "Illinois law provides specific protections for tenants, including timely return of security deposits and habitable living conditions.",
+      "claims": [
+        {
+          "slug": "security-deposit",
+          "name": "Failure to Return Security Deposit",
+          "example": "Your landlord withheld your $1,200 security deposit without providing an itemized list of damages.",
+          "eligibility": "eligible",
+          "claim_statute": "765 ILCS 710/",
+          "notes": "Landlords must return the deposit or provide an itemized list of damages within 30 days. File within 5 years if they fail to do so.",
+          "damage_boost": "Possible recovery of up to two times the deposit amount if the landlord acted in bad faith.",
+          "source_ids": [
+            "S22"
+          ]
+        },
+        {
+          "slug": "deposit-not-itemized",
+          "name": "No Itemized List for Withheld Deposit",
+          "example": "Your landlord kept $800 of your deposit without explaining why.",
+          "eligibility": "eligible",
+          "claim_statute": "765 ILCS 710/",
+          "notes": "Landlords must provide an itemized list of damages within 30 days. File within 5 years if they fail to do so.",
+          "damage_boost": "Potential recovery of up to two times the deposit amount for bad faith withholding.",
+          "source_ids": [
+            "S22"
+          ]
+        },
+        {
+          "slug": "uninhabitable-rental",
+          "name": "Uninhabitable Living Conditions",
+          "example": "Your apartment had no heat during winter, and the landlord refused to fix it.",
+          "eligibility": "eligible",
+          "claim_statute": "765 ILCS 742/",
+          "notes": "Tenants can withhold rent or terminate the lease if the landlord fails to maintain habitable conditions. File within 5 years.",
+          "damage_boost": "",
+          "source_ids": [
+            "S23"
+          ]
+        },
+        {
+          "slug": "wrongful-retention-property",
+          "name": "Landlord Keeping Tenant's Property",
+          "example": "After eviction, your landlord kept your $2,000 worth of furniture.",
+          "eligibility": "eligible",
+          "claim_statute": "735 ILCS 5/9-301",
+          "notes": "Landlords must follow legal procedures when handling a tenant's abandoned property. File within 5 years if they fail to do so.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "illegal-eviction",
+          "name": "Unlawful Eviction Practices",
+          "example": "Your landlord changed the locks without notice, preventing you from accessing your apartment.",
+          "eligibility": "eligible",
+          "claim_statute": "735 ILCS 5/9-101",
+          "notes": "Self-help evictions are illegal in Illinois. Tenants can sue for damages and reinstatement. File within 5 years.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unreturned-prepaid-rent",
+          "name": "Failure to Return Prepaid Rent",
+          "example": "You paid first and last month's rent, but the landlord refuses to return the last month's rent after you moved out.",
+          "eligibility": "eligible",
+          "claim_statute": "735 ILCS 5/9-301",
+          "notes": "Landlords must return prepaid rent if not applied. File within 5 years if they fail to do so.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unpaid-rent-by-tenant",
+          "name": "Tenant Owes Unpaid Rent",
+          "example": "A tenant moved out owing $3,000 in unpaid rent.",
+          "eligibility": "eligible",
+          "claim_statute": "735 ILCS 5/13-206",
+          "notes": "Landlords have 10 years to file for unpaid rent under a written lease. Provide the lease agreement and payment records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "repair-and-deduct",
+          "name": "Tenant Repair and Deduct",
+          "example": "You paid $500 to fix a leaking roof after the landlord failed to do so and deducted it from your rent.",
+          "eligibility": "eligible",
+          "claim_statute": "765 ILCS 742/",
+          "notes": "Tenants can repair and deduct if the landlord fails to address issues affecting habitability. File within 5 years if the landlord disputes.",
+          "damage_boost": "",
+          "source_ids": [
+            "S23"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "employment-and-wages",
+      "title": "Employment and Wages",
+      "blurb": "Illinois law mandates timely payment of wages and provides penalties for employers who fail to comply.",
+      "claims": [
+        {
+          "slug": "unpaid-wages",
+          "name": "Unpaid Wages",
+          "example": "Your employer failed to pay you $1,000 for hours worked.",
+          "eligibility": "eligible",
+          "claim_statute": "820 ILCS 115/",
+          "notes": "Employees have 10 years to file for unpaid wages. Provide pay stubs, time records, and any communication with the employer.",
+          "damage_boost": "Possible recovery of 2% of the underpayment per month as a penalty.",
+          "source_ids": [
+            "S24"
+          ]
+        },
+        {
+          "slug": "final-paycheck",
+          "name": "Failure to Provide Final Paycheck",
+          "example": "After termination, your employer did not give you your final paycheck of $800.",
+          "eligibility": "eligible",
+          "claim_statute": "820 ILCS 115/",
+          "notes": "Employers must provide the final paycheck by the next scheduled payday. File within 10 years if they fail to do so.",
+          "damage_boost": "Potential recovery of 2% of the underpayment per month as a penalty.",
+          "source_ids": [
+            "S24"
+          ]
+        },
+        {
+          "slug": "unpaid-commissions",
+          "name": "Unpaid Sales Commissions",
+          "example": "Your employer owes you $2,500 in earned commissions but refuses to pay.",
+          "eligibility": "eligible",
+          "claim_statute": "820 ILCS 115/",
+          "notes": "Commissions are considered wages. File within 10 years and provide the commission agreement and sales records.",
+          "damage_boost": "Possible recovery of 2% of the underpayment per month as a penalty.",
+          "source_ids": [
+            "S24"
+          ]
+        },
+        {
+          "slug": "unpaid-overtime",
+          "name": "Unpaid Overtime Wages",
+          "example": "You worked 10 hours of overtime but were paid only your regular rate.",
+          "eligibility": "eligible",
+          "claim_statute": "820 ILCS 115/",
+          "notes": "Employers must pay overtime at 1.5 times the regular rate. File within 10 years and provide time records and pay stubs.",
+          "damage_boost": "Potential recovery of 2% of the underpayment per month as a penalty.",
+          "source_ids": [
+            "S24"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "personal-claims",
+      "title": "Personal Claims",
+      "blurb": "Personal injury claims in Illinois must be filed within 2 years, while property damage claims have a 5-year statute of limitations.",
+      "claims": [
+        {
+          "slug": "minor-injury",
+          "name": "Minor Personal Injury",
+          "example": "You slipped and fell in a store, resulting in $3,000 in medical bills.",
+          "eligibility": "eligible",
+          "claim_statute": "735 ILCS 5/13-202",
+          "notes": "You have 2 years from the date of injury to file. Provide medical records, bills, and any incident reports.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "loaned-property",
+          "name": "Failure to Return Loaned Property",
+          "example": "You loaned a friend a $1,500 camera, and they refuse to return it.",
+          "eligibility": "eligible",
+          "claim_statute": "735 ILCS 5/13-205",
+          "notes": "File within 5 years of the demand for return. Provide evidence of ownership and any communication regarding the loan.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "civil-theft",
+          "name": "Theft of Personal Property",
+          "example": "Someone stole your $2,000 bicycle, and you have evidence of their involvement.",
+          "eligibility": "eligible",
+          "claim_statute": "735 ILCS 5/13-205",
+          "notes": "You have 5 years to file. Provide police reports, evidence of ownership, and any proof of the defendant's involvement.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vehicle-specific",
+      "title": "Vehicle-Specific Claims",
+      "blurb": "Illinois allows claims related to vehicle repairs and wrongful towing, with specific statutes governing these disputes.",
+      "claims": [
+        {
+          "slug": "mechanic-dispute",
+          "name": "Dispute Over Mechanic's Charges",
+          "example": "A mechanic charged you $1,200 for repairs you didn't authorize.",
+          "eligibility": "eligible",
+          "claim_statute": "815 ILCS 505/",
+          "notes": "File within 3 years under the Consumer Fraud Act. Provide repair invoices, payment records, and any communication with the mechanic.",
+          "damage_boost": "Possible recovery of attorney's fees and punitive damages for willful or reckless violations.",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "wrongful-tow",
+          "name": "Wrongful Towing of Vehicle",
+          "example": "Your car was towed from a legal parking spot, and the towing company demands $500 for its return.",
+          "eligibility": "eligible",
+          "claim_statute": "625 ILCS 5/4-203",
+          "notes": "Towing companies must follow specific procedures. File within 5 years if they fail to do so.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "category": "Eviction (unlawful detainer)",
+      "explanation": "Eviction cases are handled in the Circuit Court but may not be suitable for small claims procedures due to their complexity.",
+      "where_to_go_instead": "Circuit Court eviction proceedings",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Title to real estate",
+      "explanation": "Disputes involving ownership or title to real property are beyond the jurisdiction of small claims court.",
+      "where_to_go_instead": "Circuit Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Defamation",
+      "explanation": "Claims involving defamation, libel, or slander are not suitable for small claims court due to the complexity of proving damages.",
+      "where_to_go_instead": "Circuit Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Malpractice",
+      "explanation": "Professional malpractice claims require expert testimony and are beyond the scope of small claims court.",
+      "where_to_go_instead": "Circuit Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Family law matters",
+      "explanation": "Issues such as divorce, child custody, and support are handled by family courts, not small claims court.",
+      "where_to_go_instead": "Family Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Probate matters",
+      "explanation": "Disputes involving wills, estates, and trusts are under the jurisdiction of probate courts.",
+      "where_to_go_instead": "Probate Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Claims against the federal government",
+      "explanation": "Small claims courts do not have jurisdiction over cases against federal agencies or the U.S. government.",
+      "where_to_go_instead": "Federal Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Class actions",
+      "explanation": "Class action lawsuits are complex and not suitable for the simplified procedures of small claims court.",
+      "where_to_go_instead": "Circuit Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Injunctions and specific performance",
+      "explanation": "Small claims courts cannot issue orders requiring a party to do or refrain from doing something.",
+      "where_to_go_instead": "Circuit Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Workers' compensation claims",
+      "explanation": "These claims are handled by the Illinois Workers' Compensation Commission, not small claims court.",
+      "where_to_go_instead": "Illinois Workers' Compensation Commission",
+      "source_ids": [
+        "S1"
+      ]
+    }
+  ],
+  "damages": {
+    "compensatory_allowed": true,
+    "punitive_allowed": false,
+    "punitive_explanation": "Punitive damages are generally not awarded in small claims court. However, statutory penalties may apply in certain cases, such as consumer fraud violations.",
+    "statutory_multipliers": [
+      {
+        "claim": "Bad check (after 30-day notice)",
+        "multiplier": "Up to 3x check amount",
+        "explanation": "Check amount + service charge up to $25 + civil penalty up to $1,500 or triple the check amount, whichever is greater.",
+        "statute": "810 ILCS 5/3-806",
+        "source_ids": [
+          "S21"
+        ]
+      }
+    ],
+    "attorney_fees_recoverable": "sometimes",
+    "attorney_fees_explanation": "Attorney's fees may be recoverable in cases involving violations of the Consumer Fraud and Deceptive Business Practices Act or other statutes that specifically allow for fee recovery.",
+    "prejudgment_interest_rate_pct": null,
+    "prejudgment_interest_statute": "",
+    "postjudgment_interest_rate_pct": null,
+    "postjudgment_interest_type": "simple",
+    "postjudgment_interest_statute": "",
+    "postjudgment_interest_notes": "",
+    "filing_and_service_fees_recoverable_from_loser": true,
+    "source_ids": [
+      "S19"
+    ]
+  },
+  "where_to_file": {
+    "court_name": "Small Claims Division of the Circuit Court",
+    "parent_court": "Illinois Circuit Court",
+    "venue_rules": [
+      {
+        "scenario": "Most cases (the default)",
+        "filing_options": [
+          "County where the defendant resides",
+          "County where the transaction or injury occurred"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Defendant is a private corporation",
+        "filing_options": [
+          "County where the corporation does business"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Defendant is a public corporation",
+        "filing_options": [
+          "County where its principal office is located"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "consequences_of_wrong_venue": "Filing in the wrong venue may result in the case being transferred or dismissed, leading to delays and additional costs.",
+    "e_filing_available": "varies",
+    "e_filing_notes": "E-filing availability varies by county. Check with the local court clerk for specific procedures.",
+    "e_filing_portal": null,
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "fees": {
+    "filing_fee_tiers": [
+      {
+        "range_label": "$0 to $1,500",
+        "range_min": 0,
+        "range_max": 1500,
+        "fee_dollars": 40,
+        "source_ids": [
+          "S12"
+        ]
+      },
+      {
+        "range_label": "$1,501 to $5,000",
+        "range_min": 1501,
+        "range_max": 5000,
+        "fee_dollars": 75,
+        "source_ids": [
+          "S12"
+        ]
+      },
+      {
+        "range_label": "$5,001 to $10,000",
+        "range_min": 5001,
+        "range_max": 10000,
+        "fee_dollars": 200,
+        "source_ids": [
+          "S12"
+        ]
+      }
+    ],
+    "frequent_filer": {
+      "threshold_per_year": null,
+      "fee_dollars": null,
+      "notes": ""
+    },
+    "service_fees": [
+      {
+        "method": "Sheriff (personal service)",
+        "amount_label": "$30-75",
+        "notes": "Varies by county and distance.",
+        "source_ids": [
+          "S12"
+        ]
+      },
+      {
+        "method": "Certified mail",
+        "amount_label": "$10-20",
+        "notes": "Requires court approval.",
+        "source_ids": [
+          "S12"
+        ]
+      },
+      {
+        "method": "Private process server",
+        "amount_label": "$50-100",
+        "notes": "Costs vary; ensure the server is licensed.",
+        "source_ids": [
+          "S12"
+        ]
+      }
+    ],
+    "waiver": {
+      "forms": [
+        {
+          "number": "Application for Waiver of Court Fees",
+          "name": "Application for Waiver of Court Fees",
+          "url": "https://www.illinoiscourts.gov/documents-and-forms/approved-forms/fee-waiver",
+          "source_ids": [
+            "S11"
+          ]
+        }
+      ],
+      "eligibility_bullets": [
+        "Receiving need-based public assistance (SNAP, TANF, SSI)",
+        "Household income below 125% of the federal poverty line",
+        "Other circumstances showing inability to pay fees"
+      ],
+      "coverage_notes": "The waiver covers filing fees, service fees, and other court costs.",
+      "if_you_win_notes": "If you win, the waived fees are typically not added to the judgment against the loser."
+    },
+    "other_fees": [
+      {
+        "name": "Jury demand fee",
+        "amount_label": "$12.50",
+        "notes": "Additional fee if a jury trial is requested.",
+        "source_ids": [
+          "S12"
+        ]
+      },
+      {
+        "name": "Subpoena issuance",
+        "amount_label": "$10",
+        "notes": "Plus witness fee per day.",
+        "source_ids": [
+          "S12"
+        ]
+      },
+      {
+        "name": "Appeal filing",
+        "amount_label": "$50",
+        "notes": "",
+        "source_ids": [
+          "S12"
+        ]
+      },
+      {
+        "name": "Writ of execution",
+        "amount_label": "$30",
+        "notes": "Post-judgment enforcement.",
+        "source_ids": [
+          "S12"
+        ]
+      }
+    ],
+    "fees_recoverable_from_loser_notes": "If you win, filing fees and reasonable service costs are typically added to the judgment against the loser.",
+    "source_ids": [
+      "S12"
+    ]
+  },
+  "statute_of_limitations": {
+    "entries": [
+      {
+        "id": "written-contract",
+        "claim": "Written contract",
+        "years": 10,
+        "clock_starts": "Date of breach",
+        "statute": "735 ILCS 5/13-206",
+        "notes": "Ensure you file within 10 years to preserve your claim.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "oral-contract",
+        "claim": "Oral contract",
+        "years": 5,
+        "clock_starts": "Date of breach",
+        "statute": "735 ILCS 5/13-205",
+        "notes": "File within 5 years to maintain your right to sue.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "sale-of-goods",
+        "claim": "Sale of goods (UCC)",
+        "years": 4,
+        "clock_starts": "Date of breach",
+        "statute": "810 ILCS 5/2-725",
+        "notes": "Applicable to contracts for the sale of goods.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "promissory-note",
+        "claim": "Promissory note",
+        "years": 10,
+        "clock_starts": "Date of default",
+        "statute": "735 ILCS 5/13-206",
+        "notes": "Ensure timely filing within 10 years.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "open-account",
+        "claim": "Open account / credit card debt",
+        "years": 5,
+        "clock_starts": "Date of last payment or charge",
+        "statute": "735 ILCS 5/13-205",
+        "notes": "File within 5 years to preserve your claim.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "personal-injury",
+        "claim": "Personal injury",
+        "years": 2,
+        "clock_starts": "Date of injury",
+        "statute": "735 ILCS 5/13-202",
+        "notes": "Strict 2-year limit; file promptly.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "property-damage",
+        "claim": "Property damage",
+        "years": 5,
+        "clock_starts": "Date of damage",
+        "statute": "735 ILCS 5/13-205",
+        "notes": "Ensure filing within 5 years.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "fraud",
+        "claim": "Fraud (note discovery rule)",
+        "years": 5,
+        "clock_starts": "Date of discovery",
+        "statute": "735 ILCS 5/13-205",
+        "notes": "Discovery rule applies; file within 5 years of discovery.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "bad-check",
+        "claim": "Bad check",
+        "years": 3,
+        "clock_starts": "Date check was dishonored",
+        "statute": "810 ILCS 5/3-118",
+        "notes": "File within 3 years to recover damages.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "unpaid-wages",
+        "claim": "Unpaid wages",
+        "years": 10,
+        "clock_starts": "Date wages were due",
+        "statute": "820 ILCS 115/13",
+        "notes": "Employees have 10 years to file for unpaid wages.",
+        "source_ids": [
+          "S24"
+        ]
+      },
+      {
+        "id": "security-deposit",
+        "claim": "Security deposit",
+        "years": 5,
+        "clock_starts": "Date deposit was due to be returned",
+        "statute": "735 ILCS 5/13-205",
+        "notes": "File within 5 years if the deposit is not returned.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "judgment-enforcement",
+        "claim": "Judgment enforcement",
+        "years": 7,
+        "clock_starts": "Date judgment was entered",
+        "statute": "735 ILCS 5/12-108",
+        "notes": "Judgments are enforceable for 7 years; can be revived.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "discovery_rule_notes": "The discovery rule applies to fraud claims, allowing the statute of limitations to begin when the fraud is discovered.",
+    "tolling_notes": "Statutes of limitations may be tolled if the defendant is out of state, the plaintiff is a minor, or other specific circumstances apply.",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "pre_filing": {
+    "demand_letter_required": false,
+    "demand_letter_recommended": true,
+    "demand_letter_notes": "While not required, sending a demand letter can often resolve disputes without court intervention and serves as evidence of your attempt to settle.",
+    "bad_check_notice_rule": "For bad checks, a written demand for payment must be sent, and if unpaid after 30 days, you may recover damages up to three times the check amount.",
+    "wage_claim_demand_rule": "Employees must make a written demand for unpaid wages; if unpaid, they may recover penalties of 2% per month on the underpayment.",
+    "government_claim_required": false,
+    "government_claim_deadline_days": null,
+    "government_claim_notes": "",
+    "landlord_tenant_pre_filing_notes": "Landlords must provide an itemized list of damages within 30 days of lease termination; failure to do so may result in penalties.",
+    "consumer_protection_notes": "Under the Consumer Fraud Act, consumers can recover attorney's fees and punitive damages for willful or reckless violations.",
+    "mandatory_mediation_before_filing": "none",
+    "arbitration_clauses_enforced": true,
+    "source_ids": [
+      "S19"
+    ]
+  },
+  "forms": [
+    {
+      "number": "SC-500",
+      "name": "Complaint",
+      "description": "Initiates the small claims lawsuit by outlining the plaintiff's allegations and desired relief.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "https://www.illinoiscourts.gov/documents-and-forms/approved-forms/small-claims",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "number": "SC-500.1",
+      "name": "Summons",
+      "description": "Notifies the defendant of the lawsuit and the date of the court hearing.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "service",
+      "url": "https://www.illinoiscourts.gov/documents-and-forms/approved-forms/small-claims",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "number": "SC-500.2",
+      "name": "Affidavit of Service",
+      "description": "Proof that the defendant was properly served with the summons and complaint.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "service",
+      "url": "https://www.illinoiscourts.gov/documents-and-forms/approved-forms/small-claims",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "number": "SC-500.3",
+      "name": "Appearance",
+      "description": "Filed by the defendant to indicate their intention to participate in the case.",
+      "filed_by": "defendant",
+      "required": false,
+      "group": "hearing",
+      "url": "https://www.illinoiscourts.gov/documents-and-forms/approved-forms/small-claims",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "number": "SC-500.4",
+      "name": "Answer",
+      "description": "The defendant's formal response to the allegations in the complaint.",
+      "filed_by": "defendant",
+      "required": false,
+      "group": "hearing",
+      "url": "https://www.illinoiscourts.gov/documents-and-forms/approved-forms/small-claims",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "number": "SC-500.5",
+      "name": "Counterclaim",
+      "description": "Filed by the defendant if they have a claim against the plaintiff.",
+      "filed_by": "defendant",
+      "required": false,
+      "group": "counterclaim",
+      "url": "https://www.illinoiscourts.gov/documents-and-forms/approved-forms/small-claims",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "number": "SC-500.6",
+      "name": "Motion to Vacate Default Judgment",
+      "description": "Request to set aside a default judgment entered against a party who failed to appear.",
+      "filed_by": "defendant",
+      "required": false,
+      "group": "after-judgment",
+      "url": "https://www.illinoiscourts.gov/documents-and-forms/approved-forms/small-claims",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "number": "SC-500.7",
+      "name": "Satisfaction of Judgment",
+      "description": "Filed by the plaintiff to indicate that the judgment has been paid in full.",
+      "filed_by": "plaintiff",
+      "required": false,
+      "group": "after-judgment",
+      "url": "https://www.illinoiscourts.gov/documents-and-forms/approved-forms/small-claims",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "number": "SC-500.8",
+      "name": "Notice of Appeal",
+      "description": "Filed to initiate an appeal of the small claims court's decision.",
+      "filed_by": "either",
+      "required": false,
+      "group": "appeal",
+      "url": "https://www.illinoiscourts.gov/documents-and-forms/approved-forms/small-claims",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "number": "SC-500.9",
+      "name": "Application for Waiver of Court Fees",
+      "description": "Request to waive court fees due to financial hardship.",
+      "filed_by": "plaintiff",
+      "required": false,
+      "group": "fee-waiver",
+      "url": "https://www.illinoiscourts.gov/documents-and-forms/approved-forms/fee-waiver",
+      "source_ids": [
+        "S11"
+      ]
+    }
+  ],
+  "service": {
+    "who_can_serve": [
+      "Sheriff",
+      "Certified mail by clerk",
+      "Private process server"
+    ],
+    "methods": [
+      {
+        "name": "Sheriff personal service",
+        "description": "A sheriff or deputy personally delivers the summons and complaint to the defendant.",
+        "pros": [
+          "Official and reliable",
+          "Proof of service provided"
+        ],
+        "cons": [
+          "May be slower than private service",
+          "Additional fees apply"
+        ],
+        "source_ids": [
+          "S13"
+        ]
+      },
+      {
+        "name": "Certified mail",
+        "description": "The court clerk sends the summons and complaint to the defendant via certified mail with return receipt requested.",
+        "pros": [
+          "Cost-effective",
+          "Proof of mailing provided"
+        ],
+        "cons": [
+          "Defendant may refuse delivery",
+          "Not suitable for all cases"
+        ],
+        "source_ids": [
+          "S13"
+        ]
+      },
+      {
+        "name": "Private process server",
+        "description": "A licensed private individual delivers the summons and complaint to the defendant.",
+        "pros": [
+          "Faster service",
+          "Flexible scheduling"
+        ],
+        "cons": [
+          "Higher cost",
+          "Must ensure server is licensed"
+        ],
+        "source_ids": [
+          "S13"
+        ]
+      }
+    ],
+    "in_county_days_before_hearing": 3,
+    "out_of_county_days_before_hearing": 7,
+    "proof_of_service_form": {
+      "number": "SC-500.2",
+      "name": "Affidavit of Service"
+    },
+    "proof_filing_deadline_days_before_hearing": 1,
+    "business_service_rule": "Serve the registered agent of the corporation or, if none, an officer or agent of the corporation. For sole proprietors, serve the individual owner.",
+    "out_of_state_defendant_notes": "Service must comply with Illinois law and the laws of the state where the defendant is located.",
+    "cant_find_defendant_notes": "If the defendant cannot be located after diligent efforts, service by publication may be permitted with court approval.",
+    "avoiding_service_notes": "If the defendant is evading service, document all attempts and seek court approval for alternative methods.",
+    "source_ids": [
+      "S13"
+    ]
+  },
+  "response_and_default": {
+    "must_file_written_answer": false,
+    "response_deadline_days": 0,
+    "response_notes": "Defendants are not required to file a written answer but must appear in court on the date specified in the summons.",
+    "default_process": "If the defendant fails to appear, the court may enter a default judgment in favor of the plaintiff.",
+    "prove_up_required": true,
+    "prove_up_notes": "Even if the defendant defaults, the plaintiff must provide evidence to support the claim before a judgment is entered.",
+    "motion_to_vacate_form": {
+      "number": "SC-500.6",
+      "name": "Motion to Vacate Default Judgment"
+    },
+    "motion_to_vacate_deadline_days": 30,
+    "motion_to_vacate_lack_of_notice_days": 30,
+    "motion_to_vacate_appeal_deadline_days": 30,
+    "motion_to_vacate_appeal_notes": "If the motion to vacate is denied, the defendant may appeal the decision within 30 days.",
+    "source_ids": [
+      "S10"
+    ]
+  },
+  "counterclaim": {
+    "allowed": true,
+    "form": {
+      "number": "SC-500.5",
+      "name": "Counterclaim"
+    },
+    "same_monetary_limit": true,
+    "service_deadline_in_county_days": 3,
+    "service_deadline_out_of_county_days": 7,
+    "transfer_to_higher_court_available": true,
+    "transfer_to_higher_court_statute": "735 ILCS 5/2-1001",
+    "transfer_to_higher_court_notes": "If the counterclaim exceeds the small claims limit, the case may be transferred to the regular civil docket.",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "hearing": {
+    "lawyers_allowed": "yes",
+    "lawyers_allowed_notes": "Parties may be represented by attorneys, but it is not required.",
+    "format": "Bench trial with each side presenting evidence and witnesses; typically lasts 30-60 minutes.",
+    "presider": "judge",
+    "burden_of_proof": "preponderance",
+    "what_to_bring": [
+      "Originals of any contracts",
+      "Receipts and bank records",
+      "Photos and videos",
+      "Names and contact info for witnesses"
+    ],
+    "subpoena_form": {
+      "number": "SC-500.10",
+      "name": "Subpoena"
+    },
+    "witness_fee_per_day_dollars": 20,
+    "free_interpreters": true,
+    "interpreter_request_process": "Request an interpreter from the court clerk as soon as possible before the hearing date.",
+    "jury_option": true,
+    "decision_timing": "On the spot or mailed within 7 days",
+    "on_site_mediation": "by county",
+    "on_site_mediation_notes": "Some counties offer mediation services on the day of the hearing; check with the local court.",
+    "source_ids": [
+      "S8"
+    ]
+  },
+  "appeals": {
+    "who_can_appeal": "either",
+    "deadline_days": 30,
+    "fee_dollars": 50,
+    "type": "on the record",
+    "type_notes": "The appellate court reviews the record of the small claims court proceedings; no new evidence is presented.",
+    "attorneys_allowed_on_appeal": true,
+    "bond_required": false,
+    "bond_amount_notes": "",
+    "automatic_stay_on_appeal": false,
+    "default_judgment_appealable": true,
+    "default_judgment_notes": "A default judgment can be appealed, but it is often more effective to file a motion to vacate the judgment first.",
+    "notice_of_appeal_form": {
+      "number": "SC-500.8",
+      "name": "Notice of Appeal"
+    },
+    "frivolous_appeal_penalty_dollars": null,
+    "frivolous_appeal_statute": "",
+    "frivolous_appeal_notes": "",
+    "source_ids": [
+      "S15"
+    ]
+  },
+  "collection": {
+    "payment_deadline_typical_days": 30,
+    "post_judgment_interest_rate_pct": 9,
+    "post_judgment_interest_statute": "735 ILCS 5/2-1303",
+    "post_judgment_interest_notes": "Interest accrues at 9% per annum on judgments.",
+    "methods": [
+      {
+        "id": "wage-garnishment",
+        "name": "Wage Garnishment",
+        "blurb": "Have a portion of the debtor's wages withheld until the judgment is paid.",
+        "description": "File a wage deduction order with the court, serve the employer, and the employer will withhold a portion of the debtor's wages to satisfy the judgment.",
+        "forms": [
+          {
+            "number": "SC-500.11",
+            "name": "Wage Deduction Order"
+          }
+        ],
+        "estimated_cost": "$30-50 plus sheriff fees",
+        "effectiveness_notes": "Effective if the debtor is employed and earns above the exemption threshold.",
+        "exemptions": [
+          "The lesser of 15% of gross weekly wages or the amount by which disposable earnings exceed 45 times the federal minimum wage per week."
+        ],
+        "source_ids": [
+          "S17"
+        ]
+      },
+      {
+        "id": "bank-levy",
+        "name": "Bank Levy",
+        "blurb": "Seize funds from the debtor's bank account to satisfy the judgment.",
+        "description": "Obtain a non-wage garnishment order from the court, serve the bank, and the bank will freeze and turn over funds from the debtor's account.",
+        "forms": [
+          {
+            "number": "SC-500.12",
+            "name": "Non-Wage Garnishment Order"
+          }
+        ],
+        "estimated_cost": "$30-50 plus sheriff fees",
+        "effectiveness_notes": "Effective if the debtor has sufficient funds in the account; timing is crucial to prevent withdrawals.",
+        "exemptions": [
+          "$4,000 in personal property, including bank accounts, is exempt from collection."
+        ],
+        "source_ids": [
+          "S18"
+        ]
+      },
+      {
+        "id": "property-lien",
+        "name": "Property Lien",
+        "blurb": "Place a lien on the debtor's real property, preventing its sale or refinancing until the judgment is satisfied.",
+        "description": "Record the judgment with the county recorder's office to create a lien on the debtor's real estate.",
+        "forms": [
+          {
+            "number": "SC-500.13",
+            "name": "Memorandum of Judgment"
+          }
+        ],
+        "estimated_cost": "$30-50 recording fee",
+        "effectiveness_notes": "Effective if the debtor owns real estate; may take time to realize payment, as the lien is satisfied upon sale or refinancing.",
+        "exemptions": [
+          "Homestead exemption up to $15,000 for individuals, $30,000 for married couples."
+        ],
+        "source_ids": [
+          "S18"
+        ]
+      },
+      {
+        "id": "writ-of-execution",
+        "name": "Writ of Execution",
+        "blurb": "Authorize the sheriff to seize and sell the debtor's non-exempt property to satisfy the judgment.",
+        "description": "Obtain a writ of execution from the court, and the sheriff will seize and auction the debtor's non-exempt assets.",
+        "forms": [
+          {
+            "number": "SC-500.14",
+            "name": "Writ of Execution"
+          }
+        ],
+        "estimated_cost": "$50-100 plus sheriff fees",
+        "effectiveness_notes": "Effective if the debtor owns valuable non-exempt property; process can be time-consuming and may not yield full payment.",
+        "exemptions": [
+          "$4,000 in personal property is exempt; specific items like necessary clothing and tools of the trade are also exempt."
+        ],
+        "source_ids": [
+          "S18"
+        ]
+      }
+    ],
+    "wage_garnishment_max_pct_of_disposable": 15,
+    "judgment_lifespan_years": 7,
+    "judgment_renewal_process": "File a petition to revive the judgment before the 7-year period expires to extend its enforceability.",
+    "debtor_exam_form": {
+      "number": "SC-500.15",
+      "name": "Citation to Discover Assets"
+    },
+    "exempt_assets": [
+      "Homestead — $15,000 for individuals, $30,000 for married couples",
+      "Motor vehicle — up to $2,400",
+      "Personal property — up to $4,000",
+      "Retirement accounts — fully exempt",
+      "Social Security and federal benefits — fully exempt"
+    ],
+    "bankruptcy_effect_notes": "Filing for bankruptcy imposes an automatic stay on collection efforts; certain judgments may be discharged, while others, like those for fraud, may survive.",
+    "satisfaction_of_judgment_form": {
+      "number": "SC-500.7",
+      "name": "Satisfaction of Judgment"
+    },
+    "priority_notes": "Judgment liens are prioritized based on the date of recording; earlier liens have higher priority over later ones.",
+    "source_ids": [
+      "S18"
+    ]
+  },
+  "businesses": {
+    "self_representation_allowed": true,
+    "self_representation_notes": "Corporations and LLCs may represent themselves in small claims court without an attorney.",
+    "can_send_employee": true,
+    "can_send_attorney": true,
+    "non_attorney_representation_form": {
+      "number": "SC-500.16",
+      "name": "Corporate Authorization to Appear"
+    },
+    "insurance_adjuster_allowed": false,
+    "fictitious_name_form": {
+      "number": "SC-500.17",
+      "name": "Assumed Business Name Certificate"
+    },
+    "fictitious_name_notes": "Businesses operating under an assumed name must file a certificate with the county clerk.",
+    "sole_proprietor_employee_exception": "Sole proprietors may authorize an employee to represent them in small claims court.",
+    "out_of_state_business_must_register": true,
+    "out_of_state_business_statute": "805 ILCS 5/13.05",
+    "licensing_notes": "Unlicensed contractors may face challenges in enforcing contracts; ensure proper licensing before filing a claim.",
+    "source_ids": [
+      "S8"
+    ]
+  },
+  "county_variations_material": true,
+  "county_variations": [
+    {
+      "county": "Cook",
+      "topic": "E-filing availability",
+      "detail": "Cook County requires e-filing for all small claims cases through the Odyssey eFileIL system.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "county": "DuPage",
+      "topic": "Mediation services",
+      "detail": "DuPage County offers mandatory mediation for small claims disputes before proceeding to trial.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "county": "Lake",
+      "topic": "Filing fees",
+      "detail": "Lake County's filing fees for small claims cases range from $50 to $150, depending on the claim amount.",
+      "source_ids": [
+        "S12"
+      ]
+    }
+  ],
+  "pitfalls": [
+    {
+      "title": "Incorrect defendant information",
+      "what_happens": "Suing the wrong party or using incorrect names can result in dismissal or unenforceable judgments.",
+      "how_to_avoid": "Verify the exact legal name and address of the defendant before filing; for businesses, check the Secretary of State's records.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Missing statute of limitations",
+      "what_happens": "Filing after the statute of limitations expires leads to automatic dismissal of the case.",
+      "how_to_avoid": "Confirm the applicable statute of limitations for your claim type and file within the allowed time frame.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "title": "Improper service of process",
+      "what_happens": "Failure to serve the defendant correctly can delay the case or result in dismissal.",
+      "how_to_avoid": "Follow Illinois rules for service of process carefully, using authorized methods and ensuring timely service.",
+      "source_ids": [
+        "S13"
+      ]
+    },
+    {
+      "title": "Insufficient evidence",
+      "what_happens": "Lack of adequate evidence can lead to losing the case, even if your claim is valid.",
+      "how_to_avoid": "Gather and organize all relevant documents, photos, and witness statements before the hearing.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Ignoring court deadlines",
+      "what_happens": "Missing filing deadlines or court dates can result in default judgments or case dismissal.",
+      "how_to_avoid": "Keep track of all deadlines and court dates, and ensure timely submissions and appearances.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Overlooking counterclaims",
+      "what_happens": "Failing to file a counterclaim may forfeit your right to seek damages related to the same dispute.",
+      "how_to_avoid": "If you have a claim against the plaintiff, file a counterclaim within the allowed time frame.",
+      "source_ids": [
+        "S1"
+      ]
+    }
+  ],
+  "recent_changes": [
+    {
+      "date": "2025-10-01",
+      "title": "Elimination of appearance fees in small claims cases",
+      "description": "The Illinois Supreme Court amended rules to eliminate appearance fees in small claims cases, reducing financial barriers for defendants.",
+      "bill_or_rule_citation": "M.R. Order 29741",
+      "source_ids": [
+        "S12"
+      ]
+    },
+    {
+      "date": "2025-04-30",
+      "title": "Fee waivers expanded for minor guardianship cases",
+      "description": "Filing and appearance fees were eliminated in minor guardianship cases to improve access to justice.",
+      "bill_or_rule_citation": "M.R. Order 29741",
+      "source_ids": [
+        "S12"
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Do I need a lawyer?",
+      "answer": "No, you are not required to have a lawyer in Illinois small claims court. The process is designed to be accessible for individuals representing themselves. However, you may choose to hire an attorney if you prefer.",
+      "source_ids": [
+        "S8"
+      ]
+    },
+    {
+      "question": "How long does it take?",
+      "answer": "The timeline varies by county, but most small claims cases are resolved within 30 to 90 days from filing to judgment.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "What's the maximum I can sue for?",
+      "answer": "In Illinois small claims court, you can sue for up to $10,000, excluding interest and court costs.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "What happens if the defendant doesn't show up?",
+      "answer": "If the defendant fails to appear in court, the judge may enter a default judgment in your favor. You may still need to provide evidence to support your claim before the judgment is finalized.",
+      "source_ids": [
+        "S10"
+      ]
+    },
+    {
+      "question": "Can I appeal?",
+      "answer": "Yes, either party can appeal a small claims court decision. The appeal must be filed within 30 days of the judgment, and the appellate court will review the record of the original proceedings.",
+      "source_ids": [
+        "S15"
+      ]
+    },
+    {
+      "question": "How long is a judgment good for?",
+      "answer": "In Illinois, a judgment is enforceable for 7 years. You can petition the court to revive the judgment before it expires to extend its enforceability.",
+      "source_ids": [
+        "S4"
+      ]
+    }
+  ],
+  "state_specific_notes": [
+    "Illinois allows corporations and LLCs to represent themselves in small claims court without an attorney.",
+    "The Consumer Fraud and Deceptive Business Practices Act provides for recovery of attorney's fees and punitive damages in cases of willful or reckless violations.",
+    "Landlords must return security deposits or provide an itemized list of damages within 30 days of lease termination.",
+    "Wage garnishment in Illinois is limited to the lesser of 15% of gross weekly wages or the amount by which disposable earnings exceed 45 times the federal minimum wage per week.",
+    "Judgments accrue interest at a rate of 9% per annum until satisfied."
+  ],
+  "_extras": {
+    "interesting_findings": [
+      "Illinois has eliminated appearance fees in small claims cases as of October 1, 2025, reducing financial barriers for defendants.",
+      "The state provides a comprehensive set of standardized forms for small claims proceedings, available on the Illinois Courts website.",
+      "Some counties in Illinois offer mandatory mediation services for small claims disputes to encourage settlement before trial.",
+      "E-filing requirements and availability vary by county; litigants should check with their local court for specific procedures.",
+      "Illinois law provides specific exemptions for wage garnishment and property liens to protect debtors from undue hardship."
+    ]
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "label": "Illinois Courts - Small Claims",
+      "url": "https://www.illinoiscourts.gov/courts/circuit-court/small-claims/",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S4",
+      "label": "735 ILCS 5/2-416 (Small claims procedures)",
+      "url": "https://www.ilga.gov/legislation/ilcs/fulltext.asp?DocName=073500050K2-416",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S8",
+      "label": "Illinois Supreme Court Rule 282 (Small Claims Procedures)",
+      "url": "https://www.illinoiscourts.gov/supreme-court-rules/rule-282-small-claims/",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S11",
+      "label": "Illinois Courts Approved Statewide Forms - Small Claims",
+      "url": "https://www.illinoiscourts.gov/documents-and-forms/approved-forms/small-claims",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S12",
+      "label": "Illinois Courts Fee Schedule by County",
+      "url": "https://www.illinoiscourts.gov/courts/circuit-court/circuit-court-fee-schedule/",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S13",
+      "label": "Illinois Supreme Court Rule 105 (Service by Publication/Notice) — civil",
+      "url": "https://www.illinoiscourts.gov/supreme-court-rules/rule-105-notice-by-publication-or-mail/",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S15",
+      "label": "Illinois Supreme Court Rule 301 (Appeals from Final Judgments)",
+      "url": "https://www.illinoiscourts.gov/supreme-court-rules/rule-301-appeals-from-final-judgments/",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S17",
+      "label": "735 ILCS 5/12-803 (Wage deductions)",
+      "url": "https://www.ilga.gov/legislation/ilcs/fulltext.asp?DocName=073500050K12-803",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S18",
+      "label": "735 ILCS 5/12-901 et seq. (Garnishment proceedings)",
+      "url": "https://www.ilga.gov/legislation/ilcs/fulltext.asp?DocName=073500050K12-901",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S19",
+      "label": "815 ILCS 505/ Consumer Fraud and Deceptive Business Practices Act",
+      "url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=2353&ChapterID=67",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S21",
+      "label": "810 ILCS 5/3-806 (Bad check civil penalties)",
+      "url": "https://www.ilga.gov/legislation/ilcs/fulltext.asp?DocName=081000050K3-806",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S22",
+      "label": "765 ILCS 710/ Security Deposit Return Act",
+      "url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=2204&ChapterID=62",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S23",
+      "label": "765 ILCS 742/ (Rental Property Utility Service Act)",
+      "url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=2465&ChapterID=62",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S24",
+      "label": "820 ILCS 115/1 et seq. (Illinois Wage Payment and Collection Act)",
+      "url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=2407&ChapterID=68",
+      "primary": true,
+      "citation": ""
+    }
+  ],
+  "_meta": {
+    "state": "Illinois",
+    "slug": "illinois",
+    "model": "gpt-4.1",
+    "sources_response_id": "resp_0ea174721f87109d0069f089806a2081948edd57d4183a8080",
+    "extraction_response_id": "resp_09cf8616d944af7f0069f08e9cea748190b2795bc07ef7e39f",
+    "generated_at": "2026-04-28T10:42:38.327Z",
+    "usage": {
+      "input_tokens": 7773,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 15531,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 23304
+    }
+  }
+}

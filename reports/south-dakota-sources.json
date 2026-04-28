@@ -1,0 +1,146 @@
+{
+  "state": "South Dakota",
+  "as_of": "2024-06-18",
+  "state_judiciary_pages": [
+    {
+      "label": "South Dakota Unified Judicial System Self-Help Small Claims",
+      "url": "https://ujs.sd.gov/Information/small_claims.aspx",
+      "scope": "small_claims"
+    },
+    {
+      "label": "South Dakota Unified Judicial System Main Self-Help Directory",
+      "url": "https://ujs.sd.gov/Information/self_help.aspx",
+      "scope": "self_help"
+    },
+    {
+      "label": "South Dakota Court Directory",
+      "url": "https://ujs.sd.gov/Circuit_Court/default.aspx",
+      "scope": "court_directory"
+    }
+  ],
+  "statutes": [
+    {
+      "label": "South Dakota Codified Laws § 16-12C-13 — Small Claims Limitation & Jurisdiction",
+      "url": "https://sdlegislature.gov/Statutes/16-12C-13",
+      "section_or_chapter": "§ 16-12C-13"
+    },
+    {
+      "label": "South Dakota Codified Laws Ch. 15-39.1 — Small Claims Procedure",
+      "url": "https://sdlegislature.gov/Statutes/15-39-1",
+      "section_or_chapter": "Chapter 15-39.1"
+    },
+    {
+      "label": "South Dakota Codified Laws § 16-12C-7 — Magistrate Court Jurisdiction",
+      "url": "https://sdlegislature.gov/Statutes/16-12C-7",
+      "section_or_chapter": "§ 16-12C-7"
+    },
+    {
+      "label": "South Dakota Codified Laws § 15-39-50 — Small Claims Appeals",
+      "url": "https://sdlegislature.gov/Statutes/15-39-50",
+      "section_or_chapter": "§ 15-39-50"
+    }
+  ],
+  "court_rules": [
+    {
+      "label": "South Dakota Rules of Civil Procedure",
+      "url": "https://sdlegislature.gov/Statutes/Codified_Laws/15-6",
+      "rule_or_chapter": "Chapter 15-6"
+    },
+    {
+      "label": "South Dakota Small Claims Court Rules & Forms (chapter overview)",
+      "url": "https://ujs.sd.gov/Information/small_claims.aspx",
+      "rule_or_chapter": "Small Claims"
+    }
+  ],
+  "forms_pages": [
+    {
+      "label": "South Dakota Small Claims Forms",
+      "url": "https://ujs.sd.gov/Forms/Small_Claims.aspx"
+    }
+  ],
+  "fee_schedules": [
+    {
+      "label": "South Dakota Unified Judicial System Fee Schedule",
+      "url": "https://ujs.sd.gov/Information/fee_schedule.aspx"
+    }
+  ],
+  "service_rules": [
+    {
+      "label": "Service of Process in Small Claims — S.D. Codified Laws § 15-39-42",
+      "url": "https://sdlegislature.gov/Statutes/15-39-42",
+      "section_or_chapter": "§ 15-39-42"
+    }
+  ],
+  "appeal_rules": [
+    {
+      "label": "Small Claims Appeals — S.D. Codified Laws § 15-39-50",
+      "url": "https://sdlegislature.gov/Statutes/15-39-50",
+      "section_or_chapter": "§ 15-39-50"
+    }
+  ],
+  "post_judgment_collection": [
+    {
+      "label": "South Dakota Codified Laws Ch. 21-18 — Garnishment Procedure",
+      "url": "https://sdlegislature.gov/Statutes/21-18",
+      "section_or_chapter": "Chapter 21-18"
+    },
+    {
+      "label": "South Dakota Codified Laws Ch. 21-19 — Executions on Judgments",
+      "url": "https://sdlegislature.gov/Statutes/21-19",
+      "section_or_chapter": "Chapter 21-19"
+    }
+  ],
+  "consumer_protection_statutes": [
+    {
+      "label": "South Dakota Deceptive Trade Practices and Consumer Protection — Ch. 37-24",
+      "url": "https://sdlegislature.gov/Statutes/37-24",
+      "section_or_chapter": "Chapter 37-24"
+    },
+    {
+      "label": "South Dakota Codified Laws § 22-39-36 — Bad Checks Penalty",
+      "url": "https://sdlegislature.gov/Statutes/22-39-36",
+      "section_or_chapter": "§ 22-39-36"
+    }
+  ],
+  "landlord_tenant_statutes": [
+    {
+      "label": "South Dakota Codified Laws Ch. 43-32 — Rights and Duties of Landlord and Tenant",
+      "url": "https://sdlegislature.gov/Statutes/43-32",
+      "section_or_chapter": "Chapter 43-32"
+    }
+  ],
+  "wage_and_employment_statutes": [
+    {
+      "label": "South Dakota Codified Laws § 60-11-10 — Final Paycheck Deadline",
+      "url": "https://sdlegislature.gov/Statutes/60-11-10",
+      "section_or_chapter": "§ 60-11-10"
+    }
+  ],
+  "civil_remedies_statutes": [
+    {
+      "label": "South Dakota Codified Laws § 16-17-1 — Attorney Fees in Civil Actions",
+      "url": "https://sdlegislature.gov/Statutes/16-17-1",
+      "section_or_chapter": "§ 16-17-1"
+    }
+  ],
+  "county_specific": [],
+  "notes": "South Dakota uses a unified magistrate court system for small claims; most procedure is set at the state level.",
+  "_meta": {
+    "state": "South Dakota",
+    "slug": "south-dakota",
+    "model": "gpt-4.1",
+    "response_id": "resp_098a0653848abe450069f08b4992f481909695148aee9656e5",
+    "generated_at": "2026-04-28T10:26:27.879Z",
+    "usage": {
+      "input_tokens": 2105,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 1328,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 3433
+    }
+  }
+}

@@ -1,110 +1,155 @@
 {
   "state": "Alabama",
-  "as_of": "2024-06-16",
+  "as_of": "2024-06-10",
   "state_judiciary_pages": [
     {
-      "label": "Alabama Unified Judicial System — Small Claims Information",
-      "url": "https://judicial.alabama.gov/Library/SmallClaims",
+      "label": "Alabama Unified Judicial System — Small Claims Court",
+      "url": "https://judicial.alabama.gov/CourtInfo/SmallClaims",
       "scope": "small_claims"
     },
     {
-      "label": "Alabama Unified Judicial System — District Court Overview",
-      "url": "https://judicial.alabama.gov/Courts/District",
+      "label": "Alabama Unified Judicial System — District Courts Overview",
+      "url": "https://judicial.alabama.gov/CourtInfo/District",
       "scope": "court_directory"
     },
     {
       "label": "Alabama Unified Judicial System — Self Help",
-      "url": "https://judicial.alabama.gov/SelfHelp/Default.aspx",
+      "url": "https://judicial.alabama.gov/SelfHelp",
       "scope": "self_help"
     }
   ],
   "statutes": [
     {
-      "label": "Ala. Code § 12-12-31 (Small claims court; jurisdiction; representation)",
-      "url": "https://alisondb.legislature.state.al.us/alison/CodeOfAlabama/1975/Coatoc.htm",
-      "section_or_chapter": "§ 12-12-31"
-    },
-    {
-      "label": "Ala. Code § 12-12-30 (Organization of district courts; divisions; special district court judges)",
-      "url": "https://alisondb.legislature.state.al.us/alison/CodeOfAlabama/1975/Coatoc.htm",
+      "label": "Alabama Code § 12-12-30 — District court; organization; powers; procedure; small claims",
+      "url": "https://alisondb.legislature.state.al.us/alison/codeofalabama/1975/12-12-30.htm",
       "section_or_chapter": "§ 12-12-30"
     },
     {
-      "label": "Ala. Code § 6-6-340 (Small claims procedure; right to jury trial)",
-      "url": "https://alisondb.legislature.state.al.us/alison/CodeOfAlabama/1975/Coatoc.htm",
-      "section_or_chapter": "§ 6-6-340"
+      "label": "Alabama Code § 12-12-31 — Jurisdiction in small claims cases",
+      "url": "https://alisondb.legislature.state.al.us/alison/codeofalabama/1975/12-12-31.htm",
+      "section_or_chapter": "§ 12-12-31"
     },
     {
-      "label": "Ala. Code § 12-12-70 (Appeal from district court to circuit court)",
-      "url": "https://alisondb.legislature.state.al.us/alison/CodeOfAlabama/1975/Coatoc.htm",
+      "label": "Alabama Code § 12-12-70 — Appeals from district court decisions",
+      "url": "https://alisondb.legislature.state.al.us/alison/codeofalabama/1975/12-12-70.htm",
       "section_or_chapter": "§ 12-12-70"
     },
     {
-      "label": "Ala. Code § 6-10-7 (Wage garnishment exemptions)",
-      "url": "https://alisondb.legislature.state.al.us/alison/CodeOfAlabama/1975/Coatoc.htm",
-      "section_or_chapter": "§ 6-10-7"
+      "label": "Alabama Code § 6-6-332 — Commencement of small claims actions, service, fees",
+      "url": "https://alisondb.legislature.state.al.us/alison/codeofalabama/1975/6-6-332.htm",
+      "section_or_chapter": "§ 6-6-332"
+    },
+    {
+      "label": "Alabama Code § 6-6-334 — Judgment and collection in small claims",
+      "url": "https://alisondb.legislature.state.al.us/alison/codeofalabama/1975/6-6-334.htm",
+      "section_or_chapter": "§ 6-6-334"
+    },
+    {
+      "label": "Alabama Code § 6-6-337 — Costs, fees, and attorney fees in small claims",
+      "url": "https://alisondb.legislature.state.al.us/alison/codeofalabama/1975/6-6-337.htm",
+      "section_or_chapter": "§ 6-6-337"
     }
   ],
   "court_rules": [
     {
-      "label": "Alabama Rules of Civil Procedure — Rule 81 (Applicability to small claims)",
-      "url": "https://judicial.alabama.gov/docs/library/rules/civ.pdf",
+      "label": "Alabama Rules of Civil Procedure — Rule 81 (Applicability in Small Claims Courts)",
+      "url": "https://judicial.alabama.gov/docs/library/rules/civ81.pdf",
       "rule_or_chapter": "Rule 81"
     },
     {
-      "label": "Alabama Rules of Small Claims Procedure",
-      "url": "https://judicial.alabama.gov/docs/library/rules/sclaims.pdf",
-      "rule_or_chapter": "Full document"
+      "label": "Alabama Small Claims Rules",
+      "url": "https://judicial.alabama.gov/docs/library/rules/smallclaims.pdf",
+      "rule_or_chapter": "Entire document"
     }
   ],
   "forms_pages": [
     {
-      "label": "Alabama small claims forms (Statement of Claim, Subpoena, etc.)",
-      "url": "https://judicial.alabama.gov/Library/Forms#small_claims"
+      "label": "Alabama Unified Judicial System — Small Claims Forms",
+      "url": "https://judicial.alabama.gov/Library/JudicialForms#SmallClaims"
     }
   ],
   "fee_schedules": [
     {
-      "label": "Alabama district court filing fees",
-      "url": "https://judicial.alabama.gov/Library/FeeSchedules"
+      "label": "Alabama Unified Judicial System — Court Costs Schedule",
+      "url": "https://judicial.alabama.gov/docs/library/fees/costschedule.pdf"
     }
   ],
   "service_rules": [
     {
-      "label": "Service of process — Alabama Rules of Civil Procedure, Rule 4",
-      "url": "https://judicial.alabama.gov/docs/library/rules/civ.pdf"
+      "label": "Alabama Rules of Civil Procedure — Service of Process (Rule 4)",
+      "url": "https://judicial.alabama.gov/docs/library/rules/civ4.pdf"
     }
   ],
   "appeal_rules": [
     {
-      "label": "Appeals from district court — Ala. Code § 12-12-70",
-      "url": "https://alisondb.legislature.state.al.us/alison/CodeOfAlabama/1975/Coatoc.htm"
+      "label": "Alabama Code § 12-12-70 — Appeals from district (including small claims) courts",
+      "url": "https://alisondb.legislature.state.al.us/alison/codeofalabama/1975/12-12-70.htm"
     }
   ],
   "post_judgment_collection": [
     {
-      "label": "Wage garnishment exemptions — Ala. Code § 6-10-7",
-      "url": "https://alisondb.legislature.state.al.us/alison/CodeOfAlabama/1975/Coatoc.htm"
+      "label": "Alabama Code § 6-6-334 — Judgment and collection in small claims",
+      "url": "https://alisondb.legislature.state.al.us/alison/codeofalabama/1975/6-6-334.htm"
+    },
+    {
+      "label": "Alabama Code § 6-10-7 — Wage garnishment exemptions",
+      "url": "https://alisondb.legislature.state.al.us/alison/codeofalabama/1975/6-10-7.htm"
+    }
+  ],
+  "consumer_protection_statutes": [
+    {
+      "label": "Alabama Deceptive Trade Practices Act — Ala. Code § 8-19-5",
+      "url": "https://alisondb.legislature.state.al.us/alison/codeofalabama/1975/8-19-5.htm"
+    },
+    {
+      "label": "Alabama Code § 13A-9-13.1 — Bad checks; civil and criminal penalties",
+      "url": "https://alisondb.legislature.state.al.us/alison/codeofalabama/1975/13A-9-13.1.htm"
+    }
+  ],
+  "landlord_tenant_statutes": [
+    {
+      "label": "Alabama Uniform Residential Landlord and Tenant Act — Security Deposits (§ 35-9A-201, § 35-9A-202)",
+      "url": "https://alisondb.legislature.state.al.us/alison/codeofalabama/1975/35-9A-201.htm"
+    },
+    {
+      "label": "Alabama Code § 35-9A-422 — Tenant remedies for illegal lockout",
+      "url": "https://alisondb.legislature.state.al.us/alison/codeofalabama/1975/35-9A-422.htm"
+    }
+  ],
+  "wage_and_employment_statutes": [
+    {
+      "label": "Alabama Code § 25-4-78 — Unpaid wages; final paycheck deadline",
+      "url": "https://alisondb.legislature.state.al.us/alison/codeofalabama/1975/25-4-78.htm"
+    }
+  ],
+  "civil_remedies_statutes": [
+    {
+      "label": "Alabama Code § 6-5-370 — Civil damages for theft",
+      "url": "https://alisondb.legislature.state.al.us/alison/codeofalabama/1975/6-5-370.htm"
+    },
+    {
+      "label": "Alabama Code § 6-5-101 — General fraud cause of action; damages",
+      "url": "https://alisondb.legislature.state.al.us/alison/codeofalabama/1975/6-5-101.htm"
     }
   ],
   "county_specific": [],
-  "notes": "Alabama uses unified district courts with dedicated small-claims procedures; all forms and rules are centralized on the state judiciary website.",
+  "notes": "Alabama small claims courts operate within the unified district court system; rules and forms are standardized statewide.",
   "_meta": {
     "state": "Alabama",
     "slug": "alabama",
     "model": "gpt-4.1",
-    "response_id": "resp_05a594682fc6c9260069f079c1b3bc8196b9799e3171c3713f",
-    "generated_at": "2026-04-28T09:11:39.155Z",
+    "response_id": "resp_0ab3940f3d06c8790069f0825fd23081948a0dddad83400916",
+    "generated_at": "2026-04-28T09:48:30.615Z",
     "usage": {
-      "input_tokens": 1793,
+      "input_tokens": 2104,
       "input_tokens_details": {
-        "cached_tokens": 0
+        "cached_tokens": 1024
       },
-      "output_tokens": 1011,
+      "output_tokens": 1652,
       "output_tokens_details": {
         "reasoning_tokens": 0
       },
-      "total_tokens": 2804
+      "total_tokens": 3756
     }
   }
 }

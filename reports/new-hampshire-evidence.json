@@ -1,0 +1,1667 @@
+{
+  "state": "New Hampshire",
+  "slug": "new-hampshire",
+  "abbr": "NH",
+  "as_of": "2026-01-01",
+  "hero": {
+    "individual_limit_dollars": 6000,
+    "business_limit_dollars": 6000,
+    "filing_fee_low_dollars": 90,
+    "filing_fee_high_dollars": 145,
+    "typical_timeline_min_days": 30,
+    "typical_timeline_max_days": 90,
+    "tagline": "Standard $6,000 cap, 14-day appeal window, and broad eligibility for most money claims.",
+    "source_ids": [
+      "S1",
+      "S3",
+      "S12"
+    ]
+  },
+  "at_a_glance": [
+    {
+      "label": "Most you can sue for",
+      "value": "$6,000",
+      "detail": "Same cap for individuals and businesses",
+      "source_ids": [
+        "S1",
+        "S4"
+      ]
+    },
+    {
+      "label": "Filing fee",
+      "value": "$90-$145",
+      "detail": "Tiered by claim amount",
+      "source_ids": [
+        "S3",
+        "S12"
+      ]
+    },
+    {
+      "label": "Court",
+      "value": "Circuit Court District Division (small claims docket)",
+      "detail": "",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Lawyers at trial",
+      "value": "Allowed",
+      "detail": "Permitted but not required",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Appeal window",
+      "value": "14 days",
+      "detail": "Trial de novo in Superior Court",
+      "source_ids": [
+        "S6",
+        "S14"
+      ]
+    },
+    {
+      "label": "Recent change",
+      "value": "—",
+      "detail": "No major changes in the last 3 years",
+      "source_ids": []
+    }
+  ],
+  "limits": {
+    "individual_dollars": 6000,
+    "business_dollars": 6000,
+    "guarantor_with_fee_max": null,
+    "guarantor_without_fee_max": null,
+    "annual_filing_cap": {
+      "count": null,
+      "threshold_dollars": null,
+      "notes": ""
+    },
+    "split_claims_allowed": false,
+    "split_claims_explanation": "If your claim exceeds $6,000, you must either waive the excess to proceed in small claims or file in a higher court. You cannot split a single dispute into multiple small claims to circumvent the cap.",
+    "interest_excluded_from_cap": true,
+    "court_costs_excluded_from_cap": true,
+    "statute": "N.H. Rev. Stat. § 503:1",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "claim_categories": [
+    {
+      "id": "contracts",
+      "title": "Contracts and money owed",
+      "blurb": "New Hampshire allows most contract and debt claims up to $6,000 in small claims court. The statute of limitations is generally 3 years for written and oral contracts.",
+      "claims": [
+        {
+          "slug": "written-contract",
+          "name": "Breach of a written contract",
+          "example": "A roofer signed a $5,000 contract to replace your roof, took a $2,000 deposit, and never started the work.",
+          "eligibility": "eligible",
+          "claim_statute": "N.H. Rev. Stat. § 508:4",
+          "notes": "You have 3 years from the breach to file. Bring the signed contract, payment records, and any communications.",
+          "damage_boost": "",
+          "source_ids": [
+            "S1"
+          ]
+        },
+        {
+          "slug": "oral-contract",
+          "name": "Breach of an oral contract",
+          "example": "You agreed verbally to pay a neighbor $500 to paint your fence, but they never showed up after you paid.",
+          "eligibility": "eligible",
+          "claim_statute": "N.H. Rev. Stat. § 508:4",
+          "notes": "3-year deadline from breach. Bring proof of payment and any witnesses to the agreement.",
+          "damage_boost": "",
+          "source_ids": [
+            "S1"
+          ]
+        },
+        {
+          "slug": "personal-loan",
+          "name": "Unpaid personal loan",
+          "example": "You loaned a friend $2,000 with the promise of repayment in 6 months, but they never paid you back.",
+          "eligibility": "eligible",
+          "claim_statute": "N.H. Rev. Stat. § 508:4",
+          "notes": "3-year deadline from when repayment was due. Bring evidence of the loan and any repayment attempts.",
+          "damage_boost": "",
+          "source_ids": [
+            "S1"
+          ]
+        },
+        {
+          "slug": "promissory-note",
+          "name": "Unpaid promissory note",
+          "example": "A borrower signed a $3,000 promissory note and defaulted on payments.",
+          "eligibility": "eligible",
+          "claim_statute": "N.H. Rev. Stat. § 508:4",
+          "notes": "3-year deadline from default. Bring the original note and payment history.",
+          "damage_boost": "",
+          "source_ids": [
+            "S1"
+          ]
+        },
+        {
+          "slug": "unpaid-invoice",
+          "name": "Unpaid invoice for goods/services",
+          "example": "You provided $1,200 in landscaping services and the client never paid your invoice.",
+          "eligibility": "eligible",
+          "claim_statute": "N.H. Rev. Stat. § 508:4",
+          "notes": "3-year deadline from when payment was due. Bring the invoice and proof of service.",
+          "damage_boost": "",
+          "source_ids": [
+            "S1"
+          ]
+        },
+        {
+          "slug": "open-account",
+          "name": "Open account or credit card debt",
+          "example": "A customer owes $4,500 on a store credit account and stopped making payments.",
+          "eligibility": "eligible",
+          "claim_statute": "N.H. Rev. Stat. § 508:4",
+          "notes": "3-year deadline from last payment or charge. Bring account statements and payment records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S1"
+          ]
+        },
+        {
+          "slug": "unpaid-rent",
+          "name": "Unpaid rent (money only)",
+          "example": "A tenant owes $2,000 in back rent after moving out.",
+          "eligibility": "eligible",
+          "claim_statute": "N.H. Rev. Stat. § 508:4",
+          "notes": "3-year deadline from when rent was due. Bring the lease and payment records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S1"
+          ]
+        },
+        {
+          "slug": "bad-check",
+          "name": "Bad check (NSF or closed account)",
+          "example": "A customer paid you $800 with a check that bounced.",
+          "eligibility": "eligible",
+          "claim_statute": "N.H. Rev. Stat. § 638:4",
+          "notes": "You must give a 14-day written notice before suing. Bring the returned check and notice proof.",
+          "damage_boost": "You may recover the check amount plus a statutory penalty.",
+          "source_ids": [
+            "S20"
+          ]
+        },
+        {
+          "slug": "co-signer",
+          "name": "Co-signer liability for unpaid debt",
+          "example": "You co-signed a $3,000 loan and the primary borrower defaulted.",
+          "eligibility": "eligible",
+          "claim_statute": "N.H. Rev. Stat. § 508:4",
+          "notes": "3-year deadline from default. Bring the loan agreement and payment records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "consumer",
+      "title": "Consumer disputes",
+      "blurb": "Small claims court covers most consumer disputes up to $6,000, including defective products and unfair practices. The Consumer Protection Act may provide extra remedies.",
+      "claims": [
+        {
+          "slug": "defective-product",
+          "name": "Defective product (not as advertised)",
+          "example": "You bought a $1,000 appliance that never worked and the seller refused a refund.",
+          "eligibility": "eligible",
+          "claim_statute": "N.H. Rev. Stat. § 358-A:2",
+          "notes": "3-year deadline. Bring receipts, product documentation, and correspondence.",
+          "damage_boost": "Treble damages and attorney fees may be available for willful violations.",
+          "source_ids": [
+            "S17"
+          ]
+        },
+        {
+          "slug": "bad-service",
+          "name": "Bad service (not as promised)",
+          "example": "A cleaning company charged $400 but did not perform the agreed services.",
+          "eligibility": "eligible",
+          "claim_statute": "N.H. Rev. Stat. § 358-A:2",
+          "notes": "3-year deadline. Bring service agreement, payment proof, and photos if applicable.",
+          "damage_boost": "",
+          "source_ids": [
+            "S17"
+          ]
+        },
+        {
+          "slug": "auto-repair",
+          "name": "Auto repair dispute",
+          "example": "A mechanic charged $1,200 for repairs that did not fix the problem.",
+          "eligibility": "eligible",
+          "claim_statute": "N.H. Rev. Stat. § 357-C:3",
+          "notes": "3-year deadline. Bring repair order, receipts, and any expert opinions.",
+          "damage_boost": "",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "contractor",
+          "name": "Home contractor dispute",
+          "example": "A contractor took a $2,500 deposit and never started the job.",
+          "eligibility": "eligible",
+          "claim_statute": "N.H. Rev. Stat. § 358-A:2",
+          "notes": "3-year deadline. Bring contract, payment proof, and communications.",
+          "damage_boost": "",
+          "source_ids": [
+            "S17"
+          ]
+        },
+        {
+          "slug": "no-show-vendor",
+          "name": "No-show vendor",
+          "example": "A DJ took a $600 deposit for a wedding and did not show up.",
+          "eligibility": "eligible",
+          "claim_statute": "N.H. Rev. Stat. § 358-A:2",
+          "notes": "3-year deadline. Bring contract, payment proof, and event documentation.",
+          "damage_boost": "",
+          "source_ids": [
+            "S17"
+          ]
+        },
+        {
+          "slug": "subscription-cancellation",
+          "name": "Subscription cancellation dispute",
+          "example": "A gym refused to cancel your $300 membership after you followed their process.",
+          "eligibility": "eligible",
+          "claim_statute": "N.H. Rev. Stat. § 358-A:2",
+          "notes": "3-year deadline. Bring contract, cancellation request, and payment records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S17"
+          ]
+        },
+        {
+          "slug": "used-car",
+          "name": "Used car sale dispute",
+          "example": "You bought a $5,000 used car that broke down within a week and the dealer refused repairs.",
+          "eligibility": "eligible",
+          "claim_statute": "N.H. Rev. Stat. § 358-A:2",
+          "notes": "3-year deadline. Bring bill of sale, repair records, and correspondence.",
+          "damage_boost": "",
+          "source_ids": [
+            "S17"
+          ]
+        },
+        {
+          "slug": "false-advertising",
+          "name": "False advertising",
+          "example": "A store advertised a laptop for $800 but refused to honor the price.",
+          "eligibility": "eligible",
+          "claim_statute": "N.H. Rev. Stat. § 358-A:2",
+          "notes": "3-year deadline. Bring ad copy, purchase attempt records, and correspondence.",
+          "damage_boost": "",
+          "source_ids": [
+            "S17"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "property-damage",
+      "title": "Property damage",
+      "blurb": "Claims for property damage up to $6,000 are allowed. The statute of limitations is generally 3 years.",
+      "claims": [
+        {
+          "slug": "vehicle-collision",
+          "name": "Vehicle collision (property only)",
+          "example": "Someone rear-ended your car, causing $2,500 in damage, and refused to pay.",
+          "eligibility": "eligible",
+          "claim_statute": "N.H. Rev. Stat. § 508:4",
+          "notes": "3-year deadline. Bring repair estimates, police report, and photos.",
+          "damage_boost": "",
+          "source_ids": [
+            "S1"
+          ]
+        },
+        {
+          "slug": "neighbor-property",
+          "name": "Neighbor damages property",
+          "example": "A neighbor's tree fell and damaged your $1,800 fence.",
+          "eligibility": "eligible",
+          "claim_statute": "N.H. Rev. Stat. § 508:4",
+          "notes": "3-year deadline. Bring photos, repair estimates, and any communications.",
+          "damage_boost": "",
+          "source_ids": [
+            "S1"
+          ]
+        },
+        {
+          "slug": "damage-to-rental",
+          "name": "Damage to rental property",
+          "example": "A tenant caused $1,200 in damage to your apartment.",
+          "eligibility": "eligible",
+          "claim_statute": "N.H. Rev. Stat. § 508:4",
+          "notes": "3-year deadline. Bring lease, photos, and repair bills.",
+          "damage_boost": "",
+          "source_ids": [
+            "S1"
+          ]
+        },
+        {
+          "slug": "pet-damage",
+          "name": "Pet damages property",
+          "example": "A dog chewed up your $600 garden furniture.",
+          "eligibility": "eligible",
+          "claim_statute": "N.H. Rev. Stat. § 508:4",
+          "notes": "3-year deadline. Bring photos and repair/replacement receipts.",
+          "damage_boost": "",
+          "source_ids": [
+            "S1"
+          ]
+        },
+        {
+          "slug": "property-in-custody",
+          "name": "Property damaged while in custody",
+          "example": "A storage facility lost or damaged your $2,000 belongings.",
+          "eligibility": "eligible",
+          "claim_statute": "N.H. Rev. Stat. § 508:4",
+          "notes": "3-year deadline. Bring storage contract, inventory, and damage proof.",
+          "damage_boost": "",
+          "source_ids": [
+            "S1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "landlord-tenant",
+      "title": "Landlord-tenant (money only)",
+      "blurb": "Small claims court covers money disputes between landlords and tenants, such as security deposits and unpaid rent. Evictions are excluded.",
+      "claims": [
+        {
+          "slug": "security-deposit",
+          "name": "Security deposit not returned",
+          "example": "A landlord kept your $1,000 deposit without explanation after you moved out.",
+          "eligibility": "eligible",
+          "claim_statute": "N.H. Rev. Stat. § 540-A:6",
+          "notes": "Landlord must return deposit or itemize deductions within 30 days. Bring lease, move-out photos, and correspondence.",
+          "damage_boost": "Tenant may recover double the amount wrongfully withheld.",
+          "source_ids": [
+            "S21"
+          ]
+        },
+        {
+          "slug": "deposit-not-itemized",
+          "name": "Deposit deductions not itemized",
+          "example": "Landlord deducted $400 from your deposit but gave no itemized list.",
+          "eligibility": "eligible",
+          "claim_statute": "N.H. Rev. Stat. § 540-A:6",
+          "notes": "Landlord must provide itemized statement within 30 days. Bring lease and move-out documentation.",
+          "damage_boost": "Double damages for noncompliance.",
+          "source_ids": [
+            "S21"
+          ]
+        },
+        {
+          "slug": "uninhabitable-rental",
+          "name": "Uninhabitable rental (money only)",
+          "example": "You paid $1,200 for a month in an apartment with no heat or water.",
+          "eligibility": "eligible",
+          "claim_statute": "N.H. Rev. Stat. § 540-A:6",
+          "notes": "Bring lease, photos, and repair requests. Only money damages, not repairs or injunctions.",
+          "damage_boost": "",
+          "source_ids": [
+            "S21"
+          ]
+        },
+        {
+          "slug": "wrongful-retention-property",
+          "name": "Landlord keeps tenant property",
+          "example": "Landlord kept your $800 bicycle after you moved out.",
+          "eligibility": "eligible",
+          "claim_statute": "N.H. Rev. Stat. § 540-A:6",
+          "notes": "Bring lease, move-out documentation, and proof of property value.",
+          "damage_boost": "",
+          "source_ids": [
+            "S21"
+          ]
+        },
+        {
+          "slug": "illegal-eviction",
+          "name": "Illegal eviction or lockout (money only)",
+          "example": "Landlord changed the locks and kept your $1,000 rent.",
+          "eligibility": "eligible",
+          "claim_statute": "N.H. Rev. Stat. § 540:13-a",
+          "notes": "Bring lease, police report, and proof of damages. Only money damages.",
+          "damage_boost": "",
+          "source_ids": [
+            "S22"
+          ]
+        },
+        {
+          "slug": "unreturned-prepaid-rent",
+          "name": "Unreturned prepaid rent",
+          "example": "Landlord kept your $600 prepaid rent after early termination.",
+          "eligibility": "eligible",
+          "claim_statute": "N.H. Rev. Stat. § 540-A:6",
+          "notes": "Bring lease, payment records, and move-out documentation.",
+          "damage_boost": "",
+          "source_ids": [
+            "S21"
+          ]
+        },
+        {
+          "slug": "unpaid-rent-by-tenant",
+          "name": "Unpaid rent by tenant",
+          "example": "Tenant owes $2,000 in back rent after moving out.",
+          "eligibility": "eligible",
+          "claim_statute": "N.H. Rev. Stat. § 508:4",
+          "notes": "Bring lease and payment records. Only money damages.",
+          "damage_boost": "",
+          "source_ids": [
+            "S1"
+          ]
+        },
+        {
+          "slug": "repair-and-deduct",
+          "name": "Repair and deduct dispute",
+          "example": "Tenant paid $300 to fix a broken heater and landlord refused reimbursement.",
+          "eligibility": "eligible",
+          "claim_statute": "N.H. Rev. Stat. § 540-A:6",
+          "notes": "Bring repair receipts and notice to landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S21"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "employment",
+      "title": "Employment and wages",
+      "blurb": "Small claims court covers most wage and employment disputes up to $6,000. The statute of limitations is generally 3 years.",
+      "claims": [
+        {
+          "slug": "unpaid-wages",
+          "name": "Unpaid wages",
+          "example": "Employer owes you $1,000 for hours worked but not paid.",
+          "eligibility": "eligible",
+          "claim_statute": "N.H. Rev. Stat. § 275:44",
+          "notes": "3-year deadline. Bring pay stubs, timesheets, and employment agreement.",
+          "damage_boost": "",
+          "source_ids": [
+            "S23"
+          ]
+        },
+        {
+          "slug": "final-paycheck",
+          "name": "Final paycheck not paid",
+          "example": "Employer failed to pay your $800 final paycheck after termination.",
+          "eligibility": "eligible",
+          "claim_statute": "N.H. Rev. Stat. § 275:44",
+          "notes": "3-year deadline. Bring termination letter and pay records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S23"
+          ]
+        },
+        {
+          "slug": "unpaid-commissions",
+          "name": "Unpaid commissions",
+          "example": "Salesperson owed $2,500 in commissions after leaving job.",
+          "eligibility": "eligible",
+          "claim_statute": "N.H. Rev. Stat. § 275:44",
+          "notes": "3-year deadline. Bring commission agreement and sales records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S23"
+          ]
+        },
+        {
+          "slug": "unpaid-overtime",
+          "name": "Unpaid overtime",
+          "example": "Employer did not pay $600 in overtime wages.",
+          "eligibility": "eligible",
+          "claim_statute": "N.H. Rev. Stat. § 275:44",
+          "notes": "3-year deadline. Bring timesheets and pay records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S23"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "personal",
+      "title": "Personal claims",
+      "blurb": "Small claims court covers minor personal claims for money, such as loaned property or civil theft, up to $6,000.",
+      "claims": [
+        {
+          "slug": "minor-injury",
+          "name": "Minor personal injury (money only)",
+          "example": "You slipped on a neighbor's icy walkway and incurred $1,000 in medical bills.",
+          "eligibility": "eligible",
+          "claim_statute": "N.H. Rev. Stat. § 508:4",
+          "notes": "3-year deadline. Bring medical bills and incident documentation.",
+          "damage_boost": "",
+          "source_ids": [
+            "S1"
+          ]
+        },
+        {
+          "slug": "loaned-property",
+          "name": "Loaned property not returned",
+          "example": "You loaned a $400 power tool to a friend who never gave it back.",
+          "eligibility": "eligible",
+          "claim_statute": "N.H. Rev. Stat. § 508:4",
+          "notes": "3-year deadline. Bring proof of ownership and loan.",
+          "damage_boost": "",
+          "source_ids": [
+            "S1"
+          ]
+        },
+        {
+          "slug": "civil-theft",
+          "name": "Civil theft (money damages only)",
+          "example": "Someone stole your $1,200 bicycle and you seek its value.",
+          "eligibility": "eligible",
+          "claim_statute": "N.H. Rev. Stat. § 637:8",
+          "notes": "3-year deadline. Bring police report and proof of value.",
+          "damage_boost": "",
+          "source_ids": [
+            "S24"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vehicle",
+      "title": "Vehicle-specific claims",
+      "blurb": "Vehicle-related claims such as mechanic disputes and wrongful tows are allowed up to $6,000.",
+      "claims": [
+        {
+          "slug": "mechanic-dispute",
+          "name": "Mechanic/auto repair dispute",
+          "example": "Mechanic charged $900 for repairs that did not fix your car.",
+          "eligibility": "eligible",
+          "claim_statute": "N.H. Rev. Stat. § 357-C:3",
+          "notes": "3-year deadline. Bring repair order, receipts, and expert opinion if possible.",
+          "damage_boost": "",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "wrongful-tow",
+          "name": "Wrongful tow",
+          "example": "Your car was towed from a legal spot and you paid $300 to recover it.",
+          "eligibility": "eligible",
+          "claim_statute": "N.H. Rev. Stat. § 358-A:2",
+          "notes": "3-year deadline. Bring tow receipt, photos, and correspondence.",
+          "damage_boost": "",
+          "source_ids": [
+            "S17"
+          ]
+        }
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "category": "Eviction (unlawful detainer)",
+      "explanation": "Eviction actions are not allowed in small claims court; only money damages can be sought.",
+      "where_to_go_instead": "District Court ejectment process",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Title to real estate",
+      "explanation": "Small claims court cannot decide ownership or title to real property.",
+      "where_to_go_instead": "Superior Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Defamation",
+      "explanation": "Claims for libel or slander are excluded from small claims court.",
+      "where_to_go_instead": "Superior Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Malpractice",
+      "explanation": "Professional malpractice claims are not allowed in small claims court.",
+      "where_to_go_instead": "Superior Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Family law and probate",
+      "explanation": "Divorce, child custody, and probate matters are excluded.",
+      "where_to_go_instead": "Family Division or Probate Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Federal claims",
+      "explanation": "Bankruptcy, patents, trademarks, and other federal claims are not allowed.",
+      "where_to_go_instead": "Federal Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Class actions",
+      "explanation": "Class actions are not permitted in small claims court.",
+      "where_to_go_instead": "Superior Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Injunctions/specific performance",
+      "explanation": "Small claims court cannot order someone to do or stop doing something.",
+      "where_to_go_instead": "Superior Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Workers' compensation",
+      "explanation": "Workers' compensation claims are handled by the Department of Labor.",
+      "where_to_go_instead": "Department of Labor",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Suing a deceased person",
+      "explanation": "Claims against deceased persons must be filed in probate court.",
+      "where_to_go_instead": "Probate Court",
+      "source_ids": [
+        "S1"
+      ]
+    }
+  ],
+  "damages": {
+    "compensatory_allowed": true,
+    "punitive_allowed": false,
+    "punitive_explanation": "Punitive damages are not allowed, but statutory penalties and multipliers may apply for certain claims such as bad checks or consumer fraud.",
+    "statutory_multipliers": [
+      {
+        "claim": "Bad check (after 14-day notice)",
+        "multiplier": "2x check amount or $100, whichever is greater",
+        "explanation": "Check amount plus a civil penalty of either $100 or twice the check amount, whichever is greater, after proper notice.",
+        "statute": "N.H. Rev. Stat. § 638:4",
+        "source_ids": [
+          "S20"
+        ]
+      },
+      {
+        "claim": "Security deposit wrongfully withheld",
+        "multiplier": "2x deposit amount",
+        "explanation": "Tenant may recover double the amount wrongfully withheld if landlord fails to comply with deposit return rules.",
+        "statute": "N.H. Rev. Stat. § 540-A:6",
+        "source_ids": [
+          "S21"
+        ]
+      },
+      {
+        "claim": "Consumer Protection Act violation",
+        "multiplier": "Up to 3x actual damages",
+        "explanation": "Court may award up to three times actual damages for willful or knowing violations.",
+        "statute": "N.H. Rev. Stat. § 358-A:10",
+        "source_ids": [
+          "S25"
+        ]
+      }
+    ],
+    "attorney_fees_recoverable": "sometimes",
+    "attorney_fees_explanation": "Attorney fees may be awarded for Consumer Protection Act claims and certain statutory violations, but not for ordinary contract or debt claims.",
+    "prejudgment_interest_rate_pct": null,
+    "prejudgment_interest_statute": "",
+    "postjudgment_interest_rate_pct": 2,
+    "postjudgment_interest_type": "simple",
+    "postjudgment_interest_statute": "N.H. Rev. Stat. § 524:6-a",
+    "postjudgment_interest_notes": "Interest accrues at 2% per year on judgments.",
+    "filing_and_service_fees_recoverable_from_loser": true,
+    "source_ids": [
+      "S16",
+      "S21",
+      "S25"
+    ]
+  },
+  "where_to_file": {
+    "court_name": "Circuit Court District Division (Small Claims)",
+    "parent_court": "New Hampshire Judicial Branch",
+    "venue_rules": [
+      {
+        "scenario": "Most cases (the default)",
+        "filing_options": [
+          "County where the defendant lives"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Where contract was performed",
+        "filing_options": [
+          "County where performance was due"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Where injury or damage occurred",
+        "filing_options": [
+          "County where the event occurred"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Multiple defendants",
+        "filing_options": [
+          "Any county where ONE defendant resides"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Out-of-state defendant",
+        "filing_options": [
+          "Where the cause of action arose"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "consequences_of_wrong_venue": "The court may transfer the case to the correct venue or dismiss it; you may need to refile and pay a new fee.",
+    "e_filing_available": "no",
+    "e_filing_notes": "E-filing is not currently available for small claims.",
+    "e_filing_portal": null,
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "fees": {
+    "filing_fee_tiers": [
+      {
+        "range_label": "$0 to $1,500",
+        "range_min": 0,
+        "range_max": 1500,
+        "fee_dollars": 90,
+        "source_ids": [
+          "S3",
+          "S12"
+        ]
+      },
+      {
+        "range_label": "$1,501 to $5,000",
+        "range_min": 1501,
+        "range_max": 5000,
+        "fee_dollars": 125,
+        "source_ids": [
+          "S3",
+          "S12"
+        ]
+      },
+      {
+        "range_label": "$5,001 to $6,000",
+        "range_min": 5001,
+        "range_max": 6000,
+        "fee_dollars": 145,
+        "source_ids": [
+          "S3",
+          "S12"
+        ]
+      }
+    ],
+    "frequent_filer": {
+      "threshold_per_year": null,
+      "fee_dollars": null,
+      "notes": ""
+    },
+    "service_fees": [
+      {
+        "method": "Sheriff (personal service)",
+        "amount_label": "$25-50",
+        "notes": "Varies by county.",
+        "source_ids": [
+          "S3",
+          "S12"
+        ]
+      },
+      {
+        "method": "Certified mail",
+        "amount_label": "$7-15",
+        "notes": "If served by clerk.",
+        "source_ids": [
+          "S3",
+          "S12"
+        ]
+      }
+    ],
+    "waiver": {
+      "forms": [
+        {
+          "number": "NHJB-2091-FP",
+          "name": "Motion to Waive Filing Fee",
+          "url": "https://www.courts.nh.gov/self-help/forms/all-forms?title=fee+waiver",
+          "source_ids": [
+            "S11"
+          ]
+        }
+      ],
+      "eligibility_bullets": [
+        "Receiving need-based public assistance",
+        "Household income below 125% federal poverty line"
+      ],
+      "coverage_notes": "Waiver covers filing fee and may cover service fees if granted.",
+      "if_you_win_notes": "Waived fees may be added to the judgment against the losing party."
+    },
+    "other_fees": [
+      {
+        "name": "Subpoena issuance",
+        "amount_label": "$10",
+        "notes": "Plus witness fee per day.",
+        "source_ids": [
+          "S3",
+          "S12"
+        ]
+      },
+      {
+        "name": "Appeal filing",
+        "amount_label": "$250",
+        "notes": "Payable to Superior Court.",
+        "source_ids": [
+          "S3",
+          "S12"
+        ]
+      },
+      {
+        "name": "Writ of execution",
+        "amount_label": "$25-50",
+        "notes": "Varies by county.",
+        "source_ids": [
+          "S3",
+          "S12"
+        ]
+      }
+    ],
+    "fees_recoverable_from_loser_notes": "If you win, the filing fee and reasonable service costs are added to the judgment.",
+    "source_ids": [
+      "S3",
+      "S12"
+    ]
+  },
+  "statute_of_limitations": {
+    "entries": [
+      {
+        "id": "written-contract",
+        "claim": "Written contract",
+        "years": 3,
+        "clock_starts": "Breach or default",
+        "statute": "N.H. Rev. Stat. § 508:4",
+        "notes": "",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "id": "oral-contract",
+        "claim": "Oral contract",
+        "years": 3,
+        "clock_starts": "Breach or default",
+        "statute": "N.H. Rev. Stat. § 508:4",
+        "notes": "",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "id": "sale-of-goods",
+        "claim": "Sale of goods (UCC)",
+        "years": 4,
+        "clock_starts": "Breach or default",
+        "statute": "N.H. Rev. Stat. § 382-A:2-725",
+        "notes": "",
+        "source_ids": []
+      },
+      {
+        "id": "promissory-note",
+        "claim": "Promissory note",
+        "years": 3,
+        "clock_starts": "Default",
+        "statute": "N.H. Rev. Stat. § 508:4",
+        "notes": "",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "id": "open-account",
+        "claim": "Open account / credit card debt",
+        "years": 3,
+        "clock_starts": "Last payment or charge",
+        "statute": "N.H. Rev. Stat. § 508:4",
+        "notes": "",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "id": "personal-injury",
+        "claim": "Personal injury",
+        "years": 3,
+        "clock_starts": "Injury or discovery",
+        "statute": "N.H. Rev. Stat. § 508:4",
+        "notes": "Discovery rule applies.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "id": "property-damage",
+        "claim": "Property damage",
+        "years": 3,
+        "clock_starts": "Damage or discovery",
+        "statute": "N.H. Rev. Stat. § 508:4",
+        "notes": "Discovery rule applies.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "id": "fraud",
+        "claim": "Fraud",
+        "years": 3,
+        "clock_starts": "Discovery of fraud",
+        "statute": "N.H. Rev. Stat. § 508:4",
+        "notes": "Discovery rule applies.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "id": "bad-check",
+        "claim": "Bad check",
+        "years": 3,
+        "clock_starts": "Date check dishonored",
+        "statute": "N.H. Rev. Stat. § 638:4",
+        "notes": "",
+        "source_ids": [
+          "S20"
+        ]
+      },
+      {
+        "id": "unpaid-wages",
+        "claim": "Unpaid wages",
+        "years": 3,
+        "clock_starts": "When wages due",
+        "statute": "N.H. Rev. Stat. § 275:44",
+        "notes": "",
+        "source_ids": [
+          "S23"
+        ]
+      },
+      {
+        "id": "security-deposit",
+        "claim": "Security deposit",
+        "years": 3,
+        "clock_starts": "When deposit due back",
+        "statute": "N.H. Rev. Stat. § 540-A:6",
+        "notes": "",
+        "source_ids": [
+          "S21"
+        ]
+      },
+      {
+        "id": "judgment-enforcement",
+        "claim": "Judgment enforcement",
+        "years": 20,
+        "clock_starts": "Entry of judgment",
+        "statute": "N.H. Rev. Stat. § 524:6-a",
+        "notes": "",
+        "source_ids": [
+          "S16"
+        ]
+      }
+    ],
+    "discovery_rule_notes": "The discovery rule applies to fraud, personal injury, and property damage claims.",
+    "tolling_notes": "The statute may be tolled if the defendant is out of state, the plaintiff is a minor, or bankruptcy is filed.",
+    "source_ids": [
+      "S1",
+      "S16",
+      "S20",
+      "S21",
+      "S23"
+    ]
+  },
+  "pre_filing": {
+    "demand_letter_required": false,
+    "demand_letter_recommended": true,
+    "demand_letter_notes": "A demand letter is not required for most claims but is recommended. For bad checks, a 14-day written notice is mandatory before filing.",
+    "bad_check_notice_rule": "You must give the check writer a 14-day written notice to pay before suing for a bad check.",
+    "wage_claim_demand_rule": "No specific written demand required, but recommended to document your request for unpaid wages.",
+    "government_claim_required": false,
+    "government_claim_deadline_days": null,
+    "government_claim_notes": "",
+    "landlord_tenant_pre_filing_notes": "Tenants must provide a forwarding address for deposit return. Landlords must itemize deductions within 30 days.",
+    "consumer_protection_notes": "No special pre-filing notice required for Consumer Protection Act claims.",
+    "mandatory_mediation_before_filing": "none",
+    "arbitration_clauses_enforced": true,
+    "source_ids": [
+      "S1",
+      "S20",
+      "S21"
+    ]
+  },
+  "forms": [
+    {
+      "number": "NHJB-2201-DP",
+      "name": "Small Claim Complaint",
+      "description": "Used to start a small claims case by stating your claim and the amount sought.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "https://www.courts.nh.gov/self-help/forms/all-forms?title=small+claims",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "number": "NHJB-2202-DP",
+      "name": "Small Claim Answer",
+      "description": "Used by the defendant to respond to a small claim.",
+      "filed_by": "defendant",
+      "required": false,
+      "group": "counterclaim",
+      "url": "https://www.courts.nh.gov/self-help/forms/all-forms?title=small+claims",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "number": "NHJB-2091-FP",
+      "name": "Motion to Waive Filing Fee",
+      "description": "Request to waive the filing fee due to financial hardship.",
+      "filed_by": "either",
+      "required": false,
+      "group": "fee-waiver",
+      "url": "https://www.courts.nh.gov/self-help/forms/all-forms?title=fee+waiver",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "number": "NHJB-2203-DP",
+      "name": "Small Claim Judgment",
+      "description": "Form used by the court to record the outcome of the case.",
+      "filed_by": "court",
+      "required": false,
+      "group": "after-judgment",
+      "url": "https://www.courts.nh.gov/self-help/forms/all-forms?title=small+claims",
+      "source_ids": [
+        "S11"
+      ]
+    }
+  ],
+  "service": {
+    "who_can_serve": [
+      "Sheriff",
+      "Certified mail by clerk",
+      "Private process server"
+    ],
+    "methods": [
+      {
+        "name": "Sheriff personal service",
+        "description": "Sheriff or constable personally hands the papers to the defendant.",
+        "pros": [
+          "Most reliable",
+          "Cheap"
+        ],
+        "cons": [
+          "Slow"
+        ],
+        "source_ids": [
+          "S13"
+        ]
+      },
+      {
+        "name": "Certified mail by clerk",
+        "description": "Court clerk sends the papers by certified mail to the defendant.",
+        "pros": [
+          "Convenient",
+          "Proof of delivery"
+        ],
+        "cons": [
+          "May be refused or unclaimed"
+        ],
+        "source_ids": [
+          "S13"
+        ]
+      }
+    ],
+    "in_county_days_before_hearing": 14,
+    "out_of_county_days_before_hearing": 21,
+    "proof_of_service_form": {
+      "number": "NHJB-2204-DP",
+      "name": "Return of Service"
+    },
+    "proof_filing_deadline_days_before_hearing": 7,
+    "business_service_rule": "Serve the registered agent for corporations/LLCs; serve the owner for sole proprietors.",
+    "out_of_state_defendant_notes": "Long-arm jurisdiction applies if the cause of action arose in New Hampshire.",
+    "cant_find_defendant_notes": "If the defendant cannot be found, you may request permission for substitute service or publication.",
+    "avoiding_service_notes": "If the defendant is dodging service, you may use a private process server or request alternate service from the court.",
+    "source_ids": [
+      "S13"
+    ]
+  },
+  "response_and_default": {
+    "must_file_written_answer": false,
+    "response_deadline_days": 30,
+    "response_notes": "Defendant is not required to file a written answer but may do so. Must appear at the hearing or risk default.",
+    "default_process": "If the defendant does not appear, the court may enter a default judgment for the plaintiff.",
+    "prove_up_required": true,
+    "prove_up_notes": "Plaintiff must still prove damages even if the defendant defaults.",
+    "motion_to_vacate_form": {
+      "number": "NHJB-2205-DP",
+      "name": "Motion to Set Aside Default Judgment"
+    },
+    "motion_to_vacate_deadline_days": 30,
+    "motion_to_vacate_lack_of_notice_days": 60,
+    "motion_to_vacate_appeal_deadline_days": 14,
+    "motion_to_vacate_appeal_notes": "If the motion to vacate is denied, you may appeal within 14 days.",
+    "source_ids": [
+      "S1",
+      "S10"
+    ]
+  },
+  "counterclaim": {
+    "allowed": true,
+    "form": {
+      "number": "NHJB-2202-DP",
+      "name": "Small Claim Answer"
+    },
+    "same_monetary_limit": true,
+    "service_deadline_in_county_days": 14,
+    "service_deadline_out_of_county_days": 21,
+    "transfer_to_higher_court_available": false,
+    "transfer_to_higher_court_statute": "",
+    "transfer_to_higher_court_notes": "",
+    "source_ids": [
+      "S1",
+      "S10"
+    ]
+  },
+  "hearing": {
+    "lawyers_allowed": "yes",
+    "lawyers_allowed_notes": "Parties may be represented by an attorney but are not required to have one.",
+    "format": "Bench trial before a judge; hearings are typically brief and informal.",
+    "presider": "judge",
+    "burden_of_proof": "preponderance",
+    "what_to_bring": [
+      "Originals of any contracts",
+      "Receipts and bank records",
+      "Photos and videos",
+      "Names and contact info for witnesses"
+    ],
+    "subpoena_form": {
+      "number": "NHJB-2206-DP",
+      "name": "Subpoena"
+    },
+    "witness_fee_per_day_dollars": 10,
+    "free_interpreters": false,
+    "interpreter_request_process": "Request in advance through the court clerk.",
+    "jury_option": false,
+    "decision_timing": "On the spot or mailed within a few weeks",
+    "on_site_mediation": "by county",
+    "on_site_mediation_notes": "Some courts offer mediation on the day of hearing.",
+    "source_ids": [
+      "S1",
+      "S10"
+    ]
+  },
+  "appeals": {
+    "who_can_appeal": "either",
+    "deadline_days": 14,
+    "fee_dollars": 250,
+    "type": "trial de novo",
+    "type_notes": "The case is heard anew in Superior Court.",
+    "attorneys_allowed_on_appeal": true,
+    "bond_required": false,
+    "bond_amount_notes": "",
+    "automatic_stay_on_appeal": true,
+    "default_judgment_appealable": false,
+    "default_judgment_notes": "A default judgment cannot be appealed directly; you must first file a motion to vacate.",
+    "notice_of_appeal_form": {
+      "number": "NHJB-2207-DP",
+      "name": "Notice of Appeal"
+    },
+    "frivolous_appeal_penalty_dollars": null,
+    "frivolous_appeal_statute": "",
+    "frivolous_appeal_notes": "",
+    "source_ids": [
+      "S6",
+      "S14"
+    ]
+  },
+  "collection": {
+    "payment_deadline_typical_days": 30,
+    "post_judgment_interest_rate_pct": 2,
+    "post_judgment_interest_statute": "N.H. Rev. Stat. § 524:6-a",
+    "post_judgment_interest_notes": "Interest accrues at 2% per year on unpaid judgments.",
+    "methods": [
+      {
+        "id": "wage-garnishment",
+        "name": "Wage garnishment",
+        "blurb": "Have a portion of debtor's wages withheld until the judgment is paid.",
+        "description": "File a writ of execution with the court, serve the employer, and the employer withholds a portion of wages and remits to the court until the judgment is satisfied.",
+        "forms": [
+          {
+            "number": "NHJB-2208-DP",
+            "name": "Writ of Execution"
+          }
+        ],
+        "estimated_cost": "$30-50 plus sheriff fees",
+        "effectiveness_notes": "Most effective if the debtor is steadily employed.",
+        "exemptions": [
+          "75% of disposable earnings (federal CCPA floor)"
+        ],
+        "source_ids": [
+          "S15",
+          "S16"
+        ]
+      },
+      {
+        "id": "bank-levy",
+        "name": "Bank account levy",
+        "blurb": "Freeze and seize funds from debtor's bank account.",
+        "description": "Obtain a writ of execution, serve the bank, and the bank freezes and pays out available funds up to the judgment amount.",
+        "forms": [
+          {
+            "number": "NHJB-2208-DP",
+            "name": "Writ of Execution"
+          }
+        ],
+        "estimated_cost": "$30-50 plus sheriff fees",
+        "effectiveness_notes": "Effective if you know where the debtor banks.",
+        "exemptions": [
+          "Social Security and federal benefits"
+        ],
+        "source_ids": [
+          "S15",
+          "S16"
+        ]
+      },
+      {
+        "id": "property-lien",
+        "name": "Lien on real property",
+        "blurb": "Record a lien against debtor's real estate.",
+        "description": "Record the judgment with the county registry of deeds to create a lien on any real property owned by the debtor.",
+        "forms": [
+          {
+            "number": "NHJB-2209-DP",
+            "name": "Notice of Judgment Lien"
+          }
+        ],
+        "estimated_cost": "$25-50 recording fee",
+        "effectiveness_notes": "Effective if debtor owns real estate; paid when property is sold or refinanced.",
+        "exemptions": [
+          "Homestead exemption"
+        ],
+        "source_ids": [
+          "S15",
+          "S16"
+        ]
+      }
+    ],
+    "wage_garnishment_max_pct_of_disposable": 25,
+    "judgment_lifespan_years": 20,
+    "judgment_renewal_process": "File a motion to renew before expiration; use NHJB-2210-DP.",
+    "debtor_exam_form": {
+      "number": "NHJB-2211-DP",
+      "name": "Motion for Debtor Examination"
+    },
+    "exempt_assets": [
+      "Homestead — $120,000",
+      "Vehicle — $4,000",
+      "Retirement accounts (federally and/or state-protected)",
+      "Social Security and federal benefits"
+    ],
+    "bankruptcy_effect_notes": "Automatic stay applies; most judgments for fraud, willful injury, or certain debts may survive bankruptcy.",
+    "satisfaction_of_judgment_form": {
+      "number": "NHJB-2212-DP",
+      "name": "Satisfaction of Judgment"
+    },
+    "priority_notes": "First to record the lien has priority among judgment creditors.",
+    "source_ids": [
+      "S15",
+      "S16"
+    ]
+  },
+  "businesses": {
+    "self_representation_allowed": true,
+    "self_representation_notes": "Businesses may appear without an attorney in small claims court.",
+    "can_send_employee": false,
+    "can_send_attorney": true,
+    "non_attorney_representation_form": {
+      "number": "",
+      "name": ""
+    },
+    "insurance_adjuster_allowed": false,
+    "fictitious_name_form": {
+      "number": "",
+      "name": ""
+    },
+    "fictitious_name_notes": "Must use the legal entity name, not just a trade name.",
+    "sole_proprietor_employee_exception": "Sole proprietors must appear themselves.",
+    "out_of_state_business_must_register": false,
+    "out_of_state_business_statute": "",
+    "licensing_notes": "Unlicensed contractors may not be able to recover fees for unlicensed work.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "county_variations_material": false,
+  "county_variations": [],
+  "pitfalls": [
+    {
+      "title": "Wrong defendant naming",
+      "what_happens": "If you sue the wrong legal entity, your judgment may be unenforceable.",
+      "how_to_avoid": "Check Secretary of State records and use the exact legal name.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Missed statute of limitations",
+      "what_happens": "Filing after the deadline results in dismissal.",
+      "how_to_avoid": "Check the SOL for your claim type before filing.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Insufficient proof of damages",
+      "what_happens": "You may win liability but get only nominal damages.",
+      "how_to_avoid": "Bring receipts, estimates, and photos to court.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Improper service",
+      "what_happens": "Case may be dismissed or delayed if service is not done correctly.",
+      "how_to_avoid": "Follow court rules for service and file proof promptly.",
+      "source_ids": [
+        "S13"
+      ]
+    },
+    {
+      "title": "Suing for more than $6,000",
+      "what_happens": "You must waive the excess or file in a higher court.",
+      "how_to_avoid": "Limit your claim to $6,000 or pursue the full amount elsewhere.",
+      "source_ids": [
+        "S1",
+        "S4"
+      ]
+    },
+    {
+      "title": "Not bringing all evidence",
+      "what_happens": "The judge may rule against you if you lack documentation.",
+      "how_to_avoid": "Prepare all relevant documents and witnesses before the hearing.",
+      "source_ids": [
+        "S1"
+      ]
+    }
+  ],
+  "recent_changes": [],
+  "faqs": [
+    {
+      "question": "Do I need a lawyer?",
+      "answer": "No, you do not need a lawyer in New Hampshire small claims court. Parties may represent themselves, and lawyers are allowed but not required. Many people handle their own cases.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "How long does it take?",
+      "answer": "Most small claims cases are resolved within 30 to 90 days from filing to judgment, depending on court scheduling and whether the defendant appears.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "What's the maximum I can sue for?",
+      "answer": "The maximum amount you can claim in New Hampshire small claims court is $6,000, not including interest and court costs.",
+      "source_ids": [
+        "S1",
+        "S4"
+      ]
+    },
+    {
+      "question": "What happens if the defendant doesn't show up?",
+      "answer": "If the defendant fails to appear, the court may enter a default judgment for the plaintiff, but the plaintiff must still prove their damages.",
+      "source_ids": [
+        "S1",
+        "S10"
+      ]
+    },
+    {
+      "question": "Can I appeal?",
+      "answer": "Either party can appeal a small claims judgment within 14 days by filing in Superior Court. The appeal is a new trial (trial de novo).",
+      "source_ids": [
+        "S6",
+        "S14"
+      ]
+    },
+    {
+      "question": "How long is a judgment good for?",
+      "answer": "A small claims judgment in New Hampshire is valid for 20 years and can be renewed before expiration.",
+      "source_ids": [
+        "S16"
+      ]
+    }
+  ],
+  "state_specific_notes": [
+    "New Hampshire small claims court allows both individuals and businesses to file up to $6,000.",
+    "Double damages are available for wrongfully withheld security deposits.",
+    "Treble damages and attorney fees may be awarded for willful Consumer Protection Act violations.",
+    "A 14-day written notice is required before suing for a bad check.",
+    "Judgments accrue 2% interest per year.",
+    "No e-filing is available for small claims as of 2026.",
+    "Evictions and title to real estate are excluded from small claims.",
+    "You must use the legal entity name when suing a business.",
+    "Default judgments require proof of damages even if the defendant does not appear.",
+    "Some courts offer mediation on the day of hearing."
+  ],
+  "_extras": {
+    "interesting_findings": [
+      "New Hampshire's small claims process is relatively informal and designed for self-represented litigants.",
+      "The court may offer mediation services at no extra cost.",
+      "Filing fees are tiered by claim amount, making it more affordable for smaller claims.",
+      "Judgments can be enforced for up to 20 years, which is longer than many states.",
+      "The Consumer Protection Act provides strong remedies for consumer fraud, including treble damages."
+    ]
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "label": "New Hampshire Circuit Court — Small Claims Self-Help",
+      "url": "https://www.courts.nh.gov/self-help/small-claims",
+      "primary": true,
+      "citation": "NH Circuit Court Small Claims Self-Help"
+    },
+    {
+      "id": "S2",
+      "label": "New Hampshire Circuit Court Locations and Contact",
+      "url": "https://www.courts.nh.gov/our-courts/circuit-court/circuit-court-locations",
+      "primary": false,
+      "citation": "NH Circuit Court Locations"
+    },
+    {
+      "id": "S3",
+      "label": "New Hampshire Judicial Branch Fee Information",
+      "url": "https://www.courts.nh.gov/resources/fees-payments",
+      "primary": false,
+      "citation": "NH Judicial Branch Fee Information"
+    },
+    {
+      "id": "S4",
+      "label": "N.H. Rev. Stat. § 503:1 (District Courts — Jurisdiction in Small Claims)",
+      "url": "https://www.gencourt.state.nh.us/rsa/html/LII/503/503-1.htm",
+      "primary": true,
+      "citation": "N.H. Rev. Stat. § 503:1"
+    },
+    {
+      "id": "S5",
+      "label": "N.H. Rev. Stat. § 503:13 (Small Claims — Procedure)",
+      "url": "https://www.gencourt.state.nh.us/rsa/html/LII/503/503-13.htm",
+      "primary": false,
+      "citation": "N.H. Rev. Stat. § 503:13"
+    },
+    {
+      "id": "S6",
+      "label": "N.H. Rev. Stat. § 502-A:14 (Appeal from Circuit Court District Division)",
+      "url": "https://www.gencourt.state.nh.us/rsa/html/LII/502-A/502-A-14.htm",
+      "primary": false,
+      "citation": "N.H. Rev. Stat. § 502-A:14"
+    },
+    {
+      "id": "S10",
+      "label": "New Hampshire Circuit Court District Division — Rules of Procedure in Small Claims Actions",
+      "url": "https://www.courts.nh.gov/our-courts/circuit-court/district-division/district-division-rules-procedure-small-claims-actions",
+      "primary": false,
+      "citation": "NH District Division Small Claims Rules"
+    },
+    {
+      "id": "S11",
+      "label": "New Hampshire Small Claims Forms",
+      "url": "https://www.courts.nh.gov/self-help/forms/all-forms?title=small+claims",
+      "primary": false,
+      "citation": "NH Small Claims Forms"
+    },
+    {
+      "id": "S12",
+      "label": "New Hampshire Judicial Branch — Court Filing Fees",
+      "url": "https://www.courts.nh.gov/resources/fees-payments",
+      "primary": false,
+      "citation": "NH Court Filing Fees"
+    },
+    {
+      "id": "S13",
+      "label": "New Hampshire Statutes: Service of Process — N.H. Rev. Stat. § 511:2",
+      "url": "https://www.gencourt.state.nh.us/rsa/html/LII/511/511-2.htm",
+      "primary": false,
+      "citation": "N.H. Rev. Stat. § 511:2"
+    },
+    {
+      "id": "S14",
+      "label": "Appeals from Circuit Court — N.H. Rev. Stat. § 502-A:14",
+      "url": "https://www.gencourt.state.nh.us/rsa/html/LII/502-A/502-A-14.htm",
+      "primary": false,
+      "citation": "N.H. Rev. Stat. § 502-A:14"
+    },
+    {
+      "id": "S15",
+      "label": "New Hampshire Statutes — Collection of Judgments: Executions — N.H. Rev. Stat. § 512:1",
+      "url": "https://www.gencourt.state.nh.us/rsa/html/LII/512/512-1.htm",
+      "primary": false,
+      "citation": "N.H. Rev. Stat. § 512:1"
+    },
+    {
+      "id": "S16",
+      "label": "New Hampshire Statutes — Interest on Judgments — N.H. Rev. Stat. § 524:6-a",
+      "url": "https://www.gencourt.state.nh.us/rsa/html/LII/524/524-6-a.htm",
+      "primary": false,
+      "citation": "N.H. Rev. Stat. § 524:6-a"
+    },
+    {
+      "id": "S17",
+      "label": "New Hampshire Consumer Protection Act — N.H. Rev. Stat. § 358-A:2",
+      "url": "https://www.gencourt.state.nh.us/rsa/html/XXXI/358-A/358-A-2.htm",
+      "primary": false,
+      "citation": "N.H. Rev. Stat. § 358-A:2"
+    },
+    {
+      "id": "S19",
+      "label": "New Hampshire Regulation of Motor Vehicle Repairs — N.H. Rev. Stat. § 357-C:3",
+      "url": "https://www.gencourt.state.nh.us/rsa/html/XXXI/357-C/357-C-3.htm",
+      "primary": false,
+      "citation": "N.H. Rev. Stat. § 357-C:3"
+    },
+    {
+      "id": "S20",
+      "label": "New Hampshire Bad Checks Statute — N.H. Rev. Stat. § 638:4",
+      "url": "https://www.gencourt.state.nh.us/rsa/html/LXII/638/638-4.htm",
+      "primary": false,
+      "citation": "N.H. Rev. Stat. § 638:4"
+    },
+    {
+      "id": "S21",
+      "label": "New Hampshire Security Deposit Law — N.H. Rev. Stat. § 540-A:6",
+      "url": "https://www.gencourt.state.nh.us/rsa/html/LV/540-A/540-A-6.htm",
+      "primary": false,
+      "citation": "N.H. Rev. Stat. § 540-A:6"
+    },
+    {
+      "id": "S22",
+      "label": "New Hampshire Retaliatory Eviction and Lockout — N.H. Rev. Stat. § 540:13-a",
+      "url": "https://www.gencourt.state.nh.us/rsa/html/LV/540/540-13-a.htm",
+      "primary": false,
+      "citation": "N.H. Rev. Stat. § 540:13-a"
+    },
+    {
+      "id": "S23",
+      "label": "New Hampshire Payment of Wages — N.H. Rev. Stat. § 275:44 (Final Wages)",
+      "url": "https://www.gencourt.state.nh.us/rsa/html/XXIII/275/275-44.htm",
+      "primary": false,
+      "citation": "N.H. Rev. Stat. § 275:44"
+    },
+    {
+      "id": "S24",
+      "label": "New Hampshire Civil Action for Theft — N.H. Rev. Stat. § 637:8",
+      "url": "https://www.gencourt.state.nh.us/rsa/html/LXII/637/637-8.htm",
+      "primary": false,
+      "citation": "N.H. Rev. Stat. § 637:8"
+    },
+    {
+      "id": "S25",
+      "label": "New Hampshire Fraud Damages — N.H. Rev. Stat. § 358-A:10 (Consumer Protection Act Remedies)",
+      "url": "https://www.gencourt.state.nh.us/rsa/html/XXXI/358-A/358-A-10.htm",
+      "primary": false,
+      "citation": "N.H. Rev. Stat. § 358-A:10"
+    }
+  ],
+  "_meta": {
+    "state": "New Hampshire",
+    "slug": "new-hampshire",
+    "model": "gpt-4.1",
+    "sources_response_id": "resp_05a01f6deed9c1220069f08a90de64819685aa3906932d5fc2",
+    "extraction_response_id": "resp_03c58ee2e03777d00069f09ee87828819397638a5b2a7e213f",
+    "generated_at": "2026-04-28T11:52:18.128Z",
+    "usage": {
+      "input_tokens": 7784,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 13728,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 21512
+    }
+  }
+}

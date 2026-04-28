@@ -1,0 +1,1591 @@
+{
+  "state": "Rhode Island",
+  "slug": "rhode-island",
+  "abbr": "RI",
+  "as_of": "2026-04-28",
+  "hero": {
+    "individual_limit_dollars": 5000,
+    "business_limit_dollars": 5000,
+    "filing_fee_low_dollars": 55,
+    "filing_fee_high_dollars": 55,
+    "typical_timeline_min_days": 30,
+    "typical_timeline_max_days": 90,
+    "tagline": "Rhode Island's small claims court offers a streamlined process for resolving disputes up to $5,000, with a filing fee of $55 and a typical resolution timeline of 30 to 90 days.",
+    "source_ids": [
+      "S1",
+      "S4"
+    ]
+  },
+  "at_a_glance": [
+    {
+      "label": "Most you can sue for",
+      "value": "$5,000",
+      "detail": "Same cap for individuals and businesses",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Filing fee",
+      "value": "$55",
+      "detail": "Flat fee for all claims",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "label": "Court",
+      "value": "District Court (small claims docket)",
+      "detail": "",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Lawyers at trial",
+      "value": "Allowed",
+      "detail": "Permitted but not required",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Appeal window",
+      "value": "2 days",
+      "detail": "Defendant has 2 days to appeal; plaintiff waives right to appeal",
+      "source_ids": [
+        "S12"
+      ]
+    },
+    {
+      "label": "Recent change",
+      "value": "—",
+      "detail": "No major changes in the last 3 years",
+      "source_ids": []
+    }
+  ],
+  "limits": {
+    "individual_dollars": 5000,
+    "business_dollars": 5000,
+    "guarantor_with_fee_max": null,
+    "guarantor_without_fee_max": null,
+    "annual_filing_cap": {
+      "count": null,
+      "threshold_dollars": null,
+      "notes": ""
+    },
+    "split_claims_allowed": false,
+    "split_claims_explanation": "If a claim exceeds the $5,000 cap, you cannot split it into multiple claims to fit within the limit. Instead, you must file in a higher court.",
+    "interest_excluded_from_cap": true,
+    "court_costs_excluded_from_cap": true,
+    "statute": "R.I. Gen. Laws § 10-16-4",
+    "source_ids": [
+      "S5"
+    ]
+  },
+  "claim_categories": [
+    {
+      "id": "contracts",
+      "title": "Contracts and money owed",
+      "blurb": "Rhode Island allows you to file small claims for disputes arising from contracts and money owed, with a statute of limitations of 10 years for written contracts and 6 years for oral contracts.",
+      "claims": [
+        {
+          "slug": "written-contract",
+          "name": "Breach of a written contract",
+          "example": "A contractor signed a $4,000 contract to remodel your kitchen, took the deposit, and never finished.",
+          "eligibility": "eligible",
+          "claim_statute": "R.I. Gen. Laws § 9-1-13",
+          "notes": "10-year deadline from breach. Bring the signed contract, payment proof, and any correspondence showing the breach.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "oral-contract",
+          "name": "Breach of an oral contract",
+          "example": "You agreed verbally to lend someone $3,000, and they failed to repay as promised.",
+          "eligibility": "eligible",
+          "claim_statute": "R.I. Gen. Laws § 9-1-13",
+          "notes": "6-year deadline from breach. Provide evidence of the agreement, such as emails or witness testimony.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "personal-loan",
+          "name": "Unpaid personal loan",
+          "example": "You lent a friend $2,500 with the understanding they'd repay in six months, but they haven't.",
+          "eligibility": "eligible",
+          "claim_statute": "R.I. Gen. Laws § 9-1-13",
+          "notes": "6-year deadline from breach. Gather any written agreements, payment records, and communications regarding the loan.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "promissory-note",
+          "name": "Default on a promissory note",
+          "example": "A borrower signed a promissory note for $4,500 and failed to make the agreed payments.",
+          "eligibility": "eligible",
+          "claim_statute": "R.I. Gen. Laws § 9-1-13",
+          "notes": "10-year deadline from breach. Present the original promissory note and records of any payments made.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "unpaid-invoice",
+          "name": "Unpaid invoice for services rendered",
+          "example": "You provided consulting services worth $3,000, invoiced the client, but haven't received payment.",
+          "eligibility": "eligible",
+          "claim_statute": "R.I. Gen. Laws § 9-1-13",
+          "notes": "6-year deadline from breach. Bring copies of the invoice, service agreement, and any communication regarding payment.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "open-account",
+          "name": "Unpaid balance on an open account",
+          "example": "A customer has an outstanding balance of $4,800 on their account with your business.",
+          "eligibility": "eligible",
+          "claim_statute": "R.I. Gen. Laws § 9-1-13",
+          "notes": "6-year deadline from breach. Provide account statements, terms of agreement, and records of previous payments.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "unpaid-rent",
+          "name": "Unpaid rent by tenant",
+          "example": "Your tenant owes $4,500 in unpaid rent over several months.",
+          "eligibility": "eligible",
+          "claim_statute": "R.I. Gen. Laws § 9-1-13",
+          "notes": "6-year deadline from breach. Present the lease agreement, rent ledger, and any notices sent to the tenant.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "bad-check",
+          "name": "Payment with a bad check",
+          "example": "A customer paid for goods worth $2,000 with a check that bounced.",
+          "eligibility": "eligible",
+          "claim_statute": "R.I. Gen. Laws § 6-13.1-5.2",
+          "notes": "Provide the bounced check, bank notice, and any communication with the issuer.",
+          "damage_boost": "May recover actual damages or $200, whichever is greater.",
+          "source_ids": [
+            "S9"
+          ]
+        },
+        {
+          "slug": "co-signer",
+          "name": "Co-signer seeking repayment",
+          "example": "You co-signed a loan for $5,000, and the primary borrower defaulted, leaving you responsible.",
+          "eligibility": "eligible",
+          "claim_statute": "R.I. Gen. Laws § 9-1-13",
+          "notes": "6-year deadline from breach. Bring the loan agreement, proof of payments made, and any correspondence with the borrower.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "consumer-disputes",
+      "title": "Consumer disputes",
+      "blurb": "Rhode Island's small claims court addresses various consumer disputes, including defective products and unsatisfactory services, with a statute of limitations of 10 years for written contracts and 6 years for oral contracts.",
+      "claims": [
+        {
+          "slug": "defective-product",
+          "name": "Purchase of a defective product",
+          "example": "You bought a $1,500 appliance that stopped working within a month, and the seller refuses to repair or replace it.",
+          "eligibility": "eligible",
+          "claim_statute": "R.I. Gen. Laws § 6-13.1-5.2",
+          "notes": "Provide the purchase receipt, warranty information, and any communication with the seller.",
+          "damage_boost": "May recover actual damages or $200, whichever is greater.",
+          "source_ids": [
+            "S9"
+          ]
+        },
+        {
+          "slug": "bad-service",
+          "name": "Unsatisfactory service",
+          "example": "You paid $2,000 for home cleaning services, but the job was incomplete and poorly done.",
+          "eligibility": "eligible",
+          "claim_statute": "R.I. Gen. Laws § 6-13.1-5.2",
+          "notes": "Gather the service agreement, payment proof, and photos of the incomplete work.",
+          "damage_boost": "May recover actual damages or $200, whichever is greater.",
+          "source_ids": [
+            "S9"
+          ]
+        },
+        {
+          "slug": "auto-repair",
+          "name": "Faulty auto repair",
+          "example": "A mechanic charged you $3,500 for repairs that didn't fix the issue, and now refuses to refund or redo the work.",
+          "eligibility": "eligible",
+          "claim_statute": "R.I. Gen. Laws § 6-13.1-5.2",
+          "notes": "Provide repair invoices, payment records, and any communication with the mechanic.",
+          "damage_boost": "May recover actual damages or $200, whichever is greater.",
+          "source_ids": [
+            "S9"
+          ]
+        },
+        {
+          "slug": "contractor",
+          "name": "Contractor failed to complete work",
+          "example": "You paid a contractor $4,000 to renovate your bathroom, but they abandoned the project halfway.",
+          "eligibility": "eligible",
+          "claim_statute": "R.I. Gen. Laws § 6-13.1-5.2",
+          "notes": "Bring the contract, payment records, and evidence of incomplete work.",
+          "damage_boost": "May recover actual damages or $200, whichever is greater.",
+          "source_ids": [
+            "S9"
+          ]
+        },
+        {
+          "slug": "no-show-vendor",
+          "name": "Vendor failed to deliver goods",
+          "example": "You ordered and paid $2,500 for furniture that was never delivered, and the vendor is unresponsive.",
+          "eligibility": "eligible",
+          "claim_statute": "R.I. Gen. Laws § 6-13.1-5.2",
+          "notes": "Provide the order confirmation, payment proof, and any correspondence with the vendor.",
+          "damage_boost": "May recover actual damages or $200, whichever is greater.",
+          "source_ids": [
+            "S9"
+          ]
+        },
+        {
+          "slug": "subscription-cancellation",
+          "name": "Unauthorized subscription charges",
+          "example": "A company continues to charge your credit card $100 monthly despite your cancellation requests.",
+          "eligibility": "eligible",
+          "claim_statute": "R.I. Gen. Laws § 6-13.1-5.2",
+          "notes": "Gather bank statements, cancellation confirmations, and communication with the company.",
+          "damage_boost": "May recover actual damages or $200, whichever is greater.",
+          "source_ids": [
+            "S9"
+          ]
+        },
+        {
+          "slug": "used-car",
+          "name": "Purchase of a defective used car",
+          "example": "You bought a used car for $4,500 that broke down within a week, and the dealer refuses to address the issue.",
+          "eligibility": "eligible",
+          "claim_statute": "R.I. Gen. Laws § 6-13.1-5.2",
+          "notes": "Provide the sales contract, payment proof, and any communication with the dealer.",
+          "damage_boost": "May recover actual damages or $200, whichever is greater.",
+          "source_ids": [
+            "S9"
+          ]
+        },
+        {
+          "slug": "false-advertising",
+          "name": "False advertising leading to financial loss",
+          "example": "A company advertised a product for $1,000 with features it doesn't have, leading you to purchase under false pretenses.",
+          "eligibility": "eligible",
+          "claim_statute": "R.I. Gen. Laws § 6-13.1-5.2",
+          "notes": "Collect the advertisement, purchase receipt, and any communication with the company.",
+          "damage_boost": "May recover actual damages or $200, whichever is greater.",
+          "source_ids": [
+            "S9"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "property-damage",
+      "title": "Property damage",
+      "blurb": "Rhode Island's small claims court handles property damage claims up to $5,000, with a statute of limitations of 10 years for written contracts and 6 years for oral contracts.",
+      "claims": [
+        {
+          "slug": "vehicle-collision",
+          "name": "Damage from a vehicle collision",
+          "example": "Another driver caused $4,000 in damage to your car and refuses to pay for repairs.",
+          "eligibility": "eligible",
+          "claim_statute": "R.I. Gen. Laws § 9-1-13",
+          "notes": "6-year deadline from incident. Provide police reports, repair estimates, and photos of the damage.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "neighbor-property",
+          "name": "Neighbor's actions damaged your property",
+          "example": "A neighbor's tree fell onto your fence, causing $3,500 in damage, and they refuse to cover the cost.",
+          "eligibility": "eligible",
+          "claim_statute": "R.I. Gen. Laws § 9-1-13",
+          "notes": "6-year deadline from incident. Gather photos, repair estimates, and any communication with the neighbor.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "damage-to-rental",
+          "name": "Tenant caused damage to rental property",
+          "example": "A former tenant left $4,800 worth of damage to your rental unit beyond normal wear and tear.",
+          "eligibility": "eligible",
+          "claim_statute": "R.I. Gen. Laws § 9-1-13",
+          "notes": "6-year deadline from incident. Present the lease agreement, move-in/move-out inspection reports, and repair invoices.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "pet-damage",
+          "name": "Damage caused by someone's pet",
+          "example": "A neighbor's dog entered your yard and destroyed $2,000 worth of landscaping.",
+          "eligibility": "eligible",
+          "claim_statute": "R.I. Gen. Laws § 9-1-13",
+          "notes": "6-year deadline from incident. Provide photos, repair estimates, and any communication with the pet owner.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "property-in-custody",
+          "name": "Damage to property left in someone's care",
+          "example": "You left your watch for repair, and the jeweler damaged it, causing $1,500 in loss.",
+          "eligibility": "eligible",
+          "claim_statute": "R.I. Gen. Laws § 9-1-13",
+          "notes": "6-year deadline from incident. Bring the service agreement, photos of the damage, and repair estimates.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "landlord-tenant",
+      "title": "Landlord-tenant disputes",
+      "blurb": "Rhode Island's small claims court addresses monetary disputes between landlords and tenants up to $5,000, with a statute of limitations of 10 years for written contracts and 6 years for oral contracts.",
+      "claims": [
+        {
+          "slug": "security-deposit",
+          "name": "Failure to return security deposit",
+          "example": "Your landlord withheld your $1,800 security deposit without justification after you moved out.",
+          "eligibility": "eligible",
+          "claim_statute": "R.I. Gen. Laws § 34-18-19",
+          "notes": "Landlords must return the security deposit within 20 days after the tenant vacates. Provide the lease agreement, move-out inspection report, and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S10"
+          ]
+        },
+        {
+          "slug": "deposit-not-itemized",
+          "name": "Failure to provide itemized deductions from deposit",
+          "example": "Your landlord deducted $1,200 from your security deposit without providing an itemized list of damages.",
+          "eligibility": "eligible",
+          "claim_statute": "R.I. Gen. Laws § 34-18-19",
+          "notes": "Landlords must provide an itemized list of damages within 20 days. Gather the lease agreement, move-out inspection report, and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S10"
+          ]
+        },
+        {
+          "slug": "uninhabitable-rental",
+          "name": "Rental unit deemed uninhabitable",
+          "example": "Your apartment had severe mold issues, making it uninhabitable, and the landlord refused to address it.",
+          "eligibility": "eligible",
+          "claim_statute": "R.I. Gen. Laws § 34-18-19",
+          "notes": "Document the conditions with photos, maintenance requests, and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S10"
+          ]
+        },
+        {
+          "slug": "wrongful-retention-property",
+          "name": "Landlord retained personal property after move-out",
+          "example": "After moving out, your landlord kept your furniture worth $2,500 and refuses to return it.",
+          "eligibility": "eligible",
+          "claim_statute": "R.I. Gen. Laws § 34-18-19",
+          "notes": "Provide the lease agreement, move-out notice, and any communication regarding the retained property.",
+          "damage_boost": "",
+          "source_ids": [
+            "S10"
+          ]
+        },
+        {
+          "slug": "illegal-eviction",
+          "name": "Illegal eviction by landlord",
+          "example": "Your landlord changed the locks without notice, effectively evicting you unlawfully.",
+          "eligibility": "eligible",
+          "claim_statute": "R.I. Gen. Laws § 34-18-19",
+          "notes": "Document the eviction with photos, witness statements, and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S10"
+          ]
+        },
+        {
+          "slug": "unreturned-prepaid-rent",
+          "name": "Failure to return prepaid rent after early termination",
+          "example": "You paid last month's rent in advance, terminated the lease early, and the landlord refuses to refund the unused portion.",
+          "eligibility": "eligible",
+          "claim_statute": "R.I. Gen. Laws § 34-18-19",
+          "notes": "Provide the lease agreement, termination notice, and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S10"
+          ]
+        },
+        {
+          "slug": "unpaid-rent-by-tenant",
+          "name": "Tenant failed to pay rent",
+          "example": "Your tenant owes $4,500 in unpaid rent over several months.",
+          "eligibility": "eligible",
+          "claim_statute": "R.I. Gen. Laws § 9-1-13",
+          "notes": "6-year deadline from breach. Present the lease agreement, rent ledger, and any notices sent to the tenant.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "repair-and-deduct",
+          "name": "Tenant deducted repair costs from rent",
+          "example": "You deducted $1,200 from your rent for necessary repairs the landlord refused to make, and they are now suing for unpaid rent.",
+          "eligibility": "eligible",
+          "claim_statute": "R.I. Gen. Laws § 34-18-19",
+          "notes": "Document the repair issues, maintenance requests, receipts for repairs, and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S10"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "employment-and-wages",
+      "title": "Employment and wages",
+      "blurb": "Rhode Island's small claims court handles wage disputes up to $5,000, with a statute of limitations of 3 years for unpaid wages.",
+      "claims": [
+        {
+          "slug": "unpaid-wages",
+          "name": "Employer failed to pay wages",
+          "example": "Your employer owes you $4,000 in unpaid wages for work performed over the past two months.",
+          "eligibility": "eligible",
+          "claim_statute": "R.I. Gen. Laws § 28-14-2.2",
+          "notes": "3-year deadline from when wages were due. Provide pay stubs, timesheets, and any communication with the employer.",
+          "damage_boost": "",
+          "source_ids": [
+            "S11"
+          ]
+        },
+        {
+          "slug": "final-paycheck",
+          "name": "Employer withheld final paycheck",
+          "example": "After resigning, your employer refused to issue your final paycheck of $2,500.",
+          "eligibility": "eligible",
+          "claim_statute": "R.I. Gen. Laws § 28-14-2.2",
+          "notes": "3-year deadline from when wages were due. Gather resignation notice, pay stubs, and any communication with the employer.",
+          "damage_boost": "",
+          "source_ids": [
+            "S11"
+          ]
+        },
+        {
+          "slug": "unpaid-commissions",
+          "name": "Employer failed to pay earned commissions",
+          "example": "You earned $3,000 in sales commissions that your employer refuses to pay.",
+          "eligibility": "eligible",
+          "claim_statute": "R.I. Gen. Laws § 28-14-2.2",
+          "notes": "3-year deadline from when wages were due. Provide commission agreements, sales records, and any communication with the employer.",
+          "damage_boost": "",
+          "source_ids": [
+            "S11"
+          ]
+        },
+        {
+          "slug": "unpaid-overtime",
+          "name": "Employer failed to pay overtime wages",
+          "example": "Your employer owes you $2,500 in unpaid overtime for extra hours worked over the past year.",
+          "eligibility": "eligible",
+          "claim_statute": "R.I. Gen. Laws § 28-14-2.2",
+          "notes": "3-year deadline from when wages were due. Gather timesheets, pay stubs, and any communication with the employer.",
+          "damage_boost": "",
+          "source_ids": [
+            "S11"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "personal-claims",
+      "title": "Personal claims",
+      "blurb": "Rhode Island's small claims court addresses personal claims up to $5,000, with a statute of limitations of 10 years for written contracts and 6 years for oral contracts.",
+      "claims": [
+        {
+          "slug": "minor-injury",
+          "name": "Minor personal injury",
+          "example": "You slipped and fell at a store, incurring $4,500 in medical expenses, and the store refuses to compensate you.",
+          "eligibility": "not eligible",
+          "claim_statute": null,
+          "notes": "Personal injury claims are not permitted in Rhode Island's small claims court.",
+          "damage_boost": "",
+          "source_ids": []
+        },
+        {
+          "slug": "loaned-property",
+          "name": "Failure to return loaned property",
+          "example": "You lent a friend your camera worth $1,800, and they refuse to return it.",
+          "eligibility": "eligible",
+          "claim_statute": "R.I. Gen. Laws § 9-1-13",
+          "notes": "6-year deadline from breach. Provide evidence of the loan agreement and any communication regarding the return.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "civil-theft",
+          "name": "Theft of personal property",
+          "example": "Someone stole your bicycle worth $2,000, and you have evidence of their involvement.",
+          "eligibility": "eligible",
+          "claim_statute": "R.I. Gen. Laws § 9-1-13",
+          "notes": "6-year deadline from incident. Provide police reports, evidence of ownership, and any proof of the theft.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vehicle-specific",
+      "title": "Vehicle-specific claims",
+      "blurb": "Rhode Island's small claims court handles vehicle-related disputes up to $5,000, with a statute of limitations of 10 years for written contracts and 6 years for oral contracts.",
+      "claims": [
+        {
+          "slug": "mechanic-dispute",
+          "name": "Dispute over mechanic's charges",
+          "example": "A mechanic charged you $3,500 for repairs that didn't fix the issue, and now refuses to refund or redo the work.",
+          "eligibility": "eligible",
+          "claim_statute": "R.I. Gen. Laws § 6-13.1-5.2",
+          "notes": "Provide repair invoices, payment records, and any communication with the mechanic.",
+          "damage_boost": "May recover actual damages or $200, whichever is greater.",
+          "source_ids": [
+            "S9"
+          ]
+        },
+        {
+          "slug": "wrongful-tow",
+          "name": "Vehicle was wrongfully towed",
+          "example": "Your car was towed from a legal parking spot, and the towing company demands $1,500 for its return.",
+          "eligibility": "eligible",
+          "claim_statute": "R.I. Gen. Laws § 6-13.1-5.2",
+          "notes": "Gather photos of the parking spot, towing notices, and any communication with the towing company.",
+          "damage_boost": "May recover actual damages or $200, whichever is greater.",
+          "source_ids": [
+            "S9"
+          ]
+        }
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "category": "Eviction (unlawful detainer)",
+      "explanation": "Eviction proceedings are not handled in small claims court; they require a different legal process.",
+      "where_to_go_instead": "District Court eviction process",
+      "source_ids": []
+    },
+    {
+      "category": "Defamation",
+      "explanation": "Defamation claims involve complex legal issues and are not suitable for small claims court.",
+      "where_to_go_instead": "Superior Court",
+      "source_ids": []
+    },
+    {
+      "category": "Malpractice",
+      "explanation": "Professional malpractice claims exceed the jurisdiction of small claims court due to their complexity and potential damages.",
+      "where_to_go_instead": "Superior Court",
+      "source_ids": []
+    },
+    {
+      "category": "Family law and probate",
+      "explanation": "Matters such as divorce, child custody, and probate are not handled in small claims court.",
+      "where_to_go_instead": "Family Court or Probate Court",
+      "source_ids": []
+    },
+    {
+      "category": "Claims against the federal government",
+      "explanation": "Small claims court does not have jurisdiction over claims against federal entities.",
+      "where_to_go_instead": "Federal Court",
+      "source_ids": []
+    },
+    {
+      "category": "Workers' compensation",
+      "explanation": "Workers' compensation claims are handled by a specialized court system.",
+      "where_to_go_instead": "Workers' Compensation Court",
+      "source_ids": []
+    },
+    {
+      "category": "Class actions",
+      "explanation": "Class action lawsuits are complex and exceed the jurisdiction of small claims court.",
+      "where_to_go_instead": "Superior Court",
+      "source_ids": []
+    },
+    {
+      "category": "Injunctions and specific performance",
+      "explanation": "Small claims court cannot issue orders requiring someone to do or stop doing something.",
+      "where_to_go_instead": "Superior Court",
+      "source_ids": []
+    },
+    {
+      "category": "Title to real estate",
+      "explanation": "Disputes involving property ownership are beyond the scope of small claims court.",
+      "where_to_go_instead": "Superior Court",
+      "source_ids": []
+    },
+    {
+      "category": "Federal claims (bankruptcy, patents, trademarks)",
+      "explanation": "These specialized areas of law are handled by federal courts.",
+      "where_to_go_instead": "Federal Court",
+      "source_ids": []
+    }
+  ],
+  "damages": {
+    "compensatory_allowed": true,
+    "punitive_allowed": false,
+    "punitive_explanation": "Punitive damages are not awarded in Rhode Island's small claims court; however, statutory penalties may apply in certain cases.",
+    "statutory_multipliers": [
+      {
+        "claim": "Deceptive trade practices",
+        "multiplier": "Actual damages or $200, whichever is greater",
+        "explanation": "Under R.I. Gen. Laws § 6-13.1-5.2, a plaintiff may recover actual damages or $200, whichever is greater, for deceptive trade practices.",
+        "statute": "R.I. Gen. Laws § 6-13.1-5.2",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "attorney_fees_recoverable": "sometimes",
+    "attorney_fees_explanation": "Attorney fees may be recoverable in cases involving deceptive trade practices under R.I. Gen. Laws § 6-13.1-5.2.",
+    "prejudgment_interest_rate_pct": null,
+    "prejudgment_interest_statute": "",
+    "postjudgment_interest_rate_pct": null,
+    "postjudgment_interest_type": "simple",
+    "postjudgment_interest_statute": "",
+    "postjudgment_interest_notes": "",
+    "filing_and_service_fees_recoverable_from_loser": true,
+    "source_ids": [
+      "S9"
+    ]
+  },
+  "where_to_file": {
+    "court_name": "District Court",
+    "parent_court": "Rhode Island Judiciary",
+    "venue_rules": [
+      {
+        "scenario": "Most cases (the default)",
+        "filing_options": [
+          "County where the defendant lives"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Where contract was performed",
+        "filing_options": [
+          "County where performance was due"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Where injury or damage occurred",
+        "filing_options": [
+          "County where the event occurred"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Multiple defendants",
+        "filing_options": [
+          "Any county where ONE defendant resides"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Out-of-state defendant",
+        "filing_options": [
+          "Where the cause of action arose"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "consequences_of_wrong_venue": "Filing in the wrong venue may result in dismissal or transfer of the case, potentially causing delays and additional costs.",
+    "e_filing_available": "yes",
+    "e_filing_notes": "Mandatory for attorneys and represented parties; optional for self-represented litigants.",
+    "e_filing_portal": "https://www.courts.ri.gov/efiling",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "fees": {
+    "filing_fee_tiers": [
+      {
+        "range_label": "All claims",
+        "range_min": 0,
+        "range_max": 5000,
+        "fee_dollars": 55,
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "frequent_filer": {
+      "threshold_per_year": null,
+      "fee_dollars": null,
+      "notes": ""
+    },
+    "service_fees": [
+      {
+        "method": "Sheriff (personal service)",
+        "amount_label": "Varies",
+        "notes": "Service fees are determined by the sheriff's office and may vary.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "method": "Certified mail by clerk",
+        "amount_label": "Varies",
+        "notes": "Fees for certified mail service are determined by the postal service rates.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "waiver": {
+      "forms": [
+        {
+          "number": "Form 1",
+          "name": "Motion to Proceed in Forma Pauperis",
+          "url": "https://www.courts.ri.gov/PublicResources/forms/Pages/default.aspx",
+          "source_ids": [
+            "S3"
+          ]
+        }
+      ],
+      "eligibility_bullets": [
+        "Receiving need-based public assistance (SNAP, TANF, SSI)",
+        "Household income below 125% federal poverty line"
+      ],
+      "coverage_notes": "The waiver covers filing fees and may cover service fees; check with the court clerk for details.",
+      "if_you_win_notes": "If you win, the waived fees may be added to the judgment against the defendant."
+    },
+    "other_fees": [
+      {
+        "name": "Subpoena issuance",
+        "amount_label": "$10",
+        "notes": "Plus witness fee per day.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "name": "Appeal filing",
+        "amount_label": "$25-$170.75",
+        "notes": "Fee varies depending on the case; check with the clerk's office.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "name": "Writ of execution",
+        "amount_label": "$20",
+        "notes": "Post-judgment.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "fees_recoverable_from_loser_notes": "If you win, filing fees and reasonable service costs are added to the judgment.",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "statute_of_limitations": {
+    "entries": [
+      {
+        "id": "written-contract",
+        "claim": "Written contract",
+        "years": 10,
+        "clock_starts": "Date of breach",
+        "statute": "R.I. Gen. Laws § 9-1-13",
+        "notes": "",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "id": "oral-contract",
+        "claim": "Oral contract",
+        "years": 6,
+        "clock_starts": "Date of breach",
+        "statute": "R.I. Gen. Laws § 9-1-13",
+        "notes": "",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "id": "sale-of-goods",
+        "claim": "Sale of goods (UCC)",
+        "years": 4,
+        "clock_starts": "Date of breach",
+        "statute": "R.I. Gen. Laws § 6A-2-725",
+        "notes": "",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "id": "promissory-note",
+        "claim": "Promissory note",
+        "years": 10,
+        "clock_starts": "Date of default",
+        "statute": "R.I. Gen. Laws § 9-1-13",
+        "notes": "",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "id": "open-account",
+        "claim": "Open account / credit card debt",
+        "years": 6,
+        "clock_starts": "Date of last payment or charge",
+        "statute": "R.I. Gen. Laws § 9-1-13",
+        "notes": "",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "id": "personal-injury",
+        "claim": "Personal injury",
+        "years": 3,
+        "clock_starts": "Date of injury",
+        "statute": "R.I. Gen. Laws § 9-1-14",
+        "notes": "",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "id": "property-damage",
+        "claim": "Property damage",
+        "years": 10,
+        "clock_starts": "Date of damage",
+        "statute": "R.I. Gen. Laws § 9-1-13",
+        "notes": "",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "id": "fraud",
+        "claim": "Fraud",
+        "years": 10,
+        "clock_starts": "Date of discovery",
+        "statute": "R.I. Gen. Laws § 9-1-13",
+        "notes": "Discovery rule applies; clock starts when fraud is discovered or should have been discovered.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "id": "bad-check",
+        "claim": "Bad check",
+        "years": 3,
+        "clock_starts": "Date check was dishonored",
+        "statute": "R.I. Gen. Laws § 6-13.1-5.2",
+        "notes": "",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "id": "unpaid-wages",
+        "claim": "Unpaid wages",
+        "years": 3,
+        "clock_starts": "Date wages were due",
+        "statute": "R.I. Gen. Laws § 28-14-2.2",
+        "notes": "",
+        "source_ids": [
+          "S11"
+        ]
+      },
+      {
+        "id": "security-deposit",
+        "claim": "Security deposit",
+        "years": 3,
+        "clock_starts": "Date deposit was due to be returned",
+        "statute": "R.I. Gen. Laws § 34-18-19",
+        "notes": "",
+        "source_ids": [
+          "S10"
+        ]
+      },
+      {
+        "id": "judgment-enforcement",
+        "claim": "Judgment enforcement",
+        "years": 20,
+        "clock_starts": "Date judgment was entered",
+        "statute": "R.I. Gen. Laws § 9-1-17",
+        "notes": "",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "discovery_rule_notes": "The discovery rule applies to fraud claims; the statute of limitations begins when the fraud is discovered or should have been discovered.",
+    "tolling_notes": "The statute of limitations may be tolled if the defendant is out of state, the plaintiff is a minor, or in cases of bankruptcy.",
+    "source_ids": [
+      "S6"
+    ]
+  },
+  "pre_filing": {
+    "demand_letter_required": false,
+    "demand_letter_recommended": true,
+    "demand_letter_notes": "While not required, sending a demand letter can often resolve disputes without court intervention and serves as evidence of your attempt to settle the matter.",
+    "bad_check_notice_rule": "For bad check claims, it's advisable to send a written demand for payment before filing a lawsuit.",
+    "wage_claim_demand_rule": "For unpaid wage claims, providing written notice to the employer can strengthen your case.",
+    "government_claim_required": false,
+    "government_claim_deadline_days": null,
+    "government_claim_notes": "",
+    "landlord_tenant_pre_filing_notes": "Tenants should provide a forwarding address in writing to ensure the return of the security deposit.",
+    "consumer_protection_notes": "Under R.I. Gen. Laws § 6-13.1-5.2, consumers may recover actual damages or $200, whichever is greater, for deceptive trade practices.",
+    "mandatory_mediation_before_filing": "none",
+    "arbitration_clauses_enforced": true,
+    "source_ids": [
+      "S9"
+    ]
+  },
+  "forms": [
+    {
+      "number": "Form 1",
+      "name": "Small Claims Notice of Suit - Complaint",
+      "description": "Initiates a small claims case by outlining the plaintiff's claim against the defendant.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "https://www.courts.ri.gov/PublicResources/forms/Pages/default.aspx",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    {
+      "number": "Form 2",
+      "name": "Small Claims Notice of Suit - Answer",
+      "description": "Allows the defendant to respond to the plaintiff's complaint.",
+      "filed_by": "defendant",
+      "required": true,
+      "group": "response",
+      "url": "https://www.courts.ri.gov/PublicResources/forms/Pages/default.aspx",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    {
+      "number": "Form 3",
+      "name": "Motion to Proceed in Forma Pauperis",
+      "description": "Requests a waiver of court fees due to financial hardship.",
+      "filed_by": "plaintiff",
+      "required": false,
+      "group": "fee-waiver",
+      "url": "https://www.courts.ri.gov/PublicResources/forms/Pages/default.aspx",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    {
+      "number": "Form 4",
+      "name": "Notice of Appeal",
+      "description": "Filed by the defendant to appeal a small claims judgment.",
+      "filed_by": "defendant",
+      "required": false,
+      "group": "appeal",
+      "url": "https://www.courts.ri.gov/PublicResources/forms/Pages/default.aspx",
+      "source_ids": [
+        "S3"
+      ]
+    }
+  ],
+  "service": {
+    "who_can_serve": [
+      "Sheriff",
+      "Certified mail by clerk",
+      "Private process server"
+    ],
+    "methods": [
+      {
+        "name": "Sheriff personal service",
+        "description": "A sheriff or authorized constable personally delivers the summons and complaint to the defendant.",
+        "pros": [
+          "Reliable",
+          "Official"
+        ],
+        "cons": [
+          "May incur additional fees"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "name": "Certified mail by clerk",
+        "description": "The court clerk sends the summons and complaint to the defendant via certified mail.",
+        "pros": [
+          "Cost-effective",
+          "Provides delivery confirmation"
+        ],
+        "cons": [
+          "Defendant may refuse delivery"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "in_county_days_before_hearing": 20,
+    "out_of_county_days_before_hearing": 20,
+    "proof_of_service_form": {
+      "number": "Form 5",
+      "name": "Proof of Service"
+    },
+    "proof_filing_deadline_days_before_hearing": 5,
+    "business_service_rule": "Serve a corporation by delivering to an officer, managing agent, or registered agent; serve a sole proprietor by delivering to the individual personally.",
+    "out_of_state_defendant_notes": "Service must comply with Rhode Island rules and the laws of the state where the defendant is located.",
+    "cant_find_defendant_notes": "If the defendant cannot be located, the court may allow service by publication; consult the court clerk for guidance.",
+    "avoiding_service_notes": "If the defendant is evading service, document your attempts and seek court permission for alternative service methods.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "response_and_default": {
+    "must_file_written_answer": true,
+    "response_deadline_days": 20,
+    "response_notes": "The defendant must file a written answer within 20 days of being served; failure to do so may result in a default judgment.",
+    "default_process": "If the defendant fails to respond or appear, the court may enter a default judgment in favor of the plaintiff.",
+    "prove_up_required": true,
+    "prove_up_notes": "Even if the defendant defaults, the plaintiff must provide evidence to support the claim before the court awards damages.",
+    "motion_to_vacate_form": {
+      "number": "Form 6",
+      "name": "Motion to Vacate Default Judgment"
+    },
+    "motion_to_vacate_deadline_days": 10,
+    "motion_to_vacate_lack_of_notice_days": 30,
+    "motion_to_vacate_appeal_deadline_days": 10,
+    "motion_to_vacate_appeal_notes": "If the motion to vacate is denied, the defendant may appeal the denial within 10 days.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "counterclaim": {
+    "allowed": true,
+    "form": {
+      "number": "Form 7",
+      "name": "Counterclaim"
+    },
+    "same_monetary_limit": true,
+    "service_deadline_in_county_days": 20,
+    "service_deadline_out_of_county_days": 20,
+    "transfer_to_higher_court_available": false,
+    "transfer_to_higher_court_statute": "",
+    "transfer_to_higher_court_notes": "",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "hearing": {
+    "lawyers_allowed": "yes",
+    "lawyers_allowed_notes": "Parties may be represented by attorneys, but it is not required.",
+    "format": "Bench trial with informal procedures; each party presents their case to the judge.",
+    "presider": "judge",
+    "burden_of_proof": "preponderance",
+    "what_to_bring": [
+      "Originals of any contracts",
+      "Receipts and bank records",
+      "Photos and videos",
+      "Names and contact info for witnesses"
+    ],
+    "subpoena_form": {
+      "number": "Form 8",
+      "name": "Subpoena"
+    },
+    "witness_fee_per_day_dollars": 10,
+    "free_interpreters": true,
+    "interpreter_request_process": "Request an interpreter through the court clerk's office as soon as possible before the hearing.",
+    "jury_option": false,
+    "decision_timing": "On the spot or mailed within a few weeks",
+    "on_site_mediation": "yes",
+    "on_site_mediation_notes": "Mediation services may be available to help parties reach a settlement before the hearing.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "appeals": {
+    "who_can_appeal": "defendant",
+    "deadline_days": 2,
+    "fee_dollars": 25,
+    "type": "trial de novo",
+    "type_notes": "The appeal results in a new trial in the Superior Court.",
+    "attorneys_allowed_on_appeal": true,
+    "bond_required": false,
+    "bond_amount_notes": "",
+    "automatic_stay_on_appeal": true,
+    "default_judgment_appealable": true,
+    "default_judgment_notes": "A default judgment can be appealed by the defendant within the 2-day window.",
+    "notice_of_appeal_form": {
+      "number": "Form 4",
+      "name": "Notice of Appeal"
+    },
+    "frivolous_appeal_penalty_dollars": null,
+    "frivolous_appeal_statute": "",
+    "frivolous_appeal_notes": "",
+    "source_ids": [
+      "S12"
+    ]
+  },
+  "collection": {
+    "payment_deadline_typical_days": 30,
+    "post_judgment_interest_rate_pct": 12,
+    "post_judgment_interest_statute": "R.I. Gen. Laws § 9-21-8",
+    "post_judgment_interest_notes": "Interest accrues on the judgment amount at a rate of 12% per annum until paid.",
+    "methods": [
+      {
+        "id": "wage-garnishment",
+        "name": "Wage garnishment",
+        "blurb": "Have a portion of the debtor's wages withheld until the judgment is paid.",
+        "description": "File a writ of garnishment with the court, serve the employer, and the employer withholds a portion of the debtor's wages to satisfy the judgment.",
+        "forms": [
+          {
+            "number": "Form 9",
+            "name": "Writ of Garnishment"
+          }
+        ],
+        "estimated_cost": "$30-50 plus sheriff fees",
+        "effectiveness_notes": "Most effective when the debtor is employed and earns a regular income.",
+        "exemptions": [
+          "75% of disposable earnings (federal CCPA floor)"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "id": "bank-levy",
+        "name": "Bank levy",
+        "blurb": "Seize funds from the debtor's bank account to satisfy the judgment.",
+        "description": "Obtain a writ of execution from the court, serve it on the debtor's bank, and the bank freezes and transfers funds to satisfy the judgment.",
+        "forms": [
+          {
+            "number": "Form 10",
+            "name": "Writ of Execution"
+          }
+        ],
+        "estimated_cost": "$50-100 plus sheriff fees",
+        "effectiveness_notes": "Effective if the debtor has sufficient funds in their bank account.",
+        "exemptions": [
+          "Certain amounts may be exempt under state law; consult the court for details."
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "id": "property-lien",
+        "name": "Property lien",
+        "blurb": "Place a lien on the debtor's real property to secure the judgment amount.",
+        "description": "File a lien with the county recorder's office, which must be satisfied before the property can be sold or refinanced.",
+        "forms": [
+          {
+            "number": "Form 11",
+            "name": "Notice of Lien"
+          }
+        ],
+        "estimated_cost": "$50-100",
+        "effectiveness_notes": "Effective if the debtor owns real property and intends to sell or refinance.",
+        "exemptions": [
+          "Homestead exemptions may apply; consult the court for details."
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "id": "writ-of-execution",
+        "name": "Writ of execution",
+        "blurb": "Authorize the seizure of the debtor's non-exempt property to satisfy the judgment.",
+        "description": "Obtain a writ from the court, and the sheriff seizes and sells the debtor's property at auction.",
+        "forms": [
+          {
+            "number": "Form 10",
+            "name": "Writ of Execution"
+          }
+        ],
+        "estimated_cost": "$100-200 plus sheriff fees",
+        "effectiveness_notes": "Effective if the debtor owns valuable non-exempt property.",
+        "exemptions": [
+          "Certain personal property may be exempt; consult the court for details."
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "wage_garnishment_max_pct_of_disposable": 25,
+    "judgment_lifespan_years": 20,
+    "judgment_renewal_process": "File a motion to renew the judgment before it expires; consult the court for specific procedures and fees.",
+    "debtor_exam_form": {
+      "number": "Form 12",
+      "name": "Motion for Examination of Judgment Debtor"
+    },
+    "exempt_assets": [
+      "Homestead — $500,000",
+      "Vehicle — $12,000",
+      "Retirement accounts (federally and/or state-protected)",
+      "Social Security and federal benefits"
+    ],
+    "bankruptcy_effect_notes": "Filing for bankruptcy may discharge certain judgments; consult an attorney for specific advice.",
+    "satisfaction_of_judgment_form": {
+      "number": "Form 13",
+      "name": "Satisfaction of Judgment"
+    },
+    "priority_notes": "Priority among multiple judgment creditors is generally determined by the order in which liens are recorded.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "businesses": {
+    "self_representation_allowed": true,
+    "self_representation_notes": "Businesses may represent themselves in small claims court without an attorney.",
+    "can_send_employee": true,
+    "can_send_attorney": true,
+    "non_attorney_representation_form": {
+      "number": "Form 14",
+      "name": "Authorization for Non-Attorney Representation"
+    },
+    "insurance_adjuster_allowed": false,
+    "fictitious_name_form": {
+      "number": "Form 15",
+      "name": "Fictitious Business Name Statement"
+    },
+    "fictitious_name_notes": "Businesses operating under a fictitious name must file a statement with the Secretary of State.",
+    "sole_proprietor_employee_exception": "Sole proprietors may authorize an employee to represent them in small claims court.",
+    "out_of_state_business_must_register": true,
+    "out_of_state_business_statute": "R.I. Gen. Laws § 7-1.2-1410",
+    "licensing_notes": "Unlicensed contractors may be barred from recovering fees for services requiring a license.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "county_variations_material": false,
+  "county_variations": [],
+  "pitfalls": [
+    {
+      "title": "Waiver of appeal rights",
+      "what_happens": "As a plaintiff, you waive your right to appeal the court's decision in small claims cases.",
+      "how_to_avoid": "Be certain of your case's strength before filing in small claims court, as you cannot appeal an unfavorable decision.",
+      "source_ids": [
+        "S12"
+      ]
+    },
+    {
+      "title": "Defendant's short appeal window",
+      "what_happens": "Defendants have only 2 days to file an appeal after a judgment is entered.",
+      "how_to_avoid": "If you're a defendant, be prepared to act quickly if you intend to appeal a small claims judgment.",
+      "source_ids": [
+        "S12"
+      ]
+    },
+    {
+      "title": "Service of process errors",
+      "what_happens": "Improper service can result in case dismissal or delays.",
+      "how_to_avoid": "Ensure you follow the correct procedures for serving the defendant, using authorized methods and personnel.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Exceeding monetary limits",
+      "what_happens": "Claims exceeding $5,000 are not eligible for small claims court and may be dismissed.",
+      "how_to_avoid": "Verify that your claim amount, excluding interest and court costs, does not exceed the $5,000 limit.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Filing in the wrong venue",
+      "what_happens": "Filing in an incorrect venue can lead to dismissal or transfer, causing delays.",
+      "how_to_avoid": "File your claim in the appropriate county based on the defendant's residence or where the cause of action arose.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Ignoring statute of limitations",
+      "what_happens": "Filing after the statute of limitations has expired will result in dismissal.",
+      "how_to_avoid": "Confirm the applicable statute of limitations for your claim type before filing.",
+      "source_ids": [
+        "S6"
+      ]
+    }
+  ],
+  "recent_changes": [],
+  "faqs": [
+    {
+      "question": "Do I need a lawyer?",
+      "answer": "No, you are not required to have a lawyer in Rhode Island's small claims court. The process is designed to be accessible for individuals representing themselves.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "How long does it take?",
+      "answer": "Most small claims cases in Rhode Island are resolved within 30 to 90 days from filing to judgment.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "What's the maximum I can sue for?",
+      "answer": "The maximum amount you can sue for in Rhode Island's small claims court is $5,000, excluding interest and court costs.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "What happens if the defendant doesn't show up?",
+      "answer": "If the defendant fails to appear, the court may enter a default judgment in favor of the plaintiff, provided the plaintiff presents sufficient evidence to support the claim.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "Can I appeal?",
+      "answer": "As a plaintiff, you waive your right to appeal in small claims court. Defendants have 2 days to file an appeal after judgment.",
+      "source_ids": [
+        "S12"
+      ]
+    },
+    {
+      "question": "How long is a judgment good for?",
+      "answer": "A judgment in Rhode Island is valid for 20 years and can be renewed before it expires.",
+      "source_ids": [
+        "S6"
+      ]
+    }
+  ],
+  "state_specific_notes": [
+    "Plaintiffs waive their right to appeal in small claims cases; only defendants may appeal within 2 days.",
+    "The maximum claim amount in Rhode Island's small claims court is $5,000, excluding interest and court costs.",
+    "Service of process can be completed by a sheriff, authorized constable, or via certified mail by the court clerk.",
+    "Defendants must file a written answer within 20 days of being served to avoid default judgment.",
+    "Small claims court does not handle personal injury or property damage claims; these must be filed in a higher court."
+  ],
+  "_extras": {
+    "interesting_findings": [
+      "Rhode Island's small claims court requires plaintiffs to waive their right to appeal, which is uncommon among states.",
+      "The state offers a 'small claims mediation restricted-receipt account' funded by a portion of the filing fee to pay for mediation services.",
+      "Defendants have a notably short window of 2 days to file an appeal after a small claims judgment."
+    ]
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "label": "Rhode Island District Court Small Claims self-help page",
+      "url": "https://www.courts.ri.gov/Courts/districtcourt/Pages/SmallClaims.aspx",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S2",
+      "label": "Rhode Island District Court general information",
+      "url": "https://www.courts.ri.gov/Courts/districtcourt/Pages/default.aspx",
+      "primary": false,
+      "citation": ""
+    },
+    {
+      "id": "S3",
+      "label": "Rhode Island Judiciary forms center",
+      "url": "https://www.courts.ri.gov/PublicResources/forms/Pages/default.aspx",
+      "primary": false,
+      "citation": ""
+    },
+    {
+      "id": "S4",
+      "label": "Rhode Island Judiciary fee information",
+      "url": "https://www.courts.ri.gov/PublicResources/fee-information/Pages/default.aspx",
+      "primary": false,
+      "citation": ""
+    },
+    {
+      "id": "S5",
+      "label": "R.I. Gen. Laws § 10-16-1 et seq. (Small Claims and Consumer Claims Procedure)",
+      "url": "https://webserver.rilegislature.gov/Statutes/TITLE10/10-16/INDEX.HTM",
+      "primary": false,
+      "citation": "R.I. Gen. Laws § 10-16-1 et seq."
+    },
+    {
+      "id": "S6",
+      "label": "R.I. Gen. Laws § 9-1-13 (Limitation of actions)",
+      "url": "https://webserver.rilegislature.gov/Statutes/TITLE9/9-1/9-1-13.HTM",
+      "primary": false,
+      "citation": "R.I. Gen. Laws § 9-1-13"
+    },
+    {
+      "id": "S7",
+      "label": "R.I. Gen. Laws § 9-28-3 (Enforcement of Judgments)",
+      "url": "https://webserver.rilegislature.gov/Statutes/TITLE9/9-28/9-28-3.HTM",
+      "primary": false,
+      "citation": "R.I. Gen. Laws § 9-28-3"
+    },
+    {
+      "id": "S8",
+      "label": "R.I. Gen. Laws § 10-16-7 (Appeals in small claims actions)",
+      "url": "https://webserver.rilegislature.gov/Statutes/TITLE10/10-16/10-16-7.HTM",
+      "primary": false,
+      "citation": "R.I. Gen. Laws § 10-16-7"
+    },
+    {
+      "id": "S9",
+      "label": "R.I. Gen. Laws § 6-13.1-5.2 (Deceptive trade practices - private remedy)",
+      "url": "https://webserver.rilegislature.gov/Statutes/TITLE6/6-13.1/6-13.1-5.2.HTM",
+      "primary": false,
+      "citation": "R.I. Gen. Laws § 6-13.1-5.2"
+    },
+    {
+      "id": "S10",
+      "label": "R.I. Gen. Laws § 34-18-19 (Security deposits in residential landlord and tenant law)",
+      "url": "https://webserver.rilegislature.gov/Statutes/TITLE34/34-18/34-18-19.HTM",
+      "primary": false,
+      "citation": "R.I. Gen. Laws § 34-18-19"
+    },
+    {
+      "id": "S11",
+      "label": "R.I. Gen. Laws § 28-14-2.2 (Wage payment upon separation)",
+      "url": "https://webserver.rilegislature.gov/Statutes/TITLE28/28-14/28-14-2.2.HTM",
+      "primary": false,
+      "citation": "R.I. Gen. Laws § 28-14-2.2"
+    },
+    {
+      "id": "S12",
+      "label": "Rhode Island District Court Rules of Small Claims Procedure",
+      "url": "https://www.courts.ri.gov/Courts/districtcourt/PDFs/SmallClaimsRules.pdf",
+      "primary": false,
+      "citation": ""
+    },
+    {
+      "id": "S13",
+      "label": "Rhode Island District Court Small Claims forms",
+      "url": "https://www.courts.ri.gov/PublicResources/forms/Pages/smallclaims.aspx",
+      "primary": false,
+      "citation": ""
+    },
+    {
+      "id": "S14",
+      "label": "Rhode Island District Court fee schedule",
+      "url": "https://www.courts.ri.gov/PublicResources/fee-information/Documents/District%20Court%20Fee%20Schedule.pdf",
+      "primary": false,
+      "citation": ""
+    },
+    {
+      "id": "S15",
+      "label": "Service of process in Rhode Island Small Claims (District Court Rule 3)",
+      "url": "https://www.courts.ri.gov/Courts/districtcourt/PDFs/SmallClaimsRules.pdf",
+      "primary": false,
+      "citation": ""
+    },
+    {
+      "id": "S16",
+      "label": "Appeals in Small Claims action — R.I. Gen. Laws § 10-16-7",
+      "url": "https://webserver.rilegislature.gov/Statutes/TITLE10/10-16/10-16-7.HTM",
+      "primary": false,
+      "citation": "R.I. Gen. Laws § 10-16-7"
+    },
+    {
+      "id": "S17",
+      "label": "Rhode Island General Laws – Enforcement of Judgments § 9-28-3",
+      "url": "https://webserver.rilegislature.gov/Statutes/TITLE9/9-28/9-28-3.HTM",
+      "primary": false,
+      "citation": "R.I. Gen. Laws § 9-28-3"
+    },
+    {
+      "id": "S18",
+      "label": "R.I. Gen. Laws § 6-13.1-5.2 (Deceptive Trade Practices — Private remedies)",
+      "url": "https://webserver.rilegislature.gov/Statutes/TITLE6/6-13.1/6-13.1-5.2.HTM",
+      "primary": false,
+      "citation": "R.I. Gen. Laws § 6-13.1-5.2"
+    },
+    {
+      "id": "S19",
+      "label": "R.I. Gen. Laws § 34-18-19 (Security deposit return for residential property)",
+      "url": "https://webserver.rilegislature.gov/Statutes/TITLE34/34-18/34-18-19.HTM",
+      "primary": false,
+      "citation": "R.I. Gen. Laws § 34-18-19"
+    },
+    {
+      "id": "S20",
+      "label": "R.I. Gen. Laws § 28-14-2.2 (Payment of wages on separation from employment)",
+      "url": "https://webserver.rilegislature.gov/Statutes/TITLE28/28-14/28-14-2.2.HTM",
+      "primary": false,
+      "citation": "R.I. Gen. Laws § 28-14-2.2"
+    },
+    {
+      "id": "S21",
+      "label": "R.I. Gen. Laws § 9-1-45 (Attorney fees in breach of contract actions)",
+      "url": "https://webserver.rilegislature.gov/Statutes/TITLE9/9-1/9-1-45.HTM",
+      "primary": false,
+      "citation": "R.I. Gen. Laws § 9-1-45"
+    }
+  ],
+  "_meta": {
+    "state": "Rhode Island",
+    "slug": "rhode-island",
+    "model": "gpt-4.1",
+    "sources_response_id": "resp_0b2fde528be806810069f08b2aaa488195b3441defc7d6c440",
+    "extraction_response_id": "resp_07458f4cfcfd8b2f0069f0975fbd3c8196b6ab3d0ff552144c",
+    "generated_at": "2026-04-28T11:19:25.649Z",
+    "usage": {
+      "input_tokens": 7638,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 14738,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 22376
+    }
+  }
+}

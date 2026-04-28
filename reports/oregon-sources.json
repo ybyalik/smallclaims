@@ -1,0 +1,153 @@
+{
+  "state": "Oregon",
+  "as_of": "2024-06-10",
+  "state_judiciary_pages": [
+    {
+      "label": "Oregon Judicial Department Small Claims",
+      "url": "https://www.courts.oregon.gov/programs/Forms/Pages/smallclaims.aspx",
+      "scope": "small_claims"
+    },
+    {
+      "label": "Oregon Circuit Court - Small Claims Information",
+      "url": "https://www.courts.oregon.gov/courts/circuit/programs-services/Pages/smallclaims.aspx",
+      "scope": "small_claims"
+    },
+    {
+      "label": "Oregon Judicial Department Self-Help",
+      "url": "https://www.courts.oregon.gov/help/Pages/default.aspx",
+      "scope": "self_help"
+    }
+  ],
+  "statutes": [
+    {
+      "label": "ORS 46.405 - Jurisdiction of small claims department",
+      "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors046.html#section46.405",
+      "section_or_chapter": "ORS 46.405"
+    },
+    {
+      "label": "ORS 46.415 - Action in small claims department",
+      "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors046.html#section46.415",
+      "section_or_chapter": "ORS 46.415"
+    },
+    {
+      "label": "ORS 46.570 - Appeals",
+      "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors046.html#section46.570",
+      "section_or_chapter": "ORS 46.570"
+    },
+    {
+      "label": "ORS 46.495 - Fees",
+      "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors046.html#section46.495",
+      "section_or_chapter": "ORS 46.495"
+    },
+    {
+      "label": "ORS 18.345 - Garnishment (collection of judgment)",
+      "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors018.html#section18.345",
+      "section_or_chapter": "ORS 18.345"
+    }
+  ],
+  "court_rules": [
+    {
+      "label": "Oregon Uniform Trial Court Rules — Small Claims",
+      "url": "https://www.courts.oregon.gov/rules/UTCR/2024_UTCR.pdf",
+      "rule_or_chapter": "UTCR Chapter 13"
+    }
+  ],
+  "forms_pages": [
+    {
+      "label": "Oregon small claims forms",
+      "url": "https://www.courts.oregon.gov/programs/Forms/Pages/smallclaims.aspx"
+    }
+  ],
+  "fee_schedules": [
+    {
+      "label": "Oregon Circuit Court Fee Schedule",
+      "url": "https://www.courts.oregon.gov/courts/circuit/resources/Documents/fee-schedule.pdf"
+    }
+  ],
+  "service_rules": [
+    {
+      "label": "ORS 46.445 - Manner of service on defendant",
+      "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors046.html#section46.445"
+    }
+  ],
+  "appeal_rules": [
+    {
+      "label": "ORS 46.570 - Appeals from small claims department",
+      "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors046.html#section46.570"
+    }
+  ],
+  "post_judgment_collection": [
+    {
+      "label": "ORS 18.345 - Garnishment procedure",
+      "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors018.html#section18.345"
+    },
+    {
+      "label": "ORS 18.395 - Exempt earnings",
+      "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors018.html#section18.395"
+    }
+  ],
+  "consumer_protection_statutes": [
+    {
+      "label": "ORS 646.608 - Unlawful trade practices (UDAP)",
+      "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors646.html#section646.608"
+    },
+    {
+      "label": "ORS 646A.300 - Oregon Lemon Law",
+      "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors646A.html#section646A.300"
+    },
+    {
+      "label": "ORS 30.701 - Bad check civil penalty",
+      "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors030.html#section30.701"
+    }
+  ],
+  "landlord_tenant_statutes": [
+    {
+      "label": "ORS 90.300 - Security deposit; prepaid rent",
+      "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors090.html#section90.300"
+    },
+    {
+      "label": "ORS 90.365 - Termination of tenancy; rent refunds; failure of occupancy",
+      "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors090.html#section90.365"
+    },
+    {
+      "label": "ORS 90.435 - Tenant remedies for landlord's unlawful ouster or exclusion (illegal lockout)",
+      "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors090.html#section90.435"
+    }
+  ],
+  "wage_and_employment_statutes": [
+    {
+      "label": "ORS 652.140 - Payment on termination of employment",
+      "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors652.html#section652.140"
+    },
+    {
+      "label": "ORS 652.150 - Penalty for nonpayment of wages on termination",
+      "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors652.html#section652.150"
+    }
+  ],
+  "civil_remedies_statutes": [
+    {
+      "label": "ORS 20.080 - Attorney fees in small contract actions",
+      "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors020.html#section20.080"
+    }
+  ],
+  "county_specific": [],
+  "notes": "Oregon small claims process is unified statewide under the circuit court system; no county-specific small claims courts.",
+  "_meta": {
+    "state": "Oregon",
+    "slug": "oregon",
+    "model": "gpt-4.1",
+    "response_id": "resp_05d2d2fa95a5bea00069f08b0f037481948addce7adf10a364",
+    "generated_at": "2026-04-28T10:25:30.765Z",
+    "usage": {
+      "input_tokens": 2104,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 1496,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 3600
+    }
+  }
+}

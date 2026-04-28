@@ -1,0 +1,153 @@
+{
+  "state": "New Mexico",
+  "as_of": "2024-06-12",
+  "state_judiciary_pages": [
+    {
+      "label": "New Mexico Courts — Self Help Guide (Civil Cases, including small claims)",
+      "url": "https://www.nmcourts.gov/self-help/",
+      "scope": "self_help"
+    },
+    {
+      "label": "New Mexico Courts — Magistrate Court Information (small claims overview)",
+      "url": "https://www.nmcourts.gov/magistrate-court/",
+      "scope": "small_claims"
+    },
+    {
+      "label": "New Mexico Courts — Court Directory",
+      "url": "https://www.nmcourts.gov/court-directory/",
+      "scope": "court_directory"
+    }
+  ],
+  "statutes": [
+    {
+      "label": "N.M. Stat. Ann. § 35-3-3 (Jurisdiction of magistrate/small claims court)",
+      "url": "https://www.nmlegis.gov/Sessions/23%20Regular/statutes_ch35-03.html",
+      "section_or_chapter": "§ 35-3-3"
+    },
+    {
+      "label": "N.M. Stat. Ann. § 35-3-4 (Filing fees in magistrate court)",
+      "url": "https://www.nmlegis.gov/Sessions/23%20Regular/statutes_ch35-03.html",
+      "section_or_chapter": "§ 35-3-4"
+    },
+    {
+      "label": "N.M. Stat. Ann. § 35-8-1 (Appeals from magistrate courts)",
+      "url": "https://www.nmlegis.gov/Sessions/23%20Regular/statutes_ch35-08.html",
+      "section_or_chapter": "§ 35-8-1"
+    },
+    {
+      "label": "N.M. Stat. Ann. § 35-11-1 (Judgments and enforcement in magistrate courts)",
+      "url": "https://www.nmlegis.gov/Sessions/23%20Regular/statutes_ch35-11.html",
+      "section_or_chapter": "§ 35-11-1"
+    }
+  ],
+  "court_rules": [
+    {
+      "label": "New Mexico Rules of Civil Procedure for the Magistrate Courts (including small claims)",
+      "url": "https://nmsupremecourt.nmcourts.gov/rules/current-rules/rules-of-civil-procedure-for-the-magistrate-courts/",
+      "rule_or_chapter": "Rules of Civil Procedure for the Magistrate Courts"
+    },
+    {
+      "label": "Rule 2-401 NMRA — Small Claims Procedure (Magistrate Court)",
+      "url": "https://nmsupremecourt.nmcourts.gov/rules/current-rules/rules-of-civil-procedure-for-the-magistrate-courts/#2-401",
+      "rule_or_chapter": "Rule 2-401"
+    }
+  ],
+  "forms_pages": [
+    {
+      "label": "New Mexico Courts — Civil Forms (including small claims forms)",
+      "url": "https://www.nmcourts.gov/self-help/forms/#magistrate-court-civil-forms"
+    }
+  ],
+  "fee_schedules": [
+    {
+      "label": "New Mexico Magistrate Court Filing Fees",
+      "url": "https://www.nmcourts.gov/wp-content/uploads/2021/02/magistrate-court-fee-schedule.pdf"
+    }
+  ],
+  "service_rules": [
+    {
+      "label": "Rule 2-202 NMRA — Commencement of action, process, service (Magistrate Court)",
+      "url": "https://nmsupremecourt.nmcourts.gov/rules/current-rules/rules-of-civil-procedure-for-the-magistrate-courts/#2-202",
+      "rule_or_chapter": "Rule 2-202"
+    }
+  ],
+  "appeal_rules": [
+    {
+      "label": "Rule 2-705 NMRA — Appeals from magistrate court to district court",
+      "url": "https://nmsupremecourt.nmcourts.gov/rules/current-rules/rules-of-civil-procedure-for-the-magistrate-courts/#2-705",
+      "rule_or_chapter": "Rule 2-705"
+    },
+    {
+      "label": "N.M. Stat. Ann. § 35-8-1 (Appeals from magistrate court)",
+      "url": "https://www.nmlegis.gov/Sessions/23%20Regular/statutes_ch35-08.html",
+      "section_or_chapter": "§ 35-8-1"
+    }
+  ],
+  "post_judgment_collection": [
+    {
+      "label": "N.M. Stat. Ann. § 35-12-1 (Execution on judgments in magistrate courts)",
+      "url": "https://www.nmlegis.gov/Sessions/23%20Regular/statutes_ch35-12.html"
+    },
+    {
+      "label": "Rule 2-801 NMRA — Execution of judgments (Magistrate Court)",
+      "url": "https://nmsupremecourt.nmcourts.gov/rules/current-rules/rules-of-civil-procedure-for-the-magistrate-courts/#2-801",
+      "rule_or_chapter": "Rule 2-801"
+    }
+  ],
+  "consumer_protection_statutes": [
+    {
+      "label": "N.M. Stat. Ann. § 57-12-1 et seq. (Unfair Practices Act — UDAP)",
+      "url": "https://www.nmlegis.gov/Sessions/23%20Regular/statutes_ch57-12.html"
+    },
+    {
+      "label": "N.M. Stat. Ann. § 57-16A-1 et seq. (Motor Vehicle Quality Assurance/ Lemon Law)",
+      "url": "https://www.nmlegis.gov/Sessions/23%20Regular/statutes_ch57-16A.html"
+    },
+    {
+      "label": "N.M. Stat. Ann. § 30-36-1 et seq. (Worthless Checks / Bad-check penalty)",
+      "url": "https://www.nmlegis.gov/Sessions/23%20Regular/statutes_ch30-36.html"
+    }
+  ],
+  "landlord_tenant_statutes": [
+    {
+      "label": "N.M. Stat. Ann. § 47-8-1 et seq. (Uniform Owner-Resident Relations Act - landlord/tenant)",
+      "url": "https://www.nmlegis.gov/Sessions/23%20Regular/statutes_ch47-08.html"
+    },
+    {
+      "label": "N.M. Stat. Ann. § 47-8-18 (Security deposit return/penalty)",
+      "url": "https://www.nmlegis.gov/Sessions/23%20Regular/statutes_ch47-08.html#47-8-18"
+    }
+  ],
+  "wage_and_employment_statutes": [
+    {
+      "label": "N.M. Stat. Ann. § 50-4-1 et seq. (Minimum wage, wage payment and collection)",
+      "url": "https://www.nmlegis.gov/Sessions/23%20Regular/statutes_ch50-04.html"
+    }
+  ],
+  "civil_remedies_statutes": [
+    {
+      "label": "N.M. Stat. Ann. § 57-12-10 (UDAP damages and attorney fees)",
+      "url": "https://www.nmlegis.gov/Sessions/23%20Regular/statutes_ch57-12.html#57-12-10"
+    }
+  ],
+  "county_specific": [],
+  "notes": "Small claims are primarily handled in New Mexico Magistrate Courts, not by county-level courts.",
+  "_meta": {
+    "state": "New Mexico",
+    "slug": "new-mexico",
+    "model": "gpt-4.1",
+    "response_id": "resp_035683840966d0250069f08ab31c54819395eee930094a584d",
+    "generated_at": "2026-04-28T10:24:01.466Z",
+    "usage": {
+      "input_tokens": 2105,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 1721,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 3826
+    }
+  }
+}

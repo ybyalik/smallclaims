@@ -1,0 +1,147 @@
+{
+  "state": "Pennsylvania",
+  "as_of": "2024-06-10",
+  "state_judiciary_pages": [
+    {
+      "label": "Pennsylvania Unified Judicial System — Magisterial District Court Small Claims Information",
+      "url": "https://www.pacourts.us/learn/small-claims",
+      "scope": "small_claims"
+    },
+    {
+      "label": "Pennsylvania Courts Self-Help Center",
+      "url": "https://www.pacourts.us/learn/representing-yourself",
+      "scope": "self_help"
+    },
+    {
+      "label": "Unified Judicial System of Pennsylvania — Court Directory",
+      "url": "https://www.pacourts.us/courts/court-of-common-pleas/",
+      "scope": "court_directory"
+    }
+  ],
+  "statutes": [
+    {
+      "label": "42 Pa.C.S. § 1515 (Jurisdiction and venue of magisterial district judges)",
+      "url": "https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&ttl=42&div=0&chpt=15&sctn=15&subsctn=0",
+      "section_or_chapter": "42 Pa.C.S. § 1515"
+    },
+    {
+      "label": "42 Pa.C.S. § 1725.1 (Costs in magisterial district courts)",
+      "url": "https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&ttl=42&div=0&chpt=17&sctn=25.1&subsctn=0",
+      "section_or_chapter": "42 Pa.C.S. § 1725.1"
+    },
+    {
+      "label": "42 Pa.C.S. § 1123 (Jurisdiction and venue of Philadelphia Municipal Court)",
+      "url": "https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&ttl=42&div=0&chpt=11&sctn=23&subsctn=0",
+      "section_or_chapter": "42 Pa.C.S. § 1123"
+    },
+    {
+      "label": "18 Pa.C.S. § 4105 (Bad Checks — civil penalty)",
+      "url": "https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&ttl=18&div=0&chpt=41&sctn=5&subsctn=0",
+      "section_or_chapter": "18 Pa.C.S. § 4105"
+    },
+    {
+      "label": "73 P.S. § 201-1 et seq. (Pennsylvania Unfair Trade Practices and Consumer Protection Law)",
+      "url": "https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&ttl=73&div=0&chpt=201&sctn=1&subsctn=0",
+      "section_or_chapter": "73 P.S. § 201-1 et seq."
+    }
+  ],
+  "court_rules": [
+    {
+      "label": "Pennsylvania Rules of Civil Procedure for Magisterial District Judges",
+      "url": "https://www.pacourts.us/sites/default/files/mdl-rules.pdf",
+      "rule_or_chapter": "Rules 301–383 (Civil Actions and Proceedings Before Magisterial District Judges)"
+    }
+  ],
+  "forms_pages": [
+    {
+      "label": "Pennsylvania Magisterial District Courts Forms (Civil Complaints, etc.)",
+      "url": "https://www.pacourts.us/forms/for-the-public"
+    }
+  ],
+  "fee_schedules": [
+    {
+      "label": "Pennsylvania Magisterial District Courts Fee Schedule",
+      "url": "https://www.pacourts.us/Storage/media/pdfs/20220421/154340-mdccivilfeeschedule.pdf"
+    }
+  ],
+  "service_rules": [
+    {
+      "label": "Service of Process – Pa.R.C.P.M.D.J. Nos. 307–308",
+      "url": "https://www.pacourts.us/sites/default/files/mdl-rules.pdf"
+    }
+  ],
+  "appeal_rules": [
+    {
+      "label": "Appeals from Magisterial District Judge — Pa.R.C.P.M.D.J. No. 1002",
+      "url": "https://www.pacourts.us/sites/default/files/mdl-rules.pdf"
+    },
+    {
+      "label": "42 Pa.C.S. § 5571 (Appeals generally to court of common pleas)",
+      "url": "https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&ttl=42&div=0&chpt=55&sctn=71&subsctn=0"
+    }
+  ],
+  "post_judgment_collection": [
+    {
+      "label": "Pa.R.C.P.M.D.J. No. 401 (Request for Order of Execution)",
+      "url": "https://www.pacourts.us/sites/default/files/mdl-rules.pdf"
+    },
+    {
+      "label": "42 Pa.C.S. § 8127 (Personal earnings exempt from execution)",
+      "url": "https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&ttl=42&div=0&chpt=81&sctn=27&subsctn=0"
+    }
+  ],
+  "consumer_protection_statutes": [
+    {
+      "label": "73 P.S. § 201-1 et seq. (Pennsylvania Unfair Trade Practices and Consumer Protection Law)",
+      "url": "https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&ttl=73&div=0&chpt=201&sctn=1&subsctn=0"
+    },
+    {
+      "label": "Pennsylvania Automobile Lemon Law (73 P.S. § 1951–1963)",
+      "url": "https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&ttl=73&div=0&chpt=19&sctn=51&subsctn=0"
+    }
+  ],
+  "landlord_tenant_statutes": [
+    {
+      "label": "68 P.S. § 250.512 (Security Deposits)",
+      "url": "https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&ttl=68&div=0&chpt=8&sctn=512&subsctn=0"
+    }
+  ],
+  "wage_and_employment_statutes": [
+    {
+      "label": "43 Pa.C.S. § 260.5 (Wage Payment and Collection Law — required pay periods and final payment)",
+      "url": "https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&ttl=43&div=0&chpt=11&sctn=260.5&subsctn=0"
+    }
+  ],
+  "civil_remedies_statutes": [
+    {
+      "label": "42 Pa.C.S. § 2503 (Right of participants to receive counsel fees)",
+      "url": "https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&ttl=42&div=0&chpt=25&sctn=3&subsctn=0"
+    }
+  ],
+  "county_specific": [
+    {
+      "county": "Philadelphia",
+      "label": "Philadelphia Municipal Court Civil Division — Small Claims",
+      "url": "https://www.courts.phila.gov/municipal/civil/small-claims.asp"
+    }
+  ],
+  "notes": "Pennsylvania small claims cases are typically filed in Magisterial District Courts outside Philadelphia; Philadelphia uses a dedicated Municipal Court Civil Division with its own procedures.",
+  "_meta": {
+    "state": "Pennsylvania",
+    "slug": "pennsylvania",
+    "model": "gpt-4.1",
+    "response_id": "resp_0fc29495c4fa10120069f08b1aff1881948737b9a21ad0c1d6",
+    "generated_at": "2026-04-28T10:25:46.438Z",
+    "usage": {
+      "input_tokens": 2104,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 1839,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 3943
+    }
+  }
+}

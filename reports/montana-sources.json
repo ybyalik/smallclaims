@@ -1,0 +1,147 @@
+{
+  "state": "Montana",
+  "as_of": "2024-06-11",
+  "state_judiciary_pages": [
+    {
+      "label": "Montana Small Claims Self-Help Guide",
+      "url": "https://courts.mt.gov/forms/smallclaims/",
+      "scope": "self_help"
+    },
+    {
+      "label": "Montana Courts: Small Claims Overview",
+      "url": "https://courts.mt.gov/courts/dcourts/smallclaims/",
+      "scope": "small_claims"
+    },
+    {
+      "label": "Montana Courts Directory",
+      "url": "https://courts.mt.gov/courts/directory/",
+      "scope": "court_directory"
+    }
+  ],
+  "statutes": [
+    {
+      "label": "Mont. Code Ann. § 25-35-501 (Jurisdiction of small claims court)",
+      "url": "https://leg.mt.gov/bills/mca/title_0250/chapter_0350/part_0050/section_0010/0250-0350-0050-0010.html",
+      "section_or_chapter": "§ 25-35-501"
+    },
+    {
+      "label": "Mont. Code Ann. § 25-35-502 (Commencing actions in small claims court)",
+      "url": "https://leg.mt.gov/bills/mca/title_0250/chapter_0350/part_0050/section_0020/0250-0350-0050-0020.html",
+      "section_or_chapter": "§ 25-35-502"
+    },
+    {
+      "label": "Mont. Code Ann. § 25-35-603 (Hearing procedures in small claims court)",
+      "url": "https://leg.mt.gov/bills/mca/title_0250/chapter_0350/part_0060/section_0030/0250-0350-0060-0030.html",
+      "section_or_chapter": "§ 25-35-603"
+    },
+    {
+      "label": "Mont. Code Ann. § 25-35-702 (Judgment — payment and enforcement)",
+      "url": "https://leg.mt.gov/bills/mca/title_0250/chapter_0350/part_0070/section_0020/0250-0350-0070-0020.html",
+      "section_or_chapter": "§ 25-35-702"
+    },
+    {
+      "label": "Mont. Code Ann. § 25-35-805 (Appeals from small claims court)",
+      "url": "https://leg.mt.gov/bills/mca/title_0250/chapter_0350/part_0080/section_0050/0250-0350-0080-0050.html",
+      "section_or_chapter": "§ 25-35-805"
+    },
+    {
+      "label": "Mont. Code Ann. § 25-35-606 (Costs and fees in small claims court)",
+      "url": "https://leg.mt.gov/bills/mca/title_0250/chapter_0350/part_0060/section_0060/0250-0350-0060-0060.html",
+      "section_or_chapter": "§ 25-35-606"
+    }
+  ],
+  "court_rules": [
+    {
+      "label": "Montana Justice and City Court Rules of Civil Procedure",
+      "url": "https://courts.mt.gov/courts/limited/rules/",
+      "rule_or_chapter": "Entire ruleset"
+    }
+  ],
+  "forms_pages": [
+    {
+      "label": "Montana Small Claims Court Forms",
+      "url": "https://courts.mt.gov/forms/smallclaims/"
+    }
+  ],
+  "fee_schedules": [
+    {
+      "label": "Montana Justice Court Fee Schedule",
+      "url": "https://courts.mt.gov/external/forms/dcourt/justicecourt_fees.pdf"
+    }
+  ],
+  "service_rules": [
+    {
+      "label": "Montana Rules of Civil Procedure — Rule 4 (Summons and Service of Process)",
+      "url": "https://courts.mt.gov/courts/supreme/rules/civilproc/",
+      "rule_or_chapter": "Rule 4"
+    }
+  ],
+  "appeal_rules": [
+    {
+      "label": "Mont. Code Ann. § 25-35-805 (Appeals from small claims court)",
+      "url": "https://leg.mt.gov/bills/mca/title_0250/chapter_0350/part_0080/section_0050/0250-0350-0080-0050.html"
+    }
+  ],
+  "post_judgment_collection": [
+    {
+      "label": "Mont. Code Ann. § 25-13-204 (Exempt property—wage garnishment)",
+      "url": "https://leg.mt.gov/bills/mca/title_0250/chapter_0130/part_0020/section_0040/0250-0130-0020-0040.html"
+    },
+    {
+      "label": "Mont. Code Ann. § 25-13-608 (Execution—levy, sale, and redemption of property)",
+      "url": "https://leg.mt.gov/bills/mca/title_0250/chapter_0130/part_0060/section_0080/0250-0130-0060-0080.html"
+    }
+  ],
+  "consumer_protection_statutes": [
+    {
+      "label": "Montana Unfair Trade Practices and Consumer Protection Act — Mont. Code Ann. Title 30, Chapter 14",
+      "url": "https://leg.mt.gov/bills/mca/title_0300/chapter_0140/parts_index.html"
+    },
+    {
+      "label": "Mont. Code Ann. § 31-1-201 (Civil liability for bad checks)",
+      "url": "https://leg.mt.gov/bills/mca/title_0310/chapter_0010/part_0020/section_0010/0310-0010-0020-0010.html"
+    }
+  ],
+  "landlord_tenant_statutes": [
+    {
+      "label": "Montana Residential Landlord and Tenant Act — Mont. Code Ann. Title 70, Chapter 24",
+      "url": "https://leg.mt.gov/bills/mca/title_0700/chapter_0240/parts_index.html"
+    },
+    {
+      "label": "Mont. Code Ann. § 70-25-202 (Security deposit return and penalties)",
+      "url": "https://leg.mt.gov/bills/mca/title_0700/chapter_0250/part_0020/section_0020/0700-0250-0020-0020.html"
+    }
+  ],
+  "wage_and_employment_statutes": [
+    {
+      "label": "Mont. Code Ann. § 39-3-205 (Payment of wages—final paycheck deadline)",
+      "url": "https://leg.mt.gov/bills/mca/title_0390/chapter_0030/part_0020/section_0050/0390-0030-0020-0050.html"
+    }
+  ],
+  "civil_remedies_statutes": [
+    {
+      "label": "Mont. Code Ann. § 27-1-221 (Punitive damages—fraud, malice, oppression)",
+      "url": "https://leg.mt.gov/bills/mca/title_0270/chapter_0010/part_0020/section_0210/0270-0010-0020-0210.html"
+    }
+  ],
+  "county_specific": [],
+  "notes": "Montana small claims procedures are unified statewide under the Justice Court system and do not notably vary by county.",
+  "_meta": {
+    "state": "Montana",
+    "slug": "montana",
+    "model": "gpt-4.1",
+    "response_id": "resp_068487c1c721eefa0069f08a660ae08196b69ff0a51276d7d4",
+    "generated_at": "2026-04-28T10:22:43.168Z",
+    "usage": {
+      "input_tokens": 2104,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 1706,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 3810
+    }
+  }
+}

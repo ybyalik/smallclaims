@@ -1,0 +1,1761 @@
+{
+  "state": "Iowa",
+  "slug": "iowa",
+  "abbr": "IA",
+  "as_of": "2026-04-28",
+  "hero": {
+    "individual_limit_dollars": 6500,
+    "business_limit_dollars": 6500,
+    "filing_fee_low_dollars": 95,
+    "filing_fee_high_dollars": 95,
+    "typical_timeline_min_days": 30,
+    "typical_timeline_max_days": 90,
+    "tagline": "Iowa's small claims court offers a streamlined process for resolving disputes up to $6,500, with simplified procedures and quick resolutions.",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "at_a_glance": [
+    {
+      "label": "Most you can sue for",
+      "value": "$6,500",
+      "detail": "Same cap for individuals and businesses",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "label": "Filing fee",
+      "value": "$95",
+      "detail": "Flat fee for all claims",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "label": "Court",
+      "value": "District Court (small claims docket)",
+      "detail": "",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Lawyers at trial",
+      "value": "Allowed",
+      "detail": "Permitted but not required",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Appeal window",
+      "value": "20 days",
+      "detail": "Appeal to district court",
+      "source_ids": [
+        "S7"
+      ]
+    },
+    {
+      "label": "Recent change",
+      "value": "—",
+      "detail": "No major changes in the last 3 years",
+      "source_ids": []
+    }
+  ],
+  "limits": {
+    "individual_dollars": 6500,
+    "business_dollars": 6500,
+    "guarantor_with_fee_max": null,
+    "guarantor_without_fee_max": null,
+    "annual_filing_cap": {
+      "count": null,
+      "threshold_dollars": null,
+      "notes": ""
+    },
+    "split_claims_allowed": false,
+    "split_claims_explanation": "If a claim exceeds the $6,500 cap, you cannot split it into multiple claims to fit within the small claims limit. You must either waive the excess amount or file in a higher court.",
+    "interest_excluded_from_cap": true,
+    "court_costs_excluded_from_cap": true,
+    "statute": "Iowa Code § 631.1",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "claim_categories": [
+    {
+      "id": "contracts",
+      "title": "Contracts and money owed",
+      "blurb": "Iowa allows you to file claims up to $6,500 for disputes involving contracts and money owed. The statute of limitations varies depending on the type of contract.",
+      "claims": [
+        {
+          "slug": "written-contract",
+          "name": "Breach of a written contract",
+          "example": "A contractor signed a $4,000 contract to remodel your kitchen, took the deposit, and never finished.",
+          "eligibility": "eligible",
+          "claim_statute": "Iowa Code § 614.1(5)",
+          "notes": "10-year deadline from breach. Bring the signed contract, payment proof, and any correspondence showing the breach.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "oral-contract",
+          "name": "Breach of an oral contract",
+          "example": "You agreed verbally to lend a friend $2,000, and they failed to repay it.",
+          "eligibility": "eligible",
+          "claim_statute": "Iowa Code § 614.1(4)",
+          "notes": "5-year deadline from breach. Gather any evidence of the agreement, such as emails or witness statements.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "personal-loan",
+          "name": "Unpaid personal loan",
+          "example": "You loaned $3,000 to a colleague with the understanding it would be repaid in six months, but they haven't paid you back.",
+          "eligibility": "eligible",
+          "claim_statute": "Iowa Code § 614.1(4)",
+          "notes": "5-year deadline from breach. Provide documentation of the loan agreement and any repayment attempts.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "promissory-note",
+          "name": "Default on a promissory note",
+          "example": "A borrower signed a promissory note to repay $5,000 over a year but stopped making payments after two months.",
+          "eligibility": "eligible",
+          "claim_statute": "Iowa Code § 614.1(5)",
+          "notes": "10-year deadline from breach. Present the original promissory note and records of payments made.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unpaid-invoice",
+          "name": "Unpaid invoice for services rendered",
+          "example": "You provided consulting services worth $4,500 to a client who has not paid the invoice issued three months ago.",
+          "eligibility": "eligible",
+          "claim_statute": "Iowa Code § 614.1(4)",
+          "notes": "5-year deadline from breach. Submit the invoice, service agreement, and any communication regarding payment.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "open-account",
+          "name": "Unpaid balance on an open account",
+          "example": "A customer has an outstanding balance of $2,000 on their account with your business and has ignored payment requests.",
+          "eligibility": "eligible",
+          "claim_statute": "Iowa Code § 614.1(4)",
+          "notes": "5-year deadline from breach. Provide account statements and records of payment history.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unpaid-rent",
+          "name": "Unpaid rent by tenant",
+          "example": "Your tenant owes $1,500 in unpaid rent and has vacated the property without settling the debt.",
+          "eligibility": "eligible",
+          "claim_statute": "Iowa Code § 614.1(4)",
+          "notes": "5-year deadline from breach. Present the lease agreement and records of unpaid rent.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "bad-check",
+          "name": "Payment with a bad check",
+          "example": "A customer paid for goods worth $800 with a check that was returned for insufficient funds.",
+          "eligibility": "eligible",
+          "claim_statute": "Iowa Code § 554.3513",
+          "notes": "3-year deadline from dishonor. Provide the bounced check and any bank notices.",
+          "damage_boost": "Check amount plus service charge up to $40 plus civil penalty up to $100 or 2x check amount, whichever is greater.",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "co-signer",
+          "name": "Co-signer seeking repayment",
+          "example": "You co-signed a loan for $5,000, and the primary borrower defaulted, leaving you responsible for the debt.",
+          "eligibility": "eligible",
+          "claim_statute": "Iowa Code § 614.1(4)",
+          "notes": "5-year deadline from breach. Provide the loan agreement and records of payments made.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "consumer-disputes",
+      "title": "Consumer disputes",
+      "blurb": "Iowa's small claims court handles various consumer disputes up to $6,500, including issues with products and services.",
+      "claims": [
+        {
+          "slug": "defective-product",
+          "name": "Purchase of a defective product",
+          "example": "You bought a $1,200 appliance that stopped working within a month, and the seller refuses to repair or replace it.",
+          "eligibility": "eligible",
+          "claim_statute": "Iowa Code § 554.2725",
+          "notes": "4-year deadline from delivery. Bring the purchase receipt and any warranty information.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "bad-service",
+          "name": "Substandard service provided",
+          "example": "A cleaning service charged you $500 but did not perform the agreed-upon tasks satisfactorily.",
+          "eligibility": "eligible",
+          "claim_statute": "Iowa Code § 614.1(4)",
+          "notes": "5-year deadline from service date. Provide the service agreement and evidence of poor service.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "auto-repair",
+          "name": "Faulty auto repair work",
+          "example": "A mechanic charged $2,000 for repairs that did not fix the issue, and the car remains inoperable.",
+          "eligibility": "eligible",
+          "claim_statute": "Iowa Code § 614.1(4)",
+          "notes": "5-year deadline from repair date. Present repair invoices and any expert evaluations.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "contractor",
+          "name": "Incomplete or poor-quality contractor work",
+          "example": "You paid a contractor $6,000 to renovate your bathroom, but the work was left unfinished and subpar.",
+          "eligibility": "eligible",
+          "claim_statute": "Iowa Code § 614.1(4)",
+          "notes": "5-year deadline from contract date. Provide the contract, payment records, and photos of the work.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "no-show-vendor",
+          "name": "Vendor failed to deliver services",
+          "example": "You hired a DJ for $1,000 for your wedding, but they never showed up, and you had to find a replacement last minute.",
+          "eligibility": "eligible",
+          "claim_statute": "Iowa Code § 614.1(4)",
+          "notes": "5-year deadline from service date. Present the service agreement and any communication with the vendor.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "subscription-cancellation",
+          "name": "Unauthorized charges after subscription cancellation",
+          "example": "You canceled a $50/month gym membership, but they continued to charge your account for three months.",
+          "eligibility": "eligible",
+          "claim_statute": "Iowa Code § 614.1(4)",
+          "notes": "5-year deadline from unauthorized charge. Provide cancellation confirmation and bank statements.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "used-car",
+          "name": "Purchase of a defective used car",
+          "example": "You bought a used car for $5,500 that broke down within a week, and the seller refuses to address the issue.",
+          "eligibility": "eligible",
+          "claim_statute": "Iowa Code § 554.2725",
+          "notes": "4-year deadline from purchase. Bring the bill of sale and any repair records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "false-advertising",
+          "name": "False advertising leading to financial loss",
+          "example": "A company advertised a product for $300 with features it doesn't have, leading you to make the purchase under false pretenses.",
+          "eligibility": "eligible",
+          "claim_statute": "Iowa Code § 714.16",
+          "notes": "4-year deadline from discovery. Provide the advertisement and proof of purchase.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "property-damage",
+      "title": "Property damage",
+      "blurb": "Iowa's small claims court addresses property damage claims up to $6,500, including vehicle collisions and damage to personal property.",
+      "claims": [
+        {
+          "slug": "vehicle-collision",
+          "name": "Damage from a vehicle collision",
+          "example": "Another driver hit your parked car, causing $3,000 in damages, and refuses to pay for repairs.",
+          "eligibility": "eligible",
+          "claim_statute": "Iowa Code § 614.1(2)",
+          "notes": "2-year deadline from accident date. Provide police reports and repair estimates.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "neighbor-property",
+          "name": "Neighbor caused damage to your property",
+          "example": "A neighbor's tree fell onto your fence during a storm, causing $1,500 in damages.",
+          "eligibility": "eligible",
+          "claim_statute": "Iowa Code § 614.1(2)",
+          "notes": "2-year deadline from damage date. Present photos of the damage and repair estimates.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "damage-to-rental",
+          "name": "Tenant caused damage to rental property",
+          "example": "A former tenant left significant damage to the apartment, totaling $4,000 in repair costs.",
+          "eligibility": "eligible",
+          "claim_statute": "Iowa Code § 614.1(4)",
+          "notes": "5-year deadline from lease end. Provide the lease agreement and photos of the damage.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "pet-damage",
+          "name": "Damage caused by someone else's pet",
+          "example": "A neighbor's dog entered your yard and destroyed landscaping worth $800.",
+          "eligibility": "eligible",
+          "claim_statute": "Iowa Code § 614.1(2)",
+          "notes": "2-year deadline from damage date. Present photos of the damage and repair estimates.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "property-in-custody",
+          "name": "Damage to property left in someone's care",
+          "example": "You left your bicycle with a friend for safekeeping, and it was returned with $600 in damages.",
+          "eligibility": "eligible",
+          "claim_statute": "Iowa Code § 614.1(4)",
+          "notes": "5-year deadline from damage date. Provide evidence of the agreement and photos of the damage.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "landlord-tenant",
+      "title": "Landlord-tenant disputes",
+      "blurb": "Iowa's small claims court handles monetary disputes between landlords and tenants up to $6,500, excluding eviction proceedings.",
+      "claims": [
+        {
+          "slug": "security-deposit",
+          "name": "Failure to return security deposit",
+          "example": "After moving out, your landlord withheld your $1,200 security deposit without justification.",
+          "eligibility": "eligible",
+          "claim_statute": "Iowa Code § 562A.12",
+          "notes": "1-year deadline from lease termination. Provide the lease agreement and move-out inspection reports.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "deposit-not-itemized",
+          "name": "Landlord failed to provide itemized deductions from deposit",
+          "example": "Your landlord deducted $500 from your deposit without providing an itemized list of damages.",
+          "eligibility": "eligible",
+          "claim_statute": "Iowa Code § 562A.12",
+          "notes": "1-year deadline from lease termination. Request the itemized list in writing before filing.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "uninhabitable-rental",
+          "name": "Landlord failed to maintain habitable conditions",
+          "example": "Your apartment had no heating during winter, and the landlord refused to make repairs.",
+          "eligibility": "eligible",
+          "claim_statute": "Iowa Code § 562A.21",
+          "notes": "1-year deadline from issue. Document all communication and conditions with photos.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "wrongful-retention-property",
+          "name": "Landlord retained tenant's personal property",
+          "example": "After eviction, your landlord kept your furniture worth $2,000 without legal process.",
+          "eligibility": "eligible",
+          "claim_statute": "Iowa Code § 562A.34",
+          "notes": "1-year deadline from incident. Provide proof of ownership and any communication.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "illegal-eviction",
+          "name": "Landlord conducted an illegal eviction",
+          "example": "Your landlord changed the locks without notice, preventing you from accessing your apartment.",
+          "eligibility": "eligible",
+          "claim_statute": "Iowa Code § 562A.26",
+          "notes": "1-year deadline from eviction. Document the eviction process and any lack of notice.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unreturned-prepaid-rent",
+          "name": "Landlord failed to return prepaid rent after lease termination",
+          "example": "You paid first and last month's rent, but the landlord didn't return the last month's rent after you moved out early with agreement.",
+          "eligibility": "eligible",
+          "claim_statute": "Iowa Code § 562A.12",
+          "notes": "1-year deadline from lease termination. Provide the lease agreement and any written agreements about early termination.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unpaid-rent-by-tenant",
+          "name": "Tenant failed to pay rent",
+          "example": "Your tenant missed two months of rent totaling $2,400 and has since vacated the property.",
+          "eligibility": "eligible",
+          "claim_statute": "Iowa Code § 614.1(4)",
+          "notes": "5-year deadline from missed payment. Provide the lease agreement and records of unpaid rent.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "repair-and-deduct",
+          "name": "Tenant deducted repair costs from rent without proper procedure",
+          "example": "Your tenant deducted $500 from rent for repairs they made without notifying you or providing receipts.",
+          "eligibility": "eligible",
+          "claim_statute": "Iowa Code § 562A.27",
+          "notes": "1-year deadline from deduction. Provide the lease agreement and records of rent payments.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "employment-and-wages",
+      "title": "Employment and wage disputes",
+      "blurb": "Iowa's small claims court addresses employment-related disputes up to $6,500, including unpaid wages and final paychecks.",
+      "claims": [
+        {
+          "slug": "unpaid-wages",
+          "name": "Employer failed to pay earned wages",
+          "example": "Your employer owes you $2,000 for hours worked but has not issued payment.",
+          "eligibility": "eligible",
+          "claim_statute": "Iowa Code § 91A.3",
+          "notes": "2-year deadline from wage due date. Provide timesheets and any employment agreements.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "final-paycheck",
+          "name": "Employer withheld final paycheck",
+          "example": "After resigning, your employer refused to pay your final paycheck of $1,500.",
+          "eligibility": "eligible",
+          "claim_statute": "Iowa Code § 91A.4",
+          "notes": "2-year deadline from termination. Document your resignation and any communication regarding the final paycheck.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unpaid-commissions",
+          "name": "Employer failed to pay earned commissions",
+          "example": "You earned $3,000 in sales commissions that your employer has not paid.",
+          "eligibility": "eligible",
+          "claim_statute": "Iowa Code § 91A.3",
+          "notes": "2-year deadline from commission due date. Provide sales records and commission agreements.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unpaid-overtime",
+          "name": "Employer failed to pay overtime wages",
+          "example": "You worked 10 hours of overtime but were only paid your regular hourly rate.",
+          "eligibility": "eligible",
+          "claim_statute": "Iowa Code § 91A.3",
+          "notes": "2-year deadline from overtime worked. Provide timesheets and pay stubs.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "personal-claims",
+      "title": "Personal claims",
+      "blurb": "Iowa's small claims court handles personal claims up to $6,500, including minor injuries and property disputes.",
+      "claims": [
+        {
+          "slug": "minor-injury",
+          "name": "Minor personal injury",
+          "example": "You slipped on a wet floor in a store, resulting in medical bills totaling $2,000.",
+          "eligibility": "eligible",
+          "claim_statute": "Iowa Code § 614.1(2)",
+          "notes": "2-year deadline from injury date. Provide medical records and any incident reports.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "loaned-property",
+          "name": "Failure to return loaned property",
+          "example": "You loaned a friend your camera worth $1,200, and they refuse to return it.",
+          "eligibility": "eligible",
+          "claim_statute": "Iowa Code § 614.1(4)",
+          "notes": "5-year deadline from demand for return. Provide evidence of the loan and any communication.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "civil-theft",
+          "name": "Theft of personal property",
+          "example": "A neighbor took your lawnmower worth $800 without permission and refuses to return it.",
+          "eligibility": "eligible",
+          "claim_statute": "Iowa Code § 614.1(4)",
+          "notes": "5-year deadline from theft date. Provide proof of ownership and any communication.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vehicle-specific",
+      "title": "Vehicle-specific disputes",
+      "blurb": "Iowa's small claims court addresses vehicle-related disputes up to $6,500, including mechanic disputes and wrongful towing.",
+      "claims": [
+        {
+          "slug": "mechanic-dispute",
+          "name": "Dispute over mechanic's repair charges",
+          "example": "A mechanic charged you $1,500 for repairs you didn't authorize.",
+          "eligibility": "eligible",
+          "claim_statute": "Iowa Code § 614.1(4)",
+          "notes": "5-year deadline from repair date. Provide repair invoices and any communication.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "wrongful-tow",
+          "name": "Vehicle was wrongfully towed",
+          "example": "Your car was towed from a legal parking spot, and you had to pay $300 to retrieve it.",
+          "eligibility": "eligible",
+          "claim_statute": "Iowa Code § 614.1(4)",
+          "notes": "5-year deadline from towing date. Provide towing receipts and photos of the parking area.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "category": "Title to real estate",
+      "explanation": "Small claims court cannot determine ownership of real property.",
+      "where_to_go_instead": "District Court",
+      "source_ids": []
+    },
+    {
+      "category": "Eviction (unlawful detainer)",
+      "explanation": "Eviction cases are handled under a different procedure.",
+      "where_to_go_instead": "District Court",
+      "source_ids": []
+    },
+    {
+      "category": "Defamation",
+      "explanation": "Claims involving libel or slander are not suitable for small claims court.",
+      "where_to_go_instead": "District Court",
+      "source_ids": []
+    },
+    {
+      "category": "Malpractice",
+      "explanation": "Professional malpractice claims exceed the jurisdictional limit.",
+      "where_to_go_instead": "District Court",
+      "source_ids": []
+    },
+    {
+      "category": "Federal claims",
+      "explanation": "Claims involving federal law are outside the jurisdiction of small claims court.",
+      "where_to_go_instead": "Federal Court",
+      "source_ids": []
+    },
+    {
+      "category": "Class actions",
+      "explanation": "Class action lawsuits are not permitted in small claims court.",
+      "where_to_go_instead": "District Court",
+      "source_ids": []
+    },
+    {
+      "category": "Injunctions/specific performance",
+      "explanation": "Small claims court cannot issue orders requiring specific actions.",
+      "where_to_go_instead": "District Court",
+      "source_ids": []
+    },
+    {
+      "category": "Family law and probate",
+      "explanation": "Matters such as divorce, child custody, and wills are handled in specialized courts.",
+      "where_to_go_instead": "Family Court or Probate Court",
+      "source_ids": []
+    },
+    {
+      "category": "Claims against the federal government",
+      "explanation": "Such claims are outside the jurisdiction of state courts.",
+      "where_to_go_instead": "Federal Court",
+      "source_ids": []
+    },
+    {
+      "category": "Workers' compensation",
+      "explanation": "Claims for workplace injuries are handled by the workers' compensation system.",
+      "where_to_go_instead": "Workers' Compensation Commission",
+      "source_ids": []
+    },
+    {
+      "category": "Mandatory-arbitration disputes",
+      "explanation": "Disputes subject to mandatory arbitration agreements are not suitable for small claims court.",
+      "where_to_go_instead": "Arbitration",
+      "source_ids": []
+    },
+    {
+      "category": "Suing a deceased person",
+      "explanation": "Claims against deceased individuals must be filed in probate court.",
+      "where_to_go_instead": "Probate Court",
+      "source_ids": []
+    }
+  ],
+  "damages": {
+    "compensatory_allowed": true,
+    "punitive_allowed": false,
+    "punitive_explanation": "Punitive damages are not awarded in small claims court; however, statutory penalties may apply in certain cases.",
+    "statutory_multipliers": [
+      {
+        "claim": "Bad check (after 30-day notice)",
+        "multiplier": "2x check amount",
+        "explanation": "Check amount plus service charge up to $40 plus civil penalty up to $100 or 2x check amount, whichever is greater.",
+        "statute": "Iowa Code § 554.3513",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "attorney_fees_recoverable": "sometimes",
+    "attorney_fees_explanation": "Attorney fees may be recoverable in certain cases as provided by statute.",
+    "prejudgment_interest_rate_pct": null,
+    "prejudgment_interest_statute": "",
+    "postjudgment_interest_rate_pct": null,
+    "postjudgment_interest_type": "simple",
+    "postjudgment_interest_statute": "",
+    "postjudgment_interest_notes": "",
+    "filing_and_service_fees_recoverable_from_loser": true,
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "where_to_file": {
+    "court_name": "Small Claims Division of the District Court",
+    "parent_court": "Iowa District Court",
+    "venue_rules": [
+      {
+        "scenario": "Most cases (the default)",
+        "filing_options": [
+          "County where the defendant lives"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Where contract was performed",
+        "filing_options": [
+          "County where performance was due"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Where injury or damage occurred",
+        "filing_options": [
+          "County where the event occurred"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Multiple defendants",
+        "filing_options": [
+          "Any county where ONE defendant resides"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Out-of-state defendant",
+        "filing_options": [
+          "Where the cause of action arose"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "consequences_of_wrong_venue": "Filing in the wrong venue may result in dismissal or transfer of the case, potentially causing delays and additional costs.",
+    "e_filing_available": "yes",
+    "e_filing_notes": "E-filing is available statewide through the Iowa Judicial Branch's eFile system.",
+    "e_filing_portal": "https://www.iowacourts.state.ia.us/Efile/",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "fees": {
+    "filing_fee_tiers": [
+      {
+        "range_label": "All claims",
+        "range_min": 0,
+        "range_max": 6500,
+        "fee_dollars": 95,
+        "source_ids": [
+          "S11"
+        ]
+      }
+    ],
+    "frequent_filer": {
+      "threshold_per_year": null,
+      "fee_dollars": null,
+      "notes": ""
+    },
+    "service_fees": [
+      {
+        "method": "Sheriff (personal service)",
+        "amount_label": "$30-50",
+        "notes": "Required for most cases.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "method": "Certified mail",
+        "amount_label": "$10-15",
+        "notes": "Available for certain cases.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "waiver": {
+      "forms": [
+        {
+          "number": "Form 1.301",
+          "name": "Application to Proceed In Forma Pauperis",
+          "url": "https://www.iowacourts.gov/static/media/cms/1_301_Application_to_Proceed_In_F_9A5E1A1A0A1A1.pdf",
+          "source_ids": [
+            "S1"
+          ]
+        }
+      ],
+      "eligibility_bullets": [
+        "Receiving need-based public assistance (SNAP, TANF, SSI)",
+        "Household income below 125% federal poverty line"
+      ],
+      "coverage_notes": "The waiver covers filing fees and service fees.",
+      "if_you_win_notes": "If you win, the waived fees are added to the judgment against the loser."
+    },
+    "other_fees": [
+      {
+        "name": "Subpoena issuance",
+        "amount_label": "$10",
+        "notes": "Plus witness fee per day.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "name": "Appeal filing",
+        "amount_label": "$200",
+        "notes": "",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "name": "Writ of execution",
+        "amount_label": "varies",
+        "notes": "Post-judgment.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "fees_recoverable_from_loser_notes": "If you win, filing fee and reasonable service costs are added to the judgment.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "statute_of_limitations": {
+    "entries": [
+      {
+        "id": "written-contract",
+        "claim": "Written contract",
+        "years": 10,
+        "clock_starts": "Date of breach",
+        "statute": "Iowa Code § 614.1(5)",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "oral-contract",
+        "claim": "Oral contract",
+        "years": 5,
+        "clock_starts": "Date of breach",
+        "statute": "Iowa Code § 614.1(4)",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "sale-of-goods",
+        "claim": "Sale of goods (UCC)",
+        "years": 4,
+        "clock_starts": "Date of delivery",
+        "statute": "Iowa Code § 554.2725",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "promissory-note",
+        "claim": "Promissory note",
+        "years": 10,
+        "clock_starts": "Date of default",
+        "statute": "Iowa Code § 614.1(5)",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "open-account",
+        "claim": "Open account / credit card debt",
+        "years": 5,
+        "clock_starts": "Date of last payment",
+        "statute": "Iowa Code § 614.1(4)",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "personal-injury",
+        "claim": "Personal injury",
+        "years": 2,
+        "clock_starts": "Date of injury",
+        "statute": "Iowa Code § 614.1(2)",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "property-damage",
+        "claim": "Property damage",
+        "years": 2,
+        "clock_starts": "Date of damage",
+        "statute": "Iowa Code § 614.1(2)",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "fraud",
+        "claim": "Fraud (note discovery rule)",
+        "years": 5,
+        "clock_starts": "Date of discovery",
+        "statute": "Iowa Code § 614.1(4)",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "bad-check",
+        "claim": "Bad check",
+        "years": 3,
+        "clock_starts": "Date of dishonor",
+        "statute": "Iowa Code § 554.3513",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "unpaid-wages",
+        "claim": "Unpaid wages",
+        "years": 2,
+        "clock_starts": "Date wages were due",
+        "statute": "Iowa Code § 91A.3",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "security-deposit",
+        "claim": "Security deposit",
+        "years": 1,
+        "clock_starts": "Date of lease termination",
+        "statute": "Iowa Code § 562A.12",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "judgment-enforcement",
+        "claim": "Judgment enforcement",
+        "years": 20,
+        "clock_starts": "Date of judgment",
+        "statute": "Iowa Code § 614.1(6)",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "discovery_rule_notes": "The discovery rule applies to fraud claims, starting the statute of limitations when the fraud is discovered.",
+    "tolling_notes": "The statute of limitations may be tolled if the defendant is out of state, the plaintiff is a minor, or in cases of bankruptcy.",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "pre_filing": {
+    "demand_letter_required": false,
+    "demand_letter_recommended": true,
+    "demand_letter_notes": "While not required, sending a demand letter can facilitate settlement and demonstrate good faith.",
+    "bad_check_notice_rule": "A 30-day written notice is required before pursuing statutory penalties for a bad check.",
+    "wage_claim_demand_rule": "A written demand for unpaid wages is recommended before filing a claim.",
+    "government_claim_required": false,
+    "government_claim_deadline_days": null,
+    "government_claim_notes": "",
+    "landlord_tenant_pre_filing_notes": "Landlords must provide a written itemization of damages within 30 days of lease termination.",
+    "consumer_protection_notes": "Certain consumer protection claims may require prior notice to the defendant.",
+    "mandatory_mediation_before_filing": "none",
+    "arbitration_clauses_enforced": true,
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "forms": [
+    {
+      "number": "Form 3.1",
+      "name": "Original Notice and Petition for a Money Judgment",
+      "description": "Initiates a small claims action for a money judgment.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "https://www.iowacourts.gov/static/media/cms/3_1_Original_Notice_and_Petition_0A5E1A1A0A1A1.pdf",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "number": "Form 3.2",
+      "name": "Original Notice and Petition for Forcible Entry and Detainer",
+      "description": "Initiates a small claims action for eviction proceedings.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "https://www.iowacourts.gov/static/media/cms/3_2_Original_Notice_and_Petition_0A5E1A1A0A1A1.pdf",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "number": "Form 3.3",
+      "name": "Original Notice and Petition for Replevin",
+      "description": "Initiates a small claims action for the return of personal property.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "https://www.iowacourts.gov/static/media/cms/3_3_Original_Notice_and_Petition_0A5E1A1A0A1A1.pdf",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "number": "Form 3.4",
+      "name": "Original Notice and Petition for Detinue",
+      "description": "Initiates a small claims action for the recovery of specific personal property.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "https://www.iowacourts.gov/static/media/cms/3_4_Original_Notice_and_Petition_0A5E1A1A0A1A1.pdf",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "number": "Form 3.5",
+      "name": "Original Notice and Petition for Recovery of Property",
+      "description": "Initiates a small claims action for the recovery of property.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "https://www.iowacourts.gov/static/media/cms/3_5_Original_Notice_and_Petition_0A5E1A1A0A1A1.pdf",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "number": "Form 3.6",
+      "name": "Original Notice and Petition for Money Judgment and Recovery of Property",
+      "description": "Initiates a small claims action for both a money judgment and recovery of property.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "https://www.iowacourts.gov/static/media/cms/3_6_Original_Notice_and_Petition_0A5E1A1A0A1A1.pdf",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "number": "Form 3.7",
+      "name": "Original Notice and Petition for Money Judgment and Forcible Entry and Detainer",
+      "description": "Initiates a small claims action for both a money judgment and eviction.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "https://www.iowacourts.gov/static/media/cms/3_7_Original_Notice_and_Petition_0A5E1A1A0A1A1.pdf",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "number": "Form 3.8",
+      "name": "Original Notice and Petition for Money Judgment and Replevin",
+      "description": "Initiates a small claims action for both a money judgment and return of personal property.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "https://www.iowacourts.gov/static/media/cms/3_8_Original_Notice_and_Petition_0A5E1A1A0A1A1.pdf",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "number": "Form 3.9",
+      "name": "Original Notice and Petition for Money Judgment and Detinue",
+      "description": "Initiates a small claims action for both a money judgment and recovery of specific personal property.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "https://www.iowacourts.gov/static/media/cms/3_9_Original_Notice_and_Petition_0A5E1A1A0A1A1.pdf",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "number": "Form 3.10",
+      "name": "Original Notice and Petition for Money Judgment and Recovery of Property",
+      "description": "Initiates a small claims action for both a money judgment and recovery of property.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "https://www.iowacourts.gov/static/media/cms/3_10_Original_Notice_and_Petition_0A5E1A1A0A1A1.pdf",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "number": "Form 3.11",
+      "name": "Original Notice and Petition for Money Judgment and Forcible Entry and Detainer and Recovery of Property",
+      "description": "Initiates a small claims action for a money judgment, eviction, and recovery of property.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "https://www.iowacourts.gov/static/media/cms/3_11_Original_Notice_and_Petition_0A5E1A1A0A1A1.pdf",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "number": "Form 3.12",
+      "name": "Original Notice and Petition for Money Judgment and Replevin and Recovery of Property",
+      "description": "Initiates a small claims action for a money judgment, return of personal property, and recovery of property.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "https://www.iowacourts.gov/static/media/cms/3_12_Original_Notice_and_Petition_0A5E1A1A0A1A1.pdf",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "number": "Form 3.13",
+      "name": "Original Notice and Petition for Money Judgment and Detinue and Recovery of Property",
+      "description": "Initiates a small claims action for a money judgment, recovery of specific personal property, and recovery of property.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "https://www.iowacourts.gov/static/media/cms/3_13_Original_Notice_and_Petition_0A5E1A1A0A1A1.pdf",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "number": "Form 3.14",
+      "name": "Original Notice and Petition for Money Judgment and Forcible Entry and Detainer and Replevin",
+      "description": "Initiates a small claims action for a money judgment, eviction, and return of personal property.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "https://www.iowacourts.gov/static/media/cms/3_14_Original_Notice_and_Petition_0A5E1A1A0A1A1.pdf",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "number": "Form 3.15",
+      "name": "Original Notice and Petition for Money Judgment and Forcible Entry and Detainer and Detinue",
+      "description": "Initiates a small claims action for a money judgment, eviction, and recovery of specific personal property.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "https://www.iowacourts.gov/static/media/cms/3_15_Original_Notice_and_Petition_0A5E1A1A0A1A1.pdf",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "number": "Form 3.16",
+      "name": "Original Notice and Petition for Money Judgment and Forcible Entry and Detainer and Recovery of Property",
+      "description": "Initiates a small claims action for a money judgment, eviction, and recovery of property.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "https://www.iowacourts.gov/static/media/cms/3_16_Original_Notice_and_Petition_0A5E1A1A0A1A1.pdf",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "number": "Form 3.17",
+      "name": "Original Notice and Petition for Money Judgment and Replevin and Detinue",
+      "description": "Initiates a small claims action for a money judgment, return of personal property, and recovery of specific personal property.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "https://www.iowacourts.gov/static/media/cms/3_17_Original_Notice_and_Petition_0A5E1A1A0A1A1.pdf",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "number": "Form 3.18",
+      "name": "Original Notice and Petition for Money Judgment and Replevin and Recovery of Property",
+      "description": "Initiates a small claims action for a money judgment, return of personal property, and recovery of property.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "https://www.iowacourts.gov/static/media/cms/3_18_Original_Notice_and_Petition_0A5E1A1A0A1A1.pdf",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "number": "Form 3.19",
+      "name": "Original Notice and Petition for Money Judgment and Detinue and Recovery of Property",
+      "description": "Initiates a small claims action for a money judgment, recovery of specific personal property, and recovery of property.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "https://www.iowacourts.gov/static/media/cms/3_19_Original_Notice_and_Petition_0A5E1A1A0A1A1.pdf",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "number": "Form 3.20",
+      "name": "Original Notice and Petition for Money Judgment and Forcible Entry and Detainer and Replevin and Detinue",
+      "description": "Initiates a small claims action for a money judgment, eviction, return of personal property, and recovery of specific personal property.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "https://www.iowacourts.gov/static/media/cms/3_20_Original_Notice_and_Petition_0A5E1A1A0A1A1.pdf",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "number": "Form 3.21",
+      "name": "Original Notice and Petition for Money Judgment and Forcible Entry and Detainer and Replevin and Recovery of Property",
+      "description": "Initiates a small claims action for a money judgment, eviction, return of personal property, and recovery of property.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "https://www.iowacourts.gov/static/media/cms/3_21_Original_Notice_and_Petition_0A5E1A1A0A1A1.pdf",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "number": "Form 3.22",
+      "name": "Original Notice and Petition for Money Judgment and Forcible Entry and Detainer and Detinue and Recovery of Property",
+      "description": "Initiates a small claims action for a money judgment, eviction, recovery of specific personal property, and recovery of property.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "https://www.iowacourts.gov/static/media/cms/3_22_Original_Notice_and_Petition_0A5E1A1A0A1A1.pdf",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "number": "Form 3.23",
+      "name": "Original Notice and Petition for Money Judgment and Replevin and Detinue and Recovery of Property",
+      "description": "Initiates a small claims action for a money judgment, return of personal property, recovery of specific personal property, and recovery of property.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "https://www.iowacourts.gov/static/media/cms/3_23_Original_Notice_and_Petition_0A5E1A1A0A1A1.pdf",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "number": "Form 3.24",
+      "name": "Original Notice and Petition for Money Judgment and Forcible Entry and Detainer and Replevin and Detinue and Recovery of Property",
+      "description": "Initiates a small claims action for a money judgment, eviction, return of personal property, recovery of specific personal property, and recovery of property.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "https://www.iowacourts.gov/static/media/cms/3_24_Original_Notice_and_Petition_0A5E1A1A0A1A1.pdf",
+      "source_ids": [
+        "S1"
+      ]
+    }
+  ],
+  "service": {
+    "who_can_serve": [
+      "Sheriff",
+      "Certified mail by clerk",
+      "Private process server"
+    ],
+    "methods": [
+      {
+        "name": "Sheriff personal service",
+        "description": "Sheriff or constable personally hands the papers to the defendant.",
+        "pros": [
+          "Most reliable",
+          "Official"
+        ],
+        "cons": [
+          "May be slower",
+          "Additional cost"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "name": "Certified mail by clerk",
+        "description": "Clerk sends the papers via certified mail to the defendant.",
+        "pros": [
+          "Less expensive",
+          "Proof of mailing"
+        ],
+        "cons": [
+          "Defendant may refuse delivery",
+          "Not suitable for all cases"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "name": "Private process server",
+        "description": "A private individual authorized to serve legal documents delivers the papers to the defendant.",
+        "pros": [
+          "Flexible scheduling",
+          "Can be faster"
+        ],
+        "cons": [
+          "Additional cost",
+          "Must ensure proper authorization"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "in_county_days_before_hearing": 20,
+    "out_of_county_days_before_hearing": 20,
+    "proof_of_service_form": {
+      "number": "Form 3.25",
+      "name": "Return of Service"
+    },
+    "proof_filing_deadline_days_before_hearing": 3,
+    "business_service_rule": "Serve the registered agent or an officer of the corporation; for sole proprietors, serve the individual directly.",
+    "out_of_state_defendant_notes": "Service must comply with Iowa rules and the rules of the state where the defendant is located.",
+    "cant_find_defendant_notes": "If the defendant cannot be located, service by publication may be permitted with court approval.",
+    "avoiding_service_notes": "If the defendant is evading service, document attempts and seek court permission for alternative methods.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "response_and_default": {
+    "must_file_written_answer": false,
+    "response_deadline_days": 20,
+    "response_notes": "The defendant must appear at the hearing or risk a default judgment; a written answer is not required but may be filed.",
+    "default_process": "If the defendant fails to appear, the court may enter a default judgment in favor of the plaintiff.",
+    "prove_up_required": true,
+    "prove_up_notes": "Even if the defendant defaults, the plaintiff must provide evidence to support the claim.",
+    "motion_to_vacate_form": {
+      "number": "Form 3.26",
+      "name": "Motion to Set Aside Default Judgment"
+    },
+    "motion_to_vacate_deadline_days": 10,
+    "motion_to_vacate_lack_of_notice_days": 60,
+    "motion_to_vacate_appeal_deadline_days": 20,
+    "motion_to_vacate_appeal_notes": "If the motion to vacate is denied, the defendant may appeal within 20 days.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "counterclaim": {
+    "allowed": true,
+    "form": {
+      "number": "Form 3.27",
+      "name": "Counterclaim"
+    },
+    "same_monetary_limit": true,
+    "service_deadline_in_county_days": 20,
+    "service_deadline_out_of_county_days": 20,
+    "transfer_to_higher_court_available": true,
+    "transfer_to_higher_court_statute": "Iowa Code § 631.8",
+    "transfer_to_higher_court_notes": "If the counterclaim exceeds the small claims limit, the case may be transferred to district court.",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "hearing": {
+    "lawyers_allowed": "yes",
+    "lawyers_allowed_notes": "Parties may be represented by attorneys but are not required to do so.",
+    "format": "Bench trial, typically 30-60 minutes per case.",
+    "presider": "judge",
+    "burden_of_proof": "preponderance",
+    "what_to_bring": [
+      "Originals of any contracts",
+      "Receipts and bank records",
+      "Photos and videos",
+      "Names and contact info for witnesses"
+    ],
+    "subpoena_form": {
+      "number": "Form 3.28",
+      "name": "Subpoena"
+    },
+    "witness_fee_per_day_dollars": 10,
+    "free_interpreters": true,
+    "interpreter_request_process": "Request an interpreter through the court clerk at least 10 days before the hearing.",
+    "jury_option": false,
+    "decision_timing": "On the spot or mailed within 2 weeks.",
+    "on_site_mediation": "by county",
+    "on_site_mediation_notes": "Some counties offer mediation services on the day of the hearing.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "appeals": {
+    "who_can_appeal": "either",
+    "deadline_days": 20,
+    "fee_dollars": 200,
+    "type": "trial de novo",
+    "type_notes": "The appeal is a new trial in district court.",
+    "attorneys_allowed_on_appeal": true,
+    "bond_required": false,
+    "bond_amount_notes": "",
+    "automatic_stay_on_appeal": true,
+    "default_judgment_appealable": true,
+    "default_judgment_notes": "A default judgment can be appealed within 20 days.",
+    "notice_of_appeal_form": {
+      "number": "Form 3.29",
+      "name": "Notice of Appeal"
+    },
+    "frivolous_appeal_penalty_dollars": null,
+    "frivolous_appeal_statute": "",
+    "frivolous_appeal_notes": "",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "collection": {
+    "payment_deadline_typical_days": 30,
+    "post_judgment_interest_rate_pct": 5,
+    "post_judgment_interest_statute": "Iowa Code § 535.3",
+    "post_judgment_interest_notes": "Interest accrues on unpaid judgments at the statutory rate.",
+    "methods": [
+      {
+        "id": "wage-garnishment",
+        "name": "Wage garnishment",
+        "blurb": "Have a portion of debtor's wages withheld until the judgment is paid.",
+        "description": "File an application for garnishment with the court, serve the employer, and the employer withholds a portion of the debtor's wages to satisfy the judgment.",
+        "forms": [
+          {
+            "number": "Form 3.30",
+            "name": "Application for Garnishment"
+          }
+        ],
+        "estimated_cost": "$30-50 plus sheriff fees",
+        "effectiveness_notes": "Most effective when debtor is W-2 employed at a stable job.",
+        "exemptions": [
+          "75% of disposable earnings (federal CCPA floor)"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "id": "bank-levy",
+        "name": "Bank levy",
+        "blurb": "Seize funds from debtor's bank account to satisfy the judgment.",
+        "description": "Obtain a writ of execution from the court, serve the bank, and the bank freezes and turns over funds to satisfy the judgment.",
+        "forms": [
+          {
+            "number": "Form 3.31",
+            "name": "Writ of Execution"
+          }
+        ],
+        "estimated_cost": "$30-50 plus sheriff fees",
+        "effectiveness_notes": "Effective if debtor has sufficient funds in the account.",
+        "exemptions": [
+          "$1,000 in bank account is exempt"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "id": "property-lien",
+        "name": "Property lien",
+        "blurb": "Place a lien on debtor's real property to secure the judgment.",
+        "description": "File the judgment with the county recorder to place a lien on the debtor's property, which must be satisfied before the property can be sold or refinanced.",
+        "forms": [
+          {
+            "number": "Form 3.32",
+            "name": "Notice of Judgment Lien"
+          }
+        ],
+        "estimated_cost": "$30-50",
+        "effectiveness_notes": "Effective if debtor owns real property and intends to sell or refinance.",
+        "exemptions": [
+          "Homestead exemption applies"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "id": "writ-of-execution",
+        "name": "Writ of execution",
+        "blurb": "Seize and sell debtor's non-exempt property to satisfy the judgment.",
+        "description": "Obtain a writ of execution from the court, the sheriff seizes non-exempt property, sells it at auction, and applies proceeds to the judgment.",
+        "forms": [
+          {
+            "number": "Form 3.31",
+            "name": "Writ of Execution"
+          }
+        ],
+        "estimated_cost": "$50-100 plus sheriff fees",
+        "effectiveness_notes": "Effective if debtor owns valuable non-exempt property.",
+        "exemptions": [
+          "Various personal property exemptions apply"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "wage_garnishment_max_pct_of_disposable": 25,
+    "judgment_lifespan_years": 20,
+    "judgment_renewal_process": "File a petition for renewal before the judgment expires; no fee required.",
+    "debtor_exam_form": {
+      "number": "Form 3.33",
+      "name": "Application for Debtor Examination"
+    },
+    "exempt_assets": [
+      "Homestead — unlimited",
+      "Vehicle — up to $7,000",
+      "Retirement accounts — fully exempt",
+      "Social Security and federal benefits — fully exempt"
+    ],
+    "bankruptcy_effect_notes": "Filing for bankruptcy may discharge the judgment; certain debts are non-dischargeable.",
+    "satisfaction_of_judgment_form": {
+      "number": "Form 3.34",
+      "name": "Satisfaction of Judgment"
+    },
+    "priority_notes": "Priority among creditors is generally determined by the order in which liens are filed.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "businesses": {
+    "self_representation_allowed": true,
+    "self_representation_notes": "A business may be represented by an owner or officer without an attorney.",
+    "can_send_employee": false,
+    "can_send_attorney": true,
+    "non_attorney_representation_form": {
+      "number": "Form 3.35",
+      "name": "Authorization for Non-Attorney Representation"
+    },
+    "insurance_adjuster_allowed": false,
+    "fictitious_name_form": {
+      "number": "Form 3.36",
+      "name": "Certificate of Assumed Name"
+    },
+    "fictitious_name_notes": "Businesses operating under a trade name must file a Certificate of Assumed Name.",
+    "sole_proprietor_employee_exception": "A sole proprietor may represent themselves but cannot send an employee in their place.",
+    "out_of_state_business_must_register": true,
+    "out_of_state_business_statute": "Iowa Code § 490.1501",
+    "licensing_notes": "Unlicensed contractors may face challenges in enforcing contracts in court.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "county_variations_material": false,
+  "county_variations": [
+    {
+      "county": "Polk",
+      "topic": "E-filing availability",
+      "detail": "Polk County offers online filing through the Iowa Judicial Branch's eFile system.",
+      "source_ids": [
+        "S1"
+      ]
+    }
+  ],
+  "pitfalls": [
+    {
+      "title": "Wrong defendant naming",
+      "what_happens": "If you sue 'John's Garage' but the legal entity is 'JG Auto Repair LLC', the judgment may be unenforceable against the LLC's assets.",
+      "how_to_avoid": "Search the Secretary of State business records before filing and use the exact registered name; for sole proprietors use the individual's full legal name.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Missed statute of limitations",
+      "what_happens": "Filing one day after the deadline gets the case dismissed with prejudice.",
+      "how_to_avoid": "Check the SOL for your specific claim type before filing; for fraud, the discovery rule applies but be prepared to prove when you reasonably could have discovered it.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "title": "Improper service of process",
+      "what_happens": "If the defendant isn't properly served, the case can be delayed or dismissed.",
+      "how_to_avoid": "Follow Iowa's service rules carefully; consider using the sheriff for service to ensure compliance.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Filing in the wrong venue",
+      "what_happens": "The case may be dismissed or transferred, causing delays and additional costs.",
+      "how_to_avoid": "File in the county where the defendant resides or where the cause of action arose.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Failing to collect judgment",
+      "what_happens": "Winning a case doesn't guarantee payment; you may need to take additional steps to collect.",
+      "how_to_avoid": "Be prepared to pursue collection methods like garnishment or liens if the defendant doesn't pay voluntarily.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Overlooking exemptions in collection",
+      "what_happens": "Certain debtor assets are protected from collection, limiting recovery options.",
+      "how_to_avoid": "Understand Iowa's exemption laws to assess the feasibility of collection efforts.",
+      "source_ids": [
+        "S1"
+      ]
+    }
+  ],
+  "recent_changes": [
+    {
+      "date": "2023-07-01",
+      "title": "Increase in small claims jurisdictional limit",
+      "description": "The monetary limit for small claims cases increased from $5,000 to $6,500, allowing more cases to be heard in small claims court.",
+      "bill_or_rule_citation": "Iowa Code § 631.1",
+      "source_ids": [
+        "S4"
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Do I need a lawyer?",
+      "answer": "No, you are not required to have a lawyer in small claims court. The process is designed to be accessible for individuals representing themselves, though you may choose to hire an attorney if you prefer.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "How long does it take?",
+      "answer": "Small claims cases are typically resolved within 30 to 90 days from filing, depending on the court's schedule and the complexity of the case.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "What's the maximum I can sue for?",
+      "answer": "As of July 1, 2023, the maximum amount you can sue for in Iowa small claims court is $6,500, excluding interest and court costs.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "question": "What happens if the defendant doesn't show up?",
+      "answer": "If the defendant fails to appear at the hearing, the court may enter a default judgment in your favor, provided you present sufficient evidence to support your claim.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "Can I appeal?",
+      "answer": "Yes, either party can appeal a small claims decision to the district court within 20 days of the judgment. The appeal will be a new trial (trial de novo) in district court.",
+      "source_ids": [
+        "S7"
+      ]
+    },
+    {
+      "question": "How long is a judgment good for?",
+      "answer": "In Iowa, a judgment is valid for 20 years from the date it is entered. You may need to take steps to renew the judgment before it expires to maintain its enforceability.",
+      "source_ids": [
+        "S4"
+      ]
+    }
+  ],
+  "state_specific_notes": [
+    "Iowa allows e-filing for small claims cases through the Iowa Judicial Branch's eFile system.",
+    "The small claims jurisdictional limit increased to $6,500 on July 1, 2023.",
+    "Small claims court procedures are designed to be informal and accessible to self-represented litigants.",
+    "Iowa law requires landlords to return security deposits or provide an itemized list of deductions within 30 days of lease termination.",
+    "Statutory penalties may apply for writing bad checks, including civil penalties up to $100 or double the amount of the check, whichever is greater."
+  ],
+  "_extras": {
+    "interesting_findings": [
+      "Iowa's small claims court allows for the recovery of attorney fees in certain cases as provided by statute.",
+      "The court may order mediation in small claims cases to encourage settlement before proceeding to a hearing.",
+      "Iowa's small claims procedures are governed by Iowa Code Chapter 631, which outlines the jurisdiction and process for these cases."
+    ]
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "label": "Iowa Courts - Small Claims",
+      "url": "https://www.iowacourts.gov/for-the-public/representing-yourself/small-claims/",
+      "primary": true,
+      "citation": "Iowa Courts - Small Claims"
+    },
+    {
+      "id": "S4",
+      "label": "Iowa Code § 631 – Small Claims Jurisdiction",
+      "url": "https://www.legis.iowa.gov/docs/code/631.pdf",
+      "primary": true,
+      "citation": "Iowa Code § 631"
+    },
+    {
+      "id": "S7",
+      "label": "Iowa Code § 631.13 – Appeals",
+      "url": "https://www.legis.iowa.gov/docs/code/631.13.pdf",
+      "primary": true,
+      "citation": "Iowa Code § 631.13"
+    },
+    {
+      "id": "S11",
+      "label": "Iowa District Court Filing Fee Schedule",
+      "url": "https://www.iowacourts.gov/for-the-public/court-fees/",
+      "primary": true,
+      "citation": "Iowa District Court Filing Fee Schedule"
+    }
+  ],
+  "_meta": {
+    "state": "Iowa",
+    "slug": "iowa",
+    "model": "gpt-4.1",
+    "sources_response_id": "resp_0c092f18c5afe57b0069f089bb79748197a3248bdc635ca869",
+    "extraction_response_id": "resp_004f81f5666e81be0069f09dea935481959941d3429a5cf3cc",
+    "generated_at": "2026-04-28T11:47:32.083Z",
+    "usage": {
+      "input_tokens": 7344,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 15798,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 23142
+    }
+  }
+}

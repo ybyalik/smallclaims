@@ -1,0 +1,1592 @@
+{
+  "state": "Oregon",
+  "slug": "oregon",
+  "abbr": "OR",
+  "as_of": "2026-04-28",
+  "hero": {
+    "individual_limit_dollars": 10000,
+    "business_limit_dollars": 10000,
+    "filing_fee_low_dollars": 57,
+    "filing_fee_high_dollars": 102,
+    "typical_timeline_min_days": 30,
+    "typical_timeline_max_days": 90,
+    "tagline": "Oregon's small claims courts offer a streamlined process for resolving disputes up to $10,000, with mandatory mediation in many counties.",
+    "source_ids": [
+      "S1",
+      "S2",
+      "S11"
+    ]
+  },
+  "at_a_glance": [
+    {
+      "label": "Most you can sue for",
+      "value": "$10,000",
+      "detail": "Same cap for individuals and businesses",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Filing fee",
+      "value": "$57-$102",
+      "detail": "Depends on claim amount",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "label": "Court",
+      "value": "Circuit Court (Small Claims Department)",
+      "detail": "",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Lawyers at trial",
+      "value": "Not allowed",
+      "detail": "Unless judge grants permission",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Appeal window",
+      "value": "Not allowed",
+      "detail": "Small claims judgments are final",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Recent change",
+      "value": "—",
+      "detail": "No major changes in the last 3 years",
+      "source_ids": []
+    }
+  ],
+  "limits": {
+    "individual_dollars": 10000,
+    "business_dollars": 10000,
+    "guarantor_with_fee_max": null,
+    "guarantor_without_fee_max": null,
+    "annual_filing_cap": {
+      "count": null,
+      "threshold_dollars": null,
+      "notes": ""
+    },
+    "split_claims_allowed": false,
+    "split_claims_explanation": "If your claim exceeds $10,000, you cannot split it into multiple small claims to stay within the limit. Instead, you must file in the regular civil court.",
+    "interest_excluded_from_cap": true,
+    "court_costs_excluded_from_cap": true,
+    "statute": "ORS 46.405",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "claim_categories": [
+    {
+      "id": "contracts",
+      "title": "Contracts and money owed",
+      "blurb": "Oregon allows you to file small claims for breaches of contract and money owed, provided the amount does not exceed $10,000.",
+      "claims": [
+        {
+          "slug": "written-contract",
+          "name": "Breach of a written contract",
+          "example": "A contractor signed a $4,000 contract to remodel your kitchen, took the deposit, and never finished.",
+          "eligibility": "eligible",
+          "claim_statute": "ORS 12.080",
+          "notes": "6-year deadline from breach. Bring the signed contract, payment proof, and any correspondence showing the breach.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "oral-contract",
+          "name": "Breach of an oral contract",
+          "example": "You agreed verbally to lend someone $2,000, and they failed to repay.",
+          "eligibility": "eligible",
+          "claim_statute": "ORS 12.110",
+          "notes": "6-year deadline from breach. Provide evidence of the agreement and any partial payments.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "personal-loan",
+          "name": "Unpaid personal loan",
+          "example": "You lent a friend $5,000 with the understanding they'd repay in a year, but they haven't.",
+          "eligibility": "eligible",
+          "claim_statute": "ORS 12.080",
+          "notes": "6-year deadline from breach. Document the loan agreement and any repayment attempts.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "promissory-note",
+          "name": "Default on a promissory note",
+          "example": "Someone signed a promissory note to repay $3,000 but defaulted.",
+          "eligibility": "eligible",
+          "claim_statute": "ORS 12.080",
+          "notes": "6-year deadline from breach. Present the original promissory note and records of default.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unpaid-invoice",
+          "name": "Unpaid invoice for services",
+          "example": "You provided $1,500 worth of services, invoiced the client, but haven't been paid.",
+          "eligibility": "eligible",
+          "claim_statute": "ORS 12.080",
+          "notes": "6-year deadline from breach. Keep copies of the invoice and any communication regarding payment.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "open-account",
+          "name": "Unpaid balance on an open account",
+          "example": "A customer has an outstanding balance of $2,000 on their account with your business.",
+          "eligibility": "eligible",
+          "claim_statute": "ORS 12.080",
+          "notes": "6-year deadline from breach. Maintain detailed account statements and records of transactions.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unpaid-rent",
+          "name": "Unpaid rent by tenant",
+          "example": "Your tenant owes $3,500 in back rent and has vacated the property.",
+          "eligibility": "eligible",
+          "claim_statute": "ORS 12.080",
+          "notes": "6-year deadline from breach. Provide the lease agreement and records of unpaid rent.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "bad-check",
+          "name": "Payment with a bad check",
+          "example": "A customer paid with a $1,000 check that bounced due to insufficient funds.",
+          "eligibility": "eligible",
+          "claim_statute": "ORS 30.701",
+          "notes": "30-day notice required before filing. Keep the returned check and any related correspondence.",
+          "damage_boost": "Check amount + service charge up to $35 + civil penalty up to $500 or triple the check amount, whichever is greater.",
+          "source_ids": [
+            "S18"
+          ]
+        },
+        {
+          "slug": "co-signer",
+          "name": "Co-signer seeking repayment",
+          "example": "You co-signed a $4,000 loan, the primary borrower defaulted, and you had to pay.",
+          "eligibility": "eligible",
+          "claim_statute": "ORS 12.080",
+          "notes": "6-year deadline from breach. Show the co-signed agreement and proof of your payments.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "consumer-disputes",
+      "title": "Consumer disputes",
+      "blurb": "Oregon's small claims courts handle various consumer disputes, including defective products and false advertising, with a $10,000 limit.",
+      "claims": [
+        {
+          "slug": "defective-product",
+          "name": "Purchase of a defective product",
+          "example": "You bought a $2,000 appliance that stopped working shortly after purchase, and the seller refuses to repair or replace it.",
+          "eligibility": "eligible",
+          "claim_statute": "ORS 646.608",
+          "notes": "1-year deadline from discovery. Provide purchase receipts and any communication with the seller.",
+          "damage_boost": "",
+          "source_ids": [
+            "S16"
+          ]
+        },
+        {
+          "slug": "bad-service",
+          "name": "Substandard service",
+          "example": "A service provider charged $1,500 for work that was incomplete or poorly done.",
+          "eligibility": "eligible",
+          "claim_statute": "ORS 646.608",
+          "notes": "1-year deadline from discovery. Document the service agreement and evidence of poor workmanship.",
+          "damage_boost": "",
+          "source_ids": [
+            "S16"
+          ]
+        },
+        {
+          "slug": "auto-repair",
+          "name": "Dispute over auto repair",
+          "example": "A mechanic charged $3,000 for repairs that didn't fix the issue.",
+          "eligibility": "eligible",
+          "claim_statute": "ORS 646.608",
+          "notes": "1-year deadline from discovery. Keep all repair invoices and records of subsequent issues.",
+          "damage_boost": "",
+          "source_ids": [
+            "S16"
+          ]
+        },
+        {
+          "slug": "contractor",
+          "name": "Contractor failed to complete work",
+          "example": "You paid a contractor $5,000 to remodel your bathroom, but they left the job unfinished.",
+          "eligibility": "eligible",
+          "claim_statute": "ORS 646.608",
+          "notes": "1-year deadline from discovery. Provide the contract, payment records, and photos of incomplete work.",
+          "damage_boost": "",
+          "source_ids": [
+            "S16"
+          ]
+        },
+        {
+          "slug": "no-show-vendor",
+          "name": "Vendor failed to deliver goods",
+          "example": "You paid $1,200 for furniture that was never delivered.",
+          "eligibility": "eligible",
+          "claim_statute": "ORS 646.608",
+          "notes": "1-year deadline from discovery. Keep the purchase agreement and any correspondence with the vendor.",
+          "damage_boost": "",
+          "source_ids": [
+            "S16"
+          ]
+        },
+        {
+          "slug": "subscription-cancellation",
+          "name": "Unauthorized subscription charges",
+          "example": "A company continued to charge your credit card $50 monthly after you canceled the subscription.",
+          "eligibility": "eligible",
+          "claim_statute": "ORS 646.608",
+          "notes": "1-year deadline from discovery. Document cancellation requests and unauthorized charges.",
+          "damage_boost": "",
+          "source_ids": [
+            "S16"
+          ]
+        },
+        {
+          "slug": "used-car",
+          "name": "Purchase of a defective used car",
+          "example": "You bought a used car for $7,000 that broke down within a week, and the seller refuses to address the issue.",
+          "eligibility": "eligible",
+          "claim_statute": "ORS 646.608",
+          "notes": "1-year deadline from discovery. Provide the bill of sale and any repair estimates.",
+          "damage_boost": "",
+          "source_ids": [
+            "S16"
+          ]
+        },
+        {
+          "slug": "false-advertising",
+          "name": "False advertising leading to financial loss",
+          "example": "A company advertised a product for $500 with features it didn't have, leading you to purchase under false pretenses.",
+          "eligibility": "eligible",
+          "claim_statute": "ORS 646.608",
+          "notes": "1-year deadline from discovery. Keep copies of the advertisement and proof of purchase.",
+          "damage_boost": "",
+          "source_ids": [
+            "S16"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "property-damage",
+      "title": "Property damage",
+      "blurb": "Oregon's small claims courts address property damage claims up to $10,000, including vehicle collisions and damage to rental properties.",
+      "claims": [
+        {
+          "slug": "vehicle-collision",
+          "name": "Damage from a vehicle collision",
+          "example": "Another driver caused $4,000 in damage to your car and refuses to pay for repairs.",
+          "eligibility": "eligible",
+          "claim_statute": "ORS 12.110",
+          "notes": "2-year deadline from incident. Provide police reports and repair estimates.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "neighbor-property",
+          "name": "Neighbor damaged your property",
+          "example": "A neighbor's tree fell on your fence, causing $1,500 in damage.",
+          "eligibility": "eligible",
+          "claim_statute": "ORS 12.110",
+          "notes": "2-year deadline from incident. Document the damage with photos and repair estimates.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "damage-to-rental",
+          "name": "Tenant caused damage to rental property",
+          "example": "A former tenant left $3,000 worth of damage beyond normal wear and tear.",
+          "eligibility": "eligible",
+          "claim_statute": "ORS 12.110",
+          "notes": "2-year deadline from discovery. Provide the lease agreement and photos of the damage.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "pet-damage",
+          "name": "Damage caused by someone's pet",
+          "example": "A neighbor's dog dug up your garden, causing $800 in damage.",
+          "eligibility": "eligible",
+          "claim_statute": "ORS 12.110",
+          "notes": "2-year deadline from incident. Document the damage with photos and repair estimates.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "property-in-custody",
+          "name": "Damage to property left in someone's care",
+          "example": "You left a $2,000 bicycle with a friend, and it was damaged while in their possession.",
+          "eligibility": "eligible",
+          "claim_statute": "ORS 12.110",
+          "notes": "2-year deadline from discovery. Provide evidence of the agreement and photos of the damage.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "landlord-tenant",
+      "title": "Landlord-tenant disputes",
+      "blurb": "Oregon's small claims courts handle monetary disputes between landlords and tenants up to $10,000, excluding eviction proceedings.",
+      "claims": [
+        {
+          "slug": "security-deposit",
+          "name": "Failure to return security deposit",
+          "example": "Your landlord withheld your $1,200 security deposit without justification.",
+          "eligibility": "eligible",
+          "claim_statute": "ORS 90.300",
+          "notes": "1-year deadline from lease termination. Provide the lease agreement and move-out inspection reports.",
+          "damage_boost": "",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "deposit-not-itemized",
+          "name": "Landlord failed to provide itemized deductions",
+          "example": "Your landlord deducted $500 from your deposit without providing an itemized list of damages.",
+          "eligibility": "eligible",
+          "claim_statute": "ORS 90.300",
+          "notes": "1-year deadline from lease termination. Request the itemized list in writing before filing.",
+          "damage_boost": "",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "uninhabitable-rental",
+          "name": "Rental unit deemed uninhabitable",
+          "example": "Your apartment had severe mold issues, and the landlord refused to address them.",
+          "eligibility": "eligible",
+          "claim_statute": "ORS 90.365",
+          "notes": "1-year deadline from discovery. Document the conditions with photos and maintenance requests.",
+          "damage_boost": "",
+          "source_ids": [
+            "S20"
+          ]
+        },
+        {
+          "slug": "wrongful-retention-property",
+          "name": "Landlord retained tenant's personal property",
+          "example": "After moving out, your landlord kept your furniture valued at $2,000.",
+          "eligibility": "eligible",
+          "claim_statute": "ORS 90.425",
+          "notes": "1-year deadline from discovery. Provide evidence of ownership and communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "illegal-eviction",
+          "name": "Landlord conducted an illegal eviction",
+          "example": "Your landlord changed the locks without notice, preventing you from accessing your belongings.",
+          "eligibility": "eligible",
+          "claim_statute": "ORS 90.375",
+          "notes": "1-year deadline from incident. Document the eviction with photos and witness statements.",
+          "damage_boost": "",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "unreturned-prepaid-rent",
+          "name": "Failure to return prepaid rent",
+          "example": "You paid first and last month's rent, but moved out early and the landlord refused to refund the unused portion.",
+          "eligibility": "eligible",
+          "claim_statute": "ORS 90.300",
+          "notes": "1-year deadline from lease termination. Provide the lease agreement and proof of payment.",
+          "damage_boost": "",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "unpaid-rent-by-tenant",
+          "name": "Tenant failed to pay rent",
+          "example": "Your tenant owes $2,500 in unpaid rent and has vacated the property.",
+          "eligibility": "eligible",
+          "claim_statute": "ORS 12.080",
+          "notes": "6-year deadline from breach. Provide the lease agreement and records of unpaid rent.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "repair-and-deduct",
+          "name": "Tenant repaired and deducted from rent",
+          "example": "You repaired a broken heater for $600 and deducted it from rent, but the landlord disputes the deduction.",
+          "eligibility": "eligible",
+          "claim_statute": "ORS 90.368",
+          "notes": "1-year deadline from repair. Keep receipts and communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S19"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "employment-and-wages",
+      "title": "Employment and wage disputes",
+      "blurb": "Oregon's small claims courts handle wage disputes up to $10,000, including unpaid wages and final paychecks.",
+      "claims": [
+        {
+          "slug": "unpaid-wages",
+          "name": "Employer failed to pay wages",
+          "example": "Your employer owes you $3,000 in unpaid wages for hours worked.",
+          "eligibility": "eligible",
+          "claim_statute": "ORS 652.140",
+          "notes": "2-year deadline from due date. Provide pay stubs and records of hours worked.",
+          "damage_boost": "",
+          "source_ids": [
+            "S22"
+          ]
+        },
+        {
+          "slug": "final-paycheck",
+          "name": "Employer withheld final paycheck",
+          "example": "After leaving your job, your employer refused to issue your final paycheck of $1,500.",
+          "eligibility": "eligible",
+          "claim_statute": "ORS 652.140",
+          "notes": "2-year deadline from due date. Document your termination date and any communication with the employer.",
+          "damage_boost": "",
+          "source_ids": [
+            "S22"
+          ]
+        },
+        {
+          "slug": "unpaid-commissions",
+          "name": "Unpaid sales commissions",
+          "example": "Your employer owes you $4,000 in earned commissions but hasn't paid.",
+          "eligibility": "eligible",
+          "claim_statute": "ORS 652.140",
+          "notes": "2-year deadline from due date. Provide the commission agreement and sales records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S22"
+          ]
+        },
+        {
+          "slug": "unpaid-overtime",
+          "name": "Employer failed to pay overtime",
+          "example": "You worked 20 hours of overtime but weren't compensated at the correct rate.",
+          "eligibility": "eligible",
+          "claim_statute": "ORS 652.140",
+          "notes": "2-year deadline from due date. Keep records of hours worked and pay received.",
+          "damage_boost": "",
+          "source_ids": [
+            "S22"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "personal-claims",
+      "title": "Personal claims",
+      "blurb": "Oregon's small claims courts address personal claims up to $10,000, including minor injuries and civil theft.",
+      "claims": [
+        {
+          "slug": "minor-injury",
+          "name": "Minor personal injury",
+          "example": "You slipped on a wet floor in a store, resulting in $2,000 in medical bills.",
+          "eligibility": "eligible",
+          "claim_statute": "ORS 12.110",
+          "notes": "2-year deadline from injury. Provide medical records and incident reports.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "loaned-property",
+          "name": "Damage to loaned property",
+          "example": "You lent a friend your $1,500 camera, and they returned it broken.",
+          "eligibility": "eligible",
+          "claim_statute": "ORS 12.110",
+          "notes": "2-year deadline from discovery. Document the loan agreement and damage.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "civil-theft",
+          "name": "Theft of personal property",
+          "example": "Someone stole your bicycle worth $800, and you have evidence of their involvement.",
+          "eligibility": "eligible",
+          "claim_statute": "ORS 12.110",
+          "notes": "2-year deadline from discovery. Provide police reports and evidence of ownership.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vehicle-specific",
+      "title": "Vehicle-specific claims",
+      "blurb": "Oregon's small claims courts handle vehicle-related disputes up to $10,000, including mechanic disputes and wrongful towing.",
+      "claims": [
+        {
+          "slug": "mechanic-dispute",
+          "name": "Dispute over mechanic's work",
+          "example": "A mechanic charged $2,500 for repairs that didn't fix the problem.",
+          "eligibility": "eligible",
+          "claim_statute": "ORS 646.608",
+          "notes": "1-year deadline from discovery. Keep all repair invoices and records of subsequent issues.",
+          "damage_boost": "",
+          "source_ids": [
+            "S16"
+          ]
+        },
+        {
+          "slug": "wrongful-tow",
+          "name": "Vehicle was wrongfully towed",
+          "example": "Your car was towed from a legal parking spot, and you incurred $300 in fees.",
+          "eligibility": "eligible",
+          "claim_statute": "ORS 646.608",
+          "notes": "1-year deadline from incident. Provide photos of the parking area and towing receipts.",
+          "damage_boost": "",
+          "source_ids": [
+            "S16"
+          ]
+        }
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "category": "Eviction (unlawful detainer)",
+      "explanation": "Small claims courts do not handle eviction proceedings; these are addressed in the regular civil court.",
+      "where_to_go_instead": "Circuit Court's Landlord-Tenant section",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Title to real estate",
+      "explanation": "Disputes involving the ownership of real property are beyond the jurisdiction of small claims courts.",
+      "where_to_go_instead": "Circuit Court",
+      "source_ids": []
+    },
+    {
+      "category": "Defamation",
+      "explanation": "Claims involving defamation, such as libel or slander, are not suitable for small claims court due to their complexity.",
+      "where_to_go_instead": "Circuit Court",
+      "source_ids": []
+    },
+    {
+      "category": "Malpractice",
+      "explanation": "Professional malpractice claims require expert testimony and are not handled in small claims court.",
+      "where_to_go_instead": "Circuit Court",
+      "source_ids": []
+    },
+    {
+      "category": "Family law matters",
+      "explanation": "Issues like divorce, child custody, and support are outside the scope of small claims court.",
+      "where_to_go_instead": "Family Court",
+      "source_ids": []
+    },
+    {
+      "category": "Probate matters",
+      "explanation": "Disputes over wills and estates are handled by probate courts, not small claims courts.",
+      "where_to_go_instead": "Probate Court",
+      "source_ids": []
+    },
+    {
+      "category": "Claims against the federal government",
+      "explanation": "Small claims courts do not have jurisdiction over cases involving federal entities.",
+      "where_to_go_instead": "Federal Court",
+      "source_ids": []
+    },
+    {
+      "category": "Class actions",
+      "explanation": "Class action lawsuits are complex and not suitable for the simplified procedures of small claims court.",
+      "where_to_go_instead": "Circuit Court",
+      "source_ids": []
+    },
+    {
+      "category": "Injunctions and specific performance",
+      "explanation": "Small claims courts cannot issue orders requiring someone to do or stop doing something.",
+      "where_to_go_instead": "Circuit Court",
+      "source_ids": []
+    },
+    {
+      "category": "Workers' compensation claims",
+      "explanation": "Disputes over workers' compensation are handled by specialized boards, not small claims courts.",
+      "where_to_go_instead": "Workers' Compensation Board",
+      "source_ids": []
+    },
+    {
+      "category": "Bankruptcy matters",
+      "explanation": "Bankruptcy cases are under federal jurisdiction and not handled by state small claims courts.",
+      "where_to_go_instead": "Federal Bankruptcy Court",
+      "source_ids": []
+    },
+    {
+      "category": "Mandatory arbitration disputes",
+      "explanation": "Disputes subject to mandatory arbitration clauses are typically not eligible for small claims court.",
+      "where_to_go_instead": "Arbitration",
+      "source_ids": []
+    },
+    {
+      "category": "Suing a deceased person",
+      "explanation": "Claims against deceased individuals must be filed against their estate in probate court.",
+      "where_to_go_instead": "Probate Court",
+      "source_ids": []
+    }
+  ],
+  "damages": {
+    "compensatory_allowed": true,
+    "punitive_allowed": false,
+    "punitive_explanation": "Oregon small claims courts do not award punitive damages; however, statutory penalties may be available in certain cases.",
+    "statutory_multipliers": [
+      {
+        "claim": "Bad check (after 30-day notice)",
+        "multiplier": "Up to 3x check amount",
+        "explanation": "Check amount + service charge up to $35 + civil penalty up to $500 or triple the check amount, whichever is greater.",
+        "statute": "ORS 30.701",
+        "source_ids": [
+          "S18"
+        ]
+      }
+    ],
+    "attorney_fees_recoverable": "sometimes",
+    "attorney_fees_explanation": "Attorney fees may be recoverable in certain cases, such as those involving bad checks or specific statutory violations.",
+    "prejudgment_interest_rate_pct": null,
+    "prejudgment_interest_statute": "",
+    "postjudgment_interest_rate_pct": null,
+    "postjudgment_interest_type": "simple",
+    "postjudgment_interest_statute": "",
+    "postjudgment_interest_notes": "",
+    "filing_and_service_fees_recoverable_from_loser": true,
+    "source_ids": [
+      "S18"
+    ]
+  },
+  "where_to_file": {
+    "court_name": "Small Claims Department of the Circuit Court",
+    "parent_court": "Oregon Judicial Department",
+    "venue_rules": [
+      {
+        "scenario": "Most cases (the default)",
+        "filing_options": [
+          "County where the defendant lives"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Where contract was performed",
+        "filing_options": [
+          "County where performance was due"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Where injury or damage occurred",
+        "filing_options": [
+          "County where the event occurred"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Multiple defendants",
+        "filing_options": [
+          "Any county where ONE defendant resides"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Out-of-state defendant",
+        "filing_options": [
+          "Where the cause of action arose"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "consequences_of_wrong_venue": "Filing in the wrong venue may result in dismissal or transfer of the case, potentially causing delays and additional costs.",
+    "e_filing_available": "varies",
+    "e_filing_notes": "E-filing availability varies by county; check with the local court for specific procedures.",
+    "e_filing_portal": null,
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "fees": {
+    "filing_fee_tiers": [
+      {
+        "range_label": "$0 to $2,500",
+        "range_min": 0,
+        "range_max": 2500,
+        "fee_dollars": 57,
+        "source_ids": [
+          "S11"
+        ]
+      },
+      {
+        "range_label": "$2,500.01 to $10,000",
+        "range_min": 2500.01,
+        "range_max": 10000,
+        "fee_dollars": 102,
+        "source_ids": [
+          "S11"
+        ]
+      }
+    ],
+    "frequent_filer": {
+      "threshold_per_year": null,
+      "fee_dollars": null,
+      "notes": ""
+    },
+    "service_fees": [
+      {
+        "method": "Sheriff (personal service)",
+        "amount_label": "Varies by county",
+        "notes": "Contact the local sheriff's office for current rates.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "method": "Certified mail by clerk",
+        "amount_label": "Varies",
+        "notes": "Includes postage and administrative fees.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "method": "Private process server",
+        "amount_label": "Varies",
+        "notes": "Fees depend on the server's rates.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "waiver": {
+      "forms": [
+        {
+          "number": "",
+          "name": "Fee Deferral and Waiver Application",
+          "url": "",
+          "source_ids": [
+            "S1"
+          ]
+        }
+      ],
+      "eligibility_bullets": [
+        "Receiving need-based public assistance (SNAP, TANF, SSI)",
+        "Household income below 125% federal poverty line"
+      ],
+      "coverage_notes": "The waiver may cover filing fees and service costs.",
+      "if_you_win_notes": "If you win, the waived fees may be added to the judgment against the loser."
+    },
+    "other_fees": [
+      {
+        "name": "Subpoena issuance",
+        "amount_label": "Varies",
+        "notes": "Plus witness fee per day.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "name": "Writ of execution",
+        "amount_label": "Varies",
+        "notes": "Post-judgment.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "fees_recoverable_from_loser_notes": "If you win, filing fees and reasonable service costs are added to the judgment.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "statute_of_limitations": {
+    "entries": [
+      {
+        "id": "written-contract",
+        "claim": "Written contract",
+        "years": 6,
+        "clock_starts": "Date of breach",
+        "statute": "ORS 12.080",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "oral-contract",
+        "claim": "Oral contract",
+        "years": 6,
+        "clock_starts": "Date of breach",
+        "statute": "ORS 12.110",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "sale-of-goods",
+        "claim": "Sale of goods (UCC)",
+        "years": 4,
+        "clock_starts": "Date of breach",
+        "statute": "ORS 72.7250",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "promissory-note",
+        "claim": "Promissory note",
+        "years": 6,
+        "clock_starts": "Date of default",
+        "statute": "ORS 12.080",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "open-account",
+        "claim": "Open account / credit card debt",
+        "years": 6,
+        "clock_starts": "Date of last payment or charge",
+        "statute": "ORS 12.080",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "personal-injury",
+        "claim": "Personal injury",
+        "years": 2,
+        "clock_starts": "Date of injury",
+        "statute": "ORS 12.110",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "property-damage",
+        "claim": "Property damage",
+        "years": 2,
+        "clock_starts": "Date of damage",
+        "statute": "ORS 12.110",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "fraud",
+        "claim": "Fraud",
+        "years": 2,
+        "clock_starts": "Date of discovery",
+        "statute": "ORS 12.110",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "bad-check",
+        "claim": "Bad check",
+        "years": 6,
+        "clock_starts": "Date of dishonor",
+        "statute": "ORS 12.080",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "unpaid-wages",
+        "claim": "Unpaid wages",
+        "years": 2,
+        "clock_starts": "Date wages were due",
+        "statute": "ORS 652.140",
+        "notes": "",
+        "source_ids": [
+          "S22"
+        ]
+      },
+      {
+        "id": "security-deposit",
+        "claim": "Security deposit",
+        "years": 1,
+        "clock_starts": "Date of lease termination",
+        "statute": "ORS 90.300",
+        "notes": "",
+        "source_ids": [
+          "S19"
+        ]
+      },
+      {
+        "id": "judgment-enforcement",
+        "claim": "Judgment enforcement",
+        "years": 10,
+        "clock_starts": "Date of judgment",
+        "statute": "ORS 18.180",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "discovery_rule_notes": "The discovery rule applies to fraud claims, starting the clock when the fraud is discovered.",
+    "tolling_notes": "The statute of limitations may be tolled if the defendant is out of state, the plaintiff is a minor, or in cases of bankruptcy stays.",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "pre_filing": {
+    "demand_letter_required": true,
+    "demand_letter_recommended": true,
+    "demand_letter_notes": "Oregon requires a bona fide effort to collect the claim before filing, typically through a demand letter.",
+    "bad_check_notice_rule": "A 30-day written notice is required before filing a claim for a dishonored check.",
+    "wage_claim_demand_rule": "A written demand for unpaid wages is recommended before filing a claim.",
+    "government_claim_required": false,
+    "government_claim_deadline_days": null,
+    "government_claim_notes": "",
+    "landlord_tenant_pre_filing_notes": "Landlords must provide an itemized list of deductions from the security deposit within 31 days of lease termination.",
+    "consumer_protection_notes": "A written demand is recommended before filing under consumer protection statutes.",
+    "mandatory_mediation_before_filing": "by county",
+    "arbitration_clauses_enforced": true,
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "forms": [
+    {
+      "number": "",
+      "name": "Small Claims Complaint",
+      "description": "Initiates a small claims case by outlining the plaintiff's claim against the defendant.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "number": "",
+      "name": "Notice of Small Claim",
+      "description": "Notifies the defendant of the claim and the requirement to respond.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "service",
+      "url": "",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "number": "",
+      "name": "Defendant's Response",
+      "description": "Allows the defendant to respond to the claim and request a hearing.",
+      "filed_by": "defendant",
+      "required": true,
+      "group": "counterclaim",
+      "url": "",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "number": "",
+      "name": "Satisfaction of Judgment",
+      "description": "Filed by the plaintiff to indicate that the judgment has been paid in full.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "after-judgment",
+      "url": "",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "number": "",
+      "name": "Fee Deferral and Waiver Application",
+      "description": "Request to defer or waive court fees based on financial hardship.",
+      "filed_by": "plaintiff",
+      "required": false,
+      "group": "fee-waiver",
+      "url": "",
+      "source_ids": [
+        "S1"
+      ]
+    }
+  ],
+  "service": {
+    "who_can_serve": [
+      "Sheriff",
+      "Certified mail by clerk",
+      "Private process server"
+    ],
+    "methods": [
+      {
+        "name": "Sheriff personal service",
+        "description": "Sheriff or constable personally hands the papers to the defendant.",
+        "pros": [
+          "Reliable",
+          "Official"
+        ],
+        "cons": [
+          "May be more expensive",
+          "Dependent on sheriff's schedule"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "name": "Certified mail by clerk",
+        "description": "Court clerk sends the documents via certified mail to the defendant.",
+        "pros": [
+          "Cost-effective",
+          "Provides delivery confirmation"
+        ],
+        "cons": [
+          "Defendant may refuse delivery",
+          "Less personal"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "name": "Private process server",
+        "description": "A professional process server delivers the documents to the defendant.",
+        "pros": [
+          "Flexible scheduling",
+          "Experienced in locating defendants"
+        ],
+        "cons": [
+          "Additional cost",
+          "Varies in reliability"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "in_county_days_before_hearing": 14,
+    "out_of_county_days_before_hearing": 14,
+    "proof_of_service_form": {
+      "number": "",
+      "name": "Proof of Service"
+    },
+    "proof_filing_deadline_days_before_hearing": 7,
+    "business_service_rule": "Serve the registered agent or an officer of the corporation; for sole proprietors, serve the individual directly.",
+    "out_of_state_defendant_notes": "Service must comply with Oregon rules and the laws of the state where the defendant is located.",
+    "cant_find_defendant_notes": "If the defendant cannot be located, service by publication may be permitted with court approval.",
+    "avoiding_service_notes": "If the defendant is evading service, document attempts and seek court permission for alternative methods.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "response_and_default": {
+    "must_file_written_answer": true,
+    "response_deadline_days": 14,
+    "response_notes": "The defendant must file a written response within 14 days of service to avoid default judgment.",
+    "default_process": "If the defendant fails to respond, the plaintiff can request a default judgment for the claimed amount.",
+    "prove_up_required": true,
+    "prove_up_notes": "Even in default, the plaintiff may need to provide evidence to support the claim amount.",
+    "motion_to_vacate_form": {
+      "number": "",
+      "name": "Motion to Set Aside Default Judgment"
+    },
+    "motion_to_vacate_deadline_days": 30,
+    "motion_to_vacate_lack_of_notice_days": 30,
+    "motion_to_vacate_appeal_deadline_days": 30,
+    "motion_to_vacate_appeal_notes": "A motion to vacate must be filed within 30 days of the default judgment; if denied, an appeal can be filed within 30 days.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "counterclaim": {
+    "allowed": true,
+    "form": {
+      "number": "",
+      "name": "Defendant's Counterclaim"
+    },
+    "same_monetary_limit": true,
+    "service_deadline_in_county_days": 14,
+    "service_deadline_out_of_county_days": 14,
+    "transfer_to_higher_court_available": true,
+    "transfer_to_higher_court_statute": "ORS 46.461",
+    "transfer_to_higher_court_notes": "If the counterclaim exceeds $10,000, the case may be transferred to the regular civil docket.",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "hearing": {
+    "lawyers_allowed": "restricted",
+    "lawyers_allowed_notes": "Attorneys are not allowed to represent parties in small claims hearings without the judge's permission.",
+    "format": "Informal bench trial, typically lasting 30 minutes to an hour.",
+    "presider": "judge",
+    "burden_of_proof": "preponderance",
+    "what_to_bring": [
+      "Originals of any contracts",
+      "Receipts and bank records",
+      "Photos and videos",
+      "Names and contact info for witnesses"
+    ],
+    "subpoena_form": {
+      "number": "",
+      "name": "Subpoena"
+    },
+    "witness_fee_per_day_dollars": null,
+    "free_interpreters": true,
+    "interpreter_request_process": "Request an interpreter from the court as soon as possible before the hearing.",
+    "jury_option": false,
+    "decision_timing": "On the spot or mailed within a few weeks.",
+    "on_site_mediation": "by county",
+    "on_site_mediation_notes": "Many counties require mediation before proceeding to trial.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "appeals": {
+    "who_can_appeal": "none",
+    "deadline_days": null,
+    "fee_dollars": null,
+    "type": null,
+    "type_notes": "Small claims judgments are final and not subject to appeal.",
+    "attorneys_allowed_on_appeal": null,
+    "bond_required": null,
+    "bond_amount_notes": null,
+    "automatic_stay_on_appeal": null,
+    "default_judgment_appealable": null,
+    "default_judgment_notes": null,
+    "notice_of_appeal_form": {
+      "number": "",
+      "name": ""
+    },
+    "frivolous_appeal_penalty_dollars": null,
+    "frivolous_appeal_statute": "",
+    "frivolous_appeal_notes": "",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "collection": {
+    "payment_deadline_typical_days": 30,
+    "post_judgment_interest_rate_pct": 9,
+    "post_judgment_interest_statute": "ORS 82.010",
+    "post_judgment_interest_notes": "Interest accrues at 9% per annum on unpaid judgments.",
+    "methods": [
+      {
+        "id": "wage-garnishment",
+        "name": "Wage garnishment",
+        "blurb": "Have a portion of debtor's wages withheld until the judgment is paid.",
+        "description": "File a writ of garnishment with the court, serve the employer, and the employer withholds a portion of the debtor's wages to satisfy the judgment.",
+        "forms": [
+          {
+            "number": "",
+            "name": "Writ of Garnishment"
+          }
+        ],
+        "estimated_cost": "$50 plus service fees",
+        "effectiveness_notes": "Effective if the debtor is employed and earns above the exemption threshold.",
+        "exemptions": [
+          "75% of disposable earnings or 40 times the federal minimum hourly wage per week, whichever is greater."
+        ],
+        "source_ids": [
+          "S14"
+        ]
+      },
+      {
+        "id": "bank-levy",
+        "name": "Bank account levy",
+        "blurb": "Seize funds from debtor's bank account to satisfy the judgment.",
+        "description": "Obtain a writ of garnishment, serve it on the debtor's bank, and the bank freezes and turns over funds to the court.",
+        "forms": [
+          {
+            "number": "",
+            "name": "Writ of Garnishment"
+          }
+        ],
+        "estimated_cost": "$50 plus service fees",
+        "effectiveness_notes": "Effective if the debtor has sufficient funds in the account; some funds may be exempt.",
+        "exemptions": [
+          "$2,500 in a single account is exempt from garnishment."
+        ],
+        "source_ids": [
+          "S14"
+        ]
+      },
+      {
+        "id": "property-lien",
+        "name": "Property lien",
+        "blurb": "Place a lien on debtor's real property to secure the judgment.",
+        "description": "Record the judgment with the county recorder's office to create a lien on the debtor's real property, which must be satisfied upon sale or refinancing.",
+        "forms": [
+          {
+            "number": "",
+            "name": "Abstract of Judgment"
+          }
+        ],
+        "estimated_cost": "$20 recording fee",
+        "effectiveness_notes": "Effective if the debtor owns real property; may take time to realize payment.",
+        "exemptions": [
+          "Homestead exemption up to $40,000 for individuals, $50,000 for joint owners."
+        ],
+        "source_ids": [
+          "S14"
+        ]
+      },
+      {
+        "id": "writ-of-execution",
+        "name": "Writ of execution",
+        "blurb": "Seize and sell debtor's personal property to satisfy the judgment.",
+        "description": "Obtain a writ of execution from the court, have the sheriff seize the debtor's non-exempt personal property, and sell it at auction.",
+        "forms": [
+          {
+            "number": "",
+            "name": "Writ of Execution"
+          }
+        ],
+        "estimated_cost": "$50 plus sheriff's fees",
+        "effectiveness_notes": "Effective if the debtor owns valuable non-exempt personal property.",
+        "exemptions": [
+          "Household goods up to $3,000, vehicle up to $3,000, tools of trade up to $5,000."
+        ],
+        "source_ids": [
+          "S14"
+        ]
+      }
+    ],
+    "wage_garnishment_max_pct_of_disposable": 25,
+    "judgment_lifespan_years": 10,
+    "judgment_renewal_process": "File a motion to renew the judgment before the 10-year period expires; a fee applies.",
+    "debtor_exam_form": {
+      "number": "",
+      "name": "Order to Appear for Examination"
+    },
+    "exempt_assets": [
+      "Homestead — $40,000 for individuals, $50,000 for joint owners",
+      "Vehicle — $3,000",
+      "Household goods — $3,000",
+      "Tools of trade — $5,000",
+      "Social Security and federal benefits"
+    ],
+    "bankruptcy_effect_notes": "Filing for bankruptcy may discharge the judgment; certain debts are non-dischargeable.",
+    "satisfaction_of_judgment_form": {
+      "number": "",
+      "name": "Satisfaction of Judgment"
+    },
+    "priority_notes": "Priority among multiple judgment creditors is generally determined by the order of filing or recording the judgment.",
+    "source_ids": [
+      "S14"
+    ]
+  },
+  "businesses": {
+    "self_representation_allowed": true,
+    "self_representation_notes": "Businesses can appear without an attorney in small claims court.",
+    "can_send_employee": true,
+    "can_send_attorney": true,
+    "non_attorney_representation_form": {
+      "number": "",
+      "name": "Authorization to Appear"
+    },
+    "insurance_adjuster_allowed": false,
+    "fictitious_name_form": {
+      "number": "",
+      "name": "Assumed Business Name Registration"
+    },
+    "fictitious_name_notes": "Businesses operating under an assumed name must register with the Oregon Secretary of State.",
+    "sole_proprietor_employee_exception": "Sole proprietors can send a designated employee with written authorization.",
+    "out_of_state_business_must_register": true,
+    "out_of_state_business_statute": "ORS 60.701",
+    "licensing_notes": "Unlicensed contractors may face limitations in enforcing contracts in court.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "county_variations_material": true,
+  "county_variations": [
+    {
+      "county": "Multnomah",
+      "topic": "Mandatory mediation",
+      "detail": "Multnomah County requires mediation before proceeding to trial in small claims cases.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "county": "Coos",
+      "topic": "Mediation options",
+      "detail": "Coos County offers mediation in person, by phone, or by video for small claims cases.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "county": "Douglas",
+      "topic": "Mediation orientation",
+      "detail": "Douglas County schedules mediation orientation for all small claims cases.",
+      "source_ids": [
+        "S1"
+      ]
+    }
+  ],
+  "pitfalls": [
+    {
+      "title": "Failing to attempt pre-filing resolution",
+      "what_happens": "The court may dismiss your case if you haven't made a bona fide effort to resolve the dispute before filing.",
+      "how_to_avoid": "Send a detailed demand letter and keep records of all communication attempts.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Incorrectly naming the defendant",
+      "what_happens": "Suing the wrong party can result in dismissal or an unenforceable judgment.",
+      "how_to_avoid": "Verify the legal name and status of the defendant, especially for businesses, through the Oregon Secretary of State.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Missing the statute of limitations",
+      "what_happens": "Filing after the deadline results in automatic dismissal of your case.",
+      "how_to_avoid": "Determine the applicable statute of limitations for your claim type and file within that period.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "title": "Improper service of process",
+      "what_happens": "Improper service can delay your case or lead to dismissal.",
+      "how_to_avoid": "Follow Oregon's rules for serving documents, using authorized methods and ensuring proof of service is filed.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Not preparing sufficient evidence",
+      "what_happens": "Lack of evidence can result in losing your case.",
+      "how_to_avoid": "Gather all relevant documents, photos, and witness statements to support your claim.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Ignoring post-judgment procedures",
+      "what_happens": "Winning a judgment doesn't guarantee payment; you must take steps to collect.",
+      "how_to_avoid": "Familiarize yourself with collection methods like garnishment and liens, and act promptly to enforce the judgment.",
+      "source_ids": [
+        "S1"
+      ]
+    }
+  ],
+  "recent_changes": [
+    {
+      "date": "2025-01-01",
+      "title": "Increase in small claims filing fees",
+      "description": "Filing fees for small claims cases were increased to $57 for claims up to $2,500 and $102 for claims over $2,500.",
+      "bill_or_rule_citation": "ORS 46.570",
+      "source_ids": [
+        "S11"
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Do I need a lawyer?",
+      "answer": "No, attorneys are not allowed to represent parties in Oregon small claims court without the judge's permission. The process is designed for individuals to represent themselves.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "How long does it take?",
+      "answer": "The typical timeline for a small claims case in Oregon is between 30 to 90 days from filing to resolution, depending on the court's schedule and whether mediation is required.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "What's the maximum I can sue for?",
+      "answer": "In Oregon, the maximum amount you can sue for in small claims court is $10,000, excluding court costs and interest.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "What happens if the defendant doesn't show up?",
+      "answer": "If the defendant fails to respond or appear in court, you can request a default judgment for the amount claimed, plus any applicable fees and costs.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "Can I appeal?",
+      "answer": "No, small claims judgments in Oregon are final and not subject to appeal. It's important to present your best case during the initial hearing.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "How long is a judgment good for?",
+      "answer": "A judgment in Oregon is valid for 10 years and can be renewed before it expires to extend its enforceability.",
+      "source_ids": [
+        "S4"
+      ]
+    }
+  ],
+  "state_specific_notes": [
+    "Oregon requires a bona fide effort to resolve disputes before filing a small claims case, typically through a demand letter.",
+    "Many counties in Oregon mandate mediation before proceeding to trial in small claims cases.",
+    "Attorneys are generally not permitted to represent parties in small claims court without the judge's permission.",
+    "Small claims judgments in Oregon are final and cannot be appealed.",
+    "The maximum amount you can sue for in Oregon small claims court is $10,000, excluding court costs and interest."
+  ],
+  "_extras": {
+    "interesting_findings": [
+      "Oregon's small claims courts emphasize self-representation and informal procedures to facilitate quick resolutions.",
+      "Mandatory mediation programs in several counties aim to reduce the number of cases proceeding to trial.",
+      "The prohibition of attorney representation without court permission helps maintain the informal nature of small claims proceedings."
+    ]
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "label": "Oregon Judicial Department: Small Claims",
+      "url": "https://www.courts.oregon.gov/programs/Forms/Pages/smallclaims.aspx",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S2",
+      "label": "Oregon Circuit Court - Small Claims Information",
+      "url": "https://www.courts.oregon.gov/courts/circuit/programs-services/Pages/smallclaims.aspx",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S4",
+      "label": "ORS 46.405 - Jurisdiction of small claims department",
+      "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors046.html#section46.405",
+      "primary": true,
+      "citation": "ORS 46.405"
+    },
+    {
+      "id": "S11",
+      "label": "Oregon Circuit Court Fee Schedule",
+      "url": "https://www.courts.oregon.gov/courts/circuit/resources/Documents/fee-schedule.pdf",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S14",
+      "label": "ORS 18.345 - Garnishment procedure",
+      "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors018.html#section18.345",
+      "primary": true,
+      "citation": "ORS 18.345"
+    },
+    {
+      "id": "S16",
+      "label": "ORS 646.608 - Unlawful trade practices (UDAP)",
+      "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors646.html#section646.608",
+      "primary": true,
+      "citation": "ORS 646.608"
+    },
+    {
+      "id": "S18",
+      "label": "ORS 30.701 - Bad check civil penalty",
+      "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors030.html#section30.701",
+      "primary": true,
+      "citation": "ORS 30.701"
+    },
+    {
+      "id": "S19",
+      "label": "ORS 90.300 - Security deposit; prepaid rent",
+      "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors090.html#section90.300",
+      "primary": true,
+      "citation": "ORS 90.300"
+    },
+    {
+      "id": "S22",
+      "label": "ORS 652.140 - Payment on termination of employment",
+      "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors652.html#section652.140",
+      "primary": true,
+      "citation": "ORS 652.140"
+    }
+  ],
+  "_meta": {
+    "state": "Oregon",
+    "slug": "oregon",
+    "model": "gpt-4.1",
+    "generated_at": "2026-04-28T11:38:17.313Z",
+    "promoted_from_failure": true
+  }
+}

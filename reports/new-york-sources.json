@@ -1,0 +1,175 @@
+{
+  "state": "New York",
+  "as_of": "2024-06-22",
+  "state_judiciary_pages": [
+    {
+      "label": "New York State Unified Court System — Small Claims Handbook",
+      "url": "https://www.nycourts.gov/courthelp/pdfs/SmallClaimsHandbook.pdf",
+      "scope": "small_claims"
+    },
+    {
+      "label": "New York CourtHelp — Small Claims",
+      "url": "https://www.nycourts.gov/courthelp/goingtocourt/smallclaims.shtml",
+      "scope": "self_help"
+    },
+    {
+      "label": "New York State Unified Court System — Fee Chart",
+      "url": "https://www.nycourts.gov/LegacyPDFS/courts/nyc/civil/fees.pdf",
+      "scope": "fee_schedule"
+    },
+    {
+      "label": "New York State Courts — Small Claims Court Locations",
+      "url": "https://www.nycourts.gov/courts/nyc/smallclaims/index.shtml",
+      "scope": "court_directory"
+    }
+  ],
+  "statutes": [
+    {
+      "label": "N.Y. C.P.L.R. § 1801 (Small Claims Jurisdiction)",
+      "url": "https://www.nysenate.gov/legislation/laws/CVP/1801",
+      "section_or_chapter": "§ 1801"
+    },
+    {
+      "label": "N.Y. C.P.L.R. § 1803 (Commencement of Small Claims Action)",
+      "url": "https://www.nysenate.gov/legislation/laws/CVP/1803",
+      "section_or_chapter": "§ 1803"
+    },
+    {
+      "label": "N.Y. C.P.L.R. § 1804 (Hearing Notices; Service; Adjournment)",
+      "url": "https://www.nysenate.gov/legislation/laws/CVP/1804",
+      "section_or_chapter": "§ 1804"
+    },
+    {
+      "label": "N.Y. C.P.L.R. § 1805 (Procedure)",
+      "url": "https://www.nysenate.gov/legislation/laws/CVP/1805",
+      "section_or_chapter": "§ 1805"
+    },
+    {
+      "label": "N.Y. C.P.L.R. § 1807 (Judgment; Appeal)",
+      "url": "https://www.nysenate.gov/legislation/laws/CVP/1807",
+      "section_or_chapter": "§ 1807"
+    },
+    {
+      "label": "N.Y. C.P.L.R. § 1808 (Enforcement of Judgment)",
+      "url": "https://www.nysenate.gov/legislation/laws/CVP/1808",
+      "section_or_chapter": "§ 1808"
+    }
+  ],
+  "court_rules": [
+    {
+      "label": "New York City Civil Court Act — Small Claims Rules",
+      "url": "https://www.nycourts.gov/LegacyPDFS/courts/nyc/civil/civilctacts.pdf",
+      "rule_or_chapter": "Articles 18 & 18A"
+    }
+  ],
+  "forms_pages": [
+    {
+      "label": "New York State Unified Court System — Small Claims Forms",
+      "url": "https://www.nycourts.gov/courthelp/DIY/smallClaims.shtml"
+    }
+  ],
+  "fee_schedules": [
+    {
+      "label": "New York City Civil Court — Fee Information",
+      "url": "https://www.nycourts.gov/LegacyPDFS/courts/nyc/civil/fees.pdf"
+    }
+  ],
+  "service_rules": [
+    {
+      "label": "N.Y. C.P.L.R. § 1803 (Service of Notice for Small Claims)",
+      "url": "https://www.nysenate.gov/legislation/laws/CVP/1803"
+    }
+  ],
+  "appeal_rules": [
+    {
+      "label": "N.Y. C.P.L.R. § 1807 (Appeals in Small Claims Cases)",
+      "url": "https://www.nysenate.gov/legislation/laws/CVP/1807"
+    }
+  ],
+  "post_judgment_collection": [
+    {
+      "label": "N.Y. C.P.L.R. § 1808 (Enforcement of Judgment)",
+      "url": "https://www.nysenate.gov/legislation/laws/CVP/1808"
+    },
+    {
+      "label": "N.Y. C.P.L.R. § 5222 (Income Execution)",
+      "url": "https://www.nysenate.gov/legislation/laws/CVP/5222"
+    }
+  ],
+  "consumer_protection_statutes": [
+    {
+      "label": "N.Y. General Business Law § 349 (Deceptive Acts and Practices)",
+      "url": "https://www.nysenate.gov/legislation/laws/GBS/349"
+    },
+    {
+      "label": "N.Y. General Business Law § 396-p (Used Car Lemon Law)",
+      "url": "https://www.nysenate.gov/legislation/laws/GBS/396-p"
+    },
+    {
+      "label": "N.Y. General Business Law § 198-b (Warranties on Used Motor Vehicles)",
+      "url": "https://www.nysenate.gov/legislation/laws/GBS/198-b"
+    },
+    {
+      "label": "N.Y. General Business Law § 396 (Repair Shops — Auto Repairs)",
+      "url": "https://www.nysenate.gov/legislation/laws/GBS/396"
+    },
+    {
+      "label": "N.Y. General Business Law § 190 (Civil Penalty for Bad Checks)",
+      "url": "https://www.nysenate.gov/legislation/laws/GBS/190"
+    }
+  ],
+  "landlord_tenant_statutes": [
+    {
+      "label": "N.Y. General Obligations Law § 7-103 (Security Deposits)",
+      "url": "https://www.nysenate.gov/legislation/laws/GOB/7-103"
+    },
+    {
+      "label": "N.Y. Real Property Law § 235-e (Notice of Rent Payment and Receipts)",
+      "url": "https://www.nysenate.gov/legislation/laws/RPP/235-E"
+    },
+    {
+      "label": "N.Y. Real Property Law § 235-f (Roommate Law; Illegal Lockout)",
+      "url": "https://www.nysenate.gov/legislation/laws/RPP/235-F"
+    }
+  ],
+  "wage_and_employment_statutes": [
+    {
+      "label": "N.Y. Labor Law § 191 (Frequency and Methods of Payment of Wages)",
+      "url": "https://www.nysenate.gov/legislation/laws/LAB/191"
+    },
+    {
+      "label": "N.Y. Labor Law § 198 (Remedies/Waiting Time for Unpaid Wages)",
+      "url": "https://www.nysenate.gov/legislation/laws/LAB/198"
+    }
+  ],
+  "civil_remedies_statutes": [
+    {
+      "label": "N.Y. C.P.L.R. § 8303-a (Attorney Fees for Frivolous Civil Litigation)",
+      "url": "https://www.nysenate.gov/legislation/laws/CVP/8303-A"
+    },
+    {
+      "label": "N.Y. General Obligations Law § 11-100 (Civil Liability for Money/Property Transfer to Minor)",
+      "url": "https://www.nysenate.gov/legislation/laws/GOB/11-100"
+    }
+  ],
+  "county_specific": [],
+  "notes": "New York has both city and town/village small claims, with some distinctions for NYC, but main rules are on the state judiciary portal.",
+  "_meta": {
+    "state": "New York",
+    "slug": "new-york",
+    "model": "gpt-4.1",
+    "response_id": "resp_05df1cfcaf8eb8740069f08ac1b4048194ba1d217fb01c7702",
+    "generated_at": "2026-04-28T10:24:22.456Z",
+    "usage": {
+      "input_tokens": 2105,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 1752,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 3857
+    }
+  }
+}

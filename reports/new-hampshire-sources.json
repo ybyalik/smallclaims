@@ -1,0 +1,158 @@
+{
+  "state": "New Hampshire",
+  "as_of": "2024-06-17",
+  "state_judiciary_pages": [
+    {
+      "label": "New Hampshire Circuit Court — Small Claims Self-Help",
+      "url": "https://www.courts.nh.gov/self-help/small-claims",
+      "scope": "small_claims"
+    },
+    {
+      "label": "New Hampshire Circuit Court Locations and Contact",
+      "url": "https://www.courts.nh.gov/our-courts/circuit-court/circuit-court-locations",
+      "scope": "court_directory"
+    },
+    {
+      "label": "New Hampshire Judicial Branch Fee Information",
+      "url": "https://www.courts.nh.gov/resources/fees-payments",
+      "scope": "fee_schedule"
+    }
+  ],
+  "statutes": [
+    {
+      "label": "N.H. Rev. Stat. § 503:1 (District Courts — Jurisdiction in Small Claims)",
+      "url": "https://www.gencourt.state.nh.us/rsa/html/LII/503/503-1.htm",
+      "section_or_chapter": "§ 503:1"
+    },
+    {
+      "label": "N.H. Rev. Stat. § 503:13 (Small Claims — Procedure)",
+      "url": "https://www.gencourt.state.nh.us/rsa/html/LII/503/503-13.htm",
+      "section_or_chapter": "§ 503:13"
+    },
+    {
+      "label": "N.H. Rev. Stat. § 502-A:14 (Appeal from Circuit Court District Division)",
+      "url": "https://www.gencourt.state.nh.us/rsa/html/LII/502-A/502-A-14.htm",
+      "section_or_chapter": "§ 502-A:14"
+    },
+    {
+      "label": "N.H. Rev. Stat. § 524:6-a (Interest on Judgments)",
+      "url": "https://www.gencourt.state.nh.us/rsa/html/LII/524/524-6-a.htm",
+      "section_or_chapter": "§ 524:6-a"
+    },
+    {
+      "label": "N.H. Rev. Stat. § 511:2 (Service of Process in Civil Actions)",
+      "url": "https://www.gencourt.state.nh.us/rsa/html/LII/511/511-2.htm",
+      "section_or_chapter": "§ 511:2"
+    },
+    {
+      "label": "N.H. Rev. Stat. § 512:1 (Executions — Collection of Judgments)",
+      "url": "https://www.gencourt.state.nh.us/rsa/html/LII/512/512-1.htm",
+      "section_or_chapter": "§ 512:1"
+    }
+  ],
+  "court_rules": [
+    {
+      "label": "New Hampshire Circuit Court District Division — Rules of Procedure in Small Claims Actions",
+      "url": "https://www.courts.nh.gov/our-courts/circuit-court/district-division/district-division-rules-procedure-small-claims-actions",
+      "rule_or_chapter": "Small Claims Rules"
+    }
+  ],
+  "forms_pages": [
+    {
+      "label": "New Hampshire Small Claims Forms",
+      "url": "https://www.courts.nh.gov/self-help/forms/all-forms?title=small+claims"
+    }
+  ],
+  "fee_schedules": [
+    {
+      "label": "New Hampshire Judicial Branch — Court Filing Fees",
+      "url": "https://www.courts.nh.gov/resources/fees-payments"
+    }
+  ],
+  "service_rules": [
+    {
+      "label": "New Hampshire Statutes: Service of Process — N.H. Rev. Stat. § 511:2",
+      "url": "https://www.gencourt.state.nh.us/rsa/html/LII/511/511-2.htm"
+    }
+  ],
+  "appeal_rules": [
+    {
+      "label": "Appeals from Circuit Court — N.H. Rev. Stat. § 502-A:14",
+      "url": "https://www.gencourt.state.nh.us/rsa/html/LII/502-A/502-A-14.htm"
+    }
+  ],
+  "post_judgment_collection": [
+    {
+      "label": "New Hampshire Statutes — Collection of Judgments: Executions — N.H. Rev. Stat. § 512:1",
+      "url": "https://www.gencourt.state.nh.us/rsa/html/LII/512/512-1.htm"
+    },
+    {
+      "label": "New Hampshire Statutes — Interest on Judgments — N.H. Rev. Stat. § 524:6-a",
+      "url": "https://www.gencourt.state.nh.us/rsa/html/LII/524/524-6-a.htm"
+    }
+  ],
+  "consumer_protection_statutes": [
+    {
+      "label": "New Hampshire Consumer Protection Act — N.H. Rev. Stat. § 358-A:2",
+      "url": "https://www.gencourt.state.nh.us/rsa/html/XXXI/358-A/358-A-2.htm"
+    },
+    {
+      "label": "New Hampshire Motor Vehicle Arbitration (Lemon Law) — N.H. Rev. Stat. § 357-D:3",
+      "url": "https://www.gencourt.state.nh.us/rsa/html/XXXI/357-D/357-D-3.htm"
+    },
+    {
+      "label": "New Hampshire Regulation of Motor Vehicle Repairs — N.H. Rev. Stat. § 357-C:3",
+      "url": "https://www.gencourt.state.nh.us/rsa/html/XXXI/357-C/357-C-3.htm"
+    },
+    {
+      "label": "New Hampshire Bad Checks Statute — N.H. Rev. Stat. § 638:4",
+      "url": "https://www.gencourt.state.nh.us/rsa/html/LXII/638/638-4.htm"
+    }
+  ],
+  "landlord_tenant_statutes": [
+    {
+      "label": "New Hampshire Security Deposit Law — N.H. Rev. Stat. § 540-A:6",
+      "url": "https://www.gencourt.state.nh.us/rsa/html/LV/540-A/540-A-6.htm"
+    },
+    {
+      "label": "New Hampshire Retaliatory Eviction and Lockout — N.H. Rev. Stat. § 540:13-a",
+      "url": "https://www.gencourt.state.nh.us/rsa/html/LV/540/540-13-a.htm"
+    }
+  ],
+  "wage_and_employment_statutes": [
+    {
+      "label": "New Hampshire Payment of Wages — N.H. Rev. Stat. § 275:44 (Final Wages)",
+      "url": "https://www.gencourt.state.nh.us/rsa/html/XXIII/275/275-44.htm"
+    }
+  ],
+  "civil_remedies_statutes": [
+    {
+      "label": "New Hampshire Civil Action for Theft — N.H. Rev. Stat. § 637:8",
+      "url": "https://www.gencourt.state.nh.us/rsa/html/LXII/637/637-8.htm"
+    },
+    {
+      "label": "New Hampshire Fraud Damages — N.H. Rev. Stat. § 358-A:10 (Consumer Protection Act Remedies)",
+      "url": "https://www.gencourt.state.nh.us/rsa/html/XXXI/358-A/358-A-10.htm"
+    }
+  ],
+  "county_specific": [],
+  "notes": "New Hampshire hosts small claims rules and most forms through the state circuit court's website; all statutes are available via the official state General Court site.",
+  "_meta": {
+    "state": "New Hampshire",
+    "slug": "new-hampshire",
+    "model": "gpt-4.1",
+    "response_id": "resp_05a01f6deed9c1220069f08a90de64819685aa3906932d5fc2",
+    "generated_at": "2026-04-28T10:23:28.161Z",
+    "usage": {
+      "input_tokens": 2105,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 1717,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 3822
+    }
+  }
+}

@@ -1,0 +1,1721 @@
+{
+  "state": "Missouri",
+  "slug": "missouri",
+  "abbr": "MO",
+  "as_of": "2026-04-28",
+  "hero": {
+    "individual_limit_dollars": 5000,
+    "business_limit_dollars": 5000,
+    "filing_fee_low_dollars": 20,
+    "filing_fee_high_dollars": 100,
+    "typical_timeline_min_days": 30,
+    "typical_timeline_max_days": 90,
+    "tagline": "Missouri's small claims court offers a streamlined process for resolving disputes up to $5,000 without the need for an attorney.",
+    "source_ids": [
+      "S1",
+      "S12"
+    ]
+  },
+  "at_a_glance": [
+    {
+      "label": "Most you can sue for",
+      "value": "$5,000",
+      "detail": "Same cap for individuals and businesses",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "label": "Filing fee",
+      "value": "$20-$100",
+      "detail": "Varies by county and claim amount",
+      "source_ids": [
+        "S12"
+      ]
+    },
+    {
+      "label": "Court",
+      "value": "Small Claims Division of the Circuit Court",
+      "detail": "",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Lawyers at trial",
+      "value": "Allowed",
+      "detail": "Permitted but not required",
+      "source_ids": [
+        "S10"
+      ]
+    },
+    {
+      "label": "Appeal window",
+      "value": "10 days",
+      "detail": "Trial de novo in circuit court",
+      "source_ids": [
+        "S6"
+      ]
+    },
+    {
+      "label": "Recent change",
+      "value": "—",
+      "detail": "No major changes in the last 3 years",
+      "source_ids": []
+    }
+  ],
+  "limits": {
+    "individual_dollars": 5000,
+    "business_dollars": 5000,
+    "guarantor_with_fee_max": null,
+    "guarantor_without_fee_max": null,
+    "annual_filing_cap": {
+      "count": 12,
+      "threshold_dollars": null,
+      "notes": "A party may file no more than 12 claims in small claims court during a calendar year."
+    },
+    "split_claims_allowed": false,
+    "split_claims_explanation": "If your claim exceeds $5,000, you may waive the excess and file in small claims court, but you cannot split one claim into multiple cases to stay within the limit.",
+    "interest_excluded_from_cap": true,
+    "court_costs_excluded_from_cap": true,
+    "statute": "RSMo § 482.305",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "claim_categories": [
+    {
+      "id": "contracts",
+      "title": "Contracts and money owed",
+      "blurb": "Missouri allows you to file claims for money owed under contracts, with a statute of limitations of 5 years for written contracts and 3 years for oral contracts.",
+      "claims": [
+        {
+          "slug": "written-contract",
+          "name": "Breach of a written contract",
+          "example": "A contractor signed a $4,000 contract to remodel your kitchen, took the deposit, and never finished.",
+          "eligibility": "eligible",
+          "claim_statute": "RSMo § 516.120",
+          "notes": "5-year deadline from breach. Bring the signed contract, payment proof, and any correspondence showing the breach.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "oral-contract",
+          "name": "Breach of an oral contract",
+          "example": "You agreed verbally to lend a friend $2,000, which they promised to repay in 6 months, but they haven't.",
+          "eligibility": "eligible",
+          "claim_statute": "RSMo § 516.120",
+          "notes": "3-year deadline from breach. Provide evidence of the agreement, such as emails or witness statements.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "personal-loan",
+          "name": "Unpaid personal loan",
+          "example": "You loaned a colleague $1,500 with the understanding they'd repay in 3 months, but they haven't.",
+          "eligibility": "eligible",
+          "claim_statute": "RSMo § 516.120",
+          "notes": "5-year deadline for written agreements, 3 years for oral. Gather any written agreement or communication about the loan.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "promissory-note",
+          "name": "Default on a promissory note",
+          "example": "A borrower signed a promissory note to repay $4,500 over a year but stopped making payments after 3 months.",
+          "eligibility": "eligible",
+          "claim_statute": "RSMo § 516.110",
+          "notes": "10-year deadline from default. Present the original promissory note and records of payments made.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unpaid-invoice",
+          "name": "Unpaid invoice for services rendered",
+          "example": "You provided graphic design services worth $3,000 to a client who hasn't paid the invoice issued 6 months ago.",
+          "eligibility": "eligible",
+          "claim_statute": "RSMo § 516.120",
+          "notes": "5-year deadline from when payment was due. Include the invoice, service agreement, and any communication regarding payment.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "open-account",
+          "name": "Unpaid balance on an open account",
+          "example": "A customer has an outstanding balance of $2,500 on their store credit account and hasn't made a payment in 8 months.",
+          "eligibility": "eligible",
+          "claim_statute": "RSMo § 516.120",
+          "notes": "5-year deadline from the last payment or charge. Provide account statements and records of transactions.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unpaid-rent",
+          "name": "Unpaid rent by tenant",
+          "example": "Your tenant owes $4,000 in unpaid rent over the past 4 months and has vacated the property.",
+          "eligibility": "eligible",
+          "claim_statute": "RSMo § 516.120",
+          "notes": "5-year deadline from when rent was due. Bring the lease agreement and records of missed payments.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "bad-check",
+          "name": "Payment with a bad check",
+          "example": "A customer paid for a $1,200 service with a check that bounced due to insufficient funds.",
+          "eligibility": "eligible",
+          "claim_statute": "RSMo § 570.120",
+          "notes": "Send a statutory notice demanding payment within 30 days before filing. Keep a copy of the notice and proof of mailing.",
+          "damage_boost": "Check amount + service charge up to $25 + civil penalty up to $100 OR 2x check amount, whichever is greater.",
+          "source_ids": [
+            "S18"
+          ]
+        },
+        {
+          "slug": "co-signer",
+          "name": "Co-signer seeking repayment",
+          "example": "You co-signed a $5,000 loan for a friend who defaulted, and now you're being held responsible.",
+          "eligibility": "eligible",
+          "claim_statute": "RSMo § 516.120",
+          "notes": "5-year deadline from default. Provide the loan agreement and evidence of payments you've made on behalf of the borrower.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "consumer-disputes",
+      "title": "Consumer disputes",
+      "blurb": "Missouri allows consumers to file claims for defective products, poor services, and deceptive practices, with a 5-year statute of limitations for most claims.",
+      "claims": [
+        {
+          "slug": "defective-product",
+          "name": "Purchase of a defective product",
+          "example": "You bought a $1,000 refrigerator that stopped working after 2 months, and the seller refuses to repair or replace it.",
+          "eligibility": "eligible",
+          "claim_statute": "RSMo § 516.120",
+          "notes": "5-year deadline from purchase. Bring the purchase receipt, warranty, and any communication with the seller.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "bad-service",
+          "name": "Substandard service provided",
+          "example": "A cleaning service charged you $800 but left your home in poor condition, and they refuse to refund or redo the job.",
+          "eligibility": "eligible",
+          "claim_statute": "RSMo § 516.120",
+          "notes": "5-year deadline from service date. Provide the service agreement, payment proof, and photos of the unsatisfactory work.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "auto-repair",
+          "name": "Faulty auto repair",
+          "example": "A mechanic charged you $2,500 for repairs that didn't fix the issue, and now they won't refund or correct the work.",
+          "eligibility": "eligible",
+          "claim_statute": "RSMo § 516.120",
+          "notes": "5-year deadline from repair date. Bring the repair invoice, payment proof, and any expert opinions on the faulty repair.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "contractor",
+          "name": "Unsatisfactory contractor work",
+          "example": "You paid a contractor $4,800 to renovate your bathroom, but the work was incomplete and subpar.",
+          "eligibility": "eligible",
+          "claim_statute": "RSMo § 516.120",
+          "notes": "5-year deadline from completion date. Provide the contract, payment records, and photos of the work.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "no-show-vendor",
+          "name": "Vendor failed to deliver services",
+          "example": "You paid a DJ $1,200 for your wedding, but they never showed up and refuse to refund your money.",
+          "eligibility": "eligible",
+          "claim_statute": "RSMo § 516.120",
+          "notes": "5-year deadline from event date. Bring the service agreement, payment proof, and any communication with the vendor.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "subscription-cancellation",
+          "name": "Unauthorized subscription charges",
+          "example": "You canceled a $50/month gym membership, but they continued to charge your account for 3 months.",
+          "eligibility": "eligible",
+          "claim_statute": "RSMo § 516.120",
+          "notes": "5-year deadline from unauthorized charge. Provide cancellation confirmation and bank statements showing the charges.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "used-car",
+          "name": "Purchase of a defective used car",
+          "example": "You bought a used car for $4,500 that broke down after a week, and the seller refuses to address the issue.",
+          "eligibility": "eligible",
+          "claim_statute": "RSMo § 516.120",
+          "notes": "5-year deadline from purchase. Bring the bill of sale, any warranties, and mechanic reports on the defects.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "false-advertising",
+          "name": "Deceptive advertising leading to loss",
+          "example": "A store advertised a 'buy one, get one free' deal, but charged you full price for both items totaling $200.",
+          "eligibility": "eligible",
+          "claim_statute": "RSMo § 407.025",
+          "notes": "5-year deadline from purchase. Provide the advertisement, receipt, and any communication with the store.",
+          "damage_boost": "Actual damages plus attorney's fees and punitive damages as deemed appropriate by the court.",
+          "source_ids": [
+            "S22"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "property-damage",
+      "title": "Property damage",
+      "blurb": "Missouri allows claims for property damage with a 5-year statute of limitations, covering incidents like vehicle collisions and damage to personal property.",
+      "claims": [
+        {
+          "slug": "vehicle-collision",
+          "name": "Damage from a vehicle collision",
+          "example": "Another driver hit your parked car, causing $3,500 in damages, and refuses to pay for repairs.",
+          "eligibility": "eligible",
+          "claim_statute": "RSMo § 516.120",
+          "notes": "5-year deadline from accident date. Bring the police report, repair estimates, and photos of the damage.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "neighbor-property",
+          "name": "Neighbor caused damage to your property",
+          "example": "Your neighbor's tree fell onto your fence during a storm, causing $2,000 in damages, and they won't cover the cost.",
+          "eligibility": "eligible",
+          "claim_statute": "RSMo § 516.120",
+          "notes": "5-year deadline from damage date. Provide photos of the damage, repair estimates, and any communication with the neighbor.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "damage-to-rental",
+          "name": "Tenant caused damage to rental property",
+          "example": "A former tenant left your rental unit with $4,500 in damages beyond normal wear and tear.",
+          "eligibility": "eligible",
+          "claim_statute": "RSMo § 516.120",
+          "notes": "5-year deadline from discovery of damage. Bring the lease agreement, move-in/move-out inspection reports, and repair invoices.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "pet-damage",
+          "name": "Damage caused by someone else's pet",
+          "example": "A neighbor's dog entered your yard and destroyed $1,200 worth of landscaping.",
+          "eligibility": "eligible",
+          "claim_statute": "RSMo § 516.120",
+          "notes": "5-year deadline from incident date. Provide photos of the damage, repair estimates, and any communication with the pet owner.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "property-in-custody",
+          "name": "Damage to property left in someone's care",
+          "example": "You left your laptop with a repair shop, and they returned it with a cracked screen, refusing to take responsibility.",
+          "eligibility": "eligible",
+          "claim_statute": "RSMo § 516.120",
+          "notes": "5-year deadline from discovery of damage. Bring the service agreement, photos of the damage, and any communication with the shop.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "landlord-tenant",
+      "title": "Landlord-tenant disputes",
+      "blurb": "Missouri allows monetary claims related to landlord-tenant issues, such as security deposits and unpaid rent, with a 5-year statute of limitations.",
+      "claims": [
+        {
+          "slug": "security-deposit",
+          "name": "Failure to return security deposit",
+          "example": "After moving out, your landlord withheld your $1,000 security deposit without providing an itemized list of damages.",
+          "eligibility": "eligible",
+          "claim_statute": "RSMo § 535.300",
+          "notes": "Landlords must return the deposit or provide an itemized list of damages within 30 days. Bring the lease agreement and move-out inspection report.",
+          "damage_boost": "",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "deposit-not-itemized",
+          "name": "Deposit deductions not itemized",
+          "example": "Your landlord deducted $800 from your security deposit without providing an itemized list of damages.",
+          "eligibility": "eligible",
+          "claim_statute": "RSMo § 535.300",
+          "notes": "Landlords are required to provide an itemized list of damages within 30 days. Bring the lease agreement and any correspondence with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "uninhabitable-rental",
+          "name": "Rental unit deemed uninhabitable",
+          "example": "Your apartment had no heating during winter, and the landlord refused to make repairs, forcing you to move out.",
+          "eligibility": "eligible",
+          "claim_statute": "RSMo § 441.234",
+          "notes": "Tenants can terminate the lease if the landlord fails to repair hazardous conditions. Document all communication and conditions of the unit.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "wrongful-retention-property",
+          "name": "Landlord retained personal property after move-out",
+          "example": "After moving out, your landlord kept your furniture and refuses to return it.",
+          "eligibility": "eligible",
+          "claim_statute": "RSMo § 441.065",
+          "notes": "Landlords must follow specific procedures before disposing of tenant's property. Bring evidence of ownership and communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "illegal-eviction",
+          "name": "Landlord conducted an illegal eviction",
+          "example": "Your landlord changed the locks without notice, preventing you from accessing your apartment.",
+          "eligibility": "eligible",
+          "claim_statute": "RSMo § 441.233",
+          "notes": "Self-help evictions are illegal. Tenants may sue for damages. Document the eviction and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unreturned-prepaid-rent",
+          "name": "Landlord failed to return prepaid rent",
+          "example": "You paid first and last month's rent upfront, but after moving out, the landlord didn't return the last month's rent.",
+          "eligibility": "eligible",
+          "claim_statute": "RSMo § 535.300",
+          "notes": "Landlords must return any unearned rent. Bring the lease agreement and proof of payment.",
+          "damage_boost": "",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "unpaid-rent-by-tenant",
+          "name": "Tenant failed to pay rent",
+          "example": "Your tenant missed 3 months of rent totaling $3,600 and has since vacated the property.",
+          "eligibility": "eligible",
+          "claim_statute": "RSMo § 516.120",
+          "notes": "5-year deadline from when rent was due. Bring the lease agreement and records of missed payments.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "repair-and-deduct",
+          "name": "Tenant repaired and deducted from rent",
+          "example": "You paid $500 to fix a leaking roof after the landlord ignored repair requests and deducted it from your rent.",
+          "eligibility": "eligible",
+          "claim_statute": "RSMo § 441.234",
+          "notes": "Tenants may repair and deduct if the landlord fails to address hazardous conditions. Keep all receipts and document communication.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "employment-and-wages",
+      "title": "Employment and wage disputes",
+      "blurb": "Missouri allows claims for unpaid wages and related issues, with a 2-year statute of limitations for most wage claims.",
+      "claims": [
+        {
+          "slug": "unpaid-wages",
+          "name": "Employer failed to pay wages",
+          "example": "Your employer owes you $2,000 for hours worked but hasn't issued your paycheck.",
+          "eligibility": "eligible",
+          "claim_statute": "RSMo § 290.527",
+          "notes": "2-year deadline from when wages were due. Bring pay stubs, timesheets, and any communication with the employer.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "final-paycheck",
+          "name": "Employer withheld final paycheck",
+          "example": "After resigning, your employer refused to pay your final paycheck of $1,500.",
+          "eligibility": "eligible",
+          "claim_statute": "RSMo § 290.110",
+          "notes": "Employers must pay final wages promptly. Document your resignation and any communication regarding the final paycheck.",
+          "damage_boost": "",
+          "source_ids": [
+            "S21"
+          ]
+        },
+        {
+          "slug": "unpaid-commissions",
+          "name": "Employer failed to pay earned commissions",
+          "example": "You earned $3,000 in sales commissions, but your employer hasn't paid them.",
+          "eligibility": "eligible",
+          "claim_statute": "RSMo § 290.527",
+          "notes": "2-year deadline from when commissions were due. Provide the commission agreement and records of sales made.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unpaid-overtime",
+          "name": "Employer didn't pay overtime wages",
+          "example": "You worked 10 hours of overtime last month but weren't paid the overtime rate, totaling $500.",
+          "eligibility": "eligible",
+          "claim_statute": "RSMo § 290.527",
+          "notes": "2-year deadline from when overtime was due. Bring timesheets and pay stubs showing the overtime worked and pay received.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "personal-claims",
+      "title": "Personal claims",
+      "blurb": "Missouri allows individuals to file claims for personal injuries and property disputes, with a 5-year statute of limitations for most personal injury claims.",
+      "claims": [
+        {
+          "slug": "minor-injury",
+          "name": "Minor personal injury",
+          "example": "You slipped and fell in a store due to a wet floor, resulting in $2,000 in medical bills.",
+          "eligibility": "eligible",
+          "claim_statute": "RSMo § 516.120",
+          "notes": "5-year deadline from injury date. Provide medical records, bills, and any incident reports.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "loaned-property",
+          "name": "Failure to return loaned property",
+          "example": "You lent a friend your $1,500 camera, and they refuse to return it.",
+          "eligibility": "eligible",
+          "claim_statute": "RSMo § 516.120",
+          "notes": "5-year deadline from demand for return. Provide evidence of the loan and any communication requesting the item's return.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "civil-theft",
+          "name": "Theft of personal property",
+          "example": "A neighbor took your $800 bicycle without permission and refuses to return it.",
+          "eligibility": "eligible",
+          "claim_statute": "RSMo § 516.120",
+          "notes": "5-year deadline from theft date. File a police report and provide any evidence of ownership.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vehicle-specific",
+      "title": "Vehicle-related disputes",
+      "blurb": "Missouri allows claims related to vehicle repairs and towing disputes, with a 5-year statute of limitations for most claims.",
+      "claims": [
+        {
+          "slug": "mechanic-dispute",
+          "name": "Dispute over mechanic's charges",
+          "example": "A mechanic charged you $2,000 for repairs you didn't authorize and refuses to adjust the bill.",
+          "eligibility": "eligible",
+          "claim_statute": "RSMo § 516.120",
+          "notes": "5-year deadline from repair date. Provide the repair invoice, any written estimates, and communication with the mechanic.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "wrongful-tow",
+          "name": "Vehicle was wrongfully towed",
+          "example": "Your car was towed from a legal parking spot, and the towing company charged you $500 for its return.",
+          "eligibility": "eligible",
+          "claim_statute": "RSMo § 516.120",
+          "notes": "5-year deadline from towing date. Provide photos of the parking spot, towing receipt, and any communication with the towing company.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "category": "Eviction (unlawful detainer)",
+      "explanation": "Small claims court cannot handle eviction proceedings; these must be filed in the associate circuit court.",
+      "where_to_go_instead": "Associate Circuit Court",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "category": "Title to real estate",
+      "explanation": "Disputes involving the title to real estate are beyond the jurisdiction of small claims court.",
+      "where_to_go_instead": "Circuit Court",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "category": "Defamation",
+      "explanation": "Claims for defamation, including libel and slander, are not permitted in small claims court.",
+      "where_to_go_instead": "Circuit Court",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "category": "Malpractice",
+      "explanation": "Professional malpractice claims exceed the jurisdictional limits and complexity suitable for small claims court.",
+      "where_to_go_instead": "Circuit Court",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "category": "Family law matters",
+      "explanation": "Issues such as divorce, child custody, and support are not handled in small claims court.",
+      "where_to_go_instead": "Family Court",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "category": "Probate matters",
+      "explanation": "Disputes involving wills, estates, and trusts are outside the jurisdiction of small claims court.",
+      "where_to_go_instead": "Probate Court",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "category": "Claims against the federal government",
+      "explanation": "Small claims court cannot hear cases against federal agencies or the U.S. government.",
+      "where_to_go_instead": "Federal Court",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "category": "Class actions",
+      "explanation": "Class action lawsuits are beyond the scope and procedures of small claims court.",
+      "where_to_go_instead": "Circuit Court",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "category": "Injunctions and specific performance",
+      "explanation": "Small claims court cannot issue orders requiring a party to do or refrain from doing something.",
+      "where_to_go_instead": "Circuit Court",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "category": "Workers' compensation claims",
+      "explanation": "Claims for workplace injuries are handled by the Division of Workers' Compensation, not small claims court.",
+      "where_to_go_instead": "Division of Workers' Compensation",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "category": "Bankruptcy matters",
+      "explanation": "Bankruptcy cases are under federal jurisdiction and cannot be filed in small claims court.",
+      "where_to_go_instead": "Federal Bankruptcy Court",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "category": "Mandatory arbitration disputes",
+      "explanation": "Disputes subject to mandatory arbitration clauses are not suitable for small claims court.",
+      "where_to_go_instead": "Arbitration Panel",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "category": "Suing a deceased person",
+      "explanation": "Claims against deceased individuals must be filed against their estate in probate court.",
+      "where_to_go_instead": "Probate Court",
+      "source_ids": [
+        "S4"
+      ]
+    }
+  ],
+  "damages": {
+    "compensatory_allowed": true,
+    "punitive_allowed": false,
+    "punitive_explanation": "Punitive damages are not awarded in small claims court; only actual damages are recoverable.",
+    "statutory_multipliers": [
+      {
+        "claim": "Bad check (after 30-day notice)",
+        "multiplier": "2x check amount or $100, whichever is greater",
+        "explanation": "Check amount + service charge up to $25 + civil penalty up to $100 OR 2x check amount, whichever is greater.",
+        "statute": "RSMo § 570.120",
+        "source_ids": [
+          "S18"
+        ]
+      }
+    ],
+    "attorney_fees_recoverable": "sometimes",
+    "attorney_fees_explanation": "Attorney fees may be recoverable in cases involving bad checks or consumer fraud under specific statutes.",
+    "prejudgment_interest_rate_pct": null,
+    "prejudgment_interest_statute": "",
+    "postjudgment_interest_rate_pct": null,
+    "postjudgment_interest_type": "simple",
+    "postjudgment_interest_statute": "",
+    "postjudgment_interest_notes": "",
+    "filing_and_service_fees_recoverable_from_loser": true,
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "where_to_file": {
+    "court_name": "Small Claims Division of the Circuit Court",
+    "parent_court": "Missouri Circuit Court",
+    "venue_rules": [
+      {
+        "scenario": "Most cases (the default)",
+        "filing_options": [
+          "County where the defendant resides",
+          "County where the plaintiff resides and the defendant may be found",
+          "County where the transaction or injury occurred"
+        ],
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "scenario": "Where contract was performed",
+        "filing_options": [
+          "County where performance was due"
+        ],
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "scenario": "Where injury or damage occurred",
+        "filing_options": [
+          "County where the event occurred"
+        ],
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "scenario": "Multiple defendants",
+        "filing_options": [
+          "Any county where one defendant resides"
+        ],
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "scenario": "Out-of-state defendant",
+        "filing_options": [
+          "Where the cause of action arose"
+        ],
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "consequences_of_wrong_venue": "Filing in the wrong venue may result in dismissal or transfer of the case, leading to delays and additional costs.",
+    "e_filing_available": "varies",
+    "e_filing_notes": "E-filing availability depends on the county; check with the local court clerk.",
+    "e_filing_portal": null,
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "fees": {
+    "filing_fee_tiers": [
+      {
+        "range_label": "$0 to $1,500",
+        "range_min": 0,
+        "range_max": 1500,
+        "fee_dollars": 20,
+        "source_ids": [
+          "S12"
+        ]
+      },
+      {
+        "range_label": "$1,501 to $3,000",
+        "range_min": 1501,
+        "range_max": 3000,
+        "fee_dollars": 45,
+        "source_ids": [
+          "S12"
+        ]
+      },
+      {
+        "range_label": "$3,001 to $5,000",
+        "range_min": 3001,
+        "range_max": 5000,
+        "fee_dollars": 100,
+        "source_ids": [
+          "S12"
+        ]
+      }
+    ],
+    "frequent_filer": {
+      "threshold_per_year": 12,
+      "fee_dollars": null,
+      "notes": "A party may file no more than 12 claims in small claims court during a calendar year."
+    },
+    "service_fees": [
+      {
+        "method": "Certified mail with return receipt",
+        "amount_label": "Varies",
+        "notes": "Cost depends on postal rates; typically around $10.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "method": "Sheriff or process server",
+        "amount_label": "Varies",
+        "notes": "Fees vary by county; contact local sheriff's office for rates.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "waiver": {
+      "forms": [
+        {
+          "number": "Form 11.2",
+          "name": "Motion and Affidavit in Support of Request to Proceed as a Poor Person",
+          "url": "https://www.courts.mo.gov/file.jsp?id=696",
+          "source_ids": [
+            "S11"
+          ]
+        }
+      ],
+      "eligibility_bullets": [
+        "Receiving need-based public assistance (SNAP, TANF, SSI)",
+        "Household income below 125% federal poverty line"
+      ],
+      "coverage_notes": "The waiver covers filing fees and may cover service fees; check with the court clerk.",
+      "if_you_win_notes": "If you win, the waived fees may be added to the judgment against the defendant."
+    },
+    "other_fees": [
+      {
+        "name": "Subpoena issuance",
+        "amount_label": "$10",
+        "notes": "Plus witness fee per day.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "name": "Appeal filing",
+        "amount_label": "$30",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "name": "Writ of execution",
+        "amount_label": "Varies",
+        "notes": "Post-judgment; fees depend on county and method of execution.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "fees_recoverable_from_loser_notes": "If you win, filing fees and reasonable service costs are typically added to the judgment against the defendant.",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "statute_of_limitations": {
+    "entries": [
+      {
+        "id": "written-contract",
+        "claim": "Written contract",
+        "years": 5,
+        "clock_starts": "Date of breach",
+        "statute": "RSMo § 516.120",
+        "notes": "Applies to contracts in writing; ensure documentation is preserved.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "oral-contract",
+        "claim": "Oral contract",
+        "years": 3,
+        "clock_starts": "Date of breach",
+        "statute": "RSMo § 516.120",
+        "notes": "Verbal agreements; gather any supporting evidence like emails or witness statements.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "sale-of-goods",
+        "claim": "Sale of goods (UCC)",
+        "years": 4,
+        "clock_starts": "Date of breach",
+        "statute": "RSMo § 400.2-725",
+        "notes": "Uniform Commercial Code governs sales contracts; keep all purchase records.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "promissory-note",
+        "claim": "Promissory note",
+        "years": 10,
+        "clock_starts": "Date of default",
+        "statute": "RSMo § 516.110",
+        "notes": "Applies to written promises to pay; maintain original documents.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "open-account",
+        "claim": "Open account / credit card debt",
+        "years": 5,
+        "clock_starts": "Date of last payment or charge",
+        "statute": "RSMo § 516.120",
+        "notes": "Keep detailed account statements and payment records.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "personal-injury",
+        "claim": "Personal injury",
+        "years": 5,
+        "clock_starts": "Date of injury",
+        "statute": "RSMo § 516.120",
+        "notes": "Document injuries and medical treatments promptly.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "property-damage",
+        "claim": "Property damage",
+        "years": 5,
+        "clock_starts": "Date of damage",
+        "statute": "RSMo § 516.120",
+        "notes": "Photograph damages and obtain repair estimates.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "fraud",
+        "claim": "Fraud",
+        "years": 5,
+        "clock_starts": "Date of discovery",
+        "statute": "RSMo § 516.120",
+        "notes": "Discovery rule applies; document when fraud was discovered.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "bad-check",
+        "claim": "Bad check",
+        "years": 3,
+        "clock_starts": "Date of dishonor",
+        "statute": "RSMo § 516.120",
+        "notes": "Send statutory notice within 30 days; keep copies.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "unpaid-wages",
+        "claim": "Unpaid wages",
+        "years": 2,
+        "clock_starts": "Date wages were due",
+        "statute": "RSMo § 290.527",
+        "notes": "File promptly; maintain employment records.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "security-deposit",
+        "claim": "Security deposit",
+        "years": 5,
+        "clock_starts": "Date deposit was due",
+        "statute": "RSMo § 535.300",
+        "notes": "Landlords must return deposits or provide itemized deductions within 30 days.",
+        "source_ids": [
+          "S19"
+        ]
+      },
+      {
+        "id": "judgment-enforcement",
+        "claim": "Judgment enforcement",
+        "years": 10,
+        "clock_starts": "Date of judgment",
+        "statute": "RSMo § 516.350",
+        "notes": "Judgments can be revived before expiration; consult legal advice.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "discovery_rule_notes": "The discovery rule applies to fraud claims, starting the limitation period when the fraud is discovered.",
+    "tolling_notes": "Statutes may be tolled if the defendant is out of state, the plaintiff is a minor, or due to bankruptcy stays.",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "pre_filing": {
+    "demand_letter_required": false,
+    "demand_letter_recommended": true,
+    "demand_letter_notes": "While not mandatory, sending a demand letter can often resolve disputes without court intervention.",
+    "bad_check_notice_rule": "For bad checks, send a statutory notice demanding payment within 30 days before filing a claim.",
+    "wage_claim_demand_rule": "No specific pre-filing demand required for wage claims, but documenting requests for payment is advisable.",
+    "government_claim_required": false,
+    "government_claim_deadline_days": null,
+    "government_claim_notes": "",
+    "landlord_tenant_pre_filing_notes": "Landlords must provide an itemized list of damages within 30 days when withholding security deposits.",
+    "consumer_protection_notes": "No specific pre-filing requirements, but documenting complaints and communications is beneficial.",
+    "mandatory_mediation_before_filing": "none",
+    "arbitration_clauses_enforced": true,
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "forms": [
+    {
+      "number": "SC-1",
+      "name": "Petition Small Claims Court",
+      "description": "Initiates a small claims case by outlining the plaintiff's claim against the defendant.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "https://www.courts.mo.gov/file.jsp?id=696",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "number": "SC-2",
+      "name": "Defendant's Answer and Counterclaim",
+      "description": "Allows the defendant to respond to the plaintiff's claim and file a counterclaim if applicable.",
+      "filed_by": "defendant",
+      "required": false,
+      "group": "counterclaim",
+      "url": "https://www.courts.mo.gov/file.jsp?id=696",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "number": "SC-3",
+      "name": "Request for Trial de Novo",
+      "description": "Filed to request a new trial in the circuit court after a small claims judgment.",
+      "filed_by": "either",
+      "required": false,
+      "group": "appeal",
+      "url": "https://www.courts.mo.gov/file.jsp?id=696",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "number": "SC-4",
+      "name": "Satisfaction of Judgment",
+      "description": "Filed by the plaintiff to indicate that the judgment has been satisfied.",
+      "filed_by": "plaintiff",
+      "required": false,
+      "group": "after-judgment",
+      "url": "https://www.courts.mo.gov/file.jsp?id=696",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "number": "SC-5",
+      "name": "Motion and Affidavit in Support of Request to Proceed as a Poor Person",
+      "description": "Filed to request a waiver of court fees due to financial hardship.",
+      "filed_by": "plaintiff",
+      "required": false,
+      "group": "fee-waiver",
+      "url": "https://www.courts.mo.gov/file.jsp?id=696",
+      "source_ids": [
+        "S11"
+      ]
+    }
+  ],
+  "service": {
+    "who_can_serve": [
+      "Sheriff",
+      "Certified mail by clerk",
+      "Private process server"
+    ],
+    "methods": [
+      {
+        "name": "Certified mail with return receipt",
+        "description": "The court clerk sends the summons and petition to the defendant via certified mail, requiring the defendant's signature upon delivery.",
+        "pros": [
+          "Cost-effective",
+          "Handled by the court"
+        ],
+        "cons": [
+          "Defendant may refuse delivery",
+          "No personal contact"
+        ],
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "name": "Personal service by sheriff",
+        "description": "A sheriff or deputy personally delivers the summons and petition to the defendant.",
+        "pros": [
+          "Official and reliable",
+          "Proof of service provided"
+        ],
+        "cons": [
+          "Additional cost",
+          "May take longer"
+        ],
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "name": "Personal service by private process server",
+        "description": "A private individual authorized to serve legal documents personally delivers the summons and petition to the defendant.",
+        "pros": [
+          "Flexible scheduling",
+          "Can be faster"
+        ],
+        "cons": [
+          "Higher cost",
+          "Must ensure proper documentation"
+        ],
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "in_county_days_before_hearing": 10,
+    "out_of_county_days_before_hearing": 10,
+    "proof_of_service_form": {
+      "number": "SC-6",
+      "name": "Affidavit of Service"
+    },
+    "proof_filing_deadline_days_before_hearing": 10,
+    "business_service_rule": "Serve the registered agent or an officer of the corporation; for sole proprietors, serve the individual owner.",
+    "out_of_state_defendant_notes": "Service must comply with Missouri rules and the laws of the state where the defendant is located.",
+    "cant_find_defendant_notes": "If the defendant cannot be located, service by publication may be permitted with court approval.",
+    "avoiding_service_notes": "If the defendant is evading service, document attempts and seek court guidance for alternative methods.",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "response_and_default": {
+    "must_file_written_answer": false,
+    "response_deadline_days": 0,
+    "response_notes": "Defendants are not required to file a written answer but must appear at the scheduled hearing.",
+    "default_process": "If the defendant fails to appear, the court may enter a default judgment in favor of the plaintiff.",
+    "prove_up_required": true,
+    "prove_up_notes": "Even if the defendant defaults, the plaintiff must present evidence to support the claim.",
+    "motion_to_vacate_form": {
+      "number": "SC-7",
+      "name": "Motion to Set Aside Default Judgment"
+    },
+    "motion_to_vacate_deadline_days": 15,
+    "motion_to_vacate_lack_of_notice_days": 15,
+    "motion_to_vacate_appeal_deadline_days": 10,
+    "motion_to_vacate_appeal_notes": "If the motion to vacate is denied, the defendant may appeal within 10 days.",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "counterclaim": {
+    "allowed": true,
+    "form": {
+      "number": "SC-2",
+      "name": "Defendant's Answer and Counterclaim"
+    },
+    "same_monetary_limit": true,
+    "service_deadline_in_county_days": 10,
+    "service_deadline_out_of_county_days": 10,
+    "transfer_to_higher_court_available": true,
+    "transfer_to_higher_court_statute": "RSMo § 482.325",
+    "transfer_to_higher_court_notes": "If the counterclaim exceeds $5,000, the case may be transferred to the circuit court.",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "hearing": {
+    "lawyers_allowed": "yes",
+    "lawyers_allowed_notes": "Parties may be represented by attorneys but are not required to do so.",
+    "format": "Informal bench trial; each party presents their case directly to the judge.",
+    "presider": "judge",
+    "burden_of_proof": "preponderance",
+    "what_to_bring": [
+      "Originals of any contracts",
+      "Receipts and bank records",
+      "Photos and videos",
+      "Names and contact info for witnesses"
+    ],
+    "subpoena_form": {
+      "number": "SC-8",
+      "name": "Subpoena"
+    },
+    "witness_fee_per_day_dollars": 25,
+    "free_interpreters": false,
+    "interpreter_request_process": "Parties must arrange for their own interpreters; some courts may provide assistance upon request.",
+    "jury_option": false,
+    "decision_timing": "On the spot or mailed within a few weeks",
+    "on_site_mediation": "by county",
+    "on_site_mediation_notes": "Some counties offer mediation services; check with the local court.",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "appeals": {
+    "who_can_appeal": "either",
+    "deadline_days": 10,
+    "fee_dollars": 30,
+    "type": "trial de novo",
+    "type_notes": "A new trial is conducted in the circuit court as if the small claims trial had not occurred.",
+    "attorneys_allowed_on_appeal": true,
+    "bond_required": false,
+    "bond_amount_notes": "",
+    "automatic_stay_on_appeal": true,
+    "default_judgment_appealable": true,
+    "default_judgment_notes": "Defendants can appeal a default judgment by filing for a trial de novo within 10 days.",
+    "notice_of_appeal_form": {
+      "number": "SC-3",
+      "name": "Request for Trial de Novo"
+    },
+    "frivolous_appeal_penalty_dollars": null,
+    "frivolous_appeal_statute": "",
+    "frivolous_appeal_notes": "",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "collection": {
+    "payment_deadline_typical_days": 30,
+    "post_judgment_interest_rate_pct": 9,
+    "post_judgment_interest_statute": "RSMo § 408.040",
+    "post_judgment_interest_notes": "Interest accrues on unpaid judgments at the statutory rate until paid.",
+    "methods": [
+      {
+        "id": "wage-garnishment",
+        "name": "Wage garnishment",
+        "blurb": "Have a portion of the debtor's wages withheld until the judgment is paid.",
+        "description": "File a garnishment application with the court, serve the employer, and the employer withholds a portion of the debtor's wages to satisfy the judgment.",
+        "forms": [
+          {
+            "number": "SC-9",
+            "name": "Application for Wage Garnishment"
+          }
+        ],
+        "estimated_cost": "$30-50 plus sheriff fees",
+        "effectiveness_notes": "Most effective when the debtor is employed and earns above the exemption threshold.",
+        "exemptions": [
+          "75% of disposable earnings (federal CCPA floor)"
+        ],
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "bank-levy",
+        "name": "Bank levy",
+        "blurb": "Seize funds from the debtor's bank account to satisfy the judgment.",
+        "description": "Obtain a writ of execution from the court, serve it on the debtor's bank, and the bank freezes and turns over funds to satisfy the judgment.",
+        "forms": [
+          {
+            "number": "SC-10",
+            "name": "Writ of Execution"
+          }
+        ],
+        "estimated_cost": "$50-100 plus sheriff fees",
+        "effectiveness_notes": "Effective if the debtor has sufficient funds in the account; may require knowledge of the debtor's banking information.",
+        "exemptions": [
+          "Social Security and federal benefits",
+          "Certain retirement accounts"
+        ],
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "property-lien",
+        "name": "Property lien",
+        "blurb": "Place a lien on the debtor's real property, which must be satisfied upon sale or refinancing.",
+        "description": "File the judgment with the county recorder to place a lien on the debtor's property; the lien must be satisfied before the property can be sold or refinanced.",
+        "forms": [
+          {
+            "number": "SC-11",
+            "name": "Notice of Judgment Lien"
+          }
+        ],
+        "estimated_cost": "$25-50",
+        "effectiveness_notes": "Effective for securing payment over time; may not result in immediate payment.",
+        "exemptions": [
+          "Homestead exemption up to $15,000"
+        ],
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "writ-of-execution",
+        "name": "Writ of execution",
+        "blurb": "Authorize the sheriff to seize and sell the debtor's non-exempt property to satisfy the judgment.",
+        "description": "Obtain a writ from the court, and the sheriff seizes and sells the debtor's non-exempt property at auction to satisfy the judgment.",
+        "forms": [
+          {
+            "number": "SC-10",
+            "name": "Writ of Execution"
+          }
+        ],
+        "estimated_cost": "$50-100 plus sheriff fees",
+        "effectiveness_notes": "Effective if the debtor owns valuable non-exempt property; may be time-consuming.",
+        "exemptions": [
+          "Personal property up to $3,000",
+          "Tools of trade up to $3,000"
+        ],
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "wage_garnishment_max_pct_of_disposable": 25,
+    "judgment_lifespan_years": 10,
+    "judgment_renewal_process": "File a motion to revive the judgment before the 10-year period expires to extend its enforceability.",
+    "debtor_exam_form": {
+      "number": "SC-12",
+      "name": "Motion for Debtor Examination"
+    },
+    "exempt_assets": [
+      "Homestead — $15,000",
+      "Vehicle — $3,000",
+      "Retirement accounts (federally and state-protected)",
+      "Social Security and federal benefits"
+    ],
+    "bankruptcy_effect_notes": "Filing for bankruptcy may discharge certain judgments; consult legal advice for specifics.",
+    "satisfaction_of_judgment_form": {
+      "number": "SC-4",
+      "name": "Satisfaction of Judgment"
+    },
+    "priority_notes": "Judgment liens are prioritized by the date of recording; earlier liens have higher priority.",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "businesses": {
+    "self_representation_allowed": true,
+    "self_representation_notes": "Businesses may be represented by an officer or authorized employee without an attorney.",
+    "can_send_employee": true,
+    "can_send_attorney": true,
+    "non_attorney_representation_form": {
+      "number": "SC-13",
+      "name": "Authorization for Non-Attorney Representation"
+    },
+    "insurance_adjuster_allowed": false,
+    "fictitious_name_form": {
+      "number": "SC-14",
+      "name": "Fictitious Name Registration"
+    },
+    "fictitious_name_notes": "Businesses operating under a fictitious name must register with the Secretary of State.",
+    "sole_proprietor_employee_exception": "Sole proprietors may represent themselves or authorize an employee to appear on their behalf.",
+    "out_of_state_business_must_register": true,
+    "out_of_state_business_statute": "RSMo § 351.572",
+    "licensing_notes": "Unlicensed contractors may face challenges in enforcing contracts; ensure proper licensing before filing.",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "county_variations_material": true,
+  "county_variations": [
+    {
+      "county": "St. Louis",
+      "topic": "E-filing availability",
+      "detail": "St. Louis County offers online filing through the Missouri eFiling System.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "county": "Jackson",
+      "topic": "Mediation services",
+      "detail": "Jackson County provides on-site mediation services for small claims disputes.",
+      "source_ids": [
+        "S4"
+      ]
+    }
+  ],
+  "pitfalls": [
+    {
+      "title": "Exceeding the claim limit",
+      "what_happens": "If your claim exceeds $5,000 and you file in small claims court, you must waive the excess amount, or the case may be dismissed.",
+      "how_to_avoid": "Ensure your claim is within the $5,000 limit or file in the appropriate higher court.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "title": "Improper service of process",
+      "what_happens": "Failing to serve the defendant correctly can result in delays or dismissal of your case.",
+      "how_to_avoid": "Follow Missouri's rules for service of process carefully, using certified mail or personal service as required.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "title": "Missing the statute of limitations",
+      "what_happens": "Filing after the statute of limitations has expired will lead to dismissal of your claim.",
+      "how_to_avoid": "Verify the applicable statute of limitations for your claim type and file within the allowed time frame.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "title": "Insufficient evidence",
+      "what_happens": "Without adequate evidence, the judge may rule against you, even if your claim is valid.",
+      "how_to_avoid": "Gather all relevant documents, receipts, and witness statements to support your case.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "title": "Ignoring counterclaims",
+      "what_happens": "If the defendant files a counterclaim and you are unprepared, you could lose more than your original claim.",
+      "how_to_avoid": "Be prepared to address potential counterclaims by understanding the defendant's possible arguments.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "title": "Failing to collect judgment",
+      "what_happens": "Winning a judgment does not guarantee payment; you may need to take additional steps to collect.",
+      "how_to_avoid": "Familiarize yourself with collection methods like garnishment and liens, and be prepared to implement them if necessary.",
+      "source_ids": [
+        "S4"
+      ]
+    }
+  ],
+  "recent_changes": [
+    {
+      "date": "2025-08-28",
+      "title": "Increase in small claims court limit",
+      "description": "The maximum claim amount in Missouri small claims court increased from $3,000 to $5,000, allowing more disputes to be resolved in this forum.",
+      "bill_or_rule_citation": "RSMo § 482.305",
+      "source_ids": [
+        "S4"
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Do I need a lawyer?",
+      "answer": "No, you are not required to have a lawyer in Missouri small claims court. The process is designed to be accessible for individuals representing themselves, though you may choose to hire an attorney if you prefer.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "question": "How long does it take?",
+      "answer": "The timeline varies by case and county, but most small claims cases in Missouri are resolved within 30 to 90 days from filing to judgment.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "question": "What's the maximum I can sue for?",
+      "answer": "In Missouri small claims court, you can sue for up to $5,000, excluding interest and court costs.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "question": "What happens if the defendant doesn't show up?",
+      "answer": "If the defendant fails to appear at the hearing, the court may enter a default judgment in your favor, provided you present sufficient evidence to support your claim.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "question": "Can I appeal?",
+      "answer": "Yes, either party can appeal a small claims judgment by requesting a trial de novo in the circuit court within 10 days of the judgment.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "question": "How long is a judgment good for?",
+      "answer": "A judgment in Missouri is valid for 10 years and can be renewed before it expires to extend its enforceability.",
+      "source_ids": [
+        "S4"
+      ]
+    }
+  ],
+  "state_specific_notes": [
+    "Missouri allows individuals to file up to 12 small claims cases per calendar year.",
+    "Small claims court in Missouri does not handle eviction proceedings; these must be filed in the associate circuit court.",
+    "The court may assist with service of process by certified mail, but personal service may be required if mail service is unsuccessful.",
+    "Missouri small claims court does not conduct jury trials; all cases are decided by a judge.",
+    "If a counterclaim exceeds the small claims limit, the entire case may be transferred to the circuit court."
+  ],
+  "_extras": {
+    "interesting_findings": [
+      "Missouri's small claims court provides a user-friendly process for individuals and businesses to resolve disputes without the need for legal representation.",
+      "The increase in the claim limit to $5,000 allows for a broader range of disputes to be handled in small claims court, reducing the burden on higher courts."
+    ]
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "label": "Missouri Courts - Small Claims Information",
+      "url": "https://www.courts.mo.gov/page.jsp?id=297",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S2",
+      "label": "Missouri Courts - Court Forms for Small Claims Cases",
+      "url": "https://www.courts.mo.gov/page.jsp?id=288",
+      "primary": false,
+      "citation": ""
+    },
+    {
+      "id": "S3",
+      "label": "Missouri Courts - Local Court Information and Directories",
+      "url": "https://www.courts.mo.gov/page.jsp?id=321",
+      "primary": false,
+      "citation": ""
+    },
+    {
+      "id": "S4",
+      "label": "RSMo § 482.300 (Small Claims Court jurisdiction and procedures)",
+      "url": "https://revisor.mo.gov/main/OneSection.aspx?section=482.300",
+      "primary": true,
+      "citation": "RSMo § 482.300"
+    },
+    {
+      "id": "S5",
+      "label": "RSMo § 482.305 (Who may file; proceedings in small claims court)",
+      "url": "https://revisor.mo.gov/main/OneSection.aspx?section=482.305",
+      "primary": true,
+      "citation": "RSMo § 482.305"
+    },
+    {
+      "id": "S6",
+      "label": "RSMo § 482.330 (Appeals from small claims court)",
+      "url": "https://revisor.mo.gov/main/OneSection.aspx?section=482.330",
+      "primary": true,
+      "citation": "RSMo § 482.330"
+    },
+    {
+      "id": "S7",
+      "label": "RSMo § 517.151 (Service of process in associate circuit courts, including small claims)",
+      "url": "https://revisor.mo.gov/main/OneSection.aspx?section=517.151",
+      "primary": true,
+      "citation": "RSMo § 517.151"
+    },
+    {
+      "id": "S8",
+      "label": "RSMo § 488.012 (Filing fees in civil and small claims cases)",
+      "url": "https://revisor.mo.gov/main/OneSection.aspx?section=488.012",
+      "primary": true,
+      "citation": "RSMo § 488.012"
+    },
+    {
+      "id": "S9",
+      "label": "RSMo § 525.010 (Garnishment procedure and post-judgment remedies)",
+      "url": "https://revisor.mo.gov/main/OneSection.aspx?section=525.010",
+      "primary": true,
+      "citation": "RSMo § 525.010"
+    },
+    {
+      "id": "S10",
+      "label": "Missouri Supreme Court Rule 140 — Small Claims Court Rules",
+      "url": "https://www.courts.mo.gov/courts/ClerkHandbooksP2RulesOnly.nsf/c0c6ffa99fb7b2c5862564ca007537b4/0e57b5db5be2da8a86256d2b0060d630?OpenDocument",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S11",
+      "label": "Missouri small claims forms (Petition, Answer, Request for Trial, etc.)",
+      "url": "https://www.courts.mo.gov/page.jsp?id=288",
+      "primary": false,
+      "citation": ""
+    },
+    {
+      "id": "S12",
+      "label": "Missouri civil and small claims filing fees (State Fee Schedule by Case Type)",
+      "url": "https://www.courts.mo.gov/page.jsp?id=890",
+      "primary": false,
+      "citation": ""
+    },
+    {
+      "id": "S13",
+      "label": "Service of Process - Missouri Supreme Court Rule 54",
+      "url": "https://www.courts.mo.gov/courts/ClerkHandbooksP2RulesOnly.nsf/c0c6ffa99fb7b2c5862564ca007537b4/9c3ea240f42ec4f286256e10006d6311?OpenDocument",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S14",
+      "label": "Appeals from Small Claims - RSMo § 482.330",
+      "url": "https://revisor.mo.gov/main/OneSection.aspx?section=482.330",
+      "primary": true,
+      "citation": "RSMo § 482.330"
+    },
+    {
+      "id": "S15",
+      "label": "Garnishment Procedure - RSMo § 525.010",
+      "url": "https://revisor.mo.gov/main/OneSection.aspx?section=525.010",
+      "primary": true,
+      "citation": "RSMo § 525.010"
+    },
+    {
+      "id": "S16",
+      "label": "Exemptions and Collection - RSMo § 513.430",
+      "url": "https://revisor.mo.gov/main/OneSection.aspx?section=513.430",
+      "primary": true,
+      "citation": "RSMo § 513.430"
+    },
+    {
+      "id": "S17",
+      "label": "Missouri Merchandising Practices Act (Consumer Fraud/UDAP) - RSMo § 407.010 et seq.",
+      "url": "https://revisor.mo.gov/main/OneChapter.aspx?chapter=407",
+      "primary": true,
+      "citation": "RSMo § 407.010 et seq."
+    },
+    {
+      "id": "S18",
+      "label": "Civil Penalties for Bad Checks - RSMo § 570.120",
+      "url": "https://revisor.mo.gov/main/OneSection.aspx?section=570.120",
+      "primary": true,
+      "citation": "RSMo § 570.120"
+    },
+    {
+      "id": "S19",
+      "label": "Missouri Security Deposit Law - RSMo § 535.300",
+      "url": "https://revisor.mo.gov/main/OneSection.aspx?section=535.300",
+      "primary": true,
+      "citation": "RSMo § 535.300"
+    },
+    {
+      "id": "S20",
+      "label": "Unlawful Detainer (Illegal Lockout/Forced Entry) - RSMo § 534.020",
+      "url": "https://revisor.mo.gov/main/OneSection.aspx?section=534.020",
+      "primary": true,
+      "citation": "RSMo § 534.020"
+    },
+    {
+      "id": "S21",
+      "label": "Final Paycheck and Wage Payment - RSMo § 290.110",
+      "url": "https://revisor.mo.gov/main/OneSection.aspx?section=290.110",
+      "primary": true,
+      "citation": "RSMo § 290.110"
+    },
+    {
+      "id": "S22",
+      "label": "Fraud—Damages—Attorney Fee-Shifting Available—RSMo § 407.025 (Consumer Fraud/UDAP Civil Remedies)",
+      "url": "https://revisor.mo.gov/main/OneSection.aspx?section=407.025",
+      "primary": true,
+      "citation": "RSMo § 407.025"
+    }
+  ],
+  "_meta": {
+    "state": "Missouri",
+    "slug": "missouri",
+    "model": "gpt-4.1",
+    "sources_response_id": "resp_05af7d0e620b43b70069f08a5b104881939cfa29c28b274be3",
+    "extraction_response_id": "resp_0cbf0733f2cf318c0069f0929d14a08196837368b0ca5b0a07",
+    "generated_at": "2026-04-28T10:59:31.872Z",
+    "usage": {
+      "input_tokens": 7539,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 15142,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 22681
+    }
+  }
+}

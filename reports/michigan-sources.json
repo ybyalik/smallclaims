@@ -1,0 +1,151 @@
+{
+  "state": "Michigan",
+  "as_of": "2024-06-08",
+  "state_judiciary_pages": [
+    {
+      "label": "Michigan Courts - Small Claims",
+      "url": "https://www.courts.michigan.gov/self-help/center/court-types/district-court/small-claims/",
+      "scope": "small_claims"
+    },
+    {
+      "label": "Michigan Self-Help - Civil",
+      "url": "https://www.courts.michigan.gov/self-help/center/civil/",
+      "scope": "self_help"
+    },
+    {
+      "label": "Michigan District Courts Directory",
+      "url": "https://www.courts.michigan.gov/courts/district-court-catalog/",
+      "scope": "court_directory"
+    }
+  ],
+  "statutes": [
+    {
+      "label": "Mich. Comp. Laws § 600.8401 - Small Claims Jurisdiction",
+      "url": "https://www.legislature.mi.gov/(S(jfnoiosjq5pulqqvymw2idb0))/mileg.aspx?page=getObject&objectName=mcl-600-8401",
+      "section_or_chapter": "§ 600.8401"
+    },
+    {
+      "label": "Mich. Comp. Laws § 600.8407 - Commencing Small Claim Action",
+      "url": "https://www.legislature.mi.gov/(S(jfnoiosjq5pulqqvymw2idb0))/mileg.aspx?page=getObject&objectName=mcl-600-8407",
+      "section_or_chapter": "§ 600.8407"
+    },
+    {
+      "label": "Mich. Comp. Laws § 600.8420 - Appeals from Small Claims",
+      "url": "https://www.legislature.mi.gov/(S(jfnoiosjq5pulqqvymw2idb0))/mileg.aspx?page=getObject&objectName=mcl-600-8420",
+      "section_or_chapter": "§ 600.8420"
+    },
+    {
+      "label": "Mich. Comp. Laws § 600.8415 - Service of Notice and Summons",
+      "url": "https://www.legislature.mi.gov/(S(jfnoiosjq5pulqqvymw2idb0))/mileg.aspx?page=getObject&objectName=mcl-600-8415",
+      "section_or_chapter": "§ 600.8415"
+    },
+    {
+      "label": "Mich. Comp. Laws § 600.8426 - Enforcement of Judgment",
+      "url": "https://www.legislature.mi.gov/(S(jfnoiosjq5pulqqvymw2idb0))/mileg.aspx?page=getObject&objectName=mcl-600-8426",
+      "section_or_chapter": "§ 600.8426"
+    },
+    {
+      "label": "Michigan Consumer Protection Act - Mich. Comp. Laws § 445.901 et seq.",
+      "url": "https://www.legislature.mi.gov/(S(jfnoiosjq5pulqqvymw2idb0))/mileg.aspx?page=GetObject&objectName=mcl-Act-331-of-1976",
+      "section_or_chapter": "§ 445.901 et seq."
+    },
+    {
+      "label": "Michigan Truth-in-Renting Act - Mich. Comp. Laws § 554.631 et seq.",
+      "url": "https://www.legislature.mi.gov/(S(jfnoiosjq5pulqqvymw2idb0))/mileg.aspx?page=getObject&objectName=mcl-Act-454-of-1978",
+      "section_or_chapter": "§ 554.631 et seq."
+    }
+  ],
+  "court_rules": [
+    {
+      "label": "Michigan Court Rules — Small Claims (MCR 4.301–4.311)",
+      "url": "https://www.courts.michigan.gov/courts/michigansupremecourt/rules/court-rules/chapter-4-civil-procedure-in-district-court/",
+      "rule_or_chapter": "MCR 4.301–4.311"
+    }
+  ],
+  "forms_pages": [
+    {
+      "label": "Michigan Small Claims Forms",
+      "url": "https://www.courts.michigan.gov/forms/search-results/?formType=small_claims"
+    }
+  ],
+  "fee_schedules": [
+    {
+      "label": "Michigan District Court Fee Schedule",
+      "url": "https://www.courts.michigan.gov/4af022/siteassets/fees/district-court-fee-table-2023.pdf"
+    }
+  ],
+  "service_rules": [
+    {
+      "label": "Service of Process in Small Claims — Mich. Comp. Laws § 600.8415",
+      "url": "https://www.legislature.mi.gov/(S(jfnoiosjq5pulqqvymw2idb0))/mileg.aspx?page=getObject&objectName=mcl-600-8415"
+    }
+  ],
+  "appeal_rules": [
+    {
+      "label": "Appeals from Small Claims — Mich. Comp. Laws § 600.8420",
+      "url": "https://www.legislature.mi.gov/(S(jfnoiosjq5pulqqvymw2idb0))/mileg.aspx?page=getObject&objectName=mcl-600-8420"
+    }
+  ],
+  "post_judgment_collection": [
+    {
+      "label": "Enforcement of Judgment — Mich. Comp. Laws § 600.8426",
+      "url": "https://www.legislature.mi.gov/(S(jfnoiosjq5pulqqvymw2idb0))/mileg.aspx?page=getObject&objectName=mcl-600-8426"
+    },
+    {
+      "label": "Writ of Garnishment — Michigan Court Forms (MC 12, etc.)",
+      "url": "https://www.courts.michigan.gov/forms/search-results/?formType=writ_of_garnishment"
+    }
+  ],
+  "consumer_protection_statutes": [
+    {
+      "label": "Michigan Consumer Protection Act — Mich. Comp. Laws § 445.901 et seq.",
+      "url": "https://www.legislature.mi.gov/(S(jfnoiosjq5pulqqvymw2idb0))/mileg.aspx?page=GetObject&objectName=mcl-Act-331-of-1976"
+    },
+    {
+      "label": "Michigan Lemon Law — Mich. Comp. Laws § 257.1401 et seq.",
+      "url": "https://www.legislature.mi.gov/(S(jfnoiosjq5pulqqvymw2idb0))/mileg.aspx?page=getObject&objectName=mcl-Act-87-of-1986"
+    }
+  ],
+  "landlord_tenant_statutes": [
+    {
+      "label": "Michigan Landlord and Tenant Relationships Act — Mich. Comp. Laws § 554.601 et seq.",
+      "url": "https://www.legislature.mi.gov/(S(jfnoiosjq5pulqqvymw2idb0))/mileg.aspx?page=getObject&objectName=mcl-Act-348-of-1972"
+    },
+    {
+      "label": "Michigan Truth-in-Renting Act — Mich. Comp. Laws § 554.631 et seq.",
+      "url": "https://www.legislature.mi.gov/(S(jfnoiosjq5pulqqvymw2idb0))/mileg.aspx?page=getObject&objectName=mcl-Act-454-of-1978"
+    }
+  ],
+  "wage_and_employment_statutes": [
+    {
+      "label": "Michigan Payment of Wages and Fringe Benefits Act — Mich. Comp. Laws § 408.471 et seq.",
+      "url": "https://www.legislature.mi.gov/(S(jfnoiosjq5pulqqvymw2idb0))/mileg.aspx?page=getObject&objectName=mcl-Act-390-of-1978"
+    }
+  ],
+  "civil_remedies_statutes": [
+    {
+      "label": "Michigan Judgment Interest and Attorney Fees — Mich. Comp. Laws § 600.6013, § 600.2591",
+      "url": "https://www.legislature.mi.gov/(S(jfnoiosjq5pulqqvymw2idb0))/mileg.aspx?page=GetObject&objectName=mcl-600-2591"
+    }
+  ],
+  "county_specific": [],
+  "notes": "Michigan uses district courts for small-claims; all main rules and forms are state-wide, not county-specific.",
+  "_meta": {
+    "state": "Michigan",
+    "slug": "michigan",
+    "model": "gpt-4.1",
+    "response_id": "resp_0dc1bc27c5a27af70069f08a3de6f081958fb13f20bf0fb19e",
+    "generated_at": "2026-04-28T10:22:07.411Z",
+    "usage": {
+      "input_tokens": 2102,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 1923,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 4025
+    }
+  }
+}

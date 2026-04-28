@@ -1,0 +1,1550 @@
+{
+  "state": "New York",
+  "slug": "new-york",
+  "abbr": "NY",
+  "as_of": "2026-04-28",
+  "hero": {
+    "individual_limit_dollars": 10000,
+    "business_limit_dollars": 10000,
+    "filing_fee_low_dollars": 15,
+    "filing_fee_high_dollars": 20,
+    "typical_timeline_min_days": 30,
+    "typical_timeline_max_days": 90,
+    "tagline": "New York's small claims courts offer a straightforward process for resolving monetary disputes up to $10,000, with varying limits based on court jurisdiction.",
+    "source_ids": [
+      "S1",
+      "S2"
+    ]
+  },
+  "at_a_glance": [
+    {
+      "label": "Most you can sue for",
+      "value": "$10,000",
+      "detail": "Limit varies by court: $10,000 in NYC Civil Court, $5,000 in City Courts outside NYC, $3,000 in Town and Village Courts.",
+      "source_ids": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "label": "Filing fee",
+      "value": "$15-$20",
+      "detail": "$15 for claims up to $1,000; $20 for claims over $1,000.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Court",
+      "value": "Small Claims Part of Civil Court",
+      "detail": "Varies by location: Civil Court in NYC, City Courts outside NYC, Town/Village Courts.",
+      "source_ids": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "label": "Lawyers at trial",
+      "value": "Allowed",
+      "detail": "Permitted but not required; small claims court is designed for self-representation.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Appeal window",
+      "value": "30 days",
+      "detail": "Must file a notice of appeal within 30 days of judgment.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Recent change",
+      "value": "—",
+      "detail": "No major changes in the past three years.",
+      "source_ids": []
+    }
+  ],
+  "limits": {
+    "individual_dollars": 10000,
+    "business_dollars": 10000,
+    "guarantor_with_fee_max": null,
+    "guarantor_without_fee_max": null,
+    "annual_filing_cap": {
+      "count": null,
+      "threshold_dollars": null,
+      "notes": ""
+    },
+    "split_claims_allowed": false,
+    "split_claims_explanation": "If your claim exceeds the court's monetary limit, you cannot split it into multiple claims to fit within the cap. Instead, you must file in a higher court or waive the excess amount.",
+    "interest_excluded_from_cap": true,
+    "court_costs_excluded_from_cap": true,
+    "statute": "N.Y. C.P.L.R. § 1801",
+    "source_ids": [
+      "S5"
+    ]
+  },
+  "claim_categories": [
+    {
+      "id": "contracts",
+      "title": "Contracts and money owed",
+      "blurb": "New York allows you to file claims for breaches of contract and money owed, with a statute of limitations of 6 years for written contracts and 6 years for oral contracts.",
+      "claims": [
+        {
+          "slug": "written-contract",
+          "name": "Breach of a written contract",
+          "example": "A contractor signed a $4,000 contract to remodel your kitchen, took the deposit, and never finished.",
+          "eligibility": "eligible",
+          "claim_statute": "N.Y. C.P.L.R. § 213(2)",
+          "notes": "6-year deadline from breach. Bring the signed contract, payment proof, and any correspondence showing the breach.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "oral-contract",
+          "name": "Breach of an oral contract",
+          "example": "You agreed verbally to lend someone $2,000, and they failed to repay it.",
+          "eligibility": "eligible",
+          "claim_statute": "N.Y. C.P.L.R. § 213(2)",
+          "notes": "6-year deadline from breach. Provide evidence of the agreement, such as emails, texts, or witness statements.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "personal-loan",
+          "name": "Unpaid personal loan",
+          "example": "You loaned a friend $1,500 with the understanding they'd repay in 3 months, but they haven't.",
+          "eligibility": "eligible",
+          "claim_statute": "N.Y. C.P.L.R. § 213(2)",
+          "notes": "6-year deadline from breach. Document the loan terms and any repayment attempts.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "promissory-note",
+          "name": "Default on a promissory note",
+          "example": "A borrower signed a promissory note for $5,000 and failed to make payments as agreed.",
+          "eligibility": "eligible",
+          "claim_statute": "N.Y. U.C.C. § 3-118",
+          "notes": "6-year deadline from the due date. Present the original note and records of missed payments.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "unpaid-invoice",
+          "name": "Unpaid invoice for services rendered",
+          "example": "You provided graphic design services worth $3,000, invoiced the client, but haven't received payment.",
+          "eligibility": "eligible",
+          "claim_statute": "N.Y. C.P.L.R. § 213(2)",
+          "notes": "6-year deadline from breach. Bring the invoice, service agreement, and any communication regarding payment.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "open-account",
+          "name": "Unpaid balance on an open account",
+          "example": "A customer has an outstanding balance of $4,500 on their account for goods delivered.",
+          "eligibility": "eligible",
+          "claim_statute": "N.Y. C.P.L.R. § 213(2)",
+          "notes": "6-year deadline from breach. Provide account statements and records of transactions.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "unpaid-rent",
+          "name": "Unpaid rent by tenant",
+          "example": "Your tenant owes $2,000 in back rent and has vacated the property.",
+          "eligibility": "eligible",
+          "claim_statute": "N.Y. C.P.L.R. § 213(2)",
+          "notes": "6-year deadline from breach. Present the lease agreement and records of unpaid rent.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "bad-check",
+          "name": "Payment with a bad check",
+          "example": "A customer paid for services with a $1,200 check that bounced due to insufficient funds.",
+          "eligibility": "eligible",
+          "claim_statute": "N.Y. General Obligations Law § 11-104",
+          "notes": "6-year deadline from breach. Provide the bounced check and any bank notices.",
+          "damage_boost": "Check amount + service charge up to $20 + civil penalty up to $100 OR 2x check amount, whichever is greater.",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "co-signer",
+          "name": "Co-signer seeking repayment",
+          "example": "You co-signed a $3,000 loan, the primary borrower defaulted, and you had to pay.",
+          "eligibility": "eligible",
+          "claim_statute": "N.Y. C.P.L.R. § 213(2)",
+          "notes": "6-year deadline from breach. Show the co-signed agreement and proof of your payments.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "consumer-disputes",
+      "title": "Consumer disputes",
+      "blurb": "New York's small claims courts handle various consumer disputes, with a 3-year statute of limitations for most cases.",
+      "claims": [
+        {
+          "slug": "defective-product",
+          "name": "Purchase of a defective product",
+          "example": "You bought a $500 appliance that stopped working within a month, and the seller refuses to refund or replace it.",
+          "eligibility": "eligible",
+          "claim_statute": "N.Y. U.C.C. § 2-725",
+          "notes": "4-year deadline from delivery. Bring the purchase receipt, warranty, and any communication with the seller.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "bad-service",
+          "name": "Substandard service provided",
+          "example": "A cleaning service charged $300 but left your home in poor condition.",
+          "eligibility": "eligible",
+          "claim_statute": "N.Y. C.P.L.R. § 214(3)",
+          "notes": "3-year deadline from service date. Provide the service agreement and evidence of poor service.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "auto-repair",
+          "name": "Faulty auto repair",
+          "example": "A mechanic charged $1,200 for repairs that didn't fix the issue.",
+          "eligibility": "eligible",
+          "claim_statute": "N.Y. General Business Law § 198-b",
+          "notes": "4-year deadline from repair date. Bring repair invoices and any expert evaluations.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "contractor",
+          "name": "Unsatisfactory contractor work",
+          "example": "A contractor was paid $5,000 for a renovation but left the job incomplete.",
+          "eligibility": "eligible",
+          "claim_statute": "N.Y. C.P.L.R. § 213(2)",
+          "notes": "6-year deadline from breach. Present the contract, payment records, and photos of incomplete work.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "no-show-vendor",
+          "name": "Vendor failed to deliver services",
+          "example": "You paid $800 for a DJ who never showed up at your event.",
+          "eligibility": "eligible",
+          "claim_statute": "N.Y. C.P.L.R. § 213(2)",
+          "notes": "6-year deadline from breach. Provide the service agreement and proof of payment.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "subscription-cancellation",
+          "name": "Unauthorized subscription charges",
+          "example": "A magazine continued to charge you $50 annually after you canceled.",
+          "eligibility": "eligible",
+          "claim_statute": "N.Y. General Business Law § 349",
+          "notes": "3-year deadline from charge. Show cancellation notice and bank statements.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "used-car",
+          "name": "Defective used car purchase",
+          "example": "You bought a used car for $9,000 that broke down within a week.",
+          "eligibility": "eligible",
+          "claim_statute": "N.Y. General Business Law § 198-b",
+          "notes": "4-year deadline from purchase. Bring the sales contract and any repair records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "false-advertising",
+          "name": "Misleading advertising",
+          "example": "A store advertised a product for $200 but charged you $300 at checkout.",
+          "eligibility": "eligible",
+          "claim_statute": "N.Y. General Business Law § 349",
+          "notes": "3-year deadline from transaction. Provide the advertisement and receipt.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "property-damage",
+      "title": "Property damage",
+      "blurb": "Claims for property damage in New York have a 3-year statute of limitations.",
+      "claims": [
+        {
+          "slug": "vehicle-collision",
+          "name": "Damage from a vehicle collision",
+          "example": "Another driver hit your parked car, causing $2,500 in damage.",
+          "eligibility": "eligible",
+          "claim_statute": "N.Y. C.P.L.R. § 214(4)",
+          "notes": "3-year deadline from accident date. Bring police reports and repair estimates.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "neighbor-property",
+          "name": "Neighbor caused property damage",
+          "example": "A neighbor's tree fell on your fence, causing $1,000 in damage.",
+          "eligibility": "eligible",
+          "claim_statute": "N.Y. C.P.L.R. § 214(4)",
+          "notes": "3-year deadline from incident. Provide photos and repair estimates.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "damage-to-rental",
+          "name": "Tenant damaged rental property",
+          "example": "A tenant left $3,500 worth of damage upon moving out.",
+          "eligibility": "eligible",
+          "claim_statute": "N.Y. C.P.L.R. § 214(4)",
+          "notes": "3-year deadline from discovery. Present the lease agreement and photos of damage.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "pet-damage",
+          "name": "Damage caused by someone's pet",
+          "example": "A neighbor's dog destroyed your $800 garden.",
+          "eligibility": "eligible",
+          "claim_statute": "N.Y. C.P.L.R. § 214(4)",
+          "notes": "3-year deadline from incident. Provide photos and any witness statements.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "property-in-custody",
+          "name": "Damage to property left in someone's care",
+          "example": "A dry cleaner ruined your $500 suit.",
+          "eligibility": "eligible",
+          "claim_statute": "N.Y. C.P.L.R. § 214(4)",
+          "notes": "3-year deadline from incident. Bring the receipt and photos of damage.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "landlord-tenant",
+      "title": "Landlord-tenant disputes",
+      "blurb": "New York's small claims courts handle various landlord-tenant disputes, with specific statutes of limitations depending on the claim.",
+      "claims": [
+        {
+          "slug": "security-deposit",
+          "name": "Failure to return security deposit",
+          "example": "Your landlord withheld your $1,200 security deposit without justification.",
+          "eligibility": "eligible",
+          "claim_statute": "N.Y. General Obligations Law § 7-103",
+          "notes": "6-year deadline from lease termination. Provide the lease agreement and move-out inspection report.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "deposit-not-itemized",
+          "name": "No itemization of security deposit deductions",
+          "example": "Landlord deducted $500 from your deposit without providing an itemized list.",
+          "eligibility": "eligible",
+          "claim_statute": "N.Y. General Obligations Law § 7-103",
+          "notes": "6-year deadline from lease termination. Request an itemized statement in writing.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "uninhabitable-rental",
+          "name": "Rental unit deemed uninhabitable",
+          "example": "Your apartment had no heat for weeks, and the landlord refused to fix it.",
+          "eligibility": "eligible",
+          "claim_statute": "N.Y. Real Property Law § 235-b",
+          "notes": "6-year deadline from breach. Document the conditions and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "wrongful-retention-property",
+          "name": "Landlord retained tenant's property",
+          "example": "After eviction, the landlord kept your $2,000 worth of belongings.",
+          "eligibility": "eligible",
+          "claim_statute": "N.Y. C.P.L.R. § 214(3)",
+          "notes": "3-year deadline from incident. List the items and their value.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "illegal-eviction",
+          "name": "Illegal eviction by landlord",
+          "example": "Landlord changed the locks without notice, barring you from your apartment.",
+          "eligibility": "eligible",
+          "claim_statute": "N.Y. Real Property Actions and Proceedings Law § 853",
+          "notes": "3-year deadline from eviction. Report to local housing authority and document the incident.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "unreturned-prepaid-rent",
+          "name": "Failure to return prepaid rent",
+          "example": "You paid first and last month's rent, but moved out early and the landlord kept the last month's rent.",
+          "eligibility": "eligible",
+          "claim_statute": "N.Y. C.P.L.R. § 213(2)",
+          "notes": "6-year deadline from lease termination. Provide the lease and proof of payment.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "unpaid-rent-by-tenant",
+          "name": "Tenant failed to pay rent",
+          "example": "Your tenant missed two months' rent totaling $2,400.",
+          "eligibility": "eligible",
+          "claim_statute": "N.Y. C.P.L.R. § 213(2)",
+          "notes": "6-year deadline from breach. Present the lease and payment records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "repair-and-deduct",
+          "name": "Tenant repaired and deducted from rent",
+          "example": "You fixed a broken heater for $500 and deducted it from rent; landlord disputes this.",
+          "eligibility": "eligible",
+          "claim_statute": "N.Y. Real Property Law § 235-b",
+          "notes": "6-year deadline from repair. Keep all receipts and notify the landlord in writing before repairs.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "employment-and-wages",
+      "title": "Employment and wage disputes",
+      "blurb": "New York's small claims courts address various employment and wage disputes, with a 6-year statute of limitations for wage claims.",
+      "claims": [
+        {
+          "slug": "unpaid-wages",
+          "name": "Employer failed to pay wages",
+          "example": "Your employer owes you $1,000 for hours worked but not paid.",
+          "eligibility": "eligible",
+          "claim_statute": "N.Y. Labor Law § 198",
+          "notes": "6-year deadline from non-payment. Provide timesheets and pay stubs.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "final-paycheck",
+          "name": "Employer withheld final paycheck",
+          "example": "After resigning, your employer didn't issue your last paycheck of $800.",
+          "eligibility": "eligible",
+          "claim_statute": "N.Y. Labor Law § 198",
+          "notes": "6-year deadline from non-payment. Document your resignation and any communication.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "unpaid-commissions",
+          "name": "Unpaid sales commissions",
+          "example": "You earned $2,500 in commissions that your employer hasn't paid.",
+          "eligibility": "eligible",
+          "claim_statute": "N.Y. Labor Law § 198",
+          "notes": "6-year deadline from non-payment. Show the commission agreement and sales records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "unpaid-overtime",
+          "name": "Employer didn't pay overtime",
+          "example": "You worked 10 hours of overtime but weren't compensated accordingly.",
+          "eligibility": "eligible",
+          "claim_statute": "N.Y. Labor Law § 198",
+          "notes": "6-year deadline from non-payment. Provide work schedules and pay records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "personal-claims",
+      "title": "Personal claims",
+      "blurb": "New York's small claims courts handle various personal claims, with specific statutes of limitations depending on the claim.",
+      "claims": [
+        {
+          "slug": "minor-injury",
+          "name": "Minor personal injury",
+          "example": "You slipped on a wet floor in a store and incurred $2,000 in medical bills.",
+          "eligibility": "eligible",
+          "claim_statute": "N.Y. C.P.L.R. § 214(5)",
+          "notes": "3-year deadline from injury. Bring medical records and any incident reports.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "loaned-property",
+          "name": "Failure to return loaned property",
+          "example": "You lent a friend your $600 camera, and they refuse to return it.",
+          "eligibility": "eligible",
+          "claim_statute": "N.Y. C.P.L.R. § 214(3)",
+          "notes": "3-year deadline from demand for return. Document the loan agreement and requests for return.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "civil-theft",
+          "name": "Theft of personal property",
+          "example": "A neighbor took your $1,500 bicycle without permission.",
+          "eligibility": "eligible",
+          "claim_statute": "N.Y. C.P.L.R. § 214(3)",
+          "notes": "3-year deadline from theft. File a police report and provide evidence of ownership.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vehicle-specific",
+      "title": "Vehicle-specific claims",
+      "blurb": "New York's small claims courts address various vehicle-related disputes, with specific statutes of limitations depending on the claim.",
+      "claims": [
+        {
+          "slug": "mechanic-dispute",
+          "name": "Dispute over mechanic's charges",
+          "example": "A mechanic charged $1,000 for repairs you didn't authorize.",
+          "eligibility": "eligible",
+          "claim_statute": "N.Y. General Business Law § 198-b",
+          "notes": "4-year deadline from repair date. Bring repair orders and any communication.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "wrongful-tow",
+          "name": "Vehicle wrongfully towed",
+          "example": "Your car was towed from a legal parking spot, costing you $250.",
+          "eligibility": "eligible",
+          "claim_statute": "N.Y. General Business Law § 399-v",
+          "notes": "3-year deadline from tow date. Provide photos of the parking area and tow receipt.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        }
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "category": "Eviction (unlawful detainer)",
+      "explanation": "Small Claims Court cannot grant possession of property; eviction proceedings must be filed in Housing Court.",
+      "where_to_go_instead": "Housing Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Defamation (libel and slander)",
+      "explanation": "Claims for defamation are not permitted in Small Claims Court as they do not involve monetary damages only.",
+      "where_to_go_instead": "Supreme Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Malpractice",
+      "explanation": "Professional malpractice claims exceed the jurisdiction of Small Claims Court due to complexity and potential damages.",
+      "where_to_go_instead": "Supreme Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Family law matters",
+      "explanation": "Issues like divorce, child support, and custody are outside the jurisdiction of Small Claims Court.",
+      "where_to_go_instead": "Family Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Claims against the federal government",
+      "explanation": "Small Claims Court lacks jurisdiction over federal entities; such claims must be filed in federal court.",
+      "where_to_go_instead": "Federal Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Class actions",
+      "explanation": "Class action lawsuits are beyond the scope of Small Claims Court and must be filed in a higher court.",
+      "where_to_go_instead": "Supreme Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Injunctions and specific performance",
+      "explanation": "Small Claims Court can only award monetary damages, not compel actions or inactions.",
+      "where_to_go_instead": "Supreme Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Title to real estate",
+      "explanation": "Disputes involving property ownership are too complex for Small Claims Court.",
+      "where_to_go_instead": "Supreme Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Probate matters",
+      "explanation": "Issues related to wills and estates are handled by Surrogate's Court, not Small Claims Court.",
+      "where_to_go_instead": "Surrogate's Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Workers' compensation claims",
+      "explanation": "Claims for workplace injuries are under the jurisdiction of the Workers' Compensation Board.",
+      "where_to_go_instead": "Workers' Compensation Board",
+      "source_ids": [
+        "S1"
+      ]
+    }
+  ],
+  "damages": {
+    "compensatory_allowed": true,
+    "punitive_allowed": false,
+    "punitive_explanation": "Small Claims Court in New York does not award punitive damages; it is limited to compensatory damages only.",
+    "statutory_multipliers": [
+      {
+        "claim": "Bad check (after 30-day notice)",
+        "multiplier": "2x check amount",
+        "explanation": "Check amount + service charge up to $20 + civil penalty up to $100 OR 2x check amount, whichever is greater.",
+        "statute": "N.Y. General Obligations Law § 11-104",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "attorney_fees_recoverable": "sometimes",
+    "attorney_fees_explanation": "Attorney fees are generally not recoverable in Small Claims Court unless specified by statute or contract.",
+    "prejudgment_interest_rate_pct": 9,
+    "prejudgment_interest_statute": "N.Y. C.P.L.R. § 5001",
+    "postjudgment_interest_rate_pct": 9,
+    "postjudgment_interest_type": "simple",
+    "postjudgment_interest_statute": "N.Y. C.P.L.R. § 5004",
+    "postjudgment_interest_notes": "Interest accrues at 9% per annum from the date of judgment until paid.",
+    "filing_and_service_fees_recoverable_from_loser": true,
+    "source_ids": [
+      "S5"
+    ]
+  },
+  "where_to_file": {
+    "court_name": "Small Claims Part of the Civil Court",
+    "parent_court": "New York State Unified Court System",
+    "venue_rules": [
+      {
+        "scenario": "Defendant resides in NYC",
+        "filing_options": [
+          "County where defendant resides"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Defendant works in NYC",
+        "filing_options": [
+          "County where defendant works"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Defendant has a business in NYC",
+        "filing_options": [
+          "County where defendant has a business"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Defendant resides outside NYC",
+        "filing_options": [
+          "County where defendant resides, works, or has a business"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "consequences_of_wrong_venue": "Filing in the wrong venue may result in dismissal or transfer of the case, potentially causing delays and additional costs.",
+    "e_filing_available": "no",
+    "e_filing_notes": "Electronic filing is not currently available for Small Claims Court in New York.",
+    "e_filing_portal": null,
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "fees": {
+    "filing_fee_tiers": [
+      {
+        "range_label": "$0 to $1,000",
+        "range_min": 0,
+        "range_max": 1000,
+        "fee_dollars": 15,
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "range_label": "$1,001 to $10,000",
+        "range_min": 1001,
+        "range_max": 10000,
+        "fee_dollars": 20,
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "frequent_filer": {
+      "threshold_per_year": null,
+      "fee_dollars": null,
+      "notes": ""
+    },
+    "service_fees": [
+      {
+        "method": "Certified mail by clerk",
+        "amount_label": "Included in filing fee",
+        "notes": "The court attempts service by certified mail; if unsuccessful, personal service is required.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "method": "Personal service by process server",
+        "amount_label": "Varies",
+        "notes": "If certified mail fails, the claimant must arrange and pay for personal service.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "waiver": {
+      "forms": [
+        {
+          "number": "Form 14-1",
+          "name": "Application for Waiver of Court Fees",
+          "url": "https://www.nycourts.gov/forms/14-1.pdf",
+          "source_ids": [
+            "S1"
+          ]
+        }
+      ],
+      "eligibility_bullets": [
+        "Receiving public assistance (e.g., SNAP, SSI)",
+        "Income below 125% of the federal poverty level"
+      ],
+      "coverage_notes": "The waiver covers filing fees and service costs.",
+      "if_you_win_notes": "If you win, the waived fees are not added to the judgment against the defendant."
+    },
+    "other_fees": [
+      {
+        "name": "Subpoena issuance",
+        "amount_label": "$15",
+        "notes": "Plus witness fee per day.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "name": "Transcript of judgment",
+        "amount_label": "$6",
+        "notes": "For filing in another court.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "name": "Appeal filing",
+        "amount_label": "$30",
+        "notes": "",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "fees_recoverable_from_loser_notes": "If you win, filing fees and reasonable service costs are added to the judgment against the defendant.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "statute_of_limitations": {
+    "entries": [
+      {
+        "id": "written-contract",
+        "claim": "Written contract",
+        "years": 6,
+        "clock_starts": "Date of breach",
+        "statute": "N.Y. C.P.L.R. § 213(2)",
+        "notes": "Applies to contracts signed in writing.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "oral-contract",
+        "claim": "Oral contract",
+        "years": 6,
+        "clock_starts": "Date of breach",
+        "statute": "N.Y. C.P.L.R. § 213(2)",
+        "notes": "Applies to verbal agreements.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "sale-of-goods",
+        "claim": "Sale of goods (UCC)",
+        "years": 4,
+        "clock_starts": "Date of delivery",
+        "statute": "N.Y. U.C.C. § 2-725",
+        "notes": "Applies to contracts for the sale of goods.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "promissory-note",
+        "claim": "Promissory note",
+        "years": 6,
+        "clock_starts": "Date of default",
+        "statute": "N.Y. U.C.C. § 3-118",
+        "notes": "Applies to written promises to pay money.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "open-account",
+        "claim": "Open account / credit card debt",
+        "years": 6,
+        "clock_starts": "Date of last payment",
+        "statute": "N.Y. C.P.L.R. § 213(2)",
+        "notes": "Applies to revolving credit accounts.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "personal-injury",
+        "claim": "Personal injury",
+        "years": 3,
+        "clock_starts": "Date of injury",
+        "statute": "N.Y. C.P.L.R. § 214(5)",
+        "notes": "Applies to bodily injury claims.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "property-damage",
+        "claim": "Property damage",
+        "years": 3,
+        "clock_starts": "Date of damage",
+        "statute": "N.Y. C.P.L.R. § 214(4)",
+        "notes": "Applies to damage to personal or real property.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "fraud",
+        "claim": "Fraud",
+        "years": 6,
+        "clock_starts": "Date of discovery",
+        "statute": "N.Y. C.P.L.R. § 213(8)",
+        "notes": "Applies to fraudulent acts; discovery rule applies.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "bad-check",
+        "claim": "Bad check",
+        "years": 6,
+        "clock_starts": "Date of dishonor",
+        "statute": "N.Y. C.P.L.R. § 213(2)",
+        "notes": "Applies to checks returned for insufficient funds.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "unpaid-wages",
+        "claim": "Unpaid wages",
+        "years": 6,
+        "clock_starts": "Date wages were due",
+        "statute": "N.Y. Labor Law § 198",
+        "notes": "Applies to claims for unpaid compensation.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "security-deposit",
+        "claim": "Security deposit",
+        "years": 6,
+        "clock_starts": "Date of lease termination",
+        "statute": "N.Y. General Obligations Law § 7-103",
+        "notes": "Applies to recovery of security deposits.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "judgment-enforcement",
+        "claim": "Judgment enforcement",
+        "years": 20,
+        "clock_starts": "Date of judgment",
+        "statute": "N.Y. C.P.L.R. § 211(b)",
+        "notes": "Applies to actions to enforce judgments.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "discovery_rule_notes": "The discovery rule applies to fraud claims, starting the statute of limitations when the fraud is discovered.",
+    "tolling_notes": "The statute of limitations may be tolled if the defendant is out of state, the plaintiff is a minor, or due to bankruptcy stays.",
+    "source_ids": [
+      "S5"
+    ]
+  },
+  "pre_filing": {
+    "demand_letter_required": false,
+    "demand_letter_recommended": true,
+    "demand_letter_notes": "While not required, sending a demand letter can often resolve disputes without court intervention and serves as evidence of your attempt to settle.",
+    "bad_check_notice_rule": "For bad checks, a written demand for payment must be sent, and if unpaid after 30 days, you may seek damages up to twice the check amount.",
+    "wage_claim_demand_rule": "No specific pre-filing demand required for wage claims, but documenting requests for payment is advisable.",
+    "government_claim_required": true,
+    "government_claim_deadline_days": 90,
+    "government_claim_notes": "Claims against municipalities require a notice of claim to be filed within 90 days of the incident.",
+    "landlord_tenant_pre_filing_notes": "For security deposit disputes, it's recommended to request the return in writing before filing a claim.",
+    "consumer_protection_notes": "For deceptive practices, a written demand for relief is advisable before filing under consumer protection statutes.",
+    "mandatory_mediation_before_filing": "none",
+    "arbitration_clauses_enforced": true,
+    "source_ids": [
+      "S5"
+    ]
+  },
+  "forms": [
+    {
+      "number": "SC-1",
+      "name": "Statement of Claim",
+      "description": "Initiates a small claims case by outlining the plaintiff's claim and amount sought.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "https://www.nycourts.gov/forms/sc-1.pdf",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "number": "SC-3",
+      "name": "Notice of Counterclaim",
+      "description": "Filed by the defendant to assert a counterclaim against the plaintiff.",
+      "filed_by": "defendant",
+      "required": false,
+      "group": "counterclaim",
+      "url": "https://www.nycourts.gov/forms/sc-3.pdf",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "number": "SC-4",
+      "name": "Application for Waiver of Court Fees",
+      "description": "Requests a waiver of filing and service fees based on financial hardship.",
+      "filed_by": "plaintiff",
+      "required": false,
+      "group": "fee-waiver",
+      "url": "https://www.nycourts.gov/forms/sc-4.pdf",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "number": "SC-5",
+      "name": "Notice of Appeal",
+      "description": "Filed to initiate an appeal of the small claims court's decision.",
+      "filed_by": "either",
+      "required": false,
+      "group": "appeal",
+      "url": "https://www.nycourts.gov/forms/sc-5.pdf",
+      "source_ids": [
+        "S1"
+      ]
+    }
+  ],
+  "service": {
+    "who_can_serve": [
+      "Court clerk via certified mail",
+      "Process server",
+      "Sheriff"
+    ],
+    "methods": [
+      {
+        "name": "Certified mail by court clerk",
+        "description": "The court attempts to serve the defendant by sending the notice via certified mail.",
+        "pros": [
+          "Included in filing fee",
+          "Handled by court"
+        ],
+        "cons": [
+          "May fail if defendant doesn't accept mail"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "name": "Personal service by process server",
+        "description": "A professional process server delivers the notice directly to the defendant.",
+        "pros": [
+          "Higher success rate",
+          "Proof of service provided"
+        ],
+        "cons": [
+          "Additional cost",
+          "Must arrange independently"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "name": "Personal service by sheriff",
+        "description": "The sheriff's office delivers the notice to the defendant.",
+        "pros": [
+          "Official service",
+          "Proof of service provided"
+        ],
+        "cons": [
+          "Additional cost",
+          "May take longer"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "in_county_days_before_hearing": 15,
+    "out_of_county_days_before_hearing": 20,
+    "proof_of_service_form": {
+      "number": "SC-2",
+      "name": "Affidavit of Service"
+    },
+    "proof_filing_deadline_days_before_hearing": 5,
+    "business_service_rule": "Serve the registered agent or an officer of the corporation; for sole proprietors, serve the individual directly.",
+    "out_of_state_defendant_notes": "Service must comply with the laws of the state where the defendant is located.",
+    "cant_find_defendant_notes": "If the defendant cannot be located, you may request permission from the court for alternative service methods.",
+    "avoiding_service_notes": "If the defendant is evading service, document your attempts and request alternative service from the court.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "response_and_default": {
+    "must_file_written_answer": false,
+    "response_deadline_days": 0,
+    "response_notes": "Defendants are not required to file a written answer but must appear in court on the hearing date.",
+    "default_process": "If the defendant fails to appear, the court may grant a default judgment in favor of the plaintiff.",
+    "prove_up_required": true,
+    "prove_up_notes": "Even if the defendant defaults, the plaintiff must provide evidence to support the claim.",
+    "motion_to_vacate_form": {
+      "number": "SC-6",
+      "name": "Motion to Vacate Judgment"
+    },
+    "motion_to_vacate_deadline_days": 30,
+    "motion_to_vacate_lack_of_notice_days": 1,
+    "motion_to_vacate_appeal_deadline_days": 30,
+    "motion_to_vacate_appeal_notes": "If the motion to vacate is denied, the defendant may appeal the denial within 30 days.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "counterclaim": {
+    "allowed": true,
+    "form": {
+      "number": "SC-3",
+      "name": "Notice of Counterclaim"
+    },
+    "same_monetary_limit": true,
+    "service_deadline_in_county_days": 5,
+    "service_deadline_out_of_county_days": 10,
+    "transfer_to_higher_court_available": true,
+    "transfer_to_higher_court_statute": "N.Y. C.P.L.R. § 325(d)",
+    "transfer_to_higher_court_notes": "If the counterclaim exceeds the small claims limit, the case may be transferred to a higher court.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "hearing": {
+    "lawyers_allowed": "yes",
+    "lawyers_allowed_notes": "Parties may be represented by attorneys, but it is not required.",
+    "format": "Informal bench trial, typically lasting 15-30 minutes.",
+    "presider": "judge",
+    "burden_of_proof": "preponderance",
+    "what_to_bring": [
+      "Contracts",
+      "Receipts",
+      "Photographs",
+      "Witnesses"
+    ],
+    "subpoena_form": {
+      "number": "SC-7",
+      "name": "Subpoena"
+    },
+    "witness_fee_per_day_dollars": 15,
+    "free_interpreters": true,
+    "interpreter_request_process": "Request an interpreter from the court clerk prior to the hearing date.",
+    "jury_option": false,
+    "decision_timing": "On the spot or mailed within 30 days.",
+    "on_site_mediation": "by court",
+    "on_site_mediation_notes": "Some courts offer mediation services to help parties settle before the hearing.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "appeals": {
+    "who_can_appeal": "either",
+    "deadline_days": 30,
+    "fee_dollars": 30,
+    "type": "on the record",
+    "type_notes": "The appellate court reviews the record for legal errors; no new evidence is considered.",
+    "attorneys_allowed_on_appeal": true,
+    "bond_required": false,
+    "bond_amount_notes": "",
+    "automatic_stay_on_appeal": false,
+    "default_judgment_appealable": true,
+    "default_judgment_notes": "A default judgment can be appealed, but it's advisable to first file a motion to vacate.",
+    "notice_of_appeal_form": {
+      "number": "SC-5",
+      "name": "Notice of Appeal"
+    },
+    "frivolous_appeal_penalty_dollars": null,
+    "frivolous_appeal_statute": "",
+    "frivolous_appeal_notes": "",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "collection": {
+    "payment_deadline_typical_days": 30,
+    "post_judgment_interest_rate_pct": 9,
+    "post_judgment_interest_statute": "N.Y. C.P.L.R. § 5004",
+    "post_judgment_interest_notes": "Interest accrues at 9% per annum from the date of judgment until paid.",
+    "methods": [
+      {
+        "id": "wage-garnishment",
+        "name": "Wage garnishment",
+        "blurb": "Have a portion of the debtor's wages withheld until the judgment is paid.",
+        "description": "File an income execution with the court, serve it on the debtor's employer, and the employer will withhold a portion of the debtor's wages to satisfy the judgment.",
+        "forms": [
+          {
+            "number": "SC-8",
+            "name": "Income Execution"
+          }
+        ],
+        "estimated_cost": "$30 plus service fees",
+        "effectiveness_notes": "Effective if the debtor is employed and earns above the exemption threshold.",
+        "exemptions": [
+          "90% of earnings or 30 times the minimum wage per week, whichever is greater."
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "id": "bank-levy",
+        "name": "Bank levy",
+        "blurb": "Seize funds from the debtor's bank account to satisfy the judgment.",
+        "description": "Obtain a restraining notice and levy from the court, serve it on the debtor's bank, and the bank will freeze and turn over funds to satisfy the judgment.",
+        "forms": [
+          {
+            "number": "SC-9",
+            "name": "Restraining Notice"
+          }
+        ],
+        "estimated_cost": "$30 plus service fees",
+        "effectiveness_notes": "Effective if the debtor has sufficient funds in the account.",
+        "exemptions": [
+          "$2,640 in a bank account is exempt from levy."
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "id": "property-lien",
+        "name": "Property lien",
+        "blurb": "Place a lien on the debtor's real property to secure the judgment.",
+        "description": "File a transcript of judgment with the county clerk where the debtor owns property, creating a lien that must be satisfied upon sale or refinancing.",
+        "forms": [
+          {
+            "number": "SC-10",
+            "name": "Transcript of Judgment"
+          }
+        ],
+        "estimated_cost": "$6 filing fee",
+        "effectiveness_notes": "Effective if the debtor owns real property and intends to sell or refinance.",
+        "exemptions": [
+          "Homestead exemption up to $150,000 in NYC."
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "id": "writ-of-execution",
+        "name": "Writ of execution",
+        "blurb": "Seize and sell the debtor's non-exempt personal property to satisfy the judgment.",
+        "description": "Obtain a writ of execution from the court, have the sheriff seize non-exempt property, and sell it at auction to satisfy the judgment.",
+        "forms": [
+          {
+            "number": "SC-11",
+            "name": "Writ of Execution"
+          }
+        ],
+        "estimated_cost": "$30 plus sheriff's fees",
+        "effectiveness_notes": "Effective if the debtor owns valuable non-exempt personal property.",
+        "exemptions": [
+          "Personal property exemptions vary; consult state statutes."
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "wage_garnishment_max_pct_of_disposable": 10,
+    "judgment_lifespan_years": 20,
+    "judgment_renewal_process": "File a renewal affidavit with the court before the 20-year period expires to extend the judgment.",
+    "debtor_exam_form": {
+      "number": "SC-12",
+      "name": "Information Subpoena"
+    },
+    "exempt_assets": [
+      "Homestead — up to $150,000 in NYC",
+      "Vehicle — up to $4,000",
+      "Retirement accounts (ERISA-qualified)",
+      "Social Security and federal benefits"
+    ],
+    "bankruptcy_effect_notes": "Filing for bankruptcy may discharge the judgment; certain debts are non-dischargeable.",
+    "satisfaction_of_judgment_form": {
+      "number": "SC-13",
+      "name": "Satisfaction of Judgment"
+    },
+    "priority_notes": "Judgment liens are prioritized by filing date; earlier liens have higher priority.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "businesses": {
+    "self_representation_allowed": false,
+    "self_representation_notes": "Corporations and partnerships must be represented by an attorney in Small Claims Court.",
+    "can_send_employee": false,
+    "can_send_attorney": true,
+    "non_attorney_representation_form": {
+      "number": "",
+      "name": ""
+    },
+    "insurance_adjuster_allowed": false,
+    "fictitious_name_form": {
+      "number": "",
+      "name": ""
+    },
+    "fictitious_name_notes": "Businesses must sue and be sued under their legal names; trade names are insufficient.",
+    "sole_proprietor_employee_exception": "Sole proprietors may represent themselves but cannot send an employee in their place.",
+    "out_of_state_business_must_register": true,
+    "out_of_state_business_statute": "N.Y. Business Corporation Law § 1301",
+    "licensing_notes": "Unlicensed contractors may be barred from suing for unpaid work if a license is required.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "county_variations_material": true,
+  "county_variations": [
+    {
+      "county": "New York City",
+      "topic": "Monetary limit",
+      "detail": "Small Claims Court in NYC has a monetary limit of $10,000.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "county": "Nassau County",
+      "topic": "Monetary limit",
+      "detail": "Small Claims Court in Nassau County has a monetary limit of $5,000.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "county": "Suffolk County",
+      "topic": "Monetary limit",
+      "detail": "Small Claims Court in Suffolk County has a monetary limit of $5,000.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "county": "Town and Village Courts",
+      "topic": "Monetary limit",
+      "detail": "Town and Village Courts have a monetary limit of $3,000.",
+      "source_ids": [
+        "S1"
+      ]
+    }
+  ],
+  "pitfalls": [
+    {
+      "title": "Incorrect defendant information",
+      "what_happens": "If you sue the wrong party or use incorrect information, your case may be dismissed or the judgment unenforceable.",
+      "how_to_avoid": "Verify the defendant's legal name and address before filing; for businesses, check the Department of State's records.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Exceeding monetary limits",
+      "what_happens": "Filing a claim exceeding the court's monetary limit can result in dismissal or the need to waive the excess amount.",
+      "how_to_avoid": "Ensure your claim amount is within the appropriate limit for the court where you're filing.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Missing statute of limitations",
+      "what_happens": "Filing after the statute of limitations has expired will lead to dismissal of your case.",
+      "how_to_avoid": "Confirm the applicable statute of limitations for your claim type before filing.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Improper service of process",
+      "what_happens": "If the defendant isn't properly served, the court may not hear your case.",
+      "how_to_avoid": "Follow the court's rules for serving the defendant, and ensure proof of service is filed.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Lack of evidence",
+      "what_happens": "Without sufficient evidence, you may lose your case even if you're in the right.",
+      "how_to_avoid": "Gather all relevant documents, photos, and witness statements before the hearing.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Ignoring counterclaims",
+      "what_happens": "If the defendant files a counterclaim and you don't prepare, you could owe them money.",
+      "how_to_avoid": "Review any counterclaims carefully and prepare your defense accordingly.",
+      "source_ids": [
+        "S1"
+      ]
+    }
+  ],
+  "recent_changes": [
+    {
+      "date": "2024-01-01",
+      "title": "Increase in monetary limit for NYC Small Claims Court",
+      "description": "The monetary limit for Small Claims Court in New York City increased from $5,000 to $10,000, allowing for higher-value claims to be filed.",
+      "bill_or_rule_citation": "N.Y. C.P.L.R. § 1801",
+      "source_ids": [
+        "S5"
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Do I need a lawyer?",
+      "answer": "No, you do not need a lawyer to file or defend a case in Small Claims Court; the process is designed for individuals to represent themselves.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "How long does it take?",
+      "answer": "The timeline varies, but most cases are resolved within 30 to 90 days from filing to judgment.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "What's the maximum I can sue for?",
+      "answer": "In New York City, the maximum is $10,000; in City Courts outside NYC, it's $5,000; and in Town and Village Courts, it's $3,000.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "What happens if the defendant doesn't show up?",
+      "answer": "If the defendant fails to appear, the court may grant a default judgment in your favor, but you must still prove your claim.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "Can I appeal?",
+      "answer": "Yes, either party can appeal the court's decision within 30 days by filing a notice of appeal and paying the required fee.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "How long is a judgment good for?",
+      "answer": "A judgment is valid for 20 years in New York, and you can take steps to enforce it during that time.",
+      "source_ids": [
+        "S1"
+      ]
+    }
+  ],
+  "state_specific_notes": [
+    "New York allows individuals to file small claims cases without an attorney, promoting self-representation.",
+    "The monetary limits for small claims vary by court jurisdiction, with NYC allowing up to $10,000.",
+    "Small Claims Court in New York is designed to be informal and accessible, with simplified procedures.",
+    "Corporations and partnerships must be represented by an attorney in Small Claims Court.",
+    "Electronic filing is not currently available for Small Claims Court cases in New York."
+  ],
+  "_extras": {
+    "interesting_findings": [
+      "New York's Small Claims Court offers evening sessions to accommodate individuals who cannot attend during regular business hours.",
+      "The court attempts to serve the defendant by certified mail, reducing the burden on the plaintiff to arrange service.",
+      "If the defendant cannot be served by mail, the court provides guidance on alternative service methods.",
+      "Small Claims Court judgments accrue interest at 9% per annum until paid.",
+      "The court provides resources and guides to assist individuals in navigating the small claims process without legal representation."
+    ]
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "label": "New York State Unified Court System — Small Claims Handbook",
+      "url": "https://www.nycourts.gov/courthelp/pdfs/SmallClaimsHandbook.pdf",
+      "primary": true,
+      "citation": "N.Y. C.P.L.R. § 1801"
+    },
+    {
+      "id": "S2",
+      "label": "New York CourtHelp — Small Claims",
+      "url": "https://www.nycourts.gov/courthelp/goingtocourt/smallclaims.shtml",
+      "primary": false,
+      "citation": ""
+    },
+    {
+      "id": "S5",
+      "label": "N.Y. C.P.L.R. § 1801 (Small Claims Jurisdiction)",
+      "url": "https://www.nysenate.gov/legislation/laws/CVP/1801",
+      "primary": false,
+      "citation": "N.Y. C.P.L.R. § 1801"
+    }
+  ],
+  "_meta": {
+    "state": "New York",
+    "slug": "new-york",
+    "model": "gpt-4.1",
+    "sources_response_id": "resp_05df1cfcaf8eb8740069f08ac1b4048194ba1d217fb01c7702",
+    "extraction_response_id": "resp_095d514fc033b17b0069f09f726000819488965adefa3b1cd1",
+    "generated_at": "2026-04-28T11:54:20.320Z",
+    "usage": {
+      "input_tokens": 7786,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 13081,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 20867
+    }
+  }
+}

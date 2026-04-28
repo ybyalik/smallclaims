@@ -9,6 +9,7 @@ export interface ResearchSummary {
   sizeBytes: number;
   wordCount: number;
   updatedAt: string;
+  source: "draft" | "openai";
 }
 
 const titleCase = (slug: string) =>
@@ -19,13 +20,20 @@ const titleCase = (slug: string) =>
 
 export function listResearch(): ResearchSummary[] {
   if (!existsSync(REPORTS_DIR)) return [];
-  const files = readdirSync(REPORTS_DIR).filter(
-    (f) => f.endsWith("-openai.md") || (f.endsWith(".md") && !f.includes("-openai"))
+  // Prefer -draft.md (new 3-pass pipeline). Fall back to -openai.md (legacy)
+  // only for slugs that don't yet have a draft. Each slug appears once.
+  const all = readdirSync(REPORTS_DIR);
+  const draftSlugs = new Set(
+    all.filter((f) => f.endsWith("-draft.md")).map((f) => f.replace(/-draft\.md$/, "")),
   );
+  const legacyOnly = all
+    .filter((f) => f.endsWith("-openai.md"))
+    .map((f) => f.replace(/-openai\.md$/, ""))
+    .filter((s) => !draftSlugs.has(s));
+
   const out: ResearchSummary[] = [];
-  for (const f of files) {
-    const slug = f.replace(/-openai\.md$/, "").replace(/\.md$/, "");
-    const path = resolve(REPORTS_DIR, f);
+  const push = (slug: string, file: string, source: "draft" | "openai") => {
+    const path = resolve(REPORTS_DIR, file);
     const stat = statSync(path);
     const text = readFileSync(path, "utf8");
     const wordCount = text.split(/\s+/).filter(Boolean).length;
@@ -35,14 +43,18 @@ export function listResearch(): ResearchSummary[] {
       sizeBytes: stat.size,
       wordCount,
       updatedAt: stat.mtime.toISOString(),
+      source,
     });
-  }
+  };
+  for (const slug of draftSlugs) push(slug, `${slug}-draft.md`, "draft");
+  for (const slug of legacyOnly) push(slug, `${slug}-openai.md`, "openai");
   out.sort((a, b) => a.state.localeCompare(b.state));
   return out;
 }
 
 export function loadResearch(slug: string): { state: string; markdown: string } | null {
   const candidates = [
+    resolve(REPORTS_DIR, `${slug}-draft.md`),
     resolve(REPORTS_DIR, `${slug}-openai.md`),
     resolve(REPORTS_DIR, `${slug}.md`),
   ];

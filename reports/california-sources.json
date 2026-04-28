@@ -1,0 +1,166 @@
+{
+  "state": "California",
+  "as_of": "2024-06-20",
+  "state_judiciary_pages": [
+    {
+      "label": "California Courts Small Claims Self-Help",
+      "url": "https://www.courts.ca.gov/selfhelp-smallclaims.htm",
+      "scope": "small_claims"
+    },
+    {
+      "label": "California Courts Self-Help Center",
+      "url": "https://www.courts.ca.gov/selfhelp.htm",
+      "scope": "self_help"
+    },
+    {
+      "label": "California Courts Small Claims Information",
+      "url": "https://www.courts.ca.gov/9745.htm",
+      "scope": "small_claims"
+    },
+    {
+      "label": "California Courts Fee Waiver Information",
+      "url": "https://www.courts.ca.gov/selfhelp-feewaiver.htm",
+      "scope": "fee_schedule"
+    }
+  ],
+  "statutes": [
+    {
+      "label": "California Code of Civil Procedure § 116.220 (Small Claims Jurisdiction)",
+      "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=116.220&lawCode=CCP",
+      "section_or_chapter": "CCP § 116.220"
+    },
+    {
+      "label": "California Code of Civil Procedure § 116.210 et seq. (Small Claims Act)",
+      "url": "https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?lawCode=CCP&division=&title=1&part=1&chapter=5.5",
+      "section_or_chapter": "CCP §§ 116.110–116.950"
+    },
+    {
+      "label": "California Civil Code § 1780 (Remedies for Consumers)",
+      "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1780.",
+      "section_or_chapter": "Civ. Code § 1780"
+    },
+    {
+      "label": "California Civil Code § 1950.5 (Security Deposits - Landlord Tenant)",
+      "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=1950.5&lawCode=CIV",
+      "section_or_chapter": "Civ. Code § 1950.5"
+    },
+    {
+      "label": "California Labor Code § 203 (Waiting Time Penalty)",
+      "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=203&lawCode=LAB",
+      "section_or_chapter": "Lab. Code § 203"
+    }
+  ],
+  "court_rules": [
+    {
+      "label": "California Rules of Court, Title 3, Division 5 (Small Claims Rules)",
+      "url": "https://www.courts.ca.gov/cms/rules/index.cfm?title=three&linkid=rule3_2100",
+      "rule_or_chapter": "CRC Title 3, Division 5, Rules 3.2100-3.2120"
+    }
+  ],
+  "forms_pages": [
+    {
+      "label": "California Small Claims Forms (including Plaintiff's Claim form SC-100)",
+      "url": "https://www.courts.ca.gov/forms.htm?filter=SC"
+    }
+  ],
+  "fee_schedules": [
+    {
+      "label": "California Statewide Civil Fee Schedule",
+      "url": "https://www.courts.ca.gov/documents/StatewideCivilFeeSchedule-2024.pdf"
+    }
+  ],
+  "service_rules": [
+    {
+      "label": "California Code of Civil Procedure § 116.340 (Service of Process for Small Claims Court)",
+      "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=116.340&lawCode=CCP",
+      "section_or_chapter": "CCP § 116.340"
+    }
+  ],
+  "appeal_rules": [
+    {
+      "label": "California Code of Civil Procedure § 116.710 (Appeal from Small Claims Court)",
+      "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=116.710&lawCode=CCP",
+      "section_or_chapter": "CCP § 116.710"
+    }
+  ],
+  "post_judgment_collection": [
+    {
+      "label": "California Code of Civil Procedure § 116.820 (Enforcement of Judgment)",
+      "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=116.820&lawCode=CCP",
+      "section_or_chapter": "CCP § 116.820"
+    },
+    {
+      "label": "California Code of Civil Procedure § 704.070 (Wage Garnishment Exemptions)",
+      "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=704.070&lawCode=CCP",
+      "section_or_chapter": "CCP § 704.070"
+    }
+  ],
+  "consumer_protection_statutes": [
+    {
+      "label": "California Civil Code § 1770 (Unfair Methods of Competition - Consumer Legal Remedies Act)",
+      "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1770.",
+      "section_or_chapter": "Civ. Code § 1770"
+    },
+    {
+      "label": "California Civil Code § 1793.2 (Lemon Law for Motor Vehicles)",
+      "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1793.2.",
+      "section_or_chapter": "Civ. Code § 1793.2"
+    }
+  ],
+  "landlord_tenant_statutes": [
+    {
+      "label": "California Civil Code § 1942 (Repair and Deduct - Landlord Tenant)",
+      "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=1942&lawCode=CIV",
+      "section_or_chapter": "Civ. Code § 1942"
+    },
+    {
+      "label": "California Civil Code § 1962 (Disclosure of Owner/Manager Info)",
+      "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=1962&lawCode=CIV",
+      "section_or_chapter": "Civ. Code § 1962"
+    }
+  ],
+  "wage_and_employment_statutes": [
+    {
+      "label": "California Labor Code § 201 (Final Paycheck Deadline)",
+      "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=201&lawCode=LAB",
+      "section_or_chapter": "Lab. Code § 201"
+    },
+    {
+      "label": "California Labor Code § 203 (Waiting-Time Penalty)",
+      "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=203&lawCode=LAB",
+      "section_or_chapter": "Lab. Code § 203"
+    }
+  ],
+  "civil_remedies_statutes": [
+    {
+      "label": "California Civil Code § 3294 (Exemplary Damages — Civil Fraud/Theft)",
+      "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=3294&lawCode=CIV",
+      "section_or_chapter": "Civ. Code § 3294"
+    },
+    {
+      "label": "California Civil Code § 1021.5 (Attorney Fees — Private Attorney General Doctrine)",
+      "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=1021.5&lawCode=CIV",
+      "section_or_chapter": "Civ. Code § 1021.5"
+    }
+  ],
+  "county_specific": [],
+  "notes": "California Supreme Court and Judicial Council provide centralized small claims resources; procedure is uniform statewide. Statutory links are from the official Legislative Information portal.",
+  "_meta": {
+    "state": "California",
+    "slug": "california",
+    "model": "gpt-4.1",
+    "response_id": "resp_0be82b3074186b280069f0890358b48196884942c4dc111201",
+    "generated_at": "2026-04-28T10:16:51.949Z",
+    "usage": {
+      "input_tokens": 2102,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 1849,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 3951
+    }
+  }
+}

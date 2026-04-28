@@ -1,0 +1,148 @@
+{
+  "state": "District Of Columbia",
+  "as_of": "2024-06-05",
+  "state_judiciary_pages": [
+    {
+      "label": "DC Courts - Small Claims Information",
+      "url": "https://www.dccourts.gov/services/civil-matters/small-claims",
+      "scope": "small_claims"
+    },
+    {
+      "label": "DC Courts - Self-Help Center",
+      "url": "https://www.dccourts.gov/services/self-help",
+      "scope": "self_help"
+    },
+    {
+      "label": "DC Courts - Civil Division",
+      "url": "https://www.dccourts.gov/superior-court/civil-division",
+      "scope": "civil_general"
+    },
+    {
+      "label": "DC Courts - Court Directory",
+      "url": "https://www.dccourts.gov/contact-us",
+      "scope": "court_directory"
+    }
+  ],
+  "statutes": [
+    {
+      "label": "DC Code § 11-1321 (Small Claims and Conciliation Branch—Jurisdiction of actions and proceedings)",
+      "url": "https://code.dccouncil.us/us/dc/council/code/sections/11-1321.html",
+      "section_or_chapter": "§ 11-1321"
+    },
+    {
+      "label": "DC Code § 11-1322 (Commencement of actions, procedure, and costs in the Small Claims Branch)",
+      "url": "https://code.dccouncil.us/us/dc/council/code/sections/11-1322.html",
+      "section_or_chapter": "§ 11-1322"
+    },
+    {
+      "label": "DC Code § 28-3904 (Consumer Protection Procedures Act—Unlawful trade practices)",
+      "url": "https://code.dccouncil.us/us/dc/council/code/sections/28-3904.html",
+      "section_or_chapter": "§ 28-3904"
+    },
+    {
+      "label": "DC Code § 16-1501 (Landlord and Tenant—Summary action for possession)",
+      "url": "https://code.dccouncil.us/us/dc/council/code/sections/16-1501.html",
+      "section_or_chapter": "§ 16-1501"
+    },
+    {
+      "label": "DC Code § 16-542 (Wage attachment—Garnishment of wages)",
+      "url": "https://code.dccouncil.us/us/dc/council/code/sections/16-542.html",
+      "section_or_chapter": "§ 16-542"
+    },
+    {
+      "label": "DC Code § 16-560 (Execution of judgments—Personal property)",
+      "url": "https://code.dccouncil.us/us/dc/council/code/sections/16-560.html",
+      "section_or_chapter": "§ 16-560"
+    },
+    {
+      "label": "DC Code § 28:2-709 (Action for the price—Contracts and Sales)",
+      "url": "https://code.dccouncil.us/us/dc/council/code/sections/28-2-709.html",
+      "section_or_chapter": "§ 28:2-709"
+    }
+  ],
+  "court_rules": [
+    {
+      "label": "Superior Court of the District of Columbia - Rules of the Small Claims and Conciliation Branch",
+      "url": "https://www.dccourts.gov/sites/default/files/2017-03/superior_court_rules_of_the_small_claims_and_conciliation_branch.pdf",
+      "rule_or_chapter": "All rules"
+    }
+  ],
+  "forms_pages": [
+    {
+      "label": "DC Courts - Small Claims Forms",
+      "url": "https://www.dccourts.gov/services/forms?title=Small+Claims"
+    }
+  ],
+  "fee_schedules": [
+    {
+      "label": "DC Superior Court Civil Division Fee Schedule",
+      "url": "https://www.dccourts.gov/sites/default/files/2017-05/Fee-Schedule-Superior-Court.pdf"
+    }
+  ],
+  "service_rules": [
+    {
+      "label": "Service of Process—Superior Court of the District of Columbia Rules of the Small Claims and Conciliation Branch, Rule 4",
+      "url": "https://www.dccourts.gov/sites/default/files/2017-03/superior_court_rules_of_the_small_claims_and_conciliation_branch.pdf"
+    }
+  ],
+  "appeal_rules": [
+    {
+      "label": "Appeals from Small Claims—Superior Court of the District of Columbia Rules of the Small Claims and Conciliation Branch, Rule 7",
+      "url": "https://www.dccourts.gov/sites/default/files/2017-03/superior_court_rules_of_the_small_claims_and_conciliation_branch.pdf"
+    }
+  ],
+  "post_judgment_collection": [
+    {
+      "label": "Execution of Judgments—DC Code § 16-560",
+      "url": "https://code.dccouncil.us/us/dc/council/code/sections/16-560.html"
+    },
+    {
+      "label": "Garnishment of Wages—DC Code § 16-542",
+      "url": "https://code.dccouncil.us/us/dc/council/code/sections/16-542.html"
+    }
+  ],
+  "consumer_protection_statutes": [
+    {
+      "label": "DC Consumer Protection Procedures Act—Unlawful Trade Practices, DC Code § 28-3904",
+      "url": "https://code.dccouncil.us/us/dc/council/code/sections/28-3904.html"
+    }
+  ],
+  "landlord_tenant_statutes": [
+    {
+      "label": "Summary Action for Possession—DC Code § 16-1501",
+      "url": "https://code.dccouncil.us/us/dc/council/code/sections/16-1501.html"
+    }
+  ],
+  "wage_and_employment_statutes": [
+    {
+      "label": "Wage Attachment—DC Code § 16-542",
+      "url": "https://code.dccouncil.us/us/dc/council/code/sections/16-542.html"
+    }
+  ],
+  "civil_remedies_statutes": [
+    {
+      "label": "Action for the Price—DC Code § 28:2-709",
+      "url": "https://code.dccouncil.us/us/dc/council/code/sections/28-2-709.html"
+    }
+  ],
+  "county_specific": [],
+  "notes": "The District of Columbia has a unified Superior Court for all civil and small claims matters; no county-level variation.",
+  "_meta": {
+    "state": "District Of Columbia",
+    "slug": "district-of-columbia",
+    "model": "gpt-4.1",
+    "response_id": "resp_08a11c2a404557330069f08935db5481909258b1a62251c3fb",
+    "generated_at": "2026-04-28T10:17:37.564Z",
+    "usage": {
+      "input_tokens": 2108,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 1490,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 3598
+    }
+  }
+}

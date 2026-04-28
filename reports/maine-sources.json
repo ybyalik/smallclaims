@@ -1,0 +1,144 @@
+{
+  "state": "Maine",
+  "as_of": "2024-06-12",
+  "state_judiciary_pages": [
+    {
+      "label": "Maine Judicial Branch — Small Claims Self-Help",
+      "url": "https://www.courts.maine.gov/help/small-claims/",
+      "scope": "small_claims"
+    },
+    {
+      "label": "Maine Judicial Branch — Court Directory",
+      "url": "https://www.courts.maine.gov/courts/directory/",
+      "scope": "court_directory"
+    },
+    {
+      "label": "Maine Judicial Branch — Guide to Small Claims Proceedings",
+      "url": "https://www.courts.maine.gov/citizen_help/guides/small_claims.html",
+      "scope": "self_help"
+    }
+  ],
+  "statutes": [
+    {
+      "label": "Me. Rev. Stat. tit. 14, § 7481 (Small Claims Procedure — Jurisdiction)",
+      "url": "https://legislature.maine.gov/statutes/14/title14sec7481.html",
+      "section_or_chapter": "Title 14, § 7481"
+    },
+    {
+      "label": "Me. Rev. Stat. tit. 14, § 7482 (Venue of Actions)",
+      "url": "https://legislature.maine.gov/statutes/14/title14sec7482.html",
+      "section_or_chapter": "Title 14, § 7482"
+    },
+    {
+      "label": "Me. Rev. Stat. tit. 14, § 7483 (Procedure — Service, Notice, Hearing, Judgment, Fees, Appeal)",
+      "url": "https://legislature.maine.gov/statutes/14/title14sec7483.html",
+      "section_or_chapter": "Title 14, § 7483"
+    },
+    {
+      "label": "Me. Rev. Stat. tit. 14, § 7484 (Execution and Enforcement of Judgment)",
+      "url": "https://legislature.maine.gov/statutes/14/title14sec7484.html",
+      "section_or_chapter": "Title 14, § 7484"
+    }
+  ],
+  "court_rules": [
+    {
+      "label": "Maine Rules of Small Claims Procedure",
+      "url": "https://www.courts.maine.gov/rules_adminorders/rules/text/small_claims_procedure_only.html",
+      "rule_or_chapter": "Entire Rules"
+    }
+  ],
+  "forms_pages": [
+    {
+      "label": "Maine Judicial Branch — Small Claims Forms",
+      "url": "https://www.courts.maine.gov/forms/small-claims/"
+    }
+  ],
+  "fee_schedules": [
+    {
+      "label": "Maine Judicial Branch — District Court Filing Fee Schedule",
+      "url": "https://www.courts.maine.gov/fees/"
+    }
+  ],
+  "service_rules": [
+    {
+      "label": "Service of Process — Maine Rules of Small Claims Procedure, Rule 3",
+      "url": "https://www.courts.maine.gov/rules_adminorders/rules/text/small_claims_procedure_only.html#r3"
+    }
+  ],
+  "appeal_rules": [
+    {
+      "label": "Appeals in Small Claims Actions — Me. Rev. Stat. tit. 14, § 7483",
+      "url": "https://legislature.maine.gov/statutes/14/title14sec7483.html"
+    }
+  ],
+  "post_judgment_collection": [
+    {
+      "label": "Execution and Enforcement of Judgment — Me. Rev. Stat. tit. 14, § 7484",
+      "url": "https://legislature.maine.gov/statutes/14/title14sec7484.html"
+    },
+    {
+      "label": "Writ of Execution — Maine Rules of Small Claims Procedure, Rule 11",
+      "url": "https://www.courts.maine.gov/rules_adminorders/rules/text/small_claims_procedure_only.html#r11"
+    }
+  ],
+  "consumer_protection_statutes": [
+    {
+      "label": "Maine Unfair Trade Practices Act — Me. Rev. Stat. tit. 5, §§ 205-A to 214",
+      "url": "https://legislature.maine.gov/statutes/5/title5ch10sec205-A.html"
+    },
+    {
+      "label": "Maine Lemon Law — Me. Rev. Stat. tit. 10, §§ 1161-1169",
+      "url": "https://legislature.maine.gov/statutes/10/title10ch203-Asec1161.html"
+    },
+    {
+      "label": "Bad Checks — Me. Rev. Stat. tit. 17-A, § 708",
+      "url": "https://legislature.maine.gov/statutes/17-A/title17-Asec708.html"
+    }
+  ],
+  "landlord_tenant_statutes": [
+    {
+      "label": "Security Deposit Law — Me. Rev. Stat. tit. 14, § 6031 et seq.",
+      "url": "https://legislature.maine.gov/statutes/14/title14ch709sec6031.html"
+    },
+    {
+      "label": "Repair and Deduct — Me. Rev. Stat. tit. 14, § 6026",
+      "url": "https://legislature.maine.gov/statutes/14/title14sec6026.html"
+    },
+    {
+      "label": "Wrongful Eviction — Me. Rev. Stat. tit. 14, § 6014",
+      "url": "https://legislature.maine.gov/statutes/14/title14sec6014.html"
+    }
+  ],
+  "wage_and_employment_statutes": [
+    {
+      "label": "Law re: Payment of Wages upon Termination — Me. Rev. Stat. tit. 26, § 626",
+      "url": "https://legislature.maine.gov/statutes/26/title26sec626.html"
+    }
+  ],
+  "civil_remedies_statutes": [
+    {
+      "label": "Attorney’s Fees — Me. Rev. Stat. tit. 14, § 1502-A",
+      "url": "https://legislature.maine.gov/statutes/14/title14sec1502-A.html"
+    }
+  ],
+  "county_specific": [],
+  "notes": "Maine uses statewide small claims procedure administered by the District Court; procedure is uniform across counties.",
+  "_meta": {
+    "state": "Maine",
+    "slug": "maine",
+    "model": "gpt-4.1",
+    "response_id": "resp_098bef3737da04470069f08a0bbb088195823c471437d2208c",
+    "generated_at": "2026-04-28T10:21:15.367Z",
+    "usage": {
+      "input_tokens": 2104,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 1430,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 3534
+    }
+  }
+}

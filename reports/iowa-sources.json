@@ -1,0 +1,145 @@
+{
+  "state": "Iowa",
+  "as_of": "2024-06-12",
+  "state_judiciary_pages": [
+    {
+      "label": "Iowa Courts - Small Claims",
+      "url": "https://www.iowacourts.gov/for-the-public/representing-yourself/small-claims/",
+      "scope": "small_claims"
+    },
+    {
+      "label": "Iowa Judicial Branch Self-Help Center",
+      "url": "https://www.iowacourts.gov/for-the-public/representing-yourself/",
+      "scope": "self_help"
+    },
+    {
+      "label": "Iowa Courts Directory",
+      "url": "https://www.iowacourts.gov/courtcatalog/",
+      "scope": "court_directory"
+    }
+  ],
+  "statutes": [
+    {
+      "label": "Iowa Code § 631 – Small Claims Jurisdiction",
+      "url": "https://www.legis.iowa.gov/docs/code/631.pdf",
+      "section_or_chapter": "Chapter 631"
+    },
+    {
+      "label": "Iowa Code § 602.8105 – Court Costs and Fees",
+      "url": "https://www.legis.iowa.gov/docs/code/602.8105.pdf",
+      "section_or_chapter": "§ 602.8105"
+    },
+    {
+      "label": "Iowa Code § 631.15 – Service of Original Notice",
+      "url": "https://www.legis.iowa.gov/docs/code/631.15.pdf",
+      "section_or_chapter": "§ 631.15"
+    },
+    {
+      "label": "Iowa Code § 631.13 – Appeals",
+      "url": "https://www.legis.iowa.gov/docs/code/631.13.pdf",
+      "section_or_chapter": "§ 631.13"
+    },
+    {
+      "label": "Iowa Code § 642 – Garnishment",
+      "url": "https://www.legis.iowa.gov/docs/code/642.pdf",
+      "section_or_chapter": "Chapter 642"
+    }
+  ],
+  "court_rules": [
+    {
+      "label": "Iowa Rules of Civil Procedure – Chapter 1, Rules 1.301–1.325 (Small Claims Procedure)",
+      "url": "https://www.legis.iowa.gov/docs/iac/chapter/03-15-2023.16.4.pdf",
+      "rule_or_chapter": "Chapter 4"
+    }
+  ],
+  "forms_pages": [
+    {
+      "label": "Iowa Small Claims Forms",
+      "url": "https://www.iowacourts.gov/for-the-public/court-forms/small-claims/"
+    }
+  ],
+  "fee_schedules": [
+    {
+      "label": "Iowa District Court Filing Fee Schedule",
+      "url": "https://www.iowacourts.gov/for-the-public/court-fees/"
+    }
+  ],
+  "service_rules": [
+    {
+      "label": "Service of process—Small Claims—§ 631.15",
+      "url": "https://www.legis.iowa.gov/docs/code/631.15.pdf"
+    }
+  ],
+  "appeal_rules": [
+    {
+      "label": "Appeal from Small Claims—§ 631.13",
+      "url": "https://www.legis.iowa.gov/docs/code/631.13.pdf"
+    },
+    {
+      "label": "Iowa Rule of Appellate Procedure 6.101",
+      "url": "https://www.iowacourts.gov/static/media/documents/Chapter_6_Appellate_Rules_10_17_2018_D625A1D6EB384.pdf"
+    }
+  ],
+  "post_judgment_collection": [
+    {
+      "label": "Garnishment—Chapter 642",
+      "url": "https://www.legis.iowa.gov/docs/code/642.pdf"
+    },
+    {
+      "label": "Iowa Code § 626.20 – Execution",
+      "url": "https://www.legis.iowa.gov/docs/code/626.20.pdf"
+    }
+  ],
+  "consumer_protection_statutes": [
+    {
+      "label": "Iowa Consumer Fraud Act—§ 714.16",
+      "url": "https://www.legis.iowa.gov/docs/code/714.16.pdf"
+    },
+    {
+      "label": "Iowa Lemon Law—§ 322G",
+      "url": "https://www.legis.iowa.gov/docs/code/322G.pdf"
+    }
+  ],
+  "landlord_tenant_statutes": [
+    {
+      "label": "Iowa Uniform Residential Landlord and Tenant Law—Chapter 562A",
+      "url": "https://www.legis.iowa.gov/docs/code/562A.pdf"
+    },
+    {
+      "label": "Iowa Manufactured Home Communities—Chapter 562B",
+      "url": "https://www.legis.iowa.gov/docs/code/562B.pdf"
+    }
+  ],
+  "wage_and_employment_statutes": [
+    {
+      "label": "Final Paychecks and Wage Payment—§ 91A",
+      "url": "https://www.legis.iowa.gov/docs/code/91A.pdf"
+    }
+  ],
+  "civil_remedies_statutes": [
+    {
+      "label": "Attorney fees in small claims—§ 625.22",
+      "url": "https://www.legis.iowa.gov/docs/code/625.22.pdf"
+    }
+  ],
+  "county_specific": [],
+  "notes": "Iowa's small claims process is unified statewide under district court administration; no county-specific procedures.",
+  "_meta": {
+    "state": "Iowa",
+    "slug": "iowa",
+    "model": "gpt-4.1",
+    "response_id": "resp_0c092f18c5afe57b0069f089bb79748197a3248bdc635ca869",
+    "generated_at": "2026-04-28T10:19:54.752Z",
+    "usage": {
+      "input_tokens": 2104,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 1243,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 3347
+    }
+  }
+}

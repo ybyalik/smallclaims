@@ -1,0 +1,149 @@
+{
+  "state": "North Carolina",
+  "as_of": "2024-06-13",
+  "state_judiciary_pages": [
+    {
+      "label": "North Carolina small claims court overview",
+      "url": "https://www.nccourts.gov/help-topics/small-claims",
+      "scope": "small_claims"
+    },
+    {
+      "label": "North Carolina court locations and directory",
+      "url": "https://www.nccourts.gov/locations",
+      "scope": "court_directory"
+    },
+    {
+      "label": "Small claims self-help (forms, fees, process)",
+      "url": "https://www.nccourts.gov/help-topics/small-claims/small-claims-faq",
+      "scope": "self_help"
+    }
+  ],
+  "statutes": [
+    {
+      "label": "N.C. Gen. Stat. § 7A-210 et seq. (Small Claims Act, jurisdiction, procedure)",
+      "url": "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/ByArticle/Chapter_7A/Article_19.html",
+      "section_or_chapter": "Article 19, Chapter 7A"
+    },
+    {
+      "label": "N.C. Gen. Stat. § 7A-228 (Appeal from small claims court)",
+      "url": "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_7A/GS_7A-228.html",
+      "section_or_chapter": "§ 7A-228"
+    },
+    {
+      "label": "N.C. Gen. Stat. § 1A-1 (Rules of Civil Procedure — service, pleadings, judgments)",
+      "url": "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_1A/GS_1A-1.html",
+      "section_or_chapter": "§ 1A-1"
+    },
+    {
+      "label": "N.C. Gen. Stat. § 1-362 (Wage garnishment for judgments)",
+      "url": "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_1/GS_1-362.html",
+      "section_or_chapter": "§ 1-362"
+    }
+  ],
+  "court_rules": [
+    {
+      "label": "North Carolina General Rules of Practice for the Superior and District Courts",
+      "url": "https://www.nccourts.gov/assets/documents/publications/GeneralRulesOfPracticeForSuperiorAndDistrictCourts.pdf",
+      "rule_or_chapter": "Rules 1-13"
+    },
+    {
+      "label": "North Carolina Rules of Civil Procedure (N.C.G.S. § 1A-1)",
+      "url": "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/ByArticle/Chapter_1A/Article_1.html",
+      "rule_or_chapter": "Article 1"
+    }
+  ],
+  "forms_pages": [
+    {
+      "label": "North Carolina small claims and civil court forms",
+      "url": "https://www.nccourts.gov/documents/forms/small-claims"
+    }
+  ],
+  "fee_schedules": [
+    {
+      "label": "North Carolina civil court costs (schedule including small claims)",
+      "url": "https://www.nccourts.gov/assets/documents/publications/feeschedule.pdf"
+    }
+  ],
+  "service_rules": [
+    {
+      "label": "N.C. Rules of Civil Procedure — Service of process (Rule 4, Rule 6)",
+      "url": "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_1A/GS_1A-1.html"
+    }
+  ],
+  "appeal_rules": [
+    {
+      "label": "N.C. Gen. Stat. § 7A-228 (Appeals from magistrate to district court)",
+      "url": "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_7A/GS_7A-228.html"
+    }
+  ],
+  "post_judgment_collection": [
+    {
+      "label": "N.C. Gen. Stat. § 1-362 (Garnishment of wages to enforce judgments)",
+      "url": "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_1/GS_1-362.html"
+    },
+    {
+      "label": "N.C. Gen. Stat. § 1-308 (Enforcement of money judgments)",
+      "url": "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_1/GS_1-308.html"
+    }
+  ],
+  "consumer_protection_statutes": [
+    {
+      "label": "N.C. Gen. Stat. § 75-1.1 (Unfair and Deceptive Trade Practices Act)",
+      "url": "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_75/GS_75-1.1.html"
+    },
+    {
+      "label": "N.C. Gen. Stat. § 25A-15 (Retail installment sales - motor vehicles, used cars, lemon law)",
+      "url": "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_25A/GS_25A-15.html"
+    },
+    {
+      "label": "N.C. Gen. Stat. § 14-107 (Civil penalty for bad checks)",
+      "url": "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_14/GS_14-107.html"
+    }
+  ],
+  "landlord_tenant_statutes": [
+    {
+      "label": "N.C. Gen. Stat. § 42-51 (Security deposits, damage, and deductions)",
+      "url": "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_42/GS_42-51.html"
+    },
+    {
+      "label": "N.C. Gen. Stat. § 42-25.9 (Illegal lockout, self-help prohibited)",
+      "url": "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_42/GS_42-25.9.html"
+    },
+    {
+      "label": "N.C. Gen. Stat. § 42-42 (Landlord duties for repairs)",
+      "url": "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_42/GS_42-42.html"
+    }
+  ],
+  "wage_and_employment_statutes": [
+    {
+      "label": "N.C. Gen. Stat. § 95-25.7 (Final wages due if fired or quits)",
+      "url": "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_95/GS_95-25.7.html"
+    }
+  ],
+  "civil_remedies_statutes": [
+    {
+      "label": "N.C. Gen. Stat. § 6-21.1 (Attorney fees in certain civil actions including UDTPA)",
+      "url": "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_6/GS_6-21.1.html"
+    }
+  ],
+  "county_specific": [],
+  "notes": "North Carolina small claims courts are administered as part of the District Court Division; rules are uniform statewide and administered under the state judiciary.",
+  "_meta": {
+    "state": "North Carolina",
+    "slug": "north-carolina",
+    "model": "gpt-4.1",
+    "response_id": "resp_0e10f9c8aa86b9520069f08ad6bdc08197abbaa71d550af55e",
+    "generated_at": "2026-04-28T10:24:36.712Z",
+    "usage": {
+      "input_tokens": 2105,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 1703,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 3808
+    }
+  }
+}

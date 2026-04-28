@@ -1,0 +1,1553 @@
+{
+  "state": "Kentucky",
+  "slug": "kentucky",
+  "abbr": "KY",
+  "as_of": "2026-04-28",
+  "hero": {
+    "individual_limit_dollars": 2500,
+    "business_limit_dollars": 2500,
+    "filing_fee_low_dollars": 82,
+    "filing_fee_high_dollars": 210,
+    "typical_timeline_min_days": 20,
+    "typical_timeline_max_days": 40,
+    "tagline": "Kentucky's small claims court offers a streamlined process for disputes up to $2,500, with hearings typically scheduled within 20 to 40 days after service.",
+    "source_ids": [
+      "S1",
+      "S15"
+    ]
+  },
+  "at_a_glance": [
+    {
+      "label": "Most you can sue for",
+      "value": "$2,500",
+      "detail": "Same cap for individuals and businesses",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    {
+      "label": "Filing fee",
+      "value": "$82-$210",
+      "detail": "Varies by claim amount and county",
+      "source_ids": [
+        "S15"
+      ]
+    },
+    {
+      "label": "Court",
+      "value": "District Court (Small Claims Division)",
+      "detail": "",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    {
+      "label": "Lawyers at trial",
+      "value": "Allowed",
+      "detail": "Permitted but not required",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Appeal window",
+      "value": "10 days",
+      "detail": "Appeal to Circuit Court",
+      "source_ids": [
+        "S9"
+      ]
+    },
+    {
+      "label": "Recent change",
+      "value": "—",
+      "detail": "No major changes in the last 3 years",
+      "source_ids": []
+    }
+  ],
+  "limits": {
+    "individual_dollars": 2500,
+    "business_dollars": 2500,
+    "guarantor_with_fee_max": null,
+    "guarantor_without_fee_max": null,
+    "annual_filing_cap": {
+      "count": 25,
+      "threshold_dollars": null,
+      "notes": "Plaintiffs are limited to filing no more than 25 small claims in a calendar year."
+    },
+    "split_claims_allowed": false,
+    "split_claims_explanation": "If a claim exceeds $2,500, you must either waive the excess and file in small claims court or file the entire claim in a higher court. Splitting one dispute into multiple claims to stay within the limit is not allowed.",
+    "interest_excluded_from_cap": true,
+    "court_costs_excluded_from_cap": true,
+    "statute": "Ky. Rev. Stat. § 24A.230",
+    "source_ids": [
+      "S5"
+    ]
+  },
+  "claim_categories": [
+    {
+      "id": "contracts",
+      "title": "Contracts and money owed",
+      "blurb": "Kentucky allows you to file claims for breaches of contract and money owed up to $2,500. The statute of limitations varies depending on the type of contract.",
+      "claims": [
+        {
+          "slug": "written-contract",
+          "name": "Breach of a written contract",
+          "example": "A contractor signed a $2,000 contract to remodel your kitchen, took the deposit, and never completed the work.",
+          "eligibility": "eligible",
+          "claim_statute": "Ky. Rev. Stat. § 413.090",
+          "notes": "The statute of limitations for written contracts is 15 years. Bring the signed contract, payment proof, and any correspondence showing the breach.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "oral-contract",
+          "name": "Breach of an oral contract",
+          "example": "You agreed verbally to lend someone $1,500, and they failed to repay you as promised.",
+          "eligibility": "eligible",
+          "claim_statute": "Ky. Rev. Stat. § 413.120",
+          "notes": "The statute of limitations for oral contracts is 5 years. Gather any evidence of the agreement, such as emails or witness statements.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "personal-loan",
+          "name": "Unpaid personal loan",
+          "example": "You loaned a friend $2,000 with the understanding they would repay in six months, but they haven't made any payments.",
+          "eligibility": "eligible",
+          "claim_statute": "Ky. Rev. Stat. § 413.120",
+          "notes": "The statute of limitations for oral contracts is 5 years. Provide any documentation of the loan agreement and attempts to collect payment.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "promissory-note",
+          "name": "Default on a promissory note",
+          "example": "A borrower signed a promissory note to repay $2,500 but has missed several payments.",
+          "eligibility": "eligible",
+          "claim_statute": "Ky. Rev. Stat. § 413.090",
+          "notes": "The statute of limitations for written contracts is 15 years. Bring the original promissory note and records of missed payments.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "unpaid-invoice",
+          "name": "Unpaid invoice for services rendered",
+          "example": "You provided $2,000 worth of consulting services, but the client has not paid the invoice.",
+          "eligibility": "eligible",
+          "claim_statute": "Ky. Rev. Stat. § 413.120",
+          "notes": "The statute of limitations for oral contracts is 5 years. Present the invoice, proof of service delivery, and any communication regarding payment.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "open-account",
+          "name": "Unpaid balance on an open account",
+          "example": "A customer has an outstanding balance of $2,500 on their account with your business.",
+          "eligibility": "eligible",
+          "claim_statute": "Ky. Rev. Stat. § 413.120",
+          "notes": "The statute of limitations for open accounts is 5 years. Provide account statements and records of transactions.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "unpaid-rent",
+          "name": "Unpaid rent by tenant",
+          "example": "Your tenant owes $2,000 in unpaid rent and has vacated the property.",
+          "eligibility": "eligible",
+          "claim_statute": "Ky. Rev. Stat. § 383.695",
+          "notes": "The statute of limitations for rent collection is 5 years. Bring the lease agreement and records of unpaid rent.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "bad-check",
+          "name": "Payment with a bad check",
+          "example": "A customer paid for goods with a $1,500 check that was returned for insufficient funds.",
+          "eligibility": "eligible",
+          "claim_statute": "Ky. Rev. Stat. § 514.040",
+          "notes": "The statute of limitations for bad checks is 1 year. Provide the returned check and any bank notices.",
+          "damage_boost": "Check amount + service charge up to $40 + civil penalty up to $100 OR 2x check amount, whichever is greater.",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "co-signer",
+          "name": "Co-signer seeking repayment",
+          "example": "You co-signed a $2,500 loan, and the primary borrower defaulted, leaving you responsible.",
+          "eligibility": "eligible",
+          "claim_statute": "Ky. Rev. Stat. § 413.090",
+          "notes": "The statute of limitations for written contracts is 15 years. Bring the loan agreement and records of payments made.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "consumer-disputes",
+      "title": "Consumer disputes",
+      "blurb": "Kentucky's small claims court handles various consumer disputes up to $2,500, including issues with products and services.",
+      "claims": [
+        {
+          "slug": "defective-product",
+          "name": "Purchase of a defective product",
+          "example": "You bought a $2,000 appliance that stopped working shortly after purchase, and the seller refuses to repair or replace it.",
+          "eligibility": "eligible",
+          "claim_statute": "Ky. Rev. Stat. § 367.170",
+          "notes": "The statute of limitations for consumer protection claims is 2 years. Bring the purchase receipt, warranty, and any communication with the seller.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "bad-service",
+          "name": "Substandard service",
+          "example": "You paid $1,500 for home cleaning services, but the work was incomplete and unsatisfactory.",
+          "eligibility": "eligible",
+          "claim_statute": "Ky. Rev. Stat. § 367.170",
+          "notes": "The statute of limitations for consumer protection claims is 2 years. Provide the service agreement, payment proof, and photos of the work.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "auto-repair",
+          "name": "Faulty auto repair",
+          "example": "A mechanic charged you $2,000 for repairs that did not fix the issue, and the vehicle remains inoperable.",
+          "eligibility": "eligible",
+          "claim_statute": "Ky. Rev. Stat. § 367.170",
+          "notes": "The statute of limitations for consumer protection claims is 2 years. Bring repair invoices, payment records, and any expert opinions.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "contractor",
+          "name": "Unsatisfactory contractor work",
+          "example": "You hired a contractor for $2,500 to renovate your bathroom, but the work was poorly done and incomplete.",
+          "eligibility": "eligible",
+          "claim_statute": "Ky. Rev. Stat. § 367.170",
+          "notes": "The statute of limitations for consumer protection claims is 2 years. Provide the contract, payment proof, and photos of the work.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "no-show-vendor",
+          "name": "Vendor failed to deliver services",
+          "example": "You paid $2,000 for catering services, but the vendor did not show up on the event day.",
+          "eligibility": "eligible",
+          "claim_statute": "Ky. Rev. Stat. § 367.170",
+          "notes": "The statute of limitations for consumer protection claims is 2 years. Bring the service agreement, payment records, and any communication.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "subscription-cancellation",
+          "name": "Unauthorized subscription charges",
+          "example": "You canceled a $50/month subscription, but the company continued to charge your account for several months.",
+          "eligibility": "eligible",
+          "claim_statute": "Ky. Rev. Stat. § 367.170",
+          "notes": "The statute of limitations for consumer protection claims is 2 years. Provide cancellation confirmation and bank statements showing charges.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "used-car",
+          "name": "Purchase of a defective used car",
+          "example": "You bought a used car for $2,500 that broke down shortly after purchase, and the seller refuses to address the issues.",
+          "eligibility": "eligible",
+          "claim_statute": "Ky. Rev. Stat. § 367.170",
+          "notes": "The statute of limitations for consumer protection claims is 2 years. Bring the bill of sale, any warranties, and repair estimates.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "false-advertising",
+          "name": "False advertising leading to financial loss",
+          "example": "A company advertised a product for $2,000 with features it doesn't have, leading you to make the purchase under false pretenses.",
+          "eligibility": "eligible",
+          "claim_statute": "Ky. Rev. Stat. § 367.170",
+          "notes": "The statute of limitations for consumer protection claims is 2 years. Provide the advertisement, purchase receipt, and any correspondence.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "property-damage",
+      "title": "Property damage",
+      "blurb": "Kentucky's small claims court addresses property damage claims up to $2,500, including vehicle collisions and damage to personal property.",
+      "claims": [
+        {
+          "slug": "vehicle-collision",
+          "name": "Damage from a vehicle collision",
+          "example": "Another driver caused $2,000 in damage to your car and refuses to pay for repairs.",
+          "eligibility": "eligible",
+          "claim_statute": "Ky. Rev. Stat. § 413.125",
+          "notes": "The statute of limitations for property damage is 2 years. Bring the police report, repair estimates, and photos of the damage.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "neighbor-property",
+          "name": "Neighbor caused damage to your property",
+          "example": "Your neighbor's tree fell and caused $2,500 in damage to your fence.",
+          "eligibility": "eligible",
+          "claim_statute": "Ky. Rev. Stat. § 413.125",
+          "notes": "The statute of limitations for property damage is 2 years. Provide photos of the damage and any communication with the neighbor.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "damage-to-rental",
+          "name": "Tenant caused damage to rental property",
+          "example": "A former tenant left $2,000 worth of damage to your rental unit beyond normal wear and tear.",
+          "eligibility": "eligible",
+          "claim_statute": "Ky. Rev. Stat. § 383.695",
+          "notes": "The statute of limitations for rent collection is 5 years. Bring the lease agreement, photos of the damage, and repair estimates.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "pet-damage",
+          "name": "Damage caused by someone's pet",
+          "example": "A neighbor's dog entered your yard and caused $1,500 in damage to your garden.",
+          "eligibility": "eligible",
+          "claim_statute": "Ky. Rev. Stat. § 413.125",
+          "notes": "The statute of limitations for property damage is 2 years. Provide photos of the damage and any witness statements.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "property-in-custody",
+          "name": "Damage to property left in someone's care",
+          "example": "You left your laptop with a repair shop, and they returned it with $2,000 in additional damage.",
+          "eligibility": "eligible",
+          "claim_statute": "Ky. Rev. Stat. § 413.125",
+          "notes": "The statute of limitations for property damage is 2 years. Bring the service agreement, photos of the damage, and repair estimates.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "landlord-tenant",
+      "title": "Landlord-tenant disputes",
+      "blurb": "Kentucky's small claims court handles monetary disputes between landlords and tenants up to $2,500, excluding eviction proceedings.",
+      "claims": [
+        {
+          "slug": "security-deposit",
+          "name": "Failure to return security deposit",
+          "example": "Your landlord withheld your $1,500 security deposit without justification after you moved out.",
+          "eligibility": "eligible",
+          "claim_statute": "Ky. Rev. Stat. § 383.580",
+          "notes": "The statute of limitations for security deposit claims is 5 years. Bring the lease agreement, move-out inspection report, and any correspondence.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "deposit-not-itemized",
+          "name": "Landlord failed to provide itemized deductions",
+          "example": "Your landlord deducted $1,000 from your security deposit without providing an itemized list of damages.",
+          "eligibility": "eligible",
+          "claim_statute": "Ky. Rev. Stat. § 383.580",
+          "notes": "The statute of limitations for security deposit claims is 5 years. Provide the lease agreement and any communication regarding the deductions.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "uninhabitable-rental",
+          "name": "Landlord failed to maintain habitable conditions",
+          "example": "Your rental unit had no heating during winter, and the landlord refused to make repairs.",
+          "eligibility": "eligible",
+          "claim_statute": "Ky. Rev. Stat. § 383.595",
+          "notes": "The statute of limitations for habitability claims is 5 years. Bring photos of the conditions, repair requests, and any correspondence.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "wrongful-retention-property",
+          "name": "Landlord wrongfully retained tenant's property",
+          "example": "After eviction, your landlord kept your personal belongings worth $2,000.",
+          "eligibility": "eligible",
+          "claim_statute": "Ky. Rev. Stat. § 383.655",
+          "notes": "The statute of limitations for wrongful retention claims is 5 years. Provide an inventory of the items and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "illegal-eviction",
+          "name": "Landlord conducted an illegal eviction",
+          "example": "Your landlord changed the locks without notice, preventing you from accessing your rental unit.",
+          "eligibility": "eligible",
+          "claim_statute": "Ky. Rev. Stat. § 383.655",
+          "notes": "The statute of limitations for illegal eviction claims is 5 years. Bring the lease agreement and any evidence of the lockout.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "unreturned-prepaid-rent",
+          "name": "Landlord failed to return prepaid rent",
+          "example": "You paid the last month's rent in advance, but moved out early, and the landlord refused to refund the unused portion.",
+          "eligibility": "eligible",
+          "claim_statute": "Ky. Rev. Stat. § 383.580",
+          "notes": "The statute of limitations for rent refund claims is 5 years. Provide the lease agreement and proof of prepaid rent.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "unpaid-rent-by-tenant",
+          "name": "Tenant failed to pay rent",
+          "example": "Your tenant owes $2,500 in unpaid rent and has vacated the property.",
+          "eligibility": "eligible",
+          "claim_statute": "Ky. Rev. Stat. § 383.695",
+          "notes": "The statute of limitations for rent collection is 5 years. Bring the lease agreement and records of unpaid rent.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "repair-and-deduct",
+          "name": "Tenant deducted repair costs from rent",
+          "example": "You paid $1,500 for urgent plumbing repairs and deducted it from your rent, but the landlord disputes this.",
+          "eligibility": "eligible",
+          "claim_statute": "Ky. Rev. Stat. § 383.635",
+          "notes": "The statute of limitations for repair and deduct claims is 5 years. Provide repair receipts and communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "employment-and-wages",
+      "title": "Employment and wages",
+      "blurb": "Kentucky's small claims court addresses wage disputes up to $2,500, including unpaid wages and final paychecks.",
+      "claims": [
+        {
+          "slug": "unpaid-wages",
+          "name": "Employer failed to pay earned wages",
+          "example": "Your employer owes you $2,000 for hours worked but has not issued payment.",
+          "eligibility": "eligible",
+          "claim_statute": "Ky. Rev. Stat. § 337.385",
+          "notes": "The statute of limitations for wage claims is 5 years. Bring pay stubs, timesheets, and any communication with the employer.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "final-paycheck",
+          "name": "Employer failed to provide final paycheck",
+          "example": "After leaving your job, your employer withheld your final paycheck of $1,500.",
+          "eligibility": "eligible",
+          "claim_statute": "Ky. Rev. Stat. § 337.055",
+          "notes": "The statute of limitations for wage claims is 5 years. Provide resignation notice, final timesheet, and any communication with the employer.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "unpaid-commissions",
+          "name": "Employer failed to pay earned commissions",
+          "example": "You earned $2,500 in sales commissions, but your employer refuses to pay.",
+          "eligibility": "eligible",
+          "claim_statute": "Ky. Rev. Stat. § 337.385",
+          "notes": "The statute of limitations for wage claims is 5 years. Bring the commission agreement, sales records, and any communication with the employer.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "unpaid-overtime",
+          "name": "Employer failed to pay overtime wages",
+          "example": "You worked 20 hours of overtime, totaling $1,000, but your employer did not compensate you accordingly.",
+          "eligibility": "eligible",
+          "claim_statute": "Ky. Rev. Stat. § 337.385",
+          "notes": "The statute of limitations for wage claims is 5 years. Provide timesheets, pay stubs, and any communication with the employer.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "personal-claims",
+      "title": "Personal claims",
+      "blurb": "Kentucky's small claims court handles personal claims up to $2,500, including minor injuries and property disputes.",
+      "claims": [
+        {
+          "slug": "minor-injury",
+          "name": "Minor personal injury",
+          "example": "You slipped and fell in a store, resulting in $2,000 in medical expenses.",
+          "eligibility": "eligible",
+          "claim_statute": "Ky. Rev. Stat. § 413.140",
+          "notes": "The statute of limitations for personal injury is 1 year. Bring medical bills, incident reports, and any witness statements.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "loaned-property",
+          "name": "Failure to return loaned property",
+          "example": "You loaned a friend your $2,500 camera, and they refuse to return it.",
+          "eligibility": "eligible",
+          "claim_statute": "Ky. Rev. Stat. § 413.125",
+          "notes": "The statute of limitations for property claims is 2 years. Provide proof of ownership and any communication regarding the loan.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "civil-theft",
+          "name": "Theft of personal property",
+          "example": "Someone stole your bicycle worth $2,000, and you have evidence of their involvement.",
+          "eligibility": "eligible",
+          "claim_statute": "Ky. Rev. Stat. § 413.125",
+          "notes": "The statute of limitations for property claims is 2 years. Bring police reports, proof of ownership, and any evidence of the theft.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vehicle-specific",
+      "title": "Vehicle-specific claims",
+      "blurb": "Kentucky's small claims court addresses vehicle-related disputes up to $2,500, including mechanic disputes and wrongful towing.",
+      "claims": [
+        {
+          "slug": "mechanic-dispute",
+          "name": "Dispute over vehicle repairs",
+          "example": "A mechanic charged you $2,500 for repairs that did not fix the issue, and the vehicle remains inoperable.",
+          "eligibility": "eligible",
+          "claim_statute": "Ky. Rev. Stat. § 367.170",
+          "notes": "The statute of limitations for consumer protection claims is 2 years. Bring repair invoices, payment records, and any expert opinions.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "wrongful-tow",
+          "name": "Vehicle was wrongfully towed",
+          "example": "Your car was towed from a legal parking spot, resulting in $1,500 in fees and damages.",
+          "eligibility": "eligible",
+          "claim_statute": "Ky. Rev. Stat. § 413.125",
+          "notes": "The statute of limitations for property damage is 2 years. Provide towing receipts, photos of the parking spot, and any communication with the towing company.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        }
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "category": "Eviction (unlawful detainer)",
+      "explanation": "Small claims court does not handle eviction proceedings; these are filed in the District Court's regular civil division.",
+      "where_to_go_instead": "District Court Civil Division",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    {
+      "category": "Title to real estate",
+      "explanation": "Disputes involving the title to real estate are beyond the jurisdiction of small claims court.",
+      "where_to_go_instead": "Circuit Court",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    {
+      "category": "Defamation (libel and slander)",
+      "explanation": "Small claims court does not handle defamation cases, including libel and slander.",
+      "where_to_go_instead": "Circuit Court",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    {
+      "category": "Malpractice",
+      "explanation": "Professional malpractice claims exceed the jurisdictional limits and complexity suitable for small claims court.",
+      "where_to_go_instead": "Circuit Court",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    {
+      "category": "Family law matters",
+      "explanation": "Issues such as divorce, child custody, and support are not handled in small claims court.",
+      "where_to_go_instead": "Family Court",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    {
+      "category": "Probate matters",
+      "explanation": "Disputes involving wills, estates, and trusts are outside the jurisdiction of small claims court.",
+      "where_to_go_instead": "Probate Court",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    {
+      "category": "Claims against the federal government",
+      "explanation": "Small claims court does not have jurisdiction over claims against federal agencies.",
+      "where_to_go_instead": "Federal Court",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    {
+      "category": "Class actions",
+      "explanation": "Class action lawsuits are beyond the scope of small claims court procedures.",
+      "where_to_go_instead": "Circuit Court",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    {
+      "category": "Injunctions and specific performance",
+      "explanation": "Small claims court cannot issue orders requiring a party to do or refrain from doing something.",
+      "where_to_go_instead": "Circuit Court",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    {
+      "category": "Workers' compensation claims",
+      "explanation": "These claims are handled by the Kentucky Department of Workers' Claims, not small claims court.",
+      "where_to_go_instead": "Kentucky Department of Workers' Claims",
+      "source_ids": [
+        "S5"
+      ]
+    }
+  ],
+  "damages": {
+    "compensatory_allowed": true,
+    "punitive_allowed": false,
+    "punitive_explanation": "Punitive damages are not awarded in small claims court; the focus is on compensatory damages to cover actual losses.",
+    "statutory_multipliers": [
+      {
+        "claim": "Bad check (after 30-day notice)",
+        "multiplier": "2x check amount",
+        "explanation": "Check amount + service charge up to $40 + civil penalty up to $100 OR 2x check amount, whichever is greater.",
+        "statute": "Ky. Rev. Stat. § 514.040",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "attorney_fees_recoverable": "sometimes",
+    "attorney_fees_explanation": "Attorney fees may be recoverable in certain cases, such as those involving bad checks or consumer protection violations.",
+    "prejudgment_interest_rate_pct": null,
+    "prejudgment_interest_statute": "",
+    "postjudgment_interest_rate_pct": null,
+    "postjudgment_interest_type": "simple",
+    "postjudgment_interest_statute": "",
+    "postjudgment_interest_notes": "",
+    "filing_and_service_fees_recoverable_from_loser": true,
+    "source_ids": [
+      "S5"
+    ]
+  },
+  "where_to_file": {
+    "court_name": "Small Claims Division of the District Court",
+    "parent_court": "Kentucky Court of Justice — District Court",
+    "venue_rules": [
+      {
+        "scenario": "Most cases (the default)",
+        "filing_options": [
+          "County where the defendant lives or does business"
+        ],
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "scenario": "Where contract was performed",
+        "filing_options": [
+          "County where performance was due"
+        ],
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "scenario": "Where injury or damage occurred",
+        "filing_options": [
+          "County where the event occurred"
+        ],
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "scenario": "Multiple defendants",
+        "filing_options": [
+          "Any county where one defendant resides"
+        ],
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "scenario": "Out-of-state defendant",
+        "filing_options": [
+          "Where the cause of action arose"
+        ],
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "consequences_of_wrong_venue": "Filing in the wrong venue may result in dismissal or transfer of the case, potentially causing delays and additional costs.",
+    "e_filing_available": "varies",
+    "e_filing_notes": "E-filing availability varies by county; check with the local court clerk for specific information.",
+    "e_filing_portal": null,
+    "source_ids": [
+      "S5"
+    ]
+  },
+  "fees": {
+    "filing_fee_tiers": [
+      {
+        "range_label": "$0 to $1,500",
+        "range_min": 0,
+        "range_max": 1500,
+        "fee_dollars": 82,
+        "source_ids": [
+          "S15"
+        ]
+      },
+      {
+        "range_label": "$1,501 to $2,500",
+        "range_min": 1501,
+        "range_max": 2500,
+        "fee_dollars": 102,
+        "source_ids": [
+          "S15"
+        ]
+      }
+    ],
+    "frequent_filer": {
+      "threshold_per_year": 25,
+      "fee_dollars": null,
+      "notes": "Plaintiffs are limited to filing no more than 25 small claims in a calendar year."
+    },
+    "service_fees": [
+      {
+        "method": "Certified mail",
+        "amount_label": "$10",
+        "notes": "Service by certified mail with return receipt requested.",
+        "source_ids": [
+          "S15"
+        ]
+      },
+      {
+        "method": "Sheriff (personal service)",
+        "amount_label": "$50",
+        "notes": "Personal service by sheriff or constable.",
+        "source_ids": [
+          "S15"
+        ]
+      }
+    ],
+    "waiver": {
+      "forms": [
+        {
+          "number": "AOC-IFP-1",
+          "name": "Motion to Proceed In Forma Pauperis",
+          "url": "https://courts.ky.gov/resources/legalforms/LegalForms/AOC-IFP-1.pdf",
+          "source_ids": [
+            "S14"
+          ]
+        }
+      ],
+      "eligibility_bullets": [
+        "Receiving need-based public assistance (SNAP, TANF, SSI)",
+        "Household income below 125% federal poverty line"
+      ],
+      "coverage_notes": "The waiver covers filing fees and service fees.",
+      "if_you_win_notes": "If you win, the waived fees are added to the judgment against the loser."
+    },
+    "other_fees": [
+      {
+        "name": "Subpoena issuance",
+        "amount_label": "$10",
+        "notes": "Plus witness fee per day.",
+        "source_ids": [
+          "S15"
+        ]
+      },
+      {
+        "name": "Appeal filing",
+        "amount_label": "$200",
+        "notes": "",
+        "source_ids": [
+          "S15"
+        ]
+      },
+      {
+        "name": "Writ of execution",
+        "amount_label": "varies",
+        "notes": "Post-judgment.",
+        "source_ids": [
+          "S15"
+        ]
+      }
+    ],
+    "fees_recoverable_from_loser_notes": "If you win, filing fee and reasonable service costs are added to the judgment.",
+    "source_ids": [
+      "S15"
+    ]
+  },
+  "statute_of_limitations": {
+    "entries": [
+      {
+        "id": "written-contract",
+        "claim": "Written contract",
+        "years": 15,
+        "clock_starts": "Date of breach",
+        "statute": "Ky. Rev. Stat. § 413.090",
+        "notes": "",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "oral-contract",
+        "claim": "Oral contract",
+        "years": 5,
+        "clock_starts": "Date of breach",
+        "statute": "Ky. Rev. Stat. § 413.120",
+        "notes": "",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "sale-of-goods",
+        "claim": "Sale of goods (UCC)",
+        "years": 4,
+        "clock_starts": "Date of breach",
+        "statute": "Ky. Rev. Stat. § 355.2-725",
+        "notes": "",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "promissory-note",
+        "claim": "Promissory note",
+        "years": 15,
+        "clock_starts": "Date of default",
+        "statute": "Ky. Rev. Stat. § 413.090",
+        "notes": "",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "open-account",
+        "claim": "Open account / credit card debt",
+        "years": 5,
+        "clock_starts": "Date of last payment or charge",
+        "statute": "Ky. Rev. Stat. § 413.120",
+        "notes": "",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "personal-injury",
+        "claim": "Personal injury",
+        "years": 1,
+        "clock_starts": "Date of injury",
+        "statute": "Ky. Rev. Stat. § 413.140",
+        "notes": "",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "property-damage",
+        "claim": "Property damage",
+        "years": 2,
+        "clock_starts": "Date of damage",
+        "statute": "Ky. Rev. Stat. § 413.125",
+        "notes": "",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "fraud",
+        "claim": "Fraud",
+        "years": 5,
+        "clock_starts": "Date of discovery",
+        "statute": "Ky. Rev. Stat. § 413.120",
+        "notes": "Discovery rule applies; clock starts when fraud is discovered or should have been discovered.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "bad-check",
+        "claim": "Bad check",
+        "years": 1,
+        "clock_starts": "Date check was dishonored",
+        "statute": "Ky. Rev. Stat. § 514.040",
+        "notes": "",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "unpaid-wages",
+        "claim": "Unpaid wages",
+        "years": 5,
+        "clock_starts": "Date wages were due",
+        "statute": "Ky. Rev. Stat. § 337.385",
+        "notes": "",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "security-deposit",
+        "claim": "Security deposit",
+        "years": 5,
+        "clock_starts": "Date deposit was due to be returned",
+        "statute": "Ky. Rev. Stat. § 383.580",
+        "notes": "",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "judgment-enforcement",
+        "claim": "Judgment enforcement",
+        "years": 15,
+        "clock_starts": "Date judgment was entered",
+        "statute": "Ky. Rev. Stat. § 413.090",
+        "notes": "",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "discovery_rule_notes": "The discovery rule applies to fraud claims; the statute of limitations begins when the fraud is discovered or should have been discovered.",
+    "tolling_notes": "The statute of limitations may be tolled if the defendant is out of state, the plaintiff is a minor, or in cases of bankruptcy stay.",
+    "source_ids": [
+      "S5"
+    ]
+  },
+  "pre_filing": {
+    "demand_letter_required": false,
+    "demand_letter_recommended": true,
+    "demand_letter_notes": "While not required, sending a demand letter can often resolve disputes without court intervention and serves as evidence of your attempt to settle.",
+    "bad_check_notice_rule": "For bad check claims, a 30-day written notice demanding payment is required before filing suit.",
+    "wage_claim_demand_rule": "No specific pre-filing demand required for wage claims, but it's advisable to formally request payment before filing.",
+    "government_claim_required": false,
+    "government_claim_deadline_days": null,
+    "government_claim_notes": "",
+    "landlord_tenant_pre_filing_notes": "Landlords must provide an itemized list of damages and return any remaining security deposit within 30 days after tenancy ends.",
+    "consumer_protection_notes": "No specific pre-filing requirements for consumer protection claims, but documenting all communications is beneficial.",
+    "mandatory_mediation_before_filing": "none",
+    "arbitration_clauses_enforced": true,
+    "source_ids": [
+      "S5"
+    ]
+  },
+  "forms": [
+    {
+      "number": "AOC-175",
+      "name": "Complaint",
+      "description": "Initiates a small claims case by outlining the plaintiff's allegations and desired relief.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "https://courts.ky.gov/resources/legalforms/LegalForms/AOC-175.pdf",
+      "source_ids": [
+        "S14"
+      ]
+    },
+    {
+      "number": "AOC-180",
+      "name": "Summons",
+      "description": "Notifies the defendant of the lawsuit and provides information about the court date.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "service",
+      "url": "https://courts.ky.gov/resources/legalforms/LegalForms/AOC-180.pdf",
+      "source_ids": [
+        "S14"
+      ]
+    },
+    {
+      "number": "AOC-185",
+      "name": "Counterclaim",
+      "description": "Allows the defendant to file a claim against the plaintiff within the same case.",
+      "filed_by": "defendant",
+      "required": false,
+      "group": "counterclaim",
+      "url": "https://courts.ky.gov/resources/legalforms/LegalForms/AOC-185.pdf",
+      "source_ids": [
+        "S14"
+      ]
+    },
+    {
+      "number": "AOC-IFP-1",
+      "name": "Motion to Proceed In Forma Pauperis",
+      "description": "Requests a waiver of court fees due to financial hardship.",
+      "filed_by": "plaintiff",
+      "required": false,
+      "group": "fee-waiver",
+      "url": "https://courts.ky.gov/resources/legalforms/LegalForms/AOC-IFP-1.pdf",
+      "source_ids": [
+        "S14"
+      ]
+    },
+    {
+      "number": "AOC-230",
+      "name": "Notice of Appeal",
+      "description": "Initiates an appeal of the small claims court's decision to the Circuit Court.",
+      "filed_by": "either",
+      "required": false,
+      "group": "appeal",
+      "url": "https://courts.ky.gov/resources/legalforms/LegalForms/AOC-230.pdf",
+      "source_ids": [
+        "S14"
+      ]
+    }
+  ],
+  "service": {
+    "who_can_serve": [
+      "Sheriff",
+      "Certified mail by clerk",
+      "Private process server"
+    ],
+    "methods": [
+      {
+        "name": "Certified mail",
+        "description": "The court clerk sends the summons and complaint to the defendant via certified mail with return receipt requested.",
+        "pros": [
+          "Cost-effective",
+          "Provides proof of service"
+        ],
+        "cons": [
+          "Defendant may refuse delivery",
+          "Not suitable if address is unknown"
+        ],
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "name": "Sheriff personal service",
+        "description": "A sheriff or constable personally delivers the summons and complaint to the defendant.",
+        "pros": [
+          "Reliable",
+          "Official service"
+        ],
+        "cons": [
+          "Higher cost",
+          "May take longer"
+        ],
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "name": "Private process server",
+        "description": "A private individual authorized to serve legal documents delivers the summons and complaint to the defendant.",
+        "pros": [
+          "Flexible scheduling",
+          "Can be faster"
+        ],
+        "cons": [
+          "Additional cost",
+          "Must ensure proper authorization"
+        ],
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "in_county_days_before_hearing": 7,
+    "out_of_county_days_before_hearing": 10,
+    "proof_of_service_form": {
+      "number": "AOC-181",
+      "name": "Return of Service"
+    },
+    "proof_filing_deadline_days_before_hearing": 3,
+    "business_service_rule": "Serve the registered agent or an officer of the corporation; for sole proprietors, serve the individual owner.",
+    "out_of_state_defendant_notes": "Service must comply with Kentucky's long-arm statute and the laws of the state where the defendant resides.",
+    "cant_find_defendant_notes": "If the defendant cannot be located, service by publication may be permitted with court approval.",
+    "avoiding_service_notes": "If the defendant is evading service, you may request alternative service methods from the court.",
+    "source_ids": [
+      "S5"
+    ]
+  },
+  "response_and_default": {
+    "must_file_written_answer": false,
+    "response_deadline_days": 20,
+    "response_notes": "The defendant is not required to file a written answer but must appear at the hearing; failure to appear may result in a default judgment.",
+    "default_process": "If the defendant does not appear at the hearing, the court may grant a default judgment in favor of the plaintiff.",
+    "prove_up_required": true,
+    "prove_up_notes": "Even if the defendant defaults, the plaintiff must provide evidence to support the claim before a judgment is entered.",
+    "motion_to_vacate_form": {
+      "number": "AOC-230",
+      "name": "Motion to Set Aside Default Judgment"
+    },
+    "motion_to_vacate_deadline_days": 10,
+    "motion_to_vacate_lack_of_notice_days": 30,
+    "motion_to_vacate_appeal_deadline_days": 10,
+    "motion_to_vacate_appeal_notes": "A motion to vacate must be filed within 10 days of the judgment; if denied, an appeal can be filed within 10 days of the denial.",
+    "source_ids": [
+      "S5"
+    ]
+  },
+  "counterclaim": {
+    "allowed": true,
+    "form": {
+      "number": "AOC-185",
+      "name": "Counterclaim"
+    },
+    "same_monetary_limit": true,
+    "service_deadline_in_county_days": 7,
+    "service_deadline_out_of_county_days": 10,
+    "transfer_to_higher_court_available": true,
+    "transfer_to_higher_court_statute": "Ky. Rev. Stat. § 24A.230",
+    "transfer_to_higher_court_notes": "If the counterclaim exceeds $2,500, the case may be transferred to the regular civil docket of the District Court.",
+    "source_ids": [
+      "S5"
+    ]
+  },
+  "hearing": {
+    "lawyers_allowed": "yes",
+    "lawyers_allowed_notes": "Parties may choose to be represented by an attorney, but it is not required.",
+    "format": "Bench trial with informal procedures; each party presents their case, and the judge makes a decision.",
+    "presider": "judge",
+    "burden_of_proof": "preponderance",
+    "what_to_bring": [
+      "Originals of any contracts",
+      "Receipts and bank records",
+      "Photos and videos",
+      "Names and contact info for witnesses"
+    ],
+    "subpoena_form": {
+      "number": "AOC-280",
+      "name": "Subpoena"
+    },
+    "witness_fee_per_day_dollars": 10,
+    "free_interpreters": true,
+    "interpreter_request_process": "Request an interpreter through the court clerk's office as soon as possible before the hearing.",
+    "jury_option": false,
+    "decision_timing": "On the spot or mailed within a few days",
+    "on_site_mediation": "no",
+    "on_site_mediation_notes": "Mediation is not typically offered on-site for small claims cases.",
+    "source_ids": [
+      "S5"
+    ]
+  },
+  "appeals": {
+    "who_can_appeal": "either",
+    "deadline_days": 10,
+    "fee_dollars": 200,
+    "type": "trial de novo",
+    "type_notes": "The appeal is a new trial in the Circuit Court, where the case is heard as if it were originally filed there.",
+    "attorneys_allowed_on_appeal": true,
+    "bond_required": false,
+    "bond_amount_notes": "",
+    "automatic_stay_on_appeal": true,
+    "default_judgment_appealable": true,
+    "default_judgment_notes": "A default judgment can be appealed by filing a Notice of Appeal within 10 days of the judgment.",
+    "notice_of_appeal_form": {
+      "number": "AOC-230",
+      "name": "Notice of Appeal"
+    },
+    "frivolous_appeal_penalty_dollars": null,
+    "frivolous_appeal_statute": "",
+    "frivolous_appeal_notes": "",
+    "source_ids": [
+      "S5"
+    ]
+  },
+  "collection": {
+    "payment_deadline_typical_days": 10,
+    "post_judgment_interest_rate_pct": 6,
+    "post_judgment_interest_statute": "Ky. Rev. Stat. § 360.040",
+    "post_judgment_interest_notes": "Interest accrues on the judgment amount at a rate of 6% per annum until paid.",
+    "methods": [
+      {
+        "id": "wage-garnishment",
+        "name": "Wage garnishment",
+        "blurb": "Have a portion of the debtor's wages withheld until the judgment is paid.",
+        "description": "File a garnishment order with the court; serve the employer; employer withholds a portion of wages and remits to the court until the debt is satisfied.",
+        "forms": [
+          {
+            "number": "AOC-150",
+            "name": "Garnishment Order"
+          }
+        ],
+        "estimated_cost": "$30-50 plus sheriff fees",
+        "effectiveness_notes": "Most effective when debtor is W-2 employed at a stable job.",
+        "exemptions": [
+          "75% of disposable earnings (federal CCPA floor)"
+        ],
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "bank-levy",
+        "name": "Bank levy",
+        "blurb": "Seize funds from the debtor's bank account to satisfy the judgment.",
+        "description": "Obtain a writ of execution from the court; serve the bank; bank freezes and turns over funds up to the judgment amount.",
+        "forms": [
+          {
+            "number": "AOC-135",
+            "name": "Writ of Execution"
+          }
+        ],
+        "estimated_cost": "$50-100 plus sheriff fees",
+        "effectiveness_notes": "Effective if debtor has sufficient funds in the account; may be limited by exemptions.",
+        "exemptions": [
+          "$1,000 in personal property, including bank accounts"
+        ],
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "property-lien",
+        "name": "Property lien",
+        "blurb": "Place a lien on the debtor's real property to secure the judgment debt.",
+        "description": "File a judgment lien with the county clerk where the property is located; lien must be satisfied before property can be sold or refinanced.",
+        "forms": [
+          {
+            "number": "AOC-132",
+            "name": "Notice of Judgment Lien"
+          }
+        ],
+        "estimated_cost": "$20-50 filing fee",
+        "effectiveness_notes": "Effective for securing the debt; payment occurs when property is sold or refinanced.",
+        "exemptions": [
+          "Homestead exemption up to $5,000"
+        ],
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "writ-of-execution",
+        "name": "Writ of execution",
+        "blurb": "Seize and sell the debtor's non-exempt personal property to satisfy the judgment.",
+        "description": "Obtain a writ of execution from the court; sheriff seizes property; property is sold at public auction; proceeds applied to judgment.",
+        "forms": [
+          {
+            "number": "AOC-135",
+            "name": "Writ of Execution"
+          }
+        ],
+        "estimated_cost": "$50-100 plus sheriff fees",
+        "effectiveness_notes": "Effective if debtor owns valuable non-exempt property; process can be time-consuming.",
+        "exemptions": [
+          "$1,000 in personal property"
+        ],
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "wage_garnishment_max_pct_of_disposable": 25,
+    "judgment_lifespan_years": 15,
+    "judgment_renewal_process": "File a motion to revive the judgment before the 15-year period expires; court may grant renewal for an additional period.",
+    "debtor_exam_form": {
+      "number": "AOC-130",
+      "name": "Order for Examination of Judgment Debtor"
+    },
+    "exempt_assets": [
+      "Homestead — $5,000",
+      "Vehicle — $2,500",
+      "Retirement accounts (federally and state-protected)",
+      "Social Security and federal benefits"
+    ],
+    "bankruptcy_effect_notes": "Filing for bankruptcy imposes an automatic stay on collection efforts; certain judgments may be discharged in bankruptcy.",
+    "satisfaction_of_judgment_form": {
+      "number": "AOC-135",
+      "name": "Satisfaction of Judgment"
+    },
+    "priority_notes": "Judgment liens are prioritized by the date of filing; earlier liens have higher priority over later ones.",
+    "source_ids": [
+      "S5"
+    ]
+  },
+  "businesses": {
+    "self_representation_allowed": true,
+    "self_representation_notes": "Businesses can represent themselves in small claims court without an attorney.",
+    "can_send_employee": true,
+    "can_send_attorney": true,
+    "non_attorney_representation_form": {
+      "number": "AOC-285",
+      "name": "Corporate Authorization to Represent"
+    },
+    "insurance_adjuster_allowed": false,
+    "fictitious_name_form": {
+      "number": "AOC-286",
+      "name": "Certificate of Assumed Name"
+    },
+    "fictitious_name_notes": "Businesses operating under a fictitious name must file a Certificate of Assumed Name with the county clerk.",
+    "sole_proprietor_employee_exception": "Sole proprietors may authorize an employee to represent them in small claims court.",
+    "out_of_state_business_must_register": true,
+    "out_of_state_business_statute": "Ky. Rev. Stat. § 14A.9-010",
+    "licensing_notes": "Unlicensed contractors may face limitations in enforcing contracts in court.",
+    "source_ids": [
+      "S5"
+    ]
+  },
+  "county_variations_material": false,
+  "county_variations": [
+    {
+      "county": "Jefferson",
+      "topic": "E-filing availability",
+      "detail": "Jefferson County offers online filing through eFiling portal.",
+      "source_ids": [
+        "S5"
+      ]
+    }
+  ],
+  "pitfalls": [
+    {
+      "title": "Wrong defendant naming",
+      "what_happens": "If you sue 'John's Garage' but the legal entity is 'JG Auto Repair LLC', the judgment may be unenforceable against the LLC's assets.",
+      "how_to_avoid": "Search the Secretary of State business records before filing and use the exact registered name; for sole proprietors, use the individual's full legal name.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    {
+      "title": "Missed statute of limitations",
+      "what_happens": "Filing one day after the deadline gets the case dismissed with prejudice.",
+      "how_to_avoid": "Check the statute of limitations for your specific claim type before filing; for fraud, the discovery rule applies but be prepared to prove when you reasonably could have discovered it.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    {
+      "title": "Improper service of process",
+      "what_happens": "If the defendant is not properly served, the case cannot proceed, and you may have to start over.",
+      "how_to_avoid": "Follow Kentucky's rules for service of process carefully; consider using the sheriff for personal service to ensure compliance.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    {
+      "title": "Filing in the wrong venue",
+      "what_happens": "The case may be dismissed or transferred, causing delays and additional costs.",
+      "how_to_avoid": "File in the county where the defendant lives or does business, or where the cause of action arose.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    {
+      "title": "Exceeding the claim limit",
+      "what_happens": "Claims over $2,500 are not allowed in small claims court and will be dismissed or transferred.",
+      "how_to_avoid": "If your claim exceeds $2,500, consider waiving the excess to stay within the limit or file in a higher court.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    {
+      "title": "Failing to appear at the hearing",
+      "what_happens": "If you don't show up, the case may be dismissed, or a default judgment may be entered against you.",
+      "how_to_avoid": "Mark your calendar and make arrangements to attend the hearing; if you have a conflict, request a continuance in advance.",
+      "source_ids": [
+        "S5"
+      ]
+    }
+  ],
+  "recent_changes": [
+    {
+      "date": "2024-01-01",
+      "title": "Increase in small claims filing fees",
+      "description": "Filing fees for small claims cases were increased to $82 for claims up to $1,500 and $102 for claims between $1,501 and $2,500.",
+      "bill_or_rule_citation": "Ky. Rev. Stat. § 24A.230",
+      "source_ids": [
+        "S5"
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Do I need a lawyer?",
+      "answer": "No, you are not required to have a lawyer in small claims court; the process is designed for individuals to represent themselves.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    {
+      "question": "How long does it take?",
+      "answer": "Hearings are typically scheduled within 20 to 40 days after the defendant is served.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    {
+      "question": "What's the maximum I can sue for?",
+      "answer": "The maximum amount you can sue for in Kentucky small claims court is $2,500, excluding interest and court costs.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    {
+      "question": "What happens if the defendant doesn't show up?",
+      "answer": "If the defendant fails to appear, the court may enter a default judgment in your favor.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    {
+      "question": "Can I appeal?",
+      "answer": "Yes, either party can appeal the decision to the Circuit Court within 10 days of the judgment.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    {
+      "question": "How long is a judgment good for?",
+      "answer": "A judgment is valid for 15 years and can be renewed before it expires.",
+      "source_ids": [
+        "S5"
+      ]
+    }
+  ],
+  "state_specific_notes": [
+    "Kentucky's small claims court has a jurisdictional limit of $2,500, one of the lowest in the nation.",
+    "Plaintiffs are limited to filing no more than 25 small claims in a calendar year.",
+    "Defendants can request a jury trial by filing a written request at least seven days before the hearing date.",
+    "Small claims court does not handle eviction proceedings; these are filed in the District Court's regular civil division.",
+    "E-filing availability varies by county; check with the local court clerk for specific information."
+  ],
+  "_extras": {
+    "interesting_findings": [
+      "Kentucky's small claims court allows for the recovery of filing and service fees from the losing party.",
+      "The state provides specific forms for various stages of the small claims process, including complaints, summonses, and appeals.",
+      "While attorneys are allowed, the process is designed to be accessible for individuals representing themselves."
+    ]
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "label": "Kentucky Court of Justice Small Claims Handbook",
+      "url": "https://courts.ky.gov/resources/Publications/Handbooks/SmallClaimsHandbook.pdf",
+      "primary": true,
+      "citation": "Kentucky Court of Justice Small Claims Handbook"
+    },
+    {
+      "id": "S5",
+      "label": "Ky. Rev. Stat. § 24A.230 (Small Claims Jurisdiction and Procedure)",
+      "url": "https://apps.legislature.ky.gov/law/statutes/statute.aspx?id=411",
+      "primary": true,
+      "citation": "Ky. Rev. Stat. § 24A.230"
+    },
+    {
+      "id": "S15",
+      "label": "Kentucky District Court Fee Schedule",
+      "url": "https://courts.ky.gov/resources/Publications/LegalForms/LegalForms/Schedule-of-Court-Fees-2021.pdf",
+      "primary": true,
+      "citation": "Kentucky District Court Fee Schedule"
+    },
+    {
+      "id": "S14",
+      "label": "Kentucky Small Claims Forms",
+      "url": "https://courts.ky.gov/resources/legalforms/Pages/smallclaimsforms.aspx",
+      "primary": true,
+      "citation": "Kentucky Small Claims Forms"
+    },
+    {
+      "id": "S9",
+      "label": "Ky. Rev. Stat. § 24A.340 (Appeals from Small Claims Court)",
+      "url": "https://apps.legislature.ky.gov/law/statutes/statute.aspx?id=414",
+      "primary": true,
+      "citation": "Ky. Rev. Stat. § 24A.340"
+    },
+    {
+      "id": "S3",
+      "label": "Kentucky Court of Justice — District Court",
+      "url": "https://courts.ky.gov/courts/districtcourt/Pages/default.aspx",
+      "primary": true,
+      "citation": "Kentucky Court of Justice — District Court"
+    }
+  ],
+  "_meta": {
+    "state": "Kentucky",
+    "slug": "kentucky",
+    "model": "gpt-4.1",
+    "generated_at": "2026-04-28T11:38:17.305Z",
+    "promoted_from_failure": true
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "state": "Illinois",
+  "as_of": "2024-06-26",
+  "state_judiciary_pages": [
+    {
+      "label": "Illinois Courts - Small Claims",
+      "url": "https://www.illinoiscourts.gov/courts/circuit-court/small-claims/",
+      "scope": "small_claims"
+    },
+    {
+      "label": "Illinois Courts - Civil Self-Help",
+      "url": "https://www.illinoiscourts.gov/self-help/civil-self-help/",
+      "scope": "self_help"
+    },
+    {
+      "label": "Illinois Courts Circuit Court Directory",
+      "url": "https://www.illinoiscourts.gov/courts/circuit-court/circuit-court-directory/",
+      "scope": "court_directory"
+    }
+  ],
+  "statutes": [
+    {
+      "label": "735 ILCS 5/2-416 (Small claims procedures)",
+      "url": "https://www.ilga.gov/legislation/ilcs/fulltext.asp?DocName=073500050K2-416",
+      "section_or_chapter": "735 ILCS 5/2-416"
+    },
+    {
+      "label": "735 ILCS 5/2-409 (Jury demand in small claims)",
+      "url": "https://www.ilga.gov/legislation/ilcs/fulltext.asp?DocName=073500050K2-409",
+      "section_or_chapter": "735 ILCS 5/2-409"
+    },
+    {
+      "label": "735 ILCS 5/2-1202 (Appeal in small claims actions)",
+      "url": "https://www.ilga.gov/legislation/ilcs/fulltext.asp?DocName=073500050K2-1202",
+      "section_or_chapter": "735 ILCS 5/2-1202"
+    },
+    {
+      "label": "735 ILCS 5/12-801 et seq. (Enforcement of judgments/garnishments)",
+      "url": "https://www.ilga.gov/legislation/ilcs/ilcs4.asp?ActID=2016&ChapterID=56&SeqStart=104000000&SeqEnd=11700000",
+      "section_or_chapter": "735 ILCS 5/12-801 to 5/12-819"
+    }
+  ],
+  "court_rules": [
+    {
+      "label": "Illinois Supreme Court Rule 282 (Small Claims Procedures)",
+      "url": "https://www.illinoiscourts.gov/supreme-court-rules/rule-282-small-claims/",
+      "rule_or_chapter": "Rule 282"
+    },
+    {
+      "label": "Illinois Supreme Court Rule 283 (Pleadings - Small Claims)",
+      "url": "https://www.illinoiscourts.gov/supreme-court-rules/rule-283-small-claims-pleadings/",
+      "rule_or_chapter": "Rule 283"
+    },
+    {
+      "label": "Illinois Supreme Court Rule 284 (Default and Dismissal in Small Claims)",
+      "url": "https://www.illinoiscourts.gov/supreme-court-rules/rule-284-default-dismissal/",
+      "rule_or_chapter": "Rule 284"
+    }
+  ],
+  "forms_pages": [
+    {
+      "label": "Illinois Courts Approved Statewide Forms - Small Claims",
+      "url": "https://www.illinoiscourts.gov/documents-and-forms/approved-forms/small-claims"
+    }
+  ],
+  "fee_schedules": [
+    {
+      "label": "Illinois Courts Fee Schedule by County",
+      "url": "https://www.illinoiscourts.gov/courts/circuit-court/circuit-court-fee-schedule/"
+    }
+  ],
+  "service_rules": [
+    {
+      "label": "Illinois Supreme Court Rule 105 (Service by Publication/Notice) — civil",
+      "url": "https://www.illinoiscourts.gov/supreme-court-rules/rule-105-notice-by-publication-or-mail/",
+      "rule_or_chapter": "Rule 105"
+    },
+    {
+      "label": "Illinois Supreme Court Rule 284 (Service and appearance in small claims)",
+      "url": "https://www.illinoiscourts.gov/supreme-court-rules/rule-284-default-dismissal/",
+      "rule_or_chapter": "Rule 284"
+    }
+  ],
+  "appeal_rules": [
+    {
+      "label": "Illinois Supreme Court Rule 301 (Appeals from Final Judgments)",
+      "url": "https://www.illinoiscourts.gov/supreme-court-rules/rule-301-appeals-from-final-judgments/",
+      "rule_or_chapter": "Rule 301"
+    },
+    {
+      "label": "735 ILCS 5/2-1202 (Appeals in small claims actions)",
+      "url": "https://www.ilga.gov/legislation/ilcs/fulltext.asp?DocName=073500050K2-1202",
+      "rule_or_chapter": "735 ILCS 5/2-1202"
+    }
+  ],
+  "post_judgment_collection": [
+    {
+      "label": "735 ILCS 5/12-803 (Wage deductions)",
+      "url": "https://www.ilga.gov/legislation/ilcs/fulltext.asp?DocName=073500050K12-803"
+    },
+    {
+      "label": "735 ILCS 5/12-901 et seq. (Garnishment proceedings)",
+      "url": "https://www.ilga.gov/legislation/ilcs/fulltext.asp?DocName=073500050K12-901"
+    }
+  ],
+  "consumer_protection_statutes": [
+    {
+      "label": "815 ILCS 505/ Consumer Fraud and Deceptive Business Practices Act",
+      "url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=2353&ChapterID=67"
+    },
+    {
+      "label": "815 ILCS 380/ (New Vehicle Buyer Protection/Lemon Law)",
+      "url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=2358&ChapterID=67"
+    },
+    {
+      "label": "810 ILCS 5/3-806 (Bad check civil penalties)",
+      "url": "https://www.ilga.gov/legislation/ilcs/fulltext.asp?DocName=081000050K3-806"
+    }
+  ],
+  "landlord_tenant_statutes": [
+    {
+      "label": "765 ILCS 710/ Security Deposit Return Act",
+      "url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=2204&ChapterID=62"
+    },
+    {
+      "label": "765 ILCS 742/ (Rental Property Utility Service Act)",
+      "url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=2465&ChapterID=62"
+    }
+  ],
+  "wage_and_employment_statutes": [
+    {
+      "label": "820 ILCS 115/1 et seq. (Illinois Wage Payment and Collection Act)",
+      "url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=2407&ChapterID=68"
+    }
+  ],
+  "civil_remedies_statutes": [
+    {
+      "label": "735 ILCS 5/2-1115.05 (Attorney’s Fees)",
+      "url": "https://www.ilga.gov/legislation/ilcs/fulltext.asp?DocName=073500050K2-1115.05"
+    }
+  ],
+  "county_specific": [],
+  "notes": "Illinois Supreme Court adopted special Rules 281-288 for small claims; all forms and statutes available on state judicial branch portal and official legislative site.",
+  "_meta": {
+    "state": "Illinois",
+    "slug": "illinois",
+    "model": "gpt-4.1",
+    "response_id": "resp_0ea174721f87109d0069f089806a2081948edd57d4183a8080",
+    "generated_at": "2026-04-28T10:19:13.463Z",
+    "usage": {
+      "input_tokens": 2102,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 1760,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 3862
+    }
+  }
+}

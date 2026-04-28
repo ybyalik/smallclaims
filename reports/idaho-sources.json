@@ -1,0 +1,156 @@
+{
+  "state": "Idaho",
+  "as_of": "2024-06-16",
+  "state_judiciary_pages": [
+    {
+      "label": "Idaho Courts - Small Claims",
+      "url": "https://isc.idaho.gov/self-help/small-claims",
+      "scope": "small_claims"
+    },
+    {
+      "label": "Idaho Courts Self-Help Center",
+      "url": "https://isc.idaho.gov/self-help",
+      "scope": "self_help"
+    },
+    {
+      "label": "Idaho Court Locations & Addresses",
+      "url": "https://isc.idaho.gov/locations",
+      "scope": "court_directory"
+    }
+  ],
+  "statutes": [
+    {
+      "label": "Idaho Code § 1-2301 (Small Claims Department Created)",
+      "url": "https://legislature.idaho.gov/statutesrules/idstat/Title1/T1CH23/SECT1-2301/",
+      "section_or_chapter": "§ 1-2301"
+    },
+    {
+      "label": "Idaho Code § 1-2304 (Jurisdiction of Small Claims)",
+      "url": "https://legislature.idaho.gov/statutesrules/idstat/Title1/T1CH23/SECT1-2304/",
+      "section_or_chapter": "§ 1-2304"
+    },
+    {
+      "label": "Idaho Code § 1-2307 (Fees in Small Claims Department)",
+      "url": "https://legislature.idaho.gov/statutesrules/idstat/Title1/T1CH23/SECT1-2307/",
+      "section_or_chapter": "§ 1-2307"
+    },
+    {
+      "label": "Idaho Code § 1-2310 (Appeals from Small Claims Department)",
+      "url": "https://legislature.idaho.gov/statutesrules/idstat/Title1/T1CH23/SECT1-2310/",
+      "section_or_chapter": "§ 1-2310"
+    },
+    {
+      "label": "Idaho Code § 8-301 et seq. (Enforcement of Judgments)",
+      "url": "https://legislature.idaho.gov/statutesrules/idstat/Title8/T8CH3/",
+      "section_or_chapter": "Title 8, Chapter 3"
+    },
+    {
+      "label": "Idaho Code § 48-601 et seq. (Consumer Protection Act)",
+      "url": "https://legislature.idaho.gov/statutesrules/idstat/Title48/T48CH6/",
+      "section_or_chapter": "Title 48, Chapter 6"
+    },
+    {
+      "label": "Idaho Code § 6-303 (Forcible Entry and Unlawful Detainer/Lockout)",
+      "url": "https://legislature.idaho.gov/statutesrules/idstat/Title6/T6CH3/SECT6-303/",
+      "section_or_chapter": "§ 6-303"
+    },
+    {
+      "label": "Idaho Code § 45-617 (Wages, Final Paycheck, Penalties)",
+      "url": "https://legislature.idaho.gov/statutesrules/idstat/Title45/T45CH6/SECT45-617/",
+      "section_or_chapter": "§ 45-617"
+    }
+  ],
+  "court_rules": [
+    {
+      "label": "Idaho Rules of Small Claims Procedure",
+      "url": "https://isc.idaho.gov/irscp",
+      "rule_or_chapter": "All Rules"
+    }
+  ],
+  "forms_pages": [
+    {
+      "label": "Idaho Small Claims Forms",
+      "url": "https://isc.idaho.gov/self-help/small-claims#forms"
+    }
+  ],
+  "fee_schedules": [
+    {
+      "label": "Idaho Court Fee Schedule",
+      "url": "https://isc.idaho.gov/fees"
+    }
+  ],
+  "service_rules": [
+    {
+      "label": "Service of Process — Idaho Rules of Small Claims Procedure",
+      "url": "https://isc.idaho.gov/irscp#rule3"
+    }
+  ],
+  "appeal_rules": [
+    {
+      "label": "Idaho Code § 1-2310 (Appeals from Small Claims Department)",
+      "url": "https://legislature.idaho.gov/statutesrules/idstat/Title1/T1CH23/SECT1-2310/"
+    }
+  ],
+  "post_judgment_collection": [
+    {
+      "label": "Enforcement of Judgment — Idaho Code Title 8, Chapter 3",
+      "url": "https://legislature.idaho.gov/statutesrules/idstat/Title8/T8CH3/"
+    },
+    {
+      "label": "Wage Garnishment — Idaho Code § 11-712",
+      "url": "https://legislature.idaho.gov/statutesrules/idstat/Title11/T11CH7/SECT11-712/"
+    }
+  ],
+  "consumer_protection_statutes": [
+    {
+      "label": "Idaho Consumer Protection Act — Idaho Code § 48-601 et seq.",
+      "url": "https://legislature.idaho.gov/statutesrules/idstat/Title48/T48CH6/"
+    },
+    {
+      "label": "Idaho Code § 18-3106 (Civil Penalty for Issuing a Bad Check)",
+      "url": "https://legislature.idaho.gov/statutesrules/idstat/Title18/T18CH31/SECT18-3106/"
+    }
+  ],
+  "landlord_tenant_statutes": [
+    {
+      "label": "Idaho Code § 6-321 (Security Deposit Return)",
+      "url": "https://legislature.idaho.gov/statutesrules/idstat/Title6/T6CH3/SECT6-321/"
+    },
+    {
+      "label": "Forcible Entry and Detainer — Idaho Code § 6-303",
+      "url": "https://legislature.idaho.gov/statutesrules/idstat/Title6/T6CH3/SECT6-303/"
+    }
+  ],
+  "wage_and_employment_statutes": [
+    {
+      "label": "Idaho Code § 45-617 (Final Paycheck and Penalty)",
+      "url": "https://legislature.idaho.gov/statutesrules/idstat/Title45/T45CH6/SECT45-617/"
+    }
+  ],
+  "civil_remedies_statutes": [
+    {
+      "label": "Idaho Code § 12-120 (Attorney Fees in Civil Actions)",
+      "url": "https://legislature.idaho.gov/statutesrules/idstat/Title12/T12CH1/SECT12-120/"
+    }
+  ],
+  "county_specific": [],
+  "notes": "Idaho provides unified statewide small-claims procedures and forms via its judicial branch. No material county-level variation found.",
+  "_meta": {
+    "state": "Idaho",
+    "slug": "idaho",
+    "model": "gpt-4.1",
+    "response_id": "resp_0c6792c0df2d4ee80069f08970312881969caa259b931085e0",
+    "generated_at": "2026-04-28T10:18:40.080Z",
+    "usage": {
+      "input_tokens": 2104,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 1523,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 3627
+    }
+  }
+}

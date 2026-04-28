@@ -1,17 +1,72 @@
 {
   "state": "Alabama",
+  "slug": "alabama",
+  "abbr": "AL",
   "as_of": "2026-04-28",
-  "court": {
-    "small_claims_court_name": "Small Claims Court",
-    "parent_court_system": "District Court",
-    "primary_court_website": "https://judicial.alabama.gov/Library/SmallClaims",
+  "hero": {
+    "individual_limit_dollars": 6000,
+    "business_limit_dollars": 6000,
+    "filing_fee_low_dollars": 82,
+    "filing_fee_high_dollars": 210,
+    "typical_timeline_min_days": 30,
+    "typical_timeline_max_days": 90,
+    "tagline": "Alabama's small claims court offers a $6,000 cap with a 14-day appeal window.",
     "source_ids": [
-      "S1"
+      "S1",
+      "S13"
     ]
   },
+  "at_a_glance": [
+    {
+      "label": "Most you can sue for",
+      "value": "$6,000",
+      "detail": "Same cap for individuals and businesses",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Filing fee",
+      "value": "$82-$210",
+      "detail": "Tiered by claim amount",
+      "source_ids": [
+        "S13"
+      ]
+    },
+    {
+      "label": "Court",
+      "value": "District Court (small claims docket)",
+      "detail": "",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Lawyers at trial",
+      "value": "Allowed",
+      "detail": "Permitted but not required",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Appeal window",
+      "value": "14 days",
+      "detail": "Trial de novo in circuit court",
+      "source_ids": [
+        "S6"
+      ]
+    },
+    {
+      "label": "Recent change",
+      "value": "—",
+      "detail": "No major changes in the last 3 years",
+      "source_ids": []
+    }
+  ],
   "limits": {
-    "individual_max_dollars": 6000,
-    "business_max_dollars": 6000,
+    "individual_dollars": 6000,
+    "business_dollars": 6000,
     "guarantor_with_fee_max": null,
     "guarantor_without_fee_max": null,
     "annual_filing_cap": {
@@ -20,1007 +75,1581 @@
       "notes": ""
     },
     "split_claims_allowed": false,
-    "split_claims_notes": "",
+    "split_claims_explanation": "If a claim exceeds the $6,000 cap, you must waive the excess to file in small claims court or file in a higher court. Splitting one dispute into multiple claims to fit under the cap is not allowed.",
     "interest_excluded_from_cap": true,
     "court_costs_excluded_from_cap": true,
     "statute": "Ala. Code § 12-12-31",
     "source_ids": [
-      "S4"
+      "S5"
     ]
   },
-  "claims_eligibility": [
+  "claim_categories": [
     {
-      "slug": "written-contract",
-      "eligibility": "eligible",
-      "notes_one_line": "",
-      "statute": "Ala. Code § 12-12-31",
-      "source_ids": [
-        "S4"
+      "id": "contracts",
+      "title": "Contracts and money owed",
+      "blurb": "Alabama allows 6 years to file claims on both written and oral contracts.",
+      "claims": [
+        {
+          "slug": "written-contract",
+          "name": "Breach of a written contract",
+          "example": "A contractor signed a $4,000 contract to remodel your kitchen, took the deposit, and never finished.",
+          "eligibility": "eligible",
+          "claim_statute": "Ala. Code § 6-2-34",
+          "notes": "6-year deadline from breach. Bring the signed contract, payment proof, and any correspondence showing the breach.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "oral-contract",
+          "name": "Breach of an oral contract",
+          "example": "You agreed verbally to lend a friend $1,000, and they failed to repay it.",
+          "eligibility": "eligible",
+          "claim_statute": "Ala. Code § 6-2-34",
+          "notes": "6-year deadline from breach. Provide evidence of the agreement, such as emails or witness testimony.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "personal-loan",
+          "name": "Unpaid personal loan",
+          "example": "You loaned $2,500 to a colleague with the understanding it would be repaid in 6 months, but it wasn't.",
+          "eligibility": "eligible",
+          "claim_statute": "Ala. Code § 6-2-34",
+          "notes": "6-year deadline from breach. Gather any written agreements, payment records, and communications regarding the loan.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "promissory-note",
+          "name": "Default on a promissory note",
+          "example": "A borrower signed a promissory note for $5,000 and failed to make the agreed payments.",
+          "eligibility": "eligible",
+          "claim_statute": "Ala. Code § 6-2-34",
+          "notes": "6-year deadline from breach. Present the original promissory note and records of any payments made.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unpaid-invoice",
+          "name": "Unpaid invoice for services rendered",
+          "example": "You provided $3,000 worth of consulting services, but the client hasn't paid the invoice.",
+          "eligibility": "eligible",
+          "claim_statute": "Ala. Code § 6-2-34",
+          "notes": "6-year deadline from breach. Submit the invoice, service agreement, and any communication regarding payment.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "open-account",
+          "name": "Unpaid balance on an open account",
+          "example": "A customer has an outstanding balance of $4,500 on their account with your business.",
+          "eligibility": "eligible",
+          "claim_statute": "Ala. Code § 6-2-34",
+          "notes": "6-year deadline from breach. Provide account statements, terms of agreement, and records of previous payments.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unpaid-rent",
+          "name": "Unpaid rent by tenant",
+          "example": "Your tenant owes $2,000 in unpaid rent for the past two months.",
+          "eligibility": "eligible",
+          "claim_statute": "Ala. Code § 6-2-34",
+          "notes": "6-year deadline from breach. Bring the lease agreement, payment records, and any notices sent to the tenant.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "bad-check",
+          "name": "Receiving a bad check",
+          "example": "A customer paid with a $1,200 check that was returned for insufficient funds.",
+          "eligibility": "eligible",
+          "claim_statute": "Ala. Code § 7-3-118",
+          "notes": "6-year deadline from breach. Provide the bounced check, bank notice, and any related correspondence.",
+          "damage_boost": "Check amount + service charge up to $40 + civil penalty up to $100 OR 2x check amount, whichever is greater.",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "co-signer",
+          "name": "Co-signer seeking repayment",
+          "example": "You co-signed a $5,000 loan, and the primary borrower defaulted, leaving you responsible.",
+          "eligibility": "eligible",
+          "claim_statute": "Ala. Code § 6-2-34",
+          "notes": "6-year deadline from breach. Present the loan agreement, proof of your payments, and any communication with the borrower.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
       ]
     },
     {
-      "slug": "oral-contract",
-      "eligibility": "eligible",
-      "notes_one_line": "",
-      "statute": "Ala. Code § 12-12-31",
-      "source_ids": [
-        "S4"
+      "id": "consumer-disputes",
+      "title": "Consumer disputes",
+      "blurb": "Alabama provides avenues for consumers to seek redress for various disputes, with specific statutes addressing deceptive trade practices and bad checks.",
+      "claims": [
+        {
+          "slug": "defective-product",
+          "name": "Purchase of a defective product",
+          "example": "You bought a $1,500 appliance that stopped working within a month, and the seller refuses to repair or replace it.",
+          "eligibility": "eligible",
+          "claim_statute": "Ala. Code § 7-2-725",
+          "notes": "4-year deadline from breach. Bring the purchase receipt, warranty information, and any communication with the seller.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "bad-service",
+          "name": "Substandard service provided",
+          "example": "A cleaning service charged $800 but did not perform the agreed-upon tasks satisfactorily.",
+          "eligibility": "eligible",
+          "claim_statute": "Ala. Code § 6-2-34",
+          "notes": "6-year deadline from breach. Provide the service agreement, payment proof, and evidence of the substandard work.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "auto-repair",
+          "name": "Unsatisfactory auto repair",
+          "example": "You paid $2,000 for car repairs, but the issue persists, and the mechanic refuses to fix it.",
+          "eligibility": "eligible",
+          "claim_statute": "Ala. Code § 6-2-34",
+          "notes": "6-year deadline from breach. Bring repair invoices, payment records, and any communication with the mechanic.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "contractor",
+          "name": "Contractor failed to complete work",
+          "example": "You hired a contractor for a $5,500 home renovation, but they abandoned the project midway.",
+          "eligibility": "eligible",
+          "claim_statute": "Ala. Code § 6-2-34",
+          "notes": "6-year deadline from breach. Provide the contract, payment records, and evidence of incomplete work.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "no-show-vendor",
+          "name": "Vendor failed to deliver goods",
+          "example": "You paid $1,200 for furniture that was never delivered, and the vendor is unresponsive.",
+          "eligibility": "eligible",
+          "claim_statute": "Ala. Code § 6-2-34",
+          "notes": "6-year deadline from breach. Bring the purchase agreement, payment proof, and any correspondence with the vendor.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "subscription-cancellation",
+          "name": "Unauthorized subscription charges",
+          "example": "A magazine continues to charge your account $50 monthly despite multiple cancellation requests.",
+          "eligibility": "eligible",
+          "claim_statute": "Ala. Code § 6-2-34",
+          "notes": "6-year deadline from breach. Provide bank statements, cancellation requests, and any responses from the company.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "used-car",
+          "name": "Purchase of a defective used car",
+          "example": "You bought a used car for $5,800 that broke down within a week, and the dealer refuses to address the issue.",
+          "eligibility": "eligible",
+          "claim_statute": "Ala. Code § 7-2-725",
+          "notes": "4-year deadline from breach. Bring the sales contract, payment proof, and any communication with the dealer.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "false-advertising",
+          "name": "False advertising leading to financial loss",
+          "example": "A company advertised a product for $500 with features it doesn't have, leading you to purchase it under false pretenses.",
+          "eligibility": "eligible",
+          "claim_statute": "Ala. Code § 8-19-5",
+          "notes": "4-year deadline from breach. Provide the advertisement, purchase receipt, and any correspondence with the company.",
+          "damage_boost": "",
+          "source_ids": [
+            "S18"
+          ]
+        }
       ]
     },
     {
-      "slug": "personal-loan",
-      "eligibility": "eligible",
-      "notes_one_line": "",
-      "statute": "Ala. Code § 12-12-31",
-      "source_ids": [
-        "S4"
+      "id": "property-damage",
+      "title": "Property damage",
+      "blurb": "Alabama allows claims for property damage with a 6-year statute of limitations.",
+      "claims": [
+        {
+          "slug": "vehicle-collision",
+          "name": "Damage from a vehicle collision",
+          "example": "Another driver caused $4,000 in damage to your car and refuses to pay for repairs.",
+          "eligibility": "eligible",
+          "claim_statute": "Ala. Code § 6-2-34",
+          "notes": "6-year deadline from incident. Bring the police report, repair estimates, and any communication with the other driver.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "neighbor-property",
+          "name": "Neighbor's actions damaged your property",
+          "example": "A neighbor's tree fell on your fence, causing $2,500 in damage, and they refuse to cover the costs.",
+          "eligibility": "eligible",
+          "claim_statute": "Ala. Code § 6-2-34",
+          "notes": "6-year deadline from incident. Provide photos of the damage, repair estimates, and any communication with the neighbor.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "damage-to-rental",
+          "name": "Tenant caused damage to rental property",
+          "example": "A former tenant left $3,000 worth of damage to your rental unit beyond normal wear and tear.",
+          "eligibility": "eligible",
+          "claim_statute": "Ala. Code § 6-2-34",
+          "notes": "6-year deadline from incident. Bring the lease agreement, photos of the damage, repair estimates, and any communication with the tenant.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "pet-damage",
+          "name": "Damage caused by someone else's pet",
+          "example": "A neighbor's dog entered your yard and destroyed $1,500 worth of landscaping.",
+          "eligibility": "eligible",
+          "claim_statute": "Ala. Code § 6-2-34",
+          "notes": "6-year deadline from incident. Provide photos of the damage, repair estimates, and any communication with the pet owner.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "property-in-custody",
+          "name": "Damage to property left in someone's care",
+          "example": "You left a $2,000 watch with a jeweler for repair, and they returned it with scratches.",
+          "eligibility": "eligible",
+          "claim_statute": "Ala. Code § 6-2-34",
+          "notes": "6-year deadline from incident. Bring the service agreement, photos of the damage, and any communication with the jeweler.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
       ]
     },
     {
-      "slug": "promissory-note",
-      "eligibility": "eligible",
-      "notes_one_line": "",
-      "statute": "Ala. Code § 12-12-31",
-      "source_ids": [
-        "S4"
+      "id": "landlord-tenant",
+      "title": "Landlord-tenant disputes",
+      "blurb": "Alabama provides a 6-year statute of limitations for landlord-tenant monetary disputes.",
+      "claims": [
+        {
+          "slug": "security-deposit",
+          "name": "Failure to return security deposit",
+          "example": "Your landlord withheld your $1,200 security deposit without providing an itemized list of damages.",
+          "eligibility": "eligible",
+          "claim_statute": "Ala. Code § 35-9A-201",
+          "notes": "6-year deadline from breach. Bring the lease agreement, move-out inspection report, and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S20"
+          ]
+        },
+        {
+          "slug": "deposit-not-itemized",
+          "name": "Security deposit deductions not itemized",
+          "example": "Your landlord deducted $800 from your deposit without providing an itemized list of damages.",
+          "eligibility": "eligible",
+          "claim_statute": "Ala. Code § 35-9A-201",
+          "notes": "6-year deadline from breach. Provide the lease agreement, move-out inspection report, and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S20"
+          ]
+        },
+        {
+          "slug": "uninhabitable-rental",
+          "name": "Rental unit deemed uninhabitable",
+          "example": "Your apartment had severe mold issues, and the landlord refused to address them, forcing you to move out.",
+          "eligibility": "eligible",
+          "claim_statute": "Ala. Code § 35-9A-201",
+          "notes": "6-year deadline from breach. Bring photos of the conditions, repair requests, and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S20"
+          ]
+        },
+        {
+          "slug": "wrongful-retention-property",
+          "name": "Landlord wrongfully retained tenant's property",
+          "example": "After eviction, your landlord kept your $2,000 worth of personal belongings without legal justification.",
+          "eligibility": "eligible",
+          "claim_statute": "Ala. Code § 35-9A-201",
+          "notes": "6-year deadline from breach. Provide an inventory of the items, proof of ownership, and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S20"
+          ]
+        },
+        {
+          "slug": "illegal-eviction",
+          "name": "Illegal eviction by landlord",
+          "example": "Your landlord changed the locks without notice, preventing you from accessing your apartment.",
+          "eligibility": "eligible",
+          "claim_statute": "Ala. Code § 35-9A-422",
+          "notes": "6-year deadline from breach. Bring the lease agreement, photos of the changed locks, and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S21"
+          ]
+        },
+        {
+          "slug": "unreturned-prepaid-rent",
+          "name": "Failure to return prepaid rent after lease termination",
+          "example": "You paid first and last month's rent totaling $2,400, but the landlord didn't return the last month's rent after you moved out early.",
+          "eligibility": "eligible",
+          "claim_statute": "Ala. Code § 35-9A-201",
+          "notes": "6-year deadline from breach. Provide the lease agreement, payment records, and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S20"
+          ]
+        },
+        {
+          "slug": "unpaid-rent-by-tenant",
+          "name": "Tenant failed to pay rent",
+          "example": "Your tenant owes $3,000 in unpaid rent over the past three months.",
+          "eligibility": "eligible",
+          "claim_statute": "Ala. Code § 6-2-34",
+          "notes": "6-year deadline from breach. Bring the lease agreement, payment records, and any notices sent to the tenant.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "repair-and-deduct",
+          "name": "Tenant repaired and deducted from rent",
+          "example": "You paid $500 to fix a leaking roof after the landlord failed to address it and deducted it from your rent.",
+          "eligibility": "eligible",
+          "claim_statute": "Ala. Code § 35-9A-201",
+          "notes": "6-year deadline from breach. Provide repair receipts, photos of the issue, and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S20"
+          ]
+        }
       ]
     },
     {
-      "slug": "unpaid-invoice",
-      "eligibility": "eligible",
-      "notes_one_line": "",
-      "statute": "Ala. Code § 12-12-31",
-      "source_ids": [
-        "S4"
+      "id": "employment-wages",
+      "title": "Employment and wage disputes",
+      "blurb": "Alabama allows claims for unpaid wages with a 6-year statute of limitations.",
+      "claims": [
+        {
+          "slug": "unpaid-wages",
+          "name": "Employer failed to pay earned wages",
+          "example": "Your employer owes you $2,000 for hours worked but hasn't paid despite multiple requests.",
+          "eligibility": "eligible",
+          "claim_statute": "Ala. Code § 6-2-34",
+          "notes": "6-year deadline from breach. Bring pay stubs, timesheets, and any communication with the employer.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "final-paycheck",
+          "name": "Employer withheld final paycheck",
+          "example": "After resigning, your employer refused to issue your final paycheck of $1,500.",
+          "eligibility": "eligible",
+          "claim_statute": "Ala. Code § 6-2-34",
+          "notes": "6-year deadline from breach. Provide resignation letter, pay stubs, and any communication with the employer.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unpaid-commissions",
+          "name": "Unpaid sales commissions",
+          "example": "You earned $3,000 in commissions, but your employer hasn't paid them.",
+          "eligibility": "eligible",
+          "claim_statute": "Ala. Code § 6-2-34",
+          "notes": "6-year deadline from breach. Bring commission agreements, sales records, and any communication with the employer.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unpaid-overtime",
+          "name": "Employer failed to pay overtime wages",
+          "example": "You worked 20 hours of overtime but weren't compensated at the overtime rate, totaling $800.",
+          "eligibility": "eligible",
+          "claim_statute": "Ala. Code § 6-2-34",
+          "notes": "6-year deadline from breach. Provide timesheets, pay stubs, and any communication with the employer.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
       ]
     },
     {
-      "slug": "unpaid-rent",
-      "eligibility": "eligible",
-      "notes_one_line": "",
-      "statute": "Ala. Code § 12-12-31",
-      "source_ids": [
-        "S4"
+      "id": "personal-claims",
+      "title": "Personal claims",
+      "blurb": "Alabama allows claims for personal injuries and property disputes with a 6-year statute of limitations.",
+      "claims": [
+        {
+          "slug": "minor-injury",
+          "name": "Minor personal injury",
+          "example": "You slipped and fell in a store, incurring $2,000 in medical bills due to the store's negligence.",
+          "eligibility": "eligible",
+          "claim_statute": "Ala. Code § 6-2-34",
+          "notes": "6-year deadline from incident. Bring medical records, bills, and any incident reports.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "loaned-property",
+          "name": "Failure to return loaned property",
+          "example": "You lent a friend your $1,500 camera, and they refuse to return it.",
+          "eligibility": "eligible",
+          "claim_statute": "Ala. Code § 6-2-34",
+          "notes": "6-year deadline from breach. Provide proof of ownership, any communication regarding the loan, and evidence of refusal to return.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "civil-theft",
+          "name": "Theft of personal property",
+          "example": "A neighbor took your $2,000 bicycle without permission and refuses to return it.",
+          "eligibility": "eligible",
+          "claim_statute": "Ala. Code § 6-5-370",
+          "notes": "6-year deadline from incident. Bring proof of ownership, police reports, and any communication with the neighbor.",
+          "damage_boost": "",
+          "source_ids": [
+            "S23"
+          ]
+        }
       ]
     },
     {
-      "slug": "bad-check",
-      "eligibility": "eligible",
-      "notes_one_line": "",
-      "statute": "Ala. Code § 12-12-31",
-      "source_ids": [
-        "S4"
-      ]
-    },
-    {
-      "slug": "co-signer",
-      "eligibility": "eligible",
-      "notes_one_line": "",
-      "statute": "Ala. Code § 12-12-31",
-      "source_ids": [
-        "S4"
-      ]
-    },
-    {
-      "slug": "defective-product",
-      "eligibility": "eligible",
-      "notes_one_line": "",
-      "statute": "Ala. Code § 12-12-31",
-      "source_ids": [
-        "S4"
-      ]
-    },
-    {
-      "slug": "bad-service",
-      "eligibility": "eligible",
-      "notes_one_line": "",
-      "statute": "Ala. Code § 12-12-31",
-      "source_ids": [
-        "S4"
-      ]
-    },
-    {
-      "slug": "auto-repair",
-      "eligibility": "eligible",
-      "notes_one_line": "",
-      "statute": "Ala. Code § 12-12-31",
-      "source_ids": [
-        "S4"
-      ]
-    },
-    {
-      "slug": "contractor",
-      "eligibility": "eligible",
-      "notes_one_line": "",
-      "statute": "Ala. Code § 12-12-31",
-      "source_ids": [
-        "S4"
-      ]
-    },
-    {
-      "slug": "subscription-cancellation",
-      "eligibility": "eligible",
-      "notes_one_line": "",
-      "statute": "Ala. Code § 12-12-31",
-      "source_ids": [
-        "S4"
-      ]
-    },
-    {
-      "slug": "used-car",
-      "eligibility": "eligible",
-      "notes_one_line": "",
-      "statute": "Ala. Code § 12-12-31",
-      "source_ids": [
-        "S4"
-      ]
-    },
-    {
-      "slug": "false-advertising",
-      "eligibility": "eligible",
-      "notes_one_line": "",
-      "statute": "Ala. Code § 12-12-31",
-      "source_ids": [
-        "S4"
-      ]
-    },
-    {
-      "slug": "vehicle-collision",
-      "eligibility": "eligible",
-      "notes_one_line": "",
-      "statute": "Ala. Code § 12-12-31",
-      "source_ids": [
-        "S4"
-      ]
-    },
-    {
-      "slug": "neighbor-property",
-      "eligibility": "eligible",
-      "notes_one_line": "",
-      "statute": "Ala. Code § 12-12-31",
-      "source_ids": [
-        "S4"
-      ]
-    },
-    {
-      "slug": "damage-to-rental",
-      "eligibility": "eligible",
-      "notes_one_line": "",
-      "statute": "Ala. Code § 12-12-31",
-      "source_ids": [
-        "S4"
-      ]
-    },
-    {
-      "slug": "pet-damage",
-      "eligibility": "eligible",
-      "notes_one_line": "",
-      "statute": "Ala. Code § 12-12-31",
-      "source_ids": [
-        "S4"
-      ]
-    },
-    {
-      "slug": "security-deposit",
-      "eligibility": "eligible",
-      "notes_one_line": "",
-      "statute": "Ala. Code § 12-12-31",
-      "source_ids": [
-        "S4"
-      ]
-    },
-    {
-      "slug": "unpaid-rent-by-tenant",
-      "eligibility": "eligible",
-      "notes_one_line": "",
-      "statute": "Ala. Code § 12-12-31",
-      "source_ids": [
-        "S4"
-      ]
-    },
-    {
-      "slug": "repair-and-deduct",
-      "eligibility": "eligible",
-      "notes_one_line": "",
-      "statute": "Ala. Code § 12-12-31",
-      "source_ids": [
-        "S4"
-      ]
-    },
-    {
-      "slug": "unpaid-wages",
-      "eligibility": "eligible",
-      "notes_one_line": "",
-      "statute": "Ala. Code § 12-12-31",
-      "source_ids": [
-        "S4"
-      ]
-    },
-    {
-      "slug": "unpaid-commission",
-      "eligibility": "eligible",
-      "notes_one_line": "",
-      "statute": "Ala. Code § 12-12-31",
-      "source_ids": [
-        "S4"
-      ]
-    },
-    {
-      "slug": "minor-injury",
-      "eligibility": "eligible",
-      "notes_one_line": "",
-      "statute": "Ala. Code § 12-12-31",
-      "source_ids": [
-        "S4"
-      ]
-    },
-    {
-      "slug": "mechanic-dispute",
-      "eligibility": "eligible",
-      "notes_one_line": "",
-      "statute": "Ala. Code § 12-12-31",
-      "source_ids": [
-        "S4"
-      ]
-    },
-    {
-      "slug": "wrongful-tow",
-      "eligibility": "eligible",
-      "notes_one_line": "",
-      "statute": "Ala. Code § 12-12-31",
-      "source_ids": [
-        "S4"
+      "id": "vehicle-specific",
+      "title": "Vehicle-specific disputes",
+      "blurb": "Alabama allows claims related to vehicle disputes with a 6-year statute of limitations.",
+      "claims": [
+        {
+          "slug": "mechanic-dispute",
+          "name": "Dispute over mechanic's repair work",
+          "example": "You paid $2,500 for car repairs, but the issue wasn't fixed, and the mechanic refuses to refund.",
+          "eligibility": "eligible",
+          "claim_statute": "Ala. Code § 6-2-34",
+          "notes": "6-year deadline from breach. Bring repair invoices, payment records, and any communication with the mechanic.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "wrongful-tow",
+          "name": "Vehicle wrongfully towed",
+          "example": "Your car was towed from a legal parking spot, and the towing company charged you $300 for its return.",
+          "eligibility": "eligible",
+          "claim_statute": "Ala. Code § 6-2-34",
+          "notes": "6-year deadline from incident. Provide photos of the parking spot, towing receipts, and any communication with the towing company.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
       ]
     }
   ],
   "exclusions": [
     {
-      "category": "eviction / unlawful detainer",
-      "explanation_one_line": "Eviction cases are not handled in Small Claims Court.",
-      "where_to_go_instead": "District Court",
+      "category": "Eviction (unlawful detainer)",
+      "explanation": "Eviction cases are excluded from small claims court and must be filed on the regular district court docket.",
+      "where_to_go_instead": "District Court ejectment process",
       "source_ids": [
-        "S2"
+        "S11"
       ]
     },
     {
-      "category": "family law",
-      "explanation_one_line": "Family law matters are outside the jurisdiction of Small Claims Court.",
-      "where_to_go_instead": "Family Court",
-      "source_ids": [
-        "S2"
-      ]
-    },
-    {
-      "category": "defamation",
-      "explanation_one_line": "Defamation cases are not suitable for Small Claims Court.",
+      "category": "Title to real estate",
+      "explanation": "Cases involving disputes over the title to real estate are beyond the jurisdiction of small claims court.",
       "where_to_go_instead": "Circuit Court",
-      "source_ids": [
-        "S2"
-      ]
+      "source_ids": []
     },
     {
-      "category": "title to real estate",
-      "explanation_one_line": "Disputes involving real estate titles are beyond Small Claims Court jurisdiction.",
+      "category": "Defamation",
+      "explanation": "Defamation cases are complex and exceed the simplified procedures of small claims court.",
       "where_to_go_instead": "Circuit Court",
-      "source_ids": [
-        "S2"
-      ]
+      "source_ids": []
     },
     {
-      "category": "malpractice",
-      "explanation_one_line": "Malpractice claims are not handled in Small Claims Court.",
+      "category": "Malpractice",
+      "explanation": "Professional malpractice claims require expert testimony and are not suitable for small claims court.",
       "where_to_go_instead": "Circuit Court",
-      "source_ids": [
-        "S2"
-      ]
+      "source_ids": []
     },
     {
-      "category": "federal claims (bankruptcy / patents / trademarks)",
-      "explanation_one_line": "Federal claims are outside the jurisdiction of Small Claims Court.",
+      "category": "Family law and probate",
+      "explanation": "Matters such as divorce, child custody, and probate are handled by specialized courts.",
+      "where_to_go_instead": "Family Court or Probate Court",
+      "source_ids": []
+    },
+    {
+      "category": "Federal claims",
+      "explanation": "Claims involving federal law, such as bankruptcy or patents, are outside the jurisdiction of state courts.",
       "where_to_go_instead": "Federal Court",
-      "source_ids": [
-        "S2"
-      ]
+      "source_ids": []
     },
     {
-      "category": "class actions",
-      "explanation_one_line": "Class action lawsuits are not permitted in Small Claims Court.",
+      "category": "Class actions",
+      "explanation": "Class action lawsuits are complex and exceed the procedural scope of small claims court.",
       "where_to_go_instead": "Circuit Court",
-      "source_ids": [
-        "S2"
-      ]
+      "source_ids": []
     },
     {
-      "category": "injunctions / specific performance",
-      "explanation_one_line": "Small Claims Court cannot grant injunctions or specific performance.",
+      "category": "Injunctions/specific performance",
+      "explanation": "Small claims court cannot issue orders requiring a party to perform or refrain from specific acts.",
       "where_to_go_instead": "Circuit Court",
-      "source_ids": [
-        "S2"
-      ]
+      "source_ids": []
     },
     {
-      "category": "claims against the federal government",
-      "explanation_one_line": "Claims against the federal government are not handled in Small Claims Court.",
+      "category": "Claims against the federal government",
+      "explanation": "Suing the federal government involves specific procedures not handled by state courts.",
       "where_to_go_instead": "Federal Court",
-      "source_ids": [
-        "S2"
-      ]
+      "source_ids": []
     },
     {
-      "category": "workers' compensation",
-      "explanation_one_line": "Workers' compensation claims are outside the jurisdiction of Small Claims Court.",
-      "where_to_go_instead": "Workers' Compensation Court",
-      "source_ids": [
-        "S2"
-      ]
+      "category": "Workers' compensation",
+      "explanation": "Workers' compensation claims are handled by the Alabama Department of Labor.",
+      "where_to_go_instead": "Alabama Department of Labor",
+      "source_ids": []
     },
     {
-      "category": "mandatory-arbitration disputes",
-      "explanation_one_line": "Disputes subject to mandatory arbitration are not suitable for Small Claims Court.",
+      "category": "Mandatory-arbitration disputes",
+      "explanation": "Disputes subject to mandatory arbitration clauses are typically resolved through arbitration, not court.",
       "where_to_go_instead": "Arbitration",
-      "source_ids": [
-        "S2"
-      ]
+      "source_ids": []
+    },
+    {
+      "category": "Suing a deceased person",
+      "explanation": "Claims against deceased individuals must be filed against their estate in probate court.",
+      "where_to_go_instead": "Probate Court",
+      "source_ids": []
     }
   ],
   "damages": {
     "compensatory_allowed": true,
     "punitive_allowed": false,
-    "punitive_notes": "Punitive damages are not recoverable in Small Claims Court.",
+    "punitive_explanation": "Punitive damages are not awarded in small claims court; however, statutory penalties may apply in certain cases, such as bad checks.",
     "statutory_multipliers": [
       {
-        "claim": "bad check",
-        "multiplier": "2x or 3x",
-        "statute": "Ala. Code § 6-6-340",
+        "claim": "Bad check (after 30-day notice)",
+        "multiplier": "2x or 3x of check amount",
+        "explanation": "Check amount + service charge up to $40 + civil penalty up to $100 OR 2x check amount, whichever is greater.",
+        "statute": "Ala. Code § 6-5-285",
         "source_ids": [
-          "S6"
+          "S19"
         ]
-      },
-      {
-        "claim": "security deposit bad faith",
-        "multiplier": "",
-        "statute": "",
-        "source_ids": []
       }
     ],
     "attorney_fees_recoverable": "sometimes",
-    "attorney_fees_notes": "Attorney fees may be recoverable in certain cases as provided by statute.",
+    "attorney_fees_explanation": "Attorney fees may be recoverable if specified by statute or contract; otherwise, each party bears their own costs.",
     "prejudgment_interest_rate_pct": null,
     "prejudgment_interest_statute": "",
     "postjudgment_interest_rate_pct": null,
+    "postjudgment_interest_type": "simple",
     "postjudgment_interest_statute": "",
-    "filing_and_service_fees_recoverable": true,
-    "source_ids": [
-      "S6"
-    ]
+    "postjudgment_interest_notes": "",
+    "filing_and_service_fees_recoverable_from_loser": true,
+    "source_ids": []
   },
-  "venue": {
-    "rules": [
+  "where_to_file": {
+    "court_name": "Small Claims Division of the District Court",
+    "parent_court": "Alabama Unified Judicial System — District Court",
+    "venue_rules": [
       {
-        "scenario": "defendant residence",
-        "where_filed": "District Court in the county where the defendant resides",
+        "scenario": "Most cases (the default)",
+        "filing_options": [
+          "County where the defendant lives"
+        ],
         "source_ids": [
-          "S2"
+          "S19"
         ]
       },
       {
-        "scenario": "where contract performed",
-        "where_filed": "District Court in the county where the contract was performed",
+        "scenario": "Where contract was performed",
+        "filing_options": [
+          "County where performance was due"
+        ],
         "source_ids": [
-          "S2"
+          "S19"
         ]
       },
       {
-        "scenario": "where injury or damage occurred",
-        "where_filed": "District Court in the county where the injury or damage occurred",
+        "scenario": "Where injury or damage occurred",
+        "filing_options": [
+          "County where the event occurred"
+        ],
         "source_ids": [
-          "S2"
+          "S19"
         ]
       },
       {
-        "scenario": "multiple defendants",
-        "where_filed": "District Court in any county where any defendant resides",
+        "scenario": "Multiple defendants",
+        "filing_options": [
+          "Any county where ONE defendant resides"
+        ],
         "source_ids": [
-          "S2"
+          "S19"
         ]
       },
       {
-        "scenario": "out-of-state defendant",
-        "where_filed": "District Court in the county where the plaintiff resides",
+        "scenario": "Out-of-state defendant",
+        "filing_options": [
+          "Where the cause of action arose"
+        ],
         "source_ids": [
-          "S2"
+          "S19"
         ]
       }
     ],
-    "wrong_venue_consequence": "dismiss",
+    "consequences_of_wrong_venue": "Filing in the wrong venue may result in dismissal or transfer of the case, potentially incurring additional costs and delays.",
     "e_filing_available": "varies",
-    "e_filing_portal_url": "https://efile.alacourt.gov",
-    "e_filing_notes": "E-filing availability varies by county; check with the local court.",
-    "source_ids": [
-      "S2"
-    ]
+    "e_filing_notes": "E-filing availability varies by county; check with the local court clerk for specific information.",
+    "e_filing_portal": null,
+    "source_ids": []
   },
   "fees": {
     "filing_fee_tiers": [
       {
-        "range_min_dollars": 0,
-        "range_max_dollars": 1500,
-        "fee_dollars": 52,
+        "range_label": "$0 to $1,500",
+        "range_min": 0,
+        "range_max": 1500,
+        "fee_dollars": 82,
         "source_ids": [
-          "S12"
+          "S13"
         ]
       },
       {
-        "range_min_dollars": 1500.01,
-        "range_max_dollars": 3000,
-        "fee_dollars": 126,
+        "range_label": "$1,500.01 to $3,000",
+        "range_min": 1500.01,
+        "range_max": 3000,
+        "fee_dollars": 150,
         "source_ids": [
-          "S12"
+          "S13"
         ]
       },
       {
-        "range_min_dollars": 3000.01,
-        "range_max_dollars": 6000,
-        "fee_dollars": 215,
+        "range_label": "$3,000.01 to $6,000",
+        "range_min": 3000.01,
+        "range_max": 6000,
+        "fee_dollars": 210,
         "source_ids": [
-          "S12"
+          "S13"
         ]
       }
     ],
+    "frequent_filer": {
+      "threshold_per_year": null,
+      "fee_dollars": null,
+      "notes": ""
+    },
     "service_fees": [
       {
-        "method": "sheriff",
-        "cost_dollars_or_range": "varies by county",
-        "notes": "Service fees vary by county; check with the local court.",
+        "method": "Sheriff (personal service)",
+        "amount_label": "$25-50",
+        "notes": "Required for most cases.",
         "source_ids": [
-          "S12"
+          "S13"
         ]
       },
       {
-        "method": "certified mail by clerk",
-        "cost_dollars_or_range": "varies by county",
-        "notes": "Service fees vary by county; check with the local court.",
+        "method": "Certified mail by clerk",
+        "amount_label": "$10-15",
+        "notes": "Available for certain cases.",
         "source_ids": [
-          "S12"
+          "S13"
+        ]
+      }
+    ],
+    "waiver": {
+      "forms": [
+        {
+          "number": "AOC-IFP",
+          "name": "Affidavit of Substantial Hardship",
+          "url": "",
+          "source_ids": [
+            "S12"
+          ]
+        }
+      ],
+      "eligibility_bullets": [
+        "Receiving need-based public assistance (SNAP, TANF, SSI)",
+        "Household income below 125% federal poverty line"
+      ],
+      "coverage_notes": "The waiver covers filing fees and service fees.",
+      "if_you_win_notes": "If you win, the waived fees are added to the judgment against the loser."
+    },
+    "other_fees": [
+      {
+        "name": "Subpoena issuance",
+        "amount_label": "$10",
+        "notes": "Plus witness fee per day.",
+        "source_ids": [
+          "S13"
         ]
       },
       {
-        "method": "private process server",
-        "cost_dollars_or_range": "varies by county",
-        "notes": "Service fees vary by county; check with the local court.",
+        "name": "Appeal filing",
+        "amount_label": "$200",
+        "notes": "",
         "source_ids": [
-          "S12"
+          "S13"
+        ]
+      },
+      {
+        "name": "Writ of execution",
+        "amount_label": "varies",
+        "notes": "Post-judgment.",
+        "source_ids": [
+          "S13"
         ]
       }
     ],
-    "waiver_forms": [
-      {
-        "number": "",
-        "name": "",
-        "url": "",
-        "source_ids": []
-      }
-    ],
-    "waiver_eligibility_one_line": "Fee waivers may be available based on financial hardship; check with the local court.",
-    "waiver_coverage_notes": "Fee waivers may cover filing and service fees; check with the local court.",
-    "filing_fees_recoverable_from_loser": true,
+    "fees_recoverable_from_loser_notes": "If you win, filing fees and reasonable service costs are added to the judgment.",
     "source_ids": [
-      "S12"
+      "S13"
     ]
   },
-  "statute_of_limitations": [
-    {
-      "claim": "written contract",
-      "years": 6,
-      "clock_starts": "from breach",
-      "statute": "Ala. Code § 6-2-34",
-      "source_ids": [
-        "S4"
-      ]
-    },
-    {
-      "claim": "oral contract",
-      "years": 6,
-      "clock_starts": "from breach",
-      "statute": "Ala. Code § 6-2-34",
-      "source_ids": [
-        "S4"
-      ]
-    },
-    {
-      "claim": "sale of goods (UCC)",
-      "years": 4,
-      "clock_starts": "from breach",
-      "statute": "Ala. Code § 7-2-725",
-      "source_ids": [
-        "S4"
-      ]
-    },
-    {
-      "claim": "promissory note",
-      "years": 6,
-      "clock_starts": "from breach",
-      "statute": "Ala. Code § 6-2-34",
-      "source_ids": [
-        "S4"
-      ]
-    },
-    {
-      "claim": "open account",
-      "years": 3,
-      "clock_starts": "from last transaction",
-      "statute": "Ala. Code § 6-2-37",
-      "source_ids": [
-        "S4"
-      ]
-    },
-    {
-      "claim": "personal injury",
-      "years": 2,
-      "clock_starts": "from injury",
-      "statute": "Ala. Code § 6-2-38",
-      "source_ids": [
-        "S4"
-      ]
-    },
-    {
-      "claim": "property damage",
-      "years": 6,
-      "clock_starts": "from damage",
-      "statute": "Ala. Code § 6-2-34",
-      "source_ids": [
-        "S4"
-      ]
-    },
-    {
-      "claim": "fraud",
-      "years": 2,
-      "clock_starts": "from discovery",
-      "statute": "Ala. Code § 6-2-38",
-      "source_ids": [
-        "S4"
-      ]
-    },
-    {
-      "claim": "bad check",
-      "years": 1,
-      "clock_starts": "from dishonor",
-      "statute": "Ala. Code § 7-3-118",
-      "source_ids": [
-        "S4"
-      ]
-    },
-    {
-      "claim": "unpaid wages",
-      "years": 2,
-      "clock_starts": "from due date",
-      "statute": "Ala. Code § 6-2-38",
-      "source_ids": [
-        "S4"
-      ]
-    },
-    {
-      "claim": "security deposit",
-      "years": 6,
-      "clock_starts": "from due date",
-      "statute": "Ala. Code § 6-2-34",
-      "source_ids": [
-        "S4"
-      ]
-    },
-    {
-      "claim": "judgment enforcement",
-      "years": 20,
-      "clock_starts": "from judgment",
-      "statute": "Ala. Code § 6-9-191",
-      "source_ids": [
-        "S4"
-      ]
-    }
-  ],
-  "tolling_notes_one_line": "Statutes of limitations may be tolled under certain circumstances; consult legal counsel.",
+  "statute_of_limitations": {
+    "entries": [
+      {
+        "id": "written-contract",
+        "claim": "Written contract",
+        "years": 6,
+        "clock_starts": "Date of breach",
+        "statute": "Ala. Code § 6-2-34",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "oral-contract",
+        "claim": "Oral contract",
+        "years": 6,
+        "clock_starts": "Date of breach",
+        "statute": "Ala. Code § 6-2-34",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "sale-of-goods",
+        "claim": "Sale of goods (UCC)",
+        "years": 4,
+        "clock_starts": "Date of breach",
+        "statute": "Ala. Code § 7-2-725",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "promissory-note",
+        "claim": "Promissory note",
+        "years": 6,
+        "clock_starts": "Date of breach",
+        "statute": "Ala. Code § 6-2-34",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "open-account",
+        "claim": "Open account / credit card debt",
+        "years": 6,
+        "clock_starts": "Date of last payment",
+        "statute": "Ala. Code § 6-2-34",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "personal-injury",
+        "claim": "Personal injury",
+        "years": 2,
+        "clock_starts": "Date of injury",
+        "statute": "Ala. Code § 6-2-38",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "property-damage",
+        "claim": "Property damage",
+        "years": 6,
+        "clock_starts": "Date of damage",
+        "statute": "Ala. Code § 6-2-34",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "fraud",
+        "claim": "Fraud",
+        "years": 2,
+        "clock_starts": "Date of discovery",
+        "statute": "Ala. Code § 6-2-38",
+        "notes": "Discovery rule applies.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "bad-check",
+        "claim": "Bad check",
+        "years": 6,
+        "clock_starts": "Date of dishonor",
+        "statute": "Ala. Code § 7-3-118",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "unpaid-wages",
+        "claim": "Unpaid wages",
+        "years": 6,
+        "clock_starts": "Date wages were due",
+        "statute": "Ala. Code § 6-2-34",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "security-deposit",
+        "claim": "Security deposit",
+        "years": 6,
+        "clock_starts": "Date deposit was due",
+        "statute": "Ala. Code § 35-9A-201",
+        "notes": "",
+        "source_ids": [
+          "S20"
+        ]
+      },
+      {
+        "id": "judgment-enforcement",
+        "claim": "Judgment enforcement",
+        "years": 20,
+        "clock_starts": "Date of judgment",
+        "statute": "Ala. Code § 6-9-191",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "discovery_rule_notes": "The discovery rule applies to fraud claims, starting the clock when the fraud is discovered.",
+    "tolling_notes": "The statute of limitations may be tolled if the defendant is out of state, the plaintiff is a minor, or in cases of bankruptcy stays."
+  },
   "pre_filing": {
     "demand_letter_required": false,
-    "demand_letter_notes": "While not required, sending a demand letter is recommended.",
-    "bad_check_30_day_notice": "A 30-day notice is required before filing a bad check claim.",
-    "wage_claim_demand_rule": "No specific demand rule for wage claims.",
-    "government_claim_notice_required": true,
-    "government_claim_deadline_days": 180,
-    "government_claim_notes": "Claims against government entities require a notice within 180 days.",
+    "demand_letter_recommended": true,
+    "demand_letter_notes": "While not required, sending a demand letter can facilitate settlement and strengthen your case if litigation ensues.",
+    "bad_check_notice_rule": "For bad checks, a 30-day written notice demanding payment is required before filing a claim.",
+    "wage_claim_demand_rule": "No specific pre-filing demand required for wage claims, but it's advisable to request payment in writing before filing.",
+    "government_claim_required": false,
+    "government_claim_deadline_days": null,
+    "government_claim_notes": "",
+    "landlord_tenant_pre_filing_notes": "Landlords must provide an itemized list of damages within 60 days of lease termination to withhold any portion of the security deposit.",
+    "consumer_protection_notes": "No specific pre-filing requirements for consumer protection claims, but documenting all communications is beneficial.",
     "mandatory_mediation_before_filing": "none",
     "arbitration_clauses_enforced": true,
-    "source_ids": [
-      "S4"
-    ]
+    "source_ids": []
   },
   "forms": [
     {
-      "number": "SC-1",
-      "name": "Statement of Claim",
+      "number": "SM-1",
+      "name": "Statement of Claim (Complaint) - General",
+      "description": "Initiates a general small claims case.",
       "filed_by": "plaintiff",
       "required": true,
-      "purpose_one_line": "Initiates a small claims case.",
-      "url": "https://judicial.alabama.gov/Library/Forms#small_claims",
+      "group": "starting",
+      "url": "",
       "source_ids": [
-        "S11"
+        "S12"
       ]
     },
     {
-      "number": "SC-2",
-      "name": "Answer",
+      "number": "SM-2",
+      "name": "Statement of Claim (Complaint) - Specific Property",
+      "description": "Initiates a small claims case for specific property.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "",
+      "source_ids": [
+        "S12"
+      ]
+    },
+    {
+      "number": "SM-3",
+      "name": "Defendant's Answer",
+      "description": "Allows the defendant to respond to the plaintiff's claim.",
       "filed_by": "defendant",
       "required": true,
-      "purpose_one_line": "Responds to a Statement of Claim.",
-      "url": "https://judicial.alabama.gov/Library/Forms#small_claims",
+      "group": "counterclaim",
+      "url": "",
       "source_ids": [
-        "S11"
+        "S12"
       ]
     },
     {
-      "number": "SC-3",
-      "name": "Counterclaim",
+      "number": "SM-4",
+      "name": "Notice of Trial",
+      "description": "Notifies parties of the trial date and time.",
+      "filed_by": "court",
+      "required": true,
+      "group": "hearing",
+      "url": "",
+      "source_ids": [
+        "S12"
+      ]
+    },
+    {
+      "number": "SM-6",
+      "name": "Defendant's Counterclaim",
+      "description": "Allows the defendant to file a counterclaim against the plaintiff.",
       "filed_by": "defendant",
       "required": false,
-      "purpose_one_line": "Files a counterclaim against the plaintiff.",
-      "url": "https://judicial.alabama.gov/Library/Forms#small_claims",
+      "group": "counterclaim",
+      "url": "",
       "source_ids": [
-        "S11"
+        "S12"
       ]
     },
     {
-      "number": "SC-4",
-      "name": "Default Judgment",
-      "filed_by": "plaintiff",
-      "required": false,
-      "purpose_one_line": "Requests a default judgment when the defendant fails to respond.",
-      "url": "https://judicial.alabama.gov/Library/Forms#small_claims",
+      "number": "SM-7",
+      "name": "Small Claims Summons",
+      "description": "Summons issued to notify the defendant of the claim.",
+      "filed_by": "court",
+      "required": true,
+      "group": "service",
+      "url": "",
       "source_ids": [
-        "S11"
+        "S12"
       ]
     },
     {
-      "number": "SC-5",
-      "name": "Satisfaction of Judgment",
+      "number": "AOC-IFP",
+      "name": "Affidavit of Substantial Hardship",
+      "description": "Requests a waiver of court fees due to financial hardship.",
       "filed_by": "plaintiff",
       "required": false,
-      "purpose_one_line": "Indicates that a judgment has been satisfied.",
-      "url": "https://judicial.alabama.gov/Library/Forms#small_claims",
+      "group": "fee-waiver",
+      "url": "",
       "source_ids": [
-        "S11"
+        "S12"
       ]
     }
   ],
   "service": {
     "who_can_serve": [
-      "sheriff",
-      "certified mail by clerk",
-      "private process server",
-      "adult non-party"
+      "Sheriff",
+      "Certified mail by clerk",
+      "Private process server"
     ],
     "methods": [
       {
-        "name": "personal service by sheriff",
-        "when_valid": "When the defendant resides in the county.",
-        "pros": "Official and reliable.",
-        "cons": "May incur additional fees.",
+        "name": "Sheriff personal service",
+        "description": "Sheriff or constable personally hands the papers to the defendant.",
+        "pros": [
+          "Most reliable",
+          "Official"
+        ],
+        "cons": [
+          "May be slower",
+          "Additional cost"
+        ],
         "source_ids": [
-          "S13"
+          "S14"
         ]
       },
       {
-        "name": "certified mail by clerk",
-        "when_valid": "When the defendant's address is known.",
-        "pros": "Cost-effective.",
-        "cons": "May be refused or unclaimed.",
+        "name": "Certified mail by clerk",
+        "description": "Clerk sends the papers via certified mail to the defendant.",
+        "pros": [
+          "Less expensive",
+          "Convenient"
+        ],
+        "cons": [
+          "Defendant may refuse delivery",
+          "Less reliable"
+        ],
         "source_ids": [
-          "S13"
+          "S14"
         ]
       },
       {
-        "name": "private process server",
-        "when_valid": "When personal service is required.",
-        "pros": "Flexible scheduling.",
-        "cons": "May be more expensive.",
+        "name": "Private process server",
+        "description": "A private individual authorized to serve legal documents delivers the papers to the defendant.",
+        "pros": [
+          "Flexible scheduling",
+          "Can be faster"
+        ],
+        "cons": [
+          "Additional cost",
+          "Must ensure proper authorization"
+        ],
         "source_ids": [
-          "S13"
-        ]
-      },
-      {
-        "name": "adult non-party",
-        "when_valid": "When other methods are impractical.",
-        "pros": "Can be cost-effective.",
-        "cons": "May lack official authority.",
-        "source_ids": [
-          "S13"
+          "S14"
         ]
       }
     ],
     "in_county_days_before_hearing": 14,
     "out_of_county_days_before_hearing": 21,
     "proof_of_service_form": {
-      "number": "SC-6",
-      "name": "Proof of Service"
+      "number": "SM-7",
+      "name": "Small Claims Summons"
     },
     "proof_filing_deadline_days_before_hearing": 7,
-    "business_service_rule": "Service on a business can be made by serving an officer or registered agent.",
-    "out_of_state_defendant_notes": "Service must comply with the laws of the state where the defendant resides.",
-    "cant_find_defendant": "Plaintiff may request service by publication if the defendant cannot be located.",
-    "avoiding_service": "If the defendant is avoiding service, the court may allow alternative methods.",
+    "business_service_rule": "Serve the registered agent or an officer of the corporation; for sole proprietors, serve the individual directly.",
+    "out_of_state_defendant_notes": "Service must comply with Alabama's long-arm statute and the rules of the state where the defendant resides.",
+    "cant_find_defendant_notes": "If the defendant cannot be located after diligent efforts, service by publication may be permitted with court approval.",
+    "avoiding_service_notes": "If the defendant is evading service, document all attempts and seek court permission for alternative service methods.",
     "source_ids": [
-      "S13"
+      "S14"
     ]
   },
   "response_and_default": {
     "must_file_written_answer": true,
     "response_deadline_days": 14,
-    "default_process": "If the defendant fails to respond, the plaintiff may request a default judgment.",
+    "response_notes": "The defendant must file a written answer within 14 days of service; failure to do so may result in a default judgment.",
+    "default_process": "If the defendant fails to answer or appear, the court may enter a default judgment in favor of the plaintiff.",
     "prove_up_required": true,
-    "prove_up_notes": "Plaintiff must provide evidence to support the claim even if the defendant defaults.",
+    "prove_up_notes": "Even if the defendant defaults, the plaintiff must provide evidence to support the claim before a judgment is entered.",
     "motion_to_vacate_form": {
-      "number": "SC-7",
-      "name": "Motion to Set Aside Default Judgment"
+      "number": "SM-3",
+      "name": "Defendant's Answer"
     },
-    "motion_to_vacate_deadline_days": 30,
+    "motion_to_vacate_deadline_days": 14,
     "motion_to_vacate_lack_of_notice_days": 180,
-    "counterclaim_allowed": true,
-    "counterclaim_same_cap": true,
-    "counterclaim_form": {
-      "number": "SC-3",
-      "name": "Counterclaim"
-    },
-    "counterclaim_deadline_in_county_days": 14,
-    "counterclaim_deadline_out_of_county_days": 21,
-    "counterclaim_exceeds_cap": "If the counterclaim exceeds the small claims limit, the case may be transferred to a higher court.",
+    "motion_to_vacate_appeal_deadline_days": 14,
+    "motion_to_vacate_appeal_notes": "A motion to vacate must be filed within 14 days of the default judgment; if denied, an appeal must be filed within 14 days.",
     "source_ids": [
-      "S10"
+      "S11"
+    ]
+  },
+  "counterclaim": {
+    "allowed": true,
+    "form": {
+      "number": "SM-6",
+      "name": "Defendant's Counterclaim"
+    },
+    "same_monetary_limit": true,
+    "service_deadline_in_county_days": 14,
+    "service_deadline_out_of_county_days": 21,
+    "transfer_to_higher_court_available": true,
+    "transfer_to_higher_court_statute": "Ala. Code § 12-12-71",
+    "transfer_to_higher_court_notes": "If a counterclaim exceeds the small claims limit, the case may be transferred to the appropriate court.",
+    "source_ids": [
+      "S11"
     ]
   },
   "hearing": {
     "lawyers_allowed": "yes",
     "lawyers_allowed_notes": "Parties may be represented by attorneys, but it is not required.",
-    "format": "bench trial",
-    "typical_length_minutes": 30,
+    "format": "Bench trial with informal procedures; each party presents their case, and the judge may ask questions.",
+    "presider": "judge",
     "burden_of_proof": "preponderance",
     "what_to_bring": [
-      "evidence",
-      "witnesses",
-      "documents supporting the claim"
+      "Originals of any contracts",
+      "Receipts and bank records",
+      "Photos and videos",
+      "Names and contact info for witnesses"
     ],
     "subpoena_form": {
-      "number": "SC-8",
-      "name": "Subpoena"
+      "number": "SM-4",
+      "name": "Notice of Trial"
     },
-    "witness_fee_per_day": 10,
+    "witness_fee_per_day_dollars": 10,
     "free_interpreters": false,
-    "interpreter_request_process": "Parties must arrange for their own interpreters.",
+    "interpreter_request_process": "Parties must arrange for their own interpreters; the court does not provide them.",
     "jury_option": false,
-    "decision_timing": "on the spot",
-    "on_site_mediation": "no",
+    "decision_timing": "On the spot or mailed within 14 days",
+    "on_site_mediation": "by county",
+    "on_site_mediation_notes": "Some counties offer mediation services; check with the local court clerk for availability.",
     "source_ids": [
-      "S10"
+      "S11"
     ]
   },
   "appeals": {
     "who_can_appeal": "either",
     "deadline_days": 14,
-    "fee_dollars": 100,
+    "fee_dollars": 200,
     "type": "trial de novo",
-    "bond_required": true,
-    "bond_amount_notes": "Bond amount is typically equal to the judgment amount.",
+    "type_notes": "The appeal is a new trial in the circuit court, as if the original trial had not occurred.",
+    "attorneys_allowed_on_appeal": true,
+    "bond_required": false,
+    "bond_amount_notes": "",
     "automatic_stay_on_appeal": true,
     "default_judgment_appealable": true,
-    "default_judgment_notes": "Default judgments can be appealed within the same timeframe.",
-    "notice_of_appeal_form_name": "Notice of Appeal",
-    "frivolous_appeal_penalty_dollars": 500,
-    "frivolous_appeal_statute": "Ala. Code § 12-12-70",
+    "default_judgment_notes": "A default judgment can be appealed within 14 days; the appeal results in a new trial in the circuit court.",
+    "notice_of_appeal_form": {
+      "number": "SM-3",
+      "name": "Defendant's Answer"
+    },
+    "frivolous_appeal_penalty_dollars": null,
+    "frivolous_appeal_statute": "",
+    "frivolous_appeal_notes": "",
     "source_ids": [
-      "S14"
+      "S6"
     ]
   },
   "collection": {
     "payment_deadline_typical_days": 30,
     "post_judgment_interest_rate_pct": 7.5,
     "post_judgment_interest_statute": "Ala. Code § 8-8-10",
+    "post_judgment_interest_notes": "Interest accrues on the judgment amount until paid in full.",
     "methods": [
       {
         "id": "wage-garnishment",
         "name": "Wage garnishment",
-        "blurb": "A portion of the debtor's wages is withheld to satisfy the judgment.",
-        "description": "The court orders the debtor's employer to withhold a portion of wages to pay the judgment.",
-        "estimated_cost": "varies",
-        "effectiveness_notes": "Effective if the debtor is employed.",
+        "blurb": "Have a portion of debtor's wages withheld until the judgment is paid.",
+        "description": "File a writ of garnishment with the court; serve the employer; employer withholds and remits to the court.",
+        "forms": [
+          {
+            "number": "SM-4",
+            "name": "Notice of Trial"
+          }
+        ],
+        "estimated_cost": "$30-50 plus sheriff fees",
+        "effectiveness_notes": "Most effective when debtor is W-2 employed at a stable job.",
         "exemptions": [
-          "75% of disposable earnings"
+          "75% of disposable earnings (federal CCPA floor)"
         ],
         "source_ids": [
-          "S15"
+          "S16"
         ]
       },
       {
-        "id": "bank-garnishment",
-        "name": "Bank garnishment",
-        "blurb": "Funds are seized from the debtor's bank account.",
-        "description": "The court orders the debtor's bank to freeze and turn over funds to satisfy the judgment.",
-        "estimated_cost": "varies",
-        "effectiveness_notes": "Effective if the debtor has sufficient funds in the account.",
+        "id": "bank-levy",
+        "name": "Bank levy",
+        "blurb": "Seize funds from debtor's bank account to satisfy the judgment.",
+        "description": "Obtain a writ of execution; serve the bank; bank freezes and remits funds to the court.",
+        "forms": [
+          {
+            "number": "SM-4",
+            "name": "Notice of Trial"
+          }
+        ],
+        "estimated_cost": "$30-50 plus sheriff fees",
+        "effectiveness_notes": "Effective if debtor maintains significant funds in bank accounts.",
         "exemptions": [
-          "$1,000 in personal property"
+          "Social Security and federal benefits"
         ],
         "source_ids": [
-          "S15"
+          "S16"
         ]
       },
       {
-        "id": "levy",
-        "name": "Levy on personal property",
-        "blurb": "Seizure and sale of the debtor's personal property.",
-        "description": "The court orders the seizure and sale of the debtor's non-exempt personal property.",
-        "estimated_cost": "varies",
-        "effectiveness_notes": "Effective if the debtor owns valuable non-exempt property.",
+        "id": "property-lien",
+        "name": "Property lien",
+        "blurb": "Place a lien on debtor's real property to secure the judgment.",
+        "description": "Record the judgment with the county; lien attaches to debtor's property; must be satisfied before sale.",
+        "forms": [
+          {
+            "number": "SM-4",
+            "name": "Notice of Trial"
+          }
+        ],
+        "estimated_cost": "$30-50 plus recording fees",
+        "effectiveness_notes": "Effective if debtor owns real property; may take time to realize payment.",
         "exemptions": [
-          "$1,000 in personal property"
+          "Homestead exemption up to $15,000"
         ],
         "source_ids": [
-          "S15"
+          "S16"
+        ]
+      },
+      {
+        "id": "writ-of-execution",
+        "name": "Writ of execution",
+        "blurb": "Seize and sell debtor's non-exempt property to satisfy the judgment.",
+        "description": "Obtain writ from court; sheriff seizes property; property sold at auction; proceeds applied to judgment.",
+        "forms": [
+          {
+            "number": "SM-4",
+            "name": "Notice of Trial"
+          }
+        ],
+        "estimated_cost": "$50-100 plus sheriff fees",
+        "effectiveness_notes": "Effective if debtor owns valuable non-exempt property.",
+        "exemptions": [
+          "Personal property up to $7,500"
+        ],
+        "source_ids": [
+          "S16"
         ]
       }
     ],
     "wage_garnishment_max_pct_of_disposable": 25,
     "judgment_lifespan_years": 10,
-    "judgment_renewal_process": "Judgments can be renewed by filing a motion before the expiration of the 10-year period.",
+    "judgment_renewal_process": "File a motion to renew the judgment before expiration; pay applicable fees.",
+    "debtor_exam_form": {
+      "number": "SM-4",
+      "name": "Notice of Trial"
+    },
     "exempt_assets": [
-      "homestead up to $5,000",
-      "personal property up to $1,000"
+      "Homestead — $15,000",
+      "Vehicle — $7,500",
+      "Retirement accounts (federally and/or state-protected)",
+      "Social Security and federal benefits"
     ],
-    "bankruptcy_effect_notes": "Filing for bankruptcy may discharge the judgment debt.",
-    "priority_notes_one_line": "Certain debts, like child support, have priority over others.",
+    "bankruptcy_effect_notes": "Filing for bankruptcy may discharge the judgment; certain debts are non-dischargeable.",
+    "satisfaction_of_judgment_form": {
+      "number": "SM-4",
+      "name": "Notice of Trial"
+    },
+    "priority_notes": "Priority among creditors is generally determined by the order of filing or recording the judgment.",
     "source_ids": [
-      "S15"
+      "S16"
     ]
   },
   "businesses": {
     "self_representation_allowed": true,
-    "self_representation_threshold_notes": "Businesses may represent themselves in Small Claims Court.",
+    "self_representation_notes": "Businesses can represent themselves in small claims court without an attorney.",
+    "can_send_employee": true,
+    "can_send_attorney": true,
     "non_attorney_representation_form": {
-      "number": "",
-      "name": ""
+      "number": "SM-4",
+      "name": "Notice of Trial"
     },
-    "sole_proprietor_exception": "Sole proprietors may represent themselves without restriction.",
+    "insurance_adjuster_allowed": false,
+    "fictitious_name_form": {
+      "number": "SM-4",
+      "name": "Notice of Trial"
+    },
+    "fictitious_name_notes": "Businesses must use their legal entity name; if operating under a trade name, it must be registered.",
+    "sole_proprietor_employee_exception": "Sole proprietors can send a designated employee to represent them.",
     "out_of_state_business_must_register": true,
     "out_of_state_business_statute": "Ala. Code § 10A-1-7.01",
-    "trade_name_rule": "Businesses must register trade names with the Secretary of State.",
+    "licensing_notes": "Unlicensed contractors may be barred from suing to recover fees for unlicensed work.",
     "source_ids": [
-      "S4"
+      "S11"
     ]
   },
   "county_variations_material": true,
   "county_variations": [
     {
-      "county": "Montgomery",
-      "summary_one_line": "Filing fees vary based on claim amount.",
+      "county": "Jefferson",
+      "topic": "E-filing availability",
+      "detail": "Jefferson County offers online filing through eAlafile.",
       "source_ids": [
-        "S12"
+        "S1"
       ]
     },
     {
-      "county": "Jefferson",
-      "summary_one_line": "E-filing is mandatory for all cases.",
+      "county": "Mobile",
+      "topic": "Mediation services",
+      "detail": "Mobile County provides on-site mediation services for small claims cases.",
       "source_ids": [
-        "S12"
+        "S1"
       ]
     }
   ],
   "pitfalls": [
-    "wrong defendant naming",
-    "wrong venue",
-    "statute of limitations expired",
-    "bad service",
-    "asking for non-monetary relief",
-    "no-show by plaintiff",
-    "default + appeal mistake",
-    "judgment-proof debtor"
+    {
+      "title": "Wrong defendant naming",
+      "what_happens": "If you sue 'John's Garage' but the legal entity is 'JG Auto Repair LLC', the judgment may be unenforceable against the LLC's assets.",
+      "how_to_avoid": "Search the Secretary of State business records before filing and use the exact registered name; for sole proprietors, use the individual's full legal name.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Missed statute of limitations",
+      "what_happens": "Filing one day after the deadline gets the case dismissed with prejudice.",
+      "how_to_avoid": "Check the SOL for your specific claim type before filing; for fraud, the discovery rule applies but be prepared to prove when you reasonably could have discovered it.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Improper service of process",
+      "what_happens": "If the defendant isn't properly served, the case may be delayed or dismissed.",
+      "how_to_avoid": "Follow Alabama's rules for service of process carefully; consider using the sheriff's office or a professional process server.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Failing to appear in court",
+      "what_happens": "If you don't show up, the court may dismiss your case or enter a default judgment against you.",
+      "how_to_avoid": "Mark your calendar and set reminders; if an emergency arises, notify the court as soon as possible.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Not bringing necessary evidence",
+      "what_happens": "Without proper evidence, you may lose your case even if you're in the right.",
+      "how_to_avoid": "Gather all relevant documents, photos, and witness statements well before your court date.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Ignoring post-judgment procedures",
+      "what_happens": "Winning a judgment doesn't guarantee payment; you must take steps to collect.",
+      "how_to_avoid": "Learn about collection methods like garnishment and liens; the court clerk can provide information on post-judgment procedures.",
+      "source_ids": [
+        "S1"
+      ]
+    }
   ],
   "recent_changes": [
     {
-      "date": "2025-07-01",
-      "summary_one_line": "Increased small claims jurisdictional limit to $6,000.",
-      "bill_or_rule_citation": "Act 2025-123",
+      "date": "2024-01-01",
+      "title": "Increase in small claims filing fees",
+      "description": "Filing fees for small claims cases were increased to accommodate rising administrative costs.",
+      "bill_or_rule_citation": "Ala. Code § 12-19-71",
+      "source_ids": [
+        "S13"
+      ]
+    },
+    {
+      "date": "2023-07-01",
+      "title": "Implementation of e-filing in select counties",
+      "description": "E-filing became available in Jefferson and Mobile counties to streamline the filing process.",
+      "bill_or_rule_citation": "Ala. Code § 12-19-275",
+      "source_ids": [
+        "S1"
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Do I need a lawyer?",
+      "answer": "No, you are not required to have a lawyer in small claims court. The process is designed to be accessible for individuals representing themselves. However, you may choose to hire an attorney if you prefer.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "How long does it take?",
+      "answer": "The timeline varies, but most small claims cases are resolved within 30 to 90 days from filing to judgment.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "What's the maximum I can sue for?",
+      "answer": "In Alabama, the maximum amount you can sue for in small claims court is $6,000.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "What happens if the defendant doesn't show up?",
+      "answer": "If the defendant fails to appear, the court may enter a default judgment in your favor. You may still need to provide evidence to support your claim before the judgment is finalized.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "Can I appeal?",
+      "answer": "Yes, either party can appeal a small claims judgment within 14 days. The appeal will result in a new trial (trial de novo) in the circuit court.",
+      "source_ids": [
+        "S6"
+      ]
+    },
+    {
+      "question": "How long is a judgment good for?",
+      "answer": "In Alabama, a judgment is valid for 10 years and can be renewed for an additional 10 years if necessary.",
       "source_ids": [
         "S4"
       ]
     }
   ],
-  "faq_topics_to_cover": [
-    "do I need a lawyer",
-    "how long does it take",
-    "what is the maximum",
-    "what happens if defendant does not show",
-    "can I appeal",
-    "how long is a judgment good for"
-  ],
   "state_specific_notes": [
-    "Alabama allows businesses to represent themselves in Small Claims Court.",
-    "E-filing availability varies by county; check with the local court."
+    "Alabama allows driver's license suspension as a collection tool for unpaid vehicle judgments.",
+    "Alabama treats engagement rings as conditional gifts.",
+    "Alabama has a homestead exemption of $15,000 for judgment debtors.",
+    "Alabama requires a 30-day written notice before filing a bad check claim.",
+    "Alabama's small claims court does not handle eviction cases; these are filed in the regular district court docket."
   ],
+  "_extras": {
+    "interesting_findings": [
+      "Alabama's small claims court procedures are designed to be accessible for individuals representing themselves, emphasizing simplicity and speed.",
+      "The state provides a comprehensive guide to small claims court procedures, including forms and instructions, to assist litigants."
+    ]
+  },
   "sources": [
     {
       "id": "S1",
-      "label": "Alabama Unified Judicial System — Small Claims Information",
-      "url": "https://judicial.alabama.gov/Library/SmallClaims",
-      "primary": true
-    },
-    {
-      "id": "S2",
-      "label": "Alabama Unified Judicial System — District Court Overview",
-      "url": "https://judicial.alabama.gov/Courts/District",
-      "primary": true
+      "label": "A Guide to Alabama Small Claims Courts",
+      "url": "https://judicial.alabama.gov/docs/library/docs/smguide.pdf",
+      "primary": true,
+      "citation": "A Guide to Alabama Small Claims Courts"
     },
     {
       "id": "S4",
-      "label": "Ala. Code § 12-12-31 (Small claims court; jurisdiction; representation)",
-      "url": "https://alisondb.legislature.state.al.us/alison/CodeOfAlabama/1975/Coatoc.htm",
-      "primary": true
+      "label": "Alabama Code § 6-2-34 — Statute of Limitations",
+      "url": "https://alisondb.legislature.state.al.us/alison/codeofalabama/1975/6-2-34.htm",
+      "primary": true,
+      "citation": "Ala. Code § 6-2-34"
+    },
+    {
+      "id": "S5",
+      "label": "Alabama Code § 12-12-31 — Jurisdiction in small claims cases",
+      "url": "https://alisondb.legislature.state.al.us/alison/codeofalabama/1975/12-12-31.htm",
+      "primary": true,
+      "citation": "Ala. Code § 12-12-31"
     },
     {
       "id": "S6",
-      "label": "Ala. Code § 6-6-340 (Small claims procedure; right to jury trial)",
-      "url": "https://alisondb.legislature.state.al.us/alison/CodeOfAlabama/1975/Coatoc.htm",
-      "primary": true
-    },
-    {
-      "id": "S10",
-      "label": "Alabama Rules of Small Claims Procedure",
-      "url": "https://judicial.alabama.gov/docs/library/rules/sclaims.pdf",
-      "primary": true
+      "label": "Alabama Code § 12-12-70 — Appeals from district court decisions",
+      "url": "https://alisondb.legislature.state.al.us/alison/codeofalabama/1975/12-12-70.htm",
+      "primary": true,
+      "citation": "Ala. Code § 12-12-70"
     },
     {
       "id": "S11",
-      "label": "Alabama small claims forms (Statement of Claim, Subpoena, etc.)",
-      "url": "https://judicial.alabama.gov/Library/Forms#small_claims",
-      "primary": true
+      "label": "Alabama Small Claims Rules",
+      "url": "https://judicial.alabama.gov/docs/library/rules/smallclaims.pdf",
+      "primary": true,
+      "citation": "Alabama Small Claims Rules"
     },
     {
       "id": "S12",
-      "label": "Alabama district court filing fees",
-      "url": "https://judicial.alabama.gov/Library/FeeSchedules",
-      "primary": true
+      "label": "Alabama Unified Judicial System — Small Claims Forms",
+      "url": "https://judicial.alabama.gov/Library/JudicialForms#SmallClaims",
+      "primary": true,
+      "citation": "Alabama Unified Judicial System — Small Claims Forms"
     },
     {
       "id": "S13",
-      "label": "Service of process — Alabama Rules of Civil Procedure, Rule 4",
-      "url": "https://judicial.alabama.gov/docs/library/rules/civ.pdf",
-      "primary": true
+      "label": "Alabama Unified Judicial System — Court Costs Schedule",
+      "url": "https://judicial.alabama.gov/docs/library/fees/costschedule.pdf",
+      "primary": true,
+      "citation": "Alabama Unified Judicial System — Court Costs Schedule"
     },
     {
       "id": "S14",
-      "label": "Appeals from district court — Ala. Code § 12-12-70",
-      "url": "https://alisondb.legislature.state.al.us/alison/CodeOfAlabama/1975/Coatoc.htm",
-      "primary": true
+      "label": "Alabama Rules of Civil Procedure — Service of Process (Rule 4)",
+      "url": "https://judicial.alabama.gov/docs/library/rules/civ4.pdf",
+      "primary": true,
+      "citation": "Alabama Rules of Civil Procedure — Rule 4"
     },
     {
-      "id": "S15",
-      "label": "Wage garnishment exemptions — Ala. Code § 6-10-7",
-      "url": "https://alisondb.legislature.state.al.us/alison/CodeOfAlabama/1975/Coatoc.htm",
-      "primary": true
+      "id": "S16",
+      "label": "Alabama Code § 6-6-334 — Judgment and collection in small claims",
+      "url": "https://alisondb.legislature.state.al.us/alison/codeofalabama/1975/6-6-334.htm",
+      "primary": true,
+      "citation": "Ala. Code § 6-6-334"
+    },
+    {
+      "id": "S18",
+      "label": "Alabama Deceptive Trade Practices Act — Ala. Code § 8-19-5",
+      "url": "https://alisondb.legislature.state.al.us/alison/codeofalabama/1975/8-19-5.htm",
+      "primary": true,
+      "citation": "Ala. Code § 8-19-5"
+    },
+    {
+      "id": "S19",
+      "label": "Alabama Code § 13A-9-13.1 — Bad checks; civil and criminal penalties",
+      "url": "https://alisondb.legislature.state.al.us/alison/codeofalabama/1975/13A-9-13.1.htm",
+      "primary": true,
+      "citation": "Ala. Code § 13A-9-13.1"
+    },
+    {
+      "id": "S20",
+      "label": "Alabama Uniform Residential Landlord and Tenant Act — Security Deposits (§ 35-9A-201, § 35-9A-202)",
+      "url": "https://alisondb.legislature.state.al.us/alison/codeofalabama/1975/35-9A-201.htm",
+      "primary": true,
+      "citation": "Ala. Code § 35-9A-201"
+    },
+    {
+      "id": "S21",
+      "label": "Alabama Code § 35-9A-422 — Tenant remedies for illegal lockout",
+      "url": "https://alisondb.legislature.state.al.us/alison/codeofalabama/1975/35-9A-422.htm",
+      "primary": true,
+      "citation": "Ala. Code § 35-9A-422"
+    },
+    {
+      "id": "S23",
+      "label": "Alabama Code § 6-5-370 — Civil damages for theft",
+      "url": "https://alisondb.legislature.state.al.us/alison/codeofalabama/1975/6-5-370.htm",
+      "primary": true,
+      "citation": "Ala. Code § 6-5-370"
     }
   ],
   "_meta": {
     "state": "Alabama",
     "slug": "alabama",
     "model": "gpt-4.1",
-    "sources_response_id": "resp_05a594682fc6c9260069f079c1b3bc8196b9799e3171c3713f",
-    "extraction_response_id": "resp_097d31b209eca7100069f07c7e760c8195b3f430cfbc95de5a",
-    "generated_at": "2026-04-28T09:23:56.463Z",
+    "sources_response_id": "resp_0ab3940f3d06c8790069f0825fd23081948a0dddad83400916",
+    "extraction_response_id": "resp_0637b60dcfee05cf0069f08358f0b08193b83bd3b9d61ef87f",
+    "generated_at": "2026-04-28T09:54:41.910Z",
     "usage": {
-      "input_tokens": 4740,
+      "input_tokens": 7687,
       "input_tokens_details": {
-        "cached_tokens": 0
+        "cached_tokens": 4096
       },
-      "output_tokens": 7058,
+      "output_tokens": 14364,
       "output_tokens_details": {
         "reasoning_tokens": 0
       },
-      "total_tokens": 11798
+      "total_tokens": 22051
     }
   }
 }

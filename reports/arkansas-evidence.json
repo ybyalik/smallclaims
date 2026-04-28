@@ -1,0 +1,1455 @@
+{
+  "state": "Arkansas",
+  "slug": "arkansas",
+  "abbr": "AR",
+  "as_of": "2026-04-28",
+  "hero": {
+    "individual_limit_dollars": 5000,
+    "business_limit_dollars": 5000,
+    "filing_fee_low_dollars": 30,
+    "filing_fee_high_dollars": 65,
+    "typical_timeline_min_days": 30,
+    "typical_timeline_max_days": 90,
+    "tagline": "Arkansas small claims courts offer a streamlined process for disputes up to $5,000, with attorneys not permitted to represent parties.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "at_a_glance": [
+    {
+      "label": "Most you can sue for",
+      "value": "$5,000",
+      "detail": "Same cap for individuals and businesses",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Filing fee",
+      "value": "$30-$65",
+      "detail": "Varies by county",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Court",
+      "value": "District Court (Small Claims Division)",
+      "detail": "",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Lawyers at trial",
+      "value": "Not allowed",
+      "detail": "Parties must represent themselves",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Appeal window",
+      "value": "30 days",
+      "detail": "Trial de novo in Circuit Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Recent change",
+      "value": "—",
+      "detail": "No major changes in the last 3 years",
+      "source_ids": []
+    }
+  ],
+  "limits": {
+    "individual_dollars": 5000,
+    "business_dollars": 5000,
+    "guarantor_with_fee_max": null,
+    "guarantor_without_fee_max": null,
+    "annual_filing_cap": {
+      "count": null,
+      "threshold_dollars": null,
+      "notes": ""
+    },
+    "split_claims_allowed": false,
+    "split_claims_explanation": "If a claim exceeds the $5,000 cap, you must either waive the excess amount or file in a higher court. Splitting one dispute into multiple claims to fit under the cap is not permitted.",
+    "interest_excluded_from_cap": true,
+    "court_costs_excluded_from_cap": true,
+    "statute": "Ark. Code Ann. § 16-17-706",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "claim_categories": [
+    {
+      "id": "contracts",
+      "title": "Contracts and money owed",
+      "blurb": "Arkansas allows you to file claims for breaches of contract and money owed up to $5,000. The statute of limitations varies depending on the type of contract.",
+      "claims": [
+        {
+          "slug": "written-contract",
+          "name": "Breach of a written contract",
+          "example": "A contractor signed a $4,000 contract to remodel your kitchen, took the deposit, and never finished.",
+          "eligibility": "eligible",
+          "claim_statute": "Ark. Code Ann. § 16-56-111",
+          "notes": "5-year deadline from breach. Bring the signed contract, payment proof, and any correspondence showing the breach.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "oral-contract",
+          "name": "Breach of an oral contract",
+          "example": "You agreed verbally to lend someone $2,000, and they failed to repay.",
+          "eligibility": "eligible",
+          "claim_statute": "Ark. Code Ann. § 16-56-105",
+          "notes": "3-year deadline from breach. Gather any evidence of the agreement, such as emails or witness statements.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "personal-loan",
+          "name": "Unpaid personal loan",
+          "example": "You loaned a friend $1,500 with the promise of repayment in six months, but they haven't paid.",
+          "eligibility": "eligible",
+          "claim_statute": "Ark. Code Ann. § 16-56-111",
+          "notes": "5-year deadline from breach. Provide evidence of the loan agreement and any repayment attempts.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "promissory-note",
+          "name": "Default on a promissory note",
+          "example": "A borrower signed a promissory note for $3,000 and failed to make payments as agreed.",
+          "eligibility": "eligible",
+          "claim_statute": "Ark. Code Ann. § 16-56-111",
+          "notes": "5-year deadline from breach. Present the original promissory note and records of missed payments.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unpaid-invoice",
+          "name": "Unpaid invoice for services rendered",
+          "example": "You provided $4,500 worth of consulting services, but the client hasn't paid the invoice.",
+          "eligibility": "eligible",
+          "claim_statute": "Ark. Code Ann. § 16-56-111",
+          "notes": "5-year deadline from breach. Bring the invoice, service agreement, and any communication regarding payment.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "open-account",
+          "name": "Unpaid balance on an open account",
+          "example": "A customer has an outstanding balance of $2,000 on their account with your business.",
+          "eligibility": "eligible",
+          "claim_statute": "Ark. Code Ann. § 16-56-111",
+          "notes": "5-year deadline from breach. Provide account statements and records of transactions.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unpaid-rent",
+          "name": "Unpaid rent by tenant",
+          "example": "Your tenant owes $3,500 in unpaid rent over several months.",
+          "eligibility": "eligible",
+          "claim_statute": "Ark. Code Ann. § 16-56-111",
+          "notes": "5-year deadline from breach. Present the lease agreement and records of missed payments.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "bad-check",
+          "name": "Payment with a bad check",
+          "example": "A customer paid with a $1,200 check that bounced due to insufficient funds.",
+          "eligibility": "eligible",
+          "claim_statute": "Ark. Code Ann. § 5-37-307",
+          "notes": "30-day notice required before filing. Provide the bounced check and notice of dishonor.",
+          "damage_boost": "Check amount + service charge up to $40 + civil penalty up to $100 OR 2x check amount, whichever is greater.",
+          "source_ids": [
+            "S16"
+          ]
+        },
+        {
+          "slug": "co-signer",
+          "name": "Co-signer seeking repayment",
+          "example": "You co-signed a $4,000 loan, and the primary borrower defaulted, leaving you responsible.",
+          "eligibility": "eligible",
+          "claim_statute": "Ark. Code Ann. § 16-56-111",
+          "notes": "5-year deadline from breach. Bring the loan agreement and records of payments made on behalf of the borrower.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "consumer-disputes",
+      "title": "Consumer disputes",
+      "blurb": "Arkansas small claims courts handle various consumer disputes up to $5,000, including issues with products and services.",
+      "claims": [
+        {
+          "slug": "defective-product",
+          "name": "Purchase of a defective product",
+          "example": "You bought a $1,000 appliance that stopped working within a month, and the seller refuses to refund or replace it.",
+          "eligibility": "eligible",
+          "claim_statute": "Ark. Code Ann. § 4-88-107",
+          "notes": "5-year deadline from purchase. Bring the purchase receipt, warranty, and any communication with the seller.",
+          "damage_boost": "",
+          "source_ids": [
+            "S15"
+          ]
+        },
+        {
+          "slug": "bad-service",
+          "name": "Substandard service provided",
+          "example": "A cleaning service charged $800 but did not perform the agreed-upon tasks.",
+          "eligibility": "eligible",
+          "claim_statute": "Ark. Code Ann. § 4-88-107",
+          "notes": "5-year deadline from service date. Provide the service agreement and evidence of inadequate service.",
+          "damage_boost": "",
+          "source_ids": [
+            "S15"
+          ]
+        },
+        {
+          "slug": "auto-repair",
+          "name": "Faulty auto repair",
+          "example": "A mechanic charged $2,500 for repairs that did not fix the issue, and refuses to refund.",
+          "eligibility": "eligible",
+          "claim_statute": "Ark. Code Ann. § 4-88-107",
+          "notes": "5-year deadline from repair date. Bring repair invoices and any expert opinions on the faulty repair.",
+          "damage_boost": "",
+          "source_ids": [
+            "S15"
+          ]
+        },
+        {
+          "slug": "contractor",
+          "name": "Unsatisfactory work by a contractor",
+          "example": "A contractor was paid $4,000 for home renovations but left the work incomplete.",
+          "eligibility": "eligible",
+          "claim_statute": "Ark. Code Ann. § 4-88-107",
+          "notes": "5-year deadline from contract date. Provide the contract, payment records, and photos of incomplete work.",
+          "damage_boost": "",
+          "source_ids": [
+            "S15"
+          ]
+        },
+        {
+          "slug": "no-show-vendor",
+          "name": "Vendor failed to deliver services",
+          "example": "You paid a DJ $1,200 for an event, but they never showed up and refused to refund.",
+          "eligibility": "eligible",
+          "claim_statute": "Ark. Code Ann. § 4-88-107",
+          "notes": "5-year deadline from event date. Bring the service agreement and proof of payment.",
+          "damage_boost": "",
+          "source_ids": [
+            "S15"
+          ]
+        },
+        {
+          "slug": "subscription-cancellation",
+          "name": "Unauthorized charges after subscription cancellation",
+          "example": "You canceled a $50/month gym membership, but they continued to charge your account.",
+          "eligibility": "eligible",
+          "claim_statute": "Ark. Code Ann. § 4-88-107",
+          "notes": "5-year deadline from first unauthorized charge. Provide cancellation confirmation and bank statements.",
+          "damage_boost": "",
+          "source_ids": [
+            "S15"
+          ]
+        },
+        {
+          "slug": "used-car",
+          "name": "Purchase of a defective used car",
+          "example": "You bought a used car for $4,500 that broke down within a week, and the seller refuses to address the issue.",
+          "eligibility": "eligible",
+          "claim_statute": "Ark. Code Ann. § 4-88-107",
+          "notes": "5-year deadline from purchase. Bring the bill of sale and any communication with the seller.",
+          "damage_boost": "",
+          "source_ids": [
+            "S15"
+          ]
+        },
+        {
+          "slug": "false-advertising",
+          "name": "False advertising leading to financial loss",
+          "example": "A company advertised a product for $200 with features it doesn't have, and refuses to refund.",
+          "eligibility": "eligible",
+          "claim_statute": "Ark. Code Ann. § 4-88-107",
+          "notes": "5-year deadline from purchase. Provide the advertisement and proof of purchase.",
+          "damage_boost": "",
+          "source_ids": [
+            "S15"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "property-damage",
+      "title": "Property damage",
+      "blurb": "Arkansas small claims courts address property damage claims up to $5,000, including vehicle collisions and damage to personal property.",
+      "claims": [
+        {
+          "slug": "vehicle-collision",
+          "name": "Damage from a vehicle collision",
+          "example": "Another driver caused $3,000 in damage to your car and refuses to pay for repairs.",
+          "eligibility": "eligible",
+          "claim_statute": "Ark. Code Ann. § 16-56-105",
+          "notes": "3-year deadline from accident date. Bring the police report, repair estimates, and photos of the damage.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "neighbor-property",
+          "name": "Neighbor caused damage to your property",
+          "example": "A neighbor's tree fell on your fence, causing $2,500 in damage, and they refuse to compensate.",
+          "eligibility": "eligible",
+          "claim_statute": "Ark. Code Ann. § 16-56-105",
+          "notes": "3-year deadline from damage date. Provide photos of the damage and any communication with the neighbor.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "damage-to-rental",
+          "name": "Tenant caused damage to rental property",
+          "example": "A tenant left $4,000 worth of damage upon moving out, beyond normal wear and tear.",
+          "eligibility": "eligible",
+          "claim_statute": "Ark. Code Ann. § 16-56-105",
+          "notes": "3-year deadline from discovery of damage. Bring the lease agreement, photos of the damage, and repair estimates.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "pet-damage",
+          "name": "Damage caused by someone else's pet",
+          "example": "A neighbor's dog damaged your $1,500 garden, and they refuse to pay for repairs.",
+          "eligibility": "eligible",
+          "claim_statute": "Ark. Code Ann. § 16-56-105",
+          "notes": "3-year deadline from damage date. Provide photos of the damage and any communication with the pet owner.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "property-in-custody",
+          "name": "Damage to property left in someone's care",
+          "example": "You left a $2,000 watch with a jeweler for repair, and they damaged it.",
+          "eligibility": "eligible",
+          "claim_statute": "Ark. Code Ann. § 16-56-105",
+          "notes": "3-year deadline from discovery of damage. Bring the service agreement and photos of the damage.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "landlord-tenant",
+      "title": "Landlord-tenant disputes",
+      "blurb": "Arkansas small claims courts handle monetary disputes between landlords and tenants up to $5,000, excluding eviction proceedings.",
+      "claims": [
+        {
+          "slug": "security-deposit",
+          "name": "Failure to return security deposit",
+          "example": "Your landlord withheld your $1,200 security deposit without justification.",
+          "eligibility": "eligible",
+          "claim_statute": "Ark. Code Ann. § 18-16-303",
+          "notes": "60-day deadline from lease termination. Provide the lease agreement and any communication regarding the deposit.",
+          "damage_boost": "",
+          "source_ids": [
+            "S17"
+          ]
+        },
+        {
+          "slug": "deposit-not-itemized",
+          "name": "Landlord failed to provide itemized deductions from deposit",
+          "example": "Your landlord deducted $800 from your deposit without providing an itemized list of damages.",
+          "eligibility": "eligible",
+          "claim_statute": "Ark. Code Ann. § 18-16-303",
+          "notes": "60-day deadline from lease termination. Bring the lease agreement and any communication regarding the deposit.",
+          "damage_boost": "",
+          "source_ids": [
+            "S17"
+          ]
+        },
+        {
+          "slug": "uninhabitable-rental",
+          "name": "Landlord failed to maintain habitable conditions",
+          "example": "Your rental had no heating during winter, and the landlord refused to fix it.",
+          "eligibility": "eligible",
+          "claim_statute": "Ark. Code Ann. § 18-17-601",
+          "notes": "5-year deadline from issue occurrence. Provide photos and records of communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S18"
+          ]
+        },
+        {
+          "slug": "wrongful-retention-property",
+          "name": "Landlord wrongfully retained tenant's property",
+          "example": "After eviction, the landlord kept your $2,000 worth of personal belongings.",
+          "eligibility": "eligible",
+          "claim_statute": "Ark. Code Ann. § 18-16-303",
+          "notes": "60-day deadline from lease termination. Provide an inventory of the items and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S17"
+          ]
+        },
+        {
+          "slug": "illegal-eviction",
+          "name": "Landlord conducted an illegal eviction",
+          "example": "Your landlord changed the locks without notice, preventing you from accessing your rental.",
+          "eligibility": "eligible",
+          "claim_statute": "Ark. Code Ann. § 18-17-601",
+          "notes": "5-year deadline from eviction date. Provide evidence of the eviction and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S18"
+          ]
+        },
+        {
+          "slug": "unreturned-prepaid-rent",
+          "name": "Landlord failed to return prepaid rent after lease termination",
+          "example": "You paid the last month's rent in advance, but the landlord didn't return it after you moved out early.",
+          "eligibility": "eligible",
+          "claim_statute": "Ark. Code Ann. § 18-16-303",
+          "notes": "60-day deadline from lease termination. Provide the lease agreement and proof of prepaid rent.",
+          "damage_boost": "",
+          "source_ids": [
+            "S17"
+          ]
+        },
+        {
+          "slug": "unpaid-rent-by-tenant",
+          "name": "Tenant failed to pay rent",
+          "example": "Your tenant owes $3,000 in unpaid rent over several months.",
+          "eligibility": "eligible",
+          "claim_statute": "Ark. Code Ann. § 16-56-111",
+          "notes": "5-year deadline from breach. Provide the lease agreement and records of missed payments.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "repair-and-deduct",
+          "name": "Tenant repaired and deducted from rent without landlord consent",
+          "example": "You repaired a broken heater for $500 and deducted it from rent without landlord approval.",
+          "eligibility": "eligible",
+          "claim_statute": "Ark. Code Ann. § 18-17-601",
+          "notes": "5-year deadline from repair date. Provide repair receipts and communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S18"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "employment-wages",
+      "title": "Employment and wage disputes",
+      "blurb": "Arkansas small claims courts handle disputes over unpaid wages and related issues up to $5,000.",
+      "claims": [
+        {
+          "slug": "unpaid-wages",
+          "name": "Employer failed to pay earned wages",
+          "example": "Your employer owes you $2,000 in unpaid wages for hours worked.",
+          "eligibility": "eligible",
+          "claim_statute": "Ark. Code Ann. § 11-4-405",
+          "notes": "2-year deadline from wage due date. Provide pay stubs and records of hours worked.",
+          "damage_boost": "",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "final-paycheck",
+          "name": "Employer failed to provide final paycheck",
+          "example": "After termination, your employer didn't give you the final paycheck of $1,500.",
+          "eligibility": "eligible",
+          "claim_statute": "Ark. Code Ann. § 11-4-405",
+          "notes": "2-year deadline from termination date. Provide termination notice and records of unpaid wages.",
+          "damage_boost": "",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "unpaid-commissions",
+          "name": "Employer failed to pay earned commissions",
+          "example": "You earned $3,000 in sales commissions that your employer hasn't paid.",
+          "eligibility": "eligible",
+          "claim_statute": "Ark. Code Ann. § 11-4-405",
+          "notes": "2-year deadline from commission due date. Provide sales records and commission agreements.",
+          "damage_boost": "",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "unpaid-overtime",
+          "name": "Employer failed to pay overtime wages",
+          "example": "You worked 20 hours of overtime but weren't paid the additional $600 owed.",
+          "eligibility": "eligible",
+          "claim_statute": "Ark. Code Ann. § 11-4-405",
+          "notes": "2-year deadline from overtime worked. Provide timesheets and pay records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S19"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "personal-claims",
+      "title": "Personal claims",
+      "blurb": "Arkansas small claims courts address personal disputes up to $5,000, including minor injuries and property issues.",
+      "claims": [
+        {
+          "slug": "minor-injury",
+          "name": "Minor personal injury",
+          "example": "You slipped on a neighbor's icy sidewalk, resulting in $2,000 in medical bills.",
+          "eligibility": "eligible",
+          "claim_statute": "Ark. Code Ann. § 16-56-105",
+          "notes": "3-year deadline from injury date. Provide medical records and any communication with the neighbor.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "loaned-property",
+          "name": "Failure to return loaned property",
+          "example": "You loaned a friend your $1,500 camera, and they refuse to return it.",
+          "eligibility": "eligible",
+          "claim_statute": "Ark. Code Ann. § 16-56-105",
+          "notes": "3-year deadline from demand for return. Provide evidence of the loan and requests for return.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "civil-theft",
+          "name": "Theft of personal property",
+          "example": "A roommate took your $2,000 laptop without permission and refuses to return it.",
+          "eligibility": "eligible",
+          "claim_statute": "Ark. Code Ann. § 16-56-105",
+          "notes": "3-year deadline from theft date. Provide police reports and evidence of ownership.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vehicle-specific",
+      "title": "Vehicle-specific disputes",
+      "blurb": "Arkansas small claims courts handle vehicle-related disputes up to $5,000, including repair issues and wrongful towing.",
+      "claims": [
+        {
+          "slug": "mechanic-dispute",
+          "name": "Dispute over vehicle repairs",
+          "example": "A mechanic charged $3,000 for repairs that didn't fix the problem, and refuses to refund.",
+          "eligibility": "eligible",
+          "claim_statute": "Ark. Code Ann. § 4-88-107",
+          "notes": "5-year deadline from repair date. Provide repair invoices and any expert opinions on the faulty repair.",
+          "damage_boost": "",
+          "source_ids": [
+            "S15"
+          ]
+        },
+        {
+          "slug": "wrongful-tow",
+          "name": "Vehicle was wrongfully towed",
+          "example": "Your car was towed from your apartment complex without proper notice, resulting in $500 in fees.",
+          "eligibility": "eligible",
+          "claim_statute": "Ark. Code Ann. § 4-88-107",
+          "notes": "5-year deadline from towing date. Provide towing receipts and any communication with the towing company.",
+          "damage_boost": "",
+          "source_ids": [
+            "S15"
+          ]
+        }
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "category": "Eviction (unlawful detainer)",
+      "explanation": "Eviction cases are not handled in small claims court and must be filed in the civil division of the District Court.",
+      "where_to_go_instead": "District Court Civil Division",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Title to real estate",
+      "explanation": "Disputes involving the ownership of real property are beyond the jurisdiction of small claims court.",
+      "where_to_go_instead": "Circuit Court",
+      "source_ids": []
+    },
+    {
+      "category": "Defamation",
+      "explanation": "Claims involving defamation, such as libel or slander, are not suitable for small claims court due to their complexity.",
+      "where_to_go_instead": "Circuit Court",
+      "source_ids": []
+    },
+    {
+      "category": "Malpractice",
+      "explanation": "Professional malpractice claims require expert testimony and are not appropriate for small claims court.",
+      "where_to_go_instead": "Circuit Court",
+      "source_ids": []
+    },
+    {
+      "category": "Family law matters",
+      "explanation": "Issues such as divorce, child custody, and support are handled by family courts, not small claims court.",
+      "where_to_go_instead": "Family Court",
+      "source_ids": []
+    },
+    {
+      "category": "Probate matters",
+      "explanation": "Disputes involving wills, estates, and trusts are under the jurisdiction of probate courts.",
+      "where_to_go_instead": "Probate Court",
+      "source_ids": []
+    },
+    {
+      "category": "Claims against the federal government",
+      "explanation": "Small claims courts do not have jurisdiction over cases against federal agencies.",
+      "where_to_go_instead": "Federal Court",
+      "source_ids": []
+    },
+    {
+      "category": "Class actions",
+      "explanation": "Class action lawsuits are complex and exceed the procedural scope of small claims court.",
+      "where_to_go_instead": "Circuit Court",
+      "source_ids": []
+    },
+    {
+      "category": "Injunctions and specific performance",
+      "explanation": "Small claims courts cannot issue orders requiring a party to do or refrain from doing something.",
+      "where_to_go_instead": "Circuit Court",
+      "source_ids": []
+    },
+    {
+      "category": "Workers' compensation claims",
+      "explanation": "Disputes over workers' compensation benefits are handled by the Workers' Compensation Commission.",
+      "where_to_go_instead": "Workers' Compensation Commission",
+      "source_ids": []
+    },
+    {
+      "category": "Bankruptcy matters",
+      "explanation": "Bankruptcy cases are under the exclusive jurisdiction of federal bankruptcy courts.",
+      "where_to_go_instead": "Federal Bankruptcy Court",
+      "source_ids": []
+    },
+    {
+      "category": "Mandatory arbitration disputes",
+      "explanation": "Disputes subject to mandatory arbitration clauses are not suitable for small claims court.",
+      "where_to_go_instead": "Arbitration",
+      "source_ids": []
+    },
+    {
+      "category": "Suing a deceased person",
+      "explanation": "Claims against deceased individuals must be filed against their estate in probate court.",
+      "where_to_go_instead": "Probate Court",
+      "source_ids": []
+    }
+  ],
+  "damages": {
+    "compensatory_allowed": true,
+    "punitive_allowed": false,
+    "punitive_explanation": "Punitive damages are not awarded in small claims court; however, statutory penalties may apply in certain cases, such as bad check claims.",
+    "statutory_multipliers": [
+      {
+        "claim": "Bad check (after 30-day notice)",
+        "multiplier": "2x check amount",
+        "explanation": "Check amount + service charge up to $40 + civil penalty up to $100 OR 2x check amount, whichever is greater.",
+        "statute": "Ark. Code Ann. § 5-37-307",
+        "source_ids": [
+          "S16"
+        ]
+      }
+    ],
+    "attorney_fees_recoverable": "sometimes",
+    "attorney_fees_explanation": "Attorney fees are generally not recoverable in small claims court, as attorneys are not permitted to represent parties.",
+    "prejudgment_interest_rate_pct": null,
+    "prejudgment_interest_statute": "",
+    "postjudgment_interest_rate_pct": null,
+    "postjudgment_interest_type": "simple",
+    "postjudgment_interest_statute": "",
+    "postjudgment_interest_notes": "",
+    "filing_and_service_fees_recoverable_from_loser": true,
+    "source_ids": []
+  },
+  "where_to_file": {
+    "court_name": "Small Claims Division of the District Court",
+    "parent_court": "Arkansas District Court",
+    "venue_rules": [
+      {
+        "scenario": "Most cases (the default)",
+        "filing_options": [
+          "County where the defendant resides"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Where contract was performed",
+        "filing_options": [
+          "County where performance was due"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Where injury or damage occurred",
+        "filing_options": [
+          "County where the event occurred"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Multiple defendants",
+        "filing_options": [
+          "Any county where one defendant resides"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Out-of-state defendant",
+        "filing_options": [
+          "Where the cause of action arose"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "consequences_of_wrong_venue": "Filing in the wrong venue may result in dismissal or transfer of the case, potentially causing delays and additional costs.",
+    "e_filing_available": "varies",
+    "e_filing_notes": "Availability of e-filing depends on the specific District Court; check with the local court clerk.",
+    "e_filing_portal": null,
+    "source_ids": []
+  },
+  "fees": {
+    "filing_fee_tiers": [
+      {
+        "range_label": "All claims",
+        "range_min": 0,
+        "range_max": 5000,
+        "fee_dollars": 30,
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "frequent_filer": {
+      "threshold_per_year": null,
+      "fee_dollars": null,
+      "notes": ""
+    },
+    "service_fees": [
+      {
+        "method": "Certified mail",
+        "amount_label": "Varies",
+        "notes": "Cost depends on postal rates.",
+        "source_ids": []
+      },
+      {
+        "method": "Sheriff (personal service)",
+        "amount_label": "Varies",
+        "notes": "Fees vary by county; contact local sheriff's office for rates.",
+        "source_ids": []
+      },
+      {
+        "method": "Private process server",
+        "amount_label": "Varies",
+        "notes": "Fees vary; contact process servers for quotes.",
+        "source_ids": []
+      }
+    ],
+    "waiver": {
+      "forms": [
+        {
+          "number": "AOC-IFP",
+          "name": "Affidavit of Indigency",
+          "url": "",
+          "source_ids": []
+        }
+      ],
+      "eligibility_bullets": [
+        "Receiving need-based public assistance (SNAP, TANF, SSI)",
+        "Household income below 125% federal poverty line"
+      ],
+      "coverage_notes": "The waiver covers filing fees and may cover service fees; check with the court clerk.",
+      "if_you_win_notes": "If you win, the waived fees may be added to the judgment against the defendant."
+    },
+    "other_fees": [
+      {
+        "name": "Subpoena issuance",
+        "amount_label": "Varies",
+        "notes": "Contact the court clerk for current fees.",
+        "source_ids": []
+      },
+      {
+        "name": "Appeal filing",
+        "amount_label": "Varies",
+        "notes": "Fees vary by county; check with the Circuit Court clerk.",
+        "source_ids": []
+      },
+      {
+        "name": "Writ of execution",
+        "amount_label": "Varies",
+        "notes": "Post-judgment; fees vary by county.",
+        "source_ids": []
+      }
+    ],
+    "fees_recoverable_from_loser_notes": "If you win, filing fees and reasonable service costs are typically added to the judgment against the defendant.",
+    "source_ids": []
+  },
+  "statute_of_limitations": {
+    "entries": [
+      {
+        "id": "written-contract",
+        "claim": "Written contract",
+        "years": 5,
+        "clock_starts": "Date of breach",
+        "statute": "Ark. Code Ann. § 16-56-111",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "oral-contract",
+        "claim": "Oral contract",
+        "years": 3,
+        "clock_starts": "Date of breach",
+        "statute": "Ark. Code Ann. § 16-56-105",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "sale-of-goods",
+        "claim": "Sale of goods (UCC)",
+        "years": 4,
+        "clock_starts": "Date of breach",
+        "statute": "Ark. Code Ann. § 4-2-725",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "promissory-note",
+        "claim": "Promissory note",
+        "years": 5,
+        "clock_starts": "Date of default",
+        "statute": "Ark. Code Ann. § 16-56-111",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "open-account",
+        "claim": "Open account / credit card debt",
+        "years": 3,
+        "clock_starts": "Date of last payment or charge",
+        "statute": "Ark. Code Ann. § 16-56-105",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "personal-injury",
+        "claim": "Personal injury",
+        "years": 3,
+        "clock_starts": "Date of injury",
+        "statute": "Ark. Code Ann. § 16-56-105",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "property-damage",
+        "claim": "Property damage",
+        "years": 3,
+        "clock_starts": "Date of damage",
+        "statute": "Ark. Code Ann. § 16-56-105",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "fraud",
+        "claim": "Fraud",
+        "years": 3,
+        "clock_starts": "Date of discovery",
+        "statute": "Ark. Code Ann. § 16-56-105",
+        "notes": "Discovery rule applies; clock starts when fraud is discovered or should have been discovered.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "bad-check",
+        "claim": "Bad check",
+        "years": 3,
+        "clock_starts": "Date of dishonor",
+        "statute": "Ark. Code Ann. § 16-56-105",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "unpaid-wages",
+        "claim": "Unpaid wages",
+        "years": 2,
+        "clock_starts": "Date wages were due",
+        "statute": "Ark. Code Ann. § 11-4-405",
+        "notes": "",
+        "source_ids": [
+          "S19"
+        ]
+      },
+      {
+        "id": "security-deposit",
+        "claim": "Security deposit",
+        "years": 1,
+        "clock_starts": "Date of lease termination",
+        "statute": "Ark. Code Ann. § 18-16-303",
+        "notes": "",
+        "source_ids": [
+          "S17"
+        ]
+      },
+      {
+        "id": "judgment-enforcement",
+        "claim": "Judgment enforcement",
+        "years": 10,
+        "clock_starts": "Date of judgment",
+        "statute": "Ark. Code Ann. § 16-65-501",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "discovery_rule_notes": "The discovery rule applies to fraud claims; the statute of limitations begins when the fraud is discovered or should have been discovered.",
+    "tolling_notes": "The statute of limitations may be tolled if the defendant is out of state, the plaintiff is a minor, or in cases of bankruptcy stays. Partial payment can restart the clock.",
+    "source_ids": []
+  },
+  "pre_filing": {
+    "demand_letter_required": false,
+    "demand_letter_recommended": true,
+    "demand_letter_notes": "While not required, sending a demand letter can often resolve disputes without court intervention. For bad check claims, a 30-day notice is required before filing.",
+    "bad_check_notice_rule": "Before filing a claim for a bad check, you must send a written demand for payment, allowing the issuer 30 days to respond.",
+    "wage_claim_demand_rule": "No specific pre-filing demand required for wage claims, but it's advisable to request payment in writing before filing.",
+    "government_claim_required": false,
+    "government_claim_deadline_days": null,
+    "government_claim_notes": "",
+    "landlord_tenant_pre_filing_notes": "For security deposit disputes, provide the landlord with a forwarding address in writing to facilitate the return of the deposit.",
+    "consumer_protection_notes": "No specific pre-filing requirements for consumer protection claims, but documenting all communications is beneficial.",
+    "mandatory_mediation_before_filing": "none",
+    "arbitration_clauses_enforced": true,
+    "source_ids": []
+  },
+  "forms": [
+    {
+      "number": "AOC-SC-1",
+      "name": "Statement of Claim",
+      "description": "Initiates a small claims case by outlining the plaintiff's allegations and the relief sought.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "",
+      "source_ids": []
+    },
+    {
+      "number": "AOC-SC-2",
+      "name": "Answer",
+      "description": "Allows the defendant to respond to the plaintiff's Statement of Claim.",
+      "filed_by": "defendant",
+      "required": true,
+      "group": "hearing",
+      "url": "",
+      "source_ids": []
+    },
+    {
+      "number": "AOC-SC-3",
+      "name": "Counterclaim",
+      "description": "Filed by the defendant if they have a claim against the plaintiff.",
+      "filed_by": "defendant",
+      "required": false,
+      "group": "counterclaim",
+      "url": "",
+      "source_ids": []
+    },
+    {
+      "number": "AOC-SC-4",
+      "name": "Satisfaction of Judgment",
+      "description": "Filed by the plaintiff to indicate that the judgment has been satisfied.",
+      "filed_by": "plaintiff",
+      "required": false,
+      "group": "after-judgment",
+      "url": "",
+      "source_ids": []
+    },
+    {
+      "number": "AOC-IFP",
+      "name": "Affidavit of Indigency",
+      "description": "Used to request a waiver of court fees due to financial hardship.",
+      "filed_by": "plaintiff",
+      "required": false,
+      "group": "fee-waiver",
+      "url": "",
+      "source_ids": []
+    }
+  ],
+  "service": {
+    "who_can_serve": [
+      "Sheriff",
+      "Certified mail by clerk",
+      "Private process server"
+    ],
+    "methods": [
+      {
+        "name": "Certified mail",
+        "description": "The court clerk sends the documents to the defendant via certified mail with return receipt requested.",
+        "pros": [
+          "Cost-effective",
+          "Proof of delivery"
+        ],
+        "cons": [
+          "Defendant may refuse delivery"
+        ],
+        "source_ids": []
+      },
+      {
+        "name": "Sheriff personal service",
+        "description": "A sheriff or constable personally delivers the documents to the defendant.",
+        "pros": [
+          "Reliable",
+          "Official service"
+        ],
+        "cons": [
+          "May incur higher fees"
+        ],
+        "source_ids": []
+      },
+      {
+        "name": "Private process server",
+        "description": "A licensed individual delivers the documents to the defendant.",
+        "pros": [
+          "Flexible scheduling",
+          "Can locate evasive defendants"
+        ],
+        "cons": [
+          "Additional cost"
+        ],
+        "source_ids": []
+      }
+    ],
+    "in_county_days_before_hearing": 30,
+    "out_of_county_days_before_hearing": 30,
+    "proof_of_service_form": {
+      "number": "AOC-SC-5",
+      "name": "Affidavit of Service"
+    },
+    "proof_filing_deadline_days_before_hearing": 7,
+    "business_service_rule": "Serve the registered agent for corporations; for sole proprietors, serve the individual directly.",
+    "out_of_state_defendant_notes": "Service must comply with Arkansas rules and the laws of the state where the defendant is located.",
+    "cant_find_defendant_notes": "If the defendant cannot be located, you may request permission from the court for alternative service methods, such as publication.",
+    "avoiding_service_notes": "If the defendant is evading service, document your attempts and request alternative service methods from the court.",
+    "source_ids": []
+  },
+  "response_and_default": {
+    "must_file_written_answer": true,
+    "response_deadline_days": 30,
+    "response_notes": "The defendant must file a written answer within 30 days of being served to avoid default judgment.",
+    "default_process": "If the defendant fails to respond or appear, the court may enter a default judgment in favor of the plaintiff.",
+    "prove_up_required": true,
+    "prove_up_notes": "Even if the defendant defaults, the plaintiff must provide evidence to support the claim before the court awards judgment.",
+    "motion_to_vacate_form": {
+      "number": "AOC-SC-6",
+      "name": "Motion to Set Aside Default Judgment"
+    },
+    "motion_to_vacate_deadline_days": 30,
+    "motion_to_vacate_lack_of_notice_days": 30,
+    "motion_to_vacate_appeal_deadline_days": 30,
+    "motion_to_vacate_appeal_notes": "If the motion to vacate is denied, the defendant may appeal the decision within 30 days.",
+    "source_ids": []
+  },
+  "counterclaim": {
+    "allowed": true,
+    "form": {
+      "number": "AOC-SC-3",
+      "name": "Counterclaim"
+    },
+    "same_monetary_limit": true,
+    "service_deadline_in_county_days": 30,
+    "service_deadline_out_of_county_days": 30,
+    "transfer_to_higher_court_available": true,
+    "transfer_to_higher_court_statute": "Ark. Code Ann. § 16-17-706",
+    "transfer_to_higher_court_notes": "If a counterclaim exceeds the small claims limit, the case may be transferred to the civil division of the District Court.",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "hearing": {
+    "lawyers_allowed": "no",
+    "lawyers_allowed_notes": "Attorneys are not permitted to represent parties in small claims court; parties must represent themselves.",
+    "format": "Bench trial with informal procedures; each party presents their case directly to the judge.",
+    "presider": "judge",
+    "burden_of_proof": "preponderance",
+    "what_to_bring": [
+      "Originals of any contracts",
+      "Receipts and bank records",
+      "Photos and videos",
+      "Names and contact info for witnesses"
+    ],
+    "subpoena_form": {
+      "number": "AOC-SC-7",
+      "name": "Subpoena"
+    },
+    "witness_fee_per_day_dollars": null,
+    "free_interpreters": false,
+    "interpreter_request_process": "Contact the court clerk in advance to request an interpreter; fees may apply.",
+    "jury_option": false,
+    "decision_timing": "On the spot or mailed within a few weeks",
+    "on_site_mediation": "varies",
+    "on_site_mediation_notes": "Some courts may offer mediation services; check with the local court clerk.",
+    "source_ids": []
+  },
+  "appeals": {
+    "who_can_appeal": "either",
+    "deadline_days": 30,
+    "fee_dollars": null,
+    "type": "trial de novo",
+    "type_notes": "The appeal is a new trial in the Circuit Court, where both parties can present their cases anew.",
+    "attorneys_allowed_on_appeal": true,
+    "bond_required": false,
+    "bond_amount_notes": "",
+    "automatic_stay_on_appeal": true,
+    "default_judgment_appealable": true,
+    "default_judgment_notes": "A default judgment can be appealed within 30 days; the appeal will result in a new trial in Circuit Court.",
+    "notice_of_appeal_form": {
+      "number": "AOC-SC-8",
+      "name": "Notice of Appeal"
+    },
+    "frivolous_appeal_penalty_dollars": null,
+    "frivolous_appeal_statute": "",
+    "frivolous_appeal_notes": "",
+    "source_ids": []
+  },
+  "collection": {
+    "payment_deadline_typical_days": 30,
+    "post_judgment_interest_rate_pct": null,
+    "post_judgment_interest_statute": "",
+    "post_judgment_interest_notes": "",
+    "methods": [
+      {
+        "id": "wage-garnishment",
+        "name": "Wage garnishment",
+        "blurb": "Have a portion of the debtor's wages withheld until the judgment is paid.",
+        "description": "File a writ of garnishment with the court, serve the employer, and the employer will withhold a portion of the debtor's wages to satisfy the judgment.",
+        "forms": [
+          {
+            "number": "AOC-SC-9",
+            "name": "Writ of Garnishment"
+          }
+        ],
+        "estimated_cost": "$30-50 plus sheriff fees",
+        "effectiveness_notes": "Most effective when the debtor is employed and earns above the minimum threshold for garnishment.",
+        "exemptions": [
+          "75% of disposable earnings (federal CCPA floor)"
+        ],
+        "source_ids": []
+      },
+      {
+        "id": "bank-levy",
+        "name": "Bank levy",
+        "blurb": "Seize funds from the debtor's bank account to satisfy the judgment.",
+        "description": "Obtain a writ of garnishment, serve it on the debtor's bank, and the bank will freeze and remit funds to satisfy the judgment.",
+        "forms": [
+          {
+            "number": "AOC-SC-9",
+            "name": "Writ of Garnishment"
+          }
+        ],
+        "estimated_cost": "$30-50 plus sheriff fees",
+        "effectiveness_notes": "Effective if the debtor has sufficient funds in the bank account; may require knowledge of the debtor's banking information.",
+        "exemptions": [
+          "Social Security and federal benefits are exempt"
+        ],
+        "source_ids": []
+      },
+      {
+        "id": "property-lien",
+        "name": "Property lien",
+        "blurb": "Place a lien on the debtor's real property to secure the judgment amount.",
+        "description": "File a certified copy of the judgment with the county recorder's office to place a lien on the debtor's property; the lien must be satisfied before the property can be sold or refinanced.",
+        "forms": [
+          {
+            "number": "AOC-SC-10",
+            "name": "Abstract of Judgment"
+          }
+        ],
+        "estimated_cost": "$10-20 recording fee",
+        "effectiveness_notes": "Effective if the debtor owns real property; may take time to realize payment, as the lien is typically satisfied upon sale or refinancing.",
+        "exemptions": [
+          "Homestead exemption may apply"
+        ],
+        "source_ids": []
+      },
+      {
+        "id": "writ-of-execution",
+        "name": "Writ of execution",
+        "blurb": "Seize and sell the debtor's non-exempt personal property to satisfy the judgment.",
+        "description": "Obtain a writ of execution from the court, and the sheriff will seize and sell the debtor's non-exempt property at public auction to satisfy the judgment.",
+        "forms": [
+          {
+            "number": "AOC-SC-11",
+            "name": "Writ of Execution"
+          }
+        ],
+        "estimated_cost": "$50-100 plus sheriff fees",
+        "effectiveness_notes": "Effective if the debtor owns valuable non-exempt personal property; may be time-consuming and yield limited proceeds.",
+        "exemptions": [
+          "Certain personal property exemptions apply"
+        ],
+        "source_ids": []
+      }
+    ],
+    "wage_garnishment_max_pct_of_disposable": 25,
+    "judgment_lifespan_years": 10,
+    "judgment_renewal_process": "File a motion to renew the judgment before the 10-year period expires; renewal extends the judgment for an additional 10 years.",
+    "debtor_exam_form": {
+      "number": "AOC-SC-12",
+      "name": "Order for Examination of Judgment Debtor"
+    },
+    "exempt_assets": [
+      "Homestead — $2,500",
+      "Vehicle — $1,200",
+      "Retirement accounts (federally and state-protected)",
+      "Social Security and federal benefits"
+    ],
+    "bankruptcy_effect_notes": "Filing for bankruptcy imposes an automatic stay on collection efforts; certain judgments may be discharged in bankruptcy.",
+    "satisfaction_of_judgment_form": {
+      "number": "AOC-SC-4",
+      "name": "Satisfaction of Judgment"
+    },
+    "priority_notes": "Judgment liens are prioritized based on the date of recording; earlier liens have higher priority.",
+    "source_ids": []
+  },
+  "businesses": {
+    "self_representation_allowed": true,
+    "self_representation_notes": "Businesses can represent themselves in small claims court; however, attorneys are not permitted to represent any party.",
+    "can_send_employee": true,
+    "can_send_attorney": false,
+    "non_attorney_representation_form": {
+      "number": "AOC-SC-13",
+      "name": "Authorization to Represent"
+    },
+    "insurance_adjuster_allowed": false,
+    "fictitious_name_form": {
+      "number": "AOC-SC-14",
+      "name": "Certificate of Assumed Name"
+    },
+    "fictitious_name_notes": "Businesses operating under a fictitious name (DBA) must file a Certificate of Assumed Name with the county clerk.",
+    "sole_proprietor_employee_exception": "Sole proprietors may authorize an employee to represent them in small claims court.",
+    "out_of_state_business_must_register": true,
+    "out_of_state_business_statute": "Ark. Code Ann. § 4-27-1501",
+    "licensing_notes": "Unlicensed contractors may face challenges in enforcing contracts in court; ensure proper licensing before filing a claim.",
+    "source_ids": []
+  },
+  "county_variations_material": false,
+  "county_variations": [],
+  "pitfalls": [
+    {
+      "title": "Incorrect defendant information",
+      "what_happens": "Suing the wrong party or using incorrect names can result in dismissal or unenforceable judgments.",
+      "how_to_avoid": "Verify the exact legal name and address of the defendant before filing; for businesses, check the Secretary of State's records.",
+      "source_ids": []
+    },
+    {
+      "title": "Exceeding the monetary limit",
+      "what_happens": "Claims exceeding $5,000 are not permitted in small claims court and may be dismissed.",
+      "how_to_avoid": "Ensure your claim, excluding interest and court costs, does not exceed the $5,000 limit.",
+      "source_ids": []
+    },
+    {
+      "title": "Missing the statute of limitations",
+      "what_happens": "Filing after the statute of limitations has expired will result in dismissal of your case.",
+      "how_to_avoid": "Determine the applicable statute of limitations for your claim type and file within that period.",
+      "source_ids": []
+    },
+    {
+      "title": "Improper service of process",
+      "what_happens": "Failure to properly serve the defendant can delay proceedings or lead to dismissal.",
+      "how_to_avoid": "Follow the court's rules for service of process carefully, using approved methods and documenting service.",
+      "source_ids": []
+    },
+    {
+      "title": "Lack of evidence",
+      "what_happens": "Insufficient evidence can result in losing your case, even if your claim is valid.",
+      "how_to_avoid": "Gather all relevant documents, photos, and witness statements to support your claim.",
+      "source_ids": []
+    },
+    {
+      "title": "Ignoring counterclaims",
+      "what_happens": "If the defendant files a counterclaim and you are unprepared, you could lose and owe money.",
+      "how_to_avoid": "Be prepared to defend against potential counterclaims by reviewing the defendant's answer and gathering necessary evidence.",
+      "source_ids": []
+    }
+  ],
+  "recent_changes": [],
+  "faqs": [
+    {
+      "question": "Do I need a lawyer?",
+      "answer": "No, attorneys are not permitted to represent parties in Arkansas small claims court; individuals and businesses must represent themselves.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "How long does it take?",
+      "answer": "The typical timeline from filing to hearing is between 30 to 90 days, depending on the court's schedule and case complexity.",
+      "source_ids": []
+    },
+    {
+      "question": "What's the maximum I can sue for?",
+      "answer": "The maximum amount you can sue for in Arkansas small claims court is $5,000, excluding interest and court costs.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "What happens if the defendant doesn't show up?",
+      "answer": "If the defendant fails to appear, the court may enter a default judgment in your favor; however, you must still present evidence to support your claim.",
+      "source_ids": []
+    },
+    {
+      "question": "Can I appeal?",
+      "answer": "Yes, either party can appeal a small claims court decision by filing a notice of appeal within 30 days; the appeal will result in a new trial in Circuit Court.",
+      "source_ids": []
+    },
+    {
+      "question": "How long is a judgment good for?",
+      "answer": "A judgment in Arkansas is valid for 10 years and can be renewed before expiration to extend its enforceability.",
+      "source_ids": []
+    }
+  ],
+  "state_specific_notes": [
+    "Arkansas small claims courts do not allow attorneys to represent parties; individuals and businesses must represent themselves.",
+    "The maximum claim amount in Arkansas small claims court is $5,000, excluding interest and court costs.",
+    "Eviction cases are not handled in small claims court and must be filed in the civil division of the District Court.",
+    "A 30-day written demand is required before filing a claim for a bad check.",
+    "Judgments are valid for 10 years and can be renewed before expiration to extend enforceability."
+  ],
+  "_extras": {
+    "interesting_findings": [
+      "Arkansas small claims courts prohibit attorney representation to simplify proceedings and reduce costs.",
+      "The state requires a 30-day written demand before pursuing legal action for bad checks, providing an opportunity for resolution without court intervention."
+    ]
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "label": "Arkansas Small Claims Court Information",
+      "url": "https://www.arcourts.gov/administration/interpreters/types-of-courts#SmallClaims",
+      "primary": true,
+      "citation": "Ark. Code Ann. § 16-17-601"
+    },
+    {
+      "id": "S4",
+      "label": "Ark. Code Ann. § 16-17-601 - Small Claims Division - Jurisdiction",
+      "url": "https://www.arkleg.state.ar.us/ArkansasCode/Title16/Chapter17/Section16-17-601",
+      "primary": true,
+      "citation": "Ark. Code Ann. § 16-17-601"
+    },
+    {
+      "id": "S15",
+      "label": "Ark. Code Ann. § 4-88-107 - Deceptive Trade Practices Act (UDAP)",
+      "url": "https://www.arkleg.state.ar.us/ArkansasCode/Title4/Chapter88/Section4-88-107",
+      "primary": true,
+      "citation": "Ark. Code Ann. § 4-88-107"
+    },
+    {
+      "id": "S16",
+      "label": "Ark. Code Ann. § 5-37-307 - Civil Penalty for Bad Checks",
+      "url": "https://www.arkleg.state.ar.us/ArkansasCode/Title5/Chapter37/Section5-37-307",
+      "primary": true,
+      "citation": "Ark. Code Ann. § 5-37-307"
+    },
+    {
+      "id": "S17",
+      "label": "Ark. Code Ann. § 18-16-303 - Security Deposit Return",
+      "url": "https://www.arkleg.state.ar.us/ArkansasCode/Title18/Chapter16/Section18-16-303",
+      "primary": true,
+      "citation": "Ark. Code Ann. § 18-16-303"
+    },
+    {
+      "id": "S18",
+      "label": "Ark. Code Ann. § 18-17-601 - Wrongful Eviction",
+      "url": "https://www.arkleg.state.ar.us/ArkansasCode/Title18/Chapter17/Section18-17-601",
+      "primary": true,
+      "citation": "Ark. Code Ann. § 18-17-601"
+    },
+    {
+      "id": "S19",
+      "label": "Ark. Code Ann. § 11-4-405 - Final Paycheck Deadline",
+      "url": "https://www.arkleg.state.ar.us/ArkansasCode/Title11/Chapter4/Section11-4-405",
+      "primary": true,
+      "citation": "Ark. Code Ann. § 11-4-405"
+    }
+  ],
+  "_meta": {
+    "state": "Arkansas",
+    "slug": "arkansas",
+    "model": "gpt-4.1",
+    "generated_at": "2026-04-28T11:38:17.293Z",
+    "promoted_from_failure": true
+  }
+}

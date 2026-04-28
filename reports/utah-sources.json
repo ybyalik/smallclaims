@@ -1,0 +1,169 @@
+{
+  "state": "Utah",
+  "as_of": "2024-06-11",
+  "state_judiciary_pages": [
+    {
+      "label": "Utah Courts Small Claims Overview",
+      "url": "https://www.utcourts.gov/en/self-help/case-categories/small-claims.html",
+      "scope": "small_claims"
+    },
+    {
+      "label": "Utah Courts Self-Help Resources",
+      "url": "https://www.utcourts.gov/en/self-help.html",
+      "scope": "self_help"
+    },
+    {
+      "label": "Utah Courts District Court Directory",
+      "url": "https://www.utcourts.gov/en/about/courts/district/index.html",
+      "scope": "court_directory"
+    }
+  ],
+  "statutes": [
+    {
+      "label": "Utah Code § 78A-8-102 (Small Claims Jurisdiction)",
+      "url": "https://le.utah.gov/xcode/Title78A/Chapter8/78A-8-S102.html",
+      "section_or_chapter": "§ 78A-8-102"
+    },
+    {
+      "label": "Utah Code § 78A-8-104 (Procedure for Small Claims)",
+      "url": "https://le.utah.gov/xcode/Title78A/Chapter8/78A-8-S104.html",
+      "section_or_chapter": "§ 78A-8-104"
+    },
+    {
+      "label": "Utah Code § 78A-8-105 (Judgment – Satisfaction – Appeals)",
+      "url": "https://le.utah.gov/xcode/Title78A/Chapter8/78A-8-S105.html",
+      "section_or_chapter": "§ 78A-8-105"
+    },
+    {
+      "label": "Utah Code § 78A-2-301 (Fees of the Courts)",
+      "url": "https://le.utah.gov/xcode/Title78A/Chapter2/78A-2-S301.html",
+      "section_or_chapter": "§ 78A-2-301"
+    },
+    {
+      "label": "Utah Code § 78A-2-208 (Service of Process Authority)",
+      "url": "https://le.utah.gov/xcode/Title78A/Chapter2/78A-2-S208.html",
+      "section_or_chapter": "§ 78A-2-208"
+    },
+    {
+      "label": "Utah Code § 78A-2-118 (Appeals Process)",
+      "url": "https://le.utah.gov/xcode/Title78A/Chapter2/78A-2-S118.html",
+      "section_or_chapter": "§ 78A-2-118"
+    },
+    {
+      "label": "Utah Code § 78B-5-202 (Enforcement of Money Judgments — Writ of Garnishment)",
+      "url": "https://le.utah.gov/xcode/Title78B/Chapter5/78B-5-S202.html",
+      "section_or_chapter": "§ 78B-5-202"
+    }
+  ],
+  "court_rules": [
+    {
+      "label": "Utah Rules of Small Claims Procedure",
+      "url": "https://www.utcourts.gov/en/rules-regulations/rules/small-claims-procedure.html",
+      "rule_or_chapter": "Utah Rules of Small Claims Procedure"
+    }
+  ],
+  "forms_pages": [
+    {
+      "label": "Utah Small Claims Forms",
+      "url": "https://www.utcourts.gov/en/self-help/resources/forms.html#SCL"
+    }
+  ],
+  "fee_schedules": [
+    {
+      "label": "Utah Court Fees (including Small Claims)",
+      "url": "https://www.utcourts.gov/en/self-help/resources/fees.html"
+    }
+  ],
+  "service_rules": [
+    {
+      "label": "Service of Process — Utah Rules of Civil Procedure Rule 4",
+      "url": "https://www.utcourts.gov/en/rules-regulations/rules/civil-procedure.html#rule_4"
+    }
+  ],
+  "appeal_rules": [
+    {
+      "label": "Appeals from Small Claims — Utah Rules of Small Claims Procedure Rule 12",
+      "url": "https://www.utcourts.gov/en/rules-regulations/rules/small-claims-procedure.html#rule_12"
+    },
+    {
+      "label": "Utah Code § 78A-8-106 (Appeal Procedure for Small Claims)",
+      "url": "https://le.utah.gov/xcode/Title78A/Chapter8/78A-8-S106.html",
+      "section_or_chapter": "§ 78A-8-106"
+    }
+  ],
+  "post_judgment_collection": [
+    {
+      "label": "Utah Code § 78B-5-301 (Execution Upon Judgment)",
+      "url": "https://le.utah.gov/xcode/Title78B/Chapter5/78B-5-S301.html",
+      "section_or_chapter": "§ 78B-5-301"
+    },
+    {
+      "label": "Utah Code § 78B-5-302 (Writ of Garnishment — Procedures)",
+      "url": "https://le.utah.gov/xcode/Title78B/Chapter5/78B-5-S302.html",
+      "section_or_chapter": "§ 78B-5-302"
+    }
+  ],
+  "consumer_protection_statutes": [
+    {
+      "label": "Utah Consumer Sales Practices Act, Utah Code § 13-11-1 et seq.",
+      "url": "https://le.utah.gov/xcode/Title13/Chapter11/13-11.html",
+      "section_or_chapter": "§ 13-11-1 et seq."
+    },
+    {
+      "label": "Utah Motor Vehicle Warranty Act (Lemon Law), Utah Code § 13-20-1 et seq.",
+      "url": "https://le.utah.gov/xcode/Title13/Chapter20/13-20.html",
+      "section_or_chapter": "§ 13-20-1 et seq."
+    },
+    {
+      "label": "Civil Liability for Dishonored Checks — Utah Code § 7-15-1 et seq.",
+      "url": "https://le.utah.gov/xcode/Title7/Chapter15/7-15.html",
+      "section_or_chapter": "§ 7-15-1 et seq."
+    }
+  ],
+  "landlord_tenant_statutes": [
+    {
+      "label": "Utah Fit Premises Act (Security Deposit, Repairs, Lockout) — Utah Code § 57-22-1 et seq.",
+      "url": "https://le.utah.gov/xcode/Title57/Chapter22/57-22.html",
+      "section_or_chapter": "§ 57-22-1 et seq."
+    },
+    {
+      "label": "Residential Landlord and Tenant Act — Utah Code § 57-17-1 et seq.",
+      "url": "https://le.utah.gov/xcode/Title57/Chapter17/57-17.html",
+      "section_or_chapter": "§ 57-17-1 et seq."
+    }
+  ],
+  "wage_and_employment_statutes": [
+    {
+      "label": "Utah Payment of Wages Act — Utah Code § 34-28-1 et seq.",
+      "url": "https://le.utah.gov/xcode/Title34/Chapter28/34-28.html",
+      "section_or_chapter": "§ 34-28-1 et seq."
+    }
+  ],
+  "civil_remedies_statutes": [
+    {
+      "label": "Fraud Damages Statute — Utah Code § 78B-8-104",
+      "url": "https://le.utah.gov/xcode/Title78B/Chapter8/78B-8-S104.html",
+      "section_or_chapter": "§ 78B-8-104"
+    }
+  ],
+  "county_specific": [],
+  "notes": "Utah's small claims procedure and forms are unified statewide through the Utah Courts portal.",
+  "_meta": {
+    "state": "Utah",
+    "slug": "utah",
+    "model": "gpt-4.1",
+    "response_id": "resp_02eda5a298d4cd0d0069f08b675d7881938646ff3d81a23efb",
+    "generated_at": "2026-04-28T10:27:02.661Z",
+    "usage": {
+      "input_tokens": 2104,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 1799,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 3903
+    }
+  }
+}

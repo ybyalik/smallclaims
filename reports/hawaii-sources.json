@@ -1,0 +1,150 @@
+{
+  "state": "Hawaii",
+  "as_of": "2024-06-13",
+  "state_judiciary_pages": [
+    {
+      "label": "Hawaii Judiciary Self-Help: Small Claims",
+      "url": "https://www.courts.state.hi.us/self-help/small_claims",
+      "scope": "small_claims"
+    },
+    {
+      "label": "Hawaii Judiciary Small Claims Court Information",
+      "url": "https://www.courts.state.hi.us/courts/district/small_claims",
+      "scope": "small_claims"
+    },
+    {
+      "label": "Hawaii Judiciary Court Locations & Information",
+      "url": "https://www.courts.state.hi.us/courts/court-locations",
+      "scope": "court_directory"
+    }
+  ],
+  "statutes": [
+    {
+      "label": "Haw. Rev. Stat. § 633-27 (Small Claims Jurisdiction)",
+      "url": "https://www.capitol.hawaii.gov/hrscurrent/Vol13_Ch0601-0676/HRS0633/HRS_0633-0027.htm",
+      "section_or_chapter": "§ 633-27"
+    },
+    {
+      "label": "Haw. Rev. Stat. § 633-28 (Small Claims Procedure and Judgments)",
+      "url": "https://www.capitol.hawaii.gov/hrscurrent/Vol13_Ch0601-0676/HRS0633/HRS_0633-0028.htm",
+      "section_or_chapter": "§ 633-28"
+    },
+    {
+      "label": "Haw. Rev. Stat. § 607-5 (Fees in District Courts)",
+      "url": "https://www.capitol.hawaii.gov/hrscurrent/Vol13_Ch0601-0676/HRS0607/HRS_0607-0005.htm",
+      "section_or_chapter": "§ 607-5"
+    },
+    {
+      "label": "Haw. Rev. Stat. § 651-1 (Writ of Execution and Exemptions)",
+      "url": "https://www.capitol.hawaii.gov/hrscurrent/Vol13_Ch0601-0676/HRS0651/HRS_0651-0001.htm",
+      "section_or_chapter": "§ 651-1"
+    },
+    {
+      "label": "Haw. Rev. Stat. § 607-14 (Attorney's Fees — Fee Shifting)",
+      "url": "https://www.capitol.hawaii.gov/hrscurrent/Vol13_Ch0601-0676/HRS0607/HRS_0607-0014.htm",
+      "section_or_chapter": "§ 607-14"
+    }
+  ],
+  "court_rules": [
+    {
+      "label": "Hawaii District Court Rules of Civil Procedure",
+      "url": "https://www.courts.state.hi.us/wp-content/uploads/2016/03/HRCP.pdf",
+      "rule_or_chapter": "District Court Rules"
+    },
+    {
+      "label": "Hawaii Rules of the Small Claims Division of the District Courts",
+      "url": "https://www.courts.state.hi.us/docs/court_rules/rules/scr/scr.pdf",
+      "rule_or_chapter": "Small Claims Division"
+    }
+  ],
+  "forms_pages": [
+    {
+      "label": "Hawaii Small Claims Forms",
+      "url": "https://www.courts.state.hi.us/self-help/courts/forms/small-claims-forms"
+    }
+  ],
+  "fee_schedules": [
+    {
+      "label": "Hawaii District Court Fee Schedule",
+      "url": "https://www.courts.state.hi.us/wp-content/uploads/2023/02/District-Court-Civil-and-Small-Claims-Filing-Fees.pdf"
+    }
+  ],
+  "service_rules": [
+    {
+      "label": "Hawai‘i District Court Rules of Civil Procedure – Rule 4 (Service)",
+      "url": "https://www.courts.state.hi.us/wp-content/uploads/2016/03/HRCP.pdf"
+    }
+  ],
+  "appeal_rules": [
+    {
+      "label": "Haw. Rev. Stat. § 633-30 (Appeal from Small Claims Division)",
+      "url": "https://www.capitol.hawaii.gov/hrscurrent/Vol13_Ch0601-0676/HRS0633/HRS_0633-0030.htm"
+    }
+  ],
+  "post_judgment_collection": [
+    {
+      "label": "Haw. Rev. Stat. § 651-1 (Writ of Execution)",
+      "url": "https://www.capitol.hawaii.gov/hrscurrent/Vol13_Ch0601-0676/HRS0651/HRS_0651-0001.htm"
+    },
+    {
+      "label": "Haw. Rev. Stat. § 652-1 (Garnishment)",
+      "url": "https://www.capitol.hawaii.gov/hrscurrent/Vol13_Ch0601-0676/HRS0652/HRS_0652-0001.htm"
+    }
+  ],
+  "consumer_protection_statutes": [
+    {
+      "label": "Haw. Rev. Stat. § 480-2 (Unfair or Deceptive Acts or Practices, UDAP)",
+      "url": "https://www.capitol.hawaii.gov/hrscurrent/Vol11_Ch0471-0498/HRS0480/HRS_0480-0002.htm"
+    },
+    {
+      "label": "Haw. Rev. Stat. § 481K-2 (Lemon Law)",
+      "url": "https://www.capitol.hawaii.gov/hrscurrent/Vol11_Ch0471-0498/HRS0481K/HRS_0481K-0002.htm"
+    },
+    {
+      "label": "Haw. Rev. Stat. § 487-5 (Consumer Protection)",
+      "url": "https://www.capitol.hawaii.gov/hrscurrent/Vol11_Ch0471-0498/HRS0487/HRS_0487-0005.htm"
+    }
+  ],
+  "landlord_tenant_statutes": [
+    {
+      "label": "Haw. Rev. Stat. § 521-44 (Security Deposit Return)",
+      "url": "https://www.capitol.hawaii.gov/hrscurrent/Vol12_Ch0501-0587/HRS0521/HRS_0521-0044.htm"
+    },
+    {
+      "label": "Haw. Rev. Stat. § 521-78 (Remedies for Tenant)",
+      "url": "https://www.capitol.hawaii.gov/hrscurrent/Vol12_Ch0501-0587/HRS0521/HRS_0521-0078.htm"
+    }
+  ],
+  "wage_and_employment_statutes": [
+    {
+      "label": "Haw. Rev. Stat. § 388-3 (Final Wage Payment)",
+      "url": "https://www.capitol.hawaii.gov/hrscurrent/Vol07_Ch0346-0398/HRS0388/HRS_0388-0003.htm"
+    }
+  ],
+  "civil_remedies_statutes": [
+    {
+      "label": "Haw. Rev. Stat. § 480-13 (Civil Damages and Attorney’s Fees Under UDAP)",
+      "url": "https://www.capitol.hawaii.gov/hrscurrent/Vol11_Ch0471-0498/HRS0480/HRS_0480-0013.htm"
+    }
+  ],
+  "county_specific": [],
+  "notes": "Hawaii small claims courts operate within the District Court system; procedures and forms are consolidated at the state level.",
+  "_meta": {
+    "state": "Hawaii",
+    "slug": "hawaii",
+    "model": "gpt-4.1",
+    "response_id": "resp_060555a4612adc350069f0895f97a08194abf28a65230dd3fd",
+    "generated_at": "2026-04-28T10:18:23.958Z",
+    "usage": {
+      "input_tokens": 2104,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 1679,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 3783
+    }
+  }
+}

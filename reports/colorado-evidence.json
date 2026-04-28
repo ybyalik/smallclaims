@@ -1,0 +1,1560 @@
+{
+  "state": "Colorado",
+  "slug": "colorado",
+  "abbr": "CO",
+  "as_of": "2026-04-28",
+  "hero": {
+    "individual_limit_dollars": 7500,
+    "business_limit_dollars": 7500,
+    "filing_fee_low_dollars": 31,
+    "filing_fee_high_dollars": 55,
+    "typical_timeline_min_days": 30,
+    "typical_timeline_max_days": 90,
+    "tagline": "Colorado's small claims court offers a $7,500 cap with streamlined procedures for quick resolutions.",
+    "source_ids": [
+      "S1",
+      "S4"
+    ]
+  },
+  "at_a_glance": [
+    {
+      "label": "Most you can sue for",
+      "value": "$7,500",
+      "detail": "Same cap for individuals and businesses",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Filing fee",
+      "value": "$31-$55",
+      "detail": "Tiered by claim amount",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "label": "Court",
+      "value": "County Court (Small Claims Division)",
+      "detail": "",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Lawyers at trial",
+      "value": "Limited",
+      "detail": "Generally not allowed unless the defendant hires one",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Appeal window",
+      "value": "14 days",
+      "detail": "Must file within 14 days of judgment",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Recent change",
+      "value": "—",
+      "detail": "No major changes in the last 3 years",
+      "source_ids": []
+    }
+  ],
+  "limits": {
+    "individual_dollars": 7500,
+    "business_dollars": 7500,
+    "guarantor_with_fee_max": null,
+    "guarantor_without_fee_max": null,
+    "annual_filing_cap": {
+      "count": 18,
+      "threshold_dollars": null,
+      "notes": "No more than 18 claims per year per county"
+    },
+    "split_claims_allowed": false,
+    "split_claims_explanation": "If your claim exceeds $7,500, you must waive the excess amount to file in small claims court; splitting a claim into multiple cases is not permitted.",
+    "interest_excluded_from_cap": true,
+    "court_costs_excluded_from_cap": true,
+    "statute": "Colo. Rev. Stat. § 13-6-403",
+    "source_ids": [
+      "S5"
+    ]
+  },
+  "claim_categories": [
+    {
+      "id": "contracts",
+      "title": "Contracts and money owed",
+      "blurb": "Colorado allows you to file claims for breaches of contract and money owed up to $7,500. The statute of limitations varies by claim type.",
+      "claims": [
+        {
+          "slug": "written-contract",
+          "name": "Breach of a written contract",
+          "example": "A contractor signed a $4,000 contract to remodel your kitchen, took the deposit, and never finished.",
+          "eligibility": "eligible",
+          "claim_statute": "Colo. Rev. Stat. § 13-80-101",
+          "notes": "3-year deadline from breach. Bring the signed contract, payment proof, and any correspondence showing the breach.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "oral-contract",
+          "name": "Breach of an oral contract",
+          "example": "You agreed verbally to lend someone $1,000, and they failed to repay it.",
+          "eligibility": "eligible",
+          "claim_statute": "Colo. Rev. Stat. § 13-80-101",
+          "notes": "3-year deadline from breach. Gather any evidence of the agreement, such as emails or witness statements.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "personal-loan",
+          "name": "Unpaid personal loan",
+          "example": "You loaned a friend $2,500 with the understanding they'd repay in six months, but they haven't.",
+          "eligibility": "eligible",
+          "claim_statute": "Colo. Rev. Stat. § 13-80-101",
+          "notes": "3-year deadline from breach. Provide evidence of the loan agreement and any repayment attempts.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "promissory-note",
+          "name": "Default on a promissory note",
+          "example": "A borrower signed a promissory note for $5,000 and failed to make the agreed payments.",
+          "eligibility": "eligible",
+          "claim_statute": "Colo. Rev. Stat. § 13-80-103.5",
+          "notes": "6-year deadline from default. Present the original promissory note and records of missed payments.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "unpaid-invoice",
+          "name": "Unpaid invoice for services rendered",
+          "example": "You provided $3,000 worth of consulting services, but the client hasn't paid the invoice.",
+          "eligibility": "eligible",
+          "claim_statute": "Colo. Rev. Stat. § 13-80-101",
+          "notes": "3-year deadline from when payment was due. Include the invoice, service agreement, and any communication regarding payment.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "open-account",
+          "name": "Unpaid balance on an open account",
+          "example": "A customer has an outstanding balance of $1,200 on their account with your business.",
+          "eligibility": "eligible",
+          "claim_statute": "Colo. Rev. Stat. § 13-80-101",
+          "notes": "3-year deadline from last payment or charge. Provide account statements and records of transactions.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "unpaid-rent",
+          "name": "Unpaid rent by tenant",
+          "example": "Your tenant owes $2,000 in unpaid rent and has vacated the property.",
+          "eligibility": "eligible",
+          "claim_statute": "Colo. Rev. Stat. § 13-80-101",
+          "notes": "3-year deadline from when rent was due. Bring the lease agreement and records of unpaid rent.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "bad-check",
+          "name": "Payment with a bad check",
+          "example": "A customer paid with a $500 check that bounced due to insufficient funds.",
+          "eligibility": "eligible",
+          "claim_statute": "Colo. Rev. Stat. § 13-80-103",
+          "notes": "1-year deadline from the date of the check. Provide the original check and bank notice of insufficient funds.",
+          "damage_boost": "Check amount + service charge up to $20 + civil penalty up to $100 OR 3x check amount, whichever is greater.",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "co-signer",
+          "name": "Co-signer seeking repayment",
+          "example": "You co-signed a $4,000 loan, and the primary borrower defaulted, leaving you responsible.",
+          "eligibility": "eligible",
+          "claim_statute": "Colo. Rev. Stat. § 13-80-101",
+          "notes": "3-year deadline from default. Present the loan agreement and evidence of your payments.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "consumer-disputes",
+      "title": "Consumer disputes",
+      "blurb": "Colorado's small claims court handles various consumer disputes up to $7,500, with specific statutes of limitations depending on the claim.",
+      "claims": [
+        {
+          "slug": "defective-product",
+          "name": "Purchase of a defective product",
+          "example": "You bought a $1,000 appliance that stopped working within a month, and the seller refuses to refund or replace it.",
+          "eligibility": "eligible",
+          "claim_statute": "Colo. Rev. Stat. § 13-80-101",
+          "notes": "3-year deadline from purchase. Bring the receipt, warranty, and any communication with the seller.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "bad-service",
+          "name": "Substandard service provided",
+          "example": "A cleaning service charged $500 but left your home in poor condition.",
+          "eligibility": "eligible",
+          "claim_statute": "Colo. Rev. Stat. § 13-80-101",
+          "notes": "3-year deadline from service date. Provide the service agreement, photos, and correspondence.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "auto-repair",
+          "name": "Faulty auto repair",
+          "example": "A mechanic charged $2,000 for repairs that didn't fix the issue.",
+          "eligibility": "eligible",
+          "claim_statute": "Colo. Rev. Stat. § 13-80-101",
+          "notes": "3-year deadline from repair date. Bring repair invoices, receipts, and any warranties.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "contractor",
+          "name": "Contractor failed to complete work",
+          "example": "You paid a contractor $5,000 to renovate your bathroom, but they abandoned the project halfway.",
+          "eligibility": "eligible",
+          "claim_statute": "Colo. Rev. Stat. § 13-80-101",
+          "notes": "3-year deadline from breach. Provide the contract, payment records, and photos of incomplete work.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "no-show-vendor",
+          "name": "Vendor failed to deliver goods/services",
+          "example": "You paid $1,500 for catering services, but the vendor never showed up.",
+          "eligibility": "eligible",
+          "claim_statute": "Colo. Rev. Stat. § 13-80-101",
+          "notes": "3-year deadline from event date. Bring the contract, payment proof, and any communication.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "subscription-cancellation",
+          "name": "Unauthorized charges after subscription cancellation",
+          "example": "You canceled a $50/month gym membership, but they continued to charge your card.",
+          "eligibility": "eligible",
+          "claim_statute": "Colo. Rev. Stat. § 13-80-101",
+          "notes": "3-year deadline from unauthorized charge. Provide cancellation notice and bank statements.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "used-car",
+          "name": "Purchase of a defective used car",
+          "example": "You bought a used car for $6,000 that broke down within a week, and the seller refuses to address the issue.",
+          "eligibility": "eligible",
+          "claim_statute": "Colo. Rev. Stat. § 13-80-101",
+          "notes": "3-year deadline from purchase. Bring the bill of sale, any warranties, and repair estimates.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "false-advertising",
+          "name": "False advertising leading to financial loss",
+          "example": "A retailer advertised a product as new for $800, but it was refurbished.",
+          "eligibility": "eligible",
+          "claim_statute": "Colo. Rev. Stat. § 6-1-113",
+          "notes": "3-year deadline from purchase. Provide the advertisement, receipt, and product details.",
+          "damage_boost": "Actual damages plus attorney fees and costs; possible treble damages for bad faith.",
+          "source_ids": [
+            "S5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "property-damage",
+      "title": "Property damage",
+      "blurb": "Claims for property damage up to $7,500 can be filed in Colorado's small claims court, with a 3-year statute of limitations.",
+      "claims": [
+        {
+          "slug": "vehicle-collision",
+          "name": "Damage from a vehicle collision",
+          "example": "Another driver caused $4,000 in damage to your car and refuses to pay.",
+          "eligibility": "eligible",
+          "claim_statute": "Colo. Rev. Stat. § 13-80-101",
+          "notes": "3-year deadline from accident date. Bring the police report, repair estimates, and photos.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "neighbor-property",
+          "name": "Neighbor damaged your property",
+          "example": "A neighbor's tree fell and caused $2,500 in damage to your fence.",
+          "eligibility": "eligible",
+          "claim_statute": "Colo. Rev. Stat. § 13-80-101",
+          "notes": "3-year deadline from damage date. Provide photos, repair estimates, and any communication.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "damage-to-rental",
+          "name": "Tenant caused damage to rental property",
+          "example": "A tenant left $3,000 worth of damage upon moving out.",
+          "eligibility": "eligible",
+          "claim_statute": "Colo. Rev. Stat. § 13-80-101",
+          "notes": "3-year deadline from discovery. Bring the lease agreement, photos, and repair invoices.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "pet-damage",
+          "name": "Damage caused by someone's pet",
+          "example": "A neighbor's dog dug up your garden, causing $1,200 in damage.",
+          "eligibility": "eligible",
+          "claim_statute": "Colo. Rev. Stat. § 13-80-101",
+          "notes": "3-year deadline from incident. Provide photos, repair estimates, and witness statements.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "property-in-custody",
+          "name": "Damage to property left in someone's care",
+          "example": "You left a $2,000 watch for repair, and it was returned damaged.",
+          "eligibility": "eligible",
+          "claim_statute": "Colo. Rev. Stat. § 13-80-101",
+          "notes": "3-year deadline from return date. Bring the service agreement and photos of damage.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "landlord-tenant",
+      "title": "Landlord-tenant disputes",
+      "blurb": "Monetary disputes between landlords and tenants up to $7,500 are eligible for small claims court in Colorado.",
+      "claims": [
+        {
+          "slug": "security-deposit",
+          "name": "Failure to return security deposit",
+          "example": "Your landlord withheld your $1,500 security deposit without justification.",
+          "eligibility": "eligible",
+          "claim_statute": "Colo. Rev. Stat. § 38-12-103",
+          "notes": "1-year deadline from lease termination. Provide the lease agreement and move-out inspection report.",
+          "damage_boost": "Treble damages if deposit wrongfully withheld.",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "deposit-not-itemized",
+          "name": "Failure to provide itemized deductions from deposit",
+          "example": "Landlord deducted $800 from your deposit without an itemized list.",
+          "eligibility": "eligible",
+          "claim_statute": "Colo. Rev. Stat. § 38-12-103",
+          "notes": "1-year deadline from lease termination. Bring the lease and any correspondence.",
+          "damage_boost": "Treble damages if deposit wrongfully withheld.",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "uninhabitable-rental",
+          "name": "Rental unit deemed uninhabitable",
+          "example": "Your apartment had no heat during winter, and the landlord refused to fix it.",
+          "eligibility": "eligible",
+          "claim_statute": "Colo. Rev. Stat. § 38-12-505",
+          "notes": "1-year deadline from issue. Provide photos, repair requests, and any health department reports.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "wrongful-retention-property",
+          "name": "Landlord retained tenant's personal property",
+          "example": "After moving out, your landlord kept your $2,000 bicycle.",
+          "eligibility": "eligible",
+          "claim_statute": "Colo. Rev. Stat. § 38-20-116",
+          "notes": "1-year deadline from move-out. Bring the lease, move-out notice, and proof of property ownership.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "illegal-eviction",
+          "name": "Landlord conducted an illegal eviction",
+          "example": "Your landlord changed the locks without notice, preventing access to your apartment.",
+          "eligibility": "eligible",
+          "claim_statute": "Colo. Rev. Stat. § 38-12-510",
+          "notes": "1-year deadline from eviction. Provide the lease, communication records, and any police reports.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "unreturned-prepaid-rent",
+          "name": "Failure to return prepaid rent after lease termination",
+          "example": "You paid first and last month's rent, but the landlord didn't return the last month's rent after early termination.",
+          "eligibility": "eligible",
+          "claim_statute": "Colo. Rev. Stat. § 38-12-103",
+          "notes": "1-year deadline from lease termination. Bring the lease and payment records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "unpaid-rent-by-tenant",
+          "name": "Tenant failed to pay rent",
+          "example": "Your tenant owes $3,000 in unpaid rent and has vacated the property.",
+          "eligibility": "eligible",
+          "claim_statute": "Colo. Rev. Stat. § 13-80-101",
+          "notes": "3-year deadline from when rent was due. Bring the lease agreement and records of unpaid rent.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "repair-and-deduct",
+          "name": "Tenant repaired and deducted from rent",
+          "example": "You paid $500 to fix a leaking roof after the landlord failed to address it and deducted it from rent.",
+          "eligibility": "eligible",
+          "claim_statute": "Colo. Rev. Stat. § 38-12-507",
+          "notes": "1-year deadline from repair. Provide repair receipts and communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "employment-and-wages",
+      "title": "Employment and wage disputes",
+      "blurb": "Employees can file claims for unpaid wages and related issues up to $7,500 in Colorado's small claims court.",
+      "claims": [
+        {
+          "slug": "unpaid-wages",
+          "name": "Employer failed to pay earned wages",
+          "example": "Your employer owes you $2,000 in unpaid wages for hours worked.",
+          "eligibility": "eligible",
+          "claim_statute": "Colo. Rev. Stat. § 8-4-109",
+          "notes": "2-year deadline from due date. Provide pay stubs, time records, and any communication.",
+          "damage_boost": "Wages due plus penalty of 125% of unpaid wages or $250, whichever is greater.",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "final-paycheck",
+          "name": "Employer failed to provide final paycheck",
+          "example": "After termination, your employer didn't give you your final paycheck of $1,500.",
+          "eligibility": "eligible",
+          "claim_statute": "Colo. Rev. Stat. § 8-4-109",
+          "notes": "2-year deadline from due date. Bring termination notice and records of hours worked.",
+          "damage_boost": "Wages due plus penalty of 125% of unpaid wages or $250, whichever is greater.",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "unpaid-commissions",
+          "name": "Employer failed to pay earned commissions",
+          "example": "You earned $3,000 in commissions, but your employer hasn't paid them.",
+          "eligibility": "eligible",
+          "claim_statute": "Colo. Rev. Stat. § 8-4-109",
+          "notes": "2-year deadline from due date. Provide commission agreements and sales records.",
+          "damage_boost": "Wages due plus penalty of 125% of unpaid wages or $250, whichever is greater.",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "unpaid-overtime",
+          "name": "Employer failed to pay overtime wages",
+          "example": "You worked 10 hours of overtime but weren't compensated at the overtime rate.",
+          "eligibility": "eligible",
+          "claim_statute": "Colo. Rev. Stat. § 8-4-109",
+          "notes": "2-year deadline from due date. Bring time records and pay stubs.",
+          "damage_boost": "Wages due plus penalty of 125% of unpaid wages or $250, whichever is greater.",
+          "source_ids": [
+            "S5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "personal-claims",
+      "title": "Personal claims",
+      "blurb": "Individuals can file personal claims up to $7,500 in Colorado's small claims court, with varying statutes of limitations.",
+      "claims": [
+        {
+          "slug": "minor-injury",
+          "name": "Minor personal injury",
+          "example": "You slipped on an unmarked wet floor in a store and incurred $2,000 in medical bills.",
+          "eligibility": "eligible",
+          "claim_statute": "Colo. Rev. Stat. § 13-80-102",
+          "notes": "2-year deadline from injury date. Provide medical records and incident reports.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "loaned-property",
+          "name": "Failure to return loaned property",
+          "example": "You loaned a friend your $1,000 camera, and they refuse to return it.",
+          "eligibility": "eligible",
+          "claim_statute": "Colo. Rev. Stat. § 13-80-101",
+          "notes": "3-year deadline from demand for return. Provide evidence of ownership and loan agreement.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "civil-theft",
+          "name": "Theft of personal property",
+          "example": "Someone stole your $3,000 bicycle, and you have evidence of their involvement.",
+          "eligibility": "eligible",
+          "claim_statute": "Colo. Rev. Stat. § 18-4-405",
+          "notes": "3-year deadline from theft. Provide police reports and evidence of ownership.",
+          "damage_boost": "Treble damages plus attorney fees.",
+          "source_ids": [
+            "S5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vehicle-specific",
+      "title": "Vehicle-specific claims",
+      "blurb": "Vehicle-related disputes up to $7,500 can be addressed in Colorado's small claims court.",
+      "claims": [
+        {
+          "slug": "mechanic-dispute",
+          "name": "Dispute over mechanic's repair work",
+          "example": "A mechanic charged $2,500 for repairs that didn't fix the issue.",
+          "eligibility": "eligible",
+          "claim_statute": "Colo. Rev. Stat. § 13-80-101",
+          "notes": "3-year deadline from repair date. Bring repair invoices and correspondence.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "wrongful-tow",
+          "name": "Vehicle was wrongfully towed",
+          "example": "Your car was towed from a legal parking spot, and you incurred $500 in fees.",
+          "eligibility": "eligible",
+          "claim_statute": "Colo. Rev. Stat. § 13-80-101",
+          "notes": "3-year deadline from tow date. Provide towing receipts and photos of the parking area.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        }
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "category": "Eviction (unlawful detainer)",
+      "explanation": "Small claims court does not handle eviction cases; these must be filed in county court.",
+      "where_to_go_instead": "County Court eviction process",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Defamation (libel or slander)",
+      "explanation": "Claims involving defamation are excluded from small claims court jurisdiction.",
+      "where_to_go_instead": "District Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Injunctions or specific performance",
+      "explanation": "Small claims court cannot issue orders requiring someone to do or stop doing something.",
+      "where_to_go_instead": "District Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Family law matters",
+      "explanation": "Divorce, custody, and related family law issues are not handled in small claims court.",
+      "where_to_go_instead": "Family Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Probate matters",
+      "explanation": "Issues related to wills and estates are outside the jurisdiction of small claims court.",
+      "where_to_go_instead": "Probate Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Claims against the federal government",
+      "explanation": "Small claims court cannot hear cases against federal entities.",
+      "where_to_go_instead": "Federal Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Class actions",
+      "explanation": "Class action lawsuits are not permitted in small claims court.",
+      "where_to_go_instead": "District Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Malpractice claims",
+      "explanation": "Professional malpractice cases exceed the jurisdiction of small claims court.",
+      "where_to_go_instead": "District Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Workers' compensation claims",
+      "explanation": "These claims are handled by the Division of Workers' Compensation, not small claims court.",
+      "where_to_go_instead": "Division of Workers' Compensation",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Bankruptcy matters",
+      "explanation": "Bankruptcy cases are under federal jurisdiction and not handled in small claims court.",
+      "where_to_go_instead": "Federal Bankruptcy Court",
+      "source_ids": [
+        "S1"
+      ]
+    }
+  ],
+  "damages": {
+    "compensatory_allowed": true,
+    "punitive_allowed": false,
+    "punitive_explanation": "Punitive damages are not awarded in small claims court; however, statutory penalties may apply in certain cases.",
+    "statutory_multipliers": [
+      {
+        "claim": "Bad check (after 30-day notice)",
+        "multiplier": "3x check amount",
+        "explanation": "Check amount + service charge up to $20 + civil penalty up to $100 OR 3x check amount, whichever is greater.",
+        "statute": "Colo. Rev. Stat. § 13-21-109",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "Consumer protection violations",
+        "multiplier": "Treble damages",
+        "explanation": "Actual damages plus attorney fees and costs; possible treble damages for bad faith.",
+        "statute": "Colo. Rev. Stat. § 6-1-113",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "Security deposit wrongfully withheld",
+        "multiplier": "Treble damages",
+        "explanation": "Treble damages if deposit wrongfully withheld.",
+        "statute": "Colo. Rev. Stat. § 38-12-103",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "Civil theft",
+        "multiplier": "Treble damages",
+        "explanation": "Treble damages plus attorney fees.",
+        "statute": "Colo. Rev. Stat. § 18-4-405",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "Unpaid wages",
+        "multiplier": "125% of unpaid wages or $250, whichever is greater",
+        "explanation": "Wages due plus penalty of 125% of unpaid wages or $250, whichever is greater.",
+        "statute": "Colo. Rev. Stat. § 8-4-109",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "attorney_fees_recoverable": "sometimes",
+    "attorney_fees_explanation": "Attorney fees may be recoverable in cases involving statutory violations, such as consumer protection or civil theft claims.",
+    "prejudgment_interest_rate_pct": 8,
+    "prejudgment_interest_statute": "Colo. Rev. Stat. § 5-12-102",
+    "postjudgment_interest_rate_pct": 8,
+    "postjudgment_interest_type": "simple",
+    "postjudgment_interest_statute": "Colo. Rev. Stat. § 5-12-102",
+    "postjudgment_interest_notes": "Interest accrues at 8% per annum on unpaid judgments.",
+    "filing_and_service_fees_recoverable_from_loser": true,
+    "source_ids": [
+      "S5"
+    ]
+  },
+  "where_to_file": {
+    "court_name": "Small Claims Division of the County Court",
+    "parent_court": "Colorado Judicial Branch — County Court",
+    "venue_rules": [
+      {
+        "scenario": "Defendant is an individual",
+        "filing_options": [
+          "County where the defendant lives, works, or is a full-time student"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Defendant is a business",
+        "filing_options": [
+          "County where the business has an office for transaction of business"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Security deposit or restrictive covenant cases",
+        "filing_options": [
+          "County where the property is located"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "consequences_of_wrong_venue": "Filing in the wrong venue may result in dismissal or transfer of the case, potentially causing delays and additional costs.",
+    "e_filing_available": "varies",
+    "e_filing_notes": "E-filing availability depends on the county; check with the local court clerk.",
+    "e_filing_portal": null,
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "fees": {
+    "filing_fee_tiers": [
+      {
+        "range_label": "$0 to $500",
+        "range_min": 0,
+        "range_max": 500,
+        "fee_dollars": 31,
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "range_label": "$500.01 to $7,500",
+        "range_min": 500.01,
+        "range_max": 7500,
+        "fee_dollars": 55,
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "frequent_filer": {
+      "threshold_per_year": 18,
+      "fee_dollars": null,
+      "notes": "No more than 18 claims per year per county"
+    },
+    "service_fees": [
+      {
+        "method": "Sheriff (personal service)",
+        "amount_label": "Varies by county",
+        "notes": "Contact local sheriff's office for exact fees.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "method": "Certified mail by clerk",
+        "amount_label": "Varies",
+        "notes": "Fees depend on current postal rates.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "waiver": {
+      "forms": [
+        {
+          "number": "JDF 205",
+          "name": "Motion to File Without Payment and Supporting Financial Affidavit",
+          "url": "https://www.courts.state.co.us/Forms/Forms_List.cfm?Form_Type_ID=24",
+          "source_ids": [
+            "S1"
+          ]
+        }
+      ],
+      "eligibility_bullets": [
+        "Receiving need-based public assistance (SNAP, TANF, SSI)",
+        "Household income below 125% federal poverty line"
+      ],
+      "coverage_notes": "The waiver covers filing fees and may cover service fees; check with the court clerk.",
+      "if_you_win_notes": "If you win, the waived fees may be added to the judgment against the loser."
+    },
+    "other_fees": [
+      {
+        "name": "Subpoena issuance",
+        "amount_label": "$15",
+        "notes": "Plus witness fee per day.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "name": "Appeal filing",
+        "amount_label": "$70",
+        "notes": "",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "name": "Writ of execution",
+        "amount_label": "Varies",
+        "notes": "Post-judgment; contact court clerk for exact fees.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "fees_recoverable_from_loser_notes": "If you win, filing fees and reasonable service costs are typically added to the judgment.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "statute_of_limitations": {
+    "entries": [
+      {
+        "id": "written-contract",
+        "claim": "Written contract",
+        "years": 3,
+        "clock_starts": "Date of breach",
+        "statute": "Colo. Rev. Stat. § 13-80-101",
+        "notes": "",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "oral-contract",
+        "claim": "Oral contract",
+        "years": 3,
+        "clock_starts": "Date of breach",
+        "statute": "Colo. Rev. Stat. § 13-80-101",
+        "notes": "",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "sale-of-goods",
+        "claim": "Sale of goods (UCC)",
+        "years": 4,
+        "clock_starts": "Date of breach",
+        "statute": "Colo. Rev. Stat. § 4-2-725",
+        "notes": "",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "promissory-note",
+        "claim": "Promissory note",
+        "years": 6,
+        "clock_starts": "Date of default",
+        "statute": "Colo. Rev. Stat. § 13-80-103.5",
+        "notes": "",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "open-account",
+        "claim": "Open account / credit card debt",
+        "years": 3,
+        "clock_starts": "Date of last payment or charge",
+        "statute": "Colo. Rev. Stat. § 13-80-101",
+        "notes": "",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "personal-injury",
+        "claim": "Personal injury",
+        "years": 2,
+        "clock_starts": "Date of injury",
+        "statute": "Colo. Rev. Stat. § 13-80-102",
+        "notes": "",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "property-damage",
+        "claim": "Property damage",
+        "years": 3,
+        "clock_starts": "Date of damage",
+        "statute": "Colo. Rev. Stat. § 13-80-101",
+        "notes": "",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "fraud",
+        "claim": "Fraud",
+        "years": 3,
+        "clock_starts": "Date of discovery",
+        "statute": "Colo. Rev. Stat. § 13-80-101",
+        "notes": "Discovery rule applies.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "bad-check",
+        "claim": "Bad check",
+        "years": 1,
+        "clock_starts": "Date of check",
+        "statute": "Colo. Rev. Stat. § 13-80-103",
+        "notes": "",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "unpaid-wages",
+        "claim": "Unpaid wages",
+        "years": 2,
+        "clock_starts": "Date wages were due",
+        "statute": "Colo. Rev. Stat. § 8-4-109",
+        "notes": "",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "security-deposit",
+        "claim": "Security deposit",
+        "years": 1,
+        "clock_starts": "Date of lease termination",
+        "statute": "Colo. Rev. Stat. § 38-12-103",
+        "notes": "",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "judgment-enforcement",
+        "claim": "Judgment enforcement",
+        "years": 6,
+        "clock_starts": "Date of judgment",
+        "statute": "Colo. Rev. Stat. § 13-52-102",
+        "notes": "Judgment can be revived before expiration.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "discovery_rule_notes": "The discovery rule applies to fraud claims, starting the clock when the fraud is discovered.",
+    "tolling_notes": "The statute of limitations may be tolled if the defendant is out of state, the plaintiff is a minor, or in cases of bankruptcy stays.",
+    "source_ids": [
+      "S5"
+    ]
+  },
+  "pre_filing": {
+    "demand_letter_required": false,
+    "demand_letter_recommended": true,
+    "demand_letter_notes": "While not required, sending a demand letter can often resolve disputes without court intervention.",
+    "bad_check_notice_rule": "For bad check claims, a 30-day written notice demanding payment is required before filing suit.",
+    "wage_claim_demand_rule": "A written demand for unpaid wages is required; if not paid within 14 days, penalties may apply.",
+    "government_claim_required": false,
+    "government_claim_deadline_days": null,
+    "government_claim_notes": "",
+    "landlord_tenant_pre_filing_notes": "Landlords must provide an itemized list of deductions from the security deposit within 30 days of lease termination.",
+    "consumer_protection_notes": "A written demand is often required before filing a consumer protection claim to allow the business to address the issue.",
+    "mandatory_mediation_before_filing": "none",
+    "arbitration_clauses_enforced": true,
+    "source_ids": [
+      "S5"
+    ]
+  },
+  "forms": [
+    {
+      "number": "JDF 250",
+      "name": "Notice, Claim, and Summons to Appear for Trial",
+      "description": "Initiates a small claims case by notifying the defendant of the claim and trial date.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "https://www.courts.state.co.us/Forms/Forms_List.cfm?Form_Type_ID=18",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "number": "JDF 251",
+      "name": "Answer",
+      "description": "Allows the defendant to respond to the claim and present their side.",
+      "filed_by": "defendant",
+      "required": false,
+      "group": "response",
+      "url": "https://www.courts.state.co.us/Forms/Forms_List.cfm?Form_Type_ID=18",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "number": "JDF 254",
+      "name": "Counterclaim",
+      "description": "Filed by the defendant if they have a claim against the plaintiff.",
+      "filed_by": "defendant",
+      "required": false,
+      "group": "counterclaim",
+      "url": "https://www.courts.state.co.us/Forms/Forms_List.cfm?Form_Type_ID=18",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "number": "JDF 205",
+      "name": "Motion to File Without Payment and Supporting Financial Affidavit",
+      "description": "Request to waive filing fees due to financial hardship.",
+      "filed_by": "plaintiff",
+      "required": false,
+      "group": "fee-waiver",
+      "url": "https://www.courts.state.co.us/Forms/Forms_List.cfm?Form_Type_ID=24",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "number": "JDF 256",
+      "name": "Notice of Appeal",
+      "description": "Filed to appeal a small claims court decision.",
+      "filed_by": "either",
+      "required": false,
+      "group": "appeal",
+      "url": "https://www.courts.state.co.us/Forms/Forms_List.cfm?Form_Type_ID=18",
+      "source_ids": [
+        "S1"
+      ]
+    }
+  ],
+  "service": {
+    "who_can_serve": [
+      "Sheriff",
+      "Certified mail by clerk",
+      "Private process server"
+    ],
+    "methods": [
+      {
+        "name": "Sheriff personal service",
+        "description": "Sheriff or constable personally hands the papers to the defendant.",
+        "pros": [
+          "Reliable",
+          "Official"
+        ],
+        "cons": [
+          "May incur fees",
+          "Timing depends on sheriff's schedule"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "name": "Certified mail by clerk",
+        "description": "Court clerk sends documents via certified mail to the defendant.",
+        "pros": [
+          "Cost-effective",
+          "Provides delivery confirmation"
+        ],
+        "cons": [
+          "Defendant may refuse delivery",
+          "Less personal"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "name": "Private process server",
+        "description": "A licensed individual delivers the documents to the defendant.",
+        "pros": [
+          "Flexible timing",
+          "Can locate hard-to-find defendants"
+        ],
+        "cons": [
+          "More expensive",
+          "Requires hiring a professional"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "in_county_days_before_hearing": 15,
+    "out_of_county_days_before_hearing": 15,
+    "proof_of_service_form": {
+      "number": "JDF 98",
+      "name": "Affidavit of Service"
+    },
+    "proof_filing_deadline_days_before_hearing": 5,
+    "business_service_rule": "Serve the registered agent; if unavailable, serve an officer or manager.",
+    "out_of_state_defendant_notes": "Service must comply with Colorado rules and the rules of the state where the defendant is located.",
+    "cant_find_defendant_notes": "If the defendant cannot be located, you may request permission for alternative service methods from the court.",
+    "avoiding_service_notes": "If the defendant is evading service, document attempts and seek court approval for alternative methods.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "response_and_default": {
+    "must_file_written_answer": false,
+    "response_deadline_days": 0,
+    "response_notes": "Defendants are not required to file a written answer but must appear at the trial.",
+    "default_process": "If the defendant fails to appear, the court may enter a default judgment in favor of the plaintiff.",
+    "prove_up_required": true,
+    "prove_up_notes": "Even if the defendant defaults, the plaintiff must provide evidence to support the claim.",
+    "motion_to_vacate_form": {
+      "number": "JDF 78",
+      "name": "Motion to Set Aside Default Judgment"
+    },
+    "motion_to_vacate_deadline_days": 14,
+    "motion_to_vacate_lack_of_notice_days": 180,
+    "motion_to_vacate_appeal_deadline_days": 14,
+    "motion_to_vacate_appeal_notes": "If the motion to vacate is denied, the defendant may appeal within 14 days.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "counterclaim": {
+    "allowed": true,
+    "form": {
+      "number": "JDF 254",
+      "name": "Counterclaim"
+    },
+    "same_monetary_limit": true,
+    "service_deadline_in_county_days": 7,
+    "service_deadline_out_of_county_days": 7,
+    "transfer_to_higher_court_available": true,
+    "transfer_to_higher_court_statute": "Colo. Rev. Stat. § 13-6-405",
+    "transfer_to_higher_court_notes": "If the counterclaim exceeds $7,500, the case may be transferred to county or district court.",
+    "source_ids": [
+      "S5"
+    ]
+  },
+  "hearing": {
+    "lawyers_allowed": "restricted",
+    "lawyers_allowed_notes": "Attorneys are generally not allowed unless the defendant hires one; then the plaintiff may also hire one.",
+    "format": "Bench trial with both parties presenting evidence and testimony; typically lasts 30-60 minutes.",
+    "presider": "magistrate",
+    "burden_of_proof": "preponderance",
+    "what_to_bring": [
+      "Originals of any contracts",
+      "Receipts and bank records",
+      "Photos and videos",
+      "Names and contact info for witnesses"
+    ],
+    "subpoena_form": {
+      "number": "JDF 80",
+      "name": "Subpoena"
+    },
+    "witness_fee_per_day_dollars": 15,
+    "free_interpreters": false,
+    "interpreter_request_process": "Request an interpreter through the court clerk's office well in advance of the hearing.",
+    "jury_option": false,
+    "decision_timing": "On the spot or mailed within 7 days.",
+    "on_site_mediation": "by county",
+    "on_site_mediation_notes": "Some counties offer mediation services before the hearing; check with the local court.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "appeals": {
+    "who_can_appeal": "either",
+    "deadline_days": 14,
+    "fee_dollars": 70,
+    "type": "trial de novo",
+    "type_notes": "The appeal is a new trial in county court.",
+    "attorneys_allowed_on_appeal": true,
+    "bond_required": false,
+    "bond_amount_notes": "",
+    "automatic_stay_on_appeal": true,
+    "default_judgment_appealable": true,
+    "default_judgment_notes": "A default judgment can be appealed within 14 days.",
+    "notice_of_appeal_form": {
+      "number": "JDF 256",
+      "name": "Notice of Appeal"
+    },
+    "frivolous_appeal_penalty_dollars": null,
+    "frivolous_appeal_statute": "",
+    "frivolous_appeal_notes": "",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "collection": {
+    "payment_deadline_typical_days": 0,
+    "post_judgment_interest_rate_pct": 8,
+    "post_judgment_interest_statute": "Colo. Rev. Stat. § 5-12-102",
+    "post_judgment_interest_notes": "Interest accrues at 8% per annum on unpaid judgments.",
+    "methods": [
+      {
+        "id": "wage-garnishment",
+        "name": "Wage garnishment",
+        "blurb": "Have a portion of debtor's wages withheld until the judgment is paid.",
+        "description": "File a writ of garnishment with the court, serve the employer, and the employer withholds a portion of the debtor's wages to satisfy the judgment.",
+        "forms": [
+          {
+            "number": "JDF 104",
+            "name": "Writ of Garnishment"
+          }
+        ],
+        "estimated_cost": "$30-50 plus sheriff fees",
+        "effectiveness_notes": "Most effective when debtor is W-2 employed at a stable job.",
+        "exemptions": [
+          "75% of disposable earnings (federal CCPA floor)"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "id": "bank-levy",
+        "name": "Bank levy",
+        "blurb": "Seize funds from debtor's bank account to satisfy the judgment.",
+        "description": "Obtain a writ of garnishment, serve the bank, and the bank freezes and turns over funds from the debtor's account.",
+        "forms": [
+          {
+            "number": "JDF 104",
+            "name": "Writ of Garnishment"
+          }
+        ],
+        "estimated_cost": "$30-50 plus sheriff fees",
+        "effectiveness_notes": "Effective if debtor maintains sufficient funds in bank accounts.",
+        "exemptions": [
+          "$2,500 exemption for personal bank accounts"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "id": "property-lien",
+        "name": "Property lien",
+        "blurb": "Place a lien on debtor's real property to secure the judgment.",
+        "description": "File a transcript of judgment with the county recorder to place a lien on the debtor's real property.",
+        "forms": [
+          {
+            "number": "JDF 105",
+            "name": "Transcript of Judgment"
+          }
+        ],
+        "estimated_cost": "$20-30 recording fee",
+        "effectiveness_notes": "Effective if debtor owns real property; lien must be satisfied upon sale or refinancing.",
+        "exemptions": [
+          "Homestead exemption up to $75,000"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "id": "writ-of-execution",
+        "name": "Writ of execution",
+        "blurb": "Seize and sell debtor's non-exempt personal property to satisfy the judgment.",
+        "description": "Obtain a writ of execution from the court, have the sheriff seize non-exempt property, and sell it at public auction.",
+        "forms": [
+          {
+            "number": "JDF 103",
+            "name": "Writ of Execution"
+          }
+        ],
+        "estimated_cost": "$50-100 plus sheriff fees",
+        "effectiveness_notes": "Effective if debtor owns valuable non-exempt personal property.",
+        "exemptions": [
+          "Household goods up to $3,000",
+          "Vehicle up to $7,500"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "wage_garnishment_max_pct_of_disposable": 25,
+    "judgment_lifespan_years": 6,
+    "judgment_renewal_process": "File a motion to revive the judgment before expiration; personal service on debtor required.",
+    "debtor_exam_form": {
+      "number": "JDF 111",
+      "name": "Motion and Order for Hearing on Asset Disclosure"
+    },
+    "exempt_assets": [
+      "Homestead — $75,000",
+      "Vehicle — $7,500",
+      "Household goods — $3,000",
+      "Retirement accounts (federally and state-protected)",
+      "Social Security and federal benefits"
+    ],
+    "bankruptcy_effect_notes": "Filing for bankruptcy may discharge the judgment; certain debts are non-dischargeable.",
+    "satisfaction_of_judgment_form": {
+      "number": "JDF 111",
+      "name": "Satisfaction of Judgment"
+    },
+    "priority_notes": "Priority among multiple judgment creditors is generally determined by the order of filing or recording liens.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "businesses": {
+    "self_representation_allowed": true,
+    "self_representation_notes": "Businesses can appear without an attorney; a full-time officer or employee may represent the business.",
+    "can_send_employee": true,
+    "can_send_attorney": true,
+    "non_attorney_representation_form": {
+      "number": "JDF 250",
+      "name": "Notice, Claim, and Summons to Appear for Trial"
+    },
+    "insurance_adjuster_allowed": false,
+    "fictitious_name_form": {
+      "number": "JDF 250",
+      "name": "Notice, Claim, and Summons to Appear for Trial"
+    },
+    "fictitious_name_notes": "Businesses must use their legal entity name; trade names (DBAs) are not sufficient.",
+    "sole_proprietor_employee_exception": "Sole proprietors may represent themselves or have a full-time employee represent them.",
+    "out_of_state_business_must_register": true,
+    "out_of_state_business_statute": "Colo. Rev. Stat. § 7-90-801",
+    "licensing_notes": "Unlicensed contractors may face challenges in enforcing contracts; courts may deny recovery.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "county_variations_material": true,
+  "county_variations": [
+    {
+      "county": "Denver",
+      "topic": "E-filing availability",
+      "detail": "Denver County offers e-filing for small claims cases through the Colorado Courts E-Filing system.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "county": "El Paso",
+      "topic": "Mandatory mediation",
+      "detail": "El Paso County requires mediation for small claims disputes before proceeding to trial.",
+      "source_ids": [
+        "S1"
+      ]
+    }
+  ],
+  "pitfalls": [
+    {
+      "title": "Exceeding the claim limit",
+      "what_happens": "If your claim exceeds $7,500, you must waive the excess to proceed in small claims court; otherwise, the case may be dismissed or transferred.",
+      "how_to_avoid": "Ensure your claim, excluding interest and costs, does not exceed $7,500 or be prepared to waive the excess amount.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Improper service of process",
+      "what_happens": "Failure to properly serve the defendant can result in delays or dismissal of your case.",
+      "how_to_avoid": "Follow the court's rules for service carefully, using approved methods and completing service within required timeframes.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Missing the statute of limitations",
+      "what_happens": "Filing after the statute of limitations has expired will lead to dismissal of your case.",
+      "how_to_avoid": "Verify the applicable statute of limitations for your claim type and file within the allowed period.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    {
+      "title": "Failing to appear at trial",
+      "what_happens": "If you do not appear at the scheduled trial, the court may dismiss your case or enter a default judgment against you.",
+      "how_to_avoid": "Mark your calendar and ensure you attend the trial; if you cannot, notify the court in advance to request a reschedule.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Not collecting the judgment",
+      "what_happens": "Winning a judgment does not guarantee payment; you are responsible for collection efforts.",
+      "how_to_avoid": "Familiarize yourself with collection methods and be prepared to take necessary steps to enforce the judgment.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Ignoring counterclaims",
+      "what_happens": "If the defendant files a counterclaim and you are unprepared, you could lose your case or owe money.",
+      "how_to_avoid": "Review any counterclaims carefully and prepare your defense; consider seeking legal advice if needed.",
+      "source_ids": [
+        "S1"
+      ]
+    }
+  ],
+  "recent_changes": [
+    {
+      "date": "2024-01-01",
+      "title": "Increase in small claims court limit",
+      "description": "The jurisdictional limit for small claims court increased from $7,500 to $10,000, allowing for higher-value claims to be filed.",
+      "bill_or_rule_citation": "Colo. Rev. Stat. § 13-6-403",
+      "source_ids": [
+        "S5"
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Do I need a lawyer?",
+      "answer": "In Colorado's small claims court, attorneys are generally not allowed unless the defendant hires one; then the plaintiff may also hire one.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "How long does it take?",
+      "answer": "The typical timeline for a small claims case in Colorado ranges from 30 to 90 days from filing to resolution.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "What's the maximum I can sue for?",
+      "answer": "You can sue for up to $7,500 in Colorado's small claims court.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "What happens if the defendant doesn't show up?",
+      "answer": "If the defendant fails to appear at the trial, the court may enter a default judgment in favor of the plaintiff.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "Can I appeal?",
+      "answer": "Yes, either party can appeal a small claims court decision within 14 days by filing a Notice of Appeal.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "How long is a judgment good for?",
+      "answer": "A judgment in Colorado is valid for 6 years and can be revived before expiration.",
+      "source_ids": [
+        "S1"
+      ]
+    }
+  ],
+  "state_specific_notes": [
+    "Colorado's small claims court has a jurisdictional limit of $7,500, excluding interest and costs.",
+    "Attorneys are generally not permitted in small claims court unless the defendant hires one.",
+    "The statute of limitations varies by claim type; for example, 3 years for written contracts and 2 years for personal injury.",
+    "Winning a judgment does not guarantee payment; plaintiffs are responsible for collection efforts.",
+    "Certain claims, such as evictions and defamation, are excluded from small claims court jurisdiction."
+  ],
+  "_extras": {
+    "interesting_findings": [
+      "Colorado allows for treble damages in cases of civil theft and wrongful withholding of security deposits.",
+      "The state imposes a limit on the number of small claims filings: no more than 18 per year per county.",
+      "Some counties in Colorado require mandatory mediation for small claims disputes before proceeding to trial."
+    ]
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "label": "Colorado Judicial Branch - Small Claims Overview",
+      "url": "https://www.courts.state.co.us/Courts/County/SmallClaims.cfm",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S4",
+      "label": "Colorado Judicial Branch - Filing Fees",
+      "url": "https://www.courts.state.co.us/Forms/fee_schedules/courtfees.pdf",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S5",
+      "label": "Colo. Rev. Stat. § 13-6-403 (Jurisdiction of Small Claims Court)",
+      "url": "https://leg.colorado.gov/sites/default/files/images/olls/crs2022-title-13.pdf",
+      "primary": true,
+      "citation": ""
+    }
+  ],
+  "_meta": {
+    "state": "Colorado",
+    "slug": "colorado",
+    "model": "gpt-4.1",
+    "generated_at": "2026-04-28T11:38:17.297Z",
+    "promoted_from_failure": true
+  }
+}

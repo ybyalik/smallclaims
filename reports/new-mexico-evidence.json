@@ -1,0 +1,1611 @@
+{
+  "state": "New Mexico",
+  "slug": "new-mexico",
+  "abbr": "NM",
+  "as_of": "2026-04-28",
+  "hero": {
+    "individual_limit_dollars": 10000,
+    "business_limit_dollars": 10000,
+    "filing_fee_low_dollars": 25,
+    "filing_fee_high_dollars": 90,
+    "typical_timeline_min_days": 30,
+    "typical_timeline_max_days": 90,
+    "tagline": "New Mexico's small claims courts offer a streamlined process for disputes up to $10,000, with flexible filing options and informal proceedings.",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "at_a_glance": [
+    {
+      "label": "Most you can sue for",
+      "value": "$10,000",
+      "detail": "Same cap for individuals and businesses",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "label": "Filing fee",
+      "value": "$25–$90",
+      "detail": "Varies by claim amount",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "label": "Court",
+      "value": "Magistrate Court or Metropolitan Court",
+      "detail": "Depending on county",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Lawyers at trial",
+      "value": "Allowed",
+      "detail": "Permitted but not required",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Appeal window",
+      "value": "15 days",
+      "detail": "Trial de novo in district court",
+      "source_ids": [
+        "S6"
+      ]
+    },
+    {
+      "label": "Recent change",
+      "value": "—",
+      "detail": "No major changes in the last 3 years",
+      "source_ids": []
+    }
+  ],
+  "limits": {
+    "individual_dollars": 10000,
+    "business_dollars": 10000,
+    "guarantor_with_fee_max": null,
+    "guarantor_without_fee_max": null,
+    "annual_filing_cap": {
+      "count": null,
+      "threshold_dollars": null,
+      "notes": ""
+    },
+    "split_claims_allowed": false,
+    "split_claims_explanation": "If your claim exceeds $10,000, you cannot split it into multiple cases to fit under the cap. You must either waive the excess amount or file in a higher court.",
+    "interest_excluded_from_cap": true,
+    "court_costs_excluded_from_cap": true,
+    "statute": "N.M. Stat. Ann. § 35-3-3",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "claim_categories": [
+    {
+      "id": "contracts",
+      "title": "Contracts and money owed",
+      "blurb": "New Mexico allows you 6 years to file a claim for breach of a written contract and 4 years for an oral contract.",
+      "claims": [
+        {
+          "slug": "written-contract",
+          "name": "Breach of a written contract",
+          "example": "A contractor signed a $4,000 contract to remodel your kitchen, took the deposit, and never finished.",
+          "eligibility": "eligible",
+          "claim_statute": "N.M. Stat. Ann. § 37-1-3",
+          "notes": "6-year deadline from breach. Bring the signed contract, payment proof, and any correspondence showing the breach.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "oral-contract",
+          "name": "Breach of an oral contract",
+          "example": "You agreed verbally to lend someone $2,000, and they failed to repay.",
+          "eligibility": "eligible",
+          "claim_statute": "N.M. Stat. Ann. § 37-1-4",
+          "notes": "4-year deadline from breach. Gather any evidence of the agreement, such as emails or witness statements.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "personal-loan",
+          "name": "Unpaid personal loan",
+          "example": "You loaned a friend $5,000 with the understanding they'd repay in a year, but they haven't.",
+          "eligibility": "eligible",
+          "claim_statute": "N.M. Stat. Ann. § 37-1-3",
+          "notes": "6-year deadline from breach. Provide evidence of the loan agreement and any repayment attempts.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "promissory-note",
+          "name": "Default on a promissory note",
+          "example": "A borrower signed a promissory note for $8,000 and failed to make payments.",
+          "eligibility": "eligible",
+          "claim_statute": "N.M. Stat. Ann. § 37-1-3",
+          "notes": "6-year deadline from breach. Present the original promissory note and records of missed payments.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unpaid-invoice",
+          "name": "Unpaid invoice for services rendered",
+          "example": "You provided $3,000 worth of consulting services, but the client hasn't paid the invoice.",
+          "eligibility": "eligible",
+          "claim_statute": "N.M. Stat. Ann. § 37-1-3",
+          "notes": "6-year deadline from breach. Bring the invoice, service agreement, and any communication regarding payment.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "open-account",
+          "name": "Unpaid balance on an open account",
+          "example": "A customer has an outstanding balance of $2,500 on their account with your business.",
+          "eligibility": "eligible",
+          "claim_statute": "N.M. Stat. Ann. § 37-1-3",
+          "notes": "6-year deadline from breach. Provide account statements and records of transactions.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unpaid-rent",
+          "name": "Unpaid rent by tenant",
+          "example": "Your tenant owes $1,200 in unpaid rent for the past two months.",
+          "eligibility": "eligible",
+          "claim_statute": "N.M. Stat. Ann. § 37-1-3",
+          "notes": "6-year deadline from breach. Present the lease agreement and records of missed payments.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "bad-check",
+          "name": "Payment with a bad check",
+          "example": "A customer paid with a $500 check that bounced due to insufficient funds.",
+          "eligibility": "eligible",
+          "claim_statute": "N.M. Stat. Ann. § 30-36-1",
+          "notes": "Send a 15-day demand letter before filing. You may recover the check amount plus damages.",
+          "damage_boost": "Check amount + service charge up to $25 + civil penalty up to $100 OR 3x check amount, whichever is greater.",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "co-signer",
+          "name": "Co-signer seeking repayment",
+          "example": "You co-signed a $7,000 loan, and the primary borrower defaulted, leaving you responsible.",
+          "eligibility": "eligible",
+          "claim_statute": "N.M. Stat. Ann. § 37-1-3",
+          "notes": "6-year deadline from breach. Provide the loan agreement and evidence of payments made on behalf of the borrower.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "consumer-disputes",
+      "title": "Consumer disputes",
+      "blurb": "New Mexico's Unfair Practices Act provides remedies for deceptive trade practices, with a 4-year statute of limitations.",
+      "claims": [
+        {
+          "slug": "defective-product",
+          "name": "Purchase of a defective product",
+          "example": "You bought a $1,500 appliance that stopped working within a month, and the seller refuses to repair or replace it.",
+          "eligibility": "eligible",
+          "claim_statute": "N.M. Stat. Ann. § 57-12-1",
+          "notes": "4-year deadline from discovery. Bring the purchase receipt, warranty, and any communication with the seller.",
+          "damage_boost": "Actual damages or $100, whichever is greater; possible treble damages for willful violations.",
+          "source_ids": [
+            "S17"
+          ]
+        },
+        {
+          "slug": "bad-service",
+          "name": "Substandard service provided",
+          "example": "A cleaning service charged $800 but did not perform the agreed-upon tasks.",
+          "eligibility": "eligible",
+          "claim_statute": "N.M. Stat. Ann. § 57-12-1",
+          "notes": "4-year deadline from discovery. Provide the service agreement, payment proof, and evidence of substandard work.",
+          "damage_boost": "Actual damages or $100, whichever is greater; possible treble damages for willful violations.",
+          "source_ids": [
+            "S17"
+          ]
+        },
+        {
+          "slug": "auto-repair",
+          "name": "Faulty auto repair",
+          "example": "A mechanic charged $2,000 for repairs that did not fix the issue, and the car remains inoperable.",
+          "eligibility": "eligible",
+          "claim_statute": "N.M. Stat. Ann. § 57-12-1",
+          "notes": "4-year deadline from discovery. Bring repair invoices, receipts, and any correspondence with the mechanic.",
+          "damage_boost": "Actual damages or $100, whichever is greater; possible treble damages for willful violations.",
+          "source_ids": [
+            "S17"
+          ]
+        },
+        {
+          "slug": "contractor",
+          "name": "Contractor failed to complete work",
+          "example": "You paid a contractor $5,000 to renovate your bathroom, but they abandoned the project halfway.",
+          "eligibility": "eligible",
+          "claim_statute": "N.M. Stat. Ann. § 57-12-1",
+          "notes": "4-year deadline from discovery. Provide the contract, payment records, and evidence of incomplete work.",
+          "damage_boost": "Actual damages or $100, whichever is greater; possible treble damages for willful violations.",
+          "source_ids": [
+            "S17"
+          ]
+        },
+        {
+          "slug": "no-show-vendor",
+          "name": "Vendor failed to deliver goods or services",
+          "example": "You paid $1,200 for catering services, but the vendor never showed up on the event day.",
+          "eligibility": "eligible",
+          "claim_statute": "N.M. Stat. Ann. § 57-12-1",
+          "notes": "4-year deadline from discovery. Bring the service agreement, payment proof, and any communication with the vendor.",
+          "damage_boost": "Actual damages or $100, whichever is greater; possible treble damages for willful violations.",
+          "source_ids": [
+            "S17"
+          ]
+        },
+        {
+          "slug": "subscription-cancellation",
+          "name": "Unauthorized subscription charges",
+          "example": "A company continued to charge your credit card $50 monthly after you canceled the subscription.",
+          "eligibility": "eligible",
+          "claim_statute": "N.M. Stat. Ann. § 57-12-1",
+          "notes": "4-year deadline from discovery. Provide cancellation confirmation, bank statements, and any correspondence with the company.",
+          "damage_boost": "Actual damages or $100, whichever is greater; possible treble damages for willful violations.",
+          "source_ids": [
+            "S17"
+          ]
+        },
+        {
+          "slug": "used-car",
+          "name": "Purchase of a defective used car",
+          "example": "You bought a used car for $9,000 that broke down within a week, and the dealer refuses to address the issue.",
+          "eligibility": "eligible",
+          "claim_statute": "N.M. Stat. Ann. § 57-12-1",
+          "notes": "4-year deadline from discovery. Bring the sales contract, payment proof, and any communication with the dealer.",
+          "damage_boost": "Actual damages or $100, whichever is greater; possible treble damages for willful violations.",
+          "source_ids": [
+            "S17"
+          ]
+        },
+        {
+          "slug": "false-advertising",
+          "name": "False advertising leading to financial loss",
+          "example": "A company advertised a product for $500 with features it didn't have, leading you to make the purchase.",
+          "eligibility": "eligible",
+          "claim_statute": "N.M. Stat. Ann. § 57-12-1",
+          "notes": "4-year deadline from discovery. Provide the advertisement, purchase receipt, and evidence of the product's shortcomings.",
+          "damage_boost": "Actual damages or $100, whichever is greater; possible treble damages for willful violations.",
+          "source_ids": [
+            "S17"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "property-damage",
+      "title": "Property damage",
+      "blurb": "New Mexico allows you 4 years to file a claim for property damage.",
+      "claims": [
+        {
+          "slug": "vehicle-collision",
+          "name": "Damage from a vehicle collision",
+          "example": "Another driver hit your parked car, causing $3,000 in damages, and refuses to pay.",
+          "eligibility": "eligible",
+          "claim_statute": "N.M. Stat. Ann. § 37-1-4",
+          "notes": "4-year deadline from incident. Bring the police report, repair estimates, and any communication with the other driver.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "neighbor-property",
+          "name": "Neighbor caused damage to your property",
+          "example": "A neighbor's tree fell onto your fence, causing $2,500 in damages, and they refuse to cover the cost.",
+          "eligibility": "eligible",
+          "claim_statute": "N.M. Stat. Ann. § 37-1-4",
+          "notes": "4-year deadline from incident. Provide photos of the damage, repair estimates, and any communication with the neighbor.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "damage-to-rental",
+          "name": "Tenant caused damage to rental property",
+          "example": "A tenant left your rental unit with $4,000 in damages beyond normal wear and tear.",
+          "eligibility": "eligible",
+          "claim_statute": "N.M. Stat. Ann. § 37-1-4",
+          "notes": "4-year deadline from discovery. Bring the lease agreement, move-in/move-out inspection reports, and repair estimates.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "pet-damage",
+          "name": "Damage caused by someone's pet",
+          "example": "A neighbor's dog entered your yard and damaged your garden, resulting in $1,500 in losses.",
+          "eligibility": "eligible",
+          "claim_statute": "N.M. Stat. Ann. § 37-1-4",
+          "notes": "4-year deadline from incident. Provide photos of the damage, repair estimates, and any communication with the pet owner.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "property-in-custody",
+          "name": "Damage to property left in someone's care",
+          "example": "You left your laptop with a repair shop, and they returned it with additional damage costing $800 to fix.",
+          "eligibility": "eligible",
+          "claim_statute": "N.M. Stat. Ann. § 37-1-4",
+          "notes": "4-year deadline from discovery. Bring the service agreement, photos of the damage, and repair estimates.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "landlord-tenant",
+      "title": "Landlord-tenant disputes",
+      "blurb": "New Mexico's Uniform Owner-Resident Relations Act governs landlord-tenant relationships, with specific provisions for security deposits and habitability.",
+      "claims": [
+        {
+          "slug": "security-deposit",
+          "name": "Failure to return security deposit",
+          "example": "Your landlord withheld your $1,200 security deposit without providing an itemized list of damages.",
+          "eligibility": "eligible",
+          "claim_statute": "N.M. Stat. Ann. § 47-8-18",
+          "notes": "Landlords must return the deposit or provide an itemized list of deductions within 30 days. Failure to do so may entitle you to damages.",
+          "damage_boost": "Actual damages plus statutory damages up to $250.",
+          "source_ids": [
+            "S21"
+          ]
+        },
+        {
+          "slug": "deposit-not-itemized",
+          "name": "No itemized list for deposit deductions",
+          "example": "Your landlord deducted $500 from your deposit without specifying the reasons.",
+          "eligibility": "eligible",
+          "claim_statute": "N.M. Stat. Ann. § 47-8-18",
+          "notes": "Landlords must provide an itemized list of deductions within 30 days. Failure to do so may entitle you to damages.",
+          "damage_boost": "Actual damages plus statutory damages up to $250.",
+          "source_ids": [
+            "S21"
+          ]
+        },
+        {
+          "slug": "uninhabitable-rental",
+          "name": "Rental unit deemed uninhabitable",
+          "example": "Your rental had no heating during winter, and the landlord refused to make repairs.",
+          "eligibility": "eligible",
+          "claim_statute": "N.M. Stat. Ann. § 47-8-27.1",
+          "notes": "Tenants may withhold rent or terminate the lease if the landlord fails to maintain a habitable environment.",
+          "damage_boost": "",
+          "source_ids": [
+            "S20"
+          ]
+        },
+        {
+          "slug": "wrongful-retention-property",
+          "name": "Landlord retained personal property",
+          "example": "After moving out, your landlord kept your furniture valued at $2,000.",
+          "eligibility": "eligible",
+          "claim_statute": "N.M. Stat. Ann. § 47-8-34.1",
+          "notes": "Landlords must follow specific procedures for handling abandoned property. Failure to do so may entitle you to damages.",
+          "damage_boost": "",
+          "source_ids": [
+            "S20"
+          ]
+        },
+        {
+          "slug": "illegal-eviction",
+          "name": "Unlawful eviction by landlord",
+          "example": "Your landlord changed the locks without notice, preventing you from accessing your rental.",
+          "eligibility": "eligible",
+          "claim_statute": "N.M. Stat. Ann. § 47-8-36",
+          "notes": "Self-help evictions are illegal. Tenants may sue for damages resulting from unlawful eviction.",
+          "damage_boost": "",
+          "source_ids": [
+            "S20"
+          ]
+        },
+        {
+          "slug": "unreturned-prepaid-rent",
+          "name": "Failure to return prepaid rent",
+          "example": "You paid first and last month's rent, but the landlord didn't return the last month's rent after you moved out early.",
+          "eligibility": "eligible",
+          "claim_statute": "N.M. Stat. Ann. § 47-8-18",
+          "notes": "Landlords must return any unearned rent upon lease termination. Failure to do so may entitle you to damages.",
+          "damage_boost": "",
+          "source_ids": [
+            "S21"
+          ]
+        },
+        {
+          "slug": "unpaid-rent-by-tenant",
+          "name": "Tenant failed to pay rent",
+          "example": "Your tenant missed two months of rent totaling $1,800.",
+          "eligibility": "eligible",
+          "claim_statute": "N.M. Stat. Ann. § 37-1-3",
+          "notes": "6-year deadline from breach. Provide the lease agreement and records of missed payments.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "repair-and-deduct",
+          "name": "Tenant repaired and deducted from rent",
+          "example": "You paid $500 to fix a leaking roof after the landlord ignored repair requests and deducted it from rent.",
+          "eligibility": "eligible",
+          "claim_statute": "N.M. Stat. Ann. § 47-8-27.1",
+          "notes": "Tenants may repair and deduct if the landlord fails to address issues affecting habitability. Follow proper notice procedures.",
+          "damage_boost": "",
+          "source_ids": [
+            "S20"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "employment-and-wages",
+      "title": "Employment and wages",
+      "blurb": "New Mexico's wage laws allow employees to recover unpaid wages, with a 3-year statute of limitations.",
+      "claims": [
+        {
+          "slug": "unpaid-wages",
+          "name": "Employer failed to pay wages",
+          "example": "Your employer owes you $2,000 for hours worked but hasn't paid.",
+          "eligibility": "eligible",
+          "claim_statute": "N.M. Stat. Ann. § 50-4-26",
+          "notes": "3-year deadline from non-payment. Provide timesheets, pay stubs, and any communication with the employer.",
+          "damage_boost": "Unpaid wages plus interest; possible treble damages for willful violations.",
+          "source_ids": [
+            "S22"
+          ]
+        },
+        {
+          "slug": "final-paycheck",
+          "name": "Employer withheld final paycheck",
+          "example": "After resigning, your employer didn't provide your final paycheck of $1,500.",
+          "eligibility": "eligible",
+          "claim_statute": "N.M. Stat. Ann. § 50-4-26",
+          "notes": "3-year deadline from non-payment. Provide resignation notice, timesheets, and any communication with the employer.",
+          "damage_boost": "Unpaid wages plus interest; possible treble damages for willful violations.",
+          "source_ids": [
+            "S22"
+          ]
+        },
+        {
+          "slug": "unpaid-commissions",
+          "name": "Employer failed to pay earned commissions",
+          "example": "You earned $3,000 in sales commissions, but your employer hasn't paid them.",
+          "eligibility": "eligible",
+          "claim_statute": "N.M. Stat. Ann. § 50-4-26",
+          "notes": "3-year deadline from non-payment. Provide sales records, commission agreements, and any communication with the employer.",
+          "damage_boost": "Unpaid wages plus interest; possible treble damages for willful violations.",
+          "source_ids": [
+            "S22"
+          ]
+        },
+        {
+          "slug": "unpaid-overtime",
+          "name": "Employer didn't pay overtime wages",
+          "example": "You worked 10 hours of overtime but weren't paid the required overtime rate.",
+          "eligibility": "eligible",
+          "claim_statute": "N.M. Stat. Ann. § 50-4-26",
+          "notes": "3-year deadline from non-payment. Provide timesheets, pay stubs, and any communication with the employer.",
+          "damage_boost": "Unpaid wages plus interest; possible treble damages for willful violations.",
+          "source_ids": [
+            "S22"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "personal-claims",
+      "title": "Personal claims",
+      "blurb": "New Mexico allows you 3 years to file a claim for personal injury and 4 years for property damage.",
+      "claims": [
+        {
+          "slug": "minor-injury",
+          "name": "Minor personal injury",
+          "example": "You slipped and fell in a store, resulting in $2,000 in medical bills.",
+          "eligibility": "eligible",
+          "claim_statute": "N.M. Stat. Ann. § 37-1-8",
+          "notes": "3-year deadline from injury. Provide medical records, bills, and any incident reports.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "loaned-property",
+          "name": "Damage to loaned property",
+          "example": "You lent a friend your camera, and they returned it broken, costing $800 to repair.",
+          "eligibility": "eligible",
+          "claim_statute": "N.M. Stat. Ann. § 37-1-4",
+          "notes": "4-year deadline from discovery. Provide evidence of the loan agreement and repair estimates.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "civil-theft",
+          "name": "Theft of personal property",
+          "example": "A neighbor took your bicycle without permission and refuses to return it.",
+          "eligibility": "eligible",
+          "claim_statute": "N.M. Stat. Ann. § 37-1-4",
+          "notes": "4-year deadline from discovery. Provide evidence of ownership and any communication with the neighbor.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vehicle-specific",
+      "title": "Vehicle-specific claims",
+      "blurb": "New Mexico allows you 4 years to file a claim for property damage related to vehicles.",
+      "claims": [
+        {
+          "slug": "mechanic-dispute",
+          "name": "Dispute over mechanic's repair work",
+          "example": "A mechanic charged $2,500 for repairs that didn't fix the issue, and the car remains inoperable.",
+          "eligibility": "eligible",
+          "claim_statute": "N.M. Stat. Ann. § 57-12-1",
+          "notes": "4-year deadline from discovery. Bring repair invoices, receipts, and any correspondence with the mechanic.",
+          "damage_boost": "Actual damages or $100, whichever is greater; possible treble damages for willful violations.",
+          "source_ids": [
+            "S17"
+          ]
+        },
+        {
+          "slug": "wrongful-tow",
+          "name": "Vehicle was wrongfully towed",
+          "example": "Your car was towed from a legal parking spot, and you had to pay $300 to retrieve it.",
+          "eligibility": "eligible",
+          "claim_statute": "N.M. Stat. Ann. § 57-12-1",
+          "notes": "4-year deadline from discovery. Provide towing receipts, photos of the parking spot, and any communication with the towing company.",
+          "damage_boost": "Actual damages or $100, whichever is greater; possible treble damages for willful violations.",
+          "source_ids": [
+            "S17"
+          ]
+        }
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "category": "Eviction (unlawful detainer)",
+      "explanation": "Eviction cases are handled in district court, not small claims court.",
+      "where_to_go_instead": "District Court eviction process",
+      "source_ids": [
+        "S20"
+      ]
+    },
+    {
+      "category": "Title to real estate",
+      "explanation": "Disputes involving ownership of real property are beyond the jurisdiction of small claims court.",
+      "where_to_go_instead": "District Court",
+      "source_ids": []
+    },
+    {
+      "category": "Defamation (libel and slander)",
+      "explanation": "Defamation cases are complex and typically exceed the jurisdictional limits of small claims court.",
+      "where_to_go_instead": "District Court",
+      "source_ids": []
+    },
+    {
+      "category": "Professional malpractice",
+      "explanation": "Claims involving professional malpractice require expert testimony and are not suitable for small claims court.",
+      "where_to_go_instead": "District Court",
+      "source_ids": []
+    },
+    {
+      "category": "Family law matters",
+      "explanation": "Divorce, child custody, and other family law issues are handled in family court.",
+      "where_to_go_instead": "Family Court",
+      "source_ids": []
+    },
+    {
+      "category": "Probate matters",
+      "explanation": "Issues related to wills and estates are handled in probate court.",
+      "where_to_go_instead": "Probate Court",
+      "source_ids": []
+    },
+    {
+      "category": "Claims against the federal government",
+      "explanation": "Suing the federal government requires following specific procedures in federal court.",
+      "where_to_go_instead": "Federal Court",
+      "source_ids": []
+    },
+    {
+      "category": "Class actions",
+      "explanation": "Class action lawsuits are complex and not suitable for small claims court.",
+      "where_to_go_instead": "District Court",
+      "source_ids": []
+    },
+    {
+      "category": "Injunctions or specific performance",
+      "explanation": "Small claims court cannot issue orders requiring someone to do or stop doing something.",
+      "where_to_go_instead": "District Court",
+      "source_ids": []
+    },
+    {
+      "category": "Workers' compensation claims",
+      "explanation": "Workers' compensation cases are handled by the Workers' Compensation Administration.",
+      "where_to_go_instead": "Workers' Compensation Administration",
+      "source_ids": []
+    }
+  ],
+  "damages": {
+    "compensatory_allowed": true,
+    "punitive_allowed": false,
+    "punitive_explanation": "Punitive damages are not typically awarded in small claims court; however, statutory penalties may apply in certain cases.",
+    "statutory_multipliers": [
+      {
+        "claim": "Bad check (after 15-day notice)",
+        "multiplier": "3x check amount",
+        "explanation": "Check amount + service charge up to $25 + civil penalty up to $100 OR 3x check amount, whichever is greater.",
+        "statute": "N.M. Stat. Ann. § 30-36-1",
+        "source_ids": [
+          "S19"
+        ]
+      },
+      {
+        "claim": "Unfair trade practices",
+        "multiplier": "3x actual damages",
+        "explanation": "Actual damages or $100, whichever is greater; possible treble damages for willful violations.",
+        "statute": "N.M. Stat. Ann. § 57-12-10",
+        "source_ids": [
+          "S23"
+        ]
+      }
+    ],
+    "attorney_fees_recoverable": "sometimes",
+    "attorney_fees_explanation": "Attorney fees may be recoverable in cases involving unfair trade practices or wage claims, as specified by statute.",
+    "prejudgment_interest_rate_pct": null,
+    "prejudgment_interest_statute": "",
+    "postjudgment_interest_rate_pct": null,
+    "postjudgment_interest_type": "simple",
+    "postjudgment_interest_statute": "",
+    "postjudgment_interest_notes": "",
+    "filing_and_service_fees_recoverable_from_loser": true,
+    "source_ids": []
+  },
+  "where_to_file": {
+    "court_name": "Magistrate Court or Metropolitan Court",
+    "parent_court": "New Mexico Judicial Branch",
+    "venue_rules": [
+      {
+        "scenario": "Most cases (the default)",
+        "filing_options": [
+          "County where the defendant lives",
+          "County where the dispute occurred"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Where contract was performed",
+        "filing_options": [
+          "County where performance was due"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Where injury or damage occurred",
+        "filing_options": [
+          "County where the event occurred"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Multiple defendants",
+        "filing_options": [
+          "Any county where one defendant resides"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Out-of-state defendant",
+        "filing_options": [
+          "Where the cause of action arose"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "consequences_of_wrong_venue": "Filing in the wrong venue may result in dismissal or transfer of the case, potentially causing delays and additional costs.",
+    "e_filing_available": "varies",
+    "e_filing_notes": "E-filing availability depends on the specific court; check with the local court clerk for options.",
+    "e_filing_portal": null,
+    "source_ids": []
+  },
+  "fees": {
+    "filing_fee_tiers": [
+      {
+        "range_label": "$0 to $1,500",
+        "range_min": 0,
+        "range_max": 1500,
+        "fee_dollars": 25,
+        "source_ids": [
+          "S11"
+        ]
+      },
+      {
+        "range_label": "$1,501 to $5,000",
+        "range_min": 1501,
+        "range_max": 5000,
+        "fee_dollars": 50,
+        "source_ids": [
+          "S11"
+        ]
+      },
+      {
+        "range_label": "$5,001 to $10,000",
+        "range_min": 5001,
+        "range_max": 10000,
+        "fee_dollars": 90,
+        "source_ids": [
+          "S11"
+        ]
+      }
+    ],
+    "frequent_filer": {
+      "threshold_per_year": null,
+      "fee_dollars": null,
+      "notes": ""
+    },
+    "service_fees": [
+      {
+        "method": "Sheriff (personal service)",
+        "amount_label": "$25–$50",
+        "notes": "Required for most cases.",
+        "source_ids": [
+          "S11"
+        ]
+      },
+      {
+        "method": "Certified mail by clerk",
+        "amount_label": "$10–$15",
+        "notes": "Available for certain cases.",
+        "source_ids": [
+          "S11"
+        ]
+      }
+    ],
+    "waiver": {
+      "forms": [
+        {
+          "number": "Form 4-222 NMRA",
+          "name": "Application for Free Process",
+          "url": "",
+          "source_ids": [
+            "S10"
+          ]
+        }
+      ],
+      "eligibility_bullets": [
+        "Receiving need-based public assistance (SNAP, TANF, SSI)",
+        "Household income below 125% federal poverty line"
+      ],
+      "coverage_notes": "The waiver covers filing fees and may cover service fees; check with the court clerk.",
+      "if_you_win_notes": "If you win, the waived fees may be added to the judgment against the loser."
+    },
+    "other_fees": [
+      {
+        "name": "Subpoena issuance",
+        "amount_label": "$10",
+        "notes": "Plus witness fee per day.",
+        "source_ids": [
+          "S11"
+        ]
+      },
+      {
+        "name": "Appeal filing",
+        "amount_label": "$200",
+        "notes": "",
+        "source_ids": [
+          "S11"
+        ]
+      },
+      {
+        "name": "Writ of execution",
+        "amount_label": "Varies",
+        "notes": "Post-judgment.",
+        "source_ids": [
+          "S11"
+        ]
+      }
+    ],
+    "fees_recoverable_from_loser_notes": "If you win, filing fees and reasonable service costs are added to the judgment.",
+    "source_ids": [
+      "S11"
+    ]
+  },
+  "statute_of_limitations": {
+    "entries": [
+      {
+        "id": "written-contract",
+        "claim": "Written contract",
+        "years": 6,
+        "clock_starts": "Date of breach",
+        "statute": "N.M. Stat. Ann. § 37-1-3",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "oral-contract",
+        "claim": "Oral contract",
+        "years": 4,
+        "clock_starts": "Date of breach",
+        "statute": "N.M. Stat. Ann. § 37-1-4",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "sale-of-goods",
+        "claim": "Sale of goods (UCC)",
+        "years": 4,
+        "clock_starts": "Date of breach",
+        "statute": "N.M. Stat. Ann. § 55-2-725",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "promissory-note",
+        "claim": "Promissory note",
+        "years": 6,
+        "clock_starts": "Date of default",
+        "statute": "N.M. Stat. Ann. § 37-1-3",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "open-account",
+        "claim": "Open account / credit card debt",
+        "years": 4,
+        "clock_starts": "Date of last payment",
+        "statute": "N.M. Stat. Ann. § 37-1-4",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "personal-injury",
+        "claim": "Personal injury",
+        "years": 3,
+        "clock_starts": "Date of injury",
+        "statute": "N.M. Stat. Ann. § 37-1-8",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "property-damage",
+        "claim": "Property damage",
+        "years": 4,
+        "clock_starts": "Date of damage",
+        "statute": "N.M. Stat. Ann. § 37-1-4",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "fraud",
+        "claim": "Fraud",
+        "years": 4,
+        "clock_starts": "Date of discovery",
+        "statute": "N.M. Stat. Ann. § 37-1-4",
+        "notes": "Discovery rule applies.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "bad-check",
+        "claim": "Bad check",
+        "years": 4,
+        "clock_starts": "Date of dishonor",
+        "statute": "N.M. Stat. Ann. § 37-1-4",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "unpaid-wages",
+        "claim": "Unpaid wages",
+        "years": 3,
+        "clock_starts": "Date wages were due",
+        "statute": "N.M. Stat. Ann. § 37-1-5",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "security-deposit",
+        "claim": "Security deposit",
+        "years": 4,
+        "clock_starts": "Date deposit was due",
+        "statute": "N.M. Stat. Ann. § 37-1-4",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "judgment-enforcement",
+        "claim": "Judgment enforcement",
+        "years": 14,
+        "clock_starts": "Date of judgment",
+        "statute": "N.M. Stat. Ann. § 37-1-2",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "discovery_rule_notes": "The discovery rule applies to fraud claims, starting the statute of limitations when the fraud is discovered.",
+    "tolling_notes": "The statute of limitations may be tolled if the defendant is out of state, the plaintiff is a minor, or in cases of bankruptcy.",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "pre_filing": {
+    "demand_letter_required": false,
+    "demand_letter_recommended": true,
+    "demand_letter_notes": "While not required, sending a demand letter can facilitate settlement and demonstrate good faith.",
+    "bad_check_notice_rule": "For bad checks, send a 15-day demand letter before filing, as required by N.M. Stat. Ann. § 30-36-1.",
+    "wage_claim_demand_rule": "No specific pre-filing demand required for wage claims, but it's advisable to request payment in writing before filing.",
+    "government_claim_required": false,
+    "government_claim_deadline_days": null,
+    "government_claim_notes": "",
+    "landlord_tenant_pre_filing_notes": "Landlords must provide a 30-day notice for security deposit deductions; tenants should provide written notice for repair requests.",
+    "consumer_protection_notes": "No specific pre-filing requirements for consumer protection claims, but documenting complaints and attempts to resolve is beneficial.",
+    "mandatory_mediation_before_filing": "none",
+    "arbitration_clauses_enforced": true,
+    "source_ids": [
+      "S19"
+    ]
+  },
+  "forms": [
+    {
+      "number": "4-222 NMRA",
+      "name": "Application for Free Process",
+      "description": "Request to waive court fees due to financial hardship.",
+      "filed_by": "plaintiff",
+      "required": false,
+      "group": "fee-waiver",
+      "url": "",
+      "source_ids": [
+        "S10"
+      ]
+    },
+    {
+      "number": "4-223 NMRA",
+      "name": "Complaint",
+      "description": "Initiates a small claims case by outlining the plaintiff's allegations.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "",
+      "source_ids": [
+        "S10"
+      ]
+    },
+    {
+      "number": "4-224 NMRA",
+      "name": "Summons",
+      "description": "Notifies the defendant of the lawsuit and court date.",
+      "filed_by": "court",
+      "required": true,
+      "group": "service",
+      "url": "",
+      "source_ids": [
+        "S10"
+      ]
+    },
+    {
+      "number": "4-225 NMRA",
+      "name": "Answer",
+      "description": "Defendant's response to the complaint.",
+      "filed_by": "defendant",
+      "required": false,
+      "group": "hearing",
+      "url": "",
+      "source_ids": [
+        "S10"
+      ]
+    },
+    {
+      "number": "4-226 NMRA",
+      "name": "Counterclaim",
+      "description": "Defendant's claim against the plaintiff.",
+      "filed_by": "defendant",
+      "required": false,
+      "group": "counterclaim",
+      "url": "",
+      "source_ids": [
+        "S10"
+      ]
+    },
+    {
+      "number": "4-227 NMRA",
+      "name": "Satisfaction of Judgment",
+      "description": "Acknowledges that the judgment has been paid in full.",
+      "filed_by": "plaintiff",
+      "required": false,
+      "group": "after-judgment",
+      "url": "",
+      "source_ids": [
+        "S10"
+      ]
+    },
+    {
+      "number": "4-228 NMRA",
+      "name": "Notice of Appeal",
+      "description": "Initiates an appeal of the small claims court decision.",
+      "filed_by": "either",
+      "required": false,
+      "group": "appeal",
+      "url": "",
+      "source_ids": [
+        "S10"
+      ]
+    }
+  ],
+  "service": {
+    "who_can_serve": [
+      "Sheriff",
+      "Certified mail by clerk",
+      "Private process server"
+    ],
+    "methods": [
+      {
+        "name": "Sheriff personal service",
+        "description": "Sheriff or constable personally hands the papers to the defendant.",
+        "pros": [
+          "Reliable",
+          "Official"
+        ],
+        "cons": [
+          "May incur additional fees",
+          "Potential delays"
+        ],
+        "source_ids": [
+          "S12"
+        ]
+      },
+      {
+        "name": "Certified mail by clerk",
+        "description": "Court clerk sends the documents via certified mail to the defendant.",
+        "pros": [
+          "Cost-effective",
+          "Provides proof of service"
+        ],
+        "cons": [
+          "Defendant may refuse delivery",
+          "Not suitable for all cases"
+        ],
+        "source_ids": [
+          "S12"
+        ]
+      },
+      {
+        "name": "Private process server",
+        "description": "A licensed individual delivers the documents to the defendant.",
+        "pros": [
+          "Flexible scheduling",
+          "Can locate evasive defendants"
+        ],
+        "cons": [
+          "Additional cost",
+          "Must ensure proper licensing"
+        ],
+        "source_ids": [
+          "S12"
+        ]
+      }
+    ],
+    "in_county_days_before_hearing": 15,
+    "out_of_county_days_before_hearing": 20,
+    "proof_of_service_form": {
+      "number": "4-226 NMRA",
+      "name": "Return of Service"
+    },
+    "proof_filing_deadline_days_before_hearing": 5,
+    "business_service_rule": "Serve the registered agent; if none, serve an officer or managing agent.",
+    "out_of_state_defendant_notes": "Service must comply with New Mexico rules and the laws of the state where service is made.",
+    "cant_find_defendant_notes": "If the defendant cannot be located, service by publication may be permitted with court approval.",
+    "avoiding_service_notes": "If the defendant is evading service, document attempts and seek court permission for alternative methods.",
+    "source_ids": [
+      "S12"
+    ]
+  },
+  "response_and_default": {
+    "must_file_written_answer": false,
+    "response_deadline_days": 15,
+    "response_notes": "Defendants are encouraged to file a written answer but may appear at the hearing without one.",
+    "default_process": "If the defendant fails to appear, the court may enter a default judgment in favor of the plaintiff.",
+    "prove_up_required": true,
+    "prove_up_notes": "Even if the defendant defaults, the plaintiff must provide evidence to support the claim.",
+    "motion_to_vacate_form": {
+      "number": "4-229 NMRA",
+      "name": "Motion to Set Aside Default Judgment"
+    },
+    "motion_to_vacate_deadline_days": 30,
+    "motion_to_vacate_lack_of_notice_days": 180,
+    "motion_to_vacate_appeal_deadline_days": 15,
+    "motion_to_vacate_appeal_notes": "If the motion to vacate is denied, the defendant may appeal within 15 days.",
+    "source_ids": [
+      "S8"
+    ]
+  },
+  "counterclaim": {
+    "allowed": true,
+    "form": {
+      "number": "4-226 NMRA",
+      "name": "Counterclaim"
+    },
+    "same_monetary_limit": true,
+    "service_deadline_in_county_days": 5,
+    "service_deadline_out_of_county_days": 10,
+    "transfer_to_higher_court_available": true,
+    "transfer_to_higher_court_statute": "N.M. Stat. Ann. § 35-3-3",
+    "transfer_to_higher_court_notes": "If the counterclaim exceeds the small claims limit, the case may be transferred to district court.",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "hearing": {
+    "lawyers_allowed": "yes",
+    "lawyers_allowed_notes": "Parties may be represented by attorneys but are not required to do so.",
+    "format": "Bench trial with informal procedures; parties present evidence and testimony directly to the judge.",
+    "presider": "judge",
+    "burden_of_proof": "preponderance",
+    "what_to_bring": [
+      "Originals of any contracts",
+      "Receipts and bank records",
+      "Photos and videos",
+      "Names and contact info for witnesses"
+    ],
+    "subpoena_form": {
+      "number": "4-230 NMRA",
+      "name": "Subpoena"
+    },
+    "witness_fee_per_day_dollars": 95,
+    "free_interpreters": true,
+    "interpreter_request_process": "Request an interpreter from the court clerk as soon as possible before the hearing.",
+    "jury_option": true,
+    "decision_timing": "On the spot or mailed within 30 days",
+    "on_site_mediation": "by court",
+    "on_site_mediation_notes": "Some courts offer mediation services to help parties reach a settlement before trial.",
+    "source_ids": [
+      "S8"
+    ]
+  },
+  "appeals": {
+    "who_can_appeal": "either",
+    "deadline_days": 15,
+    "fee_dollars": 200,
+    "type": "trial de novo",
+    "type_notes": "The district court will hear the case anew, considering all evidence and testimony.",
+    "attorneys_allowed_on_appeal": true,
+    "bond_required": false,
+    "bond_amount_notes": "",
+    "automatic_stay_on_appeal": true,
+    "default_judgment_appealable": true,
+    "default_judgment_notes": "A default judgment can be appealed within the same 15-day window.",
+    "notice_of_appeal_form": {
+      "number": "4-228 NMRA",
+      "name": "Notice of Appeal"
+    },
+    "frivolous_appeal_penalty_dollars": null,
+    "frivolous_appeal_statute": "",
+    "frivolous_appeal_notes": "",
+    "source_ids": [
+      "S6"
+    ]
+  },
+  "collection": {
+    "payment_deadline_typical_days": 30,
+    "post_judgment_interest_rate_pct": 8.75,
+    "post_judgment_interest_statute": "N.M. Stat. Ann. § 56-8-4",
+    "post_judgment_interest_notes": "Interest accrues on unpaid judgments at the statutory rate until paid in full.",
+    "methods": [
+      {
+        "id": "wage-garnishment",
+        "name": "Wage garnishment",
+        "blurb": "Have a portion of the debtor's wages withheld until the judgment is paid.",
+        "description": "File a writ of garnishment with the court, serve the employer, and the employer will withhold a portion of the debtor's wages to satisfy the judgment.",
+        "forms": [
+          {
+            "number": "4-231 NMRA",
+            "name": "Writ of Garnishment"
+          }
+        ],
+        "estimated_cost": "$30–$50 plus sheriff fees",
+        "effectiveness_notes": "Most effective when the debtor is employed and earns a regular wage.",
+        "exemptions": [
+          "75% of disposable earnings (federal CCPA floor)"
+        ],
+        "source_ids": [
+          "S15"
+        ]
+      },
+      {
+        "id": "bank-levy",
+        "name": "Bank levy",
+        "blurb": "Seize funds from the debtor's bank account to satisfy the judgment.",
+        "description": "Obtain a writ of execution from the court, serve the bank, and the bank will freeze and turn over funds from the debtor's account.",
+        "forms": [
+          {
+            "number": "4-232 NMRA",
+            "name": "Writ of Execution"
+          }
+        ],
+        "estimated_cost": "$30–$50 plus sheriff fees",
+        "effectiveness_notes": "Effective if the debtor has sufficient funds in the account; may require multiple attempts.",
+        "exemptions": [
+          "$2,000 in a personal bank account"
+        ],
+        "source_ids": [
+          "S15"
+        ]
+      },
+      {
+        "id": "property-lien",
+        "name": "Property lien",
+        "blurb": "Place a lien on the debtor's real property to secure the judgment amount.",
+        "description": "File a transcript of judgment with the county clerk where the property is located, creating a lien that must be satisfied before the property can be sold or refinanced.",
+        "forms": [
+          {
+            "number": "4-233 NMRA",
+            "name": "Transcript of Judgment"
+          }
+        ],
+        "estimated_cost": "$25–$50",
+        "effectiveness_notes": "Effective for securing payment but may take time until the property is sold or refinanced.",
+        "exemptions": [
+          "Homestead exemption up to $60,000"
+        ],
+        "source_ids": [
+          "S15"
+        ]
+      },
+      {
+        "id": "writ-of-execution",
+        "name": "Writ of execution",
+        "blurb": "Authorize the seizure and sale of the debtor's non-exempt property.",
+        "description": "Obtain a writ of execution from the court, and the sheriff will seize and sell the debtor's non-exempt property to satisfy the judgment.",
+        "forms": [
+          {
+            "number": "4-232 NMRA",
+            "name": "Writ of Execution"
+          }
+        ],
+        "estimated_cost": "$50–$100 plus sheriff fees",
+        "effectiveness_notes": "Effective if the debtor owns valuable non-exempt property; may require additional time and expense.",
+        "exemptions": [
+          "Personal property up to $5,000",
+          "Tools of the trade up to $1,500"
+        ],
+        "source_ids": [
+          "S15"
+        ]
+      }
+    ],
+    "wage_garnishment_max_pct_of_disposable": 25,
+    "judgment_lifespan_years": 14,
+    "judgment_renewal_process": "File a motion to renew the judgment before the 14-year period expires; no specific form required.",
+    "debtor_exam_form": {
+      "number": "4-234 NMRA",
+      "name": "Order for Examination of Judgment Debtor"
+    },
+    "exempt_assets": [
+      "Homestead — $60,000",
+      "Vehicle — $4,000",
+      "Retirement accounts (federally and state-protected)",
+      "Social Security and federal benefits"
+    ],
+    "bankruptcy_effect_notes": "Filing for bankruptcy may discharge certain judgments; consult an attorney for specifics.",
+    "satisfaction_of_judgment_form": {
+      "number": "4-227 NMRA",
+      "name": "Satisfaction of Judgment"
+    },
+    "priority_notes": "Priority among multiple judgment creditors is generally determined by the order in which liens are filed.",
+    "source_ids": [
+      "S15"
+    ]
+  },
+  "businesses": {
+    "self_representation_allowed": true,
+    "self_representation_notes": "Businesses may represent themselves in small claims court without an attorney.",
+    "can_send_employee": true,
+    "can_send_attorney": true,
+    "non_attorney_representation_form": {
+      "number": "4-235 NMRA",
+      "name": "Authorization for Non-Attorney Representation"
+    },
+    "insurance_adjuster_allowed": false,
+    "fictitious_name_form": {
+      "number": "4-236 NMRA",
+      "name": "Certificate of Trade Name"
+    },
+    "fictitious_name_notes": "Businesses operating under a trade name must file a Certificate of Trade Name with the county clerk.",
+    "sole_proprietor_employee_exception": "Sole proprietors may authorize an employee to represent them in court.",
+    "out_of_state_business_must_register": true,
+    "out_of_state_business_statute": "N.M. Stat. Ann. § 53-17-1",
+    "licensing_notes": "Unlicensed contractors may face limitations in enforcing contracts; consult an attorney for specifics.",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "county_variations_material": false,
+  "county_variations": [],
+  "pitfalls": [
+    {
+      "title": "Incorrect defendant information",
+      "what_happens": "Suing the wrong party or using incorrect names can result in dismissal or unenforceable judgments.",
+      "how_to_avoid": "Verify the defendant's legal name and address before filing; for businesses, check the Secretary of State's records.",
+      "source_ids": []
+    },
+    {
+      "title": "Missing statute of limitations",
+      "what_happens": "Filing after the statute of limitations expires will lead to dismissal of the case.",
+      "how_to_avoid": "Confirm the applicable statute of limitations for your claim type before filing.",
+      "source_ids": []
+    },
+    {
+      "title": "Improper service of process",
+      "what_happens": "Failure to serve the defendant correctly can delay the case or lead to dismissal.",
+      "how_to_avoid": "Follow the court's rules for service of process carefully; consider using a professional process server.",
+      "source_ids": []
+    },
+    {
+      "title": "Insufficient evidence",
+      "what_happens": "Lack of evidence can result in losing the case, even if your claim is valid.",
+      "how_to_avoid": "Gather all relevant documents, photos, and witness statements to support your claim.",
+      "source_ids": []
+    },
+    {
+      "title": "Ignoring court deadlines",
+      "what_happens": "Missing filing or response deadlines can lead to default judgments or dismissal.",
+      "how_to_avoid": "Keep track of all court deadlines and respond promptly to any court notices.",
+      "source_ids": []
+    },
+    {
+      "title": "Overlooking counterclaims",
+      "what_happens": "Failing to file a counterclaim may waive your right to seek damages related to the same dispute.",
+      "how_to_avoid": "Consider any potential claims against the plaintiff and file a counterclaim if appropriate.",
+      "source_ids": []
+    }
+  ],
+  "recent_changes": [],
+  "faqs": [
+    {
+      "question": "Do I need a lawyer?",
+      "answer": "No, you are not required to have a lawyer in New Mexico small claims court. The process is designed to be accessible for individuals representing themselves. However, you may choose to hire an attorney if you prefer.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "How long does it take?",
+      "answer": "Most small claims cases in New Mexico are resolved within 30 to 90 days from filing, depending on the court's schedule and the complexity of the case.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "What's the maximum I can sue for?",
+      "answer": "In New Mexico, the maximum amount you can sue for in small claims court is $10,000, excluding interest and court costs.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "question": "What happens if the defendant doesn't show up?",
+      "answer": "If the defendant fails to appear at the hearing, the court may enter a default judgment in your favor. You will still need to provide evidence to support your claim.",
+      "source_ids": [
+        "S8"
+      ]
+    },
+    {
+      "question": "Can I appeal?",
+      "answer": "Yes, either party can appeal a small claims court decision to the district court within 15 days. The district court will hear the case anew in a trial de novo.",
+      "source_ids": [
+        "S6"
+      ]
+    },
+    {
+      "question": "How long is a judgment good for?",
+      "answer": "In New Mexico, a judgment is valid for 14 years. You can renew the judgment before it expires to extend its enforceability.",
+      "source_ids": [
+        "S4"
+      ]
+    }
+  ],
+  "state_specific_notes": [
+    "New Mexico allows for treble damages in cases of willful unfair trade practices.",
+    "Landlords must return security deposits or provide an itemized list of deductions within 30 days.",
+    "Self-help evictions by landlords are illegal in New Mexico.",
+    "Tenants may repair and deduct if the landlord fails to address habitability issues.",
+    "Wage garnishment is limited to 25% of disposable earnings under federal law."
+  ],
+  "_extras": {
+    "interesting_findings": [
+      "New Mexico's small claims courts are designed to be accessible for individuals representing themselves, with simplified procedures and informal hearings.",
+      "The state provides specific statutory penalties for bad checks, including potential treble damages.",
+      "Landlord-tenant laws in New Mexico offer protections for both parties, including requirements for security deposit returns and prohibitions on self-help evictions."
+    ]
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "label": "New Mexico Courts — Self Help Guide",
+      "url": "https://www.nmcourts.gov/self-help/",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S4",
+      "label": "N.M. Stat. Ann. § 35-3-3 (Jurisdiction of magistrate/small claims court)",
+      "url": "https://www.nmlegis.gov/Sessions/23%20Regular/statutes_ch35-03.html",
+      "primary": true,
+      "citation": "N.M. Stat. Ann. § 35-3-3"
+    },
+    {
+      "id": "S6",
+      "label": "N.M. Stat. Ann. § 35-8-1 (Appeals from magistrate courts)",
+      "url": "https://www.nmlegis.gov/Sessions/23%20Regular/statutes_ch35-08.html",
+      "primary": true,
+      "citation": "N.M. Stat. Ann. § 35-8-1"
+    },
+    {
+      "id": "S8",
+      "label": "New Mexico Rules of Civil Procedure for the Magistrate Courts",
+      "url": "https://nmsupremecourt.nmcourts.gov/rules/current-rules/rules-of-civil-procedure-for-the-magistrate-courts/",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S10",
+      "label": "New Mexico Courts — Civil Forms",
+      "url": "https://www.nmcourts.gov/self-help/forms/#magistrate-court-civil-forms",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S11",
+      "label": "New Mexico Magistrate Court Filing Fees",
+      "url": "https://www.nmcourts.gov/wp-content/uploads/2021/02/magistrate-court-fee-schedule.pdf",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S12",
+      "label": "Rule 2-202 NMRA — Commencement of action, process, service (Magistrate Court)",
+      "url": "https://nmsupremecourt.nmcourts.gov/rules/current-rules/rules-of-civil-procedure-for-the-magistrate-courts/#2-202",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S15",
+      "label": "N.M. Stat. Ann. § 35-12-1 (Execution on judgments in magistrate courts)",
+      "url": "https://www.nmlegis.gov/Sessions/23%20Regular/statutes_ch35-12.html",
+      "primary": true,
+      "citation": "N.M. Stat. Ann. § 35-12-1"
+    },
+    {
+      "id": "S17",
+      "label": "N.M. Stat. Ann. § 57-12-1 et seq. (Unfair Practices Act — UDAP)",
+      "url": "https://www.nmlegis.gov/Sessions/23%20Regular/statutes_ch57-12.html",
+      "primary": true,
+      "citation": "N.M. Stat. Ann. § 57-12-1 et seq."
+    },
+    {
+      "id": "S19",
+      "label": "N.M. Stat. Ann. § 30-36-1 et seq. (Worthless Checks / Bad-check penalty)",
+      "url": "https://www.nmlegis.gov/Sessions/23%20Regular/statutes_ch30-36.html",
+      "primary": true,
+      "citation": "N.M. Stat. Ann. § 30-36-1 et seq."
+    },
+    {
+      "id": "S20",
+      "label": "N.M. Stat. Ann. § 47-8-1 et seq. (Uniform Owner-Resident Relations Act - landlord/tenant)",
+      "url": "https://www.nmlegis.gov/Sessions/23%20Regular/statutes_ch47-08.html",
+      "primary": true,
+      "citation": "N.M. Stat. Ann. § 47-8-1 et seq."
+    },
+    {
+      "id": "S21",
+      "label": "N.M. Stat. Ann. § 47-8-18 (Security deposit return/penalty)",
+      "url": "https://www.nmlegis.gov/Sessions/23%20Regular/statutes_ch47-08.html#47-8-18",
+      "primary": true,
+      "citation": "N.M. Stat. Ann. § 47-8-18"
+    },
+    {
+      "id": "S22",
+      "label": "N.M. Stat. Ann. § 50-4-1 et seq. (Minimum wage, wage payment and collection)",
+      "url": "https://www.nmlegis.gov/Sessions/23%20Regular/statutes_ch50-04.html",
+      "primary": true,
+      "citation": "N.M. Stat. Ann. § 50-4-1 et seq."
+    },
+    {
+      "id": "S23",
+      "label": "N.M. Stat. Ann. § 57-12-10 (UDAP damages and attorney fees)",
+      "url": "https://www.nmlegis.gov/Sessions/23%20Regular/statutes_ch57-12.html#57-12-10",
+      "primary": true,
+      "citation": "N.M. Stat. Ann. § 57-12-10"
+    }
+  ],
+  "_meta": {
+    "state": "New Mexico",
+    "slug": "new-mexico",
+    "model": "gpt-4.1",
+    "sources_response_id": "resp_035683840966d0250069f08ab31c54819395eee930094a584d",
+    "extraction_response_id": "resp_0aabacda9f4b9af90069f0949671f48194a9d1dd917b59dcc0",
+    "generated_at": "2026-04-28T11:07:59.330Z",
+    "usage": {
+      "input_tokens": 7778,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 14501,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 22279
+    }
+  }
+}

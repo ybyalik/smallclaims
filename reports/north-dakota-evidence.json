@@ -1,0 +1,1536 @@
+{
+  "state": "North Dakota",
+  "slug": "north-dakota",
+  "abbr": "ND",
+  "as_of": "2026-04-28",
+  "hero": {
+    "individual_limit_dollars": 15000,
+    "business_limit_dollars": 15000,
+    "filing_fee_low_dollars": 20,
+    "filing_fee_high_dollars": 20,
+    "typical_timeline_min_days": 30,
+    "typical_timeline_max_days": 90,
+    "tagline": "North Dakota's small claims court offers a $15,000 cap with a streamlined process and no right to appeal.",
+    "source_ids": [
+      "S1",
+      "S5"
+    ]
+  },
+  "at_a_glance": [
+    {
+      "label": "Most you can sue for",
+      "value": "$15,000",
+      "detail": "Same cap for individuals and businesses",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    {
+      "label": "Filing fee",
+      "value": "$20",
+      "detail": "Increased from $10 to $20 effective July 1, 2025",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "label": "Court",
+      "value": "District Court (Small Claims Division)",
+      "detail": "",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Lawyers at trial",
+      "value": "Allowed",
+      "detail": "Permitted but not required",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    {
+      "label": "Appeal window",
+      "value": "None",
+      "detail": "Decisions are final with no right to appeal",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Recent change",
+      "value": "Filing fee increased",
+      "detail": "Filing fee increased from $10 to $20 effective July 1, 2025",
+      "source_ids": [
+        "S11"
+      ]
+    }
+  ],
+  "limits": {
+    "individual_dollars": 15000,
+    "business_dollars": 15000,
+    "guarantor_with_fee_max": null,
+    "guarantor_without_fee_max": null,
+    "annual_filing_cap": {
+      "count": null,
+      "threshold_dollars": null,
+      "notes": ""
+    },
+    "split_claims_allowed": false,
+    "split_claims_explanation": "If your claim exceeds $15,000, you cannot split it into multiple small claims cases. Instead, you must file in District Court.",
+    "interest_excluded_from_cap": true,
+    "court_costs_excluded_from_cap": true,
+    "statute": "N.D. Cent. Code § 27-08.1-01",
+    "source_ids": [
+      "S5"
+    ]
+  },
+  "claim_categories": [
+    {
+      "id": "contracts",
+      "title": "Contracts and money owed",
+      "blurb": "North Dakota allows you to file claims for breaches of contract and money owed up to $15,000. The statute of limitations is generally six years for written contracts.",
+      "claims": [
+        {
+          "slug": "written-contract",
+          "name": "Breach of a written contract",
+          "example": "A contractor signed a $10,000 contract to remodel your kitchen, took the deposit, and never completed the work.",
+          "eligibility": "eligible",
+          "claim_statute": "N.D. Cent. Code § 28-01-16",
+          "notes": "You have six years from the date of breach to file. Bring the signed contract, payment records, and any correspondence.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "oral-contract",
+          "name": "Breach of an oral contract",
+          "example": "You agreed verbally to lend $5,000 to a friend, who promised to repay in six months but failed to do so.",
+          "eligibility": "eligible",
+          "claim_statute": "N.D. Cent. Code § 28-01-16",
+          "notes": "You have six years from the date of breach to file. Provide evidence of the agreement, such as emails or witness statements.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "personal-loan",
+          "name": "Unpaid personal loan",
+          "example": "You loaned $3,000 to a colleague who agreed to repay in a year but hasn't made any payments.",
+          "eligibility": "eligible",
+          "claim_statute": "N.D. Cent. Code § 28-01-16",
+          "notes": "File within six years from the date repayment was due. Documentation of the loan agreement and any communications are essential.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "promissory-note",
+          "name": "Default on a promissory note",
+          "example": "A borrower signed a promissory note for $8,000 but defaulted on the agreed payment schedule.",
+          "eligibility": "eligible",
+          "claim_statute": "N.D. Cent. Code § 28-01-16",
+          "notes": "You have six years from the date of default to file. Present the original promissory note and records of payments made.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "unpaid-invoice",
+          "name": "Unpaid invoice for services rendered",
+          "example": "You provided consulting services worth $4,500, invoiced the client, but haven't received payment.",
+          "eligibility": "eligible",
+          "claim_statute": "N.D. Cent. Code § 28-01-16",
+          "notes": "File within six years from the invoice date. Include the invoice, service agreement, and any related correspondence.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "open-account",
+          "name": "Unpaid balance on an open account",
+          "example": "A customer has an outstanding balance of $2,000 on their store credit account and refuses to pay.",
+          "eligibility": "eligible",
+          "claim_statute": "N.D. Cent. Code § 28-01-16",
+          "notes": "You have six years from the last transaction date to file. Provide account statements and records of transactions.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "unpaid-rent",
+          "name": "Unpaid rent by tenant",
+          "example": "Your tenant owes $1,200 in unpaid rent for the past two months and has vacated the property.",
+          "eligibility": "eligible",
+          "claim_statute": "N.D. Cent. Code § 47-16-13.6",
+          "notes": "File within six years from the date rent was due. Bring the lease agreement and records of unpaid rent.",
+          "damage_boost": "",
+          "source_ids": [
+            "S9"
+          ]
+        },
+        {
+          "slug": "bad-check",
+          "name": "Payment with a bad check",
+          "example": "A customer paid for goods worth $500 with a check that was returned for insufficient funds.",
+          "eligibility": "eligible",
+          "claim_statute": "N.D. Cent. Code § 6-08-16",
+          "notes": "You have six years from the date of the check to file. Include the bounced check and any bank notices.",
+          "damage_boost": "Check amount + service charge up to $40 + civil penalty up to $100 OR 2x check amount, whichever is greater.",
+          "source_ids": [
+            "S21"
+          ]
+        },
+        {
+          "slug": "co-signer",
+          "name": "Co-signer seeking repayment",
+          "example": "You co-signed a $7,000 loan for a friend who defaulted, and you had to pay the lender.",
+          "eligibility": "eligible",
+          "claim_statute": "N.D. Cent. Code § 28-01-16",
+          "notes": "File within six years from the date you made payment. Provide the loan agreement and proof of your payment.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "consumer-disputes",
+      "title": "Consumer disputes",
+      "blurb": "North Dakota's small claims court handles various consumer disputes up to $15,000, including issues with products and services.",
+      "claims": [
+        {
+          "slug": "defective-product",
+          "name": "Purchase of a defective product",
+          "example": "You bought a $1,200 appliance that stopped working within a month, and the seller refuses to replace it.",
+          "eligibility": "eligible",
+          "claim_statute": "N.D. Cent. Code § 51-15-02",
+          "notes": "File within six years from the purchase date. Bring the purchase receipt, warranty, and any communication with the seller.",
+          "damage_boost": "",
+          "source_ids": [
+            "S8"
+          ]
+        },
+        {
+          "slug": "bad-service",
+          "name": "Substandard service provided",
+          "example": "A cleaning service charged $500 but left your home in poor condition, refusing to refund.",
+          "eligibility": "eligible",
+          "claim_statute": "N.D. Cent. Code § 51-15-02",
+          "notes": "You have six years from the service date to file. Provide the service agreement and evidence of the poor service.",
+          "damage_boost": "",
+          "source_ids": [
+            "S8"
+          ]
+        },
+        {
+          "slug": "auto-repair",
+          "name": "Faulty auto repair",
+          "example": "A mechanic charged $2,000 for repairs that didn't fix your car's issue, and refuses to correct it.",
+          "eligibility": "eligible",
+          "claim_statute": "N.D. Cent. Code § 51-15-02",
+          "notes": "File within six years from the repair date. Include repair invoices and any expert opinions.",
+          "damage_boost": "",
+          "source_ids": [
+            "S8"
+          ]
+        },
+        {
+          "slug": "contractor",
+          "name": "Contractor failed to complete work",
+          "example": "You paid a contractor $10,000 to renovate your bathroom, but they abandoned the project halfway.",
+          "eligibility": "eligible",
+          "claim_statute": "N.D. Cent. Code § 51-15-02",
+          "notes": "You have six years from the contract date to file. Bring the contract, payment records, and photos of incomplete work.",
+          "damage_boost": "",
+          "source_ids": [
+            "S8"
+          ]
+        },
+        {
+          "slug": "no-show-vendor",
+          "name": "Vendor failed to deliver services",
+          "example": "You paid $3,000 for a wedding photographer who never showed up and refuses to refund.",
+          "eligibility": "eligible",
+          "claim_statute": "N.D. Cent. Code § 51-15-02",
+          "notes": "File within six years from the event date. Provide the service agreement and proof of payment.",
+          "damage_boost": "",
+          "source_ids": [
+            "S8"
+          ]
+        },
+        {
+          "slug": "subscription-cancellation",
+          "name": "Unauthorized subscription charges",
+          "example": "A gym continued to charge your account $100 monthly after you canceled your membership.",
+          "eligibility": "eligible",
+          "claim_statute": "N.D. Cent. Code § 51-15-02",
+          "notes": "You have six years from the first unauthorized charge to file. Include cancellation notices and bank statements.",
+          "damage_boost": "",
+          "source_ids": [
+            "S8"
+          ]
+        },
+        {
+          "slug": "used-car",
+          "name": "Purchase of a defective used car",
+          "example": "You bought a used car for $8,000 that broke down within a week, and the dealer refuses to repair it.",
+          "eligibility": "eligible",
+          "claim_statute": "N.D. Cent. Code § 51-15-02",
+          "notes": "File within six years from the purchase date. Bring the sales contract, warranty, and repair records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S8"
+          ]
+        },
+        {
+          "slug": "false-advertising",
+          "name": "False advertising leading to loss",
+          "example": "A retailer advertised a laptop for $500, but charged you $700 at checkout without notice.",
+          "eligibility": "eligible",
+          "claim_statute": "N.D. Cent. Code § 51-15-02",
+          "notes": "You have six years from the purchase date to file. Provide the advertisement and purchase receipt.",
+          "damage_boost": "",
+          "source_ids": [
+            "S8"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "property-damage",
+      "title": "Property damage",
+      "blurb": "Claims for property damage up to $15,000 can be filed in North Dakota's small claims court, with a six-year statute of limitations.",
+      "claims": [
+        {
+          "slug": "vehicle-collision",
+          "name": "Damage from a vehicle collision",
+          "example": "Another driver hit your parked car, causing $4,000 in damages, and refuses to pay.",
+          "eligibility": "eligible",
+          "claim_statute": "N.D. Cent. Code § 28-01-16",
+          "notes": "File within six years from the accident date. Bring the police report, repair estimates, and photos.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "neighbor-property",
+          "name": "Neighbor damaged your property",
+          "example": "Your neighbor's tree fell onto your fence, causing $2,500 in damages, and they won't cover the cost.",
+          "eligibility": "eligible",
+          "claim_statute": "N.D. Cent. Code § 28-01-16",
+          "notes": "You have six years from the damage date to file. Provide photos and repair estimates.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "damage-to-rental",
+          "name": "Tenant caused damage to rental property",
+          "example": "A former tenant left $3,000 worth of damage to your rental unit beyond normal wear and tear.",
+          "eligibility": "eligible",
+          "claim_statute": "N.D. Cent. Code § 47-16-13.6",
+          "notes": "File within six years from the tenant's departure. Bring the lease agreement and photos of the damage.",
+          "damage_boost": "",
+          "source_ids": [
+            "S9"
+          ]
+        },
+        {
+          "slug": "pet-damage",
+          "name": "Damage caused by someone's pet",
+          "example": "A neighbor's dog entered your yard and destroyed $1,000 worth of landscaping.",
+          "eligibility": "eligible",
+          "claim_statute": "N.D. Cent. Code § 28-01-16",
+          "notes": "You have six years from the incident date to file. Provide photos and repair estimates.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "property-in-custody",
+          "name": "Damage to property left in someone's care",
+          "example": "You left your bicycle with a friend who returned it with $500 in damages and refuses to compensate.",
+          "eligibility": "eligible",
+          "claim_statute": "N.D. Cent. Code § 28-01-16",
+          "notes": "File within six years from the return date. Include any agreements and photos of the damage.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "landlord-tenant",
+      "title": "Landlord-tenant disputes",
+      "blurb": "North Dakota's small claims court addresses monetary disputes between landlords and tenants up to $15,000, excluding eviction proceedings.",
+      "claims": [
+        {
+          "slug": "security-deposit",
+          "name": "Failure to return security deposit",
+          "example": "Your landlord withheld your $1,200 security deposit without providing an itemized list of damages.",
+          "eligibility": "eligible",
+          "claim_statute": "N.D. Cent. Code § 47-16-07.1",
+          "notes": "File within six years from the lease termination. Bring the lease agreement and any correspondence.",
+          "damage_boost": "",
+          "source_ids": [
+            "S9"
+          ]
+        },
+        {
+          "slug": "deposit-not-itemized",
+          "name": "Deposit deductions not itemized",
+          "example": "Your landlord deducted $800 from your deposit without providing an itemized statement.",
+          "eligibility": "eligible",
+          "claim_statute": "N.D. Cent. Code § 47-16-07.1",
+          "notes": "You have six years from the lease termination to file. Include the lease and any communications.",
+          "damage_boost": "",
+          "source_ids": [
+            "S9"
+          ]
+        },
+        {
+          "slug": "uninhabitable-rental",
+          "name": "Rental unit deemed uninhabitable",
+          "example": "Your apartment had severe mold issues, and the landlord refused to address them, forcing you to move out.",
+          "eligibility": "eligible",
+          "claim_statute": "N.D. Cent. Code § 47-16-13.1",
+          "notes": "File within six years from the move-out date. Provide photos and any health department reports.",
+          "damage_boost": "",
+          "source_ids": [
+            "S9"
+          ]
+        },
+        {
+          "slug": "wrongful-retention-property",
+          "name": "Landlord retained tenant's property",
+          "example": "After eviction, your landlord kept your furniture worth $2,000 and refuses to return it.",
+          "eligibility": "eligible",
+          "claim_statute": "N.D. Cent. Code § 47-16-30.1",
+          "notes": "You have six years from the eviction date to file. Bring the lease and inventory of retained items.",
+          "damage_boost": "",
+          "source_ids": [
+            "S9"
+          ]
+        },
+        {
+          "slug": "illegal-eviction",
+          "name": "Illegal eviction by landlord",
+          "example": "Your landlord changed the locks without notice, preventing you from accessing your apartment.",
+          "eligibility": "eligible",
+          "claim_statute": "N.D. Cent. Code § 47-16-30.1",
+          "notes": "File within six years from the eviction date. Include the lease and any notices received.",
+          "damage_boost": "",
+          "source_ids": [
+            "S9"
+          ]
+        },
+        {
+          "slug": "unreturned-prepaid-rent",
+          "name": "Failure to return prepaid rent",
+          "example": "You paid first and last month's rent, but moved out early and the landlord won't refund the unused portion.",
+          "eligibility": "eligible",
+          "claim_statute": "N.D. Cent. Code § 47-16-07.1",
+          "notes": "You have six years from the move-out date to file. Provide the lease and payment records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S9"
+          ]
+        },
+        {
+          "slug": "unpaid-rent-by-tenant",
+          "name": "Tenant failed to pay rent",
+          "example": "Your tenant missed three months of rent totaling $3,600 and has vacated the property.",
+          "eligibility": "eligible",
+          "claim_statute": "N.D. Cent. Code § 47-16-13.6",
+          "notes": "File within six years from the last missed payment. Bring the lease and payment history.",
+          "damage_boost": "",
+          "source_ids": [
+            "S9"
+          ]
+        },
+        {
+          "slug": "repair-and-deduct",
+          "name": "Tenant repaired and deducted from rent",
+          "example": "You repaired a broken heater costing $500 and deducted it from your rent, but the landlord disputes this.",
+          "eligibility": "eligible",
+          "claim_statute": "N.D. Cent. Code § 47-16-13.1",
+          "notes": "You have six years from the repair date to file. Include repair receipts and prior notices to the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S9"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "employment-wages",
+      "title": "Employment and wage disputes",
+      "blurb": "Employees can file claims for unpaid wages and related issues up to $15,000 in North Dakota's small claims court.",
+      "claims": [
+        {
+          "slug": "unpaid-wages",
+          "name": "Employer failed to pay wages",
+          "example": "Your employer owes you $2,000 in unpaid wages for hours worked last month.",
+          "eligibility": "eligible",
+          "claim_statute": "N.D. Cent. Code § 34-14-03",
+          "notes": "File within six years from the date wages were due. Bring pay stubs and any employment agreements.",
+          "damage_boost": "",
+          "source_ids": [
+            "S10"
+          ]
+        },
+        {
+          "slug": "final-paycheck",
+          "name": "Employer withheld final paycheck",
+          "example": "After resigning, your employer refused to issue your final paycheck of $1,500.",
+          "eligibility": "eligible",
+          "claim_statute": "N.D. Cent. Code § 34-14-03",
+          "notes": "You have six years from the termination date to file. Provide resignation letters and payroll records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S10"
+          ]
+        },
+        {
+          "slug": "unpaid-commissions",
+          "name": "Unpaid sales commissions",
+          "example": "Your employer owes you $4,000 in earned commissions but refuses to pay.",
+          "eligibility": "eligible",
+          "claim_statute": "N.D. Cent. Code § 34-14-03",
+          "notes": "File within six years from the date commissions were due. Include sales records and commission agreements.",
+          "damage_boost": "",
+          "source_ids": [
+            "S10"
+          ]
+        },
+        {
+          "slug": "unpaid-overtime",
+          "name": "Unpaid overtime wages",
+          "example": "You worked 20 hours of overtime last month but weren't compensated accordingly.",
+          "eligibility": "eligible",
+          "claim_statute": "N.D. Cent. Code § 34-14-03",
+          "notes": "You have six years from the date overtime was worked to file. Bring timesheets and pay records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S10"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "personal-claims",
+      "title": "Personal claims",
+      "blurb": "Individuals can seek compensation for personal losses up to $15,000 in North Dakota's small claims court.",
+      "claims": [
+        {
+          "slug": "minor-injury",
+          "name": "Minor personal injury",
+          "example": "You slipped on a neighbor's icy sidewalk, resulting in $2,000 in medical bills.",
+          "eligibility": "eligible",
+          "claim_statute": "N.D. Cent. Code § 28-01-16",
+          "notes": "File within six years from the injury date. Provide medical records and any incident reports.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "loaned-property",
+          "name": "Damage to loaned property",
+          "example": "You lent a friend your camera, which they returned broken, causing $800 in damages.",
+          "eligibility": "eligible",
+          "claim_statute": "N.D. Cent. Code § 28-01-16",
+          "notes": "You have six years from the return date to file. Include any agreements and photos of the damage.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "civil-theft",
+          "name": "Theft of personal property",
+          "example": "A roommate took your laptop worth $1,500 without permission and refuses to return it.",
+          "eligibility": "eligible",
+          "claim_statute": "N.D. Cent. Code § 28-01-16",
+          "notes": "File within six years from the theft date. Provide proof of ownership and any police reports.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vehicle-specific",
+      "title": "Vehicle-specific disputes",
+      "blurb": "Disputes related to vehicles up to $15,000 can be addressed in North Dakota's small claims court.",
+      "claims": [
+        {
+          "slug": "mechanic-dispute",
+          "name": "Dispute over mechanic's charges",
+          "example": "A mechanic charged you $3,000 for unauthorized repairs on your vehicle.",
+          "eligibility": "eligible",
+          "claim_statute": "N.D. Cent. Code § 51-15-02",
+          "notes": "You have six years from the repair date to file. Bring repair invoices and any agreements.",
+          "damage_boost": "",
+          "source_ids": [
+            "S8"
+          ]
+        },
+        {
+          "slug": "wrongful-tow",
+          "name": "Vehicle wrongfully towed",
+          "example": "Your car was towed from a legal parking spot, and you incurred $500 in fees to retrieve it.",
+          "eligibility": "eligible",
+          "claim_statute": "N.D. Cent. Code § 51-15-02",
+          "notes": "File within six years from the tow date. Provide towing receipts and photos of the parking area.",
+          "damage_boost": "",
+          "source_ids": [
+            "S8"
+          ]
+        }
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "category": "Eviction (unlawful detainer)",
+      "explanation": "Small claims court does not handle eviction proceedings; these must be filed in District Court.",
+      "where_to_go_instead": "District Court eviction process",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Title to real estate",
+      "explanation": "Disputes involving ownership or title to real property are beyond the jurisdiction of small claims court.",
+      "where_to_go_instead": "District Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Defamation",
+      "explanation": "Claims involving defamation, such as libel or slander, are not handled in small claims court.",
+      "where_to_go_instead": "District Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Malpractice",
+      "explanation": "Professional malpractice claims require complex evidence and are not suitable for small claims court.",
+      "where_to_go_instead": "District Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Family law matters",
+      "explanation": "Issues such as divorce, child custody, and support are outside the jurisdiction of small claims court.",
+      "where_to_go_instead": "Family Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Probate matters",
+      "explanation": "Disputes involving wills, estates, and trusts are not handled in small claims court.",
+      "where_to_go_instead": "Probate Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Claims against the federal government",
+      "explanation": "Small claims court cannot hear cases against federal agencies or the U.S. government.",
+      "where_to_go_instead": "Federal Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Class actions",
+      "explanation": "Class action lawsuits are complex and exceed the procedural scope of small claims court.",
+      "where_to_go_instead": "District Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Injunctions and specific performance",
+      "explanation": "Small claims court cannot issue orders requiring a party to do or refrain from doing something.",
+      "where_to_go_instead": "District Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Workers' compensation claims",
+      "explanation": "Disputes over workers' compensation benefits are handled by specialized administrative courts.",
+      "where_to_go_instead": "Workers' Compensation Court",
+      "source_ids": [
+        "S1"
+      ]
+    }
+  ],
+  "damages": {
+    "compensatory_allowed": true,
+    "punitive_allowed": false,
+    "punitive_explanation": "Punitive damages are not awarded in small claims court; only actual losses are recoverable.",
+    "statutory_multipliers": [
+      {
+        "claim": "Bad check (after 30-day notice)",
+        "multiplier": "2x check amount",
+        "explanation": "Check amount + service charge up to $40 + civil penalty up to $100 OR 2x check amount, whichever is greater.",
+        "statute": "N.D. Cent. Code § 6-08-16",
+        "source_ids": [
+          "S21"
+        ]
+      }
+    ],
+    "attorney_fees_recoverable": "sometimes",
+    "attorney_fees_explanation": "Attorney fees may be recoverable in cases involving bad checks or consumer fraud, as specified by statute.",
+    "prejudgment_interest_rate_pct": null,
+    "prejudgment_interest_statute": "",
+    "postjudgment_interest_rate_pct": null,
+    "postjudgment_interest_type": "simple",
+    "postjudgment_interest_statute": "",
+    "postjudgment_interest_notes": "",
+    "filing_and_service_fees_recoverable_from_loser": true,
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "where_to_file": {
+    "court_name": "Small Claims Division of the District Court",
+    "parent_court": "North Dakota District Court",
+    "venue_rules": [
+      {
+        "scenario": "Defendant is an individual",
+        "filing_options": [
+          "County where the defendant resides"
+        ],
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "scenario": "Defendant is a business",
+        "filing_options": [
+          "County where the business has a place of business",
+          "County where the cause of action arose"
+        ],
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "consequences_of_wrong_venue": "Filing in the wrong venue may result in dismissal or transfer of the case, causing delays and additional costs.",
+    "e_filing_available": "no",
+    "e_filing_notes": "E-filing is not currently available for small claims cases in North Dakota.",
+    "e_filing_portal": null,
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "fees": {
+    "filing_fee_tiers": [
+      {
+        "range_label": "All claims",
+        "range_min": 0,
+        "range_max": 15000,
+        "fee_dollars": 20,
+        "source_ids": [
+          "S11"
+        ]
+      }
+    ],
+    "frequent_filer": {
+      "threshold_per_year": null,
+      "fee_dollars": null,
+      "notes": ""
+    },
+    "service_fees": [
+      {
+        "method": "Sheriff (personal service)",
+        "amount_label": "Varies by county",
+        "notes": "Contact the local sheriff's office for exact fees.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "method": "Certified mail by clerk",
+        "amount_label": "Postage costs",
+        "notes": "The clerk can serve the defendant via certified mail; costs vary.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "waiver": {
+      "forms": [
+        {
+          "number": "AOC-IFP",
+          "name": "Affidavit of Indigency",
+          "url": "",
+          "source_ids": [
+            "S1"
+          ]
+        }
+      ],
+      "eligibility_bullets": [
+        "Receiving need-based public assistance (SNAP, TANF, SSI)",
+        "Household income below 125% federal poverty line"
+      ],
+      "coverage_notes": "The waiver covers filing fees and may cover service fees; check with the court clerk.",
+      "if_you_win_notes": "If you win, the waived fees are typically added to the judgment against the defendant."
+    },
+    "other_fees": [
+      {
+        "name": "Subpoena issuance",
+        "amount_label": "$10",
+        "notes": "Plus witness fee per day.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "name": "Writ of execution",
+        "amount_label": "Varies",
+        "notes": "Post-judgment enforcement; fees depend on the method used.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "fees_recoverable_from_loser_notes": "If you win, filing and reasonable service fees are added to the judgment against the defendant.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "statute_of_limitations": {
+    "entries": [
+      {
+        "id": "written-contract",
+        "claim": "Written contract",
+        "years": 6,
+        "clock_starts": "Date of breach",
+        "statute": "N.D. Cent. Code § 28-01-16",
+        "notes": "Applies to contracts in writing; file within six years from the breach date.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "oral-contract",
+        "claim": "Oral contract",
+        "years": 6,
+        "clock_starts": "Date of breach",
+        "statute": "N.D. Cent. Code § 28-01-16",
+        "notes": "Applies to verbal agreements; file within six years from the breach date.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "sale-of-goods",
+        "claim": "Sale of goods (UCC)",
+        "years": 4,
+        "clock_starts": "Date of breach",
+        "statute": "N.D. Cent. Code § 41-02-104",
+        "notes": "Applies to contracts for the sale of goods; file within four years from the breach date.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "promissory-note",
+        "claim": "Promissory note",
+        "years": 6,
+        "clock_starts": "Date of default",
+        "statute": "N.D. Cent. Code § 28-01-16",
+        "notes": "File within six years from the date of default on the note.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "open-account",
+        "claim": "Open account / credit card debt",
+        "years": 6,
+        "clock_starts": "Date of last payment",
+        "statute": "N.D. Cent. Code § 28-01-16",
+        "notes": "File within six years from the last payment date on the account.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "personal-injury",
+        "claim": "Personal injury",
+        "years": 6,
+        "clock_starts": "Date of injury",
+        "statute": "N.D. Cent. Code § 28-01-16",
+        "notes": "File within six years from the date of injury.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "property-damage",
+        "claim": "Property damage",
+        "years": 6,
+        "clock_starts": "Date of damage",
+        "statute": "N.D. Cent. Code § 28-01-16",
+        "notes": "File within six years from the date the damage occurred.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "fraud",
+        "claim": "Fraud (note discovery rule)",
+        "years": 6,
+        "clock_starts": "Date of discovery",
+        "statute": "N.D. Cent. Code § 28-01-16",
+        "notes": "File within six years from the date the fraud was discovered or should have been discovered.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "bad-check",
+        "claim": "Bad check",
+        "years": 6,
+        "clock_starts": "Date of check issuance",
+        "statute": "N.D. Cent. Code § 6-08-16",
+        "notes": "File within six years from the date the check was issued.",
+        "source_ids": [
+          "S21"
+        ]
+      },
+      {
+        "id": "unpaid-wages",
+        "claim": "Unpaid wages",
+        "years": 6,
+        "clock_starts": "Date wages were due",
+        "statute": "N.D. Cent. Code § 34-14-03",
+        "notes": "File within six years from the date the wages were due.",
+        "source_ids": [
+          "S10"
+        ]
+      },
+      {
+        "id": "security-deposit",
+        "claim": "Security deposit",
+        "years": 6,
+        "clock_starts": "Date of lease termination",
+        "statute": "N.D. Cent. Code § 47-16-07.1",
+        "notes": "File within six years from the date the lease ended.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "id": "judgment-enforcement",
+        "claim": "Judgment enforcement",
+        "years": 10,
+        "clock_starts": "Date of judgment entry",
+        "statute": "N.D. Cent. Code § 28-20-35",
+        "notes": "File within ten years from the date the judgment was entered.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "discovery_rule_notes": "The discovery rule applies to fraud claims, allowing the statute of limitations to begin when the fraud is discovered or should have been discovered.",
+    "tolling_notes": "The statute of limitations may be tolled if the defendant is out of state, the plaintiff is a minor, or in cases of bankruptcy stays.",
+    "source_ids": [
+      "S5"
+    ]
+  },
+  "pre_filing": {
+    "demand_letter_required": false,
+    "demand_letter_recommended": true,
+    "demand_letter_notes": "While not required, sending a demand letter can often resolve disputes without court intervention and serves as evidence of your attempt to settle.",
+    "bad_check_notice_rule": "For bad check claims, you must send a written demand for payment and wait 30 days before filing suit.",
+    "wage_claim_demand_rule": "No specific pre-filing demand is required for wage claims, but it's advisable to request payment in writing before filing.",
+    "government_claim_required": false,
+    "government_claim_deadline_days": null,
+    "government_claim_notes": "",
+    "landlord_tenant_pre_filing_notes": "Landlords must provide an itemized list of damages within 30 days of lease termination when withholding a security deposit.",
+    "consumer_protection_notes": "No specific pre-filing requirements for consumer protection claims, but documenting all communications is beneficial.",
+    "mandatory_mediation_before_filing": "none",
+    "arbitration_clauses_enforced": true,
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "forms": [
+    {
+      "number": "Form 2",
+      "name": "Claim Affidavit",
+      "description": "Initiates the small claims process by outlining the plaintiff's claim.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "https://www.ndcourts.gov/Media/Default/Legal%20Resources/Legal%20Self%20Help/Small%20Claims/All%20Small%20Claims%20Court%20Forms%20Packet.pdf",
+      "source_ids": [
+        "S13"
+      ]
+    },
+    {
+      "number": "Form 3",
+      "name": "Defendant’s Request for Hearing/Removal to District Court",
+      "description": "Allows the defendant to request a hearing or move the case to District Court.",
+      "filed_by": "defendant",
+      "required": false,
+      "group": "response",
+      "url": "https://www.ndcourts.gov/Media/Default/Legal%20Resources/Legal%20Self%20Help/Small%20Claims/All%20Small%20Claims%20Court%20Forms%20Packet.pdf",
+      "source_ids": [
+        "S13"
+      ]
+    },
+    {
+      "number": "Form 4",
+      "name": "Defendant’s Answer/Counterclaim",
+      "description": "Allows the defendant to respond to the claim and assert any counterclaims.",
+      "filed_by": "defendant",
+      "required": false,
+      "group": "counterclaim",
+      "url": "https://www.ndcourts.gov/Media/Default/Legal%20Resources/Legal%20Self%20Help/Small%20Claims/All%20Small%20Claims%20Court%20Forms%20Packet.pdf",
+      "source_ids": [
+        "S13"
+      ]
+    },
+    {
+      "number": "Form 6",
+      "name": "Affidavit of Mailing/Personal Service – Plaintiff’s Claim Affidavit",
+      "description": "Proof that the plaintiff's claim affidavit was properly served on the defendant.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "service",
+      "url": "https://www.ndcourts.gov/Media/Default/Legal%20Resources/Legal%20Self%20Help/Small%20Claims/All%20Small%20Claims%20Court%20Forms%20Packet.pdf",
+      "source_ids": [
+        "S13"
+      ]
+    },
+    {
+      "number": "Form 9",
+      "name": "Satisfaction of Judgment",
+      "description": "Filed by the plaintiff to acknowledge that the judgment has been paid in full.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "after-judgment",
+      "url": "https://www.ndcourts.gov/Media/Default/Legal%20Resources/Legal%20Self%20Help/Small%20Claims/All%20Small%20Claims%20Court%20Forms%20Packet.pdf",
+      "source_ids": [
+        "S13"
+      ]
+    }
+  ],
+  "service": {
+    "who_can_serve": [
+      "Sheriff",
+      "Certified mail by clerk",
+      "Private process server"
+    ],
+    "methods": [
+      {
+        "name": "Sheriff personal service",
+        "description": "Sheriff or constable personally hands the papers to the defendant.",
+        "pros": [
+          "Reliable",
+          "Official"
+        ],
+        "cons": [
+          "May incur additional fees",
+          "Timing depends on sheriff's availability"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "name": "Certified mail by clerk",
+        "description": "The court clerk sends the documents to the defendant via certified mail.",
+        "pros": [
+          "Cost-effective",
+          "Provides proof of service"
+        ],
+        "cons": [
+          "Defendant may refuse delivery",
+          "Slower than personal service"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "name": "Private process server",
+        "description": "A private individual authorized to serve legal documents delivers the papers to the defendant.",
+        "pros": [
+          "Flexible scheduling",
+          "Can be faster"
+        ],
+        "cons": [
+          "Additional cost",
+          "Must ensure server is authorized"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "in_county_days_before_hearing": 10,
+    "out_of_county_days_before_hearing": 20,
+    "proof_of_service_form": {
+      "number": "Form 6",
+      "name": "Affidavit of Mailing/Personal Service – Plaintiff’s Claim Affidavit"
+    },
+    "proof_filing_deadline_days_before_hearing": 5,
+    "business_service_rule": "Serve the registered agent of the corporation or, if none, an officer or managing agent.",
+    "out_of_state_defendant_notes": "Service must comply with North Dakota rules and the laws of the state where the defendant is located.",
+    "cant_find_defendant_notes": "If the defendant cannot be located, service by publication may be permitted with court approval.",
+    "avoiding_service_notes": "If the defendant is evading service, document attempts and seek court permission for alternative methods.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "response_and_default": {
+    "must_file_written_answer": false,
+    "response_deadline_days": 20,
+    "response_notes": "The defendant has 20 days from the date of service to request a hearing or move the case to District Court.",
+    "default_process": "If the defendant does not respond within 20 days, the court may enter a default judgment in favor of the plaintiff.",
+    "prove_up_required": true,
+    "prove_up_notes": "Even in default, the plaintiff must provide evidence to support the claim before a judgment is entered.",
+    "motion_to_vacate_form": {
+      "number": "Form 10",
+      "name": "Notice of Entry of Judgment"
+    },
+    "motion_to_vacate_deadline_days": 30,
+    "motion_to_vacate_lack_of_notice_days": 30,
+    "motion_to_vacate_appeal_deadline_days": 30,
+    "motion_to_vacate_appeal_notes": "A motion to vacate must be filed within 30 days of the judgment entry; if denied, an appeal may be filed within 30 days.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "counterclaim": {
+    "allowed": true,
+    "form": {
+      "number": "Form 4",
+      "name": "Defendant’s Answer/Counterclaim"
+    },
+    "same_monetary_limit": true,
+    "service_deadline_in_county_days": 10,
+    "service_deadline_out_of_county_days": 20,
+    "transfer_to_higher_court_available": true,
+    "transfer_to_higher_court_statute": "N.D. Cent. Code § 27-08.1-04",
+    "transfer_to_higher_court_notes": "If the counterclaim exceeds $15,000, the case may be transferred to District Court.",
+    "source_ids": [
+      "S5"
+    ]
+  },
+  "hearing": {
+    "lawyers_allowed": "yes",
+    "lawyers_allowed_notes": "Parties may be represented by attorneys, but it is not required.",
+    "format": "Informal bench trial, typically lasting 30 minutes.",
+    "presider": "judge or judicial referee",
+    "burden_of_proof": "preponderance",
+    "what_to_bring": [
+      "Originals of any contracts",
+      "Receipts and bank records",
+      "Photos and videos",
+      "Names and contact info for witnesses"
+    ],
+    "subpoena_form": {
+      "number": "Form 5",
+      "name": "Affidavit of Mailing/Personal Service – Defendant’s Counterclaim"
+    },
+    "witness_fee_per_day_dollars": 10,
+    "free_interpreters": false,
+    "interpreter_request_process": "Parties must arrange for their own interpreters; the court does not provide them.",
+    "jury_option": false,
+    "decision_timing": "On the spot or mailed within a few weeks.",
+    "on_site_mediation": "no",
+    "on_site_mediation_notes": "Mediation is not typically offered on-site for small claims cases.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "appeals": {
+    "who_can_appeal": "none",
+    "deadline_days": 0,
+    "fee_dollars": 0,
+    "type": "none",
+    "type_notes": "Decisions in small claims court are final and cannot be appealed.",
+    "attorneys_allowed_on_appeal": false,
+    "bond_required": false,
+    "bond_amount_notes": "",
+    "automatic_stay_on_appeal": false,
+    "default_judgment_appealable": false,
+    "default_judgment_notes": "Default judgments are final and cannot be appealed; a motion to vacate must be filed instead.",
+    "notice_of_appeal_form": {
+      "number": "",
+      "name": ""
+    },
+    "frivolous_appeal_penalty_dollars": null,
+    "frivolous_appeal_statute": "",
+    "frivolous_appeal_notes": "",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "collection": {
+    "payment_deadline_typical_days": 10,
+    "post_judgment_interest_rate_pct": 6.5,
+    "post_judgment_interest_statute": "N.D. Cent. Code § 28-20-34",
+    "post_judgment_interest_notes": "Interest accrues on unpaid judgments at a rate of 6.5% per annum.",
+    "methods": [
+      {
+        "id": "wage-garnishment",
+        "name": "Wage garnishment",
+        "blurb": "Have a portion of the debtor's wages withheld until the judgment is paid.",
+        "description": "File a writ of garnishment with the court, serve the employer, and the employer withholds a portion of the debtor's wages to satisfy the judgment.",
+        "forms": [
+          {
+            "number": "Form 8",
+            "name": "Affidavit of Identification of Judgment Debtor"
+          }
+        ],
+        "estimated_cost": "$30-50 plus sheriff fees",
+        "effectiveness_notes": "Most effective when the debtor is employed and earns a regular wage.",
+        "exemptions": [
+          "75% of disposable earnings (federal CCPA floor)"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "id": "bank-levy",
+        "name": "Bank levy",
+        "blurb": "Seize funds from the debtor's bank account to satisfy the judgment.",
+        "description": "Obtain a writ of execution from the court, serve it on the debtor's bank, and the bank freezes and transfers funds to satisfy the judgment.",
+        "forms": [
+          {
+            "number": "Form 8",
+            "name": "Affidavit of Identification of Judgment Debtor"
+          }
+        ],
+        "estimated_cost": "$30-50 plus sheriff fees",
+        "effectiveness_notes": "Effective if the debtor has sufficient funds in the bank account.",
+        "exemptions": [
+          "$3,000 in bank account is exempt from levy"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "id": "property-lien",
+        "name": "Property lien",
+        "blurb": "Place a lien on the debtor's real property to secure the judgment amount.",
+        "description": "File the judgment with the county recorder to place a lien on the debtor's property, which must be satisfied before the property can be sold or refinanced.",
+        "forms": [
+          {
+            "number": "Form 8",
+            "name": "Affidavit of Identification of Judgment Debtor"
+          }
+        ],
+        "estimated_cost": "$20-30 recording fee",
+        "effectiveness_notes": "Effective if the debtor owns real property and intends to sell or refinance.",
+        "exemptions": [
+          "Homestead exemption up to $100,000"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "id": "writ-of-execution",
+        "name": "Writ of execution",
+        "blurb": "Authorize the sheriff to seize and sell the debtor's non-exempt property.",
+        "description": "Obtain a writ of execution from the court, and the sheriff seizes and sells the debtor's non-exempt property to satisfy the judgment.",
+        "forms": [
+          {
+            "number": "Form 8",
+            "name": "Affidavit of Identification of Judgment Debtor"
+          }
+        ],
+        "estimated_cost": "$50-100 plus sheriff fees",
+        "effectiveness_notes": "Effective if the debtor owns valuable non-exempt property.",
+        "exemptions": [
+          "Various personal property exemptions apply"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "wage_garnishment_max_pct_of_disposable": 25,
+    "judgment_lifespan_years": 10,
+    "judgment_renewal_process": "File a motion to renew the judgment before the 10-year period expires; if granted, the judgment is extended for another 10 years.",
+    "debtor_exam_form": {
+      "number": "Form 8",
+      "name": "Affidavit of Identification of Judgment Debtor"
+    },
+    "exempt_assets": [
+      "Homestead — up to $100,000",
+      "Vehicle — up to $2,950",
+      "Retirement accounts (federally and state-protected)",
+      "Social Security and federal benefits"
+    ],
+    "bankruptcy_effect_notes": "Filing for bankruptcy may discharge the judgment; however, certain debts are non-dischargeable.",
+    "satisfaction_of_judgment_form": {
+      "number": "Form 9",
+      "name": "Satisfaction of Judgment"
+    },
+    "priority_notes": "Judgment liens are prioritized based on the date of recording; earlier liens have higher priority.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "businesses": {
+    "self_representation_allowed": true,
+    "self_representation_notes": "Businesses may be represented by an officer, owner, director, trustee, or employee in small claims court.",
+    "can_send_employee": true,
+    "can_send_attorney": true,
+    "non_attorney_representation_form": {
+      "number": "",
+      "name": ""
+    },
+    "insurance_adjuster_allowed": false,
+    "fictitious_name_form": {
+      "number": "",
+      "name": ""
+    },
+    "fictitious_name_notes": "Businesses must use their legal entity name when filing or defending a claim.",
+    "sole_proprietor_employee_exception": "A sole proprietor may represent themselves or be represented by an employee.",
+    "out_of_state_business_must_register": true,
+    "out_of_state_business_statute": "N.D. Cent. Code § 10-19.1-143",
+    "licensing_notes": "Unlicensed contractors may face challenges in enforcing contracts in court.",
+    "source_ids": [
+      "S5"
+    ]
+  },
+  "county_variations_material": false,
+  "county_variations": [],
+  "pitfalls": [
+    {
+      "title": "Filing in the wrong venue",
+      "what_happens": "Filing in the incorrect county can lead to dismissal or transfer, causing delays and additional costs.",
+      "how_to_avoid": "Ensure you file in the county where the defendant resides or where the business has a place of business.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    {
+      "title": "Exceeding the monetary limit",
+      "what_happens": "Claims exceeding $15,000 are not eligible for small claims court and must be filed in District Court.",
+      "how_to_avoid": "Verify that your claim, excluding interest and costs, does not exceed $15,000.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    {
+      "title": "Missing the statute of limitations",
+      "what_happens": "Filing after the statute of limitations has expired will result in dismissal of your case.",
+      "how_to_avoid": "Confirm the applicable statute of limitations for your claim type and file within that period.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    {
+      "title": "Improper service of process",
+      "what_happens": "Failure to properly serve the defendant can delay proceedings or result in dismissal.",
+      "how_to_avoid": "Follow the court's guidelines for serving the defendant, using authorized methods.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Not preparing sufficient evidence",
+      "what_happens": "Lack of evidence can weaken your case and lead to an unfavorable judgment.",
+      "how_to_avoid": "Gather all relevant documents, photos, and witness statements before the hearing.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Failing to collect the judgment",
+      "what_happens": "Winning a judgment does not guarantee payment; you may need to take additional steps to collect.",
+      "how_to_avoid": "Familiarize yourself with post-judgment collection methods and be prepared to implement them.",
+      "source_ids": [
+        "S1"
+      ]
+    }
+  ],
+  "recent_changes": [
+    {
+      "date": "2025-07-01",
+      "title": "Increase in filing fees",
+      "description": "Effective July 1, 2025, the filing fee for small claims court increased from $10 to $20.",
+      "bill_or_rule_citation": "SB 2057",
+      "source_ids": [
+        "S11"
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Do I need a lawyer?",
+      "answer": "No, you are not required to have a lawyer in small claims court. The process is designed to be accessible for individuals representing themselves. However, you may choose to hire an attorney if you prefer.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "How long does it take?",
+      "answer": "The timeline varies, but most small claims cases are resolved within 30 to 90 days from filing to judgment.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "What's the maximum I can sue for?",
+      "answer": "The maximum amount you can sue for in North Dakota's small claims court is $15,000, excluding interest and costs.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    {
+      "question": "What happens if the defendant doesn't show up?",
+      "answer": "If the defendant does not respond within 20 days or fails to appear at the hearing, the court may enter a default judgment in your favor.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "Can I appeal?",
+      "answer": "No, decisions made in small claims court are final and cannot be appealed.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "How long is a judgment good for?",
+      "answer": "A judgment is valid for 10 years and can be renewed for an additional 10 years if necessary.",
+      "source_ids": [
+        "S7"
+      ]
+    }
+  ],
+  "state_specific_notes": [
+    "North Dakota's small claims court allows claims up to $15,000, which is higher than many other states.",
+    "Decisions in small claims court are final with no right to appeal, emphasizing the importance of thorough preparation.",
+    "Businesses can be represented by an officer, owner, director, trustee, or employee, providing flexibility for small business owners.",
+    "The filing fee for small claims court increased from $10 to $20 effective July 1, 2025.",
+    "Small claims court does not handle eviction proceedings; these must be filed in District Court."
+  ],
+  "_extras": {
+    "interesting_findings": [
+      "North Dakota's small claims court jurisdictional limit of $15,000 is among the highest in the United States.",
+      "The prohibition of appeals in small claims court emphasizes the need for thorough preparation and understanding of the process.",
+      "The ability for businesses to be represented by non-attorney employees provides cost-effective options for small businesses."
+    ]
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "label": "North Dakota Courts - Small Claims How-To Guide",
+      "url": "https://www.ndcourts.gov/legal-self-help/small-claims",
+      "primary": true,
+      "citation": "North Dakota Courts - Small Claims How-To Guide"
+    },
+    {
+      "id": "S5",
+      "label": "N.D. Cent. Code § 27-08.1 (Small Claims Court)",
+      "url": "https://www.ndlegis.gov/cencode/t27c08_1.html",
+      "primary": true,
+      "citation": "N.D. Cent. Code § 27-08.1"
+    },
+    {
+      "id": "S11",
+      "label": "North Dakota Courts - Notice of Fee Increases",
+      "url": "https://www.ndcourts.gov/news/north-dakota/legal-news/general-news/notice-of-fee-increases",
+      "primary": true,
+      "citation": "North Dakota Courts - Notice of Fee Increases"
+    },
+    {
+      "id": "S13",
+      "label": "North Dakota Small Claims Court Forms",
+      "url": "https://www.ndcourts.gov/legal-self-help/small-claims#forms",
+      "primary": true,
+      "citation": "North Dakota Small Claims Court Forms"
+    },
+    {
+      "id": "S21",
+      "label": "N.D. Cent. Code § 6-08-16 (Bad Checks - Civil Penalties)",
+      "url": "https://www.ndlegis.gov/cencode/t06c08.html",
+      "primary": true,
+      "citation": "N.D. Cent. Code § 6-08-16"
+    },
+    {
+      "id": "S10",
+      "label": "N.D. Cent. Code § 34-14 (Labor, Final Wages, Minimum Wage)",
+      "url": "https://www.ndlegis.gov/cencode/t34c14.html",
+      "primary": true,
+      "citation": "N.D. Cent. Code § 34-14"
+    },
+    {
+      "id": "S9",
+      "label": "N.D. Cent. Code § 47-16 (Landlord and Tenant)",
+      "url": "https://www.ndlegis.gov/cencode/t47c16.html",
+      "primary": true,
+      "citation": "N.D. Cent. Code § 47-16"
+    },
+    {
+      "id": "S8",
+      "label": "N.D. Cent. Code § 51-15 (Consumer Fraud and Unlawful Credit Practices)",
+      "url": "https://www.ndlegis.gov/cencode/t51c15.html",
+      "primary": true,
+      "citation": "N.D. Cent. Code § 51-15"
+    },
+    {
+      "id": "S7",
+      "label": "N.D. Cent. Code § 28-20 (Judgments)",
+      "url": "https://www.ndlegis.gov/cencode/t28c20.html",
+      "primary": true,
+      "citation": "N.D. Cent. Code § 28-20"
+    }
+  ],
+  "_meta": {
+    "state": "North Dakota",
+    "slug": "north-dakota",
+    "model": "gpt-4.1",
+    "sources_response_id": "resp_0a49a6df3b16ee890069f08ae4f1008195859a05fc54980e26",
+    "extraction_response_id": "resp_0a4278477e7b7be90069f0a258999c8193bf39a0e9d85ee752",
+    "generated_at": "2026-04-28T12:06:25.368Z",
+    "usage": {
+      "input_tokens": 7481,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 13822,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 21303
+    }
+  }
+}

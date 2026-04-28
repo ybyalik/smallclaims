@@ -1,0 +1,1659 @@
+{
+  "state": "California",
+  "slug": "california",
+  "abbr": "CA",
+  "as_of": "2026-04-28",
+  "hero": {
+    "individual_limit_dollars": 12500,
+    "business_limit_dollars": 6250,
+    "filing_fee_low_dollars": 30,
+    "filing_fee_high_dollars": 75,
+    "typical_timeline_min_days": 30,
+    "typical_timeline_max_days": 70,
+    "tagline": "California's small claims court offers a streamlined process with a $12,500 cap for individuals and a $6,250 cap for businesses, ensuring quick and cost-effective dispute resolution.",
+    "source_ids": [
+      "S1",
+      "S12"
+    ]
+  },
+  "at_a_glance": [
+    {
+      "label": "Most you can sue for",
+      "value": "$12,500",
+      "detail": "For individuals; businesses are limited to $6,250",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Filing fee",
+      "value": "$30-$75",
+      "detail": "Based on claim amount",
+      "source_ids": [
+        "S12"
+      ]
+    },
+    {
+      "label": "Court",
+      "value": "Superior Court (Small Claims Division)",
+      "detail": "",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Lawyers at trial",
+      "value": "Not allowed",
+      "detail": "Parties must represent themselves",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Appeal window",
+      "value": "30 days",
+      "detail": "Defendants can appeal; plaintiffs cannot",
+      "source_ids": [
+        "S14"
+      ]
+    },
+    {
+      "label": "Recent change",
+      "value": "—",
+      "detail": "No major changes in the last 3 years",
+      "source_ids": []
+    }
+  ],
+  "limits": {
+    "individual_dollars": 12500,
+    "business_dollars": 6250,
+    "guarantor_with_fee_max": 8125,
+    "guarantor_without_fee_max": 3125,
+    "annual_filing_cap": {
+      "count": 2,
+      "threshold_dollars": 2500,
+      "notes": "Individuals can file more than two claims over $2,500 in a calendar year; however, they are limited to two claims exceeding $2,500 per year."
+    },
+    "split_claims_allowed": false,
+    "split_claims_explanation": "If your claim exceeds the small claims limit, you cannot split it into multiple claims to fit within the cap. You may choose to waive the excess amount and file in small claims, or file in a higher court to seek the full amount.",
+    "interest_excluded_from_cap": true,
+    "court_costs_excluded_from_cap": true,
+    "statute": "Cal. Code Civ. Proc. § 116.221",
+    "source_ids": [
+      "S5"
+    ]
+  },
+  "claim_categories": [
+    {
+      "id": "contracts",
+      "title": "Contracts and money owed",
+      "blurb": "California allows you to file claims for breaches of contract and money owed, with a statute of limitations of 4 years for written contracts and 2 years for oral contracts.",
+      "claims": [
+        {
+          "slug": "written-contract",
+          "name": "Breach of a written contract",
+          "example": "A contractor signed a $10,000 contract to remodel your kitchen, took the deposit, and never completed the work.",
+          "eligibility": "eligible",
+          "claim_statute": "Cal. Code Civ. Proc. § 337",
+          "notes": "You have 4 years from the date of breach to file. Bring the signed contract, payment records, and any correspondence.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "oral-contract",
+          "name": "Breach of an oral contract",
+          "example": "You agreed verbally to lend a friend $5,000, which they promised to repay in a year, but they haven't.",
+          "eligibility": "eligible",
+          "claim_statute": "Cal. Code Civ. Proc. § 339",
+          "notes": "You have 2 years from the date of breach to file. Gather any evidence of the agreement, such as emails or witness statements.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "personal-loan",
+          "name": "Unpaid personal loan",
+          "example": "You lent $3,000 to a colleague who agreed to repay in six months but hasn't.",
+          "eligibility": "eligible",
+          "claim_statute": "Cal. Code Civ. Proc. § 337",
+          "notes": "For written agreements, you have 4 years to file; for oral, 2 years. Provide evidence of the loan and any repayment attempts.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "promissory-note",
+          "name": "Default on a promissory note",
+          "example": "A borrower signed a promissory note for $8,000 but failed to make any payments.",
+          "eligibility": "eligible",
+          "claim_statute": "Cal. Code Civ. Proc. § 337",
+          "notes": "You have 4 years from the date of default to file. Present the original promissory note and records of missed payments.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "unpaid-invoice",
+          "name": "Unpaid invoice for services rendered",
+          "example": "You provided graphic design services worth $2,500, invoiced the client, but haven't received payment.",
+          "eligibility": "eligible",
+          "claim_statute": "Cal. Code Civ. Proc. § 337",
+          "notes": "File within 4 years for written agreements; 2 years for oral. Include the invoice, service agreement, and communication records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "open-account",
+          "name": "Unpaid balance on an open account",
+          "example": "A customer has an outstanding balance of $4,000 on their account with your business.",
+          "eligibility": "eligible",
+          "claim_statute": "Cal. Code Civ. Proc. § 337",
+          "notes": "You have 4 years from the last transaction to file. Provide account statements and records of transactions.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "unpaid-rent",
+          "name": "Unpaid rent by tenant",
+          "example": "Your tenant owes $6,000 in unpaid rent over the past three months.",
+          "eligibility": "eligible",
+          "claim_statute": "Cal. Code Civ. Proc. § 1161",
+          "notes": "File within 4 years for written leases; 2 years for oral. Bring the lease agreement, rent ledger, and any notices sent.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "bad-check",
+          "name": "Payment with a bad check",
+          "example": "A client paid a $1,500 invoice with a check that bounced due to insufficient funds.",
+          "eligibility": "eligible",
+          "claim_statute": "Cal. Civ. Code § 1719",
+          "notes": "You have 3 years from the date of the bad check to file. Include the bounced check, bank notice, and any demand letters.",
+          "damage_boost": "You may recover the amount of the check plus damages up to three times the amount of the check, not exceeding $1,500.",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "co-signer",
+          "name": "Co-signer seeking repayment",
+          "example": "You co-signed a $5,000 loan for a friend who defaulted, and you had to pay the lender.",
+          "eligibility": "eligible",
+          "claim_statute": "Cal. Code Civ. Proc. § 337",
+          "notes": "File within 4 years of payment. Provide the loan agreement, proof of your payments, and any communication with the borrower.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "consumer-disputes",
+      "title": "Consumer disputes",
+      "blurb": "California's small claims court addresses various consumer disputes, with specific statutes of limitations depending on the claim type.",
+      "claims": [
+        {
+          "slug": "defective-product",
+          "name": "Purchase of a defective product",
+          "example": "You bought a $1,200 laptop that stopped working after two months, and the seller refuses to repair or replace it.",
+          "eligibility": "eligible",
+          "claim_statute": "Cal. Civ. Code § 1791",
+          "notes": "File within 4 years from the date of purchase. Bring the purchase receipt, warranty, and any communication with the seller.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "bad-service",
+          "name": "Substandard service provided",
+          "example": "A cleaning service charged you $500 but did a poor job, leaving areas uncleaned.",
+          "eligibility": "eligible",
+          "claim_statute": "Cal. Code Civ. Proc. § 339",
+          "notes": "You have 2 years from the service date to file. Provide the service agreement, photos of the work, and any complaints made.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "auto-repair",
+          "name": "Unsatisfactory auto repair",
+          "example": "A mechanic charged $2,000 for repairs that didn't fix the issue, and refuses a refund.",
+          "eligibility": "eligible",
+          "claim_statute": "Cal. Code Civ. Proc. § 339",
+          "notes": "File within 2 years of the repair. Include the repair invoice, any warranties, and records of subsequent issues.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "contractor",
+          "name": "Contractor performed incomplete work",
+          "example": "You paid a contractor $7,500 to renovate your bathroom, but they left the job unfinished.",
+          "eligibility": "eligible",
+          "claim_statute": "Cal. Code Civ. Proc. § 337",
+          "notes": "You have 4 years from the breach to file. Bring the contract, payment records, and photos of the incomplete work.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "no-show-vendor",
+          "name": "Vendor failed to deliver services",
+          "example": "You hired a DJ for $1,000 for your wedding, but they never showed up.",
+          "eligibility": "eligible",
+          "claim_statute": "Cal. Code Civ. Proc. § 339",
+          "notes": "File within 2 years of the event. Provide the service agreement, proof of payment, and any communication with the vendor.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "subscription-cancellation",
+          "name": "Unauthorized charges after subscription cancellation",
+          "example": "You canceled a gym membership, but they continued to charge your account for three months totaling $300.",
+          "eligibility": "eligible",
+          "claim_statute": "Cal. Bus. & Prof. Code § 17602",
+          "notes": "File within 4 years of the unauthorized charge. Include cancellation confirmation, bank statements, and any correspondence.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "used-car",
+          "name": "Purchase of a defective used car",
+          "example": "You bought a used car for $10,000 that broke down within a week, and the dealer refuses to address the issue.",
+          "eligibility": "eligible",
+          "claim_statute": "Cal. Civ. Code § 1793.2",
+          "notes": "File within 4 years of purchase. Bring the sales contract, any warranties, and records of the defect.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "false-advertising",
+          "name": "False advertising leading to financial loss",
+          "example": "A store advertised a TV for $500, but charged you $700 at checkout without honoring the advertised price.",
+          "eligibility": "eligible",
+          "claim_statute": "Cal. Bus. & Prof. Code § 17500",
+          "notes": "File within 3 years of the misleading advertisement. Provide the advertisement, receipt, and any communication with the store.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "property-damage",
+      "title": "Property damage",
+      "blurb": "Claims for property damage in California must be filed within 3 years from the date of damage.",
+      "claims": [
+        {
+          "slug": "vehicle-collision",
+          "name": "Damage from a vehicle collision",
+          "example": "Another driver hit your parked car, causing $4,000 in damages, and refuses to pay.",
+          "eligibility": "eligible",
+          "claim_statute": "Cal. Code Civ. Proc. § 338",
+          "notes": "You have 3 years from the date of the accident to file. Bring the police report, repair estimates, and photos of the damage.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "neighbor-property",
+          "name": "Neighbor caused damage to your property",
+          "example": "A neighbor's tree fell onto your fence, causing $2,500 in damages.",
+          "eligibility": "eligible",
+          "claim_statute": "Cal. Code Civ. Proc. § 338",
+          "notes": "File within 3 years of the incident. Provide photos of the damage, repair estimates, and any communication with the neighbor.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "damage-to-rental",
+          "name": "Tenant caused damage to rental property",
+          "example": "A tenant left your rental unit with $5,000 in damages beyond normal wear and tear.",
+          "eligibility": "eligible",
+          "claim_statute": "Cal. Code Civ. Proc. § 338",
+          "notes": "You have 3 years from discovering the damage to file. Bring the lease agreement, photos of the damage, and repair invoices.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "pet-damage",
+          "name": "Damage caused by someone else's pet",
+          "example": "A neighbor's dog entered your yard and destroyed $1,200 worth of landscaping.",
+          "eligibility": "eligible",
+          "claim_statute": "Cal. Code Civ. Proc. § 338",
+          "notes": "File within 3 years of the incident. Provide photos of the damage, repair estimates, and any communication with the pet owner.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "property-in-custody",
+          "name": "Damage to property left in someone's care",
+          "example": "You left your watch for repair, and the jeweler damaged it, causing $800 in losses.",
+          "eligibility": "eligible",
+          "claim_statute": "Cal. Code Civ. Proc. § 338",
+          "notes": "You have 3 years from the date of damage to file. Bring the repair agreement, photos of the damage, and any correspondence.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "landlord-tenant",
+      "title": "Landlord-tenant disputes",
+      "blurb": "California addresses various landlord-tenant disputes in small claims court, with specific statutes of limitations depending on the claim type.",
+      "claims": [
+        {
+          "slug": "security-deposit",
+          "name": "Failure to return security deposit",
+          "example": "Your landlord withheld your $2,000 security deposit without providing an itemized statement.",
+          "eligibility": "eligible",
+          "claim_statute": "Cal. Civ. Code § 1950.5",
+          "notes": "File within 4 years of the lease ending. Bring the lease agreement, move-out inspection report, and any correspondence.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "deposit-not-itemized",
+          "name": "No itemized statement for deposit deductions",
+          "example": "Your landlord deducted $1,500 from your deposit without providing an itemized list of damages.",
+          "eligibility": "eligible",
+          "claim_statute": "Cal. Civ. Code § 1950.5",
+          "notes": "You have 4 years from the lease ending to file. Provide the lease agreement, move-out inspection report, and any correspondence.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "uninhabitable-rental",
+          "name": "Living conditions deemed uninhabitable",
+          "example": "Your rental unit had persistent mold issues, and the landlord refused to address them.",
+          "eligibility": "eligible",
+          "claim_statute": "Cal. Civ. Code § 1942",
+          "notes": "File within 4 years of the issue. Bring photos, repair requests, and any health department reports.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "wrongful-retention-property",
+          "name": "Landlord retained personal property after move-out",
+          "example": "After moving out, your landlord kept your bicycle worth $800.",
+          "eligibility": "eligible",
+          "claim_statute": "Cal. Civ. Code § 1983",
+          "notes": "You have 3 years from the date of retention to file. Provide proof of ownership and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "illegal-eviction",
+          "name": "Landlord conducted an illegal eviction",
+          "example": "Your landlord changed the locks without notice, preventing you from accessing your rental.",
+          "eligibility": "eligible",
+          "claim_statute": "Cal. Civ. Code § 789.3",
+          "notes": "File within 3 years of the eviction. Bring the lease agreement, photos of the changed locks, and any correspondence.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "unreturned-prepaid-rent",
+          "name": "Failure to return prepaid rent after lease termination",
+          "example": "You paid first and last month's rent, but the landlord didn't return the last month's rent after early termination.",
+          "eligibility": "eligible",
+          "claim_statute": "Cal. Civ. Code § 1950.5",
+          "notes": "You have 4 years from lease termination to file. Provide the lease agreement, payment records, and any correspondence.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "unpaid-rent-by-tenant",
+          "name": "Tenant failed to pay rent",
+          "example": "Your tenant missed two months of rent totaling $3,000.",
+          "eligibility": "eligible",
+          "claim_statute": "Cal. Code Civ. Proc. § 1161",
+          "notes": "File within 4 years for written leases; 2 years for oral. Bring the lease agreement, rent ledger, and any notices sent.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "repair-and-deduct",
+          "name": "Tenant used 'repair and deduct' remedy",
+          "example": "You paid $600 to fix a broken heater after the landlord failed to repair it, and deducted it from rent.",
+          "eligibility": "eligible",
+          "claim_statute": "Cal. Civ. Code § 1942",
+          "notes": "File within 4 years of the repair. Provide repair receipts, photos of the issue, and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "employment-and-wages",
+      "title": "Employment and wages",
+      "blurb": "California's small claims court handles various employment and wage disputes, with specific statutes of limitations depending on the claim type.",
+      "claims": [
+        {
+          "slug": "unpaid-wages",
+          "name": "Employer failed to pay earned wages",
+          "example": "Your employer owes you $2,000 for hours worked but hasn't paid.",
+          "eligibility": "eligible",
+          "claim_statute": "Cal. Lab. Code § 1194",
+          "notes": "File within 3 years of the unpaid wages. Bring pay stubs, time records, and any communication with the employer.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "final-paycheck",
+          "name": "Employer didn't provide final paycheck",
+          "example": "After quitting, your employer didn't give you your final paycheck of $1,500.",
+          "eligibility": "eligible",
+          "claim_statute": "Cal. Lab. Code § 203",
+          "notes": "You have 3 years from the date of termination to file. Provide employment records, resignation letter, and any correspondence.",
+          "damage_boost": "You may be entitled to waiting time penalties equal to your daily wage for each day the final paycheck is delayed, up to 30 days.",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "unpaid-commissions",
+          "name": "Employer failed to pay earned commissions",
+          "example": "You earned $5,000 in sales commissions, but your employer hasn't paid them.",
+          "eligibility": "eligible",
+          "claim_statute": "Cal. Lab. Code § 204",
+          "notes": "File within 3 years of the unpaid commissions. Bring commission agreements, sales records, and any communication with the employer.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "unpaid-overtime",
+          "name": "Employer didn't pay overtime wages",
+          "example": "You worked 20 hours of overtime but weren't paid the overtime rate, totaling $800.",
+          "eligibility": "eligible",
+          "claim_statute": "Cal. Lab. Code § 1194",
+          "notes": "You have 3 years from the date of unpaid overtime to file. Provide time records, pay stubs, and any communication with the employer.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "personal-claims",
+      "title": "Personal claims",
+      "blurb": "California's small claims court addresses various personal claims, with specific statutes of limitations depending on the claim type.",
+      "claims": [
+        {
+          "slug": "minor-injury",
+          "name": "Minor personal injury",
+          "example": "You slipped and fell in a store, resulting in $3,000 in medical bills.",
+          "eligibility": "eligible",
+          "claim_statute": "Cal. Code Civ. Proc. § 335.1",
+          "notes": "File within 2 years of the injury. Bring medical records, bills, and any incident reports.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "loaned-property",
+          "name": "Failure to return loaned property",
+          "example": "You lent a friend your camera worth $1,200, and they refuse to return it.",
+          "eligibility": "eligible",
+          "claim_statute": "Cal. Code Civ. Proc. § 338",
+          "notes": "You have 3 years from the date of refusal to file. Provide proof of ownership and any communication with the borrower.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "civil-theft",
+          "name": "Theft of personal property",
+          "example": "A neighbor took your bicycle worth $800 without permission and refuses to return it.",
+          "eligibility": "eligible",
+          "claim_statute": "Cal. Code Civ. Proc. § 338",
+          "notes": "File within 3 years of the theft. Bring proof of ownership, police reports, and any communication with the neighbor.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vehicle-specific",
+      "title": "Vehicle-specific claims",
+      "blurb": "California's small claims court handles various vehicle-related disputes, with specific statutes of limitations depending on the claim type.",
+      "claims": [
+        {
+          "slug": "mechanic-dispute",
+          "name": "Dispute over mechanic's repair work",
+          "example": "A mechanic charged $2,500 for repairs that didn't fix the issue, and refuses a refund.",
+          "eligibility": "eligible",
+          "claim_statute": "Cal. Code Civ. Proc. § 339",
+          "notes": "File within 2 years of the repair. Include the repair invoice, any warranties, and records of subsequent issues.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "wrongful-tow",
+          "name": "Vehicle was wrongfully towed",
+          "example": "Your car was towed from a legal parking spot, and you had to pay $300 to retrieve it.",
+          "eligibility": "eligible",
+          "claim_statute": "Cal. Veh. Code § 22658",
+          "notes": "You have 3 years from the date of the tow to file. Provide towing receipts, photos of the parking spot, and any communication with the towing company.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        }
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "category": "Eviction (unlawful detainer)",
+      "explanation": "Small claims court does not handle eviction cases; these are processed through the regular civil court system.",
+      "where_to_go_instead": "Superior Court's Civil Division",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Defamation",
+      "explanation": "Claims involving defamation, such as libel or slander, are not suitable for small claims court due to their complexity.",
+      "where_to_go_instead": "Superior Court's Civil Division",
+      "source_ids": []
+    },
+    {
+      "category": "Malpractice",
+      "explanation": "Professional malpractice cases require expert testimony and are beyond the scope of small claims court.",
+      "where_to_go_instead": "Superior Court's Civil Division",
+      "source_ids": []
+    },
+    {
+      "category": "Family law matters",
+      "explanation": "Issues like divorce, child custody, and support are handled by family courts, not small claims.",
+      "where_to_go_instead": "Family Court",
+      "source_ids": []
+    },
+    {
+      "category": "Probate matters",
+      "explanation": "Disputes over wills, estates, and trusts are managed by probate courts.",
+      "where_to_go_instead": "Probate Court",
+      "source_ids": []
+    },
+    {
+      "category": "Claims against the federal government",
+      "explanation": "Small claims court does not have jurisdiction over federal entities.",
+      "where_to_go_instead": "Federal Claims Court",
+      "source_ids": []
+    },
+    {
+      "category": "Workers' compensation claims",
+      "explanation": "These claims are processed through the state's workers' compensation system, not small claims court.",
+      "where_to_go_instead": "Workers' Compensation Appeals Board",
+      "source_ids": []
+    },
+    {
+      "category": "Class actions",
+      "explanation": "Small claims court is designed for individual disputes and does not handle class action lawsuits.",
+      "where_to_go_instead": "Superior Court's Civil Division",
+      "source_ids": []
+    },
+    {
+      "category": "Injunctions or specific performance",
+      "explanation": "Small claims court cannot issue orders requiring someone to do or stop doing something; it can only award monetary damages.",
+      "where_to_go_instead": "Superior Court's Civil Division",
+      "source_ids": []
+    },
+    {
+      "category": "Title to real estate",
+      "explanation": "Disputes involving ownership or title to real property are beyond the jurisdiction of small claims court.",
+      "where_to_go_instead": "Superior Court's Civil Division",
+      "source_ids": []
+    }
+  ],
+  "damages": {
+    "compensatory_allowed": true,
+    "punitive_allowed": false,
+    "punitive_explanation": "Small claims court in California does not award punitive damages; it is limited to compensatory damages to reimburse actual losses.",
+    "statutory_multipliers": [
+      {
+        "claim": "Bad check (after 30-day notice)",
+        "multiplier": "Up to 3x the check amount",
+        "explanation": "You may recover the amount of the check plus damages up to three times the amount of the check, not exceeding $1,500.",
+        "statute": "Cal. Civ. Code § 1719",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "attorney_fees_recoverable": "sometimes",
+    "attorney_fees_explanation": "Attorney's fees are generally not recoverable in small claims court, as parties are not allowed to have attorneys represent them during the proceedings.",
+    "prejudgment_interest_rate_pct": 10,
+    "prejudgment_interest_statute": "Cal. Civ. Code § 3289",
+    "postjudgment_interest_rate_pct": 10,
+    "postjudgment_interest_type": "simple",
+    "postjudgment_interest_statute": "Cal. Civ. Code § 685.010",
+    "postjudgment_interest_notes": "Interest accrues at 10% per annum on the unpaid principal amount of the judgment.",
+    "filing_and_service_fees_recoverable_from_loser": true,
+    "source_ids": [
+      "S5"
+    ]
+  },
+  "where_to_file": {
+    "court_name": "Small Claims Division of the Superior Court",
+    "parent_court": "California Superior Court",
+    "venue_rules": [
+      {
+        "scenario": "Where the defendant resides",
+        "filing_options": [
+          "County where the defendant lives"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Where the contract was signed or performed",
+        "filing_options": [
+          "County where the contract was signed",
+          "County where the contract was to be performed"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Where the injury or damage occurred",
+        "filing_options": [
+          "County where the injury or damage happened"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Where the buyer resides",
+        "filing_options": [
+          "County where the buyer lived when the contract was entered into"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "consequences_of_wrong_venue": "Filing in the wrong venue may result in the case being dismissed or transferred, causing delays and additional costs.",
+    "e_filing_available": "varies",
+    "e_filing_notes": "E-filing availability depends on the county; check with the local court for specific procedures.",
+    "e_filing_portal": null,
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "fees": {
+    "filing_fee_tiers": [
+      {
+        "range_label": "$0 to $1,500",
+        "range_min": 0,
+        "range_max": 1500,
+        "fee_dollars": 30,
+        "source_ids": [
+          "S12"
+        ]
+      },
+      {
+        "range_label": "$1,500.01 to $5,000",
+        "range_min": 1500.01,
+        "range_max": 5000,
+        "fee_dollars": 50,
+        "source_ids": [
+          "S12"
+        ]
+      },
+      {
+        "range_label": "$5,000.01 to $12,500",
+        "range_min": 5000.01,
+        "range_max": 12500,
+        "fee_dollars": 75,
+        "source_ids": [
+          "S12"
+        ]
+      }
+    ],
+    "frequent_filer": {
+      "threshold_per_year": 12,
+      "fee_dollars": 100,
+      "notes": "If you have filed more than 12 claims in the past 12 months, the filing fee is $100 for any claim amount.",
+      "source_ids": [
+        "S12"
+      ]
+    },
+    "service_fees": [
+      {
+        "method": "Certified mail by clerk",
+        "amount_label": "$15",
+        "notes": "The court clerk can serve the defendant by certified mail for a fee of $15.",
+        "source_ids": [
+          "S12"
+        ]
+      },
+      {
+        "method": "Sheriff or process server",
+        "amount_label": "Varies",
+        "notes": "Fees for personal service by a sheriff or process server vary by county.",
+        "source_ids": [
+          "S12"
+        ]
+      }
+    ],
+    "waiver": {
+      "forms": [
+        {
+          "number": "FW-001",
+          "name": "Request to Waive Court Fees",
+          "url": "https://www.courts.ca.gov/documents/fw001.pdf",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ],
+      "eligibility_bullets": [
+        "Receiving public benefits such as Medi-Cal, Food Stamps, or SSI",
+        "Household income is below a specified level",
+        "Cannot afford the court fees without substantial hardship"
+      ],
+      "coverage_notes": "The fee waiver covers filing fees, service fees, and other court costs.",
+      "if_you_win_notes": "If you win your case, the court may order the losing party to pay the waived fees.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "other_fees": [
+      {
+        "name": "Motion to vacate judgment",
+        "amount_label": "$20",
+        "notes": "Fee for filing a motion to vacate a judgment.",
+        "source_ids": [
+          "S12"
+        ]
+      },
+      {
+        "name": "Appeal filing",
+        "amount_label": "$75",
+        "notes": "Fee for filing an appeal in a small claims case.",
+        "source_ids": [
+          "S12"
+        ]
+      },
+      {
+        "name": "Writ of execution",
+        "amount_label": "$40",
+        "notes": "Fee for issuing a writ of execution to enforce a judgment.",
+        "source_ids": [
+          "S12"
+        ]
+      }
+    ],
+    "fees_recoverable_from_loser_notes": "If you win, the court may order the losing party to reimburse your filing and service fees.",
+    "source_ids": [
+      "S12"
+    ]
+  },
+  "statute_of_limitations": {
+    "entries": [
+      {
+        "id": "written-contract",
+        "claim": "Written contract",
+        "years": 4,
+        "clock_starts": "Date of breach",
+        "statute": "Cal. Code Civ. Proc. § 337",
+        "notes": "You have 4 years from the date the contract was broken to file a claim.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "oral-contract",
+        "claim": "Oral contract",
+        "years": 2,
+        "clock_starts": "Date of breach",
+        "statute": "Cal. Code Civ. Proc. § 339",
+        "notes": "You have 2 years from the date the oral agreement was broken to file a claim.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "sale-of-goods",
+        "claim": "Sale of goods (UCC)",
+        "years": 4,
+        "clock_starts": "Date of breach",
+        "statute": "Cal. Com. Code § 2725",
+        "notes": "You have 4 years from the date of breach to file a claim related to the sale of goods.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "promissory-note",
+        "claim": "Promissory note",
+        "years": 4,
+        "clock_starts": "Date of default",
+        "statute": "Cal. Code Civ. Proc. § 337",
+        "notes": "You have 4 years from the date of default to file a claim on a promissory note.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "open-account",
+        "claim": "Open account / credit card debt",
+        "years": 4,
+        "clock_starts": "Date of last transaction",
+        "statute": "Cal. Code Civ. Proc. § 337",
+        "notes": "You have 4 years from the date of the last transaction to file a claim on an open account.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "personal-injury",
+        "claim": "Personal injury",
+        "years": 2,
+        "clock_starts": "Date of injury",
+        "statute": "Cal. Code Civ. Proc. § 335.1",
+        "notes": "You have 2 years from the date of injury to file a personal injury claim.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "property-damage",
+        "claim": "Property damage",
+        "years": 3,
+        "clock_starts": "Date of damage",
+        "statute": "Cal. Code Civ. Proc. § 338",
+        "notes": "You have 3 years from the date of damage to file a property damage claim.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "fraud",
+        "claim": "Fraud",
+        "years": 3,
+        "clock_starts": "Date of discovery",
+        "statute": "Cal. Code Civ. Proc. § 338",
+        "notes": "You have 3 years from the date you discovered the fraud to file a claim.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "bad-check",
+        "claim": "Bad check",
+        "years": 3,
+        "clock_starts": "Date of check",
+        "statute": "Cal. Civ. Code § 1719",
+        "notes": "You have 3 years from the date of the bad check to file a claim.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "unpaid-wages",
+        "claim": "Unpaid wages",
+        "years": 3,
+        "clock_starts": "Date wages were due",
+        "statute": "Cal. Lab. Code § 1194",
+        "notes": "You have 3 years from the date the wages were due to file a claim.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "security-deposit",
+        "claim": "Security deposit",
+        "years": 4,
+        "clock_starts": "Date of lease termination",
+        "statute": "Cal. Civ. Code § 1950.5",
+        "notes": "You have 4 years from the date the lease ended to file a claim for the return of a security deposit.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "judgment-enforcement",
+        "claim": "Judgment enforcement",
+        "years": 10,
+        "clock_starts": "Date of judgment",
+        "statute": "Cal. Code Civ. Proc. § 683.020",
+        "notes": "You have 10 years from the date of judgment to enforce it, with the possibility of renewal.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "discovery_rule_notes": "The discovery rule applies to fraud claims, allowing the statute of limitations to begin when the fraud is discovered.",
+    "tolling_notes": "The statute of limitations may be tolled if the defendant is out of state, the plaintiff is a minor, or in cases of bankruptcy.",
+    "source_ids": [
+      "S5"
+    ]
+  },
+  "pre_filing": {
+    "demand_letter_required": false,
+    "demand_letter_recommended": true,
+    "demand_letter_notes": "While not legally required, sending a demand letter is recommended as it may lead to a resolution without court involvement and demonstrates good faith.",
+    "bad_check_notice_rule": "For bad check claims, you must send a written demand for payment, allowing the issuer 30 days to respond before filing a claim.",
+    "wage_claim_demand_rule": "For unpaid wage claims, it's advisable to send a written demand to the employer before filing a claim.",
+    "government_claim_required": true,
+    "government_claim_deadline_days": 180,
+    "government_claim_notes": "Claims against government entities require filing a claim with the agency within 6 months before proceeding to court.",
+    "landlord_tenant_pre_filing_notes": "Landlords must provide an itemized statement of deductions from the security deposit within 21 days of lease termination.",
+    "consumer_protection_notes": "Certain consumer protection claims may require specific notices or demands before filing; consult the relevant statutes.",
+    "mandatory_mediation_before_filing": "none",
+    "arbitration_clauses_enforced": true,
+    "source_ids": [
+      "S5"
+    ]
+  },
+  "forms": [
+    {
+      "number": "SC-100",
+      "name": "Plaintiff's Claim and ORDER to Go to Small Claims Court",
+      "description": "Initiates a small claims case by outlining the plaintiff's claim against the defendant.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "https://www.courts.ca.gov/documents/sc100.pdf",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "number": "SC-104",
+      "name": "Proof of Service",
+      "description": "Documents the service of court papers to the defendant.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "service",
+      "url": "https://www.courts.ca.gov/documents/sc104.pdf",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "number": "SC-120",
+      "name": "Defendant's Claim and ORDER to Go to Small Claims Court",
+      "description": "Allows the defendant to file a counterclaim against the plaintiff.",
+      "filed_by": "defendant",
+      "required": false,
+      "group": "counterclaim",
+      "url": "https://www.courts.ca.gov/documents/sc120.pdf",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "number": "SC-150",
+      "name": "Request to Postpone Trial",
+      "description": "Requests a new trial date if the original date is inconvenient.",
+      "filed_by": "either",
+      "required": false,
+      "group": "hearing",
+      "url": "https://www.courts.ca.gov/documents/sc150.pdf",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "number": "SC-200",
+      "name": "Notice of Entry of Judgment",
+      "description": "Notifies parties of the court's judgment in the case.",
+      "filed_by": "court",
+      "required": true,
+      "group": "after-judgment",
+      "url": "https://www.courts.ca.gov/documents/sc200.pdf",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "number": "SC-220",
+      "name": "Request to Make Payments",
+      "description": "Allows the judgment debtor to request installment payments.",
+      "filed_by": "defendant",
+      "required": false,
+      "group": "after-judgment",
+      "url": "https://www.courts.ca.gov/documents/sc220.pdf",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "number": "SC-221",
+      "name": "Response to Request to Make Payments",
+      "description": "Allows the judgment creditor to respond to a payment plan request.",
+      "filed_by": "plaintiff",
+      "required": false,
+      "group": "after-judgment",
+      "url": "https://www.courts.ca.gov/documents/sc221.pdf",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "number": "SC-222",
+      "name": "Order on Request to Make Payments",
+      "description": "The court's decision on a payment plan request.",
+      "filed_by": "court",
+      "required": true,
+      "group": "after-judgment",
+      "url": "https://www.courts.ca.gov/documents/sc222.pdf",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "number": "SC-300",
+      "name": "Request to Correct or Cancel Judgment and Answer",
+      "description": "Requests the court to correct or cancel a judgment due to clerical errors or other issues.",
+      "filed_by": "either",
+      "required": false,
+      "group": "after-judgment",
+      "url": "https://www.courts.ca.gov/documents/sc300.pdf",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "number": "SC-500",
+      "name": "Request for Dismissal",
+      "description": "Allows a party to dismiss the case before judgment.",
+      "filed_by": "either",
+      "required": false,
+      "group": "after-judgment",
+      "url": "https://www.courts.ca.gov/documents/sc500.pdf",
+      "source_ids": [
+        "S11"
+      ]
+    }
+  ],
+  "service": {
+    "who_can_serve": [
+      "Sheriff",
+      "Certified mail by clerk",
+      "Private process server"
+    ],
+    "methods": [
+      {
+        "name": "Certified mail by clerk",
+        "description": "The court clerk sends the documents to the defendant via certified mail.",
+        "pros": [
+          "Convenient",
+          "Handled by the court"
+        ],
+        "cons": [
+          "Less reliable",
+          "Defendant may refuse delivery"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "name": "Personal service by sheriff or process server",
+        "description": "A sheriff or registered process server personally delivers the documents to the defendant.",
+        "pros": [
+          "More reliable",
+          "Proof of service provided"
+        ],
+        "cons": [
+          "Additional cost",
+          "May require multiple attempts"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "name": "Substituted service",
+        "description": "If the defendant cannot be personally served, documents are left with a responsible adult at the defendant's residence or business, and a copy is mailed.",
+        "pros": [
+          "Alternative when personal service fails"
+        ],
+        "cons": [
+          "Additional steps required",
+          "May be contested"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "in_county_days_before_hearing": 15,
+    "out_of_county_days_before_hearing": 20,
+    "proof_of_service_form": {
+      "number": "SC-104",
+      "name": "Proof of Service"
+    },
+    "proof_filing_deadline_days_before_hearing": 5,
+    "business_service_rule": "Serve the agent for service of process listed with the California Secretary of State; for sole proprietors, serve the owner personally.",
+    "out_of_state_defendant_notes": "Service must comply with the laws of the state where the defendant is served.",
+    "cant_find_defendant_notes": "If the defendant cannot be located, you may request the court's permission for service by publication.",
+    "avoiding_service_notes": "If the defendant is evading service, document your attempts and consider alternative methods like substituted service or service by publication.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "response_and_default": {
+    "must_file_written_answer": false,
+    "response_deadline_days": 0,
+    "response_notes": "The defendant is not required to file a written answer; they may appear at the hearing to present their defense.",
+    "default_process": "If the defendant does not appear at the hearing, the court may enter a default judgment in favor of the plaintiff.",
+    "prove_up_required": true,
+    "prove_up_notes": "Even if the defendant defaults, the plaintiff must present evidence to prove their claim to the court's satisfaction.",
+    "motion_to_vacate_form": {
+      "number": "SC-135",
+      "name": "Notice of Motion to Vacate Judgment"
+    },
+    "motion_to_vacate_deadline_days": 30,
+    "motion_to_vacate_lack_of_notice_days": 180,
+    "motion_to_vacate_appeal_deadline_days": 10,
+    "motion_to_vacate_appeal_notes": "If the motion to vacate is denied, the defendant has 10 days to appeal the denial.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "counterclaim": {
+    "allowed": true,
+    "form": {
+      "number": "SC-120",
+      "name": "Defendant's Claim and ORDER to Go to Small Claims Court"
+    },
+    "same_monetary_limit": true,
+    "service_deadline_in_county_days": 5,
+    "service_deadline_out_of_county_days": 15,
+    "transfer_to_higher_court_available": false,
+    "transfer_to_higher_court_statute": "",
+    "transfer_to_higher_court_notes": "",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "hearing": {
+    "lawyers_allowed": "no",
+    "lawyers_allowed_notes": "Attorneys are not permitted to represent parties in small claims court; parties must represent themselves.",
+    "format": "Bench trial with informal procedures; each party presents their case directly to the judge.",
+    "presider": "judge",
+    "burden_of_proof": "preponderance",
+    "what_to_bring": [
+      "Originals of any contracts",
+      "Receipts and bank records",
+      "Photos and videos",
+      "Names and contact info for witnesses"
+    ],
+    "subpoena_form": {
+      "number": "SC-107",
+      "name": "Small Claims Subpoena for Personal Appearance and Production of Documents at Trial or Hearing and Declaration"
+    },
+    "witness_fee_per_day_dollars": 35,
+    "free_interpreters": true,
+    "interpreter_request_process": "Request an interpreter at least 5 days before the hearing by submitting a request to the court clerk.",
+    "jury_option": false,
+    "decision_timing": "On the spot or mailed within a few weeks",
+    "on_site_mediation": "by county",
+    "on_site_mediation_notes": "Some counties offer mediation services on the day of the hearing; check with the local court for availability.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "appeals": {
+    "who_can_appeal": "defendant",
+    "deadline_days": 30,
+    "fee_dollars": 75,
+    "type": "trial de novo",
+    "type_notes": "The appeal is a new trial where the case is heard again from the beginning.",
+    "attorneys_allowed_on_appeal": true,
+    "bond_required": false,
+    "bond_amount_notes": "",
+    "automatic_stay_on_appeal": true,
+    "default_judgment_appealable": true,
+    "default_judgment_notes": "A defendant who failed to appear may appeal a default judgment within 30 days.",
+    "notice_of_appeal_form": {
+      "number": "SC-140",
+      "name": "Notice of Appeal (Small Claims)"
+    },
+    "frivolous_appeal_penalty_dollars": 1000,
+    "frivolous_appeal_statute": "Cal. Code Civ. Proc. § 116.780",
+    "frivolous_appeal_notes": "If the court finds the appeal to be frivolous or intended to cause delay, it may award the respondent up to $1,000 in attorney's fees and costs.",
+    "source_ids": [
+      "S14"
+    ]
+  },
+  "collection": {
+    "payment_deadline_typical_days": 30,
+    "post_judgment_interest_rate_pct": 10,
+    "post_judgment_interest_statute": "Cal. Civ. Code § 685.010",
+    "post_judgment_interest_notes": "Interest accrues at 10% per annum on the unpaid principal amount of the judgment.",
+    "methods": [
+      {
+        "id": "wage-garnishment",
+        "name": "Wage garnishment",
+        "blurb": "Obtain a portion of the debtor's wages until the judgment is satisfied.",
+        "description": "File a writ of execution with the court, serve it to the debtor's employer, who will then withhold a portion of the debtor's wages and remit it to the court.",
+        "forms": [
+          {
+            "number": "EJ-130",
+            "name": "Writ of Execution"
+          },
+          {
+            "number": "WG-001",
+            "name": "Application for Earnings Withholding Order"
+          }
+        ],
+        "estimated_cost": "$40 for writ issuance plus service fees",
+        "effectiveness_notes": "Effective if the debtor is employed and earns above the exemption threshold.",
+        "exemptions": [
+          "75% of disposable earnings or 40 times the state minimum wage, whichever is greater"
+        ],
+        "source_ids": [
+          "S15"
+        ]
+      },
+      {
+        "id": "bank-levy",
+        "name": "Bank levy",
+        "blurb": "Seize funds from the debtor's bank account to satisfy the judgment.",
+        "description": "Obtain a writ of execution, serve it to the debtor's bank, which will freeze the account and remit funds to the court.",
+        "forms": [
+          {
+            "number": "EJ-130",
+            "name": "Writ of Execution"
+          },
+          {
+            "number": "EJ-150",
+            "name": "Notice of Levy"
+          }
+        ],
+        "estimated_cost": "$40 for writ issuance plus service fees",
+        "effectiveness_notes": "Effective if the debtor has sufficient funds in the account.",
+        "exemptions": [
+          "Social Security benefits",
+          "Supplemental Security Income (SSI)",
+          "Public assistance benefits"
+        ],
+        "source_ids": [
+          "S15"
+        ]
+      },
+      {
+        "id": "property-lien",
+        "name": "Property lien",
+        "blurb": "Place a lien on the debtor's real property to secure the judgment amount.",
+        "description": "Record an abstract of judgment with the county recorder's office where the debtor owns property; the lien must be satisfied before the property can be sold or refinanced.",
+        "forms": [
+          {
+            "number": "EJ-001",
+            "name": "Abstract of Judgment—Civil and Small Claims"
+          }
+        ],
+        "estimated_cost": "$25-$50 recording fee",
+        "effectiveness_notes": "Effective if the debtor owns real property and intends to sell or refinance.",
+        "exemptions": [
+          "Homestead exemption up to $600,000, depending on circumstances"
+        ],
+        "source_ids": [
+          "S15"
+        ]
+      },
+      {
+        "id": "till-tap",
+        "name": "Till tap",
+        "blurb": "Seize cash directly from the debtor's business register.",
+        "description": "Obtain a writ of execution, instruct the sheriff to visit the debtor's business and collect cash from the register.",
+        "forms": [
+          {
+            "number": "EJ-130",
+            "name": "Writ of Execution"
+          }
+        ],
+        "estimated_cost": "$40 for writ issuance plus sheriff's fees",
+        "effectiveness_notes": "Effective for businesses with significant cash transactions.",
+        "exemptions": [
+          "None"
+        ],
+        "source_ids": [
+          "S15"
+        ]
+      },
+      {
+        "id": "vehicle-levy",
+        "name": "Vehicle levy",
+        "blurb": "Seize and sell the debtor's vehicle to satisfy the judgment.",
+        "description": "Obtain a writ of execution, instruct the sheriff to seize the vehicle, which is then sold at auction; proceeds are applied to the judgment.",
+        "forms": [
+          {
+            "number": "EJ-130",
+            "name": "Writ of Execution"
+          }
+        ],
+        "estimated_cost": "$40 for writ issuance plus towing and storage fees",
+        "effectiveness_notes": "Effective if the debtor owns a vehicle with sufficient equity.",
+        "exemptions": [
+          "Vehicle exemption up to $3,325"
+        ],
+        "source_ids": [
+          "S15"
+        ]
+      }
+    ],
+    "wage_garnishment_max_pct_of_disposable": 25,
+    "judgment_lifespan_years": 10,
+    "judgment_renewal_process": "File an application for renewal of judgment before the 10-year period expires; the renewed judgment is valid for another 10 years.",
+    "debtor_exam_form": {
+      "number": "SC-134",
+      "name": "Application and Order to Produce Statement of Assets and to Appear for Examination"
+    },
+    "exempt_assets": [
+      "Homestead—up to $600,000, depending on circumstances",
+      "Vehicle—up to $3,325",
+      "Social Security and public assistance benefits",
+      "Retirement accounts"
+    ],
+    "bankruptcy_effect_notes": "Filing for bankruptcy may discharge the judgment debt; however, certain debts are non-dischargeable.",
+    "satisfaction_of_judgment_form": {
+      "number": "EJ-100",
+      "name": "Acknowledgment of Satisfaction of Judgment"
+    },
+    "priority_notes": "Judgment liens are prioritized based on the date of recording; earlier liens have higher priority.",
+    "source_ids": [
+      "S15"
+    ]
+  },
+  "businesses": {
+    "self_representation_allowed": true,
+    "self_representation_notes": "Businesses may be represented by a regular employee, officer, or director; attorneys are not permitted.",
+    "can_send_employee": true,
+    "can_send_attorney": false,
+    "non_attorney_representation_form": {
+      "number": "SC-109",
+      "name": "Authorization to Appear"
+    },
+    "insurance_adjuster_allowed": false,
+    "fictitious_name_form": {
+      "number": "SC-103",
+      "name": "Fictitious Business Name Declaration"
+    },
+    "fictitious_name_notes": "If the business operates under a fictitious name, it must file a declaration with the court.",
+    "sole_proprietor_employee_exception": "A sole proprietor may be represented by a regular employee if the claim is related to the business.",
+    "out_of_state_business_must_register": true,
+    "out_of_state_business_statute": "Cal. Corp. Code § 2105",
+    "licensing_notes": "Unlicensed contractors may be barred from recovering fees for work requiring a license.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "county_variations_material": true,
+  "county_variations": [
+    {
+      "county": "Los Angeles",
+      "topic": "E-filing availability",
+      "detail": "Los Angeles County offers e-filing for small claims cases through its online portal.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "county": "San Francisco",
+      "topic": "Mediation services",
+      "detail": "San Francisco County provides on-site mediation services on the day of the hearing.",
+      "source_ids": [
+        "S1"
+      ]
+    }
+  ],
+  "pitfalls": [
+    {
+      "title": "Incorrect defendant information",
+      "what_happens": "Suing the wrong party or using incorrect names can result in dismissal or unenforceable judgments.",
+      "how_to_avoid": "Verify the exact legal name and address of the defendant before filing; for businesses, check with the California Secretary of State.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Missing statute of limitations",
+      "what_happens": "Filing after the statute of limitations has expired will lead to dismissal of the case.",
+      "how_to_avoid": "Determine the applicable statute of limitations for your claim type and ensure you file within that period.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    {
+      "title": "Improper service of process",
+      "what_happens": "Failure to serve the defendant correctly can delay the case or result in dismissal.",
+      "how_to_avoid": "Follow the court's rules for service of process carefully, and use a reliable method to ensure proper service.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Insufficient evidence",
+      "what_happens": "Lack of adequate evidence can lead to losing the case, even if your claim is valid.",
+      "how_to_avoid": "Gather all relevant documents, photos, and witness statements to support your claim.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Ignoring court deadlines",
+      "what_happens": "Missing filing deadlines or court dates can result in dismissal or default judgments.",
+      "how_to_avoid": "Keep track of all deadlines and court dates, and ensure timely compliance with court requirements.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Overlooking post-judgment procedures",
+      "what_happens": "Winning a judgment does not guarantee payment; failure to follow up can result in non-collection.",
+      "how_to_avoid": "Familiarize yourself with collection methods and take proactive steps to enforce the judgment.",
+      "source_ids": [
+        "S15"
+      ]
+    }
+  ],
+  "recent_changes": [
+    {
+      "date": "2024-01-01",
+      "title": "Increase in small claims monetary limits",
+      "description": "The jurisdictional limit for individuals in small claims court increased from $10,000 to $12,500, and for businesses from $5,000 to $6,250.",
+      "bill_or_rule_citation": "Cal. Code Civ. Proc. § 116.221",
+      "source_ids": [
+        "S5"
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Do I need a lawyer?",
+      "answer": "No, attorneys are not permitted to represent parties in California small claims court; you must represent yourself.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "How long does it take?",
+      "answer": "Typically, the hearing is scheduled 30 to 70 days after filing, and the entire process can take a few months.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "What's the maximum I can sue for?",
+      "answer": "Individuals can sue for up to $12,500, while businesses are limited to $6,250.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "What happens if the defendant doesn't show up?",
+      "answer": "If the defendant fails to appear, the court may enter a default judgment in your favor, but you must still present evidence to support your claim.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "Can I appeal?",
+      "answer": "Only the defendant can appeal a small claims judgment, and they must do so within 30 days by requesting a new trial.",
+      "source_ids": [
+        "S14"
+      ]
+    },
+    {
+      "question": "How long is a judgment good for?",
+      "answer": "A small claims judgment is valid for 10 years and can be renewed for an additional 10 years if necessary.",
+      "source_ids": [
+        "S15"
+      ]
+    }
+  ],
+  "state_specific_notes": [
+    "California prohibits attorneys from representing parties in small claims court to maintain an informal and accessible process.",
+    "The state allows individuals to file up to two claims over $2,500 in a calendar year; additional claims must be for $2,500 or less.",
+    "Small claims court cannot grant injunctions or order specific performance; it is limited to awarding monetary damages.",
+    "California requires that claims against government entities be filed with the agency within 6 months before proceeding to court.",
+    "The state offers various methods for enforcing judgments, including wage garnishment, bank levies, and property liens."
+  ],
+  "_extras": {
+    "interesting_findings": [
+      "California's small claims court system is designed to be user-friendly, allowing individuals to resolve disputes without legal representation.",
+      "The increase in monetary limits allows for a broader range of disputes to be handled within the small claims framework.",
+      "Despite the informal nature of small claims court, strict adherence to procedural rules is essential for a successful outcome."
+    ]
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "label": "California Courts Small Claims Self-Help",
+      "url": "https://www.courts.ca.gov/selfhelp-smallclaims.htm",
+      "primary": true,
+      "citation": "California Courts Small Claims Self-Help"
+    },
+    {
+      "id": "S4",
+      "label": "California Courts Fee Waiver Information",
+      "url": "https://www.courts.ca.gov/selfhelp-feewaiver.htm",
+      "primary": false,
+      "citation": "California Courts Fee Waiver Information"
+    },
+    {
+      "id": "S5",
+      "label": "California Code of Civil Procedure § 116.220 (Small Claims Jurisdiction)",
+      "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=116.220&lawCode=CCP",
+      "primary": false,
+      "citation": "Cal. Code Civ. Proc. § 116.220"
+    },
+    {
+      "id": "S11",
+      "label": "California Small Claims Forms",
+      "url": "https://www.courts.ca.gov/forms.htm?filter=SC",
+      "primary": false,
+      "citation": "California Small Claims Forms"
+    },
+    {
+      "id": "S12",
+      "label": "California Statewide Civil Fee Schedule",
+      "url": "https://www.courts.ca.gov/documents/StatewideCivilFeeSchedule-2024.pdf",
+      "primary": false,
+      "citation": "California Statewide Civil Fee Schedule"
+    },
+    {
+      "id": "S14",
+      "label": "California Code of Civil Procedure § 116.710 (Appeal from Small Claims Court)",
+      "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=116.710&lawCode=CCP",
+      "primary": false,
+      "citation": "Cal. Code Civ. Proc. § 116.710"
+    },
+    {
+      "id": "S15",
+      "label": "California Code of Civil Procedure § 116.820 (Enforcement of Judgment)",
+      "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=116.820&lawCode=CCP",
+      "primary": false,
+      "citation": "Cal. Code Civ. Proc. § 116.820"
+    }
+  ],
+  "_meta": {
+    "state": "California",
+    "slug": "california",
+    "model": "gpt-4.1",
+    "sources_response_id": "resp_0be82b3074186b280069f0890358b48196884942c4dc111201",
+    "extraction_response_id": "resp_0b1c0cc6af12a9ec0069f0a062e6188193b56732f146d6b86c",
+    "generated_at": "2026-04-28T11:58:00.700Z",
+    "usage": {
+      "input_tokens": 7707,
+      "input_tokens_details": {
+        "cached_tokens": 7680
+      },
+      "output_tokens": 14921,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 22628
+    }
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "state": "Massachusetts",
+  "as_of": "2024-06-10",
+  "state_judiciary_pages": [
+    {
+      "label": "Massachusetts Court System — Small Claims Information",
+      "url": "https://www.mass.gov/small-claims",
+      "scope": "small_claims"
+    },
+    {
+      "label": "Massachusetts Court System — Self-help for Small Claims",
+      "url": "https://www.mass.gov/self-help-small-claims",
+      "scope": "self_help"
+    }
+  ],
+  "statutes": [
+    {
+      "label": "Mass. Gen. Laws ch. 218, § 21 (small claims jurisdiction)",
+      "url": "https://malegislature.gov/Laws/GeneralLaws/PartIII/TitleI/Chapter218/Section21",
+      "section_or_chapter": "ch. 218, § 21"
+    },
+    {
+      "label": "Mass. Gen. Laws ch. 218, § 22 (procedure in small claims)",
+      "url": "https://malegislature.gov/Laws/GeneralLaws/PartIII/TitleI/Chapter218/Section22",
+      "section_or_chapter": "ch. 218, § 22"
+    },
+    {
+      "label": "Mass. Gen. Laws ch. 218, § 23 (appeals in small claims cases)",
+      "url": "https://malegislature.gov/Laws/GeneralLaws/PartIII/TitleI/Chapter218/Section23",
+      "section_or_chapter": "ch. 218, § 23"
+    },
+    {
+      "label": "Mass. Gen. Laws ch. 224, § 14 (wage garnishment — trustee process)",
+      "url": "https://malegislature.gov/Laws/GeneralLaws/PartIII/TitleII/Chapter224/Section14",
+      "section_or_chapter": "ch. 224, § 14"
+    }
+  ],
+  "court_rules": [
+    {
+      "label": "Massachusetts Uniform Small Claims Rules",
+      "url": "https://www.mass.gov/doc/uniform-small-claims-rules/download",
+      "rule_or_chapter": "Uniform Small Claims Rules"
+    }
+  ],
+  "forms_pages": [
+    {
+      "label": "Massachusetts Court System — Small Claims Forms",
+      "url": "https://www.mass.gov/small-claims-forms"
+    }
+  ],
+  "fee_schedules": [
+    {
+      "label": "Massachusetts Trial Court — Small Claims Filing Fees",
+      "url": "https://www.mass.gov/info-details/court-fees",
+      "scope": "fee_schedule"
+    }
+  ],
+  "service_rules": [
+    {
+      "label": "Service of Process in Small Claims (Uniform Small Claims Rule 2)",
+      "url": "https://www.mass.gov/doc/uniform-small-claims-rules/download"
+    }
+  ],
+  "appeal_rules": [
+    {
+      "label": "Appeals from Small Claims Decisions (Mass. Gen. Laws ch. 218, § 23)",
+      "url": "https://malegislature.gov/Laws/GeneralLaws/PartIII/TitleI/Chapter218/Section23"
+    }
+  ],
+  "post_judgment_collection": [
+    {
+      "label": "Trustee Process for Collection of Debt (Mass. Gen. Laws ch. 246)",
+      "url": "https://malegislature.gov/Laws/GeneralLaws/PartIII/TitleIV/Chapter246"
+    },
+    {
+      "label": "Wage Attachment Exemption (Mass. Gen. Laws ch. 246, § 28)",
+      "url": "https://malegislature.gov/Laws/GeneralLaws/PartIII/TitleIV/Chapter246/Section28"
+    }
+  ],
+  "consumer_protection_statutes": [
+    {
+      "label": "Massachusetts Consumer Protection Act — Ch. 93A (UDAP)",
+      "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter93A"
+    },
+    {
+      "label": "Massachusetts Lemon Law — Ch. 90, § 7N1/2",
+      "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXIV/Chapter90/Section7N1~2"
+    },
+    {
+      "label": "Massachusetts Used Vehicle Warranty Law — Ch. 90, § 7N 1/4",
+      "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXIV/Chapter90/Section7N1~4"
+    },
+    {
+      "label": "Massachusetts Bad Check Statute — Ch. 266, § 37",
+      "url": "https://malegislature.gov/Laws/GeneralLaws/PartIV/TitleI/Chapter266/Section37"
+    }
+  ],
+  "landlord_tenant_statutes": [
+    {
+      "label": "Security Deposit Return and Penalty — Mass. Gen. Laws ch. 186, § 15B",
+      "url": "https://malegislature.gov/Laws/GeneralLaws/PartII/TitleI/Chapter186/Section15B"
+    },
+    {
+      "label": "Illegal Lockout — Mass. Gen. Laws ch. 186, § 14",
+      "url": "https://malegislature.gov/Laws/GeneralLaws/PartII/TitleI/Chapter186/Section14"
+    },
+    {
+      "label": "Landlord's Duty to Repair — Mass. Gen. Laws ch. 111, § 127L",
+      "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter111/Section127L"
+    }
+  ],
+  "wage_and_employment_statutes": [
+    {
+      "label": "Final Paycheck Deadline — Mass. Gen. Laws ch. 149, § 148",
+      "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXXI/Chapter149/Section148"
+    }
+  ],
+  "civil_remedies_statutes": [
+    {
+      "label": "Multiple Damages for Consumer Fraud — Mass. Gen. Laws ch. 93A, § 9(3)",
+      "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter93A/Section9"
+    }
+  ],
+  "county_specific": [],
+  "notes": "Massachusetts small claims are handled in District Courts with uniform statewide rules; no material county-specific variation.",
+  "_meta": {
+    "state": "Massachusetts",
+    "slug": "massachusetts",
+    "model": "gpt-4.1",
+    "response_id": "resp_08563aa86523cff90069f08a2c847881909ba2c64d0bf8156a",
+    "generated_at": "2026-04-28T10:21:49.674Z",
+    "usage": {
+      "input_tokens": 2104,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 1464,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 3568
+    }
+  }
+}

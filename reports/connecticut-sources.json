@@ -1,0 +1,152 @@
+{
+  "state": "Connecticut",
+  "as_of": "2024-06-09",
+  "state_judiciary_pages": [
+    {
+      "label": "Connecticut Judicial Branch — Small Claims Information",
+      "url": "https://jud.ct.gov/external/smallclaims/",
+      "scope": "small_claims"
+    },
+    {
+      "label": "Connecticut Judicial Branch — Small Claims Frequently Asked Questions (FAQs)",
+      "url": "https://www.jud.ct.gov/faq/smallclaims.html",
+      "scope": "self_help"
+    },
+    {
+      "label": "Connecticut Judicial Branch — Court Locations Directory",
+      "url": "https://www.jud.ct.gov/directory/court_directions.htm",
+      "scope": "court_directory"
+    }
+  ],
+  "statutes": [
+    {
+      "label": "Conn. Gen. Stat. § 51-15 (Small claims; procedure; transfer; appeals)",
+      "url": "https://www.cga.ct.gov/current/pub/chap_876.htm#sec_51-15",
+      "section_or_chapter": "§ 51-15"
+    },
+    {
+      "label": "Conn. Gen. Stat. § 51-193r (Filing fees in civil and small claims matters)",
+      "url": "https://www.cga.ct.gov/current/pub/chap_876.htm#sec_51-193r",
+      "section_or_chapter": "§ 51-193r"
+    },
+    {
+      "label": "Conn. Gen. Stat. § 52-57 (Service of process — civil actions including small claims)",
+      "url": "https://www.cga.ct.gov/current/pub/chap_896.htm#sec_52-57",
+      "section_or_chapter": "§ 52-57"
+    },
+    {
+      "label": "Conn. Gen. Stat. § 52-259 (Fees for process, court entry and service)",
+      "url": "https://www.cga.ct.gov/current/pub/chap_901.htm#sec_52-259",
+      "section_or_chapter": "§ 52-259"
+    },
+    {
+      "label": "Conn. Gen. Stat. § 51-197a (Appeals from judgments of lower courts)",
+      "url": "https://www.cga.ct.gov/current/pub/chap_874.htm#sec_51-197a",
+      "section_or_chapter": "§ 51-197a"
+    },
+    {
+      "label": "Conn. Gen. Stat. § 52-350a et seq. (Enforcement of Money Judgments)",
+      "url": "https://www.cga.ct.gov/current/pub/chap_906.htm#sec_52-350a",
+      "section_or_chapter": "§ 52-350a through § 52-400"
+    }
+  ],
+  "court_rules": [
+    {
+      "label": "Connecticut Practice Book — Procedures in Small Claims Matters (Sections 24-1 to 24-34)",
+      "url": "https://www.jud.ct.gov/pb.htm",
+      "rule_or_chapter": "Secs. 24-1 to 24-34"
+    }
+  ],
+  "forms_pages": [
+    {
+      "label": "Connecticut Judicial Branch — Small Claims Forms",
+      "url": "https://www.jud.ct.gov/webforms/Default.aspx?division=SmallClaims"
+    }
+  ],
+  "fee_schedules": [
+    {
+      "label": "Connecticut Small Claims Fee Schedule",
+      "url": "https://www.jud.ct.gov/external/smallclaims/fees.htm"
+    }
+  ],
+  "service_rules": [
+    {
+      "label": "Service of process in civil actions — Conn. Gen. Stat. § 52-57",
+      "url": "https://www.cga.ct.gov/current/pub/chap_896.htm#sec_52-57"
+    }
+  ],
+  "appeal_rules": [
+    {
+      "label": "Appeals in small claims cases — Conn. Gen. Stat. § 51-197a",
+      "url": "https://www.cga.ct.gov/current/pub/chap_874.htm#sec_51-197a"
+    }
+  ],
+  "post_judgment_collection": [
+    {
+      "label": "Enforcement of money judgments (wage garnishment, bank executions, exemptions) — Conn. Gen. Stat. §§ 52-350a et seq.",
+      "url": "https://www.cga.ct.gov/current/pub/chap_906.htm#sec_52-350a"
+    },
+    {
+      "label": "Connecticut Judicial Branch — How to Collect Your Judgment",
+      "url": "https://jud.ct.gov/external/smallclaims/judgment.htm"
+    }
+  ],
+  "consumer_protection_statutes": [
+    {
+      "label": "Connecticut Unfair Trade Practices Act — Conn. Gen. Stat. § 42-110a et seq.",
+      "url": "https://www.cga.ct.gov/current/pub/chap_735a.htm",
+      "section_or_chapter": "§§ 42-110a to 42-110q"
+    },
+    {
+      "label": "Connecticut Lemon Law (New Automobile Warranties) — Conn. Gen. Stat. § 42-179",
+      "url": "https://www.cga.ct.gov/current/pub/chap_743b.htm#sec_42-179",
+      "section_or_chapter": "§ 42-179"
+    }
+  ],
+  "landlord_tenant_statutes": [
+    {
+      "label": "Connecticut Security Deposit Law — Conn. Gen. Stat. § 47a-21",
+      "url": "https://www.cga.ct.gov/current/pub/chap_831.htm#sec_47a-21",
+      "section_or_chapter": "§ 47a-21"
+    },
+    {
+      "label": "Landlord and Tenant Obligations — Conn. Gen. Stat. §§ 47a-1 to 47a-23e",
+      "url": "https://www.cga.ct.gov/current/pub/chap_832.htm",
+      "section_or_chapter": "Ch. 832"
+    }
+  ],
+  "wage_and_employment_statutes": [
+    {
+      "label": "Final paycheck — Conn. Gen. Stat. § 31-71c and § 31-71e",
+      "url": "https://www.cga.ct.gov/current/pub/chap_558.htm#sec_31-71c",
+      "section_or_chapter": "§ 31-71c, § 31-71e"
+    }
+  ],
+  "civil_remedies_statutes": [
+    {
+      "label": "Attorney's fees in civil actions — Conn. Gen. Stat. § 52-251a",
+      "url": "https://www.cga.ct.gov/current/pub/chap_901.htm#sec_52-251a",
+      "section_or_chapter": "§ 52-251a"
+    }
+  ],
+  "county_specific": [],
+  "notes": "Connecticut has a unified state small claims system; rules do not vary by county.",
+  "_meta": {
+    "state": "Connecticut",
+    "slug": "connecticut",
+    "model": "gpt-4.1",
+    "response_id": "resp_01661304cbdddc6d0069f0892261e08193adfdb5645876b426",
+    "generated_at": "2026-04-28T10:17:25.610Z",
+    "usage": {
+      "input_tokens": 2104,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 1550,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 3654
+    }
+  }
+}

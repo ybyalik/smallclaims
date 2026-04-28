@@ -1,0 +1,1625 @@
+{
+  "state": "Virginia",
+  "slug": "virginia",
+  "abbr": "VA",
+  "as_of": "2026-04-28",
+  "hero": {
+    "individual_limit_dollars": 5000,
+    "business_limit_dollars": 5000,
+    "filing_fee_low_dollars": 52,
+    "filing_fee_high_dollars": 52,
+    "typical_timeline_min_days": 30,
+    "typical_timeline_max_days": 90,
+    "tagline": "Virginia's small claims courts offer a streamlined process for disputes up to $5,000, with informal procedures and no attorney representation.",
+    "source_ids": [
+      "S6",
+      "S11"
+    ]
+  },
+  "at_a_glance": [
+    {
+      "label": "Most you can sue for",
+      "value": "$5,000",
+      "detail": "Same cap for individuals and businesses",
+      "source_ids": [
+        "S6"
+      ]
+    },
+    {
+      "label": "Filing fee",
+      "value": "$52",
+      "detail": "Flat fee for all claims",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "label": "Court",
+      "value": "General District Court (Small Claims Division)",
+      "detail": "",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Lawyers at trial",
+      "value": "Not allowed",
+      "detail": "Parties must represent themselves",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    {
+      "label": "Appeal window",
+      "value": "10 days",
+      "detail": "Trial de novo in circuit court",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    {
+      "label": "Recent change",
+      "value": "—",
+      "detail": "No major changes in the last 3 years",
+      "source_ids": []
+    }
+  ],
+  "limits": {
+    "individual_dollars": 5000,
+    "business_dollars": 5000,
+    "guarantor_with_fee_max": null,
+    "guarantor_without_fee_max": null,
+    "annual_filing_cap": {
+      "count": null,
+      "threshold_dollars": null,
+      "notes": ""
+    },
+    "split_claims_allowed": false,
+    "split_claims_explanation": "If a claim exceeds the $5,000 cap, you cannot split it into multiple claims to fit within the limit. Instead, you must file in the General District Court's regular civil division.",
+    "interest_excluded_from_cap": true,
+    "court_costs_excluded_from_cap": true,
+    "statute": "Va. Code § 16.1-122.2",
+    "source_ids": [
+      "S6"
+    ]
+  },
+  "claim_categories": [
+    {
+      "id": "contracts",
+      "title": "Contracts and money owed",
+      "blurb": "Virginia allows you to file claims for breaches of contract and money owed up to $5,000 in small claims court. The statute of limitations varies: 5 years for written contracts and 3 years for oral contracts.",
+      "claims": [
+        {
+          "slug": "written-contract",
+          "name": "Breach of a written contract",
+          "example": "A contractor signed a $4,000 contract to remodel your kitchen, took the deposit, and never finished.",
+          "eligibility": "eligible",
+          "claim_statute": "Va. Code § 8.01-246(2)",
+          "notes": "5-year deadline from breach. Bring the signed contract, payment proof, and any correspondence showing the breach.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "oral-contract",
+          "name": "Breach of an oral contract",
+          "example": "You agreed verbally to lend a friend $2,000, and they failed to repay it.",
+          "eligibility": "eligible",
+          "claim_statute": "Va. Code § 8.01-246(4)",
+          "notes": "3-year deadline from breach. Provide evidence of the agreement, such as emails or witness testimony.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "personal-loan",
+          "name": "Unpaid personal loan",
+          "example": "You lent $3,500 to a colleague who promised to repay in six months but hasn't.",
+          "eligibility": "eligible",
+          "claim_statute": "Va. Code § 8.01-246",
+          "notes": "Statute of limitations depends on whether the loan agreement was written (5 years) or oral (3 years).",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "promissory-note",
+          "name": "Default on a promissory note",
+          "example": "A borrower signed a promissory note for $4,500 and failed to make any payments.",
+          "eligibility": "eligible",
+          "claim_statute": "Va. Code § 8.01-246(2)",
+          "notes": "5-year deadline from default. Present the original promissory note and records of missed payments.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unpaid-invoice",
+          "name": "Unpaid invoice for services rendered",
+          "example": "You provided consulting services worth $2,000, invoiced the client, but haven't received payment.",
+          "eligibility": "eligible",
+          "claim_statute": "Va. Code § 8.01-246",
+          "notes": "Statute of limitations depends on whether the agreement was written (5 years) or oral (3 years).",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "open-account",
+          "name": "Unpaid balance on an open account",
+          "example": "A customer has an outstanding balance of $1,500 on their store credit account.",
+          "eligibility": "eligible",
+          "claim_statute": "Va. Code § 8.01-246",
+          "notes": "Statute of limitations depends on whether the agreement was written (5 years) or oral (3 years).",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unpaid-rent",
+          "name": "Unpaid rent by tenant",
+          "example": "Your tenant owes $4,000 in back rent and has vacated the property.",
+          "eligibility": "eligible",
+          "claim_statute": "Va. Code § 8.01-246",
+          "notes": "Statute of limitations depends on whether the lease was written (5 years) or oral (3 years).",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "bad-check",
+          "name": "Payment with a bad check",
+          "example": "A customer paid for goods with a $1,200 check that bounced due to insufficient funds.",
+          "eligibility": "eligible",
+          "claim_statute": "Va. Code § 8.01-27.1",
+          "notes": "Send a written demand for payment within 30 days. If unpaid, you may recover the check amount plus damages.",
+          "damage_boost": "Check amount + $250 or 3x check amount, whichever is greater.",
+          "source_ids": [
+            "S8"
+          ]
+        },
+        {
+          "slug": "co-signer",
+          "name": "Co-signer seeking repayment",
+          "example": "You co-signed a $5,000 loan, the primary borrower defaulted, and you had to pay.",
+          "eligibility": "eligible",
+          "claim_statute": "Va. Code § 8.01-246",
+          "notes": "Statute of limitations depends on whether the agreement was written (5 years) or oral (3 years).",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "consumer-disputes",
+      "title": "Consumer disputes",
+      "blurb": "Virginia's small claims court handles various consumer disputes up to $5,000, including issues with products, services, and contracts.",
+      "claims": [
+        {
+          "slug": "defective-product",
+          "name": "Purchase of a defective product",
+          "example": "You bought a $1,500 appliance that stopped working within a month, and the seller refuses to repair or replace it.",
+          "eligibility": "eligible",
+          "claim_statute": "Va. Code § 59.1-200",
+          "notes": "2-year statute of limitations under the Virginia Consumer Protection Act. Bring purchase receipts and any communication with the seller.",
+          "damage_boost": "Possible treble damages and attorney's fees.",
+          "source_ids": [
+            "S17"
+          ]
+        },
+        {
+          "slug": "bad-service",
+          "name": "Substandard service",
+          "example": "A cleaning service charged $800 but did not perform the agreed-upon tasks.",
+          "eligibility": "eligible",
+          "claim_statute": "Va. Code § 59.1-200",
+          "notes": "2-year statute of limitations under the Virginia Consumer Protection Act. Provide service agreements and evidence of poor service.",
+          "damage_boost": "Possible treble damages and attorney's fees.",
+          "source_ids": [
+            "S17"
+          ]
+        },
+        {
+          "slug": "auto-repair",
+          "name": "Faulty auto repair",
+          "example": "A mechanic charged $2,000 for repairs that did not fix the issue, and refuses a refund.",
+          "eligibility": "eligible",
+          "claim_statute": "Va. Code § 59.1-200",
+          "notes": "2-year statute of limitations under the Virginia Consumer Protection Act. Bring repair invoices and any expert evaluations.",
+          "damage_boost": "Possible treble damages and attorney's fees.",
+          "source_ids": [
+            "S17"
+          ]
+        },
+        {
+          "slug": "contractor",
+          "name": "Unsatisfactory contractor work",
+          "example": "A contractor was paid $4,500 for home renovations but left the work incomplete and substandard.",
+          "eligibility": "eligible",
+          "claim_statute": "Va. Code § 59.1-200",
+          "notes": "2-year statute of limitations under the Virginia Consumer Protection Act. Provide contracts, payment records, and photos of the work.",
+          "damage_boost": "Possible treble damages and attorney's fees.",
+          "source_ids": [
+            "S17"
+          ]
+        },
+        {
+          "slug": "no-show-vendor",
+          "name": "Vendor failed to deliver services",
+          "example": "You paid a DJ $1,000 for an event, but they never showed up and refused a refund.",
+          "eligibility": "eligible",
+          "claim_statute": "Va. Code § 59.1-200",
+          "notes": "2-year statute of limitations under the Virginia Consumer Protection Act. Bring contracts and proof of payment.",
+          "damage_boost": "Possible treble damages and attorney's fees.",
+          "source_ids": [
+            "S17"
+          ]
+        },
+        {
+          "slug": "subscription-cancellation",
+          "name": "Unauthorized subscription charges",
+          "example": "A gym continued to charge your account $200 monthly after you canceled the membership.",
+          "eligibility": "eligible",
+          "claim_statute": "Va. Code § 59.1-200",
+          "notes": "2-year statute of limitations under the Virginia Consumer Protection Act. Provide cancellation notices and bank statements.",
+          "damage_boost": "Possible treble damages and attorney's fees.",
+          "source_ids": [
+            "S17"
+          ]
+        },
+        {
+          "slug": "used-car",
+          "name": "Purchase of a defective used car",
+          "example": "You bought a used car for $4,000 that broke down within a week, and the dealer refuses to address the issue.",
+          "eligibility": "eligible",
+          "claim_statute": "Va. Code § 59.1-200",
+          "notes": "2-year statute of limitations under the Virginia Consumer Protection Act. Bring sales contracts and any repair records.",
+          "damage_boost": "Possible treble damages and attorney's fees.",
+          "source_ids": [
+            "S17"
+          ]
+        },
+        {
+          "slug": "false-advertising",
+          "name": "False advertising",
+          "example": "A retailer advertised a product for $500 with features it doesn't actually have.",
+          "eligibility": "eligible",
+          "claim_statute": "Va. Code § 59.1-200",
+          "notes": "2-year statute of limitations under the Virginia Consumer Protection Act. Provide advertisements and purchase records.",
+          "damage_boost": "Possible treble damages and attorney's fees.",
+          "source_ids": [
+            "S17"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "property-damage",
+      "title": "Property damage",
+      "blurb": "Virginia's small claims court addresses property damage claims up to $5,000, including vehicle collisions and damage to personal property.",
+      "claims": [
+        {
+          "slug": "vehicle-collision",
+          "name": "Damage from a vehicle collision",
+          "example": "Another driver caused $3,000 in damage to your car and refuses to pay for repairs.",
+          "eligibility": "eligible",
+          "claim_statute": "Va. Code § 8.01-243",
+          "notes": "5-year statute of limitations for property damage. Bring police reports, repair estimates, and photos.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "neighbor-property",
+          "name": "Neighbor damaged your property",
+          "example": "A neighbor's tree fell on your fence, causing $2,500 in damage.",
+          "eligibility": "eligible",
+          "claim_statute": "Va. Code § 8.01-243",
+          "notes": "5-year statute of limitations for property damage. Provide photos and repair estimates.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "damage-to-rental",
+          "name": "Tenant caused damage to rental property",
+          "example": "A tenant left $4,000 worth of damage upon moving out, beyond normal wear and tear.",
+          "eligibility": "eligible",
+          "claim_statute": "Va. Code § 8.01-243",
+          "notes": "5-year statute of limitations for property damage. Document damages with photos and repair invoices.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "pet-damage",
+          "name": "Damage caused by someone's pet",
+          "example": "A neighbor's dog chewed up your $1,200 outdoor furniture.",
+          "eligibility": "eligible",
+          "claim_statute": "Va. Code § 8.01-243",
+          "notes": "5-year statute of limitations for property damage. Provide photos and repair estimates.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "property-in-custody",
+          "name": "Damage to property left in someone's care",
+          "example": "You left a $3,500 watch for repair, and the jeweler damaged it.",
+          "eligibility": "eligible",
+          "claim_statute": "Va. Code § 8.01-243",
+          "notes": "5-year statute of limitations for property damage. Provide receipts and evidence of damage.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "landlord-tenant",
+      "title": "Landlord-tenant disputes",
+      "blurb": "Virginia's small claims court handles monetary disputes between landlords and tenants up to $5,000, excluding eviction proceedings.",
+      "claims": [
+        {
+          "slug": "security-deposit",
+          "name": "Failure to return security deposit",
+          "example": "Your landlord withheld your $1,500 security deposit without justification.",
+          "eligibility": "eligible",
+          "claim_statute": "Va. Code § 55.1-1226",
+          "notes": "Landlords must return the deposit within 45 days of lease termination. Provide lease agreements and correspondence.",
+          "damage_boost": "",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "deposit-not-itemized",
+          "name": "Failure to provide itemized deductions from deposit",
+          "example": "Landlord deducted $800 from your deposit without providing an itemized list of damages.",
+          "eligibility": "eligible",
+          "claim_statute": "Va. Code § 55.1-1226",
+          "notes": "Landlords must provide an itemized list of deductions. Bring lease agreements and any communication.",
+          "damage_boost": "",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "uninhabitable-rental",
+          "name": "Rental unit deemed uninhabitable",
+          "example": "Your apartment had no heating during winter, and the landlord refused to fix it.",
+          "eligibility": "eligible",
+          "claim_statute": "Va. Code § 55.1-1234",
+          "notes": "Tenants can terminate the lease and seek damages. Document conditions and communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "wrongful-retention-property",
+          "name": "Landlord retained tenant's personal property",
+          "example": "After eviction, the landlord kept your $2,000 worth of belongings.",
+          "eligibility": "eligible",
+          "claim_statute": "Va. Code § 55.1-1254",
+          "notes": "Landlords must follow procedures for handling abandoned property. Provide inventory and communication records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "illegal-eviction",
+          "name": "Illegal eviction by landlord",
+          "example": "Landlord changed the locks without notice, preventing you from accessing your apartment.",
+          "eligibility": "eligible",
+          "claim_statute": "Va. Code § 55.1-1245",
+          "notes": "Self-help evictions are illegal. Tenants can seek damages. Document the incident and any communication.",
+          "damage_boost": "",
+          "source_ids": [
+            "S20"
+          ]
+        },
+        {
+          "slug": "unreturned-prepaid-rent",
+          "name": "Failure to return prepaid rent after lease termination",
+          "example": "You paid first and last month's rent, but the landlord didn't return the last month's rent after early termination.",
+          "eligibility": "eligible",
+          "claim_statute": "Va. Code § 55.1-1226",
+          "notes": "Landlords must return unearned rent. Provide lease agreements and payment records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "unpaid-rent-by-tenant",
+          "name": "Tenant failed to pay rent",
+          "example": "Your tenant owes $4,500 in unpaid rent and has vacated the property.",
+          "eligibility": "eligible",
+          "claim_statute": "Va. Code § 8.01-246",
+          "notes": "Statute of limitations depends on whether the lease was written (5 years) or oral (3 years).",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "repair-and-deduct",
+          "name": "Tenant repaired and deducted from rent",
+          "example": "You paid $1,200 to fix a leaking roof after the landlord ignored requests, and deducted it from rent.",
+          "eligibility": "eligible",
+          "claim_statute": "Va. Code § 55.1-1244",
+          "notes": "Tenants must follow specific procedures before deducting repair costs. Document repair requests and expenses.",
+          "damage_boost": "",
+          "source_ids": [
+            "S19"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "employment-and-wages",
+      "title": "Employment and wage disputes",
+      "blurb": "Virginia's small claims court addresses wage disputes up to $5,000, including unpaid wages and final paychecks.",
+      "claims": [
+        {
+          "slug": "unpaid-wages",
+          "name": "Employer failed to pay wages",
+          "example": "Your employer owes you $3,000 for hours worked but hasn't paid.",
+          "eligibility": "eligible",
+          "claim_statute": "Va. Code § 40.1-29",
+          "notes": "Employers must pay wages on regular paydays. Document hours worked and payment records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S21"
+          ]
+        },
+        {
+          "slug": "final-paycheck",
+          "name": "Employer withheld final paycheck",
+          "example": "After resigning, your employer didn't provide your last paycheck of $2,500.",
+          "eligibility": "eligible",
+          "claim_statute": "Va. Code § 40.1-29",
+          "notes": "Final wages are due on the next regular payday. Document resignation and payment records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S21"
+          ]
+        },
+        {
+          "slug": "unpaid-commissions",
+          "name": "Unpaid sales commissions",
+          "example": "Your employer owes you $4,000 in earned commissions but hasn't paid.",
+          "eligibility": "eligible",
+          "claim_statute": "Va. Code § 40.1-29",
+          "notes": "Commissions are considered wages. Provide sales records and commission agreements.",
+          "damage_boost": "",
+          "source_ids": [
+            "S21"
+          ]
+        },
+        {
+          "slug": "unpaid-overtime",
+          "name": "Employer failed to pay overtime",
+          "example": "You worked 10 hours of overtime but weren't paid the additional $300 owed.",
+          "eligibility": "eligible",
+          "claim_statute": "Va. Code § 40.1-29",
+          "notes": "Employers must pay overtime as required by law. Document hours worked and payment records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S21"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "personal-claims",
+      "title": "Personal claims",
+      "blurb": "Virginia's small claims court handles personal claims up to $5,000, including minor injuries and property disputes.",
+      "claims": [
+        {
+          "slug": "minor-injury",
+          "name": "Minor personal injury",
+          "example": "You slipped on a wet floor in a store, resulting in $2,000 in medical bills.",
+          "eligibility": "eligible",
+          "claim_statute": "Va. Code § 8.01-243",
+          "notes": "2-year statute of limitations for personal injury. Provide medical records and incident reports.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "loaned-property",
+          "name": "Failure to return loaned property",
+          "example": "You lent a friend a $1,500 camera, and they refuse to return it.",
+          "eligibility": "eligible",
+          "claim_statute": "Va. Code § 8.01-243",
+          "notes": "5-year statute of limitations for property damage. Provide evidence of the loan and requests for return.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "civil-theft",
+          "name": "Theft of personal property",
+          "example": "A neighbor took your $4,000 bicycle without permission and won't return it.",
+          "eligibility": "eligible",
+          "claim_statute": "Va. Code § 8.01-243",
+          "notes": "5-year statute of limitations for property damage. Provide police reports and evidence of ownership.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vehicle-specific",
+      "title": "Vehicle-specific disputes",
+      "blurb": "Virginia's small claims court addresses vehicle-related disputes up to $5,000, including mechanic issues and wrongful towing.",
+      "claims": [
+        {
+          "slug": "mechanic-dispute",
+          "name": "Dispute over vehicle repairs",
+          "example": "A mechanic charged $3,500 for repairs that didn't fix the problem and refuses a refund.",
+          "eligibility": "eligible",
+          "claim_statute": "Va. Code § 59.1-200",
+          "notes": "2-year statute of limitations under the Virginia Consumer Protection Act. Provide repair invoices and expert evaluations.",
+          "damage_boost": "Possible treble damages and attorney's fees.",
+          "source_ids": [
+            "S17"
+          ]
+        },
+        {
+          "slug": "wrongful-tow",
+          "name": "Vehicle was wrongfully towed",
+          "example": "Your car was towed from a legal parking spot, and you had to pay $500 to retrieve it.",
+          "eligibility": "eligible",
+          "claim_statute": "Va. Code § 46.2-1231",
+          "notes": "Towing companies must follow specific procedures. Provide towing receipts and photos of the parking area.",
+          "damage_boost": "",
+          "source_ids": [
+            "S17"
+          ]
+        }
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "category": "Eviction (unlawful detainer)",
+      "explanation": "Small claims court does not have jurisdiction over eviction cases; these must be filed in the General District Court's regular civil division.",
+      "where_to_go_instead": "General District Court civil division",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Title to real estate",
+      "explanation": "Disputes involving the ownership of real property exceed the jurisdiction of small claims court.",
+      "where_to_go_instead": "Circuit Court",
+      "source_ids": []
+    },
+    {
+      "category": "Defamation",
+      "explanation": "Claims involving defamation are complex and exceed the jurisdictional limit of small claims court.",
+      "where_to_go_instead": "Circuit Court",
+      "source_ids": []
+    },
+    {
+      "category": "Malpractice",
+      "explanation": "Professional malpractice claims require expert testimony and exceed the jurisdictional limit of small claims court.",
+      "where_to_go_instead": "Circuit Court",
+      "source_ids": []
+    },
+    {
+      "category": "Family law matters",
+      "explanation": "Issues such as divorce, child custody, and support are handled by the Juvenile and Domestic Relations District Court.",
+      "where_to_go_instead": "Juvenile and Domestic Relations District Court",
+      "source_ids": []
+    },
+    {
+      "category": "Probate matters",
+      "explanation": "Disputes involving wills and estates are under the jurisdiction of the Circuit Court.",
+      "where_to_go_instead": "Circuit Court",
+      "source_ids": []
+    },
+    {
+      "category": "Claims against the federal government",
+      "explanation": "Federal claims are outside the jurisdiction of state courts.",
+      "where_to_go_instead": "Federal Court",
+      "source_ids": []
+    },
+    {
+      "category": "Class actions",
+      "explanation": "Class action lawsuits are complex and exceed the jurisdictional limit of small claims court.",
+      "where_to_go_instead": "Circuit Court",
+      "source_ids": []
+    },
+    {
+      "category": "Injunctions and specific performance",
+      "explanation": "Small claims court cannot issue orders requiring a party to do or refrain from doing something.",
+      "where_to_go_instead": "Circuit Court",
+      "source_ids": []
+    },
+    {
+      "category": "Workers' compensation claims",
+      "explanation": "These claims are handled by the Virginia Workers' Compensation Commission.",
+      "where_to_go_instead": "Virginia Workers' Compensation Commission",
+      "source_ids": []
+    },
+    {
+      "category": "Suing a deceased person",
+      "explanation": "Claims against deceased individuals must be filed against their estate in the appropriate court.",
+      "where_to_go_instead": "Circuit Court",
+      "source_ids": []
+    }
+  ],
+  "damages": {
+    "compensatory_allowed": true,
+    "punitive_allowed": false,
+    "punitive_explanation": "Punitive damages are not awarded in small claims court; however, statutory penalties may apply in certain cases, such as bad check claims.",
+    "statutory_multipliers": [
+      {
+        "claim": "Bad check (after 30-day notice)",
+        "multiplier": "Check amount + $250 or 3x check amount, whichever is greater",
+        "explanation": "If a bad check is not paid within 30 days after written demand, the holder may recover the check amount plus $250 or three times the check amount, whichever is greater.",
+        "statute": "Va. Code § 8.01-27.1",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "attorney_fees_recoverable": "sometimes",
+    "attorney_fees_explanation": "Attorney's fees may be recoverable in certain cases, such as under the Virginia Consumer Protection Act, which allows for the recovery of reasonable attorney's fees.",
+    "prejudgment_interest_rate_pct": null,
+    "prejudgment_interest_statute": "",
+    "postjudgment_interest_rate_pct": null,
+    "postjudgment_interest_type": "simple",
+    "postjudgment_interest_statute": "",
+    "postjudgment_interest_notes": "",
+    "filing_and_service_fees_recoverable_from_loser": true,
+    "source_ids": [
+      "S17"
+    ]
+  },
+  "where_to_file": {
+    "court_name": "General District Court (Small Claims Division)",
+    "parent_court": "Virginia Judicial System — General District Court",
+    "venue_rules": [
+      {
+        "scenario": "Most cases (the default)",
+        "filing_options": [
+          "County or city where the defendant resides or has a place of business"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Where contract was performed",
+        "filing_options": [
+          "County or city where the contract was to be performed"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Where injury or damage occurred",
+        "filing_options": [
+          "County or city where the injury or damage occurred"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Multiple defendants",
+        "filing_options": [
+          "Any county or city where one of the defendants resides or has a place of business"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Out-of-state defendant",
+        "filing_options": [
+          "Where the cause of action arose"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "consequences_of_wrong_venue": "Filing in the wrong venue may result in dismissal or transfer of the case, potentially causing delays and additional costs.",
+    "e_filing_available": "varies",
+    "e_filing_notes": "E-filing availability varies by county; check with the local court clerk for specific information.",
+    "e_filing_portal": null,
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "fees": {
+    "filing_fee_tiers": [
+      {
+        "range_label": "All claims",
+        "range_min": 0,
+        "range_max": 5000,
+        "fee_dollars": 52,
+        "source_ids": [
+          "S11"
+        ]
+      }
+    ],
+    "frequent_filer": {
+      "threshold_per_year": null,
+      "fee_dollars": null,
+      "notes": ""
+    },
+    "service_fees": [
+      {
+        "method": "Sheriff (personal service)",
+        "amount_label": "$12",
+        "notes": "Required for most cases.",
+        "source_ids": [
+          "S11"
+        ]
+      },
+      {
+        "method": "Certified mail by clerk",
+        "amount_label": "$6",
+        "notes": "Available for certain cases.",
+        "source_ids": [
+          "S11"
+        ]
+      }
+    ],
+    "waiver": {
+      "forms": [
+        {
+          "number": "DC-606",
+          "name": "Petition for Proceeding in Civil Case Without Payment of Fees or Costs",
+          "url": "",
+          "source_ids": [
+            "S11"
+          ]
+        }
+      ],
+      "eligibility_bullets": [
+        "Receiving need-based public assistance (SNAP, TANF, SSI)",
+        "Household income below 125% federal poverty line"
+      ],
+      "coverage_notes": "The waiver covers filing fees and service fees.",
+      "if_you_win_notes": "If you win, the waived fees are added to the judgment against the loser."
+    },
+    "other_fees": [
+      {
+        "name": "Subpoena issuance",
+        "amount_label": "$12",
+        "notes": "Plus witness fee per day.",
+        "source_ids": [
+          "S11"
+        ]
+      },
+      {
+        "name": "Appeal filing",
+        "amount_label": "$50",
+        "notes": "",
+        "source_ids": [
+          "S11"
+        ]
+      },
+      {
+        "name": "Writ of execution",
+        "amount_label": "$25",
+        "notes": "Post-judgment.",
+        "source_ids": [
+          "S11"
+        ]
+      }
+    ],
+    "fees_recoverable_from_loser_notes": "If you win, filing fees and reasonable service costs are added to the judgment.",
+    "source_ids": [
+      "S11"
+    ]
+  },
+  "statute_of_limitations": {
+    "entries": [
+      {
+        "id": "written-contract",
+        "claim": "Written contract",
+        "years": 5,
+        "clock_starts": "Date of breach",
+        "statute": "Va. Code § 8.01-246(2)",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "oral-contract",
+        "claim": "Oral contract",
+        "years": 3,
+        "clock_starts": "Date of breach",
+        "statute": "Va. Code § 8.01-246(4)",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "sale-of-goods",
+        "claim": "Sale of goods (UCC)",
+        "years": 4,
+        "clock_starts": "Date of breach",
+        "statute": "Va. Code § 8.2-725",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "promissory-note",
+        "claim": "Promissory note",
+        "years": 6,
+        "clock_starts": "Date of default",
+        "statute": "Va. Code § 8.01-246(2)",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "open-account",
+        "claim": "Open account / credit card debt",
+        "years": 3,
+        "clock_starts": "Date of last payment or charge",
+        "statute": "Va. Code § 8.01-246(4)",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "personal-injury",
+        "claim": "Personal injury",
+        "years": 2,
+        "clock_starts": "Date of injury",
+        "statute": "Va. Code § 8.01-243(A)",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "property-damage",
+        "claim": "Property damage",
+        "years": 5,
+        "clock_starts": "Date of damage",
+        "statute": "Va. Code § 8.01-243(B)",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "fraud",
+        "claim": "Fraud",
+        "years": 2,
+        "clock_starts": "Date fraud is discovered or should have been discovered",
+        "statute": "Va. Code § 8.01-243(A)",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "bad-check",
+        "claim": "Bad check",
+        "years": 5,
+        "clock_starts": "Date check was issued",
+        "statute": "Va. Code § 8.01-246(2)",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "unpaid-wages",
+        "claim": "Unpaid wages",
+        "years": 3,
+        "clock_starts": "Date wages were due",
+        "statute": "Va. Code § 40.1-29",
+        "notes": "",
+        "source_ids": [
+          "S21"
+        ]
+      },
+      {
+        "id": "security-deposit",
+        "claim": "Security deposit",
+        "years": 5,
+        "clock_starts": "Date deposit was due to be returned",
+        "statute": "Va. Code § 8.01-246(2)",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "judgment-enforcement",
+        "claim": "Judgment enforcement",
+        "years": 20,
+        "clock_starts": "Date judgment was entered",
+        "statute": "Va. Code § 8.01-251",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "discovery_rule_notes": "The discovery rule applies to fraud claims, starting the statute of limitations when the fraud is discovered or should have been discovered.",
+    "tolling_notes": "The statute of limitations may be tolled if the defendant is out of state, the plaintiff is a minor, or in cases of bankruptcy.",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "pre_filing": {
+    "demand_letter_required": false,
+    "demand_letter_recommended": true,
+    "demand_letter_notes": "While not required, sending a demand letter can often resolve disputes without court intervention and serves as evidence of your attempt to settle.",
+    "bad_check_notice_rule": "For bad check claims, you must send a written demand for payment within 30 days of the check being dishonored. If unpaid, you may recover the check amount plus damages.",
+    "wage_claim_demand_rule": "For unpaid wage claims, it's advisable to send a written demand to the employer before filing a lawsuit.",
+    "government_claim_required": false,
+    "government_claim_deadline_days": null,
+    "government_claim_notes": "",
+    "landlord_tenant_pre_filing_notes": "Landlords must provide tenants with an itemized list of damages and return any remaining security deposit within 45 days of lease termination.",
+    "consumer_protection_notes": "Under the Virginia Consumer Protection Act, consumers may recover damages for deceptive practices, including possible treble damages and attorney's fees.",
+    "mandatory_mediation_before_filing": "none",
+    "arbitration_clauses_enforced": true,
+    "source_ids": [
+      "S8"
+    ]
+  },
+  "forms": [
+    {
+      "number": "DC-402",
+      "name": "Warrant in Debt",
+      "description": "Initiates a civil claim for money owed in small claims court.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "",
+      "source_ids": [
+        "S10"
+      ]
+    },
+    {
+      "number": "DC-404",
+      "name": "Warrant in Detinue",
+      "description": "Initiates a claim for the recovery of specific personal property.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "",
+      "source_ids": [
+        "S10"
+      ]
+    },
+    {
+      "number": "DC-475",
+      "name": "Civil Appeal Notice",
+      "description": "Notifies the court and opposing party of intent to appeal a small claims judgment.",
+      "filed_by": "either",
+      "required": false,
+      "group": "appeal",
+      "url": "",
+      "source_ids": [
+        "S10"
+      ]
+    },
+    {
+      "number": "DC-407",
+      "name": "Garnishment Summons",
+      "description": "Used to initiate garnishment proceedings to collect a judgment.",
+      "filed_by": "plaintiff",
+      "required": false,
+      "group": "after-judgment",
+      "url": "",
+      "source_ids": [
+        "S10"
+      ]
+    },
+    {
+      "number": "DC-606",
+      "name": "Petition for Proceeding in Civil Case Without Payment of Fees or Costs",
+      "description": "Requests a waiver of court fees due to financial hardship.",
+      "filed_by": "plaintiff",
+      "required": false,
+      "group": "fee-waiver",
+      "url": "",
+      "source_ids": [
+        "S10"
+      ]
+    }
+  ],
+  "service": {
+    "who_can_serve": [
+      "Sheriff",
+      "Certified mail by clerk",
+      "Private process server"
+    ],
+    "methods": [
+      {
+        "name": "Sheriff personal service",
+        "description": "Sheriff or deputy personally delivers the papers to the defendant.",
+        "pros": [
+          "Official and reliable",
+          "Proof of service provided"
+        ],
+        "cons": [
+          "May take longer",
+          "Additional fee required"
+        ],
+        "source_ids": [
+          "S12"
+        ]
+      },
+      {
+        "name": "Certified mail by clerk",
+        "description": "Clerk sends the papers via certified mail to the defendant.",
+        "pros": [
+          "Cost-effective",
+          "Proof of mailing provided"
+        ],
+        "cons": [
+          "Defendant may refuse delivery",
+          "Not suitable for all cases"
+        ],
+        "source_ids": [
+          "S12"
+        ]
+      },
+      {
+        "name": "Private process server",
+        "description": "A private individual authorized to serve legal documents delivers the papers to the defendant.",
+        "pros": [
+          "Flexible scheduling",
+          "Can be faster"
+        ],
+        "cons": [
+          "Additional cost",
+          "Must ensure proper documentation"
+        ],
+        "source_ids": [
+          "S12"
+        ]
+      }
+    ],
+    "in_county_days_before_hearing": 5,
+    "out_of_county_days_before_hearing": 10,
+    "proof_of_service_form": {
+      "number": "DC-410",
+      "name": "Certificate of Service"
+    },
+    "proof_filing_deadline_days_before_hearing": 0,
+    "business_service_rule": "Serve the registered agent of the corporation or, if none, an officer or director. For sole proprietors, serve the individual owner.",
+    "out_of_state_defendant_notes": "Service must comply with Virginia's long-arm statute and the laws of the state where the defendant is located.",
+    "cant_find_defendant_notes": "If the defendant cannot be located, service by publication may be permitted with court approval.",
+    "avoiding_service_notes": "If the defendant is evading service, you may request alternative service methods from the court.",
+    "source_ids": [
+      "S12"
+    ]
+  },
+  "response_and_default": {
+    "must_file_written_answer": false,
+    "response_deadline_days": 0,
+    "response_notes": "Defendants are not required to file a written answer but must appear in court on the return date specified in the warrant.",
+    "default_process": "If the defendant fails to appear, the court may enter a default judgment in favor of the plaintiff.",
+    "prove_up_required": true,
+    "prove_up_notes": "Even if the defendant defaults, the plaintiff must present evidence to prove the claim and the amount owed.",
+    "motion_to_vacate_form": {
+      "number": "DC-434",
+      "name": "Motion to Rehear"
+    },
+    "motion_to_vacate_deadline_days": 30,
+    "motion_to_vacate_lack_of_notice_days": 0,
+    "motion_to_vacate_appeal_deadline_days": 10,
+    "motion_to_vacate_appeal_notes": "If the motion to rehear is denied, the party may appeal the denial within 10 days.",
+    "source_ids": [
+      "S3"
+    ]
+  },
+  "counterclaim": {
+    "allowed": true,
+    "form": {
+      "number": "DC-413",
+      "name": "Counterclaim"
+    },
+    "same_monetary_limit": true,
+    "service_deadline_in_county_days": 5,
+    "service_deadline_out_of_county_days": 10,
+    "transfer_to_higher_court_available": true,
+    "transfer_to_higher_court_statute": "Va. Code § 16.1-122.4",
+    "transfer_to_higher_court_notes": "If a counterclaim exceeds the small claims limit, the case may be transferred to the General District Court's regular civil division.",
+    "source_ids": [
+      "S6"
+    ]
+  },
+  "hearing": {
+    "lawyers_allowed": "no",
+    "lawyers_allowed_notes": "Attorneys are not permitted to represent parties in small claims court; parties must represent themselves.",
+    "format": "Informal bench trial where both parties present their cases directly to the judge.",
+    "presider": "judge",
+    "burden_of_proof": "preponderance",
+    "what_to_bring": [
+      "Originals of any contracts",
+      "Receipts and bank records",
+      "Photos and videos",
+      "Names and contact info for witnesses"
+    ],
+    "subpoena_form": {
+      "number": "DC-336",
+      "name": "Subpoena for Witness"
+    },
+    "witness_fee_per_day_dollars": 12,
+    "free_interpreters": false,
+    "interpreter_request_process": "Parties must arrange for their own interpreters; the court does not provide them.",
+    "jury_option": false,
+    "decision_timing": "On the spot or mailed within a few weeks",
+    "on_site_mediation": "no",
+    "on_site_mediation_notes": "",
+    "source_ids": [
+      "S3"
+    ]
+  },
+  "appeals": {
+    "who_can_appeal": "either",
+    "deadline_days": 10,
+    "fee_dollars": 50,
+    "type": "trial de novo",
+    "type_notes": "The case is heard anew in the circuit court, following formal procedures and rules of evidence.",
+    "attorneys_allowed_on_appeal": true,
+    "bond_required": true,
+    "bond_amount_notes": "The bond amount is set by the judge and must be posted within 30 days after judgment is entered.",
+    "automatic_stay_on_appeal": true,
+    "default_judgment_appealable": true,
+    "default_judgment_notes": "A default judgment can be appealed within 10 days, but the appealing party must post the required bond.",
+    "notice_of_appeal_form": {
+      "number": "DC-475",
+      "name": "Civil Appeal Notice"
+    },
+    "frivolous_appeal_penalty_dollars": null,
+    "frivolous_appeal_statute": "",
+    "frivolous_appeal_notes": "",
+    "source_ids": [
+      "S3"
+    ]
+  },
+  "collection": {
+    "payment_deadline_typical_days": 0,
+    "post_judgment_interest_rate_pct": 6,
+    "post_judgment_interest_statute": "Va. Code § 6.2-302",
+    "post_judgment_interest_notes": "Interest accrues on the judgment amount from the date of judgment at the statutory rate.",
+    "methods": [
+      {
+        "id": "wage-garnishment",
+        "name": "Wage garnishment",
+        "blurb": "Have a portion of the debtor's wages withheld until the judgment is paid.",
+        "description": "File a Garnishment Summons with the court, serve the employer, and the employer will withhold a portion of the debtor's wages to satisfy the judgment.",
+        "forms": [
+          {
+            "number": "DC-407",
+            "name": "Garnishment Summons"
+          }
+        ],
+        "estimated_cost": "$25 plus service fees",
+        "effectiveness_notes": "Effective if the debtor is employed and earns above the exemption threshold.",
+        "exemptions": [
+          "75% of disposable earnings or 40 times the federal minimum wage per week, whichever is greater"
+        ],
+        "source_ids": [
+          "S15"
+        ]
+      },
+      {
+        "id": "bank-levy",
+        "name": "Bank levy",
+        "blurb": "Seize funds from the debtor's bank account to satisfy the judgment.",
+        "description": "Obtain a Writ of Fieri Facias from the court, serve it on the debtor's bank, and the bank will freeze and turn over funds to satisfy the judgment.",
+        "forms": [
+          {
+            "number": "DC-469",
+            "name": "Writ of Fieri Facias"
+          }
+        ],
+        "estimated_cost": "$25 plus service fees",
+        "effectiveness_notes": "Effective if the debtor has sufficient funds in the bank account.",
+        "exemptions": [
+          "$1,000 in the debtor's bank account is exempt from levy"
+        ],
+        "source_ids": [
+          "S15"
+        ]
+      },
+      {
+        "id": "property-lien",
+        "name": "Property lien",
+        "blurb": "Place a lien on the debtor's real property to secure the judgment.",
+        "description": "Obtain an Abstract of Judgment from the court, record it with the circuit court in the county where the property is located, creating a lien on the property.",
+        "forms": [
+          {
+            "number": "DC-480",
+            "name": "Abstract of Judgment"
+          }
+        ],
+        "estimated_cost": "$10 plus recording fees",
+        "effectiveness_notes": "Effective if the debtor owns real property; the lien must be satisfied before the property can be sold or refinanced.",
+        "exemptions": [
+          "Homestead exemption up to $5,000"
+        ],
+        "source_ids": [
+          "S15"
+        ]
+      },
+      {
+        "id": "writ-of-execution",
+        "name": "Writ of execution",
+        "blurb": "Seize and sell the debtor's personal property to satisfy the judgment.",
+        "description": "Obtain a Writ of Fieri Facias from the court, have the sheriff seize the debtor's non-exempt personal property, and sell it at public auction to satisfy the judgment.",
+        "forms": [
+          {
+            "number": "DC-469",
+            "name": "Writ of Fieri Facias"
+          }
+        ],
+        "estimated_cost": "$25 plus sheriff's fees",
+        "effectiveness_notes": "Effective if the debtor owns valuable non-exempt personal property.",
+        "exemptions": [
+          "Various personal property exemptions under Virginia law"
+        ],
+        "source_ids": [
+          "S15"
+        ]
+      }
+    ],
+    "wage_garnishment_max_pct_of_disposable": 25,
+    "judgment_lifespan_years": 20,
+    "judgment_renewal_process": "File a motion to renew the judgment before the 20-year period expires; the court may grant an extension.",
+    "debtor_exam_form": {
+      "number": "DC-450",
+      "name": "Summons to Answer Interrogatories"
+    },
+    "exempt_assets": [
+      "Homestead — $5,000",
+      "Vehicle — $2,000",
+      "Retirement accounts (federally and state-protected)",
+      "Social Security and federal benefits"
+    ],
+    "bankruptcy_effect_notes": "Filing for bankruptcy may discharge certain judgments; however, some debts, such as those for fraud, may not be dischargeable.",
+    "satisfaction_of_judgment_form": {
+      "number": "DC-458",
+      "name": "Satisfaction of Judgment"
+    },
+    "priority_notes": "Judgment liens are prioritized based on the date of recording; earlier liens have higher priority.",
+    "source_ids": [
+      "S15"
+    ]
+  },
+  "businesses": {
+    "self_representation_allowed": true,
+    "self_representation_notes": "A corporate or partnership plaintiff or defendant may be represented by an owner, a general partner, an officer, or an employee of that corporation or partnership.",
+    "can_send_employee": true,
+    "can_send_attorney": false,
+    "non_attorney_representation_form": {
+      "number": "",
+      "name": ""
+    },
+    "insurance_adjuster_allowed": false,
+    "fictitious_name_form": {
+      "number": "",
+      "name": ""
+    },
+    "fictitious_name_notes": "Businesses must use their legal entity name when filing or defending a case; trade names or DBAs are not sufficient.",
+    "sole_proprietor_employee_exception": "A sole proprietor may represent themselves or be represented by an employee.",
+    "out_of_state_business_must_register": true,
+    "out_of_state_business_statute": "Va. Code § 13.1-757",
+    "licensing_notes": "Unlicensed contractors may be barred from recovering fees for work requiring a license.",
+    "source_ids": [
+      "S3"
+    ]
+  },
+  "county_variations_material": false,
+  "county_variations": [],
+  "pitfalls": [
+    {
+      "title": "Wrong defendant naming",
+      "what_happens": "If you sue 'John's Garage' but the legal entity is 'JG Auto Repair LLC', the judgment may be unenforceable against the LLC's assets.",
+      "how_to_avoid": "Search the State Corporation Commission records before filing and use the exact registered name; for sole proprietors, use the individual's full legal name.",
+      "source_ids": []
+    },
+    {
+      "title": "Missed statute of limitations",
+      "what_happens": "Filing one day after the deadline gets the case dismissed with prejudice.",
+      "how_to_avoid": "Check the statute of limitations for your specific claim type before filing; for fraud, the discovery rule applies but be prepared to prove when you reasonably could have discovered it.",
+      "source_ids": []
+    },
+    {
+      "title": "Improper service of process",
+      "what_happens": "If the defendant isn't properly served, the court lacks jurisdiction, and your case may be dismissed.",
+      "how_to_avoid": "Ensure service is completed according to Virginia law, using the sheriff, certified mail, or a private process server as appropriate.",
+      "source_ids": []
+    },
+    {
+      "title": "Failing to appear in court",
+      "what_happens": "If you don't show up, the court may dismiss your case or enter a default judgment against you.",
+      "how_to_avoid": "Mark your calendar and set reminders; if an emergency arises, notify the court as soon as possible to request a continuance.",
+      "source_ids": []
+    },
+    {
+      "title": "Not bringing necessary evidence",
+      "what_happens": "Without proper evidence, you may lose your case even if you're in the right.",
+      "how_to_avoid": "Gather all relevant documents, photos, and witness information before the hearing; organize them for easy presentation.",
+      "source_ids": []
+    },
+    {
+      "title": "Ignoring post-judgment procedures",
+      "what_happens": "Winning a judgment doesn't guarantee payment; you must take steps to collect.",
+      "how_to_avoid": "Familiarize yourself with collection methods like garnishment and liens; consult the court clerk for necessary forms and procedures.",
+      "source_ids": []
+    }
+  ],
+  "recent_changes": [],
+  "faqs": [
+    {
+      "question": "Do I need a lawyer?",
+      "answer": "No, attorneys are not permitted to represent parties in Virginia's small claims court; you must represent yourself.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    {
+      "question": "How long does it take?",
+      "answer": "The timeline varies, but cases are typically heard within 30 to 90 days after filing.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "What's the maximum I can sue for?",
+      "answer": "You can sue for up to $5,000 in Virginia's small claims court.",
+      "source_ids": [
+        "S6"
+      ]
+    },
+    {
+      "question": "What happens if the defendant doesn't show up?",
+      "answer": "If the defendant fails to appear, the court may enter a default judgment in your favor, but you must still present evidence to support your claim.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    {
+      "question": "Can I appeal?",
+      "answer": "Yes, either party can appeal a small claims court decision to the circuit court within 10 days for a new trial.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    {
+      "question": "How long is a judgment good for?",
+      "answer": "A judgment in Virginia is valid for 20 years and can be renewed before it expires.",
+      "source_ids": [
+        "S4"
+      ]
+    }
+  ],
+  "state_specific_notes": [
+    "Virginia's small claims court does not allow attorney representation; parties must represent themselves.",
+    "The maximum claim amount in Virginia's small claims court is $5,000.",
+    "Either party can appeal a small claims court decision to the circuit court within 10 days for a new trial.",
+    "Winning a judgment does not guarantee payment; you may need to take additional steps to collect.",
+    "Virginia allows for statutory damages in certain cases, such as treble damages under the Consumer Protection Act."
+  ],
+  "_extras": {
+    "interesting_findings": [
+      "Virginia's small claims court procedures are designed to be accessible to individuals without legal representation, emphasizing simplicity and efficiency.",
+      "The prohibition of attorney representation in small claims court aims to level the playing field for all parties involved.",
+      "The availability of statutory damages and attorney's fees under the Virginia Consumer Protection Act provides strong incentives for fair business practices."
+    ]
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "label": "Virginia Judiciary - General District Court Information",
+      "url": "https://www.vacourts.gov/courts/gd/home.html",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S2",
+      "label": "Virginia Judiciary - Self-Help",
+      "url": "https://www.vacourts.gov/courts/gd/resources/small_claims_court_info.pdf",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S3",
+      "label": "Virginia Judiciary - Small Claims Court Brochure",
+      "url": "https://www.vacourts.gov/courts/gd/resources/small_claims_court_brochure.pdf",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S4",
+      "label": "Va. Code § 16.1-77 — General Jurisdiction of General District Courts",
+      "url": "https://law.lis.virginia.gov/vacode/title16.1/chapter6/section16.1-77/",
+      "primary": true,
+      "citation": "Va. Code § 16.1-77"
+    },
+    {
+      "id": "S5",
+      "label": "Va. Code § 16.1-122.1 — Small Claims Division Established",
+      "url": "https://law.lis.virginia.gov/vacode/title16.1/chapter6.1/section16.1-122.1/",
+      "primary": true,
+      "citation": "Va. Code § 16.1-122.1"
+    },
+    {
+      "id": "S6",
+      "label": "Va. Code § 16.1-122.2 — Jurisdiction of Small Claims Division",
+      "url": "https://law.lis.virginia.gov/vacode/title16.1/chapter6.1/section16.1-122.2/",
+      "primary": true,
+      "citation": "Va. Code § 16.1-122.2"
+    },
+    {
+      "id": "S7",
+      "label": "Va. Code § 16.1-106 — Appeals from District Courts",
+      "url": "https://law.lis.virginia.gov/vacode/title16.1/chapter6/section16.1-106/",
+      "primary": true,
+      "citation": "Va. Code § 16.1-106"
+    },
+    {
+      "id": "S8",
+      "label": "Va. Code § 8.01-271.1 — Civil Remedies and Sanctions",
+      "url": "https://law.lis.virginia.gov/vacode/title8.01/chapter3/section8.01-271.1/",
+      "primary": true,
+      "citation": "Va. Code § 8.01-271.1"
+    },
+    {
+      "id": "S9",
+      "label": "Rules of the Supreme Court of Virginia, Part Seven — General District Courts",
+      "url": "https://www.vacourts.gov/courts/scv/rules/2023_part_7.pdf",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S10",
+      "label": "Virginia Judicial System — General District Court Forms",
+      "url": "https://www.vacourts.gov/forms/district.html",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S11",
+      "label": "Virginia General District Court Fee Schedule",
+      "url": "https://www.vacourts.gov/courts/gd/resources/fees.pdf",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S12",
+      "label": "Va. Code § 16.1-79 — Summons in Civil Actions",
+      "url": "https://law.lis.virginia.gov/vacode/title16.1/chapter6/section16.1-79/",
+      "primary": true,
+      "citation": "Va. Code § 16.1-79"
+    },
+    {
+      "id": "S13",
+      "label": "Va. Code § 8.01-296 — Manner of Serving Process Upon Natural Persons",
+      "url": "https://law.lis.virginia.gov/vacode/title8.01/chapter8/section8.01-296/",
+      "primary": true,
+      "citation": "Va. Code § 8.01-296"
+    },
+    {
+      "id": "S14",
+      "label": "Va. Code § 16.1-106 — Appeals from District Courts; Time and Procedure",
+      "url": "https://law.lis.virginia.gov/vacode/title16.1/chapter6/section16.1-106/",
+      "primary": true,
+      "citation": "Va. Code § 16.1-106"
+    },
+    {
+      "id": "S15",
+      "label": "Va. Code § 8.01-466 — Garnishment of Wages, etc.",
+      "url": "https://law.lis.virginia.gov/vacode/title8.01/chapter18/section8.01-466/",
+      "primary": true,
+      "citation": "Va. Code § 8.01-466"
+    },
+    {
+      "id": "S16",
+      "label": "Va. Code § 34-29 — Maximum Portion of Disposable Earnings Subject to Garnishment",
+      "url": "https://law.lis.virginia.gov/vacode/title34/chapter4/section34-29/",
+      "primary": true,
+      "citation": "Va. Code § 34-29"
+    },
+    {
+      "id": "S17",
+      "label": "Va. Code § 59.1-196 et seq. — Virginia Consumer Protection Act",
+      "url": "https://law.lis.virginia.gov/vacode/title59.1/chapter17.7/",
+      "primary": true,
+      "citation": "Va. Code § 59.1-196 et seq."
+    },
+    {
+      "id": "S18",
+      "label": "Va. Code § 18.2-181 — Issuing Bad Checks; Penalties",
+      "url": "https://law.lis.virginia.gov/vacode/title18.2/chapter6/section18.2-181/",
+      "primary": true,
+      "citation": "Va. Code § 18.2-181"
+    },
+    {
+      "id": "S19",
+      "label": "Va. Code § 55.1-1204 — Security Deposits",
+      "url": "https://law.lis.virginia.gov/vacode/title55.1/chapter12/section55.1-1204/",
+      "primary": true,
+      "citation": "Va. Code § 55.1-1204"
+    },
+    {
+      "id": "S20",
+      "label": "Va. Code § 55.1-1245 — Remedy for Unlawful Exclusion",
+      "url": "https://law.lis.virginia.gov/vacode/title55.1/chapter12/section55.1-1245/",
+      "primary": true,
+      "citation": "Va. Code § 55.1-1245"
+    },
+    {
+      "id": "S21",
+      "label": "Va. Code § 40.1-29 — Payment of Wages",
+      "url": "https://law.lis.virginia.gov/vacode/title40.1/chapter3/section40.1-29/",
+      "primary": true,
+      "citation": "Va. Code § 40.1-29"
+    },
+    {
+      "id": "S22",
+      "label": "Va. Code § 8.01-271.1 — Sanctions; Attorneys’ Fees",
+      "url": "https://law.lis.virginia.gov/vacode/title8.01/chapter3/section8.01-271.1/",
+      "primary": true,
+      "citation": "Va. Code § 8.01-271.1"
+    }
+  ],
+  "_meta": {
+    "state": "Virginia",
+    "slug": "virginia",
+    "model": "gpt-4.1",
+    "sources_response_id": "resp_0fe4204a43626d520069f08b8360688195b920b753256e94dd",
+    "extraction_response_id": "resp_0c1a91c2894047fe0069f0987a492481909bfbcf0ede632cd0",
+    "generated_at": "2026-04-28T11:24:20.021Z",
+    "usage": {
+      "input_tokens": 7626,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 14571,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 22197
+    }
+  }
+}

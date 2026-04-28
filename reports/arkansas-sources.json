@@ -1,0 +1,139 @@
+{
+  "state": "Arkansas",
+  "as_of": "2024-06-10",
+  "state_judiciary_pages": [
+    {
+      "label": "Arkansas Judiciary Small Claims Court Information",
+      "url": "https://www.arcourts.gov/administration/interpreters/types-of-courts#SmallClaims",
+      "scope": "small_claims"
+    },
+    {
+      "label": "Arkansas Judiciary Court Directory",
+      "url": "https://www.arcourts.gov/directories/court-directory",
+      "scope": "court_directory"
+    },
+    {
+      "label": "Arkansas Judiciary Self-Help Page",
+      "url": "https://www.arcourts.gov/forms-publications/self-help",
+      "scope": "self_help"
+    }
+  ],
+  "statutes": [
+    {
+      "label": "Ark. Code Ann. § 16-17-601 - Small Claims Division - Jurisdiction",
+      "url": "https://www.arkleg.state.ar.us/ArkansasCode/Title16/Chapter17/Section16-17-601",
+      "section_or_chapter": "§ 16-17-601"
+    },
+    {
+      "label": "Ark. Code Ann. § 16-17-606 - Procedures in Small Claims Court",
+      "url": "https://www.arkleg.state.ar.us/ArkansasCode/Title16/Chapter17/Section16-17-606",
+      "section_or_chapter": "§ 16-17-606"
+    },
+    {
+      "label": "Ark. Code Ann. § 16-17-617 - Appeals from Small Claims",
+      "url": "https://www.arkleg.state.ar.us/ArkansasCode/Title16/Chapter17/Section16-17-617",
+      "section_or_chapter": "§ 16-17-617"
+    },
+    {
+      "label": "Ark. Code Ann. § 16-17-120 - Judgment Collection",
+      "url": "https://www.arkleg.state.ar.us/ArkansasCode/Title16/Chapter17/Section16-17-120",
+      "section_or_chapter": "§ 16-17-120"
+    }
+  ],
+  "court_rules": [
+    {
+      "label": "Arkansas District Court Rules",
+      "url": "https://www.arcourts.gov/rules-and-administrative-orders/district-court-rules",
+      "rule_or_chapter": "District Court Rules"
+    }
+  ],
+  "forms_pages": [
+    {
+      "label": "Arkansas Court Forms (including Small Claims Statement of Claim)",
+      "url": "https://www.arcourts.gov/forms-publications/court-forms"
+    }
+  ],
+  "fee_schedules": [
+    {
+      "label": "Arkansas Supreme Court - Court Fees Schedule",
+      "url": "https://www.arcourts.gov/administration/acap/court-fees",
+      "scope": "fee_schedule"
+    }
+  ],
+  "service_rules": [
+    {
+      "label": "Service of Process - Arkansas Rules of Civil Procedure Rule 4",
+      "url": "https://www.arcourts.gov/rules-and-administrative-orders/court-rules/arkansas-rules-civil-procedure/rule-4",
+      "scope": "service"
+    }
+  ],
+  "appeal_rules": [
+    {
+      "label": "Appeals from Small Claims - Ark. Code Ann. § 16-17-617",
+      "url": "https://www.arkleg.state.ar.us/ArkansasCode/Title16/Chapter17/Section16-17-617",
+      "scope": "appeals"
+    }
+  ],
+  "post_judgment_collection": [
+    {
+      "label": "Ark. Code Ann. § 16-66-115 - Wage Garnishment",
+      "url": "https://www.arkleg.state.ar.us/ArkansasCode/Title16/Chapter66/Section16-66-115"
+    },
+    {
+      "label": "Arkansas Code — Execution on Judgment",
+      "url": "https://www.arkleg.state.ar.us/ArkansasCode/Title16/Chapter66/Section16-66-101"
+    }
+  ],
+  "consumer_protection_statutes": [
+    {
+      "label": "Ark. Code Ann. § 4-88-107 - Deceptive Trade Practices Act (UDAP)",
+      "url": "https://www.arkleg.state.ar.us/ArkansasCode/Title4/Chapter88/Section4-88-107"
+    },
+    {
+      "label": "Ark. Code Ann. § 5-37-307 - Civil Penalty for Bad Checks",
+      "url": "https://www.arkleg.state.ar.us/ArkansasCode/Title5/Chapter37/Section5-37-307"
+    }
+  ],
+  "landlord_tenant_statutes": [
+    {
+      "label": "Ark. Code Ann. § 18-16-303 - Security Deposit Return",
+      "url": "https://www.arkleg.state.ar.us/ArkansasCode/Title18/Chapter16/Section18-16-303"
+    },
+    {
+      "label": "Ark. Code Ann. § 18-17-601 - Wrongful Eviction",
+      "url": "https://www.arkleg.state.ar.us/ArkansasCode/Title18/Chapter17/Section18-17-601"
+    }
+  ],
+  "wage_and_employment_statutes": [
+    {
+      "label": "Ark. Code Ann. § 11-4-405 - Final Paycheck Deadline",
+      "url": "https://www.arkleg.state.ar.us/ArkansasCode/Title11/Chapter4/Section11-4-405"
+    }
+  ],
+  "civil_remedies_statutes": [
+    {
+      "label": "Ark. Code Ann. § 16-22-308 - Attorney Fees in Civil Actions",
+      "url": "https://www.arkleg.state.ar.us/ArkansasCode/Title16/Chapter22/Section16-22-308"
+    }
+  ],
+  "county_specific": [],
+  "notes": "Arkansas small claims are handled by District Courts as a division; statutes and rules are unified statewide.",
+  "_meta": {
+    "state": "Arkansas",
+    "slug": "arkansas",
+    "model": "gpt-4.1",
+    "response_id": "resp_07a679bb60a260690069f088f48af4819592367923cdf15744",
+    "generated_at": "2026-04-28T10:16:35.124Z",
+    "usage": {
+      "input_tokens": 2104,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 1357,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 3461
+    }
+  }
+}

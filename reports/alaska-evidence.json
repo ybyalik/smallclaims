@@ -1,0 +1,1661 @@
+{
+  "state": "Alaska",
+  "slug": "alaska",
+  "abbr": "AK",
+  "as_of": "2026-04-28",
+  "hero": {
+    "individual_limit_dollars": 10000,
+    "business_limit_dollars": 10000,
+    "filing_fee_low_dollars": 30,
+    "filing_fee_high_dollars": 100,
+    "typical_timeline_min_days": 30,
+    "typical_timeline_max_days": 90,
+    "tagline": "Alaska's small claims court offers a streamlined process for resolving disputes up to $10,000, with simplified procedures and no requirement for legal representation.",
+    "source_ids": [
+      "S1",
+      "S13"
+    ]
+  },
+  "at_a_glance": [
+    {
+      "label": "Most you can sue for",
+      "value": "$10,000",
+      "detail": "Same cap for individuals and businesses",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "label": "Filing fee",
+      "value": "$30-$100",
+      "detail": "Tiered by claim amount",
+      "source_ids": [
+        "S13"
+      ]
+    },
+    {
+      "label": "Court",
+      "value": "District Court (small claims docket)",
+      "detail": "",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Lawyers at trial",
+      "value": "Allowed",
+      "detail": "Permitted but not required",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Appeal window",
+      "value": "30 days",
+      "detail": "Appeal to Superior Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Recent change",
+      "value": "—",
+      "detail": "No major changes in the last 3 years",
+      "source_ids": []
+    }
+  ],
+  "limits": {
+    "individual_dollars": 10000,
+    "business_dollars": 10000,
+    "guarantor_with_fee_max": null,
+    "guarantor_without_fee_max": null,
+    "annual_filing_cap": {
+      "count": null,
+      "threshold_dollars": null,
+      "notes": ""
+    },
+    "split_claims_allowed": false,
+    "split_claims_explanation": "If your claim exceeds $10,000, you can still file in small claims court but must waive the right to collect any amount over $10,000. Splitting one dispute into multiple claims to stay within the limit is not allowed.",
+    "interest_excluded_from_cap": true,
+    "court_costs_excluded_from_cap": true,
+    "statute": "AS 22.15.040",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "claim_categories": [
+    {
+      "id": "contracts",
+      "title": "Contracts and money owed",
+      "blurb": "Alaska allows you to file claims up to $10,000 for disputes involving contracts and money owed. The statute of limitations varies depending on the type of contract.",
+      "claims": [
+        {
+          "slug": "written-contract",
+          "name": "Breach of a written contract",
+          "example": "A contractor signed a $4,000 contract to remodel your kitchen, took the deposit, and never finished.",
+          "eligibility": "eligible",
+          "claim_statute": "AS 09.10.053",
+          "notes": "3-year deadline from breach. Bring the signed contract, payment proof, and any correspondence showing the breach.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "oral-contract",
+          "name": "Breach of an oral contract",
+          "example": "You agreed verbally to pay $2,000 for landscaping services, but the landscaper never showed up after receiving a $500 deposit.",
+          "eligibility": "eligible",
+          "claim_statute": "AS 09.10.053",
+          "notes": "3-year deadline from breach. Gather any evidence of the agreement, such as emails or witness statements.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "personal-loan",
+          "name": "Unpaid personal loan",
+          "example": "You lent a friend $3,000 with the understanding it would be repaid in six months, but they haven't paid you back after a year.",
+          "eligibility": "eligible",
+          "claim_statute": "AS 09.10.053",
+          "notes": "3-year deadline from the date repayment was due. Provide any written agreement or proof of the loan.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "promissory-note",
+          "name": "Default on a promissory note",
+          "example": "A borrower signed a promissory note to repay $5,000 over a year but stopped making payments after two months.",
+          "eligibility": "eligible",
+          "claim_statute": "AS 09.10.053",
+          "notes": "3-year deadline from the date of default. Present the original promissory note and records of payments made.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unpaid-invoice",
+          "name": "Unpaid invoice for services rendered",
+          "example": "You provided graphic design services worth $1,500, but the client hasn't paid the invoice issued three months ago.",
+          "eligibility": "eligible",
+          "claim_statute": "AS 09.10.053",
+          "notes": "3-year deadline from the date payment was due. Include the invoice, service agreement, and any communication regarding payment.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "open-account",
+          "name": "Unpaid balance on an open account",
+          "example": "A customer has an outstanding balance of $2,500 on their store credit account and hasn't made a payment in six months.",
+          "eligibility": "eligible",
+          "claim_statute": "AS 09.10.053",
+          "notes": "3-year deadline from the last payment or charge. Provide account statements and records of communication.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unpaid-rent",
+          "name": "Unpaid rent by tenant",
+          "example": "Your tenant owes $4,000 in unpaid rent over the past four months and has vacated the property.",
+          "eligibility": "eligible",
+          "claim_statute": "AS 09.10.053",
+          "notes": "3-year deadline from the date rent was due. Bring the lease agreement, payment records, and any notices sent.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "bad-check",
+          "name": "Payment with a bad check",
+          "example": "A customer paid for $800 worth of goods with a check that bounced due to insufficient funds.",
+          "eligibility": "eligible",
+          "claim_statute": "AS 09.68.115",
+          "notes": "Provide the original check, bank notice of insufficient funds, and any communication with the issuer.",
+          "damage_boost": "Check amount + service charge up to $30 + civil penalty up to $300 OR 3x check amount, whichever is greater.",
+          "source_ids": [
+            "S7"
+          ]
+        },
+        {
+          "slug": "co-signer",
+          "name": "Co-signer seeking repayment",
+          "example": "You co-signed a $6,000 loan for a friend who defaulted, and now you're seeking repayment from them.",
+          "eligibility": "eligible",
+          "claim_statute": "AS 09.10.053",
+          "notes": "3-year deadline from the date you made payment. Provide the loan agreement and proof of payments made.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "consumer-disputes",
+      "title": "Consumer disputes",
+      "blurb": "Alaska's small claims court handles various consumer disputes up to $10,000, including issues with products, services, and deceptive practices.",
+      "claims": [
+        {
+          "slug": "defective-product",
+          "name": "Purchase of a defective product",
+          "example": "You bought a $1,200 refrigerator that stopped working after two months, and the seller refuses to repair or replace it.",
+          "eligibility": "eligible",
+          "claim_statute": "AS 45.50.471",
+          "notes": "2-year deadline from the date of purchase. Bring the purchase receipt, warranty, and any communication with the seller.",
+          "damage_boost": "Possible treble damages and attorney fees under the Alaska Consumer Protection Act.",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "bad-service",
+          "name": "Substandard service provided",
+          "example": "A cleaning service charged you $500 but did a poor job, leaving areas uncleaned and causing minor damage.",
+          "eligibility": "eligible",
+          "claim_statute": "AS 45.50.471",
+          "notes": "2-year deadline from the date of service. Provide the service agreement, photos of the work, and any complaints filed.",
+          "damage_boost": "Possible treble damages and attorney fees under the Alaska Consumer Protection Act.",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "auto-repair",
+          "name": "Unsatisfactory auto repair",
+          "example": "A mechanic charged $2,000 for repairs that didn't fix the issue, and the car broke down again shortly after.",
+          "eligibility": "eligible",
+          "claim_statute": "AS 45.50.471",
+          "notes": "2-year deadline from the date of repair. Bring repair invoices, records of subsequent issues, and any communication with the mechanic.",
+          "damage_boost": "Possible treble damages and attorney fees under the Alaska Consumer Protection Act.",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "contractor",
+          "name": "Contractor failed to complete work",
+          "example": "You paid a contractor $7,000 to renovate your bathroom, but they abandoned the project halfway through.",
+          "eligibility": "eligible",
+          "claim_statute": "AS 45.50.471",
+          "notes": "2-year deadline from the date work ceased. Provide the contract, payment records, and photos of incomplete work.",
+          "damage_boost": "Possible treble damages and attorney fees under the Alaska Consumer Protection Act.",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "no-show-vendor",
+          "name": "Vendor failed to deliver goods",
+          "example": "You paid $800 for custom furniture that was never delivered, and the vendor stopped responding.",
+          "eligibility": "eligible",
+          "claim_statute": "AS 45.50.471",
+          "notes": "2-year deadline from the expected delivery date. Include the purchase agreement, payment proof, and communication records.",
+          "damage_boost": "Possible treble damages and attorney fees under the Alaska Consumer Protection Act.",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "subscription-cancellation",
+          "name": "Unauthorized charges after subscription cancellation",
+          "example": "You canceled a $50/month gym membership, but they continued to charge your credit card for three months.",
+          "eligibility": "eligible",
+          "claim_statute": "AS 45.50.471",
+          "notes": "2-year deadline from the date of unauthorized charge. Provide cancellation confirmation and bank statements showing charges.",
+          "damage_boost": "Possible treble damages and attorney fees under the Alaska Consumer Protection Act.",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "used-car",
+          "name": "Purchase of a defective used car",
+          "example": "You bought a used car for $9,000 that broke down within a week due to undisclosed mechanical issues.",
+          "eligibility": "eligible",
+          "claim_statute": "AS 45.45.300",
+          "notes": "2-year deadline from the date of purchase. Bring the sales contract, vehicle history report, and repair estimates.",
+          "damage_boost": "Possible treble damages and attorney fees under the Alaska Consumer Protection Act.",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "false-advertising",
+          "name": "False advertising leading to financial loss",
+          "example": "A retailer advertised a '50% off' sale, but you were charged full price and denied a refund.",
+          "eligibility": "eligible",
+          "claim_statute": "AS 45.50.471",
+          "notes": "2-year deadline from the date of purchase. Provide the advertisement, receipt, and any communication with the retailer.",
+          "damage_boost": "Possible treble damages and attorney fees under the Alaska Consumer Protection Act.",
+          "source_ids": [
+            "S5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "property-damage",
+      "title": "Property damage",
+      "blurb": "Alaska's small claims court addresses property damage claims up to $10,000, including vehicle collisions and damage to personal property.",
+      "claims": [
+        {
+          "slug": "vehicle-collision",
+          "name": "Damage from a vehicle collision",
+          "example": "Another driver ran a red light and caused $6,000 in damage to your car.",
+          "eligibility": "eligible",
+          "claim_statute": "AS 09.10.070",
+          "notes": "2-year deadline from the date of the accident. Provide the police report, repair estimates, and photos of the damage.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "neighbor-property",
+          "name": "Neighbor caused damage to your property",
+          "example": "Your neighbor's tree fell onto your fence during a storm, causing $2,500 in damage.",
+          "eligibility": "eligible",
+          "claim_statute": "AS 09.10.070",
+          "notes": "2-year deadline from the date of damage. Bring photos, repair estimates, and any communication with the neighbor.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "damage-to-rental",
+          "name": "Tenant caused damage to rental property",
+          "example": "A tenant left your rental unit with $3,000 in damages beyond normal wear and tear.",
+          "eligibility": "eligible",
+          "claim_statute": "AS 09.10.070",
+          "notes": "2-year deadline from the date of discovery. Provide the lease agreement, move-in/move-out inspection reports, and repair invoices.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "pet-damage",
+          "name": "Damage caused by someone else's pet",
+          "example": "A neighbor's dog entered your yard and destroyed $1,200 worth of landscaping.",
+          "eligibility": "eligible",
+          "claim_statute": "AS 09.10.070",
+          "notes": "2-year deadline from the date of damage. Bring photos, repair estimates, and any communication with the pet owner.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "property-in-custody",
+          "name": "Damage to property while in someone else's custody",
+          "example": "You left your laptop with a repair shop, and they returned it with a cracked screen.",
+          "eligibility": "eligible",
+          "claim_statute": "AS 09.10.070",
+          "notes": "2-year deadline from the date of damage. Provide the service agreement, photos of the damage, and any communication with the shop.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "landlord-tenant",
+      "title": "Landlord-tenant disputes",
+      "blurb": "Alaska's small claims court handles monetary disputes between landlords and tenants up to $10,000, excluding eviction proceedings.",
+      "claims": [
+        {
+          "slug": "security-deposit",
+          "name": "Failure to return security deposit",
+          "example": "Your landlord withheld your $1,500 security deposit without providing an itemized list of damages.",
+          "eligibility": "eligible",
+          "claim_statute": "AS 34.03.070",
+          "notes": "1-year deadline from the date the deposit was due. Bring the lease agreement, move-out inspection report, and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S20"
+          ]
+        },
+        {
+          "slug": "deposit-not-itemized",
+          "name": "Security deposit deductions not itemized",
+          "example": "Your landlord deducted $800 from your deposit without providing an itemized list of damages.",
+          "eligibility": "eligible",
+          "claim_statute": "AS 34.03.070",
+          "notes": "1-year deadline from the date the deposit was due. Provide the lease agreement and any communication regarding the deposit.",
+          "damage_boost": "",
+          "source_ids": [
+            "S20"
+          ]
+        },
+        {
+          "slug": "uninhabitable-rental",
+          "name": "Rental unit deemed uninhabitable",
+          "example": "Your apartment had no heating during winter, and the landlord refused to make repairs.",
+          "eligibility": "eligible",
+          "claim_statute": "AS 34.03.100",
+          "notes": "1-year deadline from the date of issue. Bring photos, repair requests, and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "wrongful-retention-property",
+          "name": "Landlord wrongfully retained tenant's property",
+          "example": "After moving out, your landlord kept your furniture and personal items without permission.",
+          "eligibility": "eligible",
+          "claim_statute": "AS 34.03.260",
+          "notes": "1-year deadline from the date of retention. Provide the lease agreement and any communication regarding the property.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        {
+          "slug": "illegal-eviction",
+          "name": "Landlord conducted an illegal eviction",
+          "example": "Your landlord changed the locks without notice, preventing you from accessing your apartment.",
+          "eligibility": "eligible",
+          "claim_statute": "AS 34.03.300",
+          "notes": "1-year deadline from the date of eviction. Bring the lease agreement and any communication regarding the eviction.",
+          "damage_boost": "",
+          "source_ids": [
+            "S21"
+          ]
+        },
+        {
+          "slug": "unreturned-prepaid-rent",
+          "name": "Failure to return prepaid rent",
+          "example": "You paid first and last month's rent upfront, but the landlord didn't return the last month's rent after you moved out early.",
+          "eligibility": "eligible",
+          "claim_statute": "AS 34.03.070",
+          "notes": "1-year deadline from the date the rent was due. Provide the lease agreement and any communication regarding the rent.",
+          "damage_boost": "",
+          "source_ids": [
+            "S20"
+          ]
+        },
+        {
+          "slug": "unpaid-rent-by-tenant",
+          "name": "Tenant failed to pay rent",
+          "example": "Your tenant missed three months of rent payments totaling $3,600.",
+          "eligibility": "eligible",
+          "claim_statute": "AS 09.10.053",
+          "notes": "3-year deadline from the date rent was due. Bring the lease agreement and payment records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "repair-and-deduct",
+          "name": "Tenant repaired and deducted from rent",
+          "example": "You paid $500 to fix a leaking roof after the landlord failed to make repairs and deducted it from your rent.",
+          "eligibility": "eligible",
+          "claim_statute": "AS 34.03.100",
+          "notes": "1-year deadline from the date of repair. Provide repair receipts and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S6"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "employment-wages",
+      "title": "Employment and wage disputes",
+      "blurb": "Alaska's small claims court addresses employment-related disputes up to $10,000, including unpaid wages and final paychecks.",
+      "claims": [
+        {
+          "slug": "unpaid-wages",
+          "name": "Employer failed to pay wages",
+          "example": "Your employer owes you $2,000 for hours worked but hasn't issued payment.",
+          "eligibility": "eligible",
+          "claim_statute": "AS 23.05.140",
+          "notes": "2-year deadline from the date wages were due. Provide timesheets and any communication with the employer.",
+          "damage_boost": "",
+          "source_ids": [
+            "S22"
+          ]
+        },
+        {
+          "slug": "final-paycheck",
+          "name": "Employer withheld final paycheck",
+          "example": "After resigning, your employer didn't provide your final paycheck of $1,500.",
+          "eligibility": "eligible",
+          "claim_statute": "AS 23.05.140",
+          "notes": "2-year deadline from the date the final paycheck was due. Bring resignation notice and any communication regarding the paycheck.",
+          "damage_boost": "",
+          "source_ids": [
+            "S22"
+          ]
+        },
+        {
+          "slug": "unpaid-commissions",
+          "name": "Unpaid sales commissions",
+          "example": "Your employer owes you $3,000 in earned commissions but refuses to pay.",
+          "eligibility": "eligible",
+          "claim_statute": "AS 23.05.140",
+          "notes": "2-year deadline from the date commissions were due. Provide sales records and any communication regarding the commissions.",
+          "damage_boost": "",
+          "source_ids": [
+            "S22"
+          ]
+        },
+        {
+          "slug": "unpaid-overtime",
+          "name": "Employer failed to pay overtime wages",
+          "example": "You worked 10 hours of overtime but were only paid your regular hourly rate.",
+          "eligibility": "eligible",
+          "claim_statute": "AS 23.05.140",
+          "notes": "2-year deadline from the date overtime was worked. Provide timesheets and any communication regarding overtime pay.",
+          "damage_boost": "",
+          "source_ids": [
+            "S22"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "personal-claims",
+      "title": "Personal claims",
+      "blurb": "Alaska's small claims court handles personal disputes up to $10,000, including minor injuries and property issues.",
+      "claims": [
+        {
+          "slug": "minor-injury",
+          "name": "Minor personal injury",
+          "example": "You slipped on an unmarked wet floor in a store and incurred $2,000 in medical bills.",
+          "eligibility": "eligible",
+          "claim_statute": "AS 09.10.070",
+          "notes": "2-year deadline from the date of injury. Provide medical records and any incident reports.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "loaned-property",
+          "name": "Failure to return loaned property",
+          "example": "You lent a friend your $1,000 camera, and they refuse to return it.",
+          "eligibility": "eligible",
+          "claim_statute": "AS 09.10.070",
+          "notes": "2-year deadline from the date return was requested. Provide proof of ownership and any communication regarding the loan.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "civil-theft",
+          "name": "Theft of personal property",
+          "example": "A neighbor took your $500 bicycle without permission and refuses to return it.",
+          "eligibility": "eligible",
+          "claim_statute": "AS 09.10.070",
+          "notes": "2-year deadline from the date of theft. Provide proof of ownership and any communication regarding the theft.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vehicle-specific",
+      "title": "Vehicle-specific disputes",
+      "blurb": "Alaska's small claims court addresses vehicle-related disputes up to $10,000, including mechanic issues and wrongful towing.",
+      "claims": [
+        {
+          "slug": "mechanic-dispute",
+          "name": "Dispute over mechanic's repair work",
+          "example": "A mechanic charged $3,000 for repairs that didn't fix the problem, and the car broke down again.",
+          "eligibility": "eligible",
+          "claim_statute": "AS 45.50.471",
+          "notes": "2-year deadline from the date of repair. Provide repair invoices and records of subsequent issues.",
+          "damage_boost": "Possible treble damages and attorney fees under the Alaska Consumer Protection Act.",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "wrongful-tow",
+          "name": "Vehicle was wrongfully towed",
+          "example": "Your car was towed from a legal parking spot, and you were charged $500 for its return.",
+          "eligibility": "eligible",
+          "claim_statute": "AS 45.50.471",
+          "notes": "2-year deadline from the date of towing. Provide towing receipts and photos of the parking area.",
+          "damage_boost": "Possible treble damages and attorney fees under the Alaska Consumer Protection Act.",
+          "source_ids": [
+            "S5"
+          ]
+        }
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "category": "Eviction (unlawful detainer)",
+      "explanation": "Small claims court cannot be used for eviction proceedings; these must be filed in the district court's regular civil division.",
+      "where_to_go_instead": "District Court civil division",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Title to real estate",
+      "explanation": "Disputes involving the title to real property are outside the jurisdiction of small claims court.",
+      "where_to_go_instead": "Superior Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Injunctive relief",
+      "explanation": "Small claims court cannot issue orders requiring a party to do or refrain from doing a specific act.",
+      "where_to_go_instead": "Superior Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Family law matters",
+      "explanation": "Divorce, child custody, and other family law issues are not handled in small claims court.",
+      "where_to_go_instead": "Superior Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Claims against the government",
+      "explanation": "Small claims court does not have jurisdiction over claims against the State of Alaska or the United States government.",
+      "where_to_go_instead": "Appropriate administrative agency or court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Class actions",
+      "explanation": "Class action lawsuits are beyond the scope of small claims court procedures.",
+      "where_to_go_instead": "Superior Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Malpractice claims",
+      "explanation": "Professional malpractice claims require complex evidence and are not suitable for small claims court.",
+      "where_to_go_instead": "Superior Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Probate matters",
+      "explanation": "Issues related to wills and estates are handled by the probate division, not small claims court.",
+      "where_to_go_instead": "Superior Court probate division",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Workers' compensation claims",
+      "explanation": "Disputes over workers' compensation benefits are handled by the Workers' Compensation Board.",
+      "where_to_go_instead": "Alaska Workers' Compensation Board",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Bankruptcy proceedings",
+      "explanation": "Bankruptcy cases are under federal jurisdiction and not handled by state small claims courts.",
+      "where_to_go_instead": "U.S. Bankruptcy Court",
+      "source_ids": [
+        "S1"
+      ]
+    }
+  ],
+  "damages": {
+    "compensatory_allowed": true,
+    "punitive_allowed": false,
+    "punitive_explanation": "Punitive damages are not awarded in small claims court; however, statutory penalties may apply in certain cases, such as treble damages under the Alaska Consumer Protection Act.",
+    "statutory_multipliers": [
+      {
+        "claim": "Bad check (after 30-day notice)",
+        "multiplier": "3x check amount",
+        "explanation": "Check amount + service charge up to $30 + civil penalty up to $300 OR 3x check amount, whichever is greater.",
+        "statute": "AS 09.68.115",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "Consumer protection violations",
+        "multiplier": "3x actual damages",
+        "explanation": "Treble damages and attorney fees may be awarded under the Alaska Consumer Protection Act.",
+        "statute": "AS 45.50.531",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "attorney_fees_recoverable": "sometimes",
+    "attorney_fees_explanation": "Attorney fees may be awarded in certain cases, such as consumer protection violations, but are generally limited in small claims court.",
+    "prejudgment_interest_rate_pct": null,
+    "prejudgment_interest_statute": "",
+    "postjudgment_interest_rate_pct": null,
+    "postjudgment_interest_type": "simple",
+    "postjudgment_interest_statute": "",
+    "postjudgment_interest_notes": "",
+    "filing_and_service_fees_recoverable_from_loser": true,
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "where_to_file": {
+    "court_name": "Small Claims Division of the District Court",
+    "parent_court": "Alaska District Court",
+    "venue_rules": [
+      {
+        "scenario": "Most cases (the default)",
+        "filing_options": [
+          "District where the defendant resides or where the claim arose"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Where contract was performed",
+        "filing_options": [
+          "District where performance was due"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Where injury or damage occurred",
+        "filing_options": [
+          "District where the event occurred"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Multiple defendants",
+        "filing_options": [
+          "Any district where one defendant resides"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Out-of-state defendant",
+        "filing_options": [
+          "District where the cause of action arose"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "consequences_of_wrong_venue": "Filing in the wrong venue may result in dismissal or transfer of the case, potentially causing delays and additional costs.",
+    "e_filing_available": "varies",
+    "e_filing_notes": "E-filing availability depends on the specific district court; check with the local court clerk for options.",
+    "e_filing_portal": null,
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "fees": {
+    "filing_fee_tiers": [
+      {
+        "range_label": "$0 to $2,500",
+        "range_min": 0,
+        "range_max": 2500,
+        "fee_dollars": 30,
+        "source_ids": [
+          "S13"
+        ]
+      },
+      {
+        "range_label": "$2,500.01 to $5,000",
+        "range_min": 2500.01,
+        "range_max": 5000,
+        "fee_dollars": 50,
+        "source_ids": [
+          "S13"
+        ]
+      },
+      {
+        "range_label": "$5,000.01 to $7,500",
+        "range_min": 5000.01,
+        "range_max": 7500,
+        "fee_dollars": 75,
+        "source_ids": [
+          "S13"
+        ]
+      },
+      {
+        "range_label": "$7,500.01 to $10,000",
+        "range_min": 7500.01,
+        "range_max": 10000,
+        "fee_dollars": 100,
+        "source_ids": [
+          "S13"
+        ]
+      }
+    ],
+    "frequent_filer": {
+      "threshold_per_year": null,
+      "fee_dollars": null,
+      "notes": ""
+    },
+    "service_fees": [
+      {
+        "method": "Certified mail by clerk",
+        "amount_label": "$15",
+        "notes": "Service by certified mail handled by the court clerk.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "method": "Process server",
+        "amount_label": "Varies",
+        "notes": "Private process server fees vary; contact local providers for rates.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "method": "Peace officer (personal service)",
+        "amount_label": "$45",
+        "notes": "Service by a peace officer; fees may vary by location.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "waiver": {
+      "forms": [
+        {
+          "number": "TF-920",
+          "name": "Request for Exemption from Payment of Fees",
+          "url": "https://courts.alaska.gov/forms/tf-920.pdf",
+          "source_ids": [
+            "S1"
+          ]
+        }
+      ],
+      "eligibility_bullets": [
+        "Receiving need-based public assistance (e.g., SNAP, TANF, SSI)",
+        "Household income below 125% of the federal poverty line",
+        "Other financial hardship preventing payment of fees"
+      ],
+      "coverage_notes": "The waiver covers filing fees and may cover service fees; check with the court clerk for details.",
+      "if_you_win_notes": "If you win, the waived fees may be added to the judgment against the defendant."
+    },
+    "other_fees": [
+      {
+        "name": "Subpoena issuance",
+        "amount_label": "$5",
+        "notes": "Fee for issuing a subpoena; additional costs may apply for service.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "name": "Appeal filing",
+        "amount_label": "$150",
+        "notes": "Fee for filing an appeal to the Superior Court.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "name": "Writ of execution",
+        "amount_label": "$25",
+        "notes": "Fee for issuing a writ of execution to enforce a judgment.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "fees_recoverable_from_loser_notes": "If you win, filing fees and reasonable service costs are typically added to the judgment against the defendant.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "statute_of_limitations": {
+    "entries": [
+      {
+        "id": "written-contract",
+        "claim": "Written contract",
+        "years": 3,
+        "clock_starts": "Date of breach",
+        "statute": "AS 09.10.053",
+        "notes": "Ensure to file within 3 years from the date the contract was breached.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "oral-contract",
+        "claim": "Oral contract",
+        "years": 3,
+        "clock_starts": "Date of breach",
+        "statute": "AS 09.10.053",
+        "notes": "Oral contracts also have a 3-year limitation period from the date of breach.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "sale-of-goods",
+        "claim": "Sale of goods (UCC)",
+        "years": 4,
+        "clock_starts": "Date of breach",
+        "statute": "AS 45.02.725",
+        "notes": "Under the Uniform Commercial Code, actions for breach of contract for sale must be commenced within 4 years.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "promissory-note",
+        "claim": "Promissory note",
+        "years": 3,
+        "clock_starts": "Date of default",
+        "statute": "AS 09.10.053",
+        "notes": "File within 3 years from the date the borrower defaulted on the note.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "open-account",
+        "claim": "Open account / credit card debt",
+        "years": 3,
+        "clock_starts": "Date of last payment or charge",
+        "statute": "AS 09.10.053",
+        "notes": "The 3-year period starts from the last payment or charge on the account.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "personal-injury",
+        "claim": "Personal injury",
+        "years": 2,
+        "clock_starts": "Date of injury",
+        "statute": "AS 09.10.070",
+        "notes": "Personal injury claims must be filed within 2 years from the date of injury.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "property-damage",
+        "claim": "Property damage",
+        "years": 2,
+        "clock_starts": "Date of damage",
+        "statute": "AS 09.10.070",
+        "notes": "File within 2 years from the date the property was damaged.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "fraud",
+        "claim": "Fraud",
+        "years": 2,
+        "clock_starts": "Date of discovery",
+        "statute": "AS 09.10.070",
+        "notes": "The 2-year period begins when the fraud is discovered or reasonably should have been discovered.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "bad-check",
+        "claim": "Bad check",
+        "years": 3,
+        "clock_starts": "Date check was dishonored",
+        "statute": "AS 09.10.053",
+        "notes": "File within 3 years from the date the check was dishonored by the bank.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "unpaid-wages",
+        "claim": "Unpaid wages",
+        "years": 2,
+        "clock_starts": "Date wages were due",
+        "statute": "AS 23.10.110",
+        "notes": "Claims for unpaid wages must be filed within 2 years from the date the wages were due.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "security-deposit",
+        "claim": "Security deposit",
+        "years": 1,
+        "clock_starts": "Date deposit was due to be returned",
+        "statute": "AS 34.03.070",
+        "notes": "File within 1 year from the date the landlord was required to return the deposit.",
+        "source_ids": [
+          "S20"
+        ]
+      },
+      {
+        "id": "judgment-enforcement",
+        "claim": "Judgment enforcement",
+        "years": 10,
+        "clock_starts": "Date judgment was entered",
+        "statute": "AS 09.35.020",
+        "notes": "Judgments can be enforced within 10 years from the date they were entered.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "discovery_rule_notes": "The discovery rule applies to fraud claims, starting the limitation period when the fraud is discovered or reasonably should have been discovered.",
+    "tolling_notes": "The statute of limitations may be tolled if the defendant is out of state, the plaintiff is a minor, or in cases of bankruptcy stays.",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "pre_filing": {
+    "demand_letter_required": false,
+    "demand_letter_recommended": true,
+    "demand_letter_notes": "While not required, sending a demand letter can often resolve disputes without court intervention and serves as evidence of your attempt to settle.",
+    "bad_check_notice_rule": "For bad check claims, you must send a written demand for payment, allowing the issuer 15 days to pay before filing a lawsuit.",
+    "wage_claim_demand_rule": "For unpaid wage claims, it's advisable to send a written demand to the employer before filing a claim.",
+    "government_claim_required": false,
+    "government_claim_deadline_days": null,
+    "government_claim_notes": "",
+    "landlord_tenant_pre_filing_notes": "Landlords must provide a written itemization of damages within 14 days (or 30 days if deductions are made) when withholding any portion of a security deposit.",
+    "consumer_protection_notes": "Under the Alaska Consumer Protection Act, sending a demand letter may strengthen your case and potentially entitle you to treble damages and attorney fees.",
+    "mandatory_mediation_before_filing": "none",
+    "arbitration_clauses_enforced": true,
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "forms": [
+    {
+      "number": "SC-1",
+      "name": "Complaint",
+      "description": "Initiates a small claims case by outlining the plaintiff's claim against the defendant.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "https://courts.alaska.gov/forms/sc-1.pdf",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "number": "SC-2",
+      "name": "Summons",
+      "description": "Notifies the defendant of the lawsuit and provides information about the hearing.",
+      "filed_by": "court",
+      "required": true,
+      "group": "service",
+      "url": "https://courts.alaska.gov/forms/sc-2.pdf",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "number": "SC-3",
+      "name": "Answer",
+      "description": "Allows the defendant to respond to the plaintiff's complaint.",
+      "filed_by": "defendant",
+      "required": true,
+      "group": "response",
+      "url": "https://courts.alaska.gov/forms/sc-3.pdf",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "number": "SC-4",
+      "name": "Counterclaim",
+      "description": "Enables the defendant to file a claim against the plaintiff.",
+      "filed_by": "defendant",
+      "required": false,
+      "group": "counterclaim",
+      "url": "https://courts.alaska.gov/forms/sc-4.pdf",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "number": "SC-5",
+      "name": "Request for Default Judgment",
+      "description": "Filed when the defendant fails to respond or appear, requesting the court to issue a default judgment.",
+      "filed_by": "plaintiff",
+      "required": false,
+      "group": "after-judgment",
+      "url": "https://courts.alaska.gov/forms/sc-5.pdf",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "number": "SC-6",
+      "name": "Satisfaction of Judgment",
+      "description": "Filed to indicate that the judgment has been paid in full.",
+      "filed_by": "plaintiff",
+      "required": false,
+      "group": "after-judgment",
+      "url": "https://courts.alaska.gov/forms/sc-6.pdf",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "number": "SC-7",
+      "name": "Notice of Appeal",
+      "description": "Filed to appeal the small claims court's decision to the Superior Court.",
+      "filed_by": "either",
+      "required": false,
+      "group": "appeal",
+      "url": "https://courts.alaska.gov/forms/sc-7.pdf",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "number": "TF-920",
+      "name": "Request for Exemption from Payment of Fees",
+      "description": "Filed to request a waiver of court fees due to financial hardship.",
+      "filed_by": "plaintiff",
+      "required": false,
+      "group": "fee-waiver",
+      "url": "https://courts.alaska.gov/forms/tf-920.pdf",
+      "source_ids": [
+        "S1"
+      ]
+    }
+  ],
+  "service": {
+    "who_can_serve": [
+      "Certified mail by clerk",
+      "Process server",
+      "Peace officer"
+    ],
+    "methods": [
+      {
+        "name": "Certified mail by clerk",
+        "description": "The court clerk sends the summons and complaint to the defendant via certified mail with return receipt requested.",
+        "pros": [
+          "Cost-effective",
+          "Handled by the court"
+        ],
+        "cons": [
+          "Defendant may refuse delivery",
+          "Delivery confirmation may be delayed"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "name": "Process server",
+        "description": "A private process server personally delivers the summons and complaint to the defendant.",
+        "pros": [
+          "Professional service",
+          "Proof of service provided"
+        ],
+        "cons": [
+          "More expensive",
+          "May require coordination"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "name": "Peace officer (personal service)",
+        "description": "A peace officer, such as a sheriff or police officer, personally serves the defendant.",
+        "pros": [
+          "Official service",
+          "Proof of service provided"
+        ],
+        "cons": [
+          "Fees may vary",
+          "Availability may be limited"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "in_county_days_before_hearing": 10,
+    "out_of_county_days_before_hearing": 20,
+    "proof_of_service_form": {
+      "number": "SC-104",
+      "name": "Proof of Service"
+    },
+    "proof_filing_deadline_days_before_hearing": 5,
+    "business_service_rule": "Serve the registered agent of the corporation or, if none, an officer or managing agent. For sole proprietors, serve the individual owner.",
+    "out_of_state_defendant_notes": "Service must comply with Alaska rules and the laws of the state where the defendant is served.",
+    "cant_find_defendant_notes": "If the defendant cannot be located, you may request the court's permission for alternative service methods, such as publication.",
+    "avoiding_service_notes": "If the defendant is evading service, document your attempts and request the court's permission for alternative service.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "response_and_default": {
+    "must_file_written_answer": true,
+    "response_deadline_days": 20,
+    "response_notes": "The defendant must file a written answer within 20 days of being served to avoid default judgment.",
+    "default_process": "If the defendant fails to respond or appear, the court may enter a default judgment in favor of the plaintiff.",
+    "prove_up_required": true,
+    "prove_up_notes": "Even if the defendant defaults, the plaintiff must provide evidence to support the claim before the court will enter judgment.",
+    "motion_to_vacate_form": {
+      "number": "SC-8",
+      "name": "Motion to Set Aside Default Judgment"
+    },
+    "motion_to_vacate_deadline_days": 30,
+    "motion_to_vacate_lack_of_notice_days": 180,
+    "motion_to_vacate_appeal_deadline_days": 30,
+    "motion_to_vacate_appeal_notes": "If the motion to vacate is denied, the defendant may appeal the decision within 30 days.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "counterclaim": {
+    "allowed": true,
+    "form": {
+      "number": "SC-4",
+      "name": "Counterclaim"
+    },
+    "same_monetary_limit": true,
+    "service_deadline_in_county_days": 10,
+    "service_deadline_out_of_county_days": 20,
+    "transfer_to_higher_court_available": true,
+    "transfer_to_higher_court_statute": "AS 22.15.040",
+    "transfer_to_higher_court_notes": "If the counterclaim exceeds $10,000, the case may be transferred to the district court's regular civil division.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "hearing": {
+    "lawyers_allowed": "yes",
+    "lawyers_allowed_notes": "Parties may be represented by attorneys, but legal representation is not required.",
+    "format": "Informal bench trial where both parties present evidence and testimony; hearings typically last 30-60 minutes.",
+    "presider": "judge",
+    "burden_of_proof": "preponderance",
+    "what_to_bring": [
+      "Originals of any contracts",
+      "Receipts and bank records",
+      "Photos and videos",
+      "Names and contact info for witnesses"
+    ],
+    "subpoena_form": {
+      "number": "SC-107",
+      "name": "Subpoena"
+    },
+    "witness_fee_per_day_dollars": 12.5,
+    "free_interpreters": true,
+    "interpreter_request_process": "Request an interpreter from the court clerk as soon as possible before the hearing.",
+    "jury_option": false,
+    "decision_timing": "On the spot or mailed within a few days",
+    "on_site_mediation": "by court",
+    "on_site_mediation_notes": "Some courts offer mediation services to help parties reach a settlement before the hearing.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "appeals": {
+    "who_can_appeal": "either",
+    "deadline_days": 30,
+    "fee_dollars": 150,
+    "type": "trial de novo",
+    "type_notes": "The appeal is a new trial in the Superior Court, where both parties can present their cases anew.",
+    "attorneys_allowed_on_appeal": true,
+    "bond_required": false,
+    "bond_amount_notes": "",
+    "automatic_stay_on_appeal": true,
+    "default_judgment_appealable": true,
+    "default_judgment_notes": "A default judgment can be appealed, but it's advisable to first file a motion to set aside the default judgment in the small claims court.",
+    "notice_of_appeal_form": {
+      "number": "SC-7",
+      "name": "Notice of Appeal"
+    },
+    "frivolous_appeal_penalty_dollars": null,
+    "frivolous_appeal_statute": "",
+    "frivolous_appeal_notes": "",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "collection": {
+    "payment_deadline_typical_days": 30,
+    "post_judgment_interest_rate_pct": 3.75,
+    "post_judgment_interest_statute": "AS 09.30.070",
+    "post_judgment_interest_notes": "Interest accrues on unpaid judgments at the rate specified by statute.",
+    "methods": [
+      {
+        "id": "wage-garnishment",
+        "name": "Wage garnishment",
+        "blurb": "Have a portion of the debtor's wages withheld until the judgment is paid.",
+        "description": "File a writ of garnishment with the court, serve the employer, and the employer will withhold a portion of the debtor's wages to satisfy the judgment.",
+        "forms": [
+          {
+            "number": "SC-9",
+            "name": "Application for Writ of Garnishment"
+          }
+        ],
+        "estimated_cost": "$25 filing fee plus service costs",
+        "effectiveness_notes": "Effective if the debtor is employed and earns sufficient wages.",
+        "exemptions": [
+          "75% of disposable earnings or 40 times the federal minimum hourly wage per week, whichever is greater"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "id": "bank-levy",
+        "name": "Bank levy",
+        "blurb": "Seize funds from the debtor's bank account to satisfy the judgment.",
+        "description": "Obtain a writ of execution from the court, serve it on the debtor's bank, and the bank will freeze and turn over funds to satisfy the judgment.",
+        "forms": [
+          {
+            "number": "SC-10",
+            "name": "Application for Writ of Execution"
+          }
+        ],
+        "estimated_cost": "$25 filing fee plus service costs",
+        "effectiveness_notes": "Effective if the debtor has sufficient funds in the bank account.",
+        "exemptions": [
+          "$1,820 of deposits are exempt from execution"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "id": "property-lien",
+        "name": "Property lien",
+        "blurb": "Place a lien on the debtor's real property to secure the judgment amount.",
+        "description": "Record the judgment with the recorder's office in the county where the property is located to create a lien.",
+        "forms": [
+          {
+            "number": "SC-11",
+            "name": "Notice of Lien"
+          }
+        ],
+        "estimated_cost": "$20 recording fee",
+        "effectiveness_notes": "Effective if the debtor owns real property; the lien must be satisfied before the property can be sold or refinanced.",
+        "exemptions": [
+          "Homestead exemption up to $72,900"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "id": "writ-of-execution",
+        "name": "Writ of execution",
+        "blurb": "Authorize a peace officer to seize and sell the debtor's non-exempt property to satisfy the judgment.",
+        "description": "Obtain a writ of execution from the court, and a peace officer will seize and sell the debtor's non-exempt property.",
+        "forms": [
+          {
+            "number": "SC-10",
+            "name": "Application for Writ of Execution"
+          }
+        ],
+        "estimated_cost": "$25 filing fee plus service costs",
+        "effectiveness_notes": "Effective if the debtor owns valuable non-exempt personal property.",
+        "exemptions": [
+          "Various personal property exemptions apply"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "wage_garnishment_max_pct_of_disposable": 25,
+    "judgment_lifespan_years": 10,
+    "judgment_renewal_process": "File a motion to renew the judgment before the 10-year period expires; the court may grant a renewal for an additional 10 years.",
+    "debtor_exam_form": {
+      "number": "SC-12",
+      "name": "Motion for Judgment Debtor Examination"
+    },
+    "exempt_assets": [
+      "Homestead — up to $72,900",
+      "Vehicle — up to $4,050",
+      "Personal property — up to $3,750",
+      "Wages — 75% of disposable earnings or 40 times the federal minimum hourly wage per week, whichever is greater",
+      "Retirement accounts — generally exempt",
+      "Public assistance benefits — fully exempt"
+    ],
+    "bankruptcy_effect_notes": "Filing for bankruptcy may discharge the judgment debt; however, certain debts are non-dischargeable.",
+    "satisfaction_of_judgment_form": {
+      "number": "SC-6",
+      "name": "Satisfaction of Judgment"
+    },
+    "priority_notes": "Judgment liens are prioritized based on the date of recording; earlier liens have higher priority.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "businesses": {
+    "self_representation_allowed": true,
+    "self_representation_notes": "Businesses may represent themselves in small claims court without an attorney.",
+    "can_send_employee": true,
+    "can_send_attorney": true,
+    "non_attorney_representation_form": {
+      "number": "SC-13",
+      "name": "Authorization to Appear"
+    },
+    "insurance_adjuster_allowed": false,
+    "fictitious_name_form": {
+      "number": "SC-14",
+      "name": "Certificate of Assumed Name"
+    },
+    "fictitious_name_notes": "Businesses operating under a fictitious name must file a Certificate of Assumed Name with the state.",
+    "sole_proprietor_employee_exception": "Sole proprietors may authorize an employee to represent them in small claims court.",
+    "out_of_state_business_must_register": true,
+    "out_of_state_business_statute": "AS 10.06.150",
+    "licensing_notes": "Unlicensed contractors may face limitations in enforcing contracts in court.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "county_variations_material": false,
+  "county_variations": [],
+  "pitfalls": [
+    {
+      "title": "Filing in the wrong venue",
+      "what_happens": "Filing in the incorrect district may result in dismissal or transfer, causing delays and additional costs.",
+      "how_to_avoid": "Ensure you file in the correct district where the defendant resides or where the claim arose.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Exceeding the monetary limit",
+      "what_happens": "Claims exceeding $10,000 cannot be fully recovered in small claims court; you must waive the excess amount.",
+      "how_to_avoid": "If your claim exceeds $10,000 and you do not wish to waive the excess, file in the district court's regular civil division.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Missing the statute of limitations",
+      "what_happens": "Filing after the statute of limitations has expired will result in dismissal of your case.",
+      "how_to_avoid": "Verify the applicable statute of limitations for your claim type and file within the required timeframe.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "title": "Improper service of process",
+      "what_happens": "Failure to properly serve the defendant can delay proceedings or result in dismissal.",
+      "how_to_avoid": "Follow the court's rules for service of process carefully, using approved methods and completing service within required timeframes.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Not bringing necessary evidence",
+      "what_happens": "Lack of evidence can weaken your case and lead to an unfavorable outcome.",
+      "how_to_avoid": "Gather and bring all relevant documents, photos, and witness information to support your claim.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Ignoring post-judgment procedures",
+      "what_happens": "Winning a judgment does not guarantee payment; you must take steps to enforce it.",
+      "how_to_avoid": "Familiarize yourself with collection methods such as wage garnishment and property liens to enforce the judgment.",
+      "source_ids": [
+        "S1"
+      ]
+    }
+  ],
+  "recent_changes": [],
+  "faqs": [
+    {
+      "question": "Do I need a lawyer?",
+      "answer": "No, you do not need a lawyer to file or defend a case in Alaska's small claims court. The process is designed to be accessible for individuals representing themselves, though you may choose to hire an attorney if you prefer.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "How long does it take?",
+      "answer": "The timeline varies, but most small claims cases in Alaska are resolved within 30 to 90 days from filing to judgment, depending on court schedules and the complexity of the case.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "What's the maximum I can sue for?",
+      "answer": "In Alaska's small claims court, you can sue for up to $10,000. If your claim exceeds this amount, you must waive the excess to proceed in small claims court or file in the district court's regular civil division.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "question": "What happens if the defendant doesn't show up?",
+      "answer": "If the defendant fails to appear after being properly served, the court may enter a default judgment in your favor. You may still need to provide evidence to support your claim before the judgment is granted.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "Can I appeal?",
+      "answer": "Yes, either party can appeal a small claims court decision to the Superior Court within 30 days of the judgment. The appeal will be a new trial (trial de novo) where both parties can present their cases again.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "How long is a judgment good for?",
+      "answer": "A judgment in Alaska is valid for 10 years from the date it is entered. You can renew the judgment before it expires to extend its enforceability for another 10 years.",
+      "source_ids": [
+        "S8"
+      ]
+    }
+  ],
+  "state_specific_notes": [
+    "Alaska's small claims court allows claims up to $10,000, which is higher than many other states.",
+    "Eviction cases are not handled in small claims court and must be filed in the district court's regular civil division.",
+    "The Alaska Consumer Protection Act allows for treble damages and attorney fees in cases of deceptive trade practices.",
+    "Small claims court procedures are designed to be accessible for self-represented litigants, with simplified rules and forms.",
+    "Alaska provides a Small Claims Handbook to guide individuals through the process, available on the court's website."
+  ],
+  "_extras": {
+    "interesting_findings": [
+      "Alaska's small claims court has a relatively high monetary limit compared to other states, allowing for more substantial disputes to be resolved through this simplified process.",
+      "The state offers comprehensive self-help resources, including detailed handbooks and forms, to assist individuals in navigating the small claims process without legal representation."
+    ]
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "label": "Alaska Court System Self-Help: Small Claims",
+      "url": "https://courts.alaska.gov/shc/sc/index.htm",
+      "primary": true,
+      "citation": "Alaska Court System Self-Help: Small Claims"
+    },
+    {
+      "id": "S4",
+      "label": "Alaska Statutes: Small Claims Procedures (AS 22.15.040 and related sections)",
+      "url": "https://www.akleg.gov/basis/statutes.asp#22.15.040",
+      "primary": true,
+      "citation": "AS 22.15.040"
+    },
+    {
+      "id": "S5",
+      "label": "Alaska Consumer Protection Act (UDAP)",
+      "url": "https://www.akleg.gov/basis/statutes.asp#45.50.471",
+      "primary": true,
+      "citation": "AS 45.50.471"
+    },
+    {
+      "id": "S6",
+      "label": "Alaska Uniform Residential Landlord and Tenant Act",
+      "url": "https://www.akleg.gov/basis/statutes.asp#34.03",
+      "primary": true,
+      "citation": "AS 34.03"
+    },
+    {
+      "id": "S7",
+      "label": "Bad Check Civil Penalty — Alaska Statutes",
+      "url": "https://www.akleg.gov/basis/statutes.asp#09.68.115",
+      "primary": true,
+      "citation": "AS 09.68.115"
+    },
+    {
+      "id": "S8",
+      "label": "Judgment Enforcement and Executions — Alaska Statutes",
+      "url": "https://www.akleg.gov/basis/statutes.asp#09.38",
+      "primary": true,
+      "citation": "AS 09.38"
+    },
+    {
+      "id": "S9",
+      "label": "Employment and Wages — Alaska Statutes (Final Paychecks, etc.)",
+      "url": "https://www.akleg.gov/basis/statutes.asp#23.05",
+      "primary": true,
+      "citation": "AS 23.05"
+    },
+    {
+      "id": "S13",
+      "label": "Alaska State Court Filing Fees",
+      "url": "https://courts.alaska.gov/forms/cts-110.pdf",
+      "primary": true,
+      "citation": "Alaska State Court Filing Fees"
+    },
+    {
+      "id": "S20",
+      "label": "Alaska Uniform Residential Landlord and Tenant Act — Security Deposit Return",
+      "url": "https://www.akleg.gov/basis/statutes.asp#34.03.070",
+      "primary": true,
+      "citation": "AS 34.03.070"
+    },
+    {
+      "id": "S21",
+      "label": "Alaska Uniform Residential Landlord and Tenant Act — Prohibited Practices (illegal lockout, etc.)",
+      "url": "https://www.akleg.gov/basis/statutes.asp#34.03.300",
+      "primary": true,
+      "citation": "AS 34.03.300"
+    },
+    {
+      "id": "S22",
+      "label": "Alaska Final Paycheck Law — AS 23.05.140",
+      "url": "https://www.akleg.gov/basis/statutes.asp#23.05.140",
+      "primary": true,
+      "citation": "AS 23.05.140"
+    },
+    {
+      "id": "S19",
+      "label": "Alaska Used Car and Lemon Law Provisions",
+      "url": "https://www.akleg.gov/basis/statutes.asp#45.45",
+      "primary": true,
+      "citation": "AS 45.45"
+    }
+  ],
+  "_meta": {
+    "state": "Alaska",
+    "slug": "alaska",
+    "model": "gpt-4.1",
+    "sources_response_id": "resp_0f1b0cef4c9b08e20069f088d4c40c8195982e096699540a92",
+    "extraction_response_id": "resp_0bf361898dc8c5bb0069f08bc0545481908740d3fda3334be8",
+    "generated_at": "2026-04-28T10:30:08.741Z",
+    "usage": {
+      "input_tokens": 7346,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 14605,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 21951
+    }
+  }
+}

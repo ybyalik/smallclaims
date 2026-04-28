@@ -1,0 +1,161 @@
+{
+  "state": "Washington",
+  "as_of": "2024-06-19",
+  "state_judiciary_pages": [
+    {
+      "label": "Washington Courts — Small Claims Court",
+      "url": "https://www.courts.wa.gov/newsinfo/resources/?fa=newsinfo_jury.display&altMenu=Citi&fileID=smallClaims",
+      "scope": "small_claims"
+    },
+    {
+      "label": "Washington Courts — Self-Help: Small Claims",
+      "url": "https://www.courts.wa.gov/selfhelp/?fa=selfhelp.display&fileID=smallClaims",
+      "scope": "self_help"
+    },
+    {
+      "label": "Washington Courts — Court Directory",
+      "url": "https://www.courts.wa.gov/court_dir/",
+      "scope": "court_directory"
+    }
+  ],
+  "statutes": [
+    {
+      "label": "RCW 12.40 — Small Claims Act",
+      "url": "https://app.leg.wa.gov/rcw/default.aspx?cite=12.40",
+      "section_or_chapter": "Chapter 12.40"
+    },
+    {
+      "label": "RCW 4.28 — Commencement of Actions",
+      "url": "https://app.leg.wa.gov/rcw/default.aspx?cite=4.28",
+      "section_or_chapter": "Chapter 4.28"
+    },
+    {
+      "label": "RCW 4.56.190 — Enforcement of Judgments",
+      "url": "https://app.leg.wa.gov/rcw/default.aspx?cite=4.56.190",
+      "section_or_chapter": "RCW 4.56.190"
+    },
+    {
+      "label": "RCW 12.40.020 — Jurisdiction",
+      "url": "https://app.leg.wa.gov/rcw/default.aspx?cite=12.40.020",
+      "section_or_chapter": "RCW 12.40.020"
+    },
+    {
+      "label": "RCW 6.27 — Garnishment and Other Proceedings",
+      "url": "https://app.leg.wa.gov/rcw/default.aspx?cite=6.27",
+      "section_or_chapter": "Chapter 6.27"
+    }
+  ],
+  "court_rules": [
+    {
+      "label": "Washington State Court Rules — Local Court Rules for Small Claims (LCRLJ 12)",
+      "url": "https://www.courts.wa.gov/court_rules/?fa=court_rules.display&group=district&set=CRLJ&ruleid=districtcrlj12",
+      "rule_or_chapter": "LCRLJ 12"
+    },
+    {
+      "label": "Washington State Court Rules — Civil Rules for Courts of Limited Jurisdiction (CRLJ)",
+      "url": "https://www.courts.wa.gov/court_rules/?fa=court_rules.display&group=district&set=CRLJ",
+      "rule_or_chapter": "CRLJ"
+    }
+  ],
+  "forms_pages": [
+    {
+      "label": "Washington Courts — Small Claims Forms",
+      "url": "https://www.courts.wa.gov/forms/?fa=forms.contribute&formType=CLJ&subject=Small%20Claims"
+    }
+  ],
+  "fee_schedules": [
+    {
+      "label": "Washington Courts — Fee Schedules",
+      "url": "https://www.courts.wa.gov/newsinfo/resources/?fa=newsinfo_jury.display&altMenu=Citi&fileID=smallClaims#fees"
+    }
+  ],
+  "service_rules": [
+    {
+      "label": "RCW 12.40.040 — Service of Notice",
+      "url": "https://app.leg.wa.gov/rcw/default.aspx?cite=12.40.040",
+      "section_or_chapter": "RCW 12.40.040"
+    }
+  ],
+  "appeal_rules": [
+    {
+      "label": "RCW 12.36.020 — Appeal from a Justice Court",
+      "url": "https://app.leg.wa.gov/rcw/default.aspx?cite=12.36.020",
+      "section_or_chapter": "RCW 12.36.020"
+    }
+  ],
+  "post_judgment_collection": [
+    {
+      "label": "RCW 6.17 — Executions",
+      "url": "https://app.leg.wa.gov/rcw/default.aspx?cite=6.17",
+      "section_or_chapter": "Chapter 6.17"
+    },
+    {
+      "label": "RCW 6.27 — Garnishment and Other Proceedings",
+      "url": "https://app.leg.wa.gov/rcw/default.aspx?cite=6.27",
+      "section_or_chapter": "Chapter 6.27"
+    }
+  ],
+  "consumer_protection_statutes": [
+    {
+      "label": "RCW 19.86 — Consumer Protection Act (UDAP)",
+      "url": "https://app.leg.wa.gov/rcw/default.aspx?cite=19.86",
+      "section_or_chapter": "Chapter 19.86"
+    },
+    {
+      "label": "RCW 19.118 — Motor Vehicles Warranties (Lemon Law)",
+      "url": "https://app.leg.wa.gov/rcw/default.aspx?cite=19.118",
+      "section_or_chapter": "Chapter 19.118"
+    },
+    {
+      "label": "RCW 62A.3-515 — Civil Penalty for Dishonored Checks",
+      "url": "https://app.leg.wa.gov/rcw/default.aspx?cite=62A.3-515",
+      "section_or_chapter": "RCW 62A.3-515"
+    }
+  ],
+  "landlord_tenant_statutes": [
+    {
+      "label": "RCW 59.18 — Residential Landlord-Tenant Act",
+      "url": "https://app.leg.wa.gov/rcw/default.aspx?cite=59.18",
+      "section_or_chapter": "Chapter 59.18"
+    },
+    {
+      "label": "RCW 59.18.280 — Return of Security Deposit",
+      "url": "https://app.leg.wa.gov/rcw/default.aspx?cite=59.18.280",
+      "section_or_chapter": "RCW 59.18.280"
+    }
+  ],
+  "wage_and_employment_statutes": [
+    {
+      "label": "RCW 49.48.010 — Payment of Wages Due to Termination",
+      "url": "https://app.leg.wa.gov/rcw/default.aspx?cite=49.48.010",
+      "section_or_chapter": "RCW 49.48.010"
+    }
+  ],
+  "civil_remedies_statutes": [
+    {
+      "label": "RCW 4.84.250 — Attorney Fees for Small Claims",
+      "url": "https://app.leg.wa.gov/rcw/default.aspx?cite=4.84.250",
+      "section_or_chapter": "RCW 4.84.250"
+    }
+  ],
+  "county_specific": [],
+  "notes": "Washington small claims procedures are unified statewide through the district and municipal courts.",
+  "_meta": {
+    "state": "Washington",
+    "slug": "washington",
+    "model": "gpt-4.1",
+    "response_id": "resp_0405432007766b360069f08b900ee08195b6944a6cf50f6a87",
+    "generated_at": "2026-04-28T10:27:41.636Z",
+    "usage": {
+      "input_tokens": 2102,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 1623,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 3725
+    }
+  }
+}

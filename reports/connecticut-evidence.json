@@ -1,0 +1,1638 @@
+{
+  "state": "Connecticut",
+  "slug": "connecticut",
+  "abbr": "CT",
+  "as_of": "2026-04-28",
+  "hero": {
+    "individual_limit_dollars": 5000,
+    "business_limit_dollars": 5000,
+    "filing_fee_low_dollars": 95,
+    "filing_fee_high_dollars": 150,
+    "typical_timeline_min_days": 30,
+    "typical_timeline_max_days": 90,
+    "tagline": "Standard $5,000 cap with exceptions for home improvement and security deposit claims.",
+    "source_ids": [
+      "S1",
+      "S12"
+    ]
+  },
+  "at_a_glance": [
+    {
+      "label": "Most you can sue for",
+      "value": "$5,000",
+      "detail": "Exceptions: $15,000 for home improvement contracts; no cap for security deposit returns.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Filing fee",
+      "value": "$95–$150",
+      "detail": "Varies by claim amount.",
+      "source_ids": [
+        "S12"
+      ]
+    },
+    {
+      "label": "Court",
+      "value": "Superior Court (Small Claims Session)",
+      "detail": "",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Lawyers at trial",
+      "value": "Allowed",
+      "detail": "Permitted but not required.",
+      "source_ids": [
+        "S10"
+      ]
+    },
+    {
+      "label": "Appeal window",
+      "value": "15 days",
+      "detail": "Trial de novo in Superior Court.",
+      "source_ids": [
+        "S8"
+      ]
+    },
+    {
+      "label": "Recent change",
+      "value": "—",
+      "detail": "No major changes in the last 3 years.",
+      "source_ids": []
+    }
+  ],
+  "limits": {
+    "individual_dollars": 5000,
+    "business_dollars": 5000,
+    "guarantor_with_fee_max": null,
+    "guarantor_without_fee_max": null,
+    "annual_filing_cap": {
+      "count": null,
+      "threshold_dollars": null,
+      "notes": ""
+    },
+    "split_claims_allowed": false,
+    "split_claims_explanation": "If your claim exceeds the small claims limit, you cannot split it into multiple cases to fit within the cap. You must either waive the excess amount or file in a higher court.",
+    "interest_excluded_from_cap": true,
+    "court_costs_excluded_from_cap": true,
+    "statute": "Conn. Gen. Stat. § 51-15",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "claim_categories": [
+    {
+      "id": "contracts",
+      "title": "Contracts and money owed",
+      "blurb": "Connecticut allows you to file claims for breaches of contract and money owed up to $5,000, with a 6-year statute of limitations for written contracts.",
+      "claims": [
+        {
+          "slug": "written-contract",
+          "name": "Breach of a written contract",
+          "example": "A contractor signed a $4,000 contract to remodel your kitchen, took the deposit, and never finished.",
+          "eligibility": "eligible",
+          "claim_statute": "Conn. Gen. Stat. § 52-576",
+          "notes": "6-year deadline from breach. Bring the signed contract, payment proof, and any correspondence showing the breach.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "oral-contract",
+          "name": "Breach of an oral contract",
+          "example": "You agreed verbally to lend a friend $2,000, and they failed to repay.",
+          "eligibility": "eligible",
+          "claim_statute": "Conn. Gen. Stat. § 52-581",
+          "notes": "3-year deadline from breach. Provide evidence of the agreement, such as emails or witness testimony.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "personal-loan",
+          "name": "Unpaid personal loan",
+          "example": "You lent $3,500 to a colleague who promised to repay in 6 months but hasn't.",
+          "eligibility": "eligible",
+          "claim_statute": "Conn. Gen. Stat. § 52-576",
+          "notes": "6-year deadline from breach. Document the loan agreement and any repayment attempts.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "promissory-note",
+          "name": "Default on a promissory note",
+          "example": "A borrower signed a promissory note for $4,500 and missed payments.",
+          "eligibility": "eligible",
+          "claim_statute": "Conn. Gen. Stat. § 42a-3-118",
+          "notes": "6-year deadline from due date. Present the original note and payment records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unpaid-invoice",
+          "name": "Unpaid invoice for services rendered",
+          "example": "You provided $2,000 worth of consulting services, and the client hasn't paid.",
+          "eligibility": "eligible",
+          "claim_statute": "Conn. Gen. Stat. § 52-576",
+          "notes": "6-year deadline from breach. Include the invoice, service agreement, and communication records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "open-account",
+          "name": "Unpaid balance on an open account",
+          "example": "A customer has an outstanding balance of $1,500 on their store account.",
+          "eligibility": "eligible",
+          "claim_statute": "Conn. Gen. Stat. § 52-576",
+          "notes": "6-year deadline from last transaction. Provide account statements and transaction history.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unpaid-rent",
+          "name": "Unpaid rent by tenant",
+          "example": "Your tenant owes $4,000 in back rent and has vacated the property.",
+          "eligibility": "eligible",
+          "claim_statute": "Conn. Gen. Stat. § 47a-23a",
+          "notes": "6-year deadline from breach. Bring the lease agreement and payment records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "bad-check",
+          "name": "Payment with a bad check",
+          "example": "A customer paid with a $1,200 check that bounced due to insufficient funds.",
+          "eligibility": "eligible",
+          "claim_statute": "Conn. Gen. Stat. § 52-565a",
+          "notes": "6-year deadline from breach. Provide the bounced check and bank notice.",
+          "damage_boost": "Check amount + service charge up to $20 + civil penalty up to $500 OR 2x check amount, whichever is greater.",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "co-signer",
+          "name": "Co-signer seeking repayment",
+          "example": "You co-signed a $3,000 loan, and the primary borrower defaulted.",
+          "eligibility": "eligible",
+          "claim_statute": "Conn. Gen. Stat. § 52-576",
+          "notes": "6-year deadline from breach. Present the loan agreement and default notice.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "consumer-disputes",
+      "title": "Consumer disputes",
+      "blurb": "Connecticut allows consumers to file claims up to $5,000 for defective products, poor services, and other consumer issues, with varying statutes of limitations.",
+      "claims": [
+        {
+          "slug": "defective-product",
+          "name": "Purchase of a defective product",
+          "example": "You bought a $1,000 appliance that stopped working within a month.",
+          "eligibility": "eligible",
+          "claim_statute": "Conn. Gen. Stat. § 52-577a",
+          "notes": "3-year deadline from purchase. Bring the receipt, warranty, and any repair records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "bad-service",
+          "name": "Substandard service provided",
+          "example": "A cleaning service charged $800 but left your home dirty.",
+          "eligibility": "eligible",
+          "claim_statute": "Conn. Gen. Stat. § 52-576",
+          "notes": "6-year deadline from service date. Provide the service agreement and photos of the work.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "auto-repair",
+          "name": "Faulty auto repair",
+          "example": "A mechanic charged $2,500 for repairs that didn't fix the issue.",
+          "eligibility": "eligible",
+          "claim_statute": "Conn. Gen. Stat. § 52-576",
+          "notes": "6-year deadline from repair date. Include repair invoices and expert opinions.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "contractor",
+          "name": "Home contractor failed to complete work",
+          "example": "A contractor took a $4,000 deposit and didn't start the project.",
+          "eligibility": "eligible",
+          "claim_statute": "Conn. Gen. Stat. § 52-576",
+          "notes": "6-year deadline from breach. Bring the contract, payment proof, and correspondence.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "no-show-vendor",
+          "name": "Vendor failed to deliver goods",
+          "example": "You paid $1,500 for furniture that was never delivered.",
+          "eligibility": "eligible",
+          "claim_statute": "Conn. Gen. Stat. § 52-576",
+          "notes": "6-year deadline from breach. Provide the purchase agreement and payment records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "subscription-cancellation",
+          "name": "Unauthorized subscription charges",
+          "example": "A gym continued charging $100 monthly after you canceled.",
+          "eligibility": "eligible",
+          "claim_statute": "Conn. Gen. Stat. § 42-110b",
+          "notes": "3-year deadline from violation. Include cancellation notice and bank statements.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "used-car",
+          "name": "Purchase of a defective used car",
+          "example": "You bought a $4,500 used car that broke down within a week.",
+          "eligibility": "eligible",
+          "claim_statute": "Conn. Gen. Stat. § 42-221",
+          "notes": "3-year deadline from purchase. Bring the sales contract and repair records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "false-advertising",
+          "name": "False advertising leading to loss",
+          "example": "A store advertised a $2,000 TV as new, but it was refurbished.",
+          "eligibility": "eligible",
+          "claim_statute": "Conn. Gen. Stat. § 42-110b",
+          "notes": "3-year deadline from violation. Provide the advertisement and purchase receipt.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "property-damage",
+      "title": "Property damage",
+      "blurb": "Claims for property damage up to $5,000 are allowed in Connecticut, with a 2-year statute of limitations.",
+      "claims": [
+        {
+          "slug": "vehicle-collision",
+          "name": "Damage from a vehicle collision",
+          "example": "Another driver caused $3,000 damage to your car.",
+          "eligibility": "eligible",
+          "claim_statute": "Conn. Gen. Stat. § 52-584",
+          "notes": "2-year deadline from accident. Bring the police report and repair estimates.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "neighbor-property",
+          "name": "Neighbor damaged your property",
+          "example": "A neighbor's tree fell and caused $2,500 damage to your fence.",
+          "eligibility": "eligible",
+          "claim_statute": "Conn. Gen. Stat. § 52-584",
+          "notes": "2-year deadline from damage. Provide photos and repair estimates.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "damage-to-rental",
+          "name": "Tenant caused damage to rental property",
+          "example": "A tenant left $4,000 worth of damage upon moving out.",
+          "eligibility": "eligible",
+          "claim_statute": "Conn. Gen. Stat. § 47a-23a",
+          "notes": "6-year deadline from breach. Bring the lease agreement and photos of damage.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "pet-damage",
+          "name": "Damage caused by someone's pet",
+          "example": "A neighbor's dog chewed your $1,200 outdoor furniture.",
+          "eligibility": "eligible",
+          "claim_statute": "Conn. Gen. Stat. § 22-357",
+          "notes": "3-year deadline from incident. Provide photos and repair estimates.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "property-in-custody",
+          "name": "Damage to property left in someone's care",
+          "example": "A dry cleaner ruined your $800 suit.",
+          "eligibility": "eligible",
+          "claim_statute": "Conn. Gen. Stat. § 52-576",
+          "notes": "6-year deadline from damage. Bring the receipt and photos of damage.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "landlord-tenant",
+      "title": "Landlord-tenant disputes",
+      "blurb": "Connecticut allows claims up to $5,000 for landlord-tenant disputes, with specific statutes governing security deposits and other issues.",
+      "claims": [
+        {
+          "slug": "security-deposit",
+          "name": "Failure to return security deposit",
+          "example": "Your landlord withheld your $2,000 security deposit without cause.",
+          "eligibility": "eligible",
+          "claim_statute": "Conn. Gen. Stat. § 47a-21",
+          "notes": "2-year deadline from lease termination. Provide the lease agreement and move-out inspection report.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "deposit-not-itemized",
+          "name": "Landlord didn't provide itemized deductions",
+          "example": "Your landlord deducted $1,500 from your deposit without explanation.",
+          "eligibility": "eligible",
+          "claim_statute": "Conn. Gen. Stat. § 47a-21",
+          "notes": "2-year deadline from lease termination. Bring the lease and correspondence.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "uninhabitable-rental",
+          "name": "Rental unit deemed uninhabitable",
+          "example": "Your apartment had no heat for weeks, and the landlord didn't fix it.",
+          "eligibility": "eligible",
+          "claim_statute": "Conn. Gen. Stat. § 47a-7",
+          "notes": "6-year deadline from breach. Provide photos and repair requests.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "wrongful-retention-property",
+          "name": "Landlord kept personal property after move-out",
+          "example": "Your landlord kept your $1,000 bicycle after you moved out.",
+          "eligibility": "eligible",
+          "claim_statute": "Conn. Gen. Stat. § 47a-42",
+          "notes": "6-year deadline from breach. Bring the lease and communication records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "illegal-eviction",
+          "name": "Landlord conducted illegal eviction",
+          "example": "Your landlord changed the locks without notice.",
+          "eligibility": "eligible",
+          "claim_statute": "Conn. Gen. Stat. § 47a-43",
+          "notes": "6-year deadline from breach. Provide the lease and evidence of eviction.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unreturned-prepaid-rent",
+          "name": "Landlord didn't return prepaid rent",
+          "example": "You paid first and last month's rent, but moved out early and didn't get a refund.",
+          "eligibility": "eligible",
+          "claim_statute": "Conn. Gen. Stat. § 47a-21",
+          "notes": "2-year deadline from lease termination. Bring the lease and payment records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unpaid-rent-by-tenant",
+          "name": "Tenant failed to pay rent",
+          "example": "Your tenant owes $3,000 in unpaid rent.",
+          "eligibility": "eligible",
+          "claim_statute": "Conn. Gen. Stat. § 47a-23a",
+          "notes": "6-year deadline from breach. Provide the lease and payment records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "repair-and-deduct",
+          "name": "Tenant deducted repair costs from rent",
+          "example": "You repaired a $1,200 plumbing issue and deducted it from rent.",
+          "eligibility": "eligible",
+          "claim_statute": "Conn. Gen. Stat. § 47a-7",
+          "notes": "6-year deadline from breach. Provide repair receipts and communication records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "employment-and-wages",
+      "title": "Employment and wage disputes",
+      "blurb": "Connecticut allows claims up to $5,000 for wage disputes, with specific statutes governing unpaid wages and final paychecks.",
+      "claims": [
+        {
+          "slug": "unpaid-wages",
+          "name": "Employer failed to pay wages",
+          "example": "Your employer owes you $2,000 in unpaid wages.",
+          "eligibility": "eligible",
+          "claim_statute": "Conn. Gen. Stat. § 31-71b",
+          "notes": "2-year deadline from due date. Provide pay stubs and employment contract.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "final-paycheck",
+          "name": "Employer didn't provide final paycheck",
+          "example": "You left your job, and the employer withheld your last $1,500 paycheck.",
+          "eligibility": "eligible",
+          "claim_statute": "Conn. Gen. Stat. § 31-71c",
+          "notes": "2-year deadline from due date. Bring employment records and correspondence.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unpaid-commissions",
+          "name": "Unpaid sales commissions",
+          "example": "Your employer owes you $3,000 in earned commissions.",
+          "eligibility": "eligible",
+          "claim_statute": "Conn. Gen. Stat. § 31-71b",
+          "notes": "2-year deadline from due date. Provide commission agreements and sales records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unpaid-overtime",
+          "name": "Employer didn't pay overtime wages",
+          "example": "You worked 10 hours of overtime but weren't compensated.",
+          "eligibility": "eligible",
+          "claim_statute": "Conn. Gen. Stat. § 31-76c",
+          "notes": "2-year deadline from due date. Bring time sheets and pay records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "personal-claims",
+      "title": "Personal claims",
+      "blurb": "Connecticut allows claims up to $5,000 for personal disputes, with varying statutes of limitations.",
+      "claims": [
+        {
+          "slug": "minor-injury",
+          "name": "Minor personal injury",
+          "example": "You slipped on a wet floor in a store and incurred $2,500 in medical bills.",
+          "eligibility": "eligible",
+          "claim_statute": "Conn. Gen. Stat. § 52-584",
+          "notes": "2-year deadline from injury. Provide medical records and incident reports.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "loaned-property",
+          "name": "Failure to return loaned property",
+          "example": "You lent a friend your $1,000 camera, and they refuse to return it.",
+          "eligibility": "eligible",
+          "claim_statute": "Conn. Gen. Stat. § 52-576",
+          "notes": "6-year deadline from breach. Provide evidence of the loan and requests for return.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "civil-theft",
+          "name": "Theft of personal property",
+          "example": "A neighbor took your $800 bicycle without permission.",
+          "eligibility": "eligible",
+          "claim_statute": "Conn. Gen. Stat. § 52-564",
+          "notes": "2-year deadline from theft. Provide police reports and proof of ownership.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vehicle-specific",
+      "title": "Vehicle-specific claims",
+      "blurb": "Connecticut allows claims up to $5,000 for vehicle-related disputes, with specific statutes governing mechanic disputes and wrongful towing.",
+      "claims": [
+        {
+          "slug": "mechanic-dispute",
+          "name": "Dispute over mechanic's charges",
+          "example": "A mechanic charged $2,000 for unnecessary repairs.",
+          "eligibility": "eligible",
+          "claim_statute": "Conn. Gen. Stat. § 14-65f",
+          "notes": "2-year deadline from service date. Provide repair invoices and expert opinions.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "wrongful-tow",
+          "name": "Vehicle was wrongfully towed",
+          "example": "Your car was towed from a legal parking spot, costing you $300.",
+          "eligibility": "eligible",
+          "claim_statute": "Conn. Gen. Stat. § 14-150",
+          "notes": "2-year deadline from tow date. Provide tow receipts and photos of the parking area.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "category": "Eviction (unlawful detainer)",
+      "explanation": "Small claims court does not handle eviction cases; these must be filed in Housing Court.",
+      "where_to_go_instead": "Housing Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Title to real estate",
+      "explanation": "Disputes involving ownership of real estate are beyond the jurisdiction of small claims court.",
+      "where_to_go_instead": "Superior Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Defamation",
+      "explanation": "Claims of libel and slander are excluded from small claims court.",
+      "where_to_go_instead": "Superior Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Malpractice",
+      "explanation": "Professional malpractice claims exceed the jurisdictional limits of small claims court.",
+      "where_to_go_instead": "Superior Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Family law matters",
+      "explanation": "Divorce, child custody, and other family law issues are not handled in small claims court.",
+      "where_to_go_instead": "Family Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Probate matters",
+      "explanation": "Issues related to wills and estates are outside the jurisdiction of small claims court.",
+      "where_to_go_instead": "Probate Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Claims against the federal government",
+      "explanation": "Small claims court cannot hear cases against federal entities.",
+      "where_to_go_instead": "Federal Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Class actions",
+      "explanation": "Class action lawsuits are not permitted in small claims court.",
+      "where_to_go_instead": "Superior Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Injunctions or specific performance",
+      "explanation": "Small claims court cannot issue orders requiring someone to do or stop doing something.",
+      "where_to_go_instead": "Superior Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Workers' compensation claims",
+      "explanation": "These claims are handled by the Workers' Compensation Commission, not small claims court.",
+      "where_to_go_instead": "Workers' Compensation Commission",
+      "source_ids": [
+        "S1"
+      ]
+    }
+  ],
+  "damages": {
+    "compensatory_allowed": true,
+    "punitive_allowed": false,
+    "punitive_explanation": "Punitive damages are not awarded in small claims court; however, statutory penalties may apply in certain cases.",
+    "statutory_multipliers": [
+      {
+        "claim": "Bad check (after 30-day notice)",
+        "multiplier": "2x check amount",
+        "explanation": "Check amount + service charge up to $20 + civil penalty up to $500 OR 2x check amount, whichever is greater.",
+        "statute": "Conn. Gen. Stat. § 52-565a",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "attorney_fees_recoverable": "sometimes",
+    "attorney_fees_explanation": "Attorney's fees may be recoverable in cases where statutes specifically allow for them, such as under the Connecticut Unfair Trade Practices Act.",
+    "prejudgment_interest_rate_pct": null,
+    "prejudgment_interest_statute": "",
+    "postjudgment_interest_rate_pct": null,
+    "postjudgment_interest_type": "simple",
+    "postjudgment_interest_statute": "",
+    "postjudgment_interest_notes": "",
+    "filing_and_service_fees_recoverable_from_loser": true,
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "where_to_file": {
+    "court_name": "Small Claims Session of the Superior Court",
+    "parent_court": "Connecticut Superior Court",
+    "venue_rules": [
+      {
+        "scenario": "Most cases (the default)",
+        "filing_options": [
+          "Judicial district where the plaintiff resides",
+          "Judicial district where the defendant resides or does business",
+          "Judicial district where the transaction or injury occurred"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Landlord-tenant matters",
+        "filing_options": [
+          "Housing session for the judicial district where the rental property is located"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "consequences_of_wrong_venue": "Filing in the wrong venue may result in the case being transferred or dismissed.",
+    "e_filing_available": "yes",
+    "e_filing_notes": "Mandatory for attorneys; optional for self-represented parties.",
+    "e_filing_portal": "https://efile.eservices.jud.ct.gov/",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "fees": {
+    "filing_fee_tiers": [
+      {
+        "range_label": "$0 to $5,000",
+        "range_min": 0,
+        "range_max": 5000,
+        "fee_dollars": 95,
+        "source_ids": [
+          "S12"
+        ]
+      },
+      {
+        "range_label": "$5,001 to $15,000 (home improvement contracts)",
+        "range_min": 5001,
+        "range_max": 15000,
+        "fee_dollars": 150,
+        "source_ids": [
+          "S12"
+        ]
+      }
+    ],
+    "frequent_filer": {
+      "threshold_per_year": null,
+      "fee_dollars": null,
+      "notes": ""
+    },
+    "service_fees": [
+      {
+        "method": "Certified mail, return receipt requested",
+        "amount_label": "Varies",
+        "notes": "Cost depends on current postal rates.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "method": "State marshal service",
+        "amount_label": "Varies",
+        "notes": "Fees set by statute; contact local marshal for exact amount.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "waiver": {
+      "forms": [
+        {
+          "number": "JD-CV-120",
+          "name": "Application for Waiver of Fees/Appointment of Counsel",
+          "url": "https://www.jud.ct.gov/webforms/forms/cv120.pdf",
+          "source_ids": [
+            "S11"
+          ]
+        }
+      ],
+      "eligibility_bullets": [
+        "Receiving public assistance",
+        "Income below 125% of federal poverty level"
+      ],
+      "coverage_notes": "Waiver covers filing fees and service costs.",
+      "if_you_win_notes": "Waived fees are not added to the judgment against the loser."
+    },
+    "other_fees": [
+      {
+        "name": "Subpoena issuance",
+        "amount_label": "$50",
+        "notes": "Plus witness fee per day.",
+        "source_ids": [
+          "S12"
+        ]
+      },
+      {
+        "name": "Appeal filing",
+        "amount_label": "$250",
+        "notes": "",
+        "source_ids": [
+          "S12"
+        ]
+      },
+      {
+        "name": "Writ of execution",
+        "amount_label": "Varies",
+        "notes": "Post-judgment; contact court for exact amount.",
+        "source_ids": [
+          "S12"
+        ]
+      }
+    ],
+    "fees_recoverable_from_loser_notes": "If you win, filing fees and reasonable service costs are added to the judgment.",
+    "source_ids": [
+      "S12"
+    ]
+  },
+  "statute_of_limitations": {
+    "entries": [
+      {
+        "id": "written-contract",
+        "claim": "Written contract",
+        "years": 6,
+        "clock_starts": "Date of breach",
+        "statute": "Conn. Gen. Stat. § 52-576",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "oral-contract",
+        "claim": "Oral contract",
+        "years": 3,
+        "clock_starts": "Date of breach",
+        "statute": "Conn. Gen. Stat. § 52-581",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "sale-of-goods",
+        "claim": "Sale of goods (UCC)",
+        "years": 4,
+        "clock_starts": "Date of breach",
+        "statute": "Conn. Gen. Stat. § 42a-2-725",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "promissory-note",
+        "claim": "Promissory note",
+        "years": 6,
+        "clock_starts": "Date of default",
+        "statute": "Conn. Gen. Stat. § 42a-3-118",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "open-account",
+        "claim": "Open account / credit card debt",
+        "years": 6,
+        "clock_starts": "Date of last transaction",
+        "statute": "Conn. Gen. Stat. § 52-576",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "personal-injury",
+        "claim": "Personal injury",
+        "years": 2,
+        "clock_starts": "Date of injury",
+        "statute": "Conn. Gen. Stat. § 52-584",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "property-damage",
+        "claim": "Property damage",
+        "years": 2,
+        "clock_starts": "Date of damage",
+        "statute": "Conn. Gen. Stat. § 52-584",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "fraud",
+        "claim": "Fraud",
+        "years": 3,
+        "clock_starts": "Date of discovery",
+        "statute": "Conn. Gen. Stat. § 52-577",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "bad-check",
+        "claim": "Bad check",
+        "years": 6,
+        "clock_starts": "Date of dishonor",
+        "statute": "Conn. Gen. Stat. § 52-565a",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "unpaid-wages",
+        "claim": "Unpaid wages",
+        "years": 2,
+        "clock_starts": "Date wages were due",
+        "statute": "Conn. Gen. Stat. § 31-71b",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "security-deposit",
+        "claim": "Security deposit",
+        "years": 2,
+        "clock_starts": "Date of lease termination",
+        "statute": "Conn. Gen. Stat. § 47a-21",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "judgment-enforcement",
+        "claim": "Judgment enforcement",
+        "years": 20,
+        "clock_starts": "Date of judgment",
+        "statute": "Conn. Gen. Stat. § 52-598",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "discovery_rule_notes": "The discovery rule applies to fraud claims, starting the clock when the fraud is discovered.",
+    "tolling_notes": "The statute of limitations may be tolled if the defendant is out of state, the plaintiff is a minor, or due to bankruptcy stays.",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "pre_filing": {
+    "demand_letter_required": false,
+    "demand_letter_recommended": true,
+    "demand_letter_notes": "While not required, sending a demand letter can often resolve disputes without court intervention.",
+    "bad_check_notice_rule": "A 30-day written notice is required before pursuing statutory penalties for a bad check.",
+    "wage_claim_demand_rule": "Employers must pay wages within a certain timeframe; failure may result in penalties.",
+    "government_claim_required": false,
+    "government_claim_deadline_days": null,
+    "government_claim_notes": "",
+    "landlord_tenant_pre_filing_notes": "Landlords must return security deposits within 30 days; failure can lead to double damages.",
+    "consumer_protection_notes": "Certain consumer protection claims require prior notice to the business.",
+    "mandatory_mediation_before_filing": "none",
+    "arbitration_clauses_enforced": true,
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "forms": [
+    {
+      "number": "JD-CV-40",
+      "name": "Small Claims Writ and Notice of Suit",
+      "description": "Initiates a small claims case by outlining the plaintiff's claim against the defendant.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "https://www.jud.ct.gov/webforms/forms/cv040.pdf",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "number": "JD-CV-123",
+      "name": "Statement of Service (Delivery) Small Claims",
+      "description": "Documents how the defendant was served with the small claims writ.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "service",
+      "url": "https://www.jud.ct.gov/webforms/forms/cv123.pdf",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "number": "JD-CV-121",
+      "name": "Application for Waiver of Fees/Appointment of Counsel",
+      "description": "Requests a waiver of court fees due to financial hardship.",
+      "filed_by": "plaintiff",
+      "required": false,
+      "group": "fee-waiver",
+      "url": "https://www.jud.ct.gov/webforms/forms/cv121.pdf",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "number": "JD-CV-50",
+      "name": "Small Claims Answer",
+      "description": "Allows the defendant to respond to the plaintiff's claim.",
+      "filed_by": "defendant",
+      "required": true,
+      "group": "counterclaim",
+      "url": "https://www.jud.ct.gov/webforms/forms/cv050.pdf",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "number": "JD-CV-51",
+      "name": "Motion to Open Judgment",
+      "description": "Requests the court to reopen a judgment, typically after a default.",
+      "filed_by": "defendant",
+      "required": false,
+      "group": "after-judgment",
+      "url": "https://www.jud.ct.gov/webforms/forms/cv051.pdf",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "number": "JD-CV-52",
+      "name": "Satisfaction of Judgment",
+      "description": "Filed by the plaintiff to indicate that the judgment has been satisfied.",
+      "filed_by": "plaintiff",
+      "required": false,
+      "group": "after-judgment",
+      "url": "https://www.jud.ct.gov/webforms/forms/cv052.pdf",
+      "source_ids": [
+        "S11"
+      ]
+    }
+  ],
+  "service": {
+    "who_can_serve": [
+      "Plaintiff via certified mail",
+      "State marshal"
+    ],
+    "methods": [
+      {
+        "name": "Certified mail, return receipt requested",
+        "description": "Plaintiff sends the writ to the defendant via certified mail and receives a return receipt as proof of delivery.",
+        "pros": [
+          "Cost-effective",
+          "Provides proof of delivery"
+        ],
+        "cons": [
+          "Defendant may refuse delivery"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "name": "State marshal service",
+        "description": "A state marshal personally delivers the writ to the defendant.",
+        "pros": [
+          "Ensures personal delivery",
+          "More difficult for defendant to evade"
+        ],
+        "cons": [
+          "More expensive than mail service"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "in_county_days_before_hearing": 12,
+    "out_of_county_days_before_hearing": 12,
+    "proof_of_service_form": {
+      "number": "JD-CV-123",
+      "name": "Statement of Service (Delivery) Small Claims"
+    },
+    "proof_filing_deadline_days_before_hearing": 6,
+    "business_service_rule": "Serve the registered agent or an officer of the corporation; for sole proprietors, serve the individual directly.",
+    "out_of_state_defendant_notes": "Service must be made by a proper officer, such as a state marshal.",
+    "cant_find_defendant_notes": "If the defendant cannot be located, service by publication may be permitted with court approval.",
+    "avoiding_service_notes": "If the defendant is evading service, the court may allow alternative methods upon request.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "response_and_default": {
+    "must_file_written_answer": true,
+    "response_deadline_days": 15,
+    "response_notes": "The defendant must file an answer or a motion to transfer the case to another court on or before the 'answer date' specified in the writ.",
+    "default_process": "If the defendant fails to respond by the answer date, the plaintiff may request a default judgment.",
+    "prove_up_required": true,
+    "prove_up_notes": "Even if the defendant defaults, the plaintiff must provide evidence to support the claim before a judgment is entered.",
+    "motion_to_vacate_form": {
+      "number": "JD-CV-51",
+      "name": "Motion to Open Judgment"
+    },
+    "motion_to_vacate_deadline_days": 4,
+    "motion_to_vacate_lack_of_notice_days": 4,
+    "motion_to_vacate_appeal_deadline_days": 15,
+    "motion_to_vacate_appeal_notes": "A motion to open judgment must be filed within 4 months of the judgment date; if denied, the decision can be appealed within 15 days.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "counterclaim": {
+    "allowed": true,
+    "form": {
+      "number": "JD-CV-50",
+      "name": "Small Claims Answer"
+    },
+    "same_monetary_limit": true,
+    "service_deadline_in_county_days": 15,
+    "service_deadline_out_of_county_days": 15,
+    "transfer_to_higher_court_available": true,
+    "transfer_to_higher_court_statute": "Conn. Gen. Stat. § 51-15",
+    "transfer_to_higher_court_notes": "If a counterclaim exceeds the small claims monetary limit, the case may be transferred to the regular docket of the Superior Court.",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "hearing": {
+    "lawyers_allowed": "yes",
+    "lawyers_allowed_notes": "Parties may be represented by attorneys, but it is not required.",
+    "format": "Bench trial with informal procedures; each party presents their case to a magistrate or judge.",
+    "presider": "magistrate",
+    "burden_of_proof": "preponderance",
+    "what_to_bring": [
+      "Originals of any contracts",
+      "Receipts and bank records",
+      "Photos and videos",
+      "Names and contact info for witnesses"
+    ],
+    "subpoena_form": {
+      "number": "JD-CL-43",
+      "name": "Subpoena"
+    },
+    "witness_fee_per_day_dollars": 50,
+    "free_interpreters": true,
+    "interpreter_request_process": "Request an interpreter through the court clerk's office prior to the hearing date.",
+    "jury_option": false,
+    "decision_timing": "On the spot or mailed within a few weeks.",
+    "on_site_mediation": "yes",
+    "on_site_mediation_notes": "Mediation services may be available at the court to help parties reach a settlement before the hearing.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "appeals": {
+    "who_can_appeal": "defendant",
+    "deadline_days": 15,
+    "fee_dollars": 250,
+    "type": "trial de novo",
+    "type_notes": "The appeal is a new trial in the Superior Court, where the case is heard afresh.",
+    "attorneys_allowed_on_appeal": true,
+    "bond_required": true,
+    "bond_amount_notes": "The bond amount is set by the court and must be posted to stay the execution of the judgment during the appeal.",
+    "automatic_stay_on_appeal": true,
+    "default_judgment_appealable": true,
+    "default_judgment_notes": "A default judgment can be appealed by filing a motion to open judgment within 4 months; if denied, the decision can be appealed within 15 days.",
+    "notice_of_appeal_form": {
+      "number": "JD-SC-28",
+      "name": "Notice of Appeal"
+    },
+    "frivolous_appeal_penalty_dollars": null,
+    "frivolous_appeal_statute": "",
+    "frivolous_appeal_notes": "",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "collection": {
+    "payment_deadline_typical_days": 30,
+    "post_judgment_interest_rate_pct": 10,
+    "post_judgment_interest_statute": "Conn. Gen. Stat. § 37-3a",
+    "post_judgment_interest_notes": "Interest accrues at 10% per annum on unpaid judgments.",
+    "methods": [
+      {
+        "id": "wage-garnishment",
+        "name": "Wage garnishment",
+        "blurb": "Have a portion of debtor's wages withheld until the judgment is paid.",
+        "description": "File an application for wage execution with the court; upon approval, serve the employer with the execution order; the employer withholds a portion of the debtor's wages and remits to the court.",
+        "forms": [
+          {
+            "number": "JD-CV-3",
+            "name": "Application for Wage Execution"
+          }
+        ],
+        "estimated_cost": "$50 plus service fees",
+        "effectiveness_notes": "Most effective when debtor is employed and earning above the exemption threshold.",
+        "exemptions": [
+          "75% of disposable earnings or 40 times the federal minimum hourly wage per week, whichever is greater."
+        ],
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "bank-levy",
+        "name": "Bank levy",
+        "blurb": "Seize funds from debtor's bank account to satisfy the judgment.",
+        "description": "File an application for bank execution with the court; upon approval, serve the bank with the execution order; the bank freezes the debtor's account and remits funds to the court.",
+        "forms": [
+          {
+            "number": "JD-CV-24",
+            "name": "Application for Bank Execution"
+          }
+        ],
+        "estimated_cost": "$50 plus service fees",
+        "effectiveness_notes": "Effective if debtor has sufficient funds in the account; debtor may claim exemptions.",
+        "exemptions": [
+          "$1,000 is exempt from execution; additional exemptions may apply for certain benefits."
+        ],
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "property-lien",
+        "name": "Property lien",
+        "blurb": "Place a lien on debtor's real property to secure the judgment.",
+        "description": "File a judgment lien certificate with the town clerk where the property is located; the lien encumbers the property until the judgment is satisfied.",
+        "forms": [
+          {
+            "number": "JD-CV-54",
+            "name": "Judgment Lien Certificate"
+          }
+        ],
+        "estimated_cost": "$75 plus recording fees",
+        "effectiveness_notes": "Effective if debtor owns real property; lien must be renewed every 20 years.",
+        "exemptions": [
+          "Homestead exemption up to $75,000."
+        ],
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "writ-of-execution",
+        "name": "Writ of execution",
+        "blurb": "Seize and sell debtor's personal property to satisfy the judgment.",
+        "description": "File an application for execution with the court; upon approval, a state marshal seizes the debtor's non-exempt personal property and sells it at public auction.",
+        "forms": [
+          {
+            "number": "JD-CV-5",
+            "name": "Application for Execution"
+          }
+        ],
+        "estimated_cost": "$75 plus marshal fees",
+        "effectiveness_notes": "Effective if debtor owns valuable non-exempt personal property; process can be time-consuming.",
+        "exemptions": [
+          "Various personal property exemptions apply; consult statute for details."
+        ],
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "wage_garnishment_max_pct_of_disposable": 25,
+    "judgment_lifespan_years": 20,
+    "judgment_renewal_process": "File a new action on the judgment before the 20-year period expires to renew the judgment.",
+    "debtor_exam_form": {
+      "number": "JD-CV-23",
+      "name": "Application for Examination of Judgment Debtor"
+    },
+    "exempt_assets": [
+      "Homestead — $75,000",
+      "Motor vehicle — $3,500",
+      "Household furnishings — $1,000",
+      "Tools of trade — $2,000",
+      "Social Security and federal benefits"
+    ],
+    "bankruptcy_effect_notes": "Filing for bankruptcy may discharge the judgment; certain debts are non-dischargeable.",
+    "satisfaction_of_judgment_form": {
+      "number": "JD-CV-52",
+      "name": "Satisfaction of Judgment"
+    },
+    "priority_notes": "Priority among judgment creditors is generally determined by the order in which liens are recorded.",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "businesses": {
+    "self_representation_allowed": true,
+    "self_representation_notes": "Businesses may represent themselves in small claims court without an attorney.",
+    "can_send_employee": true,
+    "can_send_attorney": true,
+    "non_attorney_representation_form": {
+      "number": "JD-CV-50",
+      "name": "Small Claims Answer"
+    },
+    "insurance_adjuster_allowed": false,
+    "fictitious_name_form": {
+      "number": "JD-CV-50",
+      "name": "Small Claims Answer"
+    },
+    "fictitious_name_notes": "Businesses operating under a trade name must disclose their legal entity name in court filings.",
+    "sole_proprietor_employee_exception": "Sole proprietors may send a designated employee to represent them in court.",
+    "out_of_state_business_must_register": true,
+    "out_of_state_business_statute": "Conn. Gen. Stat. § 33-920",
+    "licensing_notes": "Unlicensed contractors may be barred from recovering fees for services requiring a license.",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "county_variations_material": false,
+  "county_variations": [],
+  "pitfalls": [
+    {
+      "title": "Incorrect defendant information",
+      "what_happens": "Suing the wrong entity or misspelling the defendant's name can result in dismissal or unenforceable judgments.",
+      "how_to_avoid": "Verify the exact legal name and status of the defendant, especially for businesses, through the Secretary of State's records.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Exceeding monetary limits",
+      "what_happens": "Filing a claim exceeding the small claims limit may lead to dismissal or transfer to a higher court.",
+      "how_to_avoid": "Ensure your claim amount, excluding interest and costs, does not exceed $5,000, or $15,000 for home improvement contracts.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Improper service of process",
+      "what_happens": "Failure to serve the defendant correctly can delay proceedings or result in dismissal.",
+      "how_to_avoid": "Follow the prescribed methods for service, such as certified mail or state marshal service, and file proof with the court.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Missing statute of limitations",
+      "what_happens": "Filing after the statute of limitations has expired will result in dismissal of your case.",
+      "how_to_avoid": "Determine the applicable statute of limitations for your claim type and file within that period.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "title": "Inadequate evidence",
+      "what_happens": "Lack of sufficient evidence can lead to losing your case.",
+      "how_to_avoid": "Gather all relevant documents, receipts, contracts, and witness information to support your claim.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Ignoring counterclaims",
+      "what_happens": "Failing to respond to a defendant's counterclaim can result in a judgment against you.",
+      "how_to_avoid": "Review any counterclaims carefully and file a timely response to address them.",
+      "source_ids": [
+        "S1"
+      ]
+    }
+  ],
+  "recent_changes": [
+    {
+      "date": "2026-10-01",
+      "title": "Increase in small claims limit for home improvement contracts",
+      "description": "Effective October 1, 2026, the small claims monetary limit for home improvement contracts increased from $5,000 to $15,000.",
+      "bill_or_rule_citation": "Conn. Gen. Stat. § 51-15(d)",
+      "source_ids": [
+        "S4"
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Do I need a lawyer?",
+      "answer": "No, you are not required to have a lawyer in small claims court. The process is designed to be accessible for individuals representing themselves.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "How long does it take?",
+      "answer": "Most small claims cases are resolved within 30 to 90 days, depending on the court's schedule and complexity of the case.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "What's the maximum I can sue for?",
+      "answer": "The maximum amount you can sue for in small claims court is $5,000, except for home improvement contracts, which have a limit of $15,000.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "What happens if the defendant doesn't show up?",
+      "answer": "If the defendant fails to appear or respond, you may request a default judgment. However, you must still provide evidence to support your claim.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "Can I appeal?",
+      "answer": "Only the defendant has the right to appeal a small claims judgment, and must do so within 15 days by filing a notice of appeal and posting a bond.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "question": "How long is a judgment good for?",
+      "answer": "A small claims judgment is valid for 20 years, during which time you can take steps to collect the judgment.",
+      "source_ids": [
+        "S4"
+      ]
+    }
+  ],
+  "state_specific_notes": [
+    "Connecticut allows small claims cases to be filed electronically through the e-filing system.",
+    "The small claims process is designed to be informal and accessible, allowing individuals to represent themselves without an attorney.",
+    "In landlord-tenant disputes, claims for the return of a security deposit can exceed the standard $5,000 limit.",
+    "Defendants have the right to request a transfer of the case to the regular docket of the Superior Court if they wish to have a jury trial.",
+    "Small claims judgments accrue post-judgment interest at a rate of 10% per annum until paid."
+  ],
+  "_extras": {
+    "interesting_findings": [
+      "Connecticut's small claims court provides a streamlined process for resolving disputes involving relatively small amounts of money, making it accessible for individuals without legal representation.",
+      "The ability to file claims electronically has modernized the process, allowing for more efficient case management and accessibility.",
+      "The specific provisions for higher limits in home improvement contracts and security deposit cases reflect the state's recognition of the unique nature of these disputes."
+    ]
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "label": "Connecticut Judicial Branch — Small Claims Information",
+      "url": "https://jud.ct.gov/external/smallclaims/",
+      "primary": true,
+      "citation": "Connecticut Judicial Branch — Small Claims Information"
+    },
+    {
+      "id": "S2",
+      "label": "Connecticut Judicial Branch — Small Claims Frequently Asked Questions (FAQs)",
+      "url": "https://www.jud.ct.gov/faq/smallclaims.html",
+      "primary": false,
+      "citation": "Connecticut Judicial Branch — Small Claims Frequently Asked Questions (FAQs)"
+    },
+    {
+      "id": "S3",
+      "label": "Connecticut Judicial Branch — Court Locations Directory",
+      "url": "https://www.jud.ct.gov/directory/court_directions.htm",
+      "primary": false,
+      "citation": "Connecticut Judicial Branch — Court Locations Directory"
+    },
+    {
+      "id": "S4",
+      "label": "Conn. Gen. Stat. § 51-15 (Small claims; procedure; transfer; appeals)",
+      "url": "https://www.cga.ct.gov/current/pub/chap_876.htm#sec_51-15",
+      "primary": false,
+      "citation": "Conn. Gen. Stat. § 51-15"
+    },
+    {
+      "id": "S5",
+      "label": "Conn. Gen. Stat. § 51-193r (Filing fees in civil and small claims matters)",
+      "url": "https://www.cga.ct.gov/current/pub/chap_876.htm#sec_51-193r",
+      "primary": false,
+      "citation": "Conn. Gen. Stat. § 51-193r"
+    },
+    {
+      "id": "S6",
+      "label": "Conn. Gen. Stat. § 52-57 (Service of process — civil actions including small claims)",
+      "url": "https://www.cga.ct.gov/current/pub/chap_896.htm#sec_52-57",
+      "primary": false,
+      "citation": "Conn. Gen. Stat. § 52-57"
+    },
+    {
+      "id": "S7",
+      "label": "Conn. Gen. Stat. § 52-259 (Fees for process, court entry and service)",
+      "url": "https://www.cga.ct.gov/current/pub/chap_901.htm#sec_52-259",
+      "primary": false,
+      "citation": "Conn. Gen. Stat. § 52-259"
+    },
+    {
+      "id": "S8",
+      "label": "Conn. Gen. Stat. § 51-197a (Appeals from judgments of lower courts)",
+      "url": "https://www.cga.ct.gov/current/pub/chap_874.htm#sec_51-197a",
+      "primary": false,
+      "citation": "Conn. Gen. Stat. § 51-197a"
+    },
+    {
+      "id": "S9",
+      "label": "Conn. Gen. Stat. § 52-350a et seq. (Enforcement of Money Judgments)",
+      "url": "https://www.cga.ct.gov/current/pub/chap_906.htm#sec_52-350a",
+      "primary": false,
+      "citation": "Conn. Gen. Stat. § 52-350a et seq."
+    },
+    {
+      "id": "S10",
+      "label": "Connecticut Practice Book — Procedures in Small Claims Matters (Sections 24-1 to 24-34)",
+      "url": "https://www.jud.ct.gov/pb.htm",
+      "primary": false,
+      "citation": "Connecticut Practice Book — Procedures in Small Claims Matters (Sections 24-1 to 24-34)"
+    },
+    {
+      "id": "S11",
+      "label": "Connecticut Judicial Branch — Small Claims Forms",
+      "url": "https://www.jud.ct.gov/webforms/Default.aspx?division=SmallClaims",
+      "primary": false,
+      "citation": "Connecticut Judicial Branch — Small Claims Forms"
+    },
+    {
+      "id": "S12",
+      "label": "Connecticut Small Claims Fee Schedule",
+      "url": "https://www.jud.ct.gov/external/smallclaims/fees.htm",
+      "primary": false,
+      "citation": "Connecticut Small Claims Fee Schedule"
+    },
+    {
+      "id": "S13",
+      "label": "Service of process in civil actions — Conn. Gen. Stat. § 52-57",
+      "url": "https://www.cga.ct.gov/current/pub/chap_896.htm#sec_52-57",
+      "primary": false,
+      "citation": "Conn. Gen. Stat. § 52-57"
+    },
+    {
+      "id": "S14",
+      "label": "Appeals in small claims cases — Conn. Gen. Stat. § 51-197a",
+      "url": "https://www.cga.ct.gov/current/pub/chap_874.htm#sec_51-197a",
+      "primary": false,
+      "citation": "Conn. Gen. Stat. § 51-197a"
+    },
+    {
+      "id": "S15",
+      "label": "Enforcement of money judgments (wage garnishment, bank executions, exemptions) — Conn. Gen. Stat. §§ 52-350a et seq.",
+      "url": "https://www.cga.ct.gov/current/pub/chap_906.htm#sec_52-350a",
+      "primary": false,
+      "citation": "Conn. Gen. Stat. §§ 52-350a et seq."
+    },
+    {
+      "id": "S16",
+      "label": "Connecticut Judicial Branch — How to Collect Your Judgment",
+      "url": "https://jud.ct.gov/external/smallclaims/judgment.htm",
+      "primary": false,
+      "citation": "Connecticut Judicial Branch — How to Collect Your Judgment"
+    },
+    {
+      "id": "S17",
+      "label": "Connecticut Unfair Trade Practices Act — Conn. Gen. Stat. § 42-110a et seq.",
+      "url": "https://www.cga.ct.gov/current/pub/chap_735a.htm",
+      "primary": false,
+      "citation": "Conn. Gen. Stat. § 42-110a et seq."
+    },
+    {
+      "id": "S18",
+      "label": "Connecticut Lemon Law (New Automobile Warranties) — Conn. Gen. Stat. § 42-179",
+      "url": "https://www.cga.ct.gov/current/pub/chap_743b.htm#sec_42-179",
+      "primary": false,
+      "citation": "Conn. Gen. Stat. § 42-179"
+    },
+    {
+      "id": "S19",
+      "label": "Connecticut Security Deposit Law — Conn. Gen. Stat. § 47a-21",
+      "url": "https://www.cga.ct.gov/current/pub/chap_831.htm#sec_47a-21",
+      "primary": false,
+      "citation": "Conn. Gen. Stat. § 47a-21"
+    },
+    {
+      "id": "S20",
+      "label": "Landlord and Tenant Obligations — Conn. Gen. Stat. §§ 47a-1 to 47a-23e",
+      "url": "https://www.cga.ct.gov/current/pub/chap_832.htm",
+      "primary": false,
+      "citation": "Conn. Gen. Stat. §§ 47a-1 to 47a-23e"
+    },
+    {
+      "id": "S21",
+      "label": "Final paycheck — Conn. Gen. Stat. § 31-71c and § 31-71e",
+      "url": "https://www.cga.ct.gov/current/pub/chap_558.htm#sec_31-71c",
+      "primary": false,
+      "citation": "Conn. Gen. Stat. § 31-71c and § 31-71e"
+    },
+    {
+      "id": "S22",
+      "label": "Attorney's fees in civil actions — Conn. Gen. Stat. § 52-251a",
+      "url": "https://www.cga.ct.gov/current/pub/chap_901.htm#sec_52-251a",
+      "primary": false,
+      "citation": "Conn. Gen. Stat. § 52-251a"
+    }
+  ],
+  "_meta": {
+    "state": "Connecticut",
+    "slug": "connecticut",
+    "model": "gpt-4.1",
+    "sources_response_id": "resp_01661304cbdddc6d0069f0892261e08193adfdb5645876b426",
+    "extraction_response_id": "resp_09e272a8864b36920069f08d1b6408819790bc725fa2faa59c",
+    "generated_at": "2026-04-28T10:35:26.538Z",
+    "usage": {
+      "input_tokens": 7534,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 14349,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 21883
+    }
+  }
+}

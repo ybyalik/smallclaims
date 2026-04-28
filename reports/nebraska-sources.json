@@ -1,0 +1,154 @@
+{
+  "state": "Nebraska",
+  "as_of": "2024-06-17",
+  "state_judiciary_pages": [
+    {
+      "label": "Nebraska Judicial Branch Small Claims Court Information",
+      "url": "https://supremecourt.nebraska.gov/self-help/small-claims",
+      "scope": "small_claims"
+    },
+    {
+      "label": "Nebraska Judicial Branch Self-Help Resources",
+      "url": "https://supremecourt.nebraska.gov/self-help",
+      "scope": "self_help"
+    },
+    {
+      "label": "Nebraska Courts Locations Directory",
+      "url": "https://supremecourt.nebraska.gov/courts/court-locations",
+      "scope": "court_directory"
+    }
+  ],
+  "statutes": [
+    {
+      "label": "Neb. Rev. Stat. § 25-2802 (Small Claims Court — jurisdiction and procedures)",
+      "url": "https://nebraskalegislature.gov/laws/statutes.php?statute=25-2802",
+      "section_or_chapter": "§ 25-2802"
+    },
+    {
+      "label": "Neb. Rev. Stat. § 25-2803 (Commencement of small claims action)",
+      "url": "https://nebraskalegislature.gov/laws/statutes.php?statute=25-2803",
+      "section_or_chapter": "§ 25-2803"
+    },
+    {
+      "label": "Neb. Rev. Stat. § 25-2804 (Answer — Counterclaim — Transfer to county court)",
+      "url": "https://nebraskalegislature.gov/laws/statutes.php?statute=25-2804",
+      "section_or_chapter": "§ 25-2804"
+    },
+    {
+      "label": "Neb. Rev. Stat. § 25-2806 (Appeal from small claims court)",
+      "url": "https://nebraskalegislature.gov/laws/statutes.php?statute=25-2806",
+      "section_or_chapter": "§ 25-2806"
+    },
+    {
+      "label": "Neb. Rev. Stat. § 25-2807 (Judgments — Enforcement — Collection)",
+      "url": "https://nebraskalegislature.gov/laws/statutes.php?statute=25-2807",
+      "section_or_chapter": "§ 25-2807"
+    },
+    {
+      "label": "Neb. Rev. Stat. § 25-505.01 (Service of process — methods and procedures)",
+      "url": "https://nebraskalegislature.gov/laws/statutes.php?statute=25-505.01",
+      "section_or_chapter": "§ 25-505.01"
+    }
+  ],
+  "court_rules": [
+    {
+      "label": "Nebraska Court Rules — Chapter 6, Article 14: Rules for Small Claims Court",
+      "url": "https://supremecourt.nebraska.gov/rules/small-claims",
+      "rule_or_chapter": "Chapter 6, Article 14"
+    }
+  ],
+  "forms_pages": [
+    {
+      "label": "Nebraska Small Claims Court Forms (Judicial Branch)",
+      "url": "https://supremecourt.nebraska.gov/self-help/small-claims/forms"
+    }
+  ],
+  "fee_schedules": [
+    {
+      "label": "Nebraska Judicial Branch Court Filing Fees (see County and District Court Filing Fee Schedules)",
+      "url": "https://supremecourt.nebraska.gov/courts/court-fees"
+    }
+  ],
+  "service_rules": [
+    {
+      "label": "Service of Process in Civil Cases — Neb. Rev. Stat. § 25-505.01",
+      "url": "https://nebraskalegislature.gov/laws/statutes.php?statute=25-505.01"
+    }
+  ],
+  "appeal_rules": [
+    {
+      "label": "Appeals from Small Claims Court — Neb. Rev. Stat. § 25-2806",
+      "url": "https://nebraskalegislature.gov/laws/statutes.php?statute=25-2806"
+    }
+  ],
+  "post_judgment_collection": [
+    {
+      "label": "Neb. Rev. Stat. § 25-1558 (Garnishment, procedure, exemptions)",
+      "url": "https://nebraskalegislature.gov/laws/statutes.php?statute=25-1558"
+    },
+    {
+      "label": "Neb. Rev. Stat. § 25-1552 (Wage garnishment limits and exemptions)",
+      "url": "https://nebraskalegislature.gov/laws/statutes.php?statute=25-1552"
+    }
+  ],
+  "consumer_protection_statutes": [
+    {
+      "label": "Neb. Rev. Stat. §§ 59-1601 to 59-1622 (Consumer Protection Act — UDAP)",
+      "url": "https://nebraskalegislature.gov/laws/browse-chapters.php?chapter=59"
+    },
+    {
+      "label": "Neb. Rev. Stat. §§ 69-2601 to 69-2613 (Motor Vehicle Industry Regulation — Lemon Law)",
+      "url": "https://nebraskalegislature.gov/laws/browse-chapters.php?chapter=69"
+    },
+    {
+      "label": "Neb. Rev. Stat. § 28-611 (Issuing bad checks — civil penalty provisions)",
+      "url": "https://nebraskalegislature.gov/laws/statutes.php?statute=28-611"
+    }
+  ],
+  "landlord_tenant_statutes": [
+    {
+      "label": "Neb. Rev. Stat. §§ 76-1416 to 76-1422 (Landlord and Tenant Act — Security Deposits, Remedies, Evictions)",
+      "url": "https://nebraskalegislature.gov/laws/browse-chapters.php?chapter=76"
+    },
+    {
+      "label": "Neb. Rev. Stat. § 76-1416 (Security deposit return and penalty)",
+      "url": "https://nebraskalegislature.gov/laws/statutes.php?statute=76-1416"
+    }
+  ],
+  "wage_and_employment_statutes": [
+    {
+      "label": "Neb. Rev. Stat. §§ 48-1228 to 48-1232 (Nebraska Wage Payment and Collection Act — final paycheck, wages)",
+      "url": "https://nebraskalegislature.gov/laws/browse-chapters.php?chapter=48"
+    }
+  ],
+  "civil_remedies_statutes": [
+    {
+      "label": "Neb. Rev. Stat. § 25-824 (Attorney’s fees for frivolous actions or defenses)",
+      "url": "https://nebraskalegislature.gov/laws/statutes.php?statute=25-824"
+    },
+    {
+      "label": "Neb. Rev. Stat. § 25-21,109 (Treble damages for conversion/civil theft)",
+      "url": "https://nebraskalegislature.gov/laws/statutes.php?statute=25-21,109"
+    }
+  ],
+  "county_specific": [],
+  "notes": "Nebraska small claims procedures are generally uniform statewide and are governed by state statutes and judicial branch rules.",
+  "_meta": {
+    "state": "Nebraska",
+    "slug": "nebraska",
+    "model": "gpt-4.1",
+    "response_id": "resp_05f3e0ba65cf0fca0069f08a736c1c8190b330f33fe8672865",
+    "generated_at": "2026-04-28T10:23:00.931Z",
+    "usage": {
+      "input_tokens": 2104,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 1654,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 3758
+    }
+  }
+}

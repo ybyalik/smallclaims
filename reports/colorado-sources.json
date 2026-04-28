@@ -1,0 +1,156 @@
+{
+  "state": "Colorado",
+  "as_of": "2024-06-23",
+  "state_judiciary_pages": [
+    {
+      "label": "Colorado Judicial Branch - Small Claims Overview",
+      "url": "https://www.courts.state.co.us/Courts/County/SmallClaims.cfm",
+      "scope": "small_claims"
+    },
+    {
+      "label": "Colorado Judicial Branch - Self Help Information",
+      "url": "https://www.courts.state.co.us/Self_Help/",
+      "scope": "self_help"
+    },
+    {
+      "label": "Colorado County Courts Directory",
+      "url": "https://www.courts.state.co.us/Courts/County/Choose.cfm",
+      "scope": "court_directory"
+    },
+    {
+      "label": "Colorado Judicial Branch - Filing Fees",
+      "url": "https://www.courts.state.co.us/Forms/fee_schedules/courtfees.pdf",
+      "scope": "fee_schedule"
+    }
+  ],
+  "statutes": [
+    {
+      "label": "Colo. Rev. Stat. § 13-6-403 (Jurisdiction of Small Claims Court)",
+      "url": "https://leg.colorado.gov/sites/default/files/images/olls/crs2022-title-13.pdf",
+      "section_or_chapter": "§ 13-6-403"
+    },
+    {
+      "label": "Colo. Rev. Stat. § 13-6-405 (Commencement of Action and Fees)",
+      "url": "https://leg.colorado.gov/sites/default/files/images/olls/crs2022-title-13.pdf",
+      "section_or_chapter": "§ 13-6-405"
+    },
+    {
+      "label": "Colo. Rev. Stat. § 13-6-407 (Service of Process in Small Claims)",
+      "url": "https://leg.colorado.gov/sites/default/files/images/olls/crs2022-title-13.pdf",
+      "section_or_chapter": "§ 13-6-407"
+    },
+    {
+      "label": "Colo. Rev. Stat. § 13-6-410 (Appeals from Small Claims Court)",
+      "url": "https://leg.colorado.gov/sites/default/files/images/olls/crs2022-title-13.pdf",
+      "section_or_chapter": "§ 13-6-410"
+    },
+    {
+      "label": "Colo. Rev. Stat. § 13-54-102 (Wage Garnishment Exemptions)",
+      "url": "https://leg.colorado.gov/sites/default/files/images/olls/crs2022-title-13.pdf",
+      "section_or_chapter": "§ 13-54-102"
+    },
+    {
+      "label": "Colo. Rev. Stat. § 5-5-202 (Civil Remedies for Bad Checks)",
+      "url": "https://leg.colorado.gov/sites/default/files/images/olls/crs2022-title-5.pdf",
+      "section_or_chapter": "§ 5-5-202"
+    },
+    {
+      "label": "Colo. Rev. Stat. § 6-1-113 (Consumer Protection—Private Right of Action)",
+      "url": "https://leg.colorado.gov/sites/default/files/images/olls/crs2022-title-6.pdf",
+      "section_or_chapter": "§ 6-1-113"
+    }
+  ],
+  "court_rules": [
+    {
+      "label": "Colorado Rules of Civil Procedure (Rule 501 Small Claims Rules)",
+      "url": "https://www.courts.state.co.us/Courts/Supreme_Court/Rules/Chapter-25-Colorado-Rules-of-Civil-Procedure.pdf",
+      "rule_or_chapter": "Rule 501 et seq."
+    }
+  ],
+  "forms_pages": [
+    {
+      "label": "Colorado Judicial Branch - Small Claims Forms",
+      "url": "https://www.courts.state.co.us/Forms/Forms_List.cfm?Form_Type_ID=18"
+    }
+  ],
+  "fee_schedules": [
+    {
+      "label": "Colorado Judicial Branch - Filing Fees",
+      "url": "https://www.courts.state.co.us/Forms/fee_schedules/courtfees.pdf"
+    }
+  ],
+  "service_rules": [
+    {
+      "label": "Service in Small Claims - C.R.S. § 13-6-407",
+      "url": "https://leg.colorado.gov/sites/default/files/images/olls/crs2022-title-13.pdf"
+    }
+  ],
+  "appeal_rules": [
+    {
+      "label": "Appeals from Small Claims - C.R.S. § 13-6-410",
+      "url": "https://leg.colorado.gov/sites/default/files/images/olls/crs2022-title-13.pdf"
+    }
+  ],
+  "post_judgment_collection": [
+    {
+      "label": "Wage Garnishment Exemptions - C.R.S. § 13-54-102",
+      "url": "https://leg.colorado.gov/sites/default/files/images/olls/crs2022-title-13.pdf"
+    },
+    {
+      "label": "Colorado Judicial Branch - Collecting a Judgment in County Court",
+      "url": "https://www.courts.state.co.us/userfiles/file/Self_Help/County%20Court/Collecting%20a%20Judgment/Collecting%20a%20Judgment%20Instructions.pdf"
+    }
+  ],
+  "consumer_protection_statutes": [
+    {
+      "label": "Colo. Rev. Stat. § 6-1-105 (Colorado Consumer Protection Act—Deceptive Trade Practices)",
+      "url": "https://leg.colorado.gov/sites/default/files/images/olls/crs2022-title-6.pdf"
+    },
+    {
+      "label": "Colo. Rev. Stat. § 6-1-113 (Consumer Protection—Private Right of Action)",
+      "url": "https://leg.colorado.gov/sites/default/files/images/olls/crs2022-title-6.pdf"
+    }
+  ],
+  "landlord_tenant_statutes": [
+    {
+      "label": "Colo. Rev. Stat. § 38-12-103 (Security Deposit Return)",
+      "url": "https://leg.colorado.gov/sites/default/files/images/olls/crs2022-title-38.pdf"
+    },
+    {
+      "label": "Colo. Rev. Stat. § 38-12-510 (Repair and Deduct for Tenants)",
+      "url": "https://leg.colorado.gov/sites/default/files/images/olls/crs2022-title-38.pdf"
+    }
+  ],
+  "wage_and_employment_statutes": [
+    {
+      "label": "Colo. Rev. Stat. § 8-4-109 (Payment of Wages Upon Termination)",
+      "url": "https://leg.colorado.gov/sites/default/files/images/olls/crs2022-title-8.pdf"
+    }
+  ],
+  "civil_remedies_statutes": [
+    {
+      "label": "Colo. Rev. Stat. § 18-4-405 (Civil Theft and Attorney Fees)",
+      "url": "https://leg.colorado.gov/sites/default/files/images/olls/crs2022-title-18.pdf"
+    }
+  ],
+  "county_specific": [],
+  "notes": "Colorado has a unified county court system for small claims, with uniform statewide rules and forms; statutes are available by PDF title through the legislature website.",
+  "_meta": {
+    "state": "Colorado",
+    "slug": "colorado",
+    "model": "gpt-4.1",
+    "response_id": "resp_039a05c1402ba7ab0069f089142f488196a0484e0e356ceee9",
+    "generated_at": "2026-04-28T10:17:06.134Z",
+    "usage": {
+      "input_tokens": 2102,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 1623,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 3725
+    }
+  }
+}

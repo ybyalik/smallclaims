@@ -1,0 +1,148 @@
+{
+  "state": "Missouri",
+  "as_of": "2024-06-12",
+  "state_judiciary_pages": [
+    {
+      "label": "Missouri Courts - Small Claims Information",
+      "url": "https://www.courts.mo.gov/page.jsp?id=297",
+      "scope": "small_claims"
+    },
+    {
+      "label": "Missouri Courts - Court Forms for Small Claims Cases",
+      "url": "https://www.courts.mo.gov/page.jsp?id=288",
+      "scope": "forms"
+    },
+    {
+      "label": "Missouri Courts - Local Court Information and Directories",
+      "url": "https://www.courts.mo.gov/page.jsp?id=321",
+      "scope": "court_directory"
+    }
+  ],
+  "statutes": [
+    {
+      "label": "RSMo § 482.300 (Small Claims Court jurisdiction and procedures)",
+      "url": "https://revisor.mo.gov/main/OneSection.aspx?section=482.300",
+      "section_or_chapter": "§ 482.300"
+    },
+    {
+      "label": "RSMo § 482.305 (Who may file; proceedings in small claims court)",
+      "url": "https://revisor.mo.gov/main/OneSection.aspx?section=482.305",
+      "section_or_chapter": "§ 482.305"
+    },
+    {
+      "label": "RSMo § 482.330 (Appeals from small claims court)",
+      "url": "https://revisor.mo.gov/main/OneSection.aspx?section=482.330",
+      "section_or_chapter": "§ 482.330"
+    },
+    {
+      "label": "RSMo § 517.151 (Service of process in associate circuit courts, including small claims)",
+      "url": "https://revisor.mo.gov/main/OneSection.aspx?section=517.151",
+      "section_or_chapter": "§ 517.151"
+    },
+    {
+      "label": "RSMo § 488.012 (Filing fees in civil and small claims cases)",
+      "url": "https://revisor.mo.gov/main/OneSection.aspx?section=488.012",
+      "section_or_chapter": "§ 488.012"
+    },
+    {
+      "label": "RSMo § 525.010 (Garnishment procedure and post-judgment remedies)",
+      "url": "https://revisor.mo.gov/main/OneSection.aspx?section=525.010",
+      "section_or_chapter": "§ 525.010"
+    }
+  ],
+  "court_rules": [
+    {
+      "label": "Missouri Supreme Court Rule 140 — Small Claims Court Rules",
+      "url": "https://www.courts.mo.gov/courts/ClerkHandbooksP2RulesOnly.nsf/c0c6ffa99fb7b2c5862564ca007537b4/0e57b5db5be2da8a86256d2b0060d630?OpenDocument",
+      "rule_or_chapter": "Rule 140"
+    }
+  ],
+  "forms_pages": [
+    {
+      "label": "Missouri small claims forms (Petition, Answer, Request for Trial, etc.)",
+      "url": "https://www.courts.mo.gov/page.jsp?id=288"
+    }
+  ],
+  "fee_schedules": [
+    {
+      "label": "Missouri civil and small claims filing fees (State Fee Schedule by Case Type)",
+      "url": "https://www.courts.mo.gov/page.jsp?id=890",
+      "scope": "fee_schedule"
+    }
+  ],
+  "service_rules": [
+    {
+      "label": "Service of Process - Missouri Supreme Court Rule 54",
+      "url": "https://www.courts.mo.gov/courts/ClerkHandbooksP2RulesOnly.nsf/c0c6ffa99fb7b2c5862564ca007537b4/9c3ea240f42ec4f286256e10006d6311?OpenDocument",
+      "rule_or_chapter": "Rule 54"
+    }
+  ],
+  "appeal_rules": [
+    {
+      "label": "Appeals from Small Claims - RSMo § 482.330",
+      "url": "https://revisor.mo.gov/main/OneSection.aspx?section=482.330"
+    }
+  ],
+  "post_judgment_collection": [
+    {
+      "label": "Garnishment Procedure - RSMo § 525.010",
+      "url": "https://revisor.mo.gov/main/OneSection.aspx?section=525.010"
+    },
+    {
+      "label": "Exemptions and Collection - RSMo § 513.430",
+      "url": "https://revisor.mo.gov/main/OneSection.aspx?section=513.430"
+    }
+  ],
+  "consumer_protection_statutes": [
+    {
+      "label": "Missouri Merchandising Practices Act (Consumer Fraud/UDAP) - RSMo § 407.010 et seq.",
+      "url": "https://revisor.mo.gov/main/OneChapter.aspx?chapter=407"
+    },
+    {
+      "label": "Civil Penalties for Bad Checks - RSMo § 570.120",
+      "url": "https://revisor.mo.gov/main/OneSection.aspx?section=570.120"
+    }
+  ],
+  "landlord_tenant_statutes": [
+    {
+      "label": "Missouri Security Deposit Law - RSMo § 535.300",
+      "url": "https://revisor.mo.gov/main/OneSection.aspx?section=535.300"
+    },
+    {
+      "label": "Unlawful Detainer (Illegal Lockout/Forced Entry) - RSMo § 534.020",
+      "url": "https://revisor.mo.gov/main/OneSection.aspx?section=534.020"
+    }
+  ],
+  "wage_and_employment_statutes": [
+    {
+      "label": "Final Paycheck and Wage Payment - RSMo § 290.110",
+      "url": "https://revisor.mo.gov/main/OneSection.aspx?section=290.110"
+    }
+  ],
+  "civil_remedies_statutes": [
+    {
+      "label": "Fraud—Damages—Attorney Fee-Shifting Available—RSMo § 407.025 (Consumer Fraud/UDAP Civil Remedies)",
+      "url": "https://revisor.mo.gov/main/OneSection.aspx?section=407.025"
+    }
+  ],
+  "county_specific": [],
+  "notes": "Missouri small claims are handled by the associate circuit division of each circuit court, with a unified statewide process.",
+  "_meta": {
+    "state": "Missouri",
+    "slug": "missouri",
+    "model": "gpt-4.1",
+    "response_id": "resp_05af7d0e620b43b70069f08a5b104881939cfa29c28b274be3",
+    "generated_at": "2026-04-28T10:22:29.819Z",
+    "usage": {
+      "input_tokens": 2104,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 1461,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 3565
+    }
+  }
+}

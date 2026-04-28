@@ -1,0 +1,144 @@
+{
+  "state": "Rhode Island",
+  "as_of": "2024-06-22",
+  "state_judiciary_pages": [
+    {
+      "label": "Rhode Island District Court Small Claims self-help page",
+      "url": "https://www.courts.ri.gov/Courts/districtcourt/Pages/SmallClaims.aspx",
+      "scope": "small_claims"
+    },
+    {
+      "label": "Rhode Island District Court general information",
+      "url": "https://www.courts.ri.gov/Courts/districtcourt/Pages/default.aspx",
+      "scope": "court_directory"
+    },
+    {
+      "label": "Rhode Island Judiciary forms center",
+      "url": "https://www.courts.ri.gov/PublicResources/forms/Pages/default.aspx",
+      "scope": "forms"
+    },
+    {
+      "label": "Rhode Island Judiciary fee information",
+      "url": "https://www.courts.ri.gov/PublicResources/fee-information/Pages/default.aspx",
+      "scope": "fee_schedule"
+    }
+  ],
+  "statutes": [
+    {
+      "label": "R.I. Gen. Laws § 10-16-1 et seq. (Small Claims and Consumer Claims Procedure)",
+      "url": "https://webserver.rilegislature.gov/Statutes/TITLE10/10-16/INDEX.HTM",
+      "section_or_chapter": "§ 10-16-1 et seq."
+    },
+    {
+      "label": "R.I. Gen. Laws § 9-1-13 (Limitation of actions)",
+      "url": "https://webserver.rilegislature.gov/Statutes/TITLE9/9-1/9-1-13.HTM",
+      "section_or_chapter": "§ 9-1-13"
+    },
+    {
+      "label": "R.I. Gen. Laws § 9-28-3 (Enforcement of Judgments)",
+      "url": "https://webserver.rilegislature.gov/Statutes/TITLE9/9-28/9-28-3.HTM",
+      "section_or_chapter": "§ 9-28-3"
+    },
+    {
+      "label": "R.I. Gen. Laws § 10-16-7 (Appeals in small claims actions)",
+      "url": "https://webserver.rilegislature.gov/Statutes/TITLE10/10-16/10-16-7.HTM",
+      "section_or_chapter": "§ 10-16-7"
+    },
+    {
+      "label": "R.I. Gen. Laws § 6-13.1-5.2 (Deceptive trade practices - private remedy)",
+      "url": "https://webserver.rilegislature.gov/Statutes/TITLE6/6-13.1/6-13.1-5.2.HTM",
+      "section_or_chapter": "§ 6-13.1-5.2"
+    },
+    {
+      "label": "R.I. Gen. Laws § 34-18-19 (Security deposits in residential landlord and tenant law)",
+      "url": "https://webserver.rilegislature.gov/Statutes/TITLE34/34-18/34-18-19.HTM",
+      "section_or_chapter": "§ 34-18-19"
+    },
+    {
+      "label": "R.I. Gen. Laws § 28-14-2.2 (Wage payment upon separation)",
+      "url": "https://webserver.rilegislature.gov/Statutes/TITLE28/28-14/28-14-2.2.HTM",
+      "section_or_chapter": "§ 28-14-2.2"
+    }
+  ],
+  "court_rules": [
+    {
+      "label": "Rhode Island District Court Rules of Small Claims Procedure",
+      "url": "https://www.courts.ri.gov/Courts/districtcourt/PDFs/SmallClaimsRules.pdf",
+      "rule_or_chapter": "District Court Rules of Small Claims Procedure"
+    }
+  ],
+  "forms_pages": [
+    {
+      "label": "Rhode Island District Court Small Claims forms",
+      "url": "https://www.courts.ri.gov/PublicResources/forms/Pages/smallclaims.aspx"
+    }
+  ],
+  "fee_schedules": [
+    {
+      "label": "Rhode Island District Court fee schedule",
+      "url": "https://www.courts.ri.gov/PublicResources/fee-information/Documents/District%20Court%20Fee%20Schedule.pdf"
+    }
+  ],
+  "service_rules": [
+    {
+      "label": "Service of process in Rhode Island Small Claims (District Court Rule 3)",
+      "url": "https://www.courts.ri.gov/Courts/districtcourt/PDFs/SmallClaimsRules.pdf"
+    }
+  ],
+  "appeal_rules": [
+    {
+      "label": "Appeals in Small Claims action — R.I. Gen. Laws § 10-16-7",
+      "url": "https://webserver.rilegislature.gov/Statutes/TITLE10/10-16/10-16-7.HTM"
+    }
+  ],
+  "post_judgment_collection": [
+    {
+      "label": "Rhode Island General Laws – Enforcement of Judgments § 9-28-3",
+      "url": "https://webserver.rilegislature.gov/Statutes/TITLE9/9-28/9-28-3.HTM"
+    }
+  ],
+  "consumer_protection_statutes": [
+    {
+      "label": "R.I. Gen. Laws § 6-13.1-5.2 (Deceptive Trade Practices — Private remedies)",
+      "url": "https://webserver.rilegislature.gov/Statutes/TITLE6/6-13.1/6-13.1-5.2.HTM"
+    }
+  ],
+  "landlord_tenant_statutes": [
+    {
+      "label": "R.I. Gen. Laws § 34-18-19 (Security deposit return for residential property)",
+      "url": "https://webserver.rilegislature.gov/Statutes/TITLE34/34-18/34-18-19.HTM"
+    }
+  ],
+  "wage_and_employment_statutes": [
+    {
+      "label": "R.I. Gen. Laws § 28-14-2.2 (Payment of wages on separation from employment)",
+      "url": "https://webserver.rilegislature.gov/Statutes/TITLE28/28-14/28-14-2.2.HTM"
+    }
+  ],
+  "civil_remedies_statutes": [
+    {
+      "label": "R.I. Gen. Laws § 9-1-45 (Attorney fees in breach of contract actions)",
+      "url": "https://webserver.rilegislature.gov/Statutes/TITLE9/9-1/9-1-45.HTM"
+    }
+  ],
+  "county_specific": [],
+  "notes": "Rhode Island small claims processes and forms are unified statewide through the District Court; county-based variation does not exist.",
+  "_meta": {
+    "state": "Rhode Island",
+    "slug": "rhode-island",
+    "model": "gpt-4.1",
+    "response_id": "resp_0b2fde528be806810069f08b2aaa488195b3441defc7d6c440",
+    "generated_at": "2026-04-28T10:26:00.860Z",
+    "usage": {
+      "input_tokens": 2107,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 1568,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 3675
+    }
+  }
+}

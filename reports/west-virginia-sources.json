@@ -1,0 +1,137 @@
+{
+  "state": "West Virginia",
+  "as_of": "2024-06-11",
+  "state_judiciary_pages": [
+    {
+      "label": "West Virginia Magistrate Court Information — Small Claims",
+      "url": "https://courtswv.gov/public-resources/representing-yourself/magistrate.html",
+      "scope": "small_claims"
+    },
+    {
+      "label": "West Virginia Court Directory",
+      "url": "https://courtswv.gov/public-resources/court-information/court-directory.html",
+      "scope": "court_directory"
+    },
+    {
+      "label": "West Virginia Supreme Court Self-Help Center",
+      "url": "https://courtswv.gov/public-resources/representing-yourself/index.html",
+      "scope": "self_help"
+    }
+  ],
+  "statutes": [
+    {
+      "label": "W. Va. Code § 50-2-1 — Magistrate court; jurisdiction",
+      "url": "https://code.wvlegislature.gov/50-2-1/",
+      "section_or_chapter": "§ 50-2-1"
+    },
+    {
+      "label": "W. Va. Code § 50-2-3 — Magistrate court civil jurisdiction",
+      "url": "https://code.wvlegislature.gov/50-2-3/",
+      "section_or_chapter": "§ 50-2-3"
+    },
+    {
+      "label": "W. Va. Code § 50-3-2 — Costs in magistrate court",
+      "url": "https://code.wvlegislature.gov/50-3-2/",
+      "section_or_chapter": "§ 50-3-2"
+    },
+    {
+      "label": "W. Va. Code § 50-5-7 — Appeals from magistrate court",
+      "url": "https://code.wvlegislature.gov/50-5-7/",
+      "section_or_chapter": "§ 50-5-7"
+    },
+    {
+      "label": "W. Va. Code § 38-3-1 — Enforcement of judgment (execution and garnishment)",
+      "url": "https://code.wvlegislature.gov/38-3-1/",
+      "section_or_chapter": "§ 38-3-1"
+    }
+  ],
+  "court_rules": [
+    {
+      "label": "West Virginia Rules of Civil Procedure for the Magistrate Courts",
+      "url": "https://www.courtswv.gov/public-resources/rules/magistrate-civil-procedure/index.html",
+      "rule_or_chapter": "All Rules"
+    }
+  ],
+  "forms_pages": [
+    {
+      "label": "West Virginia Magistrate Court Forms",
+      "url": "https://courtswv.gov/public-resources/court-forms/magistrate-forms.html"
+    }
+  ],
+  "fee_schedules": [
+    {
+      "label": "West Virginia Magistrate Court Fees",
+      "url": "https://courtswv.gov/public-resources/representing-yourself/magistrate.html#fees"
+    }
+  ],
+  "service_rules": [
+    {
+      "label": "Service of Process — W. Va. Rules of Civil Procedure for Magistrate Courts, Rule 4",
+      "url": "https://www.courtswv.gov/public-resources/rules/magistrate-civil-procedure/part-ii-4.html"
+    }
+  ],
+  "appeal_rules": [
+    {
+      "label": "Appeals from Magistrate Court — W. Va. Code § 50-5-7",
+      "url": "https://code.wvlegislature.gov/50-5-7/"
+    }
+  ],
+  "post_judgment_collection": [
+    {
+      "label": "Execution and Garnishment — W. Va. Code § 38-3-1",
+      "url": "https://code.wvlegislature.gov/38-3-1/"
+    },
+    {
+      "label": "Wage Garnishment — W. Va. Code § 46A-2-130",
+      "url": "https://code.wvlegislature.gov/46A-2-130/"
+    }
+  ],
+  "consumer_protection_statutes": [
+    {
+      "label": "West Virginia Consumer Credit and Protection Act — W. Va. Code § 46A-6-101 et seq.",
+      "url": "https://code.wvlegislature.gov/46A-6-101/"
+    },
+    {
+      "label": "Civil Penalties for Returned Checks — W. Va. Code § 61-3-39e",
+      "url": "https://code.wvlegislature.gov/61-3-39e/"
+    }
+  ],
+  "landlord_tenant_statutes": [
+    {
+      "label": "Security Deposits — W. Va. Code § 37-6A-1 et seq.",
+      "url": "https://code.wvlegislature.gov/37-6A-1/"
+    }
+  ],
+  "wage_and_employment_statutes": [
+    {
+      "label": "Wage Payment and Collection Act — W. Va. Code § 21-5-1 et seq.",
+      "url": "https://code.wvlegislature.gov/21-5-1/"
+    }
+  ],
+  "civil_remedies_statutes": [
+    {
+      "label": "Fraud and False Representations — W. Va. Code § 55-7-9",
+      "url": "https://code.wvlegislature.gov/55-7-9/"
+    }
+  ],
+  "county_specific": [],
+  "notes": "Small claims in West Virginia are handled by Magistrate Courts; rules and forms are unified statewide via the Supreme Court of Appeals portal.",
+  "_meta": {
+    "state": "West Virginia",
+    "slug": "west-virginia",
+    "model": "gpt-4.1",
+    "response_id": "resp_0c86eec97cc628f50069f08b9dda908197810693ec3328b1aa",
+    "generated_at": "2026-04-28T10:27:52.157Z",
+    "usage": {
+      "input_tokens": 2105,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 1269,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 3374
+    }
+  }
+}

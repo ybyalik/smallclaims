@@ -1,0 +1,1595 @@
+{
+  "state": "Wisconsin",
+  "slug": "wisconsin",
+  "abbr": "WI",
+  "as_of": "2026-04-28",
+  "hero": {
+    "individual_limit_dollars": 10000,
+    "business_limit_dollars": 10000,
+    "filing_fee_low_dollars": 94.5,
+    "filing_fee_high_dollars": 94.5,
+    "typical_timeline_min_days": 30,
+    "typical_timeline_max_days": 90,
+    "tagline": "Standard $10,000 cap and 15-day appeal window.",
+    "source_ids": [
+      "S1",
+      "S13"
+    ]
+  },
+  "at_a_glance": [
+    {
+      "label": "Most you can sue for",
+      "value": "$10,000",
+      "detail": "Same cap for individuals and businesses",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Filing fee",
+      "value": "$94.50",
+      "detail": "Flat fee for all small claims cases",
+      "source_ids": [
+        "S13"
+      ]
+    },
+    {
+      "label": "Court",
+      "value": "Circuit Court (small claims division)",
+      "detail": "",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Lawyers at trial",
+      "value": "Allowed",
+      "detail": "Permitted but not required",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Appeal window",
+      "value": "15 days",
+      "detail": "Trial de novo in circuit court",
+      "source_ids": [
+        "S15"
+      ]
+    },
+    {
+      "label": "Recent change",
+      "value": "—",
+      "detail": "No major changes in the last 3 years",
+      "source_ids": []
+    }
+  ],
+  "limits": {
+    "individual_dollars": 10000,
+    "business_dollars": 10000,
+    "guarantor_with_fee_max": null,
+    "guarantor_without_fee_max": null,
+    "annual_filing_cap": {
+      "count": null,
+      "threshold_dollars": null,
+      "notes": ""
+    },
+    "split_claims_allowed": false,
+    "split_claims_explanation": "If a claim exceeds the $10,000 cap, you cannot split it into multiple small claims cases; you must file in a higher court.",
+    "interest_excluded_from_cap": true,
+    "court_costs_excluded_from_cap": true,
+    "statute": "Wis. Stat. § 799.01",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "claim_categories": [
+    {
+      "id": "contracts",
+      "title": "Contracts and money owed",
+      "blurb": "Wisconsin allows you 6 years to file claims on written contracts and 6 years on oral contracts.",
+      "claims": [
+        {
+          "slug": "written-contract",
+          "name": "Breach of a written contract",
+          "example": "A contractor signed a $4,000 contract to remodel your kitchen, took the deposit, and never finished.",
+          "eligibility": "eligible",
+          "claim_statute": "Wis. Stat. § 893.43",
+          "notes": "6-year deadline from breach. Bring the signed contract, payment proof, and any correspondence showing the breach.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "oral-contract",
+          "name": "Breach of an oral contract",
+          "example": "You agreed verbally to lend a friend $2,000, and they failed to repay you as promised.",
+          "eligibility": "eligible",
+          "claim_statute": "Wis. Stat. § 893.43",
+          "notes": "6-year deadline from breach. Gather any evidence of the agreement, such as emails or witness statements.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "personal-loan",
+          "name": "Unpaid personal loan",
+          "example": "You lent $5,000 to a colleague with the understanding it would be repaid in a year, but they haven't paid you back.",
+          "eligibility": "eligible",
+          "claim_statute": "Wis. Stat. § 893.43",
+          "notes": "6-year deadline from breach. Provide documentation of the loan agreement and any repayment attempts.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "promissory-note",
+          "name": "Default on a promissory note",
+          "example": "A borrower signed a promissory note for $8,000 and failed to make the agreed payments.",
+          "eligibility": "eligible",
+          "claim_statute": "Wis. Stat. § 893.43",
+          "notes": "6-year deadline from breach. Present the original promissory note and records of missed payments.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unpaid-invoice",
+          "name": "Unpaid invoice for services rendered",
+          "example": "You provided consulting services worth $3,500, invoiced the client, but they haven't paid.",
+          "eligibility": "eligible",
+          "claim_statute": "Wis. Stat. § 893.43",
+          "notes": "6-year deadline from breach. Bring copies of the invoice, service agreement, and any communication regarding payment.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "open-account",
+          "name": "Unpaid balance on an open account",
+          "example": "A customer has an outstanding balance of $6,000 on their account with your business.",
+          "eligibility": "eligible",
+          "claim_statute": "Wis. Stat. § 893.43",
+          "notes": "6-year deadline from breach. Provide account statements and records of transactions.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unpaid-rent",
+          "name": "Unpaid rent by tenant",
+          "example": "Your tenant owes $4,500 in unpaid rent over the past three months.",
+          "eligibility": "eligible",
+          "claim_statute": "Wis. Stat. § 704.27",
+          "notes": "6-year deadline from breach. Bring the lease agreement, rent ledger, and any notices sent to the tenant.",
+          "damage_boost": "",
+          "source_ids": [
+            "S22"
+          ]
+        },
+        {
+          "slug": "bad-check",
+          "name": "Payment with a bad check",
+          "example": "A customer paid for goods with a $1,200 check that bounced due to insufficient funds.",
+          "eligibility": "eligible",
+          "claim_statute": "Wis. Stat. § 943.24(5)",
+          "notes": "6-year deadline from breach. Provide the original check, bank notice of insufficient funds, and any communication with the issuer.",
+          "damage_boost": "Check amount + service charge up to $40 + civil penalty up to $100 OR 2x check amount, whichever is greater.",
+          "source_ids": [
+            "S20"
+          ]
+        },
+        {
+          "slug": "co-signer",
+          "name": "Co-signer liability for defaulted loan",
+          "example": "You co-signed a $9,000 loan for a friend who defaulted, and now the lender is seeking payment from you.",
+          "eligibility": "eligible",
+          "claim_statute": "Wis. Stat. § 893.43",
+          "notes": "6-year deadline from breach. Bring the loan agreement and any correspondence from the lender.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "consumer-disputes",
+      "title": "Consumer disputes",
+      "blurb": "Wisconsin provides avenues for consumers to seek redress for various disputes, with specific statutes governing deceptive trade practices and lemon laws.",
+      "claims": [
+        {
+          "slug": "defective-product",
+          "name": "Purchase of a defective product",
+          "example": "You bought a $2,000 appliance that stopped working within a month, and the seller refuses to repair or replace it.",
+          "eligibility": "eligible",
+          "claim_statute": "Wis. Stat. § 100.18",
+          "notes": "6-year deadline from breach. Provide the purchase receipt, warranty, and any communication with the seller.",
+          "damage_boost": "",
+          "source_ids": [
+            "S18"
+          ]
+        },
+        {
+          "slug": "bad-service",
+          "name": "Substandard service provided",
+          "example": "A cleaning service charged you $1,500 but failed to perform the agreed-upon tasks.",
+          "eligibility": "eligible",
+          "claim_statute": "Wis. Stat. § 100.18",
+          "notes": "6-year deadline from breach. Bring the service agreement, payment proof, and evidence of inadequate service.",
+          "damage_boost": "",
+          "source_ids": [
+            "S18"
+          ]
+        },
+        {
+          "slug": "auto-repair",
+          "name": "Dispute over auto repair charges",
+          "example": "A mechanic charged you $3,000 for repairs that didn't fix the issue, and refuses to refund or correct the work.",
+          "eligibility": "eligible",
+          "claim_statute": "Wis. Stat. § 218.0175",
+          "notes": "6-year deadline from breach. Provide the repair invoice, payment proof, and any communication with the mechanic.",
+          "damage_boost": "",
+          "source_ids": [
+            "S21"
+          ]
+        },
+        {
+          "slug": "contractor",
+          "name": "Contractor failed to complete work",
+          "example": "You paid a contractor $7,500 to renovate your bathroom, but they abandoned the project halfway through.",
+          "eligibility": "eligible",
+          "claim_statute": "Wis. Stat. § 100.18",
+          "notes": "6-year deadline from breach. Bring the contract, payment records, and evidence of incomplete work.",
+          "damage_boost": "",
+          "source_ids": [
+            "S18"
+          ]
+        },
+        {
+          "slug": "no-show-vendor",
+          "name": "Vendor failed to deliver goods/services",
+          "example": "You paid $2,500 for catering services for an event, but the caterer never showed up.",
+          "eligibility": "eligible",
+          "claim_statute": "Wis. Stat. § 100.18",
+          "notes": "6-year deadline from breach. Provide the contract, payment proof, and any communication with the vendor.",
+          "damage_boost": "",
+          "source_ids": [
+            "S18"
+          ]
+        },
+        {
+          "slug": "subscription-cancellation",
+          "name": "Unauthorized charges after subscription cancellation",
+          "example": "You canceled a $50/month gym membership, but they continued to charge your account for several months.",
+          "eligibility": "eligible",
+          "claim_statute": "Wis. Stat. § 100.18",
+          "notes": "6-year deadline from breach. Bring cancellation confirmation, bank statements, and any communication with the gym.",
+          "damage_boost": "",
+          "source_ids": [
+            "S18"
+          ]
+        },
+        {
+          "slug": "used-car",
+          "name": "Purchase of a defective used car",
+          "example": "You bought a used car for $9,000 that broke down within a week, and the dealer refuses to address the issue.",
+          "eligibility": "eligible",
+          "claim_statute": "Wis. Stat. § 218.0171",
+          "notes": "6-year deadline from breach. Provide the sales contract, payment proof, and any communication with the dealer.",
+          "damage_boost": "",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "false-advertising",
+          "name": "False advertising leading to financial loss",
+          "example": "A retailer advertised a product for $500, but charged you $700 at checkout without honoring the advertised price.",
+          "eligibility": "eligible",
+          "claim_statute": "Wis. Stat. § 100.18",
+          "notes": "6-year deadline from breach. Bring the advertisement, receipt, and any communication with the retailer.",
+          "damage_boost": "",
+          "source_ids": [
+            "S18"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "property-damage",
+      "title": "Property damage",
+      "blurb": "Wisconsin allows you 6 years to file claims for property damage.",
+      "claims": [
+        {
+          "slug": "vehicle-collision",
+          "name": "Damage from a vehicle collision",
+          "example": "Another driver hit your parked car, causing $4,000 in damages, and refuses to pay for repairs.",
+          "eligibility": "eligible",
+          "claim_statute": "Wis. Stat. § 893.52",
+          "notes": "6-year deadline from incident. Provide police reports, repair estimates, and any communication with the other driver.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "neighbor-property",
+          "name": "Neighbor caused damage to your property",
+          "example": "A neighbor's tree fell onto your fence during a storm, causing $2,500 in damages.",
+          "eligibility": "eligible",
+          "claim_statute": "Wis. Stat. § 893.52",
+          "notes": "6-year deadline from incident. Bring photos of the damage, repair estimates, and any communication with the neighbor.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "damage-to-rental",
+          "name": "Tenant caused damage to rental property",
+          "example": "A tenant left your rental unit with $3,000 in damages beyond normal wear and tear.",
+          "eligibility": "eligible",
+          "claim_statute": "Wis. Stat. § 704.27",
+          "notes": "6-year deadline from incident. Provide the lease agreement, move-in/move-out inspection reports, and repair estimates.",
+          "damage_boost": "",
+          "source_ids": [
+            "S22"
+          ]
+        },
+        {
+          "slug": "pet-damage",
+          "name": "Damage caused by someone else's pet",
+          "example": "A neighbor's dog entered your yard and destroyed $1,500 worth of landscaping.",
+          "eligibility": "eligible",
+          "claim_statute": "Wis. Stat. § 893.52",
+          "notes": "6-year deadline from incident. Bring photos of the damage, repair estimates, and any communication with the pet owner.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "property-in-custody",
+          "name": "Damage to property left in someone's care",
+          "example": "You left your bicycle with a friend for safekeeping, and it was returned with $800 in damages.",
+          "eligibility": "eligible",
+          "claim_statute": "Wis. Stat. § 893.52",
+          "notes": "6-year deadline from incident. Provide evidence of the property's condition before and after, and any communication with the custodian.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "landlord-tenant",
+      "title": "Landlord-tenant disputes",
+      "blurb": "Wisconsin provides specific statutes governing landlord-tenant relationships, including security deposits and habitability standards.",
+      "claims": [
+        {
+          "slug": "security-deposit",
+          "name": "Failure to return security deposit",
+          "example": "After moving out, your landlord withheld your $1,200 security deposit without providing an itemized list of damages.",
+          "eligibility": "eligible",
+          "claim_statute": "Wis. Stat. § 704.28",
+          "notes": "6-year deadline from incident. Bring the lease agreement, move-out inspection report, and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S22"
+          ]
+        },
+        {
+          "slug": "deposit-not-itemized",
+          "name": "Security deposit deductions not itemized",
+          "example": "Your landlord deducted $500 from your security deposit without providing an itemized list of damages.",
+          "eligibility": "eligible",
+          "claim_statute": "Wis. Stat. § 704.28",
+          "notes": "6-year deadline from incident. Provide the lease agreement, move-out inspection report, and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S22"
+          ]
+        },
+        {
+          "slug": "uninhabitable-rental",
+          "name": "Rental unit deemed uninhabitable",
+          "example": "Your apartment had severe mold issues, making it uninhabitable, and the landlord refused to address the problem.",
+          "eligibility": "eligible",
+          "claim_statute": "Wis. Stat. § 704.07",
+          "notes": "6-year deadline from incident. Bring photos of the conditions, repair requests, and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S23"
+          ]
+        },
+        {
+          "slug": "wrongful-retention-property",
+          "name": "Landlord wrongfully retained tenant's property",
+          "example": "After eviction, your landlord kept your personal belongings worth $2,000 without legal justification.",
+          "eligibility": "eligible",
+          "claim_statute": "Wis. Stat. § 704.05",
+          "notes": "6-year deadline from incident. Provide evidence of the property, its value, and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S23"
+          ]
+        },
+        {
+          "slug": "illegal-eviction",
+          "name": "Landlord conducted an illegal eviction",
+          "example": "Your landlord changed the locks without notice, effectively evicting you without following legal procedures.",
+          "eligibility": "eligible",
+          "claim_statute": "Wis. Stat. § 704.17",
+          "notes": "6-year deadline from incident. Bring the lease agreement, evidence of the lock change, and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S23"
+          ]
+        },
+        {
+          "slug": "unreturned-prepaid-rent",
+          "name": "Failure to return prepaid rent after lease termination",
+          "example": "You paid first and last month's rent upfront, but after terminating the lease early, the landlord refused to return the unused portion.",
+          "eligibility": "eligible",
+          "claim_statute": "Wis. Stat. § 704.28",
+          "notes": "6-year deadline from incident. Provide the lease agreement, payment records, and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S22"
+          ]
+        },
+        {
+          "slug": "unpaid-rent-by-tenant",
+          "name": "Tenant failed to pay rent",
+          "example": "Your tenant missed three months of rent payments totaling $3,600 and has since vacated the property.",
+          "eligibility": "eligible",
+          "claim_statute": "Wis. Stat. § 704.27",
+          "notes": "6-year deadline from incident. Bring the lease agreement, rent ledger, and any notices sent to the tenant.",
+          "damage_boost": "",
+          "source_ids": [
+            "S22"
+          ]
+        },
+        {
+          "slug": "repair-and-deduct",
+          "name": "Tenant repaired and deducted from rent",
+          "example": "You paid $500 to fix a leaking roof after the landlord failed to address it, and deducted the cost from your rent.",
+          "eligibility": "eligible",
+          "claim_statute": "Wis. Stat. § 704.07",
+          "notes": "6-year deadline from incident. Provide repair receipts, photos of the issue, and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S23"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "employment-and-wages",
+      "title": "Employment and wages",
+      "blurb": "Wisconsin provides specific statutes governing wage payments and employer obligations.",
+      "claims": [
+        {
+          "slug": "unpaid-wages",
+          "name": "Employer failed to pay earned wages",
+          "example": "Your employer owes you $2,000 for hours worked but has not issued payment.",
+          "eligibility": "eligible",
+          "claim_statute": "Wis. Stat. § 109.03",
+          "notes": "6-year deadline from incident. Bring pay stubs, timesheets, and any communication with the employer.",
+          "damage_boost": "",
+          "source_ids": [
+            "S24"
+          ]
+        },
+        {
+          "slug": "final-paycheck",
+          "name": "Employer withheld final paycheck",
+          "example": "After resigning, your employer refused to issue your final paycheck of $1,500.",
+          "eligibility": "eligible",
+          "claim_statute": "Wis. Stat. § 109.03",
+          "notes": "6-year deadline from incident. Provide resignation notice, pay stubs, and any communication with the employer.",
+          "damage_boost": "",
+          "source_ids": [
+            "S24"
+          ]
+        },
+        {
+          "slug": "unpaid-commissions",
+          "name": "Employer failed to pay earned commissions",
+          "example": "You earned $3,000 in sales commissions, but your employer has not paid them.",
+          "eligibility": "eligible",
+          "claim_statute": "Wis. Stat. § 109.03",
+          "notes": "6-year deadline from incident. Bring commission agreements, sales records, and any communication with the employer.",
+          "damage_boost": "",
+          "source_ids": [
+            "S24"
+          ]
+        },
+        {
+          "slug": "unpaid-overtime",
+          "name": "Employer failed to pay overtime wages",
+          "example": "You worked 10 hours of overtime last month, but your employer paid only regular wages.",
+          "eligibility": "eligible",
+          "claim_statute": "Wis. Stat. § 109.03",
+          "notes": "6-year deadline from incident. Provide timesheets, pay stubs, and any communication with the employer.",
+          "damage_boost": "",
+          "source_ids": [
+            "S24"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "personal-claims",
+      "title": "Personal claims",
+      "blurb": "Wisconsin allows you 3 years to file claims for personal injury and 6 years for property damage.",
+      "claims": [
+        {
+          "slug": "minor-injury",
+          "name": "Minor personal injury",
+          "example": "You slipped on an unmarked wet floor in a store, resulting in a sprained ankle and $1,200 in medical bills.",
+          "eligibility": "eligible",
+          "claim_statute": "Wis. Stat. § 893.54",
+          "notes": "3-year deadline from incident. Bring medical records, photos of the hazard, and any communication with the store.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "loaned-property",
+          "name": "Damage to loaned property",
+          "example": "You lent a friend your camera worth $800, and they returned it with significant damage.",
+          "eligibility": "eligible",
+          "claim_statute": "Wis. Stat. § 893.52",
+          "notes": "6-year deadline from incident. Provide evidence of the property's condition before and after, and any communication with the borrower.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "civil-theft",
+          "name": "Theft of personal property",
+          "example": "A neighbor took your bicycle worth $600 without permission and refuses to return it.",
+          "eligibility": "eligible",
+          "claim_statute": "Wis. Stat. § 943.20",
+          "notes": "6-year deadline from incident. Bring proof of ownership, police reports, and any communication with the neighbor.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vehicle-specific",
+      "title": "Vehicle-specific claims",
+      "blurb": "Wisconsin provides specific statutes governing vehicle-related disputes, including auto repairs and towing.",
+      "claims": [
+        {
+          "slug": "mechanic-dispute",
+          "name": "Dispute over mechanic's charges",
+          "example": "A mechanic charged you $2,500 for repairs you didn't authorize and refuses to refund the amount.",
+          "eligibility": "eligible",
+          "claim_statute": "Wis. Stat. § 218.0175",
+          "notes": "6-year deadline from incident. Provide the repair invoice, payment proof, and any communication with the mechanic.",
+          "damage_boost": "",
+          "source_ids": [
+            "S21"
+          ]
+        },
+        {
+          "slug": "wrongful-tow",
+          "name": "Vehicle wrongfully towed",
+          "example": "Your car was towed from a legal parking spot, and the towing company charged you $300 for its return.",
+          "eligibility": "eligible",
+          "claim_statute": "Wis. Stat. § 349.13",
+          "notes": "6-year deadline from incident. Bring photos of the parking spot, towing receipt, and any communication with the towing company.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "category": "Eviction (unlawful detainer)",
+      "explanation": "Eviction actions are handled in small claims court regardless of the amount claimed.",
+      "where_to_go_instead": "Small Claims Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Title to real estate",
+      "explanation": "Disputes involving the title to real estate are not handled in small claims court.",
+      "where_to_go_instead": "Circuit Court",
+      "source_ids": []
+    },
+    {
+      "category": "Defamation",
+      "explanation": "Defamation claims are not suitable for small claims court due to their complexity.",
+      "where_to_go_instead": "Circuit Court",
+      "source_ids": []
+    },
+    {
+      "category": "Malpractice",
+      "explanation": "Professional malpractice claims exceed the jurisdictional limits of small claims court.",
+      "where_to_go_instead": "Circuit Court",
+      "source_ids": []
+    },
+    {
+      "category": "Family law and probate",
+      "explanation": "Matters such as divorce, child custody, and probate are not handled in small claims court.",
+      "where_to_go_instead": "Family Court or Probate Court",
+      "source_ids": []
+    },
+    {
+      "category": "Claims against the federal government",
+      "explanation": "Small claims court does not have jurisdiction over claims against the federal government.",
+      "where_to_go_instead": "Federal Court",
+      "source_ids": []
+    },
+    {
+      "category": "Workers' compensation",
+      "explanation": "Workers' compensation claims are handled by the Department of Workforce Development.",
+      "where_to_go_instead": "Department of Workforce Development",
+      "source_ids": []
+    },
+    {
+      "category": "Class actions",
+      "explanation": "Class action lawsuits are not suitable for small claims court.",
+      "where_to_go_instead": "Circuit Court",
+      "source_ids": []
+    },
+    {
+      "category": "Injunctions/specific performance",
+      "explanation": "Small claims court cannot grant injunctions or order specific performance.",
+      "where_to_go_instead": "Circuit Court",
+      "source_ids": []
+    },
+    {
+      "category": "Federal claims (bankruptcy, patents, trademarks)",
+      "explanation": "Federal claims are outside the jurisdiction of small claims court.",
+      "where_to_go_instead": "Federal Court",
+      "source_ids": []
+    },
+    {
+      "category": "Mandatory-arbitration disputes",
+      "explanation": "Disputes subject to mandatory arbitration clauses are not handled in small claims court.",
+      "where_to_go_instead": "Arbitration",
+      "source_ids": []
+    },
+    {
+      "category": "Suing a deceased person",
+      "explanation": "Claims against deceased individuals must be filed in probate court.",
+      "where_to_go_instead": "Probate Court",
+      "source_ids": []
+    }
+  ],
+  "damages": {
+    "compensatory_allowed": true,
+    "punitive_allowed": false,
+    "punitive_explanation": "Punitive damages are not awarded in small claims court; however, statutory penalties may apply in certain cases.",
+    "statutory_multipliers": [
+      {
+        "claim": "Bad check (after 30-day notice)",
+        "multiplier": "2x check amount",
+        "explanation": "Check amount + service charge up to $40 + civil penalty up to $100 OR 2x check amount, whichever is greater.",
+        "statute": "Wis. Stat. § 943.24(5)",
+        "source_ids": [
+          "S20"
+        ]
+      }
+    ],
+    "attorney_fees_recoverable": "sometimes",
+    "attorney_fees_explanation": "Attorney fees may be recoverable in certain cases as specified by statute.",
+    "prejudgment_interest_rate_pct": null,
+    "prejudgment_interest_statute": "",
+    "postjudgment_interest_rate_pct": null,
+    "postjudgment_interest_type": "simple",
+    "postjudgment_interest_statute": "",
+    "postjudgment_interest_notes": "",
+    "filing_and_service_fees_recoverable_from_loser": true,
+    "source_ids": [
+      "S7"
+    ]
+  },
+  "where_to_file": {
+    "court_name": "Small Claims Division of the Circuit Court",
+    "parent_court": "Wisconsin Circuit Court",
+    "venue_rules": [
+      {
+        "scenario": "Most cases (the default)",
+        "filing_options": [
+          "County where the defendant lives"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Where contract was performed",
+        "filing_options": [
+          "County where performance was due"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Where injury or damage occurred",
+        "filing_options": [
+          "County where the event occurred"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Multiple defendants",
+        "filing_options": [
+          "Any county where ONE defendant resides"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Out-of-state defendant",
+        "filing_options": [
+          "Where the cause of action arose"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "consequences_of_wrong_venue": "Filing in the wrong venue may result in dismissal or transfer of the case, potentially incurring additional costs and delays.",
+    "e_filing_available": "yes",
+    "e_filing_notes": "E-filing is available and encouraged for small claims cases.",
+    "e_filing_portal": "https://www.wicourts.gov/ecourts/efilecircuit/index.jsp",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "fees": {
+    "filing_fee_tiers": [
+      {
+        "range_label": "$0 to $10,000",
+        "range_min": 0,
+        "range_max": 10000,
+        "fee_dollars": 94.5,
+        "source_ids": [
+          "S13"
+        ]
+      }
+    ],
+    "frequent_filer": {
+      "threshold_per_year": null,
+      "fee_dollars": null,
+      "notes": ""
+    },
+    "service_fees": [
+      {
+        "method": "Sheriff (personal service)",
+        "amount_label": "$8-40",
+        "notes": "Varies by county; contact local sheriff's office for exact fees.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "method": "Certified mail by clerk",
+        "amount_label": "$8-15",
+        "notes": "Varies by county; contact local clerk's office for exact fees.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "waiver": {
+      "forms": [
+        {
+          "number": "CV-410A",
+          "name": "Petition for Waiver of Fees and Costs",
+          "url": "https://www.wicourts.gov/formdisplay/CV-410A.pdf?formNumber=CV-410A&formType=Form&formatId=2&language=en",
+          "source_ids": [
+            "S12"
+          ]
+        }
+      ],
+      "eligibility_bullets": [
+        "Receiving need-based public assistance (SNAP, TANF, SSI)",
+        "Household income below 125% federal poverty line"
+      ],
+      "coverage_notes": "The waiver covers filing fees and service fees.",
+      "if_you_win_notes": "If you win, the waived fees are added to the judgment against the loser."
+    },
+    "other_fees": [
+      {
+        "name": "Subpoena issuance",
+        "amount_label": "$2",
+        "notes": "Plus witness fee per day.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "name": "Appeal filing",
+        "amount_label": "$195",
+        "notes": "",
+        "source_ids": [
+          "S13"
+        ]
+      },
+      {
+        "name": "Writ of execution",
+        "amount_label": "$5",
+        "notes": "Post-judgment.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "fees_recoverable_from_loser_notes": "If you win, filing fee and reasonable service costs are added to the judgment.",
+    "source_ids": [
+      "S7"
+    ]
+  },
+  "statute_of_limitations": {
+    "entries": [
+      {
+        "id": "written-contract",
+        "claim": "Written contract",
+        "years": 6,
+        "clock_starts": "Date of breach",
+        "statute": "Wis. Stat. § 893.43",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "oral-contract",
+        "claim": "Oral contract",
+        "years": 6,
+        "clock_starts": "Date of breach",
+        "statute": "Wis. Stat. § 893.43",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "sale-of-goods",
+        "claim": "Sale of goods (UCC)",
+        "years": 6,
+        "clock_starts": "Date of breach",
+        "statute": "Wis. Stat. § 893.43",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "promissory-note",
+        "claim": "Promissory note",
+        "years": 6,
+        "clock_starts": "Date of breach",
+        "statute": "Wis. Stat. § 893.43",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "open-account",
+        "claim": "Open account / credit card debt",
+        "years": 6,
+        "clock_starts": "Date of last payment or charge",
+        "statute": "Wis. Stat. § 893.43",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "personal-injury",
+        "claim": "Personal injury",
+        "years": 3,
+        "clock_starts": "Date of injury",
+        "statute": "Wis. Stat. § 893.54",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "property-damage",
+        "claim": "Property damage",
+        "years": 6,
+        "clock_starts": "Date of damage",
+        "statute": "Wis. Stat. § 893.52",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "fraud",
+        "claim": "Fraud",
+        "years": 6,
+        "clock_starts": "Date of discovery",
+        "statute": "Wis. Stat. § 893.93(1)(b)",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "bad-check",
+        "claim": "Bad check",
+        "years": 6,
+        "clock_starts": "Date of dishonor",
+        "statute": "Wis. Stat. § 893.43",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "unpaid-wages",
+        "claim": "Unpaid wages",
+        "years": 6,
+        "clock_starts": "Date wages were due",
+        "statute": "Wis. Stat. § 893.44",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "security-deposit",
+        "claim": "Security deposit",
+        "years": 6,
+        "clock_starts": "Date deposit was due",
+        "statute": "Wis. Stat. § 893.43",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "judgment-enforcement",
+        "claim": "Judgment enforcement",
+        "years": 20,
+        "clock_starts": "Date of judgment",
+        "statute": "Wis. Stat. § 893.40",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "discovery_rule_notes": "The discovery rule applies to fraud claims, starting the clock when the fraud is discovered.",
+    "tolling_notes": "The statute of limitations may be tolled if the defendant is out of state, the plaintiff is a minor, or in cases of bankruptcy stays.",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "pre_filing": {
+    "demand_letter_required": false,
+    "demand_letter_recommended": true,
+    "demand_letter_notes": "While not required, sending a demand letter can often resolve disputes without court intervention.",
+    "bad_check_notice_rule": "A 30-day written notice is required before pursuing statutory penalties for a bad check.",
+    "wage_claim_demand_rule": "No specific demand requirement for wage claims, but written demand may strengthen the case.",
+    "government_claim_required": false,
+    "government_claim_deadline_days": null,
+    "government_claim_notes": "",
+    "landlord_tenant_pre_filing_notes": "Landlords must provide an itemized list of damages within 21 days of lease termination when withholding security deposits.",
+    "consumer_protection_notes": "No specific pre-filing requirements for consumer protection claims.",
+    "mandatory_mediation_before_filing": "none",
+    "arbitration_clauses_enforced": true,
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "forms": [
+    {
+      "number": "SC-500",
+      "name": "Summons and Complaint (Small Claims)",
+      "description": "To initiate a small claims action.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "https://www.wicourts.gov/formdisplay/SC-500.pdf?formNumber=SC-500&formType=Form&formatId=2&language=en",
+      "source_ids": [
+        "S12"
+      ]
+    },
+    {
+      "number": "SC-500I",
+      "name": "Summons and Complaint (Small Claims) with Instructions",
+      "description": "To initiate a small claims action with instructions for self-represented parties.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "https://www.wicourts.gov/formdisplay/SC-500i.pdf?formNumber=SC-500i&formType=Form&formatId=2&language=en",
+      "source_ids": [
+        "S12"
+      ]
+    },
+    {
+      "number": "SC-5310VB",
+      "name": "Order for Dismissal Non-Eviction (Small Claims)",
+      "description": "For the court to dismiss a small claims non-eviction action and to record the terms of the stipulation for dismissal.",
+      "filed_by": "court",
+      "required": false,
+      "group": "after-judgment",
+      "url": "https://www.wicourts.gov/formdisplay/SC-5310VB.pdf?formNumber=SC-5310VB&formType=Form&formatId=2&language=en",
+      "source_ids": [
+        "S12"
+      ]
+    },
+    {
+      "number": "SC-5420VA",
+      "name": "Declaration Based on Noncompliance for Money Judgment Non-Eviction (Small Claims)",
+      "description": "To request the court to enter a money judgment based upon noncompliance.",
+      "filed_by": "plaintiff",
+      "required": false,
+      "group": "after-judgment",
+      "url": "https://www.wicourts.gov/formdisplay/SC-5420VA.pdf?formNumber=SC-5420VA&formType=Form&formatId=2&language=en",
+      "source_ids": [
+        "S12"
+      ]
+    }
+  ],
+  "service": {
+    "who_can_serve": [
+      "Sheriff",
+      "Certified mail by clerk",
+      "Private process server"
+    ],
+    "methods": [
+      {
+        "name": "Sheriff personal service",
+        "description": "Sheriff or constable personally hands the papers to the defendant.",
+        "pros": [
+          "Most reliable",
+          "Official"
+        ],
+        "cons": [
+          "May be more expensive",
+          "Can be slower"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "name": "Certified mail by clerk",
+        "description": "Clerk sends the papers via certified mail to the defendant.",
+        "pros": [
+          "Less expensive",
+          "Convenient"
+        ],
+        "cons": [
+          "Defendant must sign for delivery",
+          "May be refused"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "name": "Private process server",
+        "description": "A private individual serves the papers to the defendant.",
+        "pros": [
+          "Flexible timing",
+          "Can be faster"
+        ],
+        "cons": [
+          "More expensive",
+          "Less official"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "in_county_days_before_hearing": 8,
+    "out_of_county_days_before_hearing": 12,
+    "proof_of_service_form": {
+      "number": "SC-5100V",
+      "name": "Affidavit of Service"
+    },
+    "proof_filing_deadline_days_before_hearing": 5,
+    "business_service_rule": "Serve the registered agent or an officer of the corporation; for sole proprietors, serve the individual directly.",
+    "out_of_state_defendant_notes": "Service must comply with the laws of the state where the defendant is served.",
+    "cant_find_defendant_notes": "If the defendant cannot be found, service by publication may be permitted with court approval.",
+    "avoiding_service_notes": "If the defendant is avoiding service, you may request alternative service methods from the court.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "response_and_default": {
+    "must_file_written_answer": false,
+    "response_deadline_days": 0,
+    "response_notes": "Defendants are not required to file a written answer but must appear at the scheduled hearing.",
+    "default_process": "If the defendant doesn't appear, the court may grant a default judgment in favor of the plaintiff.",
+    "prove_up_required": true,
+    "prove_up_notes": "Even if the defendant defaults, the plaintiff must provide evidence to support the claim.",
+    "motion_to_vacate_form": {
+      "number": "SC-5110V",
+      "name": "Motion to Reopen Small Claims Judgment"
+    },
+    "motion_to_vacate_deadline_days": 12,
+    "motion_to_vacate_lack_of_notice_days": 180,
+    "motion_to_vacate_appeal_deadline_days": 15,
+    "motion_to_vacate_appeal_notes": "If the motion to vacate is denied, the defendant may appeal within 15 days.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "counterclaim": {
+    "allowed": true,
+    "form": {
+      "number": "SC-5200V",
+      "name": "Counterclaim"
+    },
+    "same_monetary_limit": true,
+    "service_deadline_in_county_days": 8,
+    "service_deadline_out_of_county_days": 12,
+    "transfer_to_higher_court_available": true,
+    "transfer_to_higher_court_statute": "Wis. Stat. § 799.02(1)",
+    "transfer_to_higher_court_notes": "If the counterclaim exceeds the small claims limit, the case may be transferred to circuit court.",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "hearing": {
+    "lawyers_allowed": "yes",
+    "lawyers_allowed_notes": "Parties may be represented by attorneys but are not required to be.",
+    "format": "Bench trial, typically 10-15 minutes per case.",
+    "presider": "judge",
+    "burden_of_proof": "preponderance",
+    "what_to_bring": [
+      "Originals of any contracts",
+      "Receipts and bank records",
+      "Photos and videos",
+      "Names and contact info for witnesses"
+    ],
+    "subpoena_form": {
+      "number": "SC-5130V",
+      "name": "Subpoena"
+    },
+    "witness_fee_per_day_dollars": 16,
+    "free_interpreters": true,
+    "interpreter_request_process": "Request an interpreter from the court clerk as soon as possible before the hearing.",
+    "jury_option": false,
+    "decision_timing": "On the spot or mailed within 30 days.",
+    "on_site_mediation": "by county",
+    "on_site_mediation_notes": "Some counties offer mediation services on-site; check with the local court.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "appeals": {
+    "who_can_appeal": "either",
+    "deadline_days": 15,
+    "fee_dollars": 195,
+    "type": "trial de novo",
+    "type_notes": "The appeal is a new trial in the circuit court.",
+    "attorneys_allowed_on_appeal": true,
+    "bond_required": false,
+    "bond_amount_notes": "",
+    "automatic_stay_on_appeal": true,
+    "default_judgment_appealable": true,
+    "default_judgment_notes": "A default judgment can be appealed within 15 days.",
+    "notice_of_appeal_form": {
+      "number": "SC-5140V",
+      "name": "Notice of Appeal"
+    },
+    "frivolous_appeal_penalty_dollars": null,
+    "frivolous_appeal_statute": "",
+    "frivolous_appeal_notes": "",
+    "source_ids": [
+      "S15"
+    ]
+  },
+  "collection": {
+    "payment_deadline_typical_days": 30,
+    "post_judgment_interest_rate_pct": 5,
+    "post_judgment_interest_statute": "Wis. Stat. § 815.05(8)",
+    "post_judgment_interest_notes": "",
+    "methods": [
+      {
+        "id": "wage-garnishment",
+        "name": "Wage garnishment",
+        "blurb": "Have a portion of debtor's wages withheld until the judgment is paid.",
+        "description": "File a garnishment action, serve the employer, and the employer withholds a portion of the debtor's wages to satisfy the judgment.",
+        "forms": [
+          {
+            "number": "SC-5150V",
+            "name": "Earnings Garnishment Notice"
+          }
+        ],
+        "estimated_cost": "$15 plus service fees",
+        "effectiveness_notes": "Effective if the debtor is employed and earns above the exemption threshold.",
+        "exemptions": [
+          "80% of disposable earnings or 30 times the federal minimum wage per week, whichever is greater."
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "id": "bank-levy",
+        "name": "Bank levy",
+        "blurb": "Seize funds from the debtor's bank account.",
+        "description": "Obtain a writ of execution, serve it on the bank, and the bank freezes and turns over funds to satisfy the judgment.",
+        "forms": [
+          {
+            "number": "SC-5160V",
+            "name": "Non-Earnings Garnishment Notice"
+          }
+        ],
+        "estimated_cost": "$5 plus service fees",
+        "effectiveness_notes": "Effective if the debtor has sufficient funds in the account.",
+        "exemptions": [
+          "$5,000 of deposits are exempt from garnishment."
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "id": "property-lien",
+        "name": "Property lien",
+        "blurb": "Place a lien on the debtor's real property.",
+        "description": "File the judgment with the county clerk to place a lien on the debtor's property, which must be satisfied upon sale or refinancing.",
+        "forms": [
+          {
+            "number": "SC-5170V",
+            "name": "Notice of Judgment Lien"
+          }
+        ],
+        "estimated_cost": "$5 plus recording fees",
+        "effectiveness_notes": "Effective if the debtor owns real property and intends to sell or refinance.",
+        "exemptions": [
+          "Homestead exemption up to $75,000."
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "id": "writ-of-execution",
+        "name": "Writ of execution",
+        "blurb": "Seize and sell the debtor's non-exempt property.",
+        "description": "Obtain a writ of execution, have the sheriff seize non-exempt property, and sell it to satisfy the judgment.",
+        "forms": [
+          {
+            "number": "SC-5180V",
+            "name": "Writ of Execution"
+          }
+        ],
+        "estimated_cost": "$5 plus sheriff's fees",
+        "effectiveness_notes": "Effective if the debtor owns valuable non-exempt property.",
+        "exemptions": [
+          "Various personal property exemptions apply."
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "wage_garnishment_max_pct_of_disposable": 20,
+    "judgment_lifespan_years": 20,
+    "judgment_renewal_process": "File a motion to renew the judgment before it expires; no specific form, but must be filed with the court.",
+    "debtor_exam_form": {
+      "number": "SC-5190V",
+      "name": "Order for Financial Disclosure"
+    },
+    "exempt_assets": [
+      "Homestead — $75,000",
+      "Vehicle — $4,000",
+      "Retirement accounts (federally and state-protected)",
+      "Social Security and federal benefits"
+    ],
+    "bankruptcy_effect_notes": "Filing for bankruptcy imposes an automatic stay on collection efforts; certain judgments may be discharged in bankruptcy.",
+    "satisfaction_of_judgment_form": {
+      "number": "SC-5200V",
+      "name": "Satisfaction of Judgment"
+    },
+    "priority_notes": "Priority among judgment creditors is generally determined by the order in which liens are filed.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "businesses": {
+    "self_representation_allowed": true,
+    "self_representation_notes": "Businesses may appear without an attorney in small claims court.",
+    "can_send_employee": true,
+    "can_send_attorney": true,
+    "non_attorney_representation_form": {
+      "number": "SC-5210V",
+      "name": "Authorization to Appear"
+    },
+    "insurance_adjuster_allowed": false,
+    "fictitious_name_form": {
+      "number": "SC-5220V",
+      "name": "Fictitious Name Statement"
+    },
+    "fictitious_name_notes": "Businesses operating under a trade name must file a Fictitious Name Statement.",
+    "sole_proprietor_employee_exception": "Sole proprietors may authorize an employee to appear on their behalf.",
+    "out_of_state_business_must_register": true,
+    "out_of_state_business_statute": "Wis. Stat. § 180.1501",
+    "licensing_notes": "Unlicensed contractors may face limitations in enforcing contracts in court.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "county_variations_material": true,
+  "county_variations": [
+    {
+      "county": "Milwaukee",
+      "topic": "E-filing availability",
+      "detail": "Milwaukee County requires e-filing for small claims cases.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "county": "Dane",
+      "topic": "Mediation services",
+      "detail": "Dane County offers mandatory mediation for small claims disputes.",
+      "source_ids": [
+        "S1"
+      ]
+    }
+  ],
+  "pitfalls": [
+    {
+      "title": "Incorrect defendant information",
+      "what_happens": "Suing the wrong party or using incorrect information can result in dismissal or unenforceable judgments.",
+      "how_to_avoid": "Verify the defendant's legal name and address before filing.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Missing statute of limitations",
+      "what_happens": "Filing after the statute of limitations has expired will lead to dismissal of the case.",
+      "how_to_avoid": "Confirm the applicable statute of limitations for your claim type before filing.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "title": "Improper service of process",
+      "what_happens": "Failure to properly serve the defendant can delay the case or result in dismissal.",
+      "how_to_avoid": "Follow the court's rules for service of process carefully.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Insufficient evidence",
+      "what_happens": "Lack of evidence can lead to losing the case, even if your claim is valid.",
+      "how_to_avoid": "Gather all relevant documents, photos, and witness statements before the hearing.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Ignoring court deadlines",
+      "what_happens": "Missing deadlines can result in default judgments or dismissal.",
+      "how_to_avoid": "Keep track of all court dates and deadlines, and respond promptly.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Overlooking counterclaims",
+      "what_happens": "Failing to file a counterclaim may waive your right to seek damages related to the same dispute.",
+      "how_to_avoid": "Consider any potential counterclaims and file them within the required timeframe.",
+      "source_ids": [
+        "S1"
+      ]
+    }
+  ],
+  "recent_changes": [
+    {
+      "date": "2025-01-01",
+      "title": "Increase in small claims filing fee",
+      "description": "The filing fee for small claims cases increased from $94.50 to $99.50.",
+      "bill_or_rule_citation": "2024 Wisconsin Act 10",
+      "source_ids": [
+        "S13"
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Do I need a lawyer?",
+      "answer": "No, you are not required to have a lawyer in small claims court. Many individuals represent themselves successfully.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "How long does it take?",
+      "answer": "The typical timeline for a small claims case is between 30 to 90 days from filing to resolution.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "What's the maximum I can sue for?",
+      "answer": "You can sue for up to $10,000 in small claims court.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "What happens if the defendant doesn't show up?",
+      "answer": "If the defendant fails to appear, the court may grant a default judgment in your favor.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "Can I appeal?",
+      "answer": "Yes, either party can appeal a small claims judgment within 15 days.",
+      "source_ids": [
+        "S15"
+      ]
+    },
+    {
+      "question": "How long is a judgment good for?",
+      "answer": "A judgment is valid for 20 years and can be renewed before it expires.",
+      "source_ids": [
+        "S4"
+      ]
+    }
+  ],
+  "state_specific_notes": [
+    "Wisconsin allows e-filing for small claims cases in most counties.",
+    "Mediation services are available in some counties to help resolve disputes before trial.",
+    "Small claims court can handle eviction cases regardless of the amount claimed.",
+    "Statutory penalties may apply for writing bad checks, including double the amount of the check.",
+    "Landlords must return security deposits within 21 days of lease termination, providing an itemized list of any deductions."
+  ],
+  "_extras": {
+    "interesting_findings": [
+      "Wisconsin's small claims court handles a wide range of cases, including evictions and replevins.",
+      "The state provides a comprehensive self-help law center for individuals representing themselves in small claims court.",
+      "E-filing is encouraged and available for small claims cases, streamlining the filing process."
+    ]
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "label": "Wisconsin small claims court self-help",
+      "url": "https://www.wicourts.gov/services/public/selfhelp/smallclaims.htm",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S4",
+      "label": "Wis. Stat. § 799.01 – Types of claims; court procedures",
+      "url": "https://docs.legis.wisconsin.gov/statutes/statutes/799/01",
+      "primary": true,
+      "citation": "Wis. Stat. § 799.01"
+    },
+    {
+      "id": "S7",
+      "label": "Wis. Stat. § 814.61 – Fees in civil actions",
+      "url": "https://docs.legis.wisconsin.gov/statutes/statutes/814/61",
+      "primary": true,
+      "citation": "Wis. Stat. § 814.61"
+    },
+    {
+      "id": "S13",
+      "label": "Wisconsin statewide circuit court fee schedule",
+      "url": "https://www.wicourts.gov/courts/circuit/docs/cctfees.pdf",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S15",
+      "label": "Appeals in small claims – Wis. Stat. § 799.16",
+      "url": "https://docs.legis.wisconsin.gov/statutes/statutes/799/16",
+      "primary": true,
+      "citation": "Wis. Stat. § 799.16"
+    },
+    {
+      "id": "S20",
+      "label": "Civil penalty for dishonored checks – Wis. Stat. § 943.24(5)",
+      "url": "https://docs.legis.wisconsin.gov/statutes/statutes/943/24#943.24(5)",
+      "primary": true,
+      "citation": "Wis. Stat. § 943.24(5)"
+    },
+    {
+      "id": "S22",
+      "label": "Security deposits; return and penalties – Wis. Stat. § 704.28",
+      "url": "https://docs.legis.wisconsin.gov/statutes/statutes/704/28",
+      "primary": true,
+      "citation": "Wis. Stat. § 704.28"
+    },
+    {
+      "id": "S23",
+      "label": "Residential landlord-tenant law – Wis. Stat. § 704",
+      "url": "https://docs.legis.wisconsin.gov/statutes/statutes/704",
+      "primary": true,
+      "citation": "Wis. Stat. § 704"
+    },
+    {
+      "id": "S24",
+      "label": "Final payment of wages – Wis. Stat. § 109.03(2)",
+      "url": "https://docs.legis.wisconsin.gov/statutes/statutes/109/03#109.03(2)",
+      "primary": true,
+      "citation": "Wis. Stat. § 109.03(2)"
+    },
+    {
+      "id": "S12",
+      "label": "Wisconsin small claims court forms",
+      "url": "https://www.wicourts.gov/forms1/circuit.htm#civil",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S18",
+      "label": "Wisconsin Deceptive Trade Practices Act – Wis. Stat. § 100.18",
+      "url": "https://docs.legis.wisconsin.gov/statutes/statutes/100/18",
+      "primary": true,
+      "citation": "Wis. Stat. § 100.18"
+    },
+    {
+      "id": "S19",
+      "label": "Wisconsin Lemon Law – Wis. Stat. § 218.0171",
+      "url": "https://docs.legis.wisconsin.gov/statutes/statutes/218/0171",
+      "primary": true,
+      "citation": "Wis. Stat. § 218.0171"
+    },
+    {
+      "id": "S21",
+      "label": "Wisconsin Auto Repair Statute – Wis. Stat. § 218.0175",
+      "url": "https://docs.legis.wisconsin.gov/statutes/statutes/218/0175",
+      "primary": true,
+      "citation": "Wis. Stat. § 218.0175"
+    }
+  ],
+  "_meta": {
+    "state": "Wisconsin",
+    "slug": "wisconsin",
+    "model": "gpt-4.1",
+    "sources_response_id": "resp_0c632c39c535346f0069f08ba876888190bca9b086c150cc19",
+    "extraction_response_id": "resp_07ca29928ec1d6a70069f099c68f7c81908d6136f1682e0197",
+    "generated_at": "2026-04-28T11:29:40.315Z",
+    "usage": {
+      "input_tokens": 7523,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 13676,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 21199
+    }
+  }
+}

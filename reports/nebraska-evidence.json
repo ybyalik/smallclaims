@@ -1,0 +1,1620 @@
+{
+  "state": "Nebraska",
+  "slug": "nebraska",
+  "abbr": "NE",
+  "as_of": "2026-04-28",
+  "hero": {
+    "individual_limit_dollars": 7500,
+    "business_limit_dollars": 7500,
+    "filing_fee_low_dollars": 39,
+    "filing_fee_high_dollars": 54,
+    "typical_timeline_min_days": 30,
+    "typical_timeline_max_days": 90,
+    "tagline": "Nebraska's small claims court offers a streamlined process for resolving disputes up to $7,500 without attorney representation.",
+    "source_ids": [
+      "S1",
+      "S12"
+    ]
+  },
+  "at_a_glance": [
+    {
+      "label": "Most you can sue for",
+      "value": "$7,500",
+      "detail": "Same cap for individuals and businesses",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Filing fee",
+      "value": "$39-$54",
+      "detail": "Varies by claim amount",
+      "source_ids": [
+        "S12"
+      ]
+    },
+    {
+      "label": "Court",
+      "value": "County Court (Small Claims Division)",
+      "detail": "",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Lawyers at trial",
+      "value": "Not allowed",
+      "detail": "Parties must represent themselves",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Appeal window",
+      "value": "10 days",
+      "detail": "Appeal to district court",
+      "source_ids": [
+        "S7"
+      ]
+    },
+    {
+      "label": "Recent change",
+      "value": "Jurisdictional limit increased to $7,500",
+      "detail": "Effective July 1, 2025",
+      "source_ids": [
+        "S4"
+      ]
+    }
+  ],
+  "limits": {
+    "individual_dollars": 7500,
+    "business_dollars": 7500,
+    "guarantor_with_fee_max": null,
+    "guarantor_without_fee_max": null,
+    "annual_filing_cap": {
+      "count": 10,
+      "threshold_dollars": null,
+      "notes": "No more than 2 cases per week or 10 per calendar year."
+    },
+    "split_claims_allowed": false,
+    "split_claims_explanation": "If a claim exceeds $7,500, you cannot split it into multiple small claims cases; you must file in a higher court.",
+    "interest_excluded_from_cap": true,
+    "court_costs_excluded_from_cap": true,
+    "statute": "Neb. Rev. Stat. § 25-2802",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "claim_categories": [
+    {
+      "id": "contracts",
+      "title": "Contracts and money owed",
+      "blurb": "Nebraska allows you to file claims for breaches of contract and money owed up to $7,500. The statute of limitations is 5 years for written contracts and 4 years for oral contracts.",
+      "claims": [
+        {
+          "slug": "written-contract",
+          "name": "Breach of a written contract",
+          "example": "A contractor signed a $4,000 contract to remodel your kitchen, took the deposit, and never finished.",
+          "eligibility": "eligible",
+          "claim_statute": "Neb. Rev. Stat. § 25-205",
+          "notes": "5-year deadline from breach. Bring the signed contract, payment proof, and any correspondence showing the breach.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "oral-contract",
+          "name": "Breach of an oral contract",
+          "example": "You agreed verbally to lend someone $2,000, and they failed to repay it.",
+          "eligibility": "eligible",
+          "claim_statute": "Neb. Rev. Stat. § 25-206",
+          "notes": "4-year deadline from breach. Provide evidence of the agreement, such as emails or witness testimony.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "personal-loan",
+          "name": "Unpaid personal loan",
+          "example": "You loaned a friend $1,500 with the understanding they'd repay in 6 months, but they haven't.",
+          "eligibility": "eligible",
+          "claim_statute": "Neb. Rev. Stat. § 25-206",
+          "notes": "4-year deadline from breach. Gather any written agreement, payment records, and communication regarding the loan.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "promissory-note",
+          "name": "Default on a promissory note",
+          "example": "Someone signed a promissory note to repay $5,000 but missed payments.",
+          "eligibility": "eligible",
+          "claim_statute": "Neb. Rev. Stat. § 25-205",
+          "notes": "5-year deadline from breach. Present the original promissory note and records of missed payments.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unpaid-invoice",
+          "name": "Unpaid invoice for services rendered",
+          "example": "You provided $3,000 worth of consulting services, but the client hasn't paid the invoice.",
+          "eligibility": "eligible",
+          "claim_statute": "Neb. Rev. Stat. § 25-205",
+          "notes": "5-year deadline from breach. Bring the invoice, service agreement, and any communication regarding payment.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "open-account",
+          "name": "Unpaid balance on an open account",
+          "example": "A customer has an outstanding balance of $2,500 on their account with your business.",
+          "eligibility": "eligible",
+          "claim_statute": "Neb. Rev. Stat. § 25-206",
+          "notes": "4-year deadline from breach. Provide account statements and records of transactions.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unpaid-rent",
+          "name": "Unpaid rent by tenant",
+          "example": "Your tenant owes $1,200 in unpaid rent for the past two months.",
+          "eligibility": "eligible",
+          "claim_statute": "Neb. Rev. Stat. § 25-206",
+          "notes": "4-year deadline from breach. Bring the lease agreement, payment records, and any notices sent to the tenant.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "bad-check",
+          "name": "Recovery of funds from a bad check",
+          "example": "A customer paid with a $500 check that bounced due to insufficient funds.",
+          "eligibility": "eligible",
+          "claim_statute": "Neb. Rev. Stat. § 28-611",
+          "notes": "Provide the original check, bank notice of insufficient funds, and any communication with the issuer.",
+          "damage_boost": "Check amount + service charge up to $40 + civil penalty up to $100 OR 2x check amount, whichever is greater.",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "co-signer",
+          "name": "Co-signer seeking repayment from primary borrower",
+          "example": "You co-signed a $4,000 loan, and the primary borrower defaulted, leaving you responsible.",
+          "eligibility": "eligible",
+          "claim_statute": "Neb. Rev. Stat. § 25-205",
+          "notes": "5-year deadline from breach. Bring the loan agreement, proof of payments made, and any communication with the borrower.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "consumer-disputes",
+      "title": "Consumer disputes",
+      "blurb": "Nebraska's small claims court handles various consumer disputes up to $7,500, including defective products and poor service.",
+      "claims": [
+        {
+          "slug": "defective-product",
+          "name": "Purchase of a defective product",
+          "example": "You bought a $1,000 appliance that stopped working within a month, and the seller refuses to refund or replace it.",
+          "eligibility": "eligible",
+          "claim_statute": "Neb. Rev. Stat. § 59-1601",
+          "notes": "Bring the purchase receipt, warranty information, and any communication with the seller.",
+          "damage_boost": "",
+          "source_ids": [
+            "S17"
+          ]
+        },
+        {
+          "slug": "bad-service",
+          "name": "Substandard services rendered",
+          "example": "You paid $2,500 for home repairs that were poorly done, and the contractor refuses to fix them.",
+          "eligibility": "eligible",
+          "claim_statute": "Neb. Rev. Stat. § 59-1601",
+          "notes": "Provide the service contract, photos of the work, and any correspondence with the contractor.",
+          "damage_boost": "",
+          "source_ids": [
+            "S17"
+          ]
+        },
+        {
+          "slug": "auto-repair",
+          "name": "Dispute over auto repair charges",
+          "example": "A mechanic charged you $1,200 for repairs that didn't fix the problem, and refuses a refund.",
+          "eligibility": "eligible",
+          "claim_statute": "Neb. Rev. Stat. § 59-1601",
+          "notes": "Bring the repair invoice, any warranties, and communication with the mechanic.",
+          "damage_boost": "",
+          "source_ids": [
+            "S17"
+          ]
+        },
+        {
+          "slug": "contractor",
+          "name": "Contractor failed to complete agreed work",
+          "example": "You paid a contractor $3,500 to build a deck, but they abandoned the project halfway.",
+          "eligibility": "eligible",
+          "claim_statute": "Neb. Rev. Stat. § 59-1601",
+          "notes": "Provide the contract, payment records, and evidence of incomplete work.",
+          "damage_boost": "",
+          "source_ids": [
+            "S17"
+          ]
+        },
+        {
+          "slug": "no-show-vendor",
+          "name": "Vendor failed to deliver paid goods/services",
+          "example": "You paid $500 for catering services, but the vendor never showed up.",
+          "eligibility": "eligible",
+          "claim_statute": "Neb. Rev. Stat. § 59-1601",
+          "notes": "Bring the contract, payment proof, and any communication with the vendor.",
+          "damage_boost": "",
+          "source_ids": [
+            "S17"
+          ]
+        },
+        {
+          "slug": "subscription-cancellation",
+          "name": "Unauthorized charges after subscription cancellation",
+          "example": "You canceled a $50/month gym membership, but they continued to charge your account.",
+          "eligibility": "eligible",
+          "claim_statute": "Neb. Rev. Stat. § 59-1601",
+          "notes": "Provide cancellation confirmation, bank statements, and any correspondence with the gym.",
+          "damage_boost": "",
+          "source_ids": [
+            "S17"
+          ]
+        },
+        {
+          "slug": "used-car",
+          "name": "Purchase of a defective used car",
+          "example": "You bought a used car for $6,000 that broke down within a week, and the seller refuses to address the issue.",
+          "eligibility": "eligible",
+          "claim_statute": "Neb. Rev. Stat. § 69-2601",
+          "notes": "Bring the sales agreement, any warranties, and repair records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S18"
+          ]
+        },
+        {
+          "slug": "false-advertising",
+          "name": "Misleading advertising leading to financial loss",
+          "example": "A store advertised a product for $200, but charged you $300 at checkout without notice.",
+          "eligibility": "eligible",
+          "claim_statute": "Neb. Rev. Stat. § 59-1601",
+          "notes": "Provide the advertisement, receipt, and any communication with the store.",
+          "damage_boost": "",
+          "source_ids": [
+            "S17"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "property-damage",
+      "title": "Property damage",
+      "blurb": "Nebraska's small claims court addresses property damage claims up to $7,500, including vehicle collisions and damage to rental properties.",
+      "claims": [
+        {
+          "slug": "vehicle-collision",
+          "name": "Damage from a vehicle collision",
+          "example": "Another driver hit your car, causing $4,000 in damages, and refuses to pay.",
+          "eligibility": "eligible",
+          "claim_statute": "Neb. Rev. Stat. § 25-207",
+          "notes": "4-year deadline from incident. Bring the police report, repair estimates, and photos of the damage.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "neighbor-property",
+          "name": "Neighbor caused damage to your property",
+          "example": "Your neighbor's tree fell on your fence, causing $1,500 in damages.",
+          "eligibility": "eligible",
+          "claim_statute": "Neb. Rev. Stat. § 25-207",
+          "notes": "4-year deadline from incident. Provide photos, repair estimates, and any communication with the neighbor.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "damage-to-rental",
+          "name": "Tenant caused damage to rental property",
+          "example": "A tenant left your rental unit with $2,000 in damages beyond normal wear and tear.",
+          "eligibility": "eligible",
+          "claim_statute": "Neb. Rev. Stat. § 25-207",
+          "notes": "4-year deadline from incident. Bring the lease agreement, photos of damages, and repair invoices.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "pet-damage",
+          "name": "Damage caused by someone else's pet",
+          "example": "A neighbor's dog damaged your $800 garden fence.",
+          "eligibility": "eligible",
+          "claim_statute": "Neb. Rev. Stat. § 25-207",
+          "notes": "4-year deadline from incident. Provide photos, repair estimates, and any communication with the pet owner.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "property-in-custody",
+          "name": "Damage to property while in someone else's custody",
+          "example": "You left your laptop for repair, and it was returned with a cracked screen.",
+          "eligibility": "eligible",
+          "claim_statute": "Neb. Rev. Stat. § 25-207",
+          "notes": "4-year deadline from incident. Bring the service agreement, photos of damage, and any communication with the service provider.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "landlord-tenant",
+      "title": "Landlord-tenant disputes",
+      "blurb": "Nebraska's small claims court handles monetary disputes between landlords and tenants up to $7,500, excluding eviction proceedings.",
+      "claims": [
+        {
+          "slug": "security-deposit",
+          "name": "Failure to return security deposit",
+          "example": "Your landlord withheld your $1,200 security deposit without justification.",
+          "eligibility": "eligible",
+          "claim_statute": "Neb. Rev. Stat. § 76-1416",
+          "notes": "Provide the lease agreement, move-out inspection report, and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S21"
+          ]
+        },
+        {
+          "slug": "deposit-not-itemized",
+          "name": "Landlord failed to provide itemized deductions from deposit",
+          "example": "Your landlord deducted $500 from your deposit without providing an itemized list of damages.",
+          "eligibility": "eligible",
+          "claim_statute": "Neb. Rev. Stat. § 76-1416",
+          "notes": "Bring the lease agreement, correspondence with the landlord, and any evidence of the property's condition.",
+          "damage_boost": "",
+          "source_ids": [
+            "S21"
+          ]
+        },
+        {
+          "slug": "uninhabitable-rental",
+          "name": "Landlord failed to maintain habitable conditions",
+          "example": "Your apartment had no heating during winter, and the landlord refused to fix it.",
+          "eligibility": "eligible",
+          "claim_statute": "Neb. Rev. Stat. § 76-1419",
+          "notes": "Provide photos, repair requests, and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S20"
+          ]
+        },
+        {
+          "slug": "wrongful-retention-property",
+          "name": "Landlord retained tenant's personal property unlawfully",
+          "example": "After moving out, your landlord kept your $800 bicycle without cause.",
+          "eligibility": "eligible",
+          "claim_statute": "Neb. Rev. Stat. § 76-1414",
+          "notes": "Bring the lease agreement, inventory of items, and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S20"
+          ]
+        },
+        {
+          "slug": "illegal-eviction",
+          "name": "Landlord conducted an illegal eviction",
+          "example": "Your landlord changed the locks without notice, preventing you from accessing your belongings.",
+          "eligibility": "eligible",
+          "claim_statute": "Neb. Rev. Stat. § 76-1430",
+          "notes": "Provide the lease agreement, photos, and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S20"
+          ]
+        },
+        {
+          "slug": "unreturned-prepaid-rent",
+          "name": "Landlord failed to return prepaid rent after lease termination",
+          "example": "You paid first and last month's rent, but the landlord didn't return the last month's rent after early termination.",
+          "eligibility": "eligible",
+          "claim_statute": "Neb. Rev. Stat. § 76-1416",
+          "notes": "Bring the lease agreement, payment records, and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S21"
+          ]
+        },
+        {
+          "slug": "unpaid-rent-by-tenant",
+          "name": "Tenant failed to pay rent owed",
+          "example": "Your tenant owes $2,000 in unpaid rent and has vacated the property.",
+          "eligibility": "eligible",
+          "claim_statute": "Neb. Rev. Stat. § 76-1414",
+          "notes": "Provide the lease agreement, payment records, and any notices sent to the tenant.",
+          "damage_boost": "",
+          "source_ids": [
+            "S20"
+          ]
+        },
+        {
+          "slug": "repair-and-deduct",
+          "name": "Tenant seeks reimbursement for repairs made",
+          "example": "You paid $300 to fix a leaking pipe after the landlord failed to address it.",
+          "eligibility": "eligible",
+          "claim_statute": "Neb. Rev. Stat. § 76-1425",
+          "notes": "Bring repair receipts, photos, and any communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S20"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "employment-wages",
+      "title": "Employment and wage disputes",
+      "blurb": "Nebraska's small claims court addresses wage-related disputes up to $7,500, including unpaid wages and final paychecks.",
+      "claims": [
+        {
+          "slug": "unpaid-wages",
+          "name": "Employer failed to pay earned wages",
+          "example": "Your employer owes you $1,000 for hours worked but hasn't paid.",
+          "eligibility": "eligible",
+          "claim_statute": "Neb. Rev. Stat. § 48-1231",
+          "notes": "Provide pay stubs, timesheets, and any communication with the employer.",
+          "damage_boost": "",
+          "source_ids": [
+            "S22"
+          ]
+        },
+        {
+          "slug": "final-paycheck",
+          "name": "Employer failed to provide final paycheck",
+          "example": "After leaving your job, your employer didn't give you your last paycheck of $800.",
+          "eligibility": "eligible",
+          "claim_statute": "Neb. Rev. Stat. § 48-1231",
+          "notes": "Bring employment records, termination notice, and any communication with the employer.",
+          "damage_boost": "",
+          "source_ids": [
+            "S22"
+          ]
+        },
+        {
+          "slug": "unpaid-commissions",
+          "name": "Employer failed to pay earned commissions",
+          "example": "You earned $2,500 in sales commissions that your employer hasn't paid.",
+          "eligibility": "eligible",
+          "claim_statute": "Neb. Rev. Stat. § 48-1231",
+          "notes": "Provide sales records, commission agreements, and any communication with the employer.",
+          "damage_boost": "",
+          "source_ids": [
+            "S22"
+          ]
+        },
+        {
+          "slug": "unpaid-overtime",
+          "name": "Employer failed to pay overtime wages",
+          "example": "You worked 10 hours of overtime but weren't compensated at the correct rate.",
+          "eligibility": "eligible",
+          "claim_statute": "Neb. Rev. Stat. § 48-1231",
+          "notes": "Bring timesheets, pay stubs, and any communication with the employer.",
+          "damage_boost": "",
+          "source_ids": [
+            "S22"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "personal-claims",
+      "title": "Personal claims",
+      "blurb": "Nebraska's small claims court handles personal claims up to $7,500, including minor injuries and property disputes.",
+      "claims": [
+        {
+          "slug": "minor-injury",
+          "name": "Minor personal injury claims",
+          "example": "You slipped on a wet floor in a store, resulting in $2,000 in medical bills.",
+          "eligibility": "eligible",
+          "claim_statute": "Neb. Rev. Stat. § 25-207",
+          "notes": "4-year deadline from incident. Provide medical records, bills, and any incident reports.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "loaned-property",
+          "name": "Failure to return loaned property",
+          "example": "You lent a friend your $500 camera, and they refuse to return it.",
+          "eligibility": "eligible",
+          "claim_statute": "Neb. Rev. Stat. § 25-207",
+          "notes": "4-year deadline from incident. Bring evidence of ownership and any communication regarding the loan.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "civil-theft",
+          "name": "Theft of personal property",
+          "example": "Someone stole your $1,200 bicycle, and you have evidence of their involvement.",
+          "eligibility": "eligible",
+          "claim_statute": "Neb. Rev. Stat. § 25-21,109",
+          "notes": "Provide police reports, evidence of theft, and any communication with the defendant.",
+          "damage_boost": "Treble damages for conversion/civil theft.",
+          "source_ids": [
+            "S24"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vehicle-specific",
+      "title": "Vehicle-specific disputes",
+      "blurb": "Nebraska's small claims court addresses vehicle-related disputes up to $7,500, including mechanic disputes and wrongful towing.",
+      "claims": [
+        {
+          "slug": "mechanic-dispute",
+          "name": "Dispute over mechanic's repair work",
+          "example": "A mechanic charged you $1,500 for repairs that didn't fix the issue.",
+          "eligibility": "eligible",
+          "claim_statute": "Neb. Rev. Stat. § 59-1601",
+          "notes": "Bring the repair invoice, any warranties, and communication with the mechanic.",
+          "damage_boost": "",
+          "source_ids": [
+            "S17"
+          ]
+        },
+        {
+          "slug": "wrongful-tow",
+          "name": "Vehicle was wrongfully towed",
+          "example": "Your car was towed from a legal parking spot, and you had to pay $300 to retrieve it.",
+          "eligibility": "eligible",
+          "claim_statute": "Neb. Rev. Stat. § 59-1601",
+          "notes": "Provide photos of the parking spot, towing receipt, and any communication with the towing company.",
+          "damage_boost": "",
+          "source_ids": [
+            "S17"
+          ]
+        }
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "category": "Eviction (unlawful detainer)",
+      "explanation": "Small claims court cannot handle eviction proceedings; these must be filed in county court.",
+      "where_to_go_instead": "County Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Title to real estate",
+      "explanation": "Disputes involving ownership or title to real property are beyond the jurisdiction of small claims court.",
+      "where_to_go_instead": "District Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Defamation",
+      "explanation": "Claims involving defamation, such as libel or slander, are not suitable for small claims court.",
+      "where_to_go_instead": "District Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Malpractice",
+      "explanation": "Professional malpractice claims require complex evidence and are not handled in small claims court.",
+      "where_to_go_instead": "District Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Family law matters",
+      "explanation": "Issues like divorce, child custody, and support are outside the scope of small claims court.",
+      "where_to_go_instead": "District Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Probate matters",
+      "explanation": "Disputes involving wills, estates, and trusts are not handled in small claims court.",
+      "where_to_go_instead": "County Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Claims against the federal government",
+      "explanation": "Small claims court does not have jurisdiction over cases against federal entities.",
+      "where_to_go_instead": "Federal Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Workers' compensation claims",
+      "explanation": "These claims are handled by the Nebraska Workers' Compensation Court, not small claims court.",
+      "where_to_go_instead": "Nebraska Workers' Compensation Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Class actions",
+      "explanation": "Small claims court is not equipped to handle class action lawsuits.",
+      "where_to_go_instead": "District Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Injunctions and specific performance",
+      "explanation": "Small claims court cannot issue orders requiring someone to do or stop doing something.",
+      "where_to_go_instead": "District Court",
+      "source_ids": [
+        "S1"
+      ]
+    }
+  ],
+  "damages": {
+    "compensatory_allowed": true,
+    "punitive_allowed": false,
+    "punitive_explanation": "Nebraska small claims court does not award punitive damages; however, statutory penalties may apply in certain cases.",
+    "statutory_multipliers": [
+      {
+        "claim": "Bad check (after 30-day notice)",
+        "multiplier": "2x check amount",
+        "explanation": "Check amount + service charge up to $40 + civil penalty up to $100 OR 2x check amount, whichever is greater.",
+        "statute": "Neb. Rev. Stat. § 28-611",
+        "source_ids": [
+          "S19"
+        ]
+      },
+      {
+        "claim": "Civil theft",
+        "multiplier": "3x damages",
+        "explanation": "Treble damages for conversion/civil theft.",
+        "statute": "Neb. Rev. Stat. § 25-21,109",
+        "source_ids": [
+          "S24"
+        ]
+      }
+    ],
+    "attorney_fees_recoverable": "sometimes",
+    "attorney_fees_explanation": "Attorney's fees may be awarded in cases involving bad checks or civil theft under specific statutes.",
+    "prejudgment_interest_rate_pct": null,
+    "prejudgment_interest_statute": "",
+    "postjudgment_interest_rate_pct": null,
+    "postjudgment_interest_type": "simple",
+    "postjudgment_interest_statute": "",
+    "postjudgment_interest_notes": "",
+    "filing_and_service_fees_recoverable_from_loser": true,
+    "source_ids": [
+      "S19",
+      "S24"
+    ]
+  },
+  "where_to_file": {
+    "court_name": "Small Claims Division of the County Court",
+    "parent_court": "Nebraska Judicial Branch — County Court",
+    "venue_rules": [
+      {
+        "scenario": "Most cases (the default)",
+        "filing_options": [
+          "County where the defendant lives"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Where contract was performed",
+        "filing_options": [
+          "County where performance was due"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Where injury or damage occurred",
+        "filing_options": [
+          "County where the event occurred"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Multiple defendants",
+        "filing_options": [
+          "Any county where ONE defendant resides"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Out-of-state defendant",
+        "filing_options": [
+          "Where the cause of action arose"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "consequences_of_wrong_venue": "Filing in the wrong venue may result in dismissal or transfer of the case, potentially causing delays and additional costs.",
+    "e_filing_available": "varies",
+    "e_filing_notes": "E-filing availability varies by county; check with the local court clerk for options.",
+    "e_filing_portal": null,
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "fees": {
+    "filing_fee_tiers": [
+      {
+        "range_label": "$0 to $1,800",
+        "range_min": 0,
+        "range_max": 1800,
+        "fee_dollars": 39,
+        "source_ids": [
+          "S12"
+        ]
+      },
+      {
+        "range_label": "$1,800.01 to $3,600",
+        "range_min": 1800.01,
+        "range_max": 3600,
+        "fee_dollars": 54,
+        "source_ids": [
+          "S12"
+        ]
+      }
+    ],
+    "frequent_filer": {
+      "threshold_per_year": 10,
+      "fee_dollars": null,
+      "notes": "No more than 2 cases per week or 10 per calendar year."
+    },
+    "service_fees": [
+      {
+        "method": "Sheriff (personal service)",
+        "amount_label": "$25-50",
+        "notes": "Required for most cases.",
+        "source_ids": [
+          "S12"
+        ]
+      },
+      {
+        "method": "Certified mail by clerk",
+        "amount_label": "$10-15",
+        "notes": "Available for certain cases.",
+        "source_ids": [
+          "S12"
+        ]
+      }
+    ],
+    "waiver": {
+      "forms": [
+        {
+          "number": "CC 6:3.3",
+          "name": "Application to Proceed In Forma Pauperis",
+          "url": "",
+          "source_ids": [
+            "S11"
+          ]
+        }
+      ],
+      "eligibility_bullets": [
+        "Receiving need-based public assistance (SNAP, TANF, SSI)",
+        "Household income below 125% federal poverty line"
+      ],
+      "coverage_notes": "Waiver covers filing fees and service costs.",
+      "if_you_win_notes": "Waived fees are not added to the judgment against the loser."
+    },
+    "other_fees": [
+      {
+        "name": "Subpoena issuance",
+        "amount_label": "$10",
+        "notes": "Plus witness fee per day.",
+        "source_ids": [
+          "S12"
+        ]
+      },
+      {
+        "name": "Appeal filing",
+        "amount_label": "$100",
+        "notes": "",
+        "source_ids": [
+          "S12"
+        ]
+      },
+      {
+        "name": "Writ of execution",
+        "amount_label": "$20",
+        "notes": "Post-judgment.",
+        "source_ids": [
+          "S12"
+        ]
+      }
+    ],
+    "fees_recoverable_from_loser_notes": "If you win, filing fee and reasonable service costs are added to the judgment.",
+    "source_ids": [
+      "S12"
+    ]
+  },
+  "statute_of_limitations": {
+    "entries": [
+      {
+        "id": "written-contract",
+        "claim": "Written contract",
+        "years": 5,
+        "clock_starts": "Date of breach",
+        "statute": "Neb. Rev. Stat. § 25-205",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "oral-contract",
+        "claim": "Oral contract",
+        "years": 4,
+        "clock_starts": "Date of breach",
+        "statute": "Neb. Rev. Stat. § 25-206",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "sale-of-goods",
+        "claim": "Sale of goods (UCC)",
+        "years": 4,
+        "clock_starts": "Date of breach",
+        "statute": "Neb. Rev. Stat. § 2-725",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "promissory-note",
+        "claim": "Promissory note",
+        "years": 5,
+        "clock_starts": "Date of default",
+        "statute": "Neb. Rev. Stat. § 25-205",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "open-account",
+        "claim": "Open account / credit card debt",
+        "years": 4,
+        "clock_starts": "Date of last payment",
+        "statute": "Neb. Rev. Stat. § 25-206",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "personal-injury",
+        "claim": "Personal injury",
+        "years": 4,
+        "clock_starts": "Date of injury",
+        "statute": "Neb. Rev. Stat. § 25-207",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "property-damage",
+        "claim": "Property damage",
+        "years": 4,
+        "clock_starts": "Date of damage",
+        "statute": "Neb. Rev. Stat. § 25-207",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "fraud",
+        "claim": "Fraud",
+        "years": 4,
+        "clock_starts": "Date of discovery",
+        "statute": "Neb. Rev. Stat. § 25-207",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "bad-check",
+        "claim": "Bad check",
+        "years": 4,
+        "clock_starts": "Date of dishonor",
+        "statute": "Neb. Rev. Stat. § 25-207",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "unpaid-wages",
+        "claim": "Unpaid wages",
+        "years": 2,
+        "clock_starts": "Date wages were due",
+        "statute": "Neb. Rev. Stat. § 48-1231",
+        "notes": "",
+        "source_ids": [
+          "S22"
+        ]
+      },
+      {
+        "id": "security-deposit",
+        "claim": "Security deposit",
+        "years": 4,
+        "clock_starts": "Date deposit was due",
+        "statute": "Neb. Rev. Stat. § 25-207",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "judgment-enforcement",
+        "claim": "Judgment enforcement",
+        "years": 5,
+        "clock_starts": "Date of judgment",
+        "statute": "Neb. Rev. Stat. § 25-1515",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "discovery_rule_notes": "The discovery rule applies to fraud claims, starting the clock when the fraud is discovered.",
+    "tolling_notes": "The statute of limitations may be tolled if the defendant is out of state, the plaintiff is a minor, or in cases of bankruptcy.",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "pre_filing": {
+    "demand_letter_required": false,
+    "demand_letter_recommended": true,
+    "demand_letter_notes": "While not required, sending a demand letter can often resolve disputes without court intervention.",
+    "bad_check_notice_rule": "A 30-day written notice is required before pursuing a bad check claim, allowing the issuer to make the check good.",
+    "wage_claim_demand_rule": "A written demand for unpaid wages is recommended before filing a claim.",
+    "government_claim_required": false,
+    "government_claim_deadline_days": null,
+    "government_claim_notes": "",
+    "landlord_tenant_pre_filing_notes": "Tenants should provide a forwarding address in writing to ensure the return of the security deposit.",
+    "consumer_protection_notes": "No specific pre-filing requirements for consumer protection claims in small claims court.",
+    "mandatory_mediation_before_filing": "none",
+    "arbitration_clauses_enforced": true,
+    "source_ids": [
+      "S1",
+      "S19",
+      "S22"
+    ]
+  },
+  "forms": [
+    {
+      "number": "CC 6:3.1",
+      "name": "Plaintiff’s Claim and Notice to Defendant",
+      "description": "Initiates a small claims case by outlining the plaintiff's claim and notifying the defendant.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "number": "CC 6:3.2",
+      "name": "Defendant’s Counterclaim",
+      "description": "Allows the defendant to file a counterclaim against the plaintiff.",
+      "filed_by": "defendant",
+      "required": false,
+      "group": "counterclaim",
+      "url": "",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "number": "CC 6:3.3",
+      "name": "Application to Proceed In Forma Pauperis",
+      "description": "Requests a waiver of court fees due to financial hardship.",
+      "filed_by": "plaintiff",
+      "required": false,
+      "group": "fee-waiver",
+      "url": "",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "number": "CC 6:3.4",
+      "name": "Satisfaction of Judgment",
+      "description": "Filed by the plaintiff to indicate that the judgment has been satisfied.",
+      "filed_by": "plaintiff",
+      "required": false,
+      "group": "after-judgment",
+      "url": "",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "number": "CC 6:3.5",
+      "name": "Notice of Appeal",
+      "description": "Filed to initiate an appeal of the small claims court decision.",
+      "filed_by": "either",
+      "required": false,
+      "group": "appeal",
+      "url": "",
+      "source_ids": [
+        "S11"
+      ]
+    }
+  ],
+  "service": {
+    "who_can_serve": [
+      "Sheriff",
+      "Certified mail by clerk"
+    ],
+    "methods": [
+      {
+        "name": "Sheriff personal service",
+        "description": "Sheriff personally delivers the documents to the defendant.",
+        "pros": [
+          "Reliable",
+          "Official"
+        ],
+        "cons": [
+          "Additional cost",
+          "May take longer"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "name": "Certified mail by clerk",
+        "description": "Clerk sends the documents via certified mail to the defendant.",
+        "pros": [
+          "Cost-effective",
+          "Proof of delivery"
+        ],
+        "cons": [
+          "Defendant may refuse delivery",
+          "Less personal"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "in_county_days_before_hearing": 7,
+    "out_of_county_days_before_hearing": 10,
+    "proof_of_service_form": {
+      "number": "CC 6:3.6",
+      "name": "Return of Service"
+    },
+    "proof_filing_deadline_days_before_hearing": 2,
+    "business_service_rule": "Serve the registered agent or an officer of the corporation; for sole proprietors, serve the individual directly.",
+    "out_of_state_defendant_notes": "Service must comply with Nebraska statutes and the laws of the state where the defendant resides.",
+    "cant_find_defendant_notes": "If the defendant cannot be located, service by publication may be an option, but consult the court for guidance.",
+    "avoiding_service_notes": "If the defendant is evading service, document attempts and consider alternative methods permitted by the court.",
+    "source_ids": [
+      "S1",
+      "S13"
+    ]
+  },
+  "response_and_default": {
+    "must_file_written_answer": false,
+    "response_deadline_days": 0,
+    "response_notes": "Defendants are not required to file a written answer but should appear at the scheduled hearing.",
+    "default_process": "If the defendant fails to appear, the court may enter a default judgment in favor of the plaintiff.",
+    "prove_up_required": true,
+    "prove_up_notes": "Even if the defendant doesn't appear, the plaintiff must present evidence to support their claim.",
+    "motion_to_vacate_form": {
+      "number": "CC 6:3.7",
+      "name": "Motion to Set Aside Default Judgment"
+    },
+    "motion_to_vacate_deadline_days": 10,
+    "motion_to_vacate_lack_of_notice_days": 30,
+    "motion_to_vacate_appeal_deadline_days": 30,
+    "motion_to_vacate_appeal_notes": "If the motion to vacate is denied, the defendant may appeal the decision within 30 days.",
+    "source_ids": [
+      "S1",
+      "S7"
+    ]
+  },
+  "counterclaim": {
+    "allowed": true,
+    "form": {
+      "number": "CC 6:3.2",
+      "name": "Defendant’s Counterclaim"
+    },
+    "same_monetary_limit": true,
+    "service_deadline_in_county_days": 2,
+    "service_deadline_out_of_county_days": 2,
+    "transfer_to_higher_court_available": true,
+    "transfer_to_higher_court_statute": "Neb. Rev. Stat. § 25-2804",
+    "transfer_to_higher_court_notes": "If the counterclaim exceeds the small claims limit or the defendant wishes to have legal representation, the case may be transferred to county court.",
+    "source_ids": [
+      "S6"
+    ]
+  },
+  "hearing": {
+    "lawyers_allowed": "no",
+    "lawyers_allowed_notes": "Attorneys are not permitted to represent parties in small claims court.",
+    "format": "Bench trial with informal procedures; each party presents their case directly to the judge.",
+    "presider": "judge",
+    "burden_of_proof": "preponderance",
+    "what_to_bring": [
+      "Contracts",
+      "Receipts",
+      "Photographs",
+      "Witnesses"
+    ],
+    "subpoena_form": {
+      "number": "CC 6:3.8",
+      "name": "Subpoena"
+    },
+    "witness_fee_per_day_dollars": 20,
+    "free_interpreters": true,
+    "interpreter_request_process": "Request an interpreter through the court clerk's office as soon as possible before the hearing.",
+    "jury_option": false,
+    "decision_timing": "On the spot or mailed within a few days.",
+    "on_site_mediation": "by county",
+    "on_site_mediation_notes": "Some counties offer mediation services on the day of the hearing; check with the local court.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "appeals": {
+    "who_can_appeal": "either",
+    "deadline_days": 10,
+    "fee_dollars": 100,
+    "type": "trial de novo",
+    "type_notes": "The appeal is a new trial in the district court.",
+    "attorneys_allowed_on_appeal": true,
+    "bond_required": false,
+    "bond_amount_notes": "",
+    "automatic_stay_on_appeal": true,
+    "default_judgment_appealable": true,
+    "default_judgment_notes": "A default judgment can be appealed within 30 days.",
+    "notice_of_appeal_form": {
+      "number": "CC 6:3.5",
+      "name": "Notice of Appeal"
+    },
+    "frivolous_appeal_penalty_dollars": null,
+    "frivolous_appeal_statute": "",
+    "frivolous_appeal_notes": "",
+    "source_ids": [
+      "S7"
+    ]
+  },
+  "collection": {
+    "payment_deadline_typical_days": 30,
+    "post_judgment_interest_rate_pct": 12,
+    "post_judgment_interest_statute": "Neb. Rev. Stat. § 45-103",
+    "post_judgment_interest_notes": "Interest accrues on unpaid judgments at a rate of 12% per annum.",
+    "methods": [
+      {
+        "id": "wage-garnishment",
+        "name": "Wage garnishment",
+        "blurb": "Have a portion of debtor's wages withheld until the judgment is paid.",
+        "description": "File a writ of garnishment with the court, serve the employer, and the employer withholds a portion of the debtor's wages to satisfy the judgment.",
+        "forms": [
+          {
+            "number": "CC 6:3.9",
+            "name": "Writ of Garnishment"
+          }
+        ],
+        "estimated_cost": "$30-50 plus sheriff fees",
+        "effectiveness_notes": "Most effective when debtor is W-2 employed at a stable job.",
+        "exemptions": [
+          "75% of disposable earnings (federal CCPA floor)"
+        ],
+        "source_ids": [
+          "S15"
+        ]
+      },
+      {
+        "id": "bank-levy",
+        "name": "Bank levy",
+        "blurb": "Seize funds from debtor's bank account to satisfy the judgment.",
+        "description": "Obtain a writ of execution from the court, serve the bank, and the bank freezes and transfers funds to satisfy the judgment.",
+        "forms": [
+          {
+            "number": "CC 6:3.10",
+            "name": "Writ of Execution"
+          }
+        ],
+        "estimated_cost": "$30-50 plus sheriff fees",
+        "effectiveness_notes": "Effective if debtor has sufficient funds in the account.",
+        "exemptions": [
+          "Certain federal benefits are exempt"
+        ],
+        "source_ids": [
+          "S15"
+        ]
+      },
+      {
+        "id": "property-lien",
+        "name": "Property lien",
+        "blurb": "Place a lien on debtor's real property to secure the judgment.",
+        "description": "File a certificate of judgment with the county recorder to place a lien on the debtor's property, which must be satisfied before the property can be sold or refinanced.",
+        "forms": [
+          {
+            "number": "CC 6:3.11",
+            "name": "Certificate of Judgment"
+          }
+        ],
+        "estimated_cost": "$20-30",
+        "effectiveness_notes": "Effective if debtor owns real property; may take time to realize payment.",
+        "exemptions": [
+          "Homestead exemption may apply"
+        ],
+        "source_ids": [
+          "S15"
+        ]
+      },
+      {
+        "id": "writ-of-execution",
+        "name": "Writ of execution",
+        "blurb": "Seize and sell debtor's personal property to satisfy the judgment.",
+        "description": "Obtain a writ of execution from the court, the sheriff seizes debtor's non-exempt personal property, sells it at auction, and applies proceeds to the judgment.",
+        "forms": [
+          {
+            "number": "CC 6:3.10",
+            "name": "Writ of Execution"
+          }
+        ],
+        "estimated_cost": "$50-100 plus sheriff fees",
+        "effectiveness_notes": "Effective if debtor owns valuable non-exempt personal property.",
+        "exemptions": [
+          "Certain personal property is exempt"
+        ],
+        "source_ids": [
+          "S15"
+        ]
+      }
+    ],
+    "wage_garnishment_max_pct_of_disposable": 25,
+    "judgment_lifespan_years": 5,
+    "judgment_renewal_process": "File a motion to revive the judgment before it expires; if granted, the judgment is extended for another 5 years.",
+    "debtor_exam_form": {
+      "number": "CC 6:3.12",
+      "name": "Order for Debtor's Examination"
+    },
+    "exempt_assets": [
+      "Homestead — $60,000",
+      "Vehicle — $5,000",
+      "Retirement accounts (federally and state-protected)",
+      "Social Security and federal benefits"
+    ],
+    "bankruptcy_effect_notes": "Filing for bankruptcy imposes an automatic stay on collection efforts; certain judgments may be discharged in bankruptcy.",
+    "satisfaction_of_judgment_form": {
+      "number": "CC 6:3.4",
+      "name": "Satisfaction of Judgment"
+    },
+    "priority_notes": "Priority among multiple judgment creditors is generally determined by the order in which liens are filed.",
+    "source_ids": [
+      "S15",
+      "S16"
+    ]
+  },
+  "businesses": {
+    "self_representation_allowed": true,
+    "self_representation_notes": "Businesses can be represented by an officer or employee without an attorney in small claims court.",
+    "can_send_employee": true,
+    "can_send_attorney": false,
+    "non_attorney_representation_form": {
+      "number": "CC 6:3.13",
+      "name": "Authorization for Non-Attorney Representation"
+    },
+    "insurance_adjuster_allowed": false,
+    "fictitious_name_form": {
+      "number": "CC 6:3.14",
+      "name": "Certificate of Trade Name"
+    },
+    "fictitious_name_notes": "Businesses operating under a trade name must file a Certificate of Trade Name with the Secretary of State.",
+    "sole_proprietor_employee_exception": "Sole proprietors may represent themselves or authorize an employee to appear on their behalf.",
+    "out_of_state_business_must_register": true,
+    "out_of_state_business_statute": "Neb. Rev. Stat. § 21-20,168",
+    "licensing_notes": "Unlicensed contractors may face challenges in enforcing contracts in court.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "county_variations_material": false,
+  "county_variations": [],
+  "pitfalls": [
+    {
+      "title": "Exceeding the jurisdictional limit",
+      "what_happens": "Filing a claim over $7,500 in small claims court will result in dismissal or transfer to a higher court.",
+      "how_to_avoid": "Ensure your claim does not exceed the $7,500 limit; if it does, file in county or district court.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "title": "Suing the wrong party",
+      "what_happens": "Naming the incorrect defendant can lead to dismissal and wasted time.",
+      "how_to_avoid": "Verify the legal name and address of the party you're suing before filing.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Missing the statute of limitations",
+      "what_happens": "Filing after the deadline results in automatic dismissal of your case.",
+      "how_to_avoid": "Check the statute of limitations for your specific claim type before filing.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "title": "Improper service of process",
+      "what_happens": "Failure to serve the defendant correctly can delay or dismiss your case.",
+      "how_to_avoid": "Follow Nebraska's rules for serving process carefully, using authorized methods.",
+      "source_ids": [
+        "S13"
+      ]
+    },
+    {
+      "title": "Not preparing evidence",
+      "what_happens": "Lack of evidence can result in losing your case, even if you're in the right.",
+      "how_to_avoid": "Gather all relevant documents, photos, and witness statements before the hearing.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Failing to collect judgment",
+      "what_happens": "Winning a case doesn't guarantee payment; you may need to take further steps.",
+      "how_to_avoid": "Learn about post-judgment collection methods like garnishment and liens.",
+      "source_ids": [
+        "S8"
+      ]
+    }
+  ],
+  "recent_changes": [
+    {
+      "date": "2025-07-01",
+      "title": "Increase in small claims jurisdictional limit",
+      "description": "The maximum amount for small claims cases increased from $6,000 to $7,500.",
+      "bill_or_rule_citation": "LB139 (2024)",
+      "source_ids": [
+        "S4"
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Do I need a lawyer?",
+      "answer": "No, attorneys are not permitted to represent parties in Nebraska small claims court; you must represent yourself.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "How long does it take?",
+      "answer": "Small claims cases typically resolve within 30 to 90 days from filing to judgment.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "What's the maximum I can sue for?",
+      "answer": "As of July 1, 2025, the maximum amount you can sue for in Nebraska small claims court is $7,500.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "question": "What happens if the defendant doesn't show up?",
+      "answer": "If the defendant fails to appear, the court may enter a default judgment in your favor.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "Can I appeal?",
+      "answer": "Yes, either party can appeal a small claims judgment to the district court within 10 days.",
+      "source_ids": [
+        "S7"
+      ]
+    },
+    {
+      "question": "How long is a judgment good for?",
+      "answer": "A judgment in Nebraska is valid for 5 years and can be renewed before it expires.",
+      "source_ids": [
+        "S4"
+      ]
+    }
+  ],
+  "state_specific_notes": [
+    "Nebraska prohibits attorney representation in small claims court; parties must represent themselves.",
+    "The small claims jurisdictional limit increased to $7,500 effective July 1, 2025.",
+    "Defendants can request a transfer to county court if they wish to have legal representation.",
+    "Small claims judgments can be appealed to the district court within 10 days.",
+    "Post-judgment interest accrues at a rate of 12% per annum on unpaid judgments."
+  ],
+  "_extras": {
+    "interesting_findings": [
+      "Nebraska's small claims court offers a streamlined process for resolving disputes up to $7,500 without attorney representation.",
+      "The jurisdictional limit increase to $7,500 aligns Nebraska with several other states' small claims limits.",
+      "Nebraska's prohibition on attorney representation in small claims court emphasizes accessibility and simplicity for litigants."
+    ]
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "label": "Nebraska Judicial Branch Small Claims Court Information",
+      "url": "https://supremecourt.nebraska.gov/self-help/small-claims",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S4",
+      "label": "Neb. Rev. Stat. § 25-2802 (Small Claims Court — jurisdiction and procedures)",
+      "url": "https://nebraskalegislature.gov/laws/statutes.php?statute=25-2802",
+      "primary": true,
+      "citation": "Neb. Rev. Stat. § 25-2802"
+    },
+    {
+      "id": "S7",
+      "label": "Neb. Rev. Stat. § 25-2806 (Appeal from small claims court)",
+      "url": "https://nebraskalegislature.gov/laws/statutes.php?statute=25-2806",
+      "primary": true,
+      "citation": "Neb. Rev. Stat. § 25-2806"
+    },
+    {
+      "id": "S12",
+      "label": "Nebraska Judicial Branch Court Filing Fees",
+      "url": "https://supremecourt.nebraska.gov/courts/court-fees",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S11",
+      "label": "Nebraska Small Claims Court Forms (Judicial Branch)",
+      "url": "https://supremecourt.nebraska.gov/self-help/small-claims/forms",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S13",
+      "label": "Service of Process in Civil Cases — Neb. Rev. Stat. § 25-505.01",
+      "url": "https://nebraskalegislature.gov/laws/statutes.php?statute=25-505.01",
+      "primary": true,
+      "citation": "Neb. Rev. Stat. § 25-505.01"
+    },
+    {
+      "id": "S19",
+      "label": "Neb. Rev. Stat. § 28-611 (Issuing bad checks — civil penalty provisions)",
+      "url": "https://nebraskalegislature.gov/laws/statutes.php?statute=28-611",
+      "primary": true,
+      "citation": "Neb. Rev. Stat. § 28-611"
+    },
+    {
+      "id": "S24",
+      "label": "Neb. Rev. Stat. § 25-21,109 (Treble damages for conversion/civil theft)",
+      "url": "https://nebraskalegislature.gov/laws/statutes.php?statute=25-21,109",
+      "primary": true,
+      "citation": "Neb. Rev. Stat. § 25-21,109"
+    },
+    {
+      "id": "S22",
+      "label": "Neb. Rev. Stat. §§ 48-1228 to 48-1232 (Nebraska Wage Payment and Collection Act — final paycheck, wages)",
+      "url": "https://nebraskalegislature.gov/laws/browse-chapters.php?chapter=48",
+      "primary": true,
+      "citation": "Neb. Rev. Stat. §§ 48-1228 to 48-1232"
+    },
+    {
+      "id": "S21",
+      "label": "Neb. Rev. Stat. § 76-1416 (Security deposit return and penalty)",
+      "url": "https://nebraskalegislature.gov/laws/statutes.php?statute=76-1416",
+      "primary": true,
+      "citation": "Neb. Rev. Stat. § 76-1416"
+    },
+    {
+      "id": "S20",
+      "label": "Neb. Rev. Stat. §§ 76-1416 to 76-1422 (Landlord and Tenant Act — Security Deposits, Remedies, Evictions)",
+      "url": "https://nebraskalegislature.gov/laws/browse-chapters.php?chapter=76",
+      "primary": true,
+      "citation": "Neb. Rev. Stat. §§ 76-1416 to 76-1422"
+    },
+    {
+      "id": "S17",
+      "label": "Neb. Rev. Stat. §§ 59-1601 to 59-1622 (Consumer Protection Act — UDAP)",
+      "url": "https://nebraskalegislature.gov/laws/browse-chapters.php?chapter=59",
+      "primary": true,
+      "citation": "Neb. Rev. Stat. §§ 59-1601 to 59-1622"
+    },
+    {
+      "id": "S18",
+      "label": "Neb. Rev. Stat. §§ 69-2601 to 69-2613 (Motor Vehicle Industry Regulation — Lemon Law)",
+      "url": "https://nebraskalegislature.gov/laws/browse-chapters.php?chapter=69",
+      "primary": true,
+      "citation": "Neb. Rev. Stat. §§ 69-2601 to 69-2613"
+    },
+    {
+      "id": "S15",
+      "label": "Neb. Rev. Stat. § 25-1558 (Garnishment, procedure, exemptions)",
+      "url": "https://nebraskalegislature.gov/laws/statutes.php?statute=25-1558",
+      "primary": true,
+      "citation": "Neb. Rev. Stat. § 25-1558"
+    },
+    {
+      "id": "S16",
+      "label": "Neb. Rev. Stat. § 25-1552 (Wage garnishment limits and exemptions)",
+      "url": "https://nebraskalegislature.gov/laws/statutes.php?statute=25-1552",
+      "primary": true,
+      "citation": "Neb. Rev. Stat. § 25-1552"
+    }
+  ],
+  "_meta": {
+    "state": "Nebraska",
+    "slug": "nebraska",
+    "model": "gpt-4.1",
+    "sources_response_id": "resp_05f3e0ba65cf0fca0069f08a736c1c8190b330f33fe8672865",
+    "extraction_response_id": "resp_05cdf414a394a6d70069f0939141a48195bd4425ee82d6ead8",
+    "generated_at": "2026-04-28T11:03:42.632Z",
+    "usage": {
+      "input_tokens": 7733,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 13879,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 21612
+    }
+  }
+}

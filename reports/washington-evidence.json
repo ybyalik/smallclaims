@@ -1,0 +1,1438 @@
+{
+  "state": "Washington",
+  "slug": "washington",
+  "abbr": "WA",
+  "as_of": "2026-04-28",
+  "hero": {
+    "individual_limit_dollars": 10000,
+    "business_limit_dollars": 5000,
+    "filing_fee_low_dollars": 35,
+    "filing_fee_high_dollars": 50,
+    "typical_timeline_min_days": 30,
+    "typical_timeline_max_days": 90,
+    "tagline": "Washington's small claims courts offer a streamlined process for resolving disputes up to $10,000 for individuals and $5,000 for businesses.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "at_a_glance": [
+    {
+      "label": "Most you can sue for",
+      "value": "$10,000",
+      "detail": "For individuals; $5,000 for businesses",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Filing fee",
+      "value": "$35-$50",
+      "detail": "Varies by county and support for dispute resolution centers",
+      "source_ids": [
+        "S12"
+      ]
+    },
+    {
+      "label": "Court",
+      "value": "District Court (Small Claims Division)",
+      "detail": "",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Lawyers at trial",
+      "value": "Not allowed",
+      "detail": "Unless granted permission by the judge",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Appeal window",
+      "value": "30 days",
+      "detail": "Must file notice of appeal within 30 days of judgment",
+      "source_ids": [
+        "S14"
+      ]
+    },
+    {
+      "label": "Recent change",
+      "value": "—",
+      "detail": "No major changes in the last 3 years",
+      "source_ids": []
+    }
+  ],
+  "limits": {
+    "individual_dollars": 10000,
+    "business_dollars": 5000,
+    "guarantor_with_fee_max": null,
+    "guarantor_without_fee_max": null,
+    "annual_filing_cap": {
+      "count": null,
+      "threshold_dollars": null,
+      "notes": ""
+    },
+    "split_claims_allowed": false,
+    "split_claims_explanation": "If your claim exceeds the monetary limit, you cannot split it into multiple claims to fit within the limit. Instead, you must file in a higher court or waive the amount exceeding the limit.",
+    "interest_excluded_from_cap": true,
+    "court_costs_excluded_from_cap": true,
+    "statute": "RCW 12.40.010",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "claim_categories": [
+    {
+      "id": "contracts",
+      "title": "Contracts and money owed",
+      "blurb": "Washington allows you to file claims related to breaches of contract and money owed, with statutes of limitations varying by claim type.",
+      "claims": [
+        {
+          "slug": "written-contract",
+          "name": "Breach of a written contract",
+          "example": "A contractor signed a $4,000 contract to remodel your kitchen, took the deposit, and never finished.",
+          "eligibility": "eligible",
+          "claim_statute": "RCW 4.16.040",
+          "notes": "6-year deadline from breach. Bring the signed contract, payment proof, and any correspondence showing the breach.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "oral-contract",
+          "name": "Breach of an oral contract",
+          "example": "You agreed verbally to lend a friend $2,000, which they promised to repay in six months, but they haven't.",
+          "eligibility": "eligible",
+          "claim_statute": "RCW 4.16.080",
+          "notes": "3-year deadline from breach. Gather any evidence of the agreement, such as emails or witness statements.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "personal-loan",
+          "name": "Unpaid personal loan",
+          "example": "You lent $3,500 to a colleague who agreed to repay in a year, but they haven't made any payments.",
+          "eligibility": "eligible",
+          "claim_statute": "RCW 4.16.040",
+          "notes": "6-year deadline from breach. Provide documentation of the loan agreement and any communications regarding repayment.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "promissory-note",
+          "name": "Default on a promissory note",
+          "example": "A borrower signed a promissory note for $5,000, agreeing to monthly payments, but stopped after two months.",
+          "eligibility": "eligible",
+          "claim_statute": "RCW 4.16.040",
+          "notes": "6-year deadline from breach. Present the original promissory note and records of payments made.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unpaid-invoice",
+          "name": "Unpaid invoice for services rendered",
+          "example": "You provided consulting services worth $4,500 to a client who has not paid the invoice issued three months ago.",
+          "eligibility": "eligible",
+          "claim_statute": "RCW 4.16.040",
+          "notes": "6-year deadline from breach. Submit the invoice, service agreement, and any correspondence regarding payment.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "open-account",
+          "name": "Unpaid balance on an open account",
+          "example": "A customer has an outstanding balance of $3,000 on their account with your business and has ignored payment requests.",
+          "eligibility": "eligible",
+          "claim_statute": "RCW 4.16.080",
+          "notes": "3-year deadline from last transaction. Provide account statements and records of communication regarding the debt.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unpaid-rent",
+          "name": "Unpaid rent by tenant",
+          "example": "Your tenant owes $2,500 in unpaid rent and has vacated the property without settling the debt.",
+          "eligibility": "eligible",
+          "claim_statute": "RCW 4.16.040",
+          "notes": "6-year deadline from breach. Present the lease agreement, rent ledger, and any notices sent to the tenant.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "bad-check",
+          "name": "Payment with a bad check",
+          "example": "A customer paid for goods worth $1,200 with a check that was returned for insufficient funds.",
+          "eligibility": "eligible",
+          "claim_statute": "RCW 62A.3-515",
+          "notes": "6-year deadline from breach. Provide the bounced check, bank notice, and any related correspondence.",
+          "damage_boost": "Check amount + service charge up to $40 + civil penalty up to $100 OR 2x check amount, whichever is greater.",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "co-signer",
+          "name": "Co-signer seeking repayment",
+          "example": "You co-signed a loan for $6,000, and the primary borrower defaulted, leaving you responsible for the debt.",
+          "eligibility": "eligible",
+          "claim_statute": "RCW 4.16.040",
+          "notes": "6-year deadline from breach. Present the loan agreement and records of payments you've made on behalf of the borrower.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "consumer-disputes",
+      "title": "Consumer disputes",
+      "blurb": "Washington provides avenues for consumers to seek redress for various disputes, with statutes of limitations typically ranging from 2 to 4 years.",
+      "claims": [
+        {
+          "slug": "defective-product",
+          "name": "Purchase of a defective product",
+          "example": "You bought a $900 appliance that stopped working within a month, and the seller refuses to replace or repair it.",
+          "eligibility": "eligible",
+          "claim_statute": "RCW 4.16.080",
+          "notes": "3-year deadline from discovery of defect. Bring the purchase receipt, warranty, and any communication with the seller.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "bad-service",
+          "name": "Substandard service provided",
+          "example": "A cleaning service charged you $500 but left your home in poor condition, and they refuse to refund or redo the job.",
+          "eligibility": "eligible",
+          "claim_statute": "RCW 4.16.080",
+          "notes": "3-year deadline from service date. Provide the service agreement, photos of the work, and correspondence with the provider.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "auto-repair",
+          "name": "Unsatisfactory auto repair",
+          "example": "A mechanic charged $1,200 for repairs that didn't fix the issue, and they refuse to correct the problem.",
+          "eligibility": "eligible",
+          "claim_statute": "RCW 4.16.080",
+          "notes": "3-year deadline from repair date. Present the repair invoice, any warranties, and records of subsequent issues.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "contractor",
+          "name": "Incomplete or poor-quality contractor work",
+          "example": "You paid a contractor $8,000 for a home addition that remains unfinished and substandard.",
+          "eligibility": "eligible",
+          "claim_statute": "RCW 4.16.040",
+          "notes": "6-year deadline from breach. Bring the contract, payment records, and photos of the incomplete work.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "no-show-vendor",
+          "name": "Vendor failed to deliver services",
+          "example": "You paid $2,000 for a catering service that never showed up for your event and refused a refund.",
+          "eligibility": "eligible",
+          "claim_statute": "RCW 4.16.080",
+          "notes": "3-year deadline from service date. Provide the service agreement, payment proof, and any communication with the vendor.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "subscription-cancellation",
+          "name": "Unauthorized charges after subscription cancellation",
+          "example": "You canceled a $50/month gym membership, but they continued to charge your account for three months.",
+          "eligibility": "eligible",
+          "claim_statute": "RCW 4.16.080",
+          "notes": "3-year deadline from unauthorized charge. Present cancellation confirmation and bank statements showing the charges.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "used-car",
+          "name": "Purchase of a defective used car",
+          "example": "You bought a used car for $7,500 that broke down within a week, and the dealer refuses to address the issue.",
+          "eligibility": "eligible",
+          "claim_statute": "RCW 4.16.080",
+          "notes": "3-year deadline from purchase. Bring the sales contract, any warranties, and records of the car's issues.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "false-advertising",
+          "name": "Misleading advertising leading to financial loss",
+          "example": "A retailer advertised a product as 'new' for $1,500, but it was refurbished, and they refuse a refund.",
+          "eligibility": "eligible",
+          "claim_statute": "RCW 19.86.120",
+          "notes": "4-year deadline from deceptive act. Provide the advertisement, purchase receipt, and any correspondence with the retailer.",
+          "damage_boost": "",
+          "source_ids": [
+            "S17"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "property-damage",
+      "title": "Property damage",
+      "blurb": "Claims for property damage in Washington must be filed within 3 years from the date of damage.",
+      "claims": [
+        {
+          "slug": "vehicle-collision",
+          "name": "Damage to vehicle from collision",
+          "example": "Another driver hit your parked car, causing $4,000 in damages, and refuses to pay for repairs.",
+          "eligibility": "eligible",
+          "claim_statute": "RCW 4.16.080",
+          "notes": "3-year deadline from date of damage. Provide the police report, repair estimates, and photos of the damage.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "neighbor-property",
+          "name": "Neighbor's actions damaging your property",
+          "example": "A neighbor's tree fell onto your fence during a storm, causing $2,500 in damages, and they refuse to compensate.",
+          "eligibility": "eligible",
+          "claim_statute": "RCW 4.16.080",
+          "notes": "3-year deadline from date of damage. Present photos of the damage, repair estimates, and any communication with the neighbor.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "damage-to-rental",
+          "name": "Tenant caused damage to rental property",
+          "example": "A former tenant left your rental unit with $3,000 in damages beyond normal wear and tear.",
+          "eligibility": "eligible",
+          "claim_statute": "RCW 4.16.080",
+          "notes": "3-year deadline from discovery of damage. Provide the lease agreement, move-in/move-out inspection reports, and repair invoices.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "pet-damage",
+          "name": "Damage caused by someone's pet",
+          "example": "A neighbor's dog entered your yard and destroyed $1,200 worth of landscaping.",
+          "eligibility": "eligible",
+          "claim_statute": "RCW 4.16.080",
+          "notes": "3-year deadline from date of damage. Present photos of the damage, repair estimates, and any communication with the pet owner.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "property-in-custody",
+          "name": "Damage to property left in someone's care",
+          "example": "You left a $2,000 bicycle with a friend for safekeeping, and it was damaged while in their possession.",
+          "eligibility": "eligible",
+          "claim_statute": "RCW 4.16.080",
+          "notes": "3-year deadline from discovery of damage. Provide evidence of the agreement and photos of the damage.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "landlord-tenant",
+      "title": "Landlord-tenant disputes",
+      "blurb": "Washington allows tenants and landlords to file claims related to financial disputes, excluding eviction proceedings.",
+      "claims": [
+        {
+          "slug": "security-deposit",
+          "name": "Failure to return security deposit",
+          "example": "Your landlord withheld your $1,500 security deposit without providing an itemized list of damages.",
+          "eligibility": "eligible",
+          "claim_statute": "RCW 59.18.280",
+          "notes": "Tenant must provide a forwarding address; landlord must return deposit or provide itemized statement within 21 days.",
+          "damage_boost": "",
+          "source_ids": [
+            "S21"
+          ]
+        },
+        {
+          "slug": "deposit-not-itemized",
+          "name": "Security deposit deductions without itemization",
+          "example": "Landlord deducted $800 from your deposit without specifying the reasons.",
+          "eligibility": "eligible",
+          "claim_statute": "RCW 59.18.280",
+          "notes": "Landlord must provide an itemized statement within 21 days; failure may entitle tenant to full deposit return.",
+          "damage_boost": "",
+          "source_ids": [
+            "S21"
+          ]
+        },
+        {
+          "slug": "uninhabitable-rental",
+          "name": "Rental unit deemed uninhabitable",
+          "example": "Your apartment had no heating during winter, and the landlord refused to make repairs.",
+          "eligibility": "eligible",
+          "claim_statute": "RCW 59.18.060",
+          "notes": "Landlord must maintain habitable conditions; tenant may seek rent reduction or compensation for damages.",
+          "damage_boost": "",
+          "source_ids": [
+            "S20"
+          ]
+        },
+        {
+          "slug": "wrongful-retention-property",
+          "name": "Landlord retained tenant's personal property",
+          "example": "After moving out, your landlord kept your furniture valued at $2,000.",
+          "eligibility": "eligible",
+          "claim_statute": "RCW 59.18.230",
+          "notes": "Landlord must follow proper procedures for handling abandoned property; failure may result in liability.",
+          "damage_boost": "",
+          "source_ids": [
+            "S20"
+          ]
+        },
+        {
+          "slug": "illegal-eviction",
+          "name": "Unlawful eviction by landlord",
+          "example": "Landlord changed the locks without notice, preventing you from accessing your rental unit.",
+          "eligibility": "eligible",
+          "claim_statute": "RCW 59.18.290",
+          "notes": "Self-help evictions are illegal; tenant may seek damages for wrongful eviction.",
+          "damage_boost": "",
+          "source_ids": [
+            "S20"
+          ]
+        },
+        {
+          "slug": "unreturned-prepaid-rent",
+          "name": "Failure to return prepaid rent",
+          "example": "You paid first and last month's rent, but the landlord didn't return the last month's rent after you moved out early.",
+          "eligibility": "eligible",
+          "claim_statute": "RCW 59.18.280",
+          "notes": "Landlord must return prepaid rent not lawfully retained; tenant may seek recovery in small claims court.",
+          "damage_boost": "",
+          "source_ids": [
+            "S21"
+          ]
+        },
+        {
+          "slug": "unpaid-rent-by-tenant",
+          "name": "Tenant failed to pay rent",
+          "example": "Your tenant missed two months' rent totaling $2,400 and has since vacated the property.",
+          "eligibility": "eligible",
+          "claim_statute": "RCW 4.16.040",
+          "notes": "Landlord may seek unpaid rent through small claims court; ensure proper notice was given.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "repair-and-deduct",
+          "name": "Tenant repaired and deducted from rent",
+          "example": "You paid $500 to fix a leaking roof after the landlord failed to address it and deducted the cost from rent.",
+          "eligibility": "eligible",
+          "claim_statute": "RCW 59.18.100",
+          "notes": "Tenant must provide notice and allow reasonable time for landlord to repair before deducting; keep all receipts.",
+          "damage_boost": "",
+          "source_ids": [
+            "S20"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "employment-and-wages",
+      "title": "Employment and wage disputes",
+      "blurb": "Washington employees can file claims for unpaid wages and related issues, with a 3-year statute of limitations.",
+      "claims": [
+        {
+          "slug": "unpaid-wages",
+          "name": "Employer failed to pay earned wages",
+          "example": "Your employer owes you $2,000 for hours worked but hasn't issued payment.",
+          "eligibility": "eligible",
+          "claim_statute": "RCW 49.48.010",
+          "notes": "3-year deadline from date wages were due. Provide timesheets, pay stubs, and any communication with the employer.",
+          "damage_boost": "",
+          "source_ids": [
+            "S22"
+          ]
+        },
+        {
+          "slug": "final-paycheck",
+          "name": "Employer withheld final paycheck",
+          "example": "After resigning, your employer refused to pay your last paycheck of $1,500.",
+          "eligibility": "eligible",
+          "claim_statute": "RCW 49.48.010",
+          "notes": "3-year deadline from date final wages were due. Present resignation letter, final timesheet, and any correspondence.",
+          "damage_boost": "",
+          "source_ids": [
+            "S22"
+          ]
+        },
+        {
+          "slug": "unpaid-commissions",
+          "name": "Unpaid sales commissions",
+          "example": "Your employer owes you $3,000 in earned commissions but hasn't paid them.",
+          "eligibility": "eligible",
+          "claim_statute": "RCW 49.48.010",
+          "notes": "3-year deadline from date commissions were due. Provide sales records, commission agreements, and payment history.",
+          "damage_boost": "",
+          "source_ids": [
+            "S22"
+          ]
+        },
+        {
+          "slug": "unpaid-overtime",
+          "name": "Employer failed to pay overtime wages",
+          "example": "You worked 10 hours of overtime last month but weren't compensated at the overtime rate.",
+          "eligibility": "eligible",
+          "claim_statute": "RCW 49.48.010",
+          "notes": "3-year deadline from date overtime was due. Present timesheets, pay stubs, and any communication with the employer.",
+          "damage_boost": "",
+          "source_ids": [
+            "S22"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "personal-claims",
+      "title": "Personal claims",
+      "blurb": "Individuals in Washington can seek compensation for personal injuries and property-related disputes, with varying statutes of limitations.",
+      "claims": [
+        {
+          "slug": "minor-injury",
+          "name": "Minor personal injury",
+          "example": "You slipped on an unmarked wet floor in a store, resulting in a $2,000 medical bill.",
+          "eligibility": "eligible",
+          "claim_statute": "RCW 4.16.080",
+          "notes": "3-year deadline from date of injury. Provide medical records, incident reports, and any related expenses.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "loaned-property",
+          "name": "Failure to return loaned property",
+          "example": "You lent a friend your $1,500 camera, and they refuse to return it.",
+          "eligibility": "eligible",
+          "claim_statute": "RCW 4.16.080",
+          "notes": "3-year deadline from demand for return. Provide evidence of the loan agreement and any communication regarding the return.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "civil-theft",
+          "name": "Theft of personal property",
+          "example": "A neighbor took your $800 bicycle without permission and refuses to return it.",
+          "eligibility": "eligible",
+          "claim_statute": "RCW 4.16.080",
+          "notes": "3-year deadline from date of theft. Provide police reports, proof of ownership, and any communication with the individual.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vehicle-specific",
+      "title": "Vehicle-specific disputes",
+      "blurb": "Washington allows claims related to vehicle repairs and towing disputes, with a 3-year statute of limitations.",
+      "claims": [
+        {
+          "slug": "mechanic-dispute",
+          "name": "Dispute over mechanic's repair work",
+          "example": "A mechanic charged $2,500 for repairs that didn't fix the issue, and they refuse to refund or redo the work.",
+          "eligibility": "eligible",
+          "claim_statute": "RCW 4.16.080",
+          "notes": "3-year deadline from repair date. Provide repair invoices, any warranties, and records of subsequent issues.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "wrongful-tow",
+          "name": "Vehicle wrongfully towed",
+          "example": "Your car was towed from a legal parking spot, resulting in $300 in fees to retrieve it.",
+          "eligibility": "eligible",
+          "claim_statute": "RCW 4.16.080",
+          "notes": "3-year deadline from date of tow. Provide photos of the parking area, tow notices, and receipts for fees paid.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "category": "Eviction (unlawful detainer)",
+      "explanation": "Small claims court cannot handle eviction proceedings; these must be filed in the appropriate superior court.",
+      "where_to_go_instead": "Superior Court",
+      "source_ids": []
+    },
+    {
+      "category": "Title to real estate",
+      "explanation": "Disputes involving the ownership of real property are beyond the jurisdiction of small claims court.",
+      "where_to_go_instead": "Superior Court",
+      "source_ids": []
+    },
+    {
+      "category": "Defamation",
+      "explanation": "Claims involving defamation, such as libel or slander, are not permitted in small claims court.",
+      "where_to_go_instead": "Superior Court",
+      "source_ids": []
+    },
+    {
+      "category": "Malpractice",
+      "explanation": "Professional malpractice claims require complex evidence and are not suitable for small claims court.",
+      "where_to_go_instead": "Superior Court",
+      "source_ids": []
+    },
+    {
+      "category": "Family law matters",
+      "explanation": "Issues such as divorce, child custody, and support are handled by family courts, not small claims court.",
+      "where_to_go_instead": "Family Court",
+      "source_ids": []
+    },
+    {
+      "category": "Probate matters",
+      "explanation": "Disputes involving wills, estates, and trusts are under the jurisdiction of probate courts.",
+      "where_to_go_instead": "Probate Court",
+      "source_ids": []
+    },
+    {
+      "category": "Claims against the federal government",
+      "explanation": "Small claims court cannot hear cases against federal agencies or the U.S. government.",
+      "where_to_go_instead": "Federal Court",
+      "source_ids": []
+    },
+    {
+      "category": "Workers' compensation claims",
+      "explanation": "Disputes over workers' compensation benefits are handled by the Department of Labor and Industries.",
+      "where_to_go_instead": "Department of Labor and Industries",
+      "source_ids": []
+    },
+    {
+      "category": "Class actions",
+      "explanation": "Small claims court is not equipped to handle class action lawsuits involving multiple plaintiffs.",
+      "where_to_go_instead": "Superior Court",
+      "source_ids": []
+    },
+    {
+      "category": "Injunctions or specific performance",
+      "explanation": "Small claims court cannot order someone to do or stop doing something; it can only award monetary damages.",
+      "where_to_go_instead": "Superior Court",
+      "source_ids": []
+    }
+  ],
+  "damages": {
+    "compensatory_allowed": true,
+    "punitive_allowed": false,
+    "punitive_explanation": "Washington does not allow punitive damages in small claims court; however, statutory penalties may apply in certain cases, such as bad checks.",
+    "statutory_multipliers": [
+      {
+        "claim": "Bad check (after 30-day notice)",
+        "multiplier": "2x check amount",
+        "explanation": "Check amount + service charge up to $40 + civil penalty up to $100 OR 2x check amount, whichever is greater.",
+        "statute": "RCW 62A.3-515",
+        "source_ids": [
+          "S19"
+        ]
+      }
+    ],
+    "attorney_fees_recoverable": "sometimes",
+    "attorney_fees_explanation": "Attorney fees are generally not recoverable in small claims court, except in specific cases where statutes provide for them, such as consumer protection violations.",
+    "prejudgment_interest_rate_pct": null,
+    "prejudgment_interest_statute": "",
+    "postjudgment_interest_rate_pct": null,
+    "postjudgment_interest_type": "simple",
+    "postjudgment_interest_statute": "",
+    "postjudgment_interest_notes": "",
+    "filing_and_service_fees_recoverable_from_loser": true,
+    "source_ids": []
+  },
+  "where_to_file": {
+    "court_name": "Small Claims Division of the District Court",
+    "parent_court": "Washington State District Court",
+    "venue_rules": [
+      {
+        "scenario": "Most cases (the default)",
+        "filing_options": [
+          "County where the defendant resides"
+        ],
+        "source_ids": []
+      },
+      {
+        "scenario": "Where contract was performed",
+        "filing_options": [
+          "County where performance was due"
+        ],
+        "source_ids": []
+      },
+      {
+        "scenario": "Where injury or damage occurred",
+        "filing_options": [
+          "County where the event occurred"
+        ],
+        "source_ids": []
+      },
+      {
+        "scenario": "Multiple defendants",
+        "filing_options": [
+          "Any county where one defendant resides"
+        ],
+        "source_ids": []
+      },
+      {
+        "scenario": "Out-of-state defendant",
+        "filing_options": [
+          "Where the cause of action arose"
+        ],
+        "source_ids": []
+      }
+    ],
+    "consequences_of_wrong_venue": "Filing in the wrong venue may result in dismissal or transfer of the case, potentially causing delays and additional costs.",
+    "e_filing_available": "varies",
+    "e_filing_notes": "Availability of e-filing varies by county; contact the local district court for specific information.",
+    "e_filing_portal": null,
+    "source_ids": []
+  },
+  "fees": {
+    "filing_fee_tiers": [
+      {
+        "range_label": "All claims",
+        "range_min": 0,
+        "range_max": 10000,
+        "fee_dollars": 35,
+        "source_ids": [
+          "S12"
+        ]
+      }
+    ],
+    "frequent_filer": {
+      "threshold_per_year": null,
+      "fee_dollars": null,
+      "notes": ""
+    },
+    "service_fees": [
+      {
+        "method": "Sheriff (personal service)",
+        "amount_label": "Varies",
+        "notes": "Fees vary by county; contact local sheriff's office for exact amounts.",
+        "source_ids": []
+      },
+      {
+        "method": "Certified mail",
+        "amount_label": "Varies",
+        "notes": "Costs depend on postal rates; check with USPS for current fees.",
+        "source_ids": []
+      }
+    ],
+    "waiver": {
+      "forms": [
+        {
+          "number": "",
+          "name": "Fee Waiver Application",
+          "url": "",
+          "source_ids": []
+        }
+      ],
+      "eligibility_bullets": [
+        "Receiving need-based public assistance (SNAP, TANF, SSI)",
+        "Household income below 125% federal poverty line"
+      ],
+      "coverage_notes": "Waiver may cover filing fees; service fees may not be included.",
+      "if_you_win_notes": "Waived fees are not typically added to the judgment against the loser."
+    },
+    "other_fees": [
+      {
+        "name": "Appeal filing",
+        "amount_label": "$280",
+        "notes": "Superior court filing fee for appeals.",
+        "source_ids": [
+          "S14"
+        ]
+      },
+      {
+        "name": "Transcript fee",
+        "amount_label": "$20",
+        "notes": "Fee for preparing the record for appeal.",
+        "source_ids": [
+          "S14"
+        ]
+      },
+      {
+        "name": "Appeal preparation processing fee",
+        "amount_label": "$40",
+        "notes": "District court fee for processing the appeal.",
+        "source_ids": [
+          "S14"
+        ]
+      }
+    ],
+    "fees_recoverable_from_loser_notes": "If you win, filing and service fees may be added to the judgment against the defendant.",
+    "source_ids": []
+  },
+  "statute_of_limitations": {
+    "entries": [
+      {
+        "id": "written-contract",
+        "claim": "Written contract",
+        "years": 6,
+        "clock_starts": "Date of breach",
+        "statute": "RCW 4.16.040",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "oral-contract",
+        "claim": "Oral contract",
+        "years": 3,
+        "clock_starts": "Date of breach",
+        "statute": "RCW 4.16.080",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "sale-of-goods",
+        "claim": "Sale of goods (UCC)",
+        "years": 4,
+        "clock_starts": "Date of breach",
+        "statute": "RCW 62A.2-725",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "promissory-note",
+        "claim": "Promissory note",
+        "years": 6,
+        "clock_starts": "Date of default",
+        "statute": "RCW 4.16.040",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "open-account",
+        "claim": "Open account / credit card debt",
+        "years": 3,
+        "clock_starts": "Date of last transaction",
+        "statute": "RCW 4.16.080",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "personal-injury",
+        "claim": "Personal injury",
+        "years": 3,
+        "clock_starts": "Date of injury",
+        "statute": "RCW 4.16.080",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "property-damage",
+        "claim": "Property damage",
+        "years": 3,
+        "clock_starts": "Date of damage",
+        "statute": "RCW 4.16.080",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "fraud",
+        "claim": "Fraud",
+        "years": 3,
+        "clock_starts": "Date of discovery",
+        "statute": "RCW 4.16.080",
+        "notes": "Discovery rule applies; clock starts when fraud is discovered or reasonably should have been discovered.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "bad-check",
+        "claim": "Bad check",
+        "years": 6,
+        "clock_starts": "Date of dishonor",
+        "statute": "RCW 62A.3-118",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "unpaid-wages",
+        "claim": "Unpaid wages",
+        "years": 3,
+        "clock_starts": "Date wages were due",
+        "statute": "RCW 49.48.085",
+        "notes": "",
+        "source_ids": [
+          "S22"
+        ]
+      },
+      {
+        "id": "security-deposit",
+        "claim": "Security deposit",
+        "years": 3,
+        "clock_starts": "Date deposit was due",
+        "statute": "RCW 59.18.280",
+        "notes": "",
+        "source_ids": [
+          "S21"
+        ]
+      },
+      {
+        "id": "judgment-enforcement",
+        "claim": "Judgment enforcement",
+        "years": 10,
+        "clock_starts": "Date of judgment",
+        "statute": "RCW 6.17.020",
+        "notes": "",
+        "source_ids": [
+          "S15"
+        ]
+      }
+    ],
+    "discovery_rule_notes": "The discovery rule applies to fraud claims; the statute of limitations begins when the fraud is discovered or reasonably should have been discovered.",
+    "tolling_notes": "The statute of limitations may be tolled if the defendant is out of state, the plaintiff is a minor, or in cases of bankruptcy stays. Partial payment may restart the clock.",
+    "source_ids": []
+  },
+  "pre_filing": {
+    "demand_letter_required": false,
+    "demand_letter_recommended": true,
+    "demand_letter_notes": "While not required, sending a demand letter can facilitate settlement and demonstrate good faith before filing a claim.",
+    "bad_check_notice_rule": "For bad check claims, a 30-day written notice demanding payment is required before filing a lawsuit.",
+    "wage_claim_demand_rule": "No specific pre-filing demand required for wage claims, but it's advisable to request payment in writing before filing.",
+    "government_claim_required": true,
+    "government_claim_deadline_days": 60,
+    "government_claim_notes": "Claims against local government entities require filing a notice of claim within 60 days before initiating a lawsuit.",
+    "landlord_tenant_pre_filing_notes": "Tenants should provide a forwarding address to landlords to facilitate the return of security deposits.",
+    "consumer_protection_notes": "No specific pre-filing requirements for consumer protection claims, but documenting all communications is recommended.",
+    "mandatory_mediation_before_filing": "none",
+    "arbitration_clauses_enforced": true,
+    "source_ids": []
+  },
+  "forms": [
+    {
+      "number": "",
+      "name": "Notice of Small Claim",
+      "description": "Initiates a small claims case by outlining the plaintiff's claim and the amount sought.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "",
+      "source_ids": []
+    },
+    {
+      "number": "",
+      "name": "Fee Waiver Application",
+      "description": "Requests a waiver of court fees due to financial hardship.",
+      "filed_by": "plaintiff",
+      "required": false,
+      "group": "fee-waiver",
+      "url": "",
+      "source_ids": []
+    },
+    {
+      "number": "",
+      "name": "Notice of Appeal",
+      "description": "Notifies the court and opposing party of the intent to appeal a small claims judgment.",
+      "filed_by": "either",
+      "required": false,
+      "group": "appeal",
+      "url": "",
+      "source_ids": []
+    }
+  ],
+  "service": {
+    "who_can_serve": [
+      "Sheriff",
+      "Certified mail by clerk",
+      "Private process server"
+    ],
+    "methods": [
+      {
+        "name": "Sheriff personal service",
+        "description": "Sheriff or constable personally hands the papers to the defendant.",
+        "pros": [
+          "Reliable",
+          "Official"
+        ],
+        "cons": [
+          "May incur additional fees"
+        ],
+        "source_ids": []
+      },
+      {
+        "name": "Certified mail",
+        "description": "Clerk sends the notice via certified mail with return receipt requested.",
+        "pros": [
+          "Cost-effective",
+          "Provides proof of service"
+        ],
+        "cons": [
+          "Defendant may refuse delivery"
+        ],
+        "source_ids": []
+      },
+      {
+        "name": "Private process server",
+        "description": "A professional server delivers the notice to the defendant.",
+        "pros": [
+          "Flexible scheduling",
+          "Can locate hard-to-find defendants"
+        ],
+        "cons": [
+          "More expensive than other methods"
+        ],
+        "source_ids": []
+      }
+    ],
+    "in_county_days_before_hearing": 10,
+    "out_of_county_days_before_hearing": 10,
+    "proof_of_service_form": {
+      "number": "",
+      "name": "Return of Service"
+    },
+    "proof_filing_deadline_days_before_hearing": 0,
+    "business_service_rule": "Serve the registered agent or an officer of the corporation; for sole proprietors, serve the individual directly.",
+    "out_of_state_defendant_notes": "Service must comply with Washington's long-arm statute and the laws of the state where the defendant resides.",
+    "cant_find_defendant_notes": "If the defendant cannot be located, the court may allow service by publication; specific procedures must be followed.",
+    "avoiding_service_notes": "If the defendant is evading service, document attempts and consider alternative methods like service by mail or publication with court approval.",
+    "source_ids": []
+  },
+  "response_and_default": {
+    "must_file_written_answer": false,
+    "response_deadline_days": 0,
+    "response_notes": "Defendants are not required to file a written answer but must appear at the hearing to present their defense.",
+    "default_process": "If the defendant fails to appear at the hearing, the court may enter a default judgment in favor of the plaintiff.",
+    "prove_up_required": true,
+    "prove_up_notes": "Even if the defendant defaults, the plaintiff must provide evidence to support the claim and the amount sought.",
+    "motion_to_vacate_form": {
+      "number": "",
+      "name": "Motion to Vacate Judgment"
+    },
+    "motion_to_vacate_deadline_days": 0,
+    "motion_to_vacate_lack_of_notice_days": 0,
+    "motion_to_vacate_appeal_deadline_days": 0,
+    "motion_to_vacate_appeal_notes": "A motion to vacate must be filed promptly upon discovering the judgment; specific deadlines may apply.",
+    "source_ids": []
+  },
+  "counterclaim": {
+    "allowed": true,
+    "form": {
+      "number": "",
+      "name": "Counterclaim Form"
+    },
+    "same_monetary_limit": true,
+    "service_deadline_in_county_days": 0,
+    "service_deadline_out_of_county_days": 0,
+    "transfer_to_higher_court_available": false,
+    "transfer_to_higher_court_statute": "",
+    "transfer_to_higher_court_notes": "If the counterclaim exceeds the small claims monetary limit, the case may be transferred to a higher court.",
+    "source_ids": []
+  },
+  "hearing": {
+    "lawyers_allowed": "restricted",
+    "lawyers_allowed_notes": "Attorneys are generally not allowed unless the judge grants permission.",
+    "format": "Bench trial with informal procedures; each party presents their case directly to the judge.",
+    "presider": "judge",
+    "burden_of_proof": "preponderance",
+    "what_to_bring": [
+      "Originals of any contracts",
+      "Receipts and bank records",
+      "Photos and videos",
+      "Names and contact info for witnesses"
+    ],
+    "subpoena_form": {
+      "number": "",
+      "name": "Subpoena Form"
+    },
+    "witness_fee_per_day_dollars": null,
+    "free_interpreters": true,
+    "interpreter_request_process": "Request an interpreter from the court clerk as soon as possible before the hearing.",
+    "jury_option": false,
+    "decision_timing": "On the spot or mailed within a few weeks",
+    "on_site_mediation": "by county",
+    "on_site_mediation_notes": "Some counties offer mediation services before the hearing; check with the local court for availability.",
+    "source_ids": []
+  },
+  "appeals": {
+    "who_can_appeal": "either",
+    "deadline_days": 30,
+    "fee_dollars": 280,
+    "type": "trial de novo",
+    "type_notes": "The superior court will hear the case anew, as if the original trial never occurred.",
+    "attorneys_allowed_on_appeal": true,
+    "bond_required": true,
+    "bond_amount_notes": "Bond must be twice the amount of the judgment and costs or twice the amount in controversy, whichever is greater.",
+    "automatic_stay_on_appeal": true,
+    "default_judgment_appealable": true,
+    "default_judgment_notes": "A default judgment can be appealed; the appellant must follow the same procedures as other appeals.",
+    "notice_of_appeal_form": {
+      "number": "",
+      "name": "Notice of Appeal"
+    },
+    "frivolous_appeal_penalty_dollars": null,
+    "frivolous_appeal_statute": "",
+    "frivolous_appeal_notes": "",
+    "source_ids": []
+  },
+  "collection": {
+    "payment_deadline_typical_days": 30,
+    "post_judgment_interest_rate_pct": null,
+    "post_judgment_interest_statute": "",
+    "post_judgment_interest_notes": "",
+    "methods": [
+      {
+        "id": "wage-garnishment",
+        "name": "Wage garnishment",
+        "blurb": "Have a portion of debtor's wages withheld until the judgment is paid.",
+        "description": "File a writ of garnishment with the court, serve the employer, and the employer will withhold a portion of the debtor's wages to satisfy the judgment.",
+        "forms": [
+          {
+            "number": "",
+            "name": "Writ of Garnishment"
+          }
+        ],
+        "estimated_cost": "$30-50 plus sheriff fees",
+        "effectiveness_notes": "Most effective when debtor is W-2 employed at a stable job.",
+        "exemptions": [
+          "75% of disposable earnings (federal CCPA floor)"
+        ],
+        "source_ids": []
+      },
+      {
+        "id": "bank-levy",
+        "name": "Bank levy",
+        "blurb": "Seize funds from debtor's bank account to satisfy the judgment.",
+        "description": "Obtain a writ of garnishment, serve the bank, and the bank will freeze and remit funds from the debtor's account.",
+        "forms": [
+          {
+            "number": "",
+            "name": "Writ of Garnishment"
+          }
+        ],
+        "estimated_cost": "$30-50 plus sheriff fees",
+        "effectiveness_notes": "Effective if debtor maintains sufficient funds in bank accounts.",
+        "exemptions": [
+          "Certain amounts may be exempt under state law"
+        ],
+        "source_ids": []
+      },
+      {
+        "id": "property-lien",
+        "name": "Property lien",
+        "blurb": "Place a lien on debtor's real property to secure the judgment amount.",
+        "description": "File the judgment with the county recorder to place a lien on the debtor's property, which must be satisfied upon sale or refinancing.",
+        "forms": [
+          {
+            "number": "",
+            "name": "Abstract of Judgment"
+          }
+        ],
+        "estimated_cost": "$20-50 recording fee",
+        "effectiveness_notes": "Effective if debtor owns real property; may take time to realize payment.",
+        "exemptions": [
+          "Homestead exemptions may apply"
+        ],
+        "source_ids": []
+      },
+      {
+        "id": "writ-of-execution",
+        "name": "Writ of execution",
+        "blurb": "Seize and sell debtor's non-exempt personal property to satisfy the judgment.",
+        "description": "Obtain a writ of execution from the court, and the sheriff will seize and auction the debtor's non-exempt property.",
+        "forms": [
+          {
+            "number": "",
+            "name": "Writ of Execution"
+          }
+        ],
+        "estimated_cost": "$50-100 plus sheriff fees",
+        "effectiveness_notes": "Effective if debtor owns valuable non-exempt personal property.",
+        "exemptions": [
+          "Certain personal property may be exempt under state law"
+        ],
+        "source_ids": []
+      }
+    ],
+    "wage_garnishment_max_pct_of_disposable": 25,
+    "judgment_lifespan_years": 10,
+    "judgment_renewal_process": "File a motion to renew the judgment before the 10-year period expires; renewal extends the judgment for an additional 10 years.",
+    "debtor_exam_form": {
+      "number": "",
+      "name": "Order for Examination of Judgment Debtor"
+    },
+    "exempt_assets": [
+      "Homestead — $125,000",
+      "Vehicle — $3,250",
+      "Retirement accounts (federally and state-protected)",
+      "Social Security and federal benefits"
+    ],
+    "bankruptcy_effect_notes": "Filing for bankruptcy may discharge certain judgments; however, some debts, like those from fraud, may not be dischargeable.",
+    "satisfaction_of_judgment_form": {
+      "number": "",
+      "name": "Satisfaction of Judgment"
+    },
+    "priority_notes": "Priority among multiple judgment creditors is generally determined by the order in which liens are recorded.",
+    "source_ids": []
+  },
+  "businesses": {
+    "self_representation_allowed": true,
+    "self_representation_notes": "Businesses can appear without an attorney; an owner or employee may represent the business.",
+    "can_send_employee": true,
+    "can_send_attorney": false,
+    "non_attorney_representation_form": {
+      "number": "",
+      "name": "Authorization to Appear"
+    },
+    "insurance_adjuster_allowed": false,
+    "fictitious_name_form": {
+      "number": "",
+      "name": "Certificate of Assumed Name"
+    },
+    "fictitious_name_notes": "Businesses operating under a trade name must file a Certificate of Assumed Name with the state.",
+    "sole_proprietor_employee_exception": "A sole proprietor may authorize an employee to represent the business in small claims court.",
+    "out_of_state_business_must_register": true,
+    "out_of_state_business_statute": "RCW 23.95.505",
+    "licensing_notes": "Unlicensed contractors may face limitations in enforcing contracts in court.",
+    "source_ids": []
+  },
+  "county_variations_material": false,
+  "county_variations": [],
+  "pitfalls": [
+    {
+      "title": "Incorrect defendant information",
+      "what_happens": "Suing the wrong party or using incorrect names can result in dismissal or unenforceable judgments.",
+      "how_to_avoid": "Verify the exact legal name and address of the defendant before filing; for businesses, check state business records.",
+      "source_ids": []
+    },
+    {
+      "title": "Missing statute of limitations",
+      "what_happens": "Filing after the statute of limitations has expired will lead to dismissal of the case.",
+      "how_to_avoid": "Determine the applicable statute of limitations for your claim type and file within the allowed time frame.",
+      "source_ids": []
+    },
+    {
+      "title": "Insufficient evidence",
+      "what_happens": "Lack of proper documentation can weaken your case and lead to unfavorable outcomes.",
+      "how_to_avoid": "Gather all relevant documents, such as contracts, receipts, and correspondence, to support your claim.",
+      "source_ids": []
+    },
+    {
+      "title": "Improper service of process",
+      "what_happens": "Failing to serve the defendant correctly can delay proceedings or result in dismissal.",
+      "how_to_avoid": "Follow the court's rules for service of process carefully, using approved methods and documenting service properly.",
+      "source_ids": []
+    },
+    {
+      "title": "Ignoring court deadlines",
+      "what_happens": "Missing filing or response deadlines can lead to default judgments or dismissal.",
+      "how_to_avoid": "Keep track of all court-imposed deadlines and ensure timely submission of required documents.",
+      "source_ids": []
+    },
+    {
+      "title": "Overestimating claim amount",
+      "what_happens": "Claiming more than the court's monetary limit can result in dismissal or transfer to a higher court.",
+      "how_to_avoid": "Ensure your claim does not exceed the small claims court's jurisdictional limit; if it does, consider waiving the excess or filing in a higher court.",
+      "source_ids": []
+    }
+  ],
+  "recent_changes": [],
+  "faqs": [
+    {
+      "question": "Do I need a lawyer?",
+      "answer": "No, attorneys are generally not allowed in Washington small claims court unless the judge grants permission. The process is designed for individuals to represent themselves.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "How long does it take?",
+      "answer": "The timeline varies, but most small claims cases are resolved within 30 to 90 days from filing to judgment.",
+      "source_ids": []
+    },
+    {
+      "question": "What's the maximum I can sue for?",
+      "answer": "Individuals can sue for up to $10,000, while businesses and other entities have a limit of $5,000.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "What happens if the defendant doesn't show up?",
+      "answer": "If the defendant fails to appear at the hearing, the court may enter a default judgment in favor of the plaintiff.",
+      "source_ids": []
+    },
+    {
+      "question": "Can I appeal?",
+      "answer": "Yes, either party can appeal a small claims judgment to the superior court within 30 days, provided certain conditions are met.",
+      "source_ids": [
+        "S14"
+      ]
+    },
+    {
+      "question": "How long is a judgment good for?",
+      "answer": "A judgment is valid for 10 years and can be renewed for an additional 10 years if necessary.",
+      "source_ids": []
+    }
+  ],
+  "state_specific_notes": [
+    "Washington small claims courts do not allow attorneys to represent parties unless the judge grants permission.",
+    "The monetary limit for individuals is $10,000, while businesses are limited to $5,000.",
+    "Service of process can be completed by sheriff, certified mail, or private process server.",
+    "Appeals must be filed within 30 days and require posting a bond equal to twice the judgment amount.",
+    "Judgments are valid for 10 years and can be renewed for an additional 10 years."
+  ],
+  "_extras": {
+    "interesting_findings": [
+      "Washington's small claims courts are designed to be user-friendly, allowing individuals to represent themselves without the need for legal counsel.",
+      "The state provides various methods for serving defendants, including certified mail, which can be a cost-effective option for plaintiffs."
+    ]
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "label": "Washington State Attorney General's Office — Small Claims Court",
+      "url": "https://www.atg.wa.gov/small-claims-court-0",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S4",
+      "label": "RCW 12.40 — Small Claims Act",
+      "url": "https://app.leg.wa.gov/rcw/default.aspx?cite=12.40",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S12",
+      "label": "Washington Courts — Fee Schedules",
+      "url": "https://www.courts.wa.gov/newsinfo/resources/?fa=newsinfo_jury.display&altMenu=Citi&fileID=smallClaims#fees",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S14",
+      "label": "RCW 12.36.020 — Appeal from a Justice Court",
+      "url": "https://app.leg.wa.gov/rcw/default.aspx?cite=12.36.020",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S19",
+      "label": "RCW 62A.3-515 — Civil Penalty for Dishonored Checks",
+      "url": "https://app.leg.wa.gov/rcw/default.aspx?cite=62A.3-515",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S21",
+      "label": "RCW 59.18.280 — Return of Security Deposit",
+      "url": "https://app.leg.wa.gov/rcw/default.aspx?cite=59.18.280",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S22",
+      "label": "RCW 49.48.010 — Payment of Wages Due to Termination",
+      "url": "https://app.leg.wa.gov/rcw/default.aspx?cite=49.48.010",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S17",
+      "label": "RCW 19.86 — Consumer Protection Act (UDAP)",
+      "url": "https://app.leg.wa.gov/rcw/default.aspx?cite=19.86",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S20",
+      "label": "RCW 59.18 — Residential Landlord-Tenant Act",
+      "url": "https://app.leg.wa.gov/rcw/default.aspx?cite=59.18",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S15",
+      "label": "RCW 6.17 — Executions",
+      "url": "https://app.leg.wa.gov/rcw/default.aspx?cite=6.17",
+      "primary": true,
+      "citation": ""
+    }
+  ],
+  "_meta": {
+    "state": "Washington",
+    "slug": "washington",
+    "model": "gpt-4.1",
+    "sources_response_id": "resp_0405432007766b360069f08b900ee08195b6944a6cf50f6a87",
+    "extraction_response_id": "resp_0cdb09956f4588e20069f098e43cf08194af7d631bee397440",
+    "generated_at": "2026-04-28T11:26:21.154Z",
+    "usage": {
+      "input_tokens": 7541,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 12785,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 20326
+    }
+  }
+}

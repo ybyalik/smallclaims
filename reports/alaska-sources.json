@@ -1,0 +1,157 @@
+{
+  "state": "Alaska",
+  "as_of": "2024-06-19",
+  "state_judiciary_pages": [
+    {
+      "label": "Alaska small claims self-help",
+      "url": "https://courts.alaska.gov/shc/smallclaims/index.htm",
+      "scope": "small_claims"
+    },
+    {
+      "label": "Alaska court directory",
+      "url": "https://courts.alaska.gov/courtdir/index.htm",
+      "scope": "court_directory"
+    },
+    {
+      "label": "Alaska self-help center",
+      "url": "https://courts.alaska.gov/shc/",
+      "scope": "self_help"
+    }
+  ],
+  "statutes": [
+    {
+      "label": "Alaska Statutes: Small Claims Procedures (AS 22.15.040 and related sections)",
+      "url": "https://www.akleg.gov/basis/statutes.asp#22.15.040",
+      "section_or_chapter": "AS 22.15.040"
+    },
+    {
+      "label": "Alaska Consumer Protection Act (UDAP)",
+      "url": "https://www.akleg.gov/basis/statutes.asp#45.50.471",
+      "section_or_chapter": "AS 45.50.471"
+    },
+    {
+      "label": "Alaska Uniform Residential Landlord and Tenant Act",
+      "url": "https://www.akleg.gov/basis/statutes.asp#34.03",
+      "section_or_chapter": "AS 34.03"
+    },
+    {
+      "label": "Bad Check Civil Penalty — Alaska Statutes",
+      "url": "https://www.akleg.gov/basis/statutes.asp#09.68.115",
+      "section_or_chapter": "AS 09.68.115"
+    },
+    {
+      "label": "Judgment Enforcement and Executions — Alaska Statutes",
+      "url": "https://www.akleg.gov/basis/statutes.asp#09.38",
+      "section_or_chapter": "AS 09.38"
+    },
+    {
+      "label": "Employment and Wages — Alaska Statutes (Final Paychecks, etc.)",
+      "url": "https://www.akleg.gov/basis/statutes.asp#23.05",
+      "section_or_chapter": "AS 23.05"
+    }
+  ],
+  "court_rules": [
+    {
+      "label": "Alaska District Court Civil Rule 12 — Small Claims",
+      "url": "https://courts.alaska.gov/rules/dciv.htm#12",
+      "rule_or_chapter": "Civil Rule 12"
+    },
+    {
+      "label": "Alaska Rules of Civil Procedure (general rules covering service, collection, etc.)",
+      "url": "https://courts.alaska.gov/rules/civ.htm",
+      "rule_or_chapter": "Alaska Rules of Civil Procedure"
+    }
+  ],
+  "forms_pages": [
+    {
+      "label": "Alaska Small Claims Forms Packets",
+      "url": "https://courts.alaska.gov/shc/smallclaims/forms.htm"
+    }
+  ],
+  "fee_schedules": [
+    {
+      "label": "Alaska State Court Filing Fees",
+      "url": "https://courts.alaska.gov/forms/cts-110.pdf"
+    }
+  ],
+  "service_rules": [
+    {
+      "label": "Service of Process — Alaska Rules of Civil Procedure, Rule 4",
+      "url": "https://courts.alaska.gov/rules/civ.htm#4"
+    }
+  ],
+  "appeal_rules": [
+    {
+      "label": "Appeals from District Court Small Claims — Alaska District Court Civil Rule 12(h)",
+      "url": "https://courts.alaska.gov/rules/dciv.htm#12h"
+    }
+  ],
+  "post_judgment_collection": [
+    {
+      "label": "Execution on Judgments — Alaska Rules of Civil Procedure, Rule 69",
+      "url": "https://courts.alaska.gov/rules/civ.htm#69"
+    },
+    {
+      "label": "Alaska Statutes — Execution Procedures and Exemptions",
+      "url": "https://www.akleg.gov/basis/statutes.asp#09.38",
+      "section_or_chapter": "AS 09.38"
+    }
+  ],
+  "consumer_protection_statutes": [
+    {
+      "label": "Alaska Consumer Protection Act (UDAP)",
+      "url": "https://www.akleg.gov/basis/statutes.asp#45.50.471"
+    },
+    {
+      "label": "Alaska Used Car and Lemon Law Provisions",
+      "url": "https://www.akleg.gov/basis/statutes.asp#45.45",
+      "section_or_chapter": "AS 45.45"
+    }
+  ],
+  "landlord_tenant_statutes": [
+    {
+      "label": "Alaska Uniform Residential Landlord and Tenant Act — Security Deposit Return",
+      "url": "https://www.akleg.gov/basis/statutes.asp#34.03.070",
+      "section_or_chapter": "AS 34.03.070"
+    },
+    {
+      "label": "Alaska Uniform Residential Landlord and Tenant Act — Prohibited Practices (illegal lockout, etc.)",
+      "url": "https://www.akleg.gov/basis/statutes.asp#34.03.300",
+      "section_or_chapter": "AS 34.03.300"
+    }
+  ],
+  "wage_and_employment_statutes": [
+    {
+      "label": "Alaska Final Paycheck Law — AS 23.05.140",
+      "url": "https://www.akleg.gov/basis/statutes.asp#23.05.140",
+      "section_or_chapter": "AS 23.05.140"
+    }
+  ],
+  "civil_remedies_statutes": [
+    {
+      "label": "Civil Remedies and Damages (Fraud, Civil Theft, Fee Shifting) — Alaska Statutes",
+      "url": "https://www.akleg.gov/basis/statutes.asp#09.68",
+      "section_or_chapter": "AS 09.68"
+    }
+  ],
+  "county_specific": [],
+  "notes": "Alaska uses a unified District Court system for small claims; there are no county-specific small-claims courts.",
+  "_meta": {
+    "state": "Alaska",
+    "slug": "alaska",
+    "model": "gpt-4.1",
+    "response_id": "resp_0f1b0cef4c9b08e20069f088d4c40c8195982e096699540a92",
+    "generated_at": "2026-04-28T10:16:02.746Z",
+    "usage": {
+      "input_tokens": 2104,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 1384,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 3488
+    }
+  }
+}

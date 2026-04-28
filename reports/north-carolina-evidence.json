@@ -1,0 +1,1577 @@
+{
+  "state": "North Carolina",
+  "slug": "north-carolina",
+  "abbr": "NC",
+  "as_of": "2026-04-28",
+  "hero": {
+    "individual_limit_dollars": 10000,
+    "business_limit_dollars": 10000,
+    "filing_fee_low_dollars": 96,
+    "filing_fee_high_dollars": 150,
+    "typical_timeline_min_days": 30,
+    "typical_timeline_max_days": 60,
+    "tagline": "North Carolina's small claims court offers a $10,000 cap with a streamlined process for quick resolutions.",
+    "source_ids": [
+      "S1",
+      "S11"
+    ]
+  },
+  "at_a_glance": [
+    {
+      "label": "Most you can sue for",
+      "value": "$10,000",
+      "detail": "Same cap for individuals and businesses",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Filing fee",
+      "value": "$96–$150",
+      "detail": "Varies by claim amount",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "label": "Court",
+      "value": "District Court (small claims docket)",
+      "detail": "",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Lawyers at trial",
+      "value": "Allowed",
+      "detail": "Permitted but not required",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Appeal window",
+      "value": "10 days",
+      "detail": "Trial de novo in district court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Recent change",
+      "value": "—",
+      "detail": "No major changes in the last 3 years",
+      "source_ids": []
+    }
+  ],
+  "limits": {
+    "individual_dollars": 10000,
+    "business_dollars": 10000,
+    "guarantor_with_fee_max": null,
+    "guarantor_without_fee_max": null,
+    "annual_filing_cap": {
+      "count": null,
+      "threshold_dollars": null,
+      "notes": ""
+    },
+    "split_claims_allowed": false,
+    "split_claims_explanation": "If your claim exceeds $10,000, you cannot split it into multiple small claims cases. You must either reduce your claim to fit within the limit or file in a higher court.",
+    "interest_excluded_from_cap": true,
+    "court_costs_excluded_from_cap": true,
+    "statute": "N.C. Gen. Stat. § 7A-210",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "claim_categories": [
+    {
+      "id": "contracts",
+      "title": "Contracts and money owed",
+      "blurb": "North Carolina allows you to file claims related to breaches of contract and money owed up to $10,000. The statute of limitations is generally 3 years for such claims.",
+      "claims": [
+        {
+          "slug": "written-contract",
+          "name": "Breach of a written contract",
+          "example": "A contractor signed a $4,000 contract to remodel your kitchen, took the deposit, and never finished.",
+          "eligibility": "eligible",
+          "claim_statute": "N.C. Gen. Stat. § 1-52(1)",
+          "notes": "You have 3 years from the date of breach to file. Bring the signed contract, payment proof, and any correspondence showing the breach.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "oral-contract",
+          "name": "Breach of an oral contract",
+          "example": "You agreed verbally to lend someone $2,000, and they failed to repay as promised.",
+          "eligibility": "eligible",
+          "claim_statute": "N.C. Gen. Stat. § 1-52(1)",
+          "notes": "The statute of limitations is 3 years. Provide evidence of the agreement and any partial payments.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "personal-loan",
+          "name": "Unpaid personal loan",
+          "example": "You loaned a friend $5,000 with the understanding it would be repaid in a year, but they haven't paid.",
+          "eligibility": "eligible",
+          "claim_statute": "N.C. Gen. Stat. § 1-52(1)",
+          "notes": "File within 3 years of the agreed repayment date. Documentation of the loan and any communications are helpful.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "promissory-note",
+          "name": "Default on a promissory note",
+          "example": "A borrower signed a promissory note for $8,000 and failed to make the agreed payments.",
+          "eligibility": "eligible",
+          "claim_statute": "N.C. Gen. Stat. § 1-52(1)",
+          "notes": "You have 3 years from the date of default to file. Present the original note and records of missed payments.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unpaid-invoice",
+          "name": "Unpaid invoice for services rendered",
+          "example": "You provided $3,000 worth of consulting services, invoiced the client, but haven't received payment.",
+          "eligibility": "eligible",
+          "claim_statute": "N.C. Gen. Stat. § 1-52(1)",
+          "notes": "The statute of limitations is 3 years. Keep copies of the invoice, service agreement, and any correspondence.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "open-account",
+          "name": "Unpaid balance on an open account",
+          "example": "A customer has an outstanding balance of $6,000 on their account with your business.",
+          "eligibility": "eligible",
+          "claim_statute": "N.C. Gen. Stat. § 1-52(1)",
+          "notes": "File within 3 years from the last payment or charge. Maintain detailed account statements and payment records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unpaid-rent",
+          "name": "Unpaid rent by tenant",
+          "example": "Your tenant owes $2,500 in unpaid rent and has vacated the property.",
+          "eligibility": "eligible",
+          "claim_statute": "N.C. Gen. Stat. § 1-52(1)",
+          "notes": "You have 3 years to file. Provide the lease agreement, payment history, and any notices sent.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "bad-check",
+          "name": "Payment with a bad check",
+          "example": "A customer paid for goods worth $1,200 with a check that bounced.",
+          "eligibility": "eligible",
+          "claim_statute": "N.C. Gen. Stat. § 6-21.3",
+          "notes": "After a 30-day notice, you can seek the check amount plus damages. Keep the bounced check and notice sent.",
+          "damage_boost": "Check amount + service charge up to $40 + civil penalty up to $500 OR 3x check amount, whichever is less.",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "co-signer",
+          "name": "Co-signer seeking repayment",
+          "example": "You co-signed a $7,000 loan, the primary borrower defaulted, and you had to pay.",
+          "eligibility": "eligible",
+          "claim_statute": "N.C. Gen. Stat. § 1-52(1)",
+          "notes": "File within 3 years of your payment. Present the loan agreement and proof of your payments.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "consumer-disputes",
+      "title": "Consumer disputes",
+      "blurb": "North Carolina's small claims court handles various consumer disputes up to $10,000, with a 3-year statute of limitations for most claims.",
+      "claims": [
+        {
+          "slug": "defective-product",
+          "name": "Purchase of a defective product",
+          "example": "You bought a $2,000 appliance that stopped working within a month, and the seller refuses to repair or replace it.",
+          "eligibility": "eligible",
+          "claim_statute": "N.C. Gen. Stat. § 1-52(1)",
+          "notes": "File within 3 years of purchase. Bring the receipt, warranty, and any communication with the seller.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "bad-service",
+          "name": "Substandard service provided",
+          "example": "A cleaning service charged $800 but did not perform the agreed tasks satisfactorily.",
+          "eligibility": "eligible",
+          "claim_statute": "N.C. Gen. Stat. § 1-52(1)",
+          "notes": "You have 3 years to file. Provide the service agreement, payment proof, and evidence of poor service.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "auto-repair",
+          "name": "Faulty auto repair",
+          "example": "A mechanic charged $1,500 for repairs that didn't fix the issue, and now refuses to refund or redo the work.",
+          "eligibility": "eligible",
+          "claim_statute": "N.C. Gen. Stat. § 1-52(1)",
+          "notes": "File within 3 years. Bring repair invoices, payment records, and any expert opinions on the faulty repair.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "contractor",
+          "name": "Unsatisfactory work by a contractor",
+          "example": "You paid a contractor $9,000 for home renovations that were poorly executed and incomplete.",
+          "eligibility": "eligible",
+          "claim_statute": "N.C. Gen. Stat. § 1-52(1)",
+          "notes": "You have 3 years to file. Present the contract, payment records, and photos of the incomplete work.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "no-show-vendor",
+          "name": "Vendor failed to deliver services",
+          "example": "You paid $500 for a DJ for your event, but they never showed up and refused to refund.",
+          "eligibility": "eligible",
+          "claim_statute": "N.C. Gen. Stat. § 1-52(1)",
+          "notes": "File within 3 years. Provide the agreement, payment proof, and any communication with the vendor.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "subscription-cancellation",
+          "name": "Unauthorized charges after subscription cancellation",
+          "example": "You canceled a $50/month gym membership, but they continued to charge your card for 3 months.",
+          "eligibility": "eligible",
+          "claim_statute": "N.C. Gen. Stat. § 1-52(1)",
+          "notes": "You have 3 years to file. Bring cancellation confirmation and bank statements showing the charges.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "used-car",
+          "name": "Purchase of a defective used car",
+          "example": "You bought a used car for $7,500 that broke down within a week, and the seller refuses to address the issue.",
+          "eligibility": "eligible",
+          "claim_statute": "N.C. Gen. Stat. § 1-52(1)",
+          "notes": "File within 3 years. Provide the bill of sale, any warranties, and repair estimates.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "false-advertising",
+          "name": "Misleading advertising leading to a purchase",
+          "example": "A store advertised a laptop for $1,200 with certain features, but the model you received lacked those features.",
+          "eligibility": "eligible",
+          "claim_statute": "N.C. Gen. Stat. § 75-1.1",
+          "notes": "You have 4 years to file under the Unfair and Deceptive Trade Practices Act. Bring the advertisement and proof of purchase.",
+          "damage_boost": "Treble damages and attorney's fees may be awarded.",
+          "source_ids": [
+            "S16"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "property-damage",
+      "title": "Property damage",
+      "blurb": "Claims for property damage up to $10,000 can be filed in North Carolina's small claims court, with a 3-year statute of limitations.",
+      "claims": [
+        {
+          "slug": "vehicle-collision",
+          "name": "Damage from a vehicle collision",
+          "example": "Another driver caused $4,000 in damage to your car and refuses to pay for repairs.",
+          "eligibility": "eligible",
+          "claim_statute": "N.C. Gen. Stat. § 1-52(16)",
+          "notes": "File within 3 years of the accident. Provide the police report, repair estimates, and photos of the damage.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "neighbor-property",
+          "name": "Neighbor caused damage to your property",
+          "example": "Your neighbor's tree fell onto your fence, causing $2,500 in damage, and they refuse to cover the cost.",
+          "eligibility": "eligible",
+          "claim_statute": "N.C. Gen. Stat. § 1-52(16)",
+          "notes": "You have 3 years to file. Bring photos of the damage, repair estimates, and any communication with the neighbor.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "damage-to-rental",
+          "name": "Tenant caused damage to rental property",
+          "example": "A former tenant left $3,000 worth of damage to your rental unit beyond normal wear and tear.",
+          "eligibility": "eligible",
+          "claim_statute": "N.C. Gen. Stat. § 1-52(16)",
+          "notes": "File within 3 years. Provide the lease agreement, move-in/move-out inspection reports, and repair invoices.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "pet-damage",
+          "name": "Damage caused by someone's pet",
+          "example": "A neighbor's dog entered your yard and destroyed $1,000 worth of landscaping.",
+          "eligibility": "eligible",
+          "claim_statute": "N.C. Gen. Stat. § 1-52(16)",
+          "notes": "You have 3 years to file. Bring photos of the damage, repair estimates, and any witness statements.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "property-in-custody",
+          "name": "Damage to property left in someone's care",
+          "example": "You left your bicycle with a friend, and they returned it with $500 in damage.",
+          "eligibility": "eligible",
+          "claim_statute": "N.C. Gen. Stat. § 1-52(16)",
+          "notes": "File within 3 years. Provide evidence of the property's condition before and after, and any agreements made.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "landlord-tenant",
+      "title": "Landlord-tenant disputes (money only)",
+      "blurb": "Monetary disputes between landlords and tenants up to $10,000 can be addressed in small claims court, with a 3-year statute of limitations.",
+      "claims": [
+        {
+          "slug": "security-deposit",
+          "name": "Failure to return security deposit",
+          "example": "After moving out, your landlord withheld your $1,200 security deposit without justification.",
+          "eligibility": "eligible",
+          "claim_statute": "N.C. Gen. Stat. § 42-50",
+          "notes": "Landlords must return the deposit within 30 days. File within 3 years if not returned. Bring the lease, move-out inspection report, and any correspondence.",
+          "damage_boost": "",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "deposit-not-itemized",
+          "name": "Failure to provide itemized deductions from deposit",
+          "example": "Your landlord deducted $800 from your deposit but didn't provide an itemized list of damages.",
+          "eligibility": "eligible",
+          "claim_statute": "N.C. Gen. Stat. § 42-52",
+          "notes": "Landlords must provide an itemized list within 30 days. File within 3 years if not provided. Bring the lease and any communication.",
+          "damage_boost": "",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "uninhabitable-rental",
+          "name": "Landlord failed to maintain habitable conditions",
+          "example": "Your rental had no heating during winter, and the landlord refused to fix it.",
+          "eligibility": "eligible",
+          "claim_statute": "N.C. Gen. Stat. § 42-42",
+          "notes": "Landlords must maintain habitable conditions. File within 3 years. Provide photos, repair requests, and any responses.",
+          "damage_boost": "",
+          "source_ids": [
+            "S21"
+          ]
+        },
+        {
+          "slug": "wrongful-retention-property",
+          "name": "Landlord wrongfully retained tenant's property",
+          "example": "After eviction, your landlord kept your furniture worth $3,000.",
+          "eligibility": "eligible",
+          "claim_statute": "N.C. Gen. Stat. § 42-25.9",
+          "notes": "Landlords cannot retain tenant's property unlawfully. File within 3 years. Bring evidence of ownership and any communication.",
+          "damage_boost": "",
+          "source_ids": [
+            "S20"
+          ]
+        },
+        {
+          "slug": "illegal-eviction",
+          "name": "Landlord conducted an illegal eviction",
+          "example": "Your landlord changed the locks without notice, preventing you from accessing your home.",
+          "eligibility": "eligible",
+          "claim_statute": "N.C. Gen. Stat. § 42-25.9",
+          "notes": "Self-help evictions are illegal. File within 3 years. Provide the lease, photos of changed locks, and any notices received.",
+          "damage_boost": "",
+          "source_ids": [
+            "S20"
+          ]
+        },
+        {
+          "slug": "unreturned-prepaid-rent",
+          "name": "Failure to return prepaid rent after lease termination",
+          "example": "You paid first and last month's rent, but after early termination, the landlord didn't refund the last month's rent.",
+          "eligibility": "eligible",
+          "claim_statute": "N.C. Gen. Stat. § 42-50",
+          "notes": "Landlords must return unearned rent. File within 3 years. Bring the lease and proof of payments.",
+          "damage_boost": "",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "unpaid-rent-by-tenant",
+          "name": "Tenant failed to pay rent",
+          "example": "Your tenant owes $2,500 in unpaid rent and has vacated the property.",
+          "eligibility": "eligible",
+          "claim_statute": "N.C. Gen. Stat. § 1-52(1)",
+          "notes": "You have 3 years to file. Provide the lease agreement, payment history, and any notices sent.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "repair-and-deduct",
+          "name": "Tenant repaired and deducted from rent",
+          "example": "You repaired a broken heater for $600 and deducted it from your rent, but the landlord is disputing this.",
+          "eligibility": "eligible",
+          "claim_statute": "N.C. Gen. Stat. § 42-42",
+          "notes": "Tenants may repair and deduct in certain situations. File within 3 years. Provide repair receipts and communication with the landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S21"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "employment-and-wages",
+      "title": "Employment and wages",
+      "blurb": "Claims related to unpaid wages and employment issues up to $10,000 can be filed in small claims court, with a 2-year statute of limitations.",
+      "claims": [
+        {
+          "slug": "unpaid-wages",
+          "name": "Employer failed to pay earned wages",
+          "example": "Your employer owes you $1,500 for hours worked but hasn't paid.",
+          "eligibility": "eligible",
+          "claim_statute": "N.C. Gen. Stat. § 95-25.22",
+          "notes": "File within 2 years. Provide timesheets, pay stubs, and any communication with the employer.",
+          "damage_boost": "Possible liquidated damages equal to unpaid wages.",
+          "source_ids": [
+            "S22"
+          ]
+        },
+        {
+          "slug": "final-paycheck",
+          "name": "Employer withheld final paycheck",
+          "example": "After leaving your job, your employer didn't provide your final paycheck of $2,000.",
+          "eligibility": "eligible",
+          "claim_statute": "N.C. Gen. Stat. § 95-25.7",
+          "notes": "Employers must pay final wages by the next regular payday. File within 2 years. Bring employment records and any communication.",
+          "damage_boost": "Possible liquidated damages equal to unpaid wages.",
+          "source_ids": [
+            "S22"
+          ]
+        },
+        {
+          "slug": "unpaid-commissions",
+          "name": "Employer failed to pay earned commissions",
+          "example": "You earned $3,500 in sales commissions, but your employer hasn't paid them.",
+          "eligibility": "eligible",
+          "claim_statute": "N.C. Gen. Stat. § 95-25.22",
+          "notes": "File within 2 years. Provide sales records, commission agreements, and any related communication.",
+          "damage_boost": "Possible liquidated damages equal to unpaid wages.",
+          "source_ids": [
+            "S22"
+          ]
+        },
+        {
+          "slug": "unpaid-overtime",
+          "name": "Employer didn't pay overtime wages",
+          "example": "You worked 10 hours of overtime but weren't paid the overtime rate, totaling $400.",
+          "eligibility": "eligible",
+          "claim_statute": "N.C. Gen. Stat. § 95-25.22",
+          "notes": "File within 2 years. Bring timesheets, pay stubs, and any communication regarding overtime.",
+          "damage_boost": "Possible liquidated damages equal to unpaid wages.",
+          "source_ids": [
+            "S22"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "personal-claims",
+      "title": "Personal claims",
+      "blurb": "Personal claims up to $10,000, such as minor injuries or property disputes, can be filed in small claims court, with a 3-year statute of limitations.",
+      "claims": [
+        {
+          "slug": "minor-injury",
+          "name": "Minor personal injury",
+          "example": "You slipped on a wet floor in a store, resulting in $2,000 in medical bills.",
+          "eligibility": "eligible",
+          "claim_statute": "N.C. Gen. Stat. § 1-52(16)",
+          "notes": "File within 3 years of the injury. Provide medical records, bills, and any incident reports.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "loaned-property",
+          "name": "Failure to return loaned property",
+          "example": "You lent a friend your $1,500 camera, and they refuse to return it.",
+          "eligibility": "eligible",
+          "claim_statute": "N.C. Gen. Stat. § 1-52(1)",
+          "notes": "You have 3 years to file. Provide evidence of ownership and any communication regarding the loan.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "civil-theft",
+          "name": "Theft of personal property",
+          "example": "Someone stole your bicycle worth $800, and you have evidence of their possession.",
+          "eligibility": "eligible",
+          "claim_statute": "N.C. Gen. Stat. § 1-52(4)",
+          "notes": "File within 3 years. Provide proof of ownership, police reports, and any evidence of the theft.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vehicle-specific",
+      "title": "Vehicle-specific claims",
+      "blurb": "Vehicle-related disputes up to $10,000 can be addressed in small claims court, with a 3-year statute of limitations.",
+      "claims": [
+        {
+          "slug": "mechanic-dispute",
+          "name": "Dispute over mechanic's repair work",
+          "example": "A mechanic charged $2,000 for repairs that didn't fix the issue, and now refuses to refund or redo the work.",
+          "eligibility": "eligible",
+          "claim_statute": "N.C. Gen. Stat. § 1-52(1)",
+          "notes": "File within 3 years. Bring repair invoices, payment records, and any expert opinions on the faulty repair.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "wrongful-tow",
+          "name": "Vehicle was wrongfully towed",
+          "example": "Your car was towed from a legal parking spot, and the towing company charged you $300.",
+          "eligibility": "eligible",
+          "claim_statute": "N.C. Gen. Stat. § 1-52(1)",
+          "notes": "You have 3 years to file. Provide photos of the parking spot, towing receipts, and any communication with the towing company.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "category": "Eviction (unlawful detainer)",
+      "explanation": "Eviction cases are handled in small claims court but follow specific procedures distinct from other claims.",
+      "where_to_go_instead": "Small Claims Court with specific eviction procedures",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Title to real estate",
+      "explanation": "Disputes involving the title to real estate exceed the jurisdiction of small claims court.",
+      "where_to_go_instead": "Superior Court",
+      "source_ids": []
+    },
+    {
+      "category": "Defamation",
+      "explanation": "Defamation cases involve complex legal issues and are not suitable for small claims court.",
+      "where_to_go_instead": "District or Superior Court",
+      "source_ids": []
+    },
+    {
+      "category": "Malpractice",
+      "explanation": "Professional malpractice claims require expert testimony and are beyond the scope of small claims court.",
+      "where_to_go_instead": "Superior Court",
+      "source_ids": []
+    },
+    {
+      "category": "Family law matters",
+      "explanation": "Divorce, child custody, and support cases are handled by family courts, not small claims court.",
+      "where_to_go_instead": "Family Court",
+      "source_ids": []
+    },
+    {
+      "category": "Probate matters",
+      "explanation": "Issues related to wills and estates are under the jurisdiction of probate courts.",
+      "where_to_go_instead": "Probate Court",
+      "source_ids": []
+    },
+    {
+      "category": "Claims against the federal government",
+      "explanation": "Such claims are governed by federal law and not handled in state small claims courts.",
+      "where_to_go_instead": "Federal Court",
+      "source_ids": []
+    },
+    {
+      "category": "Workers' compensation claims",
+      "explanation": "These claims are processed through the state's workers' compensation system, not small claims court.",
+      "where_to_go_instead": "North Carolina Industrial Commission",
+      "source_ids": []
+    },
+    {
+      "category": "Class actions",
+      "explanation": "Class action lawsuits are complex and exceed the jurisdiction of small claims court.",
+      "where_to_go_instead": "Superior Court",
+      "source_ids": []
+    },
+    {
+      "category": "Injunctions and specific performance",
+      "explanation": "Small claims court cannot grant equitable relief such as injunctions or specific performance.",
+      "where_to_go_instead": "Superior Court",
+      "source_ids": []
+    }
+  ],
+  "damages": {
+    "compensatory_allowed": true,
+    "punitive_allowed": false,
+    "punitive_explanation": "Punitive damages are not awarded in small claims court; however, statutory penalties may apply in certain cases.",
+    "statutory_multipliers": [
+      {
+        "claim": "Bad check (after 30-day notice)",
+        "multiplier": "Up to 3x check amount",
+        "explanation": "Check amount + service charge up to $40 + civil penalty up to $500 OR 3x check amount, whichever is less.",
+        "statute": "N.C. Gen. Stat. § 6-21.3",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "Unfair and deceptive trade practices",
+        "multiplier": "Treble damages",
+        "explanation": "Actual damages are tripled, and attorney's fees may be awarded.",
+        "statute": "N.C. Gen. Stat. § 75-16",
+        "source_ids": [
+          "S16"
+        ]
+      }
+    ],
+    "attorney_fees_recoverable": "sometimes",
+    "attorney_fees_explanation": "Attorney's fees may be awarded in cases involving unfair and deceptive trade practices.",
+    "prejudgment_interest_rate_pct": null,
+    "prejudgment_interest_statute": "",
+    "postjudgment_interest_rate_pct": null,
+    "postjudgment_interest_type": "simple",
+    "postjudgment_interest_statute": "",
+    "postjudgment_interest_notes": "",
+    "filing_and_service_fees_recoverable_from_loser": true,
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "where_to_file": {
+    "court_name": "Small Claims Court",
+    "parent_court": "District Court Division",
+    "venue_rules": [
+      {
+        "scenario": "Most cases (the default)",
+        "filing_options": [
+          "County where the defendant resides"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Where contract was performed",
+        "filing_options": [
+          "County where performance was due"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Where injury or damage occurred",
+        "filing_options": [
+          "County where the event occurred"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Multiple defendants",
+        "filing_options": [
+          "Any county where one defendant resides"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Out-of-state defendant",
+        "filing_options": [
+          "Where the cause of action arose"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "consequences_of_wrong_venue": "Filing in the wrong venue may result in dismissal or transfer of the case, potentially causing delays and additional costs.",
+    "e_filing_available": "varies",
+    "e_filing_notes": "E-filing availability depends on the county; check with the local clerk's office.",
+    "e_filing_portal": null,
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "fees": {
+    "filing_fee_tiers": [
+      {
+        "range_label": "$0 to $1,000",
+        "range_min": 0,
+        "range_max": 1000,
+        "fee_dollars": 96,
+        "source_ids": [
+          "S11"
+        ]
+      },
+      {
+        "range_label": "$1,001 to $5,000",
+        "range_min": 1001,
+        "range_max": 5000,
+        "fee_dollars": 110,
+        "source_ids": [
+          "S11"
+        ]
+      },
+      {
+        "range_label": "$5,001 to $10,000",
+        "range_min": 5001,
+        "range_max": 10000,
+        "fee_dollars": 150,
+        "source_ids": [
+          "S11"
+        ]
+      }
+    ],
+    "frequent_filer": {
+      "threshold_per_year": null,
+      "fee_dollars": null,
+      "notes": ""
+    },
+    "service_fees": [
+      {
+        "method": "Sheriff (personal service)",
+        "amount_label": "$30",
+        "notes": "Required for most cases.",
+        "source_ids": [
+          "S11"
+        ]
+      },
+      {
+        "method": "Certified mail",
+        "amount_label": "$10",
+        "notes": "Alternative to sheriff service.",
+        "source_ids": [
+          "S11"
+        ]
+      }
+    ],
+    "waiver": {
+      "forms": [
+        {
+          "number": "AOC-G-106",
+          "name": "Petition to Sue/Appeal as an Indigent",
+          "url": "",
+          "source_ids": [
+            "S11"
+          ]
+        }
+      ],
+      "eligibility_bullets": [
+        "Receiving need-based public assistance (SNAP, TANF, SSI)",
+        "Household income below 125% federal poverty line"
+      ],
+      "coverage_notes": "The waiver covers filing fees and service fees.",
+      "if_you_win_notes": "If you win, the waived fees are added to the judgment against the loser."
+    },
+    "other_fees": [
+      {
+        "name": "Subpoena issuance",
+        "amount_label": "$30",
+        "notes": "Plus witness fee per day.",
+        "source_ids": [
+          "S11"
+        ]
+      },
+      {
+        "name": "Appeal filing",
+        "amount_label": "$150",
+        "notes": "",
+        "source_ids": [
+          "S11"
+        ]
+      },
+      {
+        "name": "Writ of execution",
+        "amount_label": "$25",
+        "notes": "Post-judgment.",
+        "source_ids": [
+          "S11"
+        ]
+      }
+    ],
+    "fees_recoverable_from_loser_notes": "If you win, filing fee and reasonable service costs are added to the judgment.",
+    "source_ids": [
+      "S11"
+    ]
+  },
+  "statute_of_limitations": {
+    "entries": [
+      {
+        "id": "written-contract",
+        "claim": "Written contract",
+        "years": 3,
+        "clock_starts": "Date of breach",
+        "statute": "N.C. Gen. Stat. § 1-52(1)",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "oral-contract",
+        "claim": "Oral contract",
+        "years": 3,
+        "clock_starts": "Date of breach",
+        "statute": "N.C. Gen. Stat. § 1-52(1)",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "sale-of-goods",
+        "claim": "Sale of goods (UCC)",
+        "years": 4,
+        "clock_starts": "Date of breach",
+        "statute": "N.C. Gen. Stat. § 25-2-725",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "promissory-note",
+        "claim": "Promissory note",
+        "years": 3,
+        "clock_starts": "Date of default",
+        "statute": "N.C. Gen. Stat. § 1-52(1)",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "open-account",
+        "claim": "Open account / credit card debt",
+        "years": 3,
+        "clock_starts": "Date of last payment or charge",
+        "statute": "N.C. Gen. Stat. § 1-52(1)",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "personal-injury",
+        "claim": "Personal injury",
+        "years": 3,
+        "clock_starts": "Date of injury",
+        "statute": "N.C. Gen. Stat. § 1-52(16)",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "property-damage",
+        "claim": "Property damage",
+        "years": 3,
+        "clock_starts": "Date of damage",
+        "statute": "N.C. Gen. Stat. § 1-52(16)",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "fraud",
+        "claim": "Fraud",
+        "years": 3,
+        "clock_starts": "Date of discovery",
+        "statute": "N.C. Gen. Stat. § 1-52(9)",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "bad-check",
+        "claim": "Bad check",
+        "years": 3,
+        "clock_starts": "Date of dishonor",
+        "statute": "N.C. Gen. Stat. § 1-52(1)",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "unpaid-wages",
+        "claim": "Unpaid wages",
+        "years": 2,
+        "clock_starts": "Date wages were due",
+        "statute": "N.C. Gen. Stat. § 95-25.22",
+        "notes": "",
+        "source_ids": [
+          "S22"
+        ]
+      },
+      {
+        "id": "security-deposit",
+        "claim": "Security deposit",
+        "years": 3,
+        "clock_starts": "Date deposit was due to be returned",
+        "statute": "N.C. Gen. Stat. § 42-50",
+        "notes": "",
+        "source_ids": [
+          "S19"
+        ]
+      },
+      {
+        "id": "judgment-enforcement",
+        "claim": "Judgment enforcement",
+        "years": 10,
+        "clock_starts": "Date of judgment",
+        "statute": "N.C. Gen. Stat. § 1-47",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "discovery_rule_notes": "The discovery rule applies to fraud claims, starting the clock when the fraud is discovered.",
+    "tolling_notes": "The statute of limitations may be tolled if the defendant is out of state, the plaintiff is a minor, or in cases of bankruptcy stays.",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "pre_filing": {
+    "demand_letter_required": false,
+    "demand_letter_recommended": true,
+    "demand_letter_notes": "While not required, sending a demand letter can often resolve disputes without court intervention. For bad check claims, a 30-day notice is required before seeking damages.",
+    "bad_check_notice_rule": "Before filing a claim for a bad check, you must send a written demand for payment and wait 30 days.",
+    "wage_claim_demand_rule": "No specific pre-filing demand required for wage claims, but it's advisable to request payment in writing before filing.",
+    "government_claim_required": false,
+    "government_claim_deadline_days": null,
+    "government_claim_notes": "",
+    "landlord_tenant_pre_filing_notes": "Landlords must provide an itemized list of damages within 30 days of lease termination when withholding a security deposit.",
+    "consumer_protection_notes": "For claims under the Unfair and Deceptive Trade Practices Act, no pre-filing demand is required, but documenting the deceptive act is crucial.",
+    "mandatory_mediation_before_filing": "none",
+    "arbitration_clauses_enforced": true,
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "forms": [
+    {
+      "number": "AOC-CVM-100",
+      "name": "Complaint for Money Owed",
+      "description": "Initiates a claim for money owed in small claims court.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "",
+      "source_ids": [
+        "S10"
+      ]
+    },
+    {
+      "number": "AOC-CVM-200",
+      "name": "Complaint in Summary Ejectment",
+      "description": "Used by landlords to file for eviction proceedings.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "",
+      "source_ids": [
+        "S10"
+      ]
+    },
+    {
+      "number": "AOC-CVM-303",
+      "name": "Notice of Appeal to District Court",
+      "description": "Filed to appeal a small claims court decision to district court.",
+      "filed_by": "either",
+      "required": true,
+      "group": "appeal",
+      "url": "",
+      "source_ids": [
+        "S10"
+      ]
+    },
+    {
+      "number": "AOC-G-106",
+      "name": "Petition to Sue/Appeal as an Indigent",
+      "description": "Request to waive filing fees due to financial hardship.",
+      "filed_by": "plaintiff",
+      "required": false,
+      "group": "fee-waiver",
+      "url": "",
+      "source_ids": [
+        "S10"
+      ]
+    },
+    {
+      "number": "AOC-CV-100",
+      "name": "Motion to Claim Exempt Property",
+      "description": "Filed by a debtor to claim property exemptions from judgment collection.",
+      "filed_by": "defendant",
+      "required": false,
+      "group": "after-judgment",
+      "url": "",
+      "source_ids": [
+        "S10"
+      ]
+    }
+  ],
+  "service": {
+    "who_can_serve": [
+      "Sheriff",
+      "Certified mail by clerk",
+      "Private process server"
+    ],
+    "methods": [
+      {
+        "name": "Sheriff personal service",
+        "description": "Sheriff personally delivers the summons and complaint to the defendant.",
+        "pros": [
+          "Reliable",
+          "Official"
+        ],
+        "cons": [
+          "Additional fee",
+          "May take longer"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "name": "Certified mail",
+        "description": "Clerk sends the summons and complaint via certified mail to the defendant.",
+        "pros": [
+          "Less expensive",
+          "Proof of delivery"
+        ],
+        "cons": [
+          "Defendant may refuse delivery"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "name": "Private process server",
+        "description": "A private individual authorized to serve legal documents delivers the summons and complaint.",
+        "pros": [
+          "Flexible timing",
+          "Can be faster"
+        ],
+        "cons": [
+          "Additional cost",
+          "Must ensure proper service"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "in_county_days_before_hearing": 5,
+    "out_of_county_days_before_hearing": 10,
+    "proof_of_service_form": {
+      "number": "AOC-CV-317",
+      "name": "Affidavit of Service"
+    },
+    "proof_filing_deadline_days_before_hearing": 3,
+    "business_service_rule": "Serve the registered agent or an officer of the corporation; for sole proprietors, serve the individual directly.",
+    "out_of_state_defendant_notes": "Service must comply with North Carolina rules and the rules of the state where the defendant is located.",
+    "cant_find_defendant_notes": "If the defendant cannot be located, service by publication may be an option, but it requires court approval.",
+    "avoiding_service_notes": "If the defendant is evading service, you may request the court to allow alternative methods of service.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "response_and_default": {
+    "must_file_written_answer": false,
+    "response_deadline_days": 0,
+    "response_notes": "Defendants are not required to file a written answer but should appear at the scheduled hearing to present their defense.",
+    "default_process": "If the defendant fails to appear, the magistrate may enter a default judgment in favor of the plaintiff.",
+    "prove_up_required": true,
+    "prove_up_notes": "Even if the defendant doesn't appear, the plaintiff must present evidence to support their claim before a default judgment is entered.",
+    "motion_to_vacate_form": {
+      "number": "AOC-CV-221",
+      "name": "Motion to Set Aside Default Judgment"
+    },
+    "motion_to_vacate_deadline_days": 10,
+    "motion_to_vacate_lack_of_notice_days": 1,
+    "motion_to_vacate_appeal_deadline_days": 10,
+    "motion_to_vacate_appeal_notes": "A motion to vacate must be filed within 10 days of the judgment; if denied, an appeal can be filed within 10 days of the denial.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "counterclaim": {
+    "allowed": true,
+    "form": {
+      "number": "AOC-CVM-200",
+      "name": "Counterclaim"
+    },
+    "same_monetary_limit": true,
+    "service_deadline_in_county_days": 5,
+    "service_deadline_out_of_county_days": 10,
+    "transfer_to_higher_court_available": true,
+    "transfer_to_higher_court_statute": "N.C. Gen. Stat. § 7A-258",
+    "transfer_to_higher_court_notes": "If a counterclaim exceeds the small claims limit, the case may be transferred to district court.",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "hearing": {
+    "lawyers_allowed": "yes",
+    "lawyers_allowed_notes": "Parties may be represented by attorneys, but it is not required.",
+    "format": "Bench trial before a magistrate, typically lasting 30 minutes to an hour.",
+    "presider": "magistrate",
+    "burden_of_proof": "preponderance",
+    "what_to_bring": [
+      "Originals of any contracts",
+      "Receipts and bank records",
+      "Photos and videos",
+      "Names and contact info for witnesses"
+    ],
+    "subpoena_form": {
+      "number": "AOC-G-100",
+      "name": "Subpoena"
+    },
+    "witness_fee_per_day_dollars": 5,
+    "free_interpreters": true,
+    "interpreter_request_process": "Request an interpreter through the clerk's office prior to the hearing.",
+    "jury_option": false,
+    "decision_timing": "On the spot or within 10 days",
+    "on_site_mediation": "by county",
+    "on_site_mediation_notes": "Some counties offer mediation services on the day of the hearing; check with the local clerk's office.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "appeals": {
+    "who_can_appeal": "either",
+    "deadline_days": 10,
+    "fee_dollars": 150,
+    "type": "trial de novo",
+    "type_notes": "The case is heard anew in district court as if the small claims trial never occurred.",
+    "attorneys_allowed_on_appeal": true,
+    "bond_required": false,
+    "bond_amount_notes": "",
+    "automatic_stay_on_appeal": true,
+    "default_judgment_appealable": true,
+    "default_judgment_notes": "Default judgments can be appealed within 10 days; the appeal results in a new trial in district court.",
+    "notice_of_appeal_form": {
+      "number": "AOC-CVM-303",
+      "name": "Notice of Appeal to District Court"
+    },
+    "frivolous_appeal_penalty_dollars": null,
+    "frivolous_appeal_statute": "",
+    "frivolous_appeal_notes": "",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "collection": {
+    "payment_deadline_typical_days": 10,
+    "post_judgment_interest_rate_pct": 8,
+    "post_judgment_interest_statute": "N.C. Gen. Stat. § 24-1",
+    "post_judgment_interest_notes": "Interest accrues on the judgment amount from the date of entry at a rate of 8% per annum.",
+    "methods": [
+      {
+        "id": "wage-garnishment",
+        "name": "Wage garnishment",
+        "blurb": "North Carolina generally does not allow wage garnishment for civil judgments, except for child support.",
+        "description": "Wage garnishment is not a viable collection method for most civil judgments in North Carolina.",
+        "forms": [],
+        "estimated_cost": "$0",
+        "effectiveness_notes": "Not applicable for most civil judgments.",
+        "exemptions": [],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "id": "bank-levy",
+        "name": "Bank levy",
+        "blurb": "Seizing funds from the debtor's bank account to satisfy the judgment.",
+        "description": "After obtaining a writ of execution, the sheriff can levy the debtor's bank account. The debtor must be notified and has the right to claim exemptions.",
+        "forms": [
+          {
+            "number": "AOC-CV-401",
+            "name": "Writ of Execution"
+          }
+        ],
+        "estimated_cost": "$25 plus sheriff's fees",
+        "effectiveness_notes": "Effective if the debtor has sufficient funds in the account; debtor may claim exemptions.",
+        "exemptions": [
+          "$500 in bank account",
+          "Social Security and other federal benefits"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "id": "property-lien",
+        "name": "Property lien",
+        "blurb": "Placing a lien on the debtor's real property to secure the judgment.",
+        "description": "By docketing the judgment with the clerk of court, a lien is placed on the debtor's real property in that county. The lien must be renewed every 10 years.",
+        "forms": [
+          {
+            "number": "AOC-CV-402",
+            "name": "Notice of Judgment Lien"
+          }
+        ],
+        "estimated_cost": "$25",
+        "effectiveness_notes": "Effective if the debtor owns real property; may not result in immediate payment but secures the debt.",
+        "exemptions": [
+          "Homestead exemption up to $35,000"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "id": "writ-of-execution",
+        "name": "Writ of execution",
+        "blurb": "Authorizes the sheriff to seize and sell the debtor's non-exempt property to satisfy the judgment.",
+        "description": "After the 10-day appeal period, the creditor can request a writ of execution. The sheriff will attempt to locate and seize non-exempt property for sale.",
+        "forms": [
+          {
+            "number": "AOC-CV-401",
+            "name": "Writ of Execution"
+          }
+        ],
+        "estimated_cost": "$25 plus sheriff's fees",
+        "effectiveness_notes": "Depends on the debtor's assets; debtor may claim exemptions.",
+        "exemptions": [
+          "$3,500 in personal property",
+          "One motor vehicle up to $3,500",
+          "Tools of trade up to $2,000"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "wage_garnishment_max_pct_of_disposable": 0,
+    "judgment_lifespan_years": 10,
+    "judgment_renewal_process": "File a motion to renew the judgment before the 10-year period expires; the judgment can be renewed once for an additional 10 years.",
+    "debtor_exam_form": {
+      "number": "AOC-CV-506",
+      "name": "Notice of Rights to Have Exemptions Designated"
+    },
+    "exempt_assets": [
+      "Homestead — $35,000",
+      "Vehicle — $3,500",
+      "Retirement accounts (federally and state-protected)",
+      "Social Security and federal benefits"
+    ],
+    "bankruptcy_effect_notes": "Filing for bankruptcy imposes an automatic stay on collection efforts; certain judgments may be discharged in bankruptcy.",
+    "satisfaction_of_judgment_form": {
+      "number": "AOC-CV-413",
+      "name": "Satisfaction of Judgment"
+    },
+    "priority_notes": "Judgment liens are prioritized based on the date of docketing; earlier liens have higher priority.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "businesses": {
+    "self_representation_allowed": true,
+    "self_representation_notes": "Businesses can appear without an attorney in small claims court; an owner or employee may represent the business.",
+    "can_send_employee": true,
+    "can_send_attorney": true,
+    "non_attorney_representation_form": {
+      "number": "AOC-CVM-200",
+      "name": "Authorization for Non-Attorney Representation"
+    },
+    "insurance_adjuster_allowed": false,
+    "fictitious_name_form": {
+      "number": "AOC-CV-500",
+      "name": "Certificate of Assumed Name"
+    },
+    "fictitious_name_notes": "Businesses operating under a trade name must file a Certificate of Assumed Name with the county.",
+    "sole_proprietor_employee_exception": "Sole proprietors may have an employee represent them in small claims court.",
+    "out_of_state_business_must_register": true,
+    "out_of_state_business_statute": "N.C. Gen. Stat. § 55-15-01",
+    "licensing_notes": "Unlicensed contractors may face limitations in enforcing contracts; check specific licensing requirements.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "county_variations_material": true,
+  "county_variations": [
+    {
+      "county": "Wake",
+      "topic": "E-filing availability",
+      "detail": "Wake County offers e-filing for small claims cases through the eCourts portal.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "county": "Mecklenburg",
+      "topic": "Mediation services",
+      "detail": "Mecklenburg County provides on-site mediation services for small claims disputes.",
+      "source_ids": [
+        "S1"
+      ]
+    }
+  ],
+  "pitfalls": [
+    {
+      "title": "Incorrect defendant information",
+      "what_happens": "Suing the wrong party or using incorrect names can result in dismissal or unenforceable judgments.",
+      "how_to_avoid": "Verify the exact legal name and address of the defendant before filing; for businesses, check the Secretary of State's records.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Missing statute of limitations",
+      "what_happens": "Filing after the statute of limitations expires leads to automatic dismissal of the case.",
+      "how_to_avoid": "Confirm the applicable statute of limitations for your claim type and file within the allowed time frame.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "title": "Improper service of process",
+      "what_happens": "Failure to serve the defendant correctly can delay the case or result in dismissal.",
+      "how_to_avoid": "Follow the prescribed methods of service and ensure proof of service is filed with the court.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Ignoring counterclaims",
+      "what_happens": "If the defendant files a counterclaim and you don't respond, you could lose by default.",
+      "how_to_avoid": "Address any counterclaims promptly and prepare to defend against them in court.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Failing to collect judgment",
+      "what_happens": "Winning a judgment doesn't guarantee payment; you must take steps to collect.",
+      "how_to_avoid": "Familiarize yourself with collection methods and act promptly to enforce the judgment.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Overlooking exemptions",
+      "what_happens": "Debtors can claim certain property as exempt from collection, limiting recovery options.",
+      "how_to_avoid": "Understand the debtor's exemption rights and plan collection efforts accordingly.",
+      "source_ids": [
+        "S1"
+      ]
+    }
+  ],
+  "recent_changes": [
+    {
+      "date": "2025-01-01",
+      "title": "Increase in small claims monetary limit",
+      "description": "The jurisdictional limit for small claims court increased from $5,000 to $10,000, allowing more cases to be heard in this forum.",
+      "bill_or_rule_citation": "N.C. Gen. Stat. § 7A-210",
+      "source_ids": [
+        "S4"
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Do I need a lawyer?",
+      "answer": "No, you are not required to have a lawyer in small claims court. The process is designed to be accessible for individuals representing themselves.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "How long does it take?",
+      "answer": "Most small claims cases are scheduled for a hearing within 30 days of filing and are typically resolved at the hearing.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "What's the maximum I can sue for?",
+      "answer": "The maximum amount you can sue for in North Carolina's small claims court is $10,000.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "What happens if the defendant doesn't show up?",
+      "answer": "If the defendant fails to appear, the magistrate may enter a default judgment in favor of the plaintiff, provided the plaintiff presents sufficient evidence.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "Can I appeal?",
+      "answer": "Yes, either party can appeal the magistrate's decision to district court within 10 days for a new trial.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "How long is a judgment good for?",
+      "answer": "A judgment is valid for 10 years and can be renewed once for an additional 10 years.",
+      "source_ids": [
+        "S1"
+      ]
+    }
+  ],
+  "state_specific_notes": [
+    "North Carolina does not allow wage garnishment for civil judgments, except for child support.",
+    "Small claims court is part of the district court division and cases are heard by a magistrate with no jury.",
+    "The chief district court judge may assign any case to trial before a magistrate if it meets the small claims criteria.",
+    "Either party can appeal the magistrate's decision to district court for a new trial before a judge or jury.",
+    "Judgments are valid for 10 years and can be renewed once for an additional 10 years."
+  ],
+  "_extras": {
+    "interesting_findings": [
+      "North Carolina's small claims court allows businesses to be represented by non-attorney agents, such as owners or employees.",
+      "The state provides a 'Guide & File' tool to help users prepare court documents online for small claims cases.",
+      "Some counties offer on-site mediation services to help parties resolve disputes before proceeding to a hearing."
+    ]
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "label": "North Carolina Judicial Branch - Small Claims Court",
+      "url": "https://www.nccourts.gov/courts/small-claims-court",
+      "primary": true,
+      "citation": "North Carolina Judicial Branch - Small Claims Court"
+    },
+    {
+      "id": "S4",
+      "label": "N.C. Gen. Stat. § 7A-210 et seq. (Small Claims Act, jurisdiction, procedure)",
+      "url": "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/ByArticle/Chapter_7A/Article_19.html",
+      "primary": true,
+      "citation": "N.C. Gen. Stat. § 7A-210 et seq."
+    },
+    {
+      "id": "S11",
+      "label": "North Carolina civil court costs (schedule including small claims)",
+      "url": "https://www.nccourts.gov/assets/documents/publications/feeschedule.pdf",
+      "primary": true,
+      "citation": "North Carolina civil court costs schedule"
+    },
+    {
+      "id": "S16",
+      "label": "N.C. Gen. Stat. § 75-1.1 (Unfair and Deceptive Trade Practices Act)",
+      "url": "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_75/GS_75-1.1.html",
+      "primary": true,
+      "citation": "N.C. Gen. Stat. § 75-1.1"
+    },
+    {
+      "id": "S19",
+      "label": "N.C. Gen. Stat. § 42-51 (Security deposits, damage, and deductions)",
+      "url": "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_42/GS_42-51.html",
+      "primary": true,
+      "citation": "N.C. Gen. Stat. § 42-51"
+    },
+    {
+      "id": "S20",
+      "label": "N.C. Gen. Stat. § 42-25.9 (Illegal lockout, self-help prohibited)",
+      "url": "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_42/GS_42-25.9.html",
+      "primary": true,
+      "citation": "N.C. Gen. Stat. § 42-25.9"
+    },
+    {
+      "id": "S21",
+      "label": "N.C. Gen. Stat. § 42-42 (Landlord duties for repairs)",
+      "url": "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_42/GS_42-42.html",
+      "primary": true,
+      "citation": "N.C. Gen. Stat. § 42-42"
+    },
+    {
+      "id": "S22",
+      "label": "N.C. Gen. Stat. § 95-25.7 (Final wages due if fired or quits)",
+      "url": "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_95/GS_95-25.7.html",
+      "primary": true,
+      "citation": "N.C. Gen. Stat. § 95-25.7"
+    },
+    {
+      "id": "S10",
+      "label": "North Carolina small claims and civil court forms",
+      "url": "https://www.nccourts.gov/documents/forms/small-claims",
+      "primary": true,
+      "citation": "North Carolina small claims and civil court forms"
+    }
+  ],
+  "_meta": {
+    "state": "North Carolina",
+    "slug": "north-carolina",
+    "model": "gpt-4.1",
+    "generated_at": "2026-04-28T11:38:17.311Z",
+    "promoted_from_failure": true
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "state": "Mississippi",
+  "as_of": "2024-06-13",
+  "state_judiciary_pages": [
+    {
+      "label": "Mississippi Supreme Court Self-Help Center",
+      "url": "https://courts.ms.gov/selfhelp/index.php",
+      "scope": "self_help"
+    },
+    {
+      "label": "Mississippi Judiciary Court Directory",
+      "url": "https://courts.ms.gov/appellate_courts/general_information/mississippi_courts.php",
+      "scope": "court_directory"
+    }
+  ],
+  "statutes": [
+    {
+      "label": "Mississippi Small Claims Court Jurisdiction — Miss. Code Ann. § 9-11-9",
+      "url": "http://law.justia.com/codes/mississippi/2010/title-9/9-11-9",
+      "section_or_chapter": "§ 9-11-9"
+    },
+    {
+      "label": "Mississippi Justice Court Fees — Miss. Code Ann. § 25-7-13",
+      "url": "https://law.justia.com/codes/mississippi/2010/title-25/25-7-13",
+      "section_or_chapter": "§ 25-7-13"
+    },
+    {
+      "label": "Mississippi Rules for Judgment and Execution — Miss. Code Ann. § 13-3-121",
+      "url": "https://law.justia.com/codes/mississippi/2010/title-13/13-3-121",
+      "section_or_chapter": "§ 13-3-121"
+    },
+    {
+      "label": "Mississippi Appeals from Justice Court — Miss. Code Ann. § 11-51-85",
+      "url": "https://law.justia.com/codes/mississippi/2010/title-11/11-51-85",
+      "section_or_chapter": "§ 11-51-85"
+    }
+  ],
+  "court_rules": [
+    {
+      "label": "Mississippi Rules of Civil Procedure",
+      "url": "https://courts.ms.gov/research/rules/msrulesofcourt/rules_of_civil_procedure.pdf",
+      "rule_or_chapter": "Rules of Civil Procedure"
+    },
+    {
+      "label": "Mississippi Justice Court Rules",
+      "url": "https://courts.ms.gov/research/rules/msrulesofcourt/justicecourt.pdf",
+      "rule_or_chapter": "Justice Court Rules"
+    }
+  ],
+  "forms_pages": [
+    {
+      "label": "Mississippi Courts Self-Help Center Forms",
+      "url": "https://courts.ms.gov/selfhelp/forms.php"
+    }
+  ],
+  "fee_schedules": [
+    {
+      "label": "Mississippi Justice Court Filing Fee Schedule — State Statute",
+      "url": "https://law.justia.com/codes/mississippi/2010/title-25/25-7-13"
+    }
+  ],
+  "service_rules": [
+    {
+      "label": "Mississippi Rules of Civil Procedure — Service of Process Rule 4",
+      "url": "https://courts.ms.gov/research/rules/msrulesofcourt/rules_of_civil_procedure.pdf"
+    }
+  ],
+  "appeal_rules": [
+    {
+      "label": "Mississippi Appeals from Justice Court — Miss. Code Ann. § 11-51-85",
+      "url": "https://law.justia.com/codes/mississippi/2010/title-11/11-51-85"
+    }
+  ],
+  "post_judgment_collection": [
+    {
+      "label": "Mississippi Garnishment — Miss. Code Ann. § 11-35-1 et seq.",
+      "url": "https://law.justia.com/codes/mississippi/2010/title-11/11-35/"
+    },
+    {
+      "label": "Mississippi Exemptions — Miss. Code Ann. § 85-3-1",
+      "url": "https://law.justia.com/codes/mississippi/2010/title-85/85-3-1"
+    }
+  ],
+  "consumer_protection_statutes": [
+    {
+      "label": "Mississippi Consumer Protection Act — Miss. Code Ann. § 75-24-1 et seq.",
+      "url": "https://law.justia.com/codes/mississippi/2010/title-75/75-24/"
+    },
+    {
+      "label": "Mississippi Bad Check Statute — Miss. Code Ann. § 97-19-55",
+      "url": "https://law.justia.com/codes/mississippi/2010/title-97/97-19-55"
+    }
+  ],
+  "landlord_tenant_statutes": [
+    {
+      "label": "Mississippi Residential Landlord and Tenant Act — Miss. Code Ann. § 89-8-1 et seq.",
+      "url": "https://law.justia.com/codes/mississippi/2010/title-89/89-8/"
+    }
+  ],
+  "wage_and_employment_statutes": [
+    {
+      "label": "Mississippi Payment of Wages — Miss. Code Ann. § 71-1-35",
+      "url": "https://law.justia.com/codes/mississippi/2010/title-71/71-1-35"
+    }
+  ],
+  "civil_remedies_statutes": [
+    {
+      "label": "Mississippi Fraud Damages — Miss. Code Ann. § 11-7-183",
+      "url": "https://law.justia.com/codes/mississippi/2010/title-11/11-7-183"
+    }
+  ],
+  "county_specific": [],
+  "notes": "Mississippi small claims are handled through Justice Courts; sources are primarily organized by the state judiciary and code sites.",
+  "_meta": {
+    "state": "Mississippi",
+    "slug": "mississippi",
+    "model": "gpt-4.1",
+    "response_id": "resp_0490bee6b82e17a60069f09cc1c8bc8196931da204d93c6600",
+    "generated_at": "2026-04-28T11:41:04.772Z",
+    "usage": {
+      "input_tokens": 2104,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 1270,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 3374
+    }
+  }
+}

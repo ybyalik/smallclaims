@@ -1,0 +1,165 @@
+{
+  "state": "Kentucky",
+  "as_of": "2024-06-14",
+  "state_judiciary_pages": [
+    {
+      "label": "Kentucky Court of Justice Small Claims Handbook",
+      "url": "https://courts.ky.gov/resources/Publications/Handbooks/SmallClaimsHandbook.pdf",
+      "scope": "small_claims"
+    },
+    {
+      "label": "Kentucky Court of Justice — Small Claims Court Information",
+      "url": "https://courts.ky.gov/courts/Jefferson/Pages/smallclaims.aspx",
+      "scope": "small_claims"
+    },
+    {
+      "label": "Kentucky Court of Justice — District Court",
+      "url": "https://courts.ky.gov/courts/districtcourt/Pages/default.aspx",
+      "scope": "court_directory"
+    },
+    {
+      "label": "Kentucky Court of Justice — Court Rules and Procedures",
+      "url": "https://courts.ky.gov/courts/supreme/court-rules/Pages/default.aspx",
+      "scope": "court_directory"
+    }
+  ],
+  "statutes": [
+    {
+      "label": "Ky. Rev. Stat. § 24A.230 (Small Claims Jurisdiction and Procedure)",
+      "url": "https://apps.legislature.ky.gov/law/statutes/statute.aspx?id=411",
+      "section_or_chapter": "KRS § 24A.230"
+    },
+    {
+      "label": "Ky. Rev. Stat. § 24A.220 (District Court Jurisdiction)",
+      "url": "https://apps.legislature.ky.gov/law/statutes/statute.aspx?id=410",
+      "section_or_chapter": "KRS § 24A.220"
+    },
+    {
+      "label": "Ky. Rev. Stat. § 27A.060 (Fees for District Court Proceedings)",
+      "url": "https://apps.legislature.ky.gov/law/statutes/statute.aspx?id=29827",
+      "section_or_chapter": "KRS § 27A.060"
+    },
+    {
+      "label": "Ky. Rev. Stat. § 454.030 (Service of Summons)",
+      "url": "https://apps.legislature.ky.gov/law/statutes/statute.aspx?id=37008",
+      "section_or_chapter": "KRS § 454.030"
+    },
+    {
+      "label": "Ky. Rev. Stat. § 24A.340 (Appeals from Small Claims Court)",
+      "url": "https://apps.legislature.ky.gov/law/statutes/statute.aspx?id=414",
+      "section_or_chapter": "KRS § 24A.340"
+    },
+    {
+      "label": "Ky. Rev. Stat. § 425.501 (Garnishment and Execution on Judgment)",
+      "url": "https://apps.legislature.ky.gov/law/statutes/statute.aspx?id=37321",
+      "section_or_chapter": "KRS § 425.501"
+    }
+  ],
+  "court_rules": [
+    {
+      "label": "Kentucky Rules of Civil Procedure - Rule 4 (Service of Process)",
+      "url": "https://courts.ky.gov/courts/supreme/court-rules/Documents/Civil%20Rules%20eff%201-1-23.pdf",
+      "rule_or_chapter": "Rule 4"
+    },
+    {
+      "label": "Kentucky Rules of Civil Procedure - Rule 81 (Applicability to Small Claims)",
+      "url": "https://courts.ky.gov/courts/supreme/court-rules/Documents/Civil%20Rules%20eff%201-1-23.pdf",
+      "rule_or_chapter": "Rule 81"
+    },
+    {
+      "label": "Kentucky Small Claims Procedure Rules",
+      "url": "https://courts.ky.gov/courts/supreme/court-rules/Documents/Small%20Claims%20Procedures.pdf",
+      "rule_or_chapter": "Small Claims"
+    }
+  ],
+  "forms_pages": [
+    {
+      "label": "Kentucky Small Claims Forms (AOC-175, AOC-180, AOC-186, etc.)",
+      "url": "https://courts.ky.gov/resources/legalforms/Pages/smallclaimsforms.aspx"
+    }
+  ],
+  "fee_schedules": [
+    {
+      "label": "Kentucky District Court Fee Schedule",
+      "url": "https://courts.ky.gov/resources/Publications/LegalForms/LegalForms/Schedule-of-Court-Fees-2021.pdf"
+    }
+  ],
+  "service_rules": [
+    {
+      "label": "Service of Summons — Kentucky Rules of Civil Procedure Rule 4",
+      "url": "https://courts.ky.gov/courts/supreme/court-rules/Documents/Civil%20Rules%20eff%201-1-23.pdf"
+    }
+  ],
+  "appeal_rules": [
+    {
+      "label": "Kentucky Small Claims Appeals — KRS § 24A.340",
+      "url": "https://apps.legislature.ky.gov/law/statutes/statute.aspx?id=414"
+    }
+  ],
+  "post_judgment_collection": [
+    {
+      "label": "Garnishment and Execution on Judgment — KRS § 425.501",
+      "url": "https://apps.legislature.ky.gov/law/statutes/statute.aspx?id=37321"
+    },
+    {
+      "label": "Exemptions from Execution — KRS § 427.010",
+      "url": "https://apps.legislature.ky.gov/law/statutes/statute.aspx?id=21994"
+    }
+  ],
+  "consumer_protection_statutes": [
+    {
+      "label": "Kentucky Consumer Protection Act — KRS §§ 367.110–367.360",
+      "url": "https://apps.legislature.ky.gov/law/statutes/chapter.aspx?id=38578"
+    },
+    {
+      "label": "Kentucky Motor Vehicle Warranty Act (Lemon Law) — KRS § 367.840–367.870",
+      "url": "https://apps.legislature.ky.gov/law/statutes/chapter.aspx?id=38583"
+    },
+    {
+      "label": "Kentucky Civil Penalty for Bad Checks — KRS § 514.040",
+      "url": "https://apps.legislature.ky.gov/law/statutes/statute.aspx?id=22234"
+    }
+  ],
+  "landlord_tenant_statutes": [
+    {
+      "label": "Kentucky Uniform Residential Landlord and Tenant Act — KRS §§ 383.500–383.715",
+      "url": "https://apps.legislature.ky.gov/law/statutes/chapter.aspx?id=38712"
+    }
+  ],
+  "wage_and_employment_statutes": [
+    {
+      "label": "Final Wage Payment — KRS § 337.055",
+      "url": "https://apps.legislature.ky.gov/law/statutes/statute.aspx?id=38848"
+    },
+    {
+      "label": "Wage and Hour Laws — KRS Chapter 337",
+      "url": "https://apps.legislature.ky.gov/law/statutes/chapter.aspx?id=38807"
+    }
+  ],
+  "civil_remedies_statutes": [
+    {
+      "label": "Attorney Fees in Civil Actions — KRS § 453.040",
+      "url": "https://apps.legislature.ky.gov/law/statutes/statute.aspx?id=22184"
+    }
+  ],
+  "county_specific": [],
+  "notes": "Kentucky uses a unified district court system; small claims are under district courts statewide. All key rules and forms are provided by the state judiciary.",
+  "_meta": {
+    "state": "Kentucky",
+    "slug": "kentucky",
+    "model": "gpt-4.1",
+    "response_id": "resp_00ae4bb844b680ed0069f089dcbac88194b8aa78b61a1a519e",
+    "generated_at": "2026-04-28T10:20:46.528Z",
+    "usage": {
+      "input_tokens": 2104,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 1724,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 3828
+    }
+  }
+}

@@ -1,0 +1,1542 @@
+{
+  "state": "District Of Columbia",
+  "slug": "district-of-columbia",
+  "abbr": "DC",
+  "as_of": "2026-04-28",
+  "hero": {
+    "individual_limit_dollars": 10000,
+    "business_limit_dollars": 10000,
+    "filing_fee_low_dollars": 45,
+    "filing_fee_high_dollars": 45,
+    "typical_timeline_min_days": 30,
+    "typical_timeline_max_days": 90,
+    "tagline": "Standard $10,000 cap and simplified procedures for quick resolution.",
+    "source_ids": [
+      "S1",
+      "S14"
+    ]
+  },
+  "at_a_glance": [
+    {
+      "label": "Most you can sue for",
+      "value": "$10,000",
+      "detail": "Same cap for individuals and businesses",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Filing fee",
+      "value": "$45",
+      "detail": "Flat fee for all claims",
+      "source_ids": [
+        "S14"
+      ]
+    },
+    {
+      "label": "Court",
+      "value": "Superior Court of the District of Columbia, Small Claims and Conciliation Branch",
+      "detail": "",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Lawyers at trial",
+      "value": "Allowed",
+      "detail": "Permitted but not required; businesses must have a lawyer",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Appeal window",
+      "value": "3 days",
+      "detail": "Must file a motion for a new trial within 3 days",
+      "source_ids": [
+        "S12"
+      ]
+    },
+    {
+      "label": "Recent change",
+      "value": "Jurisdictional limit increased to $10,000",
+      "detail": "Effective January 3, 2017",
+      "source_ids": [
+        "S1"
+      ]
+    }
+  ],
+  "limits": {
+    "individual_dollars": 10000,
+    "business_dollars": 10000,
+    "guarantor_with_fee_max": null,
+    "guarantor_without_fee_max": null,
+    "annual_filing_cap": {
+      "count": null,
+      "threshold_dollars": null,
+      "notes": ""
+    },
+    "split_claims_allowed": false,
+    "split_claims_explanation": "If your claim exceeds $10,000, you cannot split it into multiple claims to fit within the small claims limit. You must either waive the excess amount or file in the Civil Division.",
+    "interest_excluded_from_cap": true,
+    "court_costs_excluded_from_cap": true,
+    "statute": "D.C. Code § 11–1321",
+    "source_ids": [
+      "S5"
+    ]
+  },
+  "claim_categories": [
+    {
+      "id": "contracts",
+      "title": "Contracts and money owed",
+      "blurb": "The statute of limitations for written contracts is 3 years in D.C. Ensure you file within this period to pursue your claim.",
+      "claims": [
+        {
+          "slug": "written-contract",
+          "name": "Breach of a written contract",
+          "example": "A contractor signed a $4,000 contract to remodel your kitchen, took the deposit, and never finished.",
+          "eligibility": "eligible",
+          "claim_statute": "D.C. Code § 12-301",
+          "notes": "3-year deadline from breach. Bring the signed contract, payment proof, and any correspondence showing the breach.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "oral-contract",
+          "name": "Breach of an oral contract",
+          "example": "You agreed verbally to lend a friend $2,000, and they failed to repay as promised.",
+          "eligibility": "eligible",
+          "claim_statute": "D.C. Code § 12-301",
+          "notes": "3-year deadline from breach. Gather any evidence of the agreement, such as emails or witness statements.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "personal-loan",
+          "name": "Unpaid personal loan",
+          "example": "You loaned $5,000 to a colleague with the understanding it would be repaid in six months, but they haven't paid.",
+          "eligibility": "eligible",
+          "claim_statute": "D.C. Code § 12-301",
+          "notes": "3-year deadline from breach. Provide documentation of the loan agreement and any repayment attempts.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "promissory-note",
+          "name": "Default on a promissory note",
+          "example": "A borrower signed a promissory note to repay $8,000 over a year but stopped making payments after two months.",
+          "eligibility": "eligible",
+          "claim_statute": "D.C. Code § 12-301",
+          "notes": "3-year deadline from breach. Present the original promissory note and records of payments made.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "unpaid-invoice",
+          "name": "Unpaid invoice for services rendered",
+          "example": "You provided consulting services worth $3,500, invoiced the client, but they haven't paid.",
+          "eligibility": "eligible",
+          "claim_statute": "D.C. Code § 12-301",
+          "notes": "3-year deadline from breach. Include the invoice, service agreement, and any communication regarding payment.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "open-account",
+          "name": "Unpaid balance on an open account",
+          "example": "A customer has an outstanding balance of $6,000 on their account with your business and refuses to pay.",
+          "eligibility": "eligible",
+          "claim_statute": "D.C. Code § 12-301",
+          "notes": "3-year deadline from breach. Provide account statements and records of transactions.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "unpaid-rent",
+          "name": "Unpaid rent by tenant",
+          "example": "Your tenant owes $9,000 in unpaid rent over several months and has vacated the property.",
+          "eligibility": "eligible",
+          "claim_statute": "D.C. Code § 12-301",
+          "notes": "3-year deadline from breach. Present the lease agreement and records of missed payments.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "bad-check",
+          "name": "Payment with a bad check",
+          "example": "A client paid a $2,500 invoice with a check that bounced due to insufficient funds.",
+          "eligibility": "eligible",
+          "claim_statute": "D.C. Code § 28-3152",
+          "notes": "Provide the bounced check, bank notice, and any communication with the issuer.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "co-signer",
+          "name": "Co-signer liability for defaulted loan",
+          "example": "You co-signed a $7,000 loan for a friend who defaulted, and now the lender is seeking payment from you.",
+          "eligibility": "eligible",
+          "claim_statute": "D.C. Code § 12-301",
+          "notes": "3-year deadline from breach. Bring the loan agreement and any correspondence from the lender.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "consumer-disputes",
+      "title": "Consumer disputes",
+      "blurb": "D.C. provides a 3-year statute of limitations for most consumer disputes. Ensure you file within this period to seek redress.",
+      "claims": [
+        {
+          "slug": "defective-product",
+          "name": "Purchase of a defective product",
+          "example": "You bought a $1,200 appliance that stopped working within a month, and the seller refuses to replace or repair it.",
+          "eligibility": "eligible",
+          "claim_statute": "D.C. Code § 28-3904",
+          "notes": "3-year deadline from purchase. Provide the purchase receipt, warranty, and any communication with the seller.",
+          "damage_boost": "",
+          "source_ids": [
+            "S7"
+          ]
+        },
+        {
+          "slug": "bad-service",
+          "name": "Substandard service provided",
+          "example": "A cleaning service charged you $500 but left your home in poor condition, and they refuse to refund or redo the job.",
+          "eligibility": "eligible",
+          "claim_statute": "D.C. Code § 28-3904",
+          "notes": "3-year deadline from service date. Include the service agreement, photos of the work, and correspondence.",
+          "damage_boost": "",
+          "source_ids": [
+            "S7"
+          ]
+        },
+        {
+          "slug": "auto-repair",
+          "name": "Faulty auto repair",
+          "example": "A mechanic charged $2,000 for repairs that didn't fix the issue, and now refuses to refund or correct the work.",
+          "eligibility": "eligible",
+          "claim_statute": "D.C. Code § 28-3904",
+          "notes": "3-year deadline from repair date. Provide repair invoices, diagnostic reports, and any related communication.",
+          "damage_boost": "",
+          "source_ids": [
+            "S7"
+          ]
+        },
+        {
+          "slug": "contractor",
+          "name": "Unsatisfactory contractor work",
+          "example": "You paid a contractor $9,500 for home renovations that were left incomplete and poorly done.",
+          "eligibility": "eligible",
+          "claim_statute": "D.C. Code § 28-3904",
+          "notes": "3-year deadline from completion date. Present the contract, payment records, and photos of the work.",
+          "damage_boost": "",
+          "source_ids": [
+            "S7"
+          ]
+        },
+        {
+          "slug": "no-show-vendor",
+          "name": "Vendor failed to deliver services",
+          "example": "You hired a caterer for $3,000 who didn't show up on the event day and refuses to refund your payment.",
+          "eligibility": "eligible",
+          "claim_statute": "D.C. Code § 28-3904",
+          "notes": "3-year deadline from event date. Include the service agreement, payment proof, and any communication.",
+          "damage_boost": "",
+          "source_ids": [
+            "S7"
+          ]
+        },
+        {
+          "slug": "subscription-cancellation",
+          "name": "Unauthorized charges after subscription cancellation",
+          "example": "You canceled a $50/month gym membership, but they continued to charge your account for several months.",
+          "eligibility": "eligible",
+          "claim_statute": "D.C. Code § 28-3904",
+          "notes": "3-year deadline from first unauthorized charge. Provide cancellation confirmation and bank statements.",
+          "damage_boost": "",
+          "source_ids": [
+            "S7"
+          ]
+        },
+        {
+          "slug": "used-car",
+          "name": "Purchase of a defective used car",
+          "example": "You bought a used car for $8,000 that broke down within a week, and the dealer refuses to address the issue.",
+          "eligibility": "eligible",
+          "claim_statute": "D.C. Code § 28-3904",
+          "notes": "3-year deadline from purchase. Present the sales contract, vehicle history, and repair estimates.",
+          "damage_boost": "",
+          "source_ids": [
+            "S7"
+          ]
+        },
+        {
+          "slug": "false-advertising",
+          "name": "False advertising leading to financial loss",
+          "example": "A retailer advertised a product as 'new' for $1,500, but it was actually refurbished, and they refuse to refund.",
+          "eligibility": "eligible",
+          "claim_statute": "D.C. Code § 28-3904",
+          "notes": "3-year deadline from purchase. Include the advertisement, purchase receipt, and any correspondence.",
+          "damage_boost": "",
+          "source_ids": [
+            "S7"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "property-damage",
+      "title": "Property damage",
+      "blurb": "D.C. allows a 3-year statute of limitations for property damage claims. File promptly to seek compensation.",
+      "claims": [
+        {
+          "slug": "vehicle-collision",
+          "name": "Damage from a vehicle collision",
+          "example": "Another driver hit your parked car, causing $4,000 in damages, and refuses to pay for repairs.",
+          "eligibility": "eligible",
+          "claim_statute": "D.C. Code § 12-301",
+          "notes": "3-year deadline from accident date. Provide police reports, repair estimates, and photos.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "neighbor-property",
+          "name": "Neighbor's actions damaged your property",
+          "example": "A neighbor's tree fell onto your fence, causing $2,500 in damages, and they refuse to cover the costs.",
+          "eligibility": "eligible",
+          "claim_statute": "D.C. Code § 12-301",
+          "notes": "3-year deadline from damage date. Include photos, repair estimates, and any communication.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "damage-to-rental",
+          "name": "Tenant caused damage to rental property",
+          "example": "A former tenant left $7,000 worth of damage to your rental unit beyond normal wear and tear.",
+          "eligibility": "eligible",
+          "claim_statute": "D.C. Code § 12-301",
+          "notes": "3-year deadline from discovery. Present the lease agreement, move-in/out inspections, and repair invoices.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "pet-damage",
+          "name": "Damage caused by someone else's pet",
+          "example": "A neighbor's dog entered your yard and destroyed $1,200 worth of landscaping.",
+          "eligibility": "eligible",
+          "claim_statute": "D.C. Code § 12-301",
+          "notes": "3-year deadline from incident. Provide photos, repair estimates, and any witness statements.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "property-in-custody",
+          "name": "Damage to property left in someone's care",
+          "example": "You left a $3,000 watch with a jeweler for repair, and they returned it with scratches and refuse to compensate.",
+          "eligibility": "eligible",
+          "claim_statute": "D.C. Code § 12-301",
+          "notes": "3-year deadline from retrieval. Include service agreements, photos, and any related communication.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "landlord-tenant",
+      "title": "Landlord-tenant disputes (money only)",
+      "blurb": "D.C. provides a 3-year statute of limitations for monetary landlord-tenant disputes. Eviction cases are handled separately.",
+      "claims": [
+        {
+          "slug": "security-deposit",
+          "name": "Failure to return security deposit",
+          "example": "Your landlord withheld your $2,000 security deposit without providing an itemized list of damages.",
+          "eligibility": "eligible",
+          "claim_statute": "D.C. Code § 42-3502.17",
+          "notes": "3-year deadline from lease termination. Provide the lease agreement and any correspondence.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "deposit-not-itemized",
+          "name": "Security deposit deductions not itemized",
+          "example": "Your landlord deducted $1,500 from your deposit without specifying the reasons.",
+          "eligibility": "eligible",
+          "claim_statute": "D.C. Code § 42-3502.17",
+          "notes": "3-year deadline from lease termination. Include the lease agreement and any communication.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "uninhabitable-rental",
+          "name": "Rent paid for uninhabitable conditions",
+          "example": "You paid $3,000 in rent while your apartment had no heat for two months.",
+          "eligibility": "eligible",
+          "claim_statute": "D.C. Code § 42-3502.17",
+          "notes": "3-year deadline from issue. Provide photos, repair requests, and rent payment records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "wrongful-retention-property",
+          "name": "Landlord retained personal property after move-out",
+          "example": "After moving out, your landlord kept your $1,200 bicycle and refuses to return it.",
+          "eligibility": "eligible",
+          "claim_statute": "D.C. Code § 42-3502.17",
+          "notes": "3-year deadline from move-out. Include move-out documentation and any communication.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "illegal-eviction",
+          "name": "Landlord conducted an illegal eviction",
+          "example": "Your landlord changed the locks without notice, preventing you from accessing your $5,000 worth of belongings.",
+          "eligibility": "eligible",
+          "claim_statute": "D.C. Code § 42-3502.17",
+          "notes": "3-year deadline from eviction. Provide lease agreement, communication, and police reports if applicable.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "unreturned-prepaid-rent",
+          "name": "Landlord failed to return prepaid rent after early termination",
+          "example": "You paid first and last month's rent totaling $4,000, terminated early, and the landlord refuses to refund the unused portion.",
+          "eligibility": "eligible",
+          "claim_statute": "D.C. Code § 42-3502.17",
+          "notes": "3-year deadline from termination. Include lease agreement and payment records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "unpaid-rent-by-tenant",
+          "name": "Tenant failed to pay rent owed",
+          "example": "Your tenant owes $9,000 in unpaid rent over several months and has vacated the property.",
+          "eligibility": "eligible",
+          "claim_statute": "D.C. Code § 12-301",
+          "notes": "3-year deadline from breach. Present the lease agreement and records of missed payments.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "repair-and-deduct",
+          "name": "Tenant deducted repair costs from rent without proper notice",
+          "example": "Your tenant deducted $1,500 from rent for repairs they made without notifying you.",
+          "eligibility": "eligible",
+          "claim_statute": "D.C. Code § 42-3502.17",
+          "notes": "3-year deadline from deduction. Provide lease agreement and communication records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "employment-wages",
+      "title": "Employment and wage disputes",
+      "blurb": "D.C. enforces a 3-year statute of limitations for wage-related claims. Timely filing is crucial to recover owed wages.",
+      "claims": [
+        {
+          "slug": "unpaid-wages",
+          "name": "Employer failed to pay earned wages",
+          "example": "Your employer owes you $2,000 for hours worked but hasn't issued payment.",
+          "eligibility": "eligible",
+          "claim_statute": "D.C. Code § 32-1308",
+          "notes": "3-year deadline from due date. Provide timesheets and any communication with the employer.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "final-paycheck",
+          "name": "Employer withheld final paycheck",
+          "example": "After resigning, your employer refused to pay your final paycheck of $1,500.",
+          "eligibility": "eligible",
+          "claim_statute": "D.C. Code § 32-1308",
+          "notes": "3-year deadline from due date. Include resignation letter and payroll records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "unpaid-commissions",
+          "name": "Employer failed to pay earned commissions",
+          "example": "You earned $3,000 in sales commissions, but your employer hasn't paid them.",
+          "eligibility": "eligible",
+          "claim_statute": "D.C. Code § 32-1308",
+          "notes": "3-year deadline from due date. Provide sales records and commission agreements.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "unpaid-overtime",
+          "name": "Employer didn't pay overtime wages",
+          "example": "You worked 20 hours of overtime worth $800, but your employer paid only regular wages.",
+          "eligibility": "eligible",
+          "claim_statute": "D.C. Code § 32-1308",
+          "notes": "3-year deadline from due date. Include timesheets and payroll records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "personal-claims",
+      "title": "Personal claims",
+      "blurb": "D.C. allows a 3-year statute of limitations for personal claims. Ensure timely filing to seek redress.",
+      "claims": [
+        {
+          "slug": "minor-injury",
+          "name": "Minor personal injury",
+          "example": "You slipped on a wet floor in a store, resulting in $2,500 in medical bills.",
+          "eligibility": "eligible",
+          "claim_statute": "D.C. Code § 12-301",
+          "notes": "3-year deadline from injury date. Provide medical records and incident reports.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "loaned-property",
+          "name": "Failure to return loaned property",
+          "example": "You loaned a friend your $1,200 camera, and they refuse to return it.",
+          "eligibility": "eligible",
+          "claim_statute": "D.C. Code § 12-301",
+          "notes": "3-year deadline from demand for return. Include proof of ownership and communication records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        {
+          "slug": "civil-theft",
+          "name": "Theft of personal property",
+          "example": "A neighbor took your $3,000 bicycle without permission and refuses to return it.",
+          "eligibility": "eligible",
+          "claim_statute": "D.C. Code § 12-301",
+          "notes": "3-year deadline from theft date. Provide police reports and proof of ownership.",
+          "damage_boost": "",
+          "source_ids": [
+            "S5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vehicle-specific",
+      "title": "Vehicle-specific disputes",
+      "blurb": "D.C. enforces a 3-year statute of limitations for vehicle-related claims. Prompt action is essential.",
+      "claims": [
+        {
+          "slug": "mechanic-dispute",
+          "name": "Dispute over mechanic's repair work",
+          "example": "A mechanic charged $2,000 for repairs that didn't fix the issue, and now refuses to refund or correct the work.",
+          "eligibility": "eligible",
+          "claim_statute": "D.C. Code § 28-3904",
+          "notes": "3-year deadline from repair date. Provide repair invoices, diagnostic reports, and any related communication.",
+          "damage_boost": "",
+          "source_ids": [
+            "S7"
+          ]
+        },
+        {
+          "slug": "wrongful-tow",
+          "name": "Vehicle was wrongfully towed",
+          "example": "Your car was towed from a legal parking spot, and you had to pay $500 to retrieve it.",
+          "eligibility": "eligible",
+          "claim_statute": "D.C. Code § 28-3904",
+          "notes": "3-year deadline from tow date. Include tow receipts, photos of the parking spot, and any communication.",
+          "damage_boost": "",
+          "source_ids": [
+            "S7"
+          ]
+        }
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "category": "Eviction (unlawful detainer)",
+      "explanation": "Eviction cases are handled separately in the Landlord and Tenant Branch of the Superior Court.",
+      "where_to_go_instead": "Landlord and Tenant Branch of the Superior Court",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Title to real estate",
+      "explanation": "Cases involving disputes over the title to real estate are beyond the jurisdiction of the Small Claims Branch.",
+      "where_to_go_instead": "Civil Division of the Superior Court",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    {
+      "category": "Defamation",
+      "explanation": "Defamation cases typically involve complex legal issues and are not suitable for small claims court.",
+      "where_to_go_instead": "Civil Division of the Superior Court",
+      "source_ids": []
+    },
+    {
+      "category": "Malpractice",
+      "explanation": "Professional malpractice claims exceed the jurisdictional limit and complexity suitable for small claims court.",
+      "where_to_go_instead": "Civil Division of the Superior Court",
+      "source_ids": []
+    },
+    {
+      "category": "Family law and probate",
+      "explanation": "Matters such as divorce, child custody, and probate are handled by specialized divisions of the court.",
+      "where_to_go_instead": "Family Court or Probate Division of the Superior Court",
+      "source_ids": []
+    },
+    {
+      "category": "Federal claims",
+      "explanation": "Claims against the federal government are outside the jurisdiction of the D.C. Superior Court.",
+      "where_to_go_instead": "U.S. District Court for the District of Columbia",
+      "source_ids": []
+    },
+    {
+      "category": "Class actions",
+      "explanation": "Class action lawsuits are complex and exceed the procedural scope of small claims court.",
+      "where_to_go_instead": "Civil Division of the Superior Court",
+      "source_ids": []
+    },
+    {
+      "category": "Injunctions/specific performance",
+      "explanation": "Small claims court cannot issue injunctions or orders for specific performance.",
+      "where_to_go_instead": "Civil Division of the Superior Court",
+      "source_ids": []
+    },
+    {
+      "category": "Workers' compensation",
+      "explanation": "Workers' compensation claims are handled by the D.C. Department of Employment Services.",
+      "where_to_go_instead": "D.C. Department of Employment Services",
+      "source_ids": []
+    },
+    {
+      "category": "Mandatory-arbitration disputes",
+      "explanation": "Disputes subject to mandatory arbitration clauses are not suitable for small claims court.",
+      "where_to_go_instead": "Arbitration as specified in the contract",
+      "source_ids": []
+    },
+    {
+      "category": "Suing a deceased person",
+      "explanation": "Claims against deceased individuals must be filed against their estate in probate court.",
+      "where_to_go_instead": "Probate Division of the Superior Court",
+      "source_ids": []
+    }
+  ],
+  "damages": {
+    "compensatory_allowed": true,
+    "punitive_allowed": false,
+    "punitive_explanation": "Punitive damages are not awarded in small claims court; however, statutory penalties may apply in certain cases.",
+    "statutory_multipliers": [
+      {
+        "claim": "Bad check (after 30-day notice)",
+        "multiplier": "2x check amount",
+        "explanation": "Check amount plus service charge up to $25, or 2x check amount, whichever is greater.",
+        "statute": "D.C. Code § 28-3152",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "attorney_fees_recoverable": "sometimes",
+    "attorney_fees_explanation": "Attorney fees may be recoverable in cases where statutes provide for fee-shifting, such as consumer protection violations.",
+    "prejudgment_interest_rate_pct": null,
+    "prejudgment_interest_statute": "",
+    "postjudgment_interest_rate_pct": null,
+    "postjudgment_interest_type": "simple",
+    "postjudgment_interest_statute": "",
+    "postjudgment_interest_notes": "",
+    "filing_and_service_fees_recoverable_from_loser": true,
+    "source_ids": []
+  },
+  "where_to_file": {
+    "court_name": "Small Claims and Conciliation Branch of the Superior Court of the District of Columbia",
+    "parent_court": "Superior Court of the District of Columbia",
+    "venue_rules": [
+      {
+        "scenario": "Most cases (the default)",
+        "filing_options": [
+          "District where the defendant resides or where the cause of action arose"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Where contract was performed",
+        "filing_options": [
+          "District where performance was due"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Where injury or damage occurred",
+        "filing_options": [
+          "District where the event occurred"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Multiple defendants",
+        "filing_options": [
+          "Any district where one defendant resides"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Out-of-state defendant",
+        "filing_options": [
+          "Where the cause of action arose"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "consequences_of_wrong_venue": "Filing in the wrong venue may result in dismissal or transfer of the case, potentially causing delays and additional costs.",
+    "e_filing_available": "no",
+    "e_filing_notes": "E-filing is not currently available for small claims cases in D.C.",
+    "e_filing_portal": null,
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "fees": {
+    "filing_fee_tiers": [
+      {
+        "range_label": "$0 to $10,000",
+        "range_min": 0,
+        "range_max": 10000,
+        "fee_dollars": 45,
+        "source_ids": [
+          "S14"
+        ]
+      }
+    ],
+    "frequent_filer": {
+      "threshold_per_year": null,
+      "fee_dollars": null,
+      "notes": ""
+    },
+    "service_fees": [
+      {
+        "method": "Certified mail by clerk",
+        "amount_label": "$15",
+        "notes": "Service by certified mail handled by the clerk's office.",
+        "source_ids": [
+          "S15"
+        ]
+      },
+      {
+        "method": "Private process server",
+        "amount_label": "Varies",
+        "notes": "Fees depend on the process server's rates.",
+        "source_ids": [
+          "S15"
+        ]
+      }
+    ],
+    "waiver": {
+      "forms": [
+        {
+          "number": "Form 106",
+          "name": "Application to Proceed Without Prepayment of Costs",
+          "url": "",
+          "source_ids": [
+            "S13"
+          ]
+        }
+      ],
+      "eligibility_bullets": [
+        "Receiving need-based public assistance (SNAP, TANF, SSI)",
+        "Household income below 125% federal poverty line"
+      ],
+      "coverage_notes": "The waiver covers filing fees and service costs.",
+      "if_you_win_notes": "If you win, the waived fees are added to the judgment against the loser."
+    },
+    "other_fees": [
+      {
+        "name": "Jury demand",
+        "amount_label": "$75",
+        "notes": "Fee for requesting a jury trial.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "name": "Subpoena issuance",
+        "amount_label": "$10",
+        "notes": "Plus witness fee per day.",
+        "source_ids": [
+          "S14"
+        ]
+      },
+      {
+        "name": "Writ of execution",
+        "amount_label": "$20",
+        "notes": "Post-judgment enforcement.",
+        "source_ids": [
+          "S14"
+        ]
+      }
+    ],
+    "fees_recoverable_from_loser_notes": "If you win, filing fees and reasonable service costs are added to the judgment.",
+    "source_ids": [
+      "S14"
+    ]
+  },
+  "statute_of_limitations": {
+    "entries": [
+      {
+        "id": "written-contract",
+        "claim": "Written contract",
+        "years": 3,
+        "clock_starts": "Date of breach",
+        "statute": "D.C. Code § 12-301",
+        "notes": "Ensure to file within 3 years from the date the contract was breached.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "oral-contract",
+        "claim": "Oral contract",
+        "years": 3,
+        "clock_starts": "Date of breach",
+        "statute": "D.C. Code § 12-301",
+        "notes": "Oral agreements must be enforced within 3 years of the breach.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "sale-of-goods",
+        "claim": "Sale of goods (UCC)",
+        "years": 4,
+        "clock_starts": "Date of breach",
+        "statute": "D.C. Code § 28:2-725",
+        "notes": "Claims related to the sale of goods have a 4-year limitation period.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "promissory-note",
+        "claim": "Promissory note",
+        "years": 3,
+        "clock_starts": "Date of default",
+        "statute": "D.C. Code § 12-301",
+        "notes": "File within 3 years from the date of default on the note.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "open-account",
+        "claim": "Open account / credit card debt",
+        "years": 3,
+        "clock_starts": "Date of last payment or charge",
+        "statute": "D.C. Code § 12-301",
+        "notes": "Claims must be filed within 3 years from the last activity on the account.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "personal-injury",
+        "claim": "Personal injury",
+        "years": 3,
+        "clock_starts": "Date of injury",
+        "statute": "D.C. Code § 12-301",
+        "notes": "Personal injury claims have a 3-year statute of limitations.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "property-damage",
+        "claim": "Property damage",
+        "years": 3,
+        "clock_starts": "Date of damage",
+        "statute": "D.C. Code § 12-301",
+        "notes": "File within 3 years from the date the property was damaged.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "fraud",
+        "claim": "Fraud (note discovery rule)",
+        "years": 3,
+        "clock_starts": "Date of discovery",
+        "statute": "D.C. Code § 12-301",
+        "notes": "The clock starts when the fraud is discovered or reasonably should have been discovered.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "bad-check",
+        "claim": "Bad check",
+        "years": 3,
+        "clock_starts": "Date of dishonor",
+        "statute": "D.C. Code § 28-3152",
+        "notes": "Claims must be filed within 3 years from the date the check was dishonored.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "unpaid-wages",
+        "claim": "Unpaid wages",
+        "years": 3,
+        "clock_starts": "Date wages were due",
+        "statute": "D.C. Code § 32-1308",
+        "notes": "File within 3 years from the date the wages were due.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "security-deposit",
+        "claim": "Security deposit",
+        "years": 3,
+        "clock_starts": "Date of lease termination",
+        "statute": "D.C. Code § 42-3502.17",
+        "notes": "Claims related to security deposits must be filed within 3 years from lease termination.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "judgment-enforcement",
+        "claim": "Judgment enforcement",
+        "years": 12,
+        "clock_starts": "Date of judgment",
+        "statute": "D.C. Code § 15-101",
+        "notes": "Judgments can be enforced for up to 12 years from the date of entry.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "discovery_rule_notes": "The discovery rule applies to fraud claims, starting the limitation period when the fraud is discovered or reasonably should have been discovered.",
+    "tolling_notes": "The statute of limitations may be tolled if the defendant is out of the jurisdiction, the plaintiff is a minor, or in cases of bankruptcy.",
+    "source_ids": [
+      "S5"
+    ]
+  },
+  "pre_filing": {
+    "demand_letter_required": false,
+    "demand_letter_recommended": true,
+    "demand_letter_notes": "While not required, sending a demand letter can facilitate settlement and demonstrate good faith before filing.",
+    "bad_check_notice_rule": "For bad check claims, a 30-day written notice demanding payment is required before filing.",
+    "wage_claim_demand_rule": "For unpaid wage claims, a written demand is recommended to document the employer's refusal to pay.",
+    "government_claim_required": false,
+    "government_claim_deadline_days": null,
+    "government_claim_notes": "",
+    "landlord_tenant_pre_filing_notes": "Landlords must provide an itemized list of damages when withholding a security deposit; failure to do so may forfeit their right to retain any portion.",
+    "consumer_protection_notes": "Under the Consumer Protection Procedures Act, consumers may be entitled to treble damages and attorney's fees for violations.",
+    "mandatory_mediation_before_filing": "none",
+    "arbitration_clauses_enforced": true,
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "forms": [
+    {
+      "number": "Form 106",
+      "name": "Statement of Claim",
+      "description": "Initiates a small claims case by outlining the plaintiff's allegations and the amount sought.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "",
+      "source_ids": [
+        "S13"
+      ]
+    },
+    {
+      "number": "Form 107",
+      "name": "Information Sheet",
+      "description": "Provides additional details about the parties involved in the case.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "",
+      "source_ids": [
+        "S13"
+      ]
+    },
+    {
+      "number": "Form 108",
+      "name": "Application to Proceed Without Prepayment of Costs",
+      "description": "Requests a waiver of filing and service fees due to financial hardship.",
+      "filed_by": "plaintiff",
+      "required": false,
+      "group": "fee-waiver",
+      "url": "",
+      "source_ids": [
+        "S13"
+      ]
+    },
+    {
+      "number": "Form 109",
+      "name": "Praecipe",
+      "description": "Notifies the court of actions such as settlement or dismissal.",
+      "filed_by": "either",
+      "required": false,
+      "group": "after-judgment",
+      "url": "",
+      "source_ids": [
+        "S13"
+      ]
+    },
+    {
+      "number": "Form 110",
+      "name": "Subpoena",
+      "description": "Commands a witness to appear in court or produce documents.",
+      "filed_by": "either",
+      "required": false,
+      "group": "hearing",
+      "url": "",
+      "source_ids": [
+        "S13"
+      ]
+    },
+    {
+      "number": "Form 111",
+      "name": "Writ of Execution",
+      "description": "Authorizes the seizure of a debtor's property to satisfy a judgment.",
+      "filed_by": "plaintiff",
+      "required": false,
+      "group": "after-judgment",
+      "url": "",
+      "source_ids": [
+        "S13"
+      ]
+    },
+    {
+      "number": "Form 112",
+      "name": "Notice of Appeal",
+      "description": "Initiates an appeal of the small claims court's decision.",
+      "filed_by": "either",
+      "required": false,
+      "group": "appeal",
+      "url": "",
+      "source_ids": [
+        "S13"
+      ]
+    }
+  ],
+  "service": {
+    "who_can_serve": [
+      "Clerk via certified mail",
+      "Private process server"
+    ],
+    "methods": [
+      {
+        "name": "Certified mail by clerk",
+        "description": "The clerk sends the summons and complaint to the defendant via certified mail.",
+        "pros": [
+          "Cost-effective",
+          "Handled by the court"
+        ],
+        "cons": [
+          "May be less reliable if defendant refuses delivery"
+        ],
+        "source_ids": [
+          "S15"
+        ]
+      },
+      {
+        "name": "Private process server",
+        "description": "A private individual delivers the summons and complaint to the defendant.",
+        "pros": [
+          "More reliable delivery",
+          "Can provide proof of service"
+        ],
+        "cons": [
+          "Additional cost"
+        ],
+        "source_ids": [
+          "S15"
+        ]
+      }
+    ],
+    "in_county_days_before_hearing": 7,
+    "out_of_county_days_before_hearing": 7,
+    "proof_of_service_form": {
+      "number": "Form 113",
+      "name": "Affidavit of Service"
+    },
+    "proof_filing_deadline_days_before_hearing": 5,
+    "business_service_rule": "Serve the registered agent or an officer of the corporation; for sole proprietors, serve the individual directly.",
+    "out_of_state_defendant_notes": "Service must comply with D.C. rules and the laws of the state where the defendant is located.",
+    "cant_find_defendant_notes": "If the defendant cannot be located, the court may allow service by publication as a last resort.",
+    "avoiding_service_notes": "If the defendant is evading service, document attempts and seek court permission for alternative methods.",
+    "source_ids": [
+      "S15"
+    ]
+  },
+  "response_and_default": {
+    "must_file_written_answer": false,
+    "response_deadline_days": 0,
+    "response_notes": "Defendants are not required to file a written answer; they can present their defense orally at the hearing.",
+    "default_process": "If the defendant fails to appear, the court may enter a default judgment in favor of the plaintiff.",
+    "prove_up_required": true,
+    "prove_up_notes": "Even if the defendant defaults, the plaintiff must provide evidence to support the claim amount.",
+    "motion_to_vacate_form": {
+      "number": "Form 114",
+      "name": "Motion to Vacate Default Judgment"
+    },
+    "motion_to_vacate_deadline_days": 7,
+    "motion_to_vacate_lack_of_notice_days": 180,
+    "motion_to_vacate_appeal_deadline_days": 3,
+    "motion_to_vacate_appeal_notes": "A motion for a new trial must be filed within 3 days of judgment to appeal a default judgment.",
+    "source_ids": [
+      "S12"
+    ]
+  },
+  "counterclaim": {
+    "allowed": true,
+    "form": {
+      "number": "Form 115",
+      "name": "Counterclaim"
+    },
+    "same_monetary_limit": true,
+    "service_deadline_in_county_days": 7,
+    "service_deadline_out_of_county_days": 7,
+    "transfer_to_higher_court_available": true,
+    "transfer_to_higher_court_statute": "D.C. Code § 11–1321",
+    "transfer_to_higher_court_notes": "If a counterclaim exceeds the small claims limit, the case may be transferred to the Civil Division.",
+    "source_ids": [
+      "S5"
+    ]
+  },
+  "hearing": {
+    "lawyers_allowed": "yes",
+    "lawyers_allowed_notes": "Parties may be represented by attorneys, but it is not required; businesses must have legal representation.",
+    "format": "Bench trial with simplified procedures; each side presents their case, and the judge makes a decision.",
+    "presider": "judge",
+    "burden_of_proof": "preponderance",
+    "what_to_bring": [
+      "Originals of any contracts",
+      "Receipts and bank records",
+      "Photos and videos",
+      "Names and contact info for witnesses"
+    ],
+    "subpoena_form": {
+      "number": "Form 110",
+      "name": "Subpoena"
+    },
+    "witness_fee_per_day_dollars": 40,
+    "free_interpreters": true,
+    "interpreter_request_process": "Request an interpreter through the court's Language Access Program prior to the hearing.",
+    "jury_option": true,
+    "decision_timing": "On the spot or mailed within a few weeks",
+    "on_site_mediation": "yes",
+    "on_site_mediation_notes": "Mediation services are available to help parties reach a settlement before trial.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "appeals": {
+    "who_can_appeal": "either",
+    "deadline_days": 3,
+    "fee_dollars": 75,
+    "type": "trial de novo",
+    "type_notes": "The case is retried as if it were new, with no deference to the small claims court's decision.",
+    "attorneys_allowed_on_appeal": true,
+    "bond_required": false,
+    "bond_amount_notes": "",
+    "automatic_stay_on_appeal": true,
+    "default_judgment_appealable": true,
+    "default_judgment_notes": "A motion for a new trial must be filed within 3 days to appeal a default judgment.",
+    "notice_of_appeal_form": {
+      "number": "Form 112",
+      "name": "Notice of Appeal"
+    },
+    "frivolous_appeal_penalty_dollars": null,
+    "frivolous_appeal_statute": "",
+    "frivolous_appeal_notes": "",
+    "source_ids": [
+      "S12"
+    ]
+  },
+  "collection": {
+    "payment_deadline_typical_days": 30,
+    "post_judgment_interest_rate_pct": 6,
+    "post_judgment_interest_statute": "D.C. Code § 28-3302",
+    "post_judgment_interest_notes": "Interest accrues on unpaid judgments at a rate of 6% per annum.",
+    "methods": [
+      {
+        "id": "wage-garnishment",
+        "name": "Wage garnishment",
+        "blurb": "Have a portion of the debtor's wages withheld until the judgment is paid.",
+        "description": "File a writ of garnishment with the court, serve the employer, and the employer withholds a portion of the debtor's wages to satisfy the judgment.",
+        "forms": [
+          {
+            "number": "Form 116",
+            "name": "Writ of Garnishment"
+          }
+        ],
+        "estimated_cost": "$20 plus service fees",
+        "effectiveness_notes": "Effective if the debtor is employed and earns above the exemption threshold.",
+        "exemptions": [
+          "75% of disposable earnings"
+        ],
+        "source_ids": [
+          "S18"
+        ]
+      },
+      {
+        "id": "bank-levy",
+        "name": "Bank levy",
+        "blurb": "Seize funds from the debtor's bank account to satisfy the judgment.",
+        "description": "Obtain a writ of attachment, serve the bank, and the bank freezes the debtor's account up to the judgment amount.",
+        "forms": [
+          {
+            "number": "Form 117",
+            "name": "Writ of Attachment"
+          }
+        ],
+        "estimated_cost": "$20 plus service fees",
+        "effectiveness_notes": "Effective if the debtor has sufficient funds in the account.",
+        "exemptions": [
+          "$850 of funds in the account"
+        ],
+        "source_ids": [
+          "S17"
+        ]
+      },
+      {
+        "id": "property-lien",
+        "name": "Property lien",
+        "blurb": "Place a lien on the debtor's real property, preventing its sale until the judgment is satisfied.",
+        "description": "File a judgment lien with the Recorder of Deeds, which attaches to the debtor's real property.",
+        "forms": [
+          {
+            "number": "Form 118",
+            "name": "Judgment Lien"
+          }
+        ],
+        "estimated_cost": "$20 plus recording fees",
+        "effectiveness_notes": "Effective if the debtor owns real property and intends to sell or refinance.",
+        "exemptions": [
+          "Homestead exemption up to $144,000"
+        ],
+        "source_ids": [
+          "S17"
+        ]
+      },
+      {
+        "id": "writ-of-execution",
+        "name": "Writ of execution",
+        "blurb": "Seize and sell the debtor's personal property to satisfy the judgment.",
+        "description": "Obtain a writ of execution, have the U.S. Marshal seize the debtor's property, and sell it at public auction.",
+        "forms": [
+          {
+            "number": "Form 111",
+            "name": "Writ of Execution"
+          }
+        ],
+        "estimated_cost": "$20 plus service and storage fees",
+        "effectiveness_notes": "Effective if the debtor owns valuable personal property.",
+        "exemptions": [
+          "Personal property up to $1,425"
+        ],
+        "source_ids": [
+          "S17"
+        ]
+      }
+    ],
+    "wage_garnishment_max_pct_of_disposable": 25,
+    "judgment_lifespan_years": 12,
+    "judgment_renewal_process": "File a motion to renew the judgment before the 12-year period expires; no additional fee required.",
+    "debtor_exam_form": {
+      "number": "Form 119",
+      "name": "Motion for Debtor Examination"
+    },
+    "exempt_assets": [
+      "Homestead — $144,000",
+      "Vehicle — $2,575",
+      "Retirement accounts (federally and/or state-protected)",
+      "Social Security and federal benefits"
+    ],
+    "bankruptcy_effect_notes": "Filing for bankruptcy imposes an automatic stay on collection efforts; certain judgments may be discharged in bankruptcy.",
+    "satisfaction_of_judgment_form": {
+      "number": "Form 120",
+      "name": "Satisfaction of Judgment"
+    },
+    "priority_notes": "Priority among multiple judgment creditors is generally determined by the order in which liens are recorded.",
+    "source_ids": [
+      "S17"
+    ]
+  },
+  "businesses": {
+    "self_representation_allowed": false,
+    "self_representation_notes": "Businesses must be represented by an attorney in small claims court.",
+    "can_send_employee": false,
+    "can_send_attorney": true,
+    "non_attorney_representation_form": {
+      "number": "",
+      "name": ""
+    },
+    "insurance_adjuster_allowed": false,
+    "fictitious_name_form": {
+      "number": "",
+      "name": ""
+    },
+    "fictitious_name_notes": "Businesses must use their legal entity name when filing or defending a claim.",
+    "sole_proprietor_employee_exception": "Sole proprietors may represent themselves but cannot send an employee in their place.",
+    "out_of_state_business_must_register": true,
+    "out_of_state_business_statute": "D.C. Code § 29-105.02",
+    "licensing_notes": "Unlicensed contractors may be barred from recovering fees for services requiring a license.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "county_variations_material": false,
+  "county_variations": [],
+  "pitfalls": [
+    {
+      "title": "Incorrect defendant information",
+      "what_happens": "Suing the wrong party or using incorrect names can result in dismissal or unenforceable judgments.",
+      "how_to_avoid": "Verify the exact legal name and address of the defendant before filing.",
+      "source_ids": []
+    },
+    {
+      "title": "Missing statute of limitations",
+      "what_happens": "Filing after the statute of limitations expires leads to automatic dismissal.",
+      "how_to_avoid": "Confirm the applicable statute of limitations for your claim type and file within the allowed period.",
+      "source_ids": []
+    },
+    {
+      "title": "Improper service of process",
+      "what_happens": "Failure to serve the defendant correctly can delay the case or lead to dismissal.",
+      "how_to_avoid": "Follow the court's rules for service of process precisely, using approved methods.",
+      "source_ids": []
+    },
+    {
+      "title": "Overlooking counterclaims",
+      "what_happens": "Defendants may file counterclaims that could offset or exceed your claim.",
+      "how_to_avoid": "Be prepared to address potential counterclaims and gather evidence to support your position.",
+      "source_ids": []
+    },
+    {
+      "title": "Inadequate evidence",
+      "what_happens": "Lack of sufficient evidence can result in losing the case.",
+      "how_to_avoid": "Collect and organize all relevant documents, photos, and witness statements before the hearing.",
+      "source_ids": []
+    },
+    {
+      "title": "Ignoring post-judgment procedures",
+      "what_happens": "Winning a judgment doesn't guarantee payment; failure to follow up can leave you unpaid.",
+      "how_to_avoid": "Learn about and utilize post-judgment collection methods to enforce the judgment.",
+      "source_ids": []
+    }
+  ],
+  "recent_changes": [
+    {
+      "date": "2017-01-03",
+      "title": "Increase in small claims jurisdictional limit",
+      "description": "The jurisdictional limit for small claims cases increased from $5,000 to $10,000, allowing more cases to be heard in the Small Claims Branch.",
+      "bill_or_rule_citation": "D.C. Code § 11–1321",
+      "source_ids": [
+        "S1"
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Do I need a lawyer?",
+      "answer": "No, individuals are not required to have a lawyer in small claims court; however, businesses must be represented by an attorney.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "How long does it take?",
+      "answer": "Small claims cases typically resolve within 30 to 90 days, depending on the complexity and court schedule.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "What's the maximum I can sue for?",
+      "answer": "The maximum amount you can sue for in D.C. small claims court is $10,000, excluding interest, attorney fees, and costs.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "What happens if the defendant doesn't show up?",
+      "answer": "If the defendant fails to appear, the court may enter a default judgment in favor of the plaintiff.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "Can I appeal?",
+      "answer": "Yes, either party can appeal a small claims decision by filing a motion for a new trial within 3 days of the judgment.",
+      "source_ids": [
+        "S12"
+      ]
+    },
+    {
+      "question": "How long is a judgment good for?",
+      "answer": "A judgment in D.C. is enforceable for 12 years from the date of entry and can be renewed before expiration.",
+      "source_ids": [
+        "S5"
+      ]
+    }
+  ],
+  "state_specific_notes": [
+    "D.C. small claims court has a jurisdictional limit of $10,000, excluding interest and costs.",
+    "Businesses must be represented by an attorney in small claims court.",
+    "The statute of limitations for most claims in D.C. is 3 years.",
+    "Eviction cases are handled separately in the Landlord and Tenant Branch.",
+    "D.C. allows for jury trials in small claims cases upon request."
+  ],
+  "_extras": {
+    "interesting_findings": [
+      "D.C. small claims court offers on-site mediation services to help parties settle disputes before trial.",
+      "The court provides free interpreter services upon request to ensure language access for all parties.",
+      "Filing fees in D.C. small claims court are relatively low, with a flat fee of $45 for all claims up to $10,000.",
+      "D.C. small claims court procedures are designed to be accessible to individuals without legal representation.",
+      "The increase in the jurisdictional limit to $10,000 in 2017 expanded access to the small claims process for more litigants."
+    ]
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "label": "DC Courts - Small Claims Information",
+      "url": "https://www.dccourts.gov/services/civil-matters/small-claims",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S5",
+      "label": "DC Code § 11-1321 (Small Claims and Conciliation Branch—Jurisdiction of actions and proceedings)",
+      "url": "https://code.dccouncil.us/us/dc/council/code/sections/11-1321.html",
+      "primary": true,
+      "citation": "D.C. Code § 11–1321"
+    },
+    {
+      "id": "S7",
+      "label": "DC Code § 28-3904 (Consumer Protection Procedures Act—Unlawful trade practices)",
+      "url": "https://code.dccouncil.us/us/dc/council/code/sections/28-3904.html",
+      "primary": true,
+      "citation": "D.C. Code § 28-3904"
+    },
+    {
+      "id": "S12",
+      "label": "Superior Court of the District of Columbia - Rules of the Small Claims and Conciliation Branch",
+      "url": "https://www.dccourts.gov/sites/default/files/2017-03/superior_court_rules_of_the_small_claims_and_conciliation_branch.pdf",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S13",
+      "label": "DC Courts - Small Claims Forms",
+      "url": "https://www.dccourts.gov/services/forms?title=Small+Claims",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S14",
+      "label": "DC Superior Court Civil Division Fee Schedule",
+      "url": "https://www.dccourts.gov/sites/default/files/2017-05/Fee-Schedule-Superior-Court.pdf",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S15",
+      "label": "Service of Process—Superior Court of the District of Columbia Rules of the Small Claims and Conciliation Branch, Rule 4",
+      "url": "https://www.dccourts.gov/sites/default/files/2017-03/superior_court_rules_of_the_small_claims_and_conciliation_branch.pdf",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S17",
+      "label": "Execution of Judgments—DC Code § 16-560",
+      "url": "https://code.dccouncil.us/us/dc/council/code/sections/16-560.html",
+      "primary": true,
+      "citation": "D.C. Code § 16-560"
+    },
+    {
+      "id": "S18",
+      "label": "Garnishment of Wages—DC Code § 16-542",
+      "url": "https://code.dccouncil.us/us/dc/council/code/sections/16-542.html",
+      "primary": true,
+      "citation": "D.C. Code § 16-542"
+    }
+  ],
+  "_meta": {
+    "state": "District Of Columbia",
+    "slug": "district-of-columbia",
+    "model": "gpt-4.1",
+    "generated_at": "2026-04-28T11:38:17.299Z",
+    "promoted_from_failure": true
+  }
+}

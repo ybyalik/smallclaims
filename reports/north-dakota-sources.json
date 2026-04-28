@@ -1,0 +1,158 @@
+{
+  "state": "North Dakota",
+  "as_of": "2024-06-11",
+  "state_judiciary_pages": [
+    {
+      "label": "North Dakota Courts - Small Claims How-To Guide",
+      "url": "https://www.ndcourts.gov/legal-self-help/small-claims",
+      "scope": "small_claims"
+    },
+    {
+      "label": "North Dakota Courts - Legal Self Help Center",
+      "url": "https://www.ndcourts.gov/legal-self-help",
+      "scope": "self_help"
+    },
+    {
+      "label": "North Dakota Courts - District Court Locations",
+      "url": "https://www.ndcourts.gov/court-locations/district-courts",
+      "scope": "court_directory"
+    },
+    {
+      "label": "North Dakota Courts - Filing Fees",
+      "url": "https://www.ndcourts.gov/legal-self-help/fees",
+      "scope": "fee_schedule"
+    }
+  ],
+  "statutes": [
+    {
+      "label": "N.D. Cent. Code § 27-08.1 (Small Claims Court)",
+      "url": "https://www.ndlegis.gov/cencode/t27c08_1.html",
+      "section_or_chapter": "§ 27-08.1"
+    },
+    {
+      "label": "N.D. Cent. Code § 32-09.1 (Enforcement of Judgments)",
+      "url": "https://www.ndlegis.gov/cencode/t32c09_1.html",
+      "section_or_chapter": "§ 32-09.1"
+    },
+    {
+      "label": "N.D. Cent. Code § 28-20 (Judgments)",
+      "url": "https://www.ndlegis.gov/cencode/t28c20.html",
+      "section_or_chapter": "§ 28-20"
+    },
+    {
+      "label": "N.D. Cent. Code § 51-15 (Consumer Fraud and Unlawful Credit Practices)",
+      "url": "https://www.ndlegis.gov/cencode/t51c15.html",
+      "section_or_chapter": "§ 51-15"
+    },
+    {
+      "label": "N.D. Cent. Code § 47-16 (Landlord and Tenant)",
+      "url": "https://www.ndlegis.gov/cencode/t47c16.html",
+      "section_or_chapter": "§ 47-16"
+    },
+    {
+      "label": "N.D. Cent. Code § 34-14 (Labor, Final Wages, Minimum Wage)",
+      "url": "https://www.ndlegis.gov/cencode/t34c14.html",
+      "section_or_chapter": "§ 34-14"
+    }
+  ],
+  "court_rules": [
+    {
+      "label": "North Dakota Rules of Court - Small Claims Procedure",
+      "url": "https://www.ndcourts.gov/legal-self-help/small-claims#rules",
+      "rule_or_chapter": "Small Claims Procedure"
+    },
+    {
+      "label": "North Dakota Rules of Civil Procedure",
+      "url": "https://www.ndcourts.gov/legal-resources/rules/ndrcivp",
+      "rule_or_chapter": "Rules of Civil Procedure"
+    }
+  ],
+  "forms_pages": [
+    {
+      "label": "North Dakota Small Claims Court Forms",
+      "url": "https://www.ndcourts.gov/legal-self-help/small-claims#forms"
+    }
+  ],
+  "fee_schedules": [
+    {
+      "label": "North Dakota Courts - Filing Fee Schedule",
+      "url": "https://www.ndcourts.gov/legal-self-help/fees"
+    }
+  ],
+  "service_rules": [
+    {
+      "label": "North Dakota Small Claims Service of Process",
+      "url": "https://www.ndcourts.gov/legal-self-help/small-claims#service"
+    },
+    {
+      "label": "North Dakota Rules of Civil Procedure - Rule 4 (Service of Process)",
+      "url": "https://www.ndcourts.gov/legal-resources/rules/ndrcivp/4",
+      "rule_or_chapter": "Rule 4"
+    }
+  ],
+  "appeal_rules": [
+    {
+      "label": "N.D. Cent. Code § 27-08.1-04 (Appeals from Small Claims Court)",
+      "url": "https://www.ndlegis.gov/cencode/t27c08_1.html",
+      "section_or_chapter": "§ 27-08.1-04"
+    }
+  ],
+  "post_judgment_collection": [
+    {
+      "label": "N.D. Cent. Code § 32-09.1 (Enforcement of Judgments - Garnishment and Execution)",
+      "url": "https://www.ndlegis.gov/cencode/t32c09_1.html"
+    },
+    {
+      "label": "N.D. Cent. Code § 28-21 (Exemptions from Process)",
+      "url": "https://www.ndlegis.gov/cencode/t28c21.html"
+    }
+  ],
+  "consumer_protection_statutes": [
+    {
+      "label": "N.D. Cent. Code § 51-15 (Consumer Fraud and Unlawful Credit Practices)",
+      "url": "https://www.ndlegis.gov/cencode/t51c15.html"
+    },
+    {
+      "label": "N.D. Cent. Code § 6-08-16 (Bad Checks - Civil Penalties)",
+      "url": "https://www.ndlegis.gov/cencode/t06c08.html"
+    }
+  ],
+  "landlord_tenant_statutes": [
+    {
+      "label": "N.D. Cent. Code § 47-16 (Landlord and Tenant: Residential and Nonresidential)",
+      "url": "https://www.ndlegis.gov/cencode/t47c16.html"
+    }
+  ],
+  "wage_and_employment_statutes": [
+    {
+      "label": "N.D. Cent. Code § 34-14-03 (Payment of Wages upon Separation)",
+      "url": "https://www.ndlegis.gov/cencode/t34c14.html"
+    }
+  ],
+  "civil_remedies_statutes": [
+    {
+      "label": "N.D. Cent. Code § 32-03-23 (Attorney Fee Shifting for Wrongful Actions)",
+      "url": "https://www.ndlegis.gov/cencode/t32c03.html"
+    }
+  ],
+  "county_specific": [],
+  "notes": "North Dakota hosts nearly all relevant small-claims resources and statutes on the combined judicial and legislative portals. Small claims are governed by a streamlined procedure distinct from general civil actions.",
+  "_meta": {
+    "state": "North Dakota",
+    "slug": "north-dakota",
+    "model": "gpt-4.1",
+    "response_id": "resp_0a49a6df3b16ee890069f08ae4f1008195859a05fc54980e26",
+    "generated_at": "2026-04-28T10:24:48.110Z",
+    "usage": {
+      "input_tokens": 2105,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 1453,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 3558
+    }
+  }
+}

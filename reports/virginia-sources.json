@@ -1,0 +1,151 @@
+{
+  "state": "Virginia",
+  "as_of": "2024-06-10",
+  "state_judiciary_pages": [
+    {
+      "label": "Virginia Judiciary - General District Court Information",
+      "url": "https://www.vacourts.gov/courts/gd/home.html",
+      "scope": "court_directory"
+    },
+    {
+      "label": "Virginia Judiciary - Self-Help",
+      "url": "https://www.vacourts.gov/courts/gd/resources/small_claims_court_info.pdf",
+      "scope": "self_help"
+    },
+    {
+      "label": "Virginia Judiciary - Small Claims Court Brochure",
+      "url": "https://www.vacourts.gov/courts/gd/resources/small_claims_court_brochure.pdf",
+      "scope": "small_claims"
+    }
+  ],
+  "statutes": [
+    {
+      "label": "Va. Code § 16.1-77 — General Jurisdiction of General District Courts",
+      "url": "https://law.lis.virginia.gov/vacode/title16.1/chapter6/section16.1-77/",
+      "section_or_chapter": "§ 16.1-77"
+    },
+    {
+      "label": "Va. Code § 16.1-122.1 — Small Claims Division Established",
+      "url": "https://law.lis.virginia.gov/vacode/title16.1/chapter6.1/section16.1-122.1/",
+      "section_or_chapter": "§ 16.1-122.1"
+    },
+    {
+      "label": "Va. Code § 16.1-122.2 — Jurisdiction of Small Claims Division",
+      "url": "https://law.lis.virginia.gov/vacode/title16.1/chapter6.1/section16.1-122.2/",
+      "section_or_chapter": "§ 16.1-122.2"
+    },
+    {
+      "label": "Va. Code § 16.1-106 — Appeals from District Courts",
+      "url": "https://law.lis.virginia.gov/vacode/title16.1/chapter6/section16.1-106/",
+      "section_or_chapter": "§ 16.1-106"
+    },
+    {
+      "label": "Va. Code § 8.01-271.1 — Civil Remedies and Sanctions",
+      "url": "https://law.lis.virginia.gov/vacode/title8.01/chapter3/section8.01-271.1/",
+      "section_or_chapter": "§ 8.01-271.1"
+    }
+  ],
+  "court_rules": [
+    {
+      "label": "Rules of the Supreme Court of Virginia, Part Seven — General District Courts",
+      "url": "https://www.vacourts.gov/courts/scv/rules/2023_part_7.pdf",
+      "rule_or_chapter": "Part Seven"
+    }
+  ],
+  "forms_pages": [
+    {
+      "label": "Virginia Judicial System — General District Court Forms",
+      "url": "https://www.vacourts.gov/forms/district.html"
+    }
+  ],
+  "fee_schedules": [
+    {
+      "label": "Virginia General District Court Fee Schedule",
+      "url": "https://www.vacourts.gov/courts/gd/resources/fees.pdf"
+    }
+  ],
+  "service_rules": [
+    {
+      "label": "Va. Code § 16.1-79 — Summons in Civil Actions",
+      "url": "https://law.lis.virginia.gov/vacode/title16.1/chapter6/section16.1-79/"
+    },
+    {
+      "label": "Va. Code § 8.01-296 — Manner of Serving Process Upon Natural Persons",
+      "url": "https://law.lis.virginia.gov/vacode/title8.01/chapter8/section8.01-296/"
+    }
+  ],
+  "appeal_rules": [
+    {
+      "label": "Va. Code § 16.1-106 — Appeals from District Courts; Time and Procedure",
+      "url": "https://law.lis.virginia.gov/vacode/title16.1/chapter6/section16.1-106/"
+    }
+  ],
+  "post_judgment_collection": [
+    {
+      "label": "Va. Code § 8.01-466 — Garnishment of Wages, etc.",
+      "url": "https://law.lis.virginia.gov/vacode/title8.01/chapter18/section8.01-466/"
+    },
+    {
+      "label": "Va. Code § 34-29 — Maximum Portion of Disposable Earnings Subject to Garnishment",
+      "url": "https://law.lis.virginia.gov/vacode/title34/chapter4/section34-29/"
+    }
+  ],
+  "consumer_protection_statutes": [
+    {
+      "label": "Va. Code § 59.1-196 et seq. — Virginia Consumer Protection Act",
+      "url": "https://law.lis.virginia.gov/vacode/title59.1/chapter17.7/",
+      "section_or_chapter": "§ 59.1-196 et seq."
+    },
+    {
+      "label": "Va. Code § 18.2-181 — Issuing Bad Checks; Penalties",
+      "url": "https://law.lis.virginia.gov/vacode/title18.2/chapter6/section18.2-181/",
+      "section_or_chapter": "§ 18.2-181"
+    }
+  ],
+  "landlord_tenant_statutes": [
+    {
+      "label": "Va. Code § 55.1-1204 — Security Deposits",
+      "url": "https://law.lis.virginia.gov/vacode/title55.1/chapter12/section55.1-1204/",
+      "section_or_chapter": "§ 55.1-1204"
+    },
+    {
+      "label": "Va. Code § 55.1-1245 — Remedy for Unlawful Exclusion",
+      "url": "https://law.lis.virginia.gov/vacode/title55.1/chapter12/section55.1-1245/",
+      "section_or_chapter": "§ 55.1-1245"
+    }
+  ],
+  "wage_and_employment_statutes": [
+    {
+      "label": "Va. Code § 40.1-29 — Payment of Wages",
+      "url": "https://law.lis.virginia.gov/vacode/title40.1/chapter3/section40.1-29/",
+      "section_or_chapter": "§ 40.1-29"
+    }
+  ],
+  "civil_remedies_statutes": [
+    {
+      "label": "Va. Code § 8.01-271.1 — Sanctions; Attorneys’ Fees",
+      "url": "https://law.lis.virginia.gov/vacode/title8.01/chapter3/section8.01-271.1/",
+      "section_or_chapter": "§ 8.01-271.1"
+    }
+  ],
+  "county_specific": [],
+  "notes": "Virginia uses a unified General District Court system for small claims, with a dedicated small claims division statewide.",
+  "_meta": {
+    "state": "Virginia",
+    "slug": "virginia",
+    "model": "gpt-4.1",
+    "response_id": "resp_0fe4204a43626d520069f08b8360688195b920b753256e94dd",
+    "generated_at": "2026-04-28T10:27:27.821Z",
+    "usage": {
+      "input_tokens": 2102,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 1629,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 3731
+    }
+  }
+}

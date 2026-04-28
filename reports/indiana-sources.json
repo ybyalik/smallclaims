@@ -1,0 +1,152 @@
+{
+  "state": "Indiana",
+  "as_of": "2024-06-11",
+  "state_judiciary_pages": [
+    {
+      "label": "Indiana small claims court self-help",
+      "url": "https://www.in.gov/courts/selfservice/small-claims/",
+      "scope": "small_claims"
+    },
+    {
+      "label": "Indiana courts forms and self-help",
+      "url": "https://www.in.gov/courts/selfservice/forms/",
+      "scope": "self_help"
+    },
+    {
+      "label": "Indiana courts fee information",
+      "url": "https://www.in.gov/courts/5570.htm",
+      "scope": "fee_schedule"
+    },
+    {
+      "label": "Find Indiana Courts (Court Directory)",
+      "url": "https://www.in.gov/courts/local/",
+      "scope": "court_directory"
+    }
+  ],
+  "statutes": [
+    {
+      "label": "Indiana Small Claims Statute — Jurisdiction (Ind. Code § 33-28-3-4)",
+      "url": "https://iga.in.gov/laws/2023/ic/titles/033#33-28-3-4",
+      "section_or_chapter": "§ 33-28-3-4"
+    },
+    {
+      "label": "Indiana Small Claims Procedure (Ind. Code § 33-34)",
+      "url": "https://iga.in.gov/laws/2023/ic/titles/033#33-34",
+      "section_or_chapter": "§ 33-34"
+    },
+    {
+      "label": "Indiana Garnishment Statute — Proceedings Supplemental (Ind. Code § 34-25-3)",
+      "url": "https://iga.in.gov/laws/2023/ic/titles/034#34-25-3",
+      "section_or_chapter": "§ 34-25-3"
+    },
+    {
+      "label": "Indiana Wage Assignment Statute (Ind. Code § 22-2-6)",
+      "url": "https://iga.in.gov/laws/2023/ic/titles/022#22-2-6",
+      "section_or_chapter": "§ 22-2-6"
+    }
+  ],
+  "court_rules": [
+    {
+      "label": "Indiana Rules of Court — Small Claims",
+      "url": "https://www.in.gov/courts/rules/small_claims/index.html",
+      "rule_or_chapter": "Small Claims Rules"
+    },
+    {
+      "label": "Indiana Rules of Trial Procedure (generally applicable)",
+      "url": "https://www.in.gov/courts/rules/trial_proc/",
+      "rule_or_chapter": "Indiana Rules of Trial Procedure"
+    }
+  ],
+  "forms_pages": [
+    {
+      "label": "Indiana small claims court forms (Statement of Claim, Notice of Claim, etc.)",
+      "url": "https://www.in.gov/courts/selfservice/forms/"
+    }
+  ],
+  "fee_schedules": [
+    {
+      "label": "Indiana court fee schedule",
+      "url": "https://www.in.gov/courts/5570.htm"
+    }
+  ],
+  "service_rules": [
+    {
+      "label": "Service of process — Indiana Rules of Trial Procedure, Rule 4",
+      "url": "https://www.in.gov/courts/rules/trial_proc/index.html#_Toc128774662"
+    }
+  ],
+  "appeal_rules": [
+    {
+      "label": "Appeals from Small Claims Court — Indiana Rules of Court: Small Claims Rule 11",
+      "url": "https://www.in.gov/courts/rules/small_claims/index.html#_Toc127734268"
+    }
+  ],
+  "post_judgment_collection": [
+    {
+      "label": "Indiana Proceedings Supplemental for Collection (Ind. Code § 34-25-3)",
+      "url": "https://iga.in.gov/laws/2023/ic/titles/034#34-25-3"
+    },
+    {
+      "label": "Garnishments — Indiana Small Claims Rule 12",
+      "url": "https://www.in.gov/courts/rules/small_claims/index.html#_Toc127734270"
+    }
+  ],
+  "consumer_protection_statutes": [
+    {
+      "label": "Indiana Deceptive Consumer Sales Act (Ind. Code § 24-5-0.5)",
+      "url": "https://iga.in.gov/laws/2023/ic/titles/024#24-5-0.5",
+      "section_or_chapter": "§ 24-5-0.5"
+    },
+    {
+      "label": "Indiana Used Motor Vehicle Consumer Protection (Ind. Code § 24-5-13)",
+      "url": "https://iga.in.gov/laws/2023/ic/titles/024#24-5-13",
+      "section_or_chapter": "§ 24-5-13"
+    }
+  ],
+  "landlord_tenant_statutes": [
+    {
+      "label": "Indiana Security Deposits (Ind. Code § 32-31-3)",
+      "url": "https://iga.in.gov/laws/2023/ic/titles/032#32-31-3",
+      "section_or_chapter": "§ 32-31-3"
+    },
+    {
+      "label": "Indiana Emergency Possession and Lockout Statute (Ind. Code § 32-31-6)",
+      "url": "https://iga.in.gov/laws/2023/ic/titles/032#32-31-6",
+      "section_or_chapter": "§ 32-31-6"
+    }
+  ],
+  "wage_and_employment_statutes": [
+    {
+      "label": "Indiana Wage Payment Law (Final Paycheck Rule — Ind. Code § 22-2-5)",
+      "url": "https://iga.in.gov/laws/2023/ic/titles/022#22-2-5",
+      "section_or_chapter": "§ 22-2-5"
+    }
+  ],
+  "civil_remedies_statutes": [
+    {
+      "label": "Indiana Crime Victims Relief Act — Treble Damages (Ind. Code § 34-24-3)",
+      "url": "https://iga.in.gov/laws/2023/ic/titles/034#34-24-3",
+      "section_or_chapter": "§ 34-24-3"
+    }
+  ],
+  "county_specific": [],
+  "notes": "Indiana uses circuit and superior courts for small claims; Marion County operates a separate small claims court system.",
+  "_meta": {
+    "state": "Indiana",
+    "slug": "indiana",
+    "model": "gpt-4.1",
+    "response_id": "resp_0bfdfe834699abad0069f089a1b3e481908106ed07dd14e2c7",
+    "generated_at": "2026-04-28T10:19:39.225Z",
+    "usage": {
+      "input_tokens": 2102,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 1443,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 3545
+    }
+  }
+}

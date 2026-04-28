@@ -1,0 +1,1630 @@
+{
+  "state": "Pennsylvania",
+  "slug": "pennsylvania",
+  "abbr": "PA",
+  "as_of": "2026-04-28",
+  "hero": {
+    "individual_limit_dollars": 12000,
+    "business_limit_dollars": 12000,
+    "filing_fee_low_dollars": 50,
+    "filing_fee_high_dollars": 150,
+    "typical_timeline_min_days": 30,
+    "typical_timeline_max_days": 90,
+    "tagline": "Pennsylvania's Magisterial District Courts handle small claims up to $12,000 with a straightforward process.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "at_a_glance": [
+    {
+      "label": "Most you can sue for",
+      "value": "$12,000",
+      "detail": "Same cap for individuals and businesses",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Filing fee",
+      "value": "$50-$150",
+      "detail": "Varies by claim amount and county",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "label": "Court",
+      "value": "Magisterial District Court",
+      "detail": "",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Lawyers at trial",
+      "value": "Allowed",
+      "detail": "Permitted but not required",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "label": "Appeal window",
+      "value": "30 days",
+      "detail": "Trial de novo in Court of Common Pleas",
+      "source_ids": [
+        "S13"
+      ]
+    },
+    {
+      "label": "Recent change",
+      "value": "—",
+      "detail": "No major changes in the last 3 years",
+      "source_ids": []
+    }
+  ],
+  "limits": {
+    "individual_dollars": 12000,
+    "business_dollars": 12000,
+    "guarantor_with_fee_max": null,
+    "guarantor_without_fee_max": null,
+    "annual_filing_cap": {
+      "count": null,
+      "threshold_dollars": null,
+      "notes": ""
+    },
+    "split_claims_allowed": false,
+    "split_claims_explanation": "If a claim exceeds the $12,000 cap, you cannot split it into multiple claims to fit within the limit. Instead, you must file in a higher court.",
+    "interest_excluded_from_cap": true,
+    "court_costs_excluded_from_cap": true,
+    "statute": "42 Pa.C.S. § 1515",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "claim_categories": [
+    {
+      "id": "contracts",
+      "title": "Contracts and money owed",
+      "blurb": "Pennsylvania allows you 4 years to file a claim for breach of contract, whether written or oral.",
+      "claims": [
+        {
+          "slug": "written-contract",
+          "name": "Breach of a written contract",
+          "example": "A contractor signed a $10,000 contract to remodel your kitchen, took the deposit, and never completed the work.",
+          "eligibility": "eligible",
+          "claim_statute": "42 Pa.C.S. § 5525",
+          "notes": "You have 4 years from the date of breach to file. Bring the signed contract, payment records, and any correspondence.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "oral-contract",
+          "name": "Breach of an oral contract",
+          "example": "You agreed verbally to lend someone $5,000, and they failed to repay as promised.",
+          "eligibility": "eligible",
+          "claim_statute": "42 Pa.C.S. § 5525",
+          "notes": "Also a 4-year deadline. Gather evidence like emails, texts, or witness statements to prove the agreement.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "personal-loan",
+          "name": "Unpaid personal loan",
+          "example": "You loaned a friend $3,000 with the understanding they'd repay in 6 months, but they haven't.",
+          "eligibility": "eligible",
+          "claim_statute": "42 Pa.C.S. § 5525",
+          "notes": "File within 4 years. Documentation of the loan terms and any repayment attempts will support your case.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "promissory-note",
+          "name": "Default on a promissory note",
+          "example": "A borrower signed a promissory note for $8,000 and missed the repayment deadline.",
+          "eligibility": "eligible",
+          "claim_statute": "42 Pa.C.S. § 5525",
+          "notes": "You have 4 years to file. Present the original note and records of missed payments.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unpaid-invoice",
+          "name": "Unpaid invoice for services rendered",
+          "example": "You provided $2,500 worth of consulting services, but the client hasn't paid the invoice.",
+          "eligibility": "eligible",
+          "claim_statute": "42 Pa.C.S. § 5525",
+          "notes": "File within 4 years. Keep copies of the invoice, service agreement, and any communication regarding payment.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "open-account",
+          "name": "Unpaid balance on an open account",
+          "example": "A customer has an outstanding balance of $1,200 on their store credit account.",
+          "eligibility": "eligible",
+          "claim_statute": "42 Pa.C.S. § 5525",
+          "notes": "4-year statute of limitations. Maintain detailed account statements and records of transactions.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "unpaid-rent",
+          "name": "Unpaid rent by tenant",
+          "example": "Your tenant owes $6,000 in back rent and has vacated the property.",
+          "eligibility": "eligible",
+          "claim_statute": "42 Pa.C.S. § 5525",
+          "notes": "File within 4 years. Lease agreements and payment records are crucial evidence.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "bad-check",
+          "name": "Receiving a bad check",
+          "example": "A customer paid with a $500 check that bounced due to insufficient funds.",
+          "eligibility": "eligible",
+          "claim_statute": "18 Pa.C.S. § 4105",
+          "notes": "You can seek the check amount plus additional penalties. Provide the original check and bank notices.",
+          "damage_boost": "Check amount + service charge up to $40 + civil penalty up to $100 OR 2x check amount, whichever is greater.",
+          "source_ids": [
+            "S7"
+          ]
+        },
+        {
+          "slug": "co-signer",
+          "name": "Co-signer held liable for default",
+          "example": "You co-signed a $7,000 loan, and the primary borrower defaulted.",
+          "eligibility": "eligible",
+          "claim_statute": "42 Pa.C.S. § 5525",
+          "notes": "4-year limit. Present the loan agreement and records of default.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "consumer-disputes",
+      "title": "Consumer disputes",
+      "blurb": "Pennsylvania's Unfair Trade Practices and Consumer Protection Law allows consumers to seek remedies for deceptive practices.",
+      "claims": [
+        {
+          "slug": "defective-product",
+          "name": "Purchase of a defective product",
+          "example": "You bought a $1,000 appliance that stopped working within a month, and the seller refuses to repair or replace it.",
+          "eligibility": "eligible",
+          "claim_statute": "73 P.S. § 201-1 et seq.",
+          "notes": "File within 6 years. Keep purchase receipts and any communication with the seller.",
+          "damage_boost": "Actual damages or $100, whichever is greater; treble damages for willful violations.",
+          "source_ids": [
+            "S8"
+          ]
+        },
+        {
+          "slug": "bad-service",
+          "name": "Substandard service provided",
+          "example": "A cleaning service charged $500 but did not perform the agreed-upon tasks.",
+          "eligibility": "eligible",
+          "claim_statute": "73 P.S. § 201-1 et seq.",
+          "notes": "6-year statute. Document the service agreement and any complaints made.",
+          "damage_boost": "Actual damages or $100, whichever is greater; treble damages for willful violations.",
+          "source_ids": [
+            "S8"
+          ]
+        },
+        {
+          "slug": "auto-repair",
+          "name": "Unsatisfactory auto repair",
+          "example": "Paid $2,000 for car repairs that were not completed properly, causing further damage.",
+          "eligibility": "eligible",
+          "claim_statute": "73 P.S. § 201-1 et seq.",
+          "notes": "File within 6 years. Maintain repair invoices and expert evaluations.",
+          "damage_boost": "Actual damages or $100, whichever is greater; treble damages for willful violations.",
+          "source_ids": [
+            "S8"
+          ]
+        },
+        {
+          "slug": "contractor",
+          "name": "Home contractor failed to complete work",
+          "example": "A contractor was paid $8,000 to renovate your bathroom but left the job unfinished.",
+          "eligibility": "eligible",
+          "claim_statute": "73 P.S. § 201-1 et seq.",
+          "notes": "6-year limit. Keep the contract, payment records, and photos of incomplete work.",
+          "damage_boost": "Actual damages or $100, whichever is greater; treble damages for willful violations.",
+          "source_ids": [
+            "S8"
+          ]
+        },
+        {
+          "slug": "no-show-vendor",
+          "name": "Vendor failed to deliver goods/services",
+          "example": "Paid $1,500 for catering services, but the vendor never showed up.",
+          "eligibility": "eligible",
+          "claim_statute": "73 P.S. § 201-1 et seq.",
+          "notes": "File within 6 years. Provide contracts and proof of payment.",
+          "damage_boost": "Actual damages or $100, whichever is greater; treble damages for willful violations.",
+          "source_ids": [
+            "S8"
+          ]
+        },
+        {
+          "slug": "subscription-cancellation",
+          "name": "Unauthorized charges after subscription cancellation",
+          "example": "Cancelled a $50/month gym membership, but charges continued for 3 months.",
+          "eligibility": "eligible",
+          "claim_statute": "73 P.S. § 201-1 et seq.",
+          "notes": "6-year statute. Keep cancellation confirmations and bank statements.",
+          "damage_boost": "Actual damages or $100, whichever is greater; treble damages for willful violations.",
+          "source_ids": [
+            "S8"
+          ]
+        },
+        {
+          "slug": "used-car",
+          "name": "Purchase of a defective used car",
+          "example": "Bought a used car for $9,000 that broke down within a week due to undisclosed issues.",
+          "eligibility": "eligible",
+          "claim_statute": "73 P.S. § 201-1 et seq.",
+          "notes": "File within 6 years. Retain the sales agreement and any repair records.",
+          "damage_boost": "Actual damages or $100, whichever is greater; treble damages for willful violations.",
+          "source_ids": [
+            "S8"
+          ]
+        },
+        {
+          "slug": "false-advertising",
+          "name": "False advertising leading to financial loss",
+          "example": "Purchased a $200 product advertised as 'new,' but it was refurbished.",
+          "eligibility": "eligible",
+          "claim_statute": "73 P.S. § 201-1 et seq.",
+          "notes": "6-year limit. Save advertisements and purchase receipts.",
+          "damage_boost": "Actual damages or $100, whichever is greater; treble damages for willful violations.",
+          "source_ids": [
+            "S8"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "property-damage",
+      "title": "Property damage",
+      "blurb": "Claims for property damage in Pennsylvania generally have a 2-year statute of limitations.",
+      "claims": [
+        {
+          "slug": "vehicle-collision",
+          "name": "Damage from a vehicle collision",
+          "example": "Another driver caused $4,000 in damage to your car and refuses to pay.",
+          "eligibility": "eligible",
+          "claim_statute": "42 Pa.C.S. § 5524",
+          "notes": "File within 2 years. Obtain police reports and repair estimates.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "neighbor-property",
+          "name": "Neighbor's actions damaged your property",
+          "example": "Neighbor's tree fell on your fence, causing $1,500 in damage.",
+          "eligibility": "eligible",
+          "claim_statute": "42 Pa.C.S. § 5524",
+          "notes": "2-year statute. Take photos and get repair quotes.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "damage-to-rental",
+          "name": "Tenant caused damage to rental property",
+          "example": "Tenant left $3,000 worth of damage upon moving out.",
+          "eligibility": "eligible",
+          "claim_statute": "42 Pa.C.S. § 5524",
+          "notes": "File within 2 years. Document damages with photos and repair bills.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "pet-damage",
+          "name": "Damage caused by someone's pet",
+          "example": "Neighbor's dog chewed your $800 outdoor furniture.",
+          "eligibility": "eligible",
+          "claim_statute": "42 Pa.C.S. § 5524",
+          "notes": "2-year limit. Gather evidence like photos and witness statements.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "property-in-custody",
+          "name": "Damage to property left in someone's care",
+          "example": "Dry cleaner ruined your $500 suit and refuses to compensate.",
+          "eligibility": "eligible",
+          "claim_statute": "42 Pa.C.S. § 5524",
+          "notes": "File within 2 years. Keep receipts and damaged items as evidence.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "landlord-tenant",
+      "title": "Landlord-tenant disputes",
+      "blurb": "Pennsylvania law provides specific protections and remedies for both landlords and tenants in financial disputes.",
+      "claims": [
+        {
+          "slug": "security-deposit",
+          "name": "Failure to return security deposit",
+          "example": "Landlord withheld your $1,200 security deposit without justification.",
+          "eligibility": "eligible",
+          "claim_statute": "68 P.S. § 250.512",
+          "notes": "Landlord must return deposit within 30 days. File within 2 years if not returned.",
+          "damage_boost": "Double the amount wrongfully withheld.",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "deposit-not-itemized",
+          "name": "No itemized list for deposit deductions",
+          "example": "Landlord deducted $500 from your deposit without providing an itemized list.",
+          "eligibility": "eligible",
+          "claim_statute": "68 P.S. § 250.512",
+          "notes": "Landlord must provide an itemized list within 30 days. File within 2 years if not provided.",
+          "damage_boost": "Double the amount wrongfully withheld.",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "uninhabitable-rental",
+          "name": "Rental unit deemed uninhabitable",
+          "example": "Persistent mold made your $900/month apartment unlivable, and landlord refused to address it.",
+          "eligibility": "eligible",
+          "claim_statute": "68 P.S. § 250.206",
+          "notes": "File within 2 years. Document conditions and communication with landlord.",
+          "damage_boost": "",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "wrongful-retention-property",
+          "name": "Landlord retained personal property after move-out",
+          "example": "Landlord kept your $2,000 worth of furniture after you vacated.",
+          "eligibility": "eligible",
+          "claim_statute": "68 P.S. § 250.505a",
+          "notes": "File within 2 years. Provide proof of ownership and communication records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "illegal-eviction",
+          "name": "Illegal eviction without proper notice",
+          "example": "Landlord changed locks without notice, preventing access to your $1,500/month apartment.",
+          "eligibility": "eligible",
+          "claim_statute": "68 P.S. § 250.501",
+          "notes": "File within 2 years. Keep records of lease and eviction notice (or lack thereof).",
+          "damage_boost": "",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "unreturned-prepaid-rent",
+          "name": "Failure to return prepaid rent after lease termination",
+          "example": "Landlord didn't refund your $1,000 prepaid rent after you legally terminated the lease.",
+          "eligibility": "eligible",
+          "claim_statute": "68 P.S. § 250.512",
+          "notes": "File within 2 years. Provide lease agreement and termination notice.",
+          "damage_boost": "",
+          "source_ids": [
+            "S19"
+          ]
+        },
+        {
+          "slug": "unpaid-rent-by-tenant",
+          "name": "Tenant failed to pay rent owed",
+          "example": "Tenant owes $4,500 in unpaid rent and has vacated the property.",
+          "eligibility": "eligible",
+          "claim_statute": "42 Pa.C.S. § 5525",
+          "notes": "File within 4 years. Present lease agreement and payment records.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "repair-and-deduct",
+          "name": "Tenant deducted repair costs from rent",
+          "example": "Tenant deducted $300 for repairs from rent without landlord's consent.",
+          "eligibility": "eligible",
+          "claim_statute": "68 P.S. § 250.206",
+          "notes": "File within 2 years. Provide lease terms and repair receipts.",
+          "damage_boost": "",
+          "source_ids": [
+            "S19"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "employment-wages",
+      "title": "Employment and wage disputes",
+      "blurb": "Pennsylvania's Wage Payment and Collection Law allows employees to recover unpaid wages and penalties.",
+      "claims": [
+        {
+          "slug": "unpaid-wages",
+          "name": "Employer failed to pay earned wages",
+          "example": "Employer owes you $2,000 for hours worked but hasn't paid.",
+          "eligibility": "eligible",
+          "claim_statute": "43 P.S. § 260.9a",
+          "notes": "File within 3 years. Keep pay stubs and records of hours worked.",
+          "damage_boost": "Wages owed plus 25% liquidated damages.",
+          "source_ids": [
+            "S20"
+          ]
+        },
+        {
+          "slug": "final-paycheck",
+          "name": "Employer withheld final paycheck",
+          "example": "After termination, employer didn't provide your $1,500 final paycheck.",
+          "eligibility": "eligible",
+          "claim_statute": "43 P.S. § 260.9a",
+          "notes": "File within 3 years. Document termination and owed wages.",
+          "damage_boost": "Wages owed plus 25% liquidated damages.",
+          "source_ids": [
+            "S20"
+          ]
+        },
+        {
+          "slug": "unpaid-commissions",
+          "name": "Unpaid sales commissions",
+          "example": "Employer owes $3,000 in earned commissions but refuses to pay.",
+          "eligibility": "eligible",
+          "claim_statute": "43 P.S. § 260.9a",
+          "notes": "File within 3 years. Provide commission agreements and sales records.",
+          "damage_boost": "Wages owed plus 25% liquidated damages.",
+          "source_ids": [
+            "S20"
+          ]
+        },
+        {
+          "slug": "unpaid-overtime",
+          "name": "Employer failed to pay overtime wages",
+          "example": "Worked 10 hours of overtime but received no additional pay.",
+          "eligibility": "eligible",
+          "claim_statute": "43 P.S. § 260.9a",
+          "notes": "File within 3 years. Maintain timesheets and pay records.",
+          "damage_boost": "Wages owed plus 25% liquidated damages.",
+          "source_ids": [
+            "S20"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "personal-claims",
+      "title": "Personal claims",
+      "blurb": "Personal injury claims in Pennsylvania have a 2-year statute of limitations.",
+      "claims": [
+        {
+          "slug": "minor-injury",
+          "name": "Minor personal injury",
+          "example": "Slipped on a wet floor in a store, resulting in a $1,000 medical bill.",
+          "eligibility": "eligible",
+          "claim_statute": "42 Pa.C.S. § 5524",
+          "notes": "File within 2 years. Obtain medical records and incident reports.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "loaned-property",
+          "name": "Failure to return loaned property",
+          "example": "Loaned a friend your $500 camera, and they refuse to return it.",
+          "eligibility": "eligible",
+          "claim_statute": "42 Pa.C.S. § 5524",
+          "notes": "2-year limit. Provide proof of ownership and loan agreement.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        {
+          "slug": "civil-theft",
+          "name": "Theft of personal property",
+          "example": "Neighbor took your $800 bicycle without permission and won't return it.",
+          "eligibility": "eligible",
+          "claim_statute": "42 Pa.C.S. § 5524",
+          "notes": "File within 2 years. Gather evidence of ownership and theft.",
+          "damage_boost": "",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vehicle-specific",
+      "title": "Vehicle-specific claims",
+      "blurb": "Claims related to vehicle repairs and towing in Pennsylvania have specific legal considerations.",
+      "claims": [
+        {
+          "slug": "mechanic-dispute",
+          "name": "Dispute over mechanic's repair charges",
+          "example": "Mechanic charged $1,200 for unauthorized repairs on your car.",
+          "eligibility": "eligible",
+          "claim_statute": "73 P.S. § 201-1 et seq.",
+          "notes": "File within 6 years. Keep repair orders and invoices.",
+          "damage_boost": "Actual damages or $100, whichever is greater; treble damages for willful violations.",
+          "source_ids": [
+            "S8"
+          ]
+        },
+        {
+          "slug": "wrongful-tow",
+          "name": "Vehicle wrongfully towed",
+          "example": "Car was towed from a legal parking spot, costing $300 in fees.",
+          "eligibility": "eligible",
+          "claim_statute": "73 P.S. § 201-1 et seq.",
+          "notes": "6-year statute. Obtain towing records and photos of parking area.",
+          "damage_boost": "Actual damages or $100, whichever is greater; treble damages for willful violations.",
+          "source_ids": [
+            "S8"
+          ]
+        }
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "category": "Eviction (unlawful detainer)",
+      "explanation": "Eviction proceedings are handled separately and are not within the jurisdiction of small claims court.",
+      "where_to_go_instead": "File in Magisterial District Court under landlord-tenant proceedings.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Title to real estate",
+      "explanation": "Disputes involving ownership of real property exceed the jurisdiction of small claims court.",
+      "where_to_go_instead": "File in the Court of Common Pleas.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "category": "Defamation",
+      "explanation": "Claims for libel or slander are complex and not suitable for small claims court.",
+      "where_to_go_instead": "Consult an attorney for appropriate filing.",
+      "source_ids": []
+    },
+    {
+      "category": "Professional malpractice",
+      "explanation": "Malpractice claims require expert testimony and are beyond small claims jurisdiction.",
+      "where_to_go_instead": "File in the Court of Common Pleas.",
+      "source_ids": []
+    },
+    {
+      "category": "Family law matters",
+      "explanation": "Divorce, child custody, and support issues are handled by family courts.",
+      "where_to_go_instead": "File in the Family Division of the Court of Common Pleas.",
+      "source_ids": []
+    },
+    {
+      "category": "Probate matters",
+      "explanation": "Estate and will disputes are under the jurisdiction of the Orphans' Court.",
+      "where_to_go_instead": "File in the Orphans' Court Division of the Court of Common Pleas.",
+      "source_ids": []
+    },
+    {
+      "category": "Claims against the federal government",
+      "explanation": "Federal entities are not subject to state small claims court jurisdiction.",
+      "where_to_go_instead": "File in the appropriate federal court.",
+      "source_ids": []
+    },
+    {
+      "category": "Class actions",
+      "explanation": "Class action lawsuits are complex and exceed small claims court procedures.",
+      "where_to_go_instead": "File in the Court of Common Pleas.",
+      "source_ids": []
+    },
+    {
+      "category": "Injunctions or specific performance",
+      "explanation": "Small claims court cannot order someone to do or stop doing something.",
+      "where_to_go_instead": "File in the Court of Common Pleas.",
+      "source_ids": []
+    },
+    {
+      "category": "Workers' compensation claims",
+      "explanation": "These claims are handled by the state's workers' compensation system.",
+      "where_to_go_instead": "File with the Pennsylvania Department of Labor & Industry.",
+      "source_ids": []
+    }
+  ],
+  "damages": {
+    "compensatory_allowed": true,
+    "punitive_allowed": false,
+    "punitive_explanation": "Punitive damages are not awarded in small claims court; however, statutory penalties may apply in certain cases.",
+    "statutory_multipliers": [
+      {
+        "claim": "Bad check (after 30-day notice)",
+        "multiplier": "2x check amount",
+        "explanation": "Check amount + service charge up to $40 + civil penalty up to $100 OR 2x check amount, whichever is greater.",
+        "statute": "18 Pa.C.S. § 4105",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "Consumer protection violations",
+        "multiplier": "3x actual damages",
+        "explanation": "Actual damages or $100, whichever is greater; treble damages for willful violations.",
+        "statute": "73 P.S. § 201-9.2",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "Unpaid wages",
+        "multiplier": "1.25x wages owed",
+        "explanation": "Wages owed plus 25% liquidated damages.",
+        "statute": "43 P.S. § 260.10",
+        "source_ids": [
+          "S20"
+        ]
+      }
+    ],
+    "attorney_fees_recoverable": "sometimes",
+    "attorney_fees_explanation": "Attorney fees may be recoverable in cases involving bad checks, consumer protection violations, and unpaid wages.",
+    "prejudgment_interest_rate_pct": null,
+    "prejudgment_interest_statute": "",
+    "postjudgment_interest_rate_pct": null,
+    "postjudgment_interest_type": "simple",
+    "postjudgment_interest_statute": "",
+    "postjudgment_interest_notes": "",
+    "filing_and_service_fees_recoverable_from_loser": true,
+    "source_ids": []
+  },
+  "where_to_file": {
+    "court_name": "Magisterial District Court",
+    "parent_court": "Unified Judicial System of Pennsylvania",
+    "venue_rules": [
+      {
+        "scenario": "Most cases (the default)",
+        "filing_options": [
+          "County where the defendant lives"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Where contract was performed",
+        "filing_options": [
+          "County where performance was due"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Where injury or damage occurred",
+        "filing_options": [
+          "County where the event occurred"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Multiple defendants",
+        "filing_options": [
+          "Any county where ONE defendant resides"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "scenario": "Out-of-state defendant",
+        "filing_options": [
+          "Where the cause of action arose"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "consequences_of_wrong_venue": "Filing in the wrong venue may result in dismissal or transfer of the case, potentially causing delays and additional costs.",
+    "e_filing_available": "varies",
+    "e_filing_notes": "E-filing availability varies by county; check with the local Magisterial District Court.",
+    "e_filing_portal": null,
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "fees": {
+    "filing_fee_tiers": [
+      {
+        "range_label": "$0 to $2,000",
+        "range_min": 0,
+        "range_max": 2000,
+        "fee_dollars": 50,
+        "source_ids": [
+          "S11"
+        ]
+      },
+      {
+        "range_label": "$2,001 to $4,000",
+        "range_min": 2001,
+        "range_max": 4000,
+        "fee_dollars": 75,
+        "source_ids": [
+          "S11"
+        ]
+      },
+      {
+        "range_label": "$4,001 to $12,000",
+        "range_min": 4001,
+        "range_max": 12000,
+        "fee_dollars": 150,
+        "source_ids": [
+          "S11"
+        ]
+      }
+    ],
+    "frequent_filer": {
+      "threshold_per_year": null,
+      "fee_dollars": null,
+      "notes": ""
+    },
+    "service_fees": [
+      {
+        "method": "Sheriff (personal service)",
+        "amount_label": "$25-50",
+        "notes": "Varies by county; required for most cases.",
+        "source_ids": [
+          "S11"
+        ]
+      },
+      {
+        "method": "Certified mail",
+        "amount_label": "$10-20",
+        "notes": "Available for certain cases; confirm with court.",
+        "source_ids": [
+          "S11"
+        ]
+      }
+    ],
+    "waiver": {
+      "forms": [
+        {
+          "number": "In Forma Pauperis",
+          "name": "Petition to Proceed In Forma Pauperis",
+          "url": "https://www.pacourts.us/forms/for-the-public",
+          "source_ids": [
+            "S10"
+          ]
+        }
+      ],
+      "eligibility_bullets": [
+        "Receiving need-based public assistance (SNAP, TANF, SSI)",
+        "Household income below 125% federal poverty line"
+      ],
+      "coverage_notes": "Waiver covers filing fees; service fees may still apply.",
+      "if_you_win_notes": "Waived fees are not added to the judgment against the loser."
+    },
+    "other_fees": [
+      {
+        "name": "Subpoena issuance",
+        "amount_label": "$10",
+        "notes": "Plus witness fee per day.",
+        "source_ids": [
+          "S11"
+        ]
+      },
+      {
+        "name": "Appeal filing",
+        "amount_label": "$50",
+        "notes": "",
+        "source_ids": [
+          "S11"
+        ]
+      },
+      {
+        "name": "Writ of execution",
+        "amount_label": "$30",
+        "notes": "Post-judgment.",
+        "source_ids": [
+          "S11"
+        ]
+      }
+    ],
+    "fees_recoverable_from_loser_notes": "If you win, filing fee and reasonable service costs are added to the judgment.",
+    "source_ids": [
+      "S11"
+    ]
+  },
+  "statute_of_limitations": {
+    "entries": [
+      {
+        "id": "written-contract",
+        "claim": "Written contract",
+        "years": 4,
+        "clock_starts": "Date of breach",
+        "statute": "42 Pa.C.S. § 5525",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "oral-contract",
+        "claim": "Oral contract",
+        "years": 4,
+        "clock_starts": "Date of breach",
+        "statute": "42 Pa.C.S. § 5525",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "sale-of-goods",
+        "claim": "Sale of goods (UCC)",
+        "years": 4,
+        "clock_starts": "Date of breach",
+        "statute": "13 Pa.C.S. § 2725",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "promissory-note",
+        "claim": "Promissory note",
+        "years": 4,
+        "clock_starts": "Date of default",
+        "statute": "42 Pa.C.S. § 5525",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "open-account",
+        "claim": "Open account / credit card debt",
+        "years": 4,
+        "clock_starts": "Date of last payment or charge",
+        "statute": "42 Pa.C.S. § 5525",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "personal-injury",
+        "claim": "Personal injury",
+        "years": 2,
+        "clock_starts": "Date of injury",
+        "statute": "42 Pa.C.S. § 5524",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "property-damage",
+        "claim": "Property damage",
+        "years": 2,
+        "clock_starts": "Date of damage",
+        "statute": "42 Pa.C.S. § 5524",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "fraud",
+        "claim": "Fraud",
+        "years": 2,
+        "clock_starts": "Date fraud was discovered or should have been discovered",
+        "statute": "42 Pa.C.S. § 5524",
+        "notes": "Discovery rule applies.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "bad-check",
+        "claim": "Bad check",
+        "years": 2,
+        "clock_starts": "Date check was dishonored",
+        "statute": "42 Pa.C.S. § 5524",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "unpaid-wages",
+        "claim": "Unpaid wages",
+        "years": 3,
+        "clock_starts": "Date wages were due",
+        "statute": "43 P.S. § 260.9a",
+        "notes": "",
+        "source_ids": [
+          "S20"
+        ]
+      },
+      {
+        "id": "security-deposit",
+        "claim": "Security deposit",
+        "years": 2,
+        "clock_starts": "Date deposit was due to be returned",
+        "statute": "68 P.S. § 250.512",
+        "notes": "",
+        "source_ids": [
+          "S19"
+        ]
+      },
+      {
+        "id": "judgment-enforcement",
+        "claim": "Judgment enforcement",
+        "years": 20,
+        "clock_starts": "Date judgment was entered",
+        "statute": "42 Pa.C.S. § 5529",
+        "notes": "",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "discovery_rule_notes": "The discovery rule applies to fraud claims, starting the clock when the fraud is discovered or should have been discovered.",
+    "tolling_notes": "The statute of limitations may be tolled if the defendant is out of state, the plaintiff is a minor, or in cases of bankruptcy stays.",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "pre_filing": {
+    "demand_letter_required": false,
+    "demand_letter_recommended": true,
+    "demand_letter_notes": "While not required, sending a demand letter can often resolve disputes without court intervention. For bad check claims, a 30-day notice is required.",
+    "bad_check_notice_rule": "Before filing a claim for a bad check, you must send a written demand for payment, allowing the issuer 30 days to respond.",
+    "wage_claim_demand_rule": "No specific pre-filing demand required for wage claims under Pennsylvania law.",
+    "government_claim_required": false,
+    "government_claim_deadline_days": null,
+    "government_claim_notes": "",
+    "landlord_tenant_pre_filing_notes": "Landlords must provide a forwarding address for the return of security deposits. Tenants should document repair requests and notices.",
+    "consumer_protection_notes": "No specific pre-filing notice required under Pennsylvania's Unfair Trade Practices and Consumer Protection Law.",
+    "mandatory_mediation_before_filing": "none",
+    "arbitration_clauses_enforced": true,
+    "source_ids": [
+      "S7"
+    ]
+  },
+  "forms": [
+    {
+      "number": "MDJ-01",
+      "name": "Civil Complaint",
+      "description": "Initiates a civil action in Magisterial District Court.",
+      "filed_by": "plaintiff",
+      "required": true,
+      "group": "starting",
+      "url": "https://www.pacourts.us/forms/for-the-public",
+      "source_ids": [
+        "S10"
+      ]
+    },
+    {
+      "number": "MDJ-02",
+      "name": "Notice of Judgment",
+      "description": "Notifies parties of the court's judgment.",
+      "filed_by": "court",
+      "required": true,
+      "group": "after-judgment",
+      "url": "https://www.pacourts.us/forms/for-the-public",
+      "source_ids": [
+        "S10"
+      ]
+    },
+    {
+      "number": "MDJ-03",
+      "name": "Request for Order of Execution",
+      "description": "Requests enforcement of a judgment.",
+      "filed_by": "plaintiff",
+      "required": false,
+      "group": "after-judgment",
+      "url": "https://www.pacourts.us/forms/for-the-public",
+      "source_ids": [
+        "S10"
+      ]
+    },
+    {
+      "number": "MDJ-04",
+      "name": "Petition to Proceed In Forma Pauperis",
+      "description": "Requests waiver of court fees due to financial hardship.",
+      "filed_by": "plaintiff",
+      "required": false,
+      "group": "fee-waiver",
+      "url": "https://www.pacourts.us/forms/for-the-public",
+      "source_ids": [
+        "S10"
+      ]
+    },
+    {
+      "number": "MDJ-05",
+      "name": "Notice of Appeal",
+      "description": "Initiates an appeal to the Court of Common Pleas.",
+      "filed_by": "either",
+      "required": false,
+      "group": "appeal",
+      "url": "https://www.pacourts.us/forms/for-the-public",
+      "source_ids": [
+        "S10"
+      ]
+    }
+  ],
+  "service": {
+    "who_can_serve": [
+      "Sheriff",
+      "Certified mail by clerk",
+      "Private process server"
+    ],
+    "methods": [
+      {
+        "name": "Sheriff personal service",
+        "description": "Sheriff or constable personally delivers the complaint to the defendant.",
+        "pros": [
+          "Reliable",
+          "Official"
+        ],
+        "cons": [
+          "May be more expensive",
+          "Potential delays"
+        ],
+        "source_ids": [
+          "S12"
+        ]
+      },
+      {
+        "name": "Certified mail",
+        "description": "Complaint is sent via certified mail with return receipt requested.",
+        "pros": [
+          "Cost-effective",
+          "Proof of delivery"
+        ],
+        "cons": [
+          "Defendant may refuse delivery",
+          "Not suitable for all cases"
+        ],
+        "source_ids": [
+          "S12"
+        ]
+      },
+      {
+        "name": "Private process server",
+        "description": "A private individual authorized to serve legal documents delivers the complaint.",
+        "pros": [
+          "Flexible scheduling",
+          "Can be faster"
+        ],
+        "cons": [
+          "Additional cost",
+          "Must ensure proper authorization"
+        ],
+        "source_ids": [
+          "S12"
+        ]
+      }
+    ],
+    "in_county_days_before_hearing": 10,
+    "out_of_county_days_before_hearing": 15,
+    "proof_of_service_form": {
+      "number": "MDJ-06",
+      "name": "Affidavit of Service"
+    },
+    "proof_filing_deadline_days_before_hearing": 5,
+    "business_service_rule": "Serve the registered agent or an officer of the corporation; for sole proprietors, serve the individual directly.",
+    "out_of_state_defendant_notes": "Service must comply with Pennsylvania's long-arm statute and the rules of the state where the defendant resides.",
+    "cant_find_defendant_notes": "If the defendant cannot be located, the court may allow service by publication in a newspaper of general circulation.",
+    "avoiding_service_notes": "If the defendant is evading service, you may request the court to permit alternative methods of service.",
+    "source_ids": [
+      "S12"
+    ]
+  },
+  "response_and_default": {
+    "must_file_written_answer": false,
+    "response_deadline_days": 5,
+    "response_notes": "Defendant is not required to file a written answer but must appear at the hearing. Failure to appear may result in a default judgment.",
+    "default_process": "If the defendant fails to appear, the court may enter a default judgment in favor of the plaintiff.",
+    "prove_up_required": true,
+    "prove_up_notes": "Even if the defendant defaults, the plaintiff must present evidence to support the claim and amount of damages.",
+    "motion_to_vacate_form": {
+      "number": "MDJ-07",
+      "name": "Petition to Open Judgment"
+    },
+    "motion_to_vacate_deadline_days": 30,
+    "motion_to_vacate_lack_of_notice_days": 30,
+    "motion_to_vacate_appeal_deadline_days": 30,
+    "motion_to_vacate_appeal_notes": "If the motion to vacate is denied, the defendant may appeal to the Court of Common Pleas within 30 days.",
+    "source_ids": [
+      "S13"
+    ]
+  },
+  "counterclaim": {
+    "allowed": true,
+    "form": {
+      "number": "MDJ-08",
+      "name": "Counterclaim"
+    },
+    "same_monetary_limit": true,
+    "service_deadline_in_county_days": 5,
+    "service_deadline_out_of_county_days": 10,
+    "transfer_to_higher_court_available": true,
+    "transfer_to_higher_court_statute": "42 Pa.C.S. § 1515",
+    "transfer_to_higher_court_notes": "If the counterclaim exceeds the jurisdictional limit, the case may be transferred to the Court of Common Pleas.",
+    "source_ids": [
+      "S4"
+    ]
+  },
+  "hearing": {
+    "lawyers_allowed": "yes",
+    "lawyers_allowed_notes": "Parties may be represented by attorneys but are not required to do so.",
+    "format": "Bench trial, typically lasting 30-60 minutes.",
+    "presider": "judge",
+    "burden_of_proof": "preponderance",
+    "what_to_bring": [
+      "Originals of any contracts",
+      "Receipts and bank records",
+      "Photos and videos",
+      "Names and contact info for witnesses"
+    ],
+    "subpoena_form": {
+      "number": "MDJ-09",
+      "name": "Subpoena"
+    },
+    "witness_fee_per_day_dollars": 5,
+    "free_interpreters": true,
+    "interpreter_request_process": "Request an interpreter from the court at least 5 days before the hearing.",
+    "jury_option": false,
+    "decision_timing": "On the spot or mailed within 5 days.",
+    "on_site_mediation": "no",
+    "on_site_mediation_notes": "",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "appeals": {
+    "who_can_appeal": "either",
+    "deadline_days": 30,
+    "fee_dollars": 50,
+    "type": "trial de novo",
+    "type_notes": "The appeal is a new trial in the Court of Common Pleas.",
+    "attorneys_allowed_on_appeal": true,
+    "bond_required": false,
+    "bond_amount_notes": "",
+    "automatic_stay_on_appeal": true,
+    "default_judgment_appealable": true,
+    "default_judgment_notes": "A default judgment can be appealed within 30 days to the Court of Common Pleas.",
+    "notice_of_appeal_form": {
+      "number": "MDJ-05",
+      "name": "Notice of Appeal"
+    },
+    "frivolous_appeal_penalty_dollars": null,
+    "frivolous_appeal_statute": "",
+    "frivolous_appeal_notes": "",
+    "source_ids": [
+      "S13"
+    ]
+  },
+  "collection": {
+    "payment_deadline_typical_days": 30,
+    "post_judgment_interest_rate_pct": 6,
+    "post_judgment_interest_statute": "42 Pa.C.S. § 8101",
+    "post_judgment_interest_notes": "Interest accrues at 6% per annum on unpaid judgments.",
+    "methods": [
+      {
+        "id": "wage-garnishment",
+        "name": "Wage garnishment",
+        "blurb": "Have a portion of debtor's wages withheld until the judgment is paid.",
+        "description": "File a writ of execution with the court, serve the employer, and the employer will withhold a portion of the debtor's wages to satisfy the judgment.",
+        "forms": [
+          {
+            "number": "MDJ-03",
+            "name": "Request for Order of Execution"
+          }
+        ],
+        "estimated_cost": "$30 plus sheriff fees",
+        "effectiveness_notes": "Effective if the debtor is employed and earns above the exemption threshold.",
+        "exemptions": [
+          "75% of disposable earnings"
+        ],
+        "source_ids": [
+          "S15"
+        ]
+      },
+      {
+        "id": "bank-levy",
+        "name": "Bank levy",
+        "blurb": "Seize funds from the debtor's bank account to satisfy the judgment.",
+        "description": "Obtain a writ of execution, serve the bank, and the bank will freeze and remit funds from the debtor's account.",
+        "forms": [
+          {
+            "number": "MDJ-03",
+            "name": "Request for Order of Execution"
+          }
+        ],
+        "estimated_cost": "$30 plus sheriff fees",
+        "effectiveness_notes": "Effective if the debtor has sufficient funds in the account.",
+        "exemptions": [
+          "$300 statutory exemption"
+        ],
+        "source_ids": [
+          "S15"
+        ]
+      },
+      {
+        "id": "property-lien",
+        "name": "Property lien",
+        "blurb": "Place a lien on the debtor's real property to secure the judgment.",
+        "description": "File the judgment with the county recorder to place a lien on the debtor's property, which must be satisfied upon sale or refinancing.",
+        "forms": [
+          {
+            "number": "MDJ-10",
+            "name": "Praecipe to Enter Judgment"
+          }
+        ],
+        "estimated_cost": "$30 recording fee",
+        "effectiveness_notes": "Effective if the debtor owns real property.",
+        "exemptions": [
+          "Homestead exemption up to $300"
+        ],
+        "source_ids": [
+          "S15"
+        ]
+      },
+      {
+        "id": "writ-of-execution",
+        "name": "Writ of execution",
+        "blurb": "Authorize the sheriff to seize and sell the debtor's personal property.",
+        "description": "File a writ of execution, and the sheriff will seize and auction the debtor's non-exempt personal property to satisfy the judgment.",
+        "forms": [
+          {
+            "number": "MDJ-03",
+            "name": "Request for Order of Execution"
+          }
+        ],
+        "estimated_cost": "$30 plus sheriff fees",
+        "effectiveness_notes": "Effective if the debtor owns valuable non-exempt personal property.",
+        "exemptions": [
+          "Personal property up to $300"
+        ],
+        "source_ids": [
+          "S15"
+        ]
+      }
+    ],
+    "wage_garnishment_max_pct_of_disposable": 25,
+    "judgment_lifespan_years": 20,
+    "judgment_renewal_process": "File a revival of judgment before the 20-year period expires to extend the judgment's enforceability.",
+    "debtor_exam_form": {
+      "number": "MDJ-11",
+      "name": "Interrogatories to Judgment Debtor"
+    },
+    "exempt_assets": [
+      "Homestead — $300",
+      "Vehicle — $300",
+      "Retirement accounts (state-protected)",
+      "Social Security and federal benefits"
+    ],
+    "bankruptcy_effect_notes": "Filing for bankruptcy may discharge certain judgments; consult an attorney for specifics.",
+    "satisfaction_of_judgment_form": {
+      "number": "MDJ-12",
+      "name": "Satisfaction of Judgment"
+    },
+    "priority_notes": "Priority among judgment creditors is generally determined by the date of lien attachment.",
+    "source_ids": [
+      "S15"
+    ]
+  },
+  "businesses": {
+    "self_representation_allowed": true,
+    "self_representation_notes": "Businesses can appear without an attorney in Magisterial District Court.",
+    "can_send_employee": true,
+    "can_send_attorney": true,
+    "non_attorney_representation_form": {
+      "number": "MDJ-13",
+      "name": "Authorization for Non-Attorney Representation"
+    },
+    "insurance_adjuster_allowed": false,
+    "fictitious_name_form": {
+      "number": "MDJ-14",
+      "name": "Fictitious Name Registration"
+    },
+    "fictitious_name_notes": "Businesses operating under a fictitious name must register with the state and may need to provide proof in court.",
+    "sole_proprietor_employee_exception": "Sole proprietors may authorize an employee to represent them in court.",
+    "out_of_state_business_must_register": true,
+    "out_of_state_business_statute": "15 Pa.C.S. § 411",
+    "licensing_notes": "Unlicensed contractors may face challenges in enforcing contracts; consult legal counsel.",
+    "source_ids": [
+      "S1"
+    ]
+  },
+  "county_variations_material": true,
+  "county_variations": [
+    {
+      "county": "Philadelphia",
+      "topic": "Court structure",
+      "detail": "Philadelphia has a separate Municipal Court handling small claims up to $12,000.",
+      "source_ids": [
+        "S22"
+      ]
+    },
+    {
+      "county": "Allegheny",
+      "topic": "E-filing availability",
+      "detail": "Allegheny County offers e-filing for certain cases; check with the local court.",
+      "source_ids": [
+        "S1"
+      ]
+    }
+  ],
+  "pitfalls": [
+    {
+      "title": "Incorrect defendant information",
+      "what_happens": "Suing the wrong party or using incorrect names can result in dismissal or unenforceable judgments.",
+      "how_to_avoid": "Verify the exact legal name and address of the defendant before filing.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Missing statute of limitations",
+      "what_happens": "Filing after the deadline results in automatic dismissal of the case.",
+      "how_to_avoid": "Confirm the applicable statute of limitations for your claim type before filing.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "title": "Improper service of process",
+      "what_happens": "Failure to serve the defendant correctly can delay the case or lead to dismissal.",
+      "how_to_avoid": "Follow the court's rules for service of process precisely.",
+      "source_ids": [
+        "S12"
+      ]
+    },
+    {
+      "title": "Insufficient evidence",
+      "what_happens": "Lack of evidence can result in losing the case, even if your claim is valid.",
+      "how_to_avoid": "Gather all relevant documents, photos, and witness statements before the hearing.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Ignoring counterclaims",
+      "what_happens": "Defendants may file counterclaims, potentially increasing your liability.",
+      "how_to_avoid": "Be prepared to defend against possible counterclaims by reviewing your case thoroughly.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "title": "Overlooking post-judgment procedures",
+      "what_happens": "Winning a judgment doesn't guarantee payment; you must take steps to collect.",
+      "how_to_avoid": "Familiarize yourself with collection methods and follow through promptly.",
+      "source_ids": [
+        "S15"
+      ]
+    }
+  ],
+  "recent_changes": [
+    {
+      "date": "2025-06-01",
+      "title": "Increase in filing fees",
+      "description": "Filing fees for small claims cases increased by $10 across all tiers.",
+      "bill_or_rule_citation": "42 Pa.C.S. § 1725.1",
+      "source_ids": [
+        "S5"
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Do I need a lawyer?",
+      "answer": "No, you are not required to have a lawyer in Magisterial District Court. Many individuals represent themselves in small claims cases.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "How long does it take?",
+      "answer": "Small claims cases typically resolve within 30 to 90 days, depending on the court's schedule and complexity of the case.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "What's the maximum I can sue for?",
+      "answer": "The maximum amount you can sue for in Pennsylvania's small claims court is $12,000.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "What happens if the defendant doesn't show up?",
+      "answer": "If the defendant fails to appear, the court may enter a default judgment in your favor.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "question": "Can I appeal?",
+      "answer": "Yes, either party can appeal the judgment to the Court of Common Pleas within 30 days.",
+      "source_ids": [
+        "S13"
+      ]
+    },
+    {
+      "question": "How long is a judgment good for?",
+      "answer": "A judgment in Pennsylvania is valid for 20 years and can be renewed before expiration.",
+      "source_ids": [
+        "S4"
+      ]
+    }
+  ],
+  "state_specific_notes": [
+    "Pennsylvania allows treble damages for willful violations under its consumer protection law.",
+    "Security deposits must be returned within 30 days, or landlords face double damages.",
+    "Wage garnishment is limited to 25% of disposable earnings.",
+    "Post-judgment interest accrues at 6% per annum.",
+    "Philadelphia has a separate Municipal Court for small claims up to $12,000."
+  ],
+  "_extras": {
+    "interesting_findings": [
+      "Pennsylvania's small claims court allows for statutory penalties in bad check cases, potentially doubling the amount owed.",
+      "The state provides a standardized form for filing in forma pauperis petitions, aiding those unable to afford filing fees.",
+      "Magisterial District Courts offer a relatively quick resolution for small claims, often within 90 days."
+    ]
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "label": "Pennsylvania Unified Judicial System — Magisterial District Court Small Claims Information",
+      "url": "https://www.pacourts.us/learn/small-claims",
+      "primary": true,
+      "citation": ""
+    },
+    {
+      "id": "S4",
+      "label": "42 Pa.C.S. § 1515 (Jurisdiction and venue of magisterial district judges)",
+      "url": "https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&ttl=42&div=0&chpt=15&sctn=15&subsctn=0",
+      "primary": false,
+      "citation": "42 Pa.C.S. § 1515"
+    },
+    {
+      "id": "S5",
+      "label": "42 Pa.C.S. § 1725.1 (Costs in magisterial district courts)",
+      "url": "https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&ttl=42&div=0&chpt=17&sctn=25.1&subsctn=0",
+      "primary": false,
+      "citation": "42 Pa.C.S. § 1725.1"
+    },
+    {
+      "id": "S7",
+      "label": "18 Pa.C.S. § 4105 (Bad Checks — civil penalty)",
+      "url": "https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&ttl=18&div=0&chpt=41&sctn=5&subsctn=0",
+      "primary": false,
+      "citation": "18 Pa.C.S. § 4105"
+    },
+    {
+      "id": "S8",
+      "label": "73 P.S. § 201-1 et seq. (Pennsylvania Unfair Trade Practices and Consumer Protection Law)",
+      "url": "https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&ttl=73&div=0&chpt=201&sctn=1&subsctn=0",
+      "primary": false,
+      "citation": "73 P.S. § 201-1 et seq."
+    },
+    {
+      "id": "S10",
+      "label": "Pennsylvania Magisterial District Courts Forms (Civil Complaints, etc.)",
+      "url": "https://www.pacourts.us/forms/for-the-public",
+      "primary": false,
+      "citation": ""
+    },
+    {
+      "id": "S11",
+      "label": "Pennsylvania Magisterial District Courts Fee Schedule",
+      "url": "https://www.pacourts.us/Storage/media/pdfs/20220421/154340-mdccivilfeeschedule.pdf",
+      "primary": false,
+      "citation": ""
+    },
+    {
+      "id": "S12",
+      "label": "Service of Process – Pa.R.C.P.M.D.J. Nos. 307–308",
+      "url": "https://www.pacourts.us/sites/default/files/mdl-rules.pdf",
+      "primary": false,
+      "citation": ""
+    },
+    {
+      "id": "S13",
+      "label": "Appeals from Magisterial District Judge — Pa.R.C.P.M.D.J. No. 1002",
+      "url": "https://www.pacourts.us/sites/default/files/mdl-rules.pdf",
+      "primary": false,
+      "citation": ""
+    },
+    {
+      "id": "S15",
+      "label": "Pa.R.C.P.M.D.J. No. 401 (Request for Order of Execution)",
+      "url": "https://www.pacourts.us/sites/default/files/mdl-rules.pdf",
+      "primary": false,
+      "citation": ""
+    },
+    {
+      "id": "S19",
+      "label": "68 P.S. § 250.512 (Security Deposits)",
+      "url": "https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&ttl=68&div=0&chpt=8&sctn=512&subsctn=0",
+      "primary": false,
+      "citation": "68 P.S. § 250.512"
+    },
+    {
+      "id": "S20",
+      "label": "43 Pa.C.S. § 260.5 (Wage Payment and Collection Law — required pay periods and final payment)",
+      "url": "https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&ttl=43&div=0&chpt=11&sctn=260.5&subsctn=0",
+      "primary": false,
+      "citation": "43 Pa.C.S. § 260.5"
+    },
+    {
+      "id": "S22",
+      "label": "Philadelphia Municipal Court Civil Division — Small Claims",
+      "url": "https://www.courts.phila.gov/municipal/civil/small-claims.asp",
+      "primary": false,
+      "citation": ""
+    }
+  ],
+  "_meta": {
+    "state": "Pennsylvania",
+    "slug": "pennsylvania",
+    "model": "gpt-4.1",
+    "sources_response_id": "resp_0fc29495c4fa10120069f08b1aff1881948737b9a21ad0c1d6",
+    "extraction_response_id": "resp_03ca0dcfac322ad50069f097076a308195940b4c43c55675d2",
+    "generated_at": "2026-04-28T11:17:51.500Z",
+    "usage": {
+      "input_tokens": 7919,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 13895,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 21814
+    }
+  }
+}
