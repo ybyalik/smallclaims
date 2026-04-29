@@ -201,21 +201,43 @@ function SecurityDepositPage() {
         </section>
 
         {/* HOW LONG */}
-        <section className="cat-section cat-prose">
-          <h2>How long does your landlord have?</h2>
-          <p>
-            Every state has a hard deadline for returning the deposit (or sending an itemized
-            list of deductions). Miss it, and the landlord typically forfeits the right to
-            withhold any of it &mdash; meaning you can recover the full deposit even if there were
-            real damages, plus statutory penalties on top.
-          </p>
-          <p>
-            The clock generally starts on whichever is later: <strong>(a)</strong> the date you
-            moved out, or <strong>(b)</strong> the date the landlord receives your written
-            forwarding address. Get the forwarding-address notice in writing &mdash; certified
-            mail or email with a read receipt &mdash; because that&rsquo;s the fact that resets
-            the clock in most states.
-          </p>
+        <section className="cat-section">
+          <div className="cat-split">
+            <div className="cat-split-intro">
+              <span className="eyebrow">The clock</span>
+              <h2>
+                How long does your <em>landlord</em> have?
+              </h2>
+              <p>
+                Every state has a hard deadline for returning the deposit (or sending an itemized
+                list of deductions). Miss it, and the landlord typically forfeits the right to
+                withhold any of it.
+              </p>
+            </div>
+            <div className="cat-elig-list">
+              <div className="cat-elig-row">
+                <div className="cat-elig-step">A</div>
+                <div>
+                  <h4>Move-out date</h4>
+                  <p>The day you handed back the keys and vacated the unit.</p>
+                </div>
+              </div>
+              <div className="cat-elig-row">
+                <div className="cat-elig-step">B</div>
+                <div>
+                  <h4>Forwarding-address notice</h4>
+                  <p>Written notice (certified mail or email with read receipt) telling the landlord where to send the deposit.</p>
+                </div>
+              </div>
+              <div className="cat-elig-row clock">
+                <div className="cat-elig-step">▶</div>
+                <div>
+                  <h4>The clock starts on the later of the two</h4>
+                  <p>That&rsquo;s why the forwarding-address notice matters — without it the deadline never starts.</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* STATE TABLE */}
@@ -265,33 +287,47 @@ function SecurityDepositPage() {
         </section>
 
         {/* WHAT YOU CAN RECOVER */}
-        <section className="cat-section cat-prose">
-          <h2>What you can recover</h2>
-          <p>
-            Three layers of recovery, stacked. Bring receipts and a clear damages math to the
-            hearing &mdash; judges decide what they can verify.
-          </p>
-          <h3>1. The deposit itself</h3>
-          <p>
-            Whatever the landlord wrongfully withheld. If they kept $1,200 of a $1,500 deposit
-            and sent no itemized list (or sent one full of normal wear and tear), you&rsquo;re
-            asking for the full $1,500. The burden is on the landlord to justify each
-            deduction &mdash; not on you to disprove them.
-          </p>
-          <h3>2. Statutory penalty</h3>
-          <p>
-            Most states multiply this when the landlord acted in bad faith: <strong>2x or 3x
-            the wrongfully withheld amount</strong> is the most common multiplier. In Texas,
-            for example, bad faith adds <em>$100 + three times the deposit</em>. In
-            Massachusetts, three times the deposit plus interest plus attorney fees.
-          </p>
-          <h3>3. Attorney&rsquo;s fees and interest</h3>
-          <p>
-            Most state security-deposit statutes shift attorney fees to the losing landlord. You
-            don&rsquo;t need a lawyer to use this provision &mdash; the threat of fee-shifting
-            is what pushes most landlords to settle once a real demand letter shows up. Pre-
-            and post-judgment interest also runs at your state&rsquo;s legal rate.
-          </p>
+        <section className="cat-section">
+          <div className="cat-split">
+            <div className="cat-split-intro">
+              <span className="eyebrow">Damages</span>
+              <h2>
+                Three layers, <em>stacked</em>.
+              </h2>
+              <p>
+                Bring receipts and clear math to the hearing &mdash; judges award what they can
+                verify. The burden is on the landlord to justify deductions, not on you to
+                disprove them.
+              </p>
+            </div>
+            <div className="cat-damages-grid" style={{ marginTop: 0, gridTemplateColumns: "1fr" }}>
+              <div className="cat-damage">
+                <div className="cat-damage-tag">1 — The deposit</div>
+                <p>
+                  Whatever the landlord wrongfully withheld. If they kept $1,200 of a $1,500
+                  deposit and sent no itemized list (or one full of normal wear and tear),
+                  you&rsquo;re asking for the full $1,500.
+                </p>
+              </div>
+              <div className="cat-damage">
+                <div className="cat-damage-tag">2 — Statutory penalty</div>
+                <p>
+                  <strong>2x or 3x the wrongfully withheld amount</strong> in most states when
+                  the landlord acted in bad faith. Texas adds $100 + 3x the deposit;
+                  Massachusetts adds 3x plus interest plus attorney fees.
+                </p>
+              </div>
+              <div className="cat-damage">
+                <div className="cat-damage-tag">3 — Attorney&rsquo;s fees + interest</div>
+                <p>
+                  Most security-deposit statutes shift attorney fees to the loser, even if you
+                  go pro se. The threat of fee-shifting is what pushes most landlords to settle
+                  once a real demand letter shows up. Pre- and post-judgment interest also runs
+                  at your state&rsquo;s legal rate.
+                </p>
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* STEP BY STEP */}
@@ -369,32 +405,48 @@ function SecurityDepositPage() {
         </section>
 
         {/* COMMON DEFENSES */}
-        <section className="cat-section cat-prose">
-          <h2>Common landlord defenses (and how to counter them)</h2>
-          <p>
-            Landlords usually try one of three defenses. Be ready for each.
-          </p>
-          <h3>&ldquo;The damages exceeded the deposit&rdquo;</h3>
-          <p>
-            They have to prove it &mdash; with itemized invoices, photos, and reasonable cost
-            estimates. Counter with your move-in walkthrough photos and the move-in checklist.
-            If they didn&rsquo;t do a move-in walkthrough, that&rsquo;s itself a fact the judge
-            cares about.
-          </p>
-          <h3>&ldquo;You never gave us a forwarding address&rdquo;</h3>
-          <p>
-            This is why certified mail with the return receipt matters. If you emailed it,
-            print the email with full headers showing the timestamp. If you don&rsquo;t have
-            proof of forwarding-address notice, your case isn&rsquo;t dead but the penalty
-            calculation gets harder &mdash; the clock may not have started.
-          </p>
-          <h3>&ldquo;Normal wear and tear&rdquo; charges</h3>
-          <p>
-            Carpet wear after 3 years of normal use, paint scuffs, minor nail holes, faded
-            curtains &mdash; these are wear and tear, not damages. Landlords routinely charge
-            for them anyway. Cite your state&rsquo;s definition of normal wear and tear (most
-            statutes have one) and bring photos of the move-out condition.
-          </p>
+        <section className="cat-section">
+          <div className="cat-split">
+            <div className="cat-split-intro">
+              <span className="eyebrow">Be ready</span>
+              <h2>
+                Common landlord <em>defenses</em>.
+              </h2>
+              <p>
+                Landlords usually try one of three. Each has a clean rebuttal if you have your
+                paperwork in order.
+              </p>
+            </div>
+            <div className="cat-defense-list">
+              <div className="cat-defense">
+                <div className="cat-defense-claim">&ldquo;The damages exceeded the deposit.&rdquo;</div>
+                <p>
+                  <strong>Counter:</strong> they have to prove it with itemized invoices,
+                  photos, and reasonable estimates. Bring your move-in walkthrough photos and
+                  checklist. If they skipped the move-in walkthrough, that itself is a fact the
+                  judge cares about.
+                </p>
+              </div>
+              <div className="cat-defense">
+                <div className="cat-defense-claim">&ldquo;You never gave us a forwarding address.&rdquo;</div>
+                <p>
+                  <strong>Counter:</strong> certified-mail receipt with the return signature, or
+                  a printed email with full headers and timestamp. Without proof, your case
+                  isn&rsquo;t dead but the penalty calculation gets harder &mdash; the clock
+                  may not have started.
+                </p>
+              </div>
+              <div className="cat-defense">
+                <div className="cat-defense-claim">&ldquo;Normal wear and tear&rdquo; charges.</div>
+                <p>
+                  <strong>Counter:</strong> carpet wear after years of use, paint scuffs, nail
+                  holes, faded curtains &mdash; these are wear and tear, not damages. Cite your
+                  state&rsquo;s definition (most statutes have one) and bring photos of the
+                  move-out condition.
+                </p>
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* CTA */}
@@ -438,9 +490,20 @@ function SecurityDepositPage() {
 
         {/* FAQ */}
         <section className="cat-section">
-          <h2 className="cat-h2">
-            Frequently <em>asked</em>.
-          </h2>
+          <div className="cat-split">
+            <div className="cat-split-intro">
+              <span className="eyebrow">FAQ</span>
+              <h2>
+                Frequently <em>asked</em>.
+              </h2>
+              <p>
+                The questions tenants actually ask before filing.{" "}
+                <Link href="/contact" className="cat-text-link">
+                  Email support
+                </Link>{" "}
+                if yours isn&rsquo;t here.
+              </p>
+            </div>
           <div className="cat-faq">
             <details>
               <summary>How long does my landlord have to return my deposit?</summary>
@@ -494,6 +557,7 @@ function SecurityDepositPage() {
                 </p>
               </div>
             </details>
+          </div>
           </div>
         </section>
 

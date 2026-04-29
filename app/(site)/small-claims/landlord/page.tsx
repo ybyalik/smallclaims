@@ -382,41 +382,74 @@ export default function LandlordHubPage() {
                 usually has more paper than you do. Pull this together first.
               </p>
             </div>
-            <div className="cat-receipts">
-              <div className="cat-receipt">
-                <span className="cat-receipt-tag">Contract</span>
-                <div className="cat-receipt-name">lease_signed.pdf</div>
-                <p className="cat-receipt-desc">Every page. The signed copy, not a draft.</p>
+            <div className="cat-evidence-grid">
+              <div className="cat-evidence-card">
+                <div className="cat-evidence-icon">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.8">
+                    <path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" />
+                    <path d="M14 3v6h6" />
+                  </svg>
+                </div>
+                <h4 className="cat-evidence-title">Your lease</h4>
+                <p className="cat-evidence-desc">Every page of the signed copy, not a draft. If it lives in your email, print it.</p>
               </div>
-              <div className="cat-receipt">
-                <span className="cat-receipt-tag">Photos</span>
-                <div className="cat-receipt-name">move-in_walkthrough.jpg</div>
-                <p className="cat-receipt-desc">Walkthrough photos and the condition checklist. Date-stamps matter.</p>
+              <div className="cat-evidence-card">
+                <div className="cat-evidence-icon">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.8">
+                    <rect x="3" y="6" width="18" height="14" rx="2" />
+                    <circle cx="12" cy="13" r="3.5" />
+                  </svg>
+                </div>
+                <h4 className="cat-evidence-title">Move-in &amp; move-out photos</h4>
+                <p className="cat-evidence-desc">Walkthrough photos plus the condition checklist. Date-stamps matter — judges care when the evidence was created.</p>
               </div>
-              <div className="cat-receipt">
-                <span className="cat-receipt-tag">Bank</span>
-                <div className="cat-receipt-name">deposit_payment.png</div>
-                <p className="cat-receipt-desc">Bank records, money-order stubs, payment-app screenshots.</p>
+              <div className="cat-evidence-card">
+                <div className="cat-evidence-icon">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.8">
+                    <path d="M3 10h18M5 6h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2zM7 15h2M13 15h4" />
+                  </svg>
+                </div>
+                <h4 className="cat-evidence-title">Proof of every payment</h4>
+                <p className="cat-evidence-desc">Bank records, money-order stubs, canceled checks, payment-app screenshots. Show dollar amount and date.</p>
               </div>
-              <div className="cat-receipt">
-                <span className="cat-receipt-tag">Comms</span>
-                <div className="cat-receipt-name">texts_with_landlord.pdf</div>
-                <p className="cat-receipt-desc">Most cases turn on what was said and when. Print with timestamps.</p>
+              <div className="cat-evidence-card">
+                <div className="cat-evidence-icon">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.8">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                  </svg>
+                </div>
+                <h4 className="cat-evidence-title">All communications</h4>
+                <p className="cat-evidence-desc">Texts, emails, certified-mail receipts, voicemails. Most landlord-tenant cases turn on what was said and when.</p>
               </div>
-              <div className="cat-receipt">
-                <span className="cat-receipt-tag">Receipts</span>
-                <div className="cat-receipt-name">hotel_repairs.pdf</div>
-                <p className="cat-receipt-desc">Hotel, movers, exterminator, mold remediation, replacement furniture.</p>
+              <div className="cat-evidence-card">
+                <div className="cat-evidence-icon">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.8">
+                    <path d="M9 14l-3 3 3 3M15 4l3-3 3 3M9 4l-3-3-3 3M15 14l3 3 3-3M5 9l-3 3 3 3M19 9l3 3-3 3" />
+                    <circle cx="12" cy="12" r="4" />
+                  </svg>
+                </div>
+                <h4 className="cat-evidence-title">Receipts for what you spent</h4>
+                <p className="cat-evidence-desc">Hotel, movers, replacement furniture, exterminator, mold remediation. Originals or PDFs.</p>
               </div>
-              <div className="cat-receipt">
-                <span className="cat-receipt-tag">Notice</span>
-                <div className="cat-receipt-name">forwarding_address.pdf</div>
-                <p className="cat-receipt-desc">Certified-mail receipt that resets the deposit-return clock.</p>
+              <div className="cat-evidence-card">
+                <div className="cat-evidence-icon">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.8">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </div>
+                <h4 className="cat-evidence-title">Your forwarding address notice</h4>
+                <p className="cat-evidence-desc">For deposit cases especially — written notice of where to send it is what starts the state clock.</p>
               </div>
-              <div className="cat-receipt">
-                <span className="cat-receipt-tag">Witness</span>
-                <div className="cat-receipt-name">roommate_contact.txt</div>
-                <p className="cat-receipt-desc">Roommate, neighbor, or repair tech who saw the condition.</p>
+              <div className="cat-evidence-card">
+                <div className="cat-evidence-icon">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.8">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                  </svg>
+                </div>
+                <h4 className="cat-evidence-title">Witness contact info</h4>
+                <p className="cat-evidence-desc">Roommate, neighbor, or repair tech who saw the unit&rsquo;s condition can be the difference at the hearing.</p>
               </div>
             </div>
           </div>
