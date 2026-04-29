@@ -405,12 +405,45 @@ export default async function StateGuide({ params }: Params) {
             <span className="eyebrow">Appeals</span>
             <h2>Can you appeal if you lose?</h2>
           </header>
-          <p>{g.appeals.whoCanAppeal}</p>
-          <p>
-            <strong>Deadline:</strong> {g.appeals.deadlineDays} days from the judgment notice.{" "}
-            <strong>Filing fee:</strong> ${g.appeals.fee}. <strong>Form:</strong> {g.appeals.notice.form}.
-          </p>
-          <p>{g.appeals.typeNotes}</p>
+          {g.appeals.whoCanAppeal?.trim() && <p>{g.appeals.whoCanAppeal}</p>}
+
+          {/* Inline facts — only render the parts we have */}
+          {(g.appeals.deadlineDays > 0 ||
+            g.appeals.fee > 0 ||
+            g.appeals.notice.form?.trim() ||
+            g.appeals.notice.name?.trim()) && (
+            <ul className="g-fact-list">
+              {g.appeals.deadlineDays > 0 && (
+                <li>
+                  <strong>Deadline:</strong> {g.appeals.deadlineDays} days from the judgment notice.
+                </li>
+              )}
+              {g.appeals.fee > 0 && (
+                <li>
+                  <strong>Filing fee:</strong> ${g.appeals.fee}.
+                </li>
+              )}
+              {(g.appeals.notice.form?.trim() || g.appeals.notice.name?.trim()) && (
+                <li>
+                  <strong>Form:</strong>{" "}
+                  {[g.appeals.notice.form, g.appeals.notice.name].filter(Boolean).join(" — ") ||
+                    "Notice of Appeal (filed at the trial court)"}
+                  .
+                </li>
+              )}
+              <li>
+                <strong>Type:</strong>{" "}
+                {g.appeals.type === "de novo"
+                  ? "Trial de novo — the case is heard fresh in the higher court."
+                  : g.appeals.type === "on the record"
+                    ? "On the record — the higher court reviews the existing trial record."
+                    : "Varies — see details below."}
+              </li>
+            </ul>
+          )}
+
+          {g.appeals.typeNotes?.trim() && <p>{g.appeals.typeNotes}</p>}
+
           {g.appeals.automaticStayOnFiling && (
             <p>
               Filing the appeal automatically pauses any collection efforts until the appeal is resolved.
@@ -419,22 +452,35 @@ export default async function StateGuide({ params }: Params) {
           {g.appeals.defaultJudgmentNotAppealable && (
             <details className="g-extra">
               <summary>Default judgment? Different rules.</summary>
-              <p>{g.appeals.defaultJudgmentNotes}</p>
-              <p>
-                Motion to vacate (Form {g.response.motionToVacateForm.number}): file within{" "}
-                {g.response.motionToVacateDeadlineDays} days of the judgment notice. If you never received notice,
-                you have up to {g.response.motionToVacateLackOfNoticeDays} days.
-              </p>
-              <p>
-                If the motion is denied, you have {g.response.motionToVacateAppealDeadlineDays} days to appeal the
-                denial. {g.response.motionToVacateAppealNotes}
-              </p>
+              {g.appeals.defaultJudgmentNotes?.trim() && <p>{g.appeals.defaultJudgmentNotes}</p>}
+              {(g.response.motionToVacateForm.number?.trim() ||
+                g.response.motionToVacateDeadlineDays > 0) && (
+                <p>
+                  Motion to vacate
+                  {g.response.motionToVacateForm.number?.trim() &&
+                    ` (Form ${g.response.motionToVacateForm.number})`}
+                  {g.response.motionToVacateDeadlineDays > 0 &&
+                    `: file within ${g.response.motionToVacateDeadlineDays} days of the judgment notice`}
+                  {g.response.motionToVacateLackOfNoticeDays > 0 &&
+                    `. If you never received notice, you have up to ${g.response.motionToVacateLackOfNoticeDays} days`}
+                  .
+                </p>
+              )}
+              {g.response.motionToVacateAppealDeadlineDays > 0 && (
+                <p>
+                  If the motion is denied, you have {g.response.motionToVacateAppealDeadlineDays}{" "}
+                  days to appeal the denial.{" "}
+                  {g.response.motionToVacateAppealNotes?.trim() ?? ""}
+                </p>
+              )}
             </details>
           )}
-          {g.appeals.frivolousPenalty?.available && (
+          {g.appeals.frivolousPenalty?.available && g.appeals.frivolousPenalty.cap > 0 && (
             <details className="g-extra">
               <summary>Frivolous appeal? Up to ${g.appeals.frivolousPenalty.cap} in attorney fees.</summary>
-              <p>{g.appeals.frivolousPenalty.notes}</p>
+              {g.appeals.frivolousPenalty.notes?.trim() && (
+                <p>{g.appeals.frivolousPenalty.notes}</p>
+              )}
               {g.appeals.frivolousPenalty.statute && (
                 <p className="cite">{g.appeals.frivolousPenalty.statute}</p>
               )}

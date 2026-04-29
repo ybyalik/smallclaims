@@ -27,16 +27,23 @@ export default function GroupedForms({ forms }: { forms: Form[] }) {
   const [query, setQuery] = useState("");
   const searching = query.trim().length > 0;
 
+  // Drop dead rows (empty number AND empty name → no useful content). Keep
+  // rows that have a name even without a number so users still see the entry.
+  const cleaned = useMemo(
+    () => forms.filter((f) => (f.number?.trim() || f.name?.trim())),
+    [forms],
+  );
+
   const filtered = useMemo(() => {
-    if (!searching) return forms;
+    if (!searching) return cleaned;
     const q = query.toLowerCase();
-    return forms.filter(
+    return cleaned.filter(
       (f) =>
         f.number.toLowerCase().includes(q) ||
         f.name.toLowerCase().includes(q) ||
         f.description.toLowerCase().includes(q)
     );
-  }, [forms, searching, query]);
+  }, [cleaned, searching, query]);
 
   const grouped = useMemo(() => {
     const map = new Map<FormGroup, Form[]>();
@@ -80,22 +87,29 @@ export default function GroupedForms({ forms }: { forms: Form[] }) {
               <span className="form-group-count">{groupForms.length}</span>
             </summary>
             <ul>
-              {groupForms.map((f) => (
-                <li key={f.number} className="form-row">
-                  <span className="form-row-num">{f.number}</span>
-                  <div className="form-row-body">
-                    <span className="form-row-name">{f.name}</span>
-                    <span className="form-row-desc">{f.description}</span>
-                  </div>
-                  {f.url ? (
-                    <a className="form-row-link" href={f.url} target="_blank" rel="noopener noreferrer">
-                      PDF →
-                    </a>
-                  ) : (
-                    <span className="form-row-link form-row-link-muted">PDF</span>
-                  )}
-                </li>
-              ))}
+              {groupForms.map((f, idx) => {
+                const hasNum = !!f.number?.trim();
+                return (
+                  <li key={`${f.number || "noid"}-${idx}`} className="form-row">
+                    {hasNum ? (
+                      <span className="form-row-num">{f.number}</span>
+                    ) : (
+                      <span className="form-row-num form-row-num-empty" aria-hidden="true">—</span>
+                    )}
+                    <div className="form-row-body">
+                      <span className="form-row-name">{f.name || "Untitled form"}</span>
+                      {f.description && <span className="form-row-desc">{f.description}</span>}
+                    </div>
+                    {f.url ? (
+                      <a className="form-row-link" href={f.url} target="_blank" rel="noopener noreferrer">
+                        PDF →
+                      </a>
+                    ) : (
+                      <span className="form-row-link form-row-link-muted">PDF</span>
+                    )}
+                  </li>
+                );
+              })}
             </ul>
           </details>
         ))}

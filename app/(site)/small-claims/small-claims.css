@@ -904,6 +904,12 @@
   border-radius: 6px;
   text-align: center;
   white-space: nowrap;
+  min-width: 56px;
+}
+.form-row-num-empty {
+  color: var(--muted);
+  background: transparent;
+  font-weight: 400;
 }
 .form-row-body {
   display: flex;
@@ -1125,6 +1131,29 @@
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 12px;
   color: var(--muted);
+}
+
+/* G-FACT-LIST — inline fact rows in sections like Appeals ──────────── */
+.g-fact-list {
+  list-style: none;
+  padding: 0;
+  margin: 14px 0 18px;
+  display: grid;
+  gap: 8px;
+}
+.g-fact-list li {
+  background: var(--card);
+  border: 1px solid var(--hairline);
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+.g-fact-list li strong {
+  color: var(--ink);
+  font-weight: 600;
+  margin-right: 4px;
 }
 
 /* G-EXTRA (collapsibles inside steps for advanced/edge details) ──────── */
