@@ -2,6 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import SectionCaseStudySlider from "./SectionCaseStudySlider";
 import SectionSteppedTabs from "./SectionSteppedTabs";
+import {
+  StepsTimelineVariant, StepsSubwayVariant, StepsReceiptVariant,
+  HowLongHeroNumericVariant, HowLongStateCompareVariant, HowLongCalendarVariant,
+  RecoverReceiptVariant, RecoverStackedBarVariant, RecoverGlobeCardVariant,
+  EvidenceCorkboardVariant, EvidenceBentoVariant, EvidenceProgressRingVariant,
+  EligibilityYesNoTreeVariant, EligibilityTwoColPSVariant, EligibilityQuizVariant,
+} from "./SectionVariants";
 
 export const metadata: Metadata = {
   title: "Section library (private)",
@@ -126,6 +133,66 @@ export default function SectionsPage() {
            ============================================================ */}
       <Label id="11">Stepped framework — clickable tabs swap the right photo card</Label>
       <SectionSteppedTabs />
+
+      {/* ════════════════════════════════════════════════════════════════════
+           Variant set: Step-by-step (3 versions)
+           ════════════════════════════════════════════════════════════════════ */}
+      <Label id="12-A">Step-by-step / variant A — Vertical timeline with traveling dot</Label>
+      <SVWrap><StepsTimelineVariant /></SVWrap>
+
+      <Label id="12-B">Step-by-step / variant B — Subway map / horizontal track</Label>
+      <SVWrap><StepsSubwayVariant /></SVWrap>
+
+      <Label id="12-C">Step-by-step / variant C — Court-docket receipt</Label>
+      <SVWrap><StepsReceiptVariant /></SVWrap>
+
+      {/* ════════════════════════════════════════════════════════════════════
+           Variant set: How long (deadline)
+           ════════════════════════════════════════════════════════════════════ */}
+      <Label id="13-A">How long / variant A — Hero numeric + day-bar</Label>
+      <SVWrap><HowLongHeroNumericVariant /></SVWrap>
+
+      <Label id="13-B">How long / variant B — State comparison cards</Label>
+      <SVWrap><HowLongStateCompareVariant /></SVWrap>
+
+      <Label id="13-C">How long / variant C — Calendar visualization</Label>
+      <SVWrap><HowLongCalendarVariant /></SVWrap>
+
+      {/* ════════════════════════════════════════════════════════════════════
+           Variant set: What you can recover
+           ════════════════════════════════════════════════════════════════════ */}
+      <Label id="14-A">What you can recover / variant A — Settlement receipt</Label>
+      <SVWrap><RecoverReceiptVariant /></SVWrap>
+
+      <Label id="14-B">What you can recover / variant B — Stacked bar chart</Label>
+      <SVWrap><RecoverStackedBarVariant /></SVWrap>
+
+      <Label id="14-C">What you can recover / variant C — Globe-card max recovery</Label>
+      <SVWrap><RecoverGlobeCardVariant /></SVWrap>
+
+      {/* ════════════════════════════════════════════════════════════════════
+           Variant set: Evidence
+           ════════════════════════════════════════════════════════════════════ */}
+      <Label id="15-A">Evidence / variant A — Polaroid cork board</Label>
+      <SVWrap><EvidenceCorkboardVariant /></SVWrap>
+
+      <Label id="15-B">Evidence / variant B — Bento with native renderings</Label>
+      <SVWrap><EvidenceBentoVariant /></SVWrap>
+
+      <Label id="15-C">Evidence / variant C — Progress-ring checklist</Label>
+      <SVWrap><EvidenceProgressRingVariant /></SVWrap>
+
+      {/* ════════════════════════════════════════════════════════════════════
+           Variant set: Eligibility / decision flow
+           ════════════════════════════════════════════════════════════════════ */}
+      <Label id="16-A">Eligibility / variant A — Yes/no decision tree</Label>
+      <SVWrap><EligibilityYesNoTreeVariant /></SVWrap>
+
+      <Label id="16-B">Eligibility / variant B — Two-column qualify / disqualify</Label>
+      <SVWrap><EligibilityTwoColPSVariant /></SVWrap>
+
+      <Label id="16-C">Eligibility / variant C — Toggle quiz with live verdict</Label>
+      <SVWrap><EligibilityQuizVariant /></SVWrap>
 
       <div style={{ padding: "60px 0", background: "var(--bg-2)", textAlign: "center" }}>
         <p style={{ color: "var(--muted)", fontSize: 13 }}>
@@ -2367,3 +2434,11 @@ function CaseStat({ n, label }: { n: string; label: string }) {
   );
 }
 
+
+function SVWrap({ children }: { children: React.ReactNode }) {
+  return (
+    <section style={{ padding: "56px 24px", background: "#faf6e9" }}>
+      <div style={{ maxWidth: 1180, margin: "0 auto" }}>{children}</div>
+    </section>
+  );
+}
