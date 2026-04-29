@@ -1087,9 +1087,9 @@ footer { padding: 80px 0 40px; }
 .cat-hero h1 em { font-style: italic; color: var(--accent); font-weight: var(--headline-italic-weight); letter-spacing: var(--headline-italic-tracking); }
 .cat-lede { font-size: 19px; line-height: 1.55; color: var(--ink-2); max-width: 60ch; margin: 0 0 20px; }
 
-/* Section rhythm — comfortable but not loose. */
-.cat-section { margin: 0; padding: 36px 0; }
-.cat-section + .cat-section { padding-top: 36px; }
+/* Section rhythm — 40px top + 40px bottom on every section. */
+.cat-section { margin: 0; padding: 40px 0; }
+.cat-section + .cat-section { padding-top: 40px; }
 .cat-section:first-of-type { padding-top: 24px; }
 
 /* Stacked-section header (intro above, content below). */
