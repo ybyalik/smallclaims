@@ -239,21 +239,36 @@ function SecurityDepositPage() {
             </div>
             <div className="cat-elig-list">
               <div className="cat-elig-row">
-                <div className="cat-elig-step">A</div>
+                <div className="cat-elig-step">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.8">
+                    <path d="M3 12l2-2 4 4 8-8 4 4" />
+                    <path d="M3 21h18" />
+                  </svg>
+                </div>
                 <div>
                   <h4>Move-out date</h4>
                   <p>The day you handed back the keys and vacated the unit.</p>
                 </div>
               </div>
               <div className="cat-elig-row">
-                <div className="cat-elig-step">B</div>
+                <div className="cat-elig-step">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.8">
+                    <rect x="3" y="5" width="18" height="14" rx="2" />
+                    <path d="M3 7l9 6 9-6" />
+                  </svg>
+                </div>
                 <div>
                   <h4>Forwarding-address notice</h4>
                   <p>Written notice (certified mail or email with read receipt) telling the landlord where to send the deposit.</p>
                 </div>
               </div>
               <div className="cat-elig-row clock">
-                <div className="cat-elig-step">▶</div>
+                <div className="cat-elig-step">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.8">
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M12 7v5l3 2" />
+                  </svg>
+                </div>
                 <div>
                   <h4>The clock starts on the later of the two</h4>
                   <p>That&rsquo;s why the forwarding-address notice matters — without it the deadline never starts.</p>

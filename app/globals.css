@@ -1087,9 +1087,10 @@ footer { padding: 80px 0 40px; }
 .cat-hero h1 em { font-style: italic; color: var(--accent); font-weight: var(--headline-italic-weight); letter-spacing: var(--headline-italic-tracking); }
 .cat-lede { font-size: 19px; line-height: 1.55; color: var(--ink-2); max-width: 60ch; margin: 0 0 20px; }
 
-/* Section rhythm — tight, like homepage. Margins collapse so the visible gap is one of these values, not the sum. */
-.cat-section { margin: 0; padding: 16px 0; }
-.cat-section + .cat-section { padding-top: 16px; }
+/* Section rhythm — comfortable but not loose. */
+.cat-section { margin: 0; padding: 36px 0; }
+.cat-section + .cat-section { padding-top: 36px; }
+.cat-section:first-of-type { padding-top: 24px; }
 
 /* Stacked-section header (intro above, content below). */
 .cat-stack-head { max-width: 64ch; margin-bottom: 20px; }
@@ -1263,7 +1264,7 @@ footer { padding: 80px 0 40px; }
 .cat-elig-list { display: grid; gap: 10px; }
 .cat-elig-row { display: grid; grid-template-columns: 44px 1fr; gap: 18px; align-items: start; padding: 16px 20px; background: var(--card); border: 1px solid var(--hairline); border-radius: 12px; }
 .cat-elig-row.clock { background: var(--ink); color: #fef9f1; border-color: var(--ink); }
-.cat-elig-step { width: 36px; height: 36px; border-radius: 50%; background: rgba(217,64,46,0.12); color: var(--accent); display: grid; place-items: center; font-family: "Newsreader", Georgia, serif; font-weight: 700; font-style: italic; font-size: 18px; }
+.cat-elig-step { width: 36px; height: 36px; border-radius: 50%; background: rgba(217,64,46,0.12); color: var(--accent); display: grid; place-items: center; flex-shrink: 0; }
 .cat-elig-row.clock .cat-elig-step { background: rgba(245,178,159,0.2); color: #f5b29f; }
 .cat-elig-row h4 { font-family: "Geist", system-ui, sans-serif; font-weight: 700; font-size: 16px; letter-spacing: -0.015em; margin: 4px 0 4px; color: var(--ink); }
 .cat-elig-row.clock h4 { color: #fef9f1; }
@@ -1303,7 +1304,7 @@ footer { padding: 80px 0 40px; }
 .cat-steps h3 { font-family: "Geist", system-ui, sans-serif; font-weight: 700; font-size: 18px; letter-spacing: -0.015em; color: var(--ink); margin: 0 0 8px; }
 .cat-steps p { font-size: 16px; line-height: 1.6; color: var(--ink-2); margin: 0; }
 
-.cat-disclaimer { font-size: 13px; line-height: 1.6; color: var(--muted); max-width: 80ch; margin: 56px 0 0; }
+.cat-disclaimer { font-size: 13px; line-height: 1.6; color: var(--muted); margin: 32px 0 0; padding: 18px 22px; background: var(--card); border-radius: 12px; border: 1px solid var(--hairline); }
 .cat-disclaimer strong { color: var(--ink-2); }
 
 @media (max-width: 920px) {
