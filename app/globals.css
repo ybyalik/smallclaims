@@ -1077,3 +1077,119 @@ footer { padding: 80px 0 40px; }
   .cs-actions { flex-direction: column-reverse; }
   .cs-actions .btn { width: 100%; justify-content: center; }
 }
+
+/* ============ Category pages — /small-claims/[category] and subpages ============ */
+.cat-page { padding-bottom: 96px; }
+
+.cat-hero { margin: 32px 0 56px; max-width: 760px; }
+.cat-hero .eyebrow { display: inline-block; margin-bottom: 16px; }
+.cat-hero h1 { font-family: "Newsreader", Georgia, serif; font-weight: var(--headline-weight); font-size: clamp(38px, 4.6vw, 60px); line-height: 1.04; letter-spacing: var(--headline-tracking); color: var(--ink); margin: 0 0 22px; }
+.cat-hero h1 em { font-style: italic; color: var(--accent); font-weight: var(--headline-italic-weight); letter-spacing: var(--headline-italic-tracking); }
+.cat-lede { font-size: 19px; line-height: 1.55; color: var(--ink-2); max-width: 60ch; margin: 0 0 28px; }
+
+.cat-section { margin: 56px 0; }
+.cat-section + .cat-section { margin-top: 56px; }
+
+.cat-h2 { font-family: "Newsreader", Georgia, serif; font-weight: 700; font-size: clamp(28px, 2.8vw, 38px); line-height: 1.1; letter-spacing: -0.02em; color: var(--ink); margin: 0 0 16px; }
+.cat-h2 em { font-style: italic; color: var(--accent); font-weight: 700; }
+
+.cat-prose h2 { font-family: "Newsreader", Georgia, serif; font-weight: 700; font-size: clamp(26px, 2.4vw, 34px); line-height: 1.15; letter-spacing: -0.02em; color: var(--ink); margin: 0 0 16px; }
+.cat-prose h3 { font-family: "Geist", system-ui, sans-serif; font-weight: 700; font-size: 18px; letter-spacing: -0.015em; color: var(--ink); margin: 28px 0 10px; }
+.cat-prose p { font-size: 16.5px; line-height: 1.7; color: var(--ink-2); margin: 0 0 16px; max-width: 68ch; }
+.cat-prose strong { color: var(--ink); font-weight: 600; }
+
+/* Issue card grid */
+.cat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.cat-card { display: flex; flex-direction: column; gap: 12px; padding: 28px; background: var(--card); border: 1px solid var(--hairline); border-radius: 16px; text-decoration: none; color: var(--ink); transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; min-height: 220px; }
+.cat-card:hover { transform: translateY(-3px); border-color: var(--ink); box-shadow: 0 18px 40px -22px rgba(31,27,22,0.18); }
+.cat-card.soon { opacity: 0.78; }
+.cat-card.soon:hover { transform: translateY(-1px); opacity: 0.92; }
+.cat-card-icon { width: 44px; height: 44px; border-radius: 10px; background: rgba(217,64,46,0.08); color: var(--accent); display: grid; place-items: center; }
+.cat-card h3 { font-family: "Newsreader", Georgia, serif; font-weight: 700; font-size: 20px; letter-spacing: -0.015em; color: var(--ink); margin: 0; line-height: 1.2; }
+.cat-card p { font-size: 14px; line-height: 1.55; color: var(--ink-2); margin: 0; flex: 1; }
+.cat-card-cta { display: inline-flex; align-items: center; gap: 6px; font-size: 13.5px; font-weight: 600; color: var(--ink); margin-top: 4px; transition: gap .15s ease, color .15s ease; }
+.cat-card:hover .cat-card-cta { gap: 10px; color: var(--accent); }
+.cat-card.soon .cat-card-cta { color: var(--muted); font-weight: 500; }
+
+/* Damages cards */
+.cat-damages-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 24px; }
+.cat-damage { background: #fff; border: 1px solid var(--hairline); border-radius: 14px; padding: 24px 26px; }
+.cat-damage-tag { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600; color: var(--accent); margin-bottom: 10px; }
+.cat-damage p { font-size: 15px; line-height: 1.6; color: var(--ink-2); margin: 0; }
+.cat-damage strong { color: var(--ink); }
+
+/* Evidence checklist */
+.cat-checklist { list-style: none; padding: 0; margin: 24px 0 0; max-width: 68ch; display: grid; gap: 12px; }
+.cat-checklist li { padding: 14px 18px 14px 44px; background: var(--card); border-radius: 10px; position: relative; font-size: 15px; line-height: 1.55; color: var(--ink-2); }
+.cat-checklist li::before { content: "✓"; position: absolute; left: 18px; top: 14px; color: #2c7a3f; font-weight: 700; font-size: 16px; }
+.cat-checklist li strong { color: var(--ink); }
+
+/* State link grid */
+.cat-state-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 18px; }
+.cat-state-link { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; border: 1px solid var(--hairline); border-radius: 10px; text-decoration: none; color: var(--ink); font-size: 14.5px; font-weight: 500; transition: border-color .15s ease, background .15s ease; }
+.cat-state-link:hover { border-color: var(--ink); background: var(--card); }
+.cat-state-link svg { color: var(--accent); transition: transform .15s ease; }
+.cat-state-link:hover svg { transform: translateX(3px); }
+.cat-text-link { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.cat-text-link:hover { color: var(--accent); }
+
+/* CTA card */
+.cat-cta-card { background: var(--ink); color: #fef9f1; border-radius: 22px; padding: 40px 44px; display: grid; grid-template-columns: 1fr 1.4fr; gap: 56px; align-items: center; position: relative; overflow: hidden; }
+.cat-cta-card::before { content: ""; position: absolute; right: -100px; top: -100px; width: 280px; height: 280px; border-radius: 50%; background: radial-gradient(circle, rgba(245,178,159,0.18), transparent 65%); }
+.cat-cta-card h2 { font-family: "Newsreader", Georgia, serif; font-weight: 700; font-size: clamp(28px, 2.8vw, 38px); line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 14px; color: #fef9f1; position: relative; }
+.cat-cta-card h2 em { font-style: italic; color: #f5b29f; font-weight: 700; }
+.cat-cta-card p { font-size: 16px; line-height: 1.6; color: rgba(254,249,241,0.78); margin: 0; max-width: 38ch; position: relative; }
+.cat-cta-row { display: grid; gap: 10px; position: relative; }
+.cat-cta-tile { display: grid; grid-template-columns: 36px 1fr; gap: 14px; align-items: center; padding: 16px 20px; background: rgba(254,249,241,0.06); border: 1px solid rgba(254,249,241,0.12); border-radius: 12px; text-decoration: none; color: #fef9f1; transition: background .2s ease, border-color .2s ease; }
+.cat-cta-tile:hover { background: rgba(254,249,241,0.14); border-color: rgba(254,249,241,0.3); }
+.cat-cta-tile-icon { width: 36px; height: 36px; border-radius: 8px; background: rgba(245,178,159,0.18); display: grid; place-items: center; font-size: 16px; }
+.cat-cta-tile strong { display: block; font-family: "Geist", system-ui, sans-serif; font-weight: 600; font-size: 14.5px; margin-bottom: 2px; color: #fef9f1; }
+.cat-cta-tile span { display: block; font-size: 13px; color: rgba(254,249,241,0.6); }
+
+/* FAQ */
+.cat-faq { display: grid; gap: 8px; margin-top: 22px; max-width: 76ch; }
+.cat-faq details { background: #fff; border: 1px solid var(--hairline); border-radius: 12px; overflow: hidden; }
+.cat-faq summary { list-style: none; cursor: pointer; padding: 18px 22px; font-family: "Geist", system-ui, sans-serif; font-weight: 600; font-size: 15.5px; color: var(--ink); position: relative; padding-right: 50px; }
+.cat-faq summary::-webkit-details-marker { display: none; }
+.cat-faq summary::after { content: "+"; position: absolute; right: 22px; top: 50%; transform: translateY(-50%); font-size: 22px; font-weight: 400; color: var(--ink); transition: transform .2s ease; }
+.cat-faq details[open] summary::after { content: "−"; }
+.cat-faq details > div { padding: 0 22px 18px; font-size: 15px; line-height: 1.6; color: var(--ink-2); }
+.cat-faq details > div p { margin: 0; }
+
+/* Tables (state deadline tables, etc) */
+.cat-table-wrap { margin-top: 22px; overflow-x: auto; border: 1px solid var(--hairline); border-radius: 12px; background: #fff; }
+.cat-table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+.cat-table thead { background: var(--bg-2); }
+.cat-table th { text-align: left; padding: 14px 18px; font-weight: 600; color: var(--ink); border-bottom: 1px solid var(--hairline); font-size: 13px; letter-spacing: 0.02em; text-transform: uppercase; }
+.cat-table td { padding: 16px 18px; border-bottom: 1px solid var(--hairline); color: var(--ink-2); vertical-align: top; }
+.cat-table tr:last-child td { border-bottom: 0; }
+.cat-table code { font-size: 12.5px; color: var(--muted); background: var(--bg-2); padding: 2px 6px; border-radius: 4px; font-family: "Geist Mono", ui-monospace, SFMono-Regular, monospace; }
+
+/* Eligibility quick card (subpages) */
+.cat-quick-card { background: linear-gradient(180deg, var(--card) 0%, #fff 100%); border: 1px solid var(--hairline); border-radius: 16px; padding: 32px 36px; }
+.cat-elig { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.cat-elig li { display: grid; grid-template-columns: 22px 1fr; gap: 14px; align-items: start; font-size: 15px; line-height: 1.55; color: var(--ink-2); }
+.cat-elig-tick { display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: rgba(44,122,63,0.12); color: #2c7a3f; font-weight: 700; font-size: 13px; }
+
+/* Steps (numbered) */
+.cat-steps { list-style: none; counter-reset: cs; padding: 0; margin: 24px 0 0; display: grid; gap: 16px; max-width: 80ch; }
+.cat-steps li { counter-increment: cs; background: #fff; border: 1px solid var(--hairline); border-radius: 14px; padding: 24px 28px 22px 84px; position: relative; }
+.cat-steps li::before { content: counter(cs, decimal-leading-zero); position: absolute; left: 28px; top: 24px; font-family: "Newsreader", Georgia, serif; font-style: italic; font-weight: 700; font-size: 30px; color: var(--accent); line-height: 1; }
+.cat-steps h3 { font-family: "Geist", system-ui, sans-serif; font-weight: 700; font-size: 17px; letter-spacing: -0.015em; color: var(--ink); margin: 0 0 8px; }
+.cat-steps p { font-size: 14.5px; line-height: 1.6; color: var(--ink-2); margin: 0; }
+
+.cat-disclaimer { font-size: 13px; line-height: 1.6; color: var(--muted); max-width: 80ch; margin: 56px 0 0; }
+.cat-disclaimer strong { color: var(--ink-2); }
+
+@media (max-width: 920px) {
+  .cat-grid { grid-template-columns: repeat(2, 1fr); }
+  .cat-state-grid { grid-template-columns: repeat(2, 1fr); }
+  .cat-damages-grid { grid-template-columns: 1fr; }
+  .cat-cta-card { grid-template-columns: 1fr; padding: 28px; gap: 28px; }
+  .cat-steps li { padding: 64px 22px 22px 22px; }
+  .cat-steps li::before { left: 22px; top: 18px; font-size: 28px; }
+}
+@media (max-width: 600px) {
+  .cat-grid { grid-template-columns: 1fr; }
+  .cat-state-grid { grid-template-columns: 1fr; }
+}
