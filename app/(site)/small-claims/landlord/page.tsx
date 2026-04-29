@@ -230,123 +230,226 @@ export default function LandlordHubPage() {
                 </span>
               </Link>
             ))}
+            <Link href="/case-score" className="cat-card cat-card-quiz">
+              <div className="cat-card-icon" style={{ background: "rgba(217,64,46,0.18)" }}>
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.6">
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 7v5l3 2" />
+                </svg>
+              </div>
+              <h3>Something else?</h3>
+              <p>Tell us about your situation in 90 seconds and get a strength read on your case.</p>
+              <span className="cat-card-cta">
+                Take the case-score quiz
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </span>
+            </Link>
           </div>
         </section>
 
         {/* HOW SMALL CLAIMS HANDLES LANDLORD DISPUTES */}
-        <section className="cat-section cat-prose">
-          <h2>How small claims handles landlord disputes</h2>
-          <p>
-            Small claims court is built for everyday money disputes — exactly the kind tenants
-            run into. The judge expects regular people without lawyers, the rules are
-            simplified, and the case is decided in a single hearing that usually takes 10 to 15
-            minutes. Most states cap small claims somewhere between $5,000 and $20,000, which
-            covers the overwhelming majority of landlord-tenant money disputes.
-          </p>
-          <p>
-            <strong>What belongs here:</strong> recovering money you&rsquo;re owed. Withheld
-            security deposit, repairs you paid for that the lease said the landlord owed,
-            hotel stays during an illegal lockout, ruined personal property from a habitability
-            failure, lead-paint disclosure violations.
-          </p>
-          <p>
-            <strong>What doesn&rsquo;t belong here:</strong> getting back into the unit (that&rsquo;s
-            an emergency injunction, usually in housing court), challenging a rent control
-            calculation (administrative law), or a fair-housing discrimination claim
-            (state/federal civil-rights venue). If your case is mostly about money, you&rsquo;re
-            in the right place.
-          </p>
+        <section className="cat-section">
+          <div className="sec-head" style={{ textAlign: "left", marginBottom: 24 }}>
+            <h2 className="cat-h2" style={{ margin: 0 }}>
+              How small claims handles <em>landlord disputes</em>.
+            </h2>
+            <p style={{ margin: "10px 0 0", maxWidth: "60ch", color: "var(--ink-2)" }}>
+              Small claims is built for everyday money disputes — exactly the kind tenants run
+              into. Most state caps fall between $5,000 and $20,000, the hearing takes 10–15
+              minutes, and you don&rsquo;t need a lawyer to use it.
+            </p>
+          </div>
+
+          <div className="cat-ps">
+            <div className="cat-ps-grid">
+              <div className="cat-ps-col">
+                <h3>Belongs in small claims</h3>
+                <div className="cat-ps-item">
+                  <div className="cat-ps-num">01</div>
+                  <div className="cat-ps-text"><strong>Withheld security deposit.</strong> Plus 2x or 3x in penalty in many states.</div>
+                </div>
+                <div className="cat-ps-item">
+                  <div className="cat-ps-num">02</div>
+                  <div className="cat-ps-text"><strong>Repairs you paid for</strong> that the lease said the landlord owed.</div>
+                </div>
+                <div className="cat-ps-item">
+                  <div className="cat-ps-num">03</div>
+                  <div className="cat-ps-text"><strong>Hotel stays</strong> during an illegal lockout or uninhabitable period.</div>
+                </div>
+                <div className="cat-ps-item">
+                  <div className="cat-ps-num">04</div>
+                  <div className="cat-ps-text"><strong>Ruined personal property</strong> from a habitability failure (mold, leaks, pests).</div>
+                </div>
+                <div className="cat-ps-item">
+                  <div className="cat-ps-num">05</div>
+                  <div className="cat-ps-text"><strong>Lead-paint disclosure</strong> violations under federal and state law.</div>
+                </div>
+              </div>
+
+              <div className="cat-ps-orb" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" strokeWidth="1.6">
+                  <path d="M12 2v3M5 8l-2-1M19 8l2-1M3 11h18l-1 8H4z" />
+                  <path d="M9 19v-5h6v5" />
+                </svg>
+              </div>
+
+              <div className="cat-ps-col dark">
+                <h3>Doesn&rsquo;t belong here</h3>
+                <div className="cat-ps-item">
+                  <div className="cat-ps-num">×</div>
+                  <div className="cat-ps-text"><strong>Getting back into the unit.</strong> That&rsquo;s an emergency injunction in housing court.</div>
+                </div>
+                <div className="cat-ps-item">
+                  <div className="cat-ps-num">×</div>
+                  <div className="cat-ps-text"><strong>Rent-control calculations.</strong> Administrative law, not small claims.</div>
+                </div>
+                <div className="cat-ps-item">
+                  <div className="cat-ps-num">×</div>
+                  <div className="cat-ps-text"><strong>Fair-housing discrimination.</strong> State or federal civil-rights venue.</div>
+                </div>
+                <div className="cat-ps-item">
+                  <div className="cat-ps-num">×</div>
+                  <div className="cat-ps-text"><strong>Eviction defense.</strong> Goes to housing or unlawful-detainer court, not small claims.</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* DAMAGES */}
         <section className="cat-section">
-          <h2 className="cat-h2">
-            What you can <em>recover</em>.
-          </h2>
-          <div className="cat-damages-grid">
-            <div className="cat-damage">
-              <div className="cat-damage-tag">Direct damages</div>
+          <div className="cat-split">
+            <div className="cat-split-intro">
+              <span className="eyebrow">Damages</span>
+              <h2>
+                What you can <em>recover</em>.
+              </h2>
               <p>
-                Your actual out-of-pocket loss: the deposit you&rsquo;re owed, repair receipts,
-                replacement cost for ruined furniture, hotel and moving costs from a lockout.
-                You bring receipts, photos, and texts; the judge gives you what you can prove.
+                Four buckets of money stack on top of each other in landlord-tenant cases.
+                Bring receipts and a clear math to the hearing — judges decide what they can
+                verify.
               </p>
             </div>
-            <div className="cat-damage">
-              <div className="cat-damage-tag">Statutory penalties</div>
-              <p>
-                Many states stack penalties on top of direct damages when the landlord acted in
-                bad faith — typically <strong>2x or 3x</strong> the wrongfully withheld amount
-                for security deposits, treble damages for illegal lockouts, and per-day
-                penalties for repair-and-deduct failures.
-              </p>
-            </div>
-            <div className="cat-damage">
-              <div className="cat-damage-tag">Attorney&rsquo;s fees</div>
-              <p>
-                Most landlord-tenant statutes shift attorney&rsquo;s fees to the loser. Even if
-                you didn&rsquo;t hire one, this matters: it pressures landlords into early
-                settlement and lets you recover from a lawyer if you do bring one. (Pro se
-                plaintiffs generally can&rsquo;t recover their own time.)
-              </p>
-            </div>
-            <div className="cat-damage">
-              <div className="cat-damage-tag">Pre- and post-judgment interest</div>
-              <p>
-                Most states automatically add interest to your judgment from the date it was
-                entered until paid. Pre-judgment interest also runs in many cases. Rates range
-                from 4% to 10% per year depending on the state.
-              </p>
+            <div className="cat-damages-grid" style={{ marginTop: 0 }}>
+              <div className="cat-damage">
+                <div className="cat-damage-tag">Direct damages</div>
+                <p>
+                  Your actual out-of-pocket loss: the deposit you&rsquo;re owed, repair receipts,
+                  replacement cost for ruined furniture, hotel and moving costs from a lockout.
+                  Receipts, photos, and texts win this column.
+                </p>
+              </div>
+              <div className="cat-damage">
+                <div className="cat-damage-tag">Statutory penalties</div>
+                <p>
+                  When the landlord acted in bad faith, many states stack <strong>2x or 3x</strong>{" "}
+                  the wrongfully withheld amount on top — treble damages for illegal lockouts,
+                  per-day penalties for repair-and-deduct failures.
+                </p>
+              </div>
+              <div className="cat-damage">
+                <div className="cat-damage-tag">Attorney&rsquo;s fees</div>
+                <p>
+                  Most landlord-tenant statutes shift attorney&rsquo;s fees to the loser. Even
+                  if you don&rsquo;t hire one, the threat pressures landlords into early
+                  settlement.
+                </p>
+              </div>
+              <div className="cat-damage">
+                <div className="cat-damage-tag">Interest</div>
+                <p>
+                  Pre- and post-judgment interest runs at 4–10% per year depending on the
+                  state. Compounds quietly until paid.
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* EVIDENCE CHECKLIST */}
+        {/* EVIDENCE CHECKLIST — polaroid receipts */}
         <section className="cat-section">
-          <h2 className="cat-h2">
-            Evidence to <em>gather</em> before you file.
-          </h2>
-          <p style={{ maxWidth: "60ch", color: "var(--ink-2)" }}>
-            Landlord cases are won on documentation. Whatever you don&rsquo;t have on paper, the
-            judge has to take on your word — and a landlord with a property manager and a lease
-            file usually has more paper than you do. Pull this together first:
-          </p>
-          <ul className="cat-checklist">
-            <li><strong>The lease.</strong> Every page. The signed copy, not a draft. If it&rsquo;s in your email, print it.</li>
-            <li><strong>Move-in / move-out documentation.</strong> Photos, the move-in walkthrough form, any condition checklist. Date-stamps matter.</li>
-            <li><strong>Every payment.</strong> Bank records, money-order stubs, canceled checks, payment-app screenshots. The dollar amount and the date.</li>
-            <li><strong>Communications.</strong> Texts, emails, certified-mail receipts, voicemails. Print them with timestamps. Most landlord-tenant cases turn on what was said and when.</li>
-            <li><strong>Receipts for what you spent.</strong> Hotel, movers, replacement furniture, exterminator, mold remediation. Originals or PDFs you can put in the judge&rsquo;s hands.</li>
-            <li><strong>The forwarding address.</strong> For deposit cases specifically — most state deadlines start when you give the landlord written notice of where to send it.</li>
-            <li><strong>Witness contact info.</strong> A roommate, neighbor, or repair person who saw the condition of the unit can be the difference at the hearing.</li>
-          </ul>
+          <div className="cat-split">
+            <div className="cat-split-intro">
+              <span className="eyebrow">Build the file</span>
+              <h2>
+                Evidence to <em>gather</em>.
+              </h2>
+              <p>
+                Landlord cases are won on documentation. Whatever you don&rsquo;t have on paper,
+                the judge has to take on your word — and a landlord with a property manager
+                usually has more paper than you do. Pull this together first.
+              </p>
+            </div>
+            <div className="cat-receipts">
+              <div className="cat-receipt">
+                <span className="cat-receipt-tag">Contract</span>
+                <div className="cat-receipt-name">lease_signed.pdf</div>
+                <p className="cat-receipt-desc">Every page. The signed copy, not a draft.</p>
+              </div>
+              <div className="cat-receipt">
+                <span className="cat-receipt-tag">Photos</span>
+                <div className="cat-receipt-name">move-in_walkthrough.jpg</div>
+                <p className="cat-receipt-desc">Walkthrough photos and the condition checklist. Date-stamps matter.</p>
+              </div>
+              <div className="cat-receipt">
+                <span className="cat-receipt-tag">Bank</span>
+                <div className="cat-receipt-name">deposit_payment.png</div>
+                <p className="cat-receipt-desc">Bank records, money-order stubs, payment-app screenshots.</p>
+              </div>
+              <div className="cat-receipt">
+                <span className="cat-receipt-tag">Comms</span>
+                <div className="cat-receipt-name">texts_with_landlord.pdf</div>
+                <p className="cat-receipt-desc">Most cases turn on what was said and when. Print with timestamps.</p>
+              </div>
+              <div className="cat-receipt">
+                <span className="cat-receipt-tag">Receipts</span>
+                <div className="cat-receipt-name">hotel_repairs.pdf</div>
+                <p className="cat-receipt-desc">Hotel, movers, exterminator, mold remediation, replacement furniture.</p>
+              </div>
+              <div className="cat-receipt">
+                <span className="cat-receipt-tag">Notice</span>
+                <div className="cat-receipt-name">forwarding_address.pdf</div>
+                <p className="cat-receipt-desc">Certified-mail receipt that resets the deposit-return clock.</p>
+              </div>
+              <div className="cat-receipt">
+                <span className="cat-receipt-tag">Witness</span>
+                <div className="cat-receipt-name">roommate_contact.txt</div>
+                <p className="cat-receipt-desc">Roommate, neighbor, or repair tech who saw the condition.</p>
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* STATE-SPECIFIC RULES */}
         <section className="cat-section">
-          <h2 className="cat-h2">
-            State-specific <em>rules</em>.
-          </h2>
-          <p style={{ maxWidth: "60ch", color: "var(--ink-2)" }}>
-            Landlord-tenant rules vary state by state — deposit return deadlines, statutory
-            penalties, repair-and-deduct procedures, eviction definitions. Pick your state for
-            the exact statute, deadline, and form numbers.
-          </p>
-          <div className="cat-state-grid">
-            {featured.map((s) => (
-              <Link key={s.slug} href={`/small-claims/${s.slug}`} className="cat-state-link">
-                <span>{s.name}</span>
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M5 12h14M13 6l6 6-6 6" />
-                </svg>
+          <div className="cat-split">
+            <div className="cat-split-intro">
+              <span className="eyebrow">By state</span>
+              <h2>
+                State-specific <em>rules</em>.
+              </h2>
+              <p>
+                Landlord-tenant rules vary state by state — deposit return deadlines, statutory
+                penalties, repair-and-deduct procedures. Pick your state for the exact statute,
+                deadline, and form numbers.
+              </p>
+              <Link href="/small-claims" className="cat-text-link">
+                See all 50 state guides →
               </Link>
-            ))}
+            </div>
+            <div className="cat-state-grid">
+              {featured.map((s) => (
+                <Link key={s.slug} href={`/small-claims/${s.slug}`} className="cat-state-link">
+                  <span>{s.name}</span>
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </Link>
+              ))}
+            </div>
           </div>
-          <p style={{ marginTop: 18, fontSize: 14, color: "var(--muted)" }}>
-            <Link href="/small-claims" className="cat-text-link">
-              See all 50 state guides →
-            </Link>
-          </p>
         </section>
 
         {/* CTAs */}
@@ -364,21 +467,34 @@ export default function LandlordHubPage() {
             </div>
             <div className="cat-cta-row">
               <Link href="/demand-letter" className="cat-cta-tile">
-                <div className="cat-cta-tile-icon">✉</div>
+                <div className="cat-cta-tile-icon">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8">
+                    <rect x="3" y="5" width="18" height="14" rx="2" />
+                    <path d="M3 7l9 6 9-6" />
+                  </svg>
+                </div>
                 <div>
                   <strong>Send a demand letter</strong>
                   <span>About half of disputes end here.</span>
                 </div>
               </Link>
               <Link href="/case-score" className="cat-cta-tile">
-                <div className="cat-cta-tile-icon">📊</div>
+                <div className="cat-cta-tile-icon">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8">
+                    <path d="M3 21V5M3 21h18M7 17V11M12 17V8M17 17V13" />
+                  </svg>
+                </div>
                 <div>
                   <strong>Check my case</strong>
                   <span>Free 7-question case-strength quiz.</span>
                 </div>
               </Link>
               <Link href="/small-claims" className="cat-cta-tile">
-                <div className="cat-cta-tile-icon">⚖</div>
+                <div className="cat-cta-tile-icon">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8">
+                    <path d="M12 3v18M5 9l7-6 7 6M3 21h18" />
+                  </svg>
+                </div>
                 <div>
                   <strong>File your claim</strong>
                   <span>Step-by-step in your state.</span>
@@ -388,11 +504,22 @@ export default function LandlordHubPage() {
           </div>
         </section>
 
-        {/* FAQ */}
+        {/* FAQ — 2-col wrap */}
         <section className="cat-section">
-          <h2 className="cat-h2">
-            Common <em>questions</em>.
-          </h2>
+          <div className="cat-split">
+            <div className="cat-split-intro">
+              <span className="eyebrow">FAQ</span>
+              <h2>
+                Common <em>questions</em>.
+              </h2>
+              <p>
+                The questions tenants actually ask before filing. Don&rsquo;t see yours?{" "}
+                <Link href="/contact" className="cat-text-link">
+                  Email support
+                </Link>
+                .
+              </p>
+            </div>
           <div className="cat-faq">
             <details>
               <summary>Can I sue my landlord in small claims court?</summary>
@@ -452,6 +579,7 @@ export default function LandlordHubPage() {
                 </p>
               </div>
             </details>
+          </div>
           </div>
         </section>
 

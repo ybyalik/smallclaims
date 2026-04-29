@@ -272,12 +272,12 @@
   .coming-soon { padding: 36px 24px 40px; }
 }
 
-.guide { padding-bottom: 80px; }
+.guide { padding-bottom: 60px; }
 .guide .wrap { max-width: 920px; }
 
 /* HERO ───────────────────────────────────────────────────────────────── */
 .g-hero {
-  padding: 24px 0 40px;
+  padding: 16px 0 28px;
   text-align: left;
 }
 .g-hero .eyebrow {
@@ -380,11 +380,11 @@
 
 /* GENERIC SECTION ────────────────────────────────────────────────────── */
 .g-section {
-  padding-top: 64px;
-  margin-top: 16px;
+  padding-top: 40px;
+  margin-top: 8px;
 }
 .g-section-head {
-  margin-bottom: 28px;
+  margin-bottom: 20px;
 }
 .g-section-head .eyebrow {
   display: inline-block;
