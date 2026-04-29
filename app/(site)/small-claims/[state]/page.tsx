@@ -405,7 +405,13 @@ export default async function StateGuide({ params }: Params) {
             <span className="eyebrow">Appeals</span>
             <h2>Can you appeal if you lose?</h2>
           </header>
-          {g.appeals.whoCanAppeal?.trim() && <p>{g.appeals.whoCanAppeal}</p>}
+          {(() => {
+            // Filter out non-answers (model often returns "none", "n/a", "varies", etc.)
+            const nonAnswers = new Set(["none", "n/a", "na", "varies", "unknown", "—", "-"]);
+            const v = g.appeals.whoCanAppeal?.trim() ?? "";
+            if (!v || nonAnswers.has(v.toLowerCase())) return null;
+            return <p>{v}</p>;
+          })()}
 
           {/* Inline facts — only render the parts we have */}
           {(g.appeals.deadlineDays > 0 ||

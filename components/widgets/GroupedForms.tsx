@@ -90,12 +90,8 @@ export default function GroupedForms({ forms }: { forms: Form[] }) {
               {groupForms.map((f, idx) => {
                 const hasNum = !!f.number?.trim();
                 return (
-                  <li key={`${f.number || "noid"}-${idx}`} className="form-row">
-                    {hasNum ? (
-                      <span className="form-row-num">{f.number}</span>
-                    ) : (
-                      <span className="form-row-num form-row-num-empty" aria-hidden="true">—</span>
-                    )}
+                  <li key={`${f.number || "noid"}-${idx}`} className={`form-row ${hasNum ? "" : "form-row-noid"}`}>
+                    {hasNum && <span className="form-row-num">{f.number}</span>}
                     <div className="form-row-body">
                       <span className="form-row-name">{f.name || "Untitled form"}</span>
                       {f.description && <span className="form-row-desc">{f.description}</span>}

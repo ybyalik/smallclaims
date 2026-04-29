@@ -380,11 +380,12 @@
 
 /* GENERIC SECTION ────────────────────────────────────────────────────── */
 .g-section {
-  padding-top: 40px;
-  margin-top: 8px;
+  padding-top: 28px;
+  margin-top: 0;
 }
+.g-section + .g-section { padding-top: 28px; }
 .g-section-head {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 .g-section-head .eyebrow {
   display: inline-block;
@@ -892,6 +893,9 @@
   border-bottom: 1px solid var(--hairline);
   background: #fff;
 }
+.form-row.form-row-noid {
+  grid-template-columns: 1fr auto;
+}
 .form-row:last-child { border-bottom: 0; }
 .form-row:hover { background: var(--bg-2); }
 .form-row-num {
@@ -904,12 +908,6 @@
   border-radius: 6px;
   text-align: center;
   white-space: nowrap;
-  min-width: 56px;
-}
-.form-row-num-empty {
-  color: var(--muted);
-  background: transparent;
-  font-weight: 400;
 }
 .form-row-body {
   display: flex;
