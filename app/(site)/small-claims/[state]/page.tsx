@@ -7,7 +7,6 @@ import Breadcrumbs from "../../../../components/Breadcrumbs";
 import StatuteChecker from "../../../../components/widgets/StatuteChecker";
 import FeeCalculator from "../../../../components/widgets/FeeCalculator";
 import ClaimExplorer from "../../../../components/widgets/ClaimExplorer";
-import GroupedForms from "../../../../components/widgets/GroupedForms";
 
 // Pre-generate every state. States without data render a "coming soon" placeholder.
 export function generateStaticParams() {
@@ -494,16 +493,6 @@ export default async function StateGuide({ params }: Params) {
           )}
         </section>
 
-        {/* FORMS HUB */}
-        <section id="forms" className="g-section">
-          <header className="g-section-head">
-            <span className="eyebrow">Forms</span>
-            <h2>Every form you might need.</h2>
-            <p>All free at your state's courts website. Use the latest revision.</p>
-          </header>
-          <GroupedForms forms={g.forms} />
-        </section>
-
         {/* COUNTY DIFFERENCES */}
         {g.countyDifferences.length > 0 && (
           <section className="g-section">
@@ -548,30 +537,6 @@ export default async function StateGuide({ params }: Params) {
               </li>
             ))}
           </ul>
-        </section>
-
-        {/* RECENT CHANGES */}
-        <section className="g-section">
-          <header className="g-section-head">
-            <span className="eyebrow">Recent changes</span>
-            <h2>What changed in the last 3 years.</h2>
-          </header>
-          <ol className="g-changes">
-            {g.recentChanges.map((c, i) => (
-              <li key={i}>
-                <time dateTime={c.date}>
-                  {new Date(c.date).toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  })}
-                </time>
-                <h4>{c.title}</h4>
-                <p>{c.description}</p>
-                {c.bill && <span className="change-bill">{c.bill}</span>}
-              </li>
-            ))}
-          </ol>
         </section>
 
         {/* FAQ */}
