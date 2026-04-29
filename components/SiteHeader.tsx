@@ -14,9 +14,9 @@ export default function SiteHeader() {
         />
       </Link>
       <nav className="nav-links">
-        <Link href="/#how">How it works</Link>
-        <Link href="/#do">What we do</Link>
+        <Link href="/case-score">Case score</Link>
         <Link href="/small-claims">Small Claims</Link>
+        <Link href="/#how">How it works</Link>
         <Link href="/#faq">FAQ</Link>
       </nav>
       <div className="nav-cta">
