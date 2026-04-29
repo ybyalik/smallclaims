@@ -183,25 +183,61 @@ export default function LandlordHubPage() {
       <div className="wrap">
         <Breadcrumbs items={[{ href: "/small-claims", label: "Small Claims" }, { label: "Landlord disputes" }]} />
 
-        {/* HERO */}
-        <header className="cat-hero">
-          <span className="eyebrow">Category</span>
-          <h1>
-            Landlord Disputes in <em>Small Claims Court</em>
-          </h1>
-          <p className="cat-lede">
-            If you&rsquo;re owed money by a landlord — withheld deposit, repair costs you covered,
-            a hotel bill from a lockout — small claims is the right venue. You don&rsquo;t need an
-            attorney, the filing fee is usually under $100, and many states stack statutory
-            penalties on top of what you&rsquo;re directly owed.
-          </p>
-          <div className="hero-ctas">
-            <Link href="/case-score" className="btn btn-dark">
-              Check my case (free)
-            </Link>
-            <Link href="/demand-letter" className="btn btn-cream">
-              Send a demand letter
-            </Link>
+        {/* HERO — 3-col like homepage */}
+        <header className="cat-hero-3col">
+          <div className="cat-hero-copy">
+            <span className="eyebrow">Category</span>
+            <h1>
+              Landlord Disputes in <em>Small Claims Court</em>
+            </h1>
+            <p className="cat-lede">
+              If you&rsquo;re owed money by a landlord — withheld deposit, repair costs, a hotel
+              bill from a lockout — small claims is the right venue. You don&rsquo;t need an
+              attorney, the filing fee is usually under $100, and many states stack statutory
+              penalties on top.
+            </p>
+            <div className="hero-ctas">
+              <Link href="/case-score" className="btn btn-dark">
+                Check my case (free)
+              </Link>
+              <Link href="/demand-letter" className="btn btn-cream">
+                Send a demand letter
+              </Link>
+            </div>
+          </div>
+
+          {/* Stat card — homepage hero-card style */}
+          <div className="cat-hero-stat">
+            <div>
+              <div className="cat-hero-stat-eyebrow">Average tenant recovery</div>
+              <div className="cat-hero-stat-big">
+                $1,840
+              </div>
+              <div className="cat-hero-stat-sub">across landlord-tenant small claims · last 30 days</div>
+            </div>
+            <div>
+              <div className="cat-hero-bars">
+                <span style={{ height: "30%" }}></span>
+                <span style={{ height: "55%" }}></span>
+                <span style={{ height: "70%" }}></span>
+                <span style={{ height: "92%" }}></span>
+              </div>
+              <div className="cat-hero-bars-row">
+                <b>Apr</b>
+                <b>May</b>
+                <b>Jun</b>
+                <b>Jul</b>
+              </div>
+            </div>
+          </div>
+
+          {/* Photo */}
+          <div className="cat-hero-photo">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=1100&fit=crop"
+              alt="Apartment keys on a lease document"
+            />
           </div>
         </header>
 
@@ -318,71 +354,107 @@ export default function LandlordHubPage() {
           </div>
         </section>
 
-        {/* DAMAGES */}
+        {/* DAMAGES — recovery math dashboard */}
         <section className="cat-section">
-          <div className="cat-split">
-            <div className="cat-split-intro">
-              <span className="eyebrow">Damages</span>
-              <h2>
-                What you can <em>recover</em>.
-              </h2>
-              <p>
-                Four buckets of money stack on top of each other in landlord-tenant cases.
-                Bring receipts and a clear math to the hearing — judges decide what they can
-                verify.
-              </p>
+          <div className="cat-stack-head">
+            <span className="eyebrow">Damages</span>
+            <h2>
+              What you can <em>recover</em>.
+            </h2>
+            <p>
+              The math judges use. A typical security-deposit case stacks four layers on top of
+              the deposit you&rsquo;re directly owed.
+            </p>
+          </div>
+
+          <div className="cat-recovery">
+            <div className="cat-recovery-rows">
+              <div className="cat-recovery-row">
+                <div className="cat-recovery-label">
+                  <span className="cat-recovery-tag">Direct damages</span>
+                  <p>The deposit, repair receipts, hotel and moving costs, replacement-cost photos.</p>
+                </div>
+                <div className="cat-recovery-amount">$1,500</div>
+                <div className="cat-recovery-bar"><span style={{ width: "30%" }}></span></div>
+              </div>
+              <div className="cat-recovery-row">
+                <div className="cat-recovery-label">
+                  <span className="cat-recovery-tag accent">Statutory penalty</span>
+                  <p>Bad-faith withholding triggers 2x or 3x the wrongfully kept amount in most states.</p>
+                </div>
+                <div className="cat-recovery-amount accent">+$3,000</div>
+                <div className="cat-recovery-bar"><span style={{ width: "62%", background: "var(--accent)" }}></span></div>
+              </div>
+              <div className="cat-recovery-row">
+                <div className="cat-recovery-label">
+                  <span className="cat-recovery-tag">Attorney&rsquo;s fees</span>
+                  <p>Statute shifts the landlord&rsquo;s fees to the loser. Pressures early settlement.</p>
+                </div>
+                <div className="cat-recovery-amount">+$300</div>
+                <div className="cat-recovery-bar"><span style={{ width: "8%" }}></span></div>
+              </div>
+              <div className="cat-recovery-row">
+                <div className="cat-recovery-label">
+                  <span className="cat-recovery-tag">Interest</span>
+                  <p>4–10% per year, pre- and post-judgment, depending on state.</p>
+                </div>
+                <div className="cat-recovery-amount">+$150</div>
+                <div className="cat-recovery-bar"><span style={{ width: "4%" }}></span></div>
+              </div>
             </div>
-            <div className="cat-damages-grid" style={{ marginTop: 0 }}>
-              <div className="cat-damage">
-                <div className="cat-damage-tag">Direct damages</div>
-                <p>
-                  Your actual out-of-pocket loss: the deposit you&rsquo;re owed, repair receipts,
-                  replacement cost for ruined furniture, hotel and moving costs from a lockout.
-                  Receipts, photos, and texts win this column.
-                </p>
+
+            <div className="cat-recovery-total">
+              <div className="cat-recovery-total-label">
+                <span className="eyebrow" style={{ color: "rgba(254,249,241,0.65)" }}>What you walk away with</span>
+                <h3>Estimated recovery</h3>
+                <p>Sample math on a $1,500 deposit a landlord withheld in bad faith. Your numbers will differ.</p>
               </div>
-              <div className="cat-damage">
-                <div className="cat-damage-tag">Statutory penalties</div>
-                <p>
-                  When the landlord acted in bad faith, many states stack <strong>2x or 3x</strong>{" "}
-                  the wrongfully withheld amount on top — treble damages for illegal lockouts,
-                  per-day penalties for repair-and-deduct failures.
-                </p>
-              </div>
-              <div className="cat-damage">
-                <div className="cat-damage-tag">Attorney&rsquo;s fees</div>
-                <p>
-                  Most landlord-tenant statutes shift attorney&rsquo;s fees to the loser. Even
-                  if you don&rsquo;t hire one, the threat pressures landlords into early
-                  settlement.
-                </p>
-              </div>
-              <div className="cat-damage">
-                <div className="cat-damage-tag">Interest</div>
-                <p>
-                  Pre- and post-judgment interest runs at 4–10% per year depending on the
-                  state. Compounds quietly until paid.
-                </p>
+              <div className="cat-recovery-total-num">
+                <em>$4,950</em>
+                <span>3.3× the deposit</span>
               </div>
             </div>
           </div>
         </section>
 
-        {/* EVIDENCE CHECKLIST — polaroid receipts */}
+        {/* EVIDENCE — photo-driven document pile */}
         <section className="cat-section">
-          <div className="cat-split">
-            <div className="cat-split-intro">
-              <span className="eyebrow">Build the file</span>
-              <h2>
-                Evidence to <em>gather</em>.
-              </h2>
-              <p>
-                Landlord cases are won on documentation. Whatever you don&rsquo;t have on paper,
-                the judge has to take on your word — and a landlord with a property manager
-                usually has more paper than you do. Pull this together first.
-              </p>
+          <div className="cat-stack-head">
+            <span className="eyebrow">Build the file</span>
+            <h2>
+              Evidence to <em>gather</em>.
+            </h2>
+            <p>
+              Landlord cases are won on documentation. Whatever you don&rsquo;t have on paper,
+              the judge takes on your word — and a landlord with a property manager has more
+              paper than you do.
+            </p>
+          </div>
+
+          <div className="cat-evidence-pile">
+            <div className="cat-evidence-photo">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="https://images.unsplash.com/photo-1554224155-1696413565d3?w=900&h=900&fit=crop" alt="Lease and pen on a desk" />
+              <div className="cat-evidence-cap">Lease + walkthrough</div>
             </div>
-            <div className="cat-evidence-grid">
+            <div className="cat-evidence-photo r2">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=900&h=900&fit=crop" alt="Receipts and calculator" />
+              <div className="cat-evidence-cap">Receipts &amp; payments</div>
+            </div>
+            <div className="cat-evidence-photo r3">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=900&h=900&fit=crop" alt="Phone showing text messages" />
+              <div className="cat-evidence-cap">Texts &amp; emails</div>
+            </div>
+            <div className="cat-evidence-photo r4">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&h=900&fit=crop" alt="Camera with photos of unit condition" />
+              <div className="cat-evidence-cap">Photos &amp; video</div>
+            </div>
+          </div>
+
+          <div className="cat-evidence-grid">
               <div className="cat-evidence-card">
                 <div className="cat-evidence-icon">
                   <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.8">
@@ -452,7 +524,6 @@ export default function LandlordHubPage() {
                 <p className="cat-evidence-desc">Roommate, neighbor, or repair tech who saw the unit&rsquo;s condition can be the difference at the hearing.</p>
               </div>
             </div>
-          </div>
         </section>
 
         {/* STATE-SPECIFIC RULES */}

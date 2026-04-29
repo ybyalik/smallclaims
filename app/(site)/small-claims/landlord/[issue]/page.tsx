@@ -168,36 +168,59 @@ function SecurityDepositPage() {
           </div>
         </header>
 
-        {/* QUICK ELIGIBILITY */}
+        {/* QUICK ELIGIBILITY — decision flow */}
         <section className="cat-section">
-          <div className="cat-quick-card">
-            <h2 style={{ margin: "0 0 18px" }}>Are you eligible to sue?</h2>
-            <ul className="cat-elig">
-              <li>
-                <span className="cat-elig-tick">✓</span>
-                You moved out and gave the landlord written notice of where to send the deposit.
-              </li>
-              <li>
-                <span className="cat-elig-tick">✓</span>
-                Your state&rsquo;s deposit-return deadline (usually 14&ndash;30 days) has passed.
-              </li>
-              <li>
-                <span className="cat-elig-tick">✓</span>
-                The landlord either kept all or part of the deposit, sent no itemized list, or
-                ignored you.
-              </li>
-              <li>
-                <span className="cat-elig-tick">✓</span>
-                The amount in dispute is under your state&rsquo;s small-claims cap (typically
-                $5,000&ndash;$20,000).
-              </li>
-            </ul>
-            <p style={{ margin: "18px 0 0", fontSize: 14, color: "var(--muted)" }}>
-              All four boxes checked? You have a viable small-claims case. Run it through the{" "}
-              <Link href="/case-score" className="cat-text-link">case-score quiz</Link>{" "}
-              for a strength read in 90 seconds.
-            </p>
+          <div className="cat-stack-head">
+            <span className="eyebrow">Quick check</span>
+            <h2>Are you eligible to <em>sue</em>?</h2>
+            <p>Four conditions. Hit all four and you have a viable small-claims case.</p>
           </div>
+
+          <div className="cat-flow">
+            <div className="cat-flow-step">
+              <div className="cat-flow-num">1</div>
+              <div className="cat-flow-text">
+                <strong>You moved out</strong>
+                <span>and gave the landlord written notice of where to send the deposit.</span>
+              </div>
+            </div>
+            <div className="cat-flow-arrow">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </div>
+            <div className="cat-flow-step">
+              <div className="cat-flow-num">2</div>
+              <div className="cat-flow-text">
+                <strong>Deadline passed</strong>
+                <span>your state&rsquo;s deposit-return deadline (typically 14&ndash;30 days).</span>
+              </div>
+            </div>
+            <div className="cat-flow-arrow">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </div>
+            <div className="cat-flow-step">
+              <div className="cat-flow-num">3</div>
+              <div className="cat-flow-text">
+                <strong>Landlord kept some or all</strong>
+                <span>of the deposit, sent no itemized list, or ignored you entirely.</span>
+              </div>
+            </div>
+            <div className="cat-flow-arrow">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </div>
+            <div className="cat-flow-step ok">
+              <div className="cat-flow-num">✓</div>
+              <div className="cat-flow-text">
+                <strong>You can file</strong>
+                <span>under your state&rsquo;s small-claims cap (usually $5K&ndash;$20K).</span>
+              </div>
+            </div>
+          </div>
+
+          <p style={{ margin: "18px 0 0", fontSize: 15, color: "var(--muted)", textAlign: "center" }}>
+            All four hit? Run it through the{" "}
+            <Link href="/case-score" className="cat-text-link">case-score quiz</Link>{" "}
+            for a 90-second strength read.
+          </p>
         </section>
 
         {/* HOW LONG */}
