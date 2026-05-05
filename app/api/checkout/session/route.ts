@@ -12,6 +12,7 @@ import { createClient } from "../../../../lib/supabase/server";
 import { createServiceRoleClient } from "../../../../lib/supabase/service-role";
 import { getStripe, PRODUCTS, type ProductKey } from "../../../../lib/stripe";
 import { logEvent } from "../../../../lib/audit/log";
+import { markCasePaid } from "../../../../lib/demand-letter/mark-paid";
 
 export async function POST(req: NextRequest) {
   let body: { caseId?: string; product_key?: ProductKey };
@@ -73,14 +74,14 @@ export async function POST(req: NextRequest) {
     if (payErr) {
       return NextResponse.json({ error: "Could not record admin bypass" }, { status: 500 });
     }
-    await admin.from("cases").update({ status: "demand_paid" }).eq("id", caseRow.id);
+    await markCasePaid(caseRow.id, { source: "admin_bypass" });
     await logEvent("payment.admin_bypass", ctx, {
       entity_type: "payment",
       payload: { product_key: body.product_key },
     });
     // Return URL the client redirects to, just like Stripe would
     return NextResponse.json({
-      url: `/dashboard/cases/${caseRow.id}/letter?paid=admin`,
+      url: `/dashboard/demand-letters/${caseRow.id}/letter?paid=admin`,
     });
   }
 
@@ -122,8 +123,8 @@ export async function POST(req: NextRequest) {
         quantity: 1,
       },
     ],
-    success_url: `${origin}/dashboard/cases/${caseRow.id}/letter?paid=1`,
-    cancel_url: `${origin}/dashboard/cases/${caseRow.id}/letter?canceled=1`,
+    success_url: `${origin}/dashboard/demand-letters/${caseRow.id}/letter?paid=1`,
+    cancel_url: `${origin}/dashboard/demand-letters/${caseRow.id}/letter?canceled=1`,
     metadata: {
       case_id: caseRow.id,
       user_id: user.id,

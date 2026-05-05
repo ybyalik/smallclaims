@@ -447,3 +447,513 @@ export function EligibilityQuizVariant() {
     </div>
   );
 }
+
+/* ════════════════════════════════════════════════════════════════════════════
+   HUB HERO variants (currently: copy + stat card + photo 3-col)
+   ════════════════════════════════════════════════════════════════════════════ */
+
+export function HubHeroMagazineVariant() {
+  return (
+    <div className="sv-mag">
+      <div className="sv-mag-copy">
+        <span className="eyebrow">Category</span>
+        <h2>Landlord Disputes in <em>Small Claims Court</em></h2>
+        <p>Most tenants don&rsquo;t know they&rsquo;re owed 2&ndash;3× more than the deposit. We do the math, send the demand, walk you through filing.</p>
+        <div className="sv-mag-stats">
+          <div><strong>$1,840</strong><span>avg recovery</span></div>
+          <div><strong>21d</strong><span>median timeline</span></div>
+          <div><strong>50</strong><span>states covered</span></div>
+        </div>
+      </div>
+      <div className="sv-mag-photo">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=900&h=1200&fit=crop" alt="" />
+        <div className="sv-mag-quote">&ldquo;Got my deposit back in 11 days. The demand letter did all the work.&rdquo;<span>— Maya, Brooklyn</span></div>
+      </div>
+    </div>
+  );
+}
+
+export function HubHeroFloatingUIVariant() {
+  return (
+    <div className="sv-floating">
+      <div className="sv-floating-copy">
+        <span className="eyebrow">Category</span>
+        <h2>Sue your landlord. <em>Without the lawyer.</em></h2>
+        <p>If you&rsquo;re owed money — deposit, repairs, hotel costs from a lockout — small claims is the right door. Filing fee under $100. Hearing under 15 minutes.</p>
+        <div className="hero-ctas" style={{ marginTop: 18 }}>
+          <a href="#" className="btn btn-dark">Check my case (free)</a>
+          <a href="#" className="btn btn-cream">Send a demand letter</a>
+        </div>
+      </div>
+      <div className="sv-floating-cards">
+        <div className="sv-fc sv-fc-1">
+          <div className="sv-fc-tag">CASE STRENGTH</div>
+          <div className="sv-fc-num">82</div>
+          <div className="sv-fc-bar"><span style={{ width: "82%" }} /></div>
+        </div>
+        <div className="sv-fc sv-fc-2">
+          <div className="sv-fc-tag">DEPOSIT</div>
+          <div className="sv-fc-row"><strong>$1,500</strong><span>+ 2× penalty</span></div>
+          <div className="sv-fc-total">$4,950 estimated</div>
+        </div>
+        <div className="sv-fc sv-fc-3">
+          <div className="sv-fc-tag">CA · DEADLINE</div>
+          <div className="sv-fc-num small">21<span>days</span></div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function HubHeroReceiptVariant() {
+  return (
+    <div className="sv-hero-receipt">
+      <div>
+        <span className="eyebrow">Category</span>
+        <h2>Landlord Disputes in <em>Small Claims Court</em></h2>
+        <p>Read your state&rsquo;s rules. Send the demand. File if it&rsquo;s ignored. Most disputes end at step 2.</p>
+        <div className="hero-ctas" style={{ marginTop: 18 }}>
+          <a href="#" className="btn btn-dark">Check my case (free)</a>
+          <a href="#" className="btn btn-cream">Send a demand letter</a>
+        </div>
+      </div>
+      <div className="sv-receipt sv-receipt-narrow" style={{ margin: 0 }}>
+        <div className="sv-receipt-head">
+          <div>SAMPLE RECOVERY</div>
+          <div className="sv-receipt-meta">CA · BAD-FAITH WITHHOLDING</div>
+        </div>
+        <div className="sv-receipt-body">
+          <div className="sv-receipt-totalline"><span>Deposit withheld</span><span>$1,500</span></div>
+          <div className="sv-receipt-totalline"><span>Statutory penalty (2x)</span><span>$3,000</span></div>
+          <div className="sv-receipt-totalline"><span>Attorney fees + interest</span><span>$450</span></div>
+        </div>
+        <div className="sv-receipt-foot bold">
+          <div>EST. RECOVERY</div>
+          <div>$4,950</div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   ISSUE CARDS variants
+   ════════════════════════════════════════════════════════════════════════════ */
+
+const ISSUE_LIST = [
+  { title: "Security deposit", avg: "$1,840", blurb: "Most common. 2x or 3x penalty in many states." },
+  { title: "Illegal lockout", avg: "$3,200", blurb: "Self-help eviction triggers treble damages." },
+  { title: "Mold / habitability", avg: "$2,400", blurb: "Medical costs, ruined property, rent reduction." },
+  { title: "Repairs not made", avg: "$960", blurb: "Repair-and-deduct, rent escrow." },
+  { title: "Pest infestation", avg: "$1,150", blurb: "Treatment costs and ruined belongings." },
+  { title: "Wrongful eviction", avg: "$4,100", blurb: "Moving costs + statutory penalties." },
+  { title: "Lead poisoning", avg: "$5,800", blurb: "Federal disclosure violations." },
+];
+
+export function IssuesBentoVariant() {
+  return (
+    <div className="sv-issues-bento">
+      <div className="sv-ib sv-ib-feature">
+        <div className="sv-ib-tag">MOST COMMON</div>
+        <h4>Security deposit not returned</h4>
+        <p>Many states stack 2x or 3x the deposit as a bad-faith penalty. Highest-volume tenant claim by far.</p>
+        <div className="sv-ib-stat">$1,840 avg recovery</div>
+      </div>
+      <div className="sv-ib sv-ib-feature dark">
+        <div className="sv-ib-tag" style={{ color: "#f5b29f" }}>HIGHEST PENALTY</div>
+        <h4>Illegal lockout</h4>
+        <p>Treble damages plus moving and hotel costs. Most expensive landlord mistake in the playbook.</p>
+        <div className="sv-ib-stat" style={{ color: "#f5b29f" }}>$3,200 avg recovery</div>
+      </div>
+      {ISSUE_LIST.slice(2, 7).map((i) => (
+        <div key={i.title} className="sv-ib">
+          <h5>{i.title}</h5>
+          <p>{i.blurb}</p>
+          <div className="sv-ib-stat-sm">{i.avg}</div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export function IssuesRowListVariant() {
+  return (
+    <div className="sv-issuerows">
+      {ISSUE_LIST.map((i, idx) => (
+        <div key={i.title} className="sv-irow">
+          <div className="sv-irow-num">0{idx + 1}</div>
+          <div className="sv-irow-body">
+            <div className="sv-irow-title">{i.title}</div>
+            <div className="sv-irow-blurb">{i.blurb}</div>
+          </div>
+          <div className="sv-irow-stat">
+            <div className="sv-irow-amount">{i.avg}</div>
+            <div className="sv-irow-amount-label">avg recovery</div>
+          </div>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" className="sv-irow-arrow">
+            <path d="M5 12h14M13 6l6 6-6 6" />
+          </svg>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export function IssuesTabSwitcherVariant() {
+  const [active, setActive] = useState(0);
+  const examples = [
+    { case: "Maya · Brooklyn, NY", recovery: "$2,800", days: "12 days", quote: "Landlord ghosted for 6 weeks. Demand letter on his desk in 48 hours." },
+    { case: "Daniel · Austin, TX", recovery: "$4,200", days: "11 days", quote: "Already paid two lawyers $1,800. Finished it for $54 and a stamp." },
+    { case: "Lena · Chicago, IL", recovery: "$890", days: "6 days", quote: "It felt fair. Like the system actually heard me." },
+    { case: "Marcus · Phoenix, AZ", recovery: "$6,750", days: "25 days", quote: "Ex-employer thought ignoring me would be cheaper. Wasn't." },
+    { case: "Sara · Denver, CO", recovery: "$3,400", days: "18 days", quote: "Auto repair overcharge. Settled before the court date." },
+    { case: "Reza · LA, CA", recovery: "$1,150", days: "9 days", quote: "Photographer no-show. Refunded in full plus filing fee." },
+    { case: "Aisha · Boston, MA", recovery: "$5,800", days: "31 days", quote: "Lead-paint disclosure violation. Statute did all the work." },
+  ];
+  const ex = examples[active] ?? examples[0];
+  return (
+    <div className="sv-tabsw">
+      <div className="sv-tabsw-tabs">
+        {ISSUE_LIST.map((i, idx) => (
+          <button key={i.title} className={`sv-tabsw-tab ${idx === active ? "active" : ""}`} onClick={() => setActive(idx)}>
+            {i.title}
+          </button>
+        ))}
+      </div>
+      <div className="sv-tabsw-card">
+        <div className="sv-tabsw-meta">
+          <div className="sv-tabsw-amount">{ex.recovery}</div>
+          <div>
+            <div className="sv-tabsw-case">{ex.case}</div>
+            <div className="sv-tabsw-days">recovered in {ex.days}</div>
+          </div>
+        </div>
+        <p className="sv-tabsw-quote">&ldquo;{ex.quote}&rdquo;</p>
+        <a href="#" className="btn btn-dark" style={{ alignSelf: "flex-start" }}>Read this guide →</a>
+      </div>
+    </div>
+  );
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   "HOW SMALL CLAIMS HANDLES" variants
+   ════════════════════════════════════════════════════════════════════════════ */
+
+export function HandlesTableVariant() {
+  return (
+    <div className="sv-handles">
+      <table className="sv-handles-table">
+        <thead>
+          <tr><th>Situation</th><th>Where it goes</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Withheld security deposit</strong></td><td className="ok">✓ Small claims</td></tr>
+          <tr><td><strong>Repairs you paid for</strong></td><td className="ok">✓ Small claims</td></tr>
+          <tr><td><strong>Hotel during illegal lockout</strong></td><td className="ok">✓ Small claims</td></tr>
+          <tr><td><strong>Ruined personal property</strong></td><td className="ok">✓ Small claims</td></tr>
+          <tr><td><strong>Lead-paint disclosure violation</strong></td><td className="ok">✓ Small claims</td></tr>
+          <tr><td><strong>Getting back into your unit</strong></td><td className="no">✕ Housing court</td></tr>
+          <tr><td><strong>Rent control calculation</strong></td><td className="no">✕ Administrative law</td></tr>
+          <tr><td><strong>Fair-housing discrimination</strong></td><td className="no">✕ Civil rights venue</td></tr>
+          <tr><td><strong>Eviction defense</strong></td><td className="no">✕ Unlawful detainer court</td></tr>
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+export function HandlesDoorsVariant() {
+  return (
+    <div className="sv-doors">
+      <div className="sv-door sv-door-ok">
+        <div className="sv-door-frame">
+          <div className="sv-door-num">1</div>
+          <div className="sv-door-h">Small Claims Court</div>
+          <ul>
+            <li>Money the landlord owes you</li>
+            <li>Deposit, repairs, ruined property</li>
+            <li>Hotel during a lockout</li>
+            <li>Lead-paint violations</li>
+          </ul>
+          <div className="sv-door-tag">Most landlord money disputes go here</div>
+        </div>
+      </div>
+      <div className="sv-door-or">or</div>
+      <div className="sv-door sv-door-other">
+        <div className="sv-door-frame">
+          <div className="sv-door-num">2</div>
+          <div className="sv-door-h">Other courts</div>
+          <ul>
+            <li>Housing court — getting your unit back</li>
+            <li>Administrative law — rent control</li>
+            <li>Civil rights — fair-housing claims</li>
+            <li>Unlawful detainer — eviction defense</li>
+          </ul>
+          <div className="sv-door-tag">Different forms, different deadlines, often need an attorney</div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function HandlesMatrixVariant() {
+  const items = [
+    { name: "Withheld deposit", small: true },
+    { name: "Repairs you paid for", small: true },
+    { name: "Hotel during lockout", small: true },
+    { name: "Ruined property", small: true },
+    { name: "Lead disclosure", small: true },
+    { name: "Reduced rent (uninhabitable)", small: "depends" },
+    { name: "Get back into unit", small: false },
+    { name: "Rent control", small: false },
+    { name: "Discrimination", small: false },
+  ];
+  return (
+    <div className="sv-matrix">
+      {items.map((it) => (
+        <div key={it.name} className={`sv-matrix-cell ${it.small === true ? "ok" : it.small === false ? "no" : "maybe"}`}>
+          <div className="sv-matrix-pill">
+            {it.small === true ? "Small claims" : it.small === false ? "Different court" : "Depends"}
+          </div>
+          <div className="sv-matrix-name">{it.name}</div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   STATE-SPECIFIC RULES variants
+   ════════════════════════════════════════════════════════════════════════════ */
+
+const STATES_LIST = [
+  { name: "California", days: 21, penalty: "2×" },
+  { name: "New York", days: 14, penalty: "2×" },
+  { name: "Texas", days: 30, penalty: "$100 + 3×" },
+  { name: "Florida", days: 60, penalty: "Forfeit" },
+  { name: "Illinois", days: 30, penalty: "2×" },
+  { name: "Pennsylvania", days: 30, penalty: "2×" },
+  { name: "Massachusetts", days: 30, penalty: "3×" },
+  { name: "Minnesota", days: 21, penalty: "2× + $500" },
+  { name: "Washington", days: 30, penalty: "2×" },
+  { name: "Colorado", days: 60, penalty: "3×" },
+  { name: "Oregon", days: 31, penalty: "2×" },
+  { name: "Michigan", days: 30, penalty: "2×" },
+];
+
+export function StatesUSMapVariant() {
+  // Simplified visual — abstract dot map, hover to highlight
+  const [hover, setHover] = useState<string | null>(null);
+  const active = STATES_LIST.find((s) => s.name === hover) ?? STATES_LIST[0];
+  return (
+    <div className="sv-usmap">
+      <div className="sv-usmap-canvas">
+        <svg viewBox="0 0 640 360" width="100%" height="100%">
+          {STATES_LIST.map((s, i) => {
+            const cols = 6;
+            const x = 80 + (i % cols) * 90;
+            const y = 90 + Math.floor(i / cols) * 110;
+            return (
+              <g key={s.name} onMouseEnter={() => setHover(s.name)} style={{ cursor: "pointer" }}>
+                <circle cx={x} cy={y} r={hover === s.name ? 28 : 22} fill={hover === s.name ? "var(--accent)" : "rgba(217,64,46,0.18)"} stroke={hover === s.name ? "var(--accent)" : "#d9402e"} strokeWidth="2" style={{ transition: "all .2s ease" }} />
+                <text x={x} y={y + 5} textAnchor="middle" fontSize="13" fontWeight="700" fill={hover === s.name ? "#fff" : "#d9402e"} style={{ pointerEvents: "none" }}>{s.days}</text>
+                <text x={x} y={y + 42} textAnchor="middle" fontSize="11" fontWeight="600" fill="var(--ink)" style={{ pointerEvents: "none" }}>{s.name}</text>
+              </g>
+            );
+          })}
+        </svg>
+      </div>
+      <div className="sv-usmap-info">
+        <div className="sv-usmap-h">{active.name}</div>
+        <div className="sv-usmap-row"><span>Deposit deadline</span><strong>{active.days} days</strong></div>
+        <div className="sv-usmap-row"><span>Bad-faith penalty</span><strong>{active.penalty}</strong></div>
+        <div className="sv-usmap-hint">Hover any dot to compare. The number is the days the landlord has.</div>
+      </div>
+    </div>
+  );
+}
+
+export function StatesSpotlightVariant() {
+  return (
+    <div className="sv-spotlight">
+      <div className="sv-spotlight-feature">
+        <div className="sv-spotlight-tag">YOUR STATE · CALIFORNIA</div>
+        <div className="sv-spotlight-h">21-day deadline. 2× penalty if bad faith.</div>
+        <div className="sv-spotlight-stats">
+          <div><strong>$12,500</strong><span>Small-claims cap</span></div>
+          <div><strong>2×</strong><span>Bad-faith penalty</span></div>
+          <div><strong>21d</strong><span>Return deadline</span></div>
+        </div>
+        <a href="#" className="btn btn-dark" style={{ background: "#fef9f1", color: "var(--ink)" }}>Read the California guide</a>
+      </div>
+      <div className="sv-spotlight-grid">
+        <div className="sv-spotlight-grid-h">Other states</div>
+        {STATES_LIST.slice(1, 9).map((s) => (
+          <a key={s.name} href="#" className="sv-spotlight-tile">
+            <span>{s.name}</span>
+            <strong>{s.days}d</strong>
+          </a>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export function StatesTableVariant() {
+  return (
+    <div className="cat-table-wrap" style={{ marginTop: 0 }}>
+      <table className="cat-table">
+        <thead><tr><th>State</th><th>Deadline</th><th>Penalty</th><th>Cap</th><th></th></tr></thead>
+        <tbody>
+          {STATES_LIST.map((s) => (
+            <tr key={s.name}>
+              <td><strong>{s.name}</strong></td>
+              <td>{s.days} days</td>
+              <td>{s.penalty}</td>
+              <td>varies</td>
+              <td><a href="#" className="cat-text-link">Guide →</a></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   CTA CARD variants
+   ════════════════════════════════════════════════════════════════════════════ */
+
+export function CTASingleBoldVariant() {
+  return (
+    <div className="sv-cta-bold">
+      <div className="sv-cta-bold-eyebrow">Take the next step</div>
+      <h3>Send a demand letter <em>today</em>.</h3>
+      <p>About half of disputes settle once a real demand letter shows up. $39 to draft, professional, mailed-ready.</p>
+      <div className="sv-cta-bold-stats">
+        <div><strong>$1,840</strong><span>avg recovery</span></div>
+        <div><strong>21d</strong><span>median timeline</span></div>
+        <div><strong>50</strong><span>states</span></div>
+      </div>
+      <a href="#" className="btn btn-dark" style={{ background: "#fef9f1", color: "var(--ink)", padding: "16px 32px", fontSize: 16 }}>Start a demand letter — $39 →</a>
+    </div>
+  );
+}
+
+export function CTAPhotoSplitVariant() {
+  return (
+    <div className="sv-cta-photo">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src="https://images.unsplash.com/photo-1573164574572-cb89e39749b4?w=800&h=900&fit=crop" alt="" />
+      <div className="sv-cta-photo-card">
+        <span className="eyebrow" style={{ color: "rgba(254,249,241,0.65)" }}>Three ways to start</span>
+        <h3>Pick your <em>path</em>.</h3>
+        <a href="#" className="sv-cta-photo-row">
+          <strong>Demand letter — $39</strong>
+          <span>About half of disputes end here.</span>
+        </a>
+        <a href="#" className="sv-cta-photo-row">
+          <strong>Free case-score quiz</strong>
+          <span>Strength read in 90 seconds.</span>
+        </a>
+        <a href="#" className="sv-cta-photo-row">
+          <strong>Read your state guide</strong>
+          <span>Forms, fees, deadlines.</span>
+        </a>
+      </div>
+    </div>
+  );
+}
+
+export function CTADashboardVariant() {
+  return (
+    <div className="sv-cta-dash">
+      <div className="sv-cta-dash-mock">
+        <div className="sv-cta-dash-row"><span>CASE #CC-NEW</span><span className="pill">Action recommended</span></div>
+        <div className="sv-cta-dash-score">82<sup>/100</sup></div>
+        <div className="sv-cta-dash-label">Estimated case strength</div>
+        <div className="sv-cta-dash-bar"></div>
+        <div className="sv-cta-dash-meta">
+          <div><span>Claim</span><strong>Security deposit</strong></div>
+          <div><span>Amount</span><strong>$1,500</strong></div>
+          <div><span>Est. recovery</span><strong>$4,950</strong></div>
+        </div>
+      </div>
+      <div className="sv-cta-dash-copy">
+        <span className="eyebrow">Your case, in 90 seconds</span>
+        <h3>Get a real read on your <em>specific case</em>.</h3>
+        <p>Free 7-question quiz. Returns a strength score, your state&rsquo;s SOL deadline, and a recommended next step.</p>
+        <a href="#" className="btn btn-dark">Start the case-score quiz</a>
+      </div>
+    </div>
+  );
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   FAQ variants
+   ════════════════════════════════════════════════════════════════════════════ */
+
+const SAMPLE_FAQ = [
+  { q: "Can I sue my landlord in small claims court?", a: "Yes — small claims is the standard venue for tenant-vs-landlord money disputes under your state's cap." },
+  { q: "How long do I have to sue?", a: "Most landlord-tenant claims have 2–6 years depending on state and contract type." },
+  { q: "Do I need a lawyer?", a: "No. Small claims is built for self-represented litigants and in some states lawyers aren't even allowed." },
+  { q: "Can I sue while still living there?", a: "Legally yes; most states have anti-retaliation laws but enforcement is messy. Many tenants wait until they move out." },
+  { q: "What if my landlord ignores the demand letter?", a: "That's the cue to file in small claims. The demand letter creates the paper trail judges expect." },
+];
+
+export function FAQGridVariant() {
+  const [openIdx, setOpenIdx] = useState<number | null>(0);
+  return (
+    <div className="sv-faq-grid">
+      {SAMPLE_FAQ.map((f, i) => (
+        <button key={i} className={`sv-faq-card ${openIdx === i ? "open" : ""}`} onClick={() => setOpenIdx(openIdx === i ? null : i)}>
+          <div className="sv-faq-q">{f.q}</div>
+          {openIdx === i && <div className="sv-faq-a">{f.a}</div>}
+          <div className="sv-faq-toggle">{openIdx === i ? "−" : "+"}</div>
+        </button>
+      ))}
+    </div>
+  );
+}
+
+export function FAQOpenVariant() {
+  return (
+    <div className="sv-faq-open">
+      {SAMPLE_FAQ.map((f, i) => (
+        <div key={i} className="sv-faq-open-row">
+          <div className="sv-faq-open-q">
+            <div className="sv-faq-open-num">Q{i + 1}</div>
+            <div>{f.q}</div>
+          </div>
+          <div className="sv-faq-open-a">{f.a}</div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export function FAQSearchVariant() {
+  const [q, setQ] = useState("");
+  const filtered = q.trim() === "" ? SAMPLE_FAQ : SAMPLE_FAQ.filter((f) => (f.q + f.a).toLowerCase().includes(q.toLowerCase()));
+  return (
+    <div className="sv-faq-search">
+      <div className="sv-faq-search-bar">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2">
+          <circle cx="11" cy="11" r="7" />
+          <path d="m21 21-3.5-3.5" />
+        </svg>
+        <input placeholder="Search the FAQ — try 'lawyer' or 'deadline'" value={q} onChange={(e) => setQ(e.target.value)} />
+      </div>
+      <div className="sv-faq-search-results">
+        {filtered.length === 0 && <p className="sv-faq-empty">No matches for &ldquo;{q}&rdquo;.</p>}
+        {filtered.map((f, i) => (
+          <details key={i} open>
+            <summary>{f.q}</summary>
+            <p>{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  );
+}

@@ -3,6 +3,11 @@ import Link from "next/link";
 import SectionCaseStudySlider from "./SectionCaseStudySlider";
 import SectionSteppedTabs from "./SectionSteppedTabs";
 import {
+  ArchivedDashboardSection,
+  ArchivedUseCasesSection,
+  ArchivedReceiptsSection,
+} from "./HomeArchivedSections";
+import {
   StepsTimelineVariant, StepsSubwayVariant, StepsReceiptVariant,
   HowLongHeroNumericVariant, HowLongStateCompareVariant, HowLongCalendarVariant,
   RecoverReceiptVariant, RecoverStackedBarVariant, RecoverGlobeCardVariant,
@@ -67,6 +72,20 @@ export default function SectionsPage() {
           Private reference. Add design examples here; we&rsquo;ll reuse them on real pages.
         </p>
       </div>
+
+      {/* ============================================================
+           Archived from home page (preserved for re-use)
+           ============================================================ */}
+      <Label id="archived-use-cases">
+        Archived from home: CivilCase works for everyone who&rsquo;s owed money
+      </Label>
+      <ArchivedUseCasesSection />
+
+      <Label id="archived-dashboard">Archived from home: Every case, on one page</Label>
+      <ArchivedDashboardSection />
+
+      <Label id="archived-receipts">Archived from home: The receipts</Label>
+      <ArchivedReceiptsSection />
 
       {/* ============================================================
            1. Centered hero with single CTA

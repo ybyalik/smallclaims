@@ -37,6 +37,24 @@ export default function PostEditor({ initial }: Props) {
     html: initial?.content_html ?? "",
   });
   const [slugTouched, setSlugTouched] = useState(!!initial);
+  const [uploadingCover, setUploadingCover] = useState(false);
+
+  async function uploadCoverFile(file: File) {
+    setUploadingCover(true);
+    setError(null);
+    try {
+      const fd = new FormData();
+      fd.append("file", file);
+      const res = await fetch("/api/admin/upload", { method: "POST", body: fd });
+      const body = await res.json().catch(() => ({}));
+      if (!res.ok || !body.url) throw new Error(body.error || "Upload failed");
+      setCoverImage(body.url);
+    } catch (e) {
+      setError(e instanceof Error ? e.message : "Upload failed");
+    } finally {
+      setUploadingCover(false);
+    }
+  }
 
   function onTitleChange(v: string) {
     setTitle(v);
@@ -205,13 +223,25 @@ export default function PostEditor({ initial }: Props) {
           </div>
 
           <div className="admin-side-card">
-            <h3>Cover image URL</h3>
+            <h3>Cover image</h3>
+            <input
+              type="file"
+              accept="image/*"
+              onChange={(e) => {
+                const f = e.target.files?.[0];
+                if (f) uploadCoverFile(f);
+                e.target.value = "";
+              }}
+              disabled={uploadingCover}
+              style={{ fontSize: 13, marginBottom: 8 }}
+            />
             <input
               className="admin-input"
               value={coverImage ?? ""}
               onChange={(e) => setCoverImage(e.target.value)}
-              placeholder="https://…"
+              placeholder="…or paste a URL"
             />
+            {uploadingCover && <p className="admin-hint">Uploading…</p>}
             {coverImage && (
               // eslint-disable-next-line @next/next/no-img-element
               <img src={coverImage} alt="" className="admin-cover-preview" />

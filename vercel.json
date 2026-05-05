@@ -1,0 +1,8 @@
+{
+  "crons": [
+    {
+      "path": "/api/cron/poll-deep-research",
+      "schedule": "*/5 * * * *"
+    }
+  ]
+}

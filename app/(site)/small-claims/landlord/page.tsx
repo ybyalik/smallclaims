@@ -5,12 +5,12 @@ import { availableStateSlugs } from "../../../../lib/state-data";
 import { STATES } from "../../../../lib/states";
 
 export const metadata: Metadata = {
-  title: "Landlord Disputes in Small Claims Court — by issue and state",
+  title: "How to Sue Your Landlord in Small Claims Court",
   description:
-    "How to sue your landlord in small claims court. Security deposits, illegal lockouts, mold and habitability, wrongful eviction, repairs, and pest infestations — what you can recover and how to file.",
+    "Step by step guide to suing your landlord. Security deposits, mold, illegal lockouts, harassment, wrongful eviction, and 7 more disputes. What you can recover and how to file in your state.",
   alternates: { canonical: "/small-claims/landlord" },
   openGraph: {
-    title: "Landlord Disputes in Small Claims Court | CivilCase",
+    title: "How to Sue Your Landlord in Small Claims Court | CivilCase",
     description:
       "Landlord-tenant disputes you can take to small claims, what you can recover, and how to file in your state.",
     url: "/small-claims/landlord",
@@ -22,7 +22,7 @@ const ISSUES = [
   {
     slug: "security-deposit",
     title: "Security deposit not returned",
-    blurb: "Most common landlord small-claim. Many states allow 2x or 3x the deposit if it was withheld in bad faith.",
+    blurb: "The most common landlord small-claims case. Most states add 2x or 3x the deposit when it was withheld in bad faith.",
     icon: (
       <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.6">
         <rect x="3" y="6" width="18" height="13" rx="2" />
@@ -33,73 +33,120 @@ const ISSUES = [
   },
   {
     slug: "mold",
-    title: "Mold or habitability",
-    blurb: "Recover medical costs, ruined property, and reduced rent value when your landlord ignores serious habitability issues.",
+    title: "Mold and habitability",
+    blurb: "Recover medical costs, ruined property, and rent abatement when your landlord ignores serious habitability problems.",
     icon: (
       <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.6">
         <path d="M3 21l9-18 9 18z" />
         <path d="M9 17a3 3 0 0 1 6 0" />
       </svg>
     ),
-    ready: false,
+    ready: true,
   },
   {
     slug: "wrongful-eviction",
     title: "Wrongful eviction",
-    blurb: "Sue for moving costs, lost personal property, hotel stays, and statutory penalties when an eviction wasn't lawful.",
+    blurb: "Sue for moving costs, lost property, hotel stays, and statutory damages of 2x or 3x rent in tenant-friendly states.",
     icon: (
       <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.6">
         <path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-7h6v7" />
       </svg>
     ),
-    ready: false,
+    ready: true,
   },
   {
     slug: "illegal-lockout",
     title: "Illegal lockout",
-    blurb: "Self-help evictions are illegal in nearly every state and many trigger treble damages plus attorney fees.",
+    blurb: "Changed locks, shut-off utilities, or removed belongings without a court order. California adds $100/day. Florida adds 3x rent.",
     icon: (
       <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.6">
         <rect x="5" y="11" width="14" height="10" rx="2" />
         <path d="M8 11V7a4 4 0 0 1 8 0v4" />
       </svg>
     ),
-    ready: false,
+    ready: true,
   },
   {
-    slug: "repairs-not-made",
-    title: "Repairs not made",
-    blurb: "Repair-and-deduct, rent escrow, and direct damages claims for serious unaddressed maintenance.",
+    slug: "harassment",
+    title: "Landlord harassment",
+    blurb: "Repeated unauthorized entry, threats, retaliation. California adds $2,000 per harassment act. NYC adds 3x rent.",
     icon: (
       <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.6">
-        <path d="M14 7l-1-1a3 3 0 0 0-4 0l-5 5a3 3 0 0 0 0 4l1 1M9 17l1 1a3 3 0 0 0 4 0l5-5a3 3 0 0 0 0-4l-1-1" />
+        <path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
       </svg>
     ),
-    ready: false,
+    ready: true,
   },
   {
     slug: "pest-infestation",
     title: "Pest infestation",
-    blurb: "Roaches, bed bugs, rats. Recover treatment costs, ruined belongings, and rent reduction for the affected period.",
+    blurb: "Roaches, bed bugs, rats. Recover treatment costs, replaced belongings, and rent reduction for the affected period.",
     icon: (
       <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.6">
         <ellipse cx="12" cy="13" rx="5" ry="7" />
         <path d="M12 6V3M9 5L7 3M15 5l2-2M5 13H2M19 13h3M7 19l-2 2M17 19l2 2" />
       </svg>
     ),
-    ready: false,
+    ready: true,
   },
   {
-    slug: "lead-poisoning",
-    title: "Lead poisoning",
-    blurb: "Federal and state lead-disclosure laws give renters strong claims when a landlord ignored required disclosures.",
+    slug: "unsafe-conditions",
+    title: "Unsafe living conditions",
+    blurb: "Structural failures, electrical hazards, missing smoke detectors, no heat or hot water. Habitability claims with rent abatement.",
+    icon: (
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.6">
+        <path d="M3 21h18M3 21V10l9-7 9 7v11M9 21v-6h6v6" />
+        <path d="M12 14v.01" />
+      </svg>
+    ),
+    ready: true,
+  },
+  {
+    slug: "emotional-distress",
+    title: "Emotional distress",
+    blurb: "Pair with another tenant claim for the strongest case. Therapy bills and lost work make documented claims succeed.",
     icon: (
       <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.6">
         <circle cx="12" cy="12" r="9" />
-        <path d="M12 7v5l3 2" />
+        <path d="M9 9.5l1 1M15 9.5l-1 1M8 16s1.5-2 4-2 4 2 4 2" />
       </svg>
     ),
-    ready: false,
+    ready: true,
+  },
+  {
+    slug: "apartment-complex",
+    title: "Apartment complex",
+    blurb: "Corporate landlords settle faster than mom-and-pop. Multi-claim cases against complexes typically recover $2,000 to $6,000.",
+    icon: (
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.6">
+        <rect x="3" y="3" width="18" height="18" rx="1" />
+        <path d="M9 7h.01M9 11h.01M9 15h.01M15 7h.01M15 11h.01M15 15h.01" />
+      </svg>
+    ),
+    ready: true,
+  },
+  {
+    slug: "after-moving-out",
+    title: "After moving out",
+    blurb: "Statutes of limitations are generous. Most claims still timely 1 to 4 years post-move-out. Move quickly anyway.",
+    icon: (
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.6">
+        <path d="M21 12H7M14 5l-7 7 7 7" />
+      </svg>
+    ),
+    ready: true,
+  },
+  {
+    slug: "break-lease",
+    title: "Break your lease",
+    blurb: "Five legal grounds let you break a lease without penalty: military, domestic violence, habitability, harassment, mutual.",
+    icon: (
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.6">
+        <path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" />
+        <path d="M14 3v6h6M9 13l3 3 6-6" />
+      </svg>
+    ),
+    ready: true,
   },
 ];
 
@@ -125,7 +172,7 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Article",
-      headline: "Landlord Disputes in Small Claims Court",
+      headline: "How to Sue Your Landlord in Small Claims Court",
       description:
         "Practical guide to suing a landlord in small claims for security deposits, illegal lockouts, mold, repairs, and other tenant disputes.",
       author: { "@type": "Organization", name: "CivilCase" },
@@ -136,29 +183,29 @@ const jsonLd = {
       mainEntity: [
         {
           "@type": "Question",
-          name: "Can I sue my landlord in small claims court?",
+          name: "Can you sue your landlord in small claims court?",
           acceptedAnswer: {
             "@type": "Answer",
             text:
-              "Yes — small claims is the standard venue for tenant-vs-landlord money disputes under your state's jurisdictional cap (typically $5,000 to $20,000). Eviction itself goes to housing court, but money you're owed (security deposit, repair costs, hotel stays during a lockout, lost property) belongs in small claims.",
+              "Yes. Small claims is the standard venue for tenant-versus-landlord money disputes under your state's jurisdictional cap (usually $5,000 to $20,000). Eviction itself goes to housing court, but money you are owed (security deposit, repair costs, hotel stays during a lockout, ruined property) belongs in small claims.",
           },
         },
         {
           "@type": "Question",
-          name: "How long do I have to sue my landlord?",
+          name: "How long do you have to sue a landlord?",
           acceptedAnswer: {
             "@type": "Answer",
             text:
-              "Most landlord-tenant claims have a 2 to 6 year statute of limitations depending on the state and whether it's a written or oral lease. Check your state guide or the case-score quiz for the exact deadline that applies to your situation.",
+              "Most landlord-tenant claims have a 2 to 6 year statute of limitations, depending on the state and whether the lease is written or oral. Security-deposit claims usually run on the contract clock (longer). Repair and habitability claims sometimes run on a tort clock (shorter). Check your state guide for the exact deadline.",
           },
         },
         {
           "@type": "Question",
-          name: "What can I recover from my landlord in small claims?",
+          name: "What can you recover from a landlord in small claims?",
           acceptedAnswer: {
             "@type": "Answer",
             text:
-              "At minimum: your actual out-of-pocket loss (deposit, repair receipts, hotel costs, ruined property). Many states add statutory penalties — often 2x or 3x the wrongfully withheld amount — plus reasonable attorney fees, even though you don't need an attorney to use them.",
+              "At minimum, your out-of-pocket loss: the deposit, repair receipts, hotel costs, and ruined property. Many states add statutory damages of 2x or 3x the wrongfully withheld amount, plus reasonable attorney fees, even though you do not need a lawyer to use small claims.",
           },
         },
       ],
@@ -188,13 +235,13 @@ export default function LandlordHubPage() {
           <div className="cat-hero-copy">
             <span className="eyebrow">Category</span>
             <h1>
-              Landlord Disputes in <em>Small Claims Court</em>
+              How to <em>sue your landlord</em> in small claims court.
             </h1>
             <p className="cat-lede">
-              If you&rsquo;re owed money by a landlord — withheld deposit, repair costs, a hotel
-              bill from a lockout — small claims is the right venue. You don&rsquo;t need an
-              attorney, the filing fee is usually under $100, and many states stack statutory
-              penalties on top.
+              If your landlord owes you money for a withheld deposit, repair costs, or a hotel bill
+              from a lockout, small claims is the right court. You do not need an attorney. Filing
+              fees are usually under $100, and many states add statutory damages on top of what
+              you are directly owed.
             </p>
             <div className="hero-ctas">
               <Link href="/case-score" className="btn btn-dark">
@@ -209,11 +256,11 @@ export default function LandlordHubPage() {
           {/* Stat card — homepage hero-card style */}
           <div className="cat-hero-stat">
             <div>
-              <div className="cat-hero-stat-eyebrow">Average tenant recovery</div>
+              <div className="cat-hero-stat-eyebrow">Typical tenant recovery</div>
               <div className="cat-hero-stat-big">
                 $1,840
               </div>
-              <div className="cat-hero-stat-sub">across landlord-tenant small claims · last 30 days</div>
+              <div className="cat-hero-stat-sub">illustrative · varies by state, deposit size, and bad-faith findings</div>
             </div>
             <div>
               <div className="cat-hero-bars">
@@ -245,7 +292,7 @@ export default function LandlordHubPage() {
         <section className="cat-section">
           <div className="sec-head" style={{ textAlign: "left", marginBottom: 28 }}>
             <h2 style={{ margin: 0 }}>
-              Common landlord <em>issues</em>.
+              What can you sue your landlord <em>for</em>?
             </h2>
             <p style={{ marginTop: 12, marginLeft: 0, maxWidth: "60ch" }}>
               Pick the one that fits your situation. Each guide covers what you can recover,
@@ -254,7 +301,7 @@ export default function LandlordHubPage() {
           </div>
           <div className="cat-grid">
             {ISSUES.map((i) => (
-              <Link key={i.slug} href={`/small-claims/landlord/${i.slug}`} className={`cat-card ${i.ready ? "" : "soon"}`}>
+              <Link key={i.slug} href={`/small-claims/sue-landlord-${i.slug}`} className={`cat-card ${i.ready ? "" : "soon"}`}>
                 <div className="cat-card-icon">{i.icon}</div>
                 <h3>{i.title}</h3>
                 <p>{i.blurb}</p>
@@ -292,9 +339,9 @@ export default function LandlordHubPage() {
               How small claims handles <em>landlord disputes</em>.
             </h2>
             <p style={{ margin: "10px 0 0", maxWidth: "60ch", color: "var(--ink-2)" }}>
-              Small claims is built for everyday money disputes — exactly the kind tenants run
-              into. Most state caps fall between $5,000 and $20,000, the hearing takes 10–15
-              minutes, and you don&rsquo;t need a lawyer to use it.
+              Small claims is built for everyday money disputes, the kind tenants run into all
+              the time. Most state caps fall between $5,000 and $20,000. Hearings take 10 to 15
+              minutes. You do not need a lawyer to use it.
             </p>
           </div>
 
@@ -304,7 +351,7 @@ export default function LandlordHubPage() {
                 <h3>Belongs in small claims</h3>
                 <div className="cat-ps-item">
                   <div className="cat-ps-num">01</div>
-                  <div className="cat-ps-text"><strong>Withheld security deposit.</strong> Plus 2x or 3x in penalty in many states.</div>
+                  <div className="cat-ps-text"><strong>Withheld security deposit.</strong> Plus 2x or 3x in statutory damages in many states.</div>
                 </div>
                 <div className="cat-ps-item">
                   <div className="cat-ps-num">02</div>
@@ -359,11 +406,11 @@ export default function LandlordHubPage() {
           <div className="cat-stack-head">
             <span className="eyebrow">Damages</span>
             <h2>
-              What you can <em>recover</em>.
+              What can you <em>recover</em>?
             </h2>
             <p>
               The math judges use. A typical security-deposit case stacks four layers on top of
-              the deposit you&rsquo;re directly owed.
+              the deposit you are directly owed.
             </p>
           </div>
 
@@ -379,7 +426,7 @@ export default function LandlordHubPage() {
               </div>
               <div className="cat-recovery-row">
                 <div className="cat-recovery-label">
-                  <span className="cat-recovery-tag accent">Statutory penalty</span>
+                  <span className="cat-recovery-tag accent">Statutory damages</span>
                   <p>Bad-faith withholding triggers 2x or 3x the wrongfully kept amount in most states.</p>
                 </div>
                 <div className="cat-recovery-amount accent">+$3,000</div>
@@ -388,7 +435,7 @@ export default function LandlordHubPage() {
               <div className="cat-recovery-row">
                 <div className="cat-recovery-label">
                   <span className="cat-recovery-tag">Attorney&rsquo;s fees</span>
-                  <p>Statute shifts the landlord&rsquo;s fees to the loser. Pressures early settlement.</p>
+                  <p>Many statutes shift the loser&rsquo;s fees to the prevailing party. That alone pressures early settlement.</p>
                 </div>
                 <div className="cat-recovery-amount">+$300</div>
                 <div className="cat-recovery-bar"><span style={{ width: "8%" }}></span></div>
@@ -396,7 +443,7 @@ export default function LandlordHubPage() {
               <div className="cat-recovery-row">
                 <div className="cat-recovery-label">
                   <span className="cat-recovery-tag">Interest</span>
-                  <p>4–10% per year, pre- and post-judgment, depending on state.</p>
+                  <p>4 to 10 percent per year, pre- and post-judgment, depending on the state.</p>
                 </div>
                 <div className="cat-recovery-amount">+$150</div>
                 <div className="cat-recovery-bar"><span style={{ width: "4%" }}></span></div>
@@ -422,12 +469,12 @@ export default function LandlordHubPage() {
           <div className="cat-stack-head">
             <span className="eyebrow">Build the file</span>
             <h2>
-              Evidence to <em>gather</em>.
+              What evidence do you need to <em>sue your landlord</em>?
             </h2>
             <p>
-              Landlord cases are won on documentation. Whatever you don&rsquo;t have on paper,
-              the judge takes on your word — and a landlord with a property manager has more
-              paper than you do.
+              Landlord cases are won on documentation. Whatever you do not have on paper, the judge
+              takes on your word. A landlord with a property manager has more paper than you do, so
+              your job is to close that gap.
             </p>
           </div>
 
@@ -473,7 +520,7 @@ export default function LandlordHubPage() {
                   </svg>
                 </div>
                 <h4 className="cat-evidence-title">Move-in &amp; move-out photos</h4>
-                <p className="cat-evidence-desc">Walkthrough photos plus the condition checklist. Date-stamps matter — judges care when the evidence was created.</p>
+                <p className="cat-evidence-desc">Walkthrough photos plus the condition checklist. Date-stamps matter. Judges care when the evidence was created.</p>
               </div>
               <div className="cat-evidence-card">
                 <div className="cat-evidence-icon">
@@ -511,7 +558,7 @@ export default function LandlordHubPage() {
                   </svg>
                 </div>
                 <h4 className="cat-evidence-title">Your forwarding address notice</h4>
-                <p className="cat-evidence-desc">For deposit cases especially — written notice of where to send it is what starts the state clock.</p>
+                <p className="cat-evidence-desc">For deposit cases especially. Written notice of where to send it is what starts the state clock.</p>
               </div>
               <div className="cat-evidence-card">
                 <div className="cat-evidence-icon">
@@ -535,9 +582,9 @@ export default function LandlordHubPage() {
                 State-specific <em>rules</em>.
               </h2>
               <p>
-                Landlord-tenant rules vary state by state — deposit return deadlines, statutory
-                penalties, repair-and-deduct procedures. Pick your state for the exact statute,
-                deadline, and form numbers.
+                Landlord-tenant rules vary state by state. Deposit return deadlines, statutory
+                damages, and repair-and-deduct procedures are different in every state. Pick yours
+                for the exact statute, deadline, and form numbers.
               </p>
               <Link href="/small-claims" className="cat-text-link">
                 See all 50 state guides →
@@ -565,8 +612,8 @@ export default function LandlordHubPage() {
                 Three ways to <em>move forward</em>.
               </h2>
               <p>
-                Most landlord disputes resolve once a real demand letter shows up. If yours
-                doesn&rsquo;t, the state guide walks you through filing.
+                Most landlord disputes settle once a real demand letter arrives. If yours does
+                not, the state guide walks you through filing step by step.
               </p>
             </div>
             <div className="cat-cta-row">
@@ -626,60 +673,58 @@ export default function LandlordHubPage() {
             </div>
           <div className="cat-faq">
             <details>
-              <summary>Can I sue my landlord in small claims court?</summary>
+              <summary>Can you sue your landlord in small claims court?</summary>
               <div>
                 <p>
-                  Yes — small claims is the standard venue for tenant-vs-landlord money
-                  disputes under your state&rsquo;s jurisdictional cap (typically $5,000 to
-                  $20,000). Eviction itself goes to housing court, but money you&rsquo;re owed
-                  (deposit, repair costs, hotel stays during a lockout, lost property) belongs
+                  Yes. Small claims is the standard venue for tenant-versus-landlord money
+                  disputes under your state&rsquo;s jurisdictional cap (usually $5,000 to
+                  $20,000). Eviction itself goes to housing court, but money you are owed
+                  (deposit, repair costs, hotel stays during a lockout, ruined property) belongs
                   in small claims.
                 </p>
               </div>
             </details>
             <details>
-              <summary>How long do I have to sue my landlord?</summary>
+              <summary>How long do you have to sue a landlord?</summary>
               <div>
                 <p>
-                  Most landlord-tenant claims have a 2 to 6 year statute of limitations
-                  depending on the state and whether it&rsquo;s a written or oral lease.
-                  Security-deposit claims often run on the contract clock (longer); repair and
+                  Most landlord-tenant claims have a 2 to 6 year statute of limitations,
+                  depending on the state and whether the lease is written or oral.
+                  Security-deposit claims usually run on the contract clock (longer). Repair and
                   habitability claims sometimes run on a tort clock (shorter). Check your state
                   guide for exact numbers.
                 </p>
               </div>
             </details>
             <details>
-              <summary>Do I need a lawyer?</summary>
+              <summary>Do you need a lawyer to sue a landlord?</summary>
               <div>
                 <p>
-                  No. In most states attorneys are explicitly permitted but not required, and
-                  in a few states (California, for example) lawyers aren&rsquo;t even allowed at
-                  the initial small-claims hearing. The whole format is built for self-represented
-                  litigants.
+                  No. In most states attorneys are permitted but not required. In a few states
+                  (California, for example) lawyers are not even allowed at the initial small-claims
+                  hearing. The whole format is built for self-represented litigants.
                 </p>
               </div>
             </details>
             <details>
-              <summary>What if my landlord ignores my demand letter?</summary>
+              <summary>What if your landlord ignores your demand letter?</summary>
               <div>
                 <p>
-                  That&rsquo;s the signal to file in small claims. The demand letter creates the
-                  paper trail you&rsquo;ll point to at the hearing — most judges expect to see
-                  one. Read your state&rsquo;s small-claims guide for the specific filing fee,
-                  forms, and service rules.
+                  That is the signal to file in small claims. The demand letter creates the paper
+                  trail you point to at the hearing, and most judges expect to see one. Read your
+                  state&rsquo;s small-claims guide for the specific filing fee, forms, and service
+                  rules.
                 </p>
               </div>
             </details>
             <details>
-              <summary>Can I sue my landlord while I still live there?</summary>
+              <summary>Can you sue your landlord while you still live there?</summary>
               <div>
                 <p>
-                  Legally yes; practically be careful. Most states have anti-retaliation laws
+                  Legally yes. Practically, be careful. Most states have anti-retaliation laws
                   that protect you if the landlord tries to evict or raise rent in response to a
-                  lawsuit, but those laws are easier to invoke than to enforce. If you&rsquo;re
-                  still in the unit and have leverage to wait, many tenants file once they
-                  move out.
+                  lawsuit, but those laws are easier to invoke than to enforce. If you are still
+                  in the unit and can wait, many tenants file once they move out.
                 </p>
               </div>
             </details>

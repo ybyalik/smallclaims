@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import StartButton from "./StartButton";
 
 export const metadata: Metadata = {
   title: "Send a Demand Letter",
@@ -28,22 +29,20 @@ export default function DemandLetterTeaserPage() {
             download as a PDF.
           </p>
           <div className="hero-ctas" style={{ marginTop: 24 }}>
-            <Link className="btn btn-dark" href="/signup?next=/dashboard/cases/new">
-              Get Started
-            </Link>
-            <Link className="btn btn-cream" href="/login?next=/dashboard/cases/new">
+            <StartButton />
+            <Link className="btn btn-cream" href="/login?next=/dashboard/demand-letters/new">
               I have an account
             </Link>
           </div>
+          <p style={{ marginTop: 14, fontSize: 13.5, color: "var(--muted)" }}>
+            No account required to start. Sign up only at checkout.
+          </p>
         </div>
       </section>
 
       <section className="wrap-narrow dl-pricing">
         <h2>How it works</h2>
         <ol className="dl-steps">
-          <li>
-            <strong>Create a free account.</strong> 30 seconds with Google or email.
-          </li>
           <li>
             <strong>Tell us your story.</strong> 3 to 5 minutes. We ask about the dispute,
             the other party, and what happened.
@@ -53,8 +52,8 @@ export default function DemandLetterTeaserPage() {
             anything that doesn&apos;t sound right.
           </li>
           <li>
-            <strong>Pay $39 to download.</strong> Formatted PDF + plain-text version,
-            ready to send by mail or email.
+            <strong>Pay $29 to send (or $49 for full pressure).</strong> Sign up at
+            checkout. Letter goes out via certified mail under our brand.
           </li>
         </ol>
         <p className="dl-disclaimer">

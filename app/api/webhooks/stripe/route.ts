@@ -8,6 +8,7 @@ import { getStripe } from "../../../../lib/stripe";
 import { createServiceRoleClient } from "../../../../lib/supabase/service-role";
 import { logEvent } from "../../../../lib/audit/log";
 import { sendEmail } from "../../../../lib/resend";
+import { markCasePaid } from "../../../../lib/demand-letter/mark-paid";
 
 export const runtime = "nodejs";
 
@@ -50,8 +51,8 @@ export async function POST(req: NextRequest) {
         })
         .eq("stripe_checkout_session_id", session.id);
 
-      // Advance case status
-      await admin.from("cases").update({ status: "demand_paid" }).eq("id", caseId);
+      // Advance case status + enqueue research pipeline
+      await markCasePaid(caseId, { source: "stripe_webhook" });
 
       // Audit
       await logEvent("payment.succeeded", { case_id: caseId, actor_user_id: userId }, {
@@ -82,7 +83,7 @@ export async function POST(req: NextRequest) {
 
 Thanks for your purchase. Your demand letter against ${caseRow.defendant_name} (${dollars}) is ready to download from your dashboard.
 
-Open your case: ${process.env.NEXT_PUBLIC_SITE_URL || "https://civilcase.com"}/dashboard/cases/${caseId}/letter
+Open your case: ${process.env.NEXT_PUBLIC_SITE_URL || "https://civilcase.com"}/dashboard/demand-letters/${caseId}/letter
 
 You can edit the letter, download the PDF, and send it yourself by mail or email.
 
@@ -101,6 +102,43 @@ If you have questions, reply to this email.
         .from("payments")
         .update({ status: "failed" })
         .eq("stripe_checkout_session_id", session.id);
+      break;
+    }
+
+    case "payment_intent.amount_capturable_updated":
+    case "payment_intent.succeeded": {
+      // Inline Stripe Elements path: PaymentIntent with manual capture.
+      // amount_capturable_updated fires when the card is authorized (auth held);
+      // succeeded fires after we capture (paralegal review). markCasePaid is
+      // idempotent so receiving both is safe.
+      const intent = event.data.object as Stripe.PaymentIntent;
+      const caseId = intent.metadata?.case_id;
+      if (!caseId) break;
+
+      await admin
+        .from("payments")
+        .update({
+          status: event.type === "payment_intent.succeeded" ? "succeeded" : "pending",
+          paid_at: event.type === "payment_intent.succeeded" ? new Date().toISOString() : null,
+        })
+        .eq("stripe_payment_intent_id", intent.id);
+
+      await markCasePaid(caseId, { source: "stripe_webhook" });
+
+      await logEvent(
+        event.type === "payment_intent.succeeded"
+          ? "payment.captured"
+          : "payment.authorized",
+        { case_id: caseId, actor_user_id: intent.metadata?.user_id ?? null },
+        {
+          entity_type: "payment",
+          payload: {
+            stripe_payment_intent_id: intent.id,
+            amount: intent.amount,
+            currency: intent.currency,
+          },
+        },
+      );
       break;
     }
 

@@ -100,9 +100,7 @@ export default function GroupedForms({ forms }: { forms: Form[] }) {
                       <a className="form-row-link" href={f.url} target="_blank" rel="noopener noreferrer">
                         PDF →
                       </a>
-                    ) : (
-                      <span className="form-row-link form-row-link-muted">PDF</span>
-                    )}
+                    ) : null}
                   </li>
                 );
               })}

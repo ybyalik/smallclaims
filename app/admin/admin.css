@@ -202,10 +202,10 @@
 .admin-pill-published { background: rgba(217, 64, 46, 0.1); color: var(--accent); }
 
 .admin-actions {
-  display: flex;
-  gap: 12px;
   font-size: 13px;
+  white-space: nowrap;
 }
+.admin-actions a + a { margin-left: 12px; }
 .admin-actions a { color: var(--accent); font-weight: 500; }
 .admin-actions a:hover { text-decoration: underline; }
 
@@ -477,6 +477,266 @@ textarea.admin-input { resize: vertical; min-height: 80px; }
   text-align: center;
 }
 
+/* CASE RESEARCH PANEL (admin case detail) */
+
+.admin-research-tabs {
+  display: flex;
+  gap: 4px;
+  border-bottom: 1px solid var(--hairline);
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+.admin-research-tab {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  padding: 8px 14px;
+  font: inherit;
+  font-size: 13px;
+  color: var(--muted);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+.admin-research-tab:hover { color: var(--ink); }
+.admin-research-tab.is-active {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+  font-weight: 600;
+}
+.admin-research-tab-body { min-height: 120px; }
+
+/* Evidence pack view */
+.ev-pack { display: flex; flex-direction: column; gap: 22px; }
+.ev-section {
+  background: #fff;
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  padding: 16px 20px;
+}
+.ev-section-title {
+  margin: 0 0 12px;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+}
+.ev-field {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 12px;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+  font-size: 14px;
+}
+.ev-field:last-child { border-bottom: 0; }
+.ev-field-label { color: var(--muted); font-size: 12px; padding-top: 2px; }
+.ev-field-value { color: var(--ink); font-weight: 500; }
+.ev-list { margin: 0; padding-left: 22px; line-height: 1.55; font-size: 14px; }
+.ev-list li { margin-bottom: 6px; }
+.ev-form { list-style: disc; margin-bottom: 12px; }
+.ev-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.ev-sources {
+  margin: 0;
+  padding-left: 28px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.ev-sources li { margin-bottom: 8px; }
+.ev-cite {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 999px;
+  vertical-align: super;
+  margin: 0 2px;
+  line-height: 1.4;
+}
+
+/* Source card */
+.src-card {
+  background: #fff;
+  border: 1px solid var(--hairline);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+}
+.src-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.src-card-title {
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--ink);
+  word-break: break-word;
+}
+.src-card-meta {
+  font-size: 12px;
+  color: var(--muted);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.src-card-content {
+  margin-top: 10px;
+  padding: 12px 14px;
+  background: var(--bg-2);
+  border-radius: 6px;
+  max-height: 240px;
+  overflow-y: auto;
+}
+.src-card-content.is-expanded { max-height: 800px; }
+.src-card-content .admin-research-content {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+.src-card-content .admin-research-content h1,
+.src-card-content .admin-research-content h2 {
+  font-size: 16px;
+  margin: 6px 0;
+  border: 0;
+  padding: 0;
+}
+.src-card-content .admin-research-content h3 {
+  font-size: 14.5px;
+  margin: 6px 0 4px;
+}
+
+.qa-checks { display: flex; flex-direction: column; gap: 4px; margin: 10px 0; }
+.qa-check { display: flex; gap: 10px; font-size: 13px; }
+.qa-check-icon { width: 16px; }
+.qa-check-icon.ok { color: #2e5a3a; }
+.qa-check-icon.warn { color: var(--accent); }
+
+.admin-branch-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 0 14px;
+}
+.admin-branch-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  border: 1px solid var(--hairline);
+  background: #fff;
+  cursor: help;
+}
+.admin-branch-pill-label {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.admin-branch-pill-state {
+  color: var(--muted);
+  font-size: 11.5px;
+  display: inline-flex;
+  align-items: center;
+}
+.admin-branch-pill-good {
+  background: rgba(61, 122, 74, 0.08);
+  border-color: rgba(61, 122, 74, 0.2);
+}
+.admin-branch-pill-good .admin-branch-pill-label { color: #2e5a3a; }
+.admin-branch-pill-warn {
+  background: rgba(217, 64, 46, 0.08);
+  border-color: rgba(217, 64, 46, 0.25);
+}
+.admin-branch-pill-warn .admin-branch-pill-label { color: var(--accent); }
+.admin-branch-pill-active {
+  background: rgba(34, 70, 161, 0.08);
+  border-color: rgba(34, 70, 161, 0.2);
+}
+.admin-branch-pill-active .admin-branch-pill-label { color: #1d3a8c; }
+.admin-branch-pill-neutral {
+  background: var(--bg-2);
+}
+
+.admin-research-ledger {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 6px 0 14px;
+}
+.admin-research-ledger-step {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--bg-2);
+  border: 1px solid var(--hairline);
+  font-size: 12px;
+}
+.admin-research-ledger-name { color: var(--ink-2); font-weight: 500; }
+.admin-research-ledger-cost {
+  color: var(--muted);
+  font-family: ui-monospace, "SFMono-Regular", monospace;
+  font-size: 11px;
+}
+
+.admin-spinner {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-left: 4px;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: admin-spin 0.8s linear infinite;
+  vertical-align: middle;
+}
+@keyframes admin-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* RESEARCH EDITOR */
+
+.admin-textarea-mono {
+  width: 100%;
+  appearance: none;
+  background: #fff;
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  padding: 18px 20px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--ink-2);
+  outline: none;
+  resize: vertical;
+  min-height: 480px;
+}
+.admin-textarea-mono:focus { border-color: var(--ink); }
+
+.admin-edit-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  margin-top: 14px;
+  padding: 12px 16px;
+  background: var(--bg-2);
+  border: 1px solid var(--hairline);
+  border-radius: 10px;
+  position: sticky;
+  bottom: 12px;
+}
+
 /* RESEARCH VIEWER */
 
 .admin-research-view .admin-research-content {
@@ -500,8 +760,6 @@ textarea.admin-input { resize: vertical; min-height: 80px; }
 .admin-research-content h2 {
   font-size: 22px;
   margin: 32px 0 10px;
-  padding-top: 18px;
-  border-top: 1px solid var(--hairline);
 }
 .admin-research-content h3 { font-size: 18px; margin: 20px 0 8px; }
 .admin-research-content p { margin: 0 0 12px; }
@@ -597,4 +855,132 @@ textarea.admin-input { resize: vertical; min-height: 80px; }
   .admin-nav { flex-direction: row; flex: 1; flex-wrap: wrap; }
   .admin-side-foot { flex-direction: row; align-items: center; padding-top: 0; border-top: 0; }
   .admin-main { padding: 20px 16px; }
+}
+
+/* ============================================================================
+   Admin: Users + Cases pages
+   ============================================================================ */
+
+.admin-section-h {
+  font-family: "Newsreader", Georgia, serif;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+  margin: 28px 0 12px;
+  color: var(--ink, #111);
+}
+
+/* Status / role / payment pills */
+.admin-pill {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: #f0ede5;
+  color: #5a574e;
+  text-transform: lowercase;
+}
+.admin-pill-active {
+  background: rgba(34, 70, 161, 0.1);
+  color: #1d3a8c;
+}
+.admin-pill-good {
+  background: rgba(61, 122, 74, 0.12);
+  color: #2e5a3a;
+}
+.admin-pill-warn {
+  background: rgba(217, 64, 46, 0.1);
+  color: var(--accent, #d9402e);
+}
+.admin-pill-neutral {
+  background: #f0ede5;
+  color: #5a574e;
+}
+
+/* Detail field grid */
+.admin-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+  background: #fff;
+  border: 1px solid var(--hairline, #ebe9e3);
+  border-radius: 12px;
+  padding: 18px 22px;
+}
+.admin-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+.admin-field-label {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--muted, #6b6b6b);
+}
+.admin-field-value {
+  font-size: 14px;
+  color: var(--ink, #111);
+  word-break: break-word;
+}
+
+/* Prose blocks (narrative, calculation, line items) */
+.admin-prose {
+  background: #fff;
+  border: 1px solid var(--hairline, #ebe9e3);
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-top: 12px;
+}
+.admin-prose strong {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted, #6b6b6b);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+.admin-prose p, .admin-prose ul {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink-2, #1f1f1f);
+}
+.admin-prose ul { padding-left: 18px; }
+
+/* Raw intake_answers JSON */
+.admin-pre {
+  background: #1f1f1f;
+  color: #f0ede5;
+  padding: 16px 20px;
+  border-radius: 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  overflow-x: auto;
+  font-family: ui-monospace, "SFMono-Regular", monospace;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.admin-link {
+  color: var(--ink, #111);
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+  transition: border-color .15s ease, color .15s ease;
+}
+.admin-link:hover {
+  color: var(--accent, #d9402e);
+  border-color: currentColor;
+}
+
+@media (max-width: 700px) {
+  .admin-table { font-size: 13px; }
+  .admin-table th, .admin-table td { padding: 8px 10px; }
+  .admin-detail-grid { grid-template-columns: 1fr; padding: 14px 16px; }
 }

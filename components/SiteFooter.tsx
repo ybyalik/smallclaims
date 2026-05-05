@@ -42,7 +42,7 @@ export default function SiteFooter() {
           <b>CivilCase is not a law firm</b> and does not provide legal advice. The
           information on this site is for general informational purposes and is not a
           substitute for the advice of a licensed attorney. See our{" "}
-          <Link href="/disclaimer" style={{ color: "var(--ink-2)", textDecoration: "underline" }}>
+          <Link href="/disclaimer" style={{ color: "rgba(254, 249, 241, 0.85)", textDecoration: "underline" }}>
             disclaimer
           </Link>
           .

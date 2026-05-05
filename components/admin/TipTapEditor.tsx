@@ -5,7 +5,7 @@ import StarterKit from "@tiptap/starter-kit";
 import Link from "@tiptap/extension-link";
 import Image from "@tiptap/extension-image";
 import Placeholder from "@tiptap/extension-placeholder";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 type Mode = "visual" | "code";
 
@@ -20,6 +20,8 @@ export default function TipTapEditor({
 }) {
   const [mode, setMode] = useState<Mode>("visual");
   const [htmlSource, setHtmlSource] = useState<string>(initialHtml || "");
+  const [uploadingImg, setUploadingImg] = useState(false);
+  const imgInputRef = useRef<HTMLInputElement | null>(null);
 
   const editor = useEditor({
     extensions: [
@@ -139,14 +141,47 @@ export default function TipTapEditor({
         </button>
         <button
           type="button"
+          onClick={() => imgInputRef.current?.click()}
+          title="Upload image"
+          disabled={uploadingImg}
+        >
+          {uploadingImg ? "⏳ Uploading…" : "🖼 Image"}
+        </button>
+        <button
+          type="button"
           onClick={() => {
             const url = window.prompt("Image URL");
             if (url) editor.chain().focus().setImage({ src: url }).run();
           }}
-          title="Image"
+          title="Image from URL"
         >
-          🖼 Image
+          🔗 Img
         </button>
+        <input
+          ref={imgInputRef}
+          type="file"
+          accept="image/*"
+          style={{ display: "none" }}
+          onChange={async (e) => {
+            const file = e.target.files?.[0];
+            e.target.value = "";
+            if (!file) return;
+            setUploadingImg(true);
+            try {
+              const fd = new FormData();
+              fd.append("file", file);
+              const res = await fetch("/api/admin/upload", { method: "POST", body: fd });
+              const body = await res.json().catch(() => ({}));
+              if (!res.ok || !body.url) {
+                alert(body.error || "Upload failed");
+                return;
+              }
+              editor.chain().focus().setImage({ src: body.url }).run();
+            } finally {
+              setUploadingImg(false);
+            }
+          }}
+        />
         <span className="tiptap-divider" />
         <button
           type="button"

@@ -88,7 +88,7 @@ export default async function BillingPage() {
                   {adminBypass && <span className="app-billing-tag">admin</span>}
                 </div>
                 <div>
-                  <Link href={`/dashboard/cases/${p.case_id}`} className="app-link">
+                  <Link href={`/dashboard/demand-letters/${p.case_id}`} className="app-link">
                     Open case →
                   </Link>
                 </div>

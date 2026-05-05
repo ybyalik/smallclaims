@@ -1,265 +1,262 @@
 ## OUTPUT REQUIREMENTS — READ FIRST
 
-This report has SEVENTEEN required sections. Your output is INCOMPLETE if any are missing:
+Produce a structured small-claims-court guide for **{STATE}** that maps directly to a published data file. Output is markdown with EXACTLY the section headings shown below and the EXACT sub-structure described under each. The goal is structured data, not a long-form essay.
 
-1. Jurisdictional limits
-2. What types of cases qualify
-3. Where to file
-4. Filing fees
-5. Statute of limitations
-6. Pre-filing requirements
-7. Forms required
-8. Service of process
-9. Defendant's response and default
-10. Hearing procedure
-11. Appeals
-12. Post-judgment collection
-13. Special rules for businesses
-14. County-level differences
-15. Common pitfalls and dismissal reasons
-16. Recent changes
-17. Sources
+This report has 16 numbered sections plus a final `## Sources` section. **Do not stop until all 17 are present.** Each section has a target token budget shown in [brackets]; staying within budget is more important than completeness within a section.
 
-**DO NOT STOP UNTIL ALL 17 SECTIONS ARE WRITTEN.** Each section uses the heading `## N. <name>` exactly. Coverage of every section is the primary success criterion — a report that ends at Section 6 or Section 10 is a failure even if those sections are excellent. Write the full outline first, then expand depth where space allows.
+**Concision rules — apply throughout:**
+- One sentence per fact. No throat-clearing ("It is worth noting...", "Importantly...", "As discussed above...").
+- Cite each statute inline ONCE; do not re-explain it.
+- Use tables for any fact that appears 3+ times (fee tiers, SOL by claim type, forms, county differences).
+- Keep examples to one short sentence. No multi-paragraph hypotheticals.
+- Do NOT include any analysis of "common pain points" or "why this matters." Stick to procedural facts.
 
-Each section should be roughly 2,500–4,000 visible tokens. If you find a section growing past ~5,000 visible tokens, conclude it and move on. The full report should land around 30,000–50,000 visible tokens distributed across all 17 sections.
+**Citation rules:**
+- Cite official `.gov` sources (state courts, statutes, judicial council) wherever possible.
+- For every concrete number, deadline, fee, or form, cite the specific statute, court rule, or local rule (e.g., "Cal. Code Civ. Proc. § 116.220").
+- All citations collected in `## Sources` at the end. Inline citations use `[¹]`-style numeric anchors that match.
+- If something is genuinely uncertain, ambiguous, or recently changed, flag it explicitly with a "⚠️ Verify" note rather than guessing.
+
+**Audience:** non-lawyers (individuals and small-business owners) who want to recover money owed to them. Plain English. No legalese unless cited.
+
+**Currency:** all facts current as of 2026.
 
 ---
 
-Produce a comprehensive guide to the small claims court process in **{STATE}**, USA, current as of 2026. The audience is non-lawyers — individuals and small business owners — who want to recover money owed to them and need to understand exactly how the small claims process works in this state.
+## 1. Jurisdictional limits [target: 1,500 tokens]
 
-Cover all of the following, with citations to official `.gov` sources (state courts, statutes, judicial council) wherever possible. Where a number, deadline, fee, or form is mentioned, cite the specific statute, court rule, or local rule (e.g., "Cal. Code Civ. Proc. § 116.220").
+Required sub-fields (use bold labels):
+- **Most you can sue for:** dollar cap with statute citation
+- **Same cap for individuals and businesses?** yes/no plus any per-type variation
+- **Limit on number of cases per plaintiff per year:** yes/no, conditions if yes
+- **Splitting a claim into multiple filings:** allowed/not allowed plus statute
+- **What's excluded from the cap:** typically interest and court costs
 
-## 1. Jurisdictional limits — MAXIMUM AMOUNT YOU CAN SUE FOR
-- The dollar cap on small claims cases in this state
-- Whether the cap differs based on plaintiff type: individual vs. corporation vs. LLC vs. sole proprietor vs. partnership vs. government entity
-- Limits on number of cases per plaintiff per year over a certain dollar amount, if any
-- Whether you can split a claim into multiple filings to get under the cap (and whether that's allowed)
+## 2. What you can sue for [target: 5,000 tokens]
 
-## 2. What types of cases qualify — EVERYTHING YOU CAN SUE FOR
+Cover EXACTLY the claim slugs listed below. For each one, output a single bullet in this format:
 
-A non-lawyer should be able to scan this section and find their situation. For each claim type below, state eligibility (yes / no / conditional), give ONE concrete example in a single sentence, and cite the controlling statute when it materially affects eligibility or damages. Skip examples for unremarkable types — a one-line "Yes, eligible under standard contract rules" is enough.
+```
+- **<claim slug>** — <eligible | conditional | not eligible>. <One-sentence example.> Statute: <citation if material, else omit>. <One-line state-specific note ONLY if eligibility or damages turn on it; otherwise omit>.
+```
 
-Cover, at a minimum, every category below:
+**Group the bullets under these category headings (in order):**
 
-### Contract & money-owed disputes
-- Breach of written contract (services not delivered, work not done, terms violated)
-- Breach of oral / handshake agreements
-- Unpaid personal loans (friends, family, informal IOUs)
-- Unpaid promissory notes
-- Unpaid commercial invoices / accounts receivable
-- Unpaid rent (residential and commercial)
-- Bounced / dishonored checks (and any state-specific multi-damage statutes for NSF checks)
-- Open book accounts / running tabs
-- Co-signer / guarantor disputes
+### Contracts and money owed
+Cover these slugs only:
+- written-contract
+- oral-contract
+- personal-loan
+- promissory-note
+- unpaid-invoice
+- unpaid-rent
+- bad-check (note any state statutory penalty multiplier)
+- co-signer
 
 ### Consumer disputes
-- Refunds for defective products
-- Refunds for services not performed or done poorly
-- Auto repair overcharges or shoddy work
-- Home repair / contractor disputes (incomplete work, defects, abandonment)
-- Appliance / electronics warranty failures
-- Cancelled or no-show service providers (photographers, caterers, movers, event venues)
-- Dry cleaning / property loss in custody (hotels, valets, repair shops, storage)
-- Gym / subscription / membership cancellation refunds
-- Auto dealer / used-car disputes (lemon-law where eligible, fraudulent odometer, undisclosed defects)
-- False advertising / deceptive trade practices (cite state UDAP statute if applicable, and note treble or statutory damages)
+- defective-product
+- bad-service
+- auto-repair
+- contractor (home repair / abandonment)
+- subscription-cancellation
+- used-car (note state lemon law if relevant)
+- false-advertising (note state UDAP statute and damage multiplier)
 
 ### Property damage
-- Vehicle collisions (where damages are within the cap)
-- Damage to personal property by another person
-- Damage by a tenant to a landlord's property
-- Damage by a landlord to a tenant's property
-- Tree / fence / boundary disputes resulting in damage
-- Pet damage (your dog bit theirs, their dog damaged your stuff)
-- Damage during a move (movers, friends helping)
+- vehicle-collision
+- neighbor-property
+- damage-to-rental (tenant damages landlord property)
+- pet-damage
 
-### Landlord–tenant (financial only — possession/eviction is separate)
-- Unreturned security deposits (almost always the #1 small-claims case nationally; state any per-state penalties for bad-faith withholding, like 2× or 3× damages, and the deadline rules that trigger them)
-- Refund of prepaid last month's rent
-- Habitability / repair-and-deduct counter-claims
-- Unpaid rent or damages by landlord against a former tenant
-- Wrongful retention of tenant property after move-out
-- Dispute over fees (cleaning, late, pet, key, parking)
+### Landlord-tenant (money only — eviction is separate)
+- security-deposit (state any per-state penalty for bad-faith withholding, like 2x or 3x damages, and the deadline rule)
+- unpaid-rent-by-tenant
+- repair-and-deduct (state remedy if applicable)
 
-### Employment & wages
-- Unpaid final paycheck / earned wages (and any state penalty wages, e.g., California's "waiting time penalty")
-- Unpaid commissions or bonuses
-- Unreimbursed business expenses
-- Misclassification disputes (only if recoverable as a money claim, not as an administrative finding)
-- Note when the state Labor Commissioner / Department of Labor is the better forum and why
+### Employment and wages
+- unpaid-wages (note any state penalty wages, e.g., waiting-time penalty)
+- unpaid-commission
 
-### Personal services / professional disputes
-- Disputes with hairdressers / barbers / nail salons (botched service)
-- Tutoring / lessons / coaching not delivered
-- Pet boarding / grooming / training disputes
-- Medical billing disputes (when not subject to insurance / surprise-billing carve-outs)
-- Daycare / preschool refund disputes
-
-### Loans, debts, and financial
-- Recovery of money lent to a friend or family member
-- Disputes over jointly-paid expenses (roommates, ex-partners, group trips)
-- Disputes over wedding / engagement gifts and rings on cancellation
-- Disputes over jointly-titled property after a breakup (where state allows in small claims)
-- Recovery of cash deposits / earnest money
-- Whether a creditor (bank, collection agency, credit union) can sue a consumer in small claims here, or is barred
+### Personal claims
+- minor-injury (under the cap; note when state defamation or PI is excluded entirely)
 
 ### Vehicle-specific
-- Accident damage where insurance won't cover or denies
-- Mechanic / body shop disputes
-- Dealership disputes
-- Towing / impound disputes
-- Parking damage when you can identify the responsible driver
+- mechanic-dispute
+- wrongful-tow
 
-### Personal injury (small / minor)
-- Minor injury cases where damages fit under the cap (most personal injury cases exceed small claims caps and belong in regular civil court — state when and how the cap intersects)
+**Do NOT cover:** any claim slug not in the list above. If a claim type that's distinctive to {STATE} would be a real-world dispute (e.g., a state-specific statutory cause of action), add at most ONE extra bullet under a final sub-heading "### State-specific extras" — but only if the cause of action is genuinely material in this state.
 
-### Specific statutory claims (state-specific — research and list each that applies)
-- Bad-check statute multipliers
-- Consumer protection / UDAP statutes (e.g., California's CLRA, Texas's DTPA) and how they interact with small claims
-- Lemon law (where filing in small claims is possible)
-- Identity theft / fraud-related money damages
-- Statutory damages under wage / labor laws
+## 3. What you CANNOT sue for [target: 1,500 tokens]
 
-### Other state-specific claim types
-**Open-ended sweep.** After covering the categories above, list any additional claim type or statutory cause of action specific to this state that a non-lawyer would realistically pursue in small claims — niche tenant rights, state-specific consumer protections (automatic-renewal refunds, towing claims, state FDCPA analogs), HOA / condo disputes, agricultural / farm claims, ride-share / gig-economy disputes, cell-phone early-termination fees, etc. Brief one-line entries with statute citation are fine.
+List the top 10-12 exclusions for {STATE}, each as a bullet:
+```
+- **<exclusion category>** — <one-sentence explanation>. Where to go instead: <court or process>.
+```
 
-### Counterclaims
-- Whether defendants can counter-sue in the same hearing
-- Counterclaim dollar limit (often the same as the main cap, sometimes different)
-- What happens if the counterclaim exceeds the cap (transfer up? waive excess?)
-- Form name / number for filing a counterclaim
+Cover at minimum: eviction/unlawful detainer, family law, defamation (if state-excluded from small claims), title to real estate, malpractice, federal claims (bankruptcy / patents / trademarks), class actions, injunctions/specific performance, claims against the federal government, workers' compensation, mandatory-arbitration disputes.
 
-### What you CANNOT sue for in small claims (be specific to this state)
-- Eviction / unlawful detainer (separate court / docket)
-- Family law (divorce, child support, custody)
-- Defamation / libel / slander above the small-claims cap
-- Title disputes over real estate
-- Malpractice claims (medical, legal — usually exceeds cap and requires expert witnesses)
-- Federal claims (bankruptcy, federal civil rights, ERISA)
-- Class actions / mass torts
-- Specific performance (forcing someone to do something) — small claims is money-only
-- Injunctions / restraining orders
-- Cases where the defendant is the federal government, or a state immune by sovereign immunity
-- Workers' compensation (separate administrative system)
-- Patent / trademark / copyright (federal jurisdiction)
-- Cases against parties protected by automatic stay (in bankruptcy)
+Add up to 2 state-specific exclusions if {STATE} carves out something unusual (e.g., personal injury entirely barred from JP court).
 
-**Plus: every other state-specific exclusion.** Do not stop at the generic list above. Enumerate every additional carve-out unique to this state — e.g., arbitration-required disputes (mandatory pre-suit arbitration under specific state acts), matters with exclusive jurisdiction elsewhere (admiralty, probate, juvenile, tax court, public-utilities-commission), claim categories explicitly carved out by statute or court rule, claims subject to administrative-exhaustion requirements (state human-rights commission, labor board, insurance commissioner) that prevent direct filing in small claims. Be specific to this state. Do not just repeat the generic exclusions list.
+## 4. Damages [target: 1,200 tokens]
 
-### Damages — what you can and cannot recover in small claims
-- Compensatory (out-of-pocket loss)
-- Whether punitive / exemplary damages are available
-- Whether statutory multipliers apply (treble damages, double damages, penalty wages)
-- Whether attorney's fees and costs are recoverable (relevant even though attorneys may be barred at trial)
-- Whether interest (pre-judgment and post-judgment) is recoverable, and at what rate
-- Filing fees and service fees as recoverable costs
+Output as a bullet list of bold labels:
+- **Compensatory damages:** yes/no
+- **Punitive damages:** yes/no plus brief reason
+- **Statutory multipliers in this state:** list as a sub-bullet table, one per claim — `claim | multiplier | statute`
+- **Attorney's fees recoverable:** yes/no/sometimes plus brief explanation
+- **Pre-judgment interest:** yes/no, rate, statute
+- **Post-judgment interest:** rate, statute
+- **Filing/service fees recoverable from defendant if you win:** yes/no
 
-## 3. Where to file
-- Name of the court that hears small claims (e.g., "Small Claims Court", "Justice Court", "Magistrate Court", "District Court")
-- Venue rules: which county/township based on defendant residence, contract location, injury location, business location
-- Whether online filing (e-filing) is available, link to the portal if so
-- Whether filing in the wrong venue dismisses the case or transfers it
+## 5. Where to file [target: 1,500 tokens]
 
-## 4. Filing fees
-- Exact fee schedule by claim amount tier
-- Service-of-process fees
-- Fee waiver / in-forma-pauperis process and eligibility
-- Whether fees are recoverable from the defendant if you win
+- **Court name:** (e.g., Justice Court, District Court, Conciliation Court)
+- **Parent court:** (e.g., Justice of the Peace Court System)
+- **Venue rules** as a table — `Scenario | Where you can file`. Cover at minimum: defendant residence, where contract was performed, where injury/damage occurred, multiple defendants, out-of-state defendant.
+- **What happens if you file in the wrong venue:** dismiss vs. transfer
+- **E-filing available:** yes/no/varies; portal URL if any
 
-## 5. Statute of limitations
-- By claim type: written contract, oral contract, property damage, personal injury, fraud, unpaid wages, breach of implied warranty, open account
-- When the clock starts (date of breach, date of discovery, last payment, etc.)
-- Tolling exceptions
+## 6. Filing fees [target: 1,200 tokens]
 
-## 6. Pre-filing requirements
-- Whether a demand letter is required or recommended
-- Mandatory mediation, notice periods, or pre-suit ADR
-- Notice rules specific to landlord-tenant or consumer disputes
+- **Filing fee tiers** as a table: `Range | Fee` (e.g., "$0 to $1,500 | $30")
+- **Service of process fees** as a table: `Method | Cost | Notes`. Cover sheriff, certified mail by clerk, private process server.
+- **Fee waiver process:** form name and number, brief eligibility, scope of waiver
+- **Are filing fees recoverable from the defendant if you win?** yes/no
 
-## 7. Forms required
-- Names and form numbers of every form needed to file (complaint, summons, proof of service, etc.)
-- Direct links to the official PDF or e-form
-- Whether forms differ by county
+## 7. Statute of limitations [target: 1,500 tokens]
 
-## 8. Service of process
-- Who can serve (sheriff, registered process server, disinterested adult, certified mail by clerk)
-- Allowed methods (personal service, substituted service, certified mail, posting, publication)
-- Required timing (how many days before hearing)
-- Proof-of-service requirements and form numbers
-- Service fees and how they're paid
-- What to do if defendant cannot be located
+A single table: `Claim type | Years | Clock starts | Statute`. Cover at minimum:
+written contract, oral contract, sale-of-goods (UCC), promissory note, open account, personal injury, property damage, fraud (note discovery rule), bad check, unpaid wages, security deposit, judgment enforcement.
 
-## 9. Defendant's response and default
-- Response window — how many days defendant has to answer or appear
-- What happens if defendant fails to appear (default judgment)
-- How to obtain and enforce a default judgment
-- Whether default judgments can be set aside and on what grounds
+Brief paragraph after the table on tolling exceptions specific to this state.
 
-## 10. Hearing procedure
-- Whether parties can be represented by attorneys (some states ban lawyers in small claims)
-- Format: bench trial, judge or commissioner, length
-- What evidence to bring (photos, contracts, receipts, witnesses)
-- Witness rules — can you compel witnesses with a subpoena, what's the fee
-- Burden of proof
-- Translator / interpreter availability
+## 8. Pre-filing requirements [target: 800 tokens]
 
-## 11. Appeals
-- Appeal deadline (number of days post-judgment)
-- Who can appeal — plaintiff, defendant, both, only one
-- Appeal type — de novo trial in higher court vs. review on the record
-- Bond or deposit requirements
-- Filing fees for appeal
+- **Demand letter required?** yes/no, by claim type if mixed
+- **Bad-check 30-day notice rule:** if applicable, summarize
+- **Wage-claim demand rule:** if applicable, summarize
+- **Government claim notice:** required for tort claims against state/city/county? deadline?
+- **Mandatory mediation or ADR before filing:** none / by court / by claim type
+- **Arbitration clauses in contracts:** courts will enforce yes/no
 
-## 12. Post-judgment collection
-- This is where most plaintiffs fail. Cover thoroughly.
-- Abstract of judgment / judgment lien on real property
-- Wage garnishment — limits, exempt amounts, employer process
-- Bank levy / bank account garnishment — process and exempt funds
-- Property levy / till tap
-- Judgment debtor examination (order of examination) — how to compel debtor to disclose assets
-- Judgment interest rate
-- Judgment lifespan (how long valid) and renewal procedure
-- Federal/state exempt assets that cannot be touched
-- Priority of liens
+## 9. Forms required [target: 1,200 tokens]
 
-## 13. Special rules for businesses
-- Whether a corporation, LLC, or partnership must be represented by an attorney or can appear through an officer/employee
-- Whether non-lawyer agents (employees, owners) can represent the business at trial
-- Cap on number of small claims cases a single plaintiff (especially a business) can file per year
-- Fictitious business name / DBA registration requirements before filing
-- Out-of-state business plaintiffs: must they register to do business in the state first
+A table: `Form number | Form name | Filed by | Required | Purpose`. List the 8-12 most-used forms only (complaint, summons, answer, default judgment motion, witness subpoena, IFP affidavit, satisfaction of judgment, garnishment writs, transcript of judgment). Skip rarely-used forms.
 
-## 14. County-level differences
-- If the rules, forms, fees, or filing process differ materially between counties, list the most populous counties and what's different (e.g., Los Angeles, San Diego, San Francisco, Alameda for California)
+## 10. Service of process [target: 1,500 tokens]
 
-## 15. Common pitfalls and dismissal reasons
-- Wrong defendant name (suing "John's Plumbing" instead of "John Smith dba John's Plumbing" or the correct LLC)
-- Wrong venue
-- Statute of limitations expired
-- Failure to serve correctly
-- Insufficient evidence
-- Suing for non-eligible relief (specific performance, injunction)
-- Anything else specific to this state's process
+- **Who can serve** as a bullet list (sheriff, certified mail by clerk, private process server, adult non-party)
+- **Methods accepted** as a table: `Method | When valid | Pros | Cons`
+- **Timing rule:** how many days before hearing service must be completed
+- **Proof of service form:** form number and name
+- **Business service rule:** how to serve a corporation/LLC (registered agent, etc.)
+- **Out-of-state defendant:** brief
+- **What to do if you can't locate the defendant:** brief
 
-## 16. Recent changes
-- Any legislative or court-rule changes in the last 3 years (statute amendments, jurisdictional cap increases, e-filing rollouts, fee changes)
+## 11. Defendant's response and default [target: 1,200 tokens]
 
-## Output format
+- **Must file written answer?** yes/no
+- **Response deadline:** number of days from service
+- **Default process:** what happens if defendant doesn't appear
+- **Prove-up required for default?** yes/no
+- **Motion to vacate default:** form name, deadline, grounds
+- **Counterclaim:** allowed yes/no, same monetary cap?, deadline rule, what happens if counterclaim exceeds the cap
 
-- Use Markdown with H2 (`##`) section headings exactly matching the numbered list above
-- Use tables where appropriate (fee schedules, deadlines, statute of limitations by claim type)
-- For every concrete number/deadline/form name, cite the source inline using a footnote-style reference like `[¹]` and list all sources at the bottom in a `## Sources` section with full URLs
-- If something is genuinely uncertain, ambiguous, or recently changed, flag it explicitly with a "⚠️ Verify" note rather than guessing
-- Where official guidance is silent on a question that matters for non-lawyers (e.g., "what happens if defendant moves out of state mid-case"), say so plainly
+## 12. Hearing procedure [target: 1,500 tokens]
+
+- **Lawyers allowed at trial?** yes/no/restricted
+- **Format:** bench trial / referee / judge / panel; typical length per case
+- **Burden of proof:** preponderance / clear and convincing
+- **What to bring:** bullet checklist of evidence types
+- **Subpoenas:** form number, witness fee per day
+- **Free interpreters:** yes/no; how to request
+- **Jury option:** yes/no
+- **Decision timing:** on the spot vs. mailed
+- **On-site mediation:** offered yes/no/by county
+
+## 13. Appeals [target: 1,000 tokens]
+
+- **Who can appeal:** plaintiff / defendant / either
+- **Deadline:** number of days
+- **Fee:** dollar amount
+- **Type:** trial de novo / on the record / questions of law only
+- **Bond required:** yes/no; amount
+- **Stay of enforcement automatic on appeal?** yes/no
+- **Default judgment appealable?** yes/no
+- **Notice of appeal form name**
+
+## 14. Post-judgment collection [target: 2,000 tokens]
+
+- **Payment deadline expectation:** typical number of days
+- **Post-judgment interest rate:** percent and statute
+- **Collection methods** as a sub-section list, each with a brief description: voluntary payment / wage garnishment / bank levy / property lien / writ of execution / debtor's exam / driver's license suspension (if state allows for vehicle judgments)
+- **Wage garnishment cap:** percent of disposable earnings, plus state-specific exemption thresholds
+- **Judgment lifespan:** years; renewal process and form
+- **Exempt assets** as a bullet list (homestead value, vehicle exemption value, retirement, federal benefits, etc.)
+- **Bankruptcy effect:** automatic stay; which judgments survive
+
+## 15. Special rules for businesses [target: 800 tokens]
+
+- **Can a business represent itself or must it use an attorney?** yes/no plus any threshold (revenue/asset based)
+- **Form required for non-attorney representation:** form number/name if any (e.g., Power of Attorney, Certificate of Representation)
+- **Sole-proprietor exception:** brief
+- **Out-of-state business plaintiffs:** must register with Secretary of State first? yes/no; statute
+- **Trade-name (DBA) rule:** must use legal entity name, not trade name
+
+## 16. County-level differences [target: 800 tokens]
+
+ONLY include if {STATE} has materially different small-claims procedures by county or judicial district. Otherwise write "No material county-level differences; small claims procedure is uniform statewide."
+
+If material, list the top 3-5 most populous counties with a single bullet each in this format:
+```
+- **<county name>** — <1-2 sentence summary of what's different (court location, mediation availability, e-filing variation, schedule)>.
+```
+
+## 17. Common pitfalls and dismissal reasons [target: 1,200 tokens]
+
+List the top 8-10 most common reasons cases get dismissed or fail in {STATE}, each as a bullet in this format:
+```
+- **<pitfall title>** — <one-sentence what happens>. How to avoid: <one sentence>.
+```
+
+Cover at minimum: wrong defendant naming, wrong venue, statute of limitations expired, bad service, asking for non-monetary relief in small claims, no-show by plaintiff, defaulting and trying to appeal, judgment-proof debtor.
+
+## 18. Recent changes [target: 600 tokens]
+
+Output ONLY material changes in the last 3 years (2023-2026). For each, one bullet:
+```
+- **<YYYY-MM-DD or "YYYY">** — <change summary>. <Bill or rule citation if applicable>.
+```
+
+If no material changes, write "No material changes in the last three years."
+
+## 19. FAQs [target: 800 tokens]
+
+5-8 questions only. Pick the highest-traffic questions a non-lawyer would actually ask:
+```
+**Q: <question>**
+A: <2-3 sentence answer>.
+```
+
+Cover at minimum: do I need a lawyer, how long does it take, what's the maximum, what happens if defendant doesn't show, can I appeal, how long is a judgment good for.
+
+## Sources
+
+Numbered list of every cited source. Each entry:
+```
+[N] <Label> — <URL> (<short citation, e.g., "Cal. Code Civ. Proc. § 116.220">)
+```
+
+Aim for 12-20 sources, all primary (official statutes, court websites, judicial council) wherever possible. No blog posts or law-firm marketing pages unless they cite a primary source we can't find directly.
 
 ---
 
 ## SELF-CHECK BEFORE YOU FINISH (do not skip)
 
-Before emitting your final response, scan your output and verify:
+Scan your output and verify:
+- Sections 1 through 19 are all present, each with the correct numbered heading (`## N. <name>`)
+- A `## Sources` section follows section 19
+- Each section's target token budget is roughly respected (do not exceed 5,000 tokens on any one section)
+- Every dollar amount, deadline, and form number has a citation
 
-- Section 1 through Section 16 are all present, each with the correct numbered heading (`## N. <name>`)
-- A `## Sources` section exists at the end
-
-If any section is missing, write it now under the correct heading before stopping. Do not output a final summary or sign-off; just write the missing content. The report is INCOMPLETE until all 17 sections (1–16 + Sources) appear in your output.
+If anything is missing, write the missing sections now under the correct heading. Do not output a summary or sign-off. The report is INCOMPLETE until all 19 numbered sections plus Sources appear.

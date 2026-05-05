@@ -59,16 +59,16 @@ function extractText(result) {
 // the failure modes (low tokens, missing sections, restart pattern, duplication).
 function checkCompleteness(result, text) {
   const outTokens = result.usage?.output_tokens ?? 0;
-  if (outTokens < 45000) {
-    return { ok: false, reason: `only ${outTokens} output tokens (full reports are 45K+)` };
+  if (outTokens < 30000) {
+    return { ok: false, reason: `only ${outTokens} output tokens (full reports are 30K+)` };
   }
   const seq = [];
   const re = /^## (\d+)\./gm;
   let m;
   while ((m = re.exec(text)) !== null) seq.push(parseInt(m[1], 10));
   const uniqueSections = new Set(seq);
-  if (uniqueSections.size < 14) {
-    return { ok: false, reason: `only ${uniqueSections.size} of 16 sections found (${[...uniqueSections].sort((a,b)=>a-b).join(",")})` };
+  if (uniqueSections.size < 17) {
+    return { ok: false, reason: `only ${uniqueSections.size} of 19 sections found (${[...uniqueSections].sort((a,b)=>a-b).join(",")})` };
   }
   let maxSeen = 0;
   for (const n of seq) {

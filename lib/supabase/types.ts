@@ -67,12 +67,26 @@ export type CaseStatus =
   | "settled";
 
 export type DisputeType =
+  // Original values (pre-Phase-1)
   | "unpaid_debt"
   | "security_deposit"
   | "property_damage"
   | "services_not_rendered"
   | "goods_not_delivered"
-  | "other";
+  | "other"
+  // Added in migration 0003 to match the 15-category spec
+  | "breach_of_contract"
+  | "defective_product_or_service"
+  | "unpaid_rent_or_deposit"
+  | "tenant_landlord"
+  | "auto_accident_or_repair"
+  | "stolen_or_damaged_property"
+  | "poor_construction"
+  | "broken_verbal_promise"
+  | "personal_injury"
+  | "defamation"
+  | "consumer_protection"
+  | "ip_or_copyright";
 
 export interface PostalAddress {
   line1: string;
@@ -84,18 +98,23 @@ export interface PostalAddress {
 
 export interface Case {
   id: string;
-  owner_user_id: string;
+  // Nullable on anonymous drafts. Filled when user signs up at Phase 5.
+  owner_user_id: string | null;
+  // Nullable when claimed. Set on anonymous drafts to scope reads/writes
+  // before signup.
+  cookie_session_id: string | null;
   status: CaseStatus;
   state: string; // 2-letter
   county: string | null;
   dispute_type: DisputeType;
   amount_cents: number;
   currency: string;
-  plaintiff_name: string;
+  // Nullable during draft. Required server-side at the relevant wizard step.
+  plaintiff_name: string | null;
   plaintiff_address: PostalAddress | null;
   plaintiff_email: string | null;
   plaintiff_phone: string | null;
-  defendant_name: string;
+  defendant_name: string | null;
   defendant_address: PostalAddress | null;
   defendant_email: string | null;
   defendant_phone: string | null;
@@ -110,18 +129,19 @@ export interface Case {
 }
 
 export interface CaseInsert {
-  owner_user_id: string;
+  owner_user_id?: string | null;
+  cookie_session_id?: string | null;
   status?: CaseStatus;
   state: string;
   county?: string | null;
   dispute_type: DisputeType;
   amount_cents: number;
   currency?: string;
-  plaintiff_name: string;
+  plaintiff_name?: string | null;
   plaintiff_address?: PostalAddress | null;
   plaintiff_email?: string | null;
   plaintiff_phone?: string | null;
-  defendant_name: string;
+  defendant_name?: string | null;
   defendant_address?: PostalAddress | null;
   defendant_email?: string | null;
   defendant_phone?: string | null;

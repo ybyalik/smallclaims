@@ -185,8 +185,8 @@ async function pollUntilDone(id, slug) {
 
 // Detect partial reports. Model sometimes returns status=completed but the
 // output is incomplete or has degraded structure. Detection signals:
-//   1. low output_tokens
-//   2. fewer than 14 unique numbered sections (1-16)
+//   1. low output_tokens (the model abandoned early)
+//   2. fewer than 17 unique numbered sections (out of 19)
 //   3. missing Sources section
 //   4. "restart" pattern: a section number much lower than max seen so far,
 //      indicating the model lost context and started over (e.g. Rhode Island
@@ -194,8 +194,8 @@ async function pollUntilDone(id, slug) {
 //   5. excessive duplication: any single section appearing 3+ times
 function checkCompleteness(result, text) {
   const outTokens = result.usage?.output_tokens ?? 0;
-  if (outTokens < 45000) {
-    return { ok: false, reason: `only ${outTokens} output tokens (full reports are 45K+)` };
+  if (outTokens < 30000) {
+    return { ok: false, reason: `only ${outTokens} output tokens (the new prompt should produce 30K+)` };
   }
 
   // Pull every "## N." header in source order
@@ -207,8 +207,8 @@ function checkCompleteness(result, text) {
   }
 
   const uniqueSections = new Set(seq);
-  if (uniqueSections.size < 14) {
-    return { ok: false, reason: `only ${uniqueSections.size} of 16 sections found` };
+  if (uniqueSections.size < 17) {
+    return { ok: false, reason: `only ${uniqueSections.size} of 19 sections found` };
   }
 
   // Restart detection. We tolerate exact duplicates (n == maxSeen) and small
