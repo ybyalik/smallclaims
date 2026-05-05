@@ -38,3 +38,13 @@ export const EMPLOYER_CATEGORY: CategoryMeta = {
   audienceLabel: "workers",
   relatedH2Em: "sue your employer",
 };
+
+export const CONTRACTOR_CATEGORY: CategoryMeta = {
+  hubLabel: "Contractor Disputes",
+  hubHref: "/small-claims/contractor",
+  urlPrefix: "sue-contractor-",
+  defensesTocLabel: "Contractor defenses",
+  signatoryLabel: "Homeowner",
+  audienceLabel: "homeowners",
+  relatedH2Em: "sue your contractor",
+};
