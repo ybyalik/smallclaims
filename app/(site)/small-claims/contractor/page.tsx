@@ -43,7 +43,7 @@ const ISSUES = [
         <path d="M14 14h.01" />
       </svg>
     ),
-    ready: false,
+    ready: true,
   },
   {
     slug: "poor-workmanship",
@@ -56,7 +56,7 @@ const ISSUES = [
         <rect x="3" y="3" width="18" height="18" rx="2" />
       </svg>
     ),
-    ready: false,
+    ready: true,
   },
   {
     slug: "damaged-house",
@@ -69,7 +69,7 @@ const ISSUES = [
         <path d="M9 14l3 3 3-3" />
       </svg>
     ),
-    ready: false,
+    ready: true,
   },
   {
     slug: "handyman-bad-work",
@@ -81,7 +81,7 @@ const ISSUES = [
         <path d="M14 6l-3-3-9 9 3 3M14 6l8 8-9 9-8-8" />
       </svg>
     ),
-    ready: false,
+    ready: true,
   },
   {
     slug: "plumber-damage",
@@ -93,7 +93,7 @@ const ISSUES = [
         <path d="M12 2v6M9 8h6M12 8v8M8 16h8M12 16v4" />
       </svg>
     ),
-    ready: false,
+    ready: true,
   },
   {
     slug: "roofer-leaking-roof",
@@ -106,7 +106,7 @@ const ISSUES = [
         <path d="M12 14v.01" />
       </svg>
     ),
-    ready: false,
+    ready: true,
   },
   {
     slug: "painter-damage",
@@ -118,7 +118,7 @@ const ISSUES = [
         <path d="M19 11h2a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H7M3 13h12v8H3z" />
       </svg>
     ),
-    ready: false,
+    ready: true,
   },
   {
     slug: "landscaper-bad-work",
@@ -131,7 +131,7 @@ const ISSUES = [
         <path d="M12 10v12M5 18l7-4 7 4" />
       </svg>
     ),
-    ready: false,
+    ready: true,
   },
   {
     slug: "moving-company-damage",
@@ -146,7 +146,7 @@ const ISSUES = [
         <circle cx="18.5" cy="18.5" r="2.5" />
       </svg>
     ),
-    ready: false,
+    ready: true,
   },
   {
     slug: "moving-company-lost-items",
@@ -159,7 +159,7 @@ const ISSUES = [
         <path d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12" />
       </svg>
     ),
-    ready: false,
+    ready: true,
   },
 ];
 
