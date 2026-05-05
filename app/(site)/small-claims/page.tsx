@@ -32,18 +32,18 @@ const CATEGORIES = [
 ];
 
 const TOP_TOPICS = [
-  { href: "/small-claims/sue-landlord-security-deposit", title: "Sue a landlord for a security deposit", blurb: "2x or 3x penalties in most states" },
-  { href: "/small-claims/sue-employer-wrongful-termination", title: "Sue an employer for wrongful termination", blurb: "When small claims fits vs. needing an attorney" },
-  { href: "/small-claims/sue-employer-unpaid-wages", title: "Sue an employer for unpaid wages", blurb: "FLSA + state wage acts (often 2x damages)" },
-  { href: "/small-claims/sue-auto-parked-car-hit", title: "Sue someone for hitting your parked car", blurb: "When insurance won't pay" },
-  { href: "/small-claims/sue-contractor-deposit-and-disappearing", title: "Sue a contractor who took the deposit and vanished", blurb: "License board + bond + court" },
-  { href: "/small-claims/sue-loan-someone-owes-me-money", title: "Sue someone who owes you money", blurb: "Most informal loans are recoverable" },
-  { href: "/small-claims/sue-loan-friend-not-paying-back", title: "Sue a friend who won't pay you back", blurb: "Venmo records + texts = case" },
-  { href: "/small-claims/sue-roommate-unpaid-rent", title: "Sue a roommate for unpaid rent", blurb: "Joint-and-several lease + contribution" },
-  { href: "/small-claims/sue-neighbor-property-damage", title: "Sue a neighbor for property damage", blurb: "Their homeowners insurance covers most" },
-  { href: "/small-claims/sue-neighbor-noise", title: "Sue a neighbor for noise", blurb: "Private nuisance + city ordinances" },
-  { href: "/small-claims/sue-seller-amazon-seller", title: "Sue an Amazon seller", blurb: "A-to-z Guarantee first, court for backup" },
-  { href: "/small-claims/sue-refund-defective-product", title: "Sue for a defective product", blurb: "Magnuson-Moss + state UDAP" },
+  { href: "/small-claims/sue-landlord-security-deposit", title: "Sue a landlord for a security deposit", blurb: "2x or 3x penalties in most states", avg: "$4,500", timeline: "30-60 days", icon: (<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M14 4l4 4M19 5l3 3"/></svg>) },
+  { href: "/small-claims/sue-employer-wrongful-termination", title: "Sue an employer for wrongful termination", blurb: "When small claims fits vs. needing an attorney", avg: "$7,200", timeline: "60-90 days", icon: (<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6"><rect x="3" y="6" width="18" height="14" rx="2"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 10h18M9 14l6 0"/></svg>) },
+  { href: "/small-claims/sue-employer-unpaid-wages", title: "Sue an employer for unpaid wages", blurb: "FLSA + state wage acts (often 2x damages)", avg: "$4,400", timeline: "45-90 days", icon: (<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9 10c0-1.1.9-2 2-2h2c1.1 0 2 .9 2 2s-.9 2-2 2h-2c-1.1 0-2 .9-2 2s.9 2 2 2h2c1.1 0 2-.9 2-2"/></svg>) },
+  { href: "/small-claims/sue-auto-parked-car-hit", title: "Sue someone for hitting your parked car", blurb: "When insurance won't pay", avg: "$4,200", timeline: "30-60 days", icon: (<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M3 17h18l-2-7H5z"/><circle cx="7.5" cy="17" r="1.5"/><circle cx="16.5" cy="17" r="1.5"/><path d="M5 10l1.5-3h11l1.5 3"/></svg>) },
+  { href: "/small-claims/sue-contractor-deposit-and-disappearing", title: "Sue a contractor who took the deposit and vanished", blurb: "License board + bond + court", avg: "$6,500", timeline: "60-120 days", icon: (<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>) },
+  { href: "/small-claims/sue-loan-someone-owes-me-money", title: "Sue someone who owes you money", blurb: "Most informal loans are recoverable", avg: "$5,400", timeline: "60-90 days", icon: (<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/><circle cx="12" cy="14" r="2"/></svg>) },
+  { href: "/small-claims/sue-loan-friend-not-paying-back", title: "Sue a friend who won't pay you back", blurb: "Venmo records + texts = case", avg: "$3,200", timeline: "60-90 days", icon: (<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6"><circle cx="9" cy="8" r="3"/><circle cx="15" cy="8" r="3"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2M13 21v-2a4 4 0 0 1 4-4h0a4 4 0 0 1 4 4v2"/></svg>) },
+  { href: "/small-claims/sue-roommate-unpaid-rent", title: "Sue a roommate for unpaid rent", blurb: "Joint-and-several lease + contribution", avg: "$4,200", timeline: "60-90 days", icon: (<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M3 21h18M5 21V8l7-5 7 5v13"/><path d="M9 21v-7h6v7"/><circle cx="12" cy="11" r="0.5" fill="currentColor"/></svg>) },
+  { href: "/small-claims/sue-neighbor-property-damage", title: "Sue a neighbor for property damage", blurb: "Their homeowners insurance covers most", avg: "$4,400", timeline: "60-90 days", icon: (<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M3 22V8l4-4 4 4v14M11 22V8l4-4 4 4v14"/><path d="M3 14h18"/></svg>) },
+  { href: "/small-claims/sue-neighbor-noise", title: "Sue a neighbor for noise", blurb: "Private nuisance + city ordinances", avg: "$4,200", timeline: "60-120 days", icon: (<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M11 5L6 9H2v6h4l5 4z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>) },
+  { href: "/small-claims/sue-seller-amazon-seller", title: "Sue an Amazon seller", blurb: "A-to-z Guarantee first, court for backup", avg: "$1,800", timeline: "30-60 days", icon: (<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12"/></svg>) },
+  { href: "/small-claims/sue-refund-defective-product", title: "Sue for a defective product", blurb: "Magnuson-Moss + state UDAP", avg: "$1,800", timeline: "30-60 days", icon: (<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M12 2L2 22h20L12 2z"/><path d="M12 9v6M12 18h.01"/></svg>) },
 ];
 
 const jsonLd = {
@@ -249,11 +249,19 @@ export default function SmallClaimsHubPage() {
               The most-searched specific scenarios across all categories.
             </p>
           </div>
-          <div className="cat-grid">
-            {TOP_TOPICS.map((t) => (
-              <Link key={t.href} href={t.href} className="cat-card">
-                <h3 style={{ marginTop: 0 }}>{t.title}</h3>
+          <div className="ranked-grid">
+            {TOP_TOPICS.map((t, i) => (
+              <Link key={t.href} href={t.href} className="ranked-card">
+                <div className="ranked-card-head">
+                  <span className="ranked-card-num">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="ranked-card-icon">{t.icon}</span>
+                </div>
+                <h3>{t.title}</h3>
                 <p>{t.blurb}</p>
+                <div className="ranked-card-meta">
+                  <span><strong>Avg recovery</strong> {t.avg}</span>
+                  <span><strong>Timeline</strong> {t.timeline}</span>
+                </div>
               </Link>
             ))}
           </div>
