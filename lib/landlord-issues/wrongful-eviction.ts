@@ -14,7 +14,7 @@ export const wrongfulEviction: LandlordIssue = {
 
   hero: {
     eyebrowSuffix: "Wrongful eviction",
-    h1: { pre: "Can you sue your landlord for ", em: "wrongful eviction", post: "?" },
+    h1: { pre: "Can I sue my landlord for ", em: "wrongful eviction", post: "?" },
     leadStrong: "Yes, you can sue your landlord for wrongful eviction",
     leadBody:
       " when they removed you without going through the court process, evicted in retaliation for a complaint, or violated your protected status. Damages include moving costs, hotel stays, lost wages, the difference in your new rent, and statutory damages of 2x or 3x rent in many states.",

@@ -14,10 +14,10 @@ export const breakLease: LandlordIssue = {
 
   hero: {
     eyebrowSuffix: "Breaking your lease",
-    h1: { pre: "How to break your lease ", em: "without penalty", post: "." },
-    leadStrong: "Five legal grounds let you break a lease",
+    h1: { pre: "Can I sue my landlord to ", em: "break my lease", post: " early?" },
+    leadStrong: "Yes, in five legal scenarios you can break a lease",
     leadBody:
-      " without owing the remaining rent. Active-duty military deployment, domestic violence, uninhabitable conditions, landlord harassment, and mutual termination. Each path has specific notice and documentation requirements. If your situation does not fit one of these grounds, the landlord can charge you for the remainder of the lease (minus their duty to mitigate by re-renting).",
+      " without owing the remaining rent, and sue your landlord if they retaliate or refuse to refund prepaid amounts. Active-duty military deployment, domestic violence, uninhabitable conditions, landlord harassment, and mutual termination. Each path has specific notice and documentation requirements. If your situation does not fit one of these grounds, the landlord can charge you for the remainder of the lease (minus their duty to mitigate by re-renting).",
   },
 
   counter: {

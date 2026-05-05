@@ -14,7 +14,7 @@ export const unsafeConditions: LandlordIssue = {
 
   hero: {
     eyebrowSuffix: "Unsafe conditions",
-    h1: { pre: "How to sue your landlord for ", em: "unsafe living conditions", post: "." },
+    h1: { pre: "Can I sue my landlord for ", em: "unsafe living conditions", post: "?" },
     leadStrong: "Yes, you can sue your landlord for unsafe conditions",
     leadBody:
       ". Every state's implied warranty of habitability requires landlords to provide safe housing. Recoverable damages include medical bills from injuries, ruined personal property, rent abatement for the affected period, and (in serious cases) statutory damages or punitive damages.",

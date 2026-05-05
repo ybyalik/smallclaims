@@ -14,10 +14,10 @@ export const securityDeposit: LandlordIssue = {
 
   hero: {
     eyebrowSuffix: "Security deposit",
-    h1: { pre: "How to get your ", em: "security deposit", post: " back from a landlord." },
-    leadStrong: "Your landlord has to return the deposit",
+    h1: { pre: "Can I sue my landlord for my ", em: "security deposit", post: "?" },
+    leadStrong: "Yes, you can sue your landlord to get your security deposit back",
     leadBody:
-      " by the deadline your state sets, usually 14 to 30 days after move-out. If they miss it or charge for normal wear and tear, you can sue for the deposit plus 2x or 3x statutory damages in most states, plus filing fees and (often) attorney fees. You do not need a lawyer.",
+      " if they miss the return deadline your state sets, usually 14 to 30 days after move-out. If they miss it or charge for normal wear and tear, you can sue for the deposit plus 2x or 3x statutory damages in most states, plus filing fees and (often) attorney fees. You do not need a lawyer.",
   },
 
   counter: {

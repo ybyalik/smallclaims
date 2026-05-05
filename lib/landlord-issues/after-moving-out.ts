@@ -14,8 +14,8 @@ export const afterMovingOut: LandlordIssue = {
 
   hero: {
     eyebrowSuffix: "After moving out",
-    h1: { pre: "Can you sue a former landlord ", em: "after you've moved out", post: "?" },
-    leadStrong: "Yes, you can sue a former landlord",
+    h1: { pre: "Can I sue my landlord ", em: "after I've moved out", post: "?" },
+    leadStrong: "Yes, you can sue your landlord after moving out",
     leadBody:
       ". The most common cases are withheld security deposits and bogus post-move-out charges, but you can also sue for harassment, wrongful eviction, and habitability damages that arose during your tenancy. State statutes of limitations give you 1 to 6 years depending on the claim.",
   },

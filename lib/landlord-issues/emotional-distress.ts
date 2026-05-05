@@ -14,8 +14,8 @@ export const emotionalDistress: LandlordIssue = {
 
   hero: {
     eyebrowSuffix: "Emotional distress",
-    h1: { pre: "How much can I sue my landlord for ", em: "emotional distress", post: "?" },
-    leadStrong: "Emotional-distress claims are hard but possible",
+    h1: { pre: "Can I sue my landlord for ", em: "emotional distress", post: "?" },
+    leadStrong: "Yes, but emotional-distress claims are hard to win on their own",
     leadBody:
       ". Pure emotional-distress lawsuits rarely succeed in small claims, but emotional-distress damages added on top of another claim (harassment, wrongful eviction, mold) often do. Typical recoveries run $1,000 to $10,000 when supported by medical or therapy records.",
   },

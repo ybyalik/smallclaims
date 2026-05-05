@@ -14,8 +14,8 @@ export const illegalLockout: LandlordIssue = {
 
   hero: {
     eyebrowSuffix: "Illegal lockout",
-    h1: { pre: "What to do if your landlord ", em: "changes the locks", post: " on you." },
-    leadStrong: "Self-help eviction is illegal in every state",
+    h1: { pre: "Can I sue my landlord for ", em: "an illegal lockout", post: "?" },
+    leadStrong: "Yes, you can sue your landlord for an illegal lockout in every state",
     leadBody:
       ". If your landlord changed the locks, removed your belongings, or shut off utilities to force you out, you can recover hotel costs, moving expenses, lost wages, and statutory damages of $100 per day, 2x rent, or 3x rent depending on the state. You can also get a court order to let you back in.",
   },

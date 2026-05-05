@@ -14,8 +14,8 @@ export const apartmentComplex: LandlordIssue = {
 
   hero: {
     eyebrowSuffix: "Apartment complex",
-    h1: { pre: "How to sue your ", em: "apartment complex", post: "." },
-    leadStrong: "You can sue an apartment complex in small claims",
+    h1: { pre: "Can I sue my ", em: "apartment complex", post: "?" },
+    leadStrong: "Yes, you can sue an apartment complex in small claims",
     leadBody:
       " for the same reasons you can sue any landlord, plus a few extra. Common-area maintenance failures, security violations, lease boilerplate that breaks state law, and unauthorized fees are all small-claims territory. The corporate structure does not protect them.",
   },
