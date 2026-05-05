@@ -3,7 +3,7 @@ import Link from "next/link";
 export type Crumb = { href?: string; label: string };
 
 export default function Breadcrumbs({ items }: { items: Crumb[] }) {
-  const trail: Crumb[] = [{ href: "/", label: "Home" }, ...items];
+  const trail: Crumb[] = [{ href: "/", label: "Civil Case" }, ...items];
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -11,7 +11,7 @@ export default function Breadcrumbs({ items }: { items: Crumb[] }) {
       "@type": "ListItem",
       position: i + 1,
       name: c.label,
-      ...(c.href ? { item: `https://smallclaims.vercel.app${c.href}` } : {}),
+      ...(c.href ? { item: `https://civilcase.com${c.href}` } : {}),
     })),
   };
 

@@ -4,7 +4,7 @@ export const firedWithoutWarning: EmployerIssue = {
   slug: "fired-without-warning",
   ready: true,
   short: "Fired without warning",
-  breadcrumbLabel: "Fired without warning",
+  breadcrumbLabel: "Fired Without Warning",
 
   meta: {
     title: "Can I Sue My Employer for Being Fired Without Warning?",

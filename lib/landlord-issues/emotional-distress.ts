@@ -4,7 +4,7 @@ export const emotionalDistress: LandlordIssue = {
   slug: "emotional-distress",
   ready: true,
   short: "Emotional distress",
-  breadcrumbLabel: "Emotional distress",
+  breadcrumbLabel: "Emotional Distress",
 
   meta: {
     title: "Can You Sue Your Landlord for Emotional Distress?",

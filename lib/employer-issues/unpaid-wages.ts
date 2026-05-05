@@ -4,7 +4,7 @@ export const unpaidWages: EmployerIssue = {
   slug: "unpaid-wages",
   ready: true,
   short: "Unpaid wages",
-  breadcrumbLabel: "Unpaid wages",
+  breadcrumbLabel: "Unpaid Wages",
 
   meta: {
     title: "Can I Sue My Employer for Unpaid Wages? Small Claims Guide",

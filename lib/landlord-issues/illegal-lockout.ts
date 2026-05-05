@@ -4,7 +4,7 @@ export const illegalLockout: LandlordIssue = {
   slug: "illegal-lockout",
   ready: true,
   short: "Illegal lockout",
-  breadcrumbLabel: "Illegal lockout",
+  breadcrumbLabel: "Illegal Lockout",
 
   meta: {
     title: "What to Do If Your Landlord Changes the Locks on You",

@@ -20,7 +20,7 @@ export interface CategoryMeta {
 }
 
 export const LANDLORD_CATEGORY: CategoryMeta = {
-  hubLabel: "Landlord disputes",
+  hubLabel: "Landlord Disputes",
   hubHref: "/small-claims/landlord",
   urlPrefix: "sue-landlord-",
   defensesTocLabel: "Landlord defenses",
@@ -30,7 +30,7 @@ export const LANDLORD_CATEGORY: CategoryMeta = {
 };
 
 export const EMPLOYER_CATEGORY: CategoryMeta = {
-  hubLabel: "Employer disputes",
+  hubLabel: "Employer Disputes",
   hubHref: "/small-claims/employer",
   urlPrefix: "sue-employer-",
   defensesTocLabel: "Employer defenses",

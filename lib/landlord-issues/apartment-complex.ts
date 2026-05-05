@@ -4,7 +4,7 @@ export const apartmentComplex: LandlordIssue = {
   slug: "apartment-complex",
   ready: true,
   short: "Apartment complex",
-  breadcrumbLabel: "Apartment complex",
+  breadcrumbLabel: "Apartment Complex",
 
   meta: {
     title: "How to Sue Your Apartment Complex",

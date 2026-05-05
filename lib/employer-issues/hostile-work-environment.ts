@@ -4,7 +4,7 @@ export const hostileWorkEnvironment: EmployerIssue = {
   slug: "hostile-work-environment",
   ready: true,
   short: "Hostile work environment",
-  breadcrumbLabel: "Hostile work environment",
+  breadcrumbLabel: "Hostile Work Environment",
 
   meta: {
     title: "Can I Sue My Employer for a Hostile Work Environment After I Quit?",

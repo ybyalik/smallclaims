@@ -228,7 +228,7 @@ export default function LandlordHubPage() {
       />
 
       <div className="wrap">
-        <Breadcrumbs items={[{ href: "/small-claims", label: "Small Claims" }, { label: "Landlord disputes" }]} />
+        <Breadcrumbs items={[{ href: "/small-claims", label: "Small Claims" }, { label: "Landlord Disputes" }]} />
 
         {/* HERO — 3-col like homepage */}
         <header className="cat-hero-3col">

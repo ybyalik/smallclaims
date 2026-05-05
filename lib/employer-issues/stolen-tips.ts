@@ -4,7 +4,7 @@ export const stolenTips: EmployerIssue = {
   slug: "stolen-tips",
   ready: true,
   short: "Stolen tips",
-  breadcrumbLabel: "Stolen tips",
+  breadcrumbLabel: "Stolen Tips",
 
   meta: {
     title: "Can I Sue My Employer for Stealing My Tips? Small Claims Guide",

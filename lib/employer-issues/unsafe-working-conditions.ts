@@ -4,7 +4,7 @@ export const unsafeWorkingConditions: EmployerIssue = {
   slug: "unsafe-working-conditions",
   ready: true,
   short: "Unsafe working conditions",
-  breadcrumbLabel: "Unsafe working conditions",
+  breadcrumbLabel: "Unsafe Working Conditions",
 
   meta: {
     title: "Can I Sue My Employer for Unsafe Working Conditions?",

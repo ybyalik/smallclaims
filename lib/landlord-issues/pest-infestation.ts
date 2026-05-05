@@ -4,7 +4,7 @@ export const pestInfestation: LandlordIssue = {
   slug: "pest-infestation",
   ready: true,
   short: "Pest infestation",
-  breadcrumbLabel: "Pest infestation",
+  breadcrumbLabel: "Pest Infestation",
 
   meta: {
     title: "Can I Sue My Landlord for a Pest Infestation?",

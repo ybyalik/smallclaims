@@ -4,7 +4,7 @@ export const wrongfulEviction: LandlordIssue = {
   slug: "wrongful-eviction",
   ready: true,
   short: "Wrongful eviction",
-  breadcrumbLabel: "Wrongful eviction",
+  breadcrumbLabel: "Wrongful Eviction",
 
   meta: {
     title: "Can You Sue Your Landlord for Wrongful Eviction?",

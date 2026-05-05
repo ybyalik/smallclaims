@@ -4,7 +4,7 @@ export const lastPaycheck: EmployerIssue = {
   slug: "last-paycheck",
   ready: true,
   short: "Last paycheck withheld",
-  breadcrumbLabel: "Last paycheck",
+  breadcrumbLabel: "Last Paycheck",
 
   meta: {
     title: "Can I Sue My Employer for Withholding My Last Paycheck?",

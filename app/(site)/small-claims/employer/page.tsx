@@ -225,7 +225,7 @@ export default function EmployerHubPage() {
       />
 
       <div className="wrap">
-        <Breadcrumbs items={[{ href: "/small-claims", label: "Small Claims" }, { label: "Employer disputes" }]} />
+        <Breadcrumbs items={[{ href: "/small-claims", label: "Small Claims" }, { label: "Employer Disputes" }]} />
 
         {/* HERO */}
         <header className="cat-hero-3col">

@@ -4,7 +4,7 @@ export const afterMovingOut: LandlordIssue = {
   slug: "after-moving-out",
   ready: true,
   short: "After moving out",
-  breadcrumbLabel: "After moving out",
+  breadcrumbLabel: "After Moving Out",
 
   meta: {
     title: "Can You Sue a Former Landlord After You've Moved Out?",

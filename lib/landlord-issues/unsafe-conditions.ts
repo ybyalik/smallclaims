@@ -4,7 +4,7 @@ export const unsafeConditions: LandlordIssue = {
   slug: "unsafe-conditions",
   ready: true,
   short: "Unsafe conditions",
-  breadcrumbLabel: "Unsafe conditions",
+  breadcrumbLabel: "Unsafe Conditions",
 
   meta: {
     title: "How to Sue Your Landlord for Unsafe Living Conditions",

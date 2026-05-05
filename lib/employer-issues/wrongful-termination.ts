@@ -4,7 +4,7 @@ export const wrongfulTermination: EmployerIssue = {
   slug: "wrongful-termination",
   ready: true,
   short: "Wrongful termination",
-  breadcrumbLabel: "Wrongful termination",
+  breadcrumbLabel: "Wrongful Termination",
 
   meta: {
     title: "Can I Sue My Employer for Wrongful Termination? Small Claims Guide",

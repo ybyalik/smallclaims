@@ -4,7 +4,7 @@ export const breakLease: LandlordIssue = {
   slug: "break-lease",
   ready: true,
   short: "Break lease",
-  breadcrumbLabel: "Break lease",
+  breadcrumbLabel: "Break Lease",
 
   meta: {
     title: "How to Break Your Lease Without Penalty",

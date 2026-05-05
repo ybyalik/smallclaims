@@ -4,7 +4,7 @@ export const securityDeposit: LandlordIssue = {
   slug: "security-deposit",
   ready: true,
   short: "Security deposit",
-  breadcrumbLabel: "Security deposit",
+  breadcrumbLabel: "Security Deposit",
 
   meta: {
     title: "How to Get Your Security Deposit Back From a Landlord",

@@ -4,7 +4,7 @@ export const emotionalDistress: EmployerIssue = {
   slug: "emotional-distress",
   ready: true,
   short: "Emotional distress",
-  breadcrumbLabel: "Emotional distress",
+  breadcrumbLabel: "Emotional Distress",
 
   meta: {
     title: "Can I Sue My Employer for Emotional Distress? Small Claims Guide",
