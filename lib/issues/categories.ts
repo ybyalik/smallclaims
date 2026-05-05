@@ -48,3 +48,13 @@ export const CONTRACTOR_CATEGORY: CategoryMeta = {
   audienceLabel: "homeowners",
   relatedH2Em: "sue your contractor",
 };
+
+export const AUTO_CATEGORY: CategoryMeta = {
+  hubLabel: "Auto Disputes",
+  hubHref: "/small-claims/auto",
+  urlPrefix: "sue-auto-",
+  defensesTocLabel: "Defendant defenses",
+  signatoryLabel: "Owner",
+  audienceLabel: "drivers",
+  relatedH2Em: "sue over a car",
+};

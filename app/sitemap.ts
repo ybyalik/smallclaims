@@ -5,6 +5,7 @@ import { createClient } from "../lib/supabase/server";
 import { ISSUES } from "../lib/landlord-issues";
 import { EMPLOYER_ISSUES } from "../lib/employer-issues";
 import { CONTRACTOR_ISSUES } from "../lib/contractor-issues";
+import { AUTO_ISSUES } from "../lib/auto-issues";
 
 const BASE = "https://civilcase.com";
 
@@ -57,6 +58,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }));
 
+  const autoUrls: MetadataRoute.Sitemap = AUTO_ISSUES.filter((i) => i.ready).map((i) => ({
+    url: `${BASE}/small-claims/sue-auto-${i.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.8,
+  }));
+
   const blogPosts = await publishedBlogPosts();
   const blogUrls: MetadataRoute.Sitemap = blogPosts.map((p) => ({
     url: `${BASE}/blog/${p.slug}`,
@@ -75,6 +83,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...employerUrls,
     { url: `${BASE}/small-claims/contractor`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
     ...contractorUrls,
+    { url: `${BASE}/small-claims/auto`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    ...autoUrls,
     { url: `${BASE}/demand-letter`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/blog`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
     { url: `${BASE}/about`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },

@@ -40,6 +40,11 @@ const nextConfig = {
         destination: "/small-claims/sue-contractor-:issue",
         permanent: true,
       },
+      {
+        source: "/small-claims/auto/:issue",
+        destination: "/small-claims/sue-auto-:issue",
+        permanent: true,
+      },
     ];
   },
   async rewrites() {
@@ -55,6 +60,10 @@ const nextConfig = {
       {
         source: "/small-claims/sue-contractor-:issue",
         destination: "/small-claims/contractor/:issue",
+      },
+      {
+        source: "/small-claims/sue-auto-:issue",
+        destination: "/small-claims/auto/:issue",
       },
     ];
   },
