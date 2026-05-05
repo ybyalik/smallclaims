@@ -278,8 +278,8 @@ export default function SmallClaimsHubPage() {
         {/* CATEGORIES */}
         <section className="cat-section">
           <div className="sec-head" style={{ textAlign: "left", marginBottom: 28 }}>
-            <h2 style={{ margin: 0 }}>
-              Browse by <em>who you&rsquo;re suing</em>.
+            <h2 style={{ margin: 0, whiteSpace: "nowrap" }}>
+              <em>Pick</em> a category.
             </h2>
             <p style={{ marginTop: 12, marginLeft: 0, maxWidth: "60ch" }}>
               Each guide covers the legal theory, what evidence to bring, what you can recover,
@@ -294,15 +294,29 @@ export default function SmallClaimsHubPage() {
                 <p>{c.blurb}</p>
               </Link>
             ))}
-            <Link href="/case-score" className="cat-card cat-card-quiz">
-              <div className="cat-card-icon" style={{ background: "rgba(217,64,46,0.18)" }}>
-                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.6">
-                  <circle cx="12" cy="12" r="9" />
-                  <path d="M12 7v5l3 2" />
-                </svg>
-              </div>
-              <h3>Not sure which fits?</h3>
-              <p>Tell us about your situation in 90 seconds and get a strength read on your case.</p>
+          </div>
+        </section>
+
+        {/* NOT SURE? CTA */}
+        <section className="cat-section">
+          <div
+            className="cat-cta-card"
+            style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 24, flexWrap: "wrap" }}
+          >
+            <div style={{ flex: "1 1 360px" }}>
+              <span className="eyebrow" style={{ color: "rgba(254,249,241,0.65)" }}>
+                Not sure which fits?
+              </span>
+              <h2 style={{ marginTop: 8, marginBottom: 8 }}>
+                Take the <em>case-strength quiz</em>.
+              </h2>
+              <p style={{ margin: 0 }}>
+                Tell us about your situation in 90 seconds and get a strength read on your case
+                plus the right category to pursue.
+              </p>
+            </div>
+            <Link href="/case-score" className="cv2-cta-primary" style={{ flex: "0 0 auto" }}>
+              Start the quiz →
             </Link>
           </div>
         </section>
