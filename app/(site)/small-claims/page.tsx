@@ -20,104 +20,15 @@ export const metadata: Metadata = {
 };
 
 const CATEGORIES = [
-  {
-    slug: "landlord",
-    title: "Sue a landlord",
-    blurb: "Security deposit, mold, lockout, harassment, wrongful eviction, and 6 more disputes.",
-    icon: (
-      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.6">
-        <path d="M3 21h18M5 21V8l7-5 7 5v13" />
-        <path d="M9 21v-7h6v7" />
-      </svg>
-    ),
-  },
-  {
-    slug: "employer",
-    title: "Sue an employer",
-    blurb: "Wrongful termination, unpaid wages, last paycheck, retaliation, stolen tips, and more.",
-    icon: (
-      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.6">
-        <rect x="3" y="6" width="18" height="14" rx="2" />
-        <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
-      </svg>
-    ),
-  },
-  {
-    slug: "contractor",
-    title: "Sue a contractor",
-    blurb: "Took deposit and vanished, unfinished work, poor workmanship, damaged your house.",
-    icon: (
-      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.6">
-        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
-      </svg>
-    ),
-  },
-  {
-    slug: "auto",
-    title: "Sue over a car",
-    blurb: "Parked-car hit, dealership fraud, lemon, mechanic, valet damage, towing damage.",
-    icon: (
-      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.6">
-        <rect x="3" y="11" width="18" height="6" rx="1" />
-        <path d="M5 17v3M19 17v3M7 11l1-4h8l1 4" />
-      </svg>
-    ),
-  },
-  {
-    slug: "neighbor",
-    title: "Sue a neighbor",
-    blurb: "Property damage, fallen trees, noise, harassment, water runoff, fence disputes.",
-    icon: (
-      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.6">
-        <path d="M3 22V8l4-4 4 4v14M11 22V8l4-4 4 4v14" />
-        <path d="M3 14h18" />
-      </svg>
-    ),
-  },
-  {
-    slug: "personal-loan",
-    title: "Recover money owed",
-    blurb: "Friend, family, ex, IOU, verbal agreement, cash loan. Most informal loans are recoverable.",
-    icon: (
-      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.6">
-        <circle cx="12" cy="12" r="9" />
-        <path d="M9 9h6M9 12h6M9 15h4" />
-      </svg>
-    ),
-  },
-  {
-    slug: "roommate",
-    title: "Sue a roommate",
-    blurb: "Unpaid rent, unpaid bills, moving out without notice, property damage, security deposit.",
-    icon: (
-      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.6">
-        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-        <circle cx="9" cy="7" r="4" />
-        <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
-      </svg>
-    ),
-  },
-  {
-    slug: "online-seller",
-    title: "Sue an online seller",
-    blurb: "Amazon, eBay, Etsy, Facebook Marketplace, Venmo scams, gig services, FedEx.",
-    icon: (
-      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.6">
-        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-      </svg>
-    ),
-  },
-  {
-    slug: "refund",
-    title: "Get a refund",
-    blurb: "Defective product, gym membership, dry cleaner, salon damage, services not rendered.",
-    icon: (
-      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.6">
-        <path d="M3 12l9-9 9 9" />
-        <path d="M9 21V12h6v9" />
-      </svg>
-    ),
-  },
+  { slug: "landlord", title: "Sue a landlord", blurb: "Security deposit, mold, lockout, harassment, wrongful eviction, and 6 more disputes.", photo: "1560518883-ce09059eeffa" },
+  { slug: "employer", title: "Sue an employer", blurb: "Wrongful termination, unpaid wages, last paycheck, retaliation, stolen tips, and more.", photo: "1521791136064-7986c2920216" },
+  { slug: "contractor", title: "Sue a contractor", blurb: "Took deposit and vanished, unfinished work, poor workmanship, damaged your house.", photo: "1503387762-592deb58ef4e" },
+  { slug: "auto", title: "Sue over a car", blurb: "Parked-car hit, dealership fraud, lemon, mechanic, valet damage, towing damage.", photo: "1503376780353-7e6692767b70" },
+  { slug: "neighbor", title: "Sue a neighbor", blurb: "Property damage, fallen trees, noise, harassment, water runoff, fence disputes.", photo: "1568605114967-8130f3a36994" },
+  { slug: "personal-loan", title: "Recover money owed", blurb: "Friend, family, ex, IOU, verbal agreement, cash loan. Most informal loans are recoverable.", photo: "1554224155-1696413565d3" },
+  { slug: "roommate", title: "Sue a roommate", blurb: "Unpaid rent, unpaid bills, moving out without notice, property damage, security deposit.", photo: "1560448204-e02f11c3d0e2" },
+  { slug: "online-seller", title: "Sue an online seller", blurb: "Amazon, eBay, Etsy, Facebook Marketplace, Venmo scams, gig services, FedEx.", photo: "1607082348824-0a96f2a4b9da" },
+  { slug: "refund", title: "Get a refund", blurb: "Defective product, gym membership, dry cleaner, salon damage, services not rendered.", photo: "1554224154-26032ffc0d07" },
 ];
 
 const TOP_TOPICS = [
@@ -286,12 +197,19 @@ export default function SmallClaimsHubPage() {
               and how to file in your state.
             </p>
           </div>
-          <div className="cat-grid">
+          <div className="photo-grid">
             {CATEGORIES.map((c) => (
-              <Link key={c.slug} href={`/small-claims/${c.slug}`} className="cat-card">
-                <div className="cat-card-icon">{c.icon}</div>
-                <h3>{c.title}</h3>
-                <p>{c.blurb}</p>
+              <Link key={c.slug} href={`/small-claims/${c.slug}`} className="photo-card">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={`https://images.unsplash.com/photo-${c.photo}?w=600&h=600&fit=crop`}
+                  alt=""
+                  className="photo-card-img"
+                />
+                <div className="photo-card-overlay">
+                  <h3>{c.title}</h3>
+                  <p>{c.blurb}</p>
+                </div>
               </Link>
             ))}
           </div>
