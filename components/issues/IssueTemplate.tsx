@@ -4,7 +4,7 @@ import FeaturedUsMap from "../widgets/FeaturedUsMap";
 import CountUp from "../widgets/CountUp";
 import { availableStateSlugs } from "../../lib/state-data";
 import { getDepositStateTable } from "../../lib/deposit-state-table";
-import type { LandlordIssue } from "../../lib/landlord-issues/types";
+import type { LandlordIssue, EvidenceCell } from "../../lib/landlord-issues/types";
 import type { CategoryMeta } from "../../lib/issues/categories";
 
 const FEATURED_STATE_SLUGS = [
@@ -284,69 +284,79 @@ export default function IssueTemplate({ issue, category, siblings }: Props) {
             <H2 parts={issue.evidence.h2} />
             <p>{issue.evidence.lede}</p>
           </div>
-          <div className="sv-bento cv2-evidence-bento">
-            <div className="sv-bento-cell sv-bento-photos">
-              <div className="sv-bento-tag">Photos</div>
-              <div className="sv-bento-grid">
-                {issue.evidence.photos.map((p) => (
-                  <div
-                    key={p.id}
-                    className="sv-bento-thumb"
-                    style={{ backgroundImage: `url(https://images.unsplash.com/photo-${p.id}?w=400&h=400&fit=crop)` }}
-                    title={p.cap}
-                  />
-                ))}
-              </div>
-            </div>
-            <div className="sv-bento-cell sv-bento-texts">
-              <div className="sv-bento-tag">Texts</div>
-              {issue.evidence.texts.map((t, i) => (
-                <div key={i} className={`sv-bento-bubble ${t.dir}`}>{t.text}</div>
+          {issue.evidence.cells && issue.evidence.cells.length > 0 ? (
+            <div className="sv-bento cv2-evidence-bento cv2-evidence-flex">
+              {issue.evidence.cells.slice(0, 4).map((cell, i) => (
+                <div key={i} className={`sv-bento-cell evidence-slot-${i + 1}`}>
+                  <EvidenceCellView cell={cell} category={category} />
+                </div>
               ))}
             </div>
-            <div className="sv-bento-cell sv-bento-lease">
-              <div className="sv-bento-tag">Document</div>
-              <div className="sv-bento-doc">
-                <div className="sv-bento-doc-line" />
-                <div className="sv-bento-doc-line short" />
-                <div className="sv-bento-doc-line" />
-                <div className="sv-bento-doc-line short" />
-                <div className="sv-bento-doc-sig">/s/ {category.signatoryLabel} signature</div>
+          ) : (
+            <div className="sv-bento cv2-evidence-bento">
+              <div className="sv-bento-cell sv-bento-photos">
+                <div className="sv-bento-tag">Photos</div>
+                <div className="sv-bento-grid">
+                  {issue.evidence.photos.map((p) => (
+                    <div
+                      key={p.id}
+                      className="sv-bento-thumb"
+                      style={{ backgroundImage: `url(https://images.unsplash.com/photo-${p.id}?w=400&h=400&fit=crop)` }}
+                      title={p.cap}
+                    />
+                  ))}
+                </div>
               </div>
-            </div>
-            <div className="sv-bento-cell cv2-receipt-cell">
-              <div className="sv-bento-tag">Receipt</div>
-              <div className="cv2-receipt">
-                <div className="cv2-receipt-top">
-                  <strong>{issue.evidence.receipt.vendor}</strong>
-                  <span>{issue.evidence.receipt.vendorAddr}</span>
-                </div>
-                <div className="cv2-receipt-meta">
-                  <span>{issue.evidence.receipt.receiptNum}</span>
-                  <span>{issue.evidence.receipt.date}</span>
-                </div>
-                <div className="cv2-receipt-rule" />
-                {issue.evidence.receipt.lineItems.map((li) => (
-                  <div key={li.label} className="cv2-receipt-row">
-                    <span>{li.label}</span>
-                    <span>{li.amount}</span>
-                  </div>
+              <div className="sv-bento-cell sv-bento-texts">
+                <div className="sv-bento-tag">Texts</div>
+                {issue.evidence.texts.map((t, i) => (
+                  <div key={i} className={`sv-bento-bubble ${t.dir}`}>{t.text}</div>
                 ))}
-                <div className="cv2-receipt-rule dashed" />
-                <div className="cv2-receipt-row">
-                  <span>Subtotal</span>
-                  <span>{issue.evidence.receipt.subtotal}</span>
+              </div>
+              <div className="sv-bento-cell sv-bento-lease">
+                <div className="sv-bento-tag">Document</div>
+                <div className="sv-bento-doc">
+                  <div className="sv-bento-doc-line" />
+                  <div className="sv-bento-doc-line short" />
+                  <div className="sv-bento-doc-line" />
+                  <div className="sv-bento-doc-line short" />
+                  <div className="sv-bento-doc-sig">/s/ {category.signatoryLabel} signature</div>
                 </div>
-                <div className="cv2-receipt-rule" />
-                <div className="cv2-receipt-row total">
-                  <span>TOTAL</span>
-                  <span>{issue.evidence.receipt.total}</span>
+              </div>
+              <div className="sv-bento-cell cv2-receipt-cell">
+                <div className="sv-bento-tag">Receipt</div>
+                <div className="cv2-receipt">
+                  <div className="cv2-receipt-top">
+                    <strong>{issue.evidence.receipt.vendor}</strong>
+                    <span>{issue.evidence.receipt.vendorAddr}</span>
+                  </div>
+                  <div className="cv2-receipt-meta">
+                    <span>{issue.evidence.receipt.receiptNum}</span>
+                    <span>{issue.evidence.receipt.date}</span>
+                  </div>
+                  <div className="cv2-receipt-rule" />
+                  {issue.evidence.receipt.lineItems.map((li) => (
+                    <div key={li.label} className="cv2-receipt-row">
+                      <span>{li.label}</span>
+                      <span>{li.amount}</span>
+                    </div>
+                  ))}
+                  <div className="cv2-receipt-rule dashed" />
+                  <div className="cv2-receipt-row">
+                    <span>Subtotal</span>
+                    <span>{issue.evidence.receipt.subtotal}</span>
+                  </div>
+                  <div className="cv2-receipt-rule" />
+                  <div className="cv2-receipt-row total">
+                    <span>TOTAL</span>
+                    <span>{issue.evidence.receipt.total}</span>
+                  </div>
+                  <div className="cv2-receipt-stamp">PAID</div>
+                  <div className="cv2-receipt-footer">{issue.evidence.receipt.footer}</div>
                 </div>
-                <div className="cv2-receipt-stamp">PAID</div>
-                <div className="cv2-receipt-footer">{issue.evidence.receipt.footer}</div>
               </div>
             </div>
-          </div>
+          )}
         </section>
 
         {/* DEFENSES */}
@@ -543,4 +553,208 @@ function H2({ parts }: { parts: { pre: string; em: string; post?: string } }) {
       {parts.pre}<em>{parts.em}</em>{parts.post ?? ""}
     </h2>
   );
+}
+
+function EvidenceCellView({ cell, category }: { cell: EvidenceCell; category: CategoryMeta }) {
+  switch (cell.kind) {
+    case "photos":
+      return (
+        <>
+          <div className="sv-bento-tag">{cell.tag ?? "Photos"}</div>
+          <div className="sv-bento-grid">
+            {cell.photos.map((p) => (
+              <div
+                key={p.id}
+                className="sv-bento-thumb"
+                style={{ backgroundImage: `url(https://images.unsplash.com/photo-${p.id}?w=400&h=400&fit=crop)` }}
+                title={p.cap}
+              />
+            ))}
+          </div>
+        </>
+      );
+    case "texts":
+      return (
+        <>
+          <div className="sv-bento-tag">{cell.tag ?? "Texts"}</div>
+          {cell.texts.map((t, i) => (
+            <div key={i} className={`sv-bento-bubble ${t.dir}`}>{t.text}</div>
+          ))}
+        </>
+      );
+    case "document":
+      return (
+        <>
+          <div className="sv-bento-tag">{cell.tag ?? "Document"}</div>
+          <div className="sv-bento-doc">
+            <div className="sv-bento-doc-line" />
+            <div className="sv-bento-doc-line short" />
+            <div className="sv-bento-doc-line" />
+            <div className="sv-bento-doc-line short" />
+            <div className="sv-bento-doc-sig">/s/ {category.signatoryLabel} signature</div>
+          </div>
+        </>
+      );
+    case "receipt":
+      return (
+        <>
+          <div className="sv-bento-tag">{cell.tag ?? "Receipt"}</div>
+          <div className="cv2-receipt">
+            <div className="cv2-receipt-top">
+              <strong>{cell.vendor}</strong>
+              <span>{cell.vendorAddr}</span>
+            </div>
+            <div className="cv2-receipt-meta">
+              <span>{cell.receiptNum}</span>
+              <span>{cell.date}</span>
+            </div>
+            <div className="cv2-receipt-rule" />
+            {cell.lineItems.map((li) => (
+              <div key={li.label} className="cv2-receipt-row">
+                <span>{li.label}</span>
+                <span>{li.amount}</span>
+              </div>
+            ))}
+            <div className="cv2-receipt-rule dashed" />
+            <div className="cv2-receipt-row">
+              <span>Subtotal</span>
+              <span>{cell.subtotal}</span>
+            </div>
+            <div className="cv2-receipt-rule" />
+            <div className="cv2-receipt-row total">
+              <span>TOTAL</span>
+              <span>{cell.total}</span>
+            </div>
+            <div className="cv2-receipt-stamp">{cell.stamp ?? "PAID"}</div>
+            <div className="cv2-receipt-footer">{cell.footer}</div>
+          </div>
+        </>
+      );
+    case "paystub":
+      return (
+        <>
+          <div className="sv-bento-tag">{cell.tag ?? "Paystub"}</div>
+          <div className="cv2-paystub">
+            <div className="cv2-paystub-head">
+              <strong>{cell.employer}</strong>
+              <span>{cell.employerAddr}</span>
+            </div>
+            <div className="cv2-paystub-meta">
+              <span>{cell.payPeriod}</span>
+              <span>{cell.payDate}</span>
+            </div>
+            <div className="cv2-paystub-rule" />
+            <div className="cv2-paystub-section-label">Earnings</div>
+            {cell.earnings.map((e) => (
+              <div key={e.label} className="cv2-paystub-row">
+                <span>{e.label}</span>
+                <span>{e.amount}</span>
+              </div>
+            ))}
+            <div className="cv2-paystub-row total">
+              <span>Gross</span>
+              <span>{cell.gross}</span>
+            </div>
+            {cell.deductions && cell.deductions.length > 0 ? (
+              <>
+                <div className="cv2-paystub-rule dashed" />
+                <div className="cv2-paystub-section-label">Deductions</div>
+                {cell.deductions.map((d) => (
+                  <div key={d.label} className="cv2-paystub-row muted">
+                    <span>{d.label}</span>
+                    <span>{d.amount}</span>
+                  </div>
+                ))}
+              </>
+            ) : null}
+            <div className="cv2-paystub-rule" />
+            <div className="cv2-paystub-row net">
+              <span>Net pay</span>
+              <span>{cell.net}</span>
+            </div>
+            {cell.footer ? <div className="cv2-paystub-footer">{cell.footer}</div> : null}
+          </div>
+        </>
+      );
+    case "letter":
+      return (
+        <>
+          <div className="sv-bento-tag">{cell.tag ?? "Letter"}</div>
+          <div className="cv2-evidence-letter">
+            <div className="cv2-evidence-letter-head">{cell.letterhead}</div>
+            <div className="cv2-evidence-letter-date">{cell.date}</div>
+            <div className="cv2-evidence-letter-to">
+              <strong>{cell.recipientName}</strong>
+              {cell.recipientAddress ? <span>{cell.recipientAddress}</span> : null}
+            </div>
+            {cell.reLine ? (
+              <div className="cv2-evidence-letter-re">
+                <strong>Re:</strong> {cell.reLine}
+              </div>
+            ) : null}
+            <div className="cv2-evidence-letter-body">
+              {cell.bodyParagraphs.map((p, i) => (
+                <p key={i} dangerouslySetInnerHTML={{ __html: p }} />
+              ))}
+            </div>
+            <div className="cv2-evidence-letter-sign">
+              <span className="cv2-evidence-letter-signature">{cell.signatory}</span>
+              {cell.signatoryTitle ? (
+                <span className="cv2-evidence-letter-title">{cell.signatoryTitle}</span>
+              ) : null}
+            </div>
+          </div>
+        </>
+      );
+    case "timeLog":
+      return (
+        <>
+          <div className="sv-bento-tag">{cell.tag ?? "Time log"}</div>
+          <div className="cv2-timelog">
+            <div className="cv2-timelog-head">Week of {cell.weekOf}</div>
+            <div className="cv2-timelog-rowhead">
+              <span>Date</span>
+              <span>In</span>
+              <span>Out</span>
+              <span>Hours</span>
+            </div>
+            {cell.rows.map((r) => (
+              <div key={r.date} className="cv2-timelog-row">
+                <span>{r.date}</span>
+                <span>{r.in}</span>
+                <span>{r.out}</span>
+                <span>{r.hours}</span>
+              </div>
+            ))}
+            <div className="cv2-timelog-rule" />
+            <div className="cv2-timelog-row total">
+              <span>{cell.totalLabel}</span>
+              <span></span>
+              <span></span>
+              <span>{cell.totalHours}</span>
+            </div>
+            {cell.footer ? <div className="cv2-timelog-footer">{cell.footer}</div> : null}
+          </div>
+        </>
+      );
+    case "handbook":
+      return (
+        <>
+          <div className="sv-bento-tag">{cell.tag ?? "Handbook"}</div>
+          <div className="cv2-handbook">
+            <div className="cv2-handbook-head">{cell.documentTitle}</div>
+            <h4 className="cv2-handbook-section">{cell.sectionTitle}</h4>
+            <div className="cv2-handbook-body">
+              {cell.bodyParagraphs.map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
+              {cell.highlight ? (
+                <p className="cv2-handbook-highlight">{cell.highlight}</p>
+              ) : null}
+            </div>
+            {cell.footer ? <div className="cv2-handbook-footer">{cell.footer}</div> : null}
+          </div>
+        </>
+      );
+  }
 }

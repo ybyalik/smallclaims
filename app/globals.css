@@ -2385,6 +2385,217 @@ footer { padding: 80px 0 40px; background: var(--ink); color: #fef9f1; }
 }
 
 /* ─────────────────────────────────────────────
+   Flexible evidence cells (Option B)
+   Position-only slot classes used by EvidenceCellView. Each cell type
+   brings its own background and styling; the slot is pure positioning.
+   ───────────────────────────────────────────── */
+.cv2-evidence-flex .evidence-slot-1 { grid-column: 1; grid-row: span 2; }
+.cv2-evidence-flex .evidence-slot-2 { grid-column: 2; grid-row: 1; }
+.cv2-evidence-flex .evidence-slot-3 { grid-column: 2; grid-row: 2; }
+.cv2-evidence-flex .evidence-slot-4 {
+  grid-column: 3;
+  grid-row: span 2;
+  background: #fff;
+  border: 1px solid var(--hairline);
+  border-radius: 16px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 800px) {
+  .cv2-evidence-flex .evidence-slot-1 { grid-column: 1 / -1; grid-row: auto; }
+  .cv2-evidence-flex .evidence-slot-2 { grid-column: 1; grid-row: auto; }
+  .cv2-evidence-flex .evidence-slot-3 { grid-column: 2; grid-row: auto; }
+  .cv2-evidence-flex .evidence-slot-4 { grid-column: 1 / -1; grid-row: auto; }
+}
+
+/* Paystub — similar to receipt but with earnings/deductions/net structure. */
+.cv2-paystub {
+  background: #fefcf3;
+  margin: 0 -4px;
+  padding: 16px 18px 18px;
+  position: relative;
+  height: calc(100% - 30px);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-family: ui-monospace, "SFMono-Regular", "Geist Mono", Menlo, monospace;
+  font-size: 11.5px;
+  color: var(--ink);
+  border-radius: 4px;
+  box-shadow: 0 4px 14px -8px rgba(31,27,22,0.18), inset 0 0 0 1px rgba(31,27,22,0.04);
+}
+.cv2-paystub-head { text-align: center; line-height: 1.35; margin-bottom: 4px; }
+.cv2-paystub-head strong { display: block; font-size: 12px; letter-spacing: 0.10em; font-weight: 700; }
+.cv2-paystub-head span { display: block; font-size: 10px; color: var(--muted); margin-top: 2px; }
+.cv2-paystub-meta { display: flex; justify-content: space-between; font-size: 10px; color: var(--muted); margin-bottom: 4px; }
+.cv2-paystub-rule { border-top: 1px solid rgba(31,27,22,0.18); margin: 4px 0; }
+.cv2-paystub-rule.dashed { border-top: 1px dashed rgba(31,27,22,0.25); }
+.cv2-paystub-section-label {
+  font-family: "Geist", system-ui, sans-serif;
+  font-size: 9.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 700;
+  margin: 2px 0;
+}
+.cv2-paystub-row { display: flex; justify-content: space-between; line-height: 1.45; }
+.cv2-paystub-row.total { font-weight: 700; padding-top: 2px; }
+.cv2-paystub-row.muted { color: var(--muted); }
+.cv2-paystub-row.net { font-weight: 700; font-size: 13px; padding-top: 4px; }
+.cv2-paystub-row.net span:last-child { color: var(--accent); }
+.cv2-paystub-footer { margin-top: auto; text-align: center; font-size: 10px; color: var(--muted); padding-top: 6px; }
+
+/* Evidence-letter — small letter mock for the evidence section. */
+.cv2-evidence-letter {
+  background: #fefcf3;
+  border: 1px solid var(--hairline);
+  border-radius: 6px;
+  padding: 18px 22px 16px;
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 11.5px;
+  line-height: 1.55;
+  color: var(--ink);
+  position: relative;
+  box-shadow: 0 6px 20px -12px rgba(31,27,22,0.22);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.cv2-evidence-letter-head {
+  font-family: "Geist", system-ui, sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+  border-bottom: 1px solid rgba(31,27,22,0.12);
+  padding-bottom: 6px;
+}
+.cv2-evidence-letter-date { font-size: 11px; font-family: "Geist", system-ui, sans-serif; color: var(--muted); }
+.cv2-evidence-letter-to { display: flex; flex-direction: column; font-size: 11px; line-height: 1.35; }
+.cv2-evidence-letter-to strong { font-family: "Geist", system-ui, sans-serif; font-weight: 600; font-size: 11.5px; }
+.cv2-evidence-letter-re { font-size: 11px; padding-bottom: 4px; }
+.cv2-evidence-letter-body { display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.cv2-evidence-letter-body p { margin: 0; font-size: 11.5px; line-height: 1.5; }
+.cv2-evidence-letter-sign {
+  margin-top: auto;
+  border-top: 1px solid rgba(31,27,22,0.12);
+  padding-top: 8px;
+  display: flex;
+  flex-direction: column;
+}
+.cv2-evidence-letter-signature {
+  font-family: "Caveat", cursive, "Newsreader", Georgia, serif;
+  font-size: 18px;
+  color: var(--ink);
+  line-height: 1;
+}
+.cv2-evidence-letter-title { font-family: "Geist", system-ui, sans-serif; font-size: 10.5px; color: var(--muted); margin-top: 2px; }
+
+/* Time log — table of dates with hours. */
+.cv2-timelog {
+  background: #fff;
+  border: 1px solid var(--hairline);
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-family: ui-monospace, "SFMono-Regular", "Geist Mono", Menlo, monospace;
+  font-size: 11px;
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  height: 100%;
+}
+.cv2-timelog-head {
+  font-family: "Geist", system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  letter-spacing: 0.04em;
+}
+.cv2-timelog-rowhead {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 0.8fr 0.8fr;
+  gap: 6px;
+  font-size: 9.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 700;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(31,27,22,0.12);
+}
+.cv2-timelog-row {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 0.8fr 0.8fr;
+  gap: 6px;
+  line-height: 1.5;
+}
+.cv2-timelog-row.total { font-weight: 700; }
+.cv2-timelog-row.total span:last-child { color: var(--accent); }
+.cv2-timelog-rule { border-top: 1px solid rgba(31,27,22,0.18); margin: 4px 0; }
+.cv2-timelog-footer { margin-top: auto; font-size: 10px; color: var(--muted); padding-top: 6px; font-family: "Geist", system-ui, sans-serif; }
+
+/* Handbook — page snippet with a highlighted policy callout. */
+.cv2-handbook {
+  background: #fff;
+  border: 1px solid var(--hairline);
+  border-radius: 8px;
+  padding: 16px 18px;
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--ink);
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  overflow: hidden;
+}
+.cv2-handbook::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 24px; height: 24px;
+  background: linear-gradient(135deg, transparent 50%, rgba(31,27,22,0.08) 50%);
+}
+.cv2-handbook-head {
+  font-family: "Geist", system-ui, sans-serif;
+  font-size: 9.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 700;
+  border-bottom: 1px solid rgba(31,27,22,0.12);
+  padding-bottom: 6px;
+}
+.cv2-handbook-section {
+  margin: 4px 0 2px;
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.cv2-handbook-body { display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.cv2-handbook-body p { margin: 0; font-size: 12px; line-height: 1.5; }
+.cv2-handbook-highlight {
+  background: rgba(217,64,46,0.10);
+  border-left: 3px solid var(--accent);
+  padding: 6px 10px;
+  border-radius: 2px;
+  font-style: italic;
+  font-size: 12px;
+  color: var(--ink);
+  margin-top: 4px !important;
+}
+.cv2-handbook-footer { margin-top: auto; font-size: 10px; color: var(--muted); padding-top: 6px; font-family: "Geist", system-ui, sans-serif; }
+
+/* ─────────────────────────────────────────────
    Formal demand letter mock + equal-height bento
    ───────────────────────────────────────────── */
 .cv2-bento09 { align-items: stretch; }

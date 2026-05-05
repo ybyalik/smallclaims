@@ -174,31 +174,74 @@ export const wrongfulTermination: EmployerIssue = {
     h2: { pre: "What evidence do you need to ", em: "sue your employer", post: "?" },
     lede:
       "Wrongful-termination cases turn on documents and timing. Bring originals plus copies for the judge and the employer.",
-    photos: [
-      { id: "1554224155-1696413565d3", cap: "Offer letter" },
-      { id: "1554224154-26032ffc0d07", cap: "Paystub" },
-      { id: "1517245386807-bb43f82c33c4", cap: "HR emails" },
-      { id: "1558618666-fcd25c85cd64", cap: "Termination letter" },
-    ],
-    texts: [
-      { dir: "in", text: "Just got told I'm being let go on Friday. They said no reason." },
-      { dir: "out", text: "What? You just reported the safety issue last week!" },
-      { dir: "in", text: "Right. They said it was unrelated. I have everything in writing." },
-    ],
+    // Legacy fallback (unused once cells is set, but required by the schema).
+    photos: [],
+    texts: [],
     receipt: {
-      vendor: "APEX LOGISTICS INC.",
-      vendorAddr: "500 Industrial Way · Phoenix, AZ",
-      receiptNum: "Pay stub · period ending 04/15/2026",
-      date: "04/18/2026",
-      lineItems: [
-        { label: "Regular hours (80)", amount: "$2,000.00" },
-        { label: "Overtime (8)", amount: "$300.00" },
-        { label: "Accrued PTO (40 hrs)", amount: "$1,000.00" },
-      ],
-      subtotal: "$3,300.00",
-      total: "$3,300.00",
-      footer: "Final paystub before termination",
+      vendor: "",
+      vendorAddr: "",
+      receiptNum: "",
+      date: "",
+      lineItems: [],
+      subtotal: "",
+      total: "",
+      footer: "",
     },
+    cells: [
+      // Slot 1 (tall left): the termination letter itself.
+      {
+        kind: "letter",
+        tag: "Termination letter",
+        letterhead: "Apex Logistics Inc. · HR",
+        date: "April 18, 2026",
+        recipientName: "Jordan A. Smith",
+        recipientAddress: "1422 N 7th Ave, Phoenix, AZ",
+        reLine: "Notice of Termination",
+        bodyParagraphs: [
+          "This letter confirms the termination of your employment, effective today, April 18, 2026.",
+          "Final pay will be deposited per the standard schedule. Your access badges and equipment must be returned by end of day. We wish you the best.",
+        ],
+        signatory: "Pat Reyes",
+        signatoryTitle: "Senior HR Business Partner",
+      },
+      // Slot 2 (mid top): HR text exchange where the timing is in the open.
+      {
+        kind: "texts",
+        tag: "HR thread",
+        texts: [
+          { dir: "in", text: "Just got told I'm being let go on Friday. They said no reason." },
+          { dir: "out", text: "What? You just reported the safety issue last week." },
+          { dir: "in", text: "Right. They said it's unrelated. I have everything in writing." },
+        ],
+      },
+      // Slot 3 (mid bottom): the offer letter / contract page.
+      {
+        kind: "document",
+        tag: "Offer letter",
+      },
+      // Slot 4 (tall right): the final paystub showing the unpaid PTO line.
+      {
+        kind: "paystub",
+        tag: "Final paystub",
+        employer: "APEX LOGISTICS INC.",
+        employerAddr: "500 Industrial Way · Phoenix, AZ",
+        payPeriod: "Pay period 04/01 to 04/15/2026",
+        payDate: "Paid 04/18/2026",
+        earnings: [
+          { label: "Regular hours (80)", amount: "$2,000.00" },
+          { label: "Overtime (8)", amount: "$300.00" },
+          { label: "Accrued PTO (40 hrs)", amount: "$0.00" },
+        ],
+        deductions: [
+          { label: "Federal tax", amount: "-$280.00" },
+          { label: "FICA", amount: "-$176.00" },
+          { label: "State tax", amount: "-$92.00" },
+        ],
+        gross: "$2,300.00",
+        net: "$1,752.00",
+        footer: "Note: 40 hrs accrued PTO not paid out",
+      },
+    ],
   },
 
   defenses: {

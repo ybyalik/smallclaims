@@ -81,6 +81,99 @@ export interface FaqItem {
   a: string;
 }
 
+// Evidence cells. Each cell renders a different visual primitive in a fixed
+// bento slot. The first cell takes the tall-left slot, the next two stack in
+// the middle column, and the fourth takes the tall-right slot.
+
+export interface EvidencePhotos {
+  kind: "photos";
+  tag?: string;
+  photos: { id: string; cap: string }[];
+}
+
+export interface EvidenceTexts {
+  kind: "texts";
+  tag?: string;
+  texts: { dir: "in" | "out"; text: string }[];
+}
+
+export interface EvidenceDocument {
+  kind: "document";
+  tag?: string;
+  // Generic clipped document mock with a signature line at the bottom.
+}
+
+export interface EvidenceReceipt {
+  kind: "receipt";
+  tag?: string;
+  vendor: string;
+  vendorAddr: string;
+  receiptNum: string;
+  date: string;
+  lineItems: { label: string; amount: string }[];
+  subtotal: string;
+  total: string;
+  footer: string;
+  stamp?: string; // defaults to "PAID"
+}
+
+export interface EvidencePaystub {
+  kind: "paystub";
+  tag?: string;
+  employer: string;
+  employerAddr: string;
+  payPeriod: string;
+  payDate: string;
+  earnings: { label: string; amount: string }[];
+  deductions?: { label: string; amount: string }[];
+  gross: string;
+  net: string;
+  footer?: string;
+}
+
+export interface EvidenceLetter {
+  kind: "letter";
+  tag?: string;
+  letterhead: string;
+  date: string;
+  recipientName: string;
+  recipientAddress?: string;
+  reLine?: string;
+  bodyParagraphs: string[];
+  signatory: string;
+  signatoryTitle?: string;
+}
+
+export interface EvidenceTimeLog {
+  kind: "timeLog";
+  tag?: string;
+  weekOf: string;
+  rows: { date: string; in: string; out: string; hours: string }[];
+  totalLabel: string;
+  totalHours: string;
+  footer?: string;
+}
+
+export interface EvidenceHandbook {
+  kind: "handbook";
+  tag?: string;
+  documentTitle: string; // e.g. "Employee Handbook · Section 4"
+  sectionTitle: string; // e.g. "Final Paycheck"
+  bodyParagraphs: string[];
+  highlight?: string; // a single sentence or phrase rendered with accent
+  footer?: string;
+}
+
+export type EvidenceCell =
+  | EvidencePhotos
+  | EvidenceTexts
+  | EvidenceDocument
+  | EvidenceReceipt
+  | EvidencePaystub
+  | EvidenceLetter
+  | EvidenceTimeLog
+  | EvidenceHandbook;
+
 export interface RelatedSlug {
   slug: string;
 }
@@ -145,6 +238,8 @@ export interface LandlordIssue {
   evidence: {
     h2: H2Parts;
     lede: string;
+    // Legacy 4-slot shape (photos | texts/lease stacked | receipt). Kept for
+    // backwards compatibility with existing landlord pages.
     photos: { id: string; cap: string }[];
     texts: { dir: "in" | "out"; text: string }[];
     receipt: {
@@ -157,6 +252,9 @@ export interface LandlordIssue {
       total: string;
       footer: string;
     };
+    // New flexible shape. If provided, renders 4 cells of any kind in fixed
+    // bento positions: [tall-left, mid-top, mid-bottom, tall-right].
+    cells?: EvidenceCell[];
   };
 
   defenses: {
