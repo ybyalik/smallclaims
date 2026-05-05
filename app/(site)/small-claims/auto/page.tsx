@@ -30,7 +30,7 @@ const ISSUES = [
         <path d="M5 17v3M19 17v3M7 11l1-4h8l1 4" />
       </svg>
     ),
-    ready: false,
+    ready: true,
   },
   {
     slug: "dealership-fraud",
@@ -42,7 +42,7 @@ const ISSUES = [
         <path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
       </svg>
     ),
-    ready: false,
+    ready: true,
   },
   {
     slug: "dealership-undisclosed-damage",
@@ -54,7 +54,7 @@ const ISSUES = [
         <path d="M2 12h20M2 12c0-5 4-9 10-9s10 4 10 9M2 12c0 5 4 9 10 9s10-4 10-9" />
       </svg>
     ),
-    ready: false,
+    ready: true,
   },
   {
     slug: "towing-damage",
@@ -68,7 +68,7 @@ const ISSUES = [
         <circle cx="17" cy="20" r="2" />
       </svg>
     ),
-    ready: false,
+    ready: true,
   },
   {
     slug: "mechanic-bad-work",
@@ -80,7 +80,7 @@ const ISSUES = [
         <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
       </svg>
     ),
-    ready: false,
+    ready: true,
   },
   {
     slug: "mechanic-overcharging",
@@ -92,7 +92,7 @@ const ISSUES = [
         <path d="M12 2v20M5 7h11a3 3 0 0 1 0 6H8a3 3 0 0 0 0 6h11" />
       </svg>
     ),
-    ready: false,
+    ready: true,
   },
   {
     slug: "mechanic-took-too-long",
@@ -105,7 +105,7 @@ const ISSUES = [
         <path d="M12 7v5l3 2" />
       </svg>
     ),
-    ready: false,
+    ready: true,
   },
   {
     slug: "valet-damage",
@@ -118,7 +118,7 @@ const ISSUES = [
         <path d="M16 4l-4 4-4-4" />
       </svg>
     ),
-    ready: false,
+    ready: true,
   },
   {
     slug: "lemon-car",
