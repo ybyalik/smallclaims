@@ -175,12 +175,6 @@ export const emotionalDistress: EmployerIssue = {
     h2: { pre: "What evidence do you need to ", em: "sue your employer", post: "?" },
     lede:
       "Documented harm wins. The connection between specific incidents and specific medical care is the case.",
-    photos: [],
-    texts: [],
-    receipt: {
-      vendor: "", vendorAddr: "", receiptNum: "", date: "",
-      lineItems: [], subtotal: "", total: "", footer: "",
-    },
     cells: [
       {
         kind: "letter",

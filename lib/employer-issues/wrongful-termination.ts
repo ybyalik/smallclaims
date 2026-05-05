@@ -174,19 +174,6 @@ export const wrongfulTermination: EmployerIssue = {
     h2: { pre: "What evidence do you need to ", em: "sue your employer", post: "?" },
     lede:
       "Wrongful-termination cases turn on documents and timing. Bring originals plus copies for the judge and the employer.",
-    // Legacy fallback (unused once cells is set, but required by the schema).
-    photos: [],
-    texts: [],
-    receipt: {
-      vendor: "",
-      vendorAddr: "",
-      receiptNum: "",
-      date: "",
-      lineItems: [],
-      subtotal: "",
-      total: "",
-      footer: "",
-    },
     cells: [
       // Slot 1 (tall left): the termination letter itself.
       {

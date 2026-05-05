@@ -174,12 +174,6 @@ export const firedWithoutWarning: EmployerIssue = {
     h2: { pre: "What evidence do you need to ", em: "sue your employer", post: "?" },
     lede:
       "Cases like this turn on the handbook plus the timeline. Bring originals plus copies for the judge and the employer.",
-    photos: [],
-    texts: [],
-    receipt: {
-      vendor: "", vendorAddr: "", receiptNum: "", date: "",
-      lineItems: [], subtotal: "", total: "", footer: "",
-    },
     cells: [
       {
         kind: "handbook",

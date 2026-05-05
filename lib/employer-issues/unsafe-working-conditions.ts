@@ -176,12 +176,6 @@ export const unsafeWorkingConditions: EmployerIssue = {
     h2: { pre: "What evidence do you need to ", em: "sue your employer", post: "?" },
     lede:
       "Cases like this are won on the timeline plus the underlying safety record. The clearer the dates, the stronger the case.",
-    photos: [],
-    texts: [],
-    receipt: {
-      vendor: "", vendorAddr: "", receiptNum: "", date: "",
-      lineItems: [], subtotal: "", total: "", footer: "",
-    },
     cells: [
       {
         kind: "photos",

@@ -238,23 +238,9 @@ export interface LandlordIssue {
   evidence: {
     h2: H2Parts;
     lede: string;
-    // Legacy 4-slot shape (photos | texts/lease stacked | receipt). Kept for
-    // backwards compatibility with existing landlord pages.
-    photos: { id: string; cap: string }[];
-    texts: { dir: "in" | "out"; text: string }[];
-    receipt: {
-      vendor: string;
-      vendorAddr: string;
-      receiptNum: string;
-      date: string;
-      lineItems: { label: string; amount: string }[];
-      subtotal: string;
-      total: string;
-      footer: string;
-    };
-    // New flexible shape. If provided, renders 4 cells of any kind in fixed
-    // bento positions: [tall-left, mid-top, mid-bottom, tall-right].
-    cells?: EvidenceCell[];
+    // 4 cells of any kind in fixed bento positions:
+    // [tall-left, mid-top, mid-bottom, tall-right].
+    cells: EvidenceCell[];
   };
 
   defenses: {

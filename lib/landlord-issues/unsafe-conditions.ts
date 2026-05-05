@@ -173,31 +173,57 @@ export const unsafeConditions: LandlordIssue = {
     h2: { pre: "What evidence do you need ", em: "for unsafe conditions", post: "?" },
     lede:
       "Document every condition. Take photos before any repair. Save every report. Your case hinges on the timeline.",
-    photos: [
-      { id: "1607435543180-0b8d4ba79192", cap: "Damaged ceiling" },
-      { id: "1597595272109-7c5d97caefb1", cap: "Mold near outlet" },
-      { id: "1591019479261-c10b4716a0ea", cap: "Broken stairs" },
-      { id: "1554224155-1696413565d3", cap: "Code violation notice" },
+    cells: [
+      {
+        kind: "photos",
+        tag: "Hazard photos",
+        photos: [
+          { id: "1607435543180-0b8d4ba79192", cap: "Damaged ceiling" },
+          { id: "1597595272109-7c5d97caefb1", cap: "Mold near outlet" },
+          { id: "1591019479261-c10b4716a0ea", cap: "Broken stairs" },
+          { id: "1554224155-1696413565d3", cap: "Code violation notice" },
+        ],
+      },
+      {
+        kind: "texts",
+        tag: "Notice to landlord",
+        texts: [
+          { dir: "in", text: "The outlet sparked again. Electrical issue." },
+          { dir: "out", text: "We'll get to it." },
+          { dir: "in", text: "Three weeks now. Calling the city." },
+        ],
+      },
+      {
+        kind: "letter",
+        tag: "City inspection (311)",
+        letterhead: "SF Department of Building Inspection",
+        date: "March 18, 2026",
+        recipientName: "Property Owner",
+        reLine: "Notice of Code Violation · Case 311-2026-0182",
+        bodyParagraphs: [
+          "Inspection on March 17 confirmed live electrical hazard at outlet adjacent to bathroom (SFEC § 110.3). Repair within 30 days or daily fine begins.",
+          "Tenant complaint and inspector observation on file.",
+        ],
+        signatory: "Inspector R. Walsh",
+        signatoryTitle: "DBI Inspector ID 4421",
+      },
+      {
+        kind: "receipt",
+        tag: "ER visit (smoke)",
+        vendor: "SAN FRANCISCO GENERAL ER",
+        vendorAddr: "1001 Potrero Ave · SF, CA",
+        receiptNum: "Visit #ER-29481",
+        date: "03/14/2026",
+        lineItems: [
+          { label: "ER visit, smoke inhalation", amount: "$1,850.00" },
+          { label: "Chest X-ray", amount: "$420.00" },
+          { label: "Albuterol inhaler", amount: "$95.00" },
+        ],
+        subtotal: "$2,365.00",
+        total: "$2,365.00",
+        footer: "Receipt for tenant claim · thank you",
+      },
     ],
-    texts: [
-      { dir: "in", text: "The outlet sparked again. Electrical issue." },
-      { dir: "out", text: "We'll get to it." },
-      { dir: "in", text: "Three weeks now. Calling the city." },
-    ],
-    receipt: {
-      vendor: "SAN FRANCISCO GENERAL ER",
-      vendorAddr: "1001 Potrero Ave · SF, CA",
-      receiptNum: "Visit #ER-29481",
-      date: "03/14/2026",
-      lineItems: [
-        { label: "ER visit, smoke inhalation", amount: "$1,850.00" },
-        { label: "Chest X-ray", amount: "$420.00" },
-        { label: "Albuterol inhaler", amount: "$95.00" },
-      ],
-      subtotal: "$2,365.00",
-      total: "$2,365.00",
-      footer: "Receipt for tenant claim · thank you",
-    },
   },
 
   defenses: {

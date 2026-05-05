@@ -173,12 +173,6 @@ export const unpaidWages: EmployerIssue = {
     h2: { pre: "What evidence do you need to ", em: "sue your employer", post: "?" },
     lede:
       "Wage cases are won on time records and paystubs. The cleaner the math, the faster the hearing.",
-    photos: [],
-    texts: [],
-    receipt: {
-      vendor: "", vendorAddr: "", receiptNum: "", date: "",
-      lineItems: [], subtotal: "", total: "", footer: "",
-    },
     cells: [
       {
         kind: "timeLog",

@@ -173,30 +173,56 @@ export const afterMovingOut: LandlordIssue = {
     h2: { pre: "What evidence do you need ", em: "after moving out", post: "?" },
     lede:
       "After move-out, your evidence is whatever you took with you. Save everything before you turn in the keys.",
-    photos: [
-      { id: "1556909114-f6e7ad7d3136", cap: "Move-out walkthrough" },
-      { id: "1505873242700-f289a29e1e0f", cap: "Lease document" },
-      { id: "1564540586988-aa4e53c3d799", cap: "Mailing receipt" },
-      { id: "1517245386807-bb43f82c33c4", cap: "Forwarding letter" },
+    cells: [
+      {
+        kind: "letter",
+        tag: "Forwarding-address notice",
+        letterhead: "Tenant",
+        date: "January 31, 2026",
+        recipientName: "Landlord",
+        recipientAddress: "1247 Mission Street, SF, CA 94103",
+        reLine: "Forwarding address (Cal. Civ. Code § 1950.5)",
+        bodyParagraphs: [
+          "I vacated the unit on January 31, 2026. Please send my $1,500 deposit (or itemized statement) to: 555 Oak Street, Oakland, CA 94612.",
+          "The 21-day clock starts today.",
+        ],
+        signatory: "Tenant",
+      },
+      {
+        kind: "texts",
+        tag: "Asking for the deposit",
+        texts: [
+          { dir: "in", text: "I'm out April 1. Forwarding address is 555 Oak St." },
+          { dir: "out", text: "Got it." },
+          { dir: "in", text: "Where's my deposit? It's been 6 weeks." },
+        ],
+      },
+      {
+        kind: "photos",
+        tag: "Move-out walkthrough",
+        photos: [
+          { id: "1556909114-f6e7ad7d3136", cap: "Kitchen (clean)" },
+          { id: "1505873242700-f289a29e1e0f", cap: "Living room" },
+          { id: "1564540586988-aa4e53c3d799", cap: "Bathroom" },
+          { id: "1502672260266-1c1ef2d93688", cap: "Bedroom" },
+        ],
+      },
+      {
+        kind: "receipt",
+        tag: "Certified mail",
+        vendor: "USPS CERTIFIED MAIL",
+        vendorAddr: "Mission Branch · SF, CA",
+        receiptNum: "Cert #7019 0140 0001 4827",
+        date: "01/31/2026",
+        lineItems: [
+          { label: "Certified mail with return receipt", amount: "$8.45" },
+          { label: "Forwarding-address notice", amount: "(included)" },
+        ],
+        subtotal: "$8.45",
+        total: "$8.45",
+        footer: "Return receipt received 02/03/2026",
+      },
     ],
-    texts: [
-      { dir: "in", text: "I'm out April 1. Forwarding address is 555 Oak St." },
-      { dir: "out", text: "Got it." },
-      { dir: "in", text: "Where's my deposit? It's been 6 weeks." },
-    ],
-    receipt: {
-      vendor: "USPS CERTIFIED MAIL",
-      vendorAddr: "Mission Branch · SF, CA",
-      receiptNum: "Cert #7019 0140 0001 4827",
-      date: "01/31/2026",
-      lineItems: [
-        { label: "Certified mail with return receipt", amount: "$8.45" },
-        { label: "Forwarding-address notice", amount: "(included)" },
-      ],
-      subtotal: "$8.45",
-      total: "$8.45",
-      footer: "Return receipt received 02/03/2026",
-    },
   },
 
   defenses: {

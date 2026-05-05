@@ -176,12 +176,6 @@ export const hostileWorkEnvironment: EmployerIssue = {
     h2: { pre: "What evidence do you need to ", em: "sue your employer", post: "?" },
     lede:
       "These cases turn on documented internal complaints and a resignation letter that cites the hostility. Without those, the constructive-discharge argument is much harder.",
-    photos: [],
-    texts: [],
-    receipt: {
-      vendor: "", vendorAddr: "", receiptNum: "", date: "",
-      lineItems: [], subtotal: "", total: "", footer: "",
-    },
     cells: [
       {
         kind: "letter",

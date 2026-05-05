@@ -173,31 +173,58 @@ export const apartmentComplex: LandlordIssue = {
     h2: { pre: "What evidence do you need ", em: "against an apartment complex", post: "?" },
     lede:
       "Apartment complexes generate documents at every step. Use that against them.",
-    photos: [
-      { id: "1554224155-1696413565d3", cap: "Lease + addendums" },
-      { id: "1505873242700-f289a29e1e0f", cap: "Move-out itemization" },
-      { id: "1564540586988-aa4e53c3d799", cap: "Common area photos" },
-      { id: "1517245386807-bb43f82c33c4", cap: "Manager texts" },
+    cells: [
+      {
+        kind: "handbook",
+        tag: "Lease clause (illegal)",
+        documentTitle: "Avalon Mission Bay · Lease Section 14.2",
+        sectionTitle: "Move-Out Cleaning Fee",
+        bodyParagraphs: [
+          "Tenant agrees to pay a flat $400 move-out cleaning fee deducted from the security deposit, regardless of unit condition.",
+        ],
+        highlight:
+          "Cal. Civ. Code § 1950.5 prohibits flat non-refundable cleaning fees deducted from a security deposit.",
+        footer: "Lease boilerplate · enforceability disputed",
+      },
+      {
+        kind: "texts",
+        tag: "Property manager",
+        texts: [
+          { dir: "in", text: "I never authorized a $400 cleaning fee." },
+          { dir: "out", text: "It's in your lease. Section 14.2." },
+          { dir: "in", text: "California Civ. Code 1950.5 limits that." },
+        ],
+      },
+      {
+        kind: "letter",
+        tag: "Complaint to corporate",
+        letterhead: "Tenant",
+        date: "April 18, 2026",
+        recipientName: "AvalonBay Communities Inc., Legal Department",
+        reLine: "Demand for refund of unauthorized fees, Apt 4218",
+        bodyParagraphs: [
+          "Section 14.2 of your standard lease violates Cal. Civ. Code § 1950.5. The $400 flat cleaning fee plus $800 'carpet replacement' deduction were both wrongful.",
+          "Refund $1,200 within 14 days. If not, I will file in Small Claims Court and request the matter be reviewed by your full portfolio.",
+        ],
+        signatory: "Tenant",
+      },
+      {
+        kind: "receipt",
+        tag: "Move-out statement",
+        vendor: "AVALON MISSION BAY",
+        vendorAddr: "Apt 4218 Move-out · SF, CA",
+        receiptNum: "Statement #M-7821",
+        date: "04/15/2026",
+        lineItems: [
+          { label: "Deposit refund", amount: "$300.00" },
+          { label: "Cleaning fee (disputed)", amount: "-$400.00" },
+          { label: "Carpet replacement (disputed)", amount: "-$800.00" },
+        ],
+        subtotal: "$300.00",
+        total: "$300.00",
+        footer: "Move-out statement · payment enclosed",
+      },
     ],
-    texts: [
-      { dir: "in", text: "I never authorized a $400 cleaning fee." },
-      { dir: "out", text: "It's in your lease. Section 14.2." },
-      { dir: "in", text: "California Civ. Code 1950.5 limits that." },
-    ],
-    receipt: {
-      vendor: "AVALON MISSION BAY",
-      vendorAddr: "Apt 4218 Move-out · SF, CA",
-      receiptNum: "Statement #M-7821",
-      date: "04/15/2026",
-      lineItems: [
-        { label: "Deposit refund", amount: "$300.00" },
-        { label: "Cleaning fee (disputed)", amount: "-$400.00" },
-        { label: "Carpet replacement (disputed)", amount: "-$800.00" },
-      ],
-      subtotal: "$300.00",
-      total: "$300.00",
-      footer: "Move-out statement · payment enclosed",
-    },
   },
 
   defenses: {

@@ -173,31 +173,56 @@ export const mold: LandlordIssue = {
     h2: { pre: "What evidence do you need to ", em: "win a mold case", post: "?" },
     lede:
       "Mold cases turn on documentation. Photos and timestamps win cases. Verbal complaints almost never do.",
-    photos: [
-      { id: "1597595272109-7c5d97caefb1", cap: "Bathroom mold" },
-      { id: "1607435543180-0b8d4ba79192", cap: "Ceiling stain" },
-      { id: "1556909038-0fa56b5b4cce", cap: "Wall growth" },
-      { id: "1503602642458-232111445657", cap: "Damaged drywall" },
+    cells: [
+      {
+        kind: "photos",
+        tag: "Mold photos (dated)",
+        photos: [
+          { id: "1597595272109-7c5d97caefb1", cap: "Bathroom mold" },
+          { id: "1607435543180-0b8d4ba79192", cap: "Ceiling stain" },
+          { id: "1556909038-0fa56b5b4cce", cap: "Wall growth" },
+          { id: "1503602642458-232111445657", cap: "Damaged drywall" },
+        ],
+      },
+      {
+        kind: "texts",
+        tag: "Notice to landlord",
+        texts: [
+          { dir: "in", text: "Mold is back in the bathroom." },
+          { dir: "out", text: "We'll send someone." },
+          { dir: "in", text: "It's been 3 weeks. Nothing." },
+        ],
+      },
+      {
+        kind: "letter",
+        tag: "Habitability notice",
+        letterhead: "Tenant",
+        date: "March 1, 2026",
+        recipientName: "Bayview Property Management",
+        reLine: "Habitability notice (Cal. Civ. Code § 1941)",
+        bodyParagraphs: [
+          "I have given verbal and text notice of mold in the bathroom three times since February 8. The condition has not been remediated.",
+          "If not fixed within 14 days, I will pursue rent abatement and damages under § 1941.",
+        ],
+        signatory: "M. Chen",
+      },
+      {
+        kind: "receipt",
+        tag: "Medical bills",
+        vendor: "BAY AREA URGENT CARE",
+        vendorAddr: "1500 Geary Blvd · SF, CA",
+        receiptNum: "Visit #38291",
+        date: "03/02/2026",
+        lineItems: [
+          { label: "Office visit", amount: "$185.00" },
+          { label: "Inhaler prescription", amount: "$48.00" },
+          { label: "Mold spore testing", amount: "$220.00" },
+        ],
+        subtotal: "$453.00",
+        total: "$453.00",
+        footer: "Thank you · receipt for tenant claim",
+      },
     ],
-    texts: [
-      { dir: "in", text: "Mold is back in the bathroom." },
-      { dir: "out", text: "We'll send someone." },
-      { dir: "in", text: "It's been 3 weeks. Nothing." },
-    ],
-    receipt: {
-      vendor: "BAY AREA URGENT CARE",
-      vendorAddr: "1500 Geary Blvd · SF, CA",
-      receiptNum: "Visit #38291",
-      date: "03/02/2026",
-      lineItems: [
-        { label: "Office visit", amount: "$185.00" },
-        { label: "Inhaler prescription", amount: "$48.00" },
-        { label: "Mold spore testing", amount: "$220.00" },
-      ],
-      subtotal: "$453.00",
-      total: "$453.00",
-      footer: "Thank you · receipt for tenant claim",
-    },
   },
 
   defenses: {

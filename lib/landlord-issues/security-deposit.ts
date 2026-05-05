@@ -172,31 +172,57 @@ export const securityDeposit: LandlordIssue = {
     h2: { pre: "What evidence do you need to ", em: "sue your landlord", post: "?" },
     lede:
       "Four kinds of proof do most of the work at a security-deposit hearing. Bring originals plus copies for the judge and the landlord.",
-    photos: [
-      { id: "1556909114-f6e7ad7d3136", cap: "Kitchen" },
-      { id: "1505873242700-f289a29e1e0f", cap: "Living room" },
-      { id: "1564540586988-aa4e53c3d799", cap: "Bathroom" },
-      { id: "1502672260266-1c1ef2d93688", cap: "Bedroom" },
+    cells: [
+      {
+        kind: "photos",
+        tag: "Move-in/out walkthrough",
+        photos: [
+          { id: "1556909114-f6e7ad7d3136", cap: "Kitchen at move-in" },
+          { id: "1505873242700-f289a29e1e0f", cap: "Living room (clean)" },
+          { id: "1564540586988-aa4e53c3d799", cap: "Bathroom (clean)" },
+          { id: "1502672260266-1c1ef2d93688", cap: "Bedroom (clean)" },
+        ],
+      },
+      {
+        kind: "texts",
+        tag: "Asking for the deposit",
+        texts: [
+          { dir: "in", text: "Hey, I'm moving out April 1. Sending forwarding address now." },
+          { dir: "out", text: "OK, will send deposit." },
+          { dir: "in", text: "It's been 30 days. Where is it?" },
+        ],
+      },
+      {
+        kind: "letter",
+        tag: "Forwarding address (certified)",
+        letterhead: "Jordan A. Tenant",
+        date: "April 1, 2026",
+        recipientName: "Oakwood Properties LLC",
+        recipientAddress: "1247 Mission St, SF, CA",
+        reLine: "Forwarding address for security deposit return",
+        bodyParagraphs: [
+          "I vacated the unit on March 31. Please send my $1,500 deposit (or itemized statement of deductions) to: 88 New Street, Oakland, CA 94612.",
+          "Per Cal. Civ. Code § 1950.5, the 21-day clock starts today.",
+        ],
+        signatory: "Jordan A. Tenant",
+      },
+      {
+        kind: "receipt",
+        tag: "Deposit receipt",
+        vendor: "OAKWOOD PROPERTIES",
+        vendorAddr: "1247 Mission St · SF, CA",
+        receiptNum: "Receipt #4827",
+        date: "03/15/2025",
+        lineItems: [
+          { label: "Security deposit", amount: "$1,500.00" },
+          { label: "First month rent", amount: "$2,200.00" },
+          { label: "Pet fee", amount: "$300.00" },
+        ],
+        subtotal: "$4,000.00",
+        total: "$4,000.00",
+        footer: "Cashier's check · thank you",
+      },
     ],
-    texts: [
-      { dir: "in", text: "Hey, I'm moving out April 1." },
-      { dir: "out", text: "OK, will send deposit." },
-      { dir: "in", text: "It's been 30 days..." },
-    ],
-    receipt: {
-      vendor: "OAKWOOD PROPERTIES",
-      vendorAddr: "1247 Mission St · SF, CA",
-      receiptNum: "Receipt #4827",
-      date: "03/15/2025",
-      lineItems: [
-        { label: "Security deposit", amount: "$1,500.00" },
-        { label: "First month rent", amount: "$2,200.00" },
-        { label: "Pet fee", amount: "$300.00" },
-      ],
-      subtotal: "$4,000.00",
-      total: "$4,000.00",
-      footer: "Cashier's check · thank you",
-    },
   },
 
   defenses: {

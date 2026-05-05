@@ -174,31 +174,56 @@ export const illegalLockout: LandlordIssue = {
     h2: { pre: "What evidence do you need to ", em: "win a lockout case", post: "?" },
     lede:
       "Lockout cases are timeline cases. Date stamps and receipts are decisive.",
-    photos: [
-      { id: "1554995207-c18c203602cb", cap: "Changed locks" },
-      { id: "1591486569404-c0a98c61f6ff", cap: "Hotel receipt" },
-      { id: "1591019479261-c10b4716a0ea", cap: "Belongings on curb" },
-      { id: "1554224155-1696413565d3", cap: "Lease document" },
+    cells: [
+      {
+        kind: "photos",
+        tag: "Lockout photos",
+        photos: [
+          { id: "1554995207-c18c203602cb", cap: "Changed locks" },
+          { id: "1591486569404-c0a98c61f6ff", cap: "Hotel receipt" },
+          { id: "1591019479261-c10b4716a0ea", cap: "Belongings on curb" },
+          { id: "1554224155-1696413565d3", cap: "Lease (paid current)" },
+        ],
+      },
+      {
+        kind: "texts",
+        tag: "Landlord admits",
+        texts: [
+          { dir: "out", text: "I rekeyed the place. You're done." },
+          { dir: "in", text: "You can't do that. I'll call the police." },
+          { dir: "out", text: "Go ahead, they can't help you." },
+        ],
+      },
+      {
+        kind: "letter",
+        tag: "Demand to restore access",
+        letterhead: "Tenant",
+        date: "March 23, 2026",
+        recipientName: "Landlord",
+        reLine: "Demand for restored access (Cal. Civ. Code § 789.3)",
+        bodyParagraphs: [
+          "You changed the locks at the unit on March 22 without a court order. This is an illegal lockout under § 789.3.",
+          "Restore access today. The penalty is $100 per day plus damages.",
+        ],
+        signatory: "Tenant",
+      },
+      {
+        kind: "receipt",
+        tag: "Hotel during lockout",
+        vendor: "STARLIGHT INN OAKLAND",
+        vendorAddr: "Webster St · Oakland, CA",
+        receiptNum: "Folio #92841",
+        date: "03/22-04/21/2026",
+        lineItems: [
+          { label: "30 nights @ $145", amount: "$4,350.00" },
+          { label: "Taxes & fees", amount: "$498.00" },
+          { label: "Pet fee", amount: "$210.00" },
+        ],
+        subtotal: "$5,058.00",
+        total: "$5,058.00",
+        footer: "Receipt for tenant claim · thank you",
+      },
     ],
-    texts: [
-      { dir: "out", text: "I rekeyed the place. You're done." },
-      { dir: "in", text: "You can't do that. I'll call the police." },
-      { dir: "out", text: "Go ahead, they can't help you." },
-    ],
-    receipt: {
-      vendor: "STARLIGHT INN OAKLAND",
-      vendorAddr: "Webster St · Oakland, CA",
-      receiptNum: "Folio #92841",
-      date: "03/22-04/21/2026",
-      lineItems: [
-        { label: "30 nights @ $145", amount: "$4,350.00" },
-        { label: "Taxes & fees", amount: "$498.00" },
-        { label: "Pet fee", amount: "$210.00" },
-      ],
-      subtotal: "$5,058.00",
-      total: "$5,058.00",
-      footer: "Receipt for tenant claim · thank you",
-    },
   },
 
   defenses: {

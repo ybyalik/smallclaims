@@ -174,12 +174,6 @@ export const lastPaycheck: EmployerIssue = {
     h2: { pre: "What evidence do you need to ", em: "sue your employer", post: "?" },
     lede:
       "Final-paycheck cases are won on three documents: the termination notice, the last paystub, and the handbook PTO policy.",
-    photos: [],
-    texts: [],
-    receipt: {
-      vendor: "", vendorAddr: "", receiptNum: "", date: "",
-      lineItems: [], subtotal: "", total: "", footer: "",
-    },
     cells: [
       {
         kind: "paystub",

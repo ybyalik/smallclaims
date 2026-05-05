@@ -173,31 +173,56 @@ export const harassment: LandlordIssue = {
     h2: { pre: "What evidence do you need to ", em: "win a harassment case", post: "?" },
     lede:
       "Harassment cases are pattern cases. Date logs and saved messages decide the outcome.",
-    photos: [
-      { id: "1601933470928-c84b1e09b73a", cap: "Door camera footage" },
-      { id: "1554224155-1696413565d3", cap: "Email screenshots" },
-      { id: "1591019479261-c10b4716a0ea", cap: "Property after entry" },
-      { id: "1517245386807-bb43f82c33c4", cap: "Text thread" },
+    cells: [
+      {
+        kind: "photos",
+        tag: "Door-cam + log",
+        photos: [
+          { id: "1601933470928-c84b1e09b73a", cap: "Door camera footage" },
+          { id: "1554224155-1696413565d3", cap: "Email screenshots" },
+          { id: "1591019479261-c10b4716a0ea", cap: "Property after entry" },
+          { id: "1517245386807-bb43f82c33c4", cap: "Text thread" },
+        ],
+      },
+      {
+        kind: "texts",
+        tag: "Landlord admits no notice",
+        texts: [
+          { dir: "out", text: "I'll be there in 10 minutes. Have to look at something." },
+          { dir: "in", text: "You need to give 24-hour notice." },
+          { dir: "out", text: "I'll come whenever I want. It's my building." },
+        ],
+      },
+      {
+        kind: "letter",
+        tag: "Cease and desist",
+        letterhead: "Tenant",
+        date: "March 14, 2026",
+        recipientName: "Landlord",
+        reLine: "Cease and desist (Cal. Civ. Code § 1940.2)",
+        bodyParagraphs: [
+          "You have entered my unit four times in the last 30 days without 24-hour written notice (incidents on Feb 18, Feb 26, Mar 4, Mar 12). § 1940.2 authorizes $2,000 per incident.",
+          "Stop unauthorized entry immediately. Future violations will be added to the claim.",
+        ],
+        signatory: "Tenant",
+      },
+      {
+        kind: "receipt",
+        tag: "Locksmith",
+        vendor: "ACE LOCKSMITH",
+        vendorAddr: "Mission St · SF, CA",
+        receiptNum: "Job #4127",
+        date: "03/15/2026",
+        lineItems: [
+          { label: "Re-key apartment door", amount: "$185.00" },
+          { label: "Smart deadbolt installation", amount: "$210.00" },
+          { label: "Service call", amount: "$45.00" },
+        ],
+        subtotal: "$440.00",
+        total: "$440.00",
+        footer: "Receipt for tenant claim · thank you",
+      },
     ],
-    texts: [
-      { dir: "out", text: "I'll be there in 10 minutes. Have to look at something." },
-      { dir: "in", text: "You need to give 24-hour notice." },
-      { dir: "out", text: "I'll come whenever I want. It's my building." },
-    ],
-    receipt: {
-      vendor: "ACE LOCKSMITH",
-      vendorAddr: "Mission St · SF, CA",
-      receiptNum: "Job #4127",
-      date: "03/15/2026",
-      lineItems: [
-        { label: "Re-key apartment door", amount: "$185.00" },
-        { label: "Smart deadbolt installation", amount: "$210.00" },
-        { label: "Service call", amount: "$45.00" },
-      ],
-      subtotal: "$440.00",
-      total: "$440.00",
-      footer: "Receipt for tenant claim · thank you",
-    },
   },
 
   defenses: {

@@ -173,31 +173,57 @@ export const emotionalDistress: LandlordIssue = {
     h2: { pre: "What evidence do you need to ", em: "win", post: "?" },
     lede:
       "Emotional-distress cases are evidence cases. Records, records, records.",
-    photos: [
-      { id: "1554224155-1696413565d3", cap: "Therapy receipts" },
-      { id: "1505873242700-f289a29e1e0f", cap: "Prescription bottle" },
-      { id: "1591019479261-c10b4716a0ea", cap: "Doctor's note" },
-      { id: "1517245386807-bb43f82c33c4", cap: "Text thread" },
+    cells: [
+      {
+        kind: "letter",
+        tag: "Provider note",
+        letterhead: "Dr. K. Singh, LMFT · License CA-LMFT-12345",
+        date: "March 18, 2026",
+        recipientName: "To Whom It May Concern",
+        reLine: "Patient: M. Chen · Treatment summary",
+        bodyParagraphs: [
+          "Patient has presented for weekly therapy since January 30, 2026 with symptoms consistent with acute anxiety disorder.",
+          "Patient describes sustained harassment and threats by their landlord. Symptoms include sleep disruption and panic attacks.",
+        ],
+        signatory: "Dr. K. Singh, LMFT",
+        signatoryTitle: "Licensed Marriage and Family Therapist",
+      },
+      {
+        kind: "texts",
+        tag: "Threats from landlord",
+        texts: [
+          { dir: "out", text: "If you don't pay by tomorrow, I'm calling ICE." },
+          { dir: "in", text: "I told you I paid yesterday." },
+          { dir: "out", text: "Then we'll see what happens." },
+        ],
+      },
+      {
+        kind: "handbook",
+        tag: "Quiet enjoyment statute",
+        documentTitle: "California Civil Code · § 1927",
+        sectionTitle: "Quiet possession",
+        bodyParagraphs: [
+          "An agreement to let upon hire binds the lessor to secure to the lessee the quiet possession of the thing hired during the term of the hiring, against all persons lawfully claiming the same.",
+        ],
+        highlight: "Threats and harassment by the landlord breach quiet enjoyment.",
+      },
+      {
+        kind: "receipt",
+        tag: "Therapy & meds",
+        vendor: "BAY AREA THERAPY GROUP",
+        vendorAddr: "Polk St · SF, CA",
+        receiptNum: "Statement #4827",
+        date: "Q1 2026",
+        lineItems: [
+          { label: "8 therapy sessions @ $185", amount: "$1,480.00" },
+          { label: "Psychiatric evaluation", amount: "$420.00" },
+          { label: "Lexapro 10mg, 90-day supply", amount: "$300.00" },
+        ],
+        subtotal: "$2,200.00",
+        total: "$2,200.00",
+        footer: "Receipt for tenant claim · thank you",
+      },
     ],
-    texts: [
-      { dir: "out", text: "If you don't pay by tomorrow, I'm calling ICE." },
-      { dir: "in", text: "I told you I paid yesterday." },
-      { dir: "out", text: "Then we'll see what happens." },
-    ],
-    receipt: {
-      vendor: "BAY AREA THERAPY GROUP",
-      vendorAddr: "Polk St · SF, CA",
-      receiptNum: "Statement #4827",
-      date: "Q1 2026",
-      lineItems: [
-        { label: "8 therapy sessions @ $185", amount: "$1,480.00" },
-        { label: "Psychiatric evaluation", amount: "$420.00" },
-        { label: "Lexapro 10mg, 90-day supply", amount: "$300.00" },
-      ],
-      subtotal: "$2,200.00",
-      total: "$2,200.00",
-      footer: "Receipt for tenant claim · thank you",
-    },
   },
 
   defenses: {

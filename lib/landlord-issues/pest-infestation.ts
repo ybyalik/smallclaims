@@ -14,7 +14,7 @@ export const pestInfestation: LandlordIssue = {
 
   hero: {
     eyebrowSuffix: "Pest infestation",
-    h1: { pre: "Can I sue my landlord for ", em: "roaches", post: "?" },
+    h1: { pre: "Can I sue my landlord for a ", em: "pest infestation", post: "?" },
     leadStrong: "Yes, you can sue your landlord for a pest infestation",
     leadBody:
       " when they failed to remediate after written notice. Roaches, bed bugs, mice, and rats are habitability violations in every state. Recover extermination costs, replaced furniture and clothing, rent abatement, and medical bills if you got bitten.",
@@ -173,31 +173,56 @@ export const pestInfestation: LandlordIssue = {
     h2: { pre: "What evidence do you need to ", em: "win a pest case", post: "?" },
     lede:
       "Pest cases turn on documentation. Photos, dated reports, and (for bed bugs) physical samples are decisive.",
-    photos: [
-      { id: "1606987474440-2cdd8d144d8a", cap: "Bed bug bites" },
-      { id: "1597764069442-99e4adb2bbab", cap: "Roach in kitchen" },
-      { id: "1576570095594-50aaffabb6c7", cap: "Mouse droppings" },
-      { id: "1612874742237-6526221588e3", cap: "Damaged mattress" },
+    cells: [
+      {
+        kind: "photos",
+        tag: "Pest photos (dated)",
+        photos: [
+          { id: "1606987474440-2cdd8d144d8a", cap: "Bed bug bites" },
+          { id: "1597764069442-99e4adb2bbab", cap: "Roach in kitchen" },
+          { id: "1576570095594-50aaffabb6c7", cap: "Mouse droppings" },
+          { id: "1612874742237-6526221588e3", cap: "Damaged mattress" },
+        ],
+      },
+      {
+        kind: "texts",
+        tag: "Notice to landlord",
+        texts: [
+          { dir: "in", text: "Bed bugs again. Three weeks now." },
+          { dir: "out", text: "We sprayed already. Nothing else we can do." },
+          { dir: "in", text: "Bites are getting worse." },
+        ],
+      },
+      {
+        kind: "letter",
+        tag: "Written notice (certified)",
+        letterhead: "Tenant",
+        date: "April 1, 2026",
+        recipientName: "Landlord",
+        reLine: "Bed bug infestation (Cal. Civ. Code § 1941)",
+        bodyParagraphs: [
+          "Bed bug activity has continued for three weeks despite one spray treatment. Bites are documented (photos attached).",
+          "Please retain a licensed exterminator and conduct a full unit treatment within 7 days.",
+        ],
+        signatory: "Tenant",
+      },
+      {
+        kind: "receipt",
+        tag: "Mattress replacement",
+        vendor: "MATTRESS WAREHOUSE",
+        vendorAddr: "Geneva Ave · SF, CA",
+        receiptNum: "Order #82741",
+        date: "04/15/2026",
+        lineItems: [
+          { label: "Queen mattress", amount: "$899.00" },
+          { label: "Box spring", amount: "$249.00" },
+          { label: "Encasement set", amount: "$120.00" },
+        ],
+        subtotal: "$1,268.00",
+        total: "$1,268.00",
+        footer: "Receipt for tenant claim · thank you",
+      },
     ],
-    texts: [
-      { dir: "in", text: "Bed bugs again. Three weeks now." },
-      { dir: "out", text: "We sprayed already. Nothing else we can do." },
-      { dir: "in", text: "Bites are getting worse." },
-    ],
-    receipt: {
-      vendor: "MATTRESS WAREHOUSE",
-      vendorAddr: "Geneva Ave · SF, CA",
-      receiptNum: "Order #82741",
-      date: "04/15/2026",
-      lineItems: [
-        { label: "Queen mattress", amount: "$899.00" },
-        { label: "Box spring", amount: "$249.00" },
-        { label: "Encasement set", amount: "$120.00" },
-      ],
-      subtotal: "$1,268.00",
-      total: "$1,268.00",
-      footer: "Receipt for tenant claim · thank you",
-    },
   },
 
   defenses: {

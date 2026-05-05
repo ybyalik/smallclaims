@@ -175,12 +175,6 @@ export const noW2: EmployerIssue = {
     h2: { pre: "What evidence do you need to ", em: "sue your employer", post: "?" },
     lede:
       "W-2 cases are built on the year-end paystub, your tax-prep receipts, and proof that you asked for the W-2.",
-    photos: [],
-    texts: [],
-    receipt: {
-      vendor: "", vendorAddr: "", receiptNum: "", date: "",
-      lineItems: [], subtotal: "", total: "", footer: "",
-    },
     cells: [
       {
         kind: "paystub",

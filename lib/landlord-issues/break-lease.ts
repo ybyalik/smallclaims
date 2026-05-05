@@ -174,31 +174,56 @@ export const breakLease: LandlordIssue = {
     h2: { pre: "What evidence do you need to ", em: "break your lease", post: "?" },
     lede:
       "The right evidence depends on the ground. Habitability cases need photos. Harassment cases need a log. Military cases need orders.",
-    photos: [
-      { id: "1554224155-1696413565d3", cap: "Lease + termination letter" },
-      { id: "1607435543180-0b8d4ba79192", cap: "Habitability photos" },
-      { id: "1591019479261-c10b4716a0ea", cap: "Police report (DV)" },
-      { id: "1517245386807-bb43f82c33c4", cap: "Maintenance request log" },
+    cells: [
+      {
+        kind: "letter",
+        tag: "30-day termination notice",
+        letterhead: "Tenant",
+        date: "April 21, 2026",
+        recipientName: "Landlord",
+        reLine: "Notice of Termination (constructive eviction · Cal. Civ. Code § 1941)",
+        bodyParagraphs: [
+          "A sewage leak in the bathroom has gone unrepaired for three weeks despite multiple written notices. The unit is no longer habitable.",
+          "I am terminating the lease effective May 21, 2026. The deposit and any prepaid rent must be returned per § 1950.5.",
+        ],
+        signatory: "Tenant",
+      },
+      {
+        kind: "texts",
+        tag: "Conditions and notice",
+        texts: [
+          { dir: "in", text: "Sewage leak in bathroom for 3 weeks. Need to terminate." },
+          { dir: "out", text: "We're working on it." },
+          { dir: "in", text: "30-day notice attached. Terminating." },
+        ],
+      },
+      {
+        kind: "photos",
+        tag: "Habitability photos",
+        photos: [
+          { id: "1607435543180-0b8d4ba79192", cap: "Bathroom damage" },
+          { id: "1597595272109-7c5d97caefb1", cap: "Mold growth" },
+          { id: "1591019479261-c10b4716a0ea", cap: "Plumbing failure" },
+          { id: "1554224155-1696413565d3", cap: "City inspection" },
+        ],
+      },
+      {
+        kind: "receipt",
+        tag: "Moving costs",
+        vendor: "BAYSIDE MOVING & STORAGE",
+        vendorAddr: "Treasure Island · SF, CA",
+        receiptNum: "Job #M-7821",
+        date: "05/21/2026",
+        lineItems: [
+          { label: "Local move (1-bedroom)", amount: "$1,400.00" },
+          { label: "Packing supplies", amount: "$120.00" },
+          { label: "Storage (1 month)", amount: "$280.00" },
+        ],
+        subtotal: "$1,800.00",
+        total: "$1,800.00",
+        footer: "Receipt for tenant claim · thank you",
+      },
     ],
-    texts: [
-      { dir: "in", text: "Sewage leak in bathroom for 3 weeks. Need to terminate." },
-      { dir: "out", text: "We're working on it." },
-      { dir: "in", text: "30-day notice attached. Terminating." },
-    ],
-    receipt: {
-      vendor: "BAYSIDE MOVING & STORAGE",
-      vendorAddr: "Treasure Island · SF, CA",
-      receiptNum: "Job #M-7821",
-      date: "05/21/2026",
-      lineItems: [
-        { label: "Local move (1-bedroom)", amount: "$1,400.00" },
-        { label: "Packing supplies", amount: "$120.00" },
-        { label: "Storage (1 month)", amount: "$280.00" },
-      ],
-      subtotal: "$1,800.00",
-      total: "$1,800.00",
-      footer: "Receipt for tenant claim · thank you",
-    },
   },
 
   defenses: {

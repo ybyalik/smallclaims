@@ -174,12 +174,6 @@ export const stolenTips: EmployerIssue = {
     h2: { pre: "What evidence do you need to ", em: "sue your employer", post: "?" },
     lede:
       "Tip cases turn on credit-card slips, tip-out logs, and coworker testimony. The math is usually clean if records exist.",
-    photos: [],
-    texts: [],
-    receipt: {
-      vendor: "", vendorAddr: "", receiptNum: "", date: "",
-      lineItems: [], subtotal: "", total: "", footer: "",
-    },
     cells: [
       {
         kind: "receipt",

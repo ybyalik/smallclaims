@@ -174,31 +174,51 @@ export const wrongfulEviction: LandlordIssue = {
     h2: { pre: "What evidence do you need to ", em: "win", post: " a wrongful-eviction case?" },
     lede:
       "Wrongful-eviction cases turn on the timeline. Every receipt and every text matters.",
-    photos: [
-      { id: "1554995207-c18c203602cb", cap: "Changed locks" },
-      { id: "1591486569404-c0a98c61f6ff", cap: "Hotel receipt" },
-      { id: "1556909114-f6e7ad7d3136", cap: "Moving day" },
-      { id: "1554224155-1696413565d3", cap: "Lease document" },
+    cells: [
+      {
+        kind: "letter",
+        tag: "Bogus eviction notice",
+        letterhead: "Landlord",
+        date: "April 6, 2026",
+        recipientName: "Tenant",
+        reLine: "Notice to vacate (no court order)",
+        bodyParagraphs: [
+          "You have 24 hours to vacate. The locks will be changed. Your belongings will be removed.",
+          "This is final.",
+        ],
+        signatory: "R. Voss",
+        signatoryTitle: "Owner",
+      },
+      {
+        kind: "texts",
+        tag: "Threats from landlord",
+        texts: [
+          { dir: "out", text: "I changed the locks. You're out." },
+          { dir: "in", text: "That's illegal without a court order." },
+          { dir: "out", text: "Don't care. Get out." },
+        ],
+      },
+      {
+        kind: "document",
+        tag: "Your lease (paid in full)",
+      },
+      {
+        kind: "receipt",
+        tag: "Hotel costs",
+        vendor: "STARLIGHT INN",
+        vendorAddr: "Embarcadero · SF, CA",
+        receiptNum: "Folio #82741",
+        date: "04/07-04/14/2026",
+        lineItems: [
+          { label: "7 nights @ $189", amount: "$1,323.00" },
+          { label: "Taxes & fees", amount: "$211.00" },
+          { label: "Parking", amount: "$140.00" },
+        ],
+        subtotal: "$1,674.00",
+        total: "$1,674.00",
+        footer: "Receipt for tenant claim · thank you",
+      },
     ],
-    texts: [
-      { dir: "out", text: "I changed the locks. You're out." },
-      { dir: "in", text: "That's illegal without a court order." },
-      { dir: "out", text: "Don't care. Get out." },
-    ],
-    receipt: {
-      vendor: "STARLIGHT INN",
-      vendorAddr: "Embarcadero · SF, CA",
-      receiptNum: "Folio #82741",
-      date: "04/07-04/14/2026",
-      lineItems: [
-        { label: "7 nights @ $189", amount: "$1,323.00" },
-        { label: "Taxes & fees", amount: "$211.00" },
-        { label: "Parking", amount: "$140.00" },
-      ],
-      subtotal: "$1,674.00",
-      total: "$1,674.00",
-      footer: "Receipt for tenant claim · thank you",
-    },
   },
 
   defenses: {

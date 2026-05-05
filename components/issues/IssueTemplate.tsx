@@ -284,79 +284,13 @@ export default function IssueTemplate({ issue, category, siblings }: Props) {
             <H2 parts={issue.evidence.h2} />
             <p>{issue.evidence.lede}</p>
           </div>
-          {issue.evidence.cells && issue.evidence.cells.length > 0 ? (
-            <div className="sv-bento cv2-evidence-bento cv2-evidence-flex">
-              {issue.evidence.cells.slice(0, 4).map((cell, i) => (
-                <div key={i} className={`sv-bento-cell evidence-slot-${i + 1}`}>
-                  <EvidenceCellView cell={cell} category={category} />
-                </div>
-              ))}
-            </div>
-          ) : (
-            <div className="sv-bento cv2-evidence-bento">
-              <div className="sv-bento-cell sv-bento-photos">
-                <div className="sv-bento-tag">Photos</div>
-                <div className="sv-bento-grid">
-                  {issue.evidence.photos.map((p) => (
-                    <div
-                      key={p.id}
-                      className="sv-bento-thumb"
-                      style={{ backgroundImage: `url(https://images.unsplash.com/photo-${p.id}?w=400&h=400&fit=crop)` }}
-                      title={p.cap}
-                    />
-                  ))}
-                </div>
+          <div className="sv-bento cv2-evidence-bento cv2-evidence-flex">
+            {issue.evidence.cells.slice(0, 4).map((cell, i) => (
+              <div key={i} className={`sv-bento-cell evidence-slot-${i + 1}`}>
+                <EvidenceCellView cell={cell} category={category} />
               </div>
-              <div className="sv-bento-cell sv-bento-texts">
-                <div className="sv-bento-tag">Texts</div>
-                {issue.evidence.texts.map((t, i) => (
-                  <div key={i} className={`sv-bento-bubble ${t.dir}`}>{t.text}</div>
-                ))}
-              </div>
-              <div className="sv-bento-cell sv-bento-lease">
-                <div className="sv-bento-tag">Document</div>
-                <div className="sv-bento-doc">
-                  <div className="sv-bento-doc-line" />
-                  <div className="sv-bento-doc-line short" />
-                  <div className="sv-bento-doc-line" />
-                  <div className="sv-bento-doc-line short" />
-                  <div className="sv-bento-doc-sig">/s/ {category.signatoryLabel} signature</div>
-                </div>
-              </div>
-              <div className="sv-bento-cell cv2-receipt-cell">
-                <div className="sv-bento-tag">Receipt</div>
-                <div className="cv2-receipt">
-                  <div className="cv2-receipt-top">
-                    <strong>{issue.evidence.receipt.vendor}</strong>
-                    <span>{issue.evidence.receipt.vendorAddr}</span>
-                  </div>
-                  <div className="cv2-receipt-meta">
-                    <span>{issue.evidence.receipt.receiptNum}</span>
-                    <span>{issue.evidence.receipt.date}</span>
-                  </div>
-                  <div className="cv2-receipt-rule" />
-                  {issue.evidence.receipt.lineItems.map((li) => (
-                    <div key={li.label} className="cv2-receipt-row">
-                      <span>{li.label}</span>
-                      <span>{li.amount}</span>
-                    </div>
-                  ))}
-                  <div className="cv2-receipt-rule dashed" />
-                  <div className="cv2-receipt-row">
-                    <span>Subtotal</span>
-                    <span>{issue.evidence.receipt.subtotal}</span>
-                  </div>
-                  <div className="cv2-receipt-rule" />
-                  <div className="cv2-receipt-row total">
-                    <span>TOTAL</span>
-                    <span>{issue.evidence.receipt.total}</span>
-                  </div>
-                  <div className="cv2-receipt-stamp">PAID</div>
-                  <div className="cv2-receipt-footer">{issue.evidence.receipt.footer}</div>
-                </div>
-              </div>
-            </div>
-          )}
+            ))}
+          </div>
         </section>
 
         {/* DEFENSES */}
