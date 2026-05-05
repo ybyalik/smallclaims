@@ -238,6 +238,21 @@ export default function SiteHeaderInner({ user }: { user: SiteHeaderUser | null 
           <Link href="/small-claims/auto" onClick={() => setOpen(false)}>
             Auto disputes
           </Link>
+          <Link href="/small-claims/neighbor" onClick={() => setOpen(false)}>
+            Neighbor disputes
+          </Link>
+          <Link href="/small-claims/personal-loan" onClick={() => setOpen(false)}>
+            Personal loan disputes
+          </Link>
+          <Link href="/small-claims/roommate" onClick={() => setOpen(false)}>
+            Roommate disputes
+          </Link>
+          <Link href="/small-claims/online-seller" onClick={() => setOpen(false)}>
+            Online seller disputes
+          </Link>
+          <Link href="/small-claims/refund" onClick={() => setOpen(false)}>
+            Refund disputes
+          </Link>
           <Link href="/demand-letter" onClick={() => setOpen(false)}>
             Demand letter
           </Link>

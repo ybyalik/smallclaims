@@ -6,6 +6,11 @@ import { ISSUES } from "../lib/landlord-issues";
 import { EMPLOYER_ISSUES } from "../lib/employer-issues";
 import { CONTRACTOR_ISSUES } from "../lib/contractor-issues";
 import { AUTO_ISSUES } from "../lib/auto-issues";
+import { NEIGHBOR_ISSUES } from "../lib/neighbor-issues";
+import { PERSONAL_LOAN_ISSUES } from "../lib/personal-loan-issues";
+import { ROOMMATE_ISSUES } from "../lib/roommate-issues";
+import { ONLINE_SELLER_ISSUES } from "../lib/online-seller-issues";
+import { REFUND_ISSUES } from "../lib/refund-issues";
 
 const BASE = "https://civilcase.com";
 
@@ -65,6 +70,41 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }));
 
+  const neighborUrls: MetadataRoute.Sitemap = NEIGHBOR_ISSUES.filter((i) => i.ready).map((i) => ({
+    url: `${BASE}/small-claims/sue-neighbor-${i.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.8,
+  }));
+
+  const personalLoanUrls: MetadataRoute.Sitemap = PERSONAL_LOAN_ISSUES.filter((i) => i.ready).map((i) => ({
+    url: `${BASE}/small-claims/sue-loan-${i.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.8,
+  }));
+
+  const roommateUrls: MetadataRoute.Sitemap = ROOMMATE_ISSUES.filter((i) => i.ready).map((i) => ({
+    url: `${BASE}/small-claims/sue-roommate-${i.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.8,
+  }));
+
+  const onlineSellerUrls: MetadataRoute.Sitemap = ONLINE_SELLER_ISSUES.filter((i) => i.ready).map((i) => ({
+    url: `${BASE}/small-claims/sue-seller-${i.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.8,
+  }));
+
+  const refundUrls: MetadataRoute.Sitemap = REFUND_ISSUES.filter((i) => i.ready).map((i) => ({
+    url: `${BASE}/small-claims/sue-refund-${i.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.8,
+  }));
+
   const blogPosts = await publishedBlogPosts();
   const blogUrls: MetadataRoute.Sitemap = blogPosts.map((p) => ({
     url: `${BASE}/blog/${p.slug}`,
@@ -85,6 +125,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...contractorUrls,
     { url: `${BASE}/small-claims/auto`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
     ...autoUrls,
+    { url: `${BASE}/small-claims/neighbor`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    ...neighborUrls,
+    { url: `${BASE}/small-claims/personal-loan`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    ...personalLoanUrls,
+    { url: `${BASE}/small-claims/roommate`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    ...roommateUrls,
+    { url: `${BASE}/small-claims/online-seller`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    ...onlineSellerUrls,
+    { url: `${BASE}/small-claims/refund`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    ...refundUrls,
     { url: `${BASE}/demand-letter`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/blog`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
     { url: `${BASE}/about`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },

@@ -45,6 +45,31 @@ const nextConfig = {
         destination: "/small-claims/sue-auto-:issue",
         permanent: true,
       },
+      {
+        source: "/small-claims/neighbor/:issue",
+        destination: "/small-claims/sue-neighbor-:issue",
+        permanent: true,
+      },
+      {
+        source: "/small-claims/personal-loan/:issue",
+        destination: "/small-claims/sue-loan-:issue",
+        permanent: true,
+      },
+      {
+        source: "/small-claims/roommate/:issue",
+        destination: "/small-claims/sue-roommate-:issue",
+        permanent: true,
+      },
+      {
+        source: "/small-claims/online-seller/:issue",
+        destination: "/small-claims/sue-seller-:issue",
+        permanent: true,
+      },
+      {
+        source: "/small-claims/refund/:issue",
+        destination: "/small-claims/sue-refund-:issue",
+        permanent: true,
+      },
     ];
   },
   async rewrites() {
@@ -64,6 +89,26 @@ const nextConfig = {
       {
         source: "/small-claims/sue-auto-:issue",
         destination: "/small-claims/auto/:issue",
+      },
+      {
+        source: "/small-claims/sue-neighbor-:issue",
+        destination: "/small-claims/neighbor/:issue",
+      },
+      {
+        source: "/small-claims/sue-loan-:issue",
+        destination: "/small-claims/personal-loan/:issue",
+      },
+      {
+        source: "/small-claims/sue-roommate-:issue",
+        destination: "/small-claims/roommate/:issue",
+      },
+      {
+        source: "/small-claims/sue-seller-:issue",
+        destination: "/small-claims/online-seller/:issue",
+      },
+      {
+        source: "/small-claims/sue-refund-:issue",
+        destination: "/small-claims/refund/:issue",
       },
     ];
   },

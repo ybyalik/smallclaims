@@ -58,3 +58,53 @@ export const AUTO_CATEGORY: CategoryMeta = {
   audienceLabel: "drivers",
   relatedH2Em: "sue over a car",
 };
+
+export const NEIGHBOR_CATEGORY: CategoryMeta = {
+  hubLabel: "Neighbor Disputes",
+  hubHref: "/small-claims/neighbor",
+  urlPrefix: "sue-neighbor-",
+  defensesTocLabel: "Neighbor defenses",
+  signatoryLabel: "Owner",
+  audienceLabel: "homeowners",
+  relatedH2Em: "sue your neighbor",
+};
+
+export const PERSONAL_LOAN_CATEGORY: CategoryMeta = {
+  hubLabel: "Personal Loan Disputes",
+  hubHref: "/small-claims/personal-loan",
+  urlPrefix: "sue-loan-",
+  defensesTocLabel: "Borrower defenses",
+  signatoryLabel: "Lender",
+  audienceLabel: "lenders",
+  relatedH2Em: "recover money owed",
+};
+
+export const ROOMMATE_CATEGORY: CategoryMeta = {
+  hubLabel: "Roommate Disputes",
+  hubHref: "/small-claims/roommate",
+  urlPrefix: "sue-roommate-",
+  defensesTocLabel: "Roommate defenses",
+  signatoryLabel: "Roommate",
+  audienceLabel: "roommates",
+  relatedH2Em: "sue your roommate",
+};
+
+export const ONLINE_SELLER_CATEGORY: CategoryMeta = {
+  hubLabel: "Online Seller Disputes",
+  hubHref: "/small-claims/online-seller",
+  urlPrefix: "sue-seller-",
+  defensesTocLabel: "Seller defenses",
+  signatoryLabel: "Buyer",
+  audienceLabel: "buyers",
+  relatedH2Em: "sue an online seller",
+};
+
+export const REFUND_CATEGORY: CategoryMeta = {
+  hubLabel: "Refund Disputes",
+  hubHref: "/small-claims/refund",
+  urlPrefix: "sue-refund-",
+  defensesTocLabel: "Business defenses",
+  signatoryLabel: "Customer",
+  audienceLabel: "customers",
+  relatedH2Em: "get a refund",
+};
