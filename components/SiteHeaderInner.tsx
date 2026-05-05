@@ -229,6 +229,9 @@ export default function SiteHeaderInner({ user }: { user: SiteHeaderUser | null 
           <Link href="/small-claims/landlord" onClick={() => setOpen(false)}>
             Landlord disputes
           </Link>
+          <Link href="/small-claims/employer" onClick={() => setOpen(false)}>
+            Employer disputes
+          </Link>
           <Link href="/demand-letter" onClick={() => setOpen(false)}>
             Demand letter
           </Link>

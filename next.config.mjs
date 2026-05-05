@@ -30,17 +30,22 @@ const nextConfig = {
         destination: "/small-claims/sue-landlord-:issue",
         permanent: true,
       },
+      {
+        source: "/small-claims/employer/:issue",
+        destination: "/small-claims/sue-employer-:issue",
+        permanent: true,
+      },
     ];
   },
   async rewrites() {
     return [
-      // The actual route handler still lives at /small-claims/landlord/[issue].
-      // This rewrite serves the same handler when users hit the new flatter
-      // /small-claims/sue-landlord-<slug> URL while the browser keeps showing
-      // the new URL. Redirect above sends old URL traffic here first.
       {
         source: "/small-claims/sue-landlord-:issue",
         destination: "/small-claims/landlord/:issue",
+      },
+      {
+        source: "/small-claims/sue-employer-:issue",
+        destination: "/small-claims/employer/:issue",
       },
     ];
   },

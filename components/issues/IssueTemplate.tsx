@@ -5,7 +5,7 @@ import CountUp from "../widgets/CountUp";
 import { availableStateSlugs } from "../../lib/state-data";
 import { getDepositStateTable } from "../../lib/deposit-state-table";
 import type { LandlordIssue } from "../../lib/landlord-issues/types";
-import { getIssue } from "../../lib/landlord-issues";
+import type { CategoryMeta } from "../../lib/issues/categories";
 
 const FEATURED_STATE_SLUGS = [
   "california", "texas", "florida", "new-york", "pennsylvania",
@@ -14,18 +14,16 @@ const FEATURED_STATE_SLUGS = [
 
 interface Props {
   issue: LandlordIssue;
+  category: CategoryMeta;
+  siblings: LandlordIssue[];
 }
 
-export default function LandlordIssueTemplate({ issue }: Props) {
+export default function IssueTemplate({ issue, category, siblings }: Props) {
   const ready = new Set(availableStateSlugs());
   const depositRows = issue.stateSection?.kind === "us-map" ? getDepositStateTable() : [];
   const featuredDepositRows = FEATURED_STATE_SLUGS
     .map((slug) => depositRows.find((r) => r.slug === slug))
     .filter((r): r is NonNullable<typeof r> => Boolean(r));
-
-  const sibs = issue.relatedSlugs
-    .map((slug) => getIssue(slug))
-    .filter((s): s is LandlordIssue => s !== null);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -72,7 +70,7 @@ export default function LandlordIssueTemplate({ issue }: Props) {
           <li><a href="#before">Before you sue</a></li>
           <li><a href="#how">How to file</a></li>
           <li><a href="#evidence">Evidence checklist</a></li>
-          <li><a href="#defenses">Landlord defenses</a></li>
+          <li><a href="#defenses">{category.defensesTocLabel}</a></li>
           <li><a href="#outcomes">Realistic outcomes</a></li>
           {issue.stateSection ? <li><a href="#state">State rules</a></li> : null}
           <li><a href="#alternatives">Alternatives</a></li>
@@ -86,7 +84,7 @@ export default function LandlordIssueTemplate({ issue }: Props) {
         <Breadcrumbs
           items={[
             { href: "/small-claims", label: "Small Claims" },
-            { href: "/small-claims/landlord", label: "Landlord disputes" },
+            { href: category.hubHref, label: category.hubLabel },
             { label: issue.breadcrumbLabel },
           ]}
         />
@@ -94,7 +92,7 @@ export default function LandlordIssueTemplate({ issue }: Props) {
         {/* HERO */}
         <header className="cv2-hero">
           <div className="cv2-hero-main">
-            <span className="eyebrow">Landlord disputes · {issue.hero.eyebrowSuffix}</span>
+            <span className="eyebrow">{category.hubLabel} · {issue.hero.eyebrowSuffix}</span>
             <h1>
               {issue.hero.h1.pre}<em>{issue.hero.h1.em}</em>{issue.hero.h1.post ?? ""}
             </h1>
@@ -307,13 +305,13 @@ export default function LandlordIssueTemplate({ issue }: Props) {
               ))}
             </div>
             <div className="sv-bento-cell sv-bento-lease">
-              <div className="sv-bento-tag">Lease</div>
+              <div className="sv-bento-tag">Document</div>
               <div className="sv-bento-doc">
                 <div className="sv-bento-doc-line" />
                 <div className="sv-bento-doc-line short" />
                 <div className="sv-bento-doc-line" />
                 <div className="sv-bento-doc-line short" />
-                <div className="sv-bento-doc-sig">/s/ Tenant signature</div>
+                <div className="sv-bento-doc-sig">/s/ {category.signatoryLabel} signature</div>
               </div>
             </div>
             <div className="sv-bento-cell cv2-receipt-cell">
@@ -499,7 +497,7 @@ export default function LandlordIssueTemplate({ issue }: Props) {
               <span className="eyebrow">FAQ</span>
               <h2>Frequently <em>asked</em>.</h2>
               <p>
-                The questions tenants actually ask before filing.{" "}
+                The questions {category.audienceLabel} actually ask before filing.{" "}
                 <Link href="/contact" className="cat-text-link">Email support</Link>{" "}
                 if yours isn&rsquo;t here.
               </p>
@@ -519,12 +517,12 @@ export default function LandlordIssueTemplate({ issue }: Props) {
         <section id="related" className="cat-section">
           <div className="cat-stack-head">
             <span className="eyebrow">Related claims</span>
-            <h2>Other ways to <em>sue your landlord</em>.</h2>
+            <h2>Other ways to <em>{category.relatedH2Em}</em>.</h2>
             <p>If your dispute is not about {issue.short.toLowerCase()}, one of these guides probably fits.</p>
           </div>
           <div className="cv2-related">
-            {sibs.map((sib) => (
-              <Link key={sib.slug} href={`/small-claims/sue-landlord-${sib.slug}`} className="cv2-related-card">
+            {siblings.map((sib) => (
+              <Link key={sib.slug} href={`/small-claims/${category.urlPrefix}${sib.slug}`} className="cv2-related-card">
                 <span className="cv2-related-label">{sib.short}</span>
                 <strong>
                   {sib.hero.h1.pre}{sib.hero.h1.em}{sib.hero.h1.post ?? ""}

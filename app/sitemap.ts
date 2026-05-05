@@ -3,6 +3,7 @@ import { STATES } from "../lib/states";
 import { availableStateSlugs } from "../lib/state-data";
 import { createClient } from "../lib/supabase/server";
 import { ISSUES } from "../lib/landlord-issues";
+import { EMPLOYER_ISSUES } from "../lib/employer-issues";
 
 const BASE = "https://civilcase.com";
 
@@ -41,6 +42,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }));
 
+  const employerUrls: MetadataRoute.Sitemap = EMPLOYER_ISSUES.filter((i) => i.ready).map((i) => ({
+    url: `${BASE}/small-claims/sue-employer-${i.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.8,
+  }));
+
   const blogPosts = await publishedBlogPosts();
   const blogUrls: MetadataRoute.Sitemap = blogPosts.map((p) => ({
     url: `${BASE}/blog/${p.slug}`,
@@ -55,6 +63,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE}/small-claims`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${BASE}/small-claims/landlord`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
     ...landlordUrls,
+    { url: `${BASE}/small-claims/employer`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    ...employerUrls,
     { url: `${BASE}/demand-letter`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/blog`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
     { url: `${BASE}/about`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
