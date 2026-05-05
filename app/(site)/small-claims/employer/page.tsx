@@ -42,7 +42,7 @@ const ISSUES = [
         <path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
       </svg>
     ),
-    ready: false,
+    ready: true,
   },
   {
     slug: "emotional-distress",
@@ -55,7 +55,7 @@ const ISSUES = [
         <path d="M9 9.5l1 1M15 9.5l-1 1M8 16s1.5-2 4-2 4 2 4 2" />
       </svg>
     ),
-    ready: false,
+    ready: true,
   },
   {
     slug: "hostile-work-environment",
@@ -68,7 +68,7 @@ const ISSUES = [
         <path d="M8 9h8M8 13h6" />
       </svg>
     ),
-    ready: false,
+    ready: true,
   },
   {
     slug: "retaliation",
@@ -80,7 +80,7 @@ const ISSUES = [
         <path d="M2 12l5-5v3h7V7l5 5-5 5v-3H7v3z" />
       </svg>
     ),
-    ready: false,
+    ready: true,
   },
   {
     slug: "unpaid-wages",
@@ -93,7 +93,7 @@ const ISSUES = [
         <path d="M3 10h18M8 15h2M14 15h2" />
       </svg>
     ),
-    ready: false,
+    ready: true,
   },
   {
     slug: "no-w2",
@@ -106,7 +106,7 @@ const ISSUES = [
         <path d="M14 3v6h6M9 13h6M9 17h6" />
       </svg>
     ),
-    ready: false,
+    ready: true,
   },
   {
     slug: "unsafe-working-conditions",
@@ -119,7 +119,7 @@ const ISSUES = [
         <path d="M12 9v6M12 18h.01" />
       </svg>
     ),
-    ready: false,
+    ready: true,
   },
   {
     slug: "last-paycheck",
@@ -132,7 +132,7 @@ const ISSUES = [
         <path d="M3 10h18M16 14h2" />
       </svg>
     ),
-    ready: false,
+    ready: true,
   },
   {
     slug: "stolen-tips",
@@ -145,7 +145,7 @@ const ISSUES = [
         <path d="M9 19v-5h6v5" />
       </svg>
     ),
-    ready: false,
+    ready: true,
   },
 ];
 
