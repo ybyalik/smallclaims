@@ -1602,7 +1602,7 @@ footer { padding: 80px 0 40px; background: var(--ink); color: #fef9f1; }
 .cat-stack-head p { font-size: 16.5px; line-height: 1.55; color: var(--ink-2); margin: 0; }
 
 /* ─── Hero 3-col (homepage hero-grid pattern) ─── */
-.cat-hero-3col { display: grid; grid-template-columns: 1.8fr 0.5fr 0.6fr; gap: 48px; padding: 16px 0 64px; align-items: stretch; }
+.cat-hero-3col { display: grid; grid-template-columns: 1.8fr 0.5fr 0.6fr; gap: 48px; padding: 16px 0 64px; align-items: stretch; min-height: 520px; }
 .cat-hero-copy { display: flex; flex-direction: column; justify-content: center; }
 .cat-hero-copy .eyebrow { display: inline-block; margin-bottom: 12px; }
 .cat-hero-copy h1 { font-family: "Newsreader", Georgia, serif; font-weight: var(--headline-weight); font-size: clamp(38px, 4.6vw, 60px); line-height: 1.04; letter-spacing: var(--headline-tracking); color: var(--ink); margin: 0 0 14px; }
