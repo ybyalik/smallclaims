@@ -567,27 +567,67 @@ export default function SmallClaimsHubPage() {
           <div className="cat-ps">
             <div className="cat-ps-grid">
               <div className="cat-ps-col">
-                <h3>The basics</h3>
-                <div className="cat-ps-item">
-                  <div className="cat-ps-num">01</div>
-                  <div className="cat-ps-text"><strong>State caps.</strong> Usually $5,000 to $20,000. Texas $20K, California $12.5K (individual), New York $10K. Above the cap, you need higher court.</div>
-                </div>
-                <div className="cat-ps-item">
-                  <div className="cat-ps-num">02</div>
-                  <div className="cat-ps-text"><strong>Filing fees.</strong> $30 to $100 typical. Some states scale by claim amount. Many states waive for low-income filers.</div>
-                </div>
-                <div className="cat-ps-item">
-                  <div className="cat-ps-num">03</div>
-                  <div className="cat-ps-text"><strong>Service of process.</strong> Sheriff, certified mail through the clerk, or private process server. You cannot serve it yourself.</div>
-                </div>
-                <div className="cat-ps-item">
-                  <div className="cat-ps-num">04</div>
-                  <div className="cat-ps-text"><strong>Hearing.</strong> 10 to 15 minutes. Lead with the dollar amount, the legal theory, and your paper trail. Judge often rules from the bench.</div>
-                </div>
-                <div className="cat-ps-item">
-                  <div className="cat-ps-num">05</div>
-                  <div className="cat-ps-text"><strong>Collection.</strong> 30 days to pay voluntarily; then judgment lien, bank levy, wage garnishment, writ of execution.</div>
-                </div>
+                <h3>The process, step by step</h3>
+                <ol className="cat-ps-list">
+                  <li className="cat-ps-item">
+                    <span className="cat-ps-num">01</span>
+                    <span className="cat-ps-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M3 21h18" />
+                        <path d="M3 11h18" />
+                        <path d="M3 11l9-7 9 7" />
+                        <path d="M5.5 21V11M9.5 21V11M14.5 21V11M18.5 21V11" />
+                      </svg>
+                    </span>
+                    <div className="cat-ps-text"><strong>State caps.</strong> Usually $5,000 to $20,000. Texas $20K, California $12.5K (individual), New York $10K. Above the cap, you need higher court.</div>
+                  </li>
+                  <li className="cat-ps-item">
+                    <span className="cat-ps-num">02</span>
+                    <span className="cat-ps-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z" />
+                        <path d="M14 3v5h5" />
+                        <path d="M9 13h6M9 17h4" />
+                      </svg>
+                    </span>
+                    <div className="cat-ps-text"><strong>Filing fees.</strong> $30 to $100 typical. Some states scale by claim amount. Many states waive for low-income filers.</div>
+                  </li>
+                  <li className="cat-ps-item">
+                    <span className="cat-ps-num">03</span>
+                    <span className="cat-ps-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                        <rect x="3" y="6" width="18" height="13" rx="2" />
+                        <path d="M3 8l9 6 9-6" />
+                        <path d="M8 11v5M16 11v5" />
+                      </svg>
+                    </span>
+                    <div className="cat-ps-text"><strong>Service of process.</strong> Sheriff, certified mail through the clerk, or private process server. You cannot serve it yourself.</div>
+                  </li>
+                  <li className="cat-ps-item">
+                    <span className="cat-ps-num">04</span>
+                    <span className="cat-ps-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M14 4l6 6" />
+                        <path d="M11 7l6 6" />
+                        <path d="M16 12l-9 9" />
+                        <path d="M3 21h11" />
+                      </svg>
+                    </span>
+                    <div className="cat-ps-text"><strong>Hearing.</strong> 10 to 15 minutes. Lead with the dollar amount, the legal theory, and your paper trail. Judge often rules from the bench.</div>
+                  </li>
+                  <li className="cat-ps-item">
+                    <span className="cat-ps-num">05</span>
+                    <span className="cat-ps-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                        <rect x="2" y="6" width="20" height="12" rx="2" />
+                        <circle cx="12" cy="12" r="2.5" />
+                        <circle cx="6" cy="12" r="0.6" fill="currentColor" />
+                        <circle cx="18" cy="12" r="0.6" fill="currentColor" />
+                      </svg>
+                    </span>
+                    <div className="cat-ps-text"><strong>Collection.</strong> 30 days to pay voluntarily; then judgment lien, bank levy, wage garnishment, writ of execution.</div>
+                  </li>
+                </ol>
               </div>
 
               <div className="cat-ps-orb" aria-hidden="true">
@@ -599,26 +639,70 @@ export default function SmallClaimsHubPage() {
 
               <div className="cat-ps-col dark">
                 <h3>What to bring</h3>
-                <div className="cat-ps-item">
-                  <div className="cat-ps-num">→</div>
-                  <div className="cat-ps-text"><strong>Contracts and receipts</strong> showing what was agreed and what was paid.</div>
-                </div>
-                <div className="cat-ps-item">
-                  <div className="cat-ps-num">→</div>
-                  <div className="cat-ps-text"><strong>Photos with timestamps</strong> showing damage, conditions, or pre-incident state.</div>
-                </div>
-                <div className="cat-ps-item">
-                  <div className="cat-ps-num">→</div>
-                  <div className="cat-ps-text"><strong>All communications</strong> (texts, emails, certified-mail receipts).</div>
-                </div>
-                <div className="cat-ps-item">
-                  <div className="cat-ps-num">→</div>
-                  <div className="cat-ps-text"><strong>Witness contact info</strong> for anyone who saw what happened.</div>
-                </div>
-                <div className="cat-ps-item">
-                  <div className="cat-ps-num">→</div>
-                  <div className="cat-ps-text"><strong>Demand letter</strong> showing you tried to resolve before filing. Most judges expect to see one.</div>
-                </div>
+                <ul className="cat-ps-list">
+                  <li className="cat-ps-item">
+                    <span className="cat-ps-arrow" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M5 12h14M13 6l6 6-6 6" />
+                      </svg>
+                    </span>
+                    <div className="cat-ps-text"><strong>Contracts and receipts</strong> showing what was agreed and what was paid.</div>
+                  </li>
+                  <li className="cat-ps-item">
+                    <span className="cat-ps-arrow" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M5 12h14M13 6l6 6-6 6" />
+                      </svg>
+                    </span>
+                    <div className="cat-ps-text"><strong>Photos with timestamps</strong> showing damage, conditions, or pre-incident state.</div>
+                  </li>
+                  <li className="cat-ps-item">
+                    <span className="cat-ps-arrow" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M5 12h14M13 6l6 6-6 6" />
+                      </svg>
+                    </span>
+                    <div className="cat-ps-text"><strong>All communications</strong> (texts, emails, certified-mail receipts).</div>
+                  </li>
+                  <li className="cat-ps-item">
+                    <span className="cat-ps-arrow" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M5 12h14M13 6l6 6-6 6" />
+                      </svg>
+                    </span>
+                    <div className="cat-ps-text"><strong>Witness contact info</strong> for anyone who saw what happened.</div>
+                  </li>
+                  <li className="cat-ps-item">
+                    <span className="cat-ps-arrow" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M5 12h14M13 6l6 6-6 6" />
+                      </svg>
+                    </span>
+                    <div className="cat-ps-text"><strong>Demand letter</strong> showing you tried to resolve before filing. Most judges expect to see one.</div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="cat-ps-stats">
+              <div className="cat-ps-stat">
+                <span className="cat-ps-stat-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M12 7v5l3 2" />
+                  </svg>
+                </span>
+                <span>Most cases resolve in <strong>30 to 90 days</strong>.</span>
+              </div>
+              <span className="cat-ps-stat-divider" aria-hidden="true" />
+              <div className="cat-ps-stat">
+                <span className="cat-ps-stat-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M9 18h6M10 21h4" />
+                    <path d="M12 3a6 6 0 0 1 4 10.5c-.6.5-1 1.2-1 2v1.5H9v-1.5c0-.8-.4-1.5-1-2A6 6 0 0 1 12 3z" />
+                  </svg>
+                </span>
+                <span>You don&rsquo;t need a lawyer. <strong>You need a plan</strong>.</span>
               </div>
             </div>
           </div>
