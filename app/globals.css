@@ -1611,10 +1611,9 @@ footer { padding: 80px 0 40px; background: var(--ink); color: #fef9f1; }
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 10;
-  background: rgba(31,27,22,0.04);
-  border-radius: 18px;
+  background: transparent;
   padding: 16px;
-  overflow: hidden;
+  overflow: visible;
 }
 .hero-statepins-map {
   position: absolute;
@@ -1623,7 +1622,7 @@ footer { padding: 80px 0 40px; background: var(--ink); color: #fef9f1; }
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.55;
+  opacity: 1;
 }
 .hero-statepins-pin {
   position: absolute;
