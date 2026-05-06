@@ -2324,13 +2324,157 @@ footer { padding: 80px 0 40px; background: var(--ink); color: #fef9f1; }
 .cv2-aftermath-body strong { color: var(--ink); }
 
 /* Defenses — quote + rebuttal cards */
-.cv2-defenses { display: grid; gap: 12px; }
-.cv2-defense { background: #fff; border: 1px solid var(--hairline); border-radius: 14px; padding: 22px 26px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 28px; align-items: center; }
-.cv2-defense-head { display: flex; flex-direction: column; gap: 12px; }
-.cv2-defense-quote { font-family: "Newsreader", Georgia, serif; font-style: italic; font-weight: 500; font-size: 22px; line-height: 1.3; letter-spacing: -0.015em; color: var(--ink); }
-.cv2-defense-pill { display: inline-block; align-self: flex-start; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; padding: 4px 10px; border-radius: 6px; background: var(--bg-2); color: var(--muted); }
-.cv2-defense-rebut { font-size: 14.5px; line-height: 1.6; color: var(--ink-2); padding-left: 24px; border-left: 2px solid var(--accent); }
-.cv2-defense-rebut strong { color: var(--ink); font-weight: 600; }
+.cv2-defenses { display: grid; gap: 14px; }
+
+.cv2-defense {
+  background: #fff;
+  border: 1px solid var(--hairline);
+  border-radius: 16px;
+  padding: 24px 28px;
+  display: grid;
+  grid-template-columns: 110px 1.05fr 50px 1.4fr 64px;
+  gap: 26px;
+  align-items: center;
+}
+
+/* Per-card themes (rotate every 3) */
+.cv2-defense.theme-1 .cv2-defense-tile { background: rgba(217, 64, 46, 0.10); }
+.cv2-defense.theme-2 .cv2-defense-tile { background: #f3e8d6; }
+.cv2-defense.theme-3 .cv2-defense-tile { background: #e6e9d5; }
+
+.cv2-defense.theme-1 .cv2-defense-pill { background: rgba(217, 64, 46, 0.12); color: var(--accent); }
+.cv2-defense.theme-2 .cv2-defense-pill { background: #f3e8d6; color: #8a6e3a; }
+.cv2-defense.theme-3 .cv2-defense-pill { background: #e6e9d5; color: #5a6b3a; }
+
+.cv2-defense.theme-1 .cv2-defense-status { background: rgba(217, 64, 46, 0.10); color: var(--accent); }
+.cv2-defense.theme-2 .cv2-defense-status { background: #f3e8d6; color: #8a6e3a; }
+.cv2-defense.theme-3 .cv2-defense-status { background: #e6e9d5; color: #5a6b3a; }
+
+.cv2-defense-tile {
+  width: 110px;
+  height: 110px;
+  border-radius: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-2);
+  flex-shrink: 0;
+}
+
+.cv2-defense-head {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: flex-start;
+  min-width: 0;
+}
+.cv2-defense-quote {
+  font-family: "Newsreader", Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 1.18;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+.cv2-defense-mark {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 1.05em;
+  margin-right: 1px;
+}
+.cv2-defense-pill {
+  display: inline-block;
+  font-family: "Geist", system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 7px 12px;
+  border-radius: 8px;
+}
+
+.cv2-defense-divider {
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 110px;
+}
+.cv2-defense-divider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  background: rgba(217, 64, 46, 0.4);
+}
+.cv2-defense-arrow {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fef9f1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  box-shadow: 0 6px 14px -8px rgba(217,64,46,0.6);
+}
+
+.cv2-defense-rebut {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink-2);
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+.cv2-defense-rebut strong { color: var(--ink); font-weight: 700; }
+
+.cv2-defense-status {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  justify-self: center;
+}
+
+/* Bottom 'Keep it simple' tagline */
+.cv2-defenses-tagline {
+  margin-top: 14px;
+  padding: 18px 24px;
+  background: rgba(217, 64, 46, 0.08);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.cv2-defenses-tagline-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(217, 64, 46, 0.14);
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.cv2-defenses-tagline p {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+.cv2-defenses-tagline strong { color: var(--ink); font-weight: 700; }
 
 /* Closing CTA — split copy + receipt */
 .cv2-cta { background: var(--ink); color: #fef9f1; border-radius: 18px; padding: 36px 40px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: center; position: relative; overflow: hidden; }
@@ -2359,10 +2503,29 @@ footer { padding: 80px 0 40px; background: var(--ink); color: #fef9f1; }
 
 @media (max-width: 960px) {
   .cv2-aftermath { grid-template-columns: 1fr; gap: 12px; }
-  .cv2-defense { grid-template-columns: 1fr; gap: 16px; }
-  .cv2-defense-rebut { padding-left: 16px; }
+  .cv2-defense {
+    grid-template-columns: 84px 1fr 40px 1.2fr;
+    gap: 18px;
+    padding: 20px 22px;
+  }
+  .cv2-defense-tile { width: 84px; height: 84px; border-radius: 14px; }
+  .cv2-defense-tile svg { width: 38px; height: 38px; }
+  .cv2-defense-divider { min-height: 84px; }
+  .cv2-defense-status { display: none; }
+  .cv2-defense-quote { font-size: 21px; }
   .cv2-cta { grid-template-columns: 1fr; padding: 28px; }
   .cv2-cta-receipt { transform: none; }
+}
+@media (max-width: 700px) {
+  .cv2-defense {
+    grid-template-columns: 64px 1fr;
+    gap: 14px;
+    padding: 18px 20px;
+  }
+  .cv2-defense-tile { width: 64px; height: 64px; }
+  .cv2-defense-tile svg { width: 30px; height: 30px; }
+  .cv2-defense-divider { display: none; }
+  .cv2-defense-rebut { grid-column: 1 / -1; }
 }
 
 /* ─────────────────────────────────────────────
@@ -3994,15 +4157,20 @@ footer { padding: 80px 0 40px; background: var(--ink); color: #fef9f1; }
 
   /* Defenses */
   .cv2-defense {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: 56px 1fr !important;
     gap: 12px;
-    padding: 18px 20px;
+    padding: 16px 18px;
   }
+  .cv2-defense-tile { width: 56px; height: 56px; }
+  .cv2-defense-tile svg { width: 28px; height: 28px; }
+  .cv2-defense-divider { display: none; }
+  .cv2-defense-status { display: none; }
+  .cv2-defense-rebut { grid-column: 1 / -1; padding: 0; font-size: 13.5px; }
+  .cv2-defense-head { grid-column: 2; }
   .cv2-defense-quote { font-size: 18px; line-height: 1.3; }
-  .cv2-defense-rebut {
-    padding-left: 14px;
-    font-size: 13.5px;
-  }
+  .cv2-defenses-tagline { padding: 14px 18px; gap: 12px; }
+  .cv2-defenses-tagline-icon { width: 36px; height: 36px; }
+  .cv2-defenses-tagline p { font-size: 13.5px; }
 
   /* Outcomes */
   .cv2-outcomes { grid-template-columns: 1fr; gap: 10px; }

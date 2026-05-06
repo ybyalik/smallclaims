@@ -12,6 +12,43 @@ const FEATURED_STATE_SLUGS = [
   "illinois", "ohio", "georgia", "north-carolina", "michigan",
 ];
 
+const DEFENSE_LEFT_ICONS = [
+  <svg key="d0" viewBox="0 0 24 24" width="46" height="46" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z" />
+    <path d="M14 3v5h5" />
+    <path d="M12 12v5" />
+    <path d="M10 13.5c0-.8.7-1.5 1.5-1.5h1c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5h-1c-.8 0-1.5.7-1.5 1.5s.7 1.5 1.5 1.5h1c.8 0 1.5-.7 1.5-1.5" />
+  </svg>,
+  <svg key="d1" viewBox="0 0 24 24" width="46" height="46" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="3" y="6" width="18" height="13" rx="2" />
+    <path d="M3 8l9 6 9-6" />
+    <circle cx="17" cy="9" r="2.5" />
+    <path d="M16 9l1 1 2-2" />
+  </svg>,
+  <svg key="d2" viewBox="0 0 24 24" width="46" height="46" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M5 11V9a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v2" />
+    <path d="M3 14a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v3H3z" />
+    <path d="M5 17v3M19 17v3" />
+    <path d="M16 4l1 1 1-1M17 3v3" />
+  </svg>,
+];
+
+const DEFENSE_RIGHT_ICONS = [
+  <svg key="r0" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 3l8 3v5c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-3z" />
+    <path d="M9 12l2 2 4-4" />
+  </svg>,
+  <svg key="r1" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="9" />
+    <path d="M12 7v5l3 2" />
+  </svg>,
+  <svg key="r2" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 4v17M5 21h14" />
+    <path d="M5 8l-2 5h4z M19 8l-2 5h4z" />
+    <path d="M12 4l-7 4M12 4l7 4" />
+  </svg>,
+];
+
 interface Props {
   issue: LandlordIssue;
   category: CategoryMeta;
@@ -312,18 +349,44 @@ export default function IssueTemplate({ issue, category, siblings }: Props) {
             <p>{issue.defenses.lede}</p>
           </div>
           <div className="cv2-defenses">
-            {issue.defenses.items.map((d) => (
-              <div key={d.quote} className="cv2-defense">
+            {issue.defenses.items.map((d, i) => (
+              <div key={d.quote} className={`cv2-defense theme-${(i % 3) + 1}`}>
+                <div className="cv2-defense-tile" aria-hidden="true">
+                  {DEFENSE_LEFT_ICONS[i % 3]}
+                </div>
                 <div className="cv2-defense-head">
-                  <span className="cv2-defense-quote">&ldquo;{d.quote}&rdquo;</span>
+                  <span className="cv2-defense-quote">
+                    <span className="cv2-defense-mark">&ldquo;</span>{d.quote}&rdquo;
+                  </span>
                   <span className="cv2-defense-pill">{d.pill}</span>
+                </div>
+                <div className="cv2-defense-divider" aria-hidden="true">
+                  <span className="cv2-defense-arrow">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M9 6l6 6-6 6" />
+                    </svg>
+                  </span>
                 </div>
                 <div
                   className="cv2-defense-rebut"
                   dangerouslySetInnerHTML={{ __html: d.rebuttal }}
                 />
+                <div className="cv2-defense-status" aria-hidden="true">
+                  {DEFENSE_RIGHT_ICONS[i % 3]}
+                </div>
               </div>
             ))}
+          </div>
+          <div className="cv2-defenses-tagline">
+            <span className="cv2-defenses-tagline-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M9 18h6M10 21h4" />
+                <path d="M12 3a6 6 0 0 1 4 10.5c-.6.5-1 1.2-1 2v1.5H9v-1.5c0-.8-.4-1.5-1-2A6 6 0 0 1 12 3z" />
+              </svg>
+            </span>
+            <p>
+              <strong>Keep it simple.</strong> Organized records, clear timelines, and solid evidence are your best defense.
+            </p>
           </div>
         </section>
 
