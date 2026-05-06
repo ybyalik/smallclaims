@@ -5,6 +5,8 @@ import Breadcrumbs from "../../../../components/Breadcrumbs";
 import { availableStateSlugs } from "../../../../lib/state-data";
 import { STATES } from "../../../../lib/states";
 
+const ISSUE_PHOTOS = ["1560448204-e02f11c3d0e2", "1502672260266-1c1ef2d93688", "1560518883-ce09059eeffa", "1493809842364-78817add7ffb", "1484154218962-a197022b5858"];
+
 export const metadata: Metadata = {
   title: "How to Sue Your Roommate in Small Claims Court",
   description: "Plain-English guide to suing a roommate. Unpaid rent, bills, moving out without notice, property damage, security deposits, and no-lease cases. What you can recover and how to file.",
@@ -67,12 +69,9 @@ export default function RoommateHubPage() {
             <h2 style={{ margin: 0 }}>What can you sue your roommate <em>for</em>?</h2>
             <p style={{ marginTop: 12, marginLeft: 0, maxWidth: "60ch" }}>Pick the one that fits your situation. Each guide covers what you can recover, what evidence to bring, and how to file in your state.</p>
           </div>
-          <div className="cat-grid">
-            {ISSUES.map((i) => { const inner = (<><div className="cat-card-icon">{i.icon}</div><h3>{i.title}</h3><p>{i.blurb}</p></>); return i.ready ? <Link key={i.slug} href={`/small-claims/sue-roommate-${i.slug}`} className="cat-card">{inner}</Link> : <div key={i.slug} className="cat-card soon" aria-disabled="true">{inner}</div>; })}
-            <Link href="/case-score" className="cat-card cat-card-quiz">
-              <div className="cat-card-icon" style={{ background: "rgba(217,64,46,0.18)" }}><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-              <h3>Something else?</h3><p>Tell us about your situation in 90 seconds and get a strength read on your case.</p>
-            </Link>
+          <div className="photo-grid">
+            {ISSUES.map((i, idx) => { const inner = (<><img src={`https://images.unsplash.com/photo-${ISSUE_PHOTOS[idx % ISSUE_PHOTOS.length]}?w=600&h=600&fit=crop`} alt="" className="photo-card-img" /><span className="photo-card-icon" aria-hidden="true">{i.icon}</span><div className="photo-card-overlay"><h3>{i.title}</h3><p>{i.blurb}</p></div><span className="photo-card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span></>); return i.ready ? <Link key={i.slug} href={`/small-claims/sue-roommate-${i.slug}`} className="photo-card">{inner}</Link> : <div key={i.slug} className="photo-card soon" aria-disabled="true">{inner}</div>; })}
+            <Link href="/case-score" className="photo-card"><img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&h=600&fit=crop" alt="" className="photo-card-img" /><span className="photo-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg></span><div className="photo-card-overlay"><h3>Something else?</h3><p>Tell us about your situation in 90 seconds and get a strength read on your case.</p></div><span className="photo-card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span></Link>
           </div>
         </section>
 

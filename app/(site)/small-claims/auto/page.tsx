@@ -5,6 +5,8 @@ import Breadcrumbs from "../../../../components/Breadcrumbs";
 import { availableStateSlugs } from "../../../../lib/state-data";
 import { STATES } from "../../../../lib/states";
 
+const ISSUE_PHOTOS = ["1503376780353-7e6692767b70", "1492144534655-ae79c964c9d7", "1542362567-b07e54358753", "1486006920555-c77dcf18193c", "1568605114967-8130f3a36994"];
+
 export const metadata: Metadata = {
   title: "How to Sue Over a Car in Small Claims Court",
   description:
@@ -275,7 +277,7 @@ export default function AutoHubPage() {
               evidence to bring, and how to file in your state.
             </p>
           </div>
-          <div className="cat-grid">
+          <div className="photo-grid">
             {ISSUES.map((i) => {
               const inner = (
                 <>
@@ -294,15 +296,15 @@ export default function AutoHubPage() {
                 </div>
               );
             })}
-            <Link href="/case-score" className="cat-card cat-card-quiz">
-              <div className="cat-card-icon" style={{ background: "rgba(217,64,46,0.18)" }}>
-                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.6">
-                  <circle cx="12" cy="12" r="9" />
-                  <path d="M12 7v5l3 2" />
-                </svg>
+            <Link href="/case-score" className="photo-card">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&h=600&fit=crop" alt="" className="photo-card-img" />
+              <span className="photo-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg></span>
+              <div className="photo-card-overlay">
+                <h3>Something else?</h3>
+                <p>Tell us about your situation in 90 seconds and get a strength read on your case.</p>
               </div>
-              <h3>Something else?</h3>
-              <p>Tell us about your situation in 90 seconds and get a strength read on your case.</p>
+              <span className="photo-card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span>
             </Link>
           </div>
         </section>

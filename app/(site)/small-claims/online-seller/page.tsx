@@ -5,6 +5,8 @@ import Breadcrumbs from "../../../../components/Breadcrumbs";
 import { availableStateSlugs } from "../../../../lib/state-data";
 import { STATES } from "../../../../lib/states";
 
+const ISSUE_PHOTOS = ["1607082348824-0a96f2a4b9da", "1556742044-3c52d6e88c62", "1556761175-5973dc0f32e7", "1567521464027-f127ff144326", "1556909114-f6e7ad7d3136"];
+
 export const metadata: Metadata = {
   title: "How to Sue an Online Seller in Small Claims Court",
   description: "Plain-English guide to suing online sellers. Amazon, eBay, Etsy, Facebook Marketplace, Venmo/Cash App scams, gig services, and FedEx. What you can recover and how to file.",
@@ -68,12 +70,9 @@ export default function OnlineSellerHubPage() {
             <h2 style={{ margin: 0 }}>What kind of online seller dispute are you having?</h2>
             <p style={{ marginTop: 12, marginLeft: 0, maxWidth: "60ch" }}>Each platform has different recovery paths. Pick yours for state-specific advice.</p>
           </div>
-          <div className="cat-grid">
-            {ISSUES.map((i) => { const inner = (<><div className="cat-card-icon">{i.icon}</div><h3>{i.title}</h3><p>{i.blurb}</p></>); return i.ready ? <Link key={i.slug} href={`/small-claims/sue-seller-${i.slug}`} className="cat-card">{inner}</Link> : <div key={i.slug} className="cat-card soon" aria-disabled="true">{inner}</div>; })}
-            <Link href="/case-score" className="cat-card cat-card-quiz">
-              <div className="cat-card-icon" style={{ background: "rgba(217,64,46,0.18)" }}><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-              <h3>Something else?</h3><p>Tell us about your situation in 90 seconds and get a strength read on your case.</p>
-            </Link>
+          <div className="photo-grid">
+            {ISSUES.map((i, idx) => { const inner = (<><img src={`https://images.unsplash.com/photo-${ISSUE_PHOTOS[idx % ISSUE_PHOTOS.length]}?w=600&h=600&fit=crop`} alt="" className="photo-card-img" /><span className="photo-card-icon" aria-hidden="true">{i.icon}</span><div className="photo-card-overlay"><h3>{i.title}</h3><p>{i.blurb}</p></div><span className="photo-card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span></>); return i.ready ? <Link key={i.slug} href={`/small-claims/sue-seller-${i.slug}`} className="photo-card">{inner}</Link> : <div key={i.slug} className="photo-card soon" aria-disabled="true">{inner}</div>; })}
+            <Link href="/case-score" className="photo-card"><img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&h=600&fit=crop" alt="" className="photo-card-img" /><span className="photo-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg></span><div className="photo-card-overlay"><h3>Something else?</h3><p>Tell us about your situation in 90 seconds and get a strength read on your case.</p></div><span className="photo-card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span></Link>
           </div>
         </section>
 

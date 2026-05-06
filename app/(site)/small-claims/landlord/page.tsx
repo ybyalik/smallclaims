@@ -5,6 +5,8 @@ import Breadcrumbs from "../../../../components/Breadcrumbs";
 import { availableStateSlugs } from "../../../../lib/state-data";
 import { STATES } from "../../../../lib/states";
 
+const ISSUE_PHOTOS = ["1560518883-ce09059eeffa", "1493809842364-78817add7ffb", "1560448204-e02f11c3d0e2", "1502672260266-1c1ef2d93688", "1568605114967-8130f3a36994"];
+
 export const metadata: Metadata = {
   title: "How to Sue Your Landlord in Small Claims Court",
   description:
@@ -296,29 +298,28 @@ export default function LandlordHubPage() {
               what evidence to bring, and how to file in your state.
             </p>
           </div>
-          <div className="cat-grid">
-            {ISSUES.map((i) => (
-              <Link key={i.slug} href={`/small-claims/sue-landlord-${i.slug}`} className={`cat-card ${i.ready ? "" : "soon"}`}>
-                <div className="cat-card-icon">{i.icon}</div>
+          <div className="photo-grid">
+            {ISSUES.map((i, idx) => (
+              <Link key={i.slug} href={`/small-claims/sue-landlord-${i.slug}`} className={`photo-card${i.ready ? "" : " soon"}`}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={`https://images.unsplash.com/photo-${ISSUE_PHOTOS[idx % ISSUE_PHOTOS.length]}?w=600&h=600&fit=crop`} alt="" className="photo-card-img" />
+              <span className="photo-card-icon" aria-hidden="true">{i.icon}</span>
+              <div className="photo-card-overlay">
                 <h3>{i.title}</h3>
                 <p>{i.blurb}</p>
-              </Link>
-            ))}
-            <Link href="/case-score" className="cat-card cat-card-quiz">
-              <div className="cat-card-icon" style={{ background: "rgba(217,64,46,0.18)" }}>
-                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.6">
-                  <circle cx="12" cy="12" r="9" />
-                  <path d="M12 7v5l3 2" />
-                </svg>
               </div>
-              <h3>Something else?</h3>
-              <p>Tell us about your situation in 90 seconds and get a strength read on your case.</p>
-              <span className="cat-card-cta">
-                Take the case-score quiz
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M5 12h14M13 6l6 6-6 6" />
-                </svg>
-              </span>
+              <span className="photo-card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span>
+            </Link>
+            ))}
+            <Link href="/case-score" className="photo-card">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&h=600&fit=crop" alt="" className="photo-card-img" />
+              <span className="photo-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg></span>
+              <div className="photo-card-overlay">
+                <h3>Something else?</h3>
+                <p>Tell us about your situation in 90 seconds and get a strength read on your case.</p>
+              </div>
+              <span className="photo-card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span>
             </Link>
           </div>
         </section>

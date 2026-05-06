@@ -3691,6 +3691,8 @@ footer { padding: 80px 0 40px; background: var(--ink); color: #fef9f1; }
   transform: translateY(-2px);
   box-shadow: 0 16px 32px -16px rgba(31,27,22,0.4);
 }
+.photo-card.soon { opacity: 0.78; }
+.photo-card.soon:hover { transform: translateY(-1px); opacity: 0.92; }
 .photo-card:hover .photo-card-arrow {
   color: var(--accent-2);
   transform: translateX(2px);
