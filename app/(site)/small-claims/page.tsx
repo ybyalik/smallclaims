@@ -411,13 +411,15 @@ export default function SmallClaimsHubPage() {
         {/* CATEGORIES */}
         <section className="cat-section" id="categories">
           <div className="pick-cat-head">
-            <h2 className="cat-h2 pick-cat-title">
-              <em>Pick</em> a category.
-            </h2>
-            <p className="pick-cat-desc">
-              Each guide covers the legal theory, what evidence to bring, what you can recover,
-              and how to file in your state.
-            </p>
+            <div className="sec-head" style={{ textAlign: "left", margin: 0 }}>
+              <h2 style={{ margin: 0, whiteSpace: "nowrap" }}>
+                <em>Pick</em> a category.
+              </h2>
+              <p style={{ margin: "10px 0 0", marginLeft: 0, maxWidth: "60ch", color: "var(--ink-2)" }}>
+                Each guide covers the legal theory, what evidence to bring, what you can recover,
+                and how to file in your state.
+              </p>
+            </div>
             <div className="pick-cat-note" aria-hidden="true">
               <span>Choose what fits your case</span>
               <svg viewBox="0 0 80 60" width="60" height="48" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round">
@@ -477,17 +479,17 @@ export default function SmallClaimsHubPage() {
         {/* TOP TOPICS */}
         <section className="cat-section">
           <div className="topics-head">
-            <div className="topics-head-main">
+            <div className="sec-head" style={{ textAlign: "left", margin: 0 }}>
               <span className="topics-eyebrow">
                 Popular topics
                 <svg viewBox="0 0 40 8" width="40" height="8" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round">
                   <path d="M1 4 Q 6 1, 12 4 T 24 4 T 36 4" />
                 </svg>
               </span>
-              <h2 className="cat-h2 topics-title">
+              <h2 style={{ margin: "10px 0 0", whiteSpace: "nowrap" }}>
                 Popular <em>topics</em>.
               </h2>
-              <p className="topics-desc">
+              <p style={{ margin: "10px 0 0", marginLeft: 0, maxWidth: "60ch", color: "var(--ink-2)" }}>
                 The most-searched specific scenarios across all categories.
               </p>
             </div>
@@ -551,7 +553,7 @@ export default function SmallClaimsHubPage() {
         {/* HOW SMALL CLAIMS WORKS */}
         <section className="cat-section">
           <div className="sec-head" style={{ textAlign: "left", marginBottom: 24 }}>
-            <h2 className="cat-h2" style={{ margin: 0 }}>
+            <h2 style={{ margin: 0 }}>
               How small claims <em>actually works</em>.
             </h2>
             <p style={{ margin: "10px 0 0", maxWidth: "60ch", color: "var(--ink-2)" }}>
