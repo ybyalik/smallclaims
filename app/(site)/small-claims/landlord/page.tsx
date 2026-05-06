@@ -719,66 +719,12 @@ export default function LandlordHubPage() {
 
         {/* CTAs */}
         <section className="cat-section">
-          <div className="cat-cta-card">
-            <div>
-              <span className="eyebrow" style={{ color: "rgba(254,249,241,0.65)" }}>Take the next step</span>
-              <h2 style={{ marginTop: 14 }}>
-                Three ways to <em>move forward</em>.
-              </h2>
-              <p>
-                Most landlord disputes settle once a real demand letter arrives. If yours does
-                not, the state guide walks you through filing step by step.
-              </p>
-            </div>
-            <div className="cat-cta-row">
-              <Link href="/demand-letter" className="cat-cta-tile">
-                <div className="cat-cta-tile-icon">
-                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8">
-                    <rect x="3" y="5" width="18" height="14" rx="2" />
-                    <path d="M3 7l9 6 9-6" />
-                  </svg>
-                </div>
-                <div>
-                  <strong>Send a demand letter</strong>
-                  <span>About half of disputes end here.</span>
-                </div>
-              </Link>
-              <Link href="/case-score" className="cat-cta-tile">
-                <div className="cat-cta-tile-icon">
-                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8">
-                    <path d="M3 21V5M3 21h18M7 17V11M12 17V8M17 17V13" />
-                  </svg>
-                </div>
-                <div>
-                  <strong>Check my case</strong>
-                  <span>Free 7-question case-strength quiz.</span>
-                </div>
-              </Link>
-              <Link href="/small-claims" className="cat-cta-tile">
-                <div className="cat-cta-tile-icon">
-                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8">
-                    <path d="M12 3v18M5 9l7-6 7 6M3 21h18" />
-                  </svg>
-                </div>
-                <div>
-                  <strong>File your claim</strong>
-                  <span>Step-by-step in your state.</span>
-                </div>
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* CTAs — Variant 07 (preview) */}
-        <section className="cat-section">
           <div style={{ background: "#0d0d0d", color: "#fff", padding: "32px 0", borderRadius: 20, position: "relative", overflow: "hidden" }}>
             <div style={{ display: "grid", gridTemplateColumns: "1.85fr 1fr", gap: 0, alignItems: "center" }}>
               {/* LEFT — title + 3 step cards */}
               <div style={{ padding: "12px 44px 20px" }}>
-                <span style={{ display: "inline-block", background: "rgba(232,93,62,0.15)", color: "#e85d3e", padding: "5px 14px", borderRadius: 999, fontSize: 12, fontWeight: 600, marginBottom: 14 }}>
-                  Take the next step
-                </span>
-                <h2 style={{ fontFamily: "Newsreader, Georgia, serif", fontSize: "clamp(28px, 2.8vw, 38px)", fontWeight: 700, letterSpacing: "-0.02em", lineHeight: 1.1, margin: "0 0 28px", color: "#fef9f1" }}>
+                <span className="eyebrow" style={{ color: "rgba(254,249,241,0.65)" }}>Take the next step</span>
+                <h2 style={{ fontFamily: "Newsreader, Georgia, serif", fontSize: "clamp(28px, 2.8vw, 38px)", fontWeight: 700, letterSpacing: "-0.02em", lineHeight: 1.1, margin: "14px 0 28px", color: "#fef9f1" }}>
                   Three ways to <em style={{ fontStyle: "italic", color: "#f5b29f", fontWeight: 700 }}>move forward</em>.
                 </h2>
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 14, alignItems: "stretch", position: "relative" }}>
