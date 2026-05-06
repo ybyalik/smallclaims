@@ -1853,7 +1853,19 @@ footer { padding: 80px 0 40px; background: var(--ink); color: #fef9f1; }
   font-size: 13px;
 }
 .cat-evidence-card:hover { transform: translateY(-2px); box-shadow: 0 12px 28px -16px rgba(31,27,22,0.15); }
-.cat-evidence-icon { width: 32px; height: 32px; border-radius: 8px; background: rgba(217,64,46,0.1); color: var(--accent); display: grid; place-items: center; flex-shrink: 0; }
+.cat-evidence-icon {
+  position: absolute;
+  top: 11px;
+  right: 14px;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(217,64,46,0.1);
+  color: var(--accent);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
 .cat-evidence-title { font-family: "Newsreader", Georgia, serif; font-weight: 700; font-size: 17px; letter-spacing: -0.01em; color: var(--ink); margin: 0; line-height: 1.25; }
 .cat-evidence-desc { font-size: 14.5px; line-height: 1.55; color: var(--ink-2); margin: 0; }
 
