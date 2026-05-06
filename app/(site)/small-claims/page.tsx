@@ -411,7 +411,7 @@ export default function SmallClaimsHubPage() {
         {/* CATEGORIES */}
         <section className="cat-section" id="categories">
           <div className="pick-cat-head">
-            <h2 className="pick-cat-title">
+            <h2 className="cat-h2 pick-cat-title">
               <em>Pick</em> a category.
             </h2>
             <p className="pick-cat-desc">
@@ -484,7 +484,7 @@ export default function SmallClaimsHubPage() {
                   <path d="M1 4 Q 6 1, 12 4 T 24 4 T 36 4" />
                 </svg>
               </span>
-              <h2 className="topics-title">
+              <h2 className="cat-h2 topics-title">
                 Popular <em>topics</em>.
               </h2>
               <p className="topics-desc">
@@ -508,8 +508,10 @@ export default function SmallClaimsHubPage() {
                   <span className="topic-card-icon">{t.icon}</span>
                 </div>
                 <div className="topic-card-body">
-                  <h3>{t.title}</h3>
-                  <p>{t.blurb}</p>
+                  <div className="topic-card-text">
+                    <h3>{t.title}</h3>
+                    <p>{t.blurb}</p>
+                  </div>
                   <div className="topic-card-meta">
                     <span className="topic-meta-label">Avg recovery</span>
                     <span className="topic-meta-val">{t.avg}</span>

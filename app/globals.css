@@ -2696,7 +2696,6 @@ footer { padding: 80px 0 40px; background: var(--ink); color: #fef9f1; }
 }
 .pick-cat-title {
   margin: 0;
-  font-size: var(--h2-size);
   white-space: nowrap;
   align-self: center;
 }
@@ -2853,7 +2852,6 @@ footer { padding: 80px 0 40px; background: var(--ink); color: #fef9f1; }
 .topics-eyebrow svg { color: var(--accent); }
 .topics-title {
   margin: 10px 0 12px;
-  font-size: var(--h2-size);
 }
 .topics-desc {
   margin: 0;
@@ -2886,37 +2884,34 @@ footer { padding: 80px 0 40px; background: var(--ink); color: #fef9f1; }
   gap: 14px;
 }
 .topic-card {
+  position: relative;
   display: grid;
-  grid-template-columns: 96px 1fr 56px;
-  align-items: center;
-  gap: 18px;
-  padding: 22px 22px 22px 24px;
+  grid-template-columns: 100px 1fr 72px;
+  align-items: stretch;
   background: #faf6ef;
   border-radius: 14px;
   text-decoration: none;
   color: inherit;
-  transition: background .2s ease, transform .2s ease, box-shadow .25s ease;
   border: 1px solid rgba(217, 64, 46, 0.08);
+  transition: background .2s ease, transform .2s ease, box-shadow .25s ease;
+  min-height: 148px;
 }
 .topic-card:hover {
   background: #f5efe4;
   transform: translateY(-1px);
   box-shadow: 0 12px 22px -16px rgba(31,27,22,0.25);
 }
-.topic-card:hover .topic-card-arrow {
-  background: var(--accent-2);
-  transform: translateX(2px);
-}
 .topic-card-rail {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: flex-start;
-  gap: 12px;
-  padding-top: 2px;
+  padding: 22px 0 22px 24px;
+  border-right: 1px solid rgba(31,27,22,0.08);
 }
 .topic-card-num {
   font-family: "Newsreader", Georgia, serif;
-  font-weight: 600;
+  font-weight: 500;
   font-style: italic;
   font-size: 36px;
   line-height: 1;
@@ -2924,23 +2919,33 @@ footer { padding: 80px 0 40px; background: var(--ink); color: #fef9f1; }
   letter-spacing: -0.02em;
 }
 .topic-card-icon {
-  color: var(--ink);
+  color: var(--ink-2);
   display: inline-flex;
 }
 .topic-card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+  padding: 22px 22px 22px 24px;
   min-width: 0;
 }
-.topic-card-body h3 {
+.topic-card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.topic-card-text h3 {
   font-family: "Newsreader", Georgia, serif;
   font-weight: 700;
   font-size: 19px;
-  line-height: 1.2;
-  margin: 0 0 4px;
+  line-height: 1.25;
+  margin: 0;
   color: var(--ink);
   letter-spacing: -0.01em;
 }
-.topic-card-body > p {
-  margin: 0 0 14px;
+.topic-card-text p {
+  margin: 0;
   font-size: 14px;
   line-height: 1.45;
   color: var(--ink-2);
@@ -2949,7 +2954,9 @@ footer { padding: 80px 0 40px; background: var(--ink); color: #fef9f1; }
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(31,27,22,0.08);
   font-family: "Geist", system-ui, sans-serif;
   font-size: 11.5px;
 }
@@ -2970,10 +2977,12 @@ footer { padding: 80px 0 40px; background: var(--ink); color: #fef9f1; }
   display: inline-block;
   width: 1px;
   height: 14px;
-  background: var(--hairline);
+  background: rgba(31,27,22,0.15);
   margin: 0 4px;
 }
 .topic-card-arrow {
+  align-self: center;
+  justify-self: center;
   width: 38px; height: 38px;
   border-radius: 999px;
   background: rgba(217, 64, 46, 0.10);
@@ -2992,7 +3001,9 @@ footer { padding: 80px 0 40px; background: var(--ink); color: #fef9f1; }
 
 @media (max-width: 900px) {
   .topics-grid { grid-template-columns: 1fr; }
-  .topic-card { grid-template-columns: 72px 1fr 40px; gap: 14px; padding: 18px; }
+  .topic-card { grid-template-columns: 76px 1fr 56px; min-height: 130px; }
+  .topic-card-rail { padding: 16px 0 16px 18px; }
+  .topic-card-body { padding: 16px 18px; }
   .topic-card-num { font-size: 30px; }
 }
 
