@@ -1012,8 +1012,8 @@ export default function Home() {
             <div className="ceo-photo">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=700&h=900&fit=crop"
-                alt="A note from our founder"
+                src="/yury.png"
+                alt="Yury Byalik"
               />
               <div className="ceo-photo-frame" aria-hidden />
             </div>
@@ -1035,7 +1035,7 @@ export default function Home() {
                 We bring the procedure.
               </p>
               <div className="ceo-sig">
-                <div className="ceo-sig-name">— Sarah Chen, J.D.</div>
+                <div className="ceo-sig-name">— Yury Byalik, Esq.</div>
                 <div className="ceo-sig-title">Founder &amp; CEO, CivilCase</div>
               </div>
             </div>
