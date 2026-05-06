@@ -2442,7 +2442,7 @@ footer { padding: 80px 0 40px; background: var(--ink); color: #fef9f1; }
 .cv2-flag a { color: var(--accent); text-decoration: underline; }
 
 /* HERO with TOC sidebar */
-.cv2-hero { display: grid; grid-template-columns: 1.6fr 1fr; gap: 56px; margin: 16px 0 24px; align-items: start; }
+.cv2-hero { display: grid; grid-template-columns: 1.6fr 1fr; gap: 56px; margin: 16px 0 64px; align-items: start; }
 .cv2-hero-main h1 { font-family: "Newsreader", Georgia, serif; font-weight: var(--headline-weight); font-size: clamp(36px, 4.4vw, 56px); line-height: 1.04; letter-spacing: var(--headline-tracking); color: var(--ink); margin: 12px 0 20px; max-width: 18ch; }
 .cv2-hero-main h1 em { font-style: italic; color: var(--accent); font-weight: var(--headline-italic-weight); letter-spacing: var(--headline-italic-tracking); }
 
@@ -3178,7 +3178,7 @@ footer { padding: 80px 0 40px; background: var(--ink); color: #fef9f1; }
 }
 
 /* Hero — copy left + visual right (TOC removed from inside hero) */
-.cv2-hero { display: grid; grid-template-columns: 1.4fr 1fr; gap: 56px; margin: 16px 0 24px; align-items: center; }
+.cv2-hero { display: grid; grid-template-columns: 1.4fr 1fr; gap: 56px; margin: 16px 0 64px; align-items: center; }
 .cv2-hero-visual { position: relative; min-height: 420px; }
 
 /* Polaroid stack on hero right */
