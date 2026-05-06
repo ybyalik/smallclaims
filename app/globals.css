@@ -3990,9 +3990,15 @@ footer { padding: 80px 0 40px; background: var(--ink); color: #fef9f1; }
 }
 
 /* Mainline How-to-file section — warm bg bleeding to wrap edges */
-/* Mainline How-to-file + Defenses — tinted bg with rounded corners (matching alt section style) */
-.cv2-how-section, .cv2-defenses-section {
+.cv2-how-section {
   background: #f5efe3;
+  padding: 56px 48px !important;
+  margin: 32px 0;
+  border-radius: 20px;
+}
+/* Defenses — white bg so per-card hairline borders read clearly */
+.cv2-defenses-section {
+  background: #fff;
   padding: 56px 48px !important;
   margin: 32px 0;
   border-radius: 20px;
