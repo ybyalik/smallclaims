@@ -34,35 +34,6 @@ const DEFENSE_LEFT_ICONS = [
   </svg>,
 ];
 
-const CLAIM_ICONS = [
-  // Index 0 — receipt with $
-  <svg key="c0" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M6 3h12v17l-3-2-3 2-3-2-3 2z" />
-    <path d="M12 8v6M10 9.5c0-.8.7-1.5 1.5-1.5h1c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5h-1c-.8 0-1.5.7-1.5 1.5s.7 1.5 1.5 1.5h1c.8 0 1.5-.7 1.5-1.5" />
-  </svg>,
-  // Index 1 — scales of justice
-  <svg key="c1" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M12 4v17M5 21h14" />
-    <path d="M5 8h14" />
-    <path d="M5 8l-2 5h4z M19 8l-2 5h4z" />
-    <path d="M12 4l-7 4M12 4l7 4" />
-  </svg>,
-  // Index 2 — briefcase
-  <svg key="c2" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-    <rect x="3" y="7" width="18" height="13" rx="2" />
-    <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
-    <path d="M3 12h18" />
-  </svg>,
-  // Index 3 — percent
-  <svg key="c3" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M19 5L5 19" />
-    <circle cx="7.5" cy="7.5" r="2.5" />
-    <circle cx="16.5" cy="16.5" r="2.5" />
-  </svg>,
-];
-const CLAIM_BAR_WIDTHS = ["60%", "92%", "16%", "6%"];
-const CLAIM_BAR_LABELS = ["Base amount", "Multiplier", "Typical recovery", "Accruing"];
-
 const ALT_ICONS = {
   good: (
     <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
@@ -293,41 +264,25 @@ export default function IssueTemplate({ issue, category, siblings }: Props) {
               <p>{issue.claim.lede}</p>
             </div>
             <div className="cv2-claim-stack">
-              <div className="cv2-claim-rows">
-                {issue.claim.layers.map((layer, i) => (
-                  <div key={layer.tag} className={`cv2-claim-row${layer.accent ? " accent" : ""}`}>
-                    <span className="cv2-claim-icon" aria-hidden="true">
-                      {CLAIM_ICONS[i] ?? CLAIM_ICONS[0]}
-                    </span>
-                    <span className="cv2-claim-num" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
-                    <div className="cv2-claim-body">
-                      <h3>{layer.title}</h3>
-                      <p>{layer.body}</p>
-                    </div>
-                    <div className="cv2-claim-meter">
-                      <div className="cv2-claim-amt">{layer.amount}</div>
-                      <div className="cv2-claim-bar" aria-hidden="true">
-                        <span className="cv2-claim-bar-fill" style={{ width: CLAIM_BAR_WIDTHS[i] ?? "30%" }} />
-                      </div>
-                      <div className="cv2-claim-bar-label">{CLAIM_BAR_LABELS[i] ?? "Recovery"}</div>
-                    </div>
+              {issue.claim.layers.map((layer) => (
+                <div key={layer.tag} className={`cv2-claim-row${layer.accent ? " accent" : ""}`}>
+                  <div className={`cv2-claim-tag${layer.accent ? " accent" : ""}`}>{layer.tag}</div>
+                  <div className="cv2-claim-body">
+                    <h3>{layer.title}</h3>
+                    <p>{layer.body}</p>
                   </div>
-                ))}
-              </div>
+                  <div className={`cv2-claim-amt${layer.accent ? " accent" : ""}`}>{layer.amount}</div>
+                </div>
+              ))}
               <div className="cv2-claim-total">
-                <div className="cv2-claim-total-copy">
-                  <span className="cv2-claim-total-eyebrow">{issue.claim.total.label}</span>
-                  <h3>Estimated <em>recovery</em></h3>
+                <div>
+                  <span className="cv2-claim-total-label">{issue.claim.total.label}</span>
                   <p>{issue.claim.total.body}</p>
                 </div>
-                <div className="cv2-claim-total-note" aria-hidden="true">
+                <div className="cv2-claim-total-num">
+                  <em>{issue.claim.total.amount}</em>
                   <span>{issue.claim.total.sublabel}</span>
-                  <svg viewBox="0 0 60 40" width="50" height="36" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-                    <path d="M5 8 C 20 5, 40 12, 50 30" />
-                    <path d="M42 24 L52 32 L46 36" />
-                  </svg>
                 </div>
-                <div className="cv2-claim-total-num">{issue.claim.total.amount}</div>
               </div>
             </div>
           </div>
