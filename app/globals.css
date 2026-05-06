@@ -47,6 +47,8 @@ a { color: inherit; text-decoration: none; }
 .btn-cream { background: var(--bg-2); color: var(--ink); border-color: #c8c2b3; }
 .btn-cream:hover { border-color: #a8a193; }
 .hero-cta-btn { gap: 10px; padding-top: 17px; padding-bottom: 17px; }
+.hero-ctas .btn,
+.g-hero-cta .btn { padding-top: 17px; padding-bottom: 17px; }
 .hero-cta-btn .hero-cta-icon { display: inline-flex; align-items: center; justify-content: center; }
 .hero-cta-btn > svg { margin-left: 4px; }
 .btn-outline { background: #fff; color: var(--ink); border-color: var(--hairline); box-shadow: 0 1px 0 rgba(0,0,0,0.02); }
@@ -3176,7 +3178,7 @@ footer { padding: 80px 0 40px; background: var(--ink); color: #fef9f1; }
 }
 
 /* Hero — copy left + visual right (TOC removed from inside hero) */
-.cv2-hero { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; margin: 16px 0 24px; align-items: center; }
+.cv2-hero { display: grid; grid-template-columns: 1.4fr 1fr; gap: 56px; margin: 16px 0 24px; align-items: center; }
 .cv2-hero-visual { position: relative; min-height: 420px; }
 
 /* Polaroid stack on hero right */
