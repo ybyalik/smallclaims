@@ -46,7 +46,7 @@ a { color: inherit; text-decoration: none; }
 .btn-dark:hover { background: #2a2520; }
 .btn-cream { background: var(--bg-2); color: var(--ink); border-color: #c8c2b3; }
 .btn-cream:hover { border-color: #a8a193; }
-.hero-cta-btn { gap: 10px; }
+.hero-cta-btn { gap: 10px; padding-top: 17px; padding-bottom: 17px; }
 .hero-cta-btn .hero-cta-icon { display: inline-flex; align-items: center; justify-content: center; }
 .hero-cta-btn > svg { margin-left: 4px; }
 .btn-outline { background: #fff; color: var(--ink); border-color: var(--hairline); box-shadow: 0 1px 0 rgba(0,0,0,0.02); }
@@ -1600,7 +1600,7 @@ footer { padding: 80px 0 40px; background: var(--ink); color: #fef9f1; }
 .cat-stack-head p { font-size: 16.5px; line-height: 1.55; color: var(--ink-2); margin: 0; }
 
 /* ─── Hero 3-col (homepage hero-grid pattern) ─── */
-.cat-hero-3col { display: grid; grid-template-columns: 1.2fr 0.7fr 0.8fr; gap: 24px; padding: 16px 0 64px; align-items: stretch; }
+.cat-hero-3col { display: grid; grid-template-columns: 1.6fr 0.55fr 0.65fr; gap: 24px; padding: 16px 0 64px; align-items: stretch; }
 .cat-hero-copy { display: flex; flex-direction: column; justify-content: center; }
 .cat-hero-copy .eyebrow { display: inline-block; margin-bottom: 12px; }
 .cat-hero-copy h1 { font-family: "Newsreader", Georgia, serif; font-weight: var(--headline-weight); font-size: clamp(38px, 4.6vw, 60px); line-height: 1.04; letter-spacing: var(--headline-tracking); color: var(--ink); margin: 0 0 14px; }
@@ -3691,7 +3691,7 @@ footer { padding: 80px 0 40px; background: var(--ink); color: #fef9f1; }
 .photo-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  gap: 16px;
 }
 .photo-card {
   position: relative;
@@ -3700,7 +3700,7 @@ footer { padding: 80px 0 40px; background: var(--ink); color: #fef9f1; }
   overflow: hidden;
   text-decoration: none;
   color: inherit;
-  min-height: 180px;
+  min-height: 208px;
   background: var(--ink);
   box-shadow: 0 10px 24px -16px rgba(31,27,22,0.32);
   transition: transform .25s ease, box-shadow .25s ease;

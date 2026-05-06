@@ -89,9 +89,9 @@ export default function NeighborHubPage() {
             <p style={{ marginTop: 12, marginLeft: 0, maxWidth: "60ch" }}>Pick the one that fits your situation. Each guide covers what you can recover, what evidence to bring, and how to file in your state.</p>
           </div>
           <div className="photo-grid">
-            {ISSUES.map((i) => {
-              const inner = (<><div className="cat-card-icon">{i.icon}</div><h3>{i.title}</h3><p>{i.blurb}</p></>);
-              return i.ready ? <Link key={i.slug} href={`/small-claims/sue-neighbor-${i.slug}`} className="cat-card">{inner}</Link> : <div key={i.slug} className="cat-card soon" aria-disabled="true">{inner}</div>;
+            {ISSUES.map((i, idx) => {
+              const inner = (<>{/* eslint-disable-next-line @next/next/no-img-element */}<img src={`https://images.unsplash.com/photo-${ISSUE_PHOTOS[idx % ISSUE_PHOTOS.length]}?w=600&h=600&fit=crop`} alt="" className="photo-card-img" /><span className="photo-card-icon" aria-hidden="true">{i.icon}</span><div className="photo-card-overlay"><h3>{i.title}</h3><p>{i.blurb}</p></div><span className="photo-card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span></>);
+              return i.ready ? <Link key={i.slug} href={`/small-claims/sue-neighbor-${i.slug}`} className="photo-card">{inner}</Link> : <div key={i.slug} className="photo-card soon" aria-disabled="true">{inner}</div>;
             })}
             <Link href="/case-score" className="photo-card">
               {/* eslint-disable-next-line @next/next/no-img-element */}

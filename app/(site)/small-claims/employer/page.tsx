@@ -292,20 +292,25 @@ export default function EmployerHubPage() {
             </p>
           </div>
           <div className="photo-grid">
-            {ISSUES.map((i) => {
+            {ISSUES.map((i, idx) => {
               const inner = (
                 <>
-                  <div className="cat-card-icon">{i.icon}</div>
-                  <h3>{i.title}</h3>
-                  <p>{i.blurb}</p>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={`https://images.unsplash.com/photo-${ISSUE_PHOTOS[idx % ISSUE_PHOTOS.length]}?w=600&h=600&fit=crop`} alt="" className="photo-card-img" />
+                  <span className="photo-card-icon" aria-hidden="true">{i.icon}</span>
+                  <div className="photo-card-overlay">
+                    <h3>{i.title}</h3>
+                    <p>{i.blurb}</p>
+                  </div>
+                  <span className="photo-card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span>
                 </>
               );
               return i.ready ? (
-                <Link key={i.slug} href={`/small-claims/sue-employer-${i.slug}`} className="cat-card">
+                <Link key={i.slug} href={`/small-claims/sue-employer-${i.slug}`} className="photo-card">
                   {inner}
                 </Link>
               ) : (
-                <div key={i.slug} className="cat-card soon" aria-disabled="true">
+                <div key={i.slug} className="photo-card soon" aria-disabled="true">
                   {inner}
                 </div>
               );
