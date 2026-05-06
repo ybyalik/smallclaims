@@ -194,10 +194,11 @@ export default function IssueTemplate({ issue, category, siblings }: Props) {
           </div>
           <div className="cv2-hero-visual" aria-hidden="true">
             <div className="cv2-counter-card">
-              <div className="cv2-counter-head">
-                <span className="cv2-counter-tag">If you win</span>
-                <span className="cv2-counter-state">{issue.counter.meta}</span>
+              <div className="cv2-counter-stamp" aria-hidden="true">
+                <div className="cv2-counter-stamp-label">Awarded</div>
+                <div className="cv2-counter-stamp-meta">{issue.counter.meta.split("·")[0].trim()}</div>
               </div>
+              <span className="cv2-counter-tag">If you win</span>
               <div className="cv2-counter-amount">
                 <span className="cv2-counter-currency">$</span>
                 <span className="cv2-counter-num" data-target={issue.counter.amount}>0</span>
@@ -216,10 +217,7 @@ export default function IssueTemplate({ issue, category, siblings }: Props) {
                   </div>
                 ))}
               </div>
-              <div className="cv2-counter-foot">
-                <span className="cv2-counter-pulse" />
-                {issue.counter.footer}
-              </div>
+              <div className="cv2-counter-foot">{issue.counter.footer}</div>
             </div>
           </div>
         </header>
