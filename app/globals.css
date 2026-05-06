@@ -2409,17 +2409,112 @@ footer { padding: 80px 0 40px; background: var(--ink); color: #fef9f1; }
 .cv2-outcomes-tagline strong { color: var(--ink); font-weight: 700; }
 
 /* Alternatives */
-.cv2-alts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-.cv2-alt { background: #fff; border: 1px solid var(--hairline); border-radius: 14px; padding: 22px 24px; }
-.cv2-alt-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
-.cv2-alt-head h3 { font-family: "Newsreader", Georgia, serif; font-weight: 700; font-size: 19px; letter-spacing: -0.015em; color: var(--ink); margin: 0; }
-.cv2-alt-pill { display: inline-block; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; padding: 4px 9px; border-radius: 6px; }
-.cv2-alt-pill.good { background: rgba(31,27,22,0.08); color: var(--ink-2); }
-.cv2-alt-pill.primary { background: var(--accent); color: #fff; }
-.cv2-alt-pill.warn { background: rgba(217,64,46,0.12); color: var(--accent); }
-.cv2-alt p { font-size: 14px; line-height: 1.55; color: var(--ink-2); margin: 0 0 10px; }
-.cv2-alt p:last-child { margin-bottom: 0; }
-.cv2-alt p strong { color: var(--ink); }
+.cv2-alts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+
+.cv2-alt {
+  position: relative;
+  background: #fff;
+  border: 1px solid var(--hairline);
+  border-radius: 16px;
+  padding: 26px 28px 64px;
+  display: flex;
+  flex-direction: column;
+}
+.cv2-alt.tier-primary {
+  border: 1.5px solid #7ba37e;
+  background: #fbfdf9;
+}
+
+.cv2-alt-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.cv2-alt-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: rgba(31,27,22,0.06);
+  color: var(--ink-2);
+  margin-top: 2px;
+}
+.cv2-alt.tier-good .cv2-alt-icon { background: #f3e8d6; color: var(--ink-2); }
+.cv2-alt.tier-primary .cv2-alt-icon { background: #7ba37e; color: #fff; }
+.cv2-alt.tier-warn .cv2-alt-icon { background: #e6e9d5; color: var(--ink-2); }
+
+.cv2-alt-head h3 {
+  flex: 1 1 auto;
+  font-family: "Newsreader", Georgia, serif;
+  font-weight: 700;
+  font-size: 19px;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin: 6px 0 0;
+  line-height: 1.2;
+  min-width: 0;
+}
+
+.cv2-alt-pill {
+  display: inline-block;
+  font-family: "Geist", system-ui, sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: 8px;
+  flex-shrink: 0;
+  margin-top: 8px;
+  white-space: nowrap;
+}
+.cv2-alt-pill.good { background: #f3e8d6; color: #8a6e3a; }
+.cv2-alt-pill.primary { background: rgba(123, 163, 126, 0.20); color: #3d5d3f; }
+.cv2-alt-pill.warn { background: #e6e9d5; color: #5a6b3a; }
+
+.cv2-alt-body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+.cv2-alt p {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--ink-2);
+  margin: 0;
+}
+.cv2-alt p strong { color: var(--ink); font-weight: 700; }
+.cv2-alt-divider {
+  border: 0;
+  border-top: 1px solid var(--hairline);
+  margin: 16px 0;
+}
+.cv2-alt.tier-primary .cv2-alt-divider {
+  border-top-color: rgba(123, 163, 126, 0.32);
+}
+
+.cv2-alt-arrow {
+  position: absolute;
+  bottom: 22px;
+  right: 22px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1.5px solid var(--hairline);
+  color: var(--ink-2);
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.cv2-alt.tier-primary .cv2-alt-arrow {
+  border-color: #7ba37e;
+  color: #5a8a5e;
+}
 
 /* Related claims rail */
 .cv2-related { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }

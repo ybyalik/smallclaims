@@ -33,6 +33,31 @@ const DEFENSE_LEFT_ICONS = [
   </svg>,
 ];
 
+const ALT_ICONS = {
+  good: (
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M11 13l-3 3-3-3 3-3 3 3z" />
+      <path d="M13 11l3-3 3 3-3 3-3-3z" />
+      <path d="M11 13c-1.5 1-3 3-3 5M13 11c1.5-1 3-3 3-5" />
+      <path d="M3 12l3 3M21 12l-3-3" />
+    </svg>
+  ),
+  primary: (
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M14 4l6 6" />
+      <path d="M11 7l6 6" />
+      <path d="M16 12l-9 9" />
+      <path d="M3 21h11" />
+    </svg>
+  ),
+  warn: (
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="9" r="3.5" />
+      <path d="M5 21c0-3.5 3-6 7-6s7 2.5 7 6" />
+    </svg>
+  ),
+};
+
 const OUTCOME_ICONS = {
   low: (
     <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
@@ -512,13 +537,24 @@ export default function IssueTemplate({ issue, category, siblings }: Props) {
           </div>
           <div className="cv2-alts">
             {issue.alternatives.cards.map((a) => (
-              <div key={a.title} className="cv2-alt">
+              <div key={a.title} className={`cv2-alt tier-${a.pillTier}`}>
                 <div className="cv2-alt-head">
+                  <span className="cv2-alt-icon" aria-hidden="true">
+                    {ALT_ICONS[a.pillTier]}
+                  </span>
                   <h3>{a.title}</h3>
                   <span className={`cv2-alt-pill ${a.pillTier}`}>{a.pillLabel}</span>
                 </div>
-                <p><strong>When it fits:</strong> {a.whenItFits}</p>
-                <p><strong>Tradeoff:</strong> {a.tradeoff}</p>
+                <div className="cv2-alt-body">
+                  <p><strong>When it fits:</strong> {a.whenItFits}</p>
+                  <hr className="cv2-alt-divider" />
+                  <p><strong>Tradeoff:</strong> {a.tradeoff}</p>
+                </div>
+                <span className="cv2-alt-arrow" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </span>
               </div>
             ))}
           </div>
