@@ -297,12 +297,37 @@ export default function IssueTemplate({ issue, category, siblings }: Props) {
                 <H2 parts={issue.demand.h2} />
                 <p>{issue.demand.lede}</p>
                 <ul className="cv2-before-list">
-                  {issue.demand.checklist.map((c) => <li key={c}>{c}</li>)}
+                  {issue.demand.checklist.map((c) => (
+                    <li key={c}>
+                      <span className="cv2-before-check" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M5 12l5 5L20 7" />
+                        </svg>
+                      </span>
+                      <span>{c}</span>
+                    </li>
+                  ))}
                 </ul>
+                <div className="cv2-before-actions">
+                  <Link href="/demand-letter" className="cv2-before-primary">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M12 3l1.5 4 4 1.5-4 1.5L12 14l-1.5-4-4-1.5 4-1.5z" />
+                      <path d="M19 14l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z" />
+                    </svg>
+                    Generate my demand letter
+                  </Link>
+                  <Link href="#before" className="cv2-before-secondary">
+                    Preview example
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M5 12h14M13 6l6 6-6 6" />
+                    </svg>
+                  </Link>
+                </div>
               </div>
             </div>
             <div className="cv2-bento09-right">
               <div className="cv2-letter">
+                <span className="cv2-letter-example" aria-hidden="true">Example</span>
                 <div className="cv2-letter-stamp">
                   <span className="cv2-letter-stamp-label">Certified Mail</span>
                   <span className="cv2-letter-stamp-num">{issue.demand.letter.certifiedNum}</span>
@@ -330,8 +355,16 @@ export default function IssueTemplate({ issue, category, siblings }: Props) {
                   <span className="cv2-letter-signature">{issue.demand.letter.signatory}</span>
                 </div>
               </div>
-              <div className="cv2-bento09-right-actions">
-                <Link href="/demand-letter" className="btn btn-dark">Generate one in 90 seconds</Link>
+              <div className="cv2-letter-badge" aria-hidden="true">
+                <span className="cv2-letter-badge-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" stroke="none">
+                    <path d="M13 2L3 14h7l-1 8 10-12h-7z" />
+                  </svg>
+                </span>
+                <div className="cv2-letter-badge-copy">
+                  <strong>Built for speed.</strong>
+                  <span>Create a custom letter in under 90 seconds.</span>
+                </div>
               </div>
             </div>
           </div>
