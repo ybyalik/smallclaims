@@ -87,7 +87,7 @@ function CtaStepCard({
             fontFamily: "Geist, system-ui, sans-serif",
           }}
         >
-          Step
+          Path
           <span
             style={{
               background: "#fff",
