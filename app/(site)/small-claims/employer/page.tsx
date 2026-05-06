@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import HeroCta from "../../../../components/HeroCta";
+import HeroCaseFolder from "../../../../components/HeroCaseFolder";
 import CtaStepCard from "../../../../components/CtaStepCard";
 import Link from "next/link";
 import Breadcrumbs from "../../../../components/Breadcrumbs";
@@ -232,7 +233,7 @@ export default function EmployerHubPage() {
         <Breadcrumbs items={[{ href: "/small-claims", label: "Small Claims" }, { label: "Employer Disputes" }]} />
 
         {/* HERO */}
-        <header className="cat-hero-3col">
+        <header className="cat-hero-2col">
           <div className="cat-hero-copy">
             <span className="eyebrow">Category</span>
             <h1>
@@ -249,36 +250,16 @@ export default function EmployerHubPage() {
               <HeroCta href="/demand-letter" variant="cream" icon="demand-letter">Send a demand letter</HeroCta>
             </div>
           </div>
-
-          <div className="cat-hero-stat">
-            <div>
-              <div className="cat-hero-stat-eyebrow">Typical worker recovery</div>
-              <div className="cat-hero-stat-big">$3,200</div>
-              <div className="cat-hero-stat-sub">illustrative · varies by state, claim type, and employer size</div>
-            </div>
-            <div>
-              <div className="cat-hero-bars">
-                <span style={{ height: "35%" }}></span>
-                <span style={{ height: "60%" }}></span>
-                <span style={{ height: "75%" }}></span>
-                <span style={{ height: "92%" }}></span>
-              </div>
-              <div className="cat-hero-bars-row">
-                <b>Apr</b>
-                <b>May</b>
-                <b>Jun</b>
-                <b>Jul</b>
-              </div>
-            </div>
-          </div>
-
-          <div className="cat-hero-photo">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&h=1100&fit=crop"
-              alt="People discussing in a workplace setting"
-            />
-          </div>
+          <HeroCaseFolder
+            caseNumber="26-CV-08842"
+            plaintiff="Worker, M."
+            defendant="Acme Logistics Inc."
+            causeLabel="Cause of action"
+            causeValue="Wage Act § 8.51"
+            demand="$6,200"
+            filed="Mar 14, 2026"
+            hearing="Apr 30"
+          />
         </header>
 
         {/* ISSUE CARDS */}

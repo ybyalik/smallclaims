@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import HeroCta from "../../../../components/HeroCta";
+import HeroCaseFolder from "../../../../components/HeroCaseFolder";
 import CtaStepCard from "../../../../components/CtaStepCard";
 import Link from "next/link";
 import Breadcrumbs from "../../../../components/Breadcrumbs";
@@ -235,7 +236,7 @@ export default function LandlordHubPage() {
         <Breadcrumbs items={[{ href: "/small-claims", label: "Small Claims" }, { label: "Landlord Disputes" }]} />
 
         {/* HERO — 3-col like homepage */}
-        <header className="cat-hero-3col">
+        <header className="cat-hero-2col">
           <div className="cat-hero-copy">
             <span className="eyebrow">Category</span>
             <h1>
@@ -252,40 +253,16 @@ export default function LandlordHubPage() {
               <HeroCta href="/demand-letter" variant="cream" icon="demand-letter">Send a demand letter</HeroCta>
             </div>
           </div>
-
-          {/* Stat card — homepage hero-card style */}
-          <div className="cat-hero-stat">
-            <div>
-              <div className="cat-hero-stat-eyebrow">Typical tenant recovery</div>
-              <div className="cat-hero-stat-big">
-                $1,840
-              </div>
-              <div className="cat-hero-stat-sub">illustrative · varies by state, deposit size, and bad-faith findings</div>
-            </div>
-            <div>
-              <div className="cat-hero-bars">
-                <span style={{ height: "30%" }}></span>
-                <span style={{ height: "55%" }}></span>
-                <span style={{ height: "70%" }}></span>
-                <span style={{ height: "92%" }}></span>
-              </div>
-              <div className="cat-hero-bars-row">
-                <b>Apr</b>
-                <b>May</b>
-                <b>Jun</b>
-                <b>Jul</b>
-              </div>
-            </div>
-          </div>
-
-          {/* Photo */}
-          <div className="cat-hero-photo">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=1100&fit=crop"
-              alt="Apartment keys on a lease document"
-            />
-          </div>
+          <HeroCaseFolder
+            caseNumber="26-CV-04217"
+            plaintiff="Tenant, J."
+            defendant="Oakwood Properties LLC"
+            causeLabel="Cause of action"
+            causeValue="§ 1950.5 deposit"
+            demand="$4,500"
+            filed="Apr 21, 2026"
+            hearing="May 28"
+          />
         </header>
 
         {/* ISSUE CARDS */}

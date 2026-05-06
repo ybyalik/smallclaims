@@ -1603,6 +1603,182 @@ footer { padding: 80px 0 40px; background: var(--ink); color: #fef9f1; }
 
 /* ─── Hero 3-col (homepage hero-grid pattern) ─── */
 .cat-hero-3col { display: grid; grid-template-columns: 1.8fr 0.5fr 0.6fr; gap: 48px; padding: 16px 0 64px; align-items: stretch; min-height: 520px; }
+.cat-hero-2col { display: grid; grid-template-columns: 1.4fr 1fr; gap: 56px; padding: 16px 0 64px; align-items: center; min-height: 520px; }
+
+/* Hero right side — state recovery pins on a faded map */
+.hero-statepins { width: 100%; }
+.hero-statepins-mapbox {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: rgba(31,27,22,0.04);
+  border-radius: 18px;
+  padding: 16px;
+  overflow: hidden;
+}
+.hero-statepins-map {
+  position: absolute;
+  inset: 0;
+  background-image: url("/map-background.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.55;
+}
+.hero-statepins-pin {
+  position: absolute;
+  transform: translate(-50%, -100%);
+  opacity: 0;
+  animation: heroPinDrop 0.5s ease-out forwards;
+}
+@keyframes heroPinDrop {
+  from { opacity: 0; transform: translate(-50%, calc(-100% - 12px)); }
+  to { opacity: 1; transform: translate(-50%, -100%); }
+}
+.hero-statepins-pin-label {
+  background: var(--accent);
+  color: #fff;
+  padding: 4px 9px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: "Geist", system-ui, sans-serif;
+  box-shadow: 0 6px 14px -4px rgba(217,64,46,0.5);
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+}
+.hero-statepins-pin-stem {
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid var(--accent);
+  margin: 0 auto;
+}
+.hero-statepins-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: 14px;
+  font-size: 12px;
+  color: var(--ink-2);
+}
+.hero-statepins-foot-eyebrow {
+  font-family: "Geist", system-ui, sans-serif;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--accent);
+}
+.hero-statepins-foot-sub { font-style: italic; }
+
+/* Hero right side — case file folder */
+.hero-folder { width: 100%; max-width: 380px; margin-left: auto; }
+.hero-folder-tab {
+  position: relative;
+  margin-left: 28px;
+  background: #e8d8a8;
+  border-radius: 8px 8px 0 0;
+  padding: 8px 18px 6px;
+  display: inline-block;
+  border: 1px solid #c5b78a;
+  border-bottom: none;
+  font-family: ui-monospace, "SFMono-Regular", monospace;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  font-weight: 700;
+  color: #5b5648;
+}
+.hero-folder-body {
+  position: relative;
+  background: #f3e6c4;
+  border: 1px solid #c5b78a;
+  border-radius: 0 12px 12px 12px;
+  padding: 26px;
+  box-shadow: 0 22px 50px -28px rgba(31,27,22,0.32);
+}
+.hero-folder-peek1 {
+  position: absolute;
+  top: -6px; right: 24px;
+  width: 86px; height: 14px;
+  background: #fff;
+  border: 1px solid var(--hairline);
+  border-radius: 6px 6px 0 0;
+  transform: rotate(2deg);
+}
+.hero-folder-peek2 {
+  position: absolute;
+  top: -8px; right: 40px;
+  width: 86px; height: 14px;
+  background: #fefcf3;
+  border: 1px solid var(--hairline);
+  border-radius: 6px 6px 0 0;
+  transform: rotate(-3deg);
+}
+.hero-folder-card {
+  position: relative;
+  background: #fefcf3;
+  border: 1px solid var(--hairline);
+  border-radius: 4px;
+  padding: 18px;
+  margin-top: 12px;
+}
+.hero-folder-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--hairline);
+}
+.hero-folder-eyebrow {
+  font-family: "Geist", system-ui, sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--muted);
+}
+.hero-folder-name {
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.hero-folder-filed {
+  font-family: "Geist", system-ui, sans-serif;
+  font-size: 10px;
+  color: var(--muted);
+}
+.hero-folder-vs {
+  font-family: "Newsreader", Georgia, serif;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+.hero-folder-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--ink-2);
+}
+.hero-folder-row {
+  display: flex;
+  justify-content: space-between;
+}
+.hero-folder-row strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+.hero-folder-amount { color: var(--accent) !important; }
+
+@media (max-width: 920px) {
+  .cat-hero-2col { grid-template-columns: 1fr; gap: 24px; min-height: 0; }
+  .hero-folder { margin: 0 auto; }
+}
 .cat-hero-copy { display: flex; flex-direction: column; justify-content: center; }
 .cat-hero-copy .eyebrow { display: inline-block; margin-bottom: 12px; }
 .cat-hero-copy h1 { font-family: "Newsreader", Georgia, serif; font-weight: var(--headline-weight); font-size: clamp(38px, 4.6vw, 60px); line-height: 1.04; letter-spacing: var(--headline-tracking); color: var(--ink); margin: 0 0 14px; }

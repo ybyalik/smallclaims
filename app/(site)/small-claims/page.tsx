@@ -3,6 +3,7 @@ import Link from "next/link";
 import { availableStateSlugs } from "../../../lib/state-data";
 import Breadcrumbs from "../../../components/Breadcrumbs";
 import HeroCta from "../../../components/HeroCta";
+import HeroStatePins from "../../../components/HeroStatePins";
 import UsMap from "../../../components/widgets/UsMap";
 import StateSearch from "../../../components/widgets/StateSearch";
 
@@ -356,7 +357,7 @@ export default function SmallClaimsHubPage() {
         <Breadcrumbs items={[{ label: "Small Claims" }]} />
 
         {/* HERO */}
-        <header className="cat-hero-3col">
+        <header className="cat-hero-2col">
           <div className="cat-hero-copy">
             <span className="eyebrow">Small Claims Guides</span>
             <h1>
@@ -373,36 +374,7 @@ export default function SmallClaimsHubPage() {
               <HeroCta href="/demand-letter" variant="cream" icon="demand-letter">Send a demand letter</HeroCta>
             </div>
           </div>
-
-          <div className="cat-hero-stat">
-            <div>
-              <div className="cat-hero-stat-eyebrow">State caps range</div>
-              <div className="cat-hero-stat-big">$5K – $20K</div>
-              <div className="cat-hero-stat-sub">filing fees usually $30 to $100 · hearings 10 to 15 minutes</div>
-            </div>
-            <div>
-              <div className="cat-hero-bars">
-                <span style={{ height: "30%" }}></span>
-                <span style={{ height: "55%" }}></span>
-                <span style={{ height: "75%" }}></span>
-                <span style={{ height: "92%" }}></span>
-              </div>
-              <div className="cat-hero-bars-row">
-                <b>Apr</b>
-                <b>May</b>
-                <b>Jun</b>
-                <b>Jul</b>
-              </div>
-            </div>
-          </div>
-
-          <div className="cat-hero-photo">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="https://images.unsplash.com/photo-1589994965851-a8f479c573a9?w=800&h=1100&fit=crop"
-              alt="Courthouse steps with stack of paperwork"
-            />
-          </div>
+          <HeroStatePins />
         </header>
 
         {/* CATEGORIES */}

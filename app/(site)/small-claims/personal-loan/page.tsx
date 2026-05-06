@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import HeroCta from "../../../../components/HeroCta";
+import HeroCaseFolder from "../../../../components/HeroCaseFolder";
 import CtaStepCard from "../../../../components/CtaStepCard";
 import Link from "next/link";
 import Breadcrumbs from "../../../../components/Breadcrumbs";
@@ -49,21 +50,23 @@ export default function PersonalLoanHubPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="wrap">
         <Breadcrumbs items={[{ href: "/small-claims", label: "Small Claims" }, { label: "Personal Loan Disputes" }]} />
-        <header className="cat-hero-3col">
+        <header className="cat-hero-2col">
           <div className="cat-hero-copy">
             <span className="eyebrow">Category</span>
             <h1>How to <em>sue someone who owes you money</em>.</h1>
             <p className="cat-lede">Friend, family member, ex, or stranger. With or without a written agreement. Small claims is built for these cases. Most informal loans are recoverable: bank records, texts, witness testimony, and the borrower's own statements all establish the agreement. Most cases settle once a demand letter arrives.</p>
             <div className="hero-ctas"><HeroCta href="/case-score" variant="dark" icon="case-score">Check my case (free)</HeroCta><HeroCta href="/demand-letter" variant="cream" icon="demand-letter">Send a demand letter</HeroCta></div>
           </div>
-          <div className="cat-hero-stat">
-            <div><div className="cat-hero-stat-eyebrow">Typical lender recovery</div><div className="cat-hero-stat-big">$4,200</div><div className="cat-hero-stat-sub">illustrative · varies by amount and term</div></div>
-            <div><div className="cat-hero-bars"><span style={{ height: "30%" }}></span><span style={{ height: "55%" }}></span><span style={{ height: "78%" }}></span><span style={{ height: "92%" }}></span></div><div className="cat-hero-bars-row"><b>Apr</b><b>May</b><b>Jun</b><b>Jul</b></div></div>
-          </div>
-          <div className="cat-hero-photo">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="https://images.unsplash.com/photo-1554224155-1696413565d3?w=800&h=1100&fit=crop" alt="Stack of bills and contract on desk" />
-          </div>
+          <HeroCaseFolder
+            caseNumber="26-CV-07490"
+            plaintiff="Lender, A."
+            defendant="Borrower, R."
+            causeLabel="Cause of action"
+            causeValue="Breach of promise"
+            demand="$5,000"
+            filed="Apr 10, 2026"
+            hearing="Jun 02"
+          />
         </header>
 
         <section className="cat-section">

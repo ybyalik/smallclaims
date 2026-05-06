@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import HeroCta from "../../../../components/HeroCta";
+import HeroCaseFolder from "../../../../components/HeroCaseFolder";
 import CtaStepCard from "../../../../components/CtaStepCard";
 import Link from "next/link";
 import Breadcrumbs from "../../../../components/Breadcrumbs";
@@ -246,7 +247,7 @@ export default function ContractorHubPage() {
         <Breadcrumbs items={[{ href: "/small-claims", label: "Small Claims" }, { label: "Contractor Disputes" }]} />
 
         {/* HERO */}
-        <header className="cat-hero-3col">
+        <header className="cat-hero-2col">
           <div className="cat-hero-copy">
             <span className="eyebrow">Category</span>
             <h1>
@@ -264,36 +265,16 @@ export default function ContractorHubPage() {
               <HeroCta href="/demand-letter" variant="cream" icon="demand-letter">Send a demand letter</HeroCta>
             </div>
           </div>
-
-          <div className="cat-hero-stat">
-            <div>
-              <div className="cat-hero-stat-eyebrow">Typical homeowner recovery</div>
-              <div className="cat-hero-stat-big">$4,200</div>
-              <div className="cat-hero-stat-sub">illustrative · varies by state, licensing status, and project size</div>
-            </div>
-            <div>
-              <div className="cat-hero-bars">
-                <span style={{ height: "32%" }}></span>
-                <span style={{ height: "55%" }}></span>
-                <span style={{ height: "78%" }}></span>
-                <span style={{ height: "92%" }}></span>
-              </div>
-              <div className="cat-hero-bars-row">
-                <b>Apr</b>
-                <b>May</b>
-                <b>Jun</b>
-                <b>Jul</b>
-              </div>
-            </div>
-          </div>
-
-          <div className="cat-hero-photo">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&h=1100&fit=crop"
-              alt="Construction tools on a worksite"
-            />
-          </div>
+          <HeroCaseFolder
+            caseNumber="26-CV-02174"
+            plaintiff="Homeowner, D."
+            defendant="Patel Construction LLC"
+            causeLabel="Cause of action"
+            causeValue="Breach of contract"
+            demand="$4,800"
+            filed="Feb 28, 2026"
+            hearing="Apr 12"
+          />
         </header>
 
         {/* ISSUE CARDS */}

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import HeroCta from "../../../../components/HeroCta";
+import HeroCaseFolder from "../../../../components/HeroCaseFolder";
 import CtaStepCard from "../../../../components/CtaStepCard";
 import Link from "next/link";
 import Breadcrumbs from "../../../../components/Breadcrumbs";
@@ -47,21 +48,23 @@ export default function RefundHubPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="wrap">
         <Breadcrumbs items={[{ href: "/small-claims", label: "Small Claims" }, { label: "Refund Disputes" }]} />
-        <header className="cat-hero-3col">
+        <header className="cat-hero-2col">
           <div className="cat-hero-copy">
             <span className="eyebrow">Category</span>
             <h1>How to <em>get a refund</em> in small claims court.</h1>
             <p className="cat-lede">Defective products, gym memberships that won't cancel, dry cleaners that ruined your clothes, salons that damaged your hair, services never performed. State UDAP statutes apply with 2x or 3x multipliers. Most cases settle once a demand letter cites the specific statute. Use chargebacks first when possible.</p>
             <div className="hero-ctas"><HeroCta href="/case-score" variant="dark" icon="case-score">Check my case (free)</HeroCta><HeroCta href="/demand-letter" variant="cream" icon="demand-letter">Send a demand letter</HeroCta></div>
           </div>
-          <div className="cat-hero-stat">
-            <div><div className="cat-hero-stat-eyebrow">Typical refund recovery</div><div className="cat-hero-stat-big">$1,500</div><div className="cat-hero-stat-sub">illustrative · varies by case type</div></div>
-            <div><div className="cat-hero-bars"><span style={{ height: "30%" }}></span><span style={{ height: "55%" }}></span><span style={{ height: "78%" }}></span><span style={{ height: "92%" }}></span></div><div className="cat-hero-bars-row"><b>Apr</b><b>May</b><b>Jun</b><b>Jul</b></div></div>
-          </div>
-          <div className="cat-hero-photo">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="https://images.unsplash.com/photo-1554224155-1696413565d3?w=800&h=1100&fit=crop" alt="Receipts and refund forms" />
-          </div>
+          <HeroCaseFolder
+            caseNumber="26-CV-04680"
+            plaintiff="Member, S."
+            defendant="Iron Gym Holdings"
+            causeLabel="Cause of action"
+            causeValue="Refund / UDAP"
+            demand="$1,800"
+            filed="Apr 14, 2026"
+            hearing="May 30"
+          />
         </header>
 
         <section className="cat-section">

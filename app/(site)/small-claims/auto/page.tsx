@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import HeroCta from "../../../../components/HeroCta";
+import HeroCaseFolder from "../../../../components/HeroCaseFolder";
 import CtaStepCard from "../../../../components/CtaStepCard";
 import Link from "next/link";
 import Breadcrumbs from "../../../../components/Breadcrumbs";
@@ -217,7 +218,7 @@ export default function AutoHubPage() {
         <Breadcrumbs items={[{ href: "/small-claims", label: "Small Claims" }, { label: "Auto Disputes" }]} />
 
         {/* HERO */}
-        <header className="cat-hero-3col">
+        <header className="cat-hero-2col">
           <div className="cat-hero-copy">
             <span className="eyebrow">Category</span>
             <h1>
@@ -235,36 +236,16 @@ export default function AutoHubPage() {
               <HeroCta href="/demand-letter" variant="cream" icon="demand-letter">Send a demand letter</HeroCta>
             </div>
           </div>
-
-          <div className="cat-hero-stat">
-            <div>
-              <div className="cat-hero-stat-eyebrow">Typical driver recovery</div>
-              <div className="cat-hero-stat-big">$3,800</div>
-              <div className="cat-hero-stat-sub">illustrative · varies by case type and state</div>
-            </div>
-            <div>
-              <div className="cat-hero-bars">
-                <span style={{ height: "30%" }}></span>
-                <span style={{ height: "55%" }}></span>
-                <span style={{ height: "78%" }}></span>
-                <span style={{ height: "92%" }}></span>
-              </div>
-              <div className="cat-hero-bars-row">
-                <b>Apr</b>
-                <b>May</b>
-                <b>Jun</b>
-                <b>Jul</b>
-              </div>
-            </div>
-          </div>
-
-          <div className="cat-hero-photo">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&h=1100&fit=crop"
-              alt="Car keys on a dealership desk"
-            />
-          </div>
+          <HeroCaseFolder
+            caseNumber="26-CV-06721"
+            plaintiff="Buyer, C."
+            defendant="Sunrise Auto Group"
+            causeLabel="Cause of action"
+            causeValue="Lemon Law § 1793"
+            demand="$3,500"
+            filed="Apr 02, 2026"
+            hearing="May 19"
+          />
         </header>
 
         {/* ISSUE CARDS */}
