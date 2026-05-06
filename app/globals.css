@@ -1854,17 +1854,35 @@ footer { padding: 80px 0 40px; background: var(--ink); color: #fef9f1; }
 
 /* State link grid */
 .cat-state-grid {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 14px;
   margin-top: 18px;
-  padding: 56px 36px;
+  padding: 80px 30px;
+  background: transparent;
+  border-radius: 0;
+  overflow: visible;
+  isolation: isolate;
+}
+.cat-state-grid::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 130%;
+  height: 220%;
   background-image: url("/map-background.png");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #fbf7ef;
-  border-radius: 18px;
+  z-index: -1;
+  pointer-events: none;
+}
+.cat-state-link {
+  position: relative;
+  z-index: 1;
 }
 .cat-state-link {
   display: flex;
