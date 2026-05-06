@@ -33,6 +33,31 @@ const DEFENSE_LEFT_ICONS = [
   </svg>,
 ];
 
+const OUTCOME_ICONS = {
+  low: (
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 13c-3-2-6-2-7-1.5-.5 4 2 6 4 6h6c2 0 4.5-2 4-6-1-.5-4-.5-7 1.5z" />
+      <path d="M12 13V7M12 7c-1-2-3-2-4-1 0 2 2 3 4 3zM12 7c1-2 3-2 4-1 0 2-2 3-4 3z" />
+      <path d="M9 19h6l-1 2H10z" />
+    </svg>
+  ),
+  mid: (
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="4" y="14" width="3.5" height="6" rx="0.5" />
+      <rect x="10" y="9" width="3.5" height="11" rx="0.5" fill="currentColor" />
+      <rect x="16" y="11" width="3.5" height="9" rx="0.5" />
+    </svg>
+  ),
+  high: (
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M8 4h8v4a4 4 0 0 1-8 0z" />
+      <path d="M8 6H5v2a3 3 0 0 0 3 3M16 6h3v2a3 3 0 0 1-3 3" />
+      <path d="M12 12v3M9 21h6M10 19h4l-.5 2h-3z" />
+      <path d="M11 5l1 1.5L13 5l1.5-.3-1 1.4.3 1.5L12 7l-1.5.6.3-1.5-1-1.4z" fill="currentColor" stroke="none" />
+    </svg>
+  ),
+};
+
 const DEFENSE_RIGHT_ICONS = [
   <svg key="r0" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
     <path d="M12 3l8 3v5c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-3z" />
@@ -399,12 +424,36 @@ export default function IssueTemplate({ issue, category, siblings }: Props) {
           </div>
           <div className="cv2-outcomes">
             {issue.outcomes.bands.map((b) => (
-              <div key={b.label} className="cv2-outcome">
-                <div className={`cv2-outcome-band ${b.tier}`}>{b.label}</div>
+              <div key={b.label} className={`cv2-outcome tier-${b.tier}`}>
+                <span className={`cv2-outcome-band ${b.tier}`}>{b.label}</span>
+                <span className="cv2-outcome-icon" aria-hidden="true">
+                  {OUTCOME_ICONS[b.tier]}
+                </span>
                 <div className="cv2-outcome-num">{b.range}</div>
+                <div className="cv2-outcome-track" aria-hidden="true">
+                  <div className="cv2-outcome-track-bar">
+                    <div className="cv2-outcome-track-fill" />
+                  </div>
+                  <div className="cv2-outcome-track-labels">
+                    <span>$0</span>
+                    <span>$5K</span>
+                    <span>$10K+</span>
+                  </div>
+                </div>
                 <p dangerouslySetInnerHTML={{ __html: b.body }} />
               </div>
             ))}
+          </div>
+          <div className="cv2-outcomes-tagline">
+            <span className="cv2-outcomes-tagline-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 3l8 3v5c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-3z" />
+              </svg>
+            </span>
+            <p>
+              <strong>Better evidence. Better prep. Better outcome.</strong>{" "}
+              Your documentation makes the difference.
+            </p>
           </div>
         </section>
 
