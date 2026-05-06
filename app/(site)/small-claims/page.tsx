@@ -20,15 +20,116 @@ export const metadata: Metadata = {
 };
 
 const CATEGORIES = [
-  { slug: "landlord", title: "Sue a landlord", blurb: "Security deposit, mold, lockout, harassment, wrongful eviction, and 6 more disputes.", photo: "1560518883-ce09059eeffa" },
-  { slug: "employer", title: "Sue an employer", blurb: "Wrongful termination, unpaid wages, last paycheck, retaliation, stolen tips, and more.", photo: "1521791136064-7986c2920216" },
-  { slug: "contractor", title: "Sue a contractor", blurb: "Took deposit and vanished, unfinished work, poor workmanship, damaged your house.", photo: "1503387762-592deb58ef4e" },
-  { slug: "auto", title: "Sue over a car", blurb: "Parked-car hit, dealership fraud, lemon, mechanic, valet damage, towing damage.", photo: "1503376780353-7e6692767b70" },
-  { slug: "neighbor", title: "Sue a neighbor", blurb: "Property damage, fallen trees, noise, harassment, water runoff, fence disputes.", photo: "1568605114967-8130f3a36994" },
-  { slug: "personal-loan", title: "Recover money owed", blurb: "Friend, family, ex, IOU, verbal agreement, cash loan. Most informal loans are recoverable.", photo: "1554224155-1696413565d3" },
-  { slug: "roommate", title: "Sue a roommate", blurb: "Unpaid rent, unpaid bills, moving out without notice, property damage, security deposit.", photo: "1560448204-e02f11c3d0e2" },
-  { slug: "online-seller", title: "Sue an online seller", blurb: "Amazon, eBay, Etsy, Facebook Marketplace, Venmo scams, gig services, FedEx.", photo: "1607082348824-0a96f2a4b9da" },
-  { slug: "refund", title: "Get a refund", blurb: "Defective product, gym membership, dry cleaner, salon damage, services not rendered.", photo: "1554224154-26032ffc0d07" },
+  {
+    slug: "landlord",
+    title: "Sue a landlord",
+    blurb: "Security deposit, mold, lockout, harassment, wrongful eviction, and 6 more disputes.",
+    photo: "1560518883-ce09059eeffa",
+    icon: (
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.8">
+        <circle cx="12" cy="8" r="4" />
+        <path d="M4 21c0-4 4-7 8-7s8 3 8 7" />
+      </svg>
+    ),
+  },
+  {
+    slug: "employer",
+    title: "Sue an employer",
+    blurb: "Wrongful termination, unpaid wages, last paycheck, retaliation, stolen tips, and more.",
+    photo: "1521791136064-7986c2920216",
+    icon: (
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.8">
+        <rect x="3" y="7" width="18" height="13" rx="2" />
+        <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+      </svg>
+    ),
+  },
+  {
+    slug: "contractor",
+    title: "Sue a contractor",
+    blurb: "Took deposit and vanished, unfinished work, poor workmanship, damaged your house.",
+    photo: "1503387762-592deb58ef4e",
+    icon: (
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.8">
+        <path d="M14 4l6 6-3 3-6-6 3-3z" />
+        <path d="M11 7l-7 7v6h6l7-7" />
+      </svg>
+    ),
+  },
+  {
+    slug: "auto",
+    title: "Sue over a car",
+    blurb: "Parked-car hit, dealership fraud, lemon, mechanic, valet damage, towing damage.",
+    photo: "1503376780353-7e6692767b70",
+    icon: (
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.8">
+        <path d="M3 16h18l-2-7H5z" />
+        <circle cx="7.5" cy="16.5" r="1.5" />
+        <circle cx="16.5" cy="16.5" r="1.5" />
+      </svg>
+    ),
+  },
+  {
+    slug: "neighbor",
+    title: "Sue a neighbor",
+    blurb: "Property damage, fallen trees, noise, harassment, water runoff, fence disputes.",
+    photo: "1568605114967-8130f3a36994",
+    icon: (
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.8">
+        <path d="M3 21h18M5 21V10l7-5 7 5v11" />
+        <path d="M9 21v-7h6v7" />
+      </svg>
+    ),
+  },
+  {
+    slug: "personal-loan",
+    title: "Recover money owed",
+    blurb: "Friend, family, ex, IOU, verbal agreement, cash loan. Most informal loans are recoverable.",
+    photo: "1554224155-1696413565d3",
+    icon: (
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.8">
+        <path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" />
+        <path d="M14 3v6h6M8 13h8M8 17h6" />
+      </svg>
+    ),
+  },
+  {
+    slug: "roommate",
+    title: "Sue a roommate",
+    blurb: "Unpaid rent, unpaid bills, moving out without notice, property damage, security deposit.",
+    photo: "1560448204-e02f11c3d0e2",
+    icon: (
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.8">
+        <circle cx="9" cy="8" r="3" />
+        <circle cx="16" cy="9" r="2.5" />
+        <path d="M3 20c0-3 3-5 6-5s6 2 6 5M14 20c0-2.5 2-4 4.5-4s4.5 1.5 4.5 4" />
+      </svg>
+    ),
+  },
+  {
+    slug: "online-seller",
+    title: "Sue an online seller",
+    blurb: "Amazon, eBay, Etsy, Facebook Marketplace, Venmo scams, gig services, FedEx.",
+    photo: "1607082348824-0a96f2a4b9da",
+    icon: (
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.8">
+        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+        <path d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12" />
+      </svg>
+    ),
+  },
+  {
+    slug: "refund",
+    title: "Get a refund",
+    blurb: "Defective product, gym membership, dry cleaner, salon damage, services not rendered.",
+    photo: "1554224154-26032ffc0d07",
+    icon: (
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.8">
+        <path d="M3 7l4-4 4 4M7 3v10a4 4 0 0 0 4 4h10" />
+        <path d="M21 17l-4 4-4-4" />
+      </svg>
+    ),
+  },
 ];
 
 const TOP_TOPICS = [
@@ -188,14 +289,27 @@ export default function SmallClaimsHubPage() {
 
         {/* CATEGORIES */}
         <section className="cat-section">
-          <div className="sec-head" style={{ textAlign: "left", marginBottom: 28 }}>
-            <h2 style={{ margin: 0, whiteSpace: "nowrap" }}>
+          <div className="pick-cat-head">
+            <div className="pick-cat-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.8">
+                <path d="M3 21h18M4 21V10M20 21V10M6 10V8l6-4 6 4v2" />
+                <path d="M8 21v-7M12 21v-7M16 21v-7M3 10h18" />
+              </svg>
+            </div>
+            <h2 className="pick-cat-title">
               <em>Pick</em> a category.
             </h2>
-            <p style={{ marginTop: 12, marginLeft: 0, maxWidth: "60ch" }}>
+            <p className="pick-cat-desc">
               Each guide covers the legal theory, what evidence to bring, what you can recover,
               and how to file in your state.
             </p>
+            <div className="pick-cat-note" aria-hidden="true">
+              <span>Choose what fits your case</span>
+              <svg viewBox="0 0 80 60" width="60" height="48" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round">
+                <path d="M5 8 C 30 5, 60 15, 70 40" />
+                <path d="M62 32 L72 42 L62 50" />
+              </svg>
+            </div>
           </div>
           <div className="photo-grid">
             {CATEGORIES.map((c) => (
@@ -206,10 +320,16 @@ export default function SmallClaimsHubPage() {
                   alt=""
                   className="photo-card-img"
                 />
+                <span className="photo-card-icon" aria-hidden="true">{c.icon}</span>
                 <div className="photo-card-overlay">
                   <h3>{c.title}</h3>
                   <p>{c.blurb}</p>
                 </div>
+                <span className="photo-card-arrow" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </span>
               </Link>
             ))}
           </div>
