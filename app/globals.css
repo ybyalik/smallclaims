@@ -4460,7 +4460,7 @@ footer { padding: 80px 0 40px; background: var(--ink); color: #fef9f1; }
 
 /* Mainline How-to-file section — warm bg bleeding to wrap edges */
 .cv2-how-section {
-  background: #f5efe3;
+  background: #fff;
   padding: 56px 48px !important;
   margin: 32px 0;
   border-radius: 20px;
