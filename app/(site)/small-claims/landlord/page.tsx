@@ -7,6 +7,119 @@ import { STATES } from "../../../../lib/states";
 
 const ISSUE_PHOTOS = ["1560518883-ce09059eeffa", "1493809842364-78817add7ffb", "1560448204-e02f11c3d0e2", "1502672260266-1c1ef2d93688", "1568605114967-8130f3a36994"];
 
+function ctaStepOffset(pos: "top-left" | "top-right" | "bottom-left" | "bottom-right"): React.CSSProperties {
+  const inset = 22;
+  switch (pos) {
+    case "top-left": return { top: inset, left: inset };
+    case "top-right": return { top: inset, right: inset };
+    case "bottom-left": return { bottom: inset, left: inset };
+    case "bottom-right": return { bottom: inset, right: inset };
+  }
+}
+
+function CtaStepCard({
+  href,
+  bg,
+  tone,
+  stepNum,
+  stepPos,
+  title,
+  titlePos,
+  gradient,
+}: {
+  href: string;
+  bg: string;
+  tone: "dark" | "light";
+  stepNum: string;
+  stepPos: "top-left" | "top-right" | "bottom-left" | "bottom-right";
+  title: React.ReactNode;
+  titlePos: "top-left" | "top-right" | "bottom-left" | "bottom-right";
+  gradient?: boolean;
+}) {
+  const txtColor = tone === "dark" ? "#0c0c0c" : "#fff";
+  const stepBg = tone === "dark" ? "#0c0c0c" : "rgba(0,0,0,0.85)";
+  const stepText = "#fff";
+  return (
+    <Link
+      href={href}
+      style={{
+        textDecoration: "none",
+        background: bg,
+        borderRadius: 20,
+        height: 280,
+        position: "relative",
+        overflow: "hidden",
+        display: "block",
+        backgroundImage: "radial-gradient(circle, rgba(0,0,0,0.06) 1px, transparent 1px)",
+        backgroundSize: "10px 10px",
+        transition: "transform .25s ease, box-shadow .25s ease",
+      }}
+    >
+      {gradient && (
+        <div
+          style={{
+            position: "absolute",
+            left: -30,
+            bottom: -30,
+            width: 200,
+            height: 200,
+            borderRadius: "50%",
+            background: "radial-gradient(circle at 50% 50%, rgba(245,116,76,0.95), rgba(245,116,76,0) 65%)",
+            backgroundImage: "radial-gradient(circle, rgba(245,116,76,0.7) 1px, transparent 1.5px)",
+            backgroundSize: "6px 6px",
+            filter: "blur(0.4px)",
+          }}
+          aria-hidden
+        />
+      )}
+      <div style={{ position: "absolute", ...ctaStepOffset(stepPos) }}>
+        <span
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: 6,
+            background: stepBg,
+            color: stepText,
+            padding: "5px 5px 5px 12px",
+            borderRadius: 999,
+            fontSize: 11.5,
+            fontWeight: 600,
+            fontFamily: "Geist, system-ui, sans-serif",
+          }}
+        >
+          Step
+          <span
+            style={{
+              background: "#fff",
+              color: stepBg,
+              padding: "2px 8px",
+              borderRadius: 999,
+              fontWeight: 700,
+              fontSize: 11.5,
+            }}
+          >
+            {stepNum}
+          </span>
+        </span>
+      </div>
+      <div style={{ position: "absolute", maxWidth: "85%", ...ctaStepOffset(titlePos) }}>
+        <div
+          style={{
+            fontFamily: "Geist, system-ui, sans-serif",
+            fontWeight: 800,
+            fontSize: 22,
+            lineHeight: 1.15,
+            letterSpacing: "-0.015em",
+            color: txtColor,
+          }}
+        >
+          {title}
+        </div>
+      </div>
+    </Link>
+  );
+}
+
 export const metadata: Metadata = {
   title: "How to Sue Your Landlord in Small Claims Court",
   description:
@@ -652,6 +765,47 @@ export default function LandlordHubPage() {
                   <span>Step-by-step in your state.</span>
                 </div>
               </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* CTAs — Variant 07 (preview) */}
+        <section className="cat-section">
+          <div style={{ background: "#0d0d0d", color: "#fff", padding: "60px 0", borderRadius: 20, position: "relative", overflow: "hidden" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "1.85fr 1fr", gap: 0 }}>
+              {/* LEFT — title + 3 step cards */}
+              <div style={{ padding: "20px 48px 40px" }}>
+                <span style={{ display: "inline-block", background: "rgba(232,93,62,0.15)", color: "#e85d3e", padding: "5px 14px", borderRadius: 999, fontSize: 12, fontWeight: 600, marginBottom: 22 }}>
+                  Take the next step
+                </span>
+                <h2 style={{ fontFamily: "Geist, system-ui, sans-serif", fontSize: "clamp(40px, 4.4vw, 56px)", fontWeight: 800, letterSpacing: "-0.02em", lineHeight: 1.05, margin: "0 0 56px", color: "#fff" }}>
+                  Three ways to move forward.
+                </h2>
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 18, alignItems: "stretch", position: "relative" }}>
+                  <CtaStepCard href="/demand-letter" bg="#4ad96a" tone="dark" stepNum="01" stepPos="top-left" title="Send a demand letter" titlePos="bottom-left" />
+                  <CtaStepCard href="/case-score" bg="#fff" tone="dark" stepNum="02" stepPos="bottom-right" title="Check my case" titlePos="top-left" gradient />
+                  <CtaStepCard href="/small-claims" bg="#7344ee" tone="light" stepNum="03" stepPos="top-right" title="File your claim" titlePos="bottom-right" />
+                </div>
+              </div>
+              {/* RIGHT — testimonial */}
+              <div style={{ borderLeft: "1px solid #1f1f1f", padding: "40px 48px 60px", position: "relative" }}>
+                <div style={{ fontFamily: "Geist, system-ui, sans-serif", fontWeight: 900, fontSize: 110, lineHeight: 0.6, color: "#2a2a2a", marginBottom: 28, letterSpacing: "-0.06em" }} aria-hidden="true">
+                  &rdquo;&rdquo;
+                </div>
+                <div style={{ width: 60, height: 1, background: "#3a3a3a", marginBottom: 22 }} />
+                <p style={{ fontFamily: "Geist, system-ui, sans-serif", fontSize: 22, fontWeight: 700, lineHeight: 1.35, letterSpacing: "-0.01em", color: "#fff", margin: "0 0 36px" }}>
+                  Won my $4,500 deposit back in 47 days. The demand letter alone got my landlord to settle.
+                </p>
+                <div>
+                  <div style={{ fontFamily: "Geist, system-ui, sans-serif", fontWeight: 700, fontSize: 16, color: "#fff", marginBottom: 4 }}>Maria R.</div>
+                  <div style={{ fontSize: 13.5, color: "#9aa0a6" }}>Tenant · California</div>
+                </div>
+                <div style={{ position: "absolute", right: 24, bottom: 0, display: "flex", gap: 6, alignItems: "flex-end" }}>
+                  <div style={{ width: 18, height: 60, background: "#1c1c1c" }} />
+                  <div style={{ width: 18, height: 80, background: "#1c1c1c" }} />
+                  <div style={{ width: 18, height: 100, background: "#1c1c1c" }} />
+                </div>
+              </div>
             </div>
           </div>
         </section>
