@@ -133,18 +133,139 @@ const CATEGORIES = [
 ];
 
 const TOP_TOPICS = [
-  { href: "/small-claims/sue-landlord-security-deposit", title: "Sue a landlord for a security deposit", blurb: "2x or 3x penalties in most states", avg: "$4,500", timeline: "30-60 days", icon: (<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M14 4l4 4M19 5l3 3"/></svg>) },
-  { href: "/small-claims/sue-employer-wrongful-termination", title: "Sue an employer for wrongful termination", blurb: "When small claims fits vs. needing an attorney", avg: "$7,200", timeline: "60-90 days", icon: (<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6"><rect x="3" y="6" width="18" height="14" rx="2"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 10h18M9 14l6 0"/></svg>) },
-  { href: "/small-claims/sue-employer-unpaid-wages", title: "Sue an employer for unpaid wages", blurb: "FLSA + state wage acts (often 2x damages)", avg: "$4,400", timeline: "45-90 days", icon: (<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9 10c0-1.1.9-2 2-2h2c1.1 0 2 .9 2 2s-.9 2-2 2h-2c-1.1 0-2 .9-2 2s.9 2 2 2h2c1.1 0 2-.9 2-2"/></svg>) },
-  { href: "/small-claims/sue-auto-parked-car-hit", title: "Sue someone for hitting your parked car", blurb: "When insurance won't pay", avg: "$4,200", timeline: "30-60 days", icon: (<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M3 17h18l-2-7H5z"/><circle cx="7.5" cy="17" r="1.5"/><circle cx="16.5" cy="17" r="1.5"/><path d="M5 10l1.5-3h11l1.5 3"/></svg>) },
-  { href: "/small-claims/sue-contractor-deposit-and-disappearing", title: "Sue a contractor who took the deposit and vanished", blurb: "License board + bond + court", avg: "$6,500", timeline: "60-120 days", icon: (<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>) },
-  { href: "/small-claims/sue-loan-someone-owes-me-money", title: "Sue someone who owes you money", blurb: "Most informal loans are recoverable", avg: "$5,400", timeline: "60-90 days", icon: (<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/><circle cx="12" cy="14" r="2"/></svg>) },
-  { href: "/small-claims/sue-loan-friend-not-paying-back", title: "Sue a friend who won't pay you back", blurb: "Venmo records + texts = case", avg: "$3,200", timeline: "60-90 days", icon: (<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6"><circle cx="9" cy="8" r="3"/><circle cx="15" cy="8" r="3"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2M13 21v-2a4 4 0 0 1 4-4h0a4 4 0 0 1 4 4v2"/></svg>) },
-  { href: "/small-claims/sue-roommate-unpaid-rent", title: "Sue a roommate for unpaid rent", blurb: "Joint-and-several lease + contribution", avg: "$4,200", timeline: "60-90 days", icon: (<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M3 21h18M5 21V8l7-5 7 5v13"/><path d="M9 21v-7h6v7"/><circle cx="12" cy="11" r="0.5" fill="currentColor"/></svg>) },
-  { href: "/small-claims/sue-neighbor-property-damage", title: "Sue a neighbor for property damage", blurb: "Their homeowners insurance covers most", avg: "$4,400", timeline: "60-90 days", icon: (<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M3 22V8l4-4 4 4v14M11 22V8l4-4 4 4v14"/><path d="M3 14h18"/></svg>) },
-  { href: "/small-claims/sue-neighbor-noise", title: "Sue a neighbor for noise", blurb: "Private nuisance + city ordinances", avg: "$4,200", timeline: "60-120 days", icon: (<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M11 5L6 9H2v6h4l5 4z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>) },
-  { href: "/small-claims/sue-seller-amazon-seller", title: "Sue an Amazon seller", blurb: "A-to-z Guarantee first, court for backup", avg: "$1,800", timeline: "30-60 days", icon: (<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12"/></svg>) },
-  { href: "/small-claims/sue-refund-defective-product", title: "Sue for a defective product", blurb: "Magnuson-Moss + state UDAP", avg: "$1,800", timeline: "30-60 days", icon: (<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M12 2L2 22h20L12 2z"/><path d="M12 9v6M12 18h.01"/></svg>) },
+  {
+    href: "/small-claims/sue-landlord-security-deposit",
+    title: "Sue a landlord for a security deposit",
+    blurb: "2x or 3x penalties in most states",
+    avg: "$4,500",
+    timeline: "30-60 days",
+    icon: (
+      <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 3l8 3v5c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-3z" />
+        <path d="M9 12l2 2 4-4" />
+      </svg>
+    ),
+  },
+  {
+    href: "/small-claims/sue-employer-wrongful-termination",
+    title: "Sue an employer for wrongful termination",
+    blurb: "When small claims fits vs. needing an attorney",
+    avg: "$7,200",
+    timeline: "60-90 days",
+    icon: (
+      <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="7" width="18" height="13" rx="2" />
+        <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+        <path d="M3 12h18" />
+      </svg>
+    ),
+  },
+  {
+    href: "/small-claims/sue-employer-unpaid-wages",
+    title: "Sue an employer for unpaid wages",
+    blurb: "FLSA + state wage acts (often 2x damages)",
+    avg: "$4,400",
+    timeline: "45-90 days",
+    icon: (
+      <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="7" width="18" height="11" rx="1" strokeDasharray="2 2" />
+        <circle cx="12" cy="12.5" r="2.5" />
+        <path d="M12 11v3M11 12.5h2" />
+      </svg>
+    ),
+  },
+  {
+    href: "/small-claims/sue-auto-parked-car-hit",
+    title: "Sue someone for hitting your parked car",
+    blurb: "When insurance won't pay",
+    avg: "$4,200",
+    timeline: "30-60 days",
+    icon: (
+      <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3 16h18l-2-6H5z" />
+        <circle cx="7.5" cy="17" r="1.5" />
+        <circle cx="16.5" cy="17" r="1.5" />
+      </svg>
+    ),
+  },
+  {
+    href: "/small-claims/sue-contractor-deposit-and-disappearing",
+    title: "Sue a contractor who took the deposit and vanished",
+    blurb: "License board + bond + court",
+    avg: "$6,500",
+    timeline: "60-120 days",
+    icon: (
+      <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L4 17l3 3 5.3-5.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2-2 2.5-2.5z" />
+      </svg>
+    ),
+  },
+  {
+    href: "/small-claims/sue-loan-someone-owes-me-money",
+    title: "Sue someone who owes you money",
+    blurb: "Most informal loans are recoverable",
+    avg: "$5,400",
+    timeline: "60-90 days",
+    icon: (
+      <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3 8h15a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8z" />
+        <path d="M3 8V6a1 1 0 0 1 1-1h13" />
+        <circle cx="17" cy="14" r="1.2" />
+      </svg>
+    ),
+  },
+  {
+    href: "/small-claims/sue-loan-friend-not-paying-back",
+    title: "Sue a friend who won't pay you back",
+    blurb: "Venmo records + texts = case",
+    avg: "$3,200",
+    timeline: "60-90 days",
+    icon: (
+      <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3 12a9 9 0 1 1 4 7.5L3 21l1.5-4A9 9 0 0 1 3 12z" />
+      </svg>
+    ),
+  },
+  {
+    href: "/small-claims/sue-roommate-unpaid-rent",
+    title: "Sue a roommate for unpaid rent",
+    blurb: "Joint-and-several lease + contribution",
+    avg: "$4,200",
+    timeline: "60-90 days",
+    icon: (
+      <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3 21h18M5 21V10l7-5 7 5v11" />
+        <path d="M10 21v-6h4v6" />
+        <circle cx="12" cy="11" r="0.6" fill="currentColor" />
+      </svg>
+    ),
+  },
+  {
+    href: "/small-claims/sue-neighbor-property-damage",
+    title: "Sue a neighbor for property damage",
+    blurb: "Their homeowners insurance covers most",
+    avg: "$4,400",
+    timeline: "60-90 days",
+    icon: (
+      <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M4 21V11l3-3v13M11 21V11l3-3v13M18 21V11l3-3v13" />
+        <path d="M2 15h20" />
+      </svg>
+    ),
+  },
+  {
+    href: "/small-claims/sue-neighbor-noise",
+    title: "Sue a neighbor for noise",
+    blurb: "Private nuisance + city ordinances",
+    avg: "$4,200",
+    timeline: "60-120 days",
+    icon: (
+      <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M11 5L6 9H2v6h4l5 4z" />
+        <path d="M19 5a10 10 0 0 1 0 14M15.5 8.5a5 5 0 0 1 0 7" />
+      </svg>
+    ),
+  },
 ];
 
 const jsonLd = {
@@ -288,7 +409,7 @@ export default function SmallClaimsHubPage() {
         </header>
 
         {/* CATEGORIES */}
-        <section className="cat-section">
+        <section className="cat-section" id="categories">
           <div className="pick-cat-head">
             <div className="pick-cat-mark" aria-hidden="true">
               <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.8">
@@ -361,29 +482,73 @@ export default function SmallClaimsHubPage() {
 
         {/* TOP TOPICS */}
         <section className="cat-section">
-          <div className="sec-head" style={{ textAlign: "left", marginBottom: 28 }}>
-            <h2 style={{ margin: 0 }}>
-              Popular <em>topics</em>.
-            </h2>
-            <p style={{ marginTop: 12, marginLeft: 0, maxWidth: "60ch" }}>
-              The most-searched specific scenarios across all categories.
-            </p>
+          <div className="topics-head">
+            <div className="topics-head-main">
+              <span className="topics-eyebrow">
+                Popular topics
+                <svg viewBox="0 0 40 8" width="40" height="8" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round">
+                  <path d="M1 4 Q 6 1, 12 4 T 24 4 T 36 4" />
+                </svg>
+              </span>
+              <h2 className="topics-title">
+                Popular <em>topics</em>.
+              </h2>
+              <p className="topics-desc">
+                The most-searched specific scenarios across all categories.
+              </p>
+            </div>
+            <div className="topics-note" aria-hidden="true">
+              <span>Real people.<br />Real problems.</span>
+              <svg viewBox="0 0 40 60" width="32" height="48" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round">
+                <path d="M20 5 C 25 20, 18 35, 22 52" />
+                <path d="M16 46 L22 54 L28 46" />
+              </svg>
+            </div>
           </div>
-          <div className="ranked-grid">
+
+          <div className="topics-grid">
             {TOP_TOPICS.map((t, i) => (
-              <Link key={t.href} href={t.href} className="ranked-card">
-                <div className="ranked-card-head">
-                  <span className="ranked-card-num">{String(i + 1).padStart(2, "0")}</span>
-                  <span className="ranked-card-icon">{t.icon}</span>
+              <Link key={t.href} href={t.href} className="topic-card">
+                <div className="topic-card-rail">
+                  <span className="topic-card-num">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="topic-card-icon">{t.icon}</span>
                 </div>
-                <h3>{t.title}</h3>
-                <p>{t.blurb}</p>
-                <div className="ranked-card-meta">
-                  <span><strong>Avg recovery</strong> {t.avg}</span>
-                  <span><strong>Timeline</strong> {t.timeline}</span>
+                <div className="topic-card-body">
+                  <h3>{t.title}</h3>
+                  <p>{t.blurb}</p>
+                  <div className="topic-card-meta">
+                    <span className="topic-meta-label">Avg recovery</span>
+                    <span className="topic-meta-val">{t.avg}</span>
+                    <span className="topic-meta-sep" aria-hidden="true" />
+                    <span className="topic-meta-label">Timeline</span>
+                    <span className="topic-meta-val muted">{t.timeline}</span>
+                  </div>
                 </div>
+                <span className="topic-card-arrow" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </span>
               </Link>
             ))}
+          </div>
+
+          <div className="topics-cta">
+            <div className="topics-cta-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M9 18h6M10 21h4M12 2a7 7 0 0 1 4 12.7c-.7.5-1 1.3-1 2.1V18H9v-1.2c0-.8-.3-1.6-1-2.1A7 7 0 0 1 12 2z" />
+              </svg>
+            </div>
+            <div className="topics-cta-copy">
+              <strong>Don&rsquo;t see your situation?</strong>
+              <span>Browse all guides or search by keyword.</span>
+            </div>
+            <Link href="/small-claims#categories" className="topics-cta-btn">
+              Browse all guides
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </Link>
           </div>
         </section>
 

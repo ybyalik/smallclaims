@@ -2839,6 +2839,231 @@ footer { padding: 80px 0 40px; background: var(--ink); color: #fef9f1; }
   .photo-grid { grid-template-columns: 1fr; }
 }
 
+/* Popular topics — section header */
+.topics-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 28px;
+}
+.topics-head-main { max-width: 60ch; }
+.topics-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Geist", system-ui, sans-serif;
+  font-size: 11.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 0;
+}
+.topics-eyebrow svg { color: var(--accent); }
+.topics-title {
+  margin: 10px 0 12px;
+  font-size: var(--h2-size);
+}
+.topics-desc {
+  margin: 0;
+  color: var(--ink-2);
+  max-width: 60ch;
+}
+.topics-note {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 4px;
+  font-family: "Caveat", cursive;
+  font-size: 22px;
+  line-height: 1.15;
+  color: var(--ink-2);
+  flex-shrink: 0;
+  text-align: right;
+  padding-top: 4px;
+}
+.topics-note svg { color: var(--accent); margin-top: 6px; }
+
+@media (max-width: 800px) {
+  .topics-head { flex-direction: column; gap: 16px; }
+  .topics-note { display: none; }
+}
+
+/* Popular topics — cards */
+.topics-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.topic-card {
+  display: grid;
+  grid-template-columns: 96px 1fr 56px;
+  align-items: center;
+  gap: 18px;
+  padding: 22px 22px 22px 24px;
+  background: #faf6ef;
+  border-radius: 14px;
+  text-decoration: none;
+  color: inherit;
+  transition: background .2s ease, transform .2s ease, box-shadow .25s ease;
+  border: 1px solid rgba(217, 64, 46, 0.08);
+}
+.topic-card:hover {
+  background: #f5efe4;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 22px -16px rgba(31,27,22,0.25);
+}
+.topic-card:hover .topic-card-arrow {
+  background: var(--accent-2);
+  transform: translateX(2px);
+}
+.topic-card-rail {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding-top: 2px;
+}
+.topic-card-num {
+  font-family: "Newsreader", Georgia, serif;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 36px;
+  line-height: 1;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+}
+.topic-card-icon {
+  color: var(--ink);
+  display: inline-flex;
+}
+.topic-card-body {
+  min-width: 0;
+}
+.topic-card-body h3 {
+  font-family: "Newsreader", Georgia, serif;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 1.2;
+  margin: 0 0 4px;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.topic-card-body > p {
+  margin: 0 0 14px;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--ink-2);
+}
+.topic-card-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-family: "Geist", system-ui, sans-serif;
+  font-size: 11.5px;
+}
+.topic-meta-label {
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-2);
+  font-size: 10.5px;
+}
+.topic-meta-val {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 13px;
+}
+.topic-meta-val.muted { color: var(--ink-2); font-weight: 500; }
+.topic-meta-sep {
+  display: inline-block;
+  width: 1px;
+  height: 14px;
+  background: var(--hairline);
+  margin: 0 4px;
+}
+.topic-card-arrow {
+  width: 38px; height: 38px;
+  border-radius: 999px;
+  background: rgba(217, 64, 46, 0.10);
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+.topic-card:hover .topic-card-arrow {
+  background: var(--accent);
+  color: #fefcf3;
+  transform: translateX(2px);
+}
+
+@media (max-width: 900px) {
+  .topics-grid { grid-template-columns: 1fr; }
+  .topic-card { grid-template-columns: 72px 1fr 40px; gap: 14px; padding: 18px; }
+  .topic-card-num { font-size: 30px; }
+}
+
+/* Popular topics — bottom CTA */
+.topics-cta {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 22px 24px;
+  margin-top: 18px;
+  background: rgba(217, 64, 46, 0.07);
+  border-radius: 14px;
+  flex-wrap: wrap;
+}
+.topics-cta-icon {
+  width: 48px; height: 48px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fefcf3;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.topics-cta-copy {
+  flex: 1 1 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.topics-cta-copy strong {
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.topics-cta-copy span {
+  font-size: 14px;
+  color: var(--ink-2);
+}
+.topics-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--ink);
+  color: #fefcf3;
+  padding: 13px 22px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-family: "Geist", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background .2s ease, transform .2s ease;
+  flex-shrink: 0;
+}
+.topics-cta-btn:hover {
+  background: var(--ink-2);
+  transform: translateY(-1px);
+}
+
 /* Option C — Editorial numbered list */
 .editorial-grid {
   display: grid;
