@@ -1582,7 +1582,7 @@ footer { padding: 80px 0 40px; background: var(--ink); color: #fef9f1; }
 /* ============ Category pages — /small-claims/[category] and subpages ============ */
 .cat-page { padding-bottom: 60px; }
 
-.cat-hero { margin: 20px 0 56px; max-width: 760px; }
+.cat-hero { margin: 20px 0 64px; max-width: 760px; }
 .cat-hero .eyebrow { display: inline-block; margin-bottom: 12px; }
 .cat-hero h1 { font-family: "Newsreader", Georgia, serif; font-weight: var(--headline-weight); font-size: clamp(38px, 4.6vw, 60px); line-height: 1.04; letter-spacing: var(--headline-tracking); color: var(--ink); margin: 0 0 16px; }
 .cat-hero h1 em { font-style: italic; color: var(--accent); font-weight: var(--headline-italic-weight); letter-spacing: var(--headline-italic-tracking); }
@@ -1600,7 +1600,7 @@ footer { padding: 80px 0 40px; background: var(--ink); color: #fef9f1; }
 .cat-stack-head p { font-size: 16.5px; line-height: 1.55; color: var(--ink-2); margin: 0; }
 
 /* ─── Hero 3-col (homepage hero-grid pattern) ─── */
-.cat-hero-3col { display: grid; grid-template-columns: 1.2fr 0.7fr 0.8fr; gap: 24px; padding: 16px 0 56px; align-items: stretch; }
+.cat-hero-3col { display: grid; grid-template-columns: 1.2fr 0.7fr 0.8fr; gap: 24px; padding: 16px 0 64px; align-items: stretch; }
 .cat-hero-copy { display: flex; flex-direction: column; justify-content: center; }
 .cat-hero-copy .eyebrow { display: inline-block; margin-bottom: 12px; }
 .cat-hero-copy h1 { font-family: "Newsreader", Georgia, serif; font-weight: var(--headline-weight); font-size: clamp(38px, 4.6vw, 60px); line-height: 1.04; letter-spacing: var(--headline-tracking); color: var(--ink); margin: 0 0 14px; }
@@ -4581,7 +4581,7 @@ footer { padding: 80px 0 40px; background: var(--ink); color: #fef9f1; }
   .hero-ctas .btn { width: 100%; justify-content: center; }
 
   /* Hub page hero — stack 3 columns vertically */
-  .cat-hero-3col { grid-template-columns: 1fr; gap: 16px; padding: 8px 0 28px; }
+  .cat-hero-3col { grid-template-columns: 1fr; gap: 16px; padding: 8px 0 32px; }
   .cat-hero-stat { aspect-ratio: auto; padding: 20px; }
   .cat-hero-photo { aspect-ratio: 16/10; }
   .cat-hero-copy h1 { font-size: clamp(28px, 8vw, 38px); }
