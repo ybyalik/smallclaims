@@ -3691,7 +3691,7 @@ footer { padding: 80px 0 40px; background: var(--ink); color: #fef9f1; }
 .photo-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  gap: 28px;
 }
 .photo-card {
   position: relative;
@@ -3700,7 +3700,7 @@ footer { padding: 80px 0 40px; background: var(--ink); color: #fef9f1; }
   overflow: hidden;
   text-decoration: none;
   color: inherit;
-  min-height: 208px;
+  min-height: 180px;
   background: var(--ink);
   box-shadow: 0 10px 24px -16px rgba(31,27,22,0.32);
   transition: transform .25s ease, box-shadow .25s ease;
