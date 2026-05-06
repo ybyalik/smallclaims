@@ -45,8 +45,8 @@ function CtaStepCard({
       style={{
         textDecoration: "none",
         background: bg,
-        borderRadius: 20,
-        height: 280,
+        borderRadius: 16,
+        height: 200,
         position: "relative",
         overflow: "hidden",
         display: "block",
@@ -771,39 +771,34 @@ export default function LandlordHubPage() {
 
         {/* CTAs — Variant 07 (preview) */}
         <section className="cat-section">
-          <div style={{ background: "#0d0d0d", color: "#fff", padding: "60px 0", borderRadius: 20, position: "relative", overflow: "hidden" }}>
-            <div style={{ display: "grid", gridTemplateColumns: "1.85fr 1fr", gap: 0 }}>
+          <div style={{ background: "#0d0d0d", color: "#fff", padding: "32px 0", borderRadius: 20, position: "relative", overflow: "hidden" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "1.85fr 1fr", gap: 0, alignItems: "center" }}>
               {/* LEFT — title + 3 step cards */}
-              <div style={{ padding: "20px 48px 40px" }}>
-                <span style={{ display: "inline-block", background: "rgba(232,93,62,0.15)", color: "#e85d3e", padding: "5px 14px", borderRadius: 999, fontSize: 12, fontWeight: 600, marginBottom: 22 }}>
+              <div style={{ padding: "12px 44px 20px" }}>
+                <span style={{ display: "inline-block", background: "rgba(232,93,62,0.15)", color: "#e85d3e", padding: "5px 14px", borderRadius: 999, fontSize: 12, fontWeight: 600, marginBottom: 14 }}>
                   Take the next step
                 </span>
-                <h2 style={{ fontFamily: "Geist, system-ui, sans-serif", fontSize: "clamp(40px, 4.4vw, 56px)", fontWeight: 800, letterSpacing: "-0.02em", lineHeight: 1.05, margin: "0 0 56px", color: "#fff" }}>
-                  Three ways to move forward.
+                <h2 style={{ fontFamily: "Newsreader, Georgia, serif", fontSize: "clamp(28px, 2.8vw, 38px)", fontWeight: 700, letterSpacing: "-0.02em", lineHeight: 1.1, margin: "0 0 28px", color: "#fef9f1" }}>
+                  Three ways to <em style={{ fontStyle: "italic", color: "#f5b29f", fontWeight: 700 }}>move forward</em>.
                 </h2>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 18, alignItems: "stretch", position: "relative" }}>
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 14, alignItems: "stretch", position: "relative" }}>
                   <CtaStepCard href="/demand-letter" bg="#4ad96a" tone="dark" stepNum="01" stepPos="top-left" title="Send a demand letter" titlePos="bottom-left" />
                   <CtaStepCard href="/case-score" bg="#fff" tone="dark" stepNum="02" stepPos="bottom-right" title="Check my case" titlePos="top-left" gradient />
                   <CtaStepCard href="/small-claims" bg="#7344ee" tone="light" stepNum="03" stepPos="top-right" title="File your claim" titlePos="bottom-right" />
                 </div>
               </div>
               {/* RIGHT — testimonial */}
-              <div style={{ borderLeft: "1px solid #1f1f1f", padding: "40px 48px 60px", position: "relative" }}>
-                <div style={{ fontFamily: "Geist, system-ui, sans-serif", fontWeight: 900, fontSize: 110, lineHeight: 0.6, color: "#2a2a2a", marginBottom: 28, letterSpacing: "-0.06em" }} aria-hidden="true">
+              <div style={{ borderLeft: "1px solid #1f1f1f", padding: "20px 44px", position: "relative", alignSelf: "stretch", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                <div style={{ fontFamily: "Geist, system-ui, sans-serif", fontWeight: 900, fontSize: 70, lineHeight: 0.5, color: "#2a2a2a", marginBottom: 14, letterSpacing: "-0.06em" }} aria-hidden="true">
                   &rdquo;&rdquo;
                 </div>
-                <div style={{ width: 60, height: 1, background: "#3a3a3a", marginBottom: 22 }} />
-                <p style={{ fontFamily: "Geist, system-ui, sans-serif", fontSize: 22, fontWeight: 700, lineHeight: 1.35, letterSpacing: "-0.01em", color: "#fff", margin: "0 0 36px" }}>
+                <div style={{ width: 48, height: 1, background: "#3a3a3a", marginBottom: 14 }} />
+                <p style={{ fontFamily: "Newsreader, Georgia, serif", fontSize: 18, fontStyle: "italic", lineHeight: 1.35, letterSpacing: "-0.005em", color: "#fef9f1", margin: "0 0 16px" }}>
                   Won my $4,500 deposit back in 47 days. The demand letter alone got my landlord to settle.
                 </p>
                 <div>
-                  <div style={{ fontFamily: "Geist, system-ui, sans-serif", fontWeight: 700, fontSize: 16, color: "#fff", marginBottom: 4 }}>Maria R.</div>
-                  <div style={{ fontSize: 13.5, color: "#9aa0a6" }}>Tenant · California</div>
-                </div>
-                <div style={{ position: "absolute", right: 24, bottom: 0, display: "flex", gap: 6, alignItems: "flex-end" }}>
-                  <div style={{ width: 18, height: 60, background: "#1c1c1c" }} />
-                  <div style={{ width: 18, height: 80, background: "#1c1c1c" }} />
-                  <div style={{ width: 18, height: 100, background: "#1c1c1c" }} />
+                  <div style={{ fontFamily: "Geist, system-ui, sans-serif", fontWeight: 700, fontSize: 14, color: "#fff", marginBottom: 2 }}>Maria R.</div>
+                  <div style={{ fontSize: 12.5, color: "#9aa0a6" }}>Tenant · California</div>
                 </div>
               </div>
             </div>
