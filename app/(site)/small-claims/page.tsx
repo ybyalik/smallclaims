@@ -411,12 +411,6 @@ export default function SmallClaimsHubPage() {
         {/* CATEGORIES */}
         <section className="cat-section" id="categories">
           <div className="pick-cat-head">
-            <div className="pick-cat-mark" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.8">
-                <path d="M3 21h18M4 21V10M20 21V10M6 10V8l6-4 6 4v2" />
-                <path d="M8 21v-7M12 21v-7M16 21v-7M3 10h18" />
-              </svg>
-            </div>
             <h2 className="pick-cat-title">
               <em>Pick</em> a category.
             </h2>
