@@ -2,6 +2,7 @@ import Link from "next/link";
 import Breadcrumbs from "../Breadcrumbs";
 import FeaturedUsMap from "../widgets/FeaturedUsMap";
 import CountUp from "../widgets/CountUp";
+import HeroCta from "../HeroCta";
 import { availableStateSlugs } from "../../lib/state-data";
 import { getDepositStateTable } from "../../lib/deposit-state-table";
 import type { LandlordIssue, EvidenceCell } from "../../lib/landlord-issues/types";
@@ -187,8 +188,8 @@ export default function IssueTemplate({ issue, category, siblings }: Props) {
               <strong>{issue.hero.leadStrong}</strong>{issue.hero.leadBody}
             </p>
             <div className="hero-ctas">
-              <Link href="/demand-letter" className="btn btn-dark">Generate a demand letter</Link>
-              <Link href="/case-score" className="btn btn-cream">Check my case strength</Link>
+              <HeroCta href="/demand-letter" variant="dark" icon="demand-letter">Generate a demand letter</HeroCta>
+              <HeroCta href="/case-score" variant="cream" icon="case-score">Check my case strength</HeroCta>
             </div>
           </div>
           <div className="cv2-hero-visual" aria-hidden="true">

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import HeroCta from "../../../../components/HeroCta";
 import Link from "next/link";
 import Breadcrumbs from "../../../../components/Breadcrumbs";
 import { availableStateSlugs } from "../../../../lib/state-data";
@@ -50,7 +51,7 @@ export default function OnlineSellerHubPage() {
             <span className="eyebrow">Category</span>
             <h1>How to <em>sue an online seller</em> in small claims court.</h1>
             <p className="cat-lede">Amazon, eBay, Etsy, Facebook Marketplace, Venmo/Cash App scams, gig services, FedEx. Each has a different recovery path. Most platform disputes resolve through buyer protection programs. P2P scams and Marketplace fraud often need small claims under state UDAP.</p>
-            <div className="hero-ctas"><Link href="/case-score" className="btn btn-dark">Check my case (free)</Link><Link href="/demand-letter" className="btn btn-cream">Send a demand letter</Link></div>
+            <div className="hero-ctas"><HeroCta href="/case-score" variant="dark" icon="case-score">Check my case (free)</HeroCta><HeroCta href="/demand-letter" variant="cream" icon="demand-letter">Send a demand letter</HeroCta></div>
           </div>
           <div className="cat-hero-stat">
             <div><div className="cat-hero-stat-eyebrow">Typical buyer recovery</div><div className="cat-hero-stat-big">$1,800</div><div className="cat-hero-stat-sub">illustrative · varies by platform</div></div>

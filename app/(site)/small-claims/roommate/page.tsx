@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import HeroCta from "../../../../components/HeroCta";
 import Link from "next/link";
 import Breadcrumbs from "../../../../components/Breadcrumbs";
 import { availableStateSlugs } from "../../../../lib/state-data";
@@ -49,7 +50,7 @@ export default function RoommateHubPage() {
             <span className="eyebrow">Category</span>
             <h1>How to <em>sue your roommate</em> in small claims court.</h1>
             <p className="cat-lede">Unpaid rent, unpaid bills, moving out without notice, property damage, security-deposit disputes, and emotional distress. Roommate cases are textbook small-claims cases. Most settle once a demand letter arrives. Bank records, texts, and lease provisions establish the case.</p>
-            <div className="hero-ctas"><Link href="/case-score" className="btn btn-dark">Check my case (free)</Link><Link href="/demand-letter" className="btn btn-cream">Send a demand letter</Link></div>
+            <div className="hero-ctas"><HeroCta href="/case-score" variant="dark" icon="case-score">Check my case (free)</HeroCta><HeroCta href="/demand-letter" variant="cream" icon="demand-letter">Send a demand letter</HeroCta></div>
           </div>
           <div className="cat-hero-stat">
             <div><div className="cat-hero-stat-eyebrow">Typical roommate recovery</div><div className="cat-hero-stat-big">$3,200</div><div className="cat-hero-stat-sub">illustrative · varies by state and dispute type</div></div>

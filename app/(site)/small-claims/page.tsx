@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { availableStateSlugs } from "../../../lib/state-data";
 import Breadcrumbs from "../../../components/Breadcrumbs";
+import HeroCta from "../../../components/HeroCta";
 import UsMap from "../../../components/widgets/UsMap";
 import StateSearch from "../../../components/widgets/StateSearch";
 
@@ -368,12 +369,8 @@ export default function SmallClaimsHubPage() {
               filing fees and forms.
             </p>
             <div className="hero-ctas">
-              <Link href="/case-score" className="btn btn-dark">
-                Check my case (free)
-              </Link>
-              <Link href="/demand-letter" className="btn btn-cream">
-                Send a demand letter
-              </Link>
+              <HeroCta href="/case-score" variant="dark" icon="case-score">Check my case (free)</HeroCta>
+              <HeroCta href="/demand-letter" variant="cream" icon="demand-letter">Send a demand letter</HeroCta>
             </div>
           </div>
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import HeroCta from "../../../../components/HeroCta";
 import Link from "next/link";
 import Breadcrumbs from "../../../../components/Breadcrumbs";
 import { availableStateSlugs } from "../../../../lib/state-data";
@@ -244,12 +245,8 @@ export default function LandlordHubPage() {
               you are directly owed.
             </p>
             <div className="hero-ctas">
-              <Link href="/case-score" className="btn btn-dark">
-                Check my case (free)
-              </Link>
-              <Link href="/demand-letter" className="btn btn-cream">
-                Send a demand letter
-              </Link>
+              <HeroCta href="/case-score" variant="dark" icon="case-score">Check my case (free)</HeroCta>
+              <HeroCta href="/demand-letter" variant="cream" icon="demand-letter">Send a demand letter</HeroCta>
             </div>
           </div>
 

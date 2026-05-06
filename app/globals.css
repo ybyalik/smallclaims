@@ -44,7 +44,11 @@ a { color: inherit; text-decoration: none; }
 .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 24px; border-radius: 8px; font-size: 14.5px; font-weight: 600; border: 1px solid transparent; cursor: pointer; line-height: 1; transition: all .2s ease; font-family: inherit; }
 .btn-dark { background: var(--ink); color: #fef9f1; }
 .btn-dark:hover { background: #2a2520; }
-.btn-cream { background: var(--bg-2); color: var(--ink); border-color: var(--hairline); }
+.btn-cream { background: var(--bg-2); color: var(--ink); border-color: #c8c2b3; }
+.btn-cream:hover { border-color: #a8a193; }
+.hero-cta-btn { gap: 10px; }
+.hero-cta-btn .hero-cta-icon { display: inline-flex; align-items: center; justify-content: center; }
+.hero-cta-btn > svg { margin-left: 4px; }
 .btn-outline { background: #fff; color: var(--ink); border-color: var(--hairline); box-shadow: 0 1px 0 rgba(0,0,0,0.02); }
 .btn-outline:hover { background: var(--bg-2); border-color: #d8d3c8; }
 .btn-sm { padding: 11px 18px; font-size: 13.5px; }

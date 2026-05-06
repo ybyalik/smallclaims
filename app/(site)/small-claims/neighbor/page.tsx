@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import HeroCta from "../../../../components/HeroCta";
 import Link from "next/link";
 import Breadcrumbs from "../../../../components/Breadcrumbs";
 import { availableStateSlugs } from "../../../../lib/state-data";
@@ -59,8 +60,8 @@ export default function NeighborHubPage() {
             <h1>How to <em>sue your neighbor</em> in small claims court.</h1>
             <p className="cat-lede">If your neighbor damaged your property, made constant noise, harassed you, regraded their land to flood your yard, blocked your driveway, or damaged a shared fence, small claims is often the right court. Most cases also pay through the neighbor's homeowners insurance, which is faster than court. Document the pattern, send a demand letter, and file the small-claims case if needed.</p>
             <div className="hero-ctas">
-              <Link href="/case-score" className="btn btn-dark">Check my case (free)</Link>
-              <Link href="/demand-letter" className="btn btn-cream">Send a demand letter</Link>
+              <HeroCta href="/case-score" variant="dark" icon="case-score">Check my case (free)</HeroCta>
+              <HeroCta href="/demand-letter" variant="cream" icon="demand-letter">Send a demand letter</HeroCta>
             </div>
           </div>
           <div className="cat-hero-stat">
