@@ -408,49 +408,70 @@ export default function LandlordHubPage() {
           <div className="cat-recovery">
             <div className="cat-recovery-rows">
               <div className="cat-recovery-row">
+                <span className="cat-recovery-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M6 3h12v17l-3-2-3 2-3-2-3 2z" /><path d="M12 8v6M10 9.5c0-.8.7-1.5 1.5-1.5h1c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5h-1c-.8 0-1.5.7-1.5 1.5s.7 1.5 1.5 1.5h1c.8 0 1.5-.7 1.5-1.5" /></svg></span>
+                <span className="cat-recovery-num" aria-hidden="true">01</span>
                 <div className="cat-recovery-label">
                   <span className="cat-recovery-tag">Direct damages</span>
                   <p>The deposit, repair receipts, hotel and moving costs, replacement-cost photos.</p>
                 </div>
-                <div className="cat-recovery-amount">$1,500</div>
-                <div className="cat-recovery-bar"><span style={{ width: "30%" }}></span></div>
+                <div className="cat-recovery-meter">
+                  <div className="cat-recovery-amount">$1,500</div>
+                  <div className="cat-recovery-bar"><span style={{ width: "30%" }}></span></div>
+                  <div className="cat-recovery-bar-label">Base amount</div>
+                </div>
               </div>
-              <div className="cat-recovery-row">
+              <div className="cat-recovery-row accent">
+                <span className="cat-recovery-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M12 4v17M5 21h14" /><path d="M5 8h14" /><path d="M5 8l-2 5h4z M19 8l-2 5h4z" /><path d="M12 4l-7 4M12 4l7 4" /></svg></span>
+                <span className="cat-recovery-num" aria-hidden="true">02</span>
                 <div className="cat-recovery-label">
                   <span className="cat-recovery-tag accent">Statutory damages</span>
                   <p>Bad-faith withholding triggers 2x or 3x the wrongfully kept amount in most states.</p>
                 </div>
-                <div className="cat-recovery-amount accent">+$3,000</div>
-                <div className="cat-recovery-bar"><span style={{ width: "62%", background: "var(--accent)" }}></span></div>
+                <div className="cat-recovery-meter">
+                  <div className="cat-recovery-amount accent">+$3,000</div>
+                  <div className="cat-recovery-bar"><span style={{ width: "62%", background: "var(--accent)" }}></span></div>
+                  <div className="cat-recovery-bar-label">Multiplier</div>
+                </div>
               </div>
               <div className="cat-recovery-row">
+                <span className="cat-recovery-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="7" width="18" height="13" rx="2" /><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /><path d="M3 12h18" /></svg></span>
+                <span className="cat-recovery-num" aria-hidden="true">03</span>
                 <div className="cat-recovery-label">
                   <span className="cat-recovery-tag">Attorney&rsquo;s fees</span>
                   <p>Many statutes shift the loser&rsquo;s fees to the prevailing party. That alone pressures early settlement.</p>
                 </div>
-                <div className="cat-recovery-amount">+$300</div>
-                <div className="cat-recovery-bar"><span style={{ width: "8%" }}></span></div>
+                <div className="cat-recovery-meter">
+                  <div className="cat-recovery-amount">+$300</div>
+                  <div className="cat-recovery-bar"><span style={{ width: "8%" }}></span></div>
+                  <div className="cat-recovery-bar-label">Typical recovery</div>
+                </div>
               </div>
               <div className="cat-recovery-row">
+                <span className="cat-recovery-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M19 5L5 19" /><circle cx="7.5" cy="7.5" r="2.5" /><circle cx="16.5" cy="16.5" r="2.5" /></svg></span>
+                <span className="cat-recovery-num" aria-hidden="true">04</span>
                 <div className="cat-recovery-label">
                   <span className="cat-recovery-tag">Interest</span>
                   <p>4 to 10 percent per year, pre- and post-judgment, depending on the state.</p>
                 </div>
-                <div className="cat-recovery-amount">+$150</div>
-                <div className="cat-recovery-bar"><span style={{ width: "4%" }}></span></div>
+                <div className="cat-recovery-meter">
+                  <div className="cat-recovery-amount">+$150</div>
+                  <div className="cat-recovery-bar"><span style={{ width: "4%" }}></span></div>
+                  <div className="cat-recovery-bar-label">Accruing</div>
+                </div>
               </div>
             </div>
 
             <div className="cat-recovery-total">
-              <div className="cat-recovery-total-label">
+              <div className="cat-recovery-total-copy">
                 <span className="eyebrow" style={{ color: "rgba(254,249,241,0.65)" }}>What you walk away with</span>
-                <h3>Estimated recovery</h3>
+                <h3>Estimated <em>recovery</em></h3>
                 <p>Sample math on a $1,500 deposit a landlord withheld in bad faith. Your numbers will differ.</p>
               </div>
-              <div className="cat-recovery-total-num">
-                <em>$4,950</em>
+              <div className="cat-recovery-total-note" aria-hidden="true">
                 <span>3.3× the deposit</span>
+                <svg viewBox="0 0 60 40" width="50" height="36" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"><path d="M5 8 C 20 5, 40 12, 50 30" /><path d="M42 24 L52 32 L46 36" /></svg>
               </div>
+              <div className="cat-recovery-total-num">$4,950</div>
             </div>
           </div>
         </section>
