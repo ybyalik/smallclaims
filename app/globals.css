@@ -1869,22 +1869,28 @@ footer { padding: 80px 0 40px; background: var(--ink); color: #fef9f1; }
 
 .cat-ps-list { list-style: none; padding: 0; margin: 0; position: relative; }
 
-/* Left card item: number circle + icon circle + text */
+/* Left card item: number circle + (optional icon circle) + text */
 .cat-ps-col:not(.dark) .cat-ps-item {
   position: relative;
   display: grid;
-  grid-template-columns: 36px 52px 1fr;
+  grid-template-columns: 36px 1fr;
   gap: 18px;
   align-items: center;
   padding: 16px 0;
+}
+.cat-ps-col:not(.dark) .cat-ps-item:has(.cat-ps-icon) {
+  grid-template-columns: 36px 52px 1fr;
 }
 .cat-ps-col:not(.dark) .cat-ps-item + .cat-ps-item::before {
   content: "";
   position: absolute;
   top: 0;
-  left: 110px;
+  left: 54px;
   right: 0;
   border-top: 1px dashed rgba(31,27,22,0.18);
+}
+.cat-ps-col:not(.dark) .cat-ps-item:has(.cat-ps-icon) + .cat-ps-item::before {
+  left: 110px;
 }
 
 /* Vertical dashed line connecting number circles (only on left card) */
@@ -4465,13 +4471,7 @@ footer { padding: 80px 0 40px; background: var(--ink); color: #fef9f1; }
   margin: 32px 0;
   border-radius: 20px;
 }
-/* Defenses — white bg so per-card hairline borders read clearly */
-.cv2-defenses-section {
-  background: #fff;
-  padding: 56px 48px !important;
-  margin: 32px 0;
-  border-radius: 20px;
-}
+/* Defenses — no extra section chrome; per-card hairline borders read on the page bg */
 
 /* Featured US map */
 .cv2-featured-map { background: transparent; border: 0; border-radius: 0; padding: 0; }
@@ -4793,8 +4793,10 @@ footer { padding: 80px 0 40px; background: var(--ink); color: #fef9f1; }
   .cat-ps-orb { display: none; }
   .cat-ps-col,
   .cat-ps-col.dark { padding: 24px; }
-  .cat-ps-col:not(.dark) .cat-ps-item { grid-template-columns: 32px 44px 1fr; gap: 14px; }
-  .cat-ps-col:not(.dark) .cat-ps-item + .cat-ps-item::before { left: 90px; }
+  .cat-ps-col:not(.dark) .cat-ps-item { grid-template-columns: 32px 1fr; gap: 14px; }
+  .cat-ps-col:not(.dark) .cat-ps-item:has(.cat-ps-icon) { grid-template-columns: 32px 44px 1fr; }
+  .cat-ps-col:not(.dark) .cat-ps-item + .cat-ps-item::before { left: 46px; }
+  .cat-ps-col:not(.dark) .cat-ps-item:has(.cat-ps-icon) + .cat-ps-item::before { left: 90px; }
   .cat-ps-col:not(.dark) .cat-ps-list::before { left: 15.5px; }
   .cat-ps-num { width: 32px; height: 32px; font-size: 13px; }
   .cat-ps-icon { width: 44px; height: 44px; }
@@ -4909,8 +4911,7 @@ footer { padding: 80px 0 40px; background: var(--ink); color: #fef9f1; }
   .cv2-bento09-right-actions .btn { width: 100%; justify-content: center; }
 
   /* How to file flow */
-  .cv2-how-section,
-  .cv2-defenses-section {
+  .cv2-how-section {
     padding: 36px 20px !important;
     margin: 16px 0;
     border-radius: 16px;
