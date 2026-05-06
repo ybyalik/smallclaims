@@ -491,41 +491,81 @@ export default function IssueTemplate({ issue, category, siblings }: Props) {
               <H2 parts={issue.stateSection.h2} />
               <p>{issue.stateSection.lede}</p>
             </div>
-            {issue.stateSection.kind === "us-map" ? (
-              <>
-                <FeaturedUsMap highlightedSlugs={FEATURED_STATE_SLUGS} />
-                <div className="cv2-alt6-list" style={{ marginTop: 32 }}>
-                  {featuredDepositRows.map((row) => (
-                    <div key={row.slug} className="cv2-alt6-row">
-                      <strong>
-                        {ready.has(row.slug) ? (
-                          <Link href={`/small-claims/${row.slug}`} className="cat-text-link">{row.state}</Link>
-                        ) : row.state}
-                      </strong>
-                      <span className="cv2-alt6-deadline">{row.deadline}</span>
-                      <span className="cv2-alt6-penalty">{row.penalty}</span>
+
+            {(() => {
+              const rows = issue.stateSection.kind === "us-map"
+                ? featuredDepositRows.map((r) => ({ slug: r.slug, state: r.state, col2: r.deadline, col3: r.penalty }))
+                : issue.stateSection.rows.map((r) => ({ slug: r.slug, state: r.state, col2: r.col2, col3: r.col3 }));
+              const tooltips: Record<string, { title: string; sub?: string }> = {};
+              for (const r of rows) tooltips[r.slug] = { title: r.state, sub: r.col3 };
+              const featuredSlugs = rows.map((r) => r.slug);
+              return (
+                <div className="cv2-state-shell">
+                  <div className="cv2-state-grid">
+                    <div className="cv2-state-map">
+                      <FeaturedUsMap highlightedSlugs={featuredSlugs} tooltips={tooltips} />
                     </div>
-                  ))}
-                </div>
-              </>
-            ) : (
-              <div className="cv2-alt6-list">
-                {issue.stateSection.rows.map((r) => (
-                  <div key={r.slug} className="cv2-alt6-row">
-                    <strong>
-                      {ready.has(r.slug) ? (
-                        <Link href={`/small-claims/${r.slug}`} className="cat-text-link">{r.state}</Link>
-                      ) : r.state}
-                    </strong>
-                    <span className="cv2-alt6-deadline">{r.col2}</span>
-                    <span className="cv2-alt6-penalty">{r.col3}</span>
+                    <div className="cv2-state-list">
+                      <div className="cv2-state-list-head">
+                        <span className="cv2-state-list-icon" aria-hidden="true">
+                          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M3 21V5M3 21h18" />
+                            <path d="M7 17V11M12 17V8M17 17V13" />
+                          </svg>
+                        </span>
+                        <span className="cv2-state-list-title">Top 10 states by case volume</span>
+                      </div>
+                      <ol className="cv2-state-rows">
+                        {rows.map((r, i) => {
+                          const inner = (
+                            <>
+                              <span className="cv2-state-num">{i + 1}</span>
+                              <span className="cv2-state-name">{r.state}</span>
+                              <span className="cv2-state-deadline">
+                                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                                  <rect x="3" y="5" width="18" height="16" rx="2" />
+                                  <path d="M3 10h18M8 3v4M16 3v4" />
+                                </svg>
+                                {r.col2}
+                              </span>
+                              <svg className="cv2-state-arrow" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                                <path d="M5 12h14M13 6l6 6-6 6" />
+                              </svg>
+                            </>
+                          );
+                          return (
+                            <li key={r.slug} className={`cv2-state-row${ready.has(r.slug) ? "" : " is-soon"}`}>
+                              {ready.has(r.slug) ? (
+                                <Link href={`/small-claims/${r.slug}`}>{inner}</Link>
+                              ) : (
+                                <span>{inner}</span>
+                              )}
+                            </li>
+                          );
+                        })}
+                      </ol>
+                    </div>
                   </div>
-                ))}
-              </div>
-            )}
-            <p style={{ marginTop: 18, fontSize: 14, color: "var(--muted)" }}>
-              <Link href="/small-claims" className="cat-text-link">See all 50 state guides →</Link>
-            </p>
+                  <Link href="/small-claims" className="cv2-state-cta">
+                    <span className="cv2-state-cta-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M9 4l-6 2v14l6-2 6 2 6-2V4l-6 2-6-2z" />
+                        <path d="M9 4v14M15 6v14" />
+                      </svg>
+                    </span>
+                    <div className="cv2-state-cta-copy">
+                      <strong>See rules for all 50 states</strong>
+                      <span>Find deadlines, penalties, and key statutes for your state.</span>
+                    </div>
+                    <span className="cv2-state-cta-arrow" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M5 12h14M13 6l6 6-6 6" />
+                      </svg>
+                    </span>
+                  </Link>
+                </div>
+              );
+            })()}
           </section>
         ) : null}
 

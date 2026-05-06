@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { ComposableMap, Geographies, Geography } from "react-simple-maps";
 import { STATES, type State } from "../../lib/states";
 
@@ -11,8 +11,14 @@ type GeographyFeature = {
   properties: { name: string; [key: string]: unknown };
 };
 
-export default function FeaturedUsMap({ highlightedSlugs }: { highlightedSlugs: string[] }) {
+interface Props {
+  highlightedSlugs: string[];
+  tooltips?: Record<string, { title: string; sub?: string }>;
+}
+
+export default function FeaturedUsMap({ highlightedSlugs, tooltips }: Props) {
   const featured = useMemo(() => new Set(highlightedSlugs), [highlightedSlugs]);
+  const [hover, setHover] = useState<{ slug: string; x: number; y: number } | null>(null);
 
   const stateByName = useMemo(() => {
     const map: Record<string, State> = {};
@@ -21,8 +27,10 @@ export default function FeaturedUsMap({ highlightedSlugs }: { highlightedSlugs: 
     return map;
   }, []);
 
+  const tip = hover && tooltips?.[hover.slug];
+
   return (
-    <div className="cv2-featured-map">
+    <div className="cv2-featured-map" style={{ position: "relative" }}>
       <ComposableMap projection="geoAlbersUsa" width={900} height={520} style={{ width: "100%", height: "auto" }}>
         <Geographies geography={GEO_URL}>
           {({ geographies }: { geographies: GeographyFeature[] }) =>
@@ -31,10 +39,24 @@ export default function FeaturedUsMap({ highlightedSlugs }: { highlightedSlugs: 
               const state = stateByName[name];
               if (!state) return null;
               const isFeatured = featured.has(state.slug);
+              const hasTip = !!tooltips?.[state.slug];
               return (
                 <Geography
                   key={geo.rsmKey}
                   geography={geo}
+                  onMouseEnter={(e) => {
+                    if (hasTip) {
+                      const rect = (e.currentTarget.ownerSVGElement as SVGSVGElement).getBoundingClientRect();
+                      setHover({ slug: state.slug, x: e.clientX - rect.left, y: e.clientY - rect.top });
+                    }
+                  }}
+                  onMouseMove={(e) => {
+                    if (hasTip) {
+                      const rect = (e.currentTarget.ownerSVGElement as SVGSVGElement).getBoundingClientRect();
+                      setHover({ slug: state.slug, x: e.clientX - rect.left, y: e.clientY - rect.top });
+                    }
+                  }}
+                  onMouseLeave={() => setHover(null)}
                   style={{
                     default: {
                       fill: isFeatured ? "var(--accent)" : "#ECE7DC",
@@ -42,12 +64,14 @@ export default function FeaturedUsMap({ highlightedSlugs }: { highlightedSlugs: 
                       strokeWidth: 1,
                       outline: "none",
                       transition: "fill 0.2s ease",
+                      cursor: hasTip ? "pointer" : "default",
                     },
                     hover: {
                       fill: isFeatured ? "#B8331F" : "#D8CEBA",
                       stroke: "#FFFFFF",
                       strokeWidth: 1.4,
                       outline: "none",
+                      cursor: hasTip ? "pointer" : "default",
                     },
                     pressed: { fill: "var(--ink)", outline: "none" },
                   }}
@@ -57,8 +81,21 @@ export default function FeaturedUsMap({ highlightedSlugs }: { highlightedSlugs: 
           }
         </Geographies>
       </ComposableMap>
+      {tip ? (
+        <div
+          className="cv2-featured-map-tooltip"
+          style={{
+            left: hover.x,
+            top: hover.y,
+          }}
+          role="tooltip"
+        >
+          <strong>{tip.title}</strong>
+          {tip.sub ? <span>{tip.sub}</span> : null}
+        </div>
+      ) : null}
       <div className="cv2-featured-map-legend">
-        <span><i style={{ background: "var(--accent)" }} aria-hidden="true" /> Featured (10 highest-volume states)</span>
+        <span><i style={{ background: "var(--accent)" }} aria-hidden="true" /> Top 10 states</span>
         <span><i style={{ background: "#ECE7DC", border: "1px solid #d4cdb9" }} aria-hidden="true" /> Other states</span>
       </div>
     </div>
