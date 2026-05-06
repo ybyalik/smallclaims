@@ -522,11 +522,13 @@ export default function SmallClaimsHubPage() {
                     <span className="topic-meta-val muted">{t.timeline}</span>
                   </div>
                 </div>
-                <span className="topic-card-arrow" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M5 12h14M13 6l6 6-6 6" />
-                  </svg>
-                </span>
+                <div className="topic-card-arrow-cell">
+                  <span className="topic-card-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M5 12h14M13 6l6 6-6 6" />
+                    </svg>
+                  </span>
+                </div>
               </Link>
             ))}
           </div>
