@@ -476,39 +476,26 @@ export default function ContractorHubPage() {
 
         {/* EVIDENCE */}
         <section className="cat-section">
-          <div className="cat-stack-head">
-            <span className="eyebrow">Build the file</span>
-            <h2>
+          <div className="evidence-shell">
+            <div className="evidence-shell-head">
+              <div className="cat-stack-head" style={{ marginBottom: 0 }}>
+                <span className="eyebrow">Build the file</span>
+                <h2>
               What evidence do you need to <em>sue a contractor</em>?
             </h2>
-            <p>
+                <p>
               Contractor cases are won on the contract, the deposit receipt, photos of the work,
               and quotes from replacement contractors. The clearer the math, the faster the case.
             </p>
-          </div>
+              </div>
+              <div className="evidence-tagline" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 3l8 3v5c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-3z" />
+                </svg>
+                <span>More documentation =<br />stronger case</span>
+              </div>
+            </div>
 
-          <div className="cat-evidence-pile">
-            <div className="cat-evidence-photo">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=900&h=900&fit=crop" alt="Contractor tools and clipboard" />
-              <div className="cat-evidence-cap">Contract + change orders</div>
-            </div>
-            <div className="cat-evidence-photo r2">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://images.unsplash.com/photo-1554224155-1696413565d3?w=900&h=900&fit=crop" alt="Receipts on a desk" />
-              <div className="cat-evidence-cap">Deposit receipt</div>
-            </div>
-            <div className="cat-evidence-photo r3">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=900&h=900&fit=crop" alt="Phone showing texts with contractor" />
-              <div className="cat-evidence-cap">Texts with contractor</div>
-            </div>
-            <div className="cat-evidence-photo r4">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&h=900&fit=crop" alt="Camera showing photos of incomplete work" />
-              <div className="cat-evidence-cap">Photos of work</div>
-            </div>
-          </div>
 
           <div className="cat-evidence-grid">
             <div className="cat-evidence-card">
@@ -570,6 +557,7 @@ export default function ContractorHubPage() {
               <h4 className="cat-evidence-title">Contractor license record</h4>
               <p className="cat-evidence-desc">Print the license record from the state board website. Shows the bond, the surety, past complaints, and current status. Critical for unlicensed-contractor cases.</p>
             </div>
+          </div>
           </div>
         </section>
 

@@ -461,40 +461,27 @@ export default function EmployerHubPage() {
 
         {/* EVIDENCE */}
         <section className="cat-section">
-          <div className="cat-stack-head">
-            <span className="eyebrow">Build the file</span>
-            <h2>
+          <div className="evidence-shell">
+            <div className="evidence-shell-head">
+              <div className="cat-stack-head" style={{ marginBottom: 0 }}>
+                <span className="eyebrow">Build the file</span>
+                <h2>
               What evidence do you need to <em>sue your employer</em>?
             </h2>
-            <p>
+                <p>
               Employment cases are won on documents. Whatever you do not have on paper, the judge
               takes on your word. An employer with an HR team and a payroll vendor has more paper
               than you do, so your job is to close that gap.
             </p>
-          </div>
+              </div>
+              <div className="evidence-tagline" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 3l8 3v5c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-3z" />
+                </svg>
+                <span>More documentation =<br />stronger case</span>
+              </div>
+            </div>
 
-          <div className="cat-evidence-pile">
-            <div className="cat-evidence-photo">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://images.unsplash.com/photo-1554224155-1696413565d3?w=900&h=900&fit=crop" alt="Offer letter on a desk" />
-              <div className="cat-evidence-cap">Offer letter + contract</div>
-            </div>
-            <div className="cat-evidence-photo r2">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=900&h=900&fit=crop" alt="Paystubs and calculator" />
-              <div className="cat-evidence-cap">Paystubs &amp; W-2s</div>
-            </div>
-            <div className="cat-evidence-photo r3">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=900&h=900&fit=crop" alt="Phone showing HR text messages" />
-              <div className="cat-evidence-cap">Texts &amp; emails</div>
-            </div>
-            <div className="cat-evidence-photo r4">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=900&h=900&fit=crop" alt="Notebook with handwritten log" />
-              <div className="cat-evidence-cap">Time log &amp; notes</div>
-            </div>
-          </div>
 
           <div className="cat-evidence-grid">
             <div className="cat-evidence-card">
@@ -556,6 +543,7 @@ export default function EmployerHubPage() {
               <h4 className="cat-evidence-title">Witness contact info</h4>
               <p className="cat-evidence-desc">Coworkers who heard the comments, saw the conditions, or know what really happened. A short signed declaration helps.</p>
             </div>
+          </div>
           </div>
         </section>
 

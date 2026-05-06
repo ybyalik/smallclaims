@@ -457,40 +457,27 @@ export default function LandlordHubPage() {
 
         {/* EVIDENCE — photo-driven document pile */}
         <section className="cat-section">
-          <div className="cat-stack-head">
-            <span className="eyebrow">Build the file</span>
-            <h2>
+          <div className="evidence-shell">
+            <div className="evidence-shell-head">
+              <div className="cat-stack-head" style={{ marginBottom: 0 }}>
+                <span className="eyebrow">Build the file</span>
+                <h2>
               What evidence do you need to <em>sue your landlord</em>?
             </h2>
-            <p>
+                <p>
               Landlord cases are won on documentation. Whatever you do not have on paper, the judge
               takes on your word. A landlord with a property manager has more paper than you do, so
               your job is to close that gap.
             </p>
-          </div>
+              </div>
+              <div className="evidence-tagline" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 3l8 3v5c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-3z" />
+                </svg>
+                <span>More documentation =<br />stronger case</span>
+              </div>
+            </div>
 
-          <div className="cat-evidence-pile">
-            <div className="cat-evidence-photo">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://images.unsplash.com/photo-1554224155-1696413565d3?w=900&h=900&fit=crop" alt="Lease and pen on a desk" />
-              <div className="cat-evidence-cap">Lease + walkthrough</div>
-            </div>
-            <div className="cat-evidence-photo r2">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=900&h=900&fit=crop" alt="Receipts and calculator" />
-              <div className="cat-evidence-cap">Receipts &amp; payments</div>
-            </div>
-            <div className="cat-evidence-photo r3">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=900&h=900&fit=crop" alt="Phone showing text messages" />
-              <div className="cat-evidence-cap">Texts &amp; emails</div>
-            </div>
-            <div className="cat-evidence-photo r4">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&h=900&fit=crop" alt="Camera with photos of unit condition" />
-              <div className="cat-evidence-cap">Photos &amp; video</div>
-            </div>
-          </div>
 
           <div className="cat-evidence-grid">
               <div className="cat-evidence-card">
@@ -562,6 +549,7 @@ export default function LandlordHubPage() {
                 <p className="cat-evidence-desc">Roommate, neighbor, or repair tech who saw the unit&rsquo;s condition can be the difference at the hearing.</p>
               </div>
             </div>
+          </div>
         </section>
 
         {/* STATE-SPECIFIC RULES */}

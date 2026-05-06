@@ -1665,9 +1665,42 @@ footer { padding: 80px 0 40px; background: var(--ink); color: #fef9f1; }
 .cat-split-intro .cat-text-link { display: inline-block; margin-top: 16px; font-size: 14px; }
 
 /* Evidence cards — clean, readable, no fake filenames */
-.cat-evidence-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.cat-evidence-card { background: #fff; border: 1px solid var(--hairline); border-radius: 12px; padding: 18px 20px; display: flex; flex-direction: column; gap: 10px; transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
-.cat-evidence-card:hover { transform: translateY(-2px); border-color: var(--ink); box-shadow: 0 12px 28px -16px rgba(31,27,22,0.15); }
+.cat-evidence-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  counter-reset: evidence-num;
+}
+.cat-evidence-card {
+  position: relative;
+  background: #fff;
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  padding: 50px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  counter-increment: evidence-num;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.cat-evidence-card::before {
+  content: counter(evidence-num);
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Geist", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+}
+.cat-evidence-card:hover { transform: translateY(-2px); box-shadow: 0 12px 28px -16px rgba(31,27,22,0.15); }
 .cat-evidence-icon { width: 32px; height: 32px; border-radius: 8px; background: rgba(217,64,46,0.1); color: var(--accent); display: grid; place-items: center; flex-shrink: 0; }
 .cat-evidence-title { font-family: "Newsreader", Georgia, serif; font-weight: 700; font-size: 17px; letter-spacing: -0.01em; color: var(--ink); margin: 0; line-height: 1.25; }
 .cat-evidence-desc { font-size: 14.5px; line-height: 1.55; color: var(--ink-2); margin: 0; }
@@ -1996,7 +2029,7 @@ footer { padding: 80px 0 40px; background: var(--ink); color: #fef9f1; }
   .cat-steps li { padding: 64px 22px 22px 22px; }
   .cat-steps li::before { left: 22px; top: 18px; font-size: 28px; }
   .cat-split { grid-template-columns: 1fr; gap: 24px; }
-  .cat-evidence-grid { grid-template-columns: 1fr; }
+  .cat-evidence-grid { grid-template-columns: 1fr 1fr; }
   .cat-ps-grid { grid-template-columns: 1fr; gap: 24px; }
   .cat-ps-orb { display: none; }
   .cat-hero-3col { grid-template-columns: 1fr; gap: 18px; }
