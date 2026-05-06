@@ -279,17 +279,28 @@ export default function IssueTemplate({ issue, category, siblings }: Props) {
 
         {/* EVIDENCE */}
         <section id="evidence" className="cat-section">
-          <div className="cat-stack-head">
-            <span className="eyebrow">What you&rsquo;ll need</span>
-            <H2 parts={issue.evidence.h2} />
-            <p>{issue.evidence.lede}</p>
-          </div>
-          <div className="sv-bento cv2-evidence-bento cv2-evidence-flex">
-            {issue.evidence.cells.slice(0, 4).map((cell, i) => (
-              <div key={i} className={`sv-bento-cell evidence-slot-${i + 1}`}>
-                <EvidenceCellView cell={cell} category={category} />
+          <div className="evidence-shell">
+            <div className="evidence-shell-head">
+              <div className="cat-stack-head" style={{ marginBottom: 0 }}>
+                <span className="eyebrow">What to gather</span>
+                <H2 parts={issue.evidence.h2} />
+                <p>{issue.evidence.lede}</p>
               </div>
-            ))}
+              <div className="evidence-tagline" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 3l8 3v5c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-3z" />
+                </svg>
+                <span>More documentation =<br />stronger case</span>
+              </div>
+            </div>
+            <div className="sv-bento cv2-evidence-bento cv2-evidence-flex">
+              {issue.evidence.cells.slice(0, 4).map((cell, i) => (
+                <div key={i} className={`sv-bento-cell evidence-slot-${i + 1}`}>
+                  <span className="evidence-num" aria-hidden="true">{i + 1}</span>
+                  <EvidenceCellView cell={cell} category={category} />
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
