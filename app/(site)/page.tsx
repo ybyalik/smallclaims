@@ -486,24 +486,27 @@ export default function Home() {
         </div>
       </section>
 
-      {/* VERSION A — Three pillars + animated counter ticker */}
+      {/* VERSION A — Punchy / unfair-system framing + dark stats panel */}
       <section style={{ padding: "64px 0", background: "#fff" }}>
         <div className="wrap">
-          <span style={{ display: "inline-block", padding: "4px 10px", background: "rgba(217,64,46,0.10)", color: "var(--accent)", fontSize: 11, fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", borderRadius: 6, marginBottom: 14 }}>Version A · pillars</span>
+          <span style={{ display: "inline-block", padding: "4px 10px", background: "rgba(217,64,46,0.10)", color: "var(--accent)", fontSize: 11, fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", borderRadius: 6, marginBottom: 14 }}>Version A · the math is broken</span>
           <div style={{ display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: 56, alignItems: "center" }}>
             <div>
-              <span className="eyebrow" style={{ color: "var(--accent)" }}>What we do</span>
+              <span className="eyebrow" style={{ color: "var(--accent)" }}>Why we exist</span>
               <h2 style={{ fontFamily: "Newsreader", fontSize: "clamp(32px, 3.4vw, 46px)", fontWeight: 700, letterSpacing: "-0.02em", lineHeight: 1.05, margin: "10px 0 16px" }}>
-                We turn $200/hr legal work into a <em style={{ fontStyle: "italic", color: "var(--accent)" }}>guided checklist</em>.
+                <em style={{ fontStyle: "italic", color: "var(--accent)" }}>77%</em> of Americans with a real legal issue never hire a lawyer.
               </h2>
-              <p style={{ fontSize: 16, color: "var(--ink-2)", lineHeight: 1.55, marginBottom: 28, maxWidth: "55ch" }}>
-                Three things. Score the case, draft the demand letter, walk you through filing in your county. The same prep a paralegal would charge $1,500 for.
+              <p style={{ fontSize: 16.5, color: "var(--ink-2)", lineHeight: 1.6, marginBottom: 14, maxWidth: "55ch" }}>
+                Not because they&rsquo;re wrong. Because at <strong style={{ color: "var(--ink)" }}>$200&ndash;500 an hour</strong>, hiring counsel for a $4,000 dispute makes the math impossible. So they walk away.
+              </p>
+              <p style={{ fontSize: 16.5, color: "var(--ink-2)", lineHeight: 1.6, marginBottom: 28, maxWidth: "55ch" }}>
+                Landlords keep deposits. Contractors vanish with checks. Employers shave paychecks. Sellers ship junk and refuse refunds. The cost of fighting back is higher than the loss &mdash; until now.
               </p>
               <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
                 {[
-                  { num: "01", t: "Score your case", d: "Free 7-question quiz reads your facts against state statute and tells you what you can recover." },
-                  { num: "02", t: "Draft the demand letter", d: "Court-ready, certified-mail formatted, cites the exact statute. Most disputes settle here." },
-                  { num: "03", t: "File in your state", d: "County-specific forms, filing fees, deadlines, and service rules. Step by step." },
+                  { num: "01", t: "Score your case in 90 seconds", d: "We read your facts against state statute and tell you what you can recover. Free." },
+                  { num: "02", t: "Draft a court-ready demand letter", d: "Cites the exact statute, formatted for certified mail. About half of disputes settle right here." },
+                  { num: "03", t: "Walk you through filing", d: "County-specific forms, fees, deadlines, service rules. The same prep a $200/hr paralegal does." },
                 ].map((p, i) => (
                   <div key={p.num} style={{ display: "grid", gridTemplateColumns: "44px 1fr", gap: 18, padding: "16px 0", borderTop: i === 0 ? "none" : "1px solid var(--hairline)", alignItems: "start" }}>
                     <span style={{ fontFamily: "Geist", fontWeight: 700, fontSize: 13, letterSpacing: "0.12em", color: "var(--accent)" }}>{p.num}</span>
@@ -517,28 +520,29 @@ export default function Home() {
             </div>
             <div style={{ background: "var(--ink)", color: "#fef9f1", borderRadius: 18, padding: 32, position: "relative", overflow: "hidden" }}>
               <div style={{ position: "absolute", top: -60, right: -60, width: 200, height: 200, borderRadius: "50%", background: "radial-gradient(circle, rgba(245,178,159,0.22), transparent 65%)" }} aria-hidden />
-              <div style={{ position: "relative", display: "flex", flexDirection: "column", gap: 24 }}>
+              <div style={{ position: "relative", display: "flex", flexDirection: "column", gap: 22 }}>
                 <div>
-                  <div style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 700, color: "rgba(254,249,241,0.6)", marginBottom: 8 }}>Recovered to date</div>
-                  <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 64, lineHeight: 1, color: "#f5b29f", letterSpacing: "-0.04em" }}>$18M+</div>
+                  <div style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 700, color: "rgba(254,249,241,0.6)", marginBottom: 6 }}>The justice gap</div>
+                  <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 64, lineHeight: 1, color: "#f5b29f", letterSpacing: "-0.04em" }}>77%</div>
+                  <div style={{ fontSize: 13, color: "rgba(254,249,241,0.72)", marginTop: 8, lineHeight: 1.45 }}>of Americans with a legal issue never hire a lawyer &mdash; mostly because of cost.</div>
                 </div>
                 <div style={{ height: 1, background: "rgba(254,249,241,0.15)" }} />
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 22 }}>
                   <div>
-                    <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 32, color: "#fef9f1", letterSpacing: "-0.02em" }}>12,400+</div>
-                    <div style={{ fontSize: 12, color: "rgba(254,249,241,0.65)", marginTop: 4 }}>Active cases</div>
+                    <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 30, color: "#fef9f1", letterSpacing: "-0.02em" }}>$1,500&ndash;$5,000</div>
+                    <div style={{ fontSize: 12, color: "rgba(254,249,241,0.65)", marginTop: 4 }}>What a small-claims lawyer costs</div>
                   </div>
                   <div>
-                    <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 32, color: "#fef9f1", letterSpacing: "-0.02em" }}>50</div>
-                    <div style={{ fontSize: 12, color: "rgba(254,249,241,0.65)", marginTop: 4 }}>States supported</div>
+                    <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 30, color: "#fef9f1", letterSpacing: "-0.02em" }}>67<span style={{ fontSize: 22, color: "rgba(254,249,241,0.6)" }}>%</span></div>
+                    <div style={{ fontSize: 12, color: "rgba(254,249,241,0.65)", marginTop: 4 }}>cite cost as the #1 barrier</div>
                   </div>
                   <div>
-                    <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 32, color: "#fef9f1", letterSpacing: "-0.02em" }}>71%</div>
-                    <div style={{ fontSize: 12, color: "rgba(254,249,241,0.65)", marginTop: 4 }}>Win rate</div>
+                    <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 30, color: "#fef9f1", letterSpacing: "-0.02em" }}>99<span style={{ fontSize: 22, color: "rgba(254,249,241,0.6)" }}>%</span></div>
+                    <div style={{ fontSize: 12, color: "rgba(254,249,241,0.65)", marginTop: 4 }}>of small-claims filers go solo</div>
                   </div>
                   <div>
-                    <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 32, color: "#fef9f1", letterSpacing: "-0.02em" }}>47<span style={{ fontSize: 18, color: "rgba(254,249,241,0.5)", marginLeft: 4 }}>days</span></div>
-                    <div style={{ fontSize: 12, color: "rgba(254,249,241,0.65)", marginTop: 4 }}>Median time to win</div>
+                    <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 30, color: "#fef9f1", letterSpacing: "-0.02em" }}>64<span style={{ fontSize: 22, color: "rgba(254,249,241,0.6)" }}>%</span></div>
+                    <div style={{ fontSize: 12, color: "rgba(254,249,241,0.65)", marginTop: 4 }}>win rate when properly prepared</div>
                   </div>
                 </div>
               </div>
@@ -558,23 +562,26 @@ export default function Home() {
                 Built by a lawyer, so you <em style={{ fontStyle: "italic", color: "var(--accent)" }}>don&rsquo;t need one</em>.
               </h2>
               <p style={{ fontSize: 17, color: "var(--ink-2)", lineHeight: 1.6, marginBottom: 14 }}>
-                Small claims is the only court built for self-represented filers. Most state caps fall between $5K and $20K. Hearings take ten minutes. You don&rsquo;t need a lawyer.
+                Small claims is the only US court built for self-represented filers. Hearings take ten minutes. Filing fees are under $100. You don&rsquo;t need a lawyer &mdash; and in some states, you can&rsquo;t even bring one.
               </p>
-              <p style={{ fontSize: 17, color: "var(--ink-2)", lineHeight: 1.6, marginBottom: 24 }}>
-                What you do need is a strong demand letter, the right statute citation, and a clean filing in your county. CivilCase walks you through every one of them.
+              <p style={{ fontSize: 17, color: "var(--ink-2)", lineHeight: 1.6, marginBottom: 14 }}>
+                Yet <strong style={{ color: "var(--ink)" }}>77% of Americans with a real legal issue never hire one anyway</strong>. They eat the loss. The math is straightforward: a small-claims attorney costs $1,500&ndash;$5,000 for a case worth $4,000. Two-thirds of people who skip a lawyer say cost was the deciding factor.
+              </p>
+              <p style={{ fontSize: 17, color: "var(--ink)", lineHeight: 1.6, marginBottom: 24, fontWeight: 600 }}>
+                CivilCase is the same prep, without the bill. Score the case, draft the demand letter, walk you through the filing in your county. We close the gap between &ldquo;I&rsquo;m owed&rdquo; and &ldquo;I got paid.&rdquo;
               </p>
               <div style={{ display: "flex", gap: 24, flexWrap: "wrap", paddingTop: 18, borderTop: "1px solid var(--hairline)" }}>
                 <div>
-                  <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 28, color: "var(--ink)", letterSpacing: "-0.02em" }}>$18M+</div>
-                  <div style={{ fontSize: 12, color: "var(--muted)", marginTop: 2, letterSpacing: "0.06em" }}>Recovered to date</div>
+                  <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 28, color: "var(--ink)", letterSpacing: "-0.02em" }}>77%</div>
+                  <div style={{ fontSize: 12, color: "var(--muted)", marginTop: 2, letterSpacing: "0.06em" }}>Skip a lawyer entirely</div>
                 </div>
                 <div>
-                  <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 28, color: "var(--ink)", letterSpacing: "-0.02em" }}>50 states</div>
-                  <div style={{ fontSize: 12, color: "var(--muted)", marginTop: 2, letterSpacing: "0.06em" }}>Coverage, county-level</div>
+                  <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 28, color: "var(--ink)", letterSpacing: "-0.02em" }}>67%</div>
+                  <div style={{ fontSize: 12, color: "var(--muted)", marginTop: 2, letterSpacing: "0.06em" }}>Cite cost as the #1 reason</div>
                 </div>
                 <div>
-                  <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 28, color: "var(--ink)", letterSpacing: "-0.02em" }}>71%</div>
-                  <div style={{ fontSize: 12, color: "var(--muted)", marginTop: 2, letterSpacing: "0.06em" }}>Win rate w/ documented case</div>
+                  <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 28, color: "var(--ink)", letterSpacing: "-0.02em" }}>64%</div>
+                  <div style={{ fontSize: 12, color: "var(--muted)", marginTop: 2, letterSpacing: "0.06em" }}>Win when properly prepped</div>
                 </div>
               </div>
             </div>
@@ -606,26 +613,29 @@ export default function Home() {
             <div>
               <span className="eyebrow" style={{ color: "var(--accent)" }}>Our mission</span>
               <h2 style={{ fontFamily: "Newsreader", fontSize: "clamp(32px, 3.4vw, 46px)", fontWeight: 700, letterSpacing: "-0.02em", lineHeight: 1.05, margin: "10px 0 16px" }}>
-                Make small claims court <em style={{ fontStyle: "italic", color: "var(--accent)" }}>actually navigable</em> for the people it was built for.
+                Close the <em style={{ fontStyle: "italic", color: "var(--accent)" }}>preparation gap</em>.
               </h2>
-              <p style={{ fontSize: 16, color: "var(--ink-2)", lineHeight: 1.6, marginBottom: 14, maxWidth: "55ch" }}>
-                Small claims is the most accessible court in the U.S. — and the most underused. Filing fees are under $100. Hearings are short. Lawyers aren&rsquo;t required (and aren&rsquo;t allowed in some states). Yet most people who could win a claim never file one because the system feels opaque.
+              <p style={{ fontSize: 16.5, color: "var(--ink-2)", lineHeight: 1.6, marginBottom: 14, maxWidth: "56ch" }}>
+                When self-represented filers come to small claims <strong style={{ color: "var(--ink)" }}>prepared</strong>, they win <strong style={{ color: "var(--accent)" }}>64% of the time</strong>. When they don&rsquo;t, that drops to <strong style={{ color: "var(--ink)" }}>31%</strong>. The difference isn&rsquo;t the law &mdash; it&rsquo;s the prep.
               </p>
-              <p style={{ fontSize: 16, color: "var(--ink)", lineHeight: 1.6, fontWeight: 600, maxWidth: "52ch" }}>
-                We turn that opacity into a checklist.
+              <p style={{ fontSize: 16.5, color: "var(--ink-2)", lineHeight: 1.6, marginBottom: 14, maxWidth: "56ch" }}>
+                Small claims was designed to be navigable without a lawyer. Yet 99% of small-claims filers go solo and most show up under-prepared because the prep itself is the expensive part &mdash; the same statute research, demand-letter drafting, and county-by-county procedure that a paralegal would charge $1,500 to handle.
+              </p>
+              <p style={{ fontSize: 16.5, color: "var(--ink)", lineHeight: 1.6, fontWeight: 600, maxWidth: "52ch" }}>
+                CivilCase is that prep, productized. So a $4,000 claim doesn&rsquo;t cost $5,000 to pursue.
               </p>
             </div>
             <div style={{ position: "relative", padding: 20 }}>
               <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 30% 20%, rgba(217,64,46,0.45), transparent 50%), radial-gradient(circle at 80% 80%, rgba(245,178,159,0.4), transparent 50%), linear-gradient(135deg, #fed8c1, #f3e8d6)", borderRadius: 18 }} aria-hidden />
               <div style={{ position: "relative", display: "flex", flexDirection: "column", gap: 12 }}>
                 {[
-                  { eyebrow: "Recovered to date", value: "$18M+", sub: "across 12,400+ cases" },
-                  { eyebrow: "Filing → judgment", value: "47 days", sub: "median timeline" },
-                  { eyebrow: "Win rate", value: "71%", sub: "with a documented case" },
+                  { eyebrow: "Win rate · prepared", value: "64%", sub: "vs. 31% when facing a lawyer unprepared", accent: true },
+                  { eyebrow: "Cite cost as the barrier", value: "67%", sub: "of people who skipped legal help" },
+                  { eyebrow: "Self-represented", value: "99%", sub: "of small-claims plaintiffs and defendants" },
                 ].map((s, i) => (
                   <div key={s.eyebrow} style={{ background: "rgba(255,255,255,0.7)", backdropFilter: "blur(20px) saturate(140%)", border: "1px solid rgba(255,255,255,0.8)", borderRadius: 14, padding: "16px 20px", marginLeft: i === 1 ? 24 : 0, marginRight: i === 2 ? 24 : 0 }}>
                     <div style={{ fontFamily: "Geist", fontSize: 10.5, letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 700, color: "var(--accent)" }}>{s.eyebrow}</div>
-                    <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 32, color: "var(--ink)", letterSpacing: "-0.02em", marginTop: 2 }}>{s.value}</div>
+                    <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 36, color: s.accent ? "var(--accent)" : "var(--ink)", letterSpacing: "-0.02em", marginTop: 2 }}>{s.value}</div>
                     <div style={{ fontSize: 12, color: "var(--ink-2)", marginTop: 2 }}>{s.sub}</div>
                   </div>
                 ))}
@@ -719,7 +729,7 @@ export default function Home() {
 
             <div className="ps-orb">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/civilcase-shield.webp" alt="CivilCase" width={200} height={228} />
+              <img src="/civilcase-red-seal.webp" alt="CivilCase" width={200} height={228} />
             </div>
 
             <div className="ps-col-card ps-col-dark">
