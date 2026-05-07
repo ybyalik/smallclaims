@@ -102,6 +102,57 @@ export function ArchivedUseCasesSection() {
   return <UseCases />;
 }
 
+export function ArchivedWhySection() {
+  return (
+    <section
+      id="why"
+      style={{ background: "#F5EFE3", borderRadius: 24, marginInline: "max(24px, calc((100vw - 1440px) / 2 + 24px))" }}
+    >
+      <div className="wrap">
+        <div className="dh-grid">
+          <div className="dh-copy">
+            <div className="eyebrow">Why CivilCase</div>
+            <h2 style={{ marginTop: 14 }}>
+              What you need, <em>before</em> you know you need it.
+            </h2>
+            <p>
+              CivilCase evolves with your case &mdash; pulling deadlines forward, surfacing
+              the next move, and keeping you a step ahead of the other side.
+            </p>
+            <div className="dh-feats">
+              <div className="dh-feat">
+                <svg className="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+                  <path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z" />
+                </svg>
+                <h4>Smart Analytics</h4>
+                <p>Learns your case patterns and pushes the right next step in real time. No retraining, no friction.</p>
+              </div>
+              <div className="dh-feat">
+                <svg className="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+                  <rect x="3" y="11" width="18" height="11" rx="2" />
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                </svg>
+                <h4>Court-Specific Insight</h4>
+                <p>No more digging through statutes. CivilCase surfaces the rule you need, the moment you need it.</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div className="dh-photo" style={{ aspectRatio: 0.72 }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&h=900&fit=crop"
+                alt="Couple reviewing dispute"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function ArchivedReceiptsSection() {
   return (
     <section style={{ paddingTop: 30 }}>

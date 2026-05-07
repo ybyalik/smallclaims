@@ -6,6 +6,7 @@ import {
   ArchivedDashboardSection,
   ArchivedUseCasesSection,
   ArchivedReceiptsSection,
+  ArchivedWhySection,
 } from "./HomeArchivedSections";
 import {
   StepsTimelineVariant, StepsSubwayVariant, StepsReceiptVariant,
@@ -86,6 +87,9 @@ export default function SectionsPage() {
 
       <Label id="archived-receipts">Archived from home: The receipts</Label>
       <ArchivedReceiptsSection />
+
+      <Label id="archived-why">Archived from home: Why CivilCase</Label>
+      <ArchivedWhySection />
 
       {/* ============================================================
            1. Centered hero with single CTA
