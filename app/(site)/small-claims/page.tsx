@@ -359,7 +359,6 @@ export default function SmallClaimsHubPage() {
         {/* HERO */}
         <header className="cat-hero-2col">
           <div className="cat-hero-copy">
-            <span className="eyebrow">Small Claims Guides</span>
             <h1>
               How to <em>sue someone</em> in small claims court.
             </h1>

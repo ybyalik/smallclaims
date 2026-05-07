@@ -234,9 +234,7 @@ export default function EmployerHubPage() {
 
         {/* HERO */}
         <header className="cat-hero-2col">
-          <div className="cat-hero-copy">
-            <span className="eyebrow">Category</span>
-            <h1>
+          <div className="cat-hero-copy">            <h1>
               How to <em>sue your employer</em> in small claims court.
             </h1>
             <p className="cat-lede">

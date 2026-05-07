@@ -51,9 +51,7 @@ export default function OnlineSellerHubPage() {
       <div className="wrap">
         <Breadcrumbs items={[{ href: "/small-claims", label: "Small Claims" }, { label: "Online Seller Disputes" }]} />
         <header className="cat-hero-2col">
-          <div className="cat-hero-copy">
-            <span className="eyebrow">Category</span>
-            <h1>How to <em>sue an online seller</em> in small claims court.</h1>
+          <div className="cat-hero-copy">            <h1>How to <em>sue an online seller</em> in small claims court.</h1>
             <p className="cat-lede">Amazon, eBay, Etsy, Facebook Marketplace, Venmo/Cash App scams, gig services, FedEx. Each has a different recovery path. Most platform disputes resolve through buyer protection programs. P2P scams and Marketplace fraud often need small claims under state UDAP.</p>
             <div className="hero-ctas"><HeroCta href="/case-score" variant="dark" icon="case-score">Check my case (free)</HeroCta><HeroCta href="/demand-letter" variant="cream" icon="demand-letter">Send a demand letter</HeroCta></div>
           </div>

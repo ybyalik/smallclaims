@@ -180,7 +180,6 @@ export default function IssueTemplate({ issue, category, siblings }: Props) {
         {/* HERO */}
         <header className="cv2-hero">
           <div className="cv2-hero-main">
-            <span className="eyebrow">{category.hubLabel} · {issue.hero.eyebrowSuffix}</span>
             <h1>
               {issue.hero.h1.pre}<em>{issue.hero.h1.em}</em>{issue.hero.h1.post ?? ""}
             </h1>

@@ -50,9 +50,7 @@ export default function RoommateHubPage() {
       <div className="wrap">
         <Breadcrumbs items={[{ href: "/small-claims", label: "Small Claims" }, { label: "Roommate Disputes" }]} />
         <header className="cat-hero-2col">
-          <div className="cat-hero-copy">
-            <span className="eyebrow">Category</span>
-            <h1>How to <em>sue your roommate</em> in small claims court.</h1>
+          <div className="cat-hero-copy">            <h1>How to <em>sue your roommate</em> in small claims court.</h1>
             <p className="cat-lede">Unpaid rent, unpaid bills, moving out without notice, property damage, security-deposit disputes, and emotional distress. Roommate cases are textbook small-claims cases. Most settle once a demand letter arrives. Bank records, texts, and lease provisions establish the case.</p>
             <div className="hero-ctas"><HeroCta href="/case-score" variant="dark" icon="case-score">Check my case (free)</HeroCta><HeroCta href="/demand-letter" variant="cream" icon="demand-letter">Send a demand letter</HeroCta></div>
           </div>

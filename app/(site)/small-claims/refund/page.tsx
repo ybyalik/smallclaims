@@ -49,9 +49,7 @@ export default function RefundHubPage() {
       <div className="wrap">
         <Breadcrumbs items={[{ href: "/small-claims", label: "Small Claims" }, { label: "Refund Disputes" }]} />
         <header className="cat-hero-2col">
-          <div className="cat-hero-copy">
-            <span className="eyebrow">Category</span>
-            <h1>How to <em>get a refund</em> in small claims court.</h1>
+          <div className="cat-hero-copy">            <h1>How to <em>get a refund</em> in small claims court.</h1>
             <p className="cat-lede">Defective products, gym memberships that won't cancel, dry cleaners that ruined your clothes, salons that damaged your hair, services never performed. State UDAP statutes apply with 2x or 3x multipliers. Most cases settle once a demand letter cites the specific statute. Use chargebacks first when possible.</p>
             <div className="hero-ctas"><HeroCta href="/case-score" variant="dark" icon="case-score">Check my case (free)</HeroCta><HeroCta href="/demand-letter" variant="cream" icon="demand-letter">Send a demand letter</HeroCta></div>
           </div>

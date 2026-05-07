@@ -59,9 +59,7 @@ export default function NeighborHubPage() {
       <div className="wrap">
         <Breadcrumbs items={[{ href: "/small-claims", label: "Small Claims" }, { label: "Neighbor Disputes" }]} />
         <header className="cat-hero-2col">
-          <div className="cat-hero-copy">
-            <span className="eyebrow">Category</span>
-            <h1>How to <em>sue your neighbor</em> in small claims court.</h1>
+          <div className="cat-hero-copy">            <h1>How to <em>sue your neighbor</em> in small claims court.</h1>
             <p className="cat-lede">If your neighbor damaged your property, made constant noise, harassed you, regraded their land to flood your yard, blocked your driveway, or damaged a shared fence, small claims is often the right court. Most cases also pay through the neighbor's homeowners insurance, which is faster than court. Document the pattern, send a demand letter, and file the small-claims case if needed.</p>
             <div className="hero-ctas">
               <HeroCta href="/case-score" variant="dark" icon="case-score">Check my case (free)</HeroCta>

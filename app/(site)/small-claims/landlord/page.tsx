@@ -237,9 +237,7 @@ export default function LandlordHubPage() {
 
         {/* HERO — 3-col like homepage */}
         <header className="cat-hero-2col">
-          <div className="cat-hero-copy">
-            <span className="eyebrow">Category</span>
-            <h1>
+          <div className="cat-hero-copy">            <h1>
               How to <em>sue your landlord</em> in small claims court.
             </h1>
             <p className="cat-lede">

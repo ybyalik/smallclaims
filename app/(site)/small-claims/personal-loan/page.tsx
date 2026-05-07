@@ -51,9 +51,7 @@ export default function PersonalLoanHubPage() {
       <div className="wrap">
         <Breadcrumbs items={[{ href: "/small-claims", label: "Small Claims" }, { label: "Personal Loan Disputes" }]} />
         <header className="cat-hero-2col">
-          <div className="cat-hero-copy">
-            <span className="eyebrow">Category</span>
-            <h1>How to <em>sue someone who owes you money</em>.</h1>
+          <div className="cat-hero-copy">            <h1>How to <em>sue someone who owes you money</em>.</h1>
             <p className="cat-lede">Friend, family member, ex, or stranger. With or without a written agreement. Small claims is built for these cases. Most informal loans are recoverable: bank records, texts, witness testimony, and the borrower's own statements all establish the agreement. Most cases settle once a demand letter arrives.</p>
             <div className="hero-ctas"><HeroCta href="/case-score" variant="dark" icon="case-score">Check my case (free)</HeroCta><HeroCta href="/demand-letter" variant="cream" icon="demand-letter">Send a demand letter</HeroCta></div>
           </div>
