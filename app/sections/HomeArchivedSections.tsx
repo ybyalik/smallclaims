@@ -2,6 +2,7 @@
 // back into a real page later without re-deriving the markup.
 
 import UseCases from "../../components/UseCases";
+import ProcessFlow from "../(site)/ProcessFlow";
 
 export function ArchivedDashboardSection() {
   return (
@@ -100,6 +101,35 @@ export function ArchivedDashboardSection() {
 
 export function ArchivedUseCasesSection() {
   return <UseCases />;
+}
+
+export function ArchivedProcessSection() {
+  return (
+    <section id="how">
+      <div className="wrap">
+        <div className="sec-head">
+          <span className="eyebrow" style={{ color: "#3D7A4A" }}>
+            {"{ 02 } PROCESS"}
+          </span>
+          <h2 style={{ marginTop: 14 }}>
+            From &ldquo;I&rsquo;m owed&rdquo; to <em>paid in full</em>.
+          </h2>
+        </div>
+        <div className="pw-labels">
+          <span>
+            <span style={{ color: "#3D7A4A" }}>&bull;</span> Set the foundation
+          </span>
+          <span>Resolve without court &bull;</span>
+        </div>
+        <div className="pw-line">
+          <span className="dot" style={{ left: 0 }}></span>
+          <span className="dot travel"></span>
+          <span className="dot" style={{ left: "100%", transform: "translateX(-100%)" }}></span>
+        </div>
+        <ProcessFlow />
+      </div>
+    </section>
+  );
 }
 
 export function ArchivedWhySection() {

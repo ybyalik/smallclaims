@@ -1,7 +1,6 @@
 import type React from "react";
 import HeroCta from "../../components/HeroCta";
 import HeroCaseStrength from "../../components/HeroCaseStrength";
-import ProcessFlow from "./ProcessFlow";
 
 // The "We help with the most common small claims disputes" section data.
 // Each entry maps to a WebP file in /public/icons/.
@@ -691,7 +690,7 @@ export default function Home() {
           </svg>
 
           <div className="winning-solution">
-            <div className="winning-solution-inner" style={{ background: "var(--ink)", boxShadow: "0 22px 50px -28px rgba(31,27,22,0.5)" }}>
+            <div className="winning-solution-inner" style={{ background: "#263e2d", boxShadow: "0 22px 50px -28px rgba(38,62,45,0.5)" }}>
               <div className="winning-solution-shield">
                 <svg viewBox="0 0 32 32" width="22" height="22" aria-hidden>
                   <path
@@ -740,34 +739,6 @@ export default function Home() {
               See How It Works <span aria-hidden>→</span>
             </a>
           </div>
-        </div>
-      </section>
-
-      {/* HOW IT WORKS */}
-      <section id="how">
-        <div className="wrap">
-          <div className="sec-head">
-            <span className="eyebrow" style={{ color: "#3D7A4A" }}>
-              {"{ 02 } PROCESS"}
-            </span>
-            <h2 style={{ marginTop: 14 }}>
-              From &ldquo;I&rsquo;m owed&rdquo; to <em>paid in full</em>.
-            </h2>
-          </div>
-
-          <div className="pw-labels">
-            <span>
-              <span style={{ color: "#3D7A4A" }}>●</span> Set the foundation
-            </span>
-            <span>Resolve without court ●</span>
-          </div>
-          <div className="pw-line">
-            <span className="dot" style={{ left: 0 }}></span>
-            <span className="dot travel"></span>
-            <span className="dot" style={{ left: "100%", transform: "translateX(-100%)" }}></span>
-          </div>
-
-          <ProcessFlow />
         </div>
       </section>
 
