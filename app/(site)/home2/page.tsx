@@ -654,7 +654,7 @@ export default function Home() {
       </section>
 
       {/* WINNING / GETTING PAID */}
-      <section className="winning" style={{ background: "#fefcf3" }}>
+      <section className="winning" style={{ background: "#fff" }}>
         <div className="wrap-wide">
           <div className="winning-head">
             <h2>
