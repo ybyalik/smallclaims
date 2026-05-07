@@ -586,10 +586,10 @@ section { padding: var(--section-pad) 0; }
 .ps-paper-bg {
   position: absolute;
   inset: 0;
-  background-color: #f7f3ea;
+  background-color: #fefcf3;
   background-image:
-    linear-gradient(rgba(31,27,22,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(31,27,22,0.04) 1px, transparent 1px);
+    linear-gradient(rgba(31,27,22,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(31,27,22,0.035) 1px, transparent 1px);
   background-size: 28px 28px;
   pointer-events: none;
   z-index: 0;
