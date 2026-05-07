@@ -1669,10 +1669,13 @@ footer { padding: 80px 0 40px; background: var(--ink); color: #fef9f1; }
   pointer-events: none;
 }
 .hero-strength-score {
-  position: relative;
+  position: absolute;
   z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
-  margin-top: 6px;
+  opacity: 0.7;
 }
 .hero-strength-score-label {
   font-family: "Geist", system-ui, sans-serif;
