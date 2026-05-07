@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import HeroCta from "../../../../components/HeroCta";
-import HeroCaseFolder from "../../../../components/HeroCaseFolder";
+import HeroStatePins from "../../../../components/HeroStatePins";
 import CtaStepCard from "../../../../components/CtaStepCard";
 import Link from "next/link";
 import Breadcrumbs from "../../../../components/Breadcrumbs";
@@ -253,16 +253,7 @@ export default function LandlordHubPage() {
               <HeroCta href="/demand-letter" variant="cream" icon="demand-letter">Send a demand letter</HeroCta>
             </div>
           </div>
-          <HeroCaseFolder
-            caseNumber="26-CV-04217"
-            plaintiff="Tenant, J."
-            defendant="Oakwood Properties LLC"
-            causeLabel="Cause of action"
-            causeValue="§ 1950.5 deposit"
-            demand="$4,500"
-            filed="Apr 21, 2026"
-            hearing="May 28"
-          />
+          <HeroStatePins />
         </header>
 
         {/* ISSUE CARDS */}

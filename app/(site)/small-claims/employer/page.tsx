@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import HeroCta from "../../../../components/HeroCta";
-import HeroCaseFolder from "../../../../components/HeroCaseFolder";
+import HeroStatePins from "../../../../components/HeroStatePins";
 import CtaStepCard from "../../../../components/CtaStepCard";
 import Link from "next/link";
 import Breadcrumbs from "../../../../components/Breadcrumbs";
@@ -250,16 +250,7 @@ export default function EmployerHubPage() {
               <HeroCta href="/demand-letter" variant="cream" icon="demand-letter">Send a demand letter</HeroCta>
             </div>
           </div>
-          <HeroCaseFolder
-            caseNumber="26-CV-08842"
-            plaintiff="Worker, M."
-            defendant="Acme Logistics Inc."
-            causeLabel="Cause of action"
-            causeValue="Wage Act § 8.51"
-            demand="$6,200"
-            filed="Mar 14, 2026"
-            hearing="Apr 30"
-          />
+          <HeroStatePins />
         </header>
 
         {/* ISSUE CARDS */}

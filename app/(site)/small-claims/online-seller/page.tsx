@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import HeroCta from "../../../../components/HeroCta";
-import HeroCaseFolder from "../../../../components/HeroCaseFolder";
+import HeroStatePins from "../../../../components/HeroStatePins";
 import CtaStepCard from "../../../../components/CtaStepCard";
 import Link from "next/link";
 import Breadcrumbs from "../../../../components/Breadcrumbs";
@@ -57,16 +57,7 @@ export default function OnlineSellerHubPage() {
             <p className="cat-lede">Amazon, eBay, Etsy, Facebook Marketplace, Venmo/Cash App scams, gig services, FedEx. Each has a different recovery path. Most platform disputes resolve through buyer protection programs. P2P scams and Marketplace fraud often need small claims under state UDAP.</p>
             <div className="hero-ctas"><HeroCta href="/case-score" variant="dark" icon="case-score">Check my case (free)</HeroCta><HeroCta href="/demand-letter" variant="cream" icon="demand-letter">Send a demand letter</HeroCta></div>
           </div>
-          <HeroCaseFolder
-            caseNumber="26-CV-09245"
-            plaintiff="Buyer, T."
-            defendant="Marketplace Seller XYZ"
-            causeLabel="Cause of action"
-            causeValue="UDAP / fraud"
-            demand="$1,400"
-            filed="Apr 18, 2026"
-            hearing="Jun 09"
-          />
+          <HeroStatePins />
         </header>
 
         <section className="cat-section">

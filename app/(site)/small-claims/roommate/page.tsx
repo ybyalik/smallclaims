@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import HeroCta from "../../../../components/HeroCta";
-import HeroCaseFolder from "../../../../components/HeroCaseFolder";
+import HeroStatePins from "../../../../components/HeroStatePins";
 import CtaStepCard from "../../../../components/CtaStepCard";
 import Link from "next/link";
 import Breadcrumbs from "../../../../components/Breadcrumbs";
@@ -56,16 +56,7 @@ export default function RoommateHubPage() {
             <p className="cat-lede">Unpaid rent, unpaid bills, moving out without notice, property damage, security-deposit disputes, and emotional distress. Roommate cases are textbook small-claims cases. Most settle once a demand letter arrives. Bank records, texts, and lease provisions establish the case.</p>
             <div className="hero-ctas"><HeroCta href="/case-score" variant="dark" icon="case-score">Check my case (free)</HeroCta><HeroCta href="/demand-letter" variant="cream" icon="demand-letter">Send a demand letter</HeroCta></div>
           </div>
-          <HeroCaseFolder
-            caseNumber="26-CV-03318"
-            plaintiff="Roommate, J."
-            defendant="Roommate, S."
-            causeLabel="Cause of action"
-            causeValue="Joint-lease breach"
-            demand="$3,200"
-            filed="Mar 05, 2026"
-            hearing="Apr 22"
-          />
+          <HeroStatePins />
         </header>
 
         <section className="cat-section">

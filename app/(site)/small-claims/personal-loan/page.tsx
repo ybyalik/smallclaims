@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import HeroCta from "../../../../components/HeroCta";
-import HeroCaseFolder from "../../../../components/HeroCaseFolder";
+import HeroStatePins from "../../../../components/HeroStatePins";
 import CtaStepCard from "../../../../components/CtaStepCard";
 import Link from "next/link";
 import Breadcrumbs from "../../../../components/Breadcrumbs";
@@ -57,16 +57,7 @@ export default function PersonalLoanHubPage() {
             <p className="cat-lede">Friend, family member, ex, or stranger. With or without a written agreement. Small claims is built for these cases. Most informal loans are recoverable: bank records, texts, witness testimony, and the borrower's own statements all establish the agreement. Most cases settle once a demand letter arrives.</p>
             <div className="hero-ctas"><HeroCta href="/case-score" variant="dark" icon="case-score">Check my case (free)</HeroCta><HeroCta href="/demand-letter" variant="cream" icon="demand-letter">Send a demand letter</HeroCta></div>
           </div>
-          <HeroCaseFolder
-            caseNumber="26-CV-07490"
-            plaintiff="Lender, A."
-            defendant="Borrower, R."
-            causeLabel="Cause of action"
-            causeValue="Breach of promise"
-            demand="$5,000"
-            filed="Apr 10, 2026"
-            hearing="Jun 02"
-          />
+          <HeroStatePins />
         </header>
 
         <section className="cat-section">

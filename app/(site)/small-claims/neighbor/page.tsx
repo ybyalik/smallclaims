@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import HeroCta from "../../../../components/HeroCta";
-import HeroCaseFolder from "../../../../components/HeroCaseFolder";
+import HeroStatePins from "../../../../components/HeroStatePins";
 import CtaStepCard from "../../../../components/CtaStepCard";
 import Link from "next/link";
 import Breadcrumbs from "../../../../components/Breadcrumbs";
@@ -68,16 +68,7 @@ export default function NeighborHubPage() {
               <HeroCta href="/demand-letter" variant="cream" icon="demand-letter">Send a demand letter</HeroCta>
             </div>
           </div>
-          <HeroCaseFolder
-            caseNumber="26-CV-05103"
-            plaintiff="Owner, R."
-            defendant="Holm, K. (next door)"
-            causeLabel="Cause of action"
-            causeValue="Negligence + nuisance"
-            demand="$2,800"
-            filed="Mar 22, 2026"
-            hearing="May 06"
-          />
+          <HeroStatePins />
         </header>
 
         <section className="cat-section">

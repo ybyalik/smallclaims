@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import HeroCta from "../../../../components/HeroCta";
-import HeroCaseFolder from "../../../../components/HeroCaseFolder";
+import HeroStatePins from "../../../../components/HeroStatePins";
 import CtaStepCard from "../../../../components/CtaStepCard";
 import Link from "next/link";
 import Breadcrumbs from "../../../../components/Breadcrumbs";
@@ -265,16 +265,7 @@ export default function ContractorHubPage() {
               <HeroCta href="/demand-letter" variant="cream" icon="demand-letter">Send a demand letter</HeroCta>
             </div>
           </div>
-          <HeroCaseFolder
-            caseNumber="26-CV-02174"
-            plaintiff="Homeowner, D."
-            defendant="Patel Construction LLC"
-            causeLabel="Cause of action"
-            causeValue="Breach of contract"
-            demand="$4,800"
-            filed="Feb 28, 2026"
-            hearing="Apr 12"
-          />
+          <HeroStatePins />
         </header>
 
         {/* ISSUE CARDS */}

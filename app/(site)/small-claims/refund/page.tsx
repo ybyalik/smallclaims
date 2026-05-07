@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import HeroCta from "../../../../components/HeroCta";
-import HeroCaseFolder from "../../../../components/HeroCaseFolder";
+import HeroStatePins from "../../../../components/HeroStatePins";
 import CtaStepCard from "../../../../components/CtaStepCard";
 import Link from "next/link";
 import Breadcrumbs from "../../../../components/Breadcrumbs";
@@ -55,16 +55,7 @@ export default function RefundHubPage() {
             <p className="cat-lede">Defective products, gym memberships that won't cancel, dry cleaners that ruined your clothes, salons that damaged your hair, services never performed. State UDAP statutes apply with 2x or 3x multipliers. Most cases settle once a demand letter cites the specific statute. Use chargebacks first when possible.</p>
             <div className="hero-ctas"><HeroCta href="/case-score" variant="dark" icon="case-score">Check my case (free)</HeroCta><HeroCta href="/demand-letter" variant="cream" icon="demand-letter">Send a demand letter</HeroCta></div>
           </div>
-          <HeroCaseFolder
-            caseNumber="26-CV-04680"
-            plaintiff="Member, S."
-            defendant="Iron Gym Holdings"
-            causeLabel="Cause of action"
-            causeValue="Refund / UDAP"
-            demand="$1,800"
-            filed="Apr 14, 2026"
-            hearing="May 30"
-          />
+          <HeroStatePins />
         </header>
 
         <section className="cat-section">

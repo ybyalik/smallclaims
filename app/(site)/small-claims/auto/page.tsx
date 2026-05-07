@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import HeroCta from "../../../../components/HeroCta";
-import HeroCaseFolder from "../../../../components/HeroCaseFolder";
+import HeroStatePins from "../../../../components/HeroStatePins";
 import CtaStepCard from "../../../../components/CtaStepCard";
 import Link from "next/link";
 import Breadcrumbs from "../../../../components/Breadcrumbs";
@@ -236,16 +236,7 @@ export default function AutoHubPage() {
               <HeroCta href="/demand-letter" variant="cream" icon="demand-letter">Send a demand letter</HeroCta>
             </div>
           </div>
-          <HeroCaseFolder
-            caseNumber="26-CV-06721"
-            plaintiff="Buyer, C."
-            defendant="Sunrise Auto Group"
-            causeLabel="Cause of action"
-            causeValue="Lemon Law § 1793"
-            demand="$3,500"
-            filed="Apr 02, 2026"
-            hearing="May 19"
-          />
+          <HeroStatePins />
         </header>
 
         {/* ISSUE CARDS */}
