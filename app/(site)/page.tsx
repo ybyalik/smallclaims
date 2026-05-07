@@ -1,5 +1,21 @@
 import type React from "react";
+import Link from "next/link";
+import HeroCta from "../../components/HeroCta";
+import HeroStatePins from "../../components/HeroStatePins";
+import CtaStepCard from "../../components/CtaStepCard";
 import ProcessFlow from "./ProcessFlow";
+
+const HOME_CATEGORIES = [
+  { slug: "landlord", title: "Sue a landlord", blurb: "Security deposit, mold, lockout, harassment.", photo: "1560518883-ce09059eeffa" },
+  { slug: "employer", title: "Sue an employer", blurb: "Wrongful termination, unpaid wages, last paycheck.", photo: "1521791136064-7986c2920216" },
+  { slug: "contractor", title: "Sue a contractor", blurb: "Took the deposit and vanished, unfinished work.", photo: "1503387762-592deb58ef4e" },
+  { slug: "auto", title: "Sue over a car", blurb: "Parked-car hit, dealership fraud, lemon, mechanic.", photo: "1503376780353-7e6692767b70" },
+  { slug: "neighbor", title: "Sue a neighbor", blurb: "Property damage, fallen trees, noise, harassment.", photo: "1568605114967-8130f3a36994" },
+  { slug: "personal-loan", title: "Recover money owed", blurb: "Friend, family, ex, IOU. Most informal loans recoverable.", photo: "1554224155-1696413565d3" },
+  { slug: "roommate", title: "Sue a roommate", blurb: "Unpaid rent, unpaid bills, moving out without notice.", photo: "1560448204-e02f11c3d0e2" },
+  { slug: "online-seller", title: "Sue an online seller", blurb: "Amazon, eBay, Etsy, Marketplace, Venmo scams.", photo: "1607082348824-0a96f2a4b9da" },
+  { slug: "refund", title: "Get a refund", blurb: "Defective product, gym membership, services not rendered.", photo: "1554224154-26032ffc0d07" },
+];
 
 // The "We help with the most common small claims disputes" section data.
 // Each entry maps to a WebP file in /public/icons/.
@@ -330,12 +346,6 @@ export default function Home() {
         <div className="wrap-wide hero-inner">
           <div className="hero-v2-grid">
             <div className="hero-v2-copy">
-              <span className="hero-v2-badge">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden>
-                  <path d="M12 2l2.39 7.36H22l-6.18 4.49L18.21 22 12 17.27 5.79 22l2.39-8.15L2 9.36h7.61z" />
-                </svg>
-                The #1 Platform for Small Claims
-              </span>
               <h1>
                 Get your money back <em>without a lawyer.</em>
               </h1>
@@ -354,13 +364,9 @@ export default function Home() {
                   <CheckIcon /> Used in all 50 states
                 </li>
               </ul>
-              <div className="hero-v2-ctas">
-                <a className="btn btn-dark btn-lg" href="/demand-letter">
-                  Start your case now
-                </a>
-                <a className="btn btn-outline btn-lg" href="#how">
-                  See how it works <span aria-hidden>→</span>
-                </a>
+              <div className="hero-ctas">
+                <HeroCta href="/demand-letter" variant="dark" icon="demand-letter">Start your case now</HeroCta>
+                <HeroCta href="/case-score" variant="cream" icon="case-score">Check my case strength</HeroCta>
               </div>
               <div className="hero-v2-social">
                 <div className="hero-v2-avatars" aria-hidden>
@@ -386,7 +392,7 @@ export default function Home() {
               </div>
             </div>
 
-            <HeroAnim />
+            <HeroStatePins />
           </div>
         </div>
       </section>
@@ -487,22 +493,37 @@ export default function Home() {
         </div>
       </section>
 
-      {/* COMMON DISPUTES — original layout with the colorful WebP icons. */}
-      <section className="disputes">
-        <div className="wrap-wide">
-          <h2 className="disputes-title">
-            We help with the <em>most common</em> small claims disputes.
-          </h2>
-          <div className="disputes-grid">
-            {DISPUTE_ITEMS.map((d) => (
-              <div key={d.title} className="dispute-card dispute-card-webp">
-                <div className="dispute-icon dispute-icon-webp">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={`/icons/${d.webp}.webp`} alt="" />
+      {/* CATEGORIES — photo-card grid (matches /small-claims) */}
+      <section className="cat-section">
+        <div className="wrap">
+          <div className="sec-head" style={{ textAlign: "left", marginBottom: 28 }}>
+            <h2 style={{ margin: 0 }}>
+              Pick a <em>category</em>.
+            </h2>
+            <p style={{ marginTop: 12, marginLeft: 0, maxWidth: "60ch" }}>
+              Each guide covers what you can recover, what evidence to bring, and how to file
+              in your state.
+            </p>
+          </div>
+          <div className="photo-grid">
+            {HOME_CATEGORIES.map((c) => (
+              <Link key={c.slug} href={`/small-claims/${c.slug}`} className="photo-card">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={`https://images.unsplash.com/photo-${c.photo}?w=600&h=600&fit=crop`}
+                  alt=""
+                  className="photo-card-img"
+                />
+                <div className="photo-card-overlay">
+                  <h3>{c.title}</h3>
+                  <p>{c.blurb}</p>
                 </div>
-                <h3>{d.title}</h3>
-                <p>{d.blurb}</p>
-              </div>
+                <span className="photo-card-arrow" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </span>
+              </Link>
             ))}
           </div>
         </div>
@@ -627,7 +648,7 @@ export default function Home() {
       </section>
 
       {/* WINNING / GETTING PAID */}
-      <section className="winning">
+      <section className="winning" style={{ background: "#fff" }}>
         <div className="wrap-wide">
           <div className="winning-head">
             <h2>
@@ -684,14 +705,14 @@ export default function Home() {
               <g key={i}>
                 <path
                   d={`M${x},0 Q${x},30 ${x},50`}
-                  stroke="rgba(61,122,74,0.45)"
+                  stroke="rgba(217,64,46,0.45)"
                   strokeWidth="1.4"
                   strokeDasharray="4 5"
                   fill="none"
                 />
                 <path
                   d={`M${x - 5},45 L${x},52 L${x + 5},45`}
-                  stroke="rgba(61,122,74,0.55)"
+                  stroke="rgba(217,64,46,0.55)"
                   strokeWidth="1.4"
                   fill="none"
                   strokeLinecap="round"
@@ -702,7 +723,7 @@ export default function Home() {
           </svg>
 
           <div className="winning-solution">
-            <div className="winning-solution-inner">
+            <div className="winning-solution-inner" style={{ background: "var(--ink)", boxShadow: "0 22px 50px -28px rgba(31,27,22,0.5)" }}>
               <div className="winning-solution-shield">
                 <svg viewBox="0 0 32 32" width="22" height="22" aria-hidden>
                   <path
@@ -1041,27 +1062,35 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA BAND (above footer) */}
-      <section className="home-cta-band-section">
+      {/* CTA BAND — variant 07 'Three ways' style */}
+      <section className="cat-section">
         <div className="wrap">
-          <div className="home-cta-band">
-            <div className="home-cta-band-copy">
-              <span className="home-cta-band-eyebrow">Ready when you are</span>
-              <h2>
-                Recover what&rsquo;s <em>actually owed.</em>
-              </h2>
-              <p>
-                Start with a demand letter or check your case strength first. No
-                lawyer, no subscription, no surprises.
-              </p>
-            </div>
-            <div className="home-cta-band-actions">
-              <a className="btn btn-accent btn-lg" href="/demand-letter">
-                Start your case
-              </a>
-              <a className="home-cta-band-secondary" href="/case-score">
-                Check case strength →
-              </a>
+          <div style={{ background: "#0d0d0d", color: "#fff", padding: "32px 0", borderRadius: 20, position: "relative", overflow: "hidden" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "1.85fr 1fr", gap: 0, alignItems: "center" }}>
+              <div style={{ padding: "12px 44px 20px" }}>
+                <span className="eyebrow" style={{ color: "rgba(254,249,241,0.65)" }}>Ready when you are</span>
+                <h2 style={{ fontFamily: "Newsreader, Georgia, serif", fontSize: "clamp(28px, 2.8vw, 38px)", fontWeight: 700, letterSpacing: "-0.02em", lineHeight: 1.1, margin: "14px 0 28px", color: "#fef9f1" }}>
+                  Three ways to <em style={{ fontStyle: "italic", color: "#f5b29f", fontWeight: 700 }}>move forward</em>.
+                </h2>
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 14, alignItems: "stretch", position: "relative" }}>
+                  <CtaStepCard href="/demand-letter" bg="#4ad96a" tone="dark" stepNum="01" stepPos="top-left" title="Send a demand letter" titlePos="bottom-left" />
+                  <CtaStepCard href="/case-score" bg="#fff" tone="dark" stepNum="02" stepPos="bottom-right" title="Check my case" titlePos="top-left" gradient />
+                  <CtaStepCard href="/small-claims" bg="#7344ee" tone="light" stepNum="03" stepPos="top-right" title="File your claim" titlePos="bottom-right" />
+                </div>
+              </div>
+              <div style={{ borderLeft: "1px solid #1f1f1f", padding: "20px 44px", position: "relative", alignSelf: "stretch", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                <div style={{ fontFamily: "Geist, system-ui, sans-serif", fontWeight: 900, fontSize: 70, lineHeight: 0.5, color: "#2a2a2a", marginBottom: 14, letterSpacing: "-0.06em" }} aria-hidden="true">
+                  &rdquo;&rdquo;
+                </div>
+                <div style={{ width: 48, height: 1, background: "#3a3a3a", marginBottom: 14 }} />
+                <p style={{ fontFamily: "Newsreader, Georgia, serif", fontSize: 18, fontStyle: "italic", lineHeight: 1.35, letterSpacing: "-0.005em", color: "#fef9f1", margin: "0 0 16px" }}>
+                  Won my $4,500 deposit back in 47 days. The demand letter alone got my landlord to settle.
+                </p>
+                <div>
+                  <div style={{ fontFamily: "Geist, system-ui, sans-serif", fontWeight: 700, fontSize: 14, color: "#fff", marginBottom: 2 }}>Maria R.</div>
+                  <div style={{ fontSize: 12.5, color: "#9aa0a6" }}>Tenant · California</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
