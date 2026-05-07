@@ -478,6 +478,163 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ────── ALTERNATIVES PREVIEW (delete after picking) ────── */}
+      <section style={{ background: "#fbf6ec", padding: "56px 0 24px", borderTop: "1px dashed rgba(31,27,22,0.15)" }}>
+        <div className="wrap-wide" style={{ marginBottom: 24 }}>
+          <span className="eyebrow" style={{ color: "var(--accent)" }}>Preview · pick one</span>
+          <h2 style={{ fontFamily: "Newsreader", fontSize: 30, margin: "8px 0 0" }}>About-us / what-we-do alternatives</h2>
+        </div>
+      </section>
+
+      {/* VERSION A — Three pillars + animated counter ticker */}
+      <section style={{ padding: "64px 0", background: "#fff" }}>
+        <div className="wrap">
+          <span style={{ display: "inline-block", padding: "4px 10px", background: "rgba(217,64,46,0.10)", color: "var(--accent)", fontSize: 11, fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", borderRadius: 6, marginBottom: 14 }}>Version A · pillars</span>
+          <div style={{ display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: 56, alignItems: "center" }}>
+            <div>
+              <span className="eyebrow" style={{ color: "var(--accent)" }}>What we do</span>
+              <h2 style={{ fontFamily: "Newsreader", fontSize: "clamp(32px, 3.4vw, 46px)", fontWeight: 700, letterSpacing: "-0.02em", lineHeight: 1.05, margin: "10px 0 16px" }}>
+                We turn $200/hr legal work into a <em style={{ fontStyle: "italic", color: "var(--accent)" }}>guided checklist</em>.
+              </h2>
+              <p style={{ fontSize: 16, color: "var(--ink-2)", lineHeight: 1.55, marginBottom: 28, maxWidth: "55ch" }}>
+                Three things. Score the case, draft the demand letter, walk you through filing in your county. The same prep a paralegal would charge $1,500 for.
+              </p>
+              <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
+                {[
+                  { num: "01", t: "Score your case", d: "Free 7-question quiz reads your facts against state statute and tells you what you can recover." },
+                  { num: "02", t: "Draft the demand letter", d: "Court-ready, certified-mail formatted, cites the exact statute. Most disputes settle here." },
+                  { num: "03", t: "File in your state", d: "County-specific forms, filing fees, deadlines, and service rules. Step by step." },
+                ].map((p, i) => (
+                  <div key={p.num} style={{ display: "grid", gridTemplateColumns: "44px 1fr", gap: 18, padding: "16px 0", borderTop: i === 0 ? "none" : "1px solid var(--hairline)", alignItems: "start" }}>
+                    <span style={{ fontFamily: "Geist", fontWeight: 700, fontSize: 13, letterSpacing: "0.12em", color: "var(--accent)" }}>{p.num}</span>
+                    <div>
+                      <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 17, color: "var(--ink)", marginBottom: 4 }}>{p.t}</div>
+                      <div style={{ fontSize: 14.5, color: "var(--ink-2)", lineHeight: 1.5 }}>{p.d}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div style={{ background: "var(--ink)", color: "#fef9f1", borderRadius: 18, padding: 32, position: "relative", overflow: "hidden" }}>
+              <div style={{ position: "absolute", top: -60, right: -60, width: 200, height: 200, borderRadius: "50%", background: "radial-gradient(circle, rgba(245,178,159,0.22), transparent 65%)" }} aria-hidden />
+              <div style={{ position: "relative", display: "flex", flexDirection: "column", gap: 24 }}>
+                <div>
+                  <div style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 700, color: "rgba(254,249,241,0.6)", marginBottom: 8 }}>Recovered to date</div>
+                  <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 64, lineHeight: 1, color: "#f5b29f", letterSpacing: "-0.04em" }}>$18M+</div>
+                </div>
+                <div style={{ height: 1, background: "rgba(254,249,241,0.15)" }} />
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
+                  <div>
+                    <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 32, color: "#fef9f1", letterSpacing: "-0.02em" }}>12,400+</div>
+                    <div style={{ fontSize: 12, color: "rgba(254,249,241,0.65)", marginTop: 4 }}>Active cases</div>
+                  </div>
+                  <div>
+                    <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 32, color: "#fef9f1", letterSpacing: "-0.02em" }}>50</div>
+                    <div style={{ fontSize: 12, color: "rgba(254,249,241,0.65)", marginTop: 4 }}>States supported</div>
+                  </div>
+                  <div>
+                    <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 32, color: "#fef9f1", letterSpacing: "-0.02em" }}>71%</div>
+                    <div style={{ fontSize: 12, color: "rgba(254,249,241,0.65)", marginTop: 4 }}>Win rate</div>
+                  </div>
+                  <div>
+                    <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 32, color: "#fef9f1", letterSpacing: "-0.02em" }}>47<span style={{ fontSize: 18, color: "rgba(254,249,241,0.5)", marginLeft: 4 }}>days</span></div>
+                    <div style={{ fontSize: 12, color: "rgba(254,249,241,0.65)", marginTop: 4 }}>Median time to win</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* VERSION B — Founder-led editorial + cream demand letter mockup */}
+      <section style={{ padding: "64px 0", background: "#fefcf3" }}>
+        <div className="wrap">
+          <span style={{ display: "inline-block", padding: "4px 10px", background: "rgba(217,64,46,0.10)", color: "var(--accent)", fontSize: 11, fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", borderRadius: 6, marginBottom: 14 }}>Version B · editorial</span>
+          <div style={{ display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: 56, alignItems: "center" }}>
+            <div>
+              <span className="eyebrow" style={{ color: "var(--accent)" }}>Why we built this</span>
+              <h2 style={{ fontFamily: "Newsreader", fontSize: "clamp(32px, 3.4vw, 46px)", fontWeight: 700, letterSpacing: "-0.02em", lineHeight: 1.05, margin: "10px 0 16px" }}>
+                Built by a lawyer, so you <em style={{ fontStyle: "italic", color: "var(--accent)" }}>don&rsquo;t need one</em>.
+              </h2>
+              <p style={{ fontSize: 17, color: "var(--ink-2)", lineHeight: 1.6, marginBottom: 14 }}>
+                Small claims is the only court built for self-represented filers. Most state caps fall between $5K and $20K. Hearings take ten minutes. You don&rsquo;t need a lawyer.
+              </p>
+              <p style={{ fontSize: 17, color: "var(--ink-2)", lineHeight: 1.6, marginBottom: 24 }}>
+                What you do need is a strong demand letter, the right statute citation, and a clean filing in your county. CivilCase walks you through every one of them.
+              </p>
+              <div style={{ display: "flex", gap: 24, flexWrap: "wrap", paddingTop: 18, borderTop: "1px solid var(--hairline)" }}>
+                <div>
+                  <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 28, color: "var(--ink)", letterSpacing: "-0.02em" }}>$18M+</div>
+                  <div style={{ fontSize: 12, color: "var(--muted)", marginTop: 2, letterSpacing: "0.06em" }}>Recovered to date</div>
+                </div>
+                <div>
+                  <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 28, color: "var(--ink)", letterSpacing: "-0.02em" }}>50 states</div>
+                  <div style={{ fontSize: 12, color: "var(--muted)", marginTop: 2, letterSpacing: "0.06em" }}>Coverage, county-level</div>
+                </div>
+                <div>
+                  <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 28, color: "var(--ink)", letterSpacing: "-0.02em" }}>71%</div>
+                  <div style={{ fontSize: 12, color: "var(--muted)", marginTop: 2, letterSpacing: "0.06em" }}>Win rate w/ documented case</div>
+                </div>
+              </div>
+            </div>
+            {/* Cream certified-mail letter */}
+            <div style={{ position: "relative", background: "#fff", border: "1px solid var(--hairline)", borderRadius: 6, padding: "40px 36px 28px", boxShadow: "0 24px 50px -28px rgba(31,27,22,0.32)", transform: "rotate(-0.6deg)" }}>
+              <div style={{ position: "absolute", top: 18, right: 22, transform: "rotate(8deg)", border: "2px solid rgba(217,64,46,0.5)", borderRadius: 4, padding: "6px 10px", textAlign: "center" }}>
+                <div style={{ fontSize: 9, letterSpacing: "0.18em", fontWeight: 700, color: "var(--accent)", textTransform: "uppercase" }}>Certified</div>
+                <div style={{ fontSize: 9, color: "var(--muted)", fontFamily: "ui-monospace, monospace", marginTop: 2 }}>2026</div>
+              </div>
+              <div style={{ fontFamily: "Geist", fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--muted)", marginBottom: 14 }}>Sample demand letter</div>
+              <div style={{ fontFamily: "Newsreader", fontSize: 13, lineHeight: 1.6, color: "var(--ink)", display: "flex", flexDirection: "column", gap: 10 }}>
+                <div>April 21, 2026</div>
+                <div><strong>Oakwood Properties LLC</strong></div>
+                <div style={{ paddingBottom: 10, borderBottom: "1px solid var(--hairline)" }}><strong>Re:</strong> Demand for return of security deposit</div>
+                <p style={{ margin: 0 }}>Pursuant to <strong>Cal. Civ. Code § 1950.5,</strong> you were required to return my $1,500 deposit within 21 days of move-out. That period has elapsed.</p>
+                <p style={{ margin: 0 }}>I demand <strong>$4,500</strong> within fourteen (14) days, or I will file in Small Claims Court.</p>
+                <div style={{ fontFamily: "Caveat", fontStyle: "italic", fontSize: 24, color: "var(--accent)", marginTop: 8 }}>Jordan A. Tenant</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* VERSION C — Mission + glass stat trio */}
+      <section style={{ padding: "64px 0", background: "#fff" }}>
+        <div className="wrap">
+          <span style={{ display: "inline-block", padding: "4px 10px", background: "rgba(217,64,46,0.10)", color: "var(--accent)", fontSize: 11, fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", borderRadius: 6, marginBottom: 14 }}>Version C · mission</span>
+          <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 56, alignItems: "center" }}>
+            <div>
+              <span className="eyebrow" style={{ color: "var(--accent)" }}>Our mission</span>
+              <h2 style={{ fontFamily: "Newsreader", fontSize: "clamp(32px, 3.4vw, 46px)", fontWeight: 700, letterSpacing: "-0.02em", lineHeight: 1.05, margin: "10px 0 16px" }}>
+                Make small claims court <em style={{ fontStyle: "italic", color: "var(--accent)" }}>actually navigable</em> for the people it was built for.
+              </h2>
+              <p style={{ fontSize: 16, color: "var(--ink-2)", lineHeight: 1.6, marginBottom: 14, maxWidth: "55ch" }}>
+                Small claims is the most accessible court in the U.S. — and the most underused. Filing fees are under $100. Hearings are short. Lawyers aren&rsquo;t required (and aren&rsquo;t allowed in some states). Yet most people who could win a claim never file one because the system feels opaque.
+              </p>
+              <p style={{ fontSize: 16, color: "var(--ink)", lineHeight: 1.6, fontWeight: 600, maxWidth: "52ch" }}>
+                We turn that opacity into a checklist.
+              </p>
+            </div>
+            <div style={{ position: "relative", padding: 20 }}>
+              <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 30% 20%, rgba(217,64,46,0.45), transparent 50%), radial-gradient(circle at 80% 80%, rgba(245,178,159,0.4), transparent 50%), linear-gradient(135deg, #fed8c1, #f3e8d6)", borderRadius: 18 }} aria-hidden />
+              <div style={{ position: "relative", display: "flex", flexDirection: "column", gap: 12 }}>
+                {[
+                  { eyebrow: "Recovered to date", value: "$18M+", sub: "across 12,400+ cases" },
+                  { eyebrow: "Filing → judgment", value: "47 days", sub: "median timeline" },
+                  { eyebrow: "Win rate", value: "71%", sub: "with a documented case" },
+                ].map((s, i) => (
+                  <div key={s.eyebrow} style={{ background: "rgba(255,255,255,0.7)", backdropFilter: "blur(20px) saturate(140%)", border: "1px solid rgba(255,255,255,0.8)", borderRadius: 14, padding: "16px 20px", marginLeft: i === 1 ? 24 : 0, marginRight: i === 2 ? 24 : 0 }}>
+                    <div style={{ fontFamily: "Geist", fontSize: 10.5, letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 700, color: "var(--accent)" }}>{s.eyebrow}</div>
+                    <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 32, color: "var(--ink)", letterSpacing: "-0.02em", marginTop: 2 }}>{s.value}</div>
+                    <div style={{ fontSize: 12, color: "var(--ink-2)", marginTop: 2 }}>{s.sub}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* PROBLEM / SOLUTION */}
       <section className="ps-section">
         <div className="ps-paper-bg" aria-hidden />
