@@ -1,7 +1,7 @@
 import type React from "react";
 import Link from "next/link";
 import HeroCta from "../../components/HeroCta";
-import HeroStatePins from "../../components/HeroStatePins";
+import HeroCaseStrength from "../../components/HeroCaseStrength";
 import CtaStepCard from "../../components/CtaStepCard";
 import ProcessFlow from "./ProcessFlow";
 
@@ -392,7 +392,7 @@ export default function Home() {
               </div>
             </div>
 
-            <HeroStatePins />
+            <HeroCaseStrength />
           </div>
         </div>
       </section>

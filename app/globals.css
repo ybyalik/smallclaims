@@ -1605,6 +1605,145 @@ footer { padding: 80px 0 40px; background: var(--ink); color: #fef9f1; }
 .cat-hero-3col { display: grid; grid-template-columns: 1.8fr 0.5fr 0.6fr; gap: 48px; padding: 16px 0 64px; align-items: stretch; min-height: 520px; }
 .cat-hero-2col { display: grid; grid-template-columns: 1.4fr 1fr; gap: 56px; padding: 16px 0 64px; align-items: center; min-height: 520px; }
 
+/* Hero right side — case strength dashboard with vintage map */
+.hero-strength {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 28px;
+  width: 100%;
+  align-items: stretch;
+}
+.hero-strength-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 26px;
+}
+.hero-strength-row { display: flex; flex-direction: column; gap: 4px; }
+.hero-strength-label {
+  font-family: "Geist", system-ui, sans-serif;
+  font-size: 10.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--muted);
+}
+.hero-strength-value {
+  font-family: "Geist", system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.hero-strength-value.accent { color: var(--accent); letter-spacing: -0.005em; }
+.hero-strength-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 0 rgba(217,64,46,0.6);
+  animation: heroStrengthPulse 1.6s ease-in-out infinite;
+}
+@keyframes heroStrengthPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(217,64,46,0.6); }
+  50% { box-shadow: 0 0 0 8px rgba(217,64,46,0); }
+}
+
+.hero-strength-main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 320px;
+}
+.hero-strength-map {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  z-index: 0;
+  pointer-events: none;
+}
+.hero-strength-score {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-top: 6px;
+}
+.hero-strength-score-label {
+  font-family: "Geist", system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-2);
+  margin-bottom: 4px;
+}
+.hero-strength-score-num {
+  font-family: "Newsreader", Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(96px, 11vw, 128px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+}
+.hero-strength-score-denom {
+  font-size: 0.32em;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0;
+  margin-left: 4px;
+}
+
+.hero-strength-meter {
+  position: relative;
+  z-index: 1;
+  margin-top: auto;
+  padding-top: 12px;
+}
+.hero-strength-meter-track {
+  position: relative;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(31,27,22,0.18) 0%, rgba(31,27,22,0.18) 35%, rgba(217,64,46,0.45) 65%, rgba(217,64,46,0.85) 100%);
+  border-radius: 2px;
+}
+.hero-strength-meter-dot {
+  position: absolute;
+  top: 6px;
+  left: 67%;
+  transform: translate(-50%, 0);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px #fff, 0 6px 14px -4px rgba(217,64,46,0.5);
+}
+.hero-strength-meter-labels {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 14px;
+  font-family: "Geist", system-ui, sans-serif;
+  font-size: 10.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--muted);
+}
+.hero-strength-meter-labels span:nth-child(1) { text-align: left; }
+.hero-strength-meter-labels span:nth-child(2) { text-align: center; }
+.hero-strength-meter-labels span:nth-child(3) { text-align: center; color: var(--accent); font-weight: 700; }
+.hero-strength-meter-labels span:nth-child(4) { text-align: right; }
+
+@media (max-width: 720px) {
+  .hero-strength { grid-template-columns: 1fr; gap: 18px; }
+  .hero-strength-side { flex-direction: row; flex-wrap: wrap; gap: 18px; }
+  .hero-strength-main { min-height: 260px; }
+}
+
 /* Hero right side — state recovery pins on a faded map */
 .hero-statepins { width: 100%; }
 .hero-statepins-mapbox {
