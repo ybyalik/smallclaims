@@ -581,10 +581,174 @@ section { padding: var(--section-pad) 0; }
 /* PROBLEM/SOLUTION */
 /* Problem / Solution: two side-by-side cards (light + dark) with the
    shield logo centered between them. No outer beige container. */
-.ps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; position: relative; align-items: stretch; }
-.ps-col-card { border-radius: 18px; padding: 36px 36px 28px; }
-.ps-col-light { background: #F4ECDF; color: var(--ink); }
-.ps-col-dark { background: #0E1A22; color: #fef9f1; }
+/* Scrapbook / desk feel for problem-solution */
+.ps-section { position: relative; padding: 80px 0; overflow: hidden; }
+.ps-paper-bg {
+  position: absolute;
+  inset: 0;
+  background-color: #f7f3ea;
+  background-image:
+    linear-gradient(rgba(31,27,22,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(31,27,22,0.04) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  z-index: 0;
+}
+.ps-section .wrap { position: relative; z-index: 1; }
+.ps-stage { position: relative; }
+
+.ps-handwritten-note {
+  position: absolute;
+  left: -32px;
+  top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  font-family: "Caveat", "Newsreader", Georgia, serif;
+  font-size: 22px;
+  color: rgba(31,27,22,0.18);
+  line-height: 1;
+  pointer-events: none;
+  z-index: 0;
+  transform: rotate(-3deg);
+}
+
+.ps-handwritten-right {
+  position: absolute;
+  right: -16px;
+  top: 36px;
+  font-family: "Geist", system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--ink);
+  pointer-events: none;
+  z-index: 0;
+  text-align: left;
+}
+.ps-hw-line { position: relative; padding-bottom: 14px; }
+.ps-hw-line + .ps-hw-line { margin-top: 26px; }
+.ps-hw-line-sub { color: var(--ink-2); font-weight: 600; }
+.ps-hw-underline {
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  width: 50%;
+  height: 4px;
+  background: var(--accent);
+  border-radius: 2px;
+  transform: rotate(-1.5deg);
+}
+
+.ps-seal {
+  position: absolute;
+  right: -28px;
+  bottom: -28px;
+  width: 130px;
+  height: 130px;
+  z-index: 0;
+  opacity: 0.85;
+  pointer-events: none;
+  transform: rotate(-8deg);
+}
+
+.ps-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  position: relative;
+  align-items: stretch;
+  z-index: 1;
+}
+
+.ps-col-card {
+  border-radius: 4px;
+  padding: 36px 36px 28px;
+  position: relative;
+  box-shadow: 0 18px 40px -22px rgba(31,27,22,0.18);
+}
+.ps-col-light {
+  background: #fefcf3;
+  color: var(--ink);
+  transform: rotate(-1.2deg);
+  background-image:
+    linear-gradient(rgba(31,27,22,0.025) 1px, transparent 1px);
+  background-size: 100% 28px;
+}
+.ps-col-dark {
+  background: #1a1a1a;
+  color: #fef9f1;
+  transform: rotate(0.8deg);
+  border-radius: 6px;
+}
+
+.ps-paperclip {
+  position: absolute;
+  top: -22px;
+  left: 24px;
+  z-index: 3;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.18));
+}
+
+.ps-thumbtack {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #f0a89c, #d9402e 60%, #8a2618);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.5);
+  z-index: 3;
+}
+
+/* New eyebrow style for the cards */
+.ps-col-eyebrow {
+  display: inline-block;
+  font-family: "Geist", system-ui, sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 0;
+  padding-bottom: 6px;
+  position: relative;
+}
+.ps-col-eyebrow-red { color: var(--accent); }
+.ps-col-eyebrow-red::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60%;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+.ps-col-eyebrow-light { color: rgba(254,249,241,0.85); }
+.ps-col-eyebrow-light::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60%;
+  height: 2px;
+  background: rgba(254,249,241,0.5);
+  border-radius: 2px;
+}
+
+@media (max-width: 920px) {
+  .ps-handwritten-note,
+  .ps-handwritten-right,
+  .ps-seal { display: none; }
+  .ps-col-light,
+  .ps-col-dark { transform: none; }
+  .ps-paperclip,
+  .ps-thumbtack { display: none; }
+}
 
 .ps-col-head { display: flex; align-items: center; gap: 14px; margin-bottom: 26px; }
 .ps-col-head h3 { font-family: "Newsreader", Georgia, serif; font-weight: 700; font-size: 28px; letter-spacing: -0.01em; margin: 0; color: inherit; }

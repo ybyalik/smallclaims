@@ -480,23 +480,45 @@ export default function Home() {
       </section>
 
       {/* PROBLEM / SOLUTION */}
-      <section>
+      <section className="ps-section">
+        <div className="ps-paper-bg" aria-hidden />
         <div className="wrap">
-          <div className="sec-head">
-            <h2>
-              Most small disputes are <em>visibility</em> problems.
-            </h2>
-          </div>
+          <div className="ps-stage">
+            <div className="ps-handwritten-note ps-handwritten-note-1" aria-hidden>
+              <span>2, B</span>
+              <span>26 do</span>
+              <span>nu de</span>
+              <span>26 do</span>
+              <span>uc do</span>
+            </div>
+            <div className="ps-handwritten-right" aria-hidden>
+              <div className="ps-hw-line">
+                Small claims.
+                <br />
+                Big results.
+                <span className="ps-hw-underline" />
+              </div>
+              <div className="ps-hw-line ps-hw-line-sub">
+                We help you
+                <br />
+                make it
+                <br />
+                visible.
+              </div>
+            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img className="ps-seal" src="/seal2.webp" alt="" aria-hidden />
+
           <div className="ps-grid">
             <div className="ps-col-card ps-col-light">
+              <span className="ps-paperclip" aria-hidden>
+                <svg viewBox="0 0 32 80" width="22" height="55" fill="none" stroke="#9ba1a8" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M16 8c4 0 8 3 8 8v44c0 5-4 9-9 9s-9-4-9-9V14" />
+                  <path d="M16 22c2 0 5 1 5 5v28c0 3-2 5-5 5s-5-2-5-5V18" />
+                </svg>
+              </span>
               <div className="ps-col-head">
-                <span className="ps-col-head-badge ps-col-head-badge-red" aria-hidden>
-                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 3l10 18H2L12 3z" />
-                    <path d="M12 10v5M12 18h.01" />
-                  </svg>
-                </span>
-                <h3>Common pain points</h3>
+                <h3 className="ps-col-eyebrow ps-col-eyebrow-red">Common pain points</h3>
               </div>
               <div className="ps-list">
                 <div className="ps-item">
@@ -545,14 +567,9 @@ export default function Home() {
             </div>
 
             <div className="ps-col-card ps-col-dark">
+              <span className="ps-thumbtack" aria-hidden />
               <div className="ps-col-head">
-                <span className="ps-col-head-badge ps-col-head-badge-green" aria-hidden>
-                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="12" r="9" />
-                    <path d="M8 12.5l2.5 2.5L16 9" />
-                  </svg>
-                </span>
-                <h3>How we solve it</h3>
+                <h3 className="ps-col-eyebrow ps-col-eyebrow-light">How we solve it</h3>
               </div>
               <div className="ps-list">
                 <div className="ps-item">
@@ -593,6 +610,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
           </div>
         </div>
       </section>
