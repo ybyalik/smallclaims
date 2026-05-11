@@ -11,8 +11,8 @@ export const defectiveProduct: RefundIssue = {
   hero: {
     eyebrowSuffix: "Defective product",
     h1: { pre: "Can I sue for a ", em: "defective product", post: "?" },
-    leadStrong: "Yes. Federal warranty law plus state UDAP both apply.",
-    leadBody: " A defective product violates the implied warranty of merchantability and possibly the manufacturer's express warranty. The federal Magnuson-Moss Warranty Act (15 U.S.C. § 2301) extends federal court enforcement to any written warranty. State UDAP statutes add 2x or 3x multipliers. Recovery is refund or replacement value, plus often attorney fees if you hire one.",
+    leadStrong: "Yes. Federal warranty law plus state consumer-protection law both apply.",
+    leadBody: " A defective product breaks the law's basic 'implied warranty' that products must work for their normal purpose — and possibly the manufacturer's own written warranty too. The federal Magnuson-Moss Warranty Act lets you enforce any written warranty in court. Your state's consumer-protection law adds 2x or 3x damages on top. You can recover refund or replacement value, plus often attorney fees if you hire one.",
   },
 
   counter: { amount: 1800, meta: "Magnuson-Moss + state UDAP", rows: [
@@ -25,12 +25,12 @@ export const defectiveProduct: RefundIssue = {
     h2: { pre: "What kinds of ", em: "defective product", post: " disputes can you sue for?" },
     lede: "Four common patterns.",
     cards: [
-      { num: "01", title: "Item doesn't work as advertised", body: "Implied warranty of merchantability covers this. Item must be 'fit for ordinary purpose'. Failure within reasonable time is breach." },
-      { num: "02", title: "Hidden defects discovered after purchase", body: "Latent defects not visible at purchase. Most state laws extend warranty for reasonable time after discovery, even after returns expired." },
-      { num: "03", title: "Manufacturer warranty refused", body: "Manufacturer denies warranty claim. Magnuson-Moss requires written warranties be honored as written. Plus state UDAP for refusal." },
-      { num: "04", title: "Counterfeit or seriously misrepresented item", body: "Item is fake or significantly different from listing. Federal trademark law plus state UDAP both apply." },
+      { num: "01", title: "Item doesn't work as advertised", body: "The law's basic 'implied warranty' covers this — products must work for their normal purpose for a reasonable time. Failure within a reasonable time is a violation." },
+      { num: "02", title: "Hidden defects discovered after purchase", body: "Defects you couldn't see at purchase. Most state laws extend warranty protection for a reasonable time after discovery — even after return windows expire." },
+      { num: "03", title: "Manufacturer warranty refused", body: "Manufacturer denies a warranty claim. Federal law (Magnuson-Moss) requires them to honor written warranties as written. Plus state consumer-protection law for the refusal." },
+      { num: "04", title: "Counterfeit or seriously misrepresented item", body: "Item is fake or significantly different from how it was described. Federal trademark law plus state consumer-protection law both apply." },
     ],
-    note: { strongIntro: "Implied warranty of merchantability is automatic.", rest: " Most state laws require products to be 'fit for ordinary purpose' for a reasonable time. This warranty is automatic on most consumer purchases regardless of any 'as is' clause. Defective products break the warranty regardless of disclaimer." },
+    note: { strongIntro: "The implied warranty applies automatically.", rest: " Most state laws require products to be 'fit for ordinary purpose' for a reasonable time. This protection applies automatically to most consumer purchases — regardless of any 'as is' clause in the contract. Defective products break the warranty no matter what the seller's disclaimer says." },
   },
 
   claim: {

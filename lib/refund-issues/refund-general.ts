@@ -12,7 +12,7 @@ export const refundGeneral: RefundIssue = {
     eyebrowSuffix: "Refund",
     h1: { pre: "Can I sue for a ", em: "refund", post: "?" },
     leadStrong: "Yes. State consumer-protection laws cover most refund disputes.",
-    leadBody: " When a business refuses a legitimate refund — for defective products, services not rendered, gym memberships not cancelable, or other consumer disputes — state UDAP statutes apply with 2x or 3x multipliers in many states. Most cases settle once a demand letter cites the specific statute. Small claims is the right venue for documented disputes within your state's cap.",
+    leadBody: " When a business refuses a legitimate refund — for defective products, services not rendered, gym memberships they won't let you cancel, or other consumer disputes — your state's consumer-protection law applies. Many states let you ask for 2x or 3x damages. Most cases settle once a demand letter cites the specific law by name. Small claims is the right venue for documented disputes within your state's cap.",
   },
 
   counter: { amount: 1800, meta: "State UDAP + breach of contract", rows: [
@@ -25,9 +25,9 @@ export const refundGeneral: RefundIssue = {
     h2: { pre: "When can you sue for a ", em: "refund", post: "?" },
     lede: "Four common scenarios under state UDAP.",
     cards: [
-      { num: "01", title: "Defective product", body: "Item doesn't work as advertised. Implied warranty of merchantability + state UDAP both apply. Recovery is refund or replacement value." },
+      { num: "01", title: "Defective product", body: "Item doesn't work as advertised. Two layers of legal protection apply: the law's basic 'implied warranty' that products must work for their normal purpose, plus your state's consumer-protection law. Recovery is refund or replacement value." },
       { num: "02", title: "Services not rendered", body: "Paid for service that wasn't performed (or done badly). Breach of contract + state UDAP. Recovery is refund or cost to redo." },
-      { num: "03", title: "Refund refused despite policy", body: "Business advertised return policy and refused. Most state laws hold businesses to advertised refund terms. Refusal triggers UDAP claim." },
+      { num: "03", title: "Refund refused despite policy", body: "Business advertised a return policy and refused to honor it. Most state laws hold businesses to their advertised refund terms. Refusing creates a consumer-protection claim." },
       { num: "04", title: "Cancellation refused", body: "Gym membership, subscription, contract that the business refuses to cancel. State-specific membership cancellation statutes often apply." },
     ],
     note: { strongIntro: "Try the business first.", rest: " Email or call customer service. Document the refusal. State the legal theory in your follow-up. Most refund disputes resolve before court when you cite state UDAP and the multiplier." },
@@ -38,7 +38,7 @@ export const refundGeneral: RefundIssue = {
     lede: "Refund plus UDAP multiplier plus filing fees.",
     layers: [
       { tag: "Layer 1", title: "Refund of payment", body: "Original payment. Bank/credit-card record establishes the amount.", amount: "$1,200" },
-      { tag: "Layer 2", title: "UDAP multiplier", body: "State UDAP statutes add 2x or 3x for willful violations.", amount: "+ $400", accent: true },
+      { tag: "Layer 2", title: "Consumer-protection penalty", body: "State consumer-protection laws add 2x or 3x damages when the business broke the law on purpose.", amount: "+ $400", accent: true },
       { tag: "Layer 3", title: "Filing fees, interest", body: "Filing fee, service-of-process cost, pre-judgment interest.", amount: "+ $200" },
     ],
     total: { label: "Sample total within small-claims cap", body: "Refund plus UDAP multiplier plus filing fee.", amount: "$1,800", sublabel: "illustrative · varies by state" },

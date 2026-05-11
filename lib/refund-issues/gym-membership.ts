@@ -12,7 +12,7 @@ export const gymMembership: RefundIssue = {
     eyebrowSuffix: "Gym membership",
     h1: { pre: "Can I sue a gym for ", em: "not canceling my membership", post: "?" },
     leadStrong: "Yes. Most states have specific health-club cancellation laws.",
-    leadBody: " Health-club cancellation laws (CA Civ. Code § 1812.82, NY Gen. Bus. Law § 624, others) require gyms to provide cancellation procedures and cooling-off periods. When a gym refuses to cancel or continues charging after cancellation, state UDAP and the specific health-club statute both apply with multipliers in many states.",
+    leadBody: " Specific health-club cancellation laws (California Civil Code § 1812.82, New York General Business Law § 624, and similar in other states) require gyms to provide clear cancellation procedures and cooling-off periods. When a gym refuses to cancel or keeps charging after you cancel, both your state's consumer-protection law and the specific health-club statute apply — with 2x or 3x damages in many states.",
   },
 
   counter: { amount: 1200, meta: "State health-club statute + UDAP", rows: [
