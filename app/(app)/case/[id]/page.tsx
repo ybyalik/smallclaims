@@ -4,7 +4,7 @@ import { notFound, redirect } from "next/navigation";
 import { createClient } from "../../../../lib/supabase/server";
 import type { Case, DemandLetter } from "../../../../lib/supabase/types";
 import ResponseTracker, { type ResponseState } from "./ResponseTracker";
-import { hasPaidForProduct } from "../../../../lib/payments/access";
+import { paidProductsForCase } from "../../../../lib/payments/access";
 import { PRODUCTS } from "../../../../lib/stripe";
 
 export const metadata: Metadata = {
@@ -54,14 +54,19 @@ export default async function CaseSummaryPage({ params }: { params: { id: string
     redirect(`/case/${c.id}/build`);
   }
 
-  const { data: letter } = await supabase
-    .from("demand_letters")
-    .select("*")
-    .eq("case_id", params.id)
-    .order("version", { ascending: false })
-    .limit(1)
-    .single();
-  const ltr = letter as DemandLetter | null;
+  // Letter + paid-products in parallel — both depend only on the case id,
+  // and neither blocks the other. Was 3 sequential round-trips before.
+  const [letterRes, paidSet] = await Promise.all([
+    supabase
+      .from("demand_letters")
+      .select("*")
+      .eq("case_id", params.id)
+      .order("version", { ascending: false })
+      .limit(1)
+      .maybeSingle(),
+    paidProductsForCase(c.id, ["filing_guide", "court_prep"]),
+  ]);
+  const ltr = (letterRes?.data ?? null) as DemandLetter | null;
 
   const status = STATUS_LABELS[c.status] || { label: c.status, tone: "neutral" as const };
   const caption =
@@ -81,14 +86,13 @@ export default async function CaseSummaryPage({ params }: { params: { id: string
   const responseState: ResponseState = responseRecord?.state ?? "pending";
   const noResponseRecorded = responseState === "no_response";
 
-  const filingPaid = await hasPaidForProduct(c.id, "filing_guide");
+  const filingPaid = paidSet.has("filing_guide");
+  const prepPaid = paidSet.has("court_prep");
   const filingPriceLabel = (PRODUCTS.filing_guide.amount_cents / 100).toLocaleString("en-US", {
     style: "currency",
     currency: "USD",
     maximumFractionDigits: 0,
   });
-
-  const prepPaid = await hasPaidForProduct(c.id, "court_prep");
   const prepPriceLabel = (PRODUCTS.court_prep.amount_cents / 100).toLocaleString("en-US", {
     style: "currency",
     currency: "USD",

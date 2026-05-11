@@ -48,7 +48,7 @@ export default function SiteFooter() {
           .
         </div>
         <div className="foot-bottom">
-          <span>© 2026 CivilCase, PBC.</span>
+          <span>Copyright © 2026 CivilCase.com. All Rights Reserved.</span>
           <span>Made for the 87% of disputes that never see a lawyer.</span>
         </div>
       </div>

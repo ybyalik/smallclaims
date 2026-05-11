@@ -2,6 +2,7 @@
 // the requester owns the draft (either authenticated user, or anonymous
 // cookie session). Returns the case row or null.
 
+import { cache } from "react";
 import { cookies } from "next/headers";
 import { createClient } from "../supabase/server";
 import { createServiceRoleClient } from "../supabase/service-role";
@@ -93,54 +94,60 @@ export async function loadCaseForRequester(caseId: string): Promise<LoadCaseResu
  * Legacy: returns Case | null. Existing callers use this.
  * Prefer loadCaseForRequester for new code so you can render
  * a login redirect instead of a flat 404.
+ *
+ * Wrapped in React.cache so wizard layout + page calling this with the
+ * same caseId in a single request share one DB round-trip. Cache is per-
+ * request, so successive requests still get fresh data.
  */
-export async function loadOwnedCase(caseId: string): Promise<Case | null> {
-  if (!isUuid(caseId)) return null;
+export const loadOwnedCase = cache(
+  async (caseId: string): Promise<Case | null> => {
+    if (!isUuid(caseId)) return null;
 
-  const supabase = createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-  const sessionId = cookies().get(COOKIE_NAME)?.value ?? null;
+    const supabase = createClient();
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+    const sessionId = cookies().get(COOKIE_NAME)?.value ?? null;
 
-  const db = createServiceRoleClient();
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const { data: rawRow } = await (db as any)
-    .from("cases")
-    .select("*")
-    .eq("id", caseId)
-    .maybeSingle();
-
-  if (!rawRow) return null;
-
-  let row = rawRow;
-
-  // Auto-claim: anonymous case + matching cookie + authenticated requester
-  if (
-    user &&
-    sessionId &&
-    !row.owner_user_id &&
-    row.cookie_session_id === sessionId
-  ) {
+    const db = createServiceRoleClient();
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const { data: claimed } = await (db as any)
+    const { data: rawRow } = await (db as any)
       .from("cases")
-      .update({
-        owner_user_id: user.id,
-        cookie_session_id: null,
-        updated_at: new Date().toISOString(),
-      })
-      .eq("id", caseId)
-      .is("owner_user_id", null)
       .select("*")
+      .eq("id", caseId)
       .maybeSingle();
-    if (claimed) row = claimed;
-  }
 
-  const isOwner = user && row.owner_user_id === user.id;
-  const isSessionMatch =
-    !row.owner_user_id && sessionId && row.cookie_session_id === sessionId;
+    if (!rawRow) return null;
 
-  if (!isOwner && !isSessionMatch) return null;
-  return row as Case;
-}
+    let row = rawRow;
+
+    // Auto-claim: anonymous case + matching cookie + authenticated requester
+    if (
+      user &&
+      sessionId &&
+      !row.owner_user_id &&
+      row.cookie_session_id === sessionId
+    ) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const { data: claimed } = await (db as any)
+        .from("cases")
+        .update({
+          owner_user_id: user.id,
+          cookie_session_id: null,
+          updated_at: new Date().toISOString(),
+        })
+        .eq("id", caseId)
+        .is("owner_user_id", null)
+        .select("*")
+        .maybeSingle();
+      if (claimed) row = claimed;
+    }
+
+    const isOwner = user && row.owner_user_id === user.id;
+    const isSessionMatch =
+      !row.owner_user_id && sessionId && row.cookie_session_id === sessionId;
+
+    if (!isOwner && !isSessionMatch) return null;
+    return row as Case;
+  },
+);
