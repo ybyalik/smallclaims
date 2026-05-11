@@ -3,6 +3,10 @@
     {
       "path": "/api/cron/poll-deep-research",
       "schedule": "*/5 * * * *"
+    },
+    {
+      "path": "/api/cron/poll-state-research",
+      "schedule": "*/5 * * * *"
     }
   ]
 }
