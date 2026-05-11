@@ -17,7 +17,7 @@ export const harassment: LandlordIssue = {
     h1: { pre: "Can I sue my landlord for ", em: "harassment", post: "?" },
     leadStrong: "Yes, you can sue your landlord for harassment",
     leadBody:
-      " when they enter your unit without notice, threaten you, retaliate for complaints, or interfere with your right to quiet enjoyment. Damages depend on state law: California adds $2,000 per harassment act under Civ. Code § 1940.2. New York City authorizes 3x damages plus civil penalties.",
+      " when they enter your unit without notice, threaten you, retaliate for complaints, or interfere with your ability to live there peacefully. What you can recover depends on state law: California adds $2,000 per harassment act (under Civ. Code § 1940.2). NYC adds triple damages plus civil penalties.",
   },
 
   counter: {
@@ -56,9 +56,9 @@ export const harassment: LandlordIssue = {
       },
       {
         num: "04",
-        title: "Interference with quiet enjoyment",
+        title: "Making the place unbearable to live in",
         body:
-          "Disrupting utilities, removing amenities (laundry, parking) without notice, refusing to repair things on purpose, or tolerating noise complaints from other tenants only when directed at you.",
+          "Disrupting utilities, removing amenities (laundry, parking) without notice, refusing to do repairs on purpose, or only acting on noise complaints when they're targeting you. The law calls this interfering with your 'right to quiet enjoyment' of the unit.",
       },
     ],
     note: {
@@ -75,9 +75,9 @@ export const harassment: LandlordIssue = {
     layers: [
       {
         tag: "Layer 1",
-        title: "Statutory damages",
+        title: "Per-incident penalty (statutory damages)",
         body:
-          "California: up to $2,000 per harassment act under Civ. Code § 1940.2. NYC: 3x rent plus civil penalty. Texas: $500 to $2,500 plus fees under Prop. Code § 92.331. Most states have a per-act or per-month structure.",
+          "Some states pay you a fixed amount for every harassment incident. California: up to $2,000 per incident (Civ. Code § 1940.2). NYC: triple the rent plus a civil penalty. Texas: $500 to $2,500 plus fees (Prop. Code § 92.331). Most states use a per-incident or per-month structure.",
         amount: "$8,000",
         accent: true,
       },
@@ -341,7 +341,7 @@ export const harassment: LandlordIssue = {
     },
     {
       q: "How much can I sue my landlord for harassment?",
-      a: "California: up to $2,000 per harassment act under Civ. Code § 1940.2. New York City: 3x rent plus civil penalty. Texas: $500 to $2,500 per § 92.331. Most cases recover $2,000 to $10,000 in small claims, depending on state and number of incidents.",
+      a: "California: up to $2,000 per harassment incident (Civ. Code § 1940.2). New York City: triple the rent plus a civil penalty. Texas: $500 to $2,500 (§ 92.331). Most cases recover $2,000 to $10,000 in small claims, depending on your state and the number of incidents.",
     },
     {
       q: "Can I sue my landlord for showing up unannounced?",
@@ -349,7 +349,7 @@ export const harassment: LandlordIssue = {
     },
     {
       q: "Can I sue my landlord for threatening to evict me?",
-      a: "If the threat is connected to a protected activity (a complaint, organizing, contacting code enforcement), yes. That is retaliation, presumed in most states if the threat or action came within 6 months of the complaint. Save the message and the underlying complaint.",
+      a: "If the threat came after you did something the law protects — filed a complaint, organized with other tenants, called code enforcement — yes. That's retaliation, and most states presume it was retaliation if the threat came within 6 months of your protected activity. Save the message and the original complaint.",
     },
     {
       q: "What if my landlord threatens to call ICE or the police?",

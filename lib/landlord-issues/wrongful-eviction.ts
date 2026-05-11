@@ -17,7 +17,7 @@ export const wrongfulEviction: LandlordIssue = {
     h1: { pre: "Can I sue my landlord for ", em: "wrongful eviction", post: "?" },
     leadStrong: "Yes, you can sue your landlord for wrongful eviction",
     leadBody:
-      " when they removed you without going through the court process, evicted in retaliation for a complaint, or violated your protected status. Damages include moving costs, hotel stays, lost wages, the difference in your new rent, and statutory damages of 2x or 3x rent in many states.",
+      " when they kicked you out without going through the court process, evicted you in retaliation for a complaint, or discriminated against you. You can recover moving costs, hotel stays, lost wages, the gap between your old and new rent, and a 2x or 3x penalty on top in many states.",
   },
 
   counter: {
@@ -34,37 +34,37 @@ export const wrongfulEviction: LandlordIssue = {
   whatCounts: {
     h2: { pre: "What counts as ", em: "wrongful eviction", post: "?" },
     lede:
-      "Four common patterns. Each is a separate cause of action under most state landlord-tenant codes.",
+      "Four common patterns. Each is its own separate reason to sue under most state landlord-tenant laws.",
     cards: [
       {
         num: "01",
-        title: "Self-help eviction",
+        title: "Lockout without going to court",
         body:
-          "The landlord changed the locks, shut off utilities, or removed your belongings without a court order. This is illegal in nearly every state and triggers statutory penalties on top of actual damages.",
+          "The landlord changed the locks, shut off utilities, or removed your belongings without first getting a court eviction order. This is illegal in nearly every state (it's called 'self-help eviction') and triggers extra penalty damages on top of what you're actually owed.",
       },
       {
         num: "02",
-        title: "Retaliatory eviction",
+        title: "Retaliation eviction",
         body:
-          "Eviction within 6 months of you reporting habitability issues, contacting code enforcement, or joining a tenant union. Most states presume retaliation and shift the burden of proof to the landlord.",
+          "Evicted within 6 months of you reporting bad conditions, calling code enforcement, or organizing with other tenants. Most states presume it's retaliation — so the landlord has to prove they had a legitimate reason, not the other way around.",
       },
       {
         num: "03",
-        title: "Discriminatory eviction",
+        title: "Discrimination eviction",
         body:
-          "Eviction based on race, religion, family status, disability, source of income (in some states), or sexual orientation (in some states). These claims also have federal HUD remedies.",
+          "Evicted because of race, religion, family status, disability, source of income (in some states), or sexual orientation (in some states). You can also file a complaint with federal HUD on top of suing.",
       },
       {
         num: "04",
-        title: "No-notice or improper-notice eviction",
+        title: "No proper notice",
         body:
-          "Eviction without the legally required notice period, or with notice that did not meet state requirements (form, service, content). Even otherwise valid evictions become wrongful when the notice fails.",
+          "Evicted without the legal notice period, or with a notice that didn't meet state requirements (wrong form, served wrong way, missing required info). Even an otherwise valid eviction becomes wrongful when the notice is bad.",
       },
     ],
     note: {
-      strongIntro: "Self-help is the highest-value claim.",
+      strongIntro: "The lockout case is the highest-value one.",
       rest:
-        " California adds $100 per day of unlawful exclusion plus actual damages. Texas adds one month's rent or $500, whichever is greater, plus attorney fees. Florida adds 3x rent. The penalty is what makes these cases settle fast.",
+        " California adds $100 per day you were locked out, plus your actual damages. Texas adds one month's rent or $500, whichever is greater, plus your attorney fees. Florida adds triple the rent. The penalty math is what makes these cases settle fast.",
     },
   },
 
@@ -82,9 +82,9 @@ export const wrongfulEviction: LandlordIssue = {
       },
       {
         tag: "Layer 2",
-        title: "Statutory damages",
+        title: "Penalty damages",
         body:
-          "California: $100 per day plus damages. Texas: one month's rent or $500 plus fees. Florida: 3x rent. New York: 3x rent in NYC. Many states authorize punitive damages for self-help evictions.",
+          "California: $100 per day plus damages. Texas: one month's rent or $500 plus fees. Florida: triple the rent. New York: triple the rent (NYC). Many states also let you ask for punitive damages on top when the landlord locked you out without a court order.",
         amount: "+ $6,400",
         accent: true,
       },
@@ -108,7 +108,7 @@ export const wrongfulEviction: LandlordIssue = {
   demand: {
     h2: { pre: "Send a ", em: "demand letter", post: " before filing." },
     lede:
-      "Wrongful-eviction cases settle quickly once the landlord sees the math. The statutory penalty plus fee-shifting makes these cases expensive to fight, even when the landlord thinks they were right.",
+      "Wrongful-eviction cases settle quickly once the landlord sees the math. Between the per-day or 2x/3x penalty and the fact that the landlord might also owe your attorney fees, these cases are expensive to fight — even when the landlord thinks they were in the right.",
     checklist: [
       "Date and method of the eviction (lockout, notice, etc.)",
       "Itemized list of moving, hotel, and replacement costs",
@@ -236,7 +236,7 @@ export const wrongfulEviction: LandlordIssue = {
         quote: "We had a court order.",
         pill: "Procedural",
         rebuttal:
-          "<strong>Rebuttal:</strong> ask for the writ of possession with the case number. If they cannot produce it, no court order existed. Self-help eviction without a writ is illegal in every state.",
+          "<strong>Rebuttal:</strong> ask them to produce the actual court paperwork (called a 'writ of possession') with the case number. If they can't, no court order existed — and a lockout without that paperwork is illegal in every state.",
       },
       {
         quote: "The eviction was for a legitimate reason.",
@@ -352,15 +352,15 @@ export const wrongfulEviction: LandlordIssue = {
   faqs: [
     {
       q: "How much can I sue a landlord for wrongful eviction?",
-      a: "Most cases recover $2,000 to $10,000 in small claims. Damages include moving costs, hotel nights, lost wages, and statutory damages (often 2x or 3x rent in tenant-friendly states). Cases over the small-claims cap go to civil court for $10,000+.",
+      a: "Most cases recover $2,000 to $10,000 in small claims. You can claim moving costs, hotel nights, lost wages, plus a 2x or 3x penalty on the rent in many tenant-friendly states. Cases over the small-claims cap go to regular civil court for $10,000+.",
     },
     {
       q: "Is it illegal for a landlord to lock you out without a court order?",
-      a: "Yes, in every state. Self-help eviction (changing locks, removing belongings, shutting off utilities) requires a court order in all 50 states. Penalties range from $100/day in California to 3x rent in Florida and NYC. The landlord cannot bypass the eviction process even if the tenant is behind on rent.",
+      a: "Yes, in every state. Locking you out, removing your belongings, or shutting off utilities without first getting a court eviction order is illegal everywhere. Penalties range from $100 per day in California to triple the rent in Florida and NYC. The landlord cannot skip the official eviction process — even if you're behind on rent.",
     },
     {
       q: "What if my landlord evicted me in retaliation for complaining?",
-      a: "Most states presume retaliation if the eviction happened within 6 months of you reporting a habitability issue, contacting code enforcement, or organizing with other tenants. The burden shifts to the landlord to prove a legitimate reason. Bring the timeline and the original complaint.",
+      a: "Most states presume it was retaliation if the eviction happened within 6 months of you reporting bad conditions, calling code enforcement, or organizing with other tenants. The landlord has to prove they had a legitimate reason — you don't have to prove they were retaliating. Bring the timeline and your original complaint.",
     },
     {
       q: "Do you have to be locked out to sue for wrongful eviction?",

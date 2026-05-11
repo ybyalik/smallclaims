@@ -17,7 +17,7 @@ export const afterMovingOut: LandlordIssue = {
     h1: { pre: "Can I sue my landlord ", em: "after I've moved out", post: "?" },
     leadStrong: "Yes, you can sue your landlord after moving out",
     leadBody:
-      ". The most common cases are withheld security deposits and bogus post-move-out charges, but you can also sue for harassment, wrongful eviction, and habitability damages that arose during your tenancy. State statutes of limitations give you 1 to 6 years depending on the claim.",
+      ". The most common reasons are a withheld security deposit and made-up post-move-out charges. But you can also sue for harassment, wrongful eviction, and unsafe-conditions damage that happened while you lived there. State filing deadlines give you 1 to 6 years depending on the type of claim.",
   },
 
   counter: {
@@ -40,19 +40,19 @@ export const afterMovingOut: LandlordIssue = {
         num: "01",
         title: "Withheld security deposit",
         body:
-          "Most common post-move-out claim. State statutes give 1 to 6 years to file (check your state guide). The clock usually starts on the date the deposit was due back, not the date you moved out.",
+          "The most common post-move-out claim. You have 1 to 6 years to file depending on your state (check your state guide). The clock usually starts on the date the deposit was supposed to be returned, not the date you moved out.",
       },
       {
         num: "02",
-        title: "Bogus post-move-out charges",
+        title: "Made-up post-move-out charges",
         body:
-          "Cleaning fees, carpet replacement, repainting, repair charges that exceed actual damage. Every state limits charges to amounts above normal wear and tear. Apartment complexes are heavy offenders here.",
+          "Cleaning fees, carpet replacement, repainting, or repair charges that go way beyond what the place actually needed. Every state says landlords can only charge for damage that's worse than normal wear and tear. Big apartment complexes are repeat offenders.",
       },
       {
         num: "03",
-        title: "Habitability damages from your tenancy",
+        title: "Unsafe-conditions damages from when you lived there",
         body:
-          "Mold exposure, pest infestations, broken AC during a heat wave, ruined property. The clock typically runs from the last day of the affected condition. You can sue years after moving out in many states.",
+          "Mold exposure, pest infestations, broken AC during a heat wave, ruined property. The clock typically starts from the last day the problem was active. You can sue years after moving out in many states.",
       },
       {
         num: "04",
@@ -82,9 +82,9 @@ export const afterMovingOut: LandlordIssue = {
       },
       {
         tag: "Layer 2",
-        title: "Statutory damages",
+        title: "Penalty damages on top",
         body:
-          "Same multipliers that applied during tenancy. California: 2x deposit. Texas: 3x. Massachusetts: 3x plus interest. Wrongful eviction: per-day penalties under state law.",
+          "The same multipliers that applied while you lived there still apply. California: 2x deposit. Texas: 3x. Massachusetts: 3x plus interest. Wrongful eviction: per-day penalties under state law.",
         amount: "+ $3,000",
         accent: true,
       },
@@ -92,7 +92,7 @@ export const afterMovingOut: LandlordIssue = {
         tag: "Layer 3",
         title: "Filing fees and attorney fees",
         body:
-          "Filing fee, service-of-process cost, statutory attorney fees in most landlord-tenant statutes (recoverable even pro se).",
+          "Filing fee, service-of-process cost, and attorney fees (recoverable in most landlord-tenant laws — even if you didn't actually hire one for the hearing).",
         amount: "+ $400",
       },
     ],

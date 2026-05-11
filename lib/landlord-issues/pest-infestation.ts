@@ -17,7 +17,7 @@ export const pestInfestation: LandlordIssue = {
     h1: { pre: "Can I sue my landlord for a ", em: "pest infestation", post: "?" },
     leadStrong: "Yes, you can sue your landlord for a pest infestation",
     leadBody:
-      " when they failed to remediate after written notice. Roaches, bed bugs, mice, and rats are habitability violations in every state. Recover extermination costs, replaced furniture and clothing, rent abatement, and medical bills if you got bitten.",
+      " when they failed to deal with it after you put your complaint in writing. Roaches, bed bugs, mice, and rats are habitability violations in every state — meaning the landlord is legally required to keep the unit liveable. You can recover extermination costs, replaced furniture and clothing, a rent reduction for the affected months, and medical bills if you got bitten.",
   },
 
   counter: {
@@ -34,7 +34,7 @@ export const pestInfestation: LandlordIssue = {
   whatCounts: {
     h2: { pre: "When does a ", em: "pest infestation", post: " give you a lawsuit?" },
     lede:
-      "Three facts have to line up. Once they do, you have a habitability claim under your state's implied warranty.",
+      "Three facts have to line up. Once they do, you have a habitability claim — meaning the landlord broke the law's basic guarantee that the unit be liveable.",
     cards: [
       {
         num: "01",
@@ -46,7 +46,7 @@ export const pestInfestation: LandlordIssue = {
         num: "02",
         title: "A reasonable time passed",
         body:
-          "Most states require pest remediation in 7 to 30 days, faster for bed bugs and rodents. After that window, the landlord is in breach of the implied warranty of habitability.",
+          "Most states require the pests to be dealt with in 7 to 30 days — faster for bed bugs and rodents. After that, the landlord has officially broken their legal duty to keep the place liveable, and you can sue.",
       },
       {
         num: "03",
@@ -82,9 +82,9 @@ export const pestInfestation: LandlordIssue = {
       },
       {
         tag: "Layer 2",
-        title: "Rent abatement",
+        title: "Rent reduction for affected months",
         body:
-          "Rent reduction for the affected period. Courts use a percentage of rent (10 to 50 percent) or full abatement when the unit was uninhabitable.",
+          "You can claim back a portion of the rent you paid while the place was infested (the legal term is 'rent abatement'). Courts use 10-50% of rent, or all of it when the unit was completely unliveable.",
         amount: "+ $2,400",
         accent: true,
       },
@@ -92,7 +92,7 @@ export const pestInfestation: LandlordIssue = {
         tag: "Layer 3",
         title: "Extermination, medical, and fees",
         body:
-          "Out-of-pocket extermination, doctor visits for bites or asthma, filing fees, and (in some states) statutory damages for repeat violations.",
+          "What you paid out of pocket: exterminator, doctor visits for bites or asthma, filing fees, and (in some states) extra penalty damages for landlords who repeatedly fail to fix infestations.",
         amount: "+ $200",
       },
     ],
@@ -344,11 +344,11 @@ export const pestInfestation: LandlordIssue = {
     },
     {
       q: "Is a pest infestation a habitability violation?",
-      a: "Yes. Every state's implied warranty of habitability requires the landlord to keep rentals free from pest infestations. Some states (California, New York City) have specific anti-pest statutes adding statutory damages on top of actual damages.",
+      a: "Yes. Every state has a law (called the 'implied warranty of habitability') requiring landlords to keep rentals free from infestations. Some states (California, New York City) have specific anti-pest laws that add extra penalty damages on top of what you're actually owed.",
     },
     {
       q: "Can I break my lease for a pest infestation?",
-      a: "Yes, in most states, after written notice and a reasonable time for remediation. Constructive eviction lets you treat the lease as terminated when the unit is uninhabitable. Document the timeline because the landlord may sue for rent.",
+      a: "Yes, in most states, after written notice and a reasonable time for the landlord to fix it. When a unit becomes unliveable, the law lets you walk away from the lease as if you'd been evicted (called 'constructive eviction'). Document the timeline because the landlord may sue you for unpaid rent — your documentation is the defense.",
     },
     {
       q: "What if my landlord blames me for bringing in bed bugs?",

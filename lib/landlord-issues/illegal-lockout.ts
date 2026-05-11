@@ -17,7 +17,7 @@ export const illegalLockout: LandlordIssue = {
     h1: { pre: "Can I sue my landlord for ", em: "an illegal lockout", post: "?" },
     leadStrong: "Yes, you can sue your landlord for an illegal lockout in every state",
     leadBody:
-      ". If your landlord changed the locks, removed your belongings, or shut off utilities to force you out, you can recover hotel costs, moving expenses, lost wages, and statutory damages of $100 per day, 2x rent, or 3x rent depending on the state. You can also get a court order to let you back in.",
+      ". If your landlord changed the locks, removed your belongings, or shut off utilities to force you out, you can recover hotel costs, moving expenses, lost wages, plus a penalty on top — $100 per day, 2x rent, or 3x rent depending on your state. You can also get an emergency court order forcing the landlord to let you back in.",
   },
 
   counter: {
@@ -34,25 +34,25 @@ export const illegalLockout: LandlordIssue = {
   whatCounts: {
     h2: { pre: "What counts as an ", em: "illegal lockout", post: "?" },
     lede:
-      "Self-help eviction has many forms. Each one is illegal under state law if done without a court order.",
+      "Forcing someone out without a court order takes many forms. Each one is illegal under state law.",
     cards: [
       {
         num: "01",
         title: "Changing the locks",
         body:
-          "The most common form. The landlord rekeys, padlocks, or removes the door without a writ of possession. Even one day of exclusion triggers daily penalties in California, Washington, and several other states.",
+          "The most common form. The landlord rekeys, padlocks, or removes the door — without going to court first. Even one day of being locked out triggers daily penalties in California, Washington, and several other states.",
       },
       {
         num: "02",
         title: "Shutting off utilities",
         body:
-          "Cutting power, water, gas, or heat to make the unit uninhabitable. Most states treat this as a constructive lockout. Texas, Florida, and Massachusetts assess separate penalties for each utility.",
+          "Cutting power, water, gas, or heat to make the place unliveable. Most states treat this the same as a lockout. Texas, Florida, and Massachusetts charge separate penalties for each utility cut off.",
       },
       {
         num: "03",
         title: "Removing your belongings",
         body:
-          "Putting your stuff on the curb, in storage, or in the dumpster without a court order. Belongings in storage may be considered held against ransom, an additional cause of action.",
+          "Putting your stuff on the curb, in a storage unit, or in the dumpster without a court order. If they put your belongings in storage and won't give them back, that's a separate claim on top of the lockout.",
       },
       {
         num: "04",
@@ -82,9 +82,9 @@ export const illegalLockout: LandlordIssue = {
       },
       {
         tag: "Layer 2",
-        title: "Statutory daily penalty",
+        title: "Daily penalty",
         body:
-          "California: $100/day. Washington: up to $100/day. Massachusetts: 3 months rent. Texas: 1 month rent or $500. The longer the exclusion, the bigger the penalty.",
+          "Many states charge the landlord a per-day penalty for every day you're locked out. California: $100/day. Washington: up to $100/day. Massachusetts: 3 months rent. Texas: 1 month rent or $500. The longer the lockout, the bigger the payday.",
         amount: "+ $3,000",
         accent: true,
       },
@@ -241,13 +241,13 @@ export const illegalLockout: LandlordIssue = {
         quote: "We had a court order.",
         pill: "Procedural",
         rebuttal:
-          "<strong>Rebuttal:</strong> ask for the writ of possession with the case number. If they cannot produce it, no court order existed. Eviction notices and court orders are different documents.",
+          "<strong>Rebuttal:</strong> ask them to produce the actual court paperwork (called a 'writ of possession') with the case number. If they can't, no court order existed. Note: an eviction notice they send to you is NOT the same as a court order — the court order comes from a judge after a hearing.",
       },
       {
         quote: "The tenant was behind on rent.",
         pill: "Cause",
         rebuttal:
-          "<strong>Rebuttal:</strong> rent arrears do not authorize self-help. The landlord still has to file an unlawful-detainer action. Arrears may offset some damages but the lockout claim stands.",
+          "<strong>Rebuttal:</strong> being behind on rent doesn't give the landlord the right to lock you out. They still have to go through the formal eviction process in court. Unpaid rent may reduce what they owe you, but it doesn't erase the lockout claim itself.",
       },
     ],
   },
@@ -357,7 +357,7 @@ export const illegalLockout: LandlordIssue = {
   faqs: [
     {
       q: "Is it illegal for a landlord to change the locks?",
-      a: "Yes, in every state, when done without a court order. Self-help eviction is illegal under all 50 state landlord-tenant codes. Penalties range from $100/day in California to 3x rent in Florida and NYC.",
+      a: "Yes, in every state, when done without a court order. Locking a tenant out, removing their belongings, or shutting off utilities to force them out is illegal under all 50 state landlord-tenant laws. Penalties range from $100/day in California to triple the rent in Florida and NYC.",
     },
     {
       q: "How much can I sue my landlord for locking me out?",
@@ -377,7 +377,7 @@ export const illegalLockout: LandlordIssue = {
     },
     {
       q: "What if my landlord shut off the utilities?",
-      a: "That is constructive lockout in most states. Same penalties apply. California assesses $100/day for utility shutoffs under § 789.3. Document the shutoff date and contact the utility company directly to confirm what happened.",
+      a: "Most states treat that the same as a lockout. Same penalties apply. California charges $100/day for utility shutoffs under § 789.3. Document the shutoff date and call the utility company directly to confirm what happened — they'll tell you whether the landlord cut service or it was something else.",
     },
     {
       q: "What happens to my belongings during a lockout?",

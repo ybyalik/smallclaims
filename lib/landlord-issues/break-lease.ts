@@ -17,7 +17,7 @@ export const breakLease: LandlordIssue = {
     h1: { pre: "Can I sue my landlord to ", em: "break my lease", post: " early?" },
     leadStrong: "Yes, in five legal scenarios you can break a lease",
     leadBody:
-      " without owing the remaining rent, and sue your landlord if they retaliate or refuse to refund prepaid amounts. Active-duty military deployment, domestic violence, uninhabitable conditions, landlord harassment, and mutual termination. Each path has specific notice and documentation requirements. If your situation does not fit one of these grounds, the landlord can charge you for the remainder of the lease (minus their duty to mitigate by re-renting).",
+      " without owing the remaining rent, and sue your landlord if they retaliate or refuse to refund money you already paid. The five paths: active-duty military deployment, domestic violence, the unit being unliveable, landlord harassment, and mutual agreement to end the lease early. Each one has specific notice and paperwork requirements. If your situation doesn't fit one of these, the landlord can charge you for the rest of the lease — though they have to make a real effort to re-rent the place (and credit you for any rent the new tenant pays).",
   },
 
   counter: {
@@ -38,9 +38,9 @@ export const breakLease: LandlordIssue = {
     cards: [
       {
         num: "01",
-        title: "Active-duty military (SCRA)",
+        title: "Active-duty military",
         body:
-          "Federal Servicemembers Civil Relief Act. Requires written notice plus a copy of orders for deployment of 90+ days or PCS. Lease ends 30 days after the next rent due date.",
+          "The federal Servicemembers Civil Relief Act (SCRA) protects you. You'll need written notice plus a copy of orders for a deployment of 90+ days, or a permanent change of station. Your lease ends 30 days after the next rent due date.",
       },
       {
         num: "02",
@@ -50,9 +50,9 @@ export const breakLease: LandlordIssue = {
       },
       {
         num: "03",
-        title: "Uninhabitable conditions",
+        title: "The place became unliveable",
         body:
-          "Constructive eviction. The unit must be so defective that it is unusable as housing (no heat in winter, sewage, severe mold, structural collapse). Requires written notice and a reasonable repair window before you can leave.",
+          "When a unit is so defective it's no longer usable as housing — no heat in winter, sewage, severe mold, collapsed structure — the law treats it as if you've been evicted (called 'constructive eviction'). You'll need written notice and a reasonable window for repairs before you can leave.",
       },
       {
         num: "04",

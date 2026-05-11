@@ -44,15 +44,15 @@ export const emotionalDistress: LandlordIssue = {
       },
       {
         num: "02",
-        title: "Outrageous conduct",
+        title: "Truly outrageous conduct",
         body:
-          "Intentional infliction of emotional distress (IIED) requires landlord conduct that goes beyond all bounds of decency. Threats with weapons, racial slurs, repeated entry while you sleep, blocking access to medical care.",
+          "When the landlord's behavior went beyond all bounds of decency (the legal name is 'intentional infliction of emotional distress'). Things like threats with weapons, racial slurs, repeated entry while you're sleeping, blocking access to medical care.",
       },
       {
         num: "03",
-        title: "Negligent infliction with physical injury",
+        title: "Negligence that caused physical injury",
         body:
-          "If landlord negligence caused physical injury (unsafe condition, mold exposure, lead poisoning), you can usually add emotional distress on top. The physical injury is what unlocks the emotional-distress claim.",
+          "If the landlord's negligence caused you actual physical harm (unsafe condition, mold exposure, lead poisoning), you can usually add emotional distress on top. The physical injury is what unlocks the emotional-distress claim — without it, courts treat emotional damage as too speculative.",
       },
       {
         num: "04",

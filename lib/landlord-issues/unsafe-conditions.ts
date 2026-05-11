@@ -17,7 +17,7 @@ export const unsafeConditions: LandlordIssue = {
     h1: { pre: "Can I sue my landlord for ", em: "unsafe living conditions", post: "?" },
     leadStrong: "Yes, you can sue your landlord for unsafe conditions",
     leadBody:
-      ". Every state's implied warranty of habitability requires landlords to provide safe housing. Recoverable damages include medical bills from injuries, ruined personal property, rent abatement for the affected period, and (in serious cases) statutory damages or punitive damages.",
+      ". Every state has a law requiring landlords to provide safe, liveable housing (the 'implied warranty of habitability'). You can recover medical bills from injuries, ruined personal property, a rent reduction for the affected months, and (in serious cases) extra penalty damages on top.",
   },
 
   counter: {
@@ -58,7 +58,7 @@ export const unsafeConditions: LandlordIssue = {
         num: "04",
         title: "Heat, water, and sewage",
         body:
-          "Failing heat in winter, no hot water, sewage backups, water contamination. Most states give landlords 24 to 72 hours to fix these. Beyond that, you can break the lease, repair-and-deduct, or sue for rent abatement plus damages.",
+          "Failing heat in winter, no hot water, sewage backups, water contamination. Most states give landlords 24 to 72 hours to fix these. Beyond that, you have three options: break the lease and move out, fix it yourself and deduct the cost from rent (called 'repair-and-deduct'), or sue for the rent back plus damages.",
       },
     ],
     note: {
@@ -82,17 +82,17 @@ export const unsafeConditions: LandlordIssue = {
       },
       {
         tag: "Layer 2",
-        title: "Rent abatement",
+        title: "Rent reduction for affected months",
         body:
-          "Rent reduction for the affected period. Courts use a percentage of rent (often 25 to 100 percent) based on how much of the unit was unusable and for how long.",
+          "You can claim back a portion of the rent you paid while the unit was unsafe (the legal term is 'rent abatement'). Courts use 25-100% of rent based on how much of the unit was unusable and for how long.",
         amount: "+ $2,400",
         accent: true,
       },
       {
         tag: "Layer 3",
-        title: "Filing fees and statutory damages",
+        title: "Filing fees and extra penalties",
         body:
-          "Filing fee, attorney fees in habitability cases (recoverable in many states even pro se), and statutory damages where state law authorizes them.",
+          "Filing fee, your attorney fees (recoverable in many states even if you didn't actually hire one for the hearing), and extra penalty damages where state law allows them.",
         amount: "+ $400",
       },
     ],

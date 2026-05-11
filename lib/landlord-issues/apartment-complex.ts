@@ -17,7 +17,7 @@ export const apartmentComplex: LandlordIssue = {
     h1: { pre: "Can I sue my ", em: "apartment complex", post: "?" },
     leadStrong: "Yes, you can sue an apartment complex in small claims",
     leadBody:
-      " for the same reasons you can sue any landlord, plus a few extra. Common-area maintenance failures, security violations, lease boilerplate that breaks state law, and unauthorized fees are all small-claims territory. The corporate structure does not protect them.",
+      " for the same reasons you can sue any landlord, plus a few extras. Failing common-area maintenance, security violations, lease language that breaks state law, and surprise fees are all fair game for small claims. The corporate structure doesn't shield them.",
   },
 
   counter: {
@@ -82,9 +82,9 @@ export const apartmentComplex: LandlordIssue = {
       },
       {
         tag: "Layer 2",
-        title: "Statutory damages",
+        title: "Penalty damages on top",
         body:
-          "Most state landlord-tenant codes apply equally to corporate landlords. Texas adds 3x deposit. California adds 2x. New York adds punitive damages for willful violations.",
+          "Most state landlord-tenant laws apply the same way to corporate landlords as to individual ones. Texas adds 3x the deposit. California adds 2x. New York adds extra punitive damages when the violation was willful.",
         amount: "+ $2,000",
         accent: true,
       },
@@ -92,7 +92,7 @@ export const apartmentComplex: LandlordIssue = {
         tag: "Layer 3",
         title: "Filing fees and attorney fees",
         body:
-          "Filing fee (around $50), service-of-process cost, statutory attorney fees in most landlord-tenant statutes (recoverable even pro se).",
+          "Filing fee (around $50), service-of-process costs, and attorney fees (recoverable in most landlord-tenant laws — even if you didn't actually hire one for the hearing).",
         amount: "+ $400",
       },
     ],
