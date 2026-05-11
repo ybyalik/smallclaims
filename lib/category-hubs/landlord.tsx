@@ -37,13 +37,13 @@ export const LANDLORD_HUB: CategoryHubData = {
   },
 
   issues: [
-    { slug: "security-deposit", title: "Security deposit not returned", blurb: "The most common landlord small-claims case. Most states add 2x or 3x the deposit when it was withheld in bad faith.", icon: <Banknote size={24} strokeWidth={1.7} />, ready: true },
+    { slug: "security-deposit", title: "Security deposit not returned", blurb: "The most common landlord small-claims case. Most states let you ask for 2x or 3x the deposit as a penalty if the landlord kept it without a good reason.", icon: <Banknote size={24} strokeWidth={1.7} />, ready: true },
     { slug: "mold", title: "Mold and habitability", blurb: "Recover medical costs, ruined property, and rent abatement when your landlord ignores serious habitability problems.", icon: <Droplets size={24} strokeWidth={1.7} />, ready: true },
     { slug: "wrongful-eviction", title: "Wrongful eviction", blurb: "Sue for moving costs, lost property, hotel stays, and statutory damages of 2x or 3x rent in tenant-friendly states.", icon: <DoorOpen size={24} strokeWidth={1.7} />, ready: true },
     { slug: "illegal-lockout", title: "Illegal lockout", blurb: "Changed locks, shut-off utilities, or removed belongings without a court order. California adds $100/day. Florida adds 3x rent.", icon: <Lock size={24} strokeWidth={1.7} />, ready: true },
     { slug: "harassment", title: "Landlord harassment", blurb: "Repeated unauthorized entry, threats, retaliation. California adds $2,000 per harassment act. NYC adds 3x rent.", icon: <AlertOctagon size={24} strokeWidth={1.7} />, ready: true },
     { slug: "pest-infestation", title: "Pest infestation", blurb: "Roaches, bed bugs, rats. Recover treatment costs, replaced belongings, and rent reduction for the affected period.", icon: <Bug size={24} strokeWidth={1.7} />, ready: true },
-    { slug: "unsafe-conditions", title: "Unsafe living conditions", blurb: "Structural failures, electrical hazards, missing smoke detectors, no heat or hot water. Habitability claims with rent abatement.", icon: <ShieldAlert size={24} strokeWidth={1.7} />, ready: true },
+    { slug: "unsafe-conditions", title: "Unsafe living conditions", blurb: "Structural failures, electrical hazards, missing smoke detectors, no heat or hot water. The law calls this a 'habitability' problem, and you can sue for rent back during the time the unit wasn't liveable.", icon: <ShieldAlert size={24} strokeWidth={1.7} />, ready: true },
     { slug: "emotional-distress", title: "Emotional distress", blurb: "Pair with another tenant claim for the strongest case. Therapy bills and lost work make documented claims succeed.", icon: <HeartCrack size={24} strokeWidth={1.7} />, ready: true },
     { slug: "apartment-complex", title: "Apartment complex", blurb: "Corporate landlords settle faster than mom-and-pop. Multi-claim cases against complexes typically recover $2,000 to $6,000.", icon: <Building2 size={24} strokeWidth={1.7} />, ready: true },
     { slug: "after-moving-out", title: "After moving out", blurb: "Statutes of limitations are generous. Most claims still timely 1 to 4 years post-move-out. Move quickly anyway.", icon: <Move size={24} strokeWidth={1.7} />, ready: true },
@@ -61,10 +61,10 @@ export const LANDLORD_HUB: CategoryHubData = {
       { titleBold: "Lead-paint disclosure", rest: "violations under federal and state law." },
     ],
     outItems: [
-      { titleBold: "Getting back into the unit.", rest: "That’s an emergency injunction in housing court." },
-      { titleBold: "Rent-control calculations.", rest: "Administrative law, not small claims." },
-      { titleBold: "Fair-housing discrimination.", rest: "State or federal civil-rights venue." },
-      { titleBold: "Eviction defense.", rest: "Goes to housing or unlawful-detainer court, not small claims." },
+      { titleBold: "Getting back into the unit.", rest: "That requires an emergency court order from housing court — small claims can't force the landlord to let you back in." },
+      { titleBold: "Rent-control calculations.", rest: "Handled by your local rent board, not the courts." },
+      { titleBold: "Fair-housing discrimination.", rest: "Filed with a civil-rights agency or in federal court." },
+      { titleBold: "Eviction defense.", rest: "Goes to housing court (sometimes called 'unlawful detainer' court), not small claims." },
     ],
   },
 
@@ -93,8 +93,8 @@ export const LANDLORD_HUB: CategoryHubData = {
             <path d="M12 4l-7 4M12 4l7 4" />
           </svg>
         ),
-        tag: "Statutory damages",
-        body: "Bad-faith withholding triggers 2x or 3x the wrongfully kept amount in most states.",
+        tag: "Penalty on top",
+        body: "If the landlord kept your money without a good reason, most states let you ask for 2 or 3 times that amount as a penalty (called 'statutory damages').",
         amount: "+$3,000",
         barWidthPct: 62,
         barLabel: "Multiplier",
@@ -108,8 +108,8 @@ export const LANDLORD_HUB: CategoryHubData = {
             <path d="M3 12h18" />
           </svg>
         ),
-        tag: "Attorney’s fees",
-        body: "Many statutes shift the loser’s fees to the prevailing party. That alone pressures early settlement.",
+        tag: "Attorney's fees",
+        body: "Many state laws make the losing side pay the winner's attorney fees. That pressure alone often gets the landlord to settle before court.",
         amount: "+$300",
         barWidthPct: 8,
         barLabel: "Typical recovery",
@@ -136,14 +136,14 @@ export const LANDLORD_HUB: CategoryHubData = {
 
   evidence: {
     h2Em: "sue your landlord",
-    intro: "Landlord cases are won on documentation. Whatever you do not have on paper, the judge takes on your word. A landlord with a property manager has more paper than you do, so your job is to close that gap.",
+    intro: "Landlord cases are won on paperwork. Anything you can't show in writing, you're asking the judge to just take your word for — and they usually won't. Your landlord (especially one with a property manager) has more documentation than you do. Your job is to close that gap before you walk into court.",
     items: [
       { iconSvg: <FileText size={16} strokeWidth={1.8} />, title: "Your lease", desc: "Every page of the signed copy, not a draft. If it lives in your email, print it." },
       { iconSvg: <Camera size={16} strokeWidth={1.8} />, title: "Move-in & move-out photos", desc: "Walkthrough photos plus the condition checklist. Date-stamps matter. Judges care when the evidence was created." },
       { iconSvg: <Banknote size={16} strokeWidth={1.8} />, title: "Proof of every payment", desc: "Bank records, money-order stubs, canceled checks, payment-app screenshots. Show dollar amount and date." },
       { iconSvg: <MessageSquare size={16} strokeWidth={1.8} />, title: "All communications", desc: "Texts, emails, certified-mail receipts, voicemails. Most landlord-tenant cases turn on what was said and when." },
       { iconSvg: <Receipt size={16} strokeWidth={1.8} />, title: "Receipts for what you spent", desc: "Hotel, movers, replacement furniture, exterminator, mold remediation. Originals or PDFs." },
-      { iconSvg: <MapPin size={16} strokeWidth={1.8} />, title: "Your forwarding address notice", desc: "For deposit cases especially. Written notice of where to send it is what starts the state clock." },
+      { iconSvg: <MapPin size={16} strokeWidth={1.8} />, title: "Your forwarding address notice", desc: "For deposit cases especially. Written notice telling the landlord where to send the deposit is what starts the state's return-deadline clock. Without it, they can argue they had nowhere to mail the check." },
       { iconSvg: <Users size={16} strokeWidth={1.8} />, title: "Witness contact info", desc: "Roommate, neighbor, or repair tech who saw the unit’s condition can be the difference at the hearing." },
     ],
   },
@@ -164,9 +164,9 @@ export const LANDLORD_HUB: CategoryHubData = {
     { q: "Can you sue your landlord in small claims court?", a: "Yes. Small claims is the standard venue for tenant-versus-landlord money disputes under your state’s jurisdictional cap (usually $5,000 to $20,000). Eviction itself goes to housing court, but money you are owed (deposit, repair costs, hotel stays during a lockout, ruined property) belongs in small claims." },
     { q: "How long do you have to sue a landlord?", a: "Most landlord-tenant claims have a 2 to 6 year statute of limitations, depending on the state and whether the lease is written or oral. Security-deposit claims usually run on the contract clock (longer). Repair and habitability claims sometimes run on a tort clock (shorter). Check your state guide for exact numbers." },
     { q: "Do you need a lawyer to sue a landlord?", a: "No. In most states attorneys are permitted but not required. In a few states (California, for example) lawyers are not even allowed at the initial small-claims hearing. The whole format is built for self-represented litigants." },
-    { q: "What if your landlord ignores your demand letter?", a: "That is the signal to file in small claims. The demand letter creates the paper trail you point to at the hearing, and most judges expect to see one. Read your state’s small-claims guide for the specific filing fee, forms, and service rules." },
-    { q: "Can you sue your landlord while you still live there?", a: "Legally yes. Practically, be careful. Most states have anti-retaliation laws that protect you if the landlord tries to evict or raise rent in response to a lawsuit, but those laws are easier to invoke than to enforce. If you are still in the unit and can wait, many tenants file once they move out." },
-    { q: "What can you recover from a landlord in small claims?", a: "At minimum, your out-of-pocket loss: the deposit, repair receipts, hotel costs, and ruined property. Many states add statutory damages of 2x or 3x the wrongfully withheld amount, plus reasonable attorney fees, even though you do not need a lawyer to use small claims." },
+    { q: "What if your landlord ignores your demand letter?", a: "That's your cue to file in small claims. The demand letter creates a paper trail you point to at the hearing — most judges expect to see one. Read your state's small-claims guide for the specific filing fee, forms, and service-of-process rules." },
+    { q: "Can you sue your landlord while you still live there?", a: "Legally, yes. Practically, be careful. Most states have anti-retaliation laws that protect you from being evicted or having your rent raised because you sued — but proving the landlord retaliated is hard in practice. If you're still in the unit and can wait, many tenants file after they move out." },
+    { q: "What can you recover from a landlord in small claims?", a: "At minimum, your out-of-pocket losses: the deposit, repair receipts, hotel costs, and ruined property. Many states also let you ask for a 2x or 3x penalty on top of the amount the landlord kept without a good reason, plus their attorney fees — even though you don't need a lawyer to use small claims yourself." },
   ],
 
   schemaFaqIndices: [0, 1, 5],

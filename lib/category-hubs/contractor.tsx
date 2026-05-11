@@ -21,7 +21,7 @@ export const CONTRACTOR_HUB: CategoryHubData = {
 
   hero: {
     h1: { pre: "How to ", em: "sue a contractor", post: " in small claims court." },
-    lede: "If a contractor took your deposit and disappeared, left the job unfinished, did defective work, or damaged your house, small claims is often the right court. Before you file, three pressure points usually settle the case faster: a state contractor licensing board complaint, a claim against the contractor’s bond, and a demand letter that cites both.",
+    lede: "If a contractor took your deposit and disappeared, left the job unfinished, did defective work, or damaged your house, small claims is often the right court. Before you file, three pressure points usually settle the case faster: a complaint to your state's contractor licensing board, a claim against the contractor's bond (insurance the state makes them carry to cover customer claims), and a demand letter that mentions both.",
   },
 
   issuePhotos: ["1503387762-592deb58ef4e", "1581094288338-2314dddb7ece", "1556909114-f6e7ad7d3136", "1581244277943-fe4a9c777189", "1567521464027-f127ff144326"],
@@ -39,7 +39,7 @@ export const CONTRACTOR_HUB: CategoryHubData = {
   issues: [
     { slug: "deposit-and-disappearing", title: "Took deposit and disappeared", blurb: "Three pressure points: contractor-board complaint, bond claim, small claims. If the contractor was unlicensed, most states let you recover every dollar paid.", icon: <UserX size={24} strokeWidth={1.7} />, ready: true },
     { slug: "unfinished-work", title: "Unfinished work", blurb: "Contractor started but never finished. Recover the cost difference to hire a replacement, plus the unearned portion of any deposit.", icon: <Construction size={24} strokeWidth={1.7} />, ready: true },
-    { slug: "poor-workmanship", title: "Poor workmanship", blurb: "Work was done but it was defective. Implied warranty of workmanlike construction in most states. Recover the cost to redo or repair.", icon: <AlertCircle size={24} strokeWidth={1.7} />, ready: true },
+    { slug: "poor-workmanship", title: "Poor workmanship", blurb: "Work was done but it was defective. Most states say contractors are legally required to do work to a professional standard — if they didn't, you can recover the cost to redo or fix it.", icon: <AlertCircle size={24} strokeWidth={1.7} />, ready: true },
     { slug: "damaged-house", title: "Damaged your house", blurb: "Contractor caused collateral damage to your home (broken pipes, water damage, electrical fires). Recover repair costs plus replaced belongings.", icon: <AlertTriangle size={24} strokeWidth={1.7} />, ready: true },
     { slug: "handyman-bad-work", title: "Handyman bad work", blurb: "Handymen often work without licenses. Bad work plus unlicensed status often means you can recover every dollar paid in many states.", icon: <Wrench size={24} strokeWidth={1.7} />, ready: true },
     { slug: "plumber-damage", title: "Plumber damage", blurb: "Water damage from a plumbing job gone wrong. Plumbers carry liability insurance and bonds. Recover repairs plus damage to belongings.", icon: <Droplets size={24} strokeWidth={1.7} />, ready: true },
@@ -47,7 +47,7 @@ export const CONTRACTOR_HUB: CategoryHubData = {
     { slug: "painter-damage", title: "Painter damage", blurb: "Damaged floors, furniture, or fixtures during a paint job. Painters often skip drop cloths. Recover cleaning, refinishing, or replacement costs.", icon: <Paintbrush size={24} strokeWidth={1.7} />, ready: true },
     { slug: "landscaper-bad-work", title: "Landscaper bad work", blurb: "Dead plants, killed lawn, broken irrigation, damaged hardscape. Recover replacement plant cost plus repair of any damage caused.", icon: <TreePine size={24} strokeWidth={1.7} />, ready: true },
     { slug: "moving-company-damage", title: "Moving company damage", blurb: "Damaged furniture, walls, or floors. Interstate moves governed by federal Carmack Amendment; intrastate by state law. Different rules apply.", icon: <Truck size={24} strokeWidth={1.7} />, ready: true },
-    { slug: "moving-company-lost-items", title: "Moving company lost items", blurb: "Items that never arrived. Movers must declare valuation method. Default ‘released-value’ liability is 60 cents per pound, but full-value protection unlocks higher recovery.", icon: <PackageX size={24} strokeWidth={1.7} />, ready: true },
+    { slug: "moving-company-lost-items", title: "Moving company lost items", blurb: "Items that never arrived. Be aware: the default coverage movers offer is only 60 cents per pound (so a 10-pound lost laptop = $6). Higher recovery requires the 'full-value' option, which the mover should have offered in writing.", icon: <PackageX size={24} strokeWidth={1.7} />, ready: true },
   ],
 
   belongs: {
@@ -56,15 +56,15 @@ export const CONTRACTOR_HUB: CategoryHubData = {
     inItems: [
       { titleBold: "Refunded deposit.", rest: "Money paid up front for work that never started or was abandoned." },
       { titleBold: "Cost difference to finish.", rest: "Quotes from replacement contractors minus what you would have paid the original." },
-      { titleBold: "Cost to redo defective work.", rest: "Implied warranty of workmanlike construction lets you recover the cost to make it right." },
+      { titleBold: "Cost to redo defective work.", rest: "Contractors are legally required to do work to a professional standard. If they didn't, you can recover the cost to make it right." },
       { titleBold: "Damage to your home.", rest: "Broken pipes, water damage, electrical issues caused by the work itself." },
       { titleBold: "Unlicensed-contractor recovery.", rest: "Many states let you claw back every dollar paid to an unlicensed contractor." },
     ],
     outItems: [
-      { titleBold: "Damages over the cap.", rest: "Full-bath or kitchen-remodel disputes often exceed $20,000 and need a higher court." },
-      { titleBold: "Mechanic’s lien removal.", rest: "Goes to property court, not small claims." },
-      { titleBold: "Personal injury from work.", rest: "Goes to civil court, not small claims, with a personal-injury attorney." },
-      { titleBold: "Permitting and code-enforcement disputes.", rest: "Administrative law, not small claims." },
+      { titleBold: "Damages over the cap.", rest: "Full kitchen or bathroom remodel disputes often exceed $20,000. Those need a higher court." },
+      { titleBold: "Removing a contractor's lien on your house.", rest: "If the contractor filed a 'mechanic's lien' against your property, removing it is a separate process in property court, not small claims." },
+      { titleBold: "Personal injury from the work.", rest: "If the work caused an injury, that goes to regular civil court — you'll usually want a personal-injury attorney." },
+      { titleBold: "Permitting and code-enforcement disputes.", rest: "These get handled by your local building department, not the courts." },
     ],
   },
 
@@ -161,8 +161,8 @@ export const CONTRACTOR_HUB: CategoryHubData = {
 
   faqs: [
     { q: "Can you sue a contractor in small claims court?", a: "Yes, when the dispute is mostly about money you are owed (refunded deposit, cost-to-finish difference, repair of damage caused) and the amount is within your state’s cap (usually $5,000 to $20,000). Bigger jobs (full kitchen or bathroom remodels, roof replacements) often exceed the cap and need higher courts." },
-    { q: "What is a contractor licensing board complaint?", a: "Each state has a board (CSLB in California, DBPR in Florida, etc.) that licenses contractors and investigates complaints. The board can pull licenses, freeze bonds, order restitution, and assess fines. Filing is free and often more effective than a lawsuit. Use this as your first step before small claims." },
-    { q: "What if the contractor was unlicensed?", a: "Most states make this work in your favor. An unlicensed contractor cannot enforce the contract or sue you for the unpaid balance. In California (Bus & Prof Code § 7031) and several other states, you can recover every dollar you paid, regardless of any work performed." },
+    { q: "What is a contractor licensing board complaint?", a: "Each state has a board that licenses contractors and investigates customer complaints (California's is the CSLB, Florida's is the DBPR, and so on). The board can suspend the contractor's license, freeze their bond, order them to refund you, and fine them. Filing a complaint is free and often more effective than a lawsuit. Use this as your first step before small claims." },
+    { q: "What if the contractor was unlicensed?", a: "Most states make this work in your favor. An unlicensed contractor cannot enforce the contract or sue you for the unpaid balance. In California (Business & Professions Code § 7031) and several other states, you can recover every dollar you paid — even if they did some of the work. Most cases like this win on default because the unlicensed contractor doesn't even show up." },
     { q: "How much can a contractor legally take as a deposit?", a: "California caps home-improvement deposits at $1,000 or 10 percent, whichever is less. New York caps at 50 percent. Connecticut at one-third. Many states have no cap but courts treat anything above 30 to 50 percent as suspicious. Your contractor-licensing law sets the limit." },
     { q: "What is a contractor surety bond and how do I claim against it?", a: "A surety bond is insurance the state requires licensed contractors to carry to cover claims by customers. California requires $25,000; other states vary. To claim, contact the bonding company (named on the contractor’s license), provide the contract, the deposit receipt, and proof of breach. The bond pays out before the contractor’s other creditors." },
   ],

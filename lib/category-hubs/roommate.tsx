@@ -33,29 +33,29 @@ export const ROOMMATE_HUB: CategoryHubData = {
   somethingElseCard: { title: "Something else?", blurb: "Tell us about your situation in 90 seconds and get a strength read on your case." },
 
   issues: [
-    { slug: "unpaid-rent", title: "Unpaid rent", blurb: "Joint-and-several lease liability + contribution rights. Bank record + texts + lease establish the case.", icon: <Banknote size={24} strokeWidth={1.7} />, ready: true },
-    { slug: "unpaid-bills", title: "Unpaid bills + utilities", blurb: "Shared utilities, internet, household supplies. Course of dealing + bills + Venmo records make the case clean.", icon: <Receipt size={24} strokeWidth={1.7} />, ready: true },
-    { slug: "moving-out-no-notice", title: "Moved out no notice", blurb: "Their share of rent until you find a replacement. Mitigation documentation (Craigslist posts) is critical.", icon: <DoorOpen size={24} strokeWidth={1.7} />, ready: true },
-    { slug: "property-damage-or-theft", title: "Damage or theft", blurb: "Negligence + conversion. Photos + receipts + witness testimony establish the case.", icon: <ShieldOff size={24} strokeWidth={1.7} />, ready: true },
-    { slug: "security-deposit", title: "Security deposit", blurb: "Roommate kept your share. Bank record from move-in + landlord refund record establish the case.", icon: <CreditCard size={24} strokeWidth={1.7} />, ready: true },
-    { slug: "no-lease", title: "No written lease", blurb: "Implied contracts + course of dealing both apply. Months of consistent Venmo establish the agreement.", icon: <FileQuestion size={24} strokeWidth={1.7} />, ready: true },
-    { slug: "emotional-distress", title: "Emotional distress", blurb: "IIED + paired-claim structure. Therapy bills + provider notes + lost work establish damages.", icon: <HeartCrack size={24} strokeWidth={1.7} />, ready: true },
+    { slug: "unpaid-rent", title: "Unpaid rent", blurb: "When you're both on the lease, the landlord can hold either of you fully responsible — and you can sue the roommate for their share. Bank records + text messages + the lease establish the case.", icon: <Banknote size={24} strokeWidth={1.7} />, ready: true },
+    { slug: "unpaid-bills", title: "Unpaid bills + utilities", blurb: "Shared utilities, internet, household supplies. The pattern of who paid what (Venmo records) plus the actual bills makes the case clean.", icon: <Receipt size={24} strokeWidth={1.7} />, ready: true },
+    { slug: "moving-out-no-notice", title: "Moved out no notice", blurb: "You can sue for their share of rent until you find a replacement. Document that you actively looked (screenshots of Craigslist or roommate-search posts) — courts won't let you collect indefinitely if you didn't try.", icon: <DoorOpen size={24} strokeWidth={1.7} />, ready: true },
+    { slug: "property-damage-or-theft", title: "Damage or theft", blurb: "Sue under negligence (they were careless) or 'conversion' (the legal name for taking your stuff). Photos + receipts + witness statements make the case.", icon: <ShieldOff size={24} strokeWidth={1.7} />, ready: true },
+    { slug: "security-deposit", title: "Security deposit", blurb: "When your roommate kept your share of the deposit the landlord returned. Bank record from move-in (you paid your share) + the landlord's refund record (made out to your roommate) establishes the case.", icon: <CreditCard size={24} strokeWidth={1.7} />, ready: true },
+    { slug: "no-lease", title: "No written lease", blurb: "Don't need one. Even without a written agreement, courts will recognize an 'implied contract' based on how you actually behaved — months of consistent Venmo payments establish what the agreement was.", icon: <FileQuestion size={24} strokeWidth={1.7} />, ready: true },
+    { slug: "emotional-distress", title: "Emotional distress", blurb: "Pair this with another claim (unpaid rent, damage, etc.) for the strongest case. Therapy bills + provider notes + lost work back up the dollar amount.", icon: <HeartCrack size={24} strokeWidth={1.7} />, ready: true },
   ],
 
   belongs: {
     h2Em: "roommate disputes",
     intro: "Roommate disputes are textbook small-claims cases. Most state caps fall between $5,000 and $20,000. Most cases settle once a demand letter arrives. The lease, the bank records, and a string of payment-app messages do most of the work.",
     inItems: [
-      { titleBold: "Unpaid share of rent.", rest: "Joint-and-several liability on the lease plus contribution rights between roommates." },
-      { titleBold: "Unpaid utilities and shared bills.", rest: "Internet, electric, water, household supplies. Course of dealing plus the bill establishes the obligation." },
-      { titleBold: "Rent owed after they moved out early.", rest: "Their share until you found a replacement. Document the mitigation (Craigslist posts, listing screenshots)." },
-      { titleBold: "Property damage and missing items.", rest: "Repair receipts, replacement cost, and photos. Conversion (theft) is its own claim." },
-      { titleBold: "Their share of the security deposit they kept.", rest: "Landlord’s refund check made out to one of you, then never split. Bank record settles it." },
+      { titleBold: "Unpaid share of rent.", rest: "When you're both on the lease, the landlord can hold either of you fully responsible — but you can sue your roommate for their share." },
+      { titleBold: "Unpaid utilities and shared bills.", rest: "Internet, electric, water, household supplies. The pattern of who paid what (Venmo, etc.) plus the actual bills establishes their obligation." },
+      { titleBold: "Rent owed after they moved out early.", rest: "Their share until you found a replacement. Be ready to show you actively looked (listing screenshots, screening texts)." },
+      { titleBold: "Property damage and missing items.", rest: "Repair receipts, replacement cost, and photos. Taking your stuff is its own separate claim called 'conversion.'" },
+      { titleBold: "Their share of the security deposit they kept.", rest: "The landlord refunded the deposit to one of you, and it never got split. Bank records settle the case." },
     ],
     outItems: [
-      { titleBold: "Eviction of the roommate.", rest: "If the landlord is on the lease too, eviction goes to housing court, not small claims." },
-      { titleBold: "Restoring access to the home.", rest: "Lockout disputes need an emergency injunction in housing court." },
-      { titleBold: "Personal-injury claims.", rest: "Fights or accidents that caused medical bills go to civil court with an attorney." },
+      { titleBold: "Evicting your roommate.", rest: "If the landlord is on the lease too, eviction is the landlord's problem and goes to housing court, not small claims." },
+      { titleBold: "Getting back into the home if you've been locked out.", rest: "Lockout disputes need an emergency court order from housing court — small claims can't issue that." },
+      { titleBold: "Personal-injury claims.", rest: "Fights or accidents that caused medical bills go to regular civil court — you'll usually want an attorney." },
       { titleBold: "Damages over the cap.", rest: "Multi-year unpaid rent or major property damage above $20,000 needs a higher court." },
     ],
   },
@@ -99,7 +99,7 @@ export const ROOMMATE_HUB: CategoryHubData = {
 
   faqs: [
     { q: "Can I sue my roommate in small claims court?", a: "Yes. Unpaid rent, unpaid utilities, moving out without notice, property damage, security-deposit disputes, and emotional distress all support small-claims cases. Most cases settle once a demand letter arrives. Documentation is the spine: lease, bank records, texts, witness testimony." },
-    { q: "What if there’s no written lease or roommate agreement?", a: "Implied contracts and course of dealing both apply. Months of consistent Venmo payments establish the agreement. Texts about money and witness testimony also work. The proof is harder than written-lease cases but the recovery is the same." },
+    { q: "What if there's no written lease or roommate agreement?", a: "You can still sue. Courts will recognize an 'implied contract' based on how you actually behaved — months of consistent Venmo payments establish what the agreement was. Texts about money and witness testimony also help. It's harder to prove than a case with a written lease, but you can still win the same amount." },
     { q: "How long do I have to sue?", a: "Written lease + roommate agreement: 4 to 6 years. Oral agreement: 2 to 4 years. Property damage: 2 to 4 years. Each unpaid month is its own claim with its own clock." },
     { q: "Will the landlord get involved?", a: "Usually not. The landlord cares that the rent gets paid, not who pays it. Your contribution case against the roommate is between you and them. The landlord is not involved." },
     { q: "Can I combine multiple roommate claims?", a: "Yes. One small-claims case can include unpaid rent + unpaid bills + property damage + deposit. Combine to avoid multiple court appearances." },

@@ -20,7 +20,7 @@ export const REFUND_HUB: CategoryHubData = {
 
   hero: {
     h1: { pre: "How to ", em: "get a refund", post: " in small claims court." },
-    lede: "Defective products, gym memberships that won’t cancel, dry cleaners that ruined your clothes, salons that damaged your hair, services never performed. State UDAP statutes apply with 2x or 3x multipliers. Most cases settle once a demand letter cites the specific statute. Use chargebacks first when possible.",
+    lede: "Defective products, gym memberships that won't cancel, dry cleaners that ruined your clothes, salons that damaged your hair, services never delivered. State consumer-protection laws apply, with 2x or 3x penalties in many states. Most cases settle once a demand letter cites the specific statute. If you paid by credit card, try a chargeback first.",
   },
 
   issuePhotos: ["1554224154-26032ffc0d07", "1554224155-1696413565d3", "1556761175-5973dc0f32e7", "1556909114-f6e7ad7d3136", "1450101499163-c8848c66ca85"],
@@ -33,23 +33,23 @@ export const REFUND_HUB: CategoryHubData = {
   somethingElseCard: { title: "Something else?", blurb: "Tell us about your situation in 90 seconds and get a strength read on your case." },
 
   issues: [
-    { slug: "refund-general", title: "Refund (general)", blurb: "State UDAP + breach of contract. 2x or 3x multipliers in many states. Use chargebacks first; small claims as backup.", icon: <Undo2 size={24} strokeWidth={1.7} />, ready: true },
-    { slug: "gym-membership", title: "Gym membership", blurb: "Most states have specific health-club statutes (CA Civ. Code § 1812.82). Cooling-off periods + cancellation rights override ‘no refund’ clauses.", icon: <Dumbbell size={24} strokeWidth={1.7} />, ready: true },
-    { slug: "dry-cleaner", title: "Dry cleaner damage", blurb: "Bailment law presumes negligence. Disclaimer signs are usually unenforceable. Replacement value of damaged items.", icon: <Shirt size={24} strokeWidth={1.7} />, ready: true },
-    { slug: "salon-or-hairdresser", title: "Salon / hairdresser damage", blurb: "Negligence + breach of professional service. Photos before/after + corrective treatment receipts establish the case.", icon: <Scissors size={24} strokeWidth={1.7} />, ready: true },
-    { slug: "defective-product", title: "Defective product", blurb: "Federal Magnuson-Moss + state implied warranty + state UDAP. Attorney fees shifted to losing manufacturer.", icon: <PackageX size={24} strokeWidth={1.7} />, ready: true },
-    { slug: "services-not-rendered", title: "Services not rendered", blurb: "Breach of contract + state UDAP. Refund of payment + 2x multiplier. Documentation of agreement and lack of performance is the case.", icon: <CalendarX size={24} strokeWidth={1.7} />, ready: true },
+    { slug: "refund-general", title: "Refund (general)", blurb: "Sue under state consumer-protection laws plus breach of contract. Many states let you ask for 2x or 3x damages. Try a credit-card chargeback first; small claims is the backup.", icon: <Undo2 size={24} strokeWidth={1.7} />, ready: true },
+    { slug: "gym-membership", title: "Gym membership", blurb: "Most states have specific laws regulating health-club contracts (e.g. CA Civil Code § 1812.82). You get a cooling-off period to cancel — and 'no refund' clauses can't override those state-given rights.", icon: <Dumbbell size={24} strokeWidth={1.7} />, ready: true },
+    { slug: "dry-cleaner", title: "Dry cleaner damage", blurb: "When you hand clothes to a dry cleaner, the law presumes they were careless if items come back damaged — they have to prove they weren't. Those 'not responsible for damage' signs usually don't hold up. You can recover the replacement value of damaged items.", icon: <Shirt size={24} strokeWidth={1.7} />, ready: true },
+    { slug: "salon-or-hairdresser", title: "Salon / hairdresser damage", blurb: "When a hairdresser causes damage, you can sue for negligence plus failing to deliver the professional service you paid for. Before/after photos plus receipts for corrective treatment make the case.", icon: <Scissors size={24} strokeWidth={1.7} />, ready: true },
+    { slug: "defective-product", title: "Defective product", blurb: "Federal warranty law (Magnuson-Moss) plus your state's implied warranty (that products must work as advertised) plus consumer-protection law. If you win, the manufacturer pays your attorney fees on top.", icon: <PackageX size={24} strokeWidth={1.7} />, ready: true },
+    { slug: "services-not-rendered", title: "Services not rendered", blurb: "Paid for a service that was never delivered. Sue for breach of contract plus consumer-protection penalties (2x in many states). Documentation of what was promised + proof it didn't happen wins the case.", icon: <CalendarX size={24} strokeWidth={1.7} />, ready: true },
   ],
 
   belongs: {
     h2Em: "refund disputes",
-    intro: "Most refund disputes are textbook small-claims cases. State UDAP statutes (Unfair and Deceptive Acts and Practices) sit on top of breach-of-contract law and often add 2x or 3x damages plus attorney fees. Most disputes settle when the demand letter cites the right statute.",
+    intro: "Most refund disputes are textbook small-claims cases. Every state has a 'UDAP' law — Unfair and Deceptive Acts and Practices — that sits on top of regular breach-of-contract law and often adds 2x or 3x damages plus attorney fees. Most disputes settle when the demand letter cites the right statute.",
     inItems: [
-      { titleBold: "Refund of money paid for services not delivered.", rest: "Wedding photographer who skipped, contractor who never started, course that never began. Breach of contract." },
-      { titleBold: "Defective product the seller refuses to refund.", rest: "Implied warranty of merchantability covers products that do not work for their ordinary purpose." },
-      { titleBold: "Gym, dance, or self-storage cancellation.", rest: "Most states have specific statutes overriding ‘no refund’ language in long-term contracts." },
-      { titleBold: "Bailee damage (dry cleaner, valet, mover).", rest: "When you handed over the item, the business is presumed negligent if it comes back damaged." },
-      { titleBold: "Refund denied after platform chargeback failed.", rest: "Bring the bank decision letter; small claims is the backstop when card networks deny the claim." },
+      { titleBold: "Refund for a service that was never delivered.", rest: "Wedding photographer who didn't show, contractor who never started, course that never began. Breach of contract." },
+      { titleBold: "Defective product the seller won't refund.", rest: "Under 'implied warranty' law, products must work for their normal purpose — even if no one explicitly promised they would." },
+      { titleBold: "Gym, dance studio, or self-storage cancellation.", rest: "Most states have specific laws that override 'no refund' language in long-term contracts." },
+      { titleBold: "Damage by a service handler (dry cleaner, valet, mover).", rest: "When you handed over the item, the business is presumed to have been careless if it comes back damaged — they have to prove they weren't at fault." },
+      { titleBold: "Refund denied after a credit-card chargeback failed.", rest: "Bring the bank's denial letter. Small claims is the backup when card networks won't pay out." },
     ],
     outItems: [
       { titleBold: "Buyer’s remorse.", rest: "If the product worked and you simply changed your mind, ‘all sales final’ usually holds up." },
@@ -63,7 +63,7 @@ export const REFUND_HUB: CategoryHubData = {
     intro: "The math judges use. A typical refund case stacks the price you paid, any state UDAP multiplier, and reasonable attorney fees if the statute shifts them.",
     rows: [
       { iconSvg: <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M6 3h12v17l-3-2-3 2-3-2-3 2z" /><path d="M12 8v6M10 9.5c0-.8.7-1.5 1.5-1.5h1c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5h-1c-.8 0-1.5.7-1.5 1.5s.7 1.5 1.5 1.5h1c.8 0 1.5-.7 1.5-1.5" /></svg>, tag: "Refund of price paid", body: "What you paid for the product or service. Receipts, invoices, bank statements all anchor the number.", amount: "$1,500", barWidthPct: 50, barLabel: "Base amount" },
-      { iconSvg: <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M12 4v17M5 21h14" /><path d="M5 8h14" /><path d="M5 8l-2 5h4z M19 8l-2 5h4z" /><path d="M12 4l-7 4M12 4l7 4" /></svg>, tag: "UDAP multiplier", body: "Most state consumer-protection statutes add 2x or 3x damages for deceptive practices.", amount: "+$1,500", barWidthPct: 50, barLabel: "Multiplier", accent: true },
+      { iconSvg: <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M12 4v17M5 21h14" /><path d="M5 8h14" /><path d="M5 8l-2 5h4z M19 8l-2 5h4z" /><path d="M12 4l-7 4M12 4l7 4" /></svg>, tag: "Consumer-protection penalty", body: "Most state consumer-protection laws add 2x or 3x damages when the seller engaged in deceptive practices.", amount: "+$1,500", barWidthPct: 50, barLabel: "Multiplier", accent: true },
       { iconSvg: <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="7" width="18" height="13" rx="2" /><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /><path d="M3 12h18" /></svg>, tag: "Mitigation costs", body: "Replacement at higher price, corrective treatment, restocking fees you absorbed. Keep the receipts.", amount: "+$300", barWidthPct: 10, barLabel: "Typical recovery" },
       { iconSvg: <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M19 5L5 19" /><circle cx="7.5" cy="7.5" r="2.5" /><circle cx="16.5" cy="16.5" r="2.5" /></svg>, tag: "Filing fee + interest", body: "Filing fee, service-of-process cost, pre-judgment interest at the state legal rate.", amount: "+$200", barWidthPct: 5, barLabel: "Accruing" },
     ],
@@ -98,11 +98,11 @@ export const REFUND_HUB: CategoryHubData = {
   audienceLabel: "consumers",
 
   faqs: [
-    { q: "Can I sue for a refund in small claims court?", a: "Yes. State consumer-protection laws (UDAP) cover most refund disputes with 2x or 3x multipliers in many states. Implied warranty of merchantability for products. Bailment law for damaged-clothes cases. Most disputes settle once a real demand letter arrives." },
-    { q: "Should I do a chargeback or sue?", a: "Try chargeback first for credit card purchases (60-120 day window). Often the fastest recovery. Use small claims for cases the chargeback doesn’t cover or denied claims." },
-    { q: "What about ‘all sales final’ policies?", a: "‘All sales final’ clauses don’t override state UDAP or implied warranty. Defective products and services not rendered have implied warranty rights regardless of policy." },
-    { q: "What is UDAP?", a: "Unfair and Deceptive Acts and Practices: state consumer-protection laws prohibiting deceptive business practices. Most states have UDAP statutes with 2x or 3x damage multipliers and attorney fee-shifting." },
-    { q: "How long do I have to sue?", a: "State UDAP claims usually run 2 to 4 years. Breach of contract: 4 to 6 years. Specific statutes (gym membership, etc.) may have specific deadlines." },
+    { q: "Can I sue for a refund in small claims court?", a: "Yes. Every state has a consumer-protection law (often called 'UDAP' — Unfair and Deceptive Acts and Practices) that covers most refund disputes. Many states let you ask for 2x or 3x damages. For defective products, there's also implied warranty law. For damaged clothing or items left in someone's care, there's bailment law. Most disputes settle once a real demand letter arrives." },
+    { q: "Should I do a chargeback or sue?", a: "If you paid by credit card, try a chargeback first (you usually have 60-120 days). It's often the fastest recovery. Save small claims for cases where the chargeback was denied or doesn't apply (Venmo, Zelle, cash, etc.)." },
+    { q: "What about 'all sales final' policies?", a: "'All sales final' clauses don't override your state's consumer-protection law or implied warranty rights. If the product was defective, or the service was never delivered, you have legal rights to a refund regardless of what the store policy says." },
+    { q: "What is UDAP?", a: "UDAP stands for Unfair and Deceptive Acts and Practices — your state's consumer-protection law. Every state has one. They prohibit deceptive business practices (false advertising, hidden fees, bait-and-switch). Most include 2x or 3x penalty damages plus attorney fees if you win." },
+    { q: "How long do I have to sue?", a: "Consumer-protection (UDAP) claims usually give you 2 to 4 years. Breach of contract: 4 to 6 years. Specific contracts like gym memberships may have their own deadlines spelled out in the contract." },
   ],
 
   schemaFaqIndices: [0, 1, 2],
