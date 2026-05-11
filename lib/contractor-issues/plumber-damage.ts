@@ -17,7 +17,7 @@ export const plumberDamage: ContractorIssue = {
     h1: { pre: "Can I sue a plumber for ", em: "damage", post: "?" },
     leadStrong: "Yes. Plumbers are licensed and insured in nearly every state.",
     leadBody:
-      " A plumber whose work caused water damage (failed solder, missed leak, overtightened fitting, wrong-pressure setting) is liable under negligence and breach of contract. Plumbers carry general liability insurance and surety bonds because most states require them. The fastest recovery path is the contractor's GL insurance, then the state plumbing board, then small claims.",
+      " A plumber whose work caused water damage (failed solder, missed leak, overtightened fitting, wrong pressure setting) is on the hook — under both negligence law and breach of contract. Plumbers carry general liability (GL) insurance and bonds (insurance the state makes them carry to cover customer claims) because most states require it. Your fastest path: claim against the plumber's GL insurance first, then file a complaint with the state plumbing board, then small claims if needed.",
   },
 
   counter: {

@@ -46,7 +46,7 @@ export const depositAndDisappearing: ContractorIssue = {
         num: "02",
         title: "Started, then walked off",
         body:
-          "Some demolition or rough work was done, then the contractor stopped responding. You owe the value of any actual work completed (judges call this 'quantum meruit'). They owe back the rest of the deposit and any cost difference to finish.",
+          "Some demolition or rough work was done, then the contractor stopped responding. You owe them the fair value of whatever they actually completed (the legal term is 'quantum meruit'). They owe you back the rest of the deposit plus any extra cost to finish with a new contractor.",
       },
       {
         num: "03",
@@ -62,9 +62,9 @@ export const depositAndDisappearing: ContractorIssue = {
       },
     ],
     note: {
-      strongIntro: "Three pressure points before you file.",
+      strongIntro: "Three pressure points to try before filing.",
       rest:
-        " (1) State contractor licensing board complaint (CSLB in California, DBPR in Florida) often triggers an investigation that ends with the contractor refunding to keep their license. (2) Bond claim against the contractor's surety bond, if licensed. (3) Better Business Bureau complaint as added pressure. Then small claims if needed.",
+        " (1) A complaint to your state's contractor licensing board (California's is the CSLB, Florida's is the DBPR) often triggers an investigation that ends with the contractor refunding you to keep their license. (2) A claim against the contractor's bond, if they were licensed — the bond is insurance the state requires them to carry to cover customer claims. (3) A BBB complaint as extra pressure. Then small claims if those don't work.",
     },
   },
 
@@ -77,7 +77,7 @@ export const depositAndDisappearing: ContractorIssue = {
         tag: "Layer 1",
         title: "Deposit paid",
         body:
-          "The full deposit, minus the value of any work actually completed (judges call this quantum meruit). If no work was done, you get the entire deposit back.",
+          "The full deposit, minus the fair value of any work that actually got done. If no work was done at all, you get the entire deposit back.",
         amount: "$5,000",
       },
       {
@@ -90,9 +90,9 @@ export const depositAndDisappearing: ContractorIssue = {
       },
       {
         tag: "Layer 3",
-        title: "Filing fees, statutory damages, interest",
+        title: "Filing fees, penalty damages, interest",
         body:
-          "Filing fee, service-of-process cost, and pre-judgment interest at your state's legal rate. If the contractor was unlicensed, many states authorize recovery of all amounts paid plus statutory penalties.",
+          "Filing fee, service-of-process cost, and pre-judgment interest at your state's legal rate. If the contractor was unlicensed, many states let you recover every dollar paid plus extra penalty damages on top.",
         amount: "+ $300",
       },
     ],

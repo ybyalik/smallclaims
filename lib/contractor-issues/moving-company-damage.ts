@@ -17,7 +17,7 @@ export const movingCompanyDamage: ContractorIssue = {
     h1: { pre: "Can I sue a moving company for ", em: "damage", post: "?" },
     leadStrong: "Yes, but the rules depend on whether the move was local or interstate.",
     leadBody:
-      " Interstate moves are governed by federal law (the Carmack Amendment, 49 U.S.C. § 14706). Local (intrastate) moves are governed by state law. Both let you recover damage costs, but the calculation differs based on which 'valuation method' you chose at booking. The default is 'released-value' protection at 60 cents per pound. Full-value protection (paid extra) covers replacement cost.",
+      " Moves across state lines are governed by federal law (called the Carmack Amendment). Moves within one state are governed by state law. Both let you recover for damage, but the amount depends on which coverage level you chose when booking. The default — 'released-value' protection — pays just 60 cents per pound, regardless of what the item is actually worth. The 'full-value' option (paid extra) pays replacement cost. Most movers don't explain this clearly at booking.",
   },
 
   counter: {
@@ -52,7 +52,7 @@ export const movingCompanyDamage: ContractorIssue = {
         num: "03",
         title: "Items damaged because of poor packing (the mover packed them)",
         body:
-          "If the moving company packed your items, they are responsible for damage caused by inadequate packing. If you packed (PBO, 'packed by owner'), the mover's liability is reduced, sometimes to zero.",
+          "If the moving company packed your items, they're responsible for damage caused by inadequate packing. If you packed them yourself (the industry calls this 'packed by owner' or PBO), the mover's responsibility drops sharply — sometimes to zero.",
       },
       {
         num: "04",
@@ -62,9 +62,9 @@ export const movingCompanyDamage: ContractorIssue = {
       },
     ],
     note: {
-      strongIntro: "Released-value vs. full-value protection.",
+      strongIntro: "Released-value vs. full-value coverage.",
       rest:
-        " The default for federal interstate moves is released-value protection: 60 cents per pound, regardless of value. A 50-pound TV (worth $800) is covered for $30 under released value. Full-value protection (paid extra at booking) pays replacement cost. Always confirm in writing which valuation you chose.",
+        " The default for interstate moves is 'released-value' coverage — 60 cents per pound, regardless of what the item is worth. So a 50-pound TV (worth $800) would be covered for $30 under that default. Full-value coverage (paid extra at booking) pays replacement cost. Always check in writing which option you actually chose.",
     },
   },
 

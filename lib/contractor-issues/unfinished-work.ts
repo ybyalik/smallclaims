@@ -40,13 +40,13 @@ export const unfinishedWork: ContractorIssue = {
         num: "01",
         title: "Stopped responding mid-job",
         body:
-          "The most common pattern. Some demolition or rough-in was done, then the contractor stopped showing up and stopped returning calls. This is breach of contract. You owe the value of work actually completed (quantum meruit). They owe back the rest, plus the cost-to-finish difference.",
+          "The most common pattern. Some demolition or rough-in was done, then the contractor stopped showing up and stopped returning calls. That's a breach of contract. You owe them the fair value of what they actually completed. They owe you back the rest, plus the extra cost to find someone else to finish.",
       },
       {
         num: "02",
         title: "Missed deadlines without good cause",
         body:
-          "Time-of-the-essence clauses make missed deadlines a material breach. Even without that clause, weeks of missed dates with no permits, materials, or workers on site lets you treat the contract as breached and bring in someone new.",
+          "If your contract makes the deadline a key term (a 'time of the essence' clause), missing it is a serious breach by itself. Even without that clause, weeks of missed dates with no permits pulled, no materials delivered, and no workers on site lets you treat the contract as broken and hire someone new.",
       },
       {
         num: "03",
@@ -82,9 +82,9 @@ export const unfinishedWork: ContractorIssue = {
       },
       {
         tag: "Layer 2",
-        title: "Unearned portion of deposit and progress payments",
+        title: "The deposit money they didn't earn",
         body:
-          "Money you paid that was not earned by completed work. Calculate the value of work actually done (quantum meruit) and subtract from total paid. The difference is recoverable.",
+          "Whatever you paid them that wasn't actually used to do work. Calculate the fair value of what they actually completed and subtract from what you paid them. The gap is recoverable.",
         amount: "+ $1,400",
         accent: true,
       },

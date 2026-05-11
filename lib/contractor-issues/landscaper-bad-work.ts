@@ -17,7 +17,7 @@ export const landscaperBadWork: ContractorIssue = {
     h1: { pre: "Can I sue a landscaper for ", em: "bad work", post: "?" },
     leadStrong: "Yes. Plant warranties and workmanship standards apply.",
     leadBody:
-      " A landscaper whose work resulted in dead plants, killed lawns, broken irrigation, or damaged hardscape is liable under contract and the implied warranty of workmanlike construction. Most landscapers offer plant warranties (typically 30 to 90 days). Plus contractor-licensing rules apply once jobs exceed your state's threshold. Small claims is well-suited because most landscape disputes fit the cap.",
+      " A landscaper whose work led to dead plants, killed lawns, broken irrigation, or damaged hardscape is on the hook — both under your contract and under the law's requirement that the work be done to professional trade standards. Most landscapers offer plant warranties (typically 30 to 90 days). Plus, contractor licensing rules apply once the job is bigger than your state's threshold. Small claims fits because most landscape disputes are within the cap.",
   },
 
   counter: {

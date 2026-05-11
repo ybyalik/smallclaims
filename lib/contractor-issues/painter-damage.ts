@@ -17,7 +17,7 @@ export const painterDamage: ContractorIssue = {
     h1: { pre: "Can I sue a painter for ", em: "damage", post: "?" },
     leadStrong: "Yes. Painters are responsible for protecting adjacent surfaces.",
     leadBody:
-      " A painter who skipped drop cloths, masking, or proper containment and damaged your floors, furniture, fixtures, or landscaping is liable under negligence. The damage is usually minor compared to the work itself, but small claims is well-suited to these cases. Painters carry general liability insurance and (in many states) bonds. The carrier and the contractor licensing board are your fastest pressure points.",
+      " A painter who skipped drop cloths, masking, or proper containment and damaged your floors, furniture, fixtures, or landscaping is on the hook under negligence law. The damage is usually small compared to the paint job itself, but small claims fits perfectly. Painters carry general liability (GL) insurance and (in many states) bonds — both of which can pay out without going to court. The insurance carrier and the contractor licensing board are your fastest pressure points.",
   },
 
   counter: {

@@ -17,7 +17,7 @@ export const handymanBadWork: ContractorIssue = {
     h1: { pre: "Can I sue a handyman for ", em: "bad work", post: "?" },
     leadStrong: "Yes, and most handymen are unlicensed, which often helps your case.",
     leadBody:
-      " Most states require licenses for jobs above a dollar threshold (California: $500, Florida: many trades). Handymen often work below that threshold or work without a license at all. That sometimes lets you recover every dollar paid, regardless of work quality. Below the threshold, the implied warranty of workmanlike construction still applies and you can recover the cost to redo defective work.",
+      " Most states require licenses for jobs above a dollar threshold (California: $500, Florida: many specific trades). Handymen often work below the threshold or with no license at all. If your job needed a license and they didn't have one, many states let you recover every dollar you paid them — regardless of work quality. Even on jobs below the threshold, the law still requires them to do the work to a professional standard, so you can recover the cost to redo defective work.",
   },
 
   counter: {
@@ -46,7 +46,7 @@ export const handymanBadWork: ContractorIssue = {
         num: "02",
         title: "Defective work below the threshold",
         body:
-          "Even on small jobs that did not require a license, the implied warranty of workmanlike construction still applies. The work has to meet the standard of competent practice in the trade. Defective work lets you recover the cost to redo.",
+          "Even on small jobs that didn't legally require a license, the law still requires the work to be done to professional trade standards. If the work is defective, you can recover the cost to redo it.",
       },
       {
         num: "03",
@@ -58,7 +58,7 @@ export const handymanBadWork: ContractorIssue = {
         num: "04",
         title: "Took a deposit without doing the work",
         body:
-          "Common with handymen working below the licensing threshold. You paid for materials or a deposit, they took the money and did not deliver. Conversion or theft, plus breach of contract. State consumer-protection laws often add multipliers.",
+          "Common with handymen working below the licensing threshold. You paid for materials or a deposit, they took the money and never showed up. That's theft on top of breach of contract — your state's consumer-protection law may also let you ask for 2x or 3x damages.",
       },
     ],
     note: {

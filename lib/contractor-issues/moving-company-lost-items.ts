@@ -17,7 +17,7 @@ export const movingCompanyLostItems: ContractorIssue = {
     h1: { pre: "Can I sue a moving company for ", em: "lost items", post: "?" },
     leadStrong: "Yes. The inventory list is your central evidence.",
     leadBody:
-      " A moving company that did not deliver items they accepted at origin is liable for loss. The recoverable amount depends on your valuation election on the bill of lading: released-value (60 cents per pound) or full-value (replacement cost). The inventory list at origin establishes what they took. Photos of high-value items, declared-value lists, and the BOL are your evidence. Federal interstate moves are governed by the Carmack Amendment.",
+      " A moving company that took items at the start but didn't deliver them is on the hook for the loss. What you can recover depends on which coverage level you picked on the shipping document (the 'bill of lading'): the default 'released-value' coverage pays just 60 cents per pound, while 'full-value' (paid extra) pays replacement cost. The pickup inventory list — signed by both you and the driver — is what proves they took it. Federal law (the Carmack Amendment) governs across-state moves.",
   },
 
   counter: {
@@ -52,13 +52,13 @@ export const movingCompanyLostItems: ContractorIssue = {
         num: "03",
         title: "High-value items lost",
         body:
-          "Federal regulations let carriers limit liability on items over $100 per pound (jewelry, art, electronics) unless declared in writing on a high-value inventory. If you declared, full-value applies. If you did not, the carrier is responsible only up to your overall valuation method.",
+          "Federal rules let movers cap their responsibility on items worth more than $100 per pound (jewelry, art, electronics) — unless you specifically declared them on a high-value inventory in writing. If you declared, full-value protection applies. If you didn't, you're stuck with your overall coverage level (often just 60 cents per pound).",
       },
       {
         num: "04",
-        title: "Items damaged so badly they are unusable (constructive total loss)",
+        title: "Items damaged so badly they're unusable",
         body:
-          "When repair cost exceeds replacement cost, the carrier owes replacement instead of repair. This is constructive total loss. Photos of the damage plus replacement quotes establish the basis.",
+          "When repair would cost more than replacement, the mover owes you replacement value instead. The law calls this a 'constructive total loss.' Photos of the damage plus replacement quotes prove the case.",
       },
     ],
     note: {

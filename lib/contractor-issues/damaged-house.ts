@@ -17,7 +17,7 @@ export const damagedHouse: ContractorIssue = {
     h1: { pre: "Can I sue a contractor for ", em: "damaging my house", post: "?" },
     leadStrong: "Yes. Contractors are responsible for damage their work causes.",
     leadBody:
-      " A contractor whose work damaged your home (broken pipe causing water damage, electrical fire from improper wiring, structural cracks from rough framing) is liable under negligence and breach of contract. The first call is to the contractor's general liability insurance carrier, which covers exactly this kind of damage. The second is your state's contractor licensing board. Small claims is the third option if neither produces a fast resolution.",
+      " A contractor whose work damaged your home (broken pipe causing water damage, electrical fire from improper wiring, structural cracks from rough framing) is on the hook for it — under both negligence law and breach of contract. The first call is to the contractor's general liability (GL) insurance — that's the policy specifically meant to cover this kind of damage. The second is your state's contractor licensing board. Small claims is the third option if neither produces a fast resolution.",
   },
 
   counter: {
@@ -52,7 +52,7 @@ export const damagedHouse: ContractorIssue = {
         num: "03",
         title: "Structural damage during work",
         body:
-          "Cracked foundations from heavy equipment, broken floor joists from cutting load-bearing material, walls out of plumb after framing work. These cases often involve homeowners insurance subrogation against the contractor's GL policy.",
+          "Cracked foundations from heavy equipment, broken floor joists from cutting load-bearing material, walls out of plumb after framing. In these cases your homeowners insurance often pays you first, then chases the contractor's GL policy themselves to get their money back.",
       },
       {
         num: "04",

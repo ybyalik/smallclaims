@@ -15,9 +15,9 @@ export const poorWorkmanship: ContractorIssue = {
   hero: {
     eyebrowSuffix: "Poor workmanship",
     h1: { pre: "Can I sue a contractor for ", em: "poor workmanship", post: "?" },
-    leadStrong: "Yes. Defective work breaks an implied warranty in nearly every state.",
+    leadStrong: "Yes. Contractors are legally required to do quality work — even if the contract doesn't say so.",
     leadBody:
-      " The 'implied warranty of workmanlike construction' is a rule that a contractor must do the work to the standard of the trade, even if the written contract says nothing about quality. If the work is defective, you can recover the cost to redo it. Photos, an industry-standards reference, and a written quote from a replacement contractor are usually enough. File a complaint with your state's licensing board first; many cases settle before court.",
+      " In nearly every state, the law says a contractor has to do the job to the standard of the trade — that's the 'implied warranty of workmanlike construction.' Even if the written contract says nothing about quality, that requirement is automatically baked in. If the work is defective, you can recover the cost to redo it. Photos, an industry-standards reference, and a written quote from a replacement contractor are usually enough. File a complaint with your state's licensing board first — many cases settle before court.",
   },
 
   counter: {
@@ -50,9 +50,9 @@ export const poorWorkmanship: ContractorIssue = {
       },
       {
         num: "03",
-        title: "Manufacturer-specification violations",
+        title: "Violating the manufacturer's installation specs",
         body:
-          "Most building products (windows, flashing, roofing, paint) come with installation specs. Skipping or violating them voids manufacturer warranties and is per-se defective workmanship. Bring the product spec sheet plus photos of the violation.",
+          "Most building products (windows, flashing, roofing, paint) come with installation instructions. Skipping or violating them voids the manufacturer's warranty and counts as automatically defective work. Bring the product spec sheet plus photos of the violation.",
       },
       {
         num: "04",
