@@ -17,7 +17,7 @@ export const propertyDamage: NeighborIssue = {
     h1: { pre: "Can I sue my neighbor for ", em: "property damage", post: "?" },
     leadStrong: "Yes. Their homeowners insurance is usually the primary recovery.",
     leadBody:
-      " A neighbor whose actions damaged your property is liable under negligence and trespass. The fastest recovery path is their homeowners liability insurance (every standard policy has it). The state DOI complaint process and small-claims court are backups when insurance fails. Most cases settle once the carrier sees a written demand and a repair estimate.",
+      " A neighbor whose actions damaged your property is on the hook under negligence law (or trespass law, if they came onto your property). Your fastest path is their homeowners liability insurance — every standard policy has it. Filing a complaint with your state Department of Insurance, or filing in small-claims court, are backups when insurance won't pay. Most cases settle once the insurance carrier sees a written demand and a repair estimate.",
   },
 
   counter: {
@@ -42,8 +42,8 @@ export const propertyDamage: NeighborIssue = {
       },
       {
         num: "02",
-        title: "Trespass to property",
-        body: "Damage from going onto your property without permission, or from physically intruding (broken-off pieces of their fence ending up on your lawn, debris from their construction landing on your patio). Trespass is its own claim.",
+        title: "Damage from coming onto your property",
+        body: "Damage from going onto your property without permission, or from their stuff ending up on your property — broken-off pieces of their fence on your lawn, debris from their construction landing on your patio. The law calls this 'trespass' and treats it as its own separate claim.",
       },
       {
         num: "03",
@@ -53,7 +53,7 @@ export const propertyDamage: NeighborIssue = {
       {
         num: "04",
         title: "Pet-caused damage",
-        body: "Their dog dug up your lawn, scratched your door, killed your plants. Most state laws make pet owners strictly liable for property damage their animals cause, regardless of fault.",
+        body: "Their dog dug up your lawn, scratched your door, killed your plants. Most state laws automatically hold pet owners responsible for property damage their animals cause — you don't have to prove the owner was careless.",
       },
     ],
     note: {

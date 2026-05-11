@@ -17,7 +17,7 @@ export const noise: NeighborIssue = {
     h1: { pre: "Can I sue my neighbor for ", em: "noise", post: "?" },
     leadStrong: "Yes, when the noise is unreasonable and persistent.",
     leadBody:
-      " Excessive noise is a private nuisance: an interference with your reasonable use and enjoyment of your property. Most cities have noise ordinances setting decibel limits and quiet hours; most states recognize private nuisance as a cause of action even without a specific city violation. Recoverable damages include the cost to soundproof, lost rental income (if you rent the property), medical bills from sleep loss, and (in extreme cases) emotional distress. Police complaints and HOA action are usually faster than court.",
+      " Excessive noise is what the law calls a 'private nuisance' — interference with your ability to use and enjoy your property. Most cities have noise ordinances setting decibel limits and quiet hours; most states also recognize this as a separate legal claim even without a specific city violation. You can recover the cost to soundproof, lost rental income (if you rent the property out), medical bills from sleep loss, and — in extreme cases — emotional distress. Police complaints and HOA action are usually faster than court.",
   },
 
   counter: {

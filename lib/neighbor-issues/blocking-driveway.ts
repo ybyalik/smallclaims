@@ -15,9 +15,9 @@ export const blockingDriveway: NeighborIssue = {
   hero: {
     eyebrowSuffix: "Blocking driveway",
     h1: { pre: "Can I sue my neighbor for ", em: "blocking my driveway", post: "?" },
-    leadStrong: "Yes. Trespass plus interference with easement, plus you can usually tow.",
+    leadStrong: "Yes. It's trespass on your property — and you can usually have the car towed.",
     leadBody:
-      " A neighbor blocking your driveway commits trespass against your property and (if there's an easement) interferes with your easement rights. The fastest remedy is parking enforcement: most cities will tow vehicles blocking residential driveways at no cost to you. For documented patterns of blocking, small claims awards damages including towing costs, lost wages from missed work, and (in extreme cases) emotional distress.",
+      " A neighbor blocking your driveway commits trespass against your property. If there's an easement (a shared driveway you both have rights to use), they're also interfering with your right to use it. Your fastest fix is parking enforcement: most cities will tow vehicles blocking residential driveways at no cost to you. For documented patterns of blocking, small claims gets you damages — towing costs, lost wages from missed work, and (in extreme cases) emotional distress.",
   },
 
   counter: {

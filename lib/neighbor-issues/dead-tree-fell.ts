@@ -17,7 +17,7 @@ export const deadTreeFell: NeighborIssue = {
     h1: { pre: "Can I sue my neighbor if his ", em: "dead tree fell on my house", post: "?" },
     leadStrong: "Usually yes — if the tree was visibly dead or dying before it fell.",
     leadBody:
-      " Most states use the 'known dangerous condition' rule: a property owner is liable for damage from a tree if they knew (or reasonably should have known) the tree was dead, diseased, or hazardous before it fell. A healthy tree felled by a freak storm is usually 'act of God' and not actionable. A visibly dead tree the neighbor ignored for months is negligence. The neighbor's homeowners insurance is the primary recovery; small claims is the backup.",
+      " Most states use a simple rule: the property owner is on the hook for tree damage if they knew (or reasonably should have known) the tree was dead, diseased, or dangerous before it fell. A healthy tree taken down by a freak storm is usually treated as an 'act of God' that no one can sue over. A visibly dead tree the neighbor ignored for months is negligence. Their homeowners insurance is the primary way to get paid; small claims is the backup if insurance refuses.",
   },
 
   counter: {
@@ -36,7 +36,7 @@ export const deadTreeFell: NeighborIssue = {
     lede: "Four conditions establish liability. The dead/dying state plus the neighbor's knowledge are the keys.",
     cards: [
       { num: "01", title: "Tree was visibly dead or dying", body: "Bark falling off, no leaves in growing season, large dead branches, fungus or rot at the base. A licensed arborist can document the condition; many homeowners' phones contain pre-fall photos." },
-      { num: "02", title: "Neighbor knew or should have known", body: "You complained in writing. The HOA cited the tree. Multiple neighbors raised concerns. The dead state was visible from the street. Constructive notice (should have known) is enough in most states." },
+      { num: "02", title: "Neighbor knew or should have known", body: "You complained in writing. The HOA cited the tree. Multiple neighbors raised concerns. The dead state was visible from the street. In most states, you don't need proof they actually knew — being so obvious that any reasonable person would have noticed is enough." },
       { num: "03", title: "Neighbor failed to act in reasonable time", body: "Most states give a property owner reasonable time to remove a known hazardous tree. Months without action after notice meets the threshold. Days might not." },
       { num: "04", title: "The tree caused the damage", body: "Photos showing the fallen tree on your property. Contractor's report tracing the damage to the tree. Most cases are obvious; rare cases involve secondary damage (water entry through tree-caused roof breach)." },
     ],

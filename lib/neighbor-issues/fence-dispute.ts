@@ -15,9 +15,9 @@ export const fenceDispute: NeighborIssue = {
   hero: {
     eyebrowSuffix: "Fence dispute",
     h1: { pre: "Can I sue my neighbor over a ", em: "fence dispute", post: "?" },
-    leadStrong: "Yes. State partition fence laws plus spite fence statutes both apply.",
+    leadStrong: "Yes. Both shared-fence cost laws and spite-fence laws apply.",
     leadBody:
-      " Boundary fences sit on the property line and have shared ownership in most states. Partition fence statutes (CA Civ. Code § 841 and similar) require both owners to share routine maintenance. Spite fence laws (CA Civ. Code § 841.4 and similar) prohibit excessive fences built primarily to annoy. Damage caused by one owner's negligence is recoverable from that owner. The state DOI complaint and small claims are usually fast paths.",
+      " A fence on the property line is jointly owned in most states. State laws (California's is Civil Code § 841 and most states have similar ones) require both neighbors to share routine maintenance costs. Separate 'spite fence' laws (California's is § 841.4) ban fences built mostly to annoy you. If your neighbor's negligence damaged the fence, you can recover from them. Filing with your state Department of Insurance or in small claims are usually the fastest paths.",
   },
 
   counter: {
@@ -35,7 +35,7 @@ export const fenceDispute: NeighborIssue = {
     h2: { pre: "What counts as a ", em: "fence dispute", post: "?" },
     lede: "Four common patterns. Each has its own legal framework.",
     cards: [
-      { num: "01", title: "Shared boundary fence repair costs", body: "Most states require both owners of a boundary fence to share routine maintenance. If you replaced the fence and the neighbor refuses to pay their share, that is a recoverable claim. Notice and reasonable construction are usually required." },
+      { num: "01", title: "Shared boundary fence repair costs", body: "Most states require both neighbors who share a boundary fence to split routine maintenance costs. If you replaced the fence and your neighbor refuses to pay their share, you can sue for it. Just be sure you gave them proper notice ahead of time and that the construction was reasonable — those are usually required." },
       { num: "02", title: "Spite fence (excessive height or design)", body: "Most states cap fence height at 6 to 8 feet (varies by zoning). A fence built primarily to annoy you (height beyond zoning, ugly side facing you, blocking your view) violates spite fence statutes. Damages and removal orders are available." },
       { num: "03", title: "Damage from neighbor's negligence", body: "Neighbor's tree fell on the fence, neighbor's vehicle hit the fence, neighbor's children damaged the fence. Negligence claims for the repair cost. The homeowners insurance route applies." },
       { num: "04", title: "Boundary line disagreement", body: "You and your neighbor disagree on where the property line is. A licensed surveyor establishes the line. If a fence was built across the line, the encroaching portion is actionable." },

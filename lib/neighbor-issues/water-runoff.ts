@@ -17,7 +17,7 @@ export const waterRunoff: NeighborIssue = {
     h1: { pre: "Can I sue my neighbor for ", em: "water runoff flooding my yard", post: "?" },
     leadStrong: "Yes, but the rules vary widely by state.",
     leadBody:
-      " Most states use one of three drainage rules: 'reasonable use' (most common — neighbor is liable for unreasonable diversion), 'civil law' (each property must accept natural flow but cannot block or alter it), or 'common enemy' (each landowner is free to defend against water as they choose). Whichever rule applies, regrading your land to dump water on your neighbor's lawn or installing drainage that floods them is usually actionable. Documentation with photos plus an engineer's report on the water source is the spine.",
+      " States use one of three drainage rules — 'reasonable use' (most common: the neighbor is on the hook if they unreasonably diverted water onto your property), 'civil law' (about 20 states: each property has to accept the natural flow but can't block or alter it), or 'common enemy' (a few states: each landowner is free to defend against water as they choose). Whichever rule applies, regrading your land to dump water on your neighbor's, or installing drainage that floods them, is usually something you can sue over. Photos plus an engineer's report identifying the water source are the spine of your case.",
   },
 
   counter: {
@@ -40,7 +40,7 @@ export const waterRunoff: NeighborIssue = {
       { num: "03", title: "Failed gutters or drainage system", body: "Neighbor's gutters or downspouts dump water onto your property instead of into proper drainage. Failure to maintain creates liability. Photos showing the discharge angle are decisive." },
       { num: "04", title: "Septic, pool, or pond overflow", body: "Septic system overflow, pool drainage, or fountain leaks that flood your property. Recovery includes clean-up costs and any health hazards (sewage cases especially)." },
     ],
-    note: { strongIntro: "Know your state's rule.", rest: " Reasonable use (most states): liability for unreasonable diversion. Civil law (about 20 states): natural flow must be preserved; any change is actionable. Common enemy (a few states): each owner can defend, but creating new diversion is still actionable. Look up your state's rule before filing." },
+    note: { strongIntro: "Know your state's drainage rule.", rest: " 'Reasonable use' (most states): you can sue if your neighbor unreasonably diverted water. 'Civil law' (about 20 states): the natural flow has to be preserved, so any change at all opens them up to a lawsuit. 'Common enemy' (a few states): each owner can defend against water, but creating brand-new diversions is still something you can sue over. Look up your state's rule before filing." },
   },
 
   claim: {

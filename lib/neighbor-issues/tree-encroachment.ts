@@ -17,7 +17,7 @@ export const treeEncroachment: NeighborIssue = {
     h1: { pre: "Can I sue my neighbor for ", em: "tree damage", post: "?" },
     leadStrong: "Yes, when branches or roots actively damage your property.",
     leadBody:
-      " Most states follow some version of the 'Hawaii rule' (you can sue for actual damage caused by encroaching branches or roots) or the 'Massachusetts rule' (self-help only — you trim what crosses the line). Either way, if the encroaching tree caused damage to your home, foundation, plumbing, or fence, you have a claim. Damage to a sewer line from invasive roots is the most common case. Self-help (trimming) is allowed in every state up to the property line.",
+      " States follow one of two rules. In most states (the 'Hawaii rule'), you can sue for actual damage caused by branches or roots crossing the line. In a few states (the 'Massachusetts rule'), you can't sue — you can only trim what crosses onto your property. Either way, if the encroaching tree damaged your home, foundation, plumbing, or fence, you have a case. Root damage to a sewer line is the most common version. And in every state, you're allowed to trim branches and roots up to the property line yourself.",
   },
 
   counter: {

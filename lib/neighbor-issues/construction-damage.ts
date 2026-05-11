@@ -17,7 +17,7 @@ export const constructionDamage: NeighborIssue = {
     h1: { pre: "Can I sue my neighbor for ", em: "construction damage", post: "?" },
     leadStrong: "Yes. Both the neighbor and the contractor are usually liable.",
     leadBody:
-      " Construction next door that damaged your property (foundation cracks from vibration, dust damage, broken fence, water intrusion from changed drainage) creates liability under negligence and (in some cases) strict liability for ultrahazardous activity. The contractor's general liability insurance is usually the primary recovery path, but the neighbor as the property owner is also liable. Document with photos before, during, and after the construction.",
+      " Construction next door that damaged your property — foundation cracks from vibration, dust damage, broken fence, water seeping in from changed drainage — puts the contractor on the hook under negligence law. For especially dangerous activities (like pile-driving or blasting), the law makes them automatically responsible even if they weren't careless. The contractor's general liability (GL) insurance is usually the main way to get paid, but the neighbor (as the property owner) is also responsible. Document with photos before, during, and after the construction.",
   },
 
   counter: {
@@ -35,7 +35,7 @@ export const constructionDamage: NeighborIssue = {
     h2: { pre: "What kinds of ", em: "construction damage", post: " can you sue for?" },
     lede: "Four common patterns. Each is recoverable under negligence; some under strict liability.",
     cards: [
-      { num: "01", title: "Foundation or structural damage from vibration", body: "Heavy machinery (jackhammers, pile drivers) can crack foundations and damage drywall on adjacent properties. Strict liability often applies; you do not have to prove negligence." },
+      { num: "01", title: "Foundation or structural damage from vibration", body: "Heavy machinery (jackhammers, pile drivers) can crack foundations and damage drywall on the property next door. The law automatically holds the contractor responsible for this kind of dangerous activity — you don't need to prove they were careless." },
       { num: "02", title: "Dust and debris damage", body: "Construction dust damages siding, paint, HVAC systems, vehicles, gardens. Failure to use proper containment is negligence. Quote from a cleaning or repair contractor establishes damages." },
       { num: "03", title: "Drainage changes from grading", body: "Construction often regrades the lot, changing how water flows. New flooding on your property is actionable under state drainage rules (see water-runoff page). The contractor's plans plus engineer's report establish causation." },
       { num: "04", title: "Direct damage to your property", body: "Equipment hit your fence, contractor encroached on your lawn, materials stored on your property without permission. Trespass plus negligence. Direct damages are full repair cost." },

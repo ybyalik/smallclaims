@@ -15,9 +15,9 @@ export const smokeAndOdors: NeighborIssue = {
   hero: {
     eyebrowSuffix: "Smoke and odors",
     h1: { pre: "Can I sue my neighbor for ", em: "smoke or odors", post: "?" },
-    leadStrong: "Yes. Persistent smoke or odors are a private nuisance.",
+    leadStrong: "Yes. Persistent smoke or odors are what the law calls a 'nuisance.'",
     leadBody:
-      " Cigar smoke, marijuana, BBQ, gasoline storage, paint fumes, garbage smells. Persistent or excessive odors that interfere with your reasonable use of your property are private nuisance under state law. Several cities have specific smoke ordinances (smoke-free multiunit housing). Recovery includes the cost to mitigate (air purifiers, sealed windows), medical bills (asthma, allergies), and (in extreme cases) emotional distress.",
+      " Cigar smoke, marijuana, BBQ, gasoline storage, paint fumes, garbage smells. Persistent or excessive odors that interfere with your ability to use your property are a legal nuisance you can sue over. Several cities also have specific smoke ordinances (especially for multiunit housing). You can recover the cost to mitigate (air purifiers, sealed windows), medical bills (asthma, allergies), and — in extreme cases — emotional distress.",
   },
 
   counter: {

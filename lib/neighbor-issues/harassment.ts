@@ -15,9 +15,9 @@ export const harassment: NeighborIssue = {
   hero: {
     eyebrowSuffix: "Harassment",
     h1: { pre: "Can I sue my neighbor for ", em: "harassment", post: "?" },
-    leadStrong: "Yes. Civil harassment plus restraining orders are both available.",
+    leadStrong: "Yes. You can both get a restraining order and sue for damages.",
     leadBody:
-      " Repeated targeted conduct (threats, photographing, following, repeated trespass, intimidation) is civil harassment under most state laws. The fastest tool is a civil harassment restraining order (CHRO) from the local court — often free and granted in 7 to 21 days. Damages cases for emotional distress, therapy bills, and security costs go to small claims. Police reports plus a documented log of incidents are the spine of every harassment case.",
+      " Repeated targeted conduct — threats, photographing you, following you, repeated trespass, intimidation — is harassment under most state laws. Your fastest tool is a civil harassment restraining order from the local court. They're often free and granted in 7 to 21 days. Then small claims is where you sue for the damages (therapy bills, security costs, emotional distress). Police reports plus a dated log of every incident are the backbone of any harassment case.",
   },
 
   counter: {
@@ -49,7 +49,7 @@ export const harassment: NeighborIssue = {
     layers: [
       { tag: "Layer 1", title: "Therapy and medical bills", body: "Therapy, prescriptions, urgent-care visits tied to harassment-induced anxiety. Provider notes connecting treatment to the harassment timeline.", amount: "$2,200" },
       { tag: "Layer 2", title: "Security upgrade", body: "Cameras, motion-activated lights, replaced locks, fence reinforcement. Quote from a security company. The cost to make your home defensible against the harasser.", amount: "+ $3,000", accent: true },
-      { tag: "Layer 3", title: "Filing fees, IIED in extreme cases, interest", body: "Filing fee, service-of-process cost. Intentional infliction of emotional distress damages in cases of extreme conduct. Pre-judgment interest at your state's legal rate.", amount: "+ $300" },
+      { tag: "Layer 3", title: "Filing fees, emotional distress damages, interest", body: "Filing fee, service-of-process cost. In extreme cases (truly outrageous conduct), emotional-distress damages on top. Pre-judgment interest at your state's legal rate.", amount: "+ $300" },
     ],
     total: { label: "Sample total within small-claims cap", body: "Therapy bills, security upgrade to make home defensible, plus filing fees.", amount: "$5,500", sublabel: "illustrative · varies by severity" },
   },
