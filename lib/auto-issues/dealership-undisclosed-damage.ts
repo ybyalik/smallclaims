@@ -15,9 +15,9 @@ export const dealershipUndisclosedDamage: AutoIssue = {
   hero: {
     eyebrowSuffix: "Dealer undisclosed damage",
     h1: { pre: "Can I sue a dealership for ", em: "not disclosing damage", post: "?" },
-    leadStrong: "Yes. State disclosure laws and UDAP statutes both apply.",
+    leadStrong: "Yes. Both state disclosure laws and consumer-protection laws cover this.",
     leadBody:
-      " A dealership that failed to disclose accident history, frame damage, flood damage, or salvage status committed fraud. Carfax and AutoCheck reports are the centerpiece evidence. State Used Car Rules require dealers to disclose known issues; UDAP statutes add 2x or 3x damages on top. Small claims fits when diminished value plus the multiplier stays within your state's cap.",
+      " A dealership that failed to disclose accident history, frame damage, flood damage, or salvage status committed fraud. Carfax and AutoCheck reports are the key evidence. State Used Car Rules require dealers to disclose known issues; consumer-protection laws (UDAP) add 2x or 3x damages on top. Small claims fits when the drop in value plus the multiplier stays within your state's cap.",
   },
 
   counter: {
@@ -46,13 +46,13 @@ export const dealershipUndisclosedDamage: AutoIssue = {
         num: "02",
         title: "Flood damage",
         body:
-          "Vehicles damaged by flooding (hurricanes, river floods) often get rebuilt and resold across state lines. Federal NMVTIS and state title-brand laws require disclosure. Flood damage is grounds for total rescission in most cases.",
+          "Vehicles damaged by flooding (hurricanes, river floods) often get rebuilt and resold across state lines. Federal title-history rules and state title-brand laws require disclosure. Flood damage is usually grounds for getting the entire sale undone.",
       },
       {
         num: "03",
         title: "Salvage or rebuilt title",
         body:
-          "Salvage-branded titles must be disclosed under federal and most state laws. Some unscrupulous dealers 'wash' the title across state lines (registering in a state with weaker brand laws) to hide the salvage history. Title washing is fraud regardless.",
+          "Salvage-branded titles must be disclosed under federal and most state laws. Some shady dealers 'wash' the title across state lines — registering in a state with weaker rules to hide the salvage history. Title washing is fraud either way.",
       },
       {
         num: "04",

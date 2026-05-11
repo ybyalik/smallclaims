@@ -17,7 +17,7 @@ export const lemonCar: AutoIssue = {
     h1: { pre: "Can I sue a dealership for selling me a ", em: "lemon", post: "?" },
     leadStrong: "Yes, but the lawsuit is usually against the manufacturer, not the dealer.",
     leadBody:
-      " A 'lemon' is a vehicle with recurring problems the manufacturer cannot fix within a reasonable number of attempts. State lemon laws (every state has one for new cars; many extend to used cars) plus the federal Magnuson-Moss Warranty Act give you the right to a refund or a replacement, plus your attorney fees. Most cases start with BBB Auto Line arbitration before court. Small claims fits when the damages are limited; bigger cases need a lemon-law attorney (most take cases on contingency at no cost to you).",
+      " A 'lemon' is a vehicle with recurring problems the manufacturer can't fix after a reasonable number of attempts. State lemon laws (every state has one for new cars; many also cover used cars) plus the federal warranty law (Magnuson-Moss) give you the right to a refund or a replacement vehicle, plus the manufacturer paying your attorney fees. Most cases start with free BBB Auto Line arbitration before going to court. Small claims fits when the damages are smaller; bigger cases need a lemon-law attorney (most work on contingency — they only get paid if you win, at no cost to you).",
   },
 
   counter: {

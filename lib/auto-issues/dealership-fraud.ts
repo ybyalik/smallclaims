@@ -17,7 +17,7 @@ export const dealershipFraud: AutoIssue = {
     h1: { pre: "Can I sue a car dealership for ", em: "fraud", post: "?" },
     leadStrong: "Yes. State consumer-protection laws often add 2x or 3x damages plus attorney fees.",
     leadBody:
-      " A dealership that lied about a car's condition, mileage, accident history, lien status, or payment terms violated state Unfair and Deceptive Acts and Practices (UDAP) statutes. Most states add 2x or 3x damages plus attorney fees. Federal odometer law (49 USC § 32710) adds $10,000 or 3x the actual damages, whichever is greater. The state DMV and the attorney general's consumer protection office both take complaints free of charge.",
+      " A dealership that lied about a car's condition, mileage, accident history, lien status, or payment terms broke your state's consumer-protection law (often called 'UDAP' — Unfair and Deceptive Acts and Practices). Most states let you ask for 2x or 3x damages plus the dealer paying your attorney fees. Federal odometer law adds $10,000 or 3x your actual damages, whichever is greater. Your state DMV and attorney general's consumer-protection office both take complaints for free.",
   },
 
   counter: {
@@ -44,9 +44,9 @@ export const dealershipFraud: AutoIssue = {
       },
       {
         num: "02",
-        title: "Concealed accident or salvage history",
+        title: "Hidden accident or salvage history",
         body:
-          "Failing to disclose prior accidents, frame damage, flood history, or salvage title. Most states require dealers to disclose if the vehicle was branded as salvage, flood, or rebuilt. The federal AutoBuyersGuide on used-car windows must accurately reflect known issues.",
+          "Failing to disclose prior accidents, frame damage, flood history, or a salvage title. Most states require dealers to disclose if the vehicle was branded as salvage, flood, or rebuilt. The federal 'Buyers Guide' (the sticker on used-car windows at dealerships) has to accurately reflect known issues.",
       },
       {
         num: "03",
@@ -68,9 +68,9 @@ export const dealershipFraud: AutoIssue = {
       },
     ],
     note: {
-      strongIntro: "State UDAP statutes are powerful.",
+      strongIntro: "State consumer-protection laws are powerful here.",
       rest:
-        " Most states' Unfair and Deceptive Acts and Practices laws include 2x or 3x damage multipliers, fee-shifting, and sometimes punitive damages. Federal odometer law adds penalties on top. Always cite the specific statute in your demand letter.",
+        " Most states' UDAP laws include 2x or 3x damage multipliers, force the loser to pay attorney fees, and sometimes allow punitive damages. Federal odometer law adds extra penalties on top. Always cite the specific state law by name in your demand letter.",
     },
   },
 

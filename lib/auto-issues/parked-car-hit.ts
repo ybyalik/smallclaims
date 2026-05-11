@@ -17,7 +17,7 @@ export const parkedCarHit: AutoIssue = {
     h1: { pre: "Can I sue someone for ", em: "hitting my parked car", post: "?" },
     leadStrong: "Yes, but their auto insurance is usually the first stop.",
     leadBody:
-      " A driver who hit your parked car owes you for the damage under negligence. Their auto insurance covers it. Small claims fits when the driver was uninsured, the insurance company rejected the claim, or it was a hit-and-run with a suspect identified (license plate, witness, security camera). You can also recover the diminished value of the vehicle even after repair.",
+      " A driver who hit your parked car owes you for the damage under negligence law. Normally their auto insurance covers it. Small claims fits when the driver was uninsured, their insurance company rejected the claim, or it was a hit-and-run where you can still identify the driver (license plate, witness, security camera). You can also recover the 'diminished value' — the drop in your car's resale value because the accident now shows up on Carfax — even after a perfect repair.",
   },
 
   counter: {
@@ -77,7 +77,7 @@ export const parkedCarHit: AutoIssue = {
         tag: "Layer 1",
         title: "Repair cost or replacement",
         body:
-          "Body shop estimate from a licensed repair facility. If the repair cost exceeds the vehicle's value, the case becomes a 'total loss' and you recover the actual cash value (ACV) instead.",
+          "Body shop estimate from a licensed repair facility. If the repair cost is more than the car is worth, the case becomes a 'total loss' and you recover the car's actual cash value instead (what it was worth right before the accident).",
         amount: "$3,200",
       },
       {

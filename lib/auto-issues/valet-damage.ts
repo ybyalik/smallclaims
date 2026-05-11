@@ -15,9 +15,9 @@ export const valetDamage: AutoIssue = {
   hero: {
     eyebrowSuffix: "Valet damage",
     h1: { pre: "Can I sue a valet for ", em: "damaging my car", post: "?" },
-    leadStrong: "Yes, and bailment law presumes the valet was negligent.",
+    leadStrong: "Yes — and the law puts the burden on the valet, not on you.",
     leadBody:
-      " A valet who takes your keys becomes a 'bailee for hire' under common law. When the car comes back damaged, bailment law presumes the valet was negligent; the valet has to prove they were not at fault. Disclaimer signs ('not responsible for damage') are usually unenforceable. Most valet operations carry general liability insurance; the carrier is the typical source of recovery.",
+      " When a valet takes your keys, the law treats them as legally responsible for the car while they have it (the legal term is 'bailee for hire'). When the car comes back damaged, you don't have to prove the valet was careless — they have to prove they weren't. Those 'not responsible for damage' signs they post? Usually unenforceable. Most valet operations carry liability insurance, and that's where the money typically comes from.",
   },
 
   counter: {
@@ -34,7 +34,7 @@ export const valetDamage: AutoIssue = {
   whatCounts: {
     h2: { pre: "What kinds of ", em: "valet damage", post: " can you sue for?" },
     lede:
-      "Four common patterns. Each one is recoverable under bailment law plus state vehicle-storage regulations.",
+      "Four common patterns. Each one is recoverable because of how the law treats people who take temporary custody of your property.",
     cards: [
       {
         num: "01",
@@ -52,19 +52,19 @@ export const valetDamage: AutoIssue = {
         num: "03",
         title: "Damage at the lot",
         body:
-          "Other vehicles backed into your car at the valet lot, weather damage from improper storage, vandalism while in their custody. The valet operation is bailee for the entire time it has your keys.",
+          "Other vehicles backed into your car in the valet lot, weather damage from improper storage, vandalism while in their custody. The valet is responsible for the whole time they have your keys.",
       },
       {
         num: "04",
         title: "Items missing from the vehicle",
         body:
-          "Items left in the car (sunglasses, electronics, golf clubs, tools) missing when retrieved. Most state laws treat valets as bailees for personal items in vehicles too. Recovery is replacement cost.",
+          "Things left in the car (sunglasses, electronics, golf clubs, tools) missing when you get the car back. Most state laws hold the valet responsible for personal items inside the vehicle too. You can recover replacement cost.",
       },
     ],
     note: {
       strongIntro: "Disclaimer signs are usually unenforceable.",
       rest:
-        " Many valet operations post 'Not responsible for damage or items left in vehicle' signs. Most state consumer-protection laws prohibit pre-loss waivers of negligence liability. Courts routinely strike these signs as unenforceable. The bailment relationship cannot be disclaimed.",
+        " Most valet operations post 'Not responsible for damage or items left in vehicle' signs. Most state consumer-protection laws ban companies from disclaiming liability for their own negligence ahead of time. Courts routinely throw out these signs. The valet's legal duty to take care of your car can't be waived.",
     },
   },
 

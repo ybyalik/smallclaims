@@ -15,9 +15,9 @@ export const towingDamage: AutoIssue = {
   hero: {
     eyebrowSuffix: "Towing damage",
     h1: { pre: "Can I sue a towing company for ", em: "damaging my car", post: "?" },
-    leadStrong: "Yes, and bailment law presumes the towing company is at fault.",
+    leadStrong: "Yes — and the law puts the burden on the towing company, not on you.",
     leadBody:
-      " A tow truck operator that picks up your car becomes a 'bailee' under common law. When the vehicle is returned damaged, bailment law presumes the bailee was negligent; the tow company has to prove they were not at fault. State tow regulations also impose specific duties (proper equipment, hookup procedures, reasonable care). Small claims is well-suited because tow damage cases usually fit the cap.",
+      " When a tow truck picks up your car, the towing company becomes legally responsible for it while they have it (the legal term is 'bailee'). When the car comes back damaged, you don't have to prove the tow company was careless — they have to prove they weren't. State tow regulations also impose specific duties (proper equipment, correct hookup procedures, reasonable care). Small claims fits because tow damage cases usually stay within the cap.",
   },
 
   counter: {
@@ -58,13 +58,13 @@ export const towingDamage: AutoIssue = {
         num: "04",
         title: "Items missing from the vehicle",
         body:
-          "Personal items in the car when towed are part of the bailee's responsibility. Tools, electronics, custom audio equipment, golf clubs. Most states treat missing items as conversion plus negligence, both recoverable.",
+          "Personal items in the car when towed are also the tow company's responsibility. Tools, electronics, custom audio equipment, golf clubs. Most states treat missing items as both theft and negligence — both are recoverable.",
       },
     ],
     note: {
-      strongIntro: "Bailment law shifts the burden.",
+      strongIntro: "The law puts the burden on the tow company.",
       rest:
-        " Unlike most negligence cases (where you have to prove the defendant was negligent), bailment law presumes negligence when a bailee returns goods damaged. The tow company has to prove they exercised reasonable care. Document the vehicle's condition before and after with photos.",
+        " Unlike most negligence cases (where you have to prove the defendant was careless), this kind of relationship flips it: the tow company has to prove they took reasonable care, not the other way around. Document the car's condition before and after with photos.",
     },
   },
 

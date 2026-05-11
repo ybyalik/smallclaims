@@ -15,9 +15,9 @@ export const mechanicTookTooLong: AutoIssue = {
   hero: {
     eyebrowSuffix: "Took too long",
     h1: { pre: "Can I sue a mechanic for ", em: "taking too long", post: "?" },
-    leadStrong: "Yes. State auto repair laws and contract law both impose a reasonable-time duty.",
+    leadStrong: "Yes. Mechanics legally have to finish work in a reasonable time.",
     leadBody:
-      " A mechanic who keeps a car for weeks or months without progress is in breach of contract for time. Most state auto repair statutes require shops to keep customers informed of delays. The Uniform Commercial Code (UCC) and common law impose a 'reasonable time' obligation on service contracts. Recoverable damages include rental car costs, lost wages, and (in extreme cases) the diminished value of the car from prolonged storage.",
+      " A mechanic who keeps your car for weeks or months without progress has broken your contract. Most state auto repair laws also require shops to keep customers informed of delays. You can recover rental car costs, lost wages, and (in extreme cases) the drop in your car's value from sitting too long.",
   },
 
   counter: {

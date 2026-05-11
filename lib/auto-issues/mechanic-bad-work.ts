@@ -15,9 +15,9 @@ export const mechanicBadWork: AutoIssue = {
   hero: {
     eyebrowSuffix: "Mechanic bad work",
     h1: { pre: "Can I sue a mechanic for ", em: "bad work", post: "?" },
-    leadStrong: "Yes. Implied warranty of workmanlike service applies in every state.",
+    leadStrong: "Yes. Every state requires mechanics to do work to professional trade standards.",
     leadBody:
-      " A mechanic who failed to fix the problem, caused new damage, or used the wrong parts violated the implied warranty of workmanlike service. Most states also have specific auto repair statutes (CA Bureau of Auto Repair, NY DMV regulations) that give consumers extra protections. The state regulator's complaint process is usually free and faster than court. Small claims fits when documented damages are within the cap.",
+      " A mechanic who didn't fix the problem, caused new damage, or used the wrong parts broke the law's basic requirement that auto repair be done competently. Most states also have specific auto-repair laws (California's Bureau of Auto Repair, New York's DMV rules) that give consumers extra protections. Filing a complaint with the state regulator is usually free and faster than court. Small claims fits when documented damages are within the cap.",
   },
 
   counter: {
@@ -52,13 +52,13 @@ export const mechanicBadWork: AutoIssue = {
         num: "03",
         title: "Used wrong or substandard parts",
         body:
-          "Used aftermarket parts when OEM was specified, used remanufactured parts presented as new, used wrong-spec fluid (transmission fluid, coolant). Most states require disclosure of part type. Misrepresentation is fraud plus warranty violation.",
+          "Used aftermarket parts when you specified OEM, used rebuilt parts presented as new, used the wrong fluid (wrong transmission fluid, wrong coolant). Most states require shops to disclose what parts they used. Misrepresenting the parts is fraud on top of the warranty violation.",
       },
       {
         num: "04",
-        title: "Did unauthorized work",
+        title: "Did work you didn't authorize",
         body:
-          "Performed work you did not approve. Most state auto repair statutes require written estimate before work; charges over the estimate require additional written authorization (CA Bureau of Auto Repair: anything over 10 percent of estimate). Unauthorized work is recoverable.",
+          "Did work without your approval. Most state auto-repair laws require a written estimate before any work; charges that go significantly over the estimate require a new written approval (California: anything more than 10% over). Unauthorized work is recoverable.",
       },
     ],
     note: {
@@ -77,7 +77,7 @@ export const mechanicBadWork: AutoIssue = {
         tag: "Layer 1",
         title: "Refund of the original repair",
         body:
-          "If the work did not fix the problem, the mechanic owes the original payment back. Quantum meruit may give them a small offset for any work that was useful, but only if they can document it.",
+          "If the work didn't fix the problem, the mechanic owes you the original payment back. They might get a small credit for the fair value of any useful work — but only if they can document what they actually did.",
         amount: "$1,800",
       },
       {

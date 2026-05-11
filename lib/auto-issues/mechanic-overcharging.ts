@@ -17,7 +17,7 @@ export const mechanicOvercharging: AutoIssue = {
     h1: { pre: "Can I sue a mechanic for ", em: "overcharging", post: "?" },
     leadStrong: "Yes. State auto repair laws cap charges over the written estimate.",
     leadBody:
-      " Most states require a written estimate before any auto repair work and cap charges over the estimate without your consent (California: anything over 10 percent of the estimate requires written authorization). Charges over that limit are recoverable, plus statutory penalties in some states. The Bureau of Auto Repair (or equivalent) takes complaints free of charge and the threat of a license investigation often produces a fast refund.",
+      " Most states require a written estimate before any auto repair work, and limit how much a shop can charge above the estimate without your approval (California: anything over 10% of the estimate needs new written approval). Charges above that limit are recoverable, plus extra penalties in some states. The state Bureau of Auto Repair (or equivalent) takes complaints for free — and the threat of a license investigation often gets you a fast refund without filing a lawsuit.",
   },
 
   counter: {
