@@ -39,7 +39,7 @@ export const data: StateGuide = {
     {
       id: "contracts",
       title: "Contracts and money owed",
-      blurb: "Texas has a generous 4-year statute of limitations on most debt and contract claims, written or oral.",
+      blurb: "Texas gives you a generous 4 years to sue on most debt and contract claims, written or oral.",
       claims: [
         {
           id: "written-contract",
@@ -257,7 +257,7 @@ export const data: StateGuide = {
           damageBoost:
             "If the landlord acted in bad faith, you recover 3x the wrongfully withheld amount + $100 + reasonable attorney fees. Bad faith is presumed if the landlord neither refunds nor sends an itemized accounting within 30 days.",
           notes:
-            "Texas requires you to give the landlord your forwarding address in writing. The 30-day clock starts when you've moved out AND given that address. A $2,200 deposit with no accounting can become a $6,800 judgment ($6,600 treble + $100).",
+            "Texas requires you to give the landlord your forwarding address in writing. The 30-day clock starts when you've moved out AND given that address. A $2,200 deposit with no accounting can become a $6,800 judgment ($6,600 = 3x the deposit, plus the $100 penalty).",
         },
         {
           id: "prepaid-rent",
@@ -464,7 +464,7 @@ export const data: StateGuide = {
           eligible: true,
           statute: "Tex. Rule of Civil Procedure 508",
           notes:
-            "Texas allows creditors and debt buyers in small claims. The 4-year statute of limitations starts from the last payment or last activity. If they don't have proof they own the debt or proper account documentation, they may lose.",
+            "Texas allows creditors and debt buyers in small claims. The 4-year deadline to sue starts from the last payment or last activity. If they don't have proof they own the debt or proper account documentation, they may lose.",
         },
       ],
     },
@@ -505,7 +505,7 @@ export const data: StateGuide = {
           example: "A debt collector called you 30 times in a week, used profanity, and showed up at your workplace.",
           eligible: true,
           statute: "Tex. Fin. Code Ch. 392",
-          damageBoost: "Actual damages, $100 minimum per intentional violation, plus attorney fees. Also a DTPA tie-in (treble damages possible).",
+          damageBoost: "Actual damages, $100 minimum per intentional violation, plus attorney fees. Also ties into the state's consumer-protection law (DTPA), which can triple damages.",
         },
         {
           id: "identity-theft",
@@ -651,7 +651,7 @@ export const data: StateGuide = {
     punitive: {
       available: false,
       explanation:
-        "Common-law punitive damages are theoretically available in justice court but rarely awarded. Most punitive-style recoveries come from specific statutes (DTPA treble damages, security deposit triple, wrongful tow penalty) which the judge will apply if you prove the conditions.",
+        "Common-law punitive damages are theoretically available in justice court but rarely awarded. Most penalty-style recoveries come from specific laws (consumer protection 'DTPA' tripling, security deposit tripling, wrongful tow penalty) which the judge will apply if you prove the conditions.",
     },
     statutoryMultipliers: [
       {
@@ -686,7 +686,7 @@ export const data: StateGuide = {
       },
       {
         claim: "Texas Debt Collection Act violation",
-        multiplier: "$100 minimum per intentional violation + actual damages + attorney fees + DTPA tie-in (treble)",
+        multiplier: "$100 minimum per intentional violation + actual damages + attorney fees + ties to consumer-protection law (DTPA) tripling",
         statute: "Tex. Fin. Code § 392.403",
       },
       {
@@ -705,7 +705,7 @@ export const data: StateGuide = {
       type: "simple",
       statute: "Tex. Fin. Code § 304.003",
       notes:
-        "Post-judgment interest is a floating rate tied to the federal prime rate, with a floor of 5% and a ceiling of 15%. Pre-judgment interest on liquidated contract sums is typically 6% per year (Tex. Fin. Code § 302.002).",
+        "Post-judgment interest is a floating rate tied to the federal prime rate, with a floor of 5% and a ceiling of 15%. Interest before the case is decided (pre-judgment interest) on fixed contract amounts is typically 6% per year (Tex. Fin. Code § 302.002).",
     },
     feesRecoverable: true,
   },
@@ -1065,7 +1065,7 @@ export const data: StateGuide = {
     responseNotes:
       "Unlike California, Texas REQUIRES the defendant to file a written answer within 14 days of service. A simple general denial is enough. If the 14th day falls on a weekend or holiday, the deadline extends to the next business day. The answer can be filed in person, by mail, or via eFileTexas.",
     defaultProcess:
-      "If the defendant doesn't file a written answer by the 14-day deadline, the plaintiff can move for default judgment. For liquidated claims (a specific sum from a written contract or sworn account), the judge can enter default without a hearing. For unliquidated claims (property damage, personal injury), the plaintiff must testify at a 'prove-up' hearing to establish damages.",
+      "If the defendant doesn't file a written answer by the 14-day deadline, you can ask for a default judgment. For fixed-dollar claims (a specific sum from a written contract or sworn account), the judge can enter default without a hearing. For damage claims with no fixed dollar amount (property damage, personal injury), you must testify at a brief 'prove-up' hearing to establish damages.",
     proveUpRequired: true,
     proveUpNotes:
       "Even on a default, the judge will require you to prove your damages by sworn testimony or affidavit. Bring contracts, invoices, photos, and any other proof. Show up empty-handed and the judge can award less than you asked or dismiss for lack of proof.",
@@ -1074,7 +1074,7 @@ export const data: StateGuide = {
     motionToVacateLackOfNoticeDays: 30,
     motionToVacateAppealDeadlineDays: 21,
     motionToVacateAppealNotes:
-      "If your motion for new trial is denied, you can appeal to county court within 21 days. The appeal is a fresh trial de novo, so you get a complete second chance.",
+      "If your motion for new trial is denied, you can appeal to county court within 21 days. The appeal is a brand-new trial, so you get a complete second chance.",
   },
 
   counterclaim: {
@@ -1202,12 +1202,12 @@ export const data: StateGuide = {
         name: "Renew the judgment (every 10 years)",
         blurb: "Keep the judgment alive past the 10-year dormancy mark.",
         description:
-          "Texas judgments become dormant after 10 years if not enforced. File for revival within 2 years after dormancy (so you have effectively 12 years). Each writ of execution issued resets the dormancy clock.",
+          "Texas judgments go dormant (lose their enforceability) after 10 years if not enforced. File to revive it within 2 years after dormancy (so you have effectively 12 years). Each writ of execution (court order to seize assets) issued resets the clock.",
       },
     ],
     judgmentLifespanYears: 10,
     renewalProcess:
-      "Before year 10 expires, file a writ of execution or apply to revive the judgment. If the judgment becomes dormant, you have 2 years to revive it. After that, the judgment is permanently unenforceable.",
+      "Before year 10 expires, file a writ of execution (court order to seize assets) or apply to revive the judgment. If it goes dormant, you have 2 years to revive it. After that, the judgment can no longer be enforced.",
     debtorExamForm: { number: "Rule 621a Discovery", name: "Post-Judgment Discovery" },
     exemptions: [
       "Wages earned for personal services (100% exempt from creditor garnishment, except for child/spousal support and certain federal debts)",
@@ -1304,9 +1304,9 @@ export const data: StateGuide = {
         "File a written answer (even a one-line general denial) within 14 days of service. If you've already missed it, file a Motion for New Trial within 14 days of the judgment, OR appeal to county court within 21 days.",
     },
     {
-      title: "Missing the statute of limitations",
+      title: "Missing the deadline to sue",
       whatHappens:
-        "You file a property damage case 2 years and 1 month after the incident. Defendant raises limitations. Case dismissed.",
+        "You file a property damage case 2 years and 1 month after the incident. Defendant points out the deadline passed. Case dismissed.",
       howToAvoid:
         "Texas property damage and personal injury claims expire in 2 years (shorter than California). Contract claims (oral or written) get 4 years. File sooner rather than later.",
     },
@@ -1402,12 +1402,12 @@ export const data: StateGuide = {
     {
       question: "What happens if the defendant doesn't show up?",
       answer:
-        "If the defendant doesn't file a written answer within 14 days of service, the plaintiff can move for default judgment. The judge will check that service was proper and may either enter the judgment without a hearing (for liquidated debts) or hold a brief 'prove-up' hearing where you testify about your damages.",
+        "If the defendant doesn't file a written answer within 14 days of being served, you can ask for a default judgment. The judge will check that service was proper and may either enter the judgment without a hearing (for fixed-dollar debts) or hold a brief 'prove-up' hearing where you testify about your damages.",
     },
     {
       question: "Can I appeal if I lose?",
       answer:
-        "Yes. Either party can appeal to county court within 21 days. The appeal is a fresh trial de novo, so you get a complete second chance with new evidence and full procedure. Defendants must post a bond of 2x the judgment (or cash deposit). Plaintiffs post a flat $500 bond. If you can't afford it, file a Statement of Inability.",
+        "Yes. Either party can appeal to county court within 21 days. The appeal is a brand-new trial, so you get a complete second chance with new evidence and full procedure. Defendants must post a bond of 2x the judgment (or cash deposit). Plaintiffs post a flat $500 bond. If you can't afford it, file a Statement of Inability.",
     },
     {
       question: "Why can't I garnish wages in Texas?",

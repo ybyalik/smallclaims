@@ -230,7 +230,7 @@ export default async function StateGuide({ params }: Params) {
             <div className="g-step-body">
               <h3>Check your deadline</h3>
               <p>
-                Every claim has a statute of limitations. Miss it by a day and your case is dead.
+                Every claim has a deadline by which you have to sue (the legal name is the &ldquo;statute of limitations&rdquo;). Miss it by a day and your case is dead.
               </p>
               <div id="statute-checker">
                 <StatuteChecker entries={g.statuteOfLimitations.entries} stateName={g.state} />
@@ -264,10 +264,10 @@ export default async function StateGuide({ params }: Params) {
             <div className="g-step-body">
               <h3>Serve the defendant</h3>
               <p>
-                The defendant must be formally served at least{" "}
+                The defendant has to receive official notice of the lawsuit (lawyers call this being &ldquo;served&rdquo;) at least{" "}
                 <strong>{g.service.timing.inCountyDays} days</strong> before the hearing
                 (in the same county) or <strong>{g.service.timing.outOfCountyDays} days</strong>{" "}
-                (out of county). You cannot serve them yourself.
+                (out of county). You can&rsquo;t hand them the papers yourself.
               </p>
               <h4>Allowed methods</h4>
               <ul className="g-methods">

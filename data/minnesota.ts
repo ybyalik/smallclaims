@@ -22,7 +22,7 @@ export const data: StateGuide = {
     { label: "Filing fee", value: "$70 to $80", detail: "$65 state base + small county law library fee" },
     { label: "Court", value: "Conciliation Court", detail: "Division of District Court in each county" },
     { label: "Lawyers at trial", value: "Allowed", detail: "Permitted but not required; most parties go without" },
-    { label: "Appeal window", value: "20 days + 3 days mail", detail: "Trial de novo in District Court (called 'removal')" },
+    { label: "Appeal window", value: "20 days + 3 days mail", detail: "Brand-new trial in District Court (called 'removal')" },
   ],
 
   limits: {
@@ -39,7 +39,7 @@ export const data: StateGuide = {
     {
       id: "contracts",
       title: "Contracts and money owed",
-      blurb: "Minnesota gives you a generous 6-year statute of limitations on most contract and debt claims, written or oral. Same clock for both.",
+      blurb: "Minnesota gives you a generous 6 years to sue on most contract and debt claims, written or oral. Same clock for both.",
       claims: [
         {
           id: "written-contract",
@@ -266,7 +266,7 @@ export const data: StateGuide = {
           example: "Your landlord changed the locks or shut off your utilities without going through court.",
           eligible: true,
           statute: "Minn. Stat. § 504B.225",
-          notes: "Self-help evictions are illegal in Minnesota and can yield treble damages plus actual losses.",
+          notes: "Locking a tenant out without going through court is illegal in Minnesota, and can yield three times your damages plus actual losses.",
         },
         {
           id: "unreturned-prepaid-rent",
@@ -403,7 +403,7 @@ export const data: StateGuide = {
     {
       category: "Defamation (libel and slander)",
       explanation: "Defamation claims are explicitly excluded from Conciliation Court regardless of dollar amount.",
-      whereToGoInstead: "District Court (with a 2-year statute of limitations)",
+      whereToGoInstead: "District Court (with a 2-year deadline to sue)",
     },
     {
       category: "Malpractice claims",
@@ -511,7 +511,7 @@ export const data: StateGuide = {
       type: "simple",
       statute: "Minn. Stat. § 549.09",
       notes:
-        "Post-judgment interest rate is set annually by the State Court Administrator based on one-year Treasury bill yields, with a 4% floor. Rates were around 5% to 6% in 2024 to 2026 due to higher T-bill yields. Pre-judgment interest is also available on liquidated sums.",
+        "Post-judgment interest rate is set annually by the State Court Administrator based on one-year Treasury bill yields, with a 4% floor. Rates were around 5% to 6% in 2024 to 2026 due to higher T-bill yields. Interest before the case is decided (pre-judgment interest) is also available on fixed dollar amounts.",
     },
     feesRecoverable: true,
   },
@@ -771,7 +771,7 @@ export const data: StateGuide = {
     {
       number: "Demand for Removal",
       name: "Demand for Removal / Affidavit of Good Faith",
-      description: "The appeal form. File within 20 days of the judgment notice (plus 3 days for mailing) to remove the case to District Court for trial de novo. Pay $310 fee + $50 cost bond.",
+      description: "The appeal form. File within 20 days of the judgment notice (plus 3 days for mailing) to move the case to District Court for a brand-new trial. Pay $310 fee + $50 cost bond.",
       whoFiles: "either",
       required: false,
       group: "appeal",
@@ -950,7 +950,7 @@ export const data: StateGuide = {
       cap: 0,
       statute: "Minn. Gen. R. Prac. 521",
       notes:
-        "If the appellant does worse on de novo than in conciliation, the court can award costs (including the $50 bond) to the other party. Frivolous appeals can also draw attorney fees if the judge finds bad faith.",
+        "If the person who appealed does worse on the new trial than they did in conciliation, the court can award costs (including the $50 bond) to the other party. Frivolous appeals can also draw attorney fees if the judge finds bad faith.",
     },
     defaultJudgmentNotAppealable: true,
     defaultJudgmentNotes:
@@ -1137,11 +1137,11 @@ export const data: StateGuide = {
         "File where the defendant lives or has its registered agent. Special exceptions: where the rental property is (landlord-tenant), where the bad check was written, or where any one defendant lives (multiple defendants).",
     },
     {
-      title: "Missing the statute of limitations",
+      title: "Missing the deadline to sue",
       whatHappens:
-        "You file a personal injury case 2 years and 1 month after the incident. Defendant raises limitations. Case dismissed.",
+        "You file a personal injury case 2 years and 1 month after the incident. Defendant points out the deadline passed. Case dismissed.",
       howToAvoid:
-        "Personal injury and defamation are 2 years. Most contracts are 6 years. Wage claims are 2 (3 if willful). UCC sale of goods is 4. File sooner rather than later.",
+        "Personal injury and defamation: 2 years. Most contracts: 6 years. Wage claims: 2 years (3 if willful). Sale of goods: 4 years. File sooner rather than later.",
     },
     {
       title: "Bad service of process",
@@ -1270,7 +1270,7 @@ export const data: StateGuide = {
     {
       question: "Can I appeal if I lose?",
       answer:
-        "Yes, in most cases. Either party who appeared can 'remove' (appeal) to District Court within 20 days of the judgment notice (plus 3 mailing days). It's a brand-new trial de novo with formal procedure and a possible jury. Filing fee is $310 (or $410 for a jury) plus a $50 cost bond. Defaulting defendants CANNOT directly appeal; they must move to vacate first.",
+        "Yes, in most cases. Either party who appeared can 'remove' (appeal) to District Court within 20 days of the judgment notice (plus 3 mailing days). It's a brand-new trial with formal procedure and a possible jury. Filing fee is $310 (or $410 for a jury) plus a $50 cost bond. Defendants who lost by default CANNOT appeal directly; they must first ask the conciliation court to undo the default judgment.",
     },
     {
       question: "Can I garnish wages in Minnesota?",

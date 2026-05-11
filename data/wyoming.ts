@@ -116,7 +116,7 @@ export const data: StateGuide = {
     {
       id: "consumer",
       title: "Consumer disputes",
-      blurb: "Wyoming has a Consumer Protection Act but its private remedy is limited to actual damages — no treble damages or automatic attorney fees for individual suits.",
+      blurb: "Wyoming has a Consumer Protection Act, but it only lets you recover your actual losses, not a tripled penalty or automatic attorney fees, when you sue on your own.",
       claims: [
         {
           id: "defective-product",
@@ -172,7 +172,7 @@ export const data: StateGuide = {
           example: "A retailer ran a bait-and-switch ad that cost you $800 in actual losses.",
           eligible: true,
           statute: "Wyo. Stat. § 40-12-105 (private right of action)",
-          notes: "Wyoming's CPA requires you give the business a chance to cure (typically by demand letter) before suing. No treble damages for individual suits, just actual losses.",
+          notes: "Wyoming's Consumer Protection Act requires you to give the business a chance to fix the problem (typically by demand letter) before suing. You can only recover your actual losses; no tripled penalty when you sue on your own.",
         },
       ],
     },
@@ -256,7 +256,7 @@ export const data: StateGuide = {
           example: "After you moved, your landlord locked up your TV and furniture claiming you owed rent.",
           eligible: true,
           statute: "Wyo. Stat. § 1-21-1210",
-          notes: "Wyoming requires landlords to follow specific abandonment procedures before disposing of left-behind property. If they didn't, you can sue for the value of your items as conversion (4-year clock).",
+          notes: "Wyoming requires landlords to follow specific abandonment procedures before disposing of left-behind property. If they didn't, you can sue for the value of your items (the legal name for taking your stuff is 'conversion'). 4-year deadline to sue.",
         },
         {
           id: "unreturned-prepaid-rent",
@@ -391,7 +391,7 @@ export const data: StateGuide = {
     },
     {
       category: "Defamation (libel/slander)",
-      explanation: "Wyoming has only a 1-year statute of limitations on defamation, and these claims rarely fit small claims even if filed timely.",
+      explanation: "Wyoming gives you only 1 year to sue on defamation, and these claims rarely fit small claims even if filed in time.",
       whereToGoInstead: "Circuit Court or District Court for civil suit",
     },
     {
@@ -748,7 +748,7 @@ export const data: StateGuide = {
     {
       number: "Garnishment forms (continuing or non-continuing)",
       name: "Writ of Garnishment forms",
-      description: "Eight-form packet for wage garnishment (continuing, 90-day stretches) or bank garnishment (non-continuing, one-time grab). Includes Request, Writ, Order for Service, Notice of Right to Hearing/Exemption, Garnishee Answer, Privacy notices.",
+      description: "Eight-form packet for wage garnishment (taking money from each paycheck for 90 days at a time) or bank garnishment (a one-time grab from their bank account). Includes Request, Writ, Order for Service, Notice of Right to Hearing/Exemption, Garnishee Answer, Privacy notices.",
       whoFiles: "plaintiff",
       required: false,
       group: "after-judgment",
@@ -885,7 +885,7 @@ export const data: StateGuide = {
     fee: 70,
     type: "on the record",
     typeNotes:
-      "CRITICAL: Wyoming small claims appeals to District Court are NOT new trials. Per Small Claims Rule 7, they 'shall be processed pursuant to W.R.A.P. and only on questions of law and not for a review of the sufficiency of evidence.' District Court reviews for legal errors, doesn't re-hear the facts. No new evidence on appeal. This is unusual — most states give de novo appeals.",
+      "CRITICAL: Wyoming small claims appeals to District Court are NOT new trials. Per Small Claims Rule 7, they 'shall be processed pursuant to W.R.A.P. and only on questions of law and not for a review of the sufficiency of evidence.' District Court reviews for legal errors only; it doesn't re-hear the facts. No new evidence on appeal. This is unusual; most states give you a brand-new trial.",
     attorneysAllowedOnAppeal: true,
     bondRequired: true,
     automaticStayOnFiling: false,
@@ -906,7 +906,7 @@ export const data: StateGuide = {
         name: "Demand letter for payment",
         blurb: "Send a polite demand. Often works.",
         description:
-          "After the 30-day appeal window passes, send the loser a written demand including the case number, judgment amount, accrued 10% interest, and your preferred payment method. Many debtors pay once they realize garnishment and liens are next.",
+          "After the 30-day appeal window passes, send the loser a written demand including the case number, judgment amount, accrued 10% interest, and your preferred payment method. Many debtors pay once they realize that taking money from their paycheck or putting a lien on their property is next.",
       },
       {
         id: "real-estate-lien",
@@ -1086,11 +1086,11 @@ export const data: StateGuide = {
         "File where the defendant lives OR where the cause of action arose. Multiple defendants? Any county where one resides works.",
     },
     {
-      title: "Missing the statute of limitations",
+      title: "Missing the deadline to sue",
       whatHappens:
-        "You file an assault-battery claim 14 months after the incident. Wyoming has a 1-year limit. Defendant raises it. Case dismissed.",
+        "You file an assault-battery claim 14 months after the incident. Wyoming gives you only 1 year. Defendant points it out. Case dismissed.",
       howToAvoid:
-        "Defamation and assault/battery: 1 year. Property and injury: 4 years. Oral contracts: 8 years. Written contracts: 10 years. UCC sale of goods: 4 years. File well before any deadline.",
+        "Defamation and assault/battery: 1 year. Property and injury: 4 years. Oral contracts: 8 years. Written contracts: 10 years. Sale of goods: 4 years. File well before any deadline.",
     },
     {
       title: "Asking for the wrong remedy",
@@ -1123,7 +1123,7 @@ export const data: StateGuide = {
     {
       title: "Forgetting Wyoming's bad-check certified-mail step",
       whatHappens:
-        "You sue for treble damages on a bounced check without sending the 30-day certified-mail demand. Court awards only the check amount, not the triple penalty.",
+        "You sue for triple damages on a bounced check without sending the 30-day certified-mail demand. Court awards only the check amount, not the triple penalty.",
       howToAvoid:
         "Wyo. Stat. § 1-1-115 requires the certified written demand 30 days before suing. Use the statutory language: $30 fee within 30 days or face triple damages. Save the certified mail receipt.",
     },
@@ -1192,7 +1192,7 @@ export const data: StateGuide = {
     {
       question: "Can I appeal if I lose?",
       answer:
-        "Yes, but Wyoming appeals are NOT new trials. Either party can appeal to District Court within 30 days, but Small Claims Rule 7 limits appeals to questions of law only — NOT a review of the evidence or who was more believable. New evidence isn't allowed. This is unusual; most states give de novo appeals.",
+        "Yes, but Wyoming appeals are NOT new trials. Either party can appeal to District Court within 30 days, but Small Claims Rule 7 limits appeals to legal errors only, NOT a review of the evidence or who was more believable. New evidence isn't allowed. This is unusual; most states give you a brand-new trial.",
     },
     {
       question: "Can I garnish wages in Wyoming?",

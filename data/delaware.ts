@@ -31,7 +31,7 @@ export const data: StateGuide = {
     annualCap: { count: 0, threshold: 0 },
     splitClaimsAllowed: false,
     splitClaimsExplanation:
-      "If your claim is more than $25,000, you have two options: sue for $25,000 and waive the rest, or file in the Court of Common Pleas (which can hear up to $75,000). You cannot split one debt into multiple smaller cases. The cap excludes statutory interest and court costs. House Bill 232 (2020) raised the cap from $15,000 to the current $25,000 and also lifted the cap entirely for rent claims tied to a commercial summary possession action.",
+      "If your claim is more than $25,000, you have two options: sue for $25,000 and give up the rest, or file in the Court of Common Pleas (which can hear up to $75,000). You can't split one debt into multiple smaller cases. The cap doesn't include statutory interest and court costs. House Bill 232 (2020) raised the cap from $15,000 to the current $25,000 and also lifted the cap entirely for rent claims tied to a commercial eviction action.",
     statute: "10 Del. C. § 9301(1)",
   },
 
@@ -39,7 +39,7 @@ export const data: StateGuide = {
     {
       id: "contracts",
       title: "Contracts and money owed",
-      blurb: "Delaware's general statute of limitations on debt and contract claims is 3 years (6 years for promissory notes and contracts under seal).",
+      blurb: "Delaware's general deadline to sue on debt and contract claims is 3 years (6 years for promissory notes and contracts under seal).",
       claims: [
         {
           id: "written-contract",
@@ -70,7 +70,7 @@ export const data: StateGuide = {
           example: "An ex-employee signed a written promissory note for a $5,000 advance, then quit and stopped paying.",
           eligible: true,
           statute: "10 Del. C. § 8109",
-          notes: "Promissory notes have a 6-year statute of limitations in Delaware (longer than the general 3-year contract rule).",
+          notes: "In Delaware, you have 6 years to sue on a promissory note (longer than the general 3-year contract deadline).",
         },
         {
           id: "unpaid-invoice",
@@ -84,7 +84,7 @@ export const data: StateGuide = {
           name: "Unpaid rent (money only, not eviction)",
           example: "A former residential tenant moved out owing $4,200 in back rent.",
           eligible: true,
-          notes: "Eviction (recovering possession) is a separate type of JP case. Small claims handles the money owed only. For commercial rent tied to summary possession, the $25,000 cap doesn't apply.",
+          notes: "Eviction (taking back possession of the unit) is a separate type of JP case. Small claims handles the money owed only. For commercial rent tied to an eviction, the $25,000 cap doesn't apply.",
         },
         {
           id: "bad-check",
@@ -99,7 +99,7 @@ export const data: StateGuide = {
           name: "Co-signer or guarantor disputes",
           example: "You co-signed a friend's car loan, paid the lender $7,000 when they defaulted, and now your friend won't reimburse you.",
           eligible: true,
-          notes: "You're suing on a contract right of subrogation or contribution. Standard 3-year clock from the date you paid.",
+          notes: "When you paid someone else's debt as a co-signer, the law lets you go after them for what you paid. Standard 3-year clock from the date you paid.",
         },
       ],
     },
@@ -155,7 +155,7 @@ export const data: StateGuide = {
           name: "Used car or dealership dispute",
           example: "A dealer sold you a $9,000 car and rolled back the odometer.",
           eligible: true,
-          damageBoost: "Odometer fraud is a federal violation (49 U.S.C. § 32710) with a treble-damages remedy. Delaware courts can apply that remedy in JP Court if proven.",
+          damageBoost: "Odometer fraud violates federal law (49 U.S.C. § 32710), and if proven, you can recover three times the damages. Delaware courts can apply that in JP Court.",
         },
         {
           id: "false-advertising",
@@ -170,7 +170,7 @@ export const data: StateGuide = {
     {
       id: "property-damage",
       title: "Property damage",
-      blurb: "Delaware has a 2-year statute of limitations on property damage claims. File quickly.",
+      blurb: "Delaware gives you only 2 years to sue on property damage claims. File quickly.",
       claims: [
         {
           id: "vehicle-collision",
@@ -267,7 +267,7 @@ export const data: StateGuide = {
     {
       id: "employment",
       title: "Employment and wage disputes",
-      blurb: "Delaware has unusually strong wage-payment protections. Unpaid wages can yield 100% liquidated damages on top of the wages owed.",
+      blurb: "Delaware has unusually strong wage-payment protections. Unpaid wages can yield a penalty equal to 100% of what you're owed (effectively doubling your recovery).",
       claims: [
         {
           id: "unpaid-wages",
@@ -276,7 +276,7 @@ export const data: StateGuide = {
           eligible: true,
           statute: "19 Del. C. § 1103",
           damageBoost:
-            "If wages are unpaid after a written demand, you can recover liquidated damages of 10% per day, up to a 100% match of the unpaid wages (so a doubling of what you're owed). Plus attorney fees on top.",
+            "If wages are still unpaid after a written demand, you can recover a penalty of 10% per day, up to a 100% match of the unpaid wages (so a doubling of what you're owed). Plus attorney fees on top.",
         },
         {
           id: "unpaid-final-paycheck",
@@ -284,14 +284,14 @@ export const data: StateGuide = {
           example: "You quit a job. Two months later, your final paycheck of $1,400 still hasn't arrived.",
           eligible: true,
           statute: "19 Del. C. § 1102, § 1103",
-          notes: "Final wages must be paid by the next regular payday. Same 10%/day liquidated damages remedy applies.",
+          notes: "Final wages must be paid by the next regular payday. Same 10%/day penalty applies.",
         },
         {
           id: "unpaid-commissions-bonus",
           name: "Unpaid commission or bonus",
           example: "You earned a $4,500 sales commission per the written plan and your employer refuses to pay it.",
           eligible: true,
-          notes: "If the commission was earned per the written plan, it's 'wages' under Delaware law and triggers the same 10%/day liquidated damages remedy.",
+          notes: "If the commission was earned per the written plan, it counts as 'wages' under Delaware law and triggers the same 10%/day penalty.",
         },
       ],
     },
@@ -414,7 +414,7 @@ export const data: StateGuide = {
       },
       {
         claim: "Unpaid wages",
-        multiplier: "10% per day liquidated damages, up to 100% of wages owed",
+        multiplier: "10% per day penalty, up to 100% of wages owed",
         statute: "19 Del. C. § 1103",
       },
       {
@@ -438,7 +438,7 @@ export const data: StateGuide = {
       type: "simple",
       statute: "6 Del. C. § 2301",
       notes:
-        "Delaware's legal rate is 5% over the Federal Reserve discount rate. As of 2026, with the discount rate around 0.75%, post-judgment interest runs at about 5.75% per year. Pre-judgment interest is generally available on liquidated sums.",
+        "Delaware's legal rate is 5% over the Federal Reserve discount rate. As of 2026, with the discount rate around 0.75%, post-judgment interest runs at about 5.75% per year. Interest before the case is decided (pre-judgment interest) is generally available on fixed dollar amounts.",
     },
     feesRecoverable: true,
   },
@@ -610,7 +610,7 @@ export const data: StateGuide = {
     demandLetterRequired: false,
     demandLetterRecommended: true,
     demandLetterNotes:
-      "Delaware doesn't require a demand letter for most claims, but several specific situations make it mandatory. Bad-check claims under 6 Del. C. § 1301A require a 30-day written demand before you can recover the $50 (or triple) statutory penalty. Wage claims for liquidated damages under 19 Del. C. § 1103 require a written demand. Even when not required, a demand letter often resolves the dispute without filing.",
+      "Delaware doesn't require a demand letter for most claims, but several specific situations make it mandatory. Bad-check claims under 6 Del. C. § 1301A require a 30-day written demand before you can recover the $50 (or triple) penalty. Wage claims under 19 Del. C. § 1103 require a written demand to unlock the doubling penalty. Even when not required, a demand letter often resolves the dispute without filing.",
     governmentClaimRequired: true,
     governmentClaimNotes:
       "Suing a Delaware state agency, county, or municipality requires written notice of claim within a short window (varies by entity, often 90 days to 1 year). Without proper notice, your case is barred under the State Tort Claims Act.",
@@ -803,9 +803,9 @@ export const data: StateGuide = {
   response: {
     defendantMustFileAnswer: true,
     responseNotes:
-      "Delaware REQUIRES the defendant to file a written answer within 15 days of being served. The answer is JP Civil Form 7. A general denial is fine, but you should also raise any affirmative defenses (statute of limitations, payment, etc.) or you risk waiving them. The answer can be filed in person, by mail, or via eFlex.",
+      "Delaware REQUIRES the defendant to file a written answer within 15 days of receiving the lawsuit papers. The answer is JP Civil Form 7. A general denial is fine, but you should also raise any specific defenses (missed deadline to sue, already paid, etc.) or you risk losing the right to use them. The answer can be filed in person, by mail, or via eFlex.",
     defaultProcess:
-      "If the defendant doesn't file a written answer by the 15-day deadline, the plaintiff can file Form 13 (Motion and Affidavit for Default Judgment). For sum-certain claims (like a fixed contract debt), the court can enter default administratively. For unliquidated claims (like property damage), the court will set a 'default hearing' where the plaintiff testifies to the damages. Plaintiffs must include a non-military service declaration under the Servicemembers Civil Relief Act.",
+      "If the defendant doesn't file a written answer by the 15-day deadline, you can file Form 13 (Motion and Affidavit for Default Judgment) to win automatically. For fixed-dollar claims (like a contract debt), the court can enter judgment without a hearing. For damage claims with no fixed dollar amount (like property damage), the court will set a brief 'default hearing' where you testify to the damages. You must also include a sworn statement that the defendant is not active-duty military (required by the Servicemembers Civil Relief Act).",
     proveUpRequired: true,
     proveUpNotes:
       "Even on a default, you'll need to prove your damages with sworn testimony or affidavit. Bring contracts, invoices, photos, and other proof. Show up empty-handed and the judge can award less than you asked or dismiss for lack of proof.",
@@ -1052,7 +1052,7 @@ export const data: StateGuide = {
         "File a written answer (even a general denial) within 15 days of service. If you've already missed it, file a motion to vacate within 15 days of the judgment notice, or appeal to CCP within 15 days.",
     },
     {
-      title: "Missing the statute of limitations",
+      title: "Missing the deadline to sue",
       whatHappens:
         "You file a property damage case 2 years and 1 month after the incident. Defendant raises limitations. Case dismissed.",
       howToAvoid:
@@ -1061,9 +1061,9 @@ export const data: StateGuide = {
     {
       title: "Skipping a required pre-suit demand",
       whatHappens:
-        "You file a bad-check claim without sending the 30-day demand letter. The court can't award the $50 (or triple) statutory penalty. Or you file a wage claim without a written demand and lose the 100% liquidated damages.",
+        "You file a bad-check claim without sending the 30-day demand letter. The court can't award the $50 (or triple) penalty. Or you file a wage claim without a written demand and lose the 100% doubling penalty.",
       howToAvoid:
-        "Bad-check claims (6 Del. C. § 1301A) require a 30-day written demand. Wage claims (19 Del. C. § 1103) require a written demand for liquidated damages. Always send via certified mail and keep proof.",
+        "Bad-check claims (6 Del. C. § 1301A) require a 30-day written demand. Wage claims (19 Del. C. § 1103) require a written demand to unlock the doubling penalty. Always send via certified mail and keep proof.",
     },
     {
       title: "Business showing up without Form 50",
@@ -1160,7 +1160,7 @@ export const data: StateGuide = {
     {
       question: "What happens if the defendant doesn't show up?",
       answer:
-        "If the defendant doesn't file a written answer within 15 days of service, the plaintiff can file Form 13 (Motion and Affidavit for Default Judgment). For sum-certain debts, the court can enter default administratively. For unliquidated claims, you'll need to attend a default hearing and prove your damages.",
+        "If the defendant doesn't file a written answer within 15 days of being served, you can file Form 13 (Motion and Affidavit for Default Judgment) to win automatically. For fixed-dollar debts, the court can enter judgment without a hearing. For damage claims with no fixed dollar amount, you'll need to attend a brief default hearing and prove your damages.",
     },
     {
       question: "Can I appeal if I lose?",
@@ -1211,7 +1211,7 @@ export const data: StateGuide = {
       citation: "25 Del. C. § 5306, § 5307",
     },
     {
-      label: "19 Del. C. § 1103 (wage payment liquidated damages)",
+      label: "19 Del. C. § 1103 (wage payment doubling penalty)",
       url: "https://delcode.delaware.gov/title19/c011/index.html",
       citation: "19 Del. C. § 1103",
     },
