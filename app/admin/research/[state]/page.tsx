@@ -8,6 +8,7 @@ import { createServiceRoleClient } from "../../../../lib/supabase/service-role";
 import { CALL_TITLES, type StateCallId } from "../../../../lib/state-research/prompts";
 import StateResearchControls from "./StateResearchControls";
 import AutoRefresh from "../AutoRefresh";
+import MarkdownView from "./MarkdownView";
 
 export const dynamic = "force-dynamic";
 
@@ -185,20 +186,7 @@ export default async function StateResearchDetail({ params }: { params: { state:
                       ${((snap.costCents ?? 0) / 100).toFixed(2)} ·{" "}
                       {snap.completedAt ? new Date(snap.completedAt).toLocaleString() : ""}
                     </div>
-                    <pre
-                      style={{
-                        background: "var(--bg-soft)",
-                        padding: 14,
-                        borderRadius: 6,
-                        maxHeight: 420,
-                        overflow: "auto",
-                        whiteSpace: "pre-wrap",
-                        fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace",
-                        fontSize: 12,
-                      }}
-                    >
-                      {snap.markdown}
-                    </pre>
+                    <MarkdownView markdown={snap.markdown} />
                   </>
                 ) : null}
 
