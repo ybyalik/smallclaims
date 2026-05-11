@@ -13,10 +13,13 @@ const DEFAULT_DR_MODEL = "o3-deep-research";
 // Same budget as per-case deep research — gives ~50k reasoning + ~50k output.
 const PER_CALL_MAX_OUTPUT_TOKENS = 100_000;
 
-// State-level research touches broader scope than per-case. 30 web searches
-// per call lets the model dig into the long-tail items in the bounded sweeps
-// without starving.
-const PER_CALL_MAX_TOOL_CALLS = 30;
+// 20 web searches per call. We tried 30 earlier — the broader scope of
+// state-level research (all claim types vs. one) plus the cost of reasoning
+// over 30 search snippets consumed too much of the 100k output budget,
+// leaving the model out of tokens before it finished writing. 20 matches
+// what per-case research uses and leaves comfortable headroom for the
+// findings dossier.
+const PER_CALL_MAX_TOOL_CALLS = 20;
 
 // OpenAI deep-research pricing (cents per 1M tokens).
 const DEEP_RESEARCH_RATES: Record<string, { in: number; out: number }> = {
