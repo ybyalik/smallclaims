@@ -11,8 +11,8 @@ export const facebookMarketplace: OnlineSellerIssue = {
   hero: {
     eyebrowSuffix: "Facebook Marketplace seller",
     h1: { pre: "Can I sue a ", em: "Facebook Marketplace seller", post: "?" },
-    leadStrong: "Yes. Facebook has no buyer protection — direct UDAP claim required.",
-    leadBody: " Unlike Amazon or eBay, Facebook Marketplace has no platform-level buyer protection program. If the seller scams you, your options are: (1) credit card chargeback for online payments; (2) police report for theft (especially in-person scams); (3) small claims under state consumer-protection laws. The seller's profile and contact info from Facebook are usually enough to identify and serve them.",
+    leadStrong: "Yes. Facebook has no buyer protection, so you'll need to sue under state consumer-protection law.",
+    leadBody: " Unlike Amazon or eBay, Facebook Marketplace has no built-in buyer-protection program. If a seller scams you, your three options are: (1) a credit-card chargeback if you paid by card; (2) a police report for theft (especially in-person scams); or (3) small claims under your state's consumer-protection law. The seller's Facebook profile usually has enough info to identify and serve them.",
   },
 
   counter: { amount: 1800, meta: "State UDAP + breach of contract", rows: [
@@ -30,7 +30,7 @@ export const facebookMarketplace: OnlineSellerIssue = {
       { num: "03", title: "Counterfeit or stolen items", body: "Item turns out to be fake, stolen, or with hidden defects. Photos plus expert opinion (where applicable) establish the case. Stolen items also trigger police involvement." },
       { num: "04", title: "Bait-and-switch", body: "Listing showed one item; seller delivered different one. Documentation of listing (screenshots) plus delivered item establishes the case." },
     ],
-    note: { strongIntro: "Facebook has no buyer protection.", rest: " Unlike Amazon, eBay, and Etsy, Facebook Marketplace has no built-in protection program. Your protections come from credit card chargebacks (if paid by card), state UDAP statutes (small claims), and police reports (for clear theft)." },
+    note: { strongIntro: "Facebook has no buyer protection.", rest: " Unlike Amazon, eBay, and Etsy, Facebook Marketplace has no built-in protection program. Your three paths are: credit-card chargebacks (if paid by card), state consumer-protection law in small claims, and police reports (for clear theft)." },
   },
 
   claim: {

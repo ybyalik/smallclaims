@@ -16,7 +16,7 @@ export const amazonSeller: OnlineSellerIssue = {
     h1: { pre: "Can I sue an ", em: "Amazon seller", post: "?" },
     leadStrong: "Yes, but use the A-to-z Guarantee first.",
     leadBody:
-      " Amazon's A-to-z Guarantee covers most third-party seller disputes: items not received, items not as described, and unauthorized charges. The guarantee resolves most claims within 30 days at no cost to you. If the A-to-z Guarantee fails (or doesn't apply), state consumer-protection laws apply with 2x or 3x multipliers in many states. Small claims is the right court for documented sellers.",
+      " Amazon's A-to-z Guarantee covers most third-party seller disputes: items not received, items not as described, and unauthorized charges. The guarantee resolves most claims within 30 days at no cost to you. If A-to-z denies your claim (or doesn't apply), state consumer-protection laws kick in — many let you ask for 2x or 3x damages. Small claims is the right court if you can identify the seller.",
   },
 
   counter: {

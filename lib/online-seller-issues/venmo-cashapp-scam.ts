@@ -11,9 +11,9 @@ export const venmoCashappScam: OnlineSellerIssue = {
   hero: {
     eyebrowSuffix: "Venmo / Cash App scam",
     h1: { pre: "Can I sue someone for a ", em: "Venmo scam", post: "?" },
-    leadStrong: "Yes, but recovery is limited because P2P apps have weak protection.",
+    leadStrong: "Yes, but recovery is harder because peer-to-peer apps have weak protection.",
     leadBody:
-      " Venmo, Cash App, Zelle, and similar P2P payment apps don't provide the same protection as credit cards. Federal Reg E covers unauthorized transactions but not authorized scam payments (where you sent money but the seller never delivered). Your options: dispute through the app for unauthorized; small claims for authorized scams. Document the conversation and payment carefully.",
+      " Venmo, Cash App, Zelle, and similar peer-to-peer (P2P) payment apps don't give you the same protection as credit cards. Federal banking law (Regulation E) protects you if someone hacked your account and sent payments without your permission — but it does NOT protect you when you authorized the payment yourself, even if you got scammed. Your options: dispute through the app if your account was hacked; small claims if you authorized the payment but got scammed. Document the conversation and payment carefully.",
   },
 
   counter: { amount: 1800, meta: "Reg E + state UDAP + breach of contract", rows: [
@@ -26,12 +26,12 @@ export const venmoCashappScam: OnlineSellerIssue = {
     h2: { pre: "What kinds of ", em: "P2P payment scams", post: " can you sue for?" },
     lede: "Four common patterns.",
     cards: [
-      { num: "01", title: "Authorized scam payment", body: "Most common. You sent money for an item or service that never came. Reg E doesn't cover authorized payments, but small claims under UDAP and breach of contract does." },
-      { num: "02", title: "Unauthorized account access", body: "Someone hacked your account and sent payments without your knowledge. Reg E covers this. Dispute through the app within 60 days of statement." },
+      { num: "01", title: "You paid the scammer yourself", body: "Most common. You sent money for an item or service that never came. Federal banking law doesn't help with payments you authorized — but small claims does, under your state's consumer-protection law and breach of contract." },
+      { num: "02", title: "Someone hacked your account", body: "Someone got into your account and sent payments without your knowledge. Federal banking law (Regulation E) covers this. Dispute through the app within 60 days of seeing it on your statement." },
       { num: "03", title: "Friend/family scam (overpayment)", body: "Scammer sends you money 'by mistake' and asks for return. The original payment is later reversed; you've sent the 'return' from your real funds. Small claims under UDAP." },
       { num: "04", title: "Romance / advance-fee scam", body: "Built relationship, then asked for money for travel/emergency/etc. Money never returned. State UDAP plus possibly criminal investigation." },
     ],
-    note: { strongIntro: "P2P apps are not credit cards.", rest: " Venmo, Cash App, Zelle don't offer the same buyer protection as credit cards. Reg E protects against unauthorized account access, not authorized scams. Use credit cards for purchases when possible to retain chargeback rights." },
+    note: { strongIntro: "Peer-to-peer apps are not credit cards.", rest: " Venmo, Cash App, and Zelle don't offer the same buyer protection as credit cards. Federal banking law protects you against hacked accounts but not against scams where you authorized the payment yourself. Use credit cards for purchases when possible — they give you chargeback rights." },
   },
 
   claim: {

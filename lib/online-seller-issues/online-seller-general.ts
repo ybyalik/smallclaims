@@ -16,7 +16,7 @@ export const onlineSellerGeneral: OnlineSellerIssue = {
     h1: { pre: "Can I sue an ", em: "online seller", post: "?" },
     leadStrong: "Yes, but try the platform's protection program first.",
     leadBody:
-      " Most online platforms (Amazon, eBay, Etsy, PayPal) have buyer-protection programs that resolve disputes faster than court. Try those first. If the platform's program fails (or doesn't exist), state consumer-protection laws (UDAP statutes) apply with 2x or 3x multipliers in many states. Small claims is the right court when damages are within your state's cap.",
+      " Most online platforms (Amazon, eBay, Etsy, PayPal) have buyer-protection programs that resolve disputes faster than court. Try those first. If the platform's program denies your claim (or doesn't exist), state consumer-protection laws apply — many let you ask for 2x or 3x damages. Small claims is the right court when the dollar amount is within your state's cap.",
   },
 
   counter: {
@@ -47,7 +47,7 @@ export const onlineSellerGeneral: OnlineSellerIssue = {
     lede: "Refund or replacement cost is the floor. UDAP multiplier and shipping costs stack on top.",
     layers: [
       { tag: "Layer 1", title: "Refund or replacement", body: "The purchase price plus shipping. If you can return the item, the refund is straightforward. If you cannot (damaged, lost), full purchase price.", amount: "$1,200" },
-      { tag: "Layer 2", title: "Statutory multiplier", body: "State UDAP statutes add 2x or 3x for willful violations. Most online seller cases qualify when seller refuses legitimate refund.", amount: "+ $400", accent: true },
+      { tag: "Layer 2", title: "Consumer-protection penalty", body: "State consumer-protection laws (often called 'UDAP') add 2x or 3x damages when the seller broke the law on purpose. Most online-seller cases qualify when the seller refuses a legitimate refund.", amount: "+ $400", accent: true },
       { tag: "Layer 3", title: "Filing fees, interest, return shipping", body: "Filing fee, return shipping you paid, pre-judgment interest at your state's legal rate.", amount: "+ $200" },
     ],
     total: { label: "Sample total within small-claims cap", body: "$1,200 refund plus 2x UDAP multiplier, plus filing fee.", amount: "$1,800", sublabel: "illustrative · varies by state" },

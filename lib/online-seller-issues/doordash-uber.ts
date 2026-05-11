@@ -11,8 +11,8 @@ export const doordashUber: OnlineSellerIssue = {
   hero: {
     eyebrowSuffix: "DoorDash / Uber",
     h1: { pre: "Can I sue ", em: "DoorDash, Uber, or Uber Eats", post: "?" },
-    leadStrong: "Sometimes. Arbitration clauses in their terms often block lawsuits.",
-    leadBody: " Most gig services include forced-arbitration clauses in their terms of service. These clauses require disputes to be arbitrated rather than litigated. Small claims is one of the few exceptions: most arbitration clauses carve out small-claims cases. So if your damages fit your state's cap, you can usually still sue. For larger cases, arbitration is usually required.",
+    leadStrong: "Sometimes. Their terms of service usually force most disputes into arbitration.",
+    leadBody: " Most gig services include 'forced arbitration' clauses in their terms — meaning disputes have to be resolved in private arbitration instead of court. Small claims is one of the few exceptions: most arbitration clauses specifically carve it out. So if your damages fit your state's cap, you can usually still sue in small claims. For bigger cases, you're usually stuck with arbitration.",
   },
 
   counter: { amount: 800, meta: "Small-claims carve-out from arbitration", rows: [
@@ -30,7 +30,7 @@ export const doordashUber: OnlineSellerIssue = {
       { num: "03", title: "Driver damaged your property", body: "Driver scratched your car, damaged the package, or caused property damage during pickup. Negligence claim against driver and company." },
       { num: "04", title: "Customer service refused legitimate refund", body: "App's customer service refused refund despite valid claim. Small-claims under state UDAP for the amount plus multipliers." },
     ],
-    note: { strongIntro: "Read the TOS arbitration clause.", rest: " Most major gig services (DoorDash, Uber, Uber Eats, Grubhub) require disputes to go to arbitration. Small claims is usually carved out (you can still sue in small claims). Class actions and other higher-court cases are usually blocked." },
+    note: { strongIntro: "Read the arbitration section of their terms.", rest: " Most major gig services (DoorDash, Uber, Uber Eats, Grubhub) force disputes into private arbitration. Small claims is usually carved out — meaning you can still sue there. Class actions and other higher-court cases are usually blocked." },
   },
 
   claim: {

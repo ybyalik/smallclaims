@@ -11,8 +11,8 @@ export const fedexPackage: OnlineSellerIssue = {
   hero: {
     eyebrowSuffix: "FedEx package",
     h1: { pre: "Can I sue FedEx for a ", em: "lost, damaged, or stolen package", post: "?" },
-    leadStrong: "Yes, but the federal Carmack Amendment limits recovery.",
-    leadBody: " Federal law (Carmack Amendment, 49 U.S.C. § 14706) governs interstate carrier liability. The default for most FedEx shipments is $100 per package unless declared value protection was purchased. For packages with declared value, full replacement up to declared amount. Stolen packages have additional theft considerations. Small claims is appropriate when the loss is within your state's cap.",
+    leadStrong: "Yes, but a federal law caps how much you can recover.",
+    leadBody: " Federal law (called the Carmack Amendment) covers shipments that crossed state lines. The default coverage is just $100 per package — unless you paid extra for 'declared value' protection at the time of shipping, which raises the cap up to the amount you declared. Stolen packages have extra wrinkles. Small claims is the right court when the loss is within your state's cap.",
   },
 
   counter: { amount: 1200, meta: "Carmack Amendment + declared value", rows: [
@@ -30,7 +30,7 @@ export const fedexPackage: OnlineSellerIssue = {
       { num: "03", title: "Stolen package (porch pirate)", body: "Package marked delivered but taken from doorstep. Police report establishes theft. FedEx liability ends at delivery; recovery may require police investigation." },
       { num: "04", title: "Damaged or lost high-value items (with declared value)", body: "If you purchased declared-value protection, full replacement up to declared amount. Without declaration, $100 default. Document the declared value at shipment." },
     ],
-    note: { strongIntro: "Carmack Amendment is federal law.", rest: " Interstate shipments are governed by Carmack. Default liability is $100/package. Declared value (extra cost) increases coverage. Read FedEx terms carefully. State law governs intrastate shipments." },
+    note: { strongIntro: "The Carmack Amendment is the federal law that controls this.", rest: " Cross-state shipments are governed by it. Default coverage is $100 per package. Declared value (paid extra) raises that cap. Read FedEx's terms carefully. State law applies to in-state shipments." },
   },
 
   claim: {
