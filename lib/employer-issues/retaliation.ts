@@ -17,7 +17,7 @@ export const retaliation: EmployerIssue = {
     h1: { pre: "Can I sue my employer for ", em: "retaliation", post: "?" },
     leadStrong: "Yes, when you can show three things in order.",
     leadBody:
-      " Retaliation cases require: (1) you did something the law protects, (2) the employer took an adverse action, and (3) the timing or pattern shows the action was because of the protected activity. Workers' comp claims, harassment reports, FMLA leave, OSHA complaints, and whistleblowing all count. Small claims fits when the lost wages and damages are within your state's cap (usually $5,000 to $20,000).",
+      " Retaliation cases require three things to line up: (1) you did something the law protects, (2) the employer took a punishing action against you, and (3) the timing or pattern shows it was because of what you did. Filing a workers' comp claim, reporting harassment, taking family/medical leave (FMLA), reporting safety problems to OSHA, and whistleblowing all count. Small claims fits when the lost wages and damages are within your state's cap (usually $5,000 to $20,000).",
   },
 
   counter: {
@@ -40,31 +40,31 @@ export const retaliation: EmployerIssue = {
         num: "01",
         title: "You did something protected",
         body:
-          "Filing a workers' comp claim. Reporting harassment or discrimination. Requesting FMLA leave. Reporting a safety violation to OSHA. Joining a union. Refusing to commit a crime. Discussing wages with coworkers. Each is protected by federal law, state law, or both.",
+          "Filing a workers' comp claim. Reporting harassment or discrimination. Taking family/medical leave (FMLA). Reporting a safety violation to OSHA. Joining a union. Refusing to commit a crime. Discussing wages with coworkers. Each is protected by federal law, state law, or both.",
       },
       {
         num: "02",
-        title: "The employer took an adverse action",
+        title: "The employer punished you for it",
         body:
-          "Firing, demotion, pay cut, schedule changes that hurt, undesirable shifts, discipline, or any change a reasonable worker would find materially adverse. Even threats can qualify in some retaliation laws.",
+          "Firing, demotion, pay cut, schedule changes that hurt, undesirable shifts, discipline, or any change a reasonable worker would consider seriously bad. Even threats can count in some retaliation laws.",
       },
       {
         num: "03",
-        title: "The timing or pattern proves causation",
+        title: "The timing or pattern shows why",
         body:
-          "Adverse action within days or weeks of the protected act is the strongest signal. Manager comments referencing the protected activity, comparator employees who got better treatment, or a sudden shift after years of clean reviews all add to the timing argument.",
+          "Punishment within days or weeks of the protected act is the strongest signal. Manager comments referencing what you did, coworkers who weren't punished, or a sudden shift in your treatment after years of clean reviews all build the case.",
       },
       {
         num: "04",
-        title: "Often a separate claim from the underlying issue",
+        title: "Stands alone as its own claim",
         body:
-          "You can win a retaliation case even if you lose (or never bring) the underlying discrimination, harassment, or wage claim. Retaliation is its own claim with its own damages and its own statute.",
+          "You can win a retaliation case even if you lose (or never even bring) the underlying discrimination, harassment, or wage claim. Retaliation has its own damages and its own filing deadlines.",
       },
     ],
     note: {
-      strongIntro: "Different statutes, different rules.",
+      strongIntro: "Different laws, different paths.",
       rest:
-        " Title VII retaliation needs an EEOC charge first. FLSA retaliation can go straight to court. State whistleblower laws vary. Public-policy retaliation is judge-made law in most states.",
+        " Discrimination-based retaliation (Title VII) requires filing with the EEOC first. Wage-related retaliation (FLSA) can go straight to court. State whistleblower laws vary. Retaliation for exercising basic rights is recognized by judges in most states without a specific statute.",
     },
   },
 

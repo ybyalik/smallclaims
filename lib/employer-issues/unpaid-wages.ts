@@ -17,7 +17,7 @@ export const unpaidWages: EmployerIssue = {
     h1: { pre: "Can I sue my employer for ", em: "unpaid wages", post: "?" },
     leadStrong: "Yes. Most state and federal wage laws double or triple what you are owed.",
     leadBody:
-      " The federal Fair Labor Standards Act (FLSA) covers most workers and adds liquidated damages equal to 100 percent of the unpaid wages when the violation was willful. Many states layer on top: 2x or 3x in some, plus pre-judgment interest, plus attorney fees that often shift to the loser. Small claims is well-suited because most disputes fit your state's cap (usually $5,000 to $20,000).",
+      " The federal Fair Labor Standards Act (FLSA) covers most workers and adds an extra 100% penalty on top of the unpaid wages when the violation was willful (called 'liquidated damages'). Many states pile on more — 2x or 3x in some, plus interest, plus attorney fees the employer has to pay if they lose. Small claims fits because most disputes are within the state's cap (usually $5,000 to $20,000).",
   },
 
   counter: {
@@ -40,13 +40,13 @@ export const unpaidWages: EmployerIssue = {
         num: "01",
         title: "Off-the-clock work",
         body:
-          "Pre-shift setup, post-shift cleanup, mandatory training, working through unpaid lunch, or answering work emails after hours. If the work was required (or 'suffered or permitted'), the time is compensable.",
+          "Pre-shift setup, post-shift cleanup, required training, working through unpaid lunch, or answering work emails after hours. If the work was required — or the employer knew you were doing it and let you — you have to be paid for that time.",
       },
       {
         num: "02",
         title: "Unpaid overtime",
         body:
-          "Most employees get 1.5x for hours over 40 in a workweek under the FLSA. Some states add daily overtime (over 8 hours in California) or double-time. Misclassifying you as 'salaried exempt' to avoid OT is a separate violation.",
+          "Federal law (FLSA) requires 1.5x for hours over 40 in a week. Some states add more: California requires overtime for hours over 8 in a day, and double-time for hours over 12. Calling you a 'salaried exempt' employee to skip overtime when you don't actually meet the legal definition is a separate violation you can also sue for.",
       },
       {
         num: "03",
@@ -82,9 +82,9 @@ export const unpaidWages: EmployerIssue = {
       },
       {
         tag: "Layer 2",
-        title: "Liquidated damages (2x or 3x)",
+        title: "Penalty on top (2x or 3x)",
         body:
-          "FLSA adds 100 percent (effectively 2x). Several states add their own multipliers on top: Massachusetts adds 3x. New York adds 100 percent if willful. Read your state's wage act before filing.",
+          "Federal law adds 100% extra (effectively doubling what you're owed). Several states pile on more: Massachusetts adds 3x. New York adds 100% extra if the employer knew they were breaking the law. Check your state's wage law before filing.",
         amount: "+ $2,000",
         accent: true,
       },
@@ -92,7 +92,7 @@ export const unpaidWages: EmployerIssue = {
         tag: "Layer 3",
         title: "Filing fees, attorney fees, interest",
         body:
-          "Most wage statutes shift attorney fees to the loser. You do not need a lawyer to use small claims, but you can recover fees if you do hire one.",
+          "Most state wage laws make the losing employer pay your attorney fees. You don't need a lawyer for small claims yourself, but you can still recover fees if you decide to hire one.",
         amount: "+ $400",
       },
     ],

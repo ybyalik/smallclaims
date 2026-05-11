@@ -17,7 +17,7 @@ export const wrongfulTermination: EmployerIssue = {
     h1: { pre: "Can I sue my employer for ", em: "wrongful termination", post: "?" },
     leadStrong: "Yes, in some cases. The hard part is knowing which court.",
     leadBody:
-      " Most states are at-will, which means an employer can fire you for almost any reason, as long as the reason is not illegal. Wrongful termination means you were fired for a reason the law puts off-limits: discrimination, retaliation for whistleblowing or filing a workers' comp claim, refusing to break the law, or breach of an employment contract. Small claims fits when your damages are within your state's cap (usually $5,000 to $20,000) and the dispute is mostly about owed wages, severance, or unpaid bonuses.",
+      " Most states are 'at-will,' meaning an employer can fire you for almost any reason — as long as it's not an illegal reason. Wrongful termination is when you were fired for a reason the law specifically puts off-limits: discrimination, retaliation for whistleblowing or filing a workers' comp claim, refusing to break the law, or breaking an employment contract. Small claims fits when your damages are within your state's cap (usually $5,000 to $20,000) and the dispute is mostly about owed wages, severance, or unpaid bonuses.",
   },
 
   counter: {
@@ -40,19 +40,19 @@ export const wrongfulTermination: EmployerIssue = {
         num: "01",
         title: "Discrimination",
         body:
-          "You were fired because of your race, color, religion, sex (including pregnancy), national origin, age (40 or older), disability, or genetic information. Federal law covers all of these. Most states add more, like sexual orientation, gender identity, marital status, or political belief. Discrimination claims usually need an EEOC charge first, and damages often outgrow small claims.",
+          "You were fired because of your race, color, religion, sex (including pregnancy), national origin, age (40 or older), disability, or genetic information. Federal law covers all of these. Most states add more — sexual orientation, gender identity, marital status, political belief. Discrimination claims usually require filing a charge with the EEOC (the federal workplace-discrimination agency) first, and the damages often outgrow what small claims can handle.",
       },
       {
         num: "02",
         title: "Retaliation",
         body:
-          "You were fired for doing something the law protects. Reporting harassment, filing a workers' comp claim, requesting FMLA leave, joining a union, or reporting illegal company conduct (whistleblowing). The closer the firing is in time to the protected act, the stronger the case.",
+          "You were fired for doing something the law protects: reporting harassment, filing a workers' comp claim, taking family/medical leave (FMLA), joining a union, or reporting illegal conduct (whistleblowing). The shorter the time between the protected act and the firing, the stronger the case.",
       },
       {
         num: "03",
-        title: "Public policy violation",
+        title: "Fired for exercising a basic legal right",
         body:
-          "You were fired for serving on a jury, voting, refusing to commit a crime your boss told you to commit, or exercising a clear legal right. Almost every state recognizes this exception, and the bar for proof is lower than discrimination cases.",
+          "You were fired for serving on a jury, voting, refusing to commit a crime your boss told you to commit, or otherwise doing something you have a clear legal right to do. The law calls this a 'public policy' violation. Almost every state recognizes it, and it's easier to prove than a discrimination case.",
       },
       {
         num: "04",

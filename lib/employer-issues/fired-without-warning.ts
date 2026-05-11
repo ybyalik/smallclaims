@@ -17,7 +17,7 @@ export const firedWithoutWarning: EmployerIssue = {
     h1: { pre: "Can I sue my employer for being ", em: "fired without warning", post: "?" },
     leadStrong: "Probably not, unless something specific was promised.",
     leadBody:
-      " In 49 states, employment is at-will, which means an employer does not have to give you a warning, a reason, or a chance to fix things. The exception is when your handbook, contract, or company policy promises a warning or a progressive-discipline process. If they promised it and skipped it, that is a contract claim. Small claims fits when the damages are within your state's cap (usually $5,000 to $20,000).",
+      " In 49 states, employment is 'at-will' — the employer doesn't have to give you a warning, a reason, or a chance to fix things. The exception: when your handbook, contract, or company policy specifically promises a warning or a step-by-step discipline process. If they promised it and skipped it, that's a contract claim you can sue over. Small claims fits when the damages are within your state's cap (usually $5,000 to $20,000).",
   },
 
   counter: {
@@ -40,7 +40,7 @@ export const firedWithoutWarning: EmployerIssue = {
         num: "01",
         title: "Handbook promised warnings",
         body:
-          "Your employee handbook lays out a progressive-discipline policy: verbal warning, written warning, suspension, then termination. In many states, that creates a contract. If they skipped the steps for you, that is a contract breach.",
+          "Your employee handbook lays out a step-by-step discipline process: verbal warning first, then written warning, then suspension, then firing. In many states, that creates a binding contract. If they skipped the steps for you, that's a contract breach.",
       },
       {
         num: "02",

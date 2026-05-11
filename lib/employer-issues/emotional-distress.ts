@@ -38,15 +38,15 @@ export const emotionalDistress: EmployerIssue = {
     cards: [
       {
         num: "01",
-        title: "Intentional Infliction of Emotional Distress (IIED)",
+        title: "Intentional infliction of distress",
         body:
-          "The employer or supervisor engaged in 'extreme and outrageous' conduct, intended to cause distress (or knew it was substantially certain to), and you suffered severe emotional distress as a result. The conduct bar is high: rude, mean, or insensitive is not enough. Targeted public humiliation, deliberate cruelty, or threats can clear it.",
+          "The employer or supervisor did something 'extreme and outrageous' — they meant to cause you distress (or knew it was almost certain to). The bar is high: rude, mean, or insensitive isn't enough. Targeted public humiliation, deliberate cruelty, or threats can clear it.",
         },
       {
         num: "02",
-        title: "Negligent Infliction of Emotional Distress (NIED)",
+        title: "Negligent infliction of distress",
         body:
-          "The employer breached a duty of care (such as workplace-safety obligations or anti-harassment policies) and the breach caused you foreseeable emotional harm. Some states require physical injury or a 'zone of danger' showing; others accept distress alone with documentation.",
+          "The employer failed a duty they owed you (workplace safety, anti-harassment policy enforcement) and that failure caused you real, foreseeable emotional harm. Some states require you to have a physical injury too; others accept emotional distress alone if you can document it.",
       },
       {
         num: "03",
@@ -62,9 +62,9 @@ export const emotionalDistress: EmployerIssue = {
       },
     ],
     note: {
-      strongIntro: "Workers' comp can block stand-alone IIED.",
+      strongIntro: "Workers' comp can block stand-alone emotional-distress claims.",
       rest:
-        " In some states, the workers' comp 'exclusive remedy' rule blocks emotional-distress suits against the employer for negligence. Intentional conduct usually escapes the bar. Pair with a non-workers'-comp claim (wage, retaliation, harassment) to keep the path clear.",
+        " In some states, the rule that workers' comp is the only path for workplace harm also blocks emotional-distress lawsuits against the employer for negligence. Intentional conduct (deliberate cruelty, harassment) usually escapes that block. Pair your case with another claim (wage, retaliation, harassment) to keep your path to court clear.",
     },
   },
 

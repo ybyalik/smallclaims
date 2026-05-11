@@ -17,7 +17,7 @@ export const unsafeWorkingConditions: EmployerIssue = {
     h1: { pre: "Can I sue my employer for ", em: "unsafe working conditions", post: "?" },
     leadStrong: "Sometimes. Workers' comp covers most injuries. Retaliation is its own case.",
     leadBody:
-      " Workers' compensation is the exclusive remedy for most workplace injuries in most states, which means you usually cannot sue your employer for the injury itself. But you can sue for retaliation if they fire, demote, or punish you for reporting unsafe conditions to OSHA. You can also sue for unpaid wages or contract damages tied to refusing dangerous work. Small claims fits when those secondary damages are within your state's cap.",
+      " Workers' compensation is the only path for most workplace injuries in most states — meaning you usually can't sue your employer directly for the injury itself. But you can sue for retaliation if they fired, demoted, or punished you for reporting unsafe conditions to OSHA (the federal workplace-safety agency). You can also sue for unpaid wages or contract damages tied to refusing dangerous work. Small claims fits when those secondary damages are within your state's cap.",
   },
 
   counter: {
@@ -56,15 +56,15 @@ export const unsafeWorkingConditions: EmployerIssue = {
       },
       {
         num: "04",
-        title: "Intentional or third-party conduct",
+        title: "Intentional acts or third-party companies",
         body:
-          "Workers' comp generally bars suits against the employer for negligence, but intentional acts (assault by a manager, deliberately dangerous setups) and suits against third-party contractors (the equipment manufacturer, a separate company on site) often go directly to civil court.",
+          "Workers' comp generally blocks lawsuits against your own employer for negligence — but intentional acts (assault by a manager, deliberately dangerous setups) and lawsuits against other companies on site (the equipment manufacturer, a separate contractor) usually go directly to regular civil court.",
       },
     ],
     note: {
       strongIntro: "Workers' comp is the default for injuries.",
       rest:
-        " If you were hurt at work, file a workers' comp claim first. The exclusive-remedy rule blocks most direct lawsuits against the employer for the injury itself. Small claims is for the side cases (retaliation, unpaid PPE, lost wages) that workers' comp does not cover.",
+        " If you were hurt at work, file a workers' comp claim first. The law generally blocks you from suing your employer directly for the injury itself — workers' comp is the only path. Small claims is for the side cases (retaliation, unpaid safety equipment, lost wages) that workers' comp doesn't cover.",
     },
   },
 

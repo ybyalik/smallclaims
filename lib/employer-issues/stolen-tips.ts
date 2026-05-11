@@ -17,7 +17,7 @@ export const stolenTips: EmployerIssue = {
     h1: { pre: "Can I sue my employer for ", em: "stealing my tips", post: "?" },
     leadStrong: "Yes. Federal law makes it illegal for managers or owners to keep any portion.",
     leadBody:
-      " Tips are the property of the employee who earned them. The federal Fair Labor Standards Act prohibits employers, managers, and supervisors from keeping any portion of an employee's tips, even when a valid tip pool is in place. Recovery typically includes the stolen tips plus 100 percent liquidated damages, plus attorney fees that shift to the loser. Small claims is well-suited because most disputes fit your state's cap.",
+      " Tips belong to the employee who earned them. The federal Fair Labor Standards Act bans employers, managers, and supervisors from keeping any of an employee's tips — even when there's a valid tip pool. You can recover the stolen tips plus an equal-amount penalty on top, plus attorney fees the employer has to pay if they lose. Small claims fits because most disputes are within the state's cap.",
   },
 
   counter: {
@@ -82,17 +82,17 @@ export const stolenTips: EmployerIssue = {
       },
       {
         tag: "Layer 2",
-        title: "Liquidated damages (100 percent FLSA)",
+        title: "Equal-amount penalty on top",
         body:
-          "FLSA tip claims add 100 percent liquidated damages on top of the stolen amount when the violation was willful. Some states (Massachusetts) add 3x. New York adds 100 percent on willful violations under state law too.",
+          "Federal law adds an extra 100% penalty on top of the stolen amount when the employer knew they were breaking the law. Some states pile on more: Massachusetts adds 3x. New York adds an extra 100% when the violation was willful.",
         amount: "+ $2,000",
         accent: true,
       },
       {
         tag: "Layer 3",
-        title: "Minimum-wage shortfall (if tip credit voided)",
+        title: "Minimum-wage shortfall (in tipped-wage states)",
         body:
-          "If you were paid the tipped minimum wage and the tip credit is voided (no notice, illegal pool, manager taking tips), you also get the difference between tipped minimum and full minimum wage for every hour worked.",
+          "If you were paid the lower tipped minimum wage and the employer broke the tip rules (no posted notice, illegal tip pool, or a manager taking tips), they lose the right to pay the lower wage. You're then owed the difference between tipped minimum and regular minimum wage for every hour you worked.",
         amount: "+ varies",
       },
     ],

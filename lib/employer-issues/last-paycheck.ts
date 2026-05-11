@@ -17,7 +17,7 @@ export const lastPaycheck: EmployerIssue = {
     h1: { pre: "Can I sue my employer for ", em: "withholding my last paycheck", post: "?" },
     leadStrong: "Yes, and most states add penalties for every day it is late.",
     leadBody:
-      " Most states set a deadline for the final paycheck (immediate, next regular payday, or sometimes faster) and many add 'waiting time' penalties of one day's wages per day late, capped between 10 and 30 days. Accrued PTO is also owed in most states. Final paycheck disputes are some of the cleanest small-claims cases because the math is simple and the deadlines are statutory.",
+      " Most states set a deadline for the final paycheck (immediate, next regular payday, or sometimes faster) and many add 'waiting time' penalties — one day's wages for every day the paycheck is late, usually capped at 10 to 30 days. Unused PTO is also owed in most states. Final-paycheck disputes are some of the cleanest small-claims cases because the math is simple and the deadlines are spelled out in state law.",
   },
 
   counter: {
@@ -84,7 +84,7 @@ export const lastPaycheck: EmployerIssue = {
         tag: "Layer 2",
         title: "Waiting-time penalty",
         body:
-          "California, Massachusetts, and several other states add one day's wages per day late, often capped at 30 days. Texas adds the lesser of 30 days' wages or the unpaid amount. New York adds 100 percent if willful.",
+          "California, Massachusetts, and several other states add one day's wages for every day the paycheck is late, usually capped at 30 days. Texas adds the lesser of 30 days' wages or the unpaid amount. New York adds 100% extra if the employer knew they were breaking the law.",
         amount: "+ $2,000",
         accent: true,
       },
@@ -92,7 +92,7 @@ export const lastPaycheck: EmployerIssue = {
         tag: "Layer 3",
         title: "Filing fees, attorney fees, interest",
         body:
-          "Most state wage statutes shift attorney fees to the loser. You do not need a lawyer to use small claims, but if you hire one those fees are recoverable.",
+          "Most state wage laws make the losing employer pay your attorney fees. You don't need a lawyer for small claims yourself, but you can still recover fees if you decide to hire one.",
         amount: "+ $400",
       },
     ],

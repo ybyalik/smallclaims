@@ -15,9 +15,9 @@ export const hostileWorkEnvironment: EmployerIssue = {
   hero: {
     eyebrowSuffix: "Hostile work environment",
     h1: { pre: "Can I sue my employer for a ", em: "hostile work environment after I quit", post: "?" },
-    leadStrong: "Sometimes. The legal name is constructive discharge.",
+    leadStrong: "Sometimes. The legal name for it is 'constructive discharge.'",
     leadBody:
-      " When workplace conditions are so hostile that any reasonable person would feel forced to quit, the law treats your resignation as a termination. The hard part: 'a bad boss' is not enough. The hostility usually has to be tied to a protected category (race, sex, religion, age, disability, pregnancy, etc.) for federal law to help. Pure interpersonal cruelty without a discrimination link is rarely actionable. Small claims fits when damages are within your state's cap.",
+      " When workplace conditions are so hostile that any reasonable person would feel forced to quit, the law treats your resignation as if you'd been fired. The hard part: 'a bad boss' isn't enough. The hostility usually has to be tied to a protected category (race, sex, religion, age, disability, pregnancy, etc.) for federal law to apply. Pure interpersonal cruelty without a discrimination angle is rarely something you can sue over. Small claims fits when damages are within your state's cap.",
   },
 
   counter: {
@@ -40,7 +40,7 @@ export const hostileWorkEnvironment: EmployerIssue = {
         num: "01",
         title: "Tied to a protected category",
         body:
-          "Federal law (Title VII, ADEA, ADA, PWFA) protects against hostility based on race, color, religion, sex, sexual orientation, gender identity, pregnancy, national origin, age (40+), disability, or genetic information. Most states add more categories. The hostility has to be because of one of these, not just a personality clash.",
+          "Federal anti-discrimination laws (Title VII, the age and disability laws, and the pregnancy law) protect against hostility based on race, color, religion, sex, sexual orientation, gender identity, pregnancy, national origin, age (40+), disability, or genetic information. Most states add more categories. The hostility has to be because of one of these — not just a personality clash.",
       },
       {
         num: "02",
@@ -52,7 +52,7 @@ export const hostileWorkEnvironment: EmployerIssue = {
         num: "03",
         title: "A reasonable person would have quit",
         body:
-          "Constructive discharge requires conditions so intolerable that a reasonable person in your position would have felt forced to resign. Many courts ask: did you give the employer a chance to fix it before you quit? Internal complaints, HR reports, and certified-mail letters help meet this requirement.",
+          "The conditions have to be so bad that any reasonable person in your position would have felt forced to resign. Many courts also ask: did you give the employer a chance to fix it before you quit? Internal complaints, HR reports, and certified-mail letters all help show you did.",
       },
       {
         num: "04",
@@ -62,9 +62,9 @@ export const hostileWorkEnvironment: EmployerIssue = {
       },
     ],
     note: {
-      strongIntro: "Title VII requires an EEOC charge first.",
+      strongIntro: "Federal discrimination claims require an EEOC filing first.",
       rest:
-        " Discrimination-based hostile environment cases under federal law require a charge with the EEOC (or state fair-employment agency) before you sue. The deadline is 180 days, extended to 300 days in most states. Public-policy and state-only claims sometimes go straight to court. Check your state.",
+        " Hostile-environment cases under federal law require filing a charge with the EEOC (the federal anti-discrimination agency) — or your state's equivalent agency — before you can sue. The deadline is 180 days, extended to 300 days in most states. State-only claims sometimes go straight to court. Check your state.",
     },
   },
 

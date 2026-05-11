@@ -40,7 +40,7 @@ export const noW2: EmployerIssue = {
         num: "01",
         title: "No W-2 by January 31",
         body:
-          "IRC § 6051 requires employers to furnish W-2s by January 31 of the following year. Missing that date is a per-form IRS penalty. The IRS will pursue it; your job is to recover your own costs.",
+          "Federal tax law requires employers to send your W-2 by January 31. Missing that deadline triggers an IRS penalty per form. The IRS will go after that; your job is to recover your own costs (tax-prep fees, accountant time, missed-deadline penalties you paid).",
       },
       {
         num: "02",
