@@ -5,6 +5,7 @@
 import Link from "next/link";
 import { STATES } from "../../../lib/states";
 import { createServiceRoleClient } from "../../../lib/supabase/service-role";
+import { getStatePrompt, CALL_TITLES, type StateCallId } from "../../../lib/state-research/prompts";
 
 export const dynamic = "force-dynamic";
 
@@ -132,6 +133,57 @@ export default async function StateResearchIndex() {
           })}
         </tbody>
       </table>
+
+      <section style={{ marginTop: 48 }}>
+        <header style={{ marginBottom: 12 }}>
+          <h2 style={{ margin: 0 }}>Prompts in use</h2>
+          <p style={{ fontSize: 13, color: "var(--muted)", margin: "4px 0 0" }}>
+            Live snapshot of the four deep-research prompts pulled from{" "}
+            <code>lib/state-research/prompts.ts</code> at request time. Whenever the prompts file
+            changes and redeploys, this view updates. <code>[STATE NAME]</code> is the placeholder
+            that gets replaced with the actual state name at submit time.
+          </p>
+        </header>
+
+        <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+          {([1, 2, 3, 4] as StateCallId[]).map((c) => {
+            const prompt = getStatePrompt(c, "[STATE NAME]");
+            return (
+              <details
+                key={c}
+                style={{
+                  border: "1px solid var(--rule)",
+                  borderRadius: 8,
+                  padding: "12px 16px",
+                  background: "var(--card)",
+                }}
+              >
+                <summary style={{ cursor: "pointer", fontWeight: 600 }}>
+                  Call {c} — {CALL_TITLES[c]}
+                  <span style={{ fontSize: 12, color: "var(--muted)", fontWeight: 400, marginLeft: 10 }}>
+                    {prompt.length.toLocaleString()} chars · {prompt.split(/\s+/).filter(Boolean).length.toLocaleString()} words
+                  </span>
+                </summary>
+                <pre
+                  style={{
+                    background: "var(--bg-soft)",
+                    padding: 14,
+                    borderRadius: 6,
+                    maxHeight: 520,
+                    overflow: "auto",
+                    whiteSpace: "pre-wrap",
+                    fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace",
+                    fontSize: 12,
+                    marginTop: 12,
+                  }}
+                >
+                  {prompt}
+                </pre>
+              </details>
+            );
+          })}
+        </div>
+      </section>
     </div>
   );
 }
