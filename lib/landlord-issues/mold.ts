@@ -17,7 +17,7 @@ export const mold: LandlordIssue = {
     h1: { pre: "Can I sue my landlord for ", em: "mold", post: "?" },
     leadStrong: "Yes, you can sue your landlord for mold",
     leadBody:
-      " when they knew about it and did not fix it, or when their negligence caused the moisture problem in the first place. Recoverable damages include medical bills, ruined personal property, rent abatement for the affected period, and (in some states) statutory damages for habitability violations.",
+      " when they knew about it and didn't fix it, or when their negligence caused the moisture in the first place. You can recover medical bills, ruined personal property, a rent reduction for the months the unit wasn't liveable, and (in some states) extra penalty damages for not keeping the place liveable (called a 'habitability violation').",
   },
 
   counter: {
@@ -82,17 +82,17 @@ export const mold: LandlordIssue = {
       },
       {
         tag: "Layer 2",
-        title: "Rent abatement",
+        title: "Rent reduction for the affected months",
         body:
-          "Rent reduction for the months the unit was uninhabitable. Most courts use a percentage of rent (10 to 50 percent) based on how unusable the affected space was.",
+          "You can claim back a portion of the rent you paid while the unit wasn't fully liveable (the legal term is 'rent abatement'). Most courts use a percentage of rent (10 to 50%) based on how much of your home was affected.",
         amount: "+ $4,000",
         accent: true,
       },
       {
         tag: "Layer 3",
-        title: "Statutory damages and fees",
+        title: "Penalty damages + filing fees",
         body:
-          "Some states (California, Massachusetts, New York City) authorize statutory damages on top for habitability breaches. Filing fees and pre-judgment interest also add up.",
+          "Some states (California, Massachusetts, New York City) add extra penalty damages on top when a landlord fails to keep a unit liveable. Filing fees and pre-judgment interest stack on top of that.",
         amount: "+ $300",
       },
     ],
@@ -348,7 +348,7 @@ export const mold: LandlordIssue = {
     },
     {
       q: "Can you break your lease because of mold?",
-      a: "Yes, in most states, if the landlord refused to remediate after written notice. Constructive eviction lets you treat the lease as terminated when the unit is uninhabitable. Document the timeline carefully because the landlord may sue you for the unpaid rent.",
+      a: "Yes, in most states, if the landlord refused to fix it after written notice. When the unit isn't liveable, the law lets you walk away from the lease as if you'd been evicted (called 'constructive eviction'). Document the timeline carefully because the landlord may sue you for the unpaid rent — your documentation is the defense.",
     },
     {
       q: "Do you need an inspector before suing?",

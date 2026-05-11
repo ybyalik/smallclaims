@@ -17,7 +17,7 @@ export const securityDeposit: LandlordIssue = {
     h1: { pre: "Can I sue my landlord for my ", em: "security deposit", post: "?" },
     leadStrong: "Yes, you can sue your landlord to get your security deposit back",
     leadBody:
-      " if they miss the return deadline your state sets, usually 14 to 30 days after move-out. If they miss it or charge for normal wear and tear, you can sue for the deposit plus 2x or 3x statutory damages in most states, plus filing fees and (often) attorney fees. You do not need a lawyer.",
+      " if they miss the return deadline your state sets — usually 14 to 30 days after move-out. If they miss it or charge for normal wear and tear, you can sue for the deposit plus a 2x or 3x penalty on top (most states call this 'statutory damages'), plus filing fees and (often) attorney fees. You don't need a lawyer.",
   },
 
   counter: {
@@ -46,7 +46,7 @@ export const securityDeposit: LandlordIssue = {
         num: "02",
         title: "No itemized list",
         body:
-          "Money was kept, but you got no written breakdown of what was deducted and why. Most statutes treat that as a failure to comply, even if the deductions would have been valid.",
+          "Money was kept, but you got no written breakdown of what was deducted and why. In most states, the rule is simple: no itemized list = the landlord automatically loses on that money, even if the deductions would have been legitimate.",
       },
       {
         num: "03",
@@ -82,9 +82,9 @@ export const securityDeposit: LandlordIssue = {
       },
       {
         tag: "Layer 2",
-        title: "Statutory damages (2x or 3x)",
+        title: "Penalty on top (2x or 3x)",
         body:
-          "Most states add a 2x or 3x multiplier on the wrongfully withheld amount when the landlord acted in bad faith. Texas adds $100 plus 3x. Massachusetts adds 3x plus interest.",
+          "Most states let you ask for an extra 2x or 3x the deposit as a penalty when the landlord kept your money in bad faith — so if they kept $1,500, you can claim $4,500 or $6,000 on top of getting the original back. Texas adds an extra $100. Massachusetts adds interest on top.",
         amount: "+ $4,500",
         accent: true,
       },
@@ -108,7 +108,7 @@ export const securityDeposit: LandlordIssue = {
   demand: {
     h2: { pre: "Send a ", em: "demand letter", post: " first." },
     lede:
-      "About half of security-deposit disputes settle once a real demand letter arrives. A real one shows the statutory damages math and cites the actual statute by section. Most landlords pay rather than risk a fee-shifting judgment in court.",
+      "About half of security-deposit disputes settle once a real demand letter arrives. A good one shows the math (deposit + penalty) and cites the exact state law by name. Most landlords pay rather than risk a court ruling that could also stick them with your attorney fees.",
     checklist: [
       "Your forwarding address and lease end date",
       "The exact amount you are owed (deposit plus statutory multiplier)",
@@ -274,7 +274,7 @@ export const securityDeposit: LandlordIssue = {
         label: "High",
         range: "$4,500 to $10,000+",
         body:
-          "<strong>3x states with fee-shifting.</strong> Texas, Massachusetts, and Colorado on clear bad-faith facts. Triple damages plus pre-judgment interest plus attorney fees.",
+          "<strong>3x penalty states.</strong> Texas, Massachusetts, and Colorado, when bad faith is clear. Triple damages plus interest plus your attorney fees (in states where the law makes the landlord cover them).",
         tier: "high",
       },
     ],
@@ -313,9 +313,9 @@ export const securityDeposit: LandlordIssue = {
         pillLabel: "When stakes are high",
         pillTier: "warn",
         whenItFits:
-          "deposit exceeds the small-claims cap, retaliation is involved, or the landlord owns multiple units (class-action territory).",
+          "your deposit exceeds the small-claims cap, the landlord is retaliating against you, or the landlord owns multiple units (which could open the door to a class action).",
         tradeoff:
-          "longer timeline, but most tenant-rights attorneys take security-deposit cases on contingency because of fee-shifting statutes.",
+          "longer timeline, but most tenant-rights attorneys take security-deposit cases on contingency — they only get paid if you win, since state law forces the landlord to cover their fees.",
       },
     ],
   },
@@ -323,7 +323,7 @@ export const securityDeposit: LandlordIssue = {
   cta: {
     h2: { pre: "Recover what's ", em: "actually owed", post: "." },
     body:
-      "Most landlords settle once a real demand letter arrives. Real ones show the statutory damages math and cite the statute by section. Our generator builds yours in under two minutes.",
+      "Most landlords settle once a real demand letter arrives. A good one lays out the math — what you're owed plus the state penalty — and cites the law by name. Our generator builds yours in under two minutes.",
     receipt: {
       label: "example · 3x state",
       items: [
@@ -344,15 +344,15 @@ export const securityDeposit: LandlordIssue = {
     },
     {
       q: "How much can you sue a landlord for if they keep your deposit?",
-      a: "The wrongfully withheld amount, plus a statutory penalty of 2x or 3x in most states when bad faith is shown, plus filing fees and (in many states) attorney fees. Texas adds $100 plus 3x. Massachusetts adds 3x plus interest plus fees.",
+      a: "The amount they kept without good cause, plus a 2x or 3x penalty in most states when the landlord kept it in bad faith, plus filing fees and (in many states) your attorney fees on top. Texas adds $100 + triple. Massachusetts adds triple plus interest plus fees.",
     },
     {
       q: "Can you sue a landlord in small claims for double or triple the deposit?",
-      a: "Yes. Most state security-deposit statutes authorize a 2x or 3x multiplier on the wrongfully withheld amount when the landlord acted in bad faith. That multiplier is what pushes most landlords to settle once a real demand letter arrives.",
+      a: "Yes. Most states let you ask for 2x or 3x the deposit as a penalty when the landlord kept it in bad faith. That penalty math is what pushes most landlords to settle once a real demand letter arrives.",
     },
     {
       q: "What counts as bad-faith withholding?",
-      a: "Failing to send an itemized list of deductions, inventing damage that pre-existed your tenancy, charging for normal wear and tear, or simply ignoring your demand. Each one is enough on its own under most state statutes.",
+      a: "Failing to send an itemized list of deductions, inventing damage that was already there before you moved in, charging for normal wear and tear, or just ignoring your demand. Any one of these is enough on its own in most states.",
     },
     {
       q: "How do you sue a landlord for a security deposit in California?",
@@ -364,7 +364,7 @@ export const securityDeposit: LandlordIssue = {
     },
     {
       q: "Do you need a lawyer to sue a landlord for a security deposit?",
-      a: "No. Small claims is built for self-represented litigants. In California, lawyers are not even allowed at the initial hearing. The hearing typically takes 10 to 15 minutes. Statutory fee-shifting still lets you recover attorney fees in some states, even without a lawyer.",
+      a: "No. Small claims is built for people representing themselves. In California, lawyers aren't even allowed at the initial hearing. The hearing typically takes 10 to 15 minutes. In some states, you can still recover attorney fees even if you didn't hire a lawyer for the hearing — so you can use that to pay an attorney just to review your case ahead of time.",
     },
   ],
 
