@@ -28,7 +28,7 @@ Output is a FINDINGS DOSSIER, not a narrative. Use compact markdown:
 - Tables are allowed where they convey information faster (fee schedules, statute of limitations by claim type, exemption amounts, evidence categories).
 - Do NOT write paragraphs of prose. Do NOT include an introduction, executive summary, or sign-off.
 - Do NOT restart, retry, or revise. Each section appears exactly once.
-- Length budget: 3,000 to 5,000 words total. If you can't fit a low-value detail, drop it; never restart.
+- Length budget: 4,000 to 7,000 words total. If you can't fit a low-value detail, drop it; never restart.
 
 BOUNDED OPEN-ENDED SWEEPS
 
