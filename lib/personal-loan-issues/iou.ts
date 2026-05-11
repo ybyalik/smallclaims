@@ -17,7 +17,7 @@ export const iou: PersonalLoanIssue = {
     h1: { pre: "Can I sue someone for ", em: "not paying back an IOU", post: "?" },
     leadStrong: "Yes. An IOU is one of the strongest types of loan evidence.",
     leadBody:
-      " A signed IOU is a written acknowledgment of debt: amount, parties, often the date and any terms. Most state laws treat IOUs as enforceable promissory notes. The case is usually straightforward at the hearing because the borrower's own writing establishes the debt. Statute of limitations is longer for written IOUs (4 to 6 years in most states, sometimes 10).",
+      " A signed IOU is written proof of the debt: amount, parties, often the date and any terms. Most state laws treat IOUs as enforceable contracts (also called 'promissory notes'). The case is usually straightforward at the hearing because the borrower's own writing establishes the debt. Filing deadlines are longer for written IOUs (4 to 6 years in most states, sometimes 10).",
   },
 
   counter: {
@@ -37,8 +37,8 @@ export const iou: PersonalLoanIssue = {
     cards: [
       { num: "01", title: "Amount", body: "The dollar amount owed. Even handwritten IOUs are enforceable if the amount is clear. Disputes about the amount can be resolved with bank records or witness testimony." },
       { num: "02", title: "Parties (lender and borrower)", body: "Both parties named. The borrower's signature is the central evidence. Lender's name is helpful but recovery is possible without it." },
-      { num: "03", title: "Repayment terms (or implied 'on demand')", body: "If the IOU specifies a date or schedule, that controls. If silent, the loan is 'on demand': payable when the lender asks. The demand letter triggers the obligation." },
-      { num: "04", title: "Interest (if specified)", body: "Interest specified in the IOU is enforceable up to state usury limits. Without specified interest, you can claim the state's pre-judgment interest rate (7 to 10 percent typical)." },
+      { num: "03", title: "Repayment terms (or default 'on demand')", body: "If the IOU specifies a date or schedule, that controls. If silent, the loan is 'on demand' — meaning payable whenever the lender asks. Sending a demand letter triggers the obligation." },
+      { num: "04", title: "Interest (if specified)", body: "If the IOU lists an interest rate, you can charge it — up to your state's legal limit (states cap how much interest is allowed). Without a specified rate, you can claim the state's default rate (typically 7 to 10%)." },
     ],
     note: { strongIntro: "Witness signatures help.", rest: " A witnessed IOU is even stronger evidence than a two-party IOU. Notarization is rarely required but adds extra weight. Even a basic IOU on a napkin is enforceable if the borrower's signature is clear." },
   },

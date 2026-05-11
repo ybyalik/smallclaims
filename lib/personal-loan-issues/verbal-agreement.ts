@@ -17,7 +17,7 @@ export const verbalAgreement: PersonalLoanIssue = {
     h1: { pre: "Can I sue someone for a ", em: "verbal agreement", post: "?" },
     leadStrong: "Yes. Oral contracts are enforceable in most cases.",
     leadBody:
-      " The widespread belief that 'oral contracts are not worth the paper they're written on' is wrong. Most state laws enforce oral contracts under 2-to-4-year statutes of limitations. The challenge is proof: bank transfers, follow-up texts, witnesses, and the borrower's own statements about the agreement all count. Some types of contracts (real estate, marriage, debts of others, year-plus performance) require writing under the Statute of Frauds.",
+      " The popular saying that 'verbal contracts aren't worth the paper they're written on' is wrong. Most states enforce verbal contracts with a 2-to-4-year filing deadline. The challenge is proof: bank transfers, follow-up texts, witnesses, and the borrower's own statements about the agreement all help. A few specific types of contracts (real estate, marriage, debts of others, agreements that can't be completed within a year) DO need to be in writing — but personal loans are not in that group.",
   },
 
   counter: {
@@ -37,10 +37,10 @@ export const verbalAgreement: PersonalLoanIssue = {
     cards: [
       { num: "01", title: "Bank transfer plus follow-up text", body: "Wire transfer, Venmo, or check with a memo line referring to the loan. Any subsequent text from the borrower acknowledging the loan and promising repayment. The borrower's own words establish the contract." },
       { num: "02", title: "Witness testimony", body: "Anyone who heard the agreement: friend, spouse, family member. Witness statements at the hearing or written declarations carry weight. The witness should remember specific details (date, amount, terms)." },
-      { num: "03", title: "Pattern of consistent conduct", body: "Repeated similar transactions, partial payments, or correspondence that imply a contract. Course-of-dealing evidence is admissible to establish what the parties agreed even without explicit writing." },
-      { num: "04", title: "Borrower's own statements (admissions)", body: "If the borrower ever acknowledged the debt in writing or in a recorded conversation (where state law allows), that's an admission. Even casual texts ('I owe you the $3k') are decisive evidence." },
+      { num: "03", title: "Pattern of consistent behavior", body: "Repeated similar transactions, partial payments, or correspondence that show there was an agreement. Courts will look at how you both actually behaved over time to figure out what was agreed — even without anything in writing." },
+      { num: "04", title: "Borrower's own statements (admissions)", body: "If the borrower ever acknowledged the debt in writing or in a recorded conversation (where state law allows), that's an admission and very strong evidence. Even casual texts ('I owe you the $3k') are decisive at the hearing." },
     ],
-    note: { strongIntro: "Statute of Frauds limits oral contracts.", rest: " Some contracts must be in writing: real estate sales, contracts that cannot be performed within a year, marriage agreements, debts of others. Loan agreements between individuals are not in this category. Most personal loans are enforceable orally regardless of amount." },
+    note: { strongIntro: "A few contract types DO need to be in writing.", rest: " Some agreements must be in writing to be enforceable: real estate sales, agreements that can't be completed within a year, marriage agreements, and you taking on someone else's debt. Personal loans between individuals are NOT in this group — verbal personal loans are enforceable regardless of amount." },
   },
 
   claim: {

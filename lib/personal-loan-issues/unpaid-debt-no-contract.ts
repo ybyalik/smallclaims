@@ -15,9 +15,9 @@ export const unpaidDebtNoContract: PersonalLoanIssue = {
   hero: {
     eyebrowSuffix: "Unpaid debt no contract",
     h1: { pre: "Can I sue someone for ", em: "unpaid debt without a contract", post: "?" },
-    leadStrong: "Yes. Unjust enrichment and promissory estoppel are alternative legal theories.",
+    leadStrong: "Yes. The law gives you alternatives to a written contract.",
     leadBody:
-      " Even without a formal contract, you can recover money owed under three theories: (1) unjust enrichment (the borrower received a benefit at your expense and it would be unfair for them to keep it without paying); (2) promissory estoppel (you relied on their promise to your detriment); (3) course of dealing (your prior transactions establish a pattern). The proof is harder than a contract case but the recovery is the same. Documentation of the transfer plus the borrower's understanding of the obligation is the spine.",
+      " Even without a formal contract, three legal theories can win the case: (1) the borrower got money or value from you and it would be unfair for them to keep it without paying (the law calls this 'unjust enrichment'); (2) they made a promise, you relied on it, and you got hurt as a result ('promissory estoppel'); (3) your prior transactions with them established a pattern ('course of dealing'). The proof is harder than a written-contract case, but the recovery is the same. The backbone: documentation of the transfer + the borrower's understanding of the obligation.",
   },
 
   counter: {
@@ -35,10 +35,10 @@ export const unpaidDebtNoContract: PersonalLoanIssue = {
     h2: { pre: "What can you ", em: "recover without a contract", post: "?" },
     lede: "Four legal theories work even without a signed agreement.",
     cards: [
-      { num: "01", title: "Unjust enrichment", body: "Borrower received money or services at your expense and it would be unfair for them to keep without paying. Doesn't require explicit agreement, just unjust retention. Most common theory in informal cases." },
-      { num: "02", title: "Promissory estoppel", body: "Borrower made a clear promise; you relied on it; you suffered detriment as a result. Even without a formal contract, the broken promise creates liability. Useful when oral agreements are disputed." },
-      { num: "03", title: "Course of dealing", body: "Your prior transactions with the borrower establish a pattern. Repeated similar exchanges with consistent repayment terms create implied contract. Each subsequent exchange follows the established pattern." },
-      { num: "04", title: "Quantum meruit (services)", body: "If you provided services rather than money, you can recover the reasonable value of services rendered. Common for freelance work without written contracts. Courts use industry rates to set value." },
+      { num: "01", title: "Unjust enrichment", body: "The borrower got money or services from you and it would be unfair for them to keep it without paying. You don't need to have made an explicit agreement — just show they unfairly kept something of value. The most common theory in informal cases." },
+      { num: "02", title: "Promissory estoppel", body: "The borrower made a clear promise; you relied on it; you got hurt as a result. Even without a formal contract, a broken promise creates legal responsibility. Useful when verbal agreements are disputed." },
+      { num: "03", title: "Course of dealing", body: "Your prior transactions with this person establish a pattern. Repeated similar exchanges with consistent repayment terms create an unwritten 'implied contract.' Each new transaction is treated as following the established pattern." },
+      { num: "04", title: "Fair value of services (quantum meruit)", body: "If you provided services instead of money, you can recover the reasonable value of those services. Common for freelance work without a written contract. Courts use typical industry rates to set the value." },
     ],
     note: { strongIntro: "Documentation matters more than the legal theory.", rest: " The court usually applies whichever theory fits the facts. Your job is to document the transfer and the borrower's understanding. Whether it's called 'unjust enrichment' or 'breach of implied contract' is the court's framing; the evidence requirements are similar." },
   },

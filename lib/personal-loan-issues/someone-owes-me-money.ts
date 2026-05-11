@@ -17,7 +17,7 @@ export const someoneOwesMeMoney: PersonalLoanIssue = {
     h1: { pre: "Can I sue someone ", em: "who owes me money", post: "?" },
     leadStrong: "Yes. Most informal loans are recoverable in small claims.",
     leadBody:
-      " A loan, IOU, or money advance that was supposed to be paid back is a contract claim. Written contracts are easiest, but oral agreements and even loans without any agreement (under 'unjust enrichment' or 'promissory estoppel' theories) are also recoverable. The key evidence: proof you transferred the money, proof they agreed to repay, and proof they didn't. Small claims is built for this kind of case.",
+      " A loan, IOU, or money advance that was supposed to be paid back is a contract claim. Written contracts are easiest, but verbal agreements work too — and even loans with no explicit agreement at all can be recovered (the law calls these 'unjust enrichment' or 'promissory estoppel' cases). The key evidence: proof you transferred the money, proof they agreed to repay, and proof they didn't. Small claims is built for this kind of case.",
   },
 
   counter: {
@@ -35,12 +35,12 @@ export const someoneOwesMeMoney: PersonalLoanIssue = {
     h2: { pre: "What kinds of ", em: "loans", post: " can you sue to recover?" },
     lede: "Four scenarios. Each is recoverable under different legal theories.",
     cards: [
-      { num: "01", title: "Written loan with signed agreement", body: "Easiest case. Signed promissory note, IOU, or written agreement specifying amount, terms, and repayment date. Statute of limitations is usually 4 to 6 years." },
-      { num: "02", title: "Oral loan with proof of transfer", body: "Most informal loans. Bank transfer, Venmo/Zelle/Cash App, money order, or witness to the cash exchange. Plus texts or emails referring to the loan establish the agreement." },
-      { num: "03", title: "Loan with no explicit agreement (unjust enrichment)", body: "You paid for something on the borrower's behalf, or transferred money expecting repayment. Even without explicit agreement, the law allows recovery to prevent unjust enrichment." },
-      { num: "04", title: "Promised payment that never came", body: "They asked for the money, promised to pay back, and never did. The promise is the basis (promissory estoppel). Even if you cannot prove a contract, the broken promise is recoverable when you relied on it to your detriment." },
+      { num: "01", title: "Written loan with signed agreement", body: "Easiest case. Signed IOU, promissory note, or written agreement showing the amount, terms, and repayment date. You usually have 4 to 6 years to sue." },
+      { num: "02", title: "Verbal loan with proof of transfer", body: "The most common informal loan. Bank transfer, Venmo/Zelle/Cash App, money order, or a witness to the cash exchange. Texts or emails that mention the loan also help establish the agreement." },
+      { num: "03", title: "Loan with no explicit agreement", body: "You paid for something on the borrower's behalf, or transferred money expecting repayment, but you never wrote anything down. Even without an explicit agreement, the law lets you sue to prevent them from keeping money they didn't earn (called 'unjust enrichment')." },
+      { num: "04", title: "Promised payment that never came", body: "They asked for the money, promised to pay back, and never did. The promise itself is what you sue on — the law calls this 'promissory estoppel.' Even without a contract, you can recover when you relied on their promise and got hurt as a result." },
     ],
-    note: { strongIntro: "Statute of limitations is critical.", rest: " Written contracts: 4 to 6 years in most states (10 years in some). Oral contracts: 2 to 4 years. The clock usually starts on the date the loan was due back. If your loan is older than the deadline, the case is barred. Move fast." },
+    note: { strongIntro: "Filing deadline is critical.", rest: " Written contracts give you 4 to 6 years in most states (10 in some). Verbal contracts give you 2 to 4 years. The clock usually starts on the date the loan was supposed to be paid back. Past the deadline, the case is dead. Move fast." },
   },
 
   claim: {
@@ -48,7 +48,7 @@ export const someoneOwesMeMoney: PersonalLoanIssue = {
     lede: "The original loan amount is the floor. Pre-judgment interest, late fees (if agreed), and filing fees stack on top.",
     layers: [
       { tag: "Layer 1", title: "Original loan amount", body: "The principal — the actual money you transferred. Bank statements, cancelled checks, Venmo/Zelle/Cash App receipts, or witness testimony to cash exchange establish the amount.", amount: "$4,000" },
-      { tag: "Layer 2", title: "Pre-judgment interest", body: "Most states allow pre-judgment interest at the legal rate (typically 7 to 10 percent per year). On a $4,000 loan that's been outstanding for 3 years, the interest is $840 to $1,200.", amount: "+ $1,200", accent: true },
+      { tag: "Layer 2", title: "Interest from when it should've been paid back", body: "Most states let you claim interest at the state default rate (typically 7 to 10% per year), running from when repayment was due. On a $4,000 loan that's been unpaid for 3 years, that's roughly $840 to $1,200 in extra interest.", amount: "+ $1,200", accent: true },
       { tag: "Layer 3", title: "Filing fees, post-judgment interest", body: "Filing fee, service-of-process cost. Post-judgment interest accrues until paid. Some states also allow attorney fees if specified in a written contract.", amount: "+ $200" },
     ],
     total: { label: "Sample total within small-claims cap", body: "$4,000 loan plus 3 years of pre-judgment interest at 10 percent, plus filing fee.", amount: "$5,400", sublabel: "illustrative · varies by state and term" },
@@ -56,7 +56,7 @@ export const someoneOwesMeMoney: PersonalLoanIssue = {
 
   demand: {
     h2: { pre: "Send a ", em: "demand letter", post: " first." },
-    lede: "Most informal loan disputes settle once a demand letter arrives. The letter serves three purposes: documents the loan and demand, shows you're serious about court, and tolls some statutes of limitations.",
+    lede: "Most informal loan disputes settle once a demand letter arrives. The letter serves three purposes: it documents the loan and your demand, shows you're serious about going to court, and in some states pauses the filing-deadline clock.",
     checklist: [
       "Date and amount of the loan",
       "How the money was transferred (bank record, Venmo, etc.)",

@@ -17,7 +17,7 @@ export const familyMember: PersonalLoanIssue = {
     h1: { pre: "Can I sue a family member for ", em: "money owed", post: "?" },
     leadStrong: "Yes, but most courts presume family transfers are gifts unless you prove otherwise.",
     leadBody:
-      " Loans between family members face an extra hurdle: many states presume that money transferred between close family members is a gift. To overcome the presumption, you need clear evidence of loan terms (written agreement, texts about repayment, transfer notes saying 'loan'). The legal framework is the same as friend loans, but the gift presumption raises the documentation bar. Family relationships often survive better with mediation than litigation.",
+      " Loans between family members face an extra hurdle: in many states, courts start by assuming that money between close family is a gift. To overcome that assumption, you need clear evidence of loan terms (written agreement, texts about repayment, transfer notes saying 'loan'). The legal framework is the same as friend loans, but you need stronger paperwork to clear the gift hurdle. Family relationships often survive better through mediation than a lawsuit.",
   },
 
   counter: {
@@ -40,7 +40,7 @@ export const familyMember: PersonalLoanIssue = {
       { num: "03", title: "Down-payment loans (often disputed)", body: "Common pattern: parent loans adult child money for house down payment. Often disputed later as the family relationship strains. Written agreement is essential to overcome gift presumption in these cases." },
       { num: "04", title: "Repeated cash advances with promise to repay", body: "Pattern of advances 'between paydays' with text or verbal promises. Cumulative pattern can support recovery. Each instance is its own claim." },
     ],
-    note: { strongIntro: "The gift presumption is real.", rest: " Most states presume that money transferred between close family members (parent-child, spouse-spouse, sibling-sibling) is a gift unless there's clear contrary evidence. The burden is on you to prove it was a loan. Written documentation and transfer-note designations are the cleanest ways to overcome the presumption." },
+    note: { strongIntro: "The gift assumption is real.", rest: " Most states start by assuming that money between close family members (parent-child, spouse-spouse, sibling-sibling) is a gift, not a loan — unless you can show otherwise. The burden is on you to prove it was a loan. Written documentation and 'loan' notes on the transfer are the cleanest ways to do that." },
   },
 
   claim: {

@@ -15,9 +15,9 @@ export const exOrAfterBreakup: PersonalLoanIssue = {
   hero: {
     eyebrowSuffix: "Ex owes me money",
     h1: { pre: "Can I sue my ex for ", em: "money owed", post: "?" },
-    leadStrong: "Yes, but the gift presumption from cohabitation can complicate things.",
+    leadStrong: "Yes, but courts may start by assuming the money was a gift between partners.",
     leadBody:
-      " Money you advanced to an ex during the relationship is often disputed afterward as 'gift' versus 'loan'. Documentation matters more than ever. Bank transfers with 'loan' notes, texts about repayment, written agreements, or proof of joint expenses you covered alone all support recovery. Small claims is the right venue when the amount fits your state's cap and you're not entangled in a family-court situation.",
+      " Money you advanced to an ex during the relationship often gets disputed afterward as 'gift' versus 'loan.' Documentation matters more than ever. Bank transfers with 'loan' notes, texts about repayment, written agreements, or proof of joint expenses you covered alone all help. Small claims is the right place when the amount fits your state's cap and you're not also dealing with a family-court matter (marriage, divorce, kids)." ,
   },
 
   counter: {
@@ -36,7 +36,7 @@ export const exOrAfterBreakup: PersonalLoanIssue = {
     lede: "Four common patterns after breakups.",
     cards: [
       { num: "01", title: "Money you advanced as a loan", body: "Cash transfer or Venmo with 'pay you back' designation. The platform record plus texts establish the loan independent of the relationship status." },
-      { num: "02", title: "Joint expenses you paid alone", body: "Rent, utilities, vacation deposits, joint car payments where you paid more than half. Recovery for the excess under unjust enrichment when the relationship ended without resolving." },
+      { num: "02", title: "Joint expenses you paid alone", body: "Rent, utilities, vacation deposits, joint car payments where you paid more than half. You can recover the excess on the theory that they shouldn't be allowed to keep the benefit without paying their share (the law calls this 'unjust enrichment')." },
       { num: "03", title: "Major purchases for shared use", body: "Furniture, electronics, appliances purchased with your money for joint use. Many state laws allow recovery of half the value when the relationship ends." },
       { num: "04", title: "Engagement ring (state-specific)", body: "Most states treat engagement rings as 'conditional gifts': returnable if the engagement is broken (regardless of fault). Some states (Montana, others) treat the ring as a gift once given." },
     ],
