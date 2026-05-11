@@ -16,12 +16,12 @@ export const securityDeposit: RoommateIssue = {
     h1: { pre: "Can I sue my roommate over the ", em: "security deposit", post: "?" },
     leadStrong: "Yes. Three common patterns: unfair allocation, kept refund, and damage caused by them.",
     leadBody:
-      " Roommate security-deposit disputes usually arise at the end of the lease. The landlord refunds the deposit to one tenant or sends a single check to the unit; that tenant has to forward each roommate's share. When they don't (or when one roommate caused damage that reduced the refund), the case lands in small claims. The original deposit-contribution records and the move-out walkthrough establish the case.",
+      " Roommate security-deposit disputes usually come up at the end of the lease. The landlord refunds the deposit to one tenant or sends a single check to the unit; that tenant is supposed to forward each roommate's share. When they don't (or when one roommate caused damage that reduced the refund), the case lands in small claims. Bank records showing what you originally paid in, plus the move-out walkthrough, are the case.",
   },
 
   counter: {
     amount: 1800,
-    meta: "Contribution / unjust enrichment",
+    meta: "Your share + keeping money that isn't theirs",
     rows: [
       { label: "Your share of deposit owed", value: "$1,500" },
       { label: "Pre-judgment interest", value: "+ $100", emphasis: "accent" },
@@ -34,9 +34,9 @@ export const securityDeposit: RoommateIssue = {
     h2: { pre: "What kinds of ", em: "deposit disputes", post: " can you sue for?" },
     lede: "Three common patterns.",
     cards: [
-      { num: "01", title: "Roommate kept your share of the deposit", body: "Most common. Landlord sent the deposit refund to one tenant. That tenant kept the full amount instead of forwarding your share. Bank record from move-in (deposit contribution) plus landlord refund record establishes the case." },
-      { num: "02", title: "Damage one roommate caused reduced the refund", body: "The deposit was reduced by deductions for damage. If a specific roommate caused the damage, their share of the deduction comes out of their portion. Photos and the move-out walkthrough establish causation." },
-      { num: "03", title: "Roommate moved out, then claimed share without contributing repair costs", body: "Roommate left mid-lease, didn't help with end-of-lease cleaning or repairs. They demand their full deposit share but didn't help cover end-of-lease costs. The shortfall is recoverable from their share." },
+      { num: "01", title: "Roommate kept your share of the deposit", body: "Most common. Landlord sent the deposit refund to one tenant. That tenant kept the full amount instead of forwarding your share. Bank record from move-in (what you paid in) plus landlord refund record makes the case." },
+      { num: "02", title: "Damage one roommate caused reduced the refund", body: "The deposit was reduced by deductions for damage. If a specific roommate caused the damage, the deduction comes out of their portion. Photos and the move-out walkthrough show who caused what." },
+      { num: "03", title: "Roommate moved out, then claimed share without contributing repair costs", body: "Roommate left mid-lease, didn't help with end-of-lease cleaning or repairs. They demand their full deposit share but didn't help cover end-of-lease costs. The shortfall comes out of their share." },
       { num: "04", title: "Disputed allocation of deductions", body: "Landlord deducted for general wear-and-tear or unclear damage. Question is how to split deductions between roommates. Default rule: equal split unless one roommate caused specific damage." },
     ],
     note: { strongIntro: "Get the move-out walkthrough.", rest: " A move-out walkthrough with the landlord (and ideally with all roommates present) establishes who caused what damage. Photos help. Without a walkthrough, ambiguous deductions often default to equal split among roommates." },
@@ -46,9 +46,9 @@ export const securityDeposit: RoommateIssue = {
     h2: { pre: "How much can you ", em: "recover", post: "?" },
     lede: "Your unpaid share of the deposit plus filing fees.",
     layers: [
-      { tag: "Layer 1", title: "Your share of the deposit", body: "Original deposit you contributed plus your fair share of any refund. Bank record from move-in establishing your contribution.", amount: "$1,500" },
-      { tag: "Layer 2", title: "Pre-judgment interest", body: "State legal rate (7 to 10 percent per year) running from the date the landlord refunded.", amount: "+ $100", accent: true },
-      { tag: "Layer 3", title: "Filing fees, post-judgment interest", body: "Filing fee, service-of-process cost, post-judgment interest until paid.", amount: "+ $200" },
+      { tag: "Layer 1", title: "Your share of the deposit", body: "What you originally paid in plus your fair share of any refund. Bank record from move-in showing your contribution.", amount: "$1,500" },
+      { tag: "Layer 2", title: "Interest before the case is decided", body: "State legal rate (7 to 10 percent per year) running from the date the landlord refunded.", amount: "+ $100", accent: true },
+      { tag: "Layer 3", title: "Filing fees, interest after judgment", body: "Filing fee, service-of-process cost, interest that keeps running until they pay.", amount: "+ $200" },
     ],
     total: { label: "Sample total within small-claims cap", body: "$1,500 share kept by ex-roommate plus interest, plus filing fee.", amount: "$1,800", sublabel: "illustrative · varies by deposit size" },
   },
@@ -56,7 +56,7 @@ export const securityDeposit: RoommateIssue = {
   demand: {
     h2: { pre: "Send a ", em: "demand letter", post: " first." },
     lede: "Demand letters work especially well for deposit disputes because the documentation is usually clean.",
-    checklist: ["Original deposit contribution record (your bank record from move-in)", "Lease showing both names", "Landlord's refund record or itemization", "Move-out walkthrough notes", "A 14-day deadline", "Sent certified mail to forwarding address"],
+    checklist: ["Bank record from move-in showing what you paid in", "Lease showing both names", "Landlord's refund record or itemization", "Move-out walkthrough notes", "A 14-day deadline", "Sent certified mail to forwarding address"],
     letter: {
       certifiedNum: "7019 0140 0001 4827 3622",
       date: "May 5, 2026",
@@ -69,7 +69,7 @@ export const securityDeposit: RoommateIssue = {
       ],
       demandList: [
         "Refund of <strong>$1,500</strong> in my deposit share;",
-        "Pre-judgment interest at 10 percent per year (<strong>$100</strong>).",
+        "Interest at 10 percent per year (<strong>$100</strong>).",
       ],
       closingLine: "Total demand: <strong>$1,600.00</strong>. If unresolved, I will file in Small Claims Court.",
       signatory: "Reese Q. Tenant",
@@ -85,7 +85,7 @@ export const securityDeposit: RoommateIssue = {
       { title: "Send certified-mail demand", body: "Use the roommate's forwarding address. Most pay at this stage to close the matter." },
       { title: "Hearing", body: "Lead with the bank record, the lease, the refund record, and the demand letter. Hearings usually run 10 to 15 minutes." },
     ],
-    aftermath: { tag: "After you win", title: "Collecting the deposit share.", bodyHtml: "Money judgments enforce via <strong>judgment lien</strong>, <strong>bank levy</strong>, and <strong>writ of execution</strong>. Wage garnishment is also available." },
+    aftermath: { tag: "After you win", title: "Collecting the deposit share.", bodyHtml: "If they don't pay, you collect using a <strong>judgment lien</strong> (claim on their property), <strong>bank levy</strong> (taking money from their account), or <strong>writ of execution</strong> (court order to seize assets). Wage garnishment is also available." },
   },
 
   evidence: {
@@ -118,9 +118,9 @@ export const securityDeposit: RoommateIssue = {
     h2: { pre: "Common roommate ", em: "defenses", post: ", with rebuttals." },
     lede: "Three arguments cover most deposit cases.",
     items: [
-      { quote: "I deducted for damage you caused.", pill: "Most common", rebuttal: "<strong>Rebuttal:</strong> bring the move-out walkthrough notes and any landlord deductions. The landlord's deductions establish what was deducted; the roommate cannot add their own deductions on top without specific evidence of damage you caused." },
-      { quote: "I never received the refund.", pill: "No refund received", rebuttal: "<strong>Rebuttal:</strong> the landlord's refund record establishes that the refund was sent. Bank record showing the deposit hit their account confirms receipt. Without the roommate's bank evidence, this defense fails." },
-      { quote: "We had a different agreement on the split.", pill: "Different terms", rebuttal: "<strong>Rebuttal:</strong> bring contemporaneous texts or roommate agreement. The original deposit contributions usually establish the split absent contrary agreement." },
+      { quote: "I deducted for damage you caused.", pill: "Most common", rebuttal: "<strong>Rebuttal:</strong> bring the move-out walkthrough notes and any landlord deductions. The landlord's deductions are the official record; your roommate can't tack on extra deductions of their own without specific evidence." },
+      { quote: "I never received the refund.", pill: "No refund received", rebuttal: "<strong>Rebuttal:</strong> the landlord's refund record shows that the refund was sent. Bank record showing the deposit hit their account confirms it. Without the roommate's bank evidence, this defense fails." },
+      { quote: "We had a different agreement on the split.", pill: "Different terms", rebuttal: "<strong>Rebuttal:</strong> bring texts from the time or any roommate agreement. The original deposit contributions usually establish the split unless there's a real agreement saying otherwise." },
     ],
   },
 
@@ -140,7 +140,7 @@ export const securityDeposit: RoommateIssue = {
     h2: { pre: "What are the ", em: "alternatives", post: " to small claims?" },
     lede: "Demand letter is the lowest-friction path.",
     cards: [
-      { title: "Demand letter alone", pillLabel: "Free, very effective", pillTier: "primary", whenItFits: "documented split. Most roommates pay at this stage.", tradeoff: "no enforcement if ignored." },
+      { title: "Demand letter alone", pillLabel: "Free, very effective", pillTier: "primary", whenItFits: "documented split. Most roommates pay at this stage.", tradeoff: "no way to enforce it if they ignore you." },
       { title: "Talk to the landlord", pillLabel: "Free, may help", pillTier: "good", whenItFits: "the landlord can often resolve disputes by allocating deductions clearly. Some landlords issue separate refund checks if asked.", tradeoff: "landlord may decline to get involved." },
       { title: "Small claims (this guide)", pillLabel: "When demand fails", pillTier: "warn", whenItFits: "demand failed. Damages within state cap.", tradeoff: "30 to 90 day timeline." },
     ],
@@ -157,11 +157,11 @@ export const securityDeposit: RoommateIssue = {
   },
 
   faqs: [
-    { q: "Can I sue my roommate for keeping my deposit share?", a: "Yes. The deposit refund is held in trust for both tenants by whoever receives it. Keeping the full refund without forwarding the other tenant's share is conversion. Bank records establishing your contribution and landlord refund records establishing the receipt are the case." },
-    { q: "What if the deposit was reduced by deductions?", a: "Landlord deductions for damage usually come off the total before splitting. If specific damage was caused by one roommate, that roommate bears that deduction; remaining damage is split per the contribution ratio. Move-out walkthrough establishes who caused what." },
-    { q: "What if the landlord sent the refund to the wrong tenant?", a: "Most landlords send to one tenant or to the property address. The receiving tenant holds the funds in trust for all tenants and must forward each share. Failure to forward = conversion." },
-    { q: "Should I ask the landlord to send separate checks?", a: "At lease signing or before move-out, yes. Many landlords will issue separate checks if all tenants request and provide forwarding addresses. This avoids the keep-the-deposit problem entirely." },
-    { q: "How long do I have to sue?", a: "Conversion claims usually run 2 to 4 years from the date the refund was received. Some states' security-deposit statutes have specific shorter windows. File promptly after the refund deadline passes." },
+    { q: "Can I sue my roommate for keeping my deposit share?", a: "Yes. Whoever receives the deposit refund is legally responsible for handing over each roommate's share. Keeping the whole refund instead of forwarding your share counts as taking your money (the legal name is 'conversion'). Bank records showing your contribution and the landlord's refund record are the case." },
+    { q: "What if the deposit was reduced by deductions?", a: "Landlord deductions for damage usually come off the total before splitting. If one roommate caused specific damage, that deduction comes out of their share; any remaining damage is split based on who paid in what originally. Move-out walkthrough shows who caused what." },
+    { q: "What if the landlord sent the refund to the wrong tenant?", a: "Most landlords send to one tenant or to the property address. The tenant who receives the check is legally required to forward each roommate's share. Not forwarding = taking your money." },
+    { q: "Should I ask the landlord to send separate checks?", a: "At lease signing or before move-out, yes. Many landlords will issue separate checks if all tenants ask and provide forwarding addresses. This avoids the keep-the-deposit problem entirely." },
+    { q: "How long do I have to sue?", a: "The deadline (the 'statute of limitations') is usually 2 to 4 years from the date the refund was received. Some states' security-deposit laws have shorter windows. File promptly after the refund deadline passes." },
     { q: "What if my roommate disputes the move-out condition?", a: "The landlord's deductions (if any) are the official record. Your roommate's separate claims about move-out condition rarely succeed without the landlord backing them." },
     { q: "Can I include this with other roommate claims?", a: "Yes. One small-claims case can include unpaid rent + unpaid bills + property damage + deposit. Combine to avoid multiple court appearances." },
   ],

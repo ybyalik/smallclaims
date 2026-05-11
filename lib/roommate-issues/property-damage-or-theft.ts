@@ -14,14 +14,14 @@ export const propertyDamageOrTheft: RoommateIssue = {
   hero: {
     eyebrowSuffix: "Damage or theft",
     h1: { pre: "Can I sue my roommate for ", em: "property damage or theft", post: "?" },
-    leadStrong: "Yes. Damage from negligence and theft both have civil remedies.",
+    leadStrong: "Yes. You can sue for damage from carelessness, and for theft.",
     leadBody:
-      " A roommate who damaged your belongings (broke your TV, stained your couch, ruined your kitchen items) is liable under negligence. A roommate who took your property (stole electronics, kept items when they moved out) is liable under conversion. Both can support a small-claims case for replacement value. Photos before and after, plus witness testimony from other roommates or neighbors, establish the case.",
+      " A roommate who damaged your belongings (broke your TV, stained your couch, ruined your kitchen items) is on the hook for being careless. A roommate who took your property (stole electronics, kept items when they moved out) is on the hook for taking your stuff (the legal name is 'conversion'). Both can support a small-claims case for replacement value. Photos before and after, plus witness testimony from other roommates or neighbors, are the case.",
   },
 
   counter: {
     amount: 3200,
-    meta: "Negligence + conversion",
+    meta: "Carelessness + taking your stuff",
     rows: [
       { label: "Replacement value of damaged/taken", value: "$2,800" },
       { label: "Pre-judgment interest", value: "+ $200", emphasis: "accent" },
@@ -34,10 +34,10 @@ export const propertyDamageOrTheft: RoommateIssue = {
     h2: { pre: "What kinds of damage or theft ", em: "are recoverable", post: "?" },
     lede: "Four common patterns.",
     cards: [
-      { num: "01", title: "Damage from negligence", body: "Spilled drink ruined laptop, dropped TV, kitchen accident damaged appliances. Negligence requires that the roommate's failure to use reasonable care caused the damage." },
-      { num: "02", title: "Damage from intentional acts", body: "Punched hole in wall, broke door in argument, threw away your food. Intentional damage = trespass to chattels (movable property). Damages plus possible punitive recovery." },
-      { num: "03", title: "Theft (conversion)", body: "Took your electronics, kept items when they moved out, used your bank card without permission. Civil conversion claim plus possible criminal complaint." },
-      { num: "04", title: "Damage to shared/common areas", body: "Living-room damage when you were the one paying for repairs. Recovery is for your share of repair costs (typically 100 percent if the damage was their fault, 50/50 if accidental)." },
+      { num: "01", title: "Damage from carelessness", body: "Spilled drink ruined laptop, dropped TV, kitchen accident damaged appliances. You have to show the roommate failed to be reasonably careful and that's what caused the damage." },
+      { num: "02", title: "Damage from intentional acts", body: "Punched hole in wall, broke door in argument, threw away your food. Damaging your stuff on purpose is a separate wrong (the legal name is 'trespass to chattels'). You can recover damages plus possibly an extra penalty." },
+      { num: "03", title: "Theft", body: "Took your electronics, kept items when they moved out, used your bank card without permission. You can sue for the value (the legal name for taking your stuff is 'conversion') and also file a police report." },
+      { num: "04", title: "Damage to shared/common areas", body: "Living-room damage when you were the one paying for repairs. You can recover your share of repair costs (typically 100 percent if the damage was their fault, 50/50 if accidental)." },
     ],
     note: { strongIntro: "Photos before and after.", rest: " Most apartments don't have walkthrough photos like rentals from landlords do. Take photos of your room and shared spaces when you move in. Date-stamps establish what was original. After-damage photos seal the case." },
   },
@@ -47,8 +47,8 @@ export const propertyDamageOrTheft: RoommateIssue = {
     lede: "Replacement value of damaged or taken items plus filing fees.",
     layers: [
       { tag: "Layer 1", title: "Replacement or repair cost", body: "Replacement-value receipts (West Elm, Best Buy, etc. for damaged items). Repair quotes for damaged items that can be fixed. Original receipt or photos to prove ownership.", amount: "$2,800" },
-      { tag: "Layer 2", title: "Pre-judgment interest", body: "State legal rate (7 to 10 percent per year) running from the date of damage or theft.", amount: "+ $200", accent: true },
-      { tag: "Layer 3", title: "Filing fees, post-judgment interest", body: "Filing fee, service-of-process cost, post-judgment interest until paid.", amount: "+ $200" },
+      { tag: "Layer 2", title: "Interest before the case is decided", body: "State legal rate (7 to 10 percent per year) running from the date of damage or theft.", amount: "+ $200", accent: true },
+      { tag: "Layer 3", title: "Filing fees, interest after judgment", body: "Filing fee, service-of-process cost, interest that keeps running until they pay.", amount: "+ $200" },
     ],
     total: { label: "Sample total within small-claims cap", body: "Replacement value of damaged or taken items plus interest, plus filing fee.", amount: "$3,200", sublabel: "illustrative · varies by extent" },
   },
@@ -72,7 +72,7 @@ export const propertyDamageOrTheft: RoommateIssue = {
       ],
       demandList: [
         "Reimbursement of <strong>$2,800</strong> in damaged or taken items;",
-        "Pre-judgment interest at 10 percent per year (<strong>$200</strong>).",
+        "Interest at 10 percent per year (<strong>$200</strong>).",
       ],
       closingLine: "Total demand: <strong>$3,000.00</strong>. If unresolved, I will file in Small Claims Court and (for the speakers) report theft to police.",
       signatory: "Reese Q. Tenant",
@@ -88,7 +88,7 @@ export const propertyDamageOrTheft: RoommateIssue = {
       { title: "File in small claims", body: "If demand fails, file. Filing fees usually run $30 to $100. File in the county where the damage occurred." },
       { title: "Hearing", body: "Lead with photos, original receipts, and replacement quotes. Hearings usually run 10 to 15 minutes." },
     ],
-    aftermath: { tag: "After you win", title: "Collecting from a roommate.", bodyHtml: "Money judgments enforce via <strong>judgment lien</strong>, <strong>bank levy</strong>, and <strong>writ of execution</strong>. Wage garnishment is also available." },
+    aftermath: { tag: "After you win", title: "Collecting from a roommate.", bodyHtml: "If they don't pay, you collect using a <strong>judgment lien</strong> (claim on their property), <strong>bank levy</strong> (taking money from their account), or <strong>writ of execution</strong> (court order to seize assets). Wage garnishment is also available." },
   },
 
   evidence: {
@@ -123,9 +123,9 @@ export const propertyDamageOrTheft: RoommateIssue = {
     h2: { pre: "Common roommate ", em: "defenses", post: ", with rebuttals." },
     lede: "Three arguments cover most cases.",
     items: [
-      { quote: "It was an accident.", pill: "Most common", rebuttal: "<strong>Rebuttal:</strong> negligence covers accidents. The roommate's failure to use reasonable care (drinking wine near a laptop) caused the damage. Accident is not a defense to negligence." },
+      { quote: "It was an accident.", pill: "Most common", rebuttal: "<strong>Rebuttal:</strong> carelessness covers accidents. The roommate's failure to be reasonably careful (drinking wine near a laptop) is what caused the damage. 'It was an accident' isn't a defense." },
       { quote: "The speakers were mine.", pill: "Disputed ownership", rebuttal: "<strong>Rebuttal:</strong> bring the original purchase receipt. Most modern items have purchase records (Amazon orders, credit-card statements). The receipt establishes ownership." },
-      { quote: "We were both drinking. You're partly to blame.", pill: "Comparative fault", rebuttal: "<strong>Rebuttal:</strong> being present is not contributory negligence. The roommate caused the damage; you didn't. State comparative fault rules rarely reduce damages from drink-spill type accidents." },
+      { quote: "We were both drinking. You're partly to blame.", pill: "Sharing the blame", rebuttal: "<strong>Rebuttal:</strong> just being there is not your fault. The roommate caused the damage; you didn't. State rules about sharing blame rarely reduce damages from spilled-drink accidents." },
     ],
   },
 
@@ -145,7 +145,7 @@ export const propertyDamageOrTheft: RoommateIssue = {
     h2: { pre: "What are the ", em: "alternatives", post: " to small claims?" },
     lede: "Demand letter usually resolves smaller cases. Police report adds leverage for theft.",
     cards: [
-      { title: "Demand letter alone", pillLabel: "Free, often works", pillTier: "primary", whenItFits: "documented damage. Most roommates pay to close the matter.", tradeoff: "no enforcement if ignored." },
+      { title: "Demand letter alone", pillLabel: "Free, often works", pillTier: "primary", whenItFits: "documented damage. Most roommates pay to close the matter.", tradeoff: "no way to enforce it if they ignore you." },
       { title: "Police report (for theft)", pillLabel: "Free, criminal angle", pillTier: "good", whenItFits: "items were stolen (vs. damaged). Police report creates official record. Many former roommates return items quickly to avoid criminal charges.", tradeoff: "criminal cases focus on punishment, not your recovery. File alongside civil action." },
       { title: "Small claims (this guide)", pillLabel: "For monetary recovery", pillTier: "warn", whenItFits: "demand letter failed. Damages within your state's cap.", tradeoff: "30 to 90 day timeline." },
     ],
@@ -162,13 +162,13 @@ export const propertyDamageOrTheft: RoommateIssue = {
   },
 
   faqs: [
-    { q: "Can I sue my roommate for damaging my stuff?", a: "Yes. Negligence covers accidental damage; intentional damage is trespass to chattels. Both support recovery for replacement or repair cost. Photos and original receipts are decisive evidence." },
-    { q: "What if my roommate took something when they moved out?", a: "Civil conversion claim plus possible police report for theft. The original receipt establishes ownership. Most former roommates return items quickly when faced with a police report or formal demand letter." },
+    { q: "Can I sue my roommate for damaging my stuff?", a: "Yes. Carelessness covers accidental damage; intentional damage is a separate wrong. Both support recovery for replacement or repair cost. Photos and original receipts are decisive evidence." },
+    { q: "What if my roommate took something when they moved out?", a: "Sue for the value (the legal name for taking your stuff is 'conversion'), plus consider a police report. The original receipt establishes ownership. Most former roommates return items quickly when faced with a police report or formal demand letter." },
     { q: "Do I file a police report?", a: "For clear theft (electronics, jewelry, items they have no claim to), yes. The police report creates an official record useful for both criminal prosecution and civil recovery. For ambiguous cases (shared items, unclear ownership), the civil case alone is usually enough." },
     { q: "How do I prove what items were mine?", a: "Original purchase receipts (Amazon order history, credit-card statements). Photos of items in your room or with you. Witness testimony. Insurance riders or rental insurance lists. The combination establishes ownership." },
-    { q: "What about damage to common areas?", a: "If the roommate caused damage and you paid to repair, the recovery is for your share of repair costs (typically 100 percent if the damage was their fault). The cleaning service or repair contractor's invoice plus photos establish the case." },
-    { q: "Can I keep the security deposit to cover damages?", a: "Only if you control the deposit. Usually the landlord holds the deposit. If your roommate's portion of the deposit is held by the landlord, it returns to them; if held by you (in a sublease), you can deduct. Document the deduction in writing to the roommate." },
-    { q: "How long do I have to sue?", a: "Property damage and conversion claims usually run 2 to 4 years from the date of damage or theft. Move fast: photos and witness memories fade." },
+    { q: "What about damage to common areas?", a: "If the roommate caused damage and you paid to repair, you can recover your share of the repair costs (typically 100 percent if the damage was their fault). The cleaning service or repair contractor's invoice plus photos make the case." },
+    { q: "Can I keep the security deposit to cover damages?", a: "Only if you control the deposit. Usually the landlord holds it. If your roommate's portion of the deposit is held by the landlord, it goes back to them; if held by you (in a sublease), you can deduct. Put the deduction in writing to the roommate." },
+    { q: "How long do I have to sue?", a: "The deadline (the 'statute of limitations') is usually 2 to 4 years from the date of damage or theft. Move fast: photos and witness memories fade." },
   ],
 
   relatedSlugs: ["unpaid-rent", "unpaid-bills", "moving-out-no-notice", "security-deposit", "no-lease", "emotional-distress"],

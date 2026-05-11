@@ -16,12 +16,12 @@ export const emotionalDistress: RoommateIssue = {
     h1: { pre: "Can I sue my roommate for ", em: "emotional distress", post: "?" },
     leadStrong: "Yes, but it works best paired with another claim.",
     leadBody:
-      " Stand-alone emotional-distress claims against roommates are hard. The legal standard (intentional infliction of emotional distress) requires extreme and outrageous conduct. Most successful cases attach emotional-distress damages to a primary claim like harassment, property damage, or stalking. Therapy bills, medication costs, and lost work make the claim survive. Documented incidents with provider notes connecting symptoms to the conduct are decisive.",
+      " Emotional-distress claims against roommates are hard to win on their own. The legal bar is high: the behavior has to be extreme and outrageous, not just rude. Most cases that succeed bundle emotional-distress damages with a main claim like harassment, property damage, or stalking. Therapy bills, medication costs, and lost work make the claim hold up. Documented incidents plus notes from your therapist or doctor connecting your symptoms to the roommate's behavior are decisive.",
   },
 
   counter: {
     amount: 4500,
-    meta: "IIED + paired primary claim",
+    meta: "Extreme/outrageous conduct + paired primary claim",
     rows: [
       { label: "Therapy + medication", value: "$2,200" },
       { label: "Lost work / missed shifts", value: "+ $2,000", emphasis: "accent" },
@@ -34,10 +34,10 @@ export const emotionalDistress: RoommateIssue = {
     h2: { pre: "When does roommate conduct ", em: "support an emotional distress claim", post: "?" },
     lede: "Three patterns plus one paired-claim structure.",
     cards: [
-      { num: "01", title: "Targeted harassment or threats", body: "Repeated targeted conduct that goes beyond ordinary roommate friction: threats, stalking, public shaming, harassment. Civil harassment restraining order plus emotional-distress damages." },
-      { num: "02", title: "Outrageous violation of privacy", body: "Recording you without consent (where state law prohibits), reading your mail or messages, sharing personal info with others, or accessing your private spaces repeatedly." },
-      { num: "03", title: "Pattern of intentional damage causing chronic stress", body: "Repeated property damage, theft, or destruction. The pattern over months establishes intentional infliction. Combined with documented health impact." },
-      { num: "04", title: "Pair with primary claim", body: "Most useful approach: file the emotional-distress damages alongside another claim (unpaid rent, property damage, harassment). The primary claim establishes the wrong; emotional-distress adds the medical and lost-work damages." },
+      { num: "01", title: "Targeted harassment or threats", body: "Repeated targeted conduct that goes beyond ordinary roommate friction: threats, stalking, public shaming, harassment. A civil harassment restraining order plus emotional-distress damages." },
+      { num: "02", title: "Outrageous violation of privacy", body: "Recording you without consent (where state law prohibits it), reading your mail or messages, sharing personal info with others, or repeatedly going into your private spaces." },
+      { num: "03", title: "Pattern of intentional damage causing chronic stress", body: "Repeated property damage, theft, or destruction. A pattern over months shows it was intentional. Combined with documented health impact." },
+      { num: "04", title: "Pair with a primary claim", body: "Most useful approach: file the emotional-distress damages alongside another claim (unpaid rent, property damage, harassment). The primary claim establishes the wrong; emotional-distress adds the medical and lost-work damages." },
     ],
     note: { strongIntro: "Documentation is everything.", rest: " Therapy or counseling notes, prescriptions, doctor's diagnoses, missed work documentation, family or witness testimony about behavioral changes. Without documentation, emotional-distress damages are usually nominal." },
   },
@@ -47,8 +47,8 @@ export const emotionalDistress: RoommateIssue = {
     lede: "Therapy and medication bills plus lost work plus filing fees.",
     layers: [
       { tag: "Layer 1", title: "Therapy and medication", body: "Therapy or psychiatry sessions, anxiety or sleep medication, urgent-care visits. Provider notes connecting treatment to roommate conduct.", amount: "$2,200" },
-      { tag: "Layer 2", title: "Lost work and consequential damages", body: "Wages lost from missed work due to chronic stress or panic attacks. Documented absences from work or school. Documented therapy appointment dates that conflicted with shifts.", amount: "+ $2,000", accent: true },
-      { tag: "Layer 3", title: "Filing fees, IIED, interest", body: "Filing fee, service-of-process cost, pre-judgment interest. In rare cases, additional IIED damages for extreme conduct.", amount: "+ $300" },
+      { tag: "Layer 2", title: "Lost work and downstream costs", body: "Wages lost from missed work due to chronic stress or panic attacks. Documented absences from work or school. Documented therapy appointment dates that conflicted with shifts.", amount: "+ $2,000", accent: true },
+      { tag: "Layer 3", title: "Filing fees + extras", body: "Filing fee, service-of-process cost, pre-judgment interest. In rare cases, additional damages for extreme conduct.", amount: "+ $300" },
     ],
     total: { label: "Sample total within small-claims cap", body: "Therapy bills, medication, missed work, plus filing fee.", amount: "$4,500", sublabel: "illustrative · varies by extent" },
   },
@@ -102,9 +102,9 @@ export const emotionalDistress: RoommateIssue = {
         { dir: "in", text: "Cameras work both ways. Stop digging." },
         { dir: "out", text: "These threats are documented. I'm seeing a therapist now." },
       ] },
-      { kind: "handbook", tag: "IIED standard", documentTitle: "Restatement (Second) of Torts · § 46", sectionTitle: "Outrageous conduct causing severe emotional distress", bodyParagraphs: [
-        "One who by extreme and outrageous conduct intentionally or recklessly causes severe emotional distress to another is subject to liability for such emotional distress.",
-      ], highlight: "Repeated threats + surveillance + property tampering meets IIED standard when combined with documented medical impact.", footer: "Restatement adopted in most state courts" },
+      { kind: "handbook", tag: "Legal standard", documentTitle: "Restatement (Second) of Torts · § 46", sectionTitle: "Outrageous conduct causing severe emotional distress", bodyParagraphs: [
+        "Someone who, through extreme and outrageous conduct, intentionally or recklessly causes severe emotional distress to another can be held responsible for that distress.",
+      ], highlight: "Repeated threats + surveillance + property tampering meets the legal standard when combined with documented medical impact.", footer: "Standard adopted by most state courts" },
       { kind: "receipt", tag: "Therapy + missed work", vendor: "WESTSIDE COUNSELING + EMPLOYER RECORDS", vendorAddr: "Combined claim", receiptNum: "Statement", date: "Q1 2026", lineItems: [
         { label: "Therapy sessions (10)", amount: "$1,800.00" },
         { label: "Anxiety medication", amount: "$400.00" },
@@ -117,9 +117,9 @@ export const emotionalDistress: RoommateIssue = {
     h2: { pre: "Common roommate ", em: "defenses", post: ", with rebuttals." },
     lede: "Three arguments cover most cases.",
     items: [
-      { quote: "We just don't get along. That's not 'extreme'.", pill: "Most common", rebuttal: "<strong>Rebuttal:</strong> bring the documented pattern. Threats, surveillance, and property tampering go beyond ordinary roommate friction. The pattern over months establishes the IIED standard." },
-      { quote: "You're being oversensitive.", pill: "Sensitivity", rebuttal: "<strong>Rebuttal:</strong> the standard is the reasonable person's response, not your subjective sensitivity. Provider notes plus witness testimony establish that conduct was objectively beyond the line." },
-      { quote: "Your problems were preexisting.", pill: "Causation", rebuttal: "<strong>Rebuttal:</strong> 'eggshell plaintiff' doctrine: the roommate takes you as they find you. If their conduct exacerbated a preexisting condition, the worsening is recoverable." },
+      { quote: "We just don't get along. That's not 'extreme'.", pill: "Most common", rebuttal: "<strong>Rebuttal:</strong> bring the documented pattern. Threats, surveillance, and property tampering go beyond ordinary roommate friction. A pattern over months meets the legal standard." },
+      { quote: "You're being oversensitive.", pill: "Sensitivity", rebuttal: "<strong>Rebuttal:</strong> the standard is how a reasonable person would react, not how sensitive you happen to be. Provider notes plus witness testimony show the conduct was objectively beyond the line." },
+      { quote: "Your problems were preexisting.", pill: "Causation", rebuttal: "<strong>Rebuttal:</strong> the law has a rule called the 'eggshell plaintiff' doctrine — your roommate takes you as they find you. If their conduct made an existing condition worse, you can recover for that worsening." },
     ],
   },
 
@@ -129,7 +129,7 @@ export const emotionalDistress: RoommateIssue = {
     bands: [
       { label: "Low", range: "$200 to $1,000", body: "<strong>Documented direct costs.</strong> Therapy bills only. Common when pattern is short or evidence is light.", tier: "low" },
       { label: "Mid", range: "$1,000 to $5,000", body: "<strong>Therapy plus lost work.</strong> Most common with provider notes and pattern documentation.", tier: "mid" },
-      { label: "High", range: "$5,000 to $20,000+", body: "<strong>Major IIED + paired claims.</strong> Cap-of-court when paired with harassment or property-damage cases.", tier: "high" },
+      { label: "High", range: "$5,000 to $20,000+", body: "<strong>Major extreme/outrageous case + paired claims.</strong> Up to the small-claims cap when paired with harassment or property-damage cases.", tier: "high" },
     ],
   },
 
@@ -141,7 +141,7 @@ export const emotionalDistress: RoommateIssue = {
     cards: [
       { title: "Civil harassment restraining order", pillLabel: "Free or low-cost, fast", pillTier: "primary", whenItFits: "ongoing harassment. Protection independent of damages.", tradeoff: "no money damages. Use alongside small-claims for damages." },
       { title: "Police complaint", pillLabel: "Free, criminal angle", pillTier: "good", whenItFits: "threats, vandalism, or stalking are crimes. Police investigate and prosecute. Criminal record creates leverage.", tradeoff: "criminal cases focus on punishment, not damages." },
-      { title: "Small claims (this guide)", pillLabel: "For monetary damages", pillTier: "warn", whenItFits: "documented therapy and lost work. Damages within state cap.", tradeoff: "30 to 90 day timeline. Cannot order injunction." },
+      { title: "Small claims (this guide)", pillLabel: "For monetary damages", pillTier: "warn", whenItFits: "documented therapy and lost work. Damages within state cap.", tradeoff: "30 to 90 day timeline. Cannot order them to stop." },
     ],
   },
 
@@ -156,11 +156,11 @@ export const emotionalDistress: RoommateIssue = {
   },
 
   faqs: [
-    { q: "Can I sue my roommate for emotional distress?", a: "Yes, when conduct meets the IIED standard (extreme and outrageous behavior) and you have documented harm (therapy, medication, lost work). Stand-alone claims are hard; pair with a primary claim like harassment, property damage, or unpaid rent for stronger cases." },
-    { q: "What is the IIED standard?", a: "Intentional Infliction of Emotional Distress requires extreme and outrageous conduct, intent (or recklessness), and severe emotional distress. The bar is high: rude, mean, or insensitive isn't enough. Targeted harassment, threats, or systematic cruelty can meet it." },
-    { q: "How important is therapy documentation?", a: "Critical. Without provider notes connecting symptoms to roommate conduct, emotional-distress damages are usually nominal. Therapy bills + provider testimony + your own documentation establish damages." },
-    { q: "Can I sue if I had pre-existing anxiety?", a: "Yes. The 'eggshell plaintiff' doctrine: the roommate takes you as they find you. If conduct exacerbated a preexisting condition, the worsening is recoverable. The provider note connecting the change to the timeline is essential." },
-    { q: "How long do I have to sue?", a: "IIED claims usually run 1 to 3 years from the most recent incident. Continuing conduct resets the clock. State personal-injury statutes apply in some jurisdictions." },
+    { q: "Can I sue my roommate for emotional distress?", a: "Yes, when their behavior was extreme and outrageous and you have documented harm (therapy, medication, lost work). Stand-alone claims are hard; pair it with a primary claim like harassment, property damage, or unpaid rent for a stronger case." },
+    { q: "What does 'extreme and outrageous' mean?", a: "The bar is high: rude, mean, or insensitive isn't enough. Targeted harassment, threats, or systematic cruelty can clear it. You also have to show the roommate did it on purpose (or recklessly) and that the distress was severe." },
+    { q: "How important is therapy documentation?", a: "Critical. Without provider notes connecting symptoms to roommate conduct, emotional-distress damages are usually small. Therapy bills + provider testimony + your own documentation prove the damages." },
+    { q: "Can I sue if I had pre-existing anxiety?", a: "Yes. The law has a rule (the 'eggshell plaintiff' doctrine): your roommate takes you as they find you. If their conduct made an existing condition worse, you can recover for that worsening. A provider note connecting the change to the timeline is essential." },
+    { q: "How long do I have to sue?", a: "The deadline (the 'statute of limitations') is usually 1 to 3 years from the most recent incident. Ongoing conduct resets the clock. Personal-injury rules apply in some states." },
     { q: "Should I just move out?", a: "Often the cleanest path. Moving out and pursuing the case from a stable place often produces better outcomes. Document each incident before, during, and after the move-out for the strongest case." },
     { q: "Can I get a restraining order?", a: "Yes. Civil harassment restraining orders provide ongoing protection independent of damages. Most states grant temporary orders within days; full hearings within 21 days. File alongside the small-claims action." },
   ],
