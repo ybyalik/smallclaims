@@ -4,9 +4,9 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 /**
- * "Start my demand letter" button. Calls /api/demand-letters/start, which
- * creates an anonymous case (or attaches to the current user if signed in)
- * and returns a case_id. Routes to the wizard.
+ * "Start my demand letter" button. Calls /api/demand-letters/start (auth-
+ * required). If the user isn't signed in, bounces to /signup and returns
+ * here on completion.
  */
 export default function StartButton() {
   const router = useRouter();
@@ -19,16 +19,15 @@ export default function StartButton() {
     setError(null);
     try {
       const res = await fetch("/api/demand-letters/start", { method: "POST" });
-      const data = (await res.json()) as { case_id?: string; error?: string; claimed?: boolean };
+      if (res.status === 401) {
+        router.push(`/signup?next=${encodeURIComponent("/demand-letter")}`);
+        return;
+      }
+      const data = (await res.json()) as { case_id?: string; error?: string };
       if (!res.ok || !data.case_id) {
         throw new Error(data.error || "Could not start. Please try again.");
       }
-      // Authenticated users go to the dashboard wizard; anonymous to public wizard
-      router.push(
-        data.claimed
-          ? `/dashboard/demand-letters/new?case=${data.case_id}`
-          : `/demand-letter/wizard/${data.case_id}`
-      );
+      router.push(`/case/${data.case_id}/build`);
     } catch (e) {
       const message = e instanceof Error ? e.message : "Could not start.";
       setError(message);
@@ -38,7 +37,7 @@ export default function StartButton() {
 
   return (
     <>
-      <button onClick={start} disabled={loading} className="btn btn-dark">
+      <button onClick={start} disabled={loading} className="btn btn-green">
         {loading ? "Starting…" : "Start my demand letter"}
       </button>
       {error ? (

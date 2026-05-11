@@ -1,6 +1,7 @@
 // GET /api/cron/poll-deep-research
 //
-// Single cron that drives every async stage of the case-research pipeline:
+// Single cron that drives the polling + extraction stages of the case-research
+// pipeline:
 //
 //   1. For any job whose deep top-level status is "polling", check OpenAI
 //      for the status of each non-terminal deep response_id and persist
@@ -8,16 +9,17 @@
 //   2. For any job where both deep calls have succeeded but no
 //      deep_research_pack has been persisted yet, run the combined
 //      structured extraction (gpt-5-mini reads concatenated A+B findings).
-//   3. For any job where deep_research_pack is present but the customer
-//      report status is still "pending", run the merge agent + writer and
-//      persist the customer report draft.
+//
+// Customer-report finalize (merge + write) is intentionally NOT triggered
+// here. It's an admin-only manual action via the Regenerate route until the
+// pricing tier that bundles Case Plan ships.
 //
 // Schedule: every 15 minutes via vercel.json.
 //
 // Authentication: open to any caller. The work is idempotent and doesn't
 // expose data — re-running the cron just hits OpenAI for known polling
-// response IDs and finalizes jobs that need it. Vercel's cron auth header
-// has been unreliable across versions, so we don't gate on it.
+// response IDs. Vercel's cron auth header has been unreliable across
+// versions, so we don't gate on it.
 
 import { NextResponse, type NextRequest } from "next/server";
 import { createServiceRoleClient } from "../../../../lib/supabase/service-role";
@@ -25,7 +27,6 @@ import {
   completeDeepResearchByResponseId,
   runCombinedExtractionIfReady,
 } from "../../../../lib/case-research/complete-deep-research";
-import { finalizeCustomerReport } from "../../../../lib/case-research/finalize-customer-report";
 
 export const runtime = "nodejs";
 export const maxDuration = 300;
@@ -133,35 +134,9 @@ export async function GET(_req: NextRequest) {
     }
   }
 
-  // ------------------------------------------------------------------
-  // Phase 3: run merge + writer for jobs where deep_research_pack is
-  //          present but customer_report_status is still pending.
-  // ------------------------------------------------------------------
-  const finalizeResults: Array<{ jobId: string; status: string; error?: string }> = [];
-  const { data: pendingReports } = await admin
-    .from("case_research_reports")
-    .select("job_id, case_id, deep_research_pack, customer_report_status")
-    .eq("customer_report_status", "pending")
-    .not("deep_research_pack", "is", null)
-    .limit(PER_RUN_LIMIT);
-  for (const r of (pendingReports ?? []) as Array<{
-    job_id: string;
-    case_id: string;
-  }>) {
-    try {
-      const out = await finalizeCustomerReport(admin, r.case_id, r.job_id);
-      finalizeResults.push({ jobId: r.job_id, status: out.status });
-    } catch (e) {
-      const msg = e instanceof Error ? e.message : String(e);
-      console.error(`[cron] finalize ${r.job_id}:`, msg);
-      finalizeResults.push({ jobId: r.job_id, status: "error", error: msg });
-    }
-  }
-
   return NextResponse.json({
     ok: true,
     poll: { count: pollResults.length, results: pollResults },
     extract: { count: extractResults.length, results: extractResults },
-    finalize: { count: finalizeResults.length, results: finalizeResults },
   });
 }

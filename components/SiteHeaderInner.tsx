@@ -2,12 +2,61 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { ChevronDown, Building2, Hammer, Briefcase, Car, Trees, HandCoins, Users, ShoppingBag, Receipt } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import type { SiteHeaderUser } from "./SiteHeader";
+
+type MegaKey = "sc" | "res";
+
+const SC_CATEGORIES: Array<{ href: string; label: string; icon: LucideIcon }> = [
+  { href: "/small-claims/landlord", label: "Landlord disputes", icon: Building2 },
+  { href: "/small-claims/contractor", label: "Contractor disputes", icon: Hammer },
+  { href: "/small-claims/employer", label: "Employer disputes", icon: Briefcase },
+  { href: "/small-claims/auto", label: "Auto disputes", icon: Car },
+  { href: "/small-claims/neighbor", label: "Neighbor disputes", icon: Trees },
+  { href: "/small-claims/personal-loan", label: "Personal loan disputes", icon: HandCoins },
+  { href: "/small-claims/roommate", label: "Roommate disputes", icon: Users },
+  { href: "/small-claims/online-seller", label: "Online seller disputes", icon: ShoppingBag },
+  { href: "/small-claims/refund", label: "Refund disputes", icon: Receipt },
+];
+
+const FEATURED_STATES: Array<{ slug: string; name: string }> = [
+  { slug: "california", name: "California" },
+  { slug: "texas", name: "Texas" },
+  { slug: "new-york", name: "New York" },
+  { slug: "florida", name: "Florida" },
+  { slug: "illinois", name: "Illinois" },
+  { slug: "pennsylvania", name: "Pennsylvania" },
+  { slug: "ohio", name: "Ohio" },
+  { slug: "georgia", name: "Georgia" },
+];
 
 export default function SiteHeaderInner({ user }: { user: SiteHeaderUser | null }) {
   const [open, setOpen] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
+  const [openMega, setOpenMega] = useState<MegaKey | null>(null);
+  const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const userMenuRef = useRef<HTMLDivElement>(null);
+
+  const openMegaNow = (k: MegaKey) => {
+    if (closeTimerRef.current) {
+      clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
+    }
+    setOpenMega(k);
+  };
+  const scheduleMegaClose = () => {
+    if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
+    closeTimerRef.current = setTimeout(() => setOpenMega(null), 140);
+  };
+  useEffect(() => {
+    if (!openMega) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpenMega(null);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [openMega]);
 
   // Lock body scroll when the mobile menu is open
   useEffect(() => {
@@ -53,6 +102,7 @@ export default function SiteHeaderInner({ user }: { user: SiteHeaderUser | null 
 
   return (
     <>
+    <div className="nav-shell">
       <header className="nav wrap">
         <Link className="brand" href="/" aria-label="CivilCase home">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -65,10 +115,30 @@ export default function SiteHeaderInner({ user }: { user: SiteHeaderUser | null 
           />
         </Link>
         <nav className="nav-links">
+          <div
+            className={`nav-mega-trigger${openMega === "sc" ? " is-open" : ""}`}
+            onMouseEnter={() => openMegaNow("sc")}
+            onMouseLeave={scheduleMegaClose}
+            onFocus={() => openMegaNow("sc")}
+          >
+            <Link href="/small-claims">
+              Small Claims
+              <ChevronDown className="nav-mega-caret" size={12} strokeWidth={2} aria-hidden />
+            </Link>
+          </div>
+          <div
+            className={`nav-mega-trigger${openMega === "res" ? " is-open" : ""}`}
+            onMouseEnter={() => openMegaNow("res")}
+            onMouseLeave={scheduleMegaClose}
+            onFocus={() => openMegaNow("res")}
+          >
+            <Link href="/blog">
+              Resources
+              <ChevronDown className="nav-mega-caret" size={12} strokeWidth={2} aria-hidden />
+            </Link>
+          </div>
           <Link href="/case-score">Case score</Link>
-          <Link href="/small-claims">Small Claims</Link>
-          <Link href="/#how">How it works</Link>
-          <Link href="/#faq">FAQ</Link>
+          <Link href="/demand-letter">Demand letter</Link>
         </nav>
 
         {user ? (
@@ -142,7 +212,7 @@ export default function SiteHeaderInner({ user }: { user: SiteHeaderUser | null 
             <Link className="btn btn-cream btn-sm" href="/login">
               Sign in
             </Link>
-            <Link className="btn btn-dark btn-sm" href="/demand-letter">
+            <Link className="btn btn-green btn-sm" href="/demand-letter">
               Get started
             </Link>
           </div>
@@ -160,6 +230,123 @@ export default function SiteHeaderInner({ user }: { user: SiteHeaderUser | null 
           <span />
         </button>
       </header>
+
+      {/* Mega menu — Small Claims */}
+      <div
+        className={`nav-mega${openMega === "sc" ? " is-open" : ""}`}
+        onMouseEnter={() => openMegaNow("sc")}
+        onMouseLeave={scheduleMegaClose}
+        aria-hidden={openMega !== "sc"}
+      >
+        <div className="nav-mega-grid nav-mega-grid-sc">
+          <div className="nav-mega-col">
+            <div className="nav-mega-eyebrow">By dispute type</div>
+            <ul className="nav-mega-list nav-mega-list-2col nav-mega-list-icons">
+              {SC_CATEGORIES.map((c) => {
+                const Icon = c.icon;
+                return (
+                  <li key={c.href}>
+                    <Link href={c.href} onClick={() => setOpenMega(null)}>
+                      <span className="nav-mega-icon" aria-hidden>
+                        <Icon size={18} strokeWidth={1.7} />
+                      </span>
+                      <span>{c.label}</span>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+            <Link className="nav-mega-allink" href="/small-claims" onClick={() => setOpenMega(null)}>
+              All categories →
+            </Link>
+          </div>
+          <div className="nav-mega-col">
+            <div className="nav-mega-eyebrow">Tools</div>
+            <ul className="nav-mega-list">
+              <li>
+                <Link href="/case-score" onClick={() => setOpenMega(null)}>
+                  <strong>Case score</strong>
+                  <span>Free 7-question case-strength quiz.</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/demand-letter" onClick={() => setOpenMega(null)}>
+                  <strong>Demand letter</strong>
+                  <span>Cite the statute, formatted for certified mail.</span>
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div className="nav-mega-col nav-mega-feature">
+            <Link href="/small-claims/landlord" onClick={() => setOpenMega(null)} className="nav-mega-feature-card">
+              <div className="nav-mega-feature-eyebrow">Most popular</div>
+              <div className="nav-mega-feature-title">Sue your landlord</div>
+              <div className="nav-mega-feature-sub">Deposits, mold, wrongful eviction, habitability — and what you can recover.</div>
+              <span className="nav-mega-feature-arrow">→</span>
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Mega menu — Resources */}
+      <div
+        className={`nav-mega${openMega === "res" ? " is-open" : ""}`}
+        onMouseEnter={() => openMegaNow("res")}
+        onMouseLeave={scheduleMegaClose}
+        aria-hidden={openMega !== "res"}
+      >
+        <div className="nav-mega-grid nav-mega-grid-res">
+          <div className="nav-mega-col">
+            <div className="nav-mega-eyebrow">State guides</div>
+            <ul className="nav-mega-list nav-mega-list-2col">
+              {FEATURED_STATES.map((s) => (
+                <li key={s.slug}>
+                  <Link href={`/small-claims/${s.slug}`} onClick={() => setOpenMega(null)}>{s.name}</Link>
+                </li>
+              ))}
+            </ul>
+            <Link className="nav-mega-allink" href="/small-claims#states" onClick={() => setOpenMega(null)}>
+              All 50 states →
+            </Link>
+          </div>
+          <div className="nav-mega-col">
+            <div className="nav-mega-eyebrow">Blog</div>
+            <ul className="nav-mega-list">
+              <li>
+                <Link href="/blog" onClick={() => setOpenMega(null)}>
+                  <strong>Latest posts</strong>
+                  <span>Stories and updates from the small-claims trenches.</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog?topic=deposits" onClick={() => setOpenMega(null)}>
+                  <strong>Security deposits</strong>
+                  <span>Demanding, deadlines, statutory penalties.</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog?topic=filing" onClick={() => setOpenMega(null)}>
+                  <strong>Filing &amp; fees</strong>
+                  <span>Forms, costs, and county-by-county procedure.</span>
+                </Link>
+              </li>
+            </ul>
+            <Link className="nav-mega-allink" href="/blog" onClick={() => setOpenMega(null)}>
+              Visit blog →
+            </Link>
+          </div>
+          <div className="nav-mega-col nav-mega-feature">
+            <Link href="/small-claims/california" onClick={() => setOpenMega(null)} className="nav-mega-feature-card">
+              <div className="nav-mega-feature-eyebrow">Featured guide</div>
+              <div className="nav-mega-feature-title">California small claims</div>
+              <div className="nav-mega-feature-sub">$12,500 limit, 30-day deadline, free filing under $1.5k. Full guide.</div>
+              <span className="nav-mega-feature-arrow">→</span>
+            </Link>
+          </div>
+        </div>
+      </div>
+
+    </div>
 
       <div
         className={`nav-backdrop${open ? " is-open" : ""}`}
@@ -256,12 +443,6 @@ export default function SiteHeaderInner({ user }: { user: SiteHeaderUser | null 
           <Link href="/demand-letter" onClick={() => setOpen(false)}>
             Demand letter
           </Link>
-          <Link href="/#how" onClick={() => setOpen(false)}>
-            How it works
-          </Link>
-          <Link href="/#faq" onClick={() => setOpen(false)}>
-            FAQ
-          </Link>
           {user ? (
             <Link href="/dashboard/settings" onClick={() => setOpen(false)}>
               Settings
@@ -284,7 +465,7 @@ export default function SiteHeaderInner({ user }: { user: SiteHeaderUser | null 
                 Sign in
               </Link>
               <Link
-                className="btn btn-dark"
+                className="btn btn-green"
                 href="/demand-letter"
                 onClick={() => setOpen(false)}
               >

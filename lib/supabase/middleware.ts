@@ -31,14 +31,14 @@ export async function updateSession(request: NextRequest) {
 
   // Browsers caching the pre-Phase-1 SiteHeader still link to
   // /signup?next=/dashboard/cases/new. After the URL migration to
-  // /dashboard/demand-letters/* and the wizard-first entry, those users
+  // /dashboard/cases/* and the wizard-first entry, those users
   // should land at the public /demand-letter entry instead of getting
   // stuck on signup. (The wizard handles both anon and authed flows.)
   if (url.pathname === "/signup" || url.pathname === "/login") {
     const next = url.searchParams.get("next") || "";
     if (
       next === "/dashboard/cases/new" ||
-      next === "/dashboard/demand-letters/new"
+      next === "/dashboard/cases/new"
     ) {
       const redirectUrl = url.clone();
       redirectUrl.pathname = "/demand-letter";
@@ -92,7 +92,7 @@ export async function updateSession(request: NextRequest) {
   // time, which can show empty fields when the user clicks Back. Setting
   // Cache-Control: no-store disables bfcache for these pages so back-nav
   // forces a real server render and re-loads data from the database.
-  if (url.pathname.startsWith("/demand-letter/wizard/")) {
+  if (url.pathname.startsWith("/case/") && url.pathname.includes("/build")) {
     response.headers.set("Cache-Control", "no-store, max-age=0, must-revalidate");
   }
 

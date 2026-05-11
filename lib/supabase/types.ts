@@ -67,14 +67,29 @@ export type CaseStatus =
   | "settled";
 
 export type DisputeType =
-  // Original values (pre-Phase-1)
+  // Canonical taxonomy surfaced in the picker (11 + other).
+  | "landlord"
+  | "auto"
+  | "personal_loan"
+  | "contractor"
+  | "refund"
+  | "online_seller"
+  | "employer"
+  | "property_damage"
+  | "medical_billing"
+  | "insurance"
+  | "pet_injury"
+  | "other"
+  // Kept in the DB enum but no longer offered in the picker.
+  | "neighbor"
+  | "roommate"
+  // Legacy values still in the DB enum, kept here so older rows still
+  // typecheck. New code should not write these.
   | "unpaid_debt"
   | "security_deposit"
   | "property_damage"
   | "services_not_rendered"
   | "goods_not_delivered"
-  | "other"
-  // Added in migration 0003 to match the 15-category spec
   | "breach_of_contract"
   | "defective_product_or_service"
   | "unpaid_rent_or_deposit"
@@ -121,6 +136,7 @@ export interface Case {
   intake_answers: Record<string, unknown> | null;
   intake_version: number;
   facts_narrative: string | null;
+  court_prep_content: Record<string, unknown> | null;
   case_number: string | null;
   filing_court_id: string | null;
   hearing_at: string | null;
@@ -175,7 +191,7 @@ export interface DemandLetter {
   generated_by: string | null;
   pdf_storage_path: string | null;
   mail_status: MailStatus;
-  lob_letter_id: string | null;
+  mail_vendor_letter_id: string | null;
   tracking_number: string | null;
   sent_at: string | null;
   delivered_at: string | null;

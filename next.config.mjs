@@ -18,10 +18,13 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      // Old URL pattern from before "Cases" was renamed to "Demand letter".
-      // Permanent so existing bookmarks and Stripe success_urls keep working.
-      { source: "/dashboard/cases", destination: "/dashboard/demand-letters", permanent: true },
-      { source: "/dashboard/cases/:path*", destination: "/dashboard/demand-letters/:path*", permanent: true },
+      // Cases is the canonical dashboard route. Old "demand-letters" path
+      // and the old wizard path stay as 301 redirects in case anything
+      // external still points at them.
+      { source: "/dashboard/demand-letters", destination: "/dashboard/cases", permanent: true },
+      { source: "/dashboard/demand-letters/:path*", destination: "/dashboard/cases/:path*", permanent: true },
+      { source: "/demand-letter/wizard/:id", destination: "/case/:id/build", permanent: true },
+      { source: "/demand-letter/wizard/:id/:step*", destination: "/case/:id/build/:step*", permanent: true },
       // Landlord issue pages were flattened from /small-claims/landlord/<slug>
       // to /small-claims/sue-landlord-<slug>. 301 the old URLs so any external
       // backlinks transfer SEO juice to the new path.

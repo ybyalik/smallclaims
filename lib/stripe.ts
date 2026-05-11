@@ -15,7 +15,7 @@ export function getStripe(): Stripe {
 
 // Product catalog. Add new products here as new tiers ship.
 export const PRODUCTS = {
-  // Legacy (kept for the old /dashboard/demand-letters/[id]/letter download flow)
+  // Legacy (kept for the old /dashboard/cases/[id]/letter download flow)
   demand_letter_download: {
     name: "Demand Letter Download",
     description: "Formatted PDF of your CivilCase demand letter, plus plain-text copy.",
@@ -67,6 +67,26 @@ export const PRODUCTS = {
     name: "Case Brief (attorney memo)",
     description: "Independent attorney memo on the area of law and typical evidence. 7-10 business days.",
     amount_cents: 9800,
+    currency: "usd",
+  },
+  // Phase 2: Filing service. Single tier; no automated form generation in
+  // v1 — customer downloads a state- and county-specific filing guide and
+  // self-files. Pricing is provisional (founder will adjust later).
+  filing_guide: {
+    name: "Filing Guide for Your State",
+    description:
+      "A complete, state- and county-specific filing guide for your case. Court venue, fee schedule, required documents, service of process, and what to bring on filing day.",
+    amount_cents: 7900,
+    currency: "usd",
+  },
+  // Phase 6: Court Prep. AI-generated hearing prep — opening statement,
+  // likely judge questions, key facts to memorize, common pitfalls.
+  // Pricing is provisional (founder will adjust).
+  court_prep: {
+    name: "Court Prep Pack",
+    description:
+      "Personalized hearing prep for your case: a 3-minute opening statement, the questions the judge is likely to ask, your key facts cheat sheet, and the mistakes to avoid.",
+    amount_cents: 3900,
     currency: "usd",
   },
 } as const;

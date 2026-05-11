@@ -1,22 +1,25 @@
 // /api/admin/test-scenarios — admin-only endpoints for the test-scenarios
 // admin page.
 //
-//   GET                              → list pre-baked scenario metadata + every
-//                                       case ever spawned from a test scenario
-//                                       (joined with research-job state).
-//   POST ?slug=<slug>                → spawn a fresh case from a pre-baked scenario
-//   POST ?random=1                   → spawn a fresh case from a randomly
-//                                       generated scenario
-//   DELETE ?caseId=<uuid>            → permanently wipe a spawned test case
-//                                       (jobs, reports, sources links, and the
-//                                       case row itself).
+//   GET                                      → list every case ever spawned
+//                                               from a test scenario (joined
+//                                               with research-job state).
+//   POST ?random=1&mode=draft|paid           → spawn a fresh case from a
+//                                               randomly generated scenario.
+//                                               mode=draft → status='draft',
+//                                               intake_version=2 (lands in
+//                                               /case/[id]/build).
+//                                               mode=paid (default) →
+//                                               status='demand_paid' (lands in
+//                                               /case/[id]).
+//   DELETE ?caseId=<uuid>                    → permanently wipe a spawned test
+//                                               case (jobs, reports, sources
+//                                               links, and the case row).
 
 import { NextResponse, type NextRequest } from "next/server";
 import { createClient } from "../../../../lib/supabase/server";
 import { createServiceRoleClient } from "../../../../lib/supabase/service-role";
 import {
-  TEST_SCENARIOS,
-  getTestScenario,
   generateRandomScenario,
   type TestScenario,
 } from "../../../../lib/demand-letter/test-scenarios";
@@ -71,15 +74,6 @@ export async function GET() {
   }
 
   return NextResponse.json({
-    scenarios: TEST_SCENARIOS.map((s) => ({
-      slug: s.slug,
-      label: s.label,
-      description: s.description,
-      state: s.state,
-      county: s.county,
-      dispute_type: s.dispute_type,
-      amount_dollars: s.amount_cents / 100,
-    })),
     spawned: ((cases ?? []) as Array<{
       id: string;
       state: string;
@@ -94,10 +88,12 @@ export async function GET() {
       const job = jobsByCase.get(c.id);
       const deepStatus = job?.progress?.deep?.status as string | undefined;
       const reportPending = job?.progress?.deep?.status === "succeeded" ? "yes" : "no";
+      const isDraft = c.status === "draft";
       return {
         caseId: c.id,
         scenarioSlug: (c.intake_answers?._test_scenario_slug as string | undefined) ?? null,
         scenarioLabel: (c.intake_answers?._test_scenario_label as string | undefined) ?? null,
+        mode: isDraft ? "draft" : "paid",
         state: c.state,
         county: c.county,
         dispute_type: c.dispute_type,
@@ -121,23 +117,17 @@ export async function POST(req: NextRequest) {
   const { admin, userId } = auth;
 
   const params = new URL(req.url).searchParams;
-  const slug = params.get("slug");
   const random = params.get("random") === "1";
+  const mode = params.get("mode") === "draft" ? "draft" : "paid";
 
-  let scenario: TestScenario | null = null;
-  if (random) {
-    scenario = generateRandomScenario();
-  } else if (slug) {
-    scenario = getTestScenario(slug);
-    if (!scenario) {
-      return NextResponse.json({ error: `unknown scenario: ${slug}` }, { status: 404 });
-    }
-  } else {
+  if (!random) {
     return NextResponse.json(
-      { error: "missing slug or random=1 query param" },
+      { error: "missing random=1 query param" },
       { status: 400 },
     );
   }
+
+  const scenario: TestScenario = generateRandomScenario();
 
   // Tag the case so we can list/delete it later from this page.
   const intakeAnswersWithMarker = {
@@ -145,13 +135,21 @@ export async function POST(req: NextRequest) {
     _test_scenario: true,
     _test_scenario_slug: scenario.slug,
     _test_scenario_label: scenario.label,
+    _test_scenario_mode: mode,
   };
+
+  // Draft mode: status='draft' + intake_version=2 lands the user in the
+  // /case/[id]/build wizard (review step, since all fields are populated).
+  // Paid mode: status='demand_paid' lands them in /case/[id] case file.
+  const status = mode === "draft" ? "draft" : "demand_paid";
+  const intakeVersion = mode === "draft" ? 2 : undefined;
 
   const { data: caseRow, error: insertError } = await admin
     .from("cases")
     .insert({
       owner_user_id: userId,
-      status: "demand_paid",
+      status,
+      ...(intakeVersion !== undefined ? { intake_version: intakeVersion } : {}),
       state: scenario.state,
       county: scenario.county,
       dispute_type: scenario.dispute_type,
@@ -180,12 +178,18 @@ export async function POST(req: NextRequest) {
     );
   }
 
+  // For draft mode, jump straight into the wizard so the admin can test
+  // the pre-purchase flow. For paid mode, the existing case-file URL.
+  const userUrl = mode === "draft" ? `/case/${caseRow.id}/build` : `/case/${caseRow.id}`;
+
   return NextResponse.json({
     ok: true,
+    mode,
     scenario: scenario.slug,
     label: scenario.label,
     caseId: caseRow.id,
     adminUrl: `/admin/cases/${caseRow.id}`,
+    userUrl,
   });
 }
 

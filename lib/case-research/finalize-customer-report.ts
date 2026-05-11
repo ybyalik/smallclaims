@@ -1,13 +1,9 @@
 // Customer report finalize — synchronous core.
 //
-// Pulled out of the Inngest function so it can be invoked directly from:
-//   - the OpenAI webhook handler (via unstable_after, after both deep calls succeed)
-//   - the admin "Regenerate customer report" route
-//   - the Inngest customerReportFinalize function (now just a thin wrapper)
-//
-// Why this exists: INNGEST_EVENT_KEY is empty in this project's prod env, so
-// `inngest.send()` silently no-ops. The Inngest path can't be relied on for
-// the post-deep finalize step. Direct invocation is the new primary path.
+// Currently invoked from one place only: the admin "Regenerate customer
+// report" route. Auto-trigger from the cron and the Inngest function were
+// removed so Case Plan generation only happens when an admin (or, later, a
+// paid pricing tier purchase) explicitly requests it.
 
 import { marked } from "marked";
 import { mergeResearchPacks, type MergeSummary } from "./merge";

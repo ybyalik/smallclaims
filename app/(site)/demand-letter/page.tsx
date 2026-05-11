@@ -30,7 +30,7 @@ export default function DemandLetterTeaserPage() {
           </p>
           <div className="hero-ctas" style={{ marginTop: 24 }}>
             <StartButton />
-            <Link className="btn btn-cream" href="/login?next=/dashboard/demand-letters/new">
+            <Link className="btn btn-cream" href="/login?next=/dashboard/cases/new">
               I have an account
             </Link>
           </div>

@@ -2,14 +2,21 @@
 // No side effects, no fetches — takes answers + state facts, returns a structured result.
 // Lives next to the client component so it can be unit-tested if we ever want.
 
+// Canonical 11 + other surfaced in the picker. neighbor + roommate stay in
+// the DB enum but aren't offered here. Score quiz mirrors the case-builder
+// taxonomy 1:1 so values pass straight through.
 export type DisputeType =
-  | "unpaid_debt"
-  | "security_deposit"
-  | "services_not_rendered"
-  | "goods_not_delivered"
-  | "property_damage"
-  | "unpaid_wages"
+  | "landlord"
+  | "auto"
+  | "personal_loan"
   | "contractor"
+  | "refund"
+  | "online_seller"
+  | "employer"
+  | "property_damage"
+  | "medical_billing"
+  | "insurance"
+  | "pet_injury"
   | "other";
 
 export type PriorContact = "formal" | "casual" | "none";
@@ -75,19 +82,21 @@ export interface ScoreResult {
 // Map dispute type → which SOL bucket to read from state facts
 function solKey(type: DisputeType): keyof StateFacts["sol_years"] {
   switch (type) {
-    case "unpaid_debt":
+    case "landlord":
+    case "personal_loan":
     case "contractor":
+    case "online_seller":
+    case "refund":
+    case "medical_billing":
+    case "insurance":
       return "written_contract";
-    case "services_not_rendered":
-      return "written_contract";
-    case "goods_not_delivered":
-      return "sale_of_goods";
+    case "employer":
+      return "wages";
+    case "auto":
     case "property_damage":
       return "property_damage";
-    case "unpaid_wages":
-      return "wages";
-    case "security_deposit":
-      return "written_contract"; // most states bucket deposit claims here
+    case "pet_injury":
+      return "personal_injury";
     case "other":
       return "written_contract";
   }
@@ -106,13 +115,17 @@ export function scoreCase(a: QuizAnswers, facts: StateFacts | null): ScoreResult
 
   // ── Dispute type (max 15) ───────────────────────────────────────
   const typeScores: Record<DisputeType, number> = {
-    unpaid_debt: 15,
-    security_deposit: 15,
-    unpaid_wages: 14,
+    landlord: 15,
+    personal_loan: 15,
+    employer: 14,
     contractor: 12,
-    services_not_rendered: 12,
-    goods_not_delivered: 12,
-    property_damage: 10,
+    refund: 12,
+    online_seller: 12,
+    auto: 11,
+    property_damage: 11,
+    medical_billing: 11,
+    insurance: 10,
+    pet_injury: 9,
     other: 8,
   };
   score += typeScores[a.dispute_type];

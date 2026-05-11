@@ -81,7 +81,7 @@ export async function POST(req: NextRequest) {
     });
     // Return URL the client redirects to, just like Stripe would
     return NextResponse.json({
-      url: `/dashboard/demand-letters/${caseRow.id}/letter?paid=admin`,
+      url: `/dashboard/cases/${caseRow.id}/letter?paid=admin`,
     });
   }
 
@@ -123,8 +123,8 @@ export async function POST(req: NextRequest) {
         quantity: 1,
       },
     ],
-    success_url: `${origin}/dashboard/demand-letters/${caseRow.id}/letter?paid=1`,
-    cancel_url: `${origin}/dashboard/demand-letters/${caseRow.id}/letter?canceled=1`,
+    success_url: `${origin}/dashboard/cases/${caseRow.id}/letter?paid=1`,
+    cancel_url: `${origin}/dashboard/cases/${caseRow.id}/letter?canceled=1`,
     metadata: {
       case_id: caseRow.id,
       user_id: user.id,

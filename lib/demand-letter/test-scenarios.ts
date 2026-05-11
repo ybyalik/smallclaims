@@ -1,5 +1,18 @@
-// Pre-baked fake cases for end-to-end testing the case-research pipeline.
-// Each scenario is a complete case payload as if a user finished the wizard.
+// Fake-case generator for end-to-end testing both flows:
+//   1. Pre-purchase ("draft" mode)  — status='draft', intake_version=2, drops
+//      the spawning admin into /case/[id]/build with the wizard fields filled
+//      so they can test the review step + checkout.
+//   2. Post-purchase ("paid" mode)  — status='demand_paid', drops them into
+//      /case/[id] with the case file ready for the demand-letter pipeline.
+//
+// Hand-crafted scenarios were removed; everything is generated randomly from
+// per-category templates. There's one template per canonical dispute_type
+// surfaced in the picker, so "Spawn random" rotates across all 11.
+//
+// IMPORTANT: dispute_type values here must match the canonical 11+other
+// taxonomy from lib/demand-letter/categories.ts and lib/supabase/types.ts.
+// Old legacy values (security_deposit, services_not_rendered, breach_of_contract,
+// defective_product_or_service) have been retired and should not be used here.
 
 import type { PostalAddress, DisputeType } from "../supabase/types";
 
@@ -26,148 +39,15 @@ export interface TestScenario {
   intake_answers: Record<string, unknown>;
 }
 
-export const TEST_SCENARIOS: TestScenario[] = [
-  {
-    slug: "nj-security-deposit",
-    label: "NJ — Security deposit (Middlesex County)",
-    description:
-      "Tenant in Old Bridge, NJ. Landlord withheld a $2,800 deposit 60 days after move-out. Classic NJSA 46:8-21.1 double-damages case.",
-    state: "NJ",
-    county: "Middlesex",
-    dispute_type: "security_deposit",
-    amount_cents: 280000,
-    plaintiff_name: "Maya Reyes",
-    plaintiff_email: "test+maya@civilcase.com",
-    plaintiff_phone: "732-555-0142",
-    plaintiff_address: {
-      line1: "118 Bridge Way",
-      city: "Old Bridge",
-      state: "NJ",
-      zip: "08857",
-    },
-    plaintiff_county: "Middlesex",
-    defendant_name: "Riverside Property Holdings LLC",
-    defendant_email: null,
-    defendant_phone: "732-555-0190",
-    defendant_address: {
-      line1: "200 Main Street, Suite 4",
-      city: "Old Bridge",
-      state: "NJ",
-      zip: "08857",
-    },
-    defendant_county: "Middlesex",
-    incident_county: "Middlesex",
-    facts_narrative:
-      "I rented an apartment from Riverside Property Holdings from June 2024 to July 2025 and paid a $2,800 security deposit. I moved out July 31, 2025 in clean condition with no damage. The landlord did not return the deposit within 30 days and has not provided an itemized statement of deductions. I sent a written demand on October 12 with proof of move-out condition; they have not responded.",
-    intake_answers: {
-      plaintiff_entity_type: "individual",
-      defendant_entity_type: "business",
-      defendant_business_subtype: "llc",
-      incident_date: "2025-08-30",
-      incident_location: "Old Bridge, NJ 08857",
-      incident_county: "Middlesex",
-      eligibility: { adult: true, private_party: true, within_sol: true },
-      eligibility_passed: true,
-    },
-  },
-  {
-    slug: "ca-unpaid-invoice",
-    label: "CA — Unpaid contractor invoice (Santa Clara County)",
-    description:
-      "Freelance web developer in San Jose. Client owes $4,500 on a delivered project. Two invoices ignored.",
-    state: "CA",
-    county: "Santa Clara",
-    dispute_type: "services_not_rendered",
-    amount_cents: 450000,
-    plaintiff_name: "Daniel Park",
-    plaintiff_email: "test+daniel@civilcase.com",
-    plaintiff_phone: "408-555-0119",
-    plaintiff_address: {
-      line1: "742 Evergreen Terrace",
-      city: "San Jose",
-      state: "CA",
-      zip: "95112",
-    },
-    plaintiff_county: "Santa Clara",
-    defendant_name: "BluePeak Marketing Inc.",
-    defendant_email: "ap@bluepeakmarketing.test",
-    defendant_phone: "415-555-0177",
-    defendant_address: {
-      line1: "55 Market Street, Floor 3",
-      city: "San Francisco",
-      state: "CA",
-      zip: "94103",
-    },
-    defendant_county: "San Francisco",
-    incident_county: "Santa Clara",
-    facts_narrative:
-      "I am a freelance web developer. I built a marketing website for BluePeak Marketing Inc. under a written agreement signed February 2025, total fee $4,500 due net-30 after launch. I delivered and launched the site on April 14, 2025. Final invoice sent April 14 and a follow-up June 1. They have not paid and have stopped responding to email.",
-    intake_answers: {
-      plaintiff_entity_type: "individual",
-      defendant_entity_type: "business",
-      defendant_business_subtype: "corp",
-      incident_date: "2025-04-14",
-      incident_location: "San Jose, CA 95112",
-      incident_county: "Santa Clara",
-      eligibility: { adult: true, private_party: true, within_sol: true },
-      eligibility_passed: true,
-    },
-  },
-  {
-    slug: "tx-broken-contract",
-    label: "TX — Broken contract (Travis County)",
-    description:
-      "Wedding photographer no-show in Austin. $1,800 refund owed. Justice of the Peace court territory.",
-    state: "TX",
-    county: "Travis",
-    dispute_type: "breach_of_contract",
-    amount_cents: 180000,
-    plaintiff_name: "Lena Okafor",
-    plaintiff_email: "test+lena@civilcase.com",
-    plaintiff_phone: "512-555-0104",
-    plaintiff_address: {
-      line1: "904 Lavaca Street",
-      city: "Austin",
-      state: "TX",
-      zip: "78701",
-    },
-    plaintiff_county: "Travis",
-    defendant_name: "James Holloway",
-    defendant_email: null,
-    defendant_phone: "512-555-0166",
-    defendant_address: {
-      line1: "215 Oak Hollow Drive",
-      city: "Austin",
-      state: "TX",
-      zip: "78745",
-    },
-    defendant_county: "Travis",
-    incident_county: "Travis",
-    facts_narrative:
-      "I hired James Holloway to photograph my wedding on May 17, 2025 for a $1,800 fee paid in advance via Venmo. He did not show up the day of the event and never delivered any photos. He stopped answering calls and texts within a week. I have the booking contract, payment receipt, and call/text logs.",
-    intake_answers: {
-      plaintiff_entity_type: "individual",
-      defendant_entity_type: "individual",
-      incident_date: "2025-05-17",
-      incident_location: "Austin, TX 78701",
-      incident_county: "Travis",
-      eligibility: { adult: true, private_party: true, within_sol: true },
-      eligibility_passed: true,
-    },
-  },
-];
+// No baked scenarios. The runner only spawns random ones.
+export const TEST_SCENARIOS: TestScenario[] = [];
 
-export function getTestScenario(slug: string): TestScenario | null {
-  return TEST_SCENARIOS.find((s) => s.slug === slug) ?? null;
+export function getTestScenario(_slug: string): TestScenario | null {
+  return null;
 }
 
 // ---------------------------------------------------------------------------
-// Random scenario generator
-//
-// Builds a plausible end-of-wizard case payload from random picks across
-// states, claim types, dollar amounts, and party templates. Used by the
-// test-scenarios page when the admin wants a fresh case beyond the three
-// pre-baked ones.
+// Random scenario generator — one template per canonical category.
 // ---------------------------------------------------------------------------
 
 const RANDOM_STATES: Array<{ abbr: string; sampleCity: string; sampleZip: string; county: string }> = [
@@ -204,62 +84,113 @@ const STREETS = [
 const BUSINESS_PREFIXES = ["Riverside", "BluePeak", "Summit", "Northstar", "Cypress", "Anchor", "Harbor", "Cedar"];
 const BUSINESS_SUFFIXES = ["Holdings", "Marketing", "Solutions", "Properties", "Services", "Group", "Partners"];
 
+interface NarrativeArgs {
+  plaintiff: string;
+  defendant: string;
+  amount: string;
+  incidentDate: string;
+  demandDate: string;
+  city: string;
+  state: string;
+}
+
 interface ScenarioTemplate {
   dispute_type: DisputeType;
   defendantBusiness: boolean;
   amountRange: [number, number];
-  narrative: (params: {
-    plaintiff: string;
-    defendant: string;
-    amount: string;
-    incidentDate: string;
-    demandDate: string;
-    city: string;
-    state: string;
-  }) => string;
+  narrative: (a: NarrativeArgs) => string;
   description: (state: string, amount: string) => string;
+  defendantName?: (random: () => string) => string;
 }
 
 const TEMPLATES: ScenarioTemplate[] = [
   {
-    dispute_type: "security_deposit",
+    dispute_type: "landlord",
     defendantBusiness: true,
     amountRange: [80000, 450000],
-    narrative: ({ plaintiff: _p, defendant, amount, incidentDate, demandDate, city, state: _s }) =>
+    narrative: ({ defendant, amount, incidentDate, demandDate, city }) =>
       `I rented an apartment from ${defendant} for the past year and paid a ${amount} security deposit. I moved out ${incidentDate} in clean condition with no damage. The landlord has not returned the deposit and has not provided an itemized statement of deductions. I sent a written demand on ${demandDate} via certified mail with photos of the move-out condition; they have not responded. The property is in ${city}.`,
-    description: (state, amount) => `Tenant withholding case in ${state}. Landlord failed to return ${amount} deposit after move-out.`,
+    description: (state, amount) => `${state} landlord/tenant case. Landlord withheld ${amount} security deposit after move-out.`,
   },
   {
-    dispute_type: "services_not_rendered",
-    defendantBusiness: true,
-    amountRange: [150000, 800000],
-    narrative: ({ plaintiff: _p, defendant, amount, incidentDate, demandDate, city, state: _s }) =>
-      `I am a freelance consultant. I delivered a project for ${defendant} under a written agreement signed earlier this year, total fee ${amount} due net-30 after delivery. I completed and handed off the work on ${incidentDate}. I sent the final invoice on ${incidentDate} and a follow-up on ${demandDate}. They have not paid and have stopped responding to email. The work was performed in ${city}.`,
-    description: (state, amount) => `Unpaid invoice in ${state}. Freelancer delivered work; client owes ${amount} and is non-responsive.`,
-  },
-  {
-    dispute_type: "breach_of_contract",
+    dispute_type: "auto",
     defendantBusiness: false,
-    amountRange: [60000, 300000],
-    narrative: ({ plaintiff: _p, defendant, amount, incidentDate, demandDate, city, state: _s }) =>
-      `I hired ${defendant} to provide a wedding-related service on ${incidentDate} for a ${amount} fee paid in advance via Venmo. They did not show up and never delivered. They stopped answering calls and texts within a week. I sent a written demand on ${demandDate}. I have the booking contract, payment receipt, and call logs. The event was in ${city}.`,
-    description: (state, amount) => `Service no-show in ${state}. Vendor took ${amount} upfront and never delivered.`,
+    amountRange: [80000, 350000],
+    narrative: ({ defendant, amount, incidentDate, demandDate, city }) =>
+      `${defendant} backed into my parked car in ${city} on ${incidentDate}. They were apologetic at the scene and exchanged information but have refused to pay the body-shop estimate of ${amount}. I sent a written demand on ${demandDate} with the repair invoice and photos. No response. I have witness contact info and the police report.`,
+    description: (state, amount) => `${state} auto/vehicle case. ${amount} repair bill, defendant refusing to pay after parked-car hit.`,
+  },
+  {
+    dispute_type: "personal_loan",
+    defendantBusiness: false,
+    amountRange: [50000, 300000],
+    narrative: ({ defendant, amount, incidentDate, demandDate }) =>
+      `I lent ${defendant} ${amount} on ${incidentDate} to help cover their rent and an emergency car repair. We had a written agreement (text exchange + signed IOU) that they'd repay within 90 days. The deadline has passed by months. They've gone quiet and stopped answering my texts. I sent a written demand on ${demandDate}. I have screenshots, the IOU, and bank-transfer records.`,
+    description: (state, amount) => `${state} personal loan case. ${amount} owed by individual; deadline passed and borrower non-responsive.`,
+  },
+  {
+    dispute_type: "contractor",
+    defendantBusiness: true,
+    amountRange: [150000, 900000],
+    narrative: ({ defendant, amount, incidentDate, demandDate, city }) =>
+      `I hired ${defendant} on ${incidentDate} to remodel a bathroom in my home in ${city}. I paid a ${amount} deposit upfront. They demolished the existing bathroom, did one day of framing work, and then disappeared. They stopped returning calls and texts. The bathroom has been unusable for weeks. I sent a written demand on ${demandDate}. I have the signed contract, payment receipt, and photos of the half-demolished bathroom.`,
+    description: (state, amount) => `${state} contractor case. Contractor took ${amount} deposit and abandoned the job mid-demolition.`,
+  },
+  {
+    dispute_type: "refund",
+    defendantBusiness: true,
+    amountRange: [40000, 250000],
+    narrative: ({ defendant, amount, incidentDate, demandDate }) =>
+      `I bought a product from ${defendant} on ${incidentDate} for ${amount}. It arrived defective and does not perform as advertised. I requested a refund within the return window; they refused, citing a "no refunds" policy that was not disclosed at purchase. I have the order confirmation, photos of the defect, and chat logs with their support team. I sent a final demand on ${demandDate}.`,
+    description: (state, amount) => `${state} consumer refund case. ${amount} refund refused on a defective product despite advertised performance.`,
+  },
+  {
+    dispute_type: "online_seller",
+    defendantBusiness: false,
+    amountRange: [25000, 200000],
+    narrative: ({ defendant, amount, incidentDate, demandDate }) =>
+      `I bought an item from ${defendant} on Facebook Marketplace on ${incidentDate} for ${amount}. They listed the item as functional and undamaged. After payment via Zelle, the item never shipped. They blocked me on Marketplace shortly after. I have screenshots of the listing, the chat thread, and the Zelle transfer. I sent a written demand to their address on ${demandDate}.`,
+    description: (state, amount) => `${state} online purchase case. ${amount} paid for Marketplace item that was never shipped; seller blocked the buyer.`,
+  },
+  {
+    dispute_type: "employer",
+    defendantBusiness: true,
+    amountRange: [100000, 600000],
+    narrative: ({ defendant, amount, incidentDate, demandDate, city }) =>
+      `I worked at ${defendant} in ${city} until my last day on ${incidentDate}. I'm owed ${amount} in unpaid final wages plus accrued PTO that the state requires they pay out. The owner promised the check was "in the mail" three times. It never arrived. I have my offer letter, time sheets, pay stubs, and the text-message exchanges with the owner. I sent a written demand on ${demandDate}.`,
+    description: (state, amount) => `${state} wage case. Final paycheck of ${amount} unpaid; employer dodging.`,
   },
   {
     dispute_type: "property_damage",
-    defendantBusiness: false,
-    amountRange: [80000, 350000],
-    narrative: ({ plaintiff: _p, defendant, amount, incidentDate, demandDate, city, state: _s }) =>
-      `${defendant} damaged my parked vehicle in ${city} on ${incidentDate}. They were apologetic at the scene and exchanged information but have refused to pay the body-shop estimate of ${amount}. I sent a written demand on ${demandDate} with the repair invoice and photos. No response. I have witness contact info and the police report.`,
-    description: (state, amount) => `Auto property damage in ${state}. ${amount} repair bill, defendant refusing to pay.`,
+    defendantBusiness: true,
+    amountRange: [60000, 350000],
+    narrative: ({ defendant, amount, incidentDate, demandDate }) =>
+      `I hired ${defendant} to move my apartment on ${incidentDate}. During the move they dropped and shattered a custom-framed art piece and gouged a path through my hardwood floor. The estimated repair/replacement cost is ${amount}. Their dispatcher told me to file a claim with the company; the company offered me $50 citing a "released-value" clause I never signed. I have the bill of lading, photos of the damage, and the appraisal. I sent a written demand on ${demandDate}.`,
+    description: (state, amount) => `${state} property damage case. ${amount} damage by mover; company hiding behind unsigned release.`,
   },
   {
-    dispute_type: "defective_product_or_service",
+    dispute_type: "medical_billing",
     defendantBusiness: true,
-    amountRange: [40000, 200000],
-    narrative: ({ plaintiff: _p, defendant, amount, incidentDate, demandDate, city: _c, state: _s }) =>
-      `I bought a product from ${defendant} on ${incidentDate} for ${amount}. It arrived defective and does not perform as advertised. I requested a refund within the return window; they refused, citing a "no refunds" policy not disclosed at purchase. I have order confirmation, photos of the defect, and chat logs. I sent a final demand on ${demandDate}.`,
-    description: (state, amount) => `Defective product in ${state}. ${amount} refund refused despite advertised performance failure.`,
+    amountRange: [50000, 400000],
+    narrative: ({ defendant, amount, incidentDate, demandDate }) =>
+      `I received a bill from ${defendant} on ${incidentDate} for ${amount} for an in-network procedure that should have been fully covered by my insurance. The provider billed me directly without first submitting to insurance. I called repeatedly, sent the EOB showing my insurance covered it, and asked them to reverse the charge. They sent the bill to collections anyway. I have the EOB, my insurance card on file, and call logs. I sent a written demand on ${demandDate}.`,
+    description: (state, amount) => `${state} medical billing case. ${amount} balance billed despite in-network coverage; sent to collections.`,
+  },
+  {
+    dispute_type: "insurance",
+    defendantBusiness: true,
+    amountRange: [100000, 600000],
+    narrative: ({ defendant, amount, incidentDate, demandDate }) =>
+      `I filed a renters-insurance claim with ${defendant} on ${incidentDate} for ${amount} after a water leak from the unit above destroyed my electronics, furniture, and a laptop I use for work. They denied the claim citing an exclusion for "gradual leaks" — but the building plumber's report shows the leak was a sudden pipe failure, not gradual. I have the plumber's report, the policy, photos of the damage, and the receipts/replacement quotes. I sent a written demand on ${demandDate}.`,
+    description: (state, amount) => `${state} insurance case. Renters claim of ${amount} wrongly denied as gradual leak despite plumber's sudden-failure report.`,
+  },
+  {
+    dispute_type: "pet_injury",
+    defendantBusiness: false,
+    amountRange: [40000, 250000],
+    narrative: ({ defendant, amount, incidentDate, demandDate, city }) =>
+      `On ${incidentDate}, ${defendant}'s dog escaped their yard and bit my dog as we walked past on a public sidewalk in ${city}. The vet bill for emergency care, sutures, and follow-up came to ${amount}. The owner admitted at the scene the gate was broken; their homeowner's insurer told me they'd cover it, then later denied the claim. I have the vet records, animal-control report, and photos of the injuries. I sent a written demand on ${demandDate}.`,
+    description: (state, amount) => `${state} pet injury case. ${amount} vet bill from neighbor's dog attack; insurer denied.`,
   },
 ];
 
@@ -366,8 +297,17 @@ export function generateRandomScenario(): TestScenario {
       incident_date: incidentDateIso,
       incident_location: `${state.sampleCity}, ${state.abbr} ${state.sampleZip}`,
       incident_county: state.county,
+      // The wizard root walks 5 prescreen + 6 main steps and redirects to
+      // the first unfilled one. Setting the keys it checks for lets a draft
+      // scenario skip straight to /review so the spawning admin can test
+      // the review step + checkout. (See app/(wizard)/case/[id]/build/page.tsx.)
+      recipient_state: state.abbr,
       eligibility: { adult: true, private_party: true, within_sol: true },
       eligibility_passed: true,
+      recovery_seen: true,
+      // Plain-text explanation the user would type into the claim-amount step.
+      amount_calculation: `Principal owed: ${amountUsd}. This is the dollar amount the other party agreed to pay or the documented loss they're responsible for.`,
+      evidence_skipped: true,
     },
   };
 }

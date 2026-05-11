@@ -121,7 +121,6 @@ export default async function AdminCaseDetailPage({ params }: { params: { id: st
         <Field label="Address" value={fmtAddress(c.plaintiff_address)} />
         <Field label="County" value={(c as { plaintiff_county?: string | null }).plaintiff_county ?? null} />
         <Field label="Entity type" value={(answers.plaintiff_entity_type as string) ?? null} />
-        <Field label="SMS consent" value={answers.plaintiff_sms_consent ? "yes" : "no"} />
       </div>
 
       <h2 className="admin-section-h" style={{ marginTop: 28 }}>Claim</h2>

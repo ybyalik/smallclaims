@@ -103,8 +103,8 @@ export async function POST(req: NextRequest, ctx: { params: { id: string } }) {
     mode: "payment",
     customer: stripeCustomerId,
     line_items: lineItems,
-    success_url: `${origin}/dashboard/demand-letters/${caseRow.id}?submitted=1`,
-    cancel_url: `${origin}/demand-letter/wizard/${caseRow.id}/review?canceled=1`,
+    success_url: `${origin}/dashboard/cases/${caseRow.id}?submitted=1`,
+    cancel_url: `${origin}/case/${caseRow.id}/build/review?canceled=1`,
     metadata: {
       case_id: caseRow.id,
       user_id: user.id,

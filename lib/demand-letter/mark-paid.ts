@@ -41,6 +41,16 @@ export async function markCasePaid(
       .from("cases")
       .update({ status: "demand_paid", updated_at: new Date().toISOString() })
       .eq("id", caseId);
+
+    // Fire the certified-mail dispatch event. The Inngest worker handles
+    // PDF rendering and the PostGrid call so the Stripe webhook returns
+    // fast. Idempotency is enforced inside mailDemandLetter() — if the
+    // event ever fires twice for the same case, the second run is a no-op.
+    await inngest.send({
+      name: "case/letter.send",
+      id: `letter-send:${caseId}`,
+      data: { caseId },
+    });
   }
 
   // Research is intentionally NOT auto-enqueued. While we're iterating on

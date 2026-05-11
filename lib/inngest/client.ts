@@ -22,3 +22,11 @@ export interface CaseResearchReadyEvent {
     jobId: string;
   };
 }
+
+export interface CaseLetterSendEvent {
+  name: "case/letter.send";
+  id?: string;
+  data: {
+    caseId: string;
+  };
+}

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { availableStateSlugs, loadStateGuide } from "../../../lib/state-data";
 import { STATES } from "../../../lib/states";
 import type { StateFacts } from "./scoring";
@@ -68,7 +69,9 @@ export default async function CaseScorePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <QuizForm states={STATES} stateFacts={facts} />
+      <Suspense fallback={null}>
+        <QuizForm states={STATES} stateFacts={facts} />
+      </Suspense>
     </>
   );
 }

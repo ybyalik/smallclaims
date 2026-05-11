@@ -1,11 +1,9 @@
 // Shared app-style shell: left sidebar + main column. Used by:
 //   - the authenticated dashboard (/dashboard/*)
-//   - the demand-letter wizard (/demand-letter/wizard/*) for both
-//     anonymous and authenticated users
+//   - the case builder (/case/{id}/build/*) — sign-in required
 //
-// Sidebar is auth-aware. When the requester is logged in we show their
-// profile + admin/settings/signout. When anonymous we show "Save your
-// progress" + sign-in/create-account links.
+// Sign-in required everywhere this shell is used now (case builder lost
+// its anonymous path during the case-builder restructure).
 
 import { redirect } from "next/navigation";
 import { createClient } from "../lib/supabase/server";

@@ -25,7 +25,7 @@ const ARROW = (
 
 interface Props {
   href: string;
-  variant: "dark" | "cream";
+  variant: "dark" | "cream" | "green";
   icon?: keyof typeof ICONS;
   children: ReactNode;
 }

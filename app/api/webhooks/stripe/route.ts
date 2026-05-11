@@ -51,10 +51,7 @@ export async function POST(req: NextRequest) {
         })
         .eq("stripe_checkout_session_id", session.id);
 
-      // Advance case status + enqueue research pipeline
-      await markCasePaid(caseId, { source: "stripe_webhook" });
-
-      // Audit
+      // Audit (every product)
       await logEvent("payment.succeeded", { case_id: caseId, actor_user_id: userId }, {
         entity_type: "payment",
         payload: {
@@ -65,32 +62,81 @@ export async function POST(req: NextRequest) {
         },
       });
 
-      // Confirmation email
-      const { data: caseRow } = await admin
-        .from("cases")
-        .select("plaintiff_email, plaintiff_name, defendant_name, amount_cents")
-        .eq("id", caseId)
-        .single();
-      if (caseRow?.plaintiff_email) {
-        const dollars = ((caseRow.amount_cents ?? 0) / 100).toLocaleString("en-US", {
-          style: "currency",
-          currency: "USD",
-        });
-        await sendEmail({
-          to: caseRow.plaintiff_email,
-          subject: "Your CivilCase demand letter is ready",
-          text: `Hi ${caseRow.plaintiff_name?.split(" ")[0] || "there"},
+      // Branch by product. Demand-letter products advance case status and
+      // fire the certified-mail event. The Filing Guide is purely an access
+      // unlock — no status change, no mail dispatch.
+      if (productKey === "filing_guide") {
+        const { data: caseRow } = await admin
+          .from("cases")
+          .select("plaintiff_email, plaintiff_name, state")
+          .eq("id", caseId)
+          .single();
+        if (caseRow?.plaintiff_email) {
+          await sendEmail({
+            to: caseRow.plaintiff_email,
+            subject: "Your CivilCase Filing Guide is unlocked",
+            text: `Hi ${caseRow.plaintiff_name?.split(" ")[0] || "there"},
 
-Thanks for your purchase. Your demand letter against ${caseRow.defendant_name} (${dollars}) is ready to download from your dashboard.
+Your Filing Guide is ready. It walks you through where to file, the forms you need, fees, service of process, and what to bring on hearing day for ${caseRow.state ?? "your state"}.
 
-Open your case: ${process.env.NEXT_PUBLIC_SITE_URL || "https://civilcase.com"}/dashboard/demand-letters/${caseId}/letter
-
-You can edit the letter, download the PDF, and send it yourself by mail or email.
+Open your guide: ${process.env.NEXT_PUBLIC_SITE_URL || "https://civilcase.com"}/case/${caseId}/file
 
 If you have questions, reply to this email.
 
 — CivilCase`,
-        });
+          });
+        }
+      } else if (productKey === "court_prep") {
+        const { data: caseRow } = await admin
+          .from("cases")
+          .select("plaintiff_email, plaintiff_name")
+          .eq("id", caseId)
+          .single();
+        if (caseRow?.plaintiff_email) {
+          await sendEmail({
+            to: caseRow.plaintiff_email,
+            subject: "Your CivilCase Court Prep Pack is ready",
+            text: `Hi ${caseRow.plaintiff_name?.split(" ")[0] || "there"},
+
+Your Court Prep Pack is ready. You'll find your opening statement, the questions the judge is likely to ask, your key-facts cheat sheet, and the pitfalls to avoid.
+
+Open your prep pack: ${process.env.NEXT_PUBLIC_SITE_URL || "https://civilcase.com"}/case/${caseId}/prep
+
+If you have questions, reply to this email.
+
+— CivilCase`,
+          });
+        }
+      } else {
+        // Demand-letter products: advance status + enqueue mail dispatch.
+        await markCasePaid(caseId, { source: "stripe_webhook" });
+
+        const { data: caseRow } = await admin
+          .from("cases")
+          .select("plaintiff_email, plaintiff_name, defendant_name, amount_cents")
+          .eq("id", caseId)
+          .single();
+        if (caseRow?.plaintiff_email) {
+          const dollars = ((caseRow.amount_cents ?? 0) / 100).toLocaleString("en-US", {
+            style: "currency",
+            currency: "USD",
+          });
+          await sendEmail({
+            to: caseRow.plaintiff_email,
+            subject: "Your CivilCase demand letter is on its way",
+            text: `Hi ${caseRow.plaintiff_name?.split(" ")[0] || "there"},
+
+Thanks for your purchase. Your demand letter against ${caseRow.defendant_name} (${dollars}) is being mailed via certified mail with return receipt to the address you provided. Tracking and delivery status will appear in your dashboard within a few business days.
+
+Open your case: ${process.env.NEXT_PUBLIC_SITE_URL || "https://civilcase.com"}/case/${caseId}
+
+You can also download a copy of the letter as a PDF for your records from the case page.
+
+If you have questions, reply to this email.
+
+— CivilCase`,
+          });
+        }
       }
       break;
     }
@@ -113,6 +159,7 @@ If you have questions, reply to this email.
       // idempotent so receiving both is safe.
       const intent = event.data.object as Stripe.PaymentIntent;
       const caseId = intent.metadata?.case_id;
+      const productKey = intent.metadata?.product_key;
       if (!caseId) break;
 
       await admin
@@ -123,7 +170,13 @@ If you have questions, reply to this email.
         })
         .eq("stripe_payment_intent_id", intent.id);
 
-      await markCasePaid(caseId, { source: "stripe_webhook" });
+      // Filing Guide and Court Prep don't change case status or fire mail.
+      // They're pure-access unlocks. Everything else (demand-letter products)
+      // gets the standard advance-and-mail treatment.
+      const standaloneUnlocks = new Set(["filing_guide", "court_prep"]);
+      if (!productKey || !standaloneUnlocks.has(productKey)) {
+        await markCasePaid(caseId, { source: "stripe_webhook" });
+      }
 
       await logEvent(
         event.type === "payment_intent.succeeded"

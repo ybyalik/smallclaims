@@ -1,31 +1,45 @@
-// The 15 dispute-type categories shown on Phase 0.1 (category picker)
-// and reused on Phase 3.3 (claim-type confirmation).
-// Each maps to a DisputeType enum value in the database.
+// Canonical 11 + other dispute-type categories shown in the case-builder
+// category step and the case-score quiz. neighbor + roommate are not in
+// this list; they stay in the DB enum but are no longer offered in the
+// picker.
 
+import type { LucideIcon } from "lucide-react";
+import {
+  Building2,
+  Car,
+  HandCoins,
+  Hammer,
+  Receipt,
+  ShoppingBag,
+  Briefcase,
+  PackageX,
+  Stethoscope,
+  Shield,
+  PawPrint,
+  HelpCircle,
+} from "lucide-react";
 import type { DisputeType } from "../supabase/types";
 
 export interface Category {
   slug: DisputeType;
   label: string;
   blurb: string;
+  icon: LucideIcon;
 }
 
 export const CATEGORIES: Category[] = [
-  { slug: "unpaid_debt", label: "Unpaid Debt or Loan", blurb: "Personal loan, IOU, or unpaid invoice." },
-  { slug: "breach_of_contract", label: "Breach of Contract", blurb: "Written or verbal agreement broken." },
-  { slug: "property_damage", label: "Property Damage", blurb: "Damage to your home, car, or belongings." },
-  { slug: "defective_product_or_service", label: "Defective Product or Service", blurb: "Doesn't work as promised." },
-  { slug: "unpaid_rent_or_deposit", label: "Unpaid Rent or Security Deposit", blurb: "Money not returned or paid." },
-  { slug: "tenant_landlord", label: "Tenant / Landlord Dispute", blurb: "Habitability, lease, or rights issues." },
-  { slug: "auto_accident_or_repair", label: "Auto Accident or Repair", blurb: "Collision, mechanic, or shop dispute." },
-  { slug: "stolen_or_damaged_property", label: "Stolen or Damaged Property", blurb: "Theft, vandalism, or negligence." },
-  { slug: "poor_construction", label: "Poor Construction", blurb: "Contractor work that wasn't done right." },
-  { slug: "broken_verbal_promise", label: "Broken Verbal Promise", blurb: "Handshake deal not honored." },
-  { slug: "personal_injury", label: "Personal Injury", blurb: "Hurt by someone else's actions." },
-  { slug: "defamation", label: "Defamation", blurb: "False statements that hurt your reputation." },
-  { slug: "consumer_protection", label: "Consumer Protection", blurb: "Deceptive trade practices, fraud." },
-  { slug: "ip_or_copyright", label: "IP / Copyright", blurb: "Stolen images, code, brand, or content." },
-  { slug: "other", label: "Other / Not Sure", blurb: "Something else. We'll figure it out." },
+  { slug: "landlord", label: "Landlord/Tenant", blurb: "Security deposit, repairs, mold, illegal lockout, eviction, last month's rent.", icon: Building2 },
+  { slug: "auto", label: "Auto/Vehicle", blurb: "Accident damage, mechanic, dealership fraud, lemon, towing, valet, parked-car hit.", icon: Car },
+  { slug: "personal_loan", label: "Personal Loan/Debt", blurb: "Money lent to friend, family, ex, business partner. IOU, verbal agreement.", icon: HandCoins },
+  { slug: "contractor", label: "Contractor/Home Improvement", blurb: "Took deposit and bailed, unfinished work, damage during work.", icon: Hammer },
+  { slug: "refund", label: "Consumer Refund", blurb: "Defective product, gym, salon, dry cleaner, services not rendered.", icon: Receipt },
+  { slug: "online_seller", label: "Online Purchase", blurb: "eBay, Amazon, Etsy, Marketplace, OfferUp. Item not delivered or not as described.", icon: ShoppingBag },
+  { slug: "employer", label: "Employer/Employee", blurb: "Unpaid wages, last paycheck, stolen tips, overtime, severance, missing W-2.", icon: Briefcase },
+  { slug: "property_damage", label: "Property Damage", blurb: "Mover, dry cleaner, storage, kennel, hotel, airline luggage, parking lot.", icon: PackageX },
+  { slug: "medical_billing", label: "Medical/Dental Billing", blurb: "Surprise bill, balance billing, double-charge, debt collector for paid bill.", icon: Stethoscope },
+  { slug: "insurance", label: "Insurance Issues", blurb: "Denied or underpaid claim. Auto, renters, homeowners, warranty insurer.", icon: Shield },
+  { slug: "pet_injury", label: "Pet Injuries", blurb: "Dog bite, neighbor's dog, kennel injury, dog walker, off-leash incident.", icon: PawPrint },
+  { slug: "other", label: "Other", blurb: "Doesn't fit the categories above.", icon: HelpCircle },
 ];
 
 export function getCategory(slug: DisputeType): Category | undefined {

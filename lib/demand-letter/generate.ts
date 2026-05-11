@@ -73,16 +73,42 @@ async function loadStateContext(stateCode: string): Promise<string> {
 
 function disputeTypeLabel(t: string): string {
   switch (t) {
+    // Canonical 11 + other (current taxonomy)
+    case "landlord":
+      return "a landlord/tenant dispute";
+    case "auto":
+      return "a vehicle-related dispute";
+    case "personal_loan":
+      return "an unpaid personal loan";
+    case "contractor":
+      return "a contractor / home-improvement dispute";
+    case "refund":
+      return "a refund dispute over a defective product or undelivered service";
+    case "online_seller":
+      return "a dispute with an online seller";
+    case "employer":
+      return "an unpaid-wages or employment dispute";
+    case "property_damage":
+      return "damage to or loss of personal property";
+    case "medical_billing":
+      return "a medical or dental billing dispute";
+    case "insurance":
+      return "a denied or underpaid insurance claim";
+    case "pet_injury":
+      return "a pet-injury claim";
+    // Legacy (still in DB enum; kept so existing rows render specifically)
     case "unpaid_debt":
       return "an unpaid debt";
     case "security_deposit":
       return "an unreturned security deposit";
-    case "property_damage":
-      return "property damage";
     case "services_not_rendered":
       return "services that were paid for but not properly delivered";
     case "goods_not_delivered":
       return "goods that were paid for but not delivered as agreed";
+    case "neighbor":
+      return "a neighbor dispute";
+    case "roommate":
+      return "a roommate dispute";
     default:
       return "an unresolved civil dispute";
   }

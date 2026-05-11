@@ -22,20 +22,14 @@ interface NavItem {
   comingSoon?: boolean;
 }
 
-// Section: services. Today only Demand Letter is live. Small claims and other
-// services slot in here when they ship.
+// Section: services. Today only Demand Letter is live. Other services
+// (e.g., Small claims) slot in here when they ship.
 const SERVICES: NavItem[] = [
   {
-    label: "Demand letter",
-    href: "/dashboard/demand-letters",
-    match: /^\/dashboard(\/(cases|demand-letters).*)?$|^\/demand-letter\/wizard/,
-    cta: { label: "Create a demand letter", href: "/dashboard/demand-letters/new" },
-  },
-  {
-    label: "Small claims",
-    href: "#",
-    match: /__never__/,
-    comingSoon: true,
+    label: "Cases",
+    href: "/dashboard/cases",
+    match: /^\/dashboard(\/cases.*)?$|^\/case\//,
+    cta: { label: "Start a new case", href: "/dashboard/cases/new" },
   },
 ];
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import {
   type DefendantKind,
@@ -32,6 +33,10 @@ interface FormState {
   prior_contact: PriorContact | "";
   evidence: Evidence | "";
   defendant: DefendantKind | "";
+  // Optional context fields (step 7). If filled, they propagate into the
+  // case row so the user doesn't retype them in the builder.
+  defendant_name: string;
+  brief_narrative: string;
 }
 
 const INITIAL: FormState = {
@@ -42,19 +47,25 @@ const INITIAL: FormState = {
   prior_contact: "",
   evidence: "",
   defendant: "",
+  defendant_name: "",
+  brief_narrative: "",
 };
 
 const DRAFT_KEY = "civilcase:case-score:draft:v1";
 
 const DISPUTE_OPTIONS: { value: DisputeType; label: string; blurb: string }[] = [
-  { value: "unpaid_debt", label: "Money I'm owed", blurb: "Unpaid loan, invoice, or debt." },
-  { value: "security_deposit", label: "Security deposit", blurb: "Landlord didn't return it." },
-  { value: "services_not_rendered", label: "Service not delivered", blurb: "Paid for service that wasn't done." },
-  { value: "goods_not_delivered", label: "Goods not delivered", blurb: "Paid for product that didn't arrive." },
-  { value: "property_damage", label: "Property damage", blurb: "Someone damaged my property." },
-  { value: "unpaid_wages", label: "Unpaid wages", blurb: "Employer owes me money." },
-  { value: "contractor", label: "Contractor dispute", blurb: "Home repair or build issue." },
-  { value: "other", label: "Something else", blurb: "Doesn't fit the categories above." },
+  { value: "landlord", label: "Landlord/Tenant", blurb: "Security deposit, repairs, mold, illegal lockout, eviction, last month's rent." },
+  { value: "auto", label: "Auto/Vehicle", blurb: "Accident damage, mechanic, dealership fraud, lemon, towing, parked-car hit." },
+  { value: "personal_loan", label: "Personal Loan/Debt", blurb: "Money lent to friend, family, ex, business partner. IOU, verbal agreement." },
+  { value: "contractor", label: "Contractor/Home Improvement", blurb: "Took deposit and bailed, unfinished work, damage during work." },
+  { value: "refund", label: "Consumer Refund", blurb: "Defective product, gym, salon, dry cleaner, services not rendered." },
+  { value: "online_seller", label: "Online Purchase", blurb: "eBay, Amazon, Etsy, Marketplace, OfferUp. Item not delivered or not as described." },
+  { value: "employer", label: "Employer/Employee", blurb: "Unpaid wages, last paycheck, stolen tips, overtime, severance, missing W-2." },
+  { value: "property_damage", label: "Property Damage", blurb: "Mover, dry cleaner, storage, kennel, hotel, airline luggage, parking lot." },
+  { value: "medical_billing", label: "Medical/Dental Billing", blurb: "Surprise bill, balance billing, double-charge, debt collector for paid bill." },
+  { value: "insurance", label: "Insurance Issues", blurb: "Denied or underpaid claim. Auto, renters, homeowners, warranty insurer." },
+  { value: "pet_injury", label: "Pet Injuries", blurb: "Dog bite, neighbor's dog, kennel injury, dog walker, off-leash incident." },
+  { value: "other", label: "Other", blurb: "Doesn't fit the categories above." },
 ];
 
 const PRIOR_OPTIONS: { value: PriorContact; label: string; blurb: string }[] = [
@@ -77,12 +88,14 @@ const DEFENDANT_OPTIONS: { value: DefendantKind; label: string; blurb: string }[
 ];
 
 export default function QuizForm({ states, stateFacts }: Props) {
-  const totalSteps = 7;
-  const [step, setStep] = useState(0); // 0..6 = questions, 7 = result
+  const totalSteps = 8;
+  const [step, setStep] = useState(0); // 0..7 = questions, 8 = result
   const [form, setForm] = useState<FormState>(INITIAL);
   const [error, setError] = useState<string | null>(null);
   const [result, setResult] = useState<ScoreResult | null>(null);
   const hydrated = useRef(false);
+  const searchParams = useSearchParams();
+  const wantsContinue = searchParams?.get("continue") === "1";
 
   // Restore draft on mount
   useEffect(() => {
@@ -101,6 +114,34 @@ export default function QuizForm({ states, stateFacts }: Props) {
       hydrated.current = true;
     }
   }, []);
+
+  // After-signup return path: ?continue=1 means the user just signed up and
+  // we should jump them straight to the case builder. Compute the result
+  // (so the Result component renders) and let it auto-fire the conversion.
+  useEffect(() => {
+    if (!hydrated.current || !wantsContinue || result) return;
+    const ready =
+      form.dispute_type &&
+      form.amount &&
+      form.state_slug &&
+      form.incident_date &&
+      form.prior_contact &&
+      form.evidence &&
+      form.defendant;
+    if (!ready) return;
+    const answers: QuizAnswers = {
+      dispute_type: form.dispute_type as DisputeType,
+      amount_dollars: parseFloat(form.amount),
+      state_slug: form.state_slug,
+      incident_date: form.incident_date,
+      prior_contact: form.prior_contact as PriorContact,
+      evidence: form.evidence as Evidence,
+      defendant: form.defendant as DefendantKind,
+    };
+    const facts = stateFacts[form.state_slug] ?? null;
+    setResult(scoreCase(answers, facts));
+    setStep(totalSteps);
+  }, [form, result, stateFacts, totalSteps, wantsContinue]);
 
   // Auto-save draft
   useEffect(() => {
@@ -137,6 +178,9 @@ export default function QuizForm({ states, stateFacts }: Props) {
         return form.evidence ? null : "Pick the closest description.";
       case 6:
         return form.defendant ? null : "Pick the closest description.";
+      case 7:
+        // Optional context — both fields can be empty.
+        return null;
       default:
         return null;
     }
@@ -185,7 +229,16 @@ export default function QuizForm({ states, stateFacts }: Props) {
   }
 
   if (step >= totalSteps && result) {
-    return <Result result={result} state={stateFacts[form.state_slug]} stateSlug={form.state_slug} onRestart={startOver} />;
+    return (
+      <Result
+        result={result}
+        state={stateFacts[form.state_slug]}
+        stateSlug={form.state_slug}
+        form={form}
+        autoContinue={wantsContinue}
+        onRestart={startOver}
+      />
+    );
   }
 
   const progress = Math.round((step / totalSteps) * 100);
@@ -227,7 +280,7 @@ export default function QuizForm({ states, stateFacts }: Props) {
 
             <div className="cs-step">
               {step === 0 && (
-                <Q label="What kind of dispute is this?" sub="Pick the closest match.">
+                <Q label="What's your dispute about?" sub="Pick the closest match.">
                   <div className="cs-cards">
                     {DISPUTE_OPTIONS.map((o) => (
                       <button
@@ -344,6 +397,35 @@ export default function QuizForm({ states, stateFacts }: Props) {
                   </div>
                 </Q>
               )}
+
+              {step === 7 && (
+                <Q label="Anything else worth telling us?" sub="Both fields are optional. If you fill them, we'll save you the typing in the case builder.">
+                  <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
+                    <label style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+                      <span style={{ fontSize: 14, fontWeight: 600 }}>Other party&apos;s name (optional)</span>
+                      <input
+                        type="text"
+                        className="cs-text"
+                        placeholder="e.g., Oakwood Properties LLC"
+                        value={form.defendant_name}
+                        onChange={(e) => set("defendant_name", e.target.value)}
+                        maxLength={120}
+                      />
+                    </label>
+                    <label style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+                      <span style={{ fontSize: 14, fontWeight: 600 }}>Briefly, what happened? (optional)</span>
+                      <textarea
+                        className="cs-textarea"
+                        placeholder="One or two sentences. You'll have room for the full story later."
+                        value={form.brief_narrative}
+                        onChange={(e) => set("brief_narrative", e.target.value)}
+                        rows={3}
+                        maxLength={400}
+                      />
+                    </label>
+                  </div>
+                </Q>
+              )}
             </div>
 
             <div className="cs-actions">
@@ -386,13 +468,69 @@ function Result({
   result,
   state,
   stateSlug,
+  form,
+  autoContinue,
   onRestart,
 }: {
   result: ScoreResult;
   state: StateFacts | undefined;
   stateSlug: string;
+  form: FormState;
+  autoContinue: boolean;
   onRestart: () => void;
 }) {
+  const router = useRouter();
+  const [continuing, setContinuing] = useState(false);
+  const [continueError, setContinueError] = useState<string | null>(null);
+  const autoFiredRef = useRef(false);
+
+  async function handleContinue() {
+    if (continuing) return;
+    setContinuing(true);
+    setContinueError(null);
+    try {
+      const res = await fetch("/api/cases/start-from-score", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          dispute_type: form.dispute_type,
+          amount_dollars: parseFloat(form.amount),
+          state_slug: form.state_slug,
+          incident_date: form.incident_date,
+          prior_contact: form.prior_contact,
+          evidence: form.evidence,
+          defendant: form.defendant,
+          defendant_name: form.defendant_name?.trim() || null,
+          brief_narrative: form.brief_narrative?.trim() || null,
+        }),
+      });
+      if (res.status === 401) {
+        // Not signed in — bounce to signup, then come back here with
+        // ?continue=1 so we auto-fire this same handler.
+        const next = "/case-score?continue=1";
+        router.push(`/signup?next=${encodeURIComponent(next)}`);
+        return;
+      }
+      if (!res.ok) {
+        const body = (await res.json().catch(() => ({}))) as { error?: string };
+        throw new Error(body.error || "Could not start your case.");
+      }
+      const data = (await res.json()) as { case_id: string; next_url: string };
+      router.push(data.next_url);
+    } catch (e) {
+      setContinueError(e instanceof Error ? e.message : "Could not start your case.");
+      setContinuing(false);
+    }
+  }
+
+  // Auto-fire continue when the user comes back from signup.
+  useEffect(() => {
+    if (!autoContinue || autoFiredRef.current) return;
+    autoFiredRef.current = true;
+    handleContinue();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [autoContinue]);
+
   const verdictMeta: Record<ScoreResult["verdict"], { label: string; tone: "good" | "ok" | "warn" | "bad" }> = {
     strong: { label: "Strong case", tone: "good" },
     decent: { label: "Decent case", tone: "ok" },
@@ -485,13 +623,26 @@ function Result({
             <h2 className="cs-path-h">{copy.headline}</h2>
             <p className="cs-path-sub">{copy.sub}</p>
             <div className="cs-path-ctas">
-              <Link href={copy.primary.href} className="btn btn-dark">
-                {copy.primary.label}
-              </Link>
+              <button
+                type="button"
+                className="btn btn-green"
+                onClick={handleContinue}
+                disabled={continuing}
+              >
+                {continuing ? "Saving your case…" : "Continue to your case →"}
+              </button>
               <Link href={copy.secondary.href} className="btn btn-cream">
                 {copy.secondary.label}
               </Link>
             </div>
+            {continueError && (
+              <p style={{ color: "var(--accent)", marginTop: 12, fontSize: 14 }}>
+                {continueError}
+              </p>
+            )}
+            <p style={{ marginTop: 14, fontSize: 13, color: "var(--muted)" }}>
+              Free to save your case. Sign up if you don&apos;t have an account yet.
+            </p>
           </div>
 
           {/* SOL deadline callout */}

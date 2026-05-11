@@ -1,6 +1,8 @@
 import type React from "react";
 import HeroCta from "../../components/HeroCta";
 import HeroCaseStrength from "../../components/HeroCaseStrength";
+import { Landmark, User, Map, ShieldCheck, Users } from "lucide-react";
+import CtaStepCard from "../../components/CtaStepCard";
 
 // The "We help with the most common small claims disputes" section data.
 // Each entry maps to a WebP file in /public/icons/.
@@ -239,64 +241,18 @@ function DpaIcon({
 }
 
 function TrustIcon({ name }: { name: "courthouse" | "person" | "states" | "shield" | "people" }) {
-  const props = {
-    width: 22,
-    height: 22,
-    viewBox: "0 0 24 24",
-    fill: "none",
-    stroke: "currentColor",
-    strokeWidth: 1.5,
-    strokeLinecap: "round" as const,
-    strokeLinejoin: "round" as const,
-    "aria-hidden": true,
-  };
+  const props = { size: 22, strokeWidth: 1.6, "aria-hidden": true } as const;
   switch (name) {
     case "courthouse":
-      // Classical building with columns
-      return (
-        <svg {...props}>
-          <path d="M3 9.5l9-5 9 5" />
-          <path d="M4 9.5v9" />
-          <path d="M20 9.5v9" />
-          <path d="M8 11v6" />
-          <path d="M12 11v6" />
-          <path d="M16 11v6" />
-          <path d="M3 19h18" />
-        </svg>
-      );
+      return <Landmark {...props} />;
     case "person":
-      // Single person silhouette
-      return (
-        <svg {...props}>
-          <circle cx="12" cy="8" r="3.5" />
-          <path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6" />
-        </svg>
-      );
+      return <User {...props} />;
     case "states":
-      // Speech bubble representing 50 states / nationwide chat coverage
-      return (
-        <svg {...props}>
-          <path d="M21 12a8.5 8.5 0 01-12.4 7.6L4 21l1.5-4.6A8.5 8.5 0 1121 12z" />
-        </svg>
-      );
+      return <Map {...props} />;
     case "shield":
-      // Security shield with check
-      return (
-        <svg {...props}>
-          <path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z" />
-          <path d="M9 12l2 2 4-4" />
-        </svg>
-      );
+      return <ShieldCheck {...props} />;
     case "people":
-      // Group of people
-      return (
-        <svg {...props}>
-          <circle cx="9" cy="8" r="3.2" />
-          <path d="M2.5 20c0-3.2 2.9-5.6 6.5-5.6s6.5 2.4 6.5 5.6" />
-          <circle cx="17" cy="9" r="2.6" />
-          <path d="M22 19c0-2.4-2-4.4-4.5-4.6" />
-        </svg>
-      );
+      return <Users {...props} />;
   }
 }
 
@@ -343,14 +299,14 @@ export default function Home() {
                   <CheckIcon /> Step-by-step guidance
                 </li>
                 <li>
-                  <CheckIcon /> Court-ready documents
+                  <CheckIcon /> Used in all 50 states
                 </li>
                 <li>
-                  <CheckIcon /> Used in all 50 states
+                  <CheckIcon /> Court-ready documents
                 </li>
               </ul>
               <div className="hero-ctas">
-                <HeroCta href="/demand-letter" variant="dark" icon="demand-letter">Start your case now</HeroCta>
+                <HeroCta href="/demand-letter" variant="green" icon="demand-letter">Start your case now</HeroCta>
                 <HeroCta href="/case-score" variant="cream" icon="case-score">Check my case strength</HeroCta>
               </div>
               <div className="hero-v2-social">
@@ -382,114 +338,32 @@ export default function Home() {
         </div>
       </section>
 
-      {/* TRUST STRIP */}
-      <div className="trust-strip">
-        <div className="wrap-wide">
-          <ul>
-            <li>
-              <TrustIcon name="courthouse" />
-              <span>Built for Small Claims Courts</span>
-            </li>
-            <li>
-              <TrustIcon name="person" />
-              <span>No Lawyer Required</span>
-            </li>
-            <li>
-              <TrustIcon name="states" />
-              <span>All 50 States</span>
-            </li>
-            <li>
-              <TrustIcon name="shield" />
-              <span>Secure &amp; Confidential</span>
-            </li>
-            <li>
-              <TrustIcon name="people" />
-              <span>
-                <strong>12,400+</strong> cases filed
-              </span>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      {/* STATS */}
-      <section>
-        <div className="wrap-wide">
-          <div className="stats-grid">
-            <div>
-              <span className="eyebrow">By the numbers</span>
-              <h2 style={{ marginTop: 14 }}>
-                Recovery at <em>operational scale.</em>
-              </h2>
-              <p>
-                These numbers reflect how everyday people use CivilCase to track claims,
-                prevent filing mistakes, and recover their money, without manual work.
-              </p>
-              <a className="btn btn-dark" href="#">
-                Talk to a case strategist
-              </a>
-            </div>
-
-            <div className="chart-card">
-              <div className="axis">
-                <div className="grid">
-                  <b>$2.4M</b>
-                  <b></b>
-                  <b>$845K</b>
-                </div>
-                <i style={{ height: "30%" }}></i>
-                <i style={{ height: "42%" }}></i>
-                <i style={{ height: "55%" }}></i>
-                <i style={{ height: "48%" }}></i>
-                <i style={{ height: "68%" }}></i>
-                <i style={{ height: "74%" }} className="tall"></i>
-                <i style={{ height: "82%" }} className="tall"></i>
-                <i style={{ height: "95%" }} className="tall"></i>
-              </div>
-              <div className="num">$18M+</div>
-              <div className="lab">Recovered for users to date</div>
-            </div>
-
-            <div className="globe-card">
-              <div className="top">
-                <div className="num">
-                  12,400<em>+</em>
-                </div>
-                <div className="lab">Active cases supported</div>
-              </div>
-              <svg className="globe-svg" viewBox="0 0 200 200">
-                <defs>
-                  <radialGradient id="gl" cx="35%" cy="35%">
-                    <stop offset="0" stopColor="#F4A28C" />
-                    <stop offset="1" stopColor="#D9402E" />
-                  </radialGradient>
-                </defs>
-                <circle cx="100" cy="100" r="90" fill="url(#gl)" />
-                <ellipse cx="100" cy="100" rx="90" ry="36" stroke="#FEF9F1" strokeOpacity=".4" fill="none" />
-                <ellipse cx="100" cy="100" rx="60" ry="90" stroke="#FEF9F1" strokeOpacity=".4" fill="none" />
-                <ellipse cx="100" cy="100" rx="30" ry="90" stroke="#FEF9F1" strokeOpacity=".3" fill="none" />
-                <circle cx="60" cy="65" r="8" fill="#1A1714" />
-                <circle cx="135" cy="80" r="8" fill="#1A1714" />
-                <circle cx="115" cy="135" r="8" fill="#1A1714" />
-                <circle cx="80" cy="125" r="6" fill="#1A1714" />
-              </svg>
-            </div>
+      {/* TRUST STRIP — dark band, fixed width */}
+      <div style={{ background: "#fff", padding: "32px 0" }}>
+        <div className="wrap">
+          <div style={{ background: "#1c1917", color: "#fef9f1", borderRadius: 999, padding: "22px 80px", boxShadow: "0 18px 40px -22px rgba(31,27,22,0.32)" }}>
+            <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", alignItems: "center", justifyContent: "space-between", gap: 24, flexWrap: "wrap" }}>
+              {([
+                { name: "courthouse" as const, label: "Built for Small Claims Courts" },
+                { name: "person" as const, label: "No Lawyer Required" },
+                { name: "states" as const, label: "All 50 States" },
+                { name: "shield" as const, label: <>Secure &amp; Confidential</> },
+              ]).map((it, i) => (
+                <li key={i} style={{ display: "inline-flex", alignItems: "center", gap: 12, fontSize: 14, color: "rgba(254,249,241,0.85)", fontWeight: 500, whiteSpace: "nowrap" }}>
+                  <span style={{ width: 38, height: 38, borderRadius: 10, background: "rgba(245,178,159,0.14)", color: "#f5b29f", display: "inline-flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                    <span style={{ display: "inline-flex", transform: "scale(1.35)" }}><TrustIcon name={it.name} /></span>
+                  </span>
+                  <span>{it.label}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
-      </section>
-
-      {/* ────── ALTERNATIVES PREVIEW (delete after picking) ────── */}
-      <section style={{ background: "#fbf6ec", padding: "56px 0 24px", borderTop: "1px dashed rgba(31,27,22,0.15)" }}>
-        <div className="wrap-wide" style={{ marginBottom: 24 }}>
-          <span className="eyebrow" style={{ color: "var(--accent)" }}>Preview · pick one</span>
-          <h2 style={{ fontFamily: "Newsreader", fontSize: 30, margin: "8px 0 0" }}>About-us / what-we-do alternatives</h2>
-        </div>
-      </section>
+      </div>
 
       {/* VERSION A — Punchy / unfair-system framing + dark stats panel */}
       <section style={{ padding: "64px 0", background: "#fff" }}>
         <div className="wrap">
-          <span style={{ display: "inline-block", padding: "4px 10px", background: "rgba(217,64,46,0.10)", color: "var(--accent)", fontSize: 11, fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", borderRadius: 6, marginBottom: 14 }}>Version A · the math is broken</span>
           <div style={{ display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: 56, alignItems: "center" }}>
             <div>
               <span className="eyebrow" style={{ color: "var(--accent)" }}>Why we exist</span>
@@ -499,148 +373,11 @@ export default function Home() {
               <p style={{ fontSize: 16.5, color: "var(--ink-2)", lineHeight: 1.6, marginBottom: 14, maxWidth: "55ch" }}>
                 Not because they&rsquo;re wrong. Because at <strong style={{ color: "var(--ink)" }}>$200&ndash;500 an hour</strong>, hiring counsel for a $4,000 dispute makes the math impossible. So they walk away.
               </p>
-              <p style={{ fontSize: 16.5, color: "var(--ink-2)", lineHeight: 1.6, marginBottom: 28, maxWidth: "55ch" }}>
+              <p style={{ fontSize: 16.5, color: "var(--ink-2)", lineHeight: 1.6, margin: 0, maxWidth: "55ch" }}>
                 Landlords keep deposits. Contractors vanish with checks. Employers shave paychecks. Sellers ship junk and refuse refunds. The cost of fighting back is higher than the loss &mdash; until now.
               </p>
-              <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
-                {[
-                  { num: "01", t: "Score your case in 90 seconds", d: "We read your facts against state statute and tell you what you can recover. Free." },
-                  { num: "02", t: "Draft a court-ready demand letter", d: "Cites the exact statute, formatted for certified mail. About half of disputes settle right here." },
-                  { num: "03", t: "Walk you through filing", d: "County-specific forms, fees, deadlines, service rules. The same prep a $200/hr paralegal does." },
-                ].map((p, i) => (
-                  <div key={p.num} style={{ display: "grid", gridTemplateColumns: "44px 1fr", gap: 18, padding: "16px 0", borderTop: i === 0 ? "none" : "1px solid var(--hairline)", alignItems: "start" }}>
-                    <span style={{ fontFamily: "Geist", fontWeight: 700, fontSize: 13, letterSpacing: "0.12em", color: "var(--accent)" }}>{p.num}</span>
-                    <div>
-                      <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 17, color: "var(--ink)", marginBottom: 4 }}>{p.t}</div>
-                      <div style={{ fontSize: 14.5, color: "var(--ink-2)", lineHeight: 1.5 }}>{p.d}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
             </div>
-            <div style={{ background: "var(--ink)", color: "#fef9f1", borderRadius: 18, padding: 32, position: "relative", overflow: "hidden" }}>
-              <div style={{ position: "absolute", top: -60, right: -60, width: 200, height: 200, borderRadius: "50%", background: "radial-gradient(circle, rgba(245,178,159,0.22), transparent 65%)" }} aria-hidden />
-              <div style={{ position: "relative", display: "flex", flexDirection: "column", gap: 22 }}>
-                <div>
-                  <div style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 700, color: "rgba(254,249,241,0.6)", marginBottom: 6 }}>The justice gap</div>
-                  <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 64, lineHeight: 1, color: "#f5b29f", letterSpacing: "-0.04em" }}>77%</div>
-                  <div style={{ fontSize: 13, color: "rgba(254,249,241,0.72)", marginTop: 8, lineHeight: 1.45 }}>of Americans with a legal issue never hire a lawyer &mdash; mostly because of cost.</div>
-                </div>
-                <div style={{ height: 1, background: "rgba(254,249,241,0.15)" }} />
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 22 }}>
-                  <div>
-                    <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 30, color: "#fef9f1", letterSpacing: "-0.02em" }}>$1,500&ndash;$5,000</div>
-                    <div style={{ fontSize: 12, color: "rgba(254,249,241,0.65)", marginTop: 4 }}>What a small-claims lawyer costs</div>
-                  </div>
-                  <div>
-                    <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 30, color: "#fef9f1", letterSpacing: "-0.02em" }}>67<span style={{ fontSize: 22, color: "rgba(254,249,241,0.6)" }}>%</span></div>
-                    <div style={{ fontSize: 12, color: "rgba(254,249,241,0.65)", marginTop: 4 }}>cite cost as the #1 barrier</div>
-                  </div>
-                  <div>
-                    <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 30, color: "#fef9f1", letterSpacing: "-0.02em" }}>99<span style={{ fontSize: 22, color: "rgba(254,249,241,0.6)" }}>%</span></div>
-                    <div style={{ fontSize: 12, color: "rgba(254,249,241,0.65)", marginTop: 4 }}>of small-claims filers go solo</div>
-                  </div>
-                  <div>
-                    <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 30, color: "#fef9f1", letterSpacing: "-0.02em" }}>64<span style={{ fontSize: 22, color: "rgba(254,249,241,0.6)" }}>%</span></div>
-                    <div style={{ fontSize: 12, color: "rgba(254,249,241,0.65)", marginTop: 4 }}>win rate when properly prepared</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* VERSION B — Founder-led editorial + cream demand letter mockup */}
-      <section style={{ padding: "64px 0", background: "#fefcf3" }}>
-        <div className="wrap">
-          <span style={{ display: "inline-block", padding: "4px 10px", background: "rgba(217,64,46,0.10)", color: "var(--accent)", fontSize: 11, fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", borderRadius: 6, marginBottom: 14 }}>Version B · editorial</span>
-          <div style={{ display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: 56, alignItems: "center" }}>
-            <div>
-              <span className="eyebrow" style={{ color: "var(--accent)" }}>Why we built this</span>
-              <h2 style={{ fontFamily: "Newsreader", fontSize: "clamp(32px, 3.4vw, 46px)", fontWeight: 700, letterSpacing: "-0.02em", lineHeight: 1.05, margin: "10px 0 16px" }}>
-                Built by a lawyer, so you <em style={{ fontStyle: "italic", color: "var(--accent)" }}>don&rsquo;t need one</em>.
-              </h2>
-              <p style={{ fontSize: 17, color: "var(--ink-2)", lineHeight: 1.6, marginBottom: 14 }}>
-                Small claims is the only US court built for self-represented filers. Hearings take ten minutes. Filing fees are under $100. You don&rsquo;t need a lawyer &mdash; and in some states, you can&rsquo;t even bring one.
-              </p>
-              <p style={{ fontSize: 17, color: "var(--ink-2)", lineHeight: 1.6, marginBottom: 14 }}>
-                Yet <strong style={{ color: "var(--ink)" }}>77% of Americans with a real legal issue never hire one anyway</strong>. They eat the loss. The math is straightforward: a small-claims attorney costs $1,500&ndash;$5,000 for a case worth $4,000. Two-thirds of people who skip a lawyer say cost was the deciding factor.
-              </p>
-              <p style={{ fontSize: 17, color: "var(--ink)", lineHeight: 1.6, marginBottom: 24, fontWeight: 600 }}>
-                CivilCase is the same prep, without the bill. Score the case, draft the demand letter, walk you through the filing in your county. We close the gap between &ldquo;I&rsquo;m owed&rdquo; and &ldquo;I got paid.&rdquo;
-              </p>
-              <div style={{ display: "flex", gap: 24, flexWrap: "wrap", paddingTop: 18, borderTop: "1px solid var(--hairline)" }}>
-                <div>
-                  <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 28, color: "var(--ink)", letterSpacing: "-0.02em" }}>77%</div>
-                  <div style={{ fontSize: 12, color: "var(--muted)", marginTop: 2, letterSpacing: "0.06em" }}>Skip a lawyer entirely</div>
-                </div>
-                <div>
-                  <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 28, color: "var(--ink)", letterSpacing: "-0.02em" }}>67%</div>
-                  <div style={{ fontSize: 12, color: "var(--muted)", marginTop: 2, letterSpacing: "0.06em" }}>Cite cost as the #1 reason</div>
-                </div>
-                <div>
-                  <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 28, color: "var(--ink)", letterSpacing: "-0.02em" }}>64%</div>
-                  <div style={{ fontSize: 12, color: "var(--muted)", marginTop: 2, letterSpacing: "0.06em" }}>Win when properly prepped</div>
-                </div>
-              </div>
-            </div>
-            {/* Cream certified-mail letter */}
-            <div style={{ position: "relative", background: "#fff", border: "1px solid var(--hairline)", borderRadius: 6, padding: "40px 36px 28px", boxShadow: "0 24px 50px -28px rgba(31,27,22,0.32)", transform: "rotate(-0.6deg)" }}>
-              <div style={{ position: "absolute", top: 18, right: 22, transform: "rotate(8deg)", border: "2px solid rgba(217,64,46,0.5)", borderRadius: 4, padding: "6px 10px", textAlign: "center" }}>
-                <div style={{ fontSize: 9, letterSpacing: "0.18em", fontWeight: 700, color: "var(--accent)", textTransform: "uppercase" }}>Certified</div>
-                <div style={{ fontSize: 9, color: "var(--muted)", fontFamily: "ui-monospace, monospace", marginTop: 2 }}>2026</div>
-              </div>
-              <div style={{ fontFamily: "Geist", fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--muted)", marginBottom: 14 }}>Sample demand letter</div>
-              <div style={{ fontFamily: "Newsreader", fontSize: 13, lineHeight: 1.6, color: "var(--ink)", display: "flex", flexDirection: "column", gap: 10 }}>
-                <div>April 21, 2026</div>
-                <div><strong>Oakwood Properties LLC</strong></div>
-                <div style={{ paddingBottom: 10, borderBottom: "1px solid var(--hairline)" }}><strong>Re:</strong> Demand for return of security deposit</div>
-                <p style={{ margin: 0 }}>Pursuant to <strong>Cal. Civ. Code § 1950.5,</strong> you were required to return my $1,500 deposit within 21 days of move-out. That period has elapsed.</p>
-                <p style={{ margin: 0 }}>I demand <strong>$4,500</strong> within fourteen (14) days, or I will file in Small Claims Court.</p>
-                <div style={{ fontFamily: "Caveat", fontStyle: "italic", fontSize: 24, color: "var(--accent)", marginTop: 8 }}>Jordan A. Tenant</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* VERSION C — Mission + glass stat trio */}
-      <section style={{ padding: "64px 0", background: "#fff" }}>
-        <div className="wrap">
-          <span style={{ display: "inline-block", padding: "4px 10px", background: "rgba(217,64,46,0.10)", color: "var(--accent)", fontSize: 11, fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", borderRadius: 6, marginBottom: 14 }}>Version C · mission</span>
-          <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 56, alignItems: "center" }}>
-            <div>
-              <span className="eyebrow" style={{ color: "var(--accent)" }}>Our mission</span>
-              <h2 style={{ fontFamily: "Newsreader", fontSize: "clamp(32px, 3.4vw, 46px)", fontWeight: 700, letterSpacing: "-0.02em", lineHeight: 1.05, margin: "10px 0 16px" }}>
-                Close the <em style={{ fontStyle: "italic", color: "var(--accent)" }}>preparation gap</em>.
-              </h2>
-              <p style={{ fontSize: 16.5, color: "var(--ink-2)", lineHeight: 1.6, marginBottom: 14, maxWidth: "56ch" }}>
-                When self-represented filers come to small claims <strong style={{ color: "var(--ink)" }}>prepared</strong>, they win <strong style={{ color: "var(--accent)" }}>64% of the time</strong>. When they don&rsquo;t, that drops to <strong style={{ color: "var(--ink)" }}>31%</strong>. The difference isn&rsquo;t the law &mdash; it&rsquo;s the prep.
-              </p>
-              <p style={{ fontSize: 16.5, color: "var(--ink-2)", lineHeight: 1.6, marginBottom: 14, maxWidth: "56ch" }}>
-                Small claims was designed to be navigable without a lawyer. Yet 99% of small-claims filers go solo and most show up under-prepared because the prep itself is the expensive part &mdash; the same statute research, demand-letter drafting, and county-by-county procedure that a paralegal would charge $1,500 to handle.
-              </p>
-              <p style={{ fontSize: 16.5, color: "var(--ink)", lineHeight: 1.6, fontWeight: 600, maxWidth: "52ch" }}>
-                CivilCase is that prep, productized. So a $4,000 claim doesn&rsquo;t cost $5,000 to pursue.
-              </p>
-            </div>
-            <div style={{ position: "relative", padding: 20 }}>
-              <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 30% 20%, rgba(217,64,46,0.45), transparent 50%), radial-gradient(circle at 80% 80%, rgba(245,178,159,0.4), transparent 50%), linear-gradient(135deg, #fed8c1, #f3e8d6)", borderRadius: 18 }} aria-hidden />
-              <div style={{ position: "relative", display: "flex", flexDirection: "column", gap: 12 }}>
-                {[
-                  { eyebrow: "Win rate · prepared", value: "64%", sub: "vs. 31% when facing a lawyer unprepared", accent: true },
-                  { eyebrow: "Cite cost as the barrier", value: "67%", sub: "of people who skipped legal help" },
-                  { eyebrow: "Self-represented", value: "99%", sub: "of small-claims plaintiffs and defendants" },
-                ].map((s, i) => (
-                  <div key={s.eyebrow} style={{ background: "rgba(255,255,255,0.7)", backdropFilter: "blur(20px) saturate(140%)", border: "1px solid rgba(255,255,255,0.8)", borderRadius: 14, padding: "16px 20px", marginLeft: i === 1 ? 24 : 0, marginRight: i === 2 ? 24 : 0 }}>
-                    <div style={{ fontFamily: "Geist", fontSize: 10.5, letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 700, color: "var(--accent)" }}>{s.eyebrow}</div>
-                    <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 36, color: s.accent ? "var(--accent)" : "var(--ink)", letterSpacing: "-0.02em", marginTop: 2 }}>{s.value}</div>
-                    <div style={{ fontSize: 12, color: "var(--ink-2)", marginTop: 2 }}>{s.sub}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <JusticeGapCombo />
           </div>
         </div>
       </section>
@@ -649,6 +386,12 @@ export default function Home() {
       <section className="ps-section">
         <div className="ps-paper-bg" aria-hidden />
         <div className="wrap">
+          <div style={{ marginBottom: 56, position: "relative", zIndex: 2 }}>
+            <span className="eyebrow">Problem &amp; solution</span>
+            <h2 style={{ fontFamily: "Newsreader, Georgia, serif", fontWeight: 700, fontSize: "clamp(34px, 4.5vw, 54px)", lineHeight: 1.04, letterSpacing: "-0.02em", color: "var(--ink)", margin: "10px 0 0" }}>
+              Where filers get stuck, and <em style={{ fontStyle: "italic", color: "var(--accent)", fontWeight: 700 }}>how we fix it.</em>
+            </h2>
+          </div>
           <div className="ps-stage">
             <div className="ps-handwritten-note ps-handwritten-note-1" aria-hidden>
               <span>2, B</span>
@@ -729,7 +472,7 @@ export default function Home() {
 
             <div className="ps-orb">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/civilcase-red-seal.webp" alt="CivilCase" width={200} height={228} />
+              <img src="/cc-white-border.webp" alt="CivilCase" width={200} height={228} />
             </div>
 
             <div className="ps-col-card ps-col-dark">
@@ -785,7 +528,8 @@ export default function Home() {
       <section className="winning" style={{ background: "#fff" }}>
         <div className="wrap-wide">
           <div className="winning-head">
-            <h2>
+            <span className="eyebrow">Our services</span>
+            <h2 style={{ marginTop: 10 }}>
               It&rsquo;s not just about winning.<br />
               <em>It&rsquo;s about getting paid.</em>
             </h2>
@@ -857,7 +601,7 @@ export default function Home() {
           </svg>
 
           <div className="winning-solution">
-            <div className="winning-solution-inner" style={{ background: "#263e2d", boxShadow: "0 22px 50px -28px rgba(38,62,45,0.5)" }}>
+            <div className="winning-solution-inner" style={{ backgroundColor: "#263e2d", backgroundImage: "radial-gradient(ellipse at 30% 20%, rgba(255,255,255,0.07), transparent 55%), radial-gradient(ellipse at 80% 80%, rgba(0,0,0,0.18), transparent 60%), url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' seed='4'/><feColorMatrix values='0 0 0 0 0.95  0 0 0 0 0.93  0 0 0 0 0.85  0 0 0 0.18 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>\")", boxShadow: "0 22px 50px -28px rgba(38,62,45,0.5), inset 0 0 80px rgba(0,0,0,0.22)" }}>
               <div className="winning-solution-shield">
                 <svg viewBox="0 0 32 32" width="22" height="22" aria-hidden>
                   <path
@@ -901,11 +645,6 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="winning-cta">
-            <a className="btn btn-dark btn-lg" href="#how">
-              See How It Works <span aria-hidden>→</span>
-            </a>
-          </div>
         </div>
       </section>
 
@@ -1168,32 +907,83 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA BAND (above footer) */}
-      <section className="home-cta-band-section">
-        <div className="wrap">
-          <div className="home-cta-band">
-            <div className="home-cta-band-copy">
-              <span className="home-cta-band-eyebrow">Ready when you are</span>
-              <h2>
-                Recover what&rsquo;s <em>actually owed.</em>
-              </h2>
-              <p>
-                Start with a demand letter or check your case strength first. No
-                lawyer, no subscription, no surprises.
-              </p>
-            </div>
-            <div className="home-cta-band-actions">
-              <a className="btn btn-accent btn-lg" href="/demand-letter">
-                Start your case
-              </a>
-              <a className="home-cta-band-secondary" href="/case-score">
-                Check case strength →
-              </a>
-            </div>
+    </>
+  );
+}
+
+function JusticeGapCombo() {
+  const BARS = [
+    { label: "Skip lawyer", pct: 77, color: "var(--accent)", h: 130 },
+    { label: "Cite cost", pct: 67, color: "#1f1b16", h: 113 },
+    { label: "Win when prepped", pct: 64, color: "#5a7a45", h: 108 },
+  ];
+  return (
+    <div style={{ position: "relative", display: "flex", justifyContent: "flex-start", alignItems: "flex-end", paddingTop: 16, paddingBottom: 28, minHeight: 480 }}>
+      {/* Recovery-layers-style card with justice gap data — left, tilted left */}
+      <div style={{ flexShrink: 0, transform: "rotate(-3deg)", transformOrigin: "bottom right", zIndex: 2, marginRight: -32 }}>
+        <div style={{ width: 300, background: "#fff", border: "1px solid var(--hairline)", borderRadius: 18, padding: "22px 24px", boxShadow: "0 22px 44px -22px rgba(31,27,22,0.25)" }}>
+          <div style={{ fontFamily: "Geist", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 700, color: "var(--accent)", marginBottom: 4 }}>The justice gap</div>
+          <div style={{ display: "flex", alignItems: "flex-end", gap: 14, height: 180, margin: "20px 0 18px" }}>
+            {BARS.map((b) => (
+              <div key={b.label} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 6, flex: 1, justifyContent: "flex-end" }}>
+                <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 15, color: b.color }}>{b.pct}%</div>
+                <div style={{ width: "100%", background: b.color, height: b.h, borderRadius: "8px 8px 0 0" }} />
+                <div style={{ fontSize: 10, color: "var(--muted)", letterSpacing: "0.04em", textAlign: "center", lineHeight: 1.2 }}>{b.label}</div>
+              </div>
+            ))}
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+            {[
+              { label: "Skip a lawyer entirely", value: "77%", color: "var(--accent)" },
+              { label: "Cite cost as #1 reason", value: "67%", color: "#1f1b16" },
+              { label: "Win when prepared", value: "64%", color: "#5a7a45" },
+            ].map((l) => (
+              <div key={l.label} style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 12.5 }}>
+                <span style={{ width: 10, height: 10, borderRadius: 2, background: l.color }} />
+                <span style={{ flex: 1, color: "var(--ink-2)" }}>{l.label}</span>
+                <strong style={{ color: "var(--ink)", fontFamily: "Newsreader" }}>{l.value}</strong>
+              </div>
+            ))}
+          </div>
+          <div style={{ marginTop: 14, paddingTop: 12, borderTop: "2px dashed rgba(217,64,46,0.4)", display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
+            <span style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", fontWeight: 700, color: "var(--accent)" }}>Lawyer cost</span>
+            <span style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 16, color: "var(--accent)" }}>$1,500&ndash;$5,000</span>
           </div>
         </div>
-      </section>
+      </div>
 
-    </>
+      {/* Certificate — right, tilted right */}
+      <div style={{ flexShrink: 0, transform: "rotate(3deg)", transformOrigin: "bottom left", zIndex: 1, marginBottom: 18 }}>
+        <div style={{ position: "relative", width: 290, background: "#fefcf3", border: "8px double var(--accent)", borderRadius: 4, padding: "24px 20px", textAlign: "center", fontFamily: "Newsreader, Georgia, serif", boxShadow: "0 22px 50px -28px rgba(31,27,22,0.32)" }}>
+          <div style={{ position: "absolute", bottom: -22, right: -22, width: 80, height: 80 }}>
+            <svg viewBox="0 0 100 100" width="80" height="80" style={{ display: "block" }}>
+              <defs>
+                <path id="circ-jg" d="M 50,50 m -38,0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0" />
+              </defs>
+              <text fill="var(--accent)" fontSize="9" fontFamily="Geist" letterSpacing="3" fontWeight="700">
+                <textPath href="#circ-jg">CERTIFIED · SMALL CLAIMS · CIVIL · 2026 ·</textPath>
+              </text>
+            </svg>
+            <div style={{ position: "absolute", inset: 0, display: "grid", placeItems: "center", color: "var(--accent)" }}>
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="1.6">
+                <path d="M12 2l3 6 6 1-4.5 4 1 6-5.5-3-5.5 3 1-6L3 9l6-1z" />
+              </svg>
+            </div>
+          </div>
+
+          <div style={{ fontSize: 10, letterSpacing: "0.32em", color: "var(--accent)", fontWeight: 700, textTransform: "uppercase" }}>State of California</div>
+          <div style={{ fontFamily: "Caveat", fontStyle: "italic", fontSize: 24, color: "var(--ink)", marginTop: 6 }}>Certificate of</div>
+          <div style={{ fontWeight: 800, fontSize: 30, color: "var(--ink)", letterSpacing: "-0.02em", lineHeight: 1, marginTop: 2 }}>Judgment</div>
+          <div style={{ width: 64, height: 1, background: "var(--ink)", margin: "14px auto" }} />
+          <div style={{ fontStyle: "italic", color: "var(--ink-2)", fontSize: 13 }}>Awarded in favor of</div>
+          <div style={{ fontFamily: "Caveat", fontSize: 22, color: "var(--ink)", marginTop: 4 }}>Tenant, J.</div>
+          <div style={{ marginTop: 10 }}>
+            <div style={{ fontSize: 10.5, letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 700, color: "var(--muted)" }}>Total awarded</div>
+            <div style={{ fontWeight: 800, fontSize: 28, color: "var(--accent)", letterSpacing: "-0.02em", marginTop: 2 }}>$4,500</div>
+          </div>
+          <div style={{ marginTop: 10, fontSize: 9.5, color: "var(--muted)", letterSpacing: "0.16em", textTransform: "uppercase" }}>Case 26-CV-04217 · May 28, 2026</div>
+        </div>
+      </div>
+    </div>
   );
 }

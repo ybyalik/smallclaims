@@ -34,29 +34,12 @@ const DEFENSE_LEFT_ICONS = [
   </svg>,
 ];
 
+import { CheckCircle2, Scale, AlertTriangle as AltWarnIcon } from "lucide-react";
+
 const ALT_ICONS = {
-  good: (
-    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M11 13l-3 3-3-3 3-3 3 3z" />
-      <path d="M13 11l3-3 3 3-3 3-3-3z" />
-      <path d="M11 13c-1.5 1-3 3-3 5M13 11c1.5-1 3-3 3-5" />
-      <path d="M3 12l3 3M21 12l-3-3" />
-    </svg>
-  ),
-  primary: (
-    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M14 4l6 6" />
-      <path d="M11 7l6 6" />
-      <path d="M16 12l-9 9" />
-      <path d="M3 21h11" />
-    </svg>
-  ),
-  warn: (
-    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="12" cy="9" r="3.5" />
-      <path d="M5 21c0-3.5 3-6 7-6s7 2.5 7 6" />
-    </svg>
-  ),
+  good: <CheckCircle2 size={20} strokeWidth={1.7} />,
+  primary: <Scale size={20} strokeWidth={1.7} />,
+  warn: <AltWarnIcon size={20} strokeWidth={1.7} />,
 };
 
 const OUTCOME_ICONS = {
@@ -187,7 +170,7 @@ export default function IssueTemplate({ issue, category, siblings }: Props) {
               <strong>{issue.hero.leadStrong}</strong>{issue.hero.leadBody}
             </p>
             <div className="hero-ctas">
-              <HeroCta href="/demand-letter" variant="dark" icon="demand-letter">Generate a demand letter</HeroCta>
+              <HeroCta href="/demand-letter" variant="green" icon="demand-letter">Generate a demand letter</HeroCta>
               <HeroCta href="/case-score" variant="cream" icon="case-score">Check my case strength</HeroCta>
             </div>
           </div>
@@ -271,14 +254,14 @@ export default function IssueTemplate({ issue, category, siblings }: Props) {
                   <div className={`cv2-claim-amt${layer.accent ? " accent" : ""}`}>{layer.amount}</div>
                 </div>
               ))}
-              <div className="cv2-claim-total">
-                <div>
-                  <span className="cv2-claim-total-label">{issue.claim.total.label}</span>
-                  <p>{issue.claim.total.body}</p>
+              <div className="cv2-claim-total-stripe">
+                <div className="cv2-claim-total-stripe-copy">
+                  <div className="cv2-claim-total-stripe-label">{issue.claim.total.label}</div>
+                  <p className="cv2-claim-total-stripe-body">{issue.claim.total.body}</p>
                 </div>
-                <div className="cv2-claim-total-num">
-                  <em>{issue.claim.total.amount}</em>
-                  <span>{issue.claim.total.sublabel}</span>
+                <div className="cv2-claim-total-stripe-right">
+                  <div className="cv2-claim-total-stripe-num">{issue.claim.total.amount}</div>
+                  <div className="cv2-claim-total-stripe-sublabel">{issue.claim.total.sublabel}</div>
                 </div>
               </div>
             </div>
@@ -351,16 +334,16 @@ export default function IssueTemplate({ issue, category, siblings }: Props) {
                 <div className="cv2-letter-sign">
                   <span className="cv2-letter-signature">{issue.demand.letter.signatory}</span>
                 </div>
-              </div>
-              <div className="cv2-letter-badge" aria-hidden="true">
-                <span className="cv2-letter-badge-icon">
-                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" stroke="none">
-                    <path d="M13 2L3 14h7l-1 8 10-12h-7z" />
-                  </svg>
-                </span>
-                <div className="cv2-letter-badge-copy">
-                  <strong>Built for speed.</strong>
-                  <span>Create a custom letter in under 90 seconds.</span>
+                <div className="cv2-letter-badge" aria-hidden="true">
+                  <span className="cv2-letter-badge-icon">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" stroke="none">
+                      <path d="M13 2L3 14h7l-1 8 10-12h-7z" />
+                    </svg>
+                  </span>
+                  <div className="cv2-letter-badge-copy">
+                    <strong>Built for speed.</strong>
+                    <span>Create a custom letter in under 90 seconds.</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -408,7 +391,7 @@ export default function IssueTemplate({ issue, category, siblings }: Props) {
                 <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M12 3l8 3v5c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-3z" />
                 </svg>
-                <span>More documentation =<br />stronger case</span>
+                <span>More documentation = stronger case</span>
               </div>
             </div>
             <div className="sv-bento cv2-evidence-bento cv2-evidence-flex">
