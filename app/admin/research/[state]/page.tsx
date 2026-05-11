@@ -7,6 +7,7 @@ import { getStateBySlug, STATES } from "../../../../lib/states";
 import { createServiceRoleClient } from "../../../../lib/supabase/service-role";
 import { CALL_TITLES, type StateCallId } from "../../../../lib/state-research/prompts";
 import StateResearchControls from "./StateResearchControls";
+import AutoRefresh from "../AutoRefresh";
 
 export const dynamic = "force-dynamic";
 
@@ -113,6 +114,7 @@ export default async function StateResearchDetail({ params }: { params: { state:
 
   return (
     <div className="admin-page admin-research-view">
+      <AutoRefresh enabled={anyRunning} />
       <header className="admin-page-head">
         <div>
           <Link href="/admin/research" className="admin-back">← All states</Link>

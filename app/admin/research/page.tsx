@@ -6,6 +6,7 @@ import Link from "next/link";
 import { STATES } from "../../../lib/states";
 import { createServiceRoleClient } from "../../../lib/supabase/service-role";
 import { getStatePrompt, CALL_TITLES, type StateCallId } from "../../../lib/state-research/prompts";
+import AutoRefresh from "./AutoRefresh";
 
 export const dynamic = "force-dynamic";
 
@@ -74,8 +75,17 @@ export default async function StateResearchIndex() {
       (r.call_4_cost_cents ?? 0);
   }
 
+  const anyRunning = Array.from(rows.values()).some(
+    (r) =>
+      r.call_1_status === "running" ||
+      r.call_2_status === "running" ||
+      r.call_3_status === "running" ||
+      r.call_4_status === "running",
+  );
+
   return (
     <div className="admin-page">
+      <AutoRefresh enabled={anyRunning} />
       <header className="admin-page-head">
         <div>
           <h1>State research</h1>
