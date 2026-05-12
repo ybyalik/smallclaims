@@ -17,6 +17,8 @@ export default function StateResearchControls({ slug, scope, status }: Props) {
   const [msg, setMsg] = useState<string | null>(null);
   const [err, setErr] = useState<string | null>(null);
   const [via, setVia] = useState<"background" | "batch">("background");
+  const [showImport, setShowImport] = useState(false);
+  const [importId, setImportId] = useState("");
 
   async function call(action: "run" | "poll") {
     if (busy) return;
@@ -47,6 +49,30 @@ export default function StateResearchControls({ slug, scope, status }: Props) {
       setTimeout(() => router.refresh(), 400);
     } catch (e) {
       setErr(e instanceof Error ? e.message : "Request failed");
+    } finally {
+      setBusy(null);
+    }
+  }
+
+  async function importResponse() {
+    if (busy || scope === "all" || !importId.trim()) return;
+    setBusy("import");
+    setMsg(null);
+    setErr(null);
+    try {
+      const res = await fetch(`/api/admin/state-research/${slug}/import`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ call: scope, responseId: importId.trim() }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(data.error || "Import failed");
+      setMsg(`Imported · ${data.chars?.toLocaleString()} chars · $${((data.cost_cents ?? 0) / 100).toFixed(2)}`);
+      setImportId("");
+      setShowImport(false);
+      setTimeout(() => router.refresh(), 400);
+    } catch (e) {
+      setErr(e instanceof Error ? e.message : "Import failed");
     } finally {
       setBusy(null);
     }
@@ -103,8 +129,49 @@ export default function StateResearchControls({ slug, scope, status }: Props) {
           {busy === "poll" ? "Polling…" : scope === "all" ? "Poll all" : "Poll"}
         </button>
       ) : null}
+      {scope !== "all" ? (
+        <button
+          type="button"
+          onClick={() => setShowImport((v) => !v)}
+          disabled={!!busy}
+          className="btn btn-cream btn-sm"
+          title="Import an already-completed OpenAI response by ID"
+        >
+          {showImport ? "Cancel import" : "Import"}
+        </button>
+      ) : null}
       {msg ? <span style={{ fontSize: 12, color: "var(--muted)" }}>{msg}</span> : null}
       {err ? <span style={{ fontSize: 12, color: "var(--accent)" }}>{err}</span> : null}
+
+      {showImport && scope !== "all" ? (
+        <div
+          style={{
+            flexBasis: "100%",
+            display: "flex",
+            gap: 8,
+            alignItems: "center",
+            marginTop: 6,
+          }}
+        >
+          <input
+            type="text"
+            value={importId}
+            onChange={(e) => setImportId(e.target.value)}
+            placeholder="resp_… or full OpenAI logs URL"
+            className="dlw-input"
+            style={{ flex: 1, fontFamily: "ui-monospace, monospace", fontSize: 12 }}
+            disabled={!!busy}
+          />
+          <button
+            type="button"
+            onClick={importResponse}
+            disabled={!!busy || !importId.trim()}
+            className="btn btn-dark btn-sm"
+          >
+            {busy === "import" ? "Importing…" : `Save into call ${scope}`}
+          </button>
+        </div>
+      ) : null}
     </div>
   );
 }

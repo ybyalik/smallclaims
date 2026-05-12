@@ -28,6 +28,12 @@ export type SubmitMode = "background" | "batch";
 // Kick off one call for one state
 // ---------------------------------------------------------------------------
 
+// If a call was started in the last IDEMPOTENCY_WINDOW_SECONDS and is still
+// running, refuse to re-submit. Blocks the "click Run twice / two tabs both
+// click Run / browser auto-retry / Vercel re-invocation" classes of bug
+// from doubling our OpenAI bill.
+const IDEMPOTENCY_WINDOW_SECONDS = 60;
+
 export async function startStateResearchCall(
   slug: string,
   call: StateCallId,
@@ -38,6 +44,46 @@ export async function startStateResearchCall(
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const admin = createServiceRoleClient() as any;
+
+  // Idempotency check: if this call is already running and was started
+  // very recently, return the existing in-flight identifier instead of
+  // launching a duplicate. Failed/done calls bypass the lock so re-runs
+  // (deliberate retries) still work.
+  const { data: existing } = await admin
+    .from("state_research")
+    .select(
+      `call_${call}_status, call_${call}_started_at, call_${call}_response_id, call_${call}_batch_id, call_${call}_via`,
+    )
+    .eq("slug", slug)
+    .maybeSingle();
+  if (existing) {
+    const status = existing[`call_${call}_status`] as string | null;
+    const startedAt = existing[`call_${call}_started_at`] as string | null;
+    if (status === "running" && startedAt) {
+      const ageMs = Date.now() - new Date(startedAt).getTime();
+      if (ageMs < IDEMPOTENCY_WINDOW_SECONDS * 1000) {
+        const existingVia = (existing[`call_${call}_via`] as string | null) ?? via;
+        const existingId =
+          (existingVia === "batch"
+            ? (existing[`call_${call}_batch_id`] as string | null)
+            : (existing[`call_${call}_response_id`] as string | null)) ?? "";
+        console.log(
+          JSON.stringify({
+            tag: "state-research.idempotency.skip",
+            ts: new Date().toISOString(),
+            slug,
+            call,
+            age_ms: ageMs,
+            existing_id: existingId,
+          }),
+        );
+        return {
+          ok: false,
+          error: `Call ${call} is already running (started ${Math.round(ageMs / 1000)}s ago, id ${existingId || "pending"}). Wait ${IDEMPOTENCY_WINDOW_SECONDS - Math.round(ageMs / 1000)}s before re-running.`,
+        };
+      }
+    }
+  }
 
   // Mark as running BEFORE submitting so a duplicate trigger sees the
   // running state. Reset error, response_id, and batch_id so a re-run from

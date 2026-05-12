@@ -69,6 +69,21 @@ export async function POST(req: NextRequest) {
 
   const via: SubmitMode = body.via === "batch" ? "batch" : "background";
 
+  console.log(
+    JSON.stringify({
+      tag: "state-research.bulk-run",
+      ts: new Date().toISOString(),
+      slugs,
+      slug_count: slugs.length,
+      via,
+      ua: req.headers.get("user-agent")?.slice(0, 120) ?? "",
+      ip:
+        req.headers.get("x-forwarded-for")?.split(",")[0].trim() ||
+        req.headers.get("x-real-ip") ||
+        "",
+    }),
+  );
+
   const perState = await Promise.all(
     slugs.map(async (slug) => {
       try {

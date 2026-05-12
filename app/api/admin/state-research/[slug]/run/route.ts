@@ -63,6 +63,23 @@ export async function POST(req: NextRequest, ctx: { params: { slug: string } }) 
 
   const via: SubmitMode = body.via === "batch" ? "batch" : "background";
 
+  // Audit log: every submission attempt gets a line so we can correlate
+  // duplicate OpenAI responses with our server invocations.
+  console.log(
+    JSON.stringify({
+      tag: "state-research.run",
+      ts: new Date().toISOString(),
+      slug: ctx.params.slug,
+      call: body.call,
+      via,
+      ua: req.headers.get("user-agent")?.slice(0, 120) ?? "",
+      ip:
+        req.headers.get("x-forwarded-for")?.split(",")[0].trim() ||
+        req.headers.get("x-real-ip") ||
+        "",
+    }),
+  );
+
   if (body.call === "all") {
     const r = await startAllStateResearch(ctx.params.slug, via);
     return NextResponse.json(r, { status: r.ok ? 200 : 502 });
