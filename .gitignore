@@ -1,7 +1,10 @@
 node_modules/
 .next/
 out/
-build/
+# Anchor to repo root — without the leading slash this matched any
+# directory named 'build' at any depth, including app/(wizard)/case/[id]/build/,
+# which silently dropped every wizard file from version control.
+/build/
 .DS_Store
 *.pem
 .env*.local
