@@ -33,9 +33,11 @@ Output is a FINDINGS DOSSIER, not a narrative. Use compact markdown:
 BOUNDED OPEN-ENDED SWEEPS
 
 Some sections instruct you to do a "bounded open-ended sweep." When you see that instruction:
-- List up to 15 additional items not covered by the standard categories above.
+- Find every distinct item that meets the criteria, up to a hard cap of 15.
+- A typical state has 8 to 15 items in each sweep category. If you're stopping at 4 to 6, you've probably missed obvious ones — keep searching.
 - One bullet per item, each ≤ 40 words (or ≤ 50 if the section specifies that limit).
-- Stop at 15 even if more exist. If you stop at the cap, add a final bullet: "Cap reached — more may exist."
+- Every item must have an inline citation to an official source. If you cannot find one, skip the item rather than invent it.
+- Only emit "Cap reached — more may exist" as a final bullet if you actually reached 15 AND could have continued. If you genuinely ran out of items, just stop — do not emit "Cap reached".
 - Do NOT skip these sections to save tokens. Their purpose is to capture state-specific items the standard categories miss.
 
 SOURCES — official only:
