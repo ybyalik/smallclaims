@@ -2,11 +2,11 @@
 // each of the four calls. The actual research is submitted to OpenAI in
 // background mode from the detail page; this page is the dashboard.
 
-import Link from "next/link";
 import { STATES } from "../../../lib/states";
 import { createServiceRoleClient } from "../../../lib/supabase/service-role";
 import { getStatePrompt, CALL_TITLES, type StateCallId } from "../../../lib/state-research/prompts";
 import AutoRefresh from "./AutoRefresh";
+import StateTable from "./StateTable";
 
 export const dynamic = "force-dynamic";
 
@@ -39,19 +39,6 @@ async function loadRows(): Promise<Map<string, StateRow>> {
   } catch {
     return new Map();
   }
-}
-
-function pillFor(status: string | null) {
-  const cls =
-    status === "done"
-      ? "admin-pill admin-pill-good"
-      : status === "running"
-        ? "admin-pill admin-pill-active"
-        : status === "failed"
-          ? "admin-pill admin-pill-warn"
-          : "admin-pill admin-pill-neutral";
-  const label = status ?? "—";
-  return <span className={cls}>{label}</span>;
 }
 
 export default async function StateResearchIndex() {
@@ -100,49 +87,21 @@ export default async function StateResearchIndex() {
         </div>
       </header>
 
-      <table className="admin-table">
-        <thead>
-          <tr>
-            <th>State</th>
-            <th>Call 1 — Court</th>
-            <th>Call 2 — Deadlines</th>
-            <th>Call 3 — Filing</th>
-            <th>Call 4 — Hearing+</th>
-            <th>Last updated</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          {STATES.map((s) => {
-            const row = rows.get(s.slug);
-            return (
-              <tr key={s.slug}>
-                <td>
-                  <Link href={`/admin/research/${s.slug}`} className="admin-link">
-                    {s.name}
-                  </Link>
-                </td>
-                <td>{pillFor(row?.call_1_status ?? null)}</td>
-                <td>{pillFor(row?.call_2_status ?? null)}</td>
-                <td>{pillFor(row?.call_3_status ?? null)}</td>
-                <td>{pillFor(row?.call_4_status ?? null)}</td>
-                <td>
-                  {row?.updated_at ? (
-                    <time style={{ fontSize: 12 }}>
-                      {new Date(row.updated_at).toLocaleString()}
-                    </time>
-                  ) : (
-                    <span style={{ fontSize: 12, color: "var(--muted)" }}>never run</span>
-                  )}
-                </td>
-                <td className="admin-actions">
-                  <Link href={`/admin/research/${s.slug}`}>Open</Link>
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+      <StateTable
+        states={STATES.map((s) => ({ slug: s.slug, name: s.name }))}
+        rows={Object.fromEntries(
+          Array.from(rows.entries()).map(([slug, r]) => [
+            slug,
+            {
+              call_1_status: r.call_1_status,
+              call_2_status: r.call_2_status,
+              call_3_status: r.call_3_status,
+              call_4_status: r.call_4_status,
+              updated_at: r.updated_at,
+            },
+          ]),
+        )}
+      />
 
       <section style={{ marginTop: 48 }}>
         <header style={{ marginBottom: 12 }}>
