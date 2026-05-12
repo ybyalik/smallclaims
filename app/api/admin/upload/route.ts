@@ -1,24 +1,44 @@
+// POST /api/admin/upload
+//
+// Admin image upload endpoint. Used by the blog editor and any other admin
+// surface that needs to attach an image to content. Returns a long-lived URL
+// the admin can paste into markdown / blog body / wherever.
+//
+// Storage: AWS S3 (bucket from env). The bucket is private, so we return a
+// path the consumer can later sign on-demand if needed. For images that
+// will be displayed publicly, a follow-up step should be CloudFront in front
+// of the bucket — until then, signed URLs work but are short-lived.
+
 import { NextResponse, type NextRequest } from "next/server";
 import { createClient } from "../../../../lib/supabase/server";
 import { createServiceRoleClient } from "../../../../lib/supabase/service-role";
+import { adminUploadPath, uploadToS3, getPresignedDownloadUrl } from "../../../../lib/s3";
 
 const MAX_BYTES = 10 * 1024 * 1024;
 const ALLOWED = new Set(["image/jpeg", "image/png", "image/webp", "image/gif", "image/svg+xml"]);
 
 function extFor(type: string): string {
   switch (type) {
-    case "image/jpeg": return "jpg";
-    case "image/png": return "png";
-    case "image/webp": return "webp";
-    case "image/gif": return "gif";
-    case "image/svg+xml": return "svg";
-    default: return "bin";
+    case "image/jpeg":
+      return "jpg";
+    case "image/png":
+      return "png";
+    case "image/webp":
+      return "webp";
+    case "image/gif":
+      return "gif";
+    case "image/svg+xml":
+      return "svg";
+    default:
+      return "bin";
   }
 }
 
 export async function POST(req: NextRequest) {
   const supabase = createClient();
-  const { data: { user } } = await supabase.auth.getUser();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
   if (!user) {
     return NextResponse.json({ error: "auth_required" }, { status: 401 });
   }
@@ -50,18 +70,24 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "File too large (max 10MB)" }, { status: 400 });
   }
 
-  const ext = extFor(file.type);
-  const key = `${new Date().getFullYear()}/${crypto.randomUUID()}.${ext}`;
-  const bytes = new Uint8Array(await file.arrayBuffer());
+  const key = adminUploadPath(extFor(file.type));
+  const bytes = Buffer.from(await file.arrayBuffer());
 
-  const { error: upErr } = await admin.storage
-    .from("uploads")
-    .upload(key, bytes, { contentType: file.type, upsert: false });
-  if (upErr) {
-    console.error("[upload]", upErr);
+  try {
+    await uploadToS3({
+      key,
+      body: bytes,
+      contentType: file.type,
+      cacheControl: "public, max-age=31536000, immutable",
+    });
+  } catch (e) {
+    console.error("[upload]", e);
     return NextResponse.json({ error: "Upload failed" }, { status: 500 });
   }
 
-  const { data: pub } = admin.storage.from("uploads").getPublicUrl(key);
-  return NextResponse.json({ url: pub.publicUrl, key });
+  // Short-lived signed GET URL so the admin can preview / paste it. Until
+  // we put CloudFront in front of the bucket, callers should re-sign as
+  // needed (or we can extend this to return a longer TTL for admin use).
+  const url = await getPresignedDownloadUrl(key, { ttlSeconds: 60 * 60 * 24 });
+  return NextResponse.json({ url, key });
 }
