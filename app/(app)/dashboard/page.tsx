@@ -73,6 +73,16 @@ function formatRelative(s: string): string {
   return date.toLocaleDateString("en-US", { month: "short", day: "numeric" });
 }
 
+function formatCreated(s: string): string {
+  const d = new Date(s);
+  const sameYear = d.getFullYear() === new Date().getFullYear();
+  return d.toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    ...(sameYear ? {} : { year: "numeric" }),
+  });
+}
+
 function caseTitle(c: Case): string {
   const plaintiff = c.plaintiff_name?.trim();
   const defendant = c.defendant_name?.trim();
@@ -255,8 +265,11 @@ export default async function DashboardHome() {
                     <div className="app-case-meta">
                       {c.dispute_type.replace(/_/g, " ")} · {c.state} · updated{" "}
                       {formatRelative(c.updated_at)}
-                      {isV2Draft ? " · click to continue" : ""}
                     </div>
+                  </div>
+                  <div className="app-case-created" title="Date created">
+                    <span className="app-case-created-label">Created</span>
+                    <span className="app-case-created-date">{formatCreated(c.created_at)}</span>
                   </div>
                   <div className="app-case-amount">{formatDollars(c.amount_cents)}</div>
                   <span className="app-case-chevron">→</span>

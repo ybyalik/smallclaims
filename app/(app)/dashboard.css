@@ -384,7 +384,7 @@
 
 .app-case-card {
   display: grid;
-  grid-template-columns: auto 1fr auto auto;
+  grid-template-columns: auto 1fr auto auto auto;
   gap: 18px;
   align-items: center;
   padding: 18px 22px;
@@ -394,6 +394,26 @@
   text-decoration: none;
   color: inherit;
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.app-case-created {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1px;
+  white-space: nowrap;
+}
+.app-case-created-label {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #9a978f;
+}
+.app-case-created-date {
+  font-size: 13px;
+  color: #5a574e;
+  font-variant-numeric: tabular-nums;
 }
 
 .app-case-card:hover {
@@ -1266,14 +1286,16 @@
   .app-case-card {
     grid-template-columns: auto 1fr;
     grid-template-areas:
-      "status status"
+      "status created"
       "info amount"
       "info chevron";
     gap: 8px 14px;
     padding: 14px 16px;
   }
   .app-case-card > .app-case-status { grid-area: status; justify-self: flex-start; }
-  .app-case-card > div:not(.app-case-status):not(.app-case-amount):not(.app-case-chevron) {
+  .app-case-card > div.app-case-created { grid-area: created; justify-self: flex-end; }
+  .app-case-card > div.app-case-created { flex-direction: row; gap: 6px; align-items: baseline; }
+  .app-case-card > div:not(.app-case-status):not(.app-case-amount):not(.app-case-chevron):not(.app-case-created) {
     grid-area: info;
   }
   .app-case-card > .app-case-amount { grid-area: amount; justify-self: flex-end; }
