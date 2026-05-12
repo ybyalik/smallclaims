@@ -2,6 +2,17 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import {
+  LayoutDashboard,
+  Folder,
+  CreditCard,
+  LifeBuoy,
+  BookOpen,
+  Shield,
+  Settings,
+  LogOut,
+  type LucideIcon,
+} from "lucide-react";
 
 interface SidebarUser {
   displayName: string;
@@ -18,6 +29,7 @@ interface NavItem {
   label: string;
   href: string;
   match: RegExp;
+  icon: LucideIcon;
   cta?: { label: string; href: string };
   comingSoon?: boolean;
 }
@@ -29,13 +41,29 @@ const SERVICES: NavItem[] = [
     label: "Cases",
     href: "/dashboard/cases",
     match: /^\/dashboard\/cases(\/.*)?$|^\/case\//,
+    icon: Folder,
     cta: { label: "Start a new case", href: "/dashboard/cases/new" },
   },
 ];
 
 const ACCOUNT: NavItem[] = [
-  { label: "Billing", href: "/dashboard/billing", match: /^\/dashboard\/billing/ },
+  {
+    label: "Billing",
+    href: "/dashboard/billing",
+    match: /^\/dashboard\/billing/,
+    icon: CreditCard,
+  },
+  {
+    label: "Support",
+    href: "/dashboard/support",
+    match: /^\/dashboard\/support/,
+    icon: LifeBuoy,
+  },
 ];
+
+function NavIcon({ Icon }: { Icon: LucideIcon }) {
+  return <Icon size={16} strokeWidth={1.8} className="app-nav-icon" aria-hidden />;
+}
 
 export default function DashboardSidebar({ user }: SidebarProps) {
   const pathname = usePathname() || "";
@@ -57,33 +85,31 @@ export default function DashboardSidebar({ user }: SidebarProps) {
         </Link>
       </div>
 
-      {user ? (
-        <nav className="app-nav">
+      <nav className="app-nav" style={{ marginTop: 14 }}>
+        {user ? (
           <Link href="/dashboard" className={dashboardActive ? "active" : ""}>
-            Dashboard
+            <NavIcon Icon={LayoutDashboard} />
+            <span>Dashboard</span>
           </Link>
-        </nav>
-      ) : null}
-
-      <div className="app-nav-section-label">Services</div>
-      <nav className="app-nav">
+        ) : null}
         {SERVICES.map((item) => {
           const active = item.match.test(pathname);
           if (item.comingSoon) {
             return (
               <span key={item.label} className="app-nav-soon" aria-disabled="true">
-                {item.label}
+                <NavIcon Icon={item.icon} />
+                <span>{item.label}</span>
                 <span className="app-nav-pill">Soon</span>
               </span>
             );
           }
-          // Anonymous users: route service nav to the public entry
           const href = user ? item.href : "/demand-letter";
           const ctaHref = user ? item.cta?.href : "/demand-letter";
           return (
             <div key={item.href} className="app-nav-group">
               <Link href={href} className={active ? "active" : ""}>
-                {item.label}
+                <NavIcon Icon={item.icon} />
+                <span>{item.label}</span>
               </Link>
               {item.cta ? (
                 <Link href={ctaHref!} className="app-nav-cta">
@@ -104,7 +130,8 @@ export default function DashboardSidebar({ user }: SidebarProps) {
             const active = item.match.test(pathname);
             return (
               <Link key={item.href} href={item.href} className={active ? "active" : ""}>
-                {item.label}
+                <NavIcon Icon={item.icon} />
+                <span>{item.label}</span>
               </Link>
             );
           })
@@ -120,11 +147,13 @@ export default function DashboardSidebar({ user }: SidebarProps) {
 
       <nav className="app-nav app-nav-secondary">
         <Link href="/small-claims" target="_blank" rel="noopener noreferrer">
-          State guides ↗
+          <NavIcon Icon={BookOpen} />
+          <span>State guides ↗</span>
         </Link>
         {user?.isAdmin ? (
           <Link href="/admin" className="app-admin-link">
-            Admin →
+            <NavIcon Icon={Shield} />
+            <span>Admin →</span>
           </Link>
         ) : null}
       </nav>
@@ -151,11 +180,11 @@ export default function DashboardSidebar({ user }: SidebarProps) {
                 href="/dashboard/settings"
                 className={`app-foot-link ${settingsActive ? "active" : ""}`}
               >
-                <SettingsIcon />
+                <Settings size={14} strokeWidth={1.8} aria-hidden />
                 <span>Settings</span>
               </Link>
               <a href="/auth/signout" className="app-foot-link">
-                <SignOutIcon />
+                <LogOut size={14} strokeWidth={1.8} aria-hidden />
                 <span>Sign out</span>
               </a>
             </nav>
@@ -170,26 +199,5 @@ export default function DashboardSidebar({ user }: SidebarProps) {
         )}
       </div>
     </aside>
-  );
-}
-
-function SettingsIcon() {
-  return (
-    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-      <path d="M8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" stroke="currentColor" strokeWidth="1.4" />
-      <path
-        d="M13.4 9.4a5.4 5.4 0 0 0 0-2.8l1.4-1-1.4-2.4-1.7.5a5.5 5.5 0 0 0-2.4-1.4L8.8.4h-1.6l-.5 1.9A5.5 5.5 0 0 0 4.3 3.7l-1.7-.5L1.2 5.6l1.4 1a5.4 5.4 0 0 0 0 2.8l-1.4 1 1.4 2.4 1.7-.5a5.5 5.5 0 0 0 2.4 1.4l.5 1.9h1.6l.5-1.9a5.5 5.5 0 0 0 2.4-1.4l1.7.5 1.4-2.4-1.4-1Z"
-        stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-function SignOutIcon() {
-  return (
-    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-      <path d="M9 3H3v10h6" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M11 5l3 3-3 3M14 8H6" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
   );
 }
