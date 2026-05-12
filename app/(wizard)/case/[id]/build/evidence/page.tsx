@@ -31,4 +31,8 @@ export interface EvidenceFileMeta {
   kind: string;
   description?: string;
   uploadedAt: string;
+  // S3 object key for the actual file. Empty during the brief window between
+  // ingestion and the presigned PUT completing. Pre-S3 evidence entries
+  // (uploaded before S3 was wired up) also have no key.
+  s3Key?: string;
 }
