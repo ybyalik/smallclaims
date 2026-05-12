@@ -5835,6 +5835,9 @@ footer { padding: 80px 0 40px; background: var(--ink); color: #fef9f1; }
 .nav-burger.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .nav-burger.is-open span:nth-child(2) { opacity: 0; }
 .nav-burger.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+/* Hide the hamburger when the drawer is open — the drawer has its own close
+   X right next to the logo. Two stacked Xs in the top-right was confusing. */
+.nav-burger.is-open { visibility: hidden; }
 
 /* Backdrop behind drawer */
 .nav-backdrop {

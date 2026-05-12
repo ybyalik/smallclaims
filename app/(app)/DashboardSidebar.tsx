@@ -28,7 +28,7 @@ const SERVICES: NavItem[] = [
   {
     label: "Cases",
     href: "/dashboard/cases",
-    match: /^\/dashboard(\/cases.*)?$|^\/case\//,
+    match: /^\/dashboard\/cases(\/.*)?$|^\/case\//,
     cta: { label: "Start a new case", href: "/dashboard/cases/new" },
   },
 ];
@@ -40,6 +40,7 @@ const ACCOUNT: NavItem[] = [
 export default function DashboardSidebar({ user }: SidebarProps) {
   const pathname = usePathname() || "";
   const settingsActive = /^\/dashboard\/settings/.test(pathname);
+  const dashboardActive = pathname === "/dashboard";
 
   return (
     <aside className="app-side">
@@ -55,6 +56,14 @@ export default function DashboardSidebar({ user }: SidebarProps) {
           />
         </Link>
       </div>
+
+      {user ? (
+        <nav className="app-nav">
+          <Link href="/dashboard" className={dashboardActive ? "active" : ""}>
+            Dashboard
+          </Link>
+        </nav>
+      ) : null}
 
       <div className="app-nav-section-label">Services</div>
       <nav className="app-nav">

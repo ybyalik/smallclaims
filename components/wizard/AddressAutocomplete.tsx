@@ -18,6 +18,12 @@ export interface ParsedAddress {
   city: string;
   state: string;
   zip: string;
+  /**
+   * County (US: administrative_area_level_2). Empty string if Google didn't
+   * include one for this address — some rural/mailing-only addresses lack
+   * it. The parent's CountyField fallback handles those.
+   */
+  county: string;
 }
 
 interface Props {
@@ -48,11 +54,15 @@ function parsePlace(place: google.maps.places.PlaceResult): ParsedAddress {
     "";
   const state = get("administrative_area_level_1", true);
   const zip = get("postal_code");
+  // US county. Google returns "Middlesex County" with the suffix; the
+  // existing CountyField shows the same format.
+  const county = get("administrative_area_level_2");
   return {
     line1: [streetNumber, route].filter(Boolean).join(" "),
     city,
     state,
     zip,
+    county,
   };
 }
 
@@ -83,6 +93,15 @@ export default function AddressAutocomplete({
     loadGoogleMaps()
       .then((maps) => {
         if (cancelled || !inputRef.current) return;
+        // Guard against double-attaching when Strict Mode re-runs the
+        // effect or when the script resolves twice.
+        if (autocompleteRef.current) return;
+        // Chrome's native autofill competes with Google's autocomplete on
+        // address fields and can suppress Google's dropdown on first
+        // interaction. Setting a non-standard autocomplete value bypasses
+        // Chrome's autofill detection. Google's widget will set its own
+        // value after attachment.
+        inputRef.current.setAttribute("autocomplete", "civilcase-street");
         const ac = new maps.places.Autocomplete(inputRef.current, {
           types: ["address"],
           componentRestrictions: country ? { country } : undefined,

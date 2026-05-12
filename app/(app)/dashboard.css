@@ -436,31 +436,10 @@
 }
 
 /* Mobile */
-@media (max-width: 768px) {
-  .app-shell {
-    grid-template-columns: 1fr;
-  }
-  .app-side {
-    position: static;
-    height: auto;
-    flex-direction: row;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 12px 16px;
-  }
-  .app-nav {
-    flex-direction: row;
-    flex-wrap: wrap;
-    flex: 1;
-  }
-  .app-side-divider,
-  .app-side-foot {
-    display: none;
-  }
-  .app-main {
-    padding: 24px 18px 48px;
-  }
-}
+/* Obsolete pre-drawer mobile layout was here. The slide-out drawer at the
+   900px media query block (~line 1215) handles mobile sidebar now. Removed
+   in 2026-05-12 because it was force-flex-row-ing the drawer contents and
+   hiding the user-info footer. */
 
 .app-back { display: inline-block; font-size: 13px; color: #7a7770; text-decoration: none; margin-bottom: 6px; }
 .app-back:hover { color: var(--ink, #111); }
