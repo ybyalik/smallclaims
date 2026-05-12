@@ -16,7 +16,9 @@ export default async function SettingsPage() {
 
   const { data: profile } = await supabase
     .from("profiles")
-    .select("full_name, avatar_url, is_admin, notification_preferences, created_at")
+    .select(
+      "full_name, avatar_url, is_admin, notification_preferences, created_at, default_entity_type, default_business_name, default_address, default_county",
+    )
     .eq("user_id", user.id)
     .single();
 
@@ -48,6 +50,10 @@ export default async function SettingsPage() {
           <SettingsForm
             initialFullName={profile?.full_name || ""}
             email={user.email || ""}
+            initialEntityType={profile?.default_entity_type ?? null}
+            initialBusinessName={profile?.default_business_name ?? ""}
+            initialAddress={profile?.default_address ?? null}
+            initialCounty={profile?.default_county ?? ""}
           />
         </section>
 

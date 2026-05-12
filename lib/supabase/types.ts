@@ -373,6 +373,10 @@ export interface Profile {
   is_admin: boolean;
   stripe_customer_id: string | null;
   notification_preferences: Record<string, unknown>;
+  default_entity_type: "individual" | "business" | null;
+  default_business_name: string | null;
+  default_address: PostalAddress | null;
+  default_county: string | null;
   created_at: string;
   updated_at: string;
 }
@@ -384,6 +388,10 @@ export interface ProfileInsert {
   is_admin?: boolean;
   stripe_customer_id?: string | null;
   notification_preferences?: Record<string, unknown>;
+  default_entity_type?: "individual" | "business" | null;
+  default_business_name?: string | null;
+  default_address?: PostalAddress | null;
+  default_county?: string | null;
 }
 
 export type ProfileUpdate = Partial<Omit<ProfileInsert, "user_id">>;
