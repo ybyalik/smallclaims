@@ -200,9 +200,28 @@ export async function pollBatchCall(batchId: string): Promise<BatchPollResult> {
   }
 
   if (batch.status === "completed") {
-    // Pull the output JSONL.
+    // OpenAI marks a batch 'completed' even when every request inside it
+    // failed — successful results land in output_file_id, failed ones in
+    // error_file_id. Prefer output; fall back to surfacing the first error
+    // from error_file_id so the admin sees the real failure cause.
     if (!batch.output_file_id) {
-      return { status: "completed", error: "Batch completed but no output_file_id present" };
+      const counts = batch.request_counts;
+      const countSummary = counts
+        ? `${counts.completed}/${counts.total} completed, ${counts.failed} failed`
+        : "no output";
+      if (batch.error_file_id) {
+        const firstError = await fetchFirstBatchError(batch.error_file_id, key);
+        return {
+          status: "completed",
+          error: firstError
+            ? `Batch ${countSummary} — ${firstError}`
+            : `Batch ${countSummary} (error file present but unreadable)`,
+        };
+      }
+      return {
+        status: "completed",
+        error: `Batch ${countSummary} but no output_file_id and no error_file_id present`,
+      };
     }
     const fileRes = await fetch(
       `https://api.openai.com/v1/files/${batch.output_file_id}/content`,
@@ -242,4 +261,36 @@ export async function pollBatchCall(batchId: string): Promise<BatchPollResult> {
   }
 
   return { status: batch.status, error: `Unexpected batch status: ${batch.status}` };
+}
+
+// Fetch the first error from a batch's error_file_id. Each line is shaped
+// like the output JSONL: { id, custom_id, response, error }.
+async function fetchFirstBatchError(
+  errorFileId: string,
+  key: string,
+): Promise<string | null> {
+  try {
+    const res = await fetch(`https://api.openai.com/v1/files/${errorFileId}/content`, {
+      headers: { Authorization: `Bearer ${key}` },
+    });
+    if (!res.ok) return null;
+    const text = await res.text();
+    const line = text.trim().split("\n")[0];
+    if (!line) return null;
+    const parsed = JSON.parse(line) as BatchOutputLine;
+    if (parsed.error) {
+      return parsed.error.message ?? parsed.error.code ?? "Unknown line error";
+    }
+    if (parsed.response) {
+      const code = parsed.response.status_code;
+      const bodyErr =
+        parsed.response.body?.error?.message ??
+        parsed.response.body?.incomplete_details?.reason ??
+        "no body error message";
+      return `HTTP ${code}: ${bodyErr}`;
+    }
+    return null;
+  } catch {
+    return null;
+  }
 }
