@@ -16,6 +16,7 @@ export default function StateResearchControls({ slug, scope, status }: Props) {
   const [busy, setBusy] = useState<string | null>(null);
   const [msg, setMsg] = useState<string | null>(null);
   const [err, setErr] = useState<string | null>(null);
+  const [via, setVia] = useState<"background" | "batch">("background");
 
   async function call(action: "run" | "poll") {
     if (busy) return;
@@ -23,7 +24,9 @@ export default function StateResearchControls({ slug, scope, status }: Props) {
     setMsg(null);
     setErr(null);
     try {
-      const body = scope === "all" ? { call: "all" } : { call: scope };
+      const callField = scope === "all" ? { call: "all" } : { call: scope };
+      const body =
+        action === "run" ? { ...callField, via } : callField;
       const res = await fetch(`/api/admin/state-research/${slug}/${action}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -33,7 +36,13 @@ export default function StateResearchControls({ slug, scope, status }: Props) {
       if (!res.ok) {
         throw new Error(data.error || `${action} failed`);
       }
-      setMsg(action === "run" ? "Submitted" : "Polled");
+      setMsg(
+        action === "run"
+          ? via === "batch"
+            ? "Submitted to batch"
+            : "Submitted"
+          : "Polled",
+      );
       // Wait a tick so the user sees the toast, then refresh server data.
       setTimeout(() => router.refresh(), 400);
     } catch (e) {
@@ -57,7 +66,25 @@ export default function StateResearchControls({ slug, scope, status }: Props) {
   const showPoll = scope === "all" ? true : status === "running";
 
   return (
-    <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+    <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
+      <label
+        style={{
+          display: "inline-flex",
+          alignItems: "center",
+          gap: 6,
+          fontSize: 12,
+          color: "var(--muted)",
+          cursor: "pointer",
+        }}
+      >
+        <input
+          type="checkbox"
+          checked={via === "batch"}
+          onChange={(e) => setVia(e.target.checked ? "batch" : "background")}
+          disabled={!!busy}
+        />
+        Batch (50% off, up to 24h)
+      </label>
       <button
         type="button"
         onClick={() => call("run")}

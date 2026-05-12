@@ -3,12 +3,15 @@
 // Kicks off state-level deep research for one state.
 //
 // Body:
-//   { "call": 1 | 2 | 3 | 4 }   -> run just that call
-//   { "call": "all" }            -> run all four in parallel
+//   { "call": 1 | 2 | 3 | 4 }                  -> run just that call
+//   { "call": "all" }                           -> run all four in parallel
+//   { "call": 1, "via": "batch" }              -> run via Batch API (50% off
+//                                                  tokens, up to 24h SLA)
+//   { "call": 1, "via": "background" }         -> default; ~30 min SLA, full
+//                                                  price
 //
-// Each call submits to OpenAI in background mode and returns a response ID
-// instantly. The actual research runs for ~10-30 minutes; the polling cron
-// (or admin manual poll) picks up the completion.
+// Each call records its 'via' mode in call_N_via so the poller knows which
+// path to use (response_id vs. batch_id).
 
 import { NextResponse, type NextRequest } from "next/server";
 import { createClient } from "../../../../../../lib/supabase/server";
@@ -16,6 +19,7 @@ import { createServiceRoleClient } from "../../../../../../lib/supabase/service-
 import {
   startAllStateResearch,
   startStateResearchCall,
+  type SubmitMode,
 } from "../../../../../../lib/state-research/orchestrate";
 import type { StateCallId } from "../../../../../../lib/state-research/prompts";
 
@@ -50,20 +54,22 @@ export async function POST(req: NextRequest, ctx: { params: { slug: string } }) 
     return NextResponse.json({ error: guard.error }, { status: 403 });
   }
 
-  let body: { call?: number | "all" };
+  let body: { call?: number | "all"; via?: string };
   try {
-    body = (await req.json()) as { call?: number | "all" };
+    body = (await req.json()) as { call?: number | "all"; via?: string };
   } catch {
     return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
   }
 
+  const via: SubmitMode = body.via === "batch" ? "batch" : "background";
+
   if (body.call === "all") {
-    const r = await startAllStateResearch(ctx.params.slug);
+    const r = await startAllStateResearch(ctx.params.slug, via);
     return NextResponse.json(r, { status: r.ok ? 200 : 502 });
   }
 
   if (body.call === 1 || body.call === 2 || body.call === 3 || body.call === 4) {
-    const r = await startStateResearchCall(ctx.params.slug, body.call as StateCallId);
+    const r = await startStateResearchCall(ctx.params.slug, body.call as StateCallId, via);
     return NextResponse.json(r, { status: r.ok ? 200 : 502 });
   }
 

@@ -1,6 +1,14 @@
 // Higher-level helpers that wire the OpenAI runner together with Supabase
 // state_research row updates. These are the entry points used by API routes
 // and the polling cron.
+//
+// Two submission modes per call:
+//   - 'background': ~30 min, full price. Uses Responses API with
+//                   background: true.
+//   - 'batch':       up to 24h, 50% off tokens. Uses Batch API.
+//
+// Each call independently records its mode in call_N_via. The poller picks
+// the right path automatically.
 
 import { createServiceRoleClient } from "../supabase/service-role";
 import { getStateBySlug } from "../states";
@@ -11,7 +19,10 @@ import {
   callRowPatch,
   type SubmitOutput,
 } from "./runner";
+import { submitStateResearchBatchCall, pollBatchCall } from "./batch";
 import type { StateCallId } from "./prompts";
+
+export type SubmitMode = "background" | "batch";
 
 // ---------------------------------------------------------------------------
 // Kick off one call for one state
@@ -20,7 +31,8 @@ import type { StateCallId } from "./prompts";
 export async function startStateResearchCall(
   slug: string,
   call: StateCallId,
-): Promise<{ ok: true; responseId: string } | { ok: false; error: string }> {
+  via: SubmitMode = "background",
+): Promise<{ ok: true; id: string; via: SubmitMode } | { ok: false; error: string }> {
   const state = getStateBySlug(slug);
   if (!state) return { ok: false, error: `Unknown state slug: ${slug}` };
 
@@ -28,14 +40,18 @@ export async function startStateResearchCall(
   const admin = createServiceRoleClient() as any;
 
   // Mark as running BEFORE submitting so a duplicate trigger sees the
-  // running state. Also resets error and bumps started_at.
+  // running state. Reset error, response_id, and batch_id so a re-run from
+  // a previously-failed state doesn't leave stale IDs.
   await admin.from("state_research").upsert(
     {
       slug,
       state_name: state.name,
       ...callRowPatch(call, {
         status: "running",
+        via,
         error: null,
+        response_id: "",
+        batch_id: "",
         started_at: new Date().toISOString(),
         completed_at: null,
       }),
@@ -44,9 +60,57 @@ export async function startStateResearchCall(
     { onConflict: "slug" },
   );
 
-  let submitted: SubmitOutput;
+  // ----- background mode --------------------------------------------------
+  if (via === "background") {
+    let submitted: SubmitOutput;
+    try {
+      submitted = await submitStateResearchCall(call, state.name);
+    } catch (e) {
+      const msg = e instanceof Error ? e.message : String(e);
+      await admin
+        .from("state_research")
+        .update({
+          ...callRowPatch(call, {
+            status: "failed",
+            error: msg,
+            completed_at: new Date().toISOString(),
+          }),
+          updated_at: new Date().toISOString(),
+        })
+        .eq("slug", slug);
+      return { ok: false, error: msg };
+    }
+
+    await admin
+      .from("state_research")
+      .update({
+        ...callRowPatch(call, {
+          response_id: submitted.responseId,
+          model: submitted.model,
+          status: "running",
+        }),
+        updated_at: new Date().toISOString(),
+      })
+      .eq("slug", slug);
+
+    return { ok: true, id: submitted.responseId, via };
+  }
+
+  // ----- batch mode -------------------------------------------------------
   try {
-    submitted = await submitStateResearchCall(call, state.name);
+    const batch = await submitStateResearchBatchCall(call, state.name, slug);
+    await admin
+      .from("state_research")
+      .update({
+        ...callRowPatch(call, {
+          batch_id: batch.batchId,
+          model: batch.model,
+          status: "running",
+        }),
+        updated_at: new Date().toISOString(),
+      })
+      .eq("slug", slug);
+    return { ok: true, id: batch.batchId, via };
   } catch (e) {
     const msg = e instanceof Error ? e.message : String(e);
     await admin
@@ -62,20 +126,6 @@ export async function startStateResearchCall(
       .eq("slug", slug);
     return { ok: false, error: msg };
   }
-
-  await admin
-    .from("state_research")
-    .update({
-      ...callRowPatch(call, {
-        response_id: submitted.responseId,
-        model: submitted.model,
-        status: "running",
-      }),
-      updated_at: new Date().toISOString(),
-    })
-    .eq("slug", slug);
-
-  return { ok: true, responseId: submitted.responseId };
 }
 
 // ---------------------------------------------------------------------------
@@ -84,15 +134,16 @@ export async function startStateResearchCall(
 
 export async function startAllStateResearch(
   slug: string,
+  via: SubmitMode = "background",
 ): Promise<{
   ok: boolean;
-  results: Array<{ call: StateCallId; ok: boolean; responseId?: string; error?: string }>;
+  results: Array<{ call: StateCallId; ok: boolean; id?: string; error?: string }>;
 }> {
   const calls: StateCallId[] = [1, 2, 3, 4];
   const results = await Promise.all(
     calls.map(async (c) => {
-      const r = await startStateResearchCall(slug, c);
-      if (r.ok) return { call: c, ok: true as const, responseId: r.responseId };
+      const r = await startStateResearchCall(slug, c, via);
+      if (r.ok) return { call: c, ok: true as const, id: r.id };
       return { call: c, ok: false as const, error: r.error };
     }),
   );
@@ -100,7 +151,7 @@ export async function startAllStateResearch(
 }
 
 // ---------------------------------------------------------------------------
-// Poll one in-flight response and persist on completion
+// Poll one in-flight call and persist on completion
 // ---------------------------------------------------------------------------
 
 export type PollOutcome =
@@ -122,12 +173,24 @@ export async function pollStateResearchCall(
     .maybeSingle();
   if (!row) return { outcome: "skipped", reason: "no row" };
 
-  const responseId = row[`call_${call}_response_id`] as string | null;
   const status = row[`call_${call}_status`] as string | null;
-  if (!responseId) return { outcome: "skipped", reason: "no response id" };
   if (status === "done" || status === "failed") {
     return { outcome: "skipped", reason: `already ${status}` };
   }
+
+  const via = (row[`call_${call}_via`] as string | null) ?? "background";
+  const model = (row[`call_${call}_model`] as string | null) ?? "o3-deep-research";
+
+  if (via === "batch") {
+    return pollBatchPath(admin, slug, call, row, model);
+  }
+  return pollBackgroundPath(admin, slug, call, row, model);
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+async function pollBackgroundPath(admin: any, slug: string, call: StateCallId, row: any, model: string): Promise<PollOutcome> {
+  const responseId = row[`call_${call}_response_id`] as string | null;
+  if (!responseId) return { outcome: "skipped", reason: "no response id" };
 
   let envelope;
   try {
@@ -142,10 +205,7 @@ export async function pollStateResearchCall(
   if (openaiStatus === "in_progress" || openaiStatus === "queued") {
     return { outcome: "still_running" };
   }
-
-  // Terminal states: completed, failed, cancelled, incomplete
   if (openaiStatus === "completed") {
-    const model = (row[`call_${call}_model`] as string) || "o3-deep-research";
     const parsed = parseStateResearchOutput(envelope, model);
     await admin
       .from("state_research")
@@ -168,6 +228,89 @@ export async function pollStateResearchCall(
     envelope.error?.message ??
     envelope.incomplete_details?.reason ??
     `OpenAI returned status ${openaiStatus}`;
+  await admin
+    .from("state_research")
+    .update({
+      ...callRowPatch(call, {
+        status: "failed",
+        error: errMsg,
+        completed_at: new Date().toISOString(),
+      }),
+      updated_at: new Date().toISOString(),
+    })
+    .eq("slug", slug);
+  return { outcome: "failed", error: errMsg };
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+async function pollBatchPath(admin: any, slug: string, call: StateCallId, row: any, model: string): Promise<PollOutcome> {
+  const batchId = row[`call_${call}_batch_id`] as string | null;
+  if (!batchId) return { outcome: "skipped", reason: "no batch id" };
+
+  let result;
+  try {
+    result = await pollBatchCall(batchId);
+  } catch (e) {
+    const msg = e instanceof Error ? e.message : String(e);
+    return { outcome: "failed", error: msg };
+  }
+
+  if (
+    result.status === "validating" ||
+    result.status === "in_progress" ||
+    result.status === "finalizing"
+  ) {
+    return { outcome: "still_running" };
+  }
+
+  if (result.status === "completed" && result.envelope) {
+    // The inner Responses envelope may itself be 'completed' (success) or
+    // 'incomplete' (e.g., max_output_tokens). Reuse the same handling as
+    // background mode: if the inner envelope says completed, save the
+    // findings; otherwise mark failed.
+    const innerStatus = result.envelope.status ?? "unknown";
+    if (innerStatus === "completed") {
+      const parsed = parseStateResearchOutput(result.envelope, model);
+      // Batch tokens billed at 50% — discount the token portion.
+      const discountedCost = Math.ceil(parsed.costCents * 0.5);
+      await admin
+        .from("state_research")
+        .update({
+          ...callRowPatch(call, {
+            markdown: parsed.markdown,
+            input_tokens: parsed.inputTokens,
+            output_tokens: parsed.outputTokens,
+            cost_cents: discountedCost,
+            response_id: result.envelope.id ?? "",
+            status: "done",
+            completed_at: new Date().toISOString(),
+          }),
+          updated_at: new Date().toISOString(),
+        })
+        .eq("slug", slug);
+      return { outcome: "done" };
+    }
+
+    const innerErr =
+      result.envelope.error?.message ??
+      result.envelope.incomplete_details?.reason ??
+      `Batch inner response status ${innerStatus}`;
+    await admin
+      .from("state_research")
+      .update({
+        ...callRowPatch(call, {
+          status: "failed",
+          error: innerErr,
+          completed_at: new Date().toISOString(),
+        }),
+        updated_at: new Date().toISOString(),
+      })
+      .eq("slug", slug);
+    return { outcome: "failed", error: innerErr };
+  }
+
+  // Terminal failure of the batch itself.
+  const errMsg = result.error ?? `Batch ${result.status}`;
   await admin
     .from("state_research")
     .update({

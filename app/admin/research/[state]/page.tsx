@@ -19,6 +19,8 @@ export function generateStaticParams() {
 interface CallSnapshot {
   status: string | null;
   responseId: string | null;
+  batchId: string | null;
+  via: string | null;
   model: string | null;
   inputTokens: number | null;
   outputTokens: number | null;
@@ -55,6 +57,8 @@ function pickCall(row: StateRowFull | null, call: StateCallId): CallSnapshot {
     return {
       status: null,
       responseId: null,
+      batchId: null,
+      via: null,
       model: null,
       inputTokens: null,
       outputTokens: null,
@@ -69,6 +73,8 @@ function pickCall(row: StateRowFull | null, call: StateCallId): CallSnapshot {
   return {
     status: (row[`${p}_status`] as string | null) ?? null,
     responseId: (row[`${p}_response_id`] as string | null) ?? null,
+    batchId: (row[`${p}_batch_id`] as string | null) ?? null,
+    via: (row[`${p}_via`] as string | null) ?? null,
     model: (row[`${p}_model`] as string | null) ?? null,
     inputTokens: (row[`${p}_input_tokens`] as number | null) ?? null,
     outputTokens: (row[`${p}_output_tokens`] as number | null) ?? null,
@@ -155,6 +161,14 @@ export default async function StateResearchDetail({ params }: { params: { state:
                   Call {c} — {CALL_TITLES[c]}
                 </span>
                 <span style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                  {snap.via === "batch" && snap.status ? (
+                    <span
+                      className="admin-pill admin-pill-neutral"
+                      title="Submitted via Batch API (50% off tokens, up to 24h SLA)"
+                    >
+                      batch
+                    </span>
+                  ) : null}
                   {pillFor(snap.status)}
                   {snap.startedAt ? (
                     <span style={{ fontSize: 12, color: "var(--muted)" }}>
@@ -167,8 +181,10 @@ export default async function StateResearchDetail({ params }: { params: { state:
               <div style={{ marginTop: 16, fontSize: 13 }}>
                 {snap.status === "running" ? (
                   <p style={{ color: "var(--muted)" }}>
-                    Submitted to OpenAI at {snap.startedAt ? new Date(snap.startedAt).toLocaleString() : "—"}.
-                    Response ID: <code>{snap.responseId ?? "—"}</code>. Cron polls every 5 min; or use Poll button.
+                    Submitted to OpenAI at {snap.startedAt ? new Date(snap.startedAt).toLocaleString() : "—"}
+                    {snap.via === "batch"
+                      ? <> via Batch API. Batch ID: <code>{snap.batchId ?? "—"}</code>. SLA up to 24h; cron polls every 5 min.</>
+                      : <>. Response ID: <code>{snap.responseId ?? "—"}</code>. Cron polls every 5 min; or use Poll button.</>}
                   </p>
                 ) : null}
 

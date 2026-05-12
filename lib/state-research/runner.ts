@@ -179,6 +179,8 @@ function extractText(env: ResponsesEnvelope): string {
 export interface StateResearchCallColumns {
   markdown: string;
   response_id: string;
+  batch_id: string;
+  via: "background" | "batch";
   model: string;
   input_tokens: number;
   output_tokens: number;
@@ -207,6 +209,8 @@ export function callRowPatch(
   const out: Record<string, unknown> = {};
   if (fields.markdown !== undefined) out[`${prefix}_markdown`] = fields.markdown;
   if (fields.response_id !== undefined) out[`${prefix}_response_id`] = fields.response_id;
+  if (fields.batch_id !== undefined) out[`${prefix}_batch_id`] = fields.batch_id;
+  if (fields.via !== undefined) out[`${prefix}_via`] = fields.via;
   if (fields.model !== undefined) out[`${prefix}_model`] = fields.model;
   if (fields.input_tokens !== undefined) out[`${prefix}_input_tokens`] = fields.input_tokens;
   if (fields.output_tokens !== undefined) out[`${prefix}_output_tokens`] = fields.output_tokens;
