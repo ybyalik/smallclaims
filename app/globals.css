@@ -5898,23 +5898,69 @@ footer { padding: 80px 0 40px; background: var(--ink); color: #fef9f1; }
 .nav-mobile-links {
   display: flex;
   flex-direction: column;
-  padding: 16px 0;
+  padding: 8px 0 16px;
   flex: 1;
+  overflow-y: auto;
+}
+.nav-mobile-section {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--hairline);
+}
+.nav-mobile-section:last-of-type {
+  border-bottom: 0;
+}
+.nav-mobile-section-label {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 700;
+  padding: 12px 24px 4px;
 }
 .nav-mobile-links a {
-  padding: 14px 24px;
+  padding: 12px 24px;
   font-family: "Newsreader", Georgia, serif;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 500;
   color: var(--ink);
   letter-spacing: -0.01em;
-  border-bottom: 1px solid var(--hairline);
   transition: background .15s ease, color .15s ease;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
 }
 .nav-mobile-links a:active,
 .nav-mobile-links a:focus {
   background: var(--bg-2);
   color: var(--accent);
+}
+
+/* Collapsible group (Browse by dispute type) */
+.nav-mobile-group { padding: 0; }
+.nav-mobile-group summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px 12px;
+  min-height: 44px;
+}
+.nav-mobile-group summary::-webkit-details-marker { display: none; }
+.nav-mobile-group summary .nav-mobile-section-label { padding: 0; }
+.nav-mobile-chev {
+  color: var(--muted);
+  transition: transform .15s ease;
+  flex-shrink: 0;
+}
+.nav-mobile-group[open] .nav-mobile-chev { transform: rotate(180deg); }
+.nav-mobile-group a {
+  padding-left: 36px;
+  font-size: 16.5px;
+  color: var(--ink-2);
 }
 
 .nav-mobile-cta {

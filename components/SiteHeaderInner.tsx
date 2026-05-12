@@ -403,51 +403,65 @@ export default function SiteHeaderInner({ user }: { user: SiteHeaderUser | null 
 
         <nav className="nav-mobile-links">
           {user ? (
-            <Link href="/dashboard" onClick={() => setOpen(false)}>
-              Dashboard
-            </Link>
+            <div className="nav-mobile-section">
+              <span className="nav-mobile-section-label">My account</span>
+              <Link href="/dashboard" onClick={() => setOpen(false)}>
+                Dashboard
+              </Link>
+              <Link href="/dashboard/settings" onClick={() => setOpen(false)}>
+                Settings
+              </Link>
+            </div>
           ) : null}
-          <Link href="/case-score" onClick={() => setOpen(false)}>
-            Case score
-          </Link>
-          <Link href="/small-claims" onClick={() => setOpen(false)}>
-            Small Claims
-          </Link>
-          <Link href="/small-claims/landlord" onClick={() => setOpen(false)}>
-            Landlord disputes
-          </Link>
-          <Link href="/small-claims/employer" onClick={() => setOpen(false)}>
-            Employer disputes
-          </Link>
-          <Link href="/small-claims/contractor" onClick={() => setOpen(false)}>
-            Contractor disputes
-          </Link>
-          <Link href="/small-claims/auto" onClick={() => setOpen(false)}>
-            Auto disputes
-          </Link>
-          <Link href="/small-claims/neighbor" onClick={() => setOpen(false)}>
-            Neighbor disputes
-          </Link>
-          <Link href="/small-claims/personal-loan" onClick={() => setOpen(false)}>
-            Personal loan disputes
-          </Link>
-          <Link href="/small-claims/roommate" onClick={() => setOpen(false)}>
-            Roommate disputes
-          </Link>
-          <Link href="/small-claims/online-seller" onClick={() => setOpen(false)}>
-            Online seller disputes
-          </Link>
-          <Link href="/small-claims/refund" onClick={() => setOpen(false)}>
-            Refund disputes
-          </Link>
-          <Link href="/demand-letter" onClick={() => setOpen(false)}>
-            Demand letter
-          </Link>
-          {user ? (
-            <Link href="/dashboard/settings" onClick={() => setOpen(false)}>
-              Settings
+
+          <div className="nav-mobile-section">
+            <span className="nav-mobile-section-label">Get started</span>
+            <Link href="/demand-letter" onClick={() => setOpen(false)}>
+              Demand letter
             </Link>
-          ) : null}
+            <Link href="/case-score" onClick={() => setOpen(false)}>
+              Case score
+            </Link>
+            <Link href="/small-claims" onClick={() => setOpen(false)}>
+              Small claims by state
+            </Link>
+          </div>
+
+          <details className="nav-mobile-section nav-mobile-group">
+            <summary>
+              <span className="nav-mobile-section-label">Browse by dispute type</span>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" className="nav-mobile-chev">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </summary>
+            <Link href="/small-claims/landlord" onClick={() => setOpen(false)}>
+              Landlord
+            </Link>
+            <Link href="/small-claims/employer" onClick={() => setOpen(false)}>
+              Employer
+            </Link>
+            <Link href="/small-claims/contractor" onClick={() => setOpen(false)}>
+              Contractor
+            </Link>
+            <Link href="/small-claims/auto" onClick={() => setOpen(false)}>
+              Auto
+            </Link>
+            <Link href="/small-claims/neighbor" onClick={() => setOpen(false)}>
+              Neighbor
+            </Link>
+            <Link href="/small-claims/personal-loan" onClick={() => setOpen(false)}>
+              Personal loan
+            </Link>
+            <Link href="/small-claims/roommate" onClick={() => setOpen(false)}>
+              Roommate
+            </Link>
+            <Link href="/small-claims/online-seller" onClick={() => setOpen(false)}>
+              Online seller
+            </Link>
+            <Link href="/small-claims/refund" onClick={() => setOpen(false)}>
+              Refunds
+            </Link>
+          </details>
         </nav>
 
         <div className="nav-mobile-cta">
