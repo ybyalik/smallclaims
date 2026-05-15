@@ -4,6 +4,10 @@ import Link from "next/link";
 import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import type { EvidenceFileMeta } from "./page";
+import {
+  useFormErrors,
+  ErrorSummary,
+} from "../../../../../../components/wizard/form-errors";
 import { useAutosave } from "../useAutosave";
 
 interface Props {
@@ -51,8 +55,13 @@ export default function EvidenceStep({
   const [localStates, setLocalStates] = useState<Record<string, LocalState>>({});
   const [dragging, setDragging] = useState(false);
   const [saving, setSaving] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const { errors, setErrors, clear } = useFormErrors();
   const [confirmed, setConfirmed] = useState(false);
+
+  function setError(msg: string | null) {
+    if (msg === null) clear();
+    else setErrors({ _error: msg });
+  }
   const inputRef = useRef<HTMLInputElement>(null);
 
   function localKey(f: EvidenceFileMeta): string {
@@ -505,7 +514,7 @@ export default function EvidenceStep({
         </button>
       </div>
 
-      {error ? <p style={{ color: "var(--accent)", marginTop: 12 }}>{error}</p> : null}
+      <ErrorSummary errors={errors} order={["_error"]} />
     </div>
   );
 }

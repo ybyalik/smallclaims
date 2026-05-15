@@ -10,6 +10,11 @@ import {
 } from "../../../../../../lib/demand-letter/ai-mocks";
 import { CATEGORIES } from "../../../../../../lib/demand-letter/categories";
 import type { DisputeType } from "../../../../../../lib/supabase/types";
+import {
+  useFormErrors,
+  ErrorSummary,
+} from "../../../../../../components/wizard/form-errors";
+import { validateClaimAmountPhase } from "../../../../../../lib/cases/phase-validators";
 import { useAutosave } from "../useAutosave";
 
 interface Props {
@@ -57,7 +62,7 @@ export default function ClaimAmountStep({
   const [capChoice, setCapChoice] = useState<CapChoice>(initialCapChoice);
 
   const [saving, setSaving] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const { errors, showErrors, clear, setErrors } = useFormErrors();
 
   // Total demanded = base amount + line items (claim heads).
   const totalDemand = useMemo(
@@ -136,22 +141,24 @@ export default function ClaimAmountStep({
     );
   }
 
-  function readyError(): string | null {
-    if (amount < 50) return "Enter the amount you're demanding (minimum $50).";
-    if (overCap && capChoice === null) {
-      return `Your demand exceeds ${stateName ?? "your state"}'s small-claims cap. Pick how to proceed below.`;
-    }
-    return null;
+  function validate(): Record<string, string> {
+    return validateClaimAmountPhase({
+      amount,
+      calculation,
+      overCap,
+      capChoice,
+      stateName,
+    });
   }
 
   async function continueToNext() {
-    const err = readyError();
-    if (err) {
-      setError(err);
+    const errs = validate();
+    if (Object.keys(errs).length > 0) {
+      showErrors(errs);
       return;
     }
     setSaving(true);
-    setError(null);
+    clear();
     try {
       const res = await fetch(`/api/demand-letters/${caseId}`, {
         method: "PATCH",
@@ -169,7 +176,7 @@ export default function ClaimAmountStep({
       if (!res.ok) throw new Error("Could not save");
       router.push(`/case/${caseId}/build/evidence`);
     } catch (e) {
-      setError(e instanceof Error ? e.message : "Could not save");
+      setErrors({ _save: e instanceof Error ? e.message : "Could not save" });
       setSaving(false);
     }
   }
@@ -197,6 +204,7 @@ export default function ClaimAmountStep({
           className="dlw-amount-input-big"
           placeholder="0"
           autoFocus
+          aria-invalid={!!errors.amount}
         />
       </div>
 
@@ -272,7 +280,7 @@ export default function ClaimAmountStep({
             margin: "0 0 10px",
           }}
         >
-          How did you calculate ${amount.toLocaleString("en-US")}?
+          How did you calculate ${amount.toLocaleString("en-US")}? <em className="dlw-required">*</em>
         </h3>
         <p className="dlw-hint" style={{ margin: "0 0 8px" }}>
           One to three sentences. No need to argue or attach evidence.
@@ -283,7 +291,11 @@ export default function ClaimAmountStep({
           className="dlw-textarea"
           placeholder="e.g., I paid $1,500 for cabinets that were never installed. I want a full refund."
           rows={3}
+          aria-invalid={!!errors.calculation}
         />
+        {errors.calculation ? (
+          <span className="dlw-field-error-msg">{errors.calculation}</span>
+        ) : null}
         {interestPreview && interestPreview.months > 0 ? (
           <div className="dlw-ai-card" style={{ marginTop: 8 }}>
             <div className="dlw-ai-card-title">Statutory interest</div>
@@ -362,6 +374,11 @@ export default function ClaimAmountStep({
         </div>
       ) : null}
 
+      <ErrorSummary
+        errors={errors}
+        order={["amount", "calculation", "capChoice", "_save"]}
+      />
+
       <div className="dlw-actions">
         <Link
           href={`/case/${caseId}/build/narrative`}
@@ -373,7 +390,6 @@ export default function ClaimAmountStep({
           {saving ? "Saving…" : "Add your evidence ▶"}
         </button>
       </div>
-      {error ? <p style={{ color: "var(--accent)", marginTop: 12 }}>{error}</p> : null}
     </div>
   );
 }

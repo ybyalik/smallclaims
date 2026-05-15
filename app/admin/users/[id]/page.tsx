@@ -1,6 +1,11 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { loadAdminUser } from "../../../../lib/admin/users";
+import {
+  disputeTypeOtherFrom,
+  formatDisputeTypeShort,
+} from "../../../../lib/cases/dispute-type-label";
+import PageHead from "../../../../components/layout/PageHead";
 
 export const dynamic = "force-dynamic";
 
@@ -32,18 +37,17 @@ export default async function AdminUserDetailPage({ params }: { params: { id: st
 
   return (
     <div className="admin-page">
-      <Link href="/admin/users" className="admin-back">
-        ← All users
-      </Link>
-      <header className="admin-page-head">
-        <div>
-          <h1>{u.fullName || u.email}</h1>
-          <p>
+      <PageHead
+        variant="admin"
+        back={{ href: "/admin/users", label: "← All users" }}
+        title={u.fullName || u.email}
+        sub={
+          <>
             {u.email} · joined {fmtDate(u.createdAt)} · last seen {fmtDate(u.lastSignInAt)}
             {u.isAdmin ? <span className="admin-pill admin-pill-warn" style={{ marginLeft: 10 }}>admin</span> : null}
-          </p>
-        </div>
-      </header>
+          </>
+        }
+      />
 
       <div className="admin-cards" style={{ marginBottom: 28 }}>
         <div className="admin-card">
@@ -109,7 +113,9 @@ export default async function AdminUserDetailPage({ params }: { params: { id: st
               <tr key={c.id}>
                 <td><span className={`admin-pill admin-pill-${statusTone(c.status)}`}>{c.status}</span></td>
                 <td>{c.defendant_name || <span style={{ color: "var(--muted)" }}>(unset)</span>}</td>
-                <td style={{ color: "var(--ink-2)" }}>{c.dispute_type.replace(/_/g, " ")}</td>
+                <td style={{ color: "var(--ink-2)" }}>
+                  {formatDisputeTypeShort(c.dispute_type, disputeTypeOtherFrom(c.intake_answers))}
+                </td>
                 <td style={{ color: "var(--muted)" }}>{c.state}</td>
                 <td style={{ textAlign: "right", fontFamily: "Newsreader, Georgia, serif", fontWeight: 600 }}>
                   {fmt$(c.amount_cents)}

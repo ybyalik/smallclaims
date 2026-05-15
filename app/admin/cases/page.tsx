@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { listAdminCases } from "../../../lib/admin/users";
 import { listCaseResearchStatuses } from "../../../lib/admin/case-research";
+import PageHead from "../../../components/layout/PageHead";
 
 export const dynamic = "force-dynamic";
 
@@ -38,14 +39,11 @@ export default async function AdminCasesPage() {
 
   return (
     <div className="admin-page">
-      <header className="admin-page-head">
-        <div>
-          <h1>Cases</h1>
-          <p>
-            {cases.length} total · {paid.length} paid
-          </p>
-        </div>
-      </header>
+      <PageHead
+        variant="admin"
+        title="Cases"
+        sub={`${cases.length} total · ${paid.length} paid`}
+      />
 
       <div className="admin-cards" style={{ marginBottom: 24 }}>
         <div className="admin-card">

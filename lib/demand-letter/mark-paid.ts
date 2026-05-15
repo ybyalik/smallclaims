@@ -9,11 +9,18 @@ interface MarkCasePaidResult {
 }
 
 /**
- * Idempotent transition to demand_paid plus enqueue of the case research job.
+ * Idempotent post-payment hook for the demand letter product.
  *
  * Safe to call from any payment success path (Stripe webhook, admin bypass,
- * inline PaymentIntent confirm). If the case is already in a status at or
- * past demand_paid, we don't re-flip and we don't enqueue a duplicate job.
+ * inline PaymentIntent confirm). It fires the certified-mail dispatch event;
+ * dedup happens at two layers:
+ *   1. Inngest dedupes events with the same id (`letter-send:${caseId}`).
+ *   2. mailDemandLetter() checks demand_letters.mail_vendor_letter_id before
+ *      calling PostGrid.
+ *
+ * case.status is no longer touched. Display state for the case is derived
+ * from payments + demand_letters.mail_status + intake_answers.demand_response
+ * (see lib/cases/derive-status-label.ts).
  *
  * To explicitly re-run research (admin "Re-run" button) call
  * `enqueueCaseResearch(caseId, { force: true })` instead.
@@ -27,25 +34,25 @@ export async function markCasePaid(
 
   const { data: caseRow } = await admin
     .from("cases")
-    .select("id, status")
+    .select("id")
     .eq("id", caseId)
     .single();
   if (!caseRow) {
     throw new Error(`markCasePaid: case ${caseId} not found`);
   }
 
-  const isPaidOrLater = caseRow.status !== "draft" && caseRow.status !== "demand_drafted";
+  // Already mailed? Skip the event to keep our logs clean. mailDemandLetter
+  // would also no-op, but this saves an Inngest round-trip.
+  const { data: latestLetter } = await admin
+    .from("demand_letters")
+    .select("mail_vendor_letter_id")
+    .eq("case_id", caseId)
+    .order("version", { ascending: false })
+    .limit(1)
+    .maybeSingle();
+  const alreadyMailed = !!latestLetter?.mail_vendor_letter_id;
 
-  if (!isPaidOrLater) {
-    await admin
-      .from("cases")
-      .update({ status: "demand_paid", updated_at: new Date().toISOString() })
-      .eq("id", caseId);
-
-    // Fire the certified-mail dispatch event. The Inngest worker handles
-    // PDF rendering and the PostGrid call so the Stripe webhook returns
-    // fast. Idempotency is enforced inside mailDemandLetter() — if the
-    // event ever fires twice for the same case, the second run is a no-op.
+  if (!alreadyMailed) {
     await inngest.send({
       name: "case/letter.send",
       id: `letter-send:${caseId}`,
@@ -55,11 +62,9 @@ export async function markCasePaid(
 
   // Research is intentionally NOT auto-enqueued. While we're iterating on
   // the pipeline, an admin clicks "Run research" / "Re-run research" on the
-  // case page (which calls /api/admin/case-research/[caseId]/rerun → which
-  // calls enqueueCaseResearch directly). Re-enable auto-enqueue here once
-  // the pipeline is stable enough to run on every paid case.
+  // case page. Re-enable here once the pipeline is stable.
   return {
-    alreadyPaid: isPaidOrLater,
+    alreadyPaid: alreadyMailed,
     jobId: null,
     jobVersion: null,
     researchTriggered: false,

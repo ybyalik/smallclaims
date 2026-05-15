@@ -22,6 +22,10 @@ export interface IntakeSnapshot {
   defendantCounty: string | null;
   incidentCounty: string | null;
   disputeType: string;
+  // Free-text description when disputeType === "other". When set, callers
+  // should pass this in classification.claim_category so the LLM has the
+  // user's words instead of a generic "other".
+  disputeTypeOther: string | null;
   amountCents: number;
   defendantName: string;
   defendantAddress: Record<string, unknown> | null;
@@ -130,6 +134,7 @@ Cover all of these dimensions, generating one or more queries for each:
 - All official forms required to start the case (claim, summons, fee waiver if relevant)
 - Where to download those forms officially
 - Filing fee schedule (and any service-of-process fee)
+- Motion fee schedule: what the clerk charges to file each kind of motion in small claims (motion to vacate default, motion for continuance, motion for change of venue, miscellaneous motions). These are the tier-2 fees that aren't always on the headline filing-fee page — search separately if needed.
 - E-filing availability and the specific portal name (Odyssey Guide & File, eFileTexas, eCourts NJ, etc.)
 - Service of process rules: who can serve, methods allowed, deadline
 - Pre-filing requirements (notice letters, mediation, agency exhaustion, etc.)
@@ -156,7 +161,13 @@ Cover all of these dimensions, generating one or more queries for each:
 - Tax implications of recovery (taxable income vs excluded; 1099-C considerations)
 - Evidence checklist specific to this claim type
 
-Each query should be a literal phrase a human would type into Google to find an OFFICIAL court page. Do NOT include "site:" filters. Each query should be self-contained — include the state name in every query so generic ones don't leak across jurisdictions.`;
+Each query should be a literal phrase a human would type into Google to find an OFFICIAL court page. Do NOT include "site:" filters.
+
+QUERY-WRITING RULES (mandatory)
+1. EVERY query MUST include "${intake.state}" (or the full state name) literally. No exceptions. County names alone leak across states (Kings County exists in NY AND California; King County is in WA; Orange County is in CA, FL, NY, TX, IN, NC, VA…). A query like "Kings County small claims fee" returns the wrong state's court half the time. Always write "Kings County New York small claims fee" instead.
+2. When a query mentions ANY county or city name, the state name must appear in the same query. Do not assume the user already knows which state.
+3. Do not generate queries that name only a city, claim type, or statute without the state. "Small claims filing fee" by itself is too generic.
+4. Prefer "(state name) (specific terms)" word order, e.g. "New York small claims filing fee NYC" rather than "NYC small claims filing fee" — putting the state first reduces wrong-state hits.`;
 
   return structuredJson<QueryPlan>({
     model: MODEL.FAST,
@@ -209,6 +220,13 @@ export interface FetchedDoc extends FirecrawlPage {
   isOfficial: boolean;
 }
 
+// Minimum chars of usable body content we'll accept from any fetcher before
+// pushing the doc into the corpus. Anything below this is treated as a
+// failed fetch and dropped — letting the source through with empty content
+// only pollutes the LLM corpus and adds a misleading "no body stored" row
+// to the admin UI.
+const MIN_USABLE_CONTENT_CHARS = 200;
+
 export async function fetchAndExtract(
   hits: RankedHit[],
   opts: { maxPages: number },
@@ -224,7 +242,7 @@ export async function fetchAndExtract(
       // First try Firecrawl ($0.02 / page)
       try {
         const page = await firecrawlFetch(h.url);
-        if (page.markdown && page.markdown.trim().length > 200) {
+        if (page.markdown && page.markdown.trim().length >= MIN_USABLE_CONTENT_CHARS) {
           docs.push({ ...page, query: h.query, isOfficial: h.isOfficial });
           cost += 2;
           return;
@@ -238,6 +256,13 @@ export async function fetchAndExtract(
       if (!canFallback) return;
       try {
         const page = await brightDataFetch(h.url);
+        // Only accept BrightData results that yielded a meaningful body.
+        // JS-heavy government sites often return non-zero raw bytes that
+        // stripHtml reduces to almost nothing — don't pollute the corpus
+        // with those.
+        if (!page.markdown || page.markdown.trim().length < MIN_USABLE_CONTENT_CHARS) {
+          return;
+        }
         docs.push({ ...page, query: h.query, isOfficial: h.isOfficial });
         cost += 2;
         fallbacks += 1;
@@ -410,6 +435,34 @@ export interface EvidencePack {
     bankruptcy_stay_effects: string;
     domestication_of_out_of_state_judgment: string;
   };
+
+  // Region- / claim-type-tier arrays. Captured once at state extraction time
+  // so the per-case pipeline can pick the right value deterministically
+  // based on intake (county, claim type, amount) without another LLM call.
+  // For states with no variation, these arrays will have a single row.
+  statute_of_limitations_by_claim_type: Array<{
+    claim_type: string;            // canonical label (e.g. "written_contract")
+    years: number | null;
+    citation: string;
+    when_clock_starts: string;
+  }>;
+  filing_fee_tiers: Array<{
+    applies_to: string;            // e.g. "NYC small claims", "city/district court"
+    amount_band: string;           // e.g. "any", "<= $1,000", "> $1,000"
+    fee_cents: number | null;
+  }>;
+  claim_cap_tiers: Array<{
+    court_level: string;           // e.g. "NYC", "city/district", "town/village"
+    cap_cents: number | null;
+    applies_when: string;          // e.g. "case filed in NYC small claims part"
+  }>;
+  prejudgment_interest_by_claim_type: Array<{
+    claim_type: string;            // canonical label
+    rate_pct: number | null;
+    type: string;                  // "simple" | "compound" | ""
+    citation: string;
+    notes: string;
+  }>;
 
   // Practical case-specific guidance
   defendant_collectability_signals: string[];
@@ -717,6 +770,65 @@ const SERVICE_METHODS_SCHEMA = {
   },
 };
 
+const SOL_BY_CLAIM_TYPE_SCHEMA = {
+  type: "array",
+  items: {
+    type: "object",
+    additionalProperties: false,
+    properties: {
+      claim_type: { type: "string" },
+      years: { type: ["number", "null"] },
+      citation: { type: "string" },
+      when_clock_starts: { type: "string" },
+    },
+    required: ["claim_type", "years", "citation", "when_clock_starts"],
+  },
+};
+
+const FILING_FEE_TIERS_SCHEMA = {
+  type: "array",
+  items: {
+    type: "object",
+    additionalProperties: false,
+    properties: {
+      applies_to: { type: "string" },
+      amount_band: { type: "string" },
+      fee_cents: { type: ["number", "null"] },
+    },
+    required: ["applies_to", "amount_band", "fee_cents"],
+  },
+};
+
+const CLAIM_CAP_TIERS_SCHEMA = {
+  type: "array",
+  items: {
+    type: "object",
+    additionalProperties: false,
+    properties: {
+      court_level: { type: "string" },
+      cap_cents: { type: ["number", "null"] },
+      applies_when: { type: "string" },
+    },
+    required: ["court_level", "cap_cents", "applies_when"],
+  },
+};
+
+const PREJUDGMENT_INTEREST_BY_CLAIM_TYPE_SCHEMA = {
+  type: "array",
+  items: {
+    type: "object",
+    additionalProperties: false,
+    properties: {
+      claim_type: { type: "string" },
+      rate_pct: { type: ["number", "null"] },
+      type: { type: "string" },
+      citation: { type: "string" },
+      notes: { type: "string" },
+    },
+    required: ["claim_type", "rate_pct", "type", "citation", "notes"],
+  },
+};
+
 const STATUTORY_MULTIPLIERS_SCHEMA = {
   type: "array",
   items: {
@@ -800,6 +912,10 @@ const EVIDENCE_PACK_PROPS = {
   appeal_details: APPEAL_DETAILS_SCHEMA,
   post_judgment_steps: { type: "array", items: { type: "string" } },
   collection_details: COLLECTION_DETAILS_SCHEMA,
+  statute_of_limitations_by_claim_type: SOL_BY_CLAIM_TYPE_SCHEMA,
+  filing_fee_tiers: FILING_FEE_TIERS_SCHEMA,
+  claim_cap_tiers: CLAIM_CAP_TIERS_SCHEMA,
+  prejudgment_interest_by_claim_type: PREJUDGMENT_INTEREST_BY_CLAIM_TYPE_SCHEMA,
   defendant_collectability_signals: { type: "array", items: { type: "string" } },
   evidence_required_for_this_claim_type: { type: "array", items: { type: "string" } },
   state_specific_quirks: { type: "array", items: { type: "string" } },
@@ -835,6 +951,10 @@ const EVIDENCE_PACK_REQUIRED_KEYS = [
   "appeal_details",
   "post_judgment_steps",
   "collection_details",
+  "statute_of_limitations_by_claim_type",
+  "filing_fee_tiers",
+  "claim_cap_tiers",
+  "prejudgment_interest_by_claim_type",
   "defendant_collectability_signals",
   "evidence_required_for_this_claim_type",
   "state_specific_quirks",
@@ -951,7 +1071,7 @@ Forms and filing
 - efile_portal.name / url: e-file portal name (e.g., "eCourts Guide & File", "Odyssey Guide & File") and direct URL.
 - efile_portal.account_required: whether registering an account is required to e-file.
 - efile_portal.accepted_file_types: file extensions accepted by the portal (e.g., "pdf", "docx").
-- fee_schedule.service_fee_cents / motion_fee_cents / jury_demand_fee_cents: each separate fee in cents (null if unstated).
+- fee_schedule.service_fee_cents / motion_fee_cents / jury_demand_fee_cents: each separate fee in cents (null if unstated). PRIORITY: capture motion_fee_cents whenever ANY fetched page mentions a motion fee (motion to vacate, continuance, change of venue, or generic "motion to file" fee). Shallow research is the primary source for these tier-2 fees — the state-level dossier often doesn't enumerate them, so this is where they get caught. If pages show different motion fees for different motion types, capture the most common / most-cited value and add a note in filing_fee_notes describing the variance.
 - fee_schedule.accepted_payment_methods: e.g., ["cash", "check", "money_order", "credit_card", "online"].
 - fee_schedule.check_payee: who checks should be made out to (e.g., "Treasurer, State of New Jersey").
 - fee_schedule.fee_waiver: { available, eligibility_criteria (income thresholds, public-benefits programs accepted), form_code, form_url }.
@@ -1029,7 +1149,6 @@ Hard rules
     input: prompt,
     jsonSchema: EVIDENCE_PACK_FULL_SCHEMA,
     temperature: 0,
-    maxOutputTokens: 12000,
   });
 }
 

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { createClient } from "../../../../lib/supabase/server";
 import SettingsForm from "./SettingsForm";
+import PageHead from "../../../../components/layout/PageHead";
 
 export const metadata: Metadata = {
   title: "Settings",
@@ -17,7 +18,7 @@ export default async function SettingsPage() {
   const { data: profile } = await supabase
     .from("profiles")
     .select(
-      "full_name, avatar_url, is_admin, notification_preferences, created_at, default_entity_type, default_business_name, default_address, default_county",
+      "full_name, avatar_url, is_admin, notification_preferences, created_at, default_entity_type, default_business_name, default_address, default_county, default_phone",
     )
     .eq("user_id", user.id)
     .single();
@@ -37,12 +38,7 @@ export default async function SettingsPage() {
 
   return (
     <div>
-      <div className="app-page-head">
-        <div>
-          <h1>Settings</h1>
-          <p className="app-page-sub">Manage your CivilCase account.</p>
-        </div>
-      </div>
+      <PageHead title="Settings" sub="Manage your CivilCase account." />
 
       <div className="app-settings">
         <section className="app-settings-card">
@@ -50,6 +46,7 @@ export default async function SettingsPage() {
           <SettingsForm
             initialFullName={profile?.full_name || ""}
             email={user.email || ""}
+            initialPhone={profile?.default_phone ?? ""}
             initialEntityType={profile?.default_entity_type ?? null}
             initialBusinessName={profile?.default_business_name ?? ""}
             initialAddress={profile?.default_address ?? null}

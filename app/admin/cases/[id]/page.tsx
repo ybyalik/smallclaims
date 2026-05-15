@@ -2,7 +2,16 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { loadAdminCase } from "../../../../lib/admin/users";
 import { loadCaseResearchLatest } from "../../../../lib/admin/case-research";
+import { loadLatestDemandLetterForAdmin } from "../../../../lib/admin/demand-letter";
+import { loadCollectionPlansForAdmin } from "../../../../lib/admin/collection-plan";
+import {
+  disputeTypeOtherFrom,
+  formatDisputeTypeShort,
+} from "../../../../lib/cases/dispute-type-label";
 import CaseResearchPanel from "./CaseResearchPanel";
+import DemandLetterPanel from "./DemandLetterPanel";
+import CollectionPlanPanel from "./CollectionPlanPanel";
+import PageHead from "../../../../components/layout/PageHead";
 
 export const dynamic = "force-dynamic";
 
@@ -59,27 +68,30 @@ export default async function AdminCaseDetailPage({ params }: { params: { id: st
   const detail = await loadAdminCase(params.id);
   if (!detail) notFound();
   const research = await loadCaseResearchLatest(params.id);
+  const demandLetter = await loadLatestDemandLetterForAdmin(params.id);
+  const collectionPlans = await loadCollectionPlansForAdmin(params.id);
 
   const { caseRow: c, ownerEmail, ownerName, payments, documents } = detail;
   const answers = (c.intake_answers ?? {}) as Record<string, unknown>;
 
   return (
     <div className="admin-page">
-      <Link href="/admin/cases" className="admin-back">
-        ← All cases
-      </Link>
-      <header className="admin-page-head">
-        <div>
-          <h1>
-            {c.defendant_name ? `vs. ${c.defendant_name}` : `Case ${c.id.slice(0, 8)}…`}
-          </h1>
-          <p>
+      <PageHead
+        variant="admin"
+        back={{ href: "/admin/cases", label: "← All Cases" }}
+        title={c.defendant_name ? `vs. ${c.defendant_name}` : `Case ${c.id.slice(0, 8)}…`}
+        sub={
+          <>
             <span className={`admin-pill admin-pill-${statusTone(c.status)}`}>{c.status}</span>
             {" · "}
-            {c.dispute_type.replace(/_/g, " ")} · {c.state} · {fmt$(c.amount_cents)} demand · created {fmtDate(c.created_at)}
-          </p>
-        </div>
-      </header>
+            {formatDisputeTypeShort(
+              c.dispute_type,
+              disputeTypeOtherFrom(c.intake_answers as Record<string, unknown> | null),
+            )}{" "}
+            · {c.state} · {fmt$(c.amount_cents)} demand · created {fmtDate(c.created_at)}
+          </>
+        }
+      />
 
       <h2 className="admin-section-h">Owner</h2>
       <div className="admin-detail-grid">
@@ -266,8 +278,14 @@ export default async function AdminCaseDetailPage({ params }: { params: { id: st
         </table>
       )}
 
+      <h2 className="admin-section-h" style={{ marginTop: 28 }}>Demand letter</h2>
+      <DemandLetterPanel caseId={params.id} letter={demandLetter} />
+
       <h2 className="admin-section-h" style={{ marginTop: 28 }}>Filing research</h2>
       <CaseResearchPanel caseId={params.id} detail={research} />
+
+      <h2 className="admin-section-h" style={{ marginTop: 28 }}>Collection plan</h2>
+      <CollectionPlanPanel caseId={params.id} plans={collectionPlans} />
 
       <details style={{ marginTop: 28 }}>
         <summary

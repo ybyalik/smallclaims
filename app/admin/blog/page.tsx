@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { createClient } from "../../../lib/supabase/server";
+import PageHead from "../../../components/layout/PageHead";
+import EmptyState from "../../../components/ui/EmptyState";
 
 export default async function BlogList() {
   type Row = {
@@ -20,25 +22,29 @@ export default async function BlogList() {
 
   return (
     <div className="admin-page">
-      <header className="admin-page-head">
-        <div>
-          <h1>Blog posts</h1>
-          <p>Drafts and published posts.</p>
-        </div>
-        <Link href="/admin/blog/new" className="btn btn-dark">
-          New post
-        </Link>
-      </header>
+      <PageHead
+        variant="admin"
+        title="Blog posts"
+        sub="Drafts and published posts."
+        actions={
+          <Link href="/admin/blog/new" className="btn btn-dark">
+            New post
+          </Link>
+        }
+      />
 
       {error && <p className="admin-error">{error.message}</p>}
 
       {posts.length === 0 ? (
-        <div className="admin-empty">
-          <p>No posts yet.</p>
-          <Link href="/admin/blog/new" className="btn btn-cream">
-            Create your first post
-          </Link>
-        </div>
+        <EmptyState
+          variant="admin"
+          body="No posts yet."
+          cta={
+            <Link href="/admin/blog/new" className="btn btn-cream">
+              Create your first post
+            </Link>
+          }
+        />
       ) : (
         <table className="admin-table">
           <thead>

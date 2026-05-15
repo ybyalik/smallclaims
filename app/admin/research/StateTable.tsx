@@ -20,7 +20,14 @@ interface RowStatuses {
   call_3_status: string | null;
   call_4_status: string | null;
   updated_at?: string | null;
+  structured_pack_extracted_at?: string | null;
 }
+
+// Hard cap matches the bulk-extract API. The number is small on purpose:
+// each state extraction is a separate gpt-5-mini call against a ~300k-char
+// dossier. Keeping batches small protects against runaway clicks and stays
+// inside route timeouts.
+const BULK_EXTRACT_CAP = 10;
 
 interface Props {
   states: StateMeta[];
@@ -96,6 +103,44 @@ export default function StateTable({ states, rows }: Props) {
     setSelected(next);
   }
 
+  // States that have all 4 calls done but NO structured_pack yet — these
+  // are the candidates for bulk-extract.
+  function selectUnextracted() {
+    const next = new Set<string>();
+    for (const s of states) {
+      const r = rows[s.slug];
+      const allDone =
+        r?.call_1_status === "done" &&
+        r?.call_2_status === "done" &&
+        r?.call_3_status === "done" &&
+        r?.call_4_status === "done";
+      if (allDone && !r?.structured_pack_extracted_at) {
+        next.add(s.slug);
+        if (next.size >= BULK_EXTRACT_CAP) break;
+      }
+    }
+    setSelected(next);
+  }
+
+  // Anything selected that isn't fully done across all 4 calls can't be
+  // extracted. The button disables when the selection has any of those, so
+  // the user knows to prune.
+  const extractableSelected = useMemo(() => {
+    let n = 0;
+    let invalid = 0;
+    for (const slug of selected) {
+      const r = rows[slug];
+      const allDone =
+        r?.call_1_status === "done" &&
+        r?.call_2_status === "done" &&
+        r?.call_3_status === "done" &&
+        r?.call_4_status === "done";
+      if (allDone) n += 1;
+      else invalid += 1;
+    }
+    return { n, invalid };
+  }, [selected, rows]);
+
   async function runSelected() {
     if (busy || selected.size === 0) return;
     setBusy(true);
@@ -114,6 +159,55 @@ export default function StateTable({ states, rows }: Props) {
       setTimeout(() => router.refresh(), 400);
     } catch (e) {
       setErr(e instanceof Error ? e.message : "Bulk run failed");
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  async function extractSelected() {
+    if (busy || extractableSelected.n === 0) return;
+    // Use only the slugs that have all 4 calls done (skip the invalid ones
+    // silently so the user can keep a mixed selection and just click).
+    const eligible = Array.from(selected).filter((slug) => {
+      const r = rows[slug];
+      return (
+        r?.call_1_status === "done" &&
+        r?.call_2_status === "done" &&
+        r?.call_3_status === "done" &&
+        r?.call_4_status === "done"
+      );
+    });
+    if (eligible.length === 0) return;
+    if (eligible.length > BULK_EXTRACT_CAP) {
+      setErr(
+        `Too many states selected (${eligible.length}). Cap is ${BULK_EXTRACT_CAP} per batch.`,
+      );
+      return;
+    }
+    setBusy(true);
+    setMsg(null);
+    setErr(null);
+    try {
+      const res = await fetch("/api/admin/state-research/bulk-extract", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ slugs: eligible }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(data.error || "Bulk extract failed");
+      const failed = (data.perState ?? []).filter(
+        (r: { ok: boolean }) => !r.ok,
+      ).length;
+      const cost = ((data.cost_cents ?? 0) / 100).toFixed(2);
+      setMsg(
+        `Extracted ${data.succeeded ?? 0} of ${data.submitted ?? eligible.length}` +
+          (failed > 0 ? ` (${failed} failed)` : "") +
+          ` · $${cost}`,
+      );
+      setSelected(new Set());
+      setTimeout(() => router.refresh(), 400);
+    } catch (e) {
+      setErr(e instanceof Error ? e.message : "Bulk extract failed");
     } finally {
       setBusy(false);
     }
@@ -153,6 +247,15 @@ export default function StateTable({ states, rows }: Props) {
           style={{ fontSize: 12, padding: "4px 10px" }}
         >
           Select with failures
+        </button>
+        <button
+          type="button"
+          onClick={selectUnextracted}
+          className="btn btn-cream btn-sm"
+          style={{ fontSize: 12, padding: "4px 10px" }}
+          title={`Select up to ${BULK_EXTRACT_CAP} states that are fully researched but have no structured pack yet`}
+        >
+          Select unextracted
         </button>
         {selected.size > 0 ? (
           <button
@@ -197,6 +300,29 @@ export default function StateTable({ states, rows }: Props) {
               ? "Run selected"
               : `Run ${selected.size} state${selected.size === 1 ? "" : "s"}`}
         </button>
+        <button
+          type="button"
+          onClick={extractSelected}
+          disabled={
+            busy ||
+            extractableSelected.n === 0 ||
+            extractableSelected.n > BULK_EXTRACT_CAP
+          }
+          className="btn btn-cream btn-sm"
+          title={
+            extractableSelected.invalid > 0
+              ? `${extractableSelected.invalid} of the selected states aren't fully researched yet and will be skipped`
+              : `Run gpt-5-mini structured extraction on the selected states (max ${BULK_EXTRACT_CAP} per batch)`
+          }
+        >
+          {busy
+            ? "Extracting…"
+            : extractableSelected.n === 0
+              ? "Extract"
+              : extractableSelected.n > BULK_EXTRACT_CAP
+                ? `Too many (max ${BULK_EXTRACT_CAP})`
+                : `Extract ${extractableSelected.n} state${extractableSelected.n === 1 ? "" : "s"}`}
+        </button>
 
         {msg ? <span style={{ fontSize: 12, color: "var(--muted)" }}>{msg}</span> : null}
         {err ? <span style={{ fontSize: 12, color: "var(--accent)" }}>{err}</span> : null}
@@ -221,6 +347,7 @@ export default function StateTable({ states, rows }: Props) {
             <th>Call 2 — Deadlines</th>
             <th>Call 3 — Filing</th>
             <th>Call 4 — Hearing+</th>
+            <th>Extraction</th>
             <th>Last updated</th>
             <th></th>
           </tr>
@@ -247,6 +374,18 @@ export default function StateTable({ states, rows }: Props) {
                 <td>{pillFor(row?.call_2_status ?? null)}</td>
                 <td>{pillFor(row?.call_3_status ?? null)}</td>
                 <td>{pillFor(row?.call_4_status ?? null)}</td>
+                <td>
+                  {row?.structured_pack_extracted_at ? (
+                    <span
+                      className="admin-pill admin-pill-good"
+                      title={new Date(row.structured_pack_extracted_at).toLocaleString()}
+                    >
+                      extracted
+                    </span>
+                  ) : (
+                    <span className="admin-pill admin-pill-neutral">—</span>
+                  )}
+                </td>
                 <td>
                   {row?.updated_at ? (
                     <time style={{ fontSize: 12 }}>

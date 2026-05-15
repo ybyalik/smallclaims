@@ -37,11 +37,11 @@ export async function mailDemandLetter(caseId: string): Promise<MailDemandLetter
 
   const { data: caseRow } = await admin
     .from("cases")
-    .select("id, defendant_name, defendant_address, plaintiff_name, status")
+    .select("id, defendant_name, defendant_address, plaintiff_name")
     .eq("id", caseId)
     .single();
   if (!caseRow) return { ok: false, reason: "no_letter" };
-  const c = caseRow as Pick<Case, "id" | "defendant_name" | "defendant_address" | "plaintiff_name" | "status">;
+  const c = caseRow as Pick<Case, "id" | "defendant_name" | "defendant_address" | "plaintiff_name">;
 
   if (!c.defendant_name || !c.defendant_address) {
     return { ok: false, reason: "no_address" };
@@ -101,11 +101,9 @@ export async function mailDemandLetter(caseId: string): Promise<MailDemandLetter
     })
     .eq("id", ltr.id);
 
-  // Roll case status forward only if it's still in a pre-send state.
-  const sendableStatuses = new Set(["demand_drafted", "demand_paid"]);
-  if (sendableStatuses.has(c.status)) {
-    await admin.from("cases").update({ status: "demand_sent" }).eq("id", caseId);
-  }
+  // case.status is no longer touched here. Mail state lives on the
+  // demand_letters row (mail_status, mail_vendor_letter_id, sent_at) and is
+  // surfaced via derive-status-label.
 
   return { ok: true, letterId: result.id, trackingNumber: result.trackingNumber };
 }

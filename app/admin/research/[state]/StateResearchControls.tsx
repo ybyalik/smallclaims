@@ -17,6 +17,9 @@ export default function StateResearchControls({ slug, scope, status }: Props) {
   const [msg, setMsg] = useState<string | null>(null);
   const [err, setErr] = useState<string | null>(null);
   const [via, setVia] = useState<"background" | "batch">("background");
+  const [model, setModel] = useState<"o3-deep-research" | "o4-mini-deep-research">(
+    "o3-deep-research",
+  );
   const [showImport, setShowImport] = useState(false);
   const [importId, setImportId] = useState("");
 
@@ -28,7 +31,7 @@ export default function StateResearchControls({ slug, scope, status }: Props) {
     try {
       const callField = scope === "all" ? { call: "all" } : { call: scope };
       const body =
-        action === "run" ? { ...callField, via } : callField;
+        action === "run" ? { ...callField, via, model } : callField;
       const res = await fetch(`/api/admin/state-research/${slug}/${action}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -110,6 +113,28 @@ export default function StateResearchControls({ slug, scope, status }: Props) {
           disabled={!!busy}
         />
         Batch (50% off, up to 24h)
+      </label>
+      <label
+        style={{
+          display: "inline-flex",
+          alignItems: "center",
+          gap: 6,
+          fontSize: 12,
+          color: "var(--muted)",
+        }}
+      >
+        Model
+        <select
+          value={model}
+          onChange={(e) =>
+            setModel(e.target.value as "o3-deep-research" | "o4-mini-deep-research")
+          }
+          disabled={!!busy}
+          style={{ fontSize: 12, padding: "2px 6px" }}
+        >
+          <option value="o3-deep-research">o3-deep-research (full)</option>
+          <option value="o4-mini-deep-research">o4-mini-deep-research (~5x cheaper)</option>
+        </select>
       </label>
       <button
         type="button"

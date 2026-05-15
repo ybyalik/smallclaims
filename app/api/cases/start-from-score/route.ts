@@ -41,6 +41,8 @@ const SCORE_DISPUTE_TO_DB: Record<string, DisputeType> = {
 
 interface ScoreAnswers {
   dispute_type: string;
+  // Free-text description when dispute_type === "other".
+  dispute_type_other?: string | null;
   amount_dollars: number;
   state_slug: string;
   incident_date: string; // YYYY-MM-DD
@@ -98,6 +100,11 @@ export async function POST(req: NextRequest) {
 
   const defendantName = (answers.defendant_name || "").trim() || null;
   const briefNarrative = (answers.brief_narrative || "").trim() || null;
+  const mappedDisputeType = mapDisputeType(answers.dispute_type);
+  const disputeTypeOther =
+    mappedDisputeType === "other"
+      ? (answers.dispute_type_other || "").trim() || null
+      : null;
 
   const db = createServiceRoleClient();
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -107,7 +114,7 @@ export async function POST(req: NextRequest) {
       owner_user_id: user.id,
       status: "draft",
       state: stateAbbr,
-      dispute_type: mapDisputeType(answers.dispute_type),
+      dispute_type: mappedDisputeType,
       amount_cents: Math.round(dollars * 100),
       defendant_name: defendantName,
       facts_narrative: briefNarrative,
@@ -124,6 +131,7 @@ export async function POST(req: NextRequest) {
         score_evidence_strength: answers.evidence || null,
         score_defendant_kind: answers.defendant || null,
         score_dispute_type_raw: answers.dispute_type,
+        ...(disputeTypeOther ? { dispute_type_other: disputeTypeOther } : {}),
       },
     })
     .select("id")

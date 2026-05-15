@@ -78,11 +78,14 @@ export async function GET(req: NextRequest, { params }: { params: { caseId: stri
     .replace(/^-+|-+$/g, "")
     .slice(0, 40);
 
+  const inline = req.nextUrl.searchParams.get("disposition") === "inline";
+  const disposition = inline ? "inline" : "attachment";
+
   return new NextResponse(Buffer.from(pdfBytes), {
     status: 200,
     headers: {
       "Content-Type": "application/pdf",
-      "Content-Disposition": `attachment; filename="civilcase-demand-${safeName}.pdf"`,
+      "Content-Disposition": `${disposition}; filename="civilcase-demand-${safeName}.pdf"`,
       "Cache-Control": "private, no-store",
     },
   });

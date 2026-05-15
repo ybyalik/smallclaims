@@ -25,23 +25,53 @@ export default function CategoryTemplate({ data }: { data: CategoryHubData }) {
     .filter((s): s is NonNullable<typeof s> => Boolean(s) && ready.has(s!.slug));
 
   const faqIndices = data.schemaFaqIndices ?? data.faqs.map((_, i) => i);
+  const SITE_URL = "https://civilcase.com";
+  const pageUrl = `${SITE_URL}/small-claims/${data.categorySlug}`;
+  const readyIssues = data.issues.filter((i) => i.ready);
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "CollectionPage",
+        "@id": `${pageUrl}#collection`,
+        url: pageUrl,
+        name: data.schemaArticle.headline,
+        description: data.schemaArticle.description,
+        isPartOf: { "@id": `${SITE_URL}/#website` },
+        publisher: { "@id": `${SITE_URL}/#organization` },
+        inLanguage: "en-US",
+        mainEntity: {
+          "@type": "ItemList",
+          numberOfItems: readyIssues.length,
+          itemListElement: readyIssues.map((i, idx) => ({
+            "@type": "ListItem",
+            position: idx + 1,
+            url: `${SITE_URL}/small-claims/${data.urlPrefix}${i.slug}`,
+            name: i.title,
+          })),
+        },
+      },
+      {
         "@type": "Article",
+        "@id": `${pageUrl}#article`,
         headline: data.schemaArticle.headline,
         description: data.schemaArticle.description,
         author: { "@type": "Organization", name: "CivilCase" },
-        publisher: { "@type": "Organization", name: "CivilCase" },
+        publisher: { "@id": `${SITE_URL}/#organization` },
+        mainEntityOfPage: { "@id": `${pageUrl}#collection` },
       },
       {
         "@type": "FAQPage",
+        "@id": `${pageUrl}#faq`,
         mainEntity: faqIndices.map((i) => ({
           "@type": "Question",
           name: data.faqs[i].q,
           acceptedAnswer: { "@type": "Answer", text: data.faqs[i].a },
         })),
+        speakable: {
+          "@type": "SpeakableSpecification",
+          cssSelector: ["#faq", ".cat-faq"],
+        },
       },
     ],
   };

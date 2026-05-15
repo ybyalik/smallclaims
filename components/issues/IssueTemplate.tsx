@@ -124,6 +124,10 @@ export default function IssueTemplate({ issue, category, siblings }: Props) {
           name: f.q,
           acceptedAnswer: { "@type": "Answer", text: f.a },
         })),
+        speakable: {
+          "@type": "SpeakableSpecification",
+          cssSelector: ["#faq", ".cat-faq"],
+        },
       },
     ],
   };

@@ -40,16 +40,6 @@ function mapStatus(pgStatus: string | undefined, eventType: string): MailStatus 
   return "queued";
 }
 
-// Cases roll forward to demand_delivered or demand_returned based on the
-// letter status. We never roll BACKWARD: once a case is past demand_sent
-// we leave the status alone except for terminal states.
-const FORWARD_FROM = new Set([
-  "demand_drafted",
-  "demand_paid",
-  "demand_sent",
-  "demand_delivered",
-]);
-
 export async function POST(req: NextRequest) {
   const rawBody = await req.text();
   const signature = req.headers.get("postgrid-webhook-signature") || "";
@@ -98,18 +88,8 @@ export async function POST(req: NextRequest) {
 
   await admin.from("demand_letters").update(updates).eq("id", letter.id);
 
-  // Roll case status forward when delivered or returned.
-  if (nextStatus === "delivered" || nextStatus === "returned") {
-    const { data: caseRow } = await admin
-      .from("cases")
-      .select("status")
-      .eq("id", letter.case_id)
-      .single();
-    if (caseRow && FORWARD_FROM.has(caseRow.status)) {
-      const target = nextStatus === "delivered" ? "demand_delivered" : "demand_returned";
-      await admin.from("cases").update({ status: target }).eq("id", letter.case_id);
-    }
-  }
+  // case.status is no longer updated from mail events. The display label is
+  // derived from demand_letters.mail_status via derive-status-label.
 
   return NextResponse.json({ ok: true });
 }

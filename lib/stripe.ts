@@ -13,6 +13,142 @@ export function getStripe(): Stripe {
   return _stripe;
 }
 
+// Find a reusable pending PaymentIntent for this case+user+product, or
+// create a fresh one. If a pending intent already exists, its amount and
+// metadata are updated in place so the same Stripe PaymentIntent serves
+// the entire checkout session (instead of canceling + recreating on every
+// tier/addon toggle, which leaks Canceled rows into the Stripe dashboard).
+//
+// If the existing PI is in a terminal state and can't be updated, the
+// local row is deleted and a new PI is created.
+export async function findOrCreatePaymentIntent(args: {
+  caseId: string;
+  userId: string;
+  productKey: import("./stripe").ProductKey;
+  amountCents: number;
+  captureMethod: "automatic" | "manual";
+  description: string;
+  metadata: Record<string, string>;
+  customerId: string;
+  lineItems: Record<string, unknown>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  admin: any;
+}): Promise<{ intent: Stripe.PaymentIntent; reused: boolean }> {
+  const stripe = getStripe();
+
+  const { data: existing } = await args.admin
+    .from("payments")
+    .select("id, stripe_payment_intent_id")
+    .eq("case_id", args.caseId)
+    .eq("user_id", args.userId)
+    .eq("product_key", args.productKey)
+    .eq("status", "pending")
+    .is("paid_at", null)
+    .order("created_at", { ascending: false })
+    .limit(1)
+    .maybeSingle();
+
+  if (existing?.stripe_payment_intent_id) {
+    try {
+      const updated = await stripe.paymentIntents.update(
+        existing.stripe_payment_intent_id,
+        {
+          amount: args.amountCents,
+          metadata: args.metadata,
+          description: args.description,
+        },
+      );
+      await args.admin
+        .from("payments")
+        .update({
+          amount_cents: args.amountCents,
+          line_items: args.lineItems,
+        })
+        .eq("id", existing.id);
+      return { intent: updated, reused: true };
+    } catch (err) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const code = (err as any)?.code;
+      console.warn("[findOrCreatePaymentIntent] update failed, creating new", code);
+      await args.admin.from("payments").delete().eq("id", existing.id);
+    }
+  }
+
+  const intent = await stripe.paymentIntents.create({
+    amount: args.amountCents,
+    currency: "usd",
+    customer: args.customerId,
+    capture_method: args.captureMethod,
+    automatic_payment_methods: { enabled: true, allow_redirects: "never" },
+    description: args.description,
+    metadata: args.metadata,
+  });
+
+  await args.admin.from("payments").insert({
+    case_id: args.caseId,
+    user_id: args.userId,
+    stripe_payment_intent_id: intent.id,
+    stripe_customer_id: args.customerId,
+    amount_cents: args.amountCents,
+    currency: "USD",
+    status: "pending",
+    product_key: args.productKey,
+    line_items: args.lineItems,
+  });
+
+  return { intent, reused: false };
+}
+
+// Resolve a usable Stripe customer ID for the given Supabase user. Handles
+// the test/live mode mismatch: a `cus_...` created in one mode does not
+// exist in the other, so if the stored ID can't be retrieved we create a
+// fresh customer and update the profile row.
+//
+// Pass in the admin (service role) Supabase client and an existing profile
+// snapshot so callers control transactions; this helper does not load it.
+export async function resolveStripeCustomerId(args: {
+  userId: string;
+  userEmail: string | null | undefined;
+  storedCustomerId: string | null | undefined;
+  fullName: string | null | undefined;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  admin: any;
+}): Promise<string> {
+  const stripe = getStripe();
+  let customerId: string | null = args.storedCustomerId || null;
+
+  if (customerId) {
+    try {
+      const existing = await stripe.customers.retrieve(customerId);
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      if ((existing as any).deleted) customerId = null;
+    } catch (err) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const code = (err as any)?.code;
+      if (code === "resource_missing") {
+        customerId = null;
+      } else {
+        throw err;
+      }
+    }
+  }
+
+  if (!customerId) {
+    const created = await stripe.customers.create({
+      email: args.userEmail || undefined,
+      name: args.fullName || undefined,
+      metadata: { supabase_user_id: args.userId },
+    });
+    customerId = created.id;
+    await args.admin
+      .from("profiles")
+      .update({ stripe_customer_id: customerId })
+      .eq("user_id", args.userId);
+  }
+
+  return customerId;
+}
+
 // Product catalog. Add new products here as new tiers ship.
 export const PRODUCTS = {
   // Legacy (kept for the old /dashboard/cases/[id]/letter download flow)
@@ -79,14 +215,16 @@ export const PRODUCTS = {
     amount_cents: 7900,
     currency: "usd",
   },
-  // Phase 6: Court Prep. AI-generated hearing prep — opening statement,
-  // likely judge questions, key facts to memorize, common pitfalls.
-  // Pricing is provisional (founder will adjust).
-  court_prep: {
-    name: "Court Prep Pack",
+  // Phase 7: Post-judgment collection plan. After the user wins (or settles)
+  // in court, this guide walks them through actually collecting the money:
+  // identifying the debtor's assets, filing wage garnishment or bank levy
+  // paperwork, debtor exams, and renewing the judgment. Functionality not
+  // built yet; the buy page is a "coming soon" stub.
+  collection_plan: {
+    name: "Post-Judgment Collection Plan",
     description:
-      "Personalized hearing prep for your case: a 3-minute opening statement, the questions the judge is likely to ask, your key facts cheat sheet, and the mistakes to avoid.",
-    amount_cents: 3900,
+      "A step-by-step guide to actually collecting on your judgment: locating the debtor's assets, wage garnishment, bank levy, debtor exams, and renewing the judgment before it expires.",
+    amount_cents: 4900,
     currency: "usd",
   },
 } as const;

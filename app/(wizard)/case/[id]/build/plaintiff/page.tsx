@@ -20,20 +20,26 @@ async function loadSavedDefaults(): Promise<SavedDefaults | null> {
   const { data } = await supabase
     .from("profiles")
     .select(
-      "full_name, default_entity_type, default_business_name, default_address, default_county",
+      "full_name, default_entity_type, default_business_name, default_address, default_county, default_phone",
     )
     .eq("user_id", user.id)
     .maybeSingle();
   if (!data) return null;
   const addr = (data.default_address ?? null) as PostalAddress | null;
+  // Show the "Use saved" button if the user has set up any defaults OR is
+  // signed in (so we can at least prefill their account email and phone).
   const hasAnything =
     data.default_entity_type ||
     data.default_business_name ||
     addr ||
-    data.default_county;
+    data.default_county ||
+    data.default_phone ||
+    user.email;
   if (!hasAnything) return null;
   return {
     fullName: data.full_name ?? "",
+    email: user.email ?? "",
+    phone: data.default_phone ?? "",
     entityType: data.default_entity_type ?? null,
     businessName: data.default_business_name ?? "",
     address: addr,

@@ -71,23 +71,25 @@ export async function POST(
           },
   };
 
-  // When the user marks "responded", roll the case status forward so the
-  // dashboard reflects the resolution. Only do this if the current status
-  // looks like an in-flight letter.
-  let nextStatus = caseRow.status as string;
-  const inFlightStatuses = new Set([
-    "demand_drafted",
-    "demand_paid",
-    "demand_sent",
-    "demand_delivered",
-  ]);
-  if (nextState === "responded" && inFlightStatuses.has(nextStatus)) {
-    nextStatus = "demand_responded";
+  // Promote the response into a lifecycle change when the user marks "they
+  // paid or settled". Reverting that response (back to pending, or to one
+  // of the non-settled states) brings the case back to "active". We do NOT
+  // touch case.status for "closed" cases because closing is a separate,
+  // explicit user action — the response tracker shouldn't override it.
+  const currentStatus = caseRow.status as string;
+  let nextStatus: string | null = null;
+  if (nextState === "responded" && currentStatus !== "settled" && currentStatus !== "closed") {
+    nextStatus = "settled";
+  } else if (nextState !== "responded" && currentStatus === "settled") {
+    nextStatus = "active";
   }
+
+  const update: Record<string, unknown> = { intake_answers: updatedAnswers };
+  if (nextStatus) update.status = nextStatus;
 
   const { error: updateErr } = await db
     .from("cases")
-    .update({ intake_answers: updatedAnswers, status: nextStatus })
+    .update(update)
     .eq("id", params.id);
   if (updateErr) {
     console.error("[cases/response]", updateErr);

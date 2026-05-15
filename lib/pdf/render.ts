@@ -13,11 +13,14 @@ const LOCAL_CHROME_PATHS = [
   "/Applications/Chromium.app/Contents/MacOS/Chromium",
 ];
 
-export async function renderHtmlToPdf(html: string, opts?: { title?: string }): Promise<Buffer> {
+export async function renderHtmlToPdf(
+  html: string,
+  opts?: { title?: string; subtitle?: string },
+): Promise<Buffer> {
   const browser = await launchBrowser();
   try {
     const page = await browser.newPage();
-    const wrapped = wrapDocument(html, opts?.title ?? "Report");
+    const wrapped = wrapDocument(html, opts?.title ?? "Report", opts?.subtitle ?? "");
     await page.setContent(wrapped, { waitUntil: "networkidle0", timeout: 30_000 });
     const pdf = await page.pdf({
       format: "Letter",
@@ -34,8 +37,15 @@ export async function renderHtmlToPdf(html: string, opts?: { title?: string }): 
 }
 
 async function launchBrowser(): Promise<Browser> {
-  // On Vercel: use the bundled Chromium binary from @sparticuz/chromium.
-  if (process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME) {
+  // Only use the bundled Linux Chromium when we're ACTUALLY running inside
+  // the Vercel / AWS Lambda runtime. Don't trust process.env.VERCEL alone —
+  // `vercel env pull` leaks that var into local .env.local, which would
+  // make us try to spawn a Linux x64 binary on macOS and crash with
+  // `spawn ENOEXEC`. AWS_LAMBDA_FUNCTION_NAME and VERCEL_REGION are only
+  // set at real runtime, never by env pull.
+  const isServerlessRuntime =
+    !!process.env.AWS_LAMBDA_FUNCTION_NAME || !!process.env.VERCEL_REGION;
+  if (isServerlessRuntime) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const c = chromium as any;
     return puppeteer.launch({
@@ -77,7 +87,7 @@ function readLogoDataUri(): string {
   }
 }
 
-function wrapDocument(bodyHtml: string, title: string): string {
+function wrapDocument(bodyHtml: string, title: string, subtitle: string): string {
   const logo = readLogoDataUri();
   return `<!doctype html>
 <html lang="en">
@@ -114,48 +124,42 @@ function wrapDocument(bodyHtml: string, title: string): string {
       em { font-style: italic; color: var(--accent-2); }
       strong { font-weight: 700; color: var(--ink); }
 
-      /* Cover header — printed once at the top of the document */
+      /* Cover header — printed once at the top of the document. Logo
+         centered on its own line, then the title centered below it. */
       .pdf-cover {
         display: flex;
+        flex-direction: column;
         align-items: center;
-        justify-content: space-between;
-        gap: 18pt;
-        padding-bottom: 14pt;
-        margin-bottom: 18pt;
+        gap: 14pt;
+        padding-bottom: 16pt;
+        margin-bottom: 20pt;
         border-bottom: 2pt solid var(--ink);
-      }
-      .pdf-cover-brand {
-        display: flex;
-        align-items: center;
-        gap: 12pt;
+        text-align: center;
       }
       .pdf-cover-logo {
-        height: 36pt;
+        height: 64pt;
         width: auto;
-      }
-      .pdf-cover-title {
-        text-align: right;
-      }
-      .pdf-cover-eyebrow {
-        font-family: var(--sans);
-        font-size: 8.5pt;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        color: var(--muted);
-        font-weight: 600;
       }
       .pdf-cover-h1 {
         font-family: var(--serif);
-        font-size: 20pt;
+        font-size: 22pt;
         font-weight: 700;
-        line-height: 1.05;
-        margin: 4pt 0 0;
+        line-height: 1.15;
+        margin: 0;
         color: var(--ink);
       }
       .pdf-cover-h1 em {
         font-style: italic;
         color: var(--accent);
         font-weight: 700;
+      }
+      .pdf-cover-subtitle {
+        font-family: var(--serif);
+        font-size: 16pt;
+        font-weight: 500;
+        line-height: 1.2;
+        margin: 0;
+        color: var(--ink-2);
       }
 
       /* Body typography */
@@ -262,13 +266,9 @@ function wrapDocument(bodyHtml: string, title: string): string {
   </head>
   <body>
     <div class="pdf-cover">
-      <div class="pdf-cover-brand">
-        ${logo ? `<img class="pdf-cover-logo" src="${logo}" alt="CivilCase" />` : `<span style="font-family: var(--serif); font-size: 18pt; font-weight: 700;">CivilCase</span>`}
-      </div>
-      <div class="pdf-cover-title">
-        <div class="pdf-cover-eyebrow">Filing Guide</div>
-        <div class="pdf-cover-h1">${escapeHtml(title)}</div>
-      </div>
+      ${logo ? `<img class="pdf-cover-logo" src="${logo}" alt="CivilCase" />` : `<span style="font-family: var(--serif); font-size: 22pt; font-weight: 700;">CivilCase</span>`}
+      <h1 class="pdf-cover-h1">${escapeHtml(title)}</h1>
+      ${subtitle ? `<p class="pdf-cover-subtitle">${escapeHtml(subtitle)}</p>` : ""}
     </div>
     ${bodyHtml}
   </body>
@@ -278,7 +278,7 @@ function wrapDocument(bodyHtml: string, title: string): string {
 function footerTemplate(title: string): string {
   // Puppeteer's header/footer needs inline-styled HTML.
   return `<div style="font-family: -apple-system, BlinkMacSystemFont, sans-serif; font-size: 8pt; color: #8B8470; width: 100%; padding: 0 0.6in; display: flex; justify-content: space-between; border-top: 1px solid #E0D9C8; padding-top: 6pt;">
-    <span style="font-weight: 600; color: #1A1714;">CivilCase</span>
+    <span style="font-weight: 600; color: #1A1714;">CivilCase.com</span>
     <span>${escapeHtml(title)}</span>
     <span>Page <span class="pageNumber"></span> of <span class="totalPages"></span></span>
   </div>`;

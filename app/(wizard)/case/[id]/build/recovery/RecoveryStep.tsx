@@ -3,6 +3,10 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import {
+  useFormErrors,
+  ErrorSummary,
+} from "../../../../../../components/wizard/form-errors";
 
 interface Props {
   caseId: string;
@@ -25,7 +29,7 @@ export default function RecoveryStep({
 }: Props) {
   const router = useRouter();
   const [saving, setSaving] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const { errors, clear, setErrors } = useFormErrors();
 
   // Approximate statutory interest. We don't know the exact incident date yet,
   // so we estimate 3 months elapsed for the prescreen calculator. The real
@@ -39,7 +43,7 @@ export default function RecoveryStep({
   async function continueToNext() {
     if (saving) return;
     setSaving(true);
-    setError(null);
+    clear();
     try {
       const res = await fetch(`/api/demand-letters/${caseId}`, {
         method: "PATCH",
@@ -51,7 +55,7 @@ export default function RecoveryStep({
       if (!res.ok) throw new Error("Could not save");
       router.push(`/case/${caseId}/build/defendant`);
     } catch (e) {
-      setError(e instanceof Error ? e.message : "Could not save");
+      setErrors({ _save: e instanceof Error ? e.message : "Could not save" });
       setSaving(false);
     }
   }
@@ -105,6 +109,8 @@ export default function RecoveryStep({
         ) : null}
       </div>
 
+      <ErrorSummary errors={errors} order={["_save"]} />
+
       <div className="dlw-actions">
         <Link
           href={`/case/${caseId}/build/eligibility`}
@@ -116,7 +122,6 @@ export default function RecoveryStep({
           {saving ? "Saving…" : "Start my letter — free to begin ▶"}
         </button>
       </div>
-      {error ? <p style={{ color: "var(--accent)", marginTop: 12 }}>{error}</p> : null}
     </div>
   );
 }

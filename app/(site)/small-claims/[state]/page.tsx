@@ -87,25 +87,37 @@ export default async function StateGuide({ params }: Params) {
 
   const totalClaims = g.whatYouCanSueFor.reduce((n, c) => n + c.claims.length, 0);
 
+  const SITE_URL = "https://civilcase.com";
+  const pageUrl = `${SITE_URL}/small-claims/${g.slug}`;
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "Article",
+        "@id": `${pageUrl}#article`,
         headline: `Small Claims in ${g.state}: Filing, Fees, Forms, Collecting`,
         description: g.hero.tagline,
         datePublished: g.lastUpdated,
         dateModified: g.lastUpdated,
         author: { "@type": "Organization", name: "CivilCase" },
-        publisher: { "@type": "Organization", name: "CivilCase" },
+        publisher: { "@id": `${SITE_URL}/#organization` },
+        mainEntityOfPage: { "@type": "WebPage", "@id": pageUrl },
       },
       {
         "@type": "FAQPage",
+        "@id": `${pageUrl}#faq`,
         mainEntity: g.faqs.map((f) => ({
           "@type": "Question",
           name: f.question,
           acceptedAnswer: { "@type": "Answer", text: f.answer },
         })),
+        // Mark the FAQ region readable by voice assistants. Google's
+        // SpeakableSpecification accepts CSS selectors that target the
+        // visible FAQ content in the page DOM.
+        speakable: {
+          "@type": "SpeakableSpecification",
+          cssSelector: [".g-faqs"],
+        },
       },
     ],
   };

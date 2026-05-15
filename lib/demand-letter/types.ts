@@ -21,6 +21,20 @@ export interface DemandLetterIntake {
   cure_period_days: number; // default 14
   // optional, used when we have full state research
   state_specific_enhanced: boolean;
+  // User's explicit consent at checkout to include the "will file in small
+  // claims court" threat. "no" = letter must omit the consequence/court
+  // threat and close with a seriousness note instead.
+  lawsuit_threat_consent?: "yes" | "no";
+  // Free-text description when dispute_type is "other". Plugs into the
+  // letter prompt so the LLM has something concrete to anchor on instead of
+  // the generic "an unresolved civil dispute" fallback.
+  dispute_type_other?: string;
+  // Resolved canonical legal claim type(s) for the case. Set by the
+  // classifier (lib/cases/classify-claim-type.ts) and read by the letter
+  // prompt + the state-law context picker so SOL / interest / multiplier
+  // rows match what actually happened, not just the wizard category.
+  primary_claim_type?: string;
+  secondary_claim_types?: string[];
 }
 
 export interface DemandLetterDraft {

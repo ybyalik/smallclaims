@@ -50,8 +50,7 @@ export async function finalizeCustomerReport(
     intake: ctx.intake,
     shallowPack: ctx.shallowPack,
     deepPack: ctx.deepPack,
-    findingsA: ctx.findingsA,
-    findingsB: ctx.findingsB,
+    stateFindings: ctx.stateFindings,
   });
   const mergedPack = mergeRes.data.merged as EvidencePack;
   const summary = mergeRes.data.summary as MergeSummary;
@@ -60,8 +59,7 @@ export async function finalizeCustomerReport(
   const writeRes = await writeCustomerReport(
     ctx.intake,
     mergedPack,
-    ctx.findingsA,
-    ctx.findingsB,
+    ctx.stateFindings,
     summary,
     {
       incidentDate: ctx.incidentDate,
@@ -150,8 +148,7 @@ interface FinalizationContext {
   intake: IntakeSnapshot;
   shallowPack: EvidencePack;
   deepPack: EvidencePack | null;
-  findingsA: string;
-  findingsB: string;
+  stateFindings: string;
   incidentDate: string | null;
   defendantEmail: string | null;
   defendantPhone: string | null;
@@ -175,7 +172,7 @@ async function loadContext(
   const { data: report } = await admin
     .from("case_research_reports")
     .select(
-      "evidence_pack, deep_research_pack, deep_research_findings_a, deep_research_findings_b",
+      "evidence_pack, deep_research_pack, state_findings_md",
     )
     .eq("job_id", jobId)
     .maybeSingle();
@@ -199,6 +196,11 @@ async function loadContext(
     defendantCounty: caseRow.defendant_county ?? null,
     incidentCounty: caseRow.incident_county ?? null,
     disputeType: caseRow.dispute_type,
+    disputeTypeOther:
+      typeof intakeAnswers.dispute_type_other === "string" &&
+      intakeAnswers.dispute_type_other.trim().length > 0
+        ? intakeAnswers.dispute_type_other.trim()
+        : null,
     amountCents: caseRow.amount_cents,
     defendantName: caseRow.defendant_name,
     defendantAddress: addr,
@@ -209,8 +211,7 @@ async function loadContext(
     intake,
     shallowPack: report.evidence_pack as EvidencePack,
     deepPack: (report.deep_research_pack as EvidencePack | null) ?? null,
-    findingsA: (report.deep_research_findings_a as string | null) ?? "",
-    findingsB: (report.deep_research_findings_b as string | null) ?? "",
+    stateFindings: (report.state_findings_md as string | null) ?? "",
     incidentDate,
     defendantEmail: caseRow.defendant_email ?? null,
     defendantPhone: caseRow.defendant_phone ?? null,

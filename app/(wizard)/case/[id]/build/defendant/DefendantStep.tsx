@@ -8,8 +8,11 @@ import type { PostalAddress } from "../../../../../../lib/supabase/types";
 import type { EntityMatch, EntitySearchResult } from "../../../../../../lib/sos-lookup/types";
 import { listStates } from "../../../../../../lib/demand-letter/state-context";
 import Combobox, { type ComboboxOption } from "../../../../../../components/wizard/Combobox";
-import CountyField from "../../../../../../components/wizard/CountyField";
+import CountyField, {
+  type CountyLookupStatus,
+} from "../../../../../../components/wizard/CountyField";
 import AddressAutocomplete from "../../../../../../components/wizard/AddressAutocomplete";
+import { validateDefendantPhase } from "../../../../../../lib/cases/phase-validators";
 import { useAutosave } from "../useAutosave";
 
 const BIZ_TYPES: ComboboxOption[] = [
@@ -117,7 +120,8 @@ export default function DefendantStep({
   const [secondary, setSecondary] = useState<SecondaryDefendant | null>(initialSecondary);
 
   const [saving, setSaving] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [countyStatus, setCountyStatus] = useState<CountyLookupStatus>("idle");
   const [showCapModal, setShowCapModal] = useState(false);
 
   // Autosave: persists every field change. Identity-only (no validation gate);
@@ -205,31 +209,36 @@ export default function DefendantStep({
     return { line1, city, state: stateAbbr, zip };
   }
 
-  function readyToContinue(): string | null {
-    if (entity === "individual") {
-      if (!first.trim()) return "First name is required.";
-      if (!last.trim()) return "Last name is required.";
-    } else {
-      if (!bizCity.trim()) return "City or location is required.";
-      if (!bizName.trim()) return "Business name is required.";
-    }
-    if (!skipTrace) {
-      if (!line1.trim()) return "Street address is required (or use skip-trace).";
-      if (!city.trim()) return "City is required.";
-      if (!stateAbbr) return "State is required.";
-      if (!/^\d{5}(-\d{4})?$/.test(zip.trim())) return "Valid ZIP is required.";
-    }
-    return null;
+  function validate(): Record<string, string> {
+    return validateDefendantPhase({
+      entity,
+      first,
+      last,
+      bizName,
+      bizCity,
+      skipTrace,
+      line1,
+      city,
+      stateAbbr,
+      zip,
+      county,
+    });
   }
 
   async function continueToNext() {
-    const err = readyToContinue();
-    if (err) {
-      setError(err);
+    const errs = validate();
+    if (Object.keys(errs).length > 0) {
+      setErrors(errs);
+      // Scroll the error summary into view so the user actually sees it.
+      requestAnimationFrame(() => {
+        document
+          .querySelector(".dlw-error-summary")
+          ?.scrollIntoView({ behavior: "smooth", block: "center" });
+      });
       return;
     }
     setSaving(true);
-    setError(null);
+    setErrors({});
     try {
       const res = await fetch(`/api/demand-letters/${caseId}`, {
         method: "PATCH",
@@ -253,10 +262,25 @@ export default function DefendantStep({
       if (!res.ok) throw new Error("Could not save");
       router.push(`/case/${caseId}/build/plaintiff`);
     } catch (e) {
-      setError(e instanceof Error ? e.message : "Could not save");
+      setErrors({ _save: e instanceof Error ? e.message : "Could not save" });
       setSaving(false);
     }
   }
+
+  // Build an ordered list of error messages for the summary, matching the
+  // visual order of the form so the user can scan it intuitively.
+  function errorMessages(): string[] {
+    const order = ["first", "last", "bizCity", "bizName", "line1", "city", "stateAbbr", "zip", "county"];
+    const ordered = order.filter((k) => errors[k]).map((k) => errors[k]);
+    if (errors._save) ordered.push(errors._save);
+    return ordered;
+  }
+
+  // Only treat the lookup as blocking when the county field is EMPTY.
+  // A background re-lookup while the field is already populated must not
+  // gray out the Continue button.
+  const isCountyLookingUp =
+    !skipTrace && countyStatus === "looking_up" && !county.trim();
 
   return (
     <div className="dlw-step">
@@ -291,20 +315,22 @@ export default function DefendantStep({
       {entity === "individual" ? (
         <div className="dlw-fields">
           <div className="dlw-field-row">
-            <Field label="First name" required>
+            <Field label="First name" required error={errors.first}>
               <input
                 value={first}
                 onChange={(e) => setFirst(e.target.value)}
                 className="dlw-input"
                 autoComplete="given-name"
+                aria-invalid={!!errors.first}
               />
             </Field>
-            <Field label="Last name" required>
+            <Field label="Last name" required error={errors.last}>
               <input
                 value={last}
                 onChange={(e) => setLast(e.target.value)}
                 className="dlw-input"
                 autoComplete="family-name"
+                aria-invalid={!!errors.last}
               />
             </Field>
           </div>
@@ -334,6 +360,7 @@ export default function DefendantStep({
           <Field
             label="City or location"
             required
+            error={errors.bizCity}
             hint="We need a location before we can search for the business."
           >
             <input
@@ -341,9 +368,10 @@ export default function DefendantStep({
               onChange={(e) => setBizCity(e.target.value)}
               className="dlw-input"
               placeholder="e.g., Las Vegas, NV"
+              aria-invalid={!!errors.bizCity}
             />
           </Field>
-          <Field label="Business name" required>
+          <Field label="Business name" required error={errors.bizName}>
             <div className="dlw-sos-row">
               <input
                 value={bizName}
@@ -357,6 +385,7 @@ export default function DefendantStep({
                 className="dlw-input"
                 disabled={!bizCity.trim()}
                 placeholder={bizCity ? "Type the business name…" : "Enter city first"}
+                aria-invalid={!!errors.bizName}
               />
               <button
                 type="button"
@@ -498,7 +527,7 @@ export default function DefendantStep({
       {/* Address fields */}
       {!skipTrace ? (
         <div className="dlw-fields" style={{ marginTop: 6 }}>
-          <Field label="Street address" required>
+          <Field label="Street address" required error={errors.line1}>
             <AddressAutocomplete
               value={line1}
               onChange={setLine1}
@@ -512,15 +541,16 @@ export default function DefendantStep({
             />
           </Field>
           <div className="dlw-field-row dlw-field-row-3">
-            <Field label="City" required>
+            <Field label="City" required error={errors.city}>
               <input
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
                 className="dlw-input"
                 autoComplete="address-level2"
+                aria-invalid={!!errors.city}
               />
             </Field>
-            <Field label="State" required>
+            <Field label="State" required error={errors.stateAbbr}>
               <Combobox
                 id="defendant-state"
                 value={stateAbbr}
@@ -531,7 +561,7 @@ export default function DefendantStep({
                 placeholder="Select…"
               />
             </Field>
-            <Field label="ZIP" required>
+            <Field label="ZIP" required error={errors.zip}>
               <input
                 value={zip}
                 onChange={(e) => setZip(e.target.value)}
@@ -539,15 +569,18 @@ export default function DefendantStep({
                 autoComplete="postal-code"
                 inputMode="numeric"
                 maxLength={10}
+                aria-invalid={!!errors.zip}
               />
             </Field>
           </div>
-          <Field label="County">
+          <Field label="County" required error={errors.county}>
             <CountyField
               address={{ line1, city, state: stateAbbr, zip }}
               value={county}
               onChange={setCounty}
               label="Defendant county"
+              onStatusChange={setCountyStatus}
+              invalid={!!errors.county}
             />
           </Field>
         </div>
@@ -588,6 +621,19 @@ export default function DefendantStep({
         ) : null}
       </div>
 
+      {errorMessages().length > 0 ? (
+        <div className="dlw-error-summary" role="alert" aria-live="polite">
+          <p className="dlw-error-summary-h">
+            Please fix the following before continuing:
+          </p>
+          <ul>
+            {errorMessages().map((m, i) => (
+              <li key={i}>{m}</li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
+
       <div className="dlw-actions">
         <Link
           href={`/case/${caseId}/build/recovery`}
@@ -595,12 +641,18 @@ export default function DefendantStep({
         >
           ← Back
         </Link>
-        <button className="dlw-cta" onClick={continueToNext} disabled={saving}>
-          {saving ? "Saving…" : "Lock in the defendant ▶"}
+        <button
+          className="dlw-cta"
+          onClick={continueToNext}
+          disabled={saving || isCountyLookingUp}
+        >
+          {saving
+            ? "Saving…"
+            : isCountyLookingUp
+              ? "Looking up county…"
+              : "Lock in the defendant ▶"}
         </button>
       </div>
-
-      {error ? <p style={{ color: "var(--accent)", marginTop: 12 }}>{error}</p> : null}
 
       {showCapModal ? (
         <div className="dlw-modal-backdrop" onClick={() => setShowCapModal(false)}>
@@ -634,20 +686,26 @@ function Field({
   label,
   required,
   hint,
+  error,
   children,
 }: {
   label: string;
   required?: boolean;
   hint?: string;
+  error?: string;
   children: React.ReactNode;
 }) {
   return (
-    <label className="dlw-field">
+    <label className={`dlw-field${error ? " is-invalid" : ""}`}>
       <span className="dlw-label">
         {label} {required ? <em className="dlw-required">*</em> : null}
       </span>
       {children}
-      {hint ? <span className="dlw-hint">{hint}</span> : null}
+      {error ? (
+        <span className="dlw-field-error-msg">{error}</span>
+      ) : hint ? (
+        <span className="dlw-hint">{hint}</span>
+      ) : null}
     </label>
   );
 }

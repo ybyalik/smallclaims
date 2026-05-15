@@ -3,6 +3,14 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { Case } from "../../../../../lib/supabase/types";
+import {
+  isComplete as phaseIsComplete,
+  validateClaimAmountFromCase,
+  validateDefendantFromCase,
+  validateEvidenceFromCase,
+  validateNarrativeFromCase,
+  validatePlaintiffFromCase,
+} from "../../../../../lib/cases/phase-validators";
 
 interface Props {
   caseRow: Case;
@@ -15,31 +23,32 @@ const PHASES = [
   { key: "narrative", label: "What happened" },
   { key: "claim-amount", label: "Amount" },
   { key: "evidence", label: "Evidence" },
-  { key: "review", label: "Letter & send" },
+  { key: "review", label: "Review" },
 ] as const;
 
 const PRESCREEN_STEPS = ["category", "amount", "state", "eligibility", "recovery"] as const;
 
 // Each "section" in the nav is one phase. Completion is computed from case
 // fields so the user sees real progress regardless of which order they
-// fill them in.
+// fill them in. Delegates to the shared phase validators in
+// lib/cases/phase-validators.ts so this stays in lockstep with the step
+// component's Continue gate and the final finish-intake gate.
 function isPhaseComplete(c: Case, phaseKey: string): boolean {
-  const a = (c.intake_answers ?? {}) as Record<string, unknown>;
   switch (phaseKey) {
     case "defendant":
-      return Boolean(c.defendant_name && c.defendant_address);
+      return phaseIsComplete(validateDefendantFromCase(c));
     case "plaintiff":
-      return Boolean(c.plaintiff_name && c.plaintiff_address);
+      return phaseIsComplete(validatePlaintiffFromCase(c));
     case "narrative":
-      return Boolean(c.facts_narrative && c.facts_narrative.length > 30);
+      return phaseIsComplete(validateNarrativeFromCase(c));
     case "claim-amount":
-      return Boolean(c.amount_cents > 0 && c.facts_narrative);
+      return phaseIsComplete(validateClaimAmountFromCase(c));
     case "evidence":
-      return a.evidence_skipped !== undefined ||
-        Array.isArray(a.evidence_files) && (a.evidence_files as unknown[]).length > 0;
+      return phaseIsComplete(validateEvidenceFromCase(c));
     case "review":
-      // Review is "complete" only after the user advances past it (paid).
-      return c.status !== "draft" && c.status !== "demand_drafted";
+      // Review is "complete" once the user signs off and the case moves
+      // out of draft status (anything other than 'draft' is post-intake).
+      return c.status !== "draft";
     default:
       return false;
   }
@@ -101,29 +110,60 @@ export default function WizardShell({ caseRow, children }: Props) {
             {PHASES.map((phase, i) => {
               const isComplete = isPhaseComplete(caseRow, phase.key);
               const isActive = i === activePhase;
-              const state = isActive ? "active" : isComplete ? "done" : "future";
+              // A phase is reachable (clickable) if either it's the current
+              // step, it's the first phase, or the previous phase is complete.
+              // This prevents users from skipping ahead past unfinished
+              // sections while still letting them go back to edit.
+              const isReachable =
+                isActive ||
+                i === 0 ||
+                isPhaseComplete(caseRow, PHASES[i - 1].key);
+              const isLocked = !isReachable;
+              const state = isActive
+                ? "active"
+                : isComplete
+                  ? "done"
+                  : isLocked
+                    ? "locked"
+                    : "future";
               const content = (
                 <>
                   <span className="dlw-phase-num">
-                    {isComplete && !isActive ? "✓" : i + 1}
+                    {isComplete && !isActive
+                      ? "✓"
+                      : isLocked
+                        ? "🔒"
+                        : i + 1}
                   </span>
                   <span className="dlw-phase-label">{phase.label}</span>
                 </>
               );
+              const classes = [
+                "dlw-phase",
+                `is-${state}`,
+                isReachable && !isActive ? "is-clickable" : "",
+                isLocked ? "is-locked" : "",
+                i === 0 ? "is-first" : "",
+                i === PHASES.length - 1 ? "is-last" : "",
+              ]
+                .filter(Boolean)
+                .join(" ");
               return (
-                <li
-                  key={phase.key}
-                  className={`dlw-phase is-${state}${
-                    !isActive ? " is-clickable" : ""
-                  }${i === 0 ? " is-first" : ""}${i === PHASES.length - 1 ? " is-last" : ""}`}
-                >
-                  {!isActive ? (
+                <li key={phase.key} className={classes}>
+                  {isReachable && !isActive ? (
                     <Link
                       href={`/case/${caseRow.id}/build/${phase.key}`}
                       aria-label={`Go to ${phase.label}`}
                     >
                       {content}
                     </Link>
+                  ) : isLocked ? (
+                    <span
+                      aria-disabled="true"
+                      title="Finish the earlier steps to unlock this one"
+                    >
+                      {content}
+                    </span>
                   ) : (
                     <span aria-current="step">{content}</span>
                   )}
@@ -208,11 +248,18 @@ export default function WizardShell({ caseRow, children }: Props) {
   );
 }
 
+function categoryPicked(c: Case, answers: Record<string, unknown>): boolean {
+  if (!c.dispute_type) return false;
+  if (c.dispute_type !== "other") return true;
+  const text = answers.dispute_type_other;
+  return typeof text === "string" && text.trim().length > 0;
+}
+
 function computeReachedIdx(c: Case, currentSlug: string): number {
   const answers = (c.intake_answers ?? {}) as Record<string, unknown>;
   let idx = ALL_STEPS_ORDER.indexOf("category");
 
-  if (c.dispute_type && c.dispute_type !== "other") idx = Math.max(idx, ALL_STEPS_ORDER.indexOf("amount"));
+  if (categoryPicked(c, answers)) idx = Math.max(idx, ALL_STEPS_ORDER.indexOf("amount"));
   if (c.amount_cents > 0) idx = Math.max(idx, ALL_STEPS_ORDER.indexOf("state"));
   if (answers.recipient_state) idx = Math.max(idx, ALL_STEPS_ORDER.indexOf("eligibility"));
   if (answers.eligibility_passed) idx = Math.max(idx, ALL_STEPS_ORDER.indexOf("recovery"));
@@ -249,7 +296,8 @@ function coachLine(slug: string): string {
 
 function computeConfidence(c: Case): number {
   let score = 0;
-  if (c.dispute_type && c.dispute_type !== "other") score += 10;
+  const answers = (c.intake_answers ?? {}) as Record<string, unknown>;
+  if (categoryPicked(c, answers)) score += 10;
   if (c.amount_cents > 0) score += 10;
   if (c.state) score += 10;
   if (c.defendant_name) score += 15;

@@ -49,7 +49,14 @@ export interface BlogPostUpdate {
 // ============================================================================
 
 export type CaseStatus =
+  // Canonical (written by new code):
   | "draft"
+  | "active"
+  | "closed"
+  | "settled"
+  // Legacy values still present in existing rows; mapped to "active" for
+  // display by derive-status-label. New code does not write these.
+  | "intake_complete"
   | "demand_drafted"
   | "demand_paid"
   | "demand_sent"
@@ -62,9 +69,7 @@ export type CaseStatus =
   | "served"
   | "hearing_scheduled"
   | "judgment_entered"
-  | "collection"
-  | "closed"
-  | "settled";
+  | "collection";
 
 export type DisputeType =
   // Canonical taxonomy surfaced in the picker (11 + other).
@@ -136,7 +141,12 @@ export interface Case {
   intake_answers: Record<string, unknown> | null;
   intake_version: number;
   facts_narrative: string | null;
-  court_prep_content: Record<string, unknown> | null;
+  // Signature captured at the review step at end of the wizard. Image is a
+  // data URL (PNG, base64). Typed name is the fallback / additional attest.
+  signature_image: string | null;
+  signature_typed_name: string | null;
+  signature_signed_at: string | null;
+  signature_ip: string | null;
   case_number: string | null;
   filing_court_id: string | null;
   hearing_at: string | null;

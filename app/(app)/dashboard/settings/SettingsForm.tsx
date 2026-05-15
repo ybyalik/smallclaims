@@ -10,6 +10,7 @@ import CountyField from "../../../../components/wizard/CountyField";
 interface Props {
   initialFullName: string;
   email: string;
+  initialPhone: string;
   initialEntityType: "individual" | "business" | null;
   initialBusinessName: string;
   initialAddress: PostalAddress | null;
@@ -19,6 +20,7 @@ interface Props {
 export default function SettingsForm({
   initialFullName,
   email,
+  initialPhone,
   initialEntityType,
   initialBusinessName,
   initialAddress,
@@ -26,6 +28,7 @@ export default function SettingsForm({
 }: Props) {
   const router = useRouter();
   const [fullName, setFullName] = useState(initialFullName);
+  const [phone, setPhone] = useState(initialPhone);
   const [entityType, setEntityType] = useState<"individual" | "business" | null>(
     initialEntityType,
   );
@@ -62,6 +65,7 @@ export default function SettingsForm({
       .from("profiles")
       .update({
         full_name: fullName.trim() || null,
+        default_phone: phone.trim() || null,
         default_entity_type: entityType,
         default_business_name:
           entityType === "business" ? businessName.trim() || null : null,
@@ -100,6 +104,19 @@ export default function SettingsForm({
         <input type="email" value={email} disabled aria-disabled />
         <span className="app-settings-hint">
           Email is set by your sign-in method and can&apos;t be changed here.
+        </span>
+      </label>
+      <label>
+        <span>Phone</span>
+        <input
+          type="tel"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+          autoComplete="tel"
+          placeholder="(555) 123-4567"
+        />
+        <span className="app-settings-hint">
+          Used on demand letters and for Voice of Justice phone follow-ups.
         </span>
       </label>
 

@@ -16,9 +16,57 @@ export const metadata: Metadata = {
   },
 };
 
+const SITE_URL = "https://civilcase.com";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": `${SITE_URL}/demand-letter#service`,
+      name: "CivilCase Demand Letter",
+      serviceType: "Demand Letter Drafting",
+      provider: { "@id": `${SITE_URL}/#organization` },
+      areaServed: { "@type": "Country", name: "United States" },
+      url: `${SITE_URL}/demand-letter`,
+      description:
+        "AI-drafted demand letter for unpaid debts, security deposits, contractor disputes, and other small-claims matters. Customer reviews and edits before download. Optional certified-mail delivery.",
+      audience: { "@type": "Audience", audienceType: "Self-represented plaintiffs" },
+      offers: {
+        "@type": "Offer",
+        price: "39.00",
+        priceCurrency: "USD",
+        availability: "https://schema.org/InStock",
+        url: `${SITE_URL}/demand-letter`,
+        category: "Legal document drafting",
+      },
+    },
+    {
+      "@type": "Product",
+      "@id": `${SITE_URL}/demand-letter#product`,
+      name: "CivilCase Demand Letter",
+      description:
+        "Professional demand letter, drafted to your facts and ready to send. Resolves about half of small-claims disputes without filing.",
+      brand: { "@id": `${SITE_URL}/#organization` },
+      category: "Legal services",
+      offers: {
+        "@type": "Offer",
+        price: "39.00",
+        priceCurrency: "USD",
+        availability: "https://schema.org/InStock",
+        url: `${SITE_URL}/demand-letter`,
+      },
+    },
+  ],
+};
+
 export default function DemandLetterTeaserPage() {
   return (
     <main className="dl-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <section className="dl-hero">
         <div className="wrap-narrow">
           <div className="eyebrow">Pre-suit</div>

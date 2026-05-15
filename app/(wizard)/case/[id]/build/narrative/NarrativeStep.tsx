@@ -11,7 +11,15 @@ import {
 } from "../../../../../../lib/demand-letter/ai-mocks";
 import type { DisputeType } from "../../../../../../lib/supabase/types";
 import Combobox, { type ComboboxOption } from "../../../../../../components/wizard/Combobox";
-import CountyField from "../../../../../../components/wizard/CountyField";
+import CountyField, {
+  type CountyLookupStatus,
+} from "../../../../../../components/wizard/CountyField";
+import {
+  useFormErrors,
+  ErrorSummary,
+  Field,
+} from "../../../../../../components/wizard/form-errors";
+import { validateNarrativePhase } from "../../../../../../lib/cases/phase-validators";
 import { useAutosave } from "../useAutosave";
 
 // "Austin, TX" / "Old Bridge NJ" / "Old Bridge, New Jersey 08857"
@@ -29,9 +37,16 @@ function parseIncidentLocation(raw: string): {
   // Drop the zip from the working string then split on commas/whitespace
   const noZip = (zipMatch ? s.replace(zipMatch[0], "") : s).trim().replace(/\s+/g, " ");
   const parts = noZip.split(/\s*,\s*/).filter(Boolean);
+  let line1: string | undefined;
   let city: string | undefined;
   let state: string | undefined;
-  if (parts.length >= 2) {
+  if (parts.length >= 3) {
+    // "123 Main St, Austin, TX" → line1="123 Main St", city="Austin", state="TX"
+    state = parts[parts.length - 1];
+    city = parts[parts.length - 2];
+    line1 = parts.slice(0, -2).join(", ");
+  } else if (parts.length === 2) {
+    // "Austin, TX" → city="Austin", state="TX"
     city = parts[0];
     state = parts[1];
   } else {
@@ -44,7 +59,7 @@ function parseIncidentLocation(raw: string): {
       city = noZip;
     }
   }
-  return { city, state, zip };
+  return { line1, city, state, zip };
 }
 
 interface Props {
@@ -82,7 +97,8 @@ export default function NarrativeStep({
   );
 
   const [saving, setSaving] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const { errors, showErrors, clear, setErrors } = useFormErrors();
+  const [countyStatus, setCountyStatus] = useState<CountyLookupStatus>("idle");
   const [debouncedNarrative, setDebouncedNarrative] = useState(narrative);
 
   useEffect(() => {
@@ -121,22 +137,24 @@ export default function NarrativeStep({
     }
   }
 
-  function readyError(): string | null {
-    if (narrative.trim().length < 10) return "Describe what happened (at least 10 characters).";
-    if (!disputeType) return "Select a claim type.";
-    if (!incidentDate) return "Enter the date of the incident.";
-    if (!incidentLocation.trim()) return "Enter the city and state of the incident.";
-    return null;
+  function validate(): Record<string, string> {
+    return validateNarrativePhase({
+      narrative,
+      disputeType,
+      incidentDate,
+      incidentLocation,
+      incidentCounty,
+    });
   }
 
   async function continueToNext() {
-    const err = readyError();
-    if (err) {
-      setError(err);
+    const errs = validate();
+    if (Object.keys(errs).length > 0) {
+      showErrors(errs);
       return;
     }
     setSaving(true);
-    setError(null);
+    clear();
     try {
       const res = await fetch(`/api/demand-letters/${caseId}`, {
         method: "PATCH",
@@ -157,10 +175,15 @@ export default function NarrativeStep({
       if (!res.ok) throw new Error("Could not save");
       router.push(`/case/${caseId}/build/claim-amount`);
     } catch (e) {
-      setError(e instanceof Error ? e.message : "Could not save");
+      setErrors({ _save: e instanceof Error ? e.message : "Could not save" });
       setSaving(false);
     }
   }
+
+  // Only treat the lookup as blocking when the county field is EMPTY.
+  // A background re-lookup while the field is already populated must not
+  // gray out the Continue button.
+  const isCountyLookingUp = countyStatus === "looking_up" && !incidentCounty.trim();
 
   return (
     <div className="dlw-step">
@@ -189,8 +212,12 @@ export default function NarrativeStep({
         onChange={(e) => setNarrative(e.target.value.slice(0, 500))}
         placeholder="Tell us what happened in your own words…"
         rows={4}
+        aria-invalid={!!errors.narrative}
       />
       <div className="dlw-char-count">{narrative.length}/500</div>
+      {errors.narrative ? (
+        <span className="dlw-field-error-msg">{errors.narrative}</span>
+      ) : null}
 
       <div className="dlw-strengthen">
         <div className="dlw-strengthen-title">Strengthen your claim</div>
@@ -243,37 +270,58 @@ export default function NarrativeStep({
           ariaLabel="Claim type"
           placeholder="Select a claim type…"
         />
+        {errors.disputeType ? (
+          <span className="dlw-field-error-msg">{errors.disputeType}</span>
+        ) : null}
       </div>
 
       {/* DATE & LOCATION */}
       <div className="dlw-field-row" style={{ marginTop: 22 }}>
-        <Field label="Date of incident" required>
+        <Field label="Date of incident" required error={errors.incidentDate}>
           <input
             type="date"
             value={incidentDate}
             onChange={(e) => setIncidentDate(e.target.value)}
             className="dlw-input"
             max={new Date().toISOString().slice(0, 10)}
+            aria-invalid={!!errors.incidentDate}
           />
         </Field>
-        <Field label="Location (City, State)" required>
+        <Field label="Location (City, State)" required error={errors.incidentLocation}>
           <input
             value={incidentLocation}
             onChange={(e) => setIncidentLocation(e.target.value)}
             className="dlw-input"
             placeholder="e.g., Austin, TX"
+            aria-invalid={!!errors.incidentLocation}
           />
         </Field>
       </div>
 
-      <Field label="Incident county">
-        <CountyField
-          address={parseIncidentLocation(incidentLocation)}
-          value={incidentCounty}
-          onChange={setIncidentCounty}
-          label="Incident county"
-        />
-      </Field>
+      <div style={{ marginTop: 22 }}>
+        <Field label="Incident county" required error={errors.incidentCounty}>
+          <CountyField
+            address={parseIncidentLocation(incidentLocation)}
+            value={incidentCounty}
+            onChange={setIncidentCounty}
+            label="Incident county"
+            onStatusChange={setCountyStatus}
+            invalid={!!errors.incidentCounty}
+          />
+        </Field>
+      </div>
+
+      <ErrorSummary
+        errors={errors}
+        order={[
+          "narrative",
+          "disputeType",
+          "incidentDate",
+          "incidentLocation",
+          "incidentCounty",
+          "_save",
+        ]}
+      />
 
       <div className="dlw-actions">
         <Link
@@ -282,11 +330,18 @@ export default function NarrativeStep({
         >
           ← Back
         </Link>
-        <button className="dlw-cta" onClick={continueToNext} disabled={saving}>
-          {saving ? "Saving…" : "Set the amount ▶"}
+        <button
+          className="dlw-cta"
+          onClick={continueToNext}
+          disabled={saving || isCountyLookingUp}
+        >
+          {saving
+            ? "Saving…"
+            : isCountyLookingUp
+              ? "Looking up county…"
+              : "Set the amount ▶"}
         </button>
       </div>
-      {error ? <p style={{ color: "var(--accent)", marginTop: 12 }}>{error}</p> : null}
     </div>
   );
 }
@@ -313,21 +368,3 @@ function ChecklistRow({ checked, label }: { checked: boolean; label: string }) {
   );
 }
 
-function Field({
-  label,
-  required,
-  children,
-}: {
-  label: string;
-  required?: boolean;
-  children: React.ReactNode;
-}) {
-  return (
-    <label className="dlw-field">
-      <span className="dlw-label">
-        {label} {required ? <em className="dlw-required">*</em> : null}
-      </span>
-      {children}
-    </label>
-  );
-}

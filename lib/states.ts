@@ -61,3 +61,8 @@ export const STATES: State[] = [
 export function getStateBySlug(slug: string): State | undefined {
   return STATES.find((s) => s.slug === slug);
 }
+
+export function getStateByAbbr(abbr: string): State | undefined {
+  const upper = abbr.toUpperCase();
+  return STATES.find((s) => s.abbr === upper);
+}

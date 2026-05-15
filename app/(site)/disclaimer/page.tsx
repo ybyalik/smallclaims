@@ -237,8 +237,8 @@ export default function DisclaimerPage() {
                 <div>
                   <h3>Contact</h3>
                   <p>
-                    Questions about this disclaimer or our terms of use can be sent to{" "}
-                    <a href="mailto:legal@civilcase.com">legal@civilcase.com</a>. By using
+                    Questions about this disclaimer or our terms of use can be sent
+                    through our <Link href="/contact">contact page</Link>. By using
                     CivilCase you acknowledge that you have read and understood this
                     disclaimer.
                   </p>

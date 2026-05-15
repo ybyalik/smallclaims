@@ -1,6 +1,6 @@
 // Customer-facing report writer.
 //
-// Inputs: merged pack, deep findings (A and B), intake, merge summary,
+// Inputs: merged pack, state research findings, intake, merge summary,
 // computed case facts. Output: ONE polished, prose-driven procedural report
 // written for a layperson. No separate action checklist (everything important
 // lives inline in the prose). No bullet-heavy formatting.
@@ -9,7 +9,11 @@ import { MODEL, plainText } from "./openai";
 import type { EvidencePack, IntakeSnapshot } from "./agents";
 import type { MergeSummary } from "./merge";
 
-const FINDINGS_BUDGET_PER_HALF = 30_000;
+// Single slice of the combined state findings fed into the writer prompt.
+// The four state-research calls concatenated can be ~250k chars; 60k is
+// what the writer comfortably needs as backup material on top of the
+// merged structured pack.
+const STATE_FINDINGS_WRITER_BUDGET = 60_000;
 
 export interface CustomerReportResult {
   data: {
@@ -26,13 +30,14 @@ export interface CustomerReportResult {
 export async function writeCustomerReport(
   intake: IntakeSnapshot,
   mergedPack: EvidencePack,
-  findingsA: string,
-  findingsB: string,
+  stateFindings: string,
   summary: MergeSummary,
   caseFacts: { incidentDate: string | null; defendantEmail: string | null; defendantPhone: string | null },
 ): Promise<CustomerReportResult> {
-  const findingsASlice = (findingsA || "").slice(0, FINDINGS_BUDGET_PER_HALF);
-  const findingsBSlice = (findingsB || "").slice(0, FINDINGS_BUDGET_PER_HALF);
+  const stateFindingsSlice = (stateFindings || "").slice(
+    0,
+    STATE_FINDINGS_WRITER_BUDGET,
+  );
   const dollars = (intake.amountCents / 100).toLocaleString("en-US", {
     style: "currency",
     currency: "USD",
@@ -66,11 +71,8 @@ CASE
 MERGED EVIDENCE PACK (the reconciled facts you should use)
 ${JSON.stringify(mergedPack, null, 2)}
 
-DEEP RESEARCH FINDINGS — CALL A (pre-filing and filing: court/venue, jurisdiction, forms, fees, service, statute of limitations)
-${findingsASlice}
-
-DEEP RESEARCH FINDINGS — CALL B (hearing through collection: hearing logistics, mediation, accommodations, recoverable amounts, appeals, post-judgment collection, garnishment, state quirks)
-${findingsBSlice}
+STATE RESEARCH FINDINGS (four sections concatenated: court structure/venue, deadlines/pre-filing, defendant ID/forms/fees/filing/service, hearing through collection)
+${stateFindingsSlice}
 ${criticalNote}
 ${lowConfidenceNote}
 
@@ -196,11 +198,7 @@ Begin the report now. The very first character of your output must be the start 
     model: MODEL.REASONING,
     input: prompt,
     temperature: 0.3,
-    // Bumped from 18k → 24k. The report now covers all 21 research sections
-    // (some conditional) including arbitration, mediation, accommodations,
-    // tax, and statutory multipliers. Reasoning + prose for a comprehensive
-    // case can run 12-18k tokens; 24k leaves comfortable headroom.
-    maxOutputTokens: 24000,
+    // No max_output_tokens cap — model uses its full default output budget.
   });
 
   // Post-process:
@@ -225,12 +223,10 @@ Begin the report now. The very first character of your output must be the start 
   };
 }
 
-const DISCLAIMER_FOOTER = `
----
-
-*Procedural information only, not legal advice. Court rules, fees, and forms can change without notice. Verify with the clerk before filing. This report was generated for your specific case using official court sources, but it is not a substitute for consultation with a licensed attorney if your situation is complex.*
-`;
+// Shared disclaimer used across customer-facing products (research report,
+// collection plan, etc.). Single source of truth lives in lib/cases.
+import { appendDisclaimerMd } from "../cases/disclaimer";
 
 export function appendDisclaimerFooter(guideMd: string): string {
-  return `${guideMd.trimEnd()}\n${DISCLAIMER_FOOTER}`;
+  return appendDisclaimerMd(guideMd);
 }

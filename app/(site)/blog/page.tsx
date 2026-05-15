@@ -28,8 +28,35 @@ export default async function BlogIndex() {
     .order("published_at", { ascending: false });
   const posts = (res.data ?? []) as Card[];
 
+  const SITE_URL = "https://civilcase.com";
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "@id": `${SITE_URL}/blog#blog`,
+    name: "CivilCase Blog",
+    description:
+      "Plain-English guides, case studies, and updates on small claims court.",
+    url: `${SITE_URL}/blog`,
+    publisher: { "@id": `${SITE_URL}/#organization` },
+    isPartOf: { "@id": `${SITE_URL}/#website` },
+    inLanguage: "en-US",
+    blogPost: posts.map((p) => ({
+      "@type": "BlogPosting",
+      headline: p.title,
+      description: p.excerpt ?? undefined,
+      image: p.cover_image_url ?? undefined,
+      datePublished: p.published_at ?? undefined,
+      url: `${SITE_URL}/blog/${p.slug}`,
+      author: { "@type": "Organization", name: "CivilCase Editorial" },
+    })),
+  };
+
   return (
     <main className="wrap blog-index">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Breadcrumbs items={[{ label: "Blog" }]} />
       <header className="blog-header">
         <span className="eyebrow">CivilCase Blog</span>

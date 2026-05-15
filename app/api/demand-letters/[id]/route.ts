@@ -1,6 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { loadOwnedCase } from "../../../../lib/demand-letter/access";
 import { createServiceRoleClient } from "../../../../lib/supabase/service-role";
+import { classificationInputsChanged } from "../../../../lib/cases/classify-claim-type";
 
 /**
  * PATCH /api/demand-letters/[id]
@@ -54,13 +55,39 @@ export async function PATCH(req: NextRequest, ctx: { params: { id: string } }) {
     return NextResponse.json({ error: "No writable fields" }, { status: 400 });
   }
 
+  // If any input that drives the legal-claim-type classifier changed, drop
+  // the cached classification BEFORE merging so the next reader re-classifies
+  // from the new facts.
+  const invalidateClassification = classificationInputsChanged(
+    {
+      dispute_type: caseRow.dispute_type,
+      facts_narrative: caseRow.facts_narrative,
+      intake_answers: caseRow.intake_answers as Record<string, unknown> | null,
+    },
+    {
+      dispute_type: update.dispute_type as string | undefined,
+      facts_narrative: update.facts_narrative as string | undefined,
+      intake_answers: update.intake_answers as Record<string, unknown> | undefined,
+    },
+  );
+
   // Merge intake_answers rather than replace, so each step can patch its slice
   if (update.intake_answers && typeof update.intake_answers === "object") {
-    const merged = {
-      ...(caseRow.intake_answers ?? {}),
+    const existingAnswers = (caseRow.intake_answers ?? {}) as Record<string, unknown>;
+    const merged: Record<string, unknown> = {
+      ...existingAnswers,
       ...(update.intake_answers as Record<string, unknown>),
     };
+    if (invalidateClassification) {
+      delete merged.case_classification;
+    }
     update.intake_answers = merged;
+  } else if (invalidateClassification) {
+    // Non-intake_answers field (e.g. facts_narrative) drove the invalidation.
+    // Rebuild intake_answers without the classification.
+    const existingAnswers = { ...((caseRow.intake_answers ?? {}) as Record<string, unknown>) };
+    delete existingAnswers.case_classification;
+    update.intake_answers = existingAnswers;
   }
 
   const db = createServiceRoleClient();

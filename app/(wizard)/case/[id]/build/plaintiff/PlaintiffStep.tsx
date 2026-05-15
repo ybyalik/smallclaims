@@ -7,8 +7,16 @@ import { User, Building2 } from "lucide-react";
 import type { PostalAddress } from "../../../../../../lib/supabase/types";
 import { listStates } from "../../../../../../lib/demand-letter/state-context";
 import Combobox, { type ComboboxOption } from "../../../../../../components/wizard/Combobox";
-import CountyField from "../../../../../../components/wizard/CountyField";
+import CountyField, {
+  type CountyLookupStatus,
+} from "../../../../../../components/wizard/CountyField";
 import AddressAutocomplete from "../../../../../../components/wizard/AddressAutocomplete";
+import {
+  useFormErrors,
+  ErrorSummary,
+  Field,
+} from "../../../../../../components/wizard/form-errors";
+import { validatePlaintiffPhase } from "../../../../../../lib/cases/phase-validators";
 import { useAutosave } from "../useAutosave";
 
 const BIZ_TYPES: ComboboxOption[] = [
@@ -29,6 +37,8 @@ type EntityType = "individual" | "business";
 
 export interface SavedDefaults {
   fullName: string;
+  email: string;
+  phone: string;
   entityType: "individual" | "business" | null;
   businessName: string;
   address: PostalAddress | null;
@@ -90,7 +100,8 @@ export default function PlaintiffStep({
   const [zip, setZip] = useState(initialAddress?.zip ?? "");
   const [county, setCounty] = useState(initialCounty ?? "");
   const [saving, setSaving] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const { errors, showErrors, clear, setErrors } = useFormErrors();
+  const [countyStatus, setCountyStatus] = useState<CountyLookupStatus>("idle");
 
   // Autosave: persist the in-progress draft on every field change.
   useAutosave(caseId, {
@@ -120,32 +131,30 @@ export default function PlaintiffStep({
     return { line1, city, state: stateAbbr, zip };
   }
 
-  function readyError(): string | null {
-    if (entity === "individual") {
-      if (!firstName.trim()) return "First name is required.";
-      if (!lastName.trim()) return "Last name is required.";
-    } else {
-      if (!bizName.trim()) return "Business name is required.";
-    }
-    if (!email.trim() || !/.+@.+\..+/.test(email.trim())) {
-      return "A valid email is required.";
-    }
-    if (!phone.trim()) return "Phone is required.";
-    if (!line1.trim()) return "Street address is required.";
-    if (!city.trim()) return "City is required.";
-    if (!stateAbbr) return "State is required.";
-    if (!/^\d{5}(-\d{4})?$/.test(zip.trim())) return "Valid ZIP is required.";
-    return null;
+  function validate(): Record<string, string> {
+    return validatePlaintiffPhase({
+      entity,
+      firstName,
+      lastName,
+      bizName,
+      email,
+      phone,
+      line1,
+      city,
+      stateAbbr,
+      zip,
+      county,
+    });
   }
 
   async function continueToNext() {
-    const err = readyError();
-    if (err) {
-      setError(err);
+    const errs = validate();
+    if (Object.keys(errs).length > 0) {
+      showErrors(errs);
       return;
     }
     setSaving(true);
-    setError(null);
+    clear();
     try {
       const res = await fetch(`/api/demand-letters/${caseId}`, {
         method: "PATCH",
@@ -165,7 +174,7 @@ export default function PlaintiffStep({
       if (!res.ok) throw new Error("Could not save");
       router.push(`/case/${caseId}/build/narrative`);
     } catch (e) {
-      setError(e instanceof Error ? e.message : "Could not save");
+      setErrors({ _save: e instanceof Error ? e.message : "Could not save" });
       setSaving(false);
     }
   }
@@ -180,6 +189,8 @@ export default function PlaintiffStep({
       setFirstName(parts[0] ?? "");
       setLastName(parts.slice(1).join(" "));
     }
+    if (savedDefaults.email) setEmail(savedDefaults.email);
+    if (savedDefaults.phone) setPhone(savedDefaults.phone);
     if (savedDefaults.address) {
       setLine1(savedDefaults.address.line1 ?? "");
       setCity(savedDefaults.address.city ?? "");
@@ -188,6 +199,11 @@ export default function PlaintiffStep({
     }
     if (savedDefaults.county) setCounty(savedDefaults.county);
   }
+
+  // Only treat the lookup as blocking when the county field is EMPTY.
+  // A background re-lookup while the field is already populated must not
+  // gray out the Continue button.
+  const isCountyLookingUp = countyStatus === "looking_up" && !county.trim();
 
   return (
     <div className="dlw-step">
@@ -252,30 +268,33 @@ export default function PlaintiffStep({
       <div className="dlw-fields">
         {entity === "individual" ? (
           <div className="dlw-field-row">
-            <Field label="First name" required>
+            <Field label="First name" required error={errors.firstName}>
               <input
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
                 className="dlw-input"
                 autoComplete="given-name"
+                aria-invalid={!!errors.firstName}
               />
             </Field>
-            <Field label="Last name" required>
+            <Field label="Last name" required error={errors.lastName}>
               <input
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
                 className="dlw-input"
                 autoComplete="family-name"
+                aria-invalid={!!errors.lastName}
               />
             </Field>
           </div>
         ) : (
           <div className="dlw-field-row">
-            <Field label="Business name" required>
+            <Field label="Business name" required error={errors.bizName}>
               <input
                 value={bizName}
                 onChange={(e) => setBizName(e.target.value)}
                 className="dlw-input"
+                aria-invalid={!!errors.bizName}
               />
             </Field>
             <Field label="Business type" required>
@@ -293,27 +312,29 @@ export default function PlaintiffStep({
         )}
 
         <div className="dlw-field-row">
-          <Field label="Email" required>
+          <Field label="Email" required error={errors.email}>
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="dlw-input"
               autoComplete="email"
+              aria-invalid={!!errors.email}
             />
           </Field>
-          <Field label="Phone" required>
+          <Field label="Phone" required error={errors.phone}>
             <input
               type="tel"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               className="dlw-input"
               autoComplete="tel"
+              aria-invalid={!!errors.phone}
             />
           </Field>
         </div>
 
-        <Field label="Street address" required>
+        <Field label="Street address" required error={errors.line1}>
           <AddressAutocomplete
             value={line1}
             onChange={setLine1}
@@ -331,15 +352,16 @@ export default function PlaintiffStep({
           />
         </Field>
         <div className="dlw-field-row dlw-field-row-3">
-          <Field label="City" required>
+          <Field label="City" required error={errors.city}>
             <input
               value={city}
               onChange={(e) => setCity(e.target.value)}
               className="dlw-input"
               autoComplete="address-level2"
+              aria-invalid={!!errors.city}
             />
           </Field>
-          <Field label="State" required>
+          <Field label="State" required error={errors.stateAbbr}>
             <Combobox
               id="plaintiff-state"
               value={stateAbbr}
@@ -350,7 +372,7 @@ export default function PlaintiffStep({
               placeholder="Select…"
             />
           </Field>
-          <Field label="ZIP" required>
+          <Field label="ZIP" required error={errors.zip}>
             <input
               value={zip}
               onChange={(e) => setZip(e.target.value)}
@@ -358,18 +380,38 @@ export default function PlaintiffStep({
               autoComplete="postal-code"
               inputMode="numeric"
               maxLength={10}
+              aria-invalid={!!errors.zip}
             />
           </Field>
         </div>
-        <Field label="County">
+        <Field label="County" required error={errors.county}>
           <CountyField
             address={{ line1, city, state: stateAbbr, zip }}
             value={county}
             onChange={setCounty}
             label="Plaintiff county"
+            onStatusChange={setCountyStatus}
+            invalid={!!errors.county}
           />
         </Field>
       </div>
+
+      <ErrorSummary
+        errors={errors}
+        order={[
+          "firstName",
+          "lastName",
+          "bizName",
+          "email",
+          "phone",
+          "line1",
+          "city",
+          "stateAbbr",
+          "zip",
+          "county",
+          "_save",
+        ]}
+      />
 
       <div className="dlw-actions">
         <Link
@@ -378,33 +420,18 @@ export default function PlaintiffStep({
         >
           ← Back
         </Link>
-        <button className="dlw-cta" onClick={continueToNext} disabled={saving}>
-          {saving ? "Saving…" : "Continue ▶"}
+        <button
+          className="dlw-cta"
+          onClick={continueToNext}
+          disabled={saving || isCountyLookingUp}
+        >
+          {saving
+            ? "Saving…"
+            : isCountyLookingUp
+              ? "Looking up county…"
+              : "Continue ▶"}
         </button>
       </div>
-      {error ? <p style={{ color: "var(--accent)", marginTop: 12 }}>{error}</p> : null}
     </div>
-  );
-}
-
-function Field({
-  label,
-  required,
-  hint,
-  children,
-}: {
-  label: string;
-  required?: boolean;
-  hint?: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <label className="dlw-field">
-      <span className="dlw-label">
-        {label} {required ? <em className="dlw-required">*</em> : null}
-      </span>
-      {children}
-      {hint ? <span className="dlw-hint">{hint}</span> : null}
-    </label>
   );
 }

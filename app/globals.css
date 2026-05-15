@@ -47,6 +47,9 @@ a { color: inherit; text-decoration: none; }
 .btn-dark:hover { background: #2a2520; }
 .btn-green { background: #3D7A4A; color: #fef9f1; }
 .btn-green:hover { background: #2d6038; }
+.btn-danger { background: #c0392b; color: #fef9f1; }
+.btn-danger:hover { background: #9d2e22; }
+.btn-danger:disabled { background: #c0392b; opacity: 0.6; cursor: not-allowed; }
 .btn-cream { background: var(--bg-2); color: var(--ink); border-color: #c8c2b3; }
 .btn-cream:hover { border-color: #a8a193; }
 .hero-cta-btn { gap: 10px; padding-top: 17px; padding-bottom: 17px; }
@@ -684,8 +687,10 @@ a { color: inherit; text-decoration: none; }
 .marquee-bar::after { right: 0; background: linear-gradient(-90deg, var(--ink), transparent); }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-/* SECTION head */
-section { padding: var(--section-pad) 0; }
+/* SECTION head — scoped to marketing pages only. App pages (dashboard,
+   checkout, etc.) use their own section sizing and would be broken by
+   this rule's 120px vertical padding. */
+.site-page section { padding: var(--section-pad) 0; }
 .sec-head { text-align: center; margin-bottom: 48px; }
 .sec-head h2 { font-family: "Newsreader", Georgia, serif; font-weight: var(--headline-weight); font-size: var(--h2-size); line-height: 1.05; letter-spacing: var(--headline-tracking); color: var(--ink); max-width: 18ch; margin: 14px auto 0; }
 .sec-head h2 em { font-style: italic; color: var(--accent); font-weight: var(--headline-italic-weight); letter-spacing: var(--headline-italic-tracking); }
@@ -1081,8 +1086,10 @@ details.qa .a { margin-top: 14px; font-size: 16px; color: var(--muted); line-hei
 .final .ctas { position: relative; display: inline-flex; gap: 10px; }
 .final .btn-cream { background: #fef9f1; color: var(--ink); border-color: transparent; }
 
-/* Footer (dark) */
-footer { padding: 80px 0 40px; background: var(--ink); color: #fef9f1; }
+/* Footer (dark) — scoped to marketing pages. App layouts have their
+   own chrome and don't render the marketing footer; this guard prevents
+   any future <footer> element in an app page from getting dark styling. */
+.site-page footer { padding: 80px 0 40px; background: var(--ink); color: #fef9f1; }
 .foot-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 32px; border-bottom: 1px solid rgba(254, 249, 241, 0.1); }
 .foot-brand { color: rgba(254, 249, 241, 0.65); font-size: 14.5px; max-width: 38ch; line-height: 1.6; }
 .foot-brand .brand-logo { filter: brightness(0) invert(1); }

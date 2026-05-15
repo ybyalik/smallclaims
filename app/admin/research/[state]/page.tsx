@@ -1,7 +1,6 @@
 // State research detail page. Shows the four-call status for one state, with
 // markdown previews and run/re-run/poll controls.
 
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getStateBySlug, STATES } from "../../../../lib/states";
 import { createServiceRoleClient } from "../../../../lib/supabase/service-role";
@@ -9,6 +8,9 @@ import { CALL_TITLES, type StateCallId } from "../../../../lib/state-research/pr
 import StateResearchControls from "./StateResearchControls";
 import AutoRefresh from "../AutoRefresh";
 import MarkdownView from "./MarkdownView";
+import ExtractStructuredPackPanel from "./ExtractStructuredPackPanel";
+import StructuredPackView from "./StructuredPackView";
+import PageHead from "../../../../components/layout/PageHead";
 
 export const dynamic = "force-dynamic";
 
@@ -118,21 +120,46 @@ export default async function StateResearchDetail({ params }: { params: { state:
 
   const totalCostCents = calls.reduce((n, c) => n + (snapshots.get(c)!.costCents ?? 0), 0);
   const anyRunning = calls.some((c) => snapshots.get(c)!.status === "running");
+  const allCallsDone = calls.every((c) => snapshots.get(c)!.status === "done");
+  const extractedAt = (row?.["structured_pack_extracted_at"] as string | null) ?? null;
+  const extractedModel = (row?.["structured_pack_model"] as string | null) ?? null;
+  const extractedCostCents = (row?.["structured_pack_cost_cents"] as number | null) ?? null;
+  const extractedSourceChars =
+    (row?.["structured_pack_source_chars"] as number | null) ?? null;
+  const structuredPack =
+    (row?.["structured_pack"] as Record<string, unknown> | null) ?? null;
+  const callCharsTotal = calls.reduce(
+    (n, c) => n + (snapshots.get(c)!.markdown?.length ?? 0),
+    0,
+  );
 
   return (
     <div className="admin-page admin-research-view">
       <AutoRefresh enabled={anyRunning} />
-      <header className="admin-page-head">
-        <div>
-          <Link href="/admin/research" className="admin-back">← All states</Link>
-          <h1>{state.name} research</h1>
-          <p style={{ fontSize: 13, color: "var(--muted)" }}>
+      <PageHead
+        variant="admin"
+        back={{ href: "/admin/research", label: "← All states" }}
+        title={`${state.name} research`}
+        sub={
+          <>
             Four parallel deep-research calls. Total spend so far: ${(totalCostCents / 100).toFixed(2)}.
-            {anyRunning ? " One or more calls in progress — poll to check status." : null}
-          </p>
-        </div>
-        <StateResearchControls slug={state.slug} scope="all" />
-      </header>
+            {anyRunning ? " One or more calls in progress, poll to check status." : null}
+          </>
+        }
+        actions={<StateResearchControls slug={state.slug} scope="all" />}
+      />
+
+      <ExtractStructuredPackPanel
+        slug={state.slug}
+        allCallsDone={allCallsDone}
+        extractedAt={extractedAt}
+        extractedModel={extractedModel}
+        extractedCostCents={extractedCostCents}
+        extractedSourceChars={extractedSourceChars}
+        callCharsTotal={callCharsTotal}
+      />
+
+      <StructuredPackView pack={structuredPack} />
 
       <div style={{ display: "flex", flexDirection: "column", gap: 24, marginTop: 12 }}>
         {calls.map((c) => {

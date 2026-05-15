@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { createClient } from "../../../../lib/supabase/server";
 import SupportForm from "./SupportForm";
+import PageHead from "../../../../components/layout/PageHead";
 
 export const metadata: Metadata = {
   title: "Support",
@@ -24,14 +25,10 @@ export default async function SupportPage() {
 
   return (
     <div>
-      <div className="app-page-head">
-        <div>
-          <h1>Support</h1>
-          <p className="app-page-sub">
-            Tell us what&rsquo;s going on. We read every message and reply by email.
-          </p>
-        </div>
-      </div>
+      <PageHead
+        title="Support"
+        sub="Tell us what's going on. We read every message and reply by email."
+      />
 
       <div className="app-settings">
         <section className="app-settings-card">
@@ -40,6 +37,10 @@ export default async function SupportPage() {
             fullName={profile?.full_name ?? ""}
           />
         </section>
+        <p className="app-support-direct">
+          Prefer email? Reach us directly at{" "}
+          <a href="mailto:contact@civilcase.com">contact@civilcase.com</a>.
+        </p>
       </div>
     </div>
   );

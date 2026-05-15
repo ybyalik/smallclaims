@@ -2,7 +2,7 @@ import { redirect } from "next/navigation";
 import { createClient } from "../../../../../lib/supabase/server";
 import { loadOwnedCase } from "../../../../../lib/demand-letter/access";
 import WizardShell from "./WizardShell";
-import "./wizard.css";
+import "../../../../wizard.css";
 
 export const dynamic = "force-dynamic";
 

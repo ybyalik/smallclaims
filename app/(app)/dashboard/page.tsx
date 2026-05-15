@@ -2,6 +2,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { createClient } from "../../../lib/supabase/server";
 import type { Case, DemandLetter, Payment, Profile } from "../../../lib/supabase/types";
+import { deriveStatusLabel } from "../../../lib/cases/derive-status-label";
+import {
+  disputeTypeOtherFrom,
+  formatDisputeTypeShort,
+} from "../../../lib/cases/dispute-type-label";
+import { productBadgesForCase } from "../../../lib/cases/format-products";
+import ProductChipList from "../../../components/cases/ProductChipList";
+import PageHead from "../../../components/layout/PageHead";
+import StatusBadge from "../../../components/ui/StatusBadge";
+import EmptyState from "../../../components/ui/EmptyState";
+import type { ProductKey } from "../../../lib/stripe";
 
 export const metadata: Metadata = {
   title: "Dashboard",
@@ -9,39 +20,9 @@ export const metadata: Metadata = {
 
 export const dynamic = "force-dynamic";
 
-const ACTIVE_CASE_STATUSES = new Set([
-  "draft",
-  "demand_drafted",
-  "demand_paid",
-  "demand_sent",
-  "demand_delivered",
-  "demand_responded",
-  "filing_prepared",
-  "filed",
-  "service_arranged",
-  "served",
-  "hearing_scheduled",
-  "collection",
-]);
-
-const CASE_STATUS_LABEL: Record<string, string> = {
-  draft: "Draft",
-  demand_drafted: "Letter ready",
-  demand_paid: "Letter paid",
-  demand_sent: "Letter mailed",
-  demand_delivered: "Delivered",
-  demand_returned: "Returned",
-  demand_responded: "Responded",
-  filing_prepared: "Forms prepared",
-  filed: "Filed",
-  service_arranged: "Service arranged",
-  served: "Served",
-  hearing_scheduled: "Hearing scheduled",
-  judgment_entered: "Judgment entered",
-  collection: "Collecting",
-  settled: "Settled",
-  closed: "Closed",
-};
+// A case is "active" unless it's been formally closed or settled. Status no
+// longer encodes the granular product/letter state — that's derived elsewhere.
+const TERMINAL_STATUSES = new Set(["closed", "settled"]);
 
 const LETTER_STATUS_LABEL: Record<string, string> = {
   draft: "Draft",
@@ -136,7 +117,28 @@ export default async function DashboardHome() {
   const letters = (lettersRes.data || []) as DemandLetter[];
   const payments = (paymentsRes.data || []) as Payment[];
 
-  const activeCases = cases.filter((c) => ACTIVE_CASE_STATUSES.has(c.status));
+  const activeCases = cases.filter((c) => !TERMINAL_STATUSES.has(c.status));
+
+  // Build per-case lookup maps for the status-pill derivation. payments and
+  // letters were already loaded above; just shape them.
+  const paidByCase = new Map<string, Set<ProductKey>>();
+  for (const p of payments) {
+    if (p.status !== "succeeded" || !p.product_key) continue;
+    let set = paidByCase.get(p.case_id);
+    if (!set) {
+      set = new Set();
+      paidByCase.set(p.case_id, set);
+    }
+    set.add(p.product_key as ProductKey);
+  }
+  const latestLetterByCase = new Map<string, Pick<DemandLetter, "mail_status">>();
+  // letters is ordered by updated_at desc above; that's close enough for
+  // "latest" to drive the pill. The case detail page does its own ordered query.
+  for (const l of letters) {
+    if (!latestLetterByCase.has(l.case_id)) {
+      latestLetterByCase.set(l.case_id, { mail_status: l.mail_status });
+    }
+  }
   const lettersInFlight = letters.filter((l) =>
     ["queued", "in_transit", "delivered"].includes(l.mail_status),
   );
@@ -155,52 +157,49 @@ export default async function DashboardHome() {
   if (cases.length === 0) {
     return (
       <div>
-        <div className="app-page-head">
-          <div>
-            <h1>{firstName ? `Welcome, ${firstName}` : "Welcome"}</h1>
-            <p className="app-page-sub">Your case files, letters, and activity will appear here.</p>
-          </div>
-          <div>
+        <PageHead
+          title={firstName ? `Welcome, ${firstName}` : "Welcome"}
+          sub="Your case files, letters, and activity will appear here."
+          actions={
             <Link href="/dashboard/cases/new" className="btn btn-dark">
               Start a new case
             </Link>
-          </div>
-        </div>
+          }
+        />
 
-        <div className="app-empty">
-          <h2>No cases yet</h2>
-          <p>
-            Start a case to begin building your file. You can purchase a demand letter or other
-            services once you&apos;ve added your details.
-          </p>
-          <Link href="/dashboard/cases/new" className="btn btn-dark">
-            Start a new case
-          </Link>
-        </div>
+        <EmptyState
+          title="No cases yet"
+          body="Start a case to begin building your file. You can purchase a demand letter or other services once you've added your details."
+          cta={
+            <Link href="/dashboard/cases/new" className="btn btn-dark">
+              Start a new case
+            </Link>
+          }
+        />
       </div>
     );
   }
 
   return (
     <div>
-      <div className="app-page-head">
-        <div>
-          <h1>{firstName ? `Welcome back, ${firstName}` : "Welcome back"}</h1>
-          <p className="app-page-sub">
+      <PageHead
+        title={firstName ? `Welcome back, ${firstName}` : "Welcome back"}
+        sub={
+          <>
             {activeCases.length === 1
               ? "1 active case"
               : `${activeCases.length} active cases`}
             {lettersInFlight.length > 0
               ? ` · ${lettersInFlight.length} ${lettersInFlight.length === 1 ? "letter" : "letters"} in flight`
               : ""}
-          </p>
-        </div>
-        <div>
+          </>
+        }
+        actions={
           <Link href="/dashboard/cases/new" className="btn btn-dark">
             Start a new case
           </Link>
-        </div>
-      </div>
+        }
+      />
 
       <div className="app-stat-grid">
         <div className="app-stat">
@@ -247,28 +246,38 @@ export default async function DashboardHome() {
               </Link>
             ) : null}
           </div>
+          <div className="app-case-list-head" aria-hidden="true">
+            <span className="app-case-col-label app-case-col-label-left">Status</span>
+            <span className="app-case-col-label app-case-col-label-start">Case Name</span>
+            <span className="app-case-col-label app-case-col-label-start">Products</span>
+            <span className="app-case-col-label">Created</span>
+            <span className="app-case-col-label app-case-col-label-center">Amount</span>
+            <span />
+          </div>
           <ul className="app-case-list">
             {recentCases.map((c) => {
               const isV2Draft = c.status === "draft" && c.intake_version === 2;
               const href = isV2Draft ? `/case/${c.id}/build` : `/case/${c.id}`;
-              const statusLabel = CASE_STATUS_LABEL[c.status] || c.status;
-              const tone = ["settled", "closed", "judgment_entered"].includes(c.status)
-                ? "done"
-                : c.status === "draft"
-                ? "neutral"
-                : "active";
+              const paidSet = paidByCase.get(c.id) ?? new Set<ProductKey>();
+              const { label: statusLabel, tone } = deriveStatusLabel({ c });
+              const badges = productBadgesForCase(paidSet);
               return (
                 <Link key={c.id} href={href} className="app-case-card">
-                  <span className={`app-case-status app-case-status-${tone}`}>{statusLabel}</span>
+                  <StatusBadge tone={tone}>{statusLabel}</StatusBadge>
                   <div>
                     <div className="app-case-defendant">{caseTitle(c)}</div>
                     <div className="app-case-meta">
-                      {c.dispute_type.replace(/_/g, " ")} · {c.state} · updated{" "}
-                      {formatRelative(c.updated_at)}
+                      {formatDisputeTypeShort(
+                        c.dispute_type,
+                        disputeTypeOtherFrom(c.intake_answers),
+                      )}{" "}
+                      · {c.state} · updated {formatRelative(c.updated_at)}
                     </div>
                   </div>
-                  <div className="app-case-created" title="Date created">
-                    <span className="app-case-created-label">Created</span>
+                  <div className="app-case-products-cell">
+                    <ProductChipList badges={badges} emptyHint="None yet" />
+                  </div>
+                  <div className="app-case-created">
                     <span className="app-case-created-date">{formatCreated(c.created_at)}</span>
                   </div>
                   <div className="app-case-amount">{formatDollars(c.amount_cents)}</div>

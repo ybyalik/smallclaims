@@ -140,8 +140,9 @@ export async function POST(req: NextRequest) {
 
   // Draft mode: status='draft' + intake_version=2 lands the user in the
   // /case/[id]/build wizard (review step, since all fields are populated).
-  // Paid mode: status='demand_paid' lands them in /case/[id] case file.
-  const status = mode === "draft" ? "draft" : "demand_paid";
+  // Paid mode: status='active' + a succeeded letter-tier payment row lands
+  // them in /case/[id] with the letter step showing "Open letter."
+  const status = mode === "draft" ? "draft" : "active";
   const intakeVersion = mode === "draft" ? 2 : undefined;
 
   const { data: caseRow, error: insertError } = await admin
@@ -176,6 +177,23 @@ export async function POST(req: NextRequest) {
       { error: `insert failed: ${insertError?.message ?? "unknown"}` },
       { status: 500 },
     );
+  }
+
+  // For paid mode, insert a synthetic succeeded payment row so the unified
+  // case page shows "Letter paid" and the timeline step shows "Open letter."
+  // The display label is derived from payments + demand_letters + intake
+  // answers; status='active' alone doesn't signal "letter paid."
+  if (mode === "paid") {
+    await admin.from("payments").insert({
+      case_id: caseRow.id,
+      user_id: userId,
+      product_key: "tier_send_letter",
+      amount_cents: 2900,
+      currency: "usd",
+      status: "succeeded",
+      paid_at: new Date().toISOString(),
+      line_items: { admin_bypass: true, source: "test_scenario" },
+    });
   }
 
   // For draft mode, jump straight into the wizard so the admin can test

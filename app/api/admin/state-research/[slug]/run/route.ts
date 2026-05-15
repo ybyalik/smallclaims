@@ -22,6 +22,7 @@ import {
   type SubmitMode,
 } from "../../../../../../lib/state-research/orchestrate";
 import type { StateCallId } from "../../../../../../lib/state-research/prompts";
+import { ALLOWED_DR_MODELS, type DeepResearchModel } from "../../../../../../lib/state-research/runner";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -54,14 +55,18 @@ export async function POST(req: NextRequest, ctx: { params: { slug: string } }) 
     return NextResponse.json({ error: guard.error }, { status: 403 });
   }
 
-  let body: { call?: number | "all"; via?: string };
+  let body: { call?: number | "all"; via?: string; model?: string };
   try {
-    body = (await req.json()) as { call?: number | "all"; via?: string };
+    body = (await req.json()) as { call?: number | "all"; via?: string; model?: string };
   } catch {
     return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
   }
 
   const via: SubmitMode = body.via === "batch" ? "batch" : "background";
+  const model: DeepResearchModel | undefined =
+    typeof body.model === "string" && ALLOWED_DR_MODELS.has(body.model as DeepResearchModel)
+      ? (body.model as DeepResearchModel)
+      : undefined;
 
   // Audit log: every submission attempt gets a line so we can correlate
   // duplicate OpenAI responses with our server invocations.
@@ -72,6 +77,7 @@ export async function POST(req: NextRequest, ctx: { params: { slug: string } }) 
       slug: ctx.params.slug,
       call: body.call,
       via,
+      model: model ?? "(default)",
       ua: req.headers.get("user-agent")?.slice(0, 120) ?? "",
       ip:
         req.headers.get("x-forwarded-for")?.split(",")[0].trim() ||
@@ -81,12 +87,12 @@ export async function POST(req: NextRequest, ctx: { params: { slug: string } }) 
   );
 
   if (body.call === "all") {
-    const r = await startAllStateResearch(ctx.params.slug, via);
+    const r = await startAllStateResearch(ctx.params.slug, via, model);
     return NextResponse.json(r, { status: r.ok ? 200 : 502 });
   }
 
   if (body.call === 1 || body.call === 2 || body.call === 3 || body.call === 4) {
-    const r = await startStateResearchCall(ctx.params.slug, body.call as StateCallId, via);
+    const r = await startStateResearchCall(ctx.params.slug, body.call as StateCallId, via, model);
     return NextResponse.json(r, { status: r.ok ? 200 : 502 });
   }
 

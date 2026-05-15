@@ -61,21 +61,22 @@ export async function GET(req: NextRequest, ctx: { params: { caseId: string } })
     );
   }
 
-  // Pull defendant name + state for the file name + page title
+  // Pull plaintiff + defendant + state for the cover title + subtitle.
   const { data: caseRow } = await admin
     .from("cases")
-    .select("defendant_name, state")
+    .select("plaintiff_name, defendant_name, state")
     .eq("id", ctx.params.caseId)
     .maybeSingle();
-  const titleSuffix =
-    caseRow?.defendant_name || caseRow?.state
-      ? ` - ${caseRow?.defendant_name ?? ""}${caseRow?.state ? ` (${caseRow.state})` : ""}`
-      : "";
-  const title = `Filing guide${titleSuffix}`.trim();
-  const fileBase = title.replace(/[^a-z0-9 \-_()]+/gi, "").replace(/\s+/g, "_");
+  const title = "Small Claims Filing Guide";
+  const plaintiff = (caseRow?.plaintiff_name ?? "").trim() || "Plaintiff";
+  const defendant = (caseRow?.defendant_name ?? "").trim() || "Defendant";
+  const subtitle = `${plaintiff} vs. ${defendant}`;
+  const fileBase = `${title} - ${defendant}`
+    .replace(/[^a-z0-9 \-_()]+/gi, "")
+    .replace(/\s+/g, "_");
 
   try {
-    const pdf = await renderHtmlToPdf(html, { title });
+    const pdf = await renderHtmlToPdf(html, { title, subtitle });
     return new NextResponse(pdf as unknown as BodyInit, {
       status: 200,
       headers: {

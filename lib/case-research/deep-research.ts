@@ -339,35 +339,32 @@ function countWebSearchCalls(env: ResponsesEnvelope): number {
 }
 
 // ---------------------------------------------------------------------------
-// Combined deep extraction
+// Structured extraction over the state-level research findings.
 //
-// Runs ONCE after both deep calls complete. Concatenates the call A + call B
-// findings dossiers, hands them to gpt-5-mini, and produces a full structured
-// EvidencePack — including the classification block (since there's no longer
-// a separate classify step upstream).
+// Inputs: the pre-baked state research markdown (four calls concatenated) for
+// the case's state. Output: a full structured EvidencePack — including the
+// classification block — that downstream merge + writer consume.
 // ---------------------------------------------------------------------------
 
 import { EVIDENCE_PACK_FULL_SCHEMA } from "./agents";
 
+// State findings can be ~250k chars across all four calls. Slicing here
+// keeps the extraction prompt well under gpt-5-mini's input window while
+// preserving the most important sections (Call 1 court/venue at the start
+// of the document is always present).
+const STATE_FINDINGS_BUDGET = 200_000;
+
 export async function extractStructuredPackFromCombinedFindings(
-  findingsA: string,
-  findingsB: string,
+  stateFindings: string,
   intake: IntakeSnapshot,
   classificationStub: Classification,
 ): Promise<{ data: EvidencePack; costCents: number; model: string }> {
-  const combined = [
-    "# DEEP RESEARCH FINDINGS — CALL A (pre-filing and filing: court/venue, jurisdiction, scope/exclusions, arbitration, frequency caps, statute of limitations, pre-filing requirements, forms, filing fees, filing methods, service of process)",
-    "",
-    findingsA || "(call A produced no findings)",
-    "",
-    "---",
-    "",
-    "# DEEP RESEARCH FINDINGS — CALL B (hearing through collection: hearing logistics, counterclaims, mediation, accommodations, recoverable amounts, appeals, post-judgment collection, garnishment exemptions, state-specific quirks, sources)",
-    "",
-    findingsB || "(call B produced no findings)",
-  ].join("\n");
+  const dossier = (stateFindings || "(no state research available)").slice(
+    0,
+    STATE_FINDINGS_BUDGET,
+  );
 
-  const prompt = `You are reading combined procedural-research findings dossiers for one US court filing and extracting structured fields into a full EvidencePack JSON. Do NOT invent facts. Use only what the dossiers state. If a field isn't addressed, leave it as a sensible empty default (empty string, empty array, null) and add a one-line note in "unknowns".
+  const prompt = `You are reading procedural-research findings for one US state's small-claims court system and extracting structured fields into a full EvidencePack JSON for one specific plaintiff's case. Do NOT invent facts. Use only what the dossier states. If a field isn't addressed, leave it as a sensible empty default (empty string, empty array, null) and add a one-line note in "unknowns".
 
 CASE CONTEXT (orientation only — do not echo as-is)
 - State: ${intake.state}
@@ -377,8 +374,8 @@ CASE CONTEXT (orientation only — do not echo as-is)
 - Claim category (user-tagged hint): ${classificationStub.claim_category}
 - Amount: $${(intake.amountCents / 100).toFixed(2)}
 
-COMBINED DOSSIERS
-${combined}
+STATE RESEARCH DOSSIER (covers court structure/venue, deadlines/pre-filing, defendant ID/forms/fees/filing/service, and hearing through collection — four sections concatenated)
+${dossier}
 
 EXTRACTION FIELDS
 
@@ -445,20 +442,17 @@ Practical
 - statutory_multipliers: structured (e.g., { statute: "NJSA 46:8-21.1", multiplier: 2, conditions: "wrongful retention of security deposit", claim_types: ["security_deposit"] })
 - tax_implications { recovery_taxability, form_1099_c_consideration }
 
-- sources: every URL the dossiers cite with url, title, domain, cited_for
-- unknowns: anything the dossiers explicitly flag as unknown OR fields you'd normally extract but neither dossier covered
+- sources: every URL the dossier cites with url, title, domain, cited_for
+- unknowns: anything the dossier explicitly flags as unknown OR fields you'd normally extract but the dossier didn't cover
 
-Return only the JSON. The dossiers are ground truth.`;
+Return only the JSON. The dossier is ground truth.`;
 
   const res = await structuredJson<EvidencePack>({
     model: MODEL.FAST,
     input: prompt,
     jsonSchema: EVIDENCE_PACK_FULL_SCHEMA,
     temperature: 0,
-    // The combined dossiers can be 50-100k chars, but the JSON output stays
-    // bounded by the schema (~12-16k tokens). Bumped over the per-call
-    // version because the combined extraction has more fields to fill.
-    maxOutputTokens: 16000,
+    // No max_output_tokens cap — model uses its full default output budget.
   });
 
   return { data: res.data, costCents: res.costCents, model: res.model };

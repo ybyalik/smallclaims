@@ -130,7 +130,7 @@ export async function POST(req: NextRequest) {
     .from("cases")
     .insert({
       owner_user_id: userId,
-      status: "demand_drafted",
+      status: "active",
       state: body.state,
       county: null,
       dispute_type: body.dispute_type,

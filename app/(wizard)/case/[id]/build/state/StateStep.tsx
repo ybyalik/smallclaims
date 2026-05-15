@@ -5,6 +5,10 @@ import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { getStateContext } from "../../../../../../lib/demand-letter/state-context";
 import Combobox, { type ComboboxOption } from "../../../../../../components/wizard/Combobox";
+import {
+  useFormErrors,
+  ErrorSummary,
+} from "../../../../../../components/wizard/form-errors";
 import { useAutosave } from "../useAutosave";
 
 interface State {
@@ -23,7 +27,7 @@ export default function StateStep({ caseId, initialAbbr, states }: Props) {
   const router = useRouter();
   const [abbr, setAbbr] = useState<string>(initialAbbr);
   const [saving, setSaving] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const { errors, showErrors, clear, setErrors } = useFormErrors();
 
   const ctx = useMemo(() => (abbr ? getStateContext(abbr) : null), [abbr]);
 
@@ -44,10 +48,21 @@ export default function StateStep({ caseId, initialAbbr, states }: Props) {
     [states],
   );
 
+  function validate(): Record<string, string> {
+    const errs: Record<string, string> = {};
+    if (!abbr) errs.state = "Select the recipient's state to continue.";
+    return errs;
+  }
+
   async function continueToNext() {
-    if (!abbr || saving) return;
+    if (saving) return;
+    const errs = validate();
+    if (Object.keys(errs).length > 0) {
+      showErrors(errs);
+      return;
+    }
     setSaving(true);
-    setError(null);
+    clear();
     try {
       const res = await fetch(`/api/demand-letters/${caseId}`, {
         method: "PATCH",
@@ -60,7 +75,7 @@ export default function StateStep({ caseId, initialAbbr, states }: Props) {
       if (!res.ok) throw new Error("Could not save");
       router.push(`/case/${caseId}/build/eligibility`);
     } catch (e) {
-      setError(e instanceof Error ? e.message : "Could not save");
+      setErrors({ _save: e instanceof Error ? e.message : "Could not save" });
       setSaving(false);
     }
   }
@@ -99,17 +114,16 @@ export default function StateStep({ caseId, initialAbbr, states }: Props) {
         </div>
       ) : null}
 
+      <ErrorSummary errors={errors} order={["state", "_save"]} />
+
       <div className="dlw-actions">
         <Link href={`/case/${caseId}/build/amount`} className="dlw-actions-back">
           ← Back
         </Link>
-        <button className="dlw-cta" onClick={continueToNext} disabled={!abbr || saving}>
+        <button className="dlw-cta" onClick={continueToNext} disabled={saving}>
           {saving ? "Saving…" : "Continue ▶"}
         </button>
       </div>
-      {error ? (
-        <p style={{ color: "var(--accent)", marginTop: 12 }}>{error}</p>
-      ) : null}
     </div>
   );
 }

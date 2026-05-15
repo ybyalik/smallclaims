@@ -41,8 +41,30 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
   const post = res.data as BlogPostType | null;
   if (!post) notFound();
 
+  const SITE_URL = "https://civilcase.com";
+  const canonical = `${SITE_URL}/blog/${post.slug}`;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": `${canonical}#blogposting`,
+    mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
+    headline: post.title,
+    description: post.excerpt ?? undefined,
+    image: post.cover_image_url ?? undefined,
+    datePublished: post.published_at ?? post.created_at,
+    dateModified: post.updated_at,
+    author: { "@type": "Organization", name: "CivilCase Editorial", url: SITE_URL },
+    publisher: { "@id": `${SITE_URL}/#organization` },
+    inLanguage: "en-US",
+    isPartOf: { "@id": `${SITE_URL}/#website` },
+  };
+
   return (
     <main className="wrap blog-post">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Breadcrumbs items={[{ href: "/blog", label: "Blog" }, { label: post.title }]} />
       <article>
         <header className="blog-post-head">

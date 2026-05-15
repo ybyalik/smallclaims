@@ -29,6 +29,9 @@ export type DefendantKind =
 
 export interface QuizAnswers {
   dispute_type: DisputeType;
+  // Free-text description when dispute_type === "other". Surfaced back in
+  // the score result so the user sees their words instead of "other".
+  dispute_type_other?: string;
   amount_dollars: number;
   state_slug: string;
   incident_date: string; // ISO YYYY-MM-DD
@@ -137,11 +140,13 @@ export function scoreCase(a: QuizAnswers, facts: StateFacts | null): ScoreResult
         "These disputes have a clear damages number and a clear duty (a written agreement, a statute, or both).",
     });
   } else if (typeScores[a.dispute_type] <= 8) {
+    const customText = a.dispute_type === "other" ? a.dispute_type_other?.trim() : null;
     factors.push({
-      label: "Less-common claim type",
+      label: customText ? "Custom claim type" : "Less-common claim type",
       impact: "neutral",
-      detail:
-        "Your dispute doesn't fit the most-common small-claims templates. The case can still work, but the framing matters.",
+      detail: customText
+        ? `You described your dispute as: "${customText}". Custom claims can still work in small claims, but the framing matters and the SOL match below is a best-effort guess.`
+        : "Your dispute doesn't fit the most-common small-claims templates. The case can still work, but the framing matters.",
     });
   }
 

@@ -22,10 +22,6 @@
 import { MODEL, structuredJson } from "./openai";
 import type { EvidencePack, IntakeSnapshot } from "./agents";
 
-// Per-half findings budget. The two halves combined fit comfortably in the
-// merger's input window.
-const FINDINGS_BUDGET_PER_HALF = 35_000;
-
 export type ConfidenceLevel = "low" | "medium" | "high";
 
 export interface MergeConflict {
@@ -168,18 +164,22 @@ export interface MergeInputs {
   // May be null if extraction failed; in that case the merger leans on the
   // raw findings text.
   deepPack: EvidencePack | null;
-  // Raw findings markdown from each deep research call (kept split because
-  // each is a separate dossier with its own citations). The dossiers are
-  // backup material the merger reads when the structured deep pack misses
-  // something.
-  findingsA: string;
-  findingsB: string;
+  // Raw markdown findings for the state (the four state-research calls
+  // concatenated). Backup material the merger reads when the structured
+  // deep pack misses something.
+  stateFindings: string;
 }
 
+// Combined state findings can run ~250k chars. The merger has comfortable
+// headroom for one sliced block.
+const STATE_FINDINGS_MERGE_BUDGET = 70_000;
+
 export async function mergeResearchPacks(inputs: MergeInputs): Promise<MergeResult> {
-  const { intake, shallowPack, deepPack, findingsA, findingsB } = inputs;
-  const findingsASlice = (findingsA || "").slice(0, FINDINGS_BUDGET_PER_HALF);
-  const findingsBSlice = (findingsB || "").slice(0, FINDINGS_BUDGET_PER_HALF);
+  const { intake, shallowPack, deepPack, stateFindings } = inputs;
+  const stateFindingsSlice = (stateFindings || "").slice(
+    0,
+    STATE_FINDINGS_MERGE_BUDGET,
+  );
 
   const prompt = `You are reconciling two procedural-research inputs about one US court filing into a single, best-of-both EvidencePack. You MUST also record every conflict, score confidence per section, and flag any critical jurisdictional disagreement.
 
@@ -195,18 +195,15 @@ CASE
 INPUT 1 — SHALLOW PACK (built mechanically from ~20 fetched official pages; structured)
 ${JSON.stringify(shallowPack, null, 2)}
 
-INPUT 2 — DEEP PACK (single extracted pack covering all 21 research sections; built from concatenated call A + B findings)
-${deepPack ? JSON.stringify(deepPack, null, 2) : "(structured extraction failed; rely on the raw findings dossiers below)"}
+INPUT 2 — DEEP PACK (structured extraction of the state research dossier)
+${deepPack ? JSON.stringify(deepPack, null, 2) : "(structured extraction failed; rely on the raw state findings dossier below)"}
 
-INPUT 3 — RAW FINDINGS A (raw markdown bullet dossier from deep research call A — pre-filing and filing topics, up to ${FINDINGS_BUDGET_PER_HALF} chars)
-${findingsASlice}
-
-INPUT 4 — RAW FINDINGS B (raw markdown bullet dossier from deep research call B — hearing through collection, up to ${FINDINGS_BUDGET_PER_HALF} chars)
-${findingsBSlice}
+INPUT 3 — RAW STATE FINDINGS (four state-research sections concatenated: court structure/venue, deadlines/pre-filing, defendant ID/forms/fees/filing/service, hearing through collection; up to ${STATE_FINDINGS_MERGE_BUDGET} chars)
+${stateFindingsSlice}
 
 HOW TO COMBINE
 - Use the deep pack as your primary structured source.
-- Use the raw findings markdown (A + B) when the deep pack is empty or thin for a field — the dossiers often have a precise statute citation or detail that didn't make it into the structured extraction.
+- Use the raw state findings markdown when the deep pack is empty or thin for a field — the dossier often has a precise statute citation or detail that didn't make it into the structured extraction.
 - Reconcile against the shallow pack using the credibility rules below.
 
 CREDIBILITY RULES (field by field)
@@ -255,7 +252,6 @@ Return JSON matching the schema. The merged pack must be complete and usable on 
     input: prompt,
     jsonSchema: MERGE_SCHEMA,
     temperature: 0,
-    maxOutputTokens: 16000,
   });
   return { data: res.data, costCents: res.costCents, model: res.model };
 }

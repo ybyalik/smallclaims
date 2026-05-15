@@ -2,6 +2,7 @@ import Link from "next/link";
 import { createClient } from "../../lib/supabase/server";
 import { createServiceRoleClient } from "../../lib/supabase/service-role";
 import { listResearch } from "../../lib/research";
+import PageHead from "../../components/layout/PageHead";
 
 export const dynamic = "force-dynamic";
 
@@ -45,9 +46,7 @@ export default async function AdminDashboard() {
 
   return (
     <div className="admin-page">
-      <header className="admin-page-head">
-        <h1>Dashboard</h1>
-      </header>
+      <PageHead variant="admin" title="Dashboard" />
 
       <h2 className="admin-section-h" style={{ marginTop: 0 }}>People & money</h2>
       <div className="admin-cards">

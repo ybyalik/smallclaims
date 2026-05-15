@@ -38,6 +38,7 @@ export async function startStateResearchCall(
   slug: string,
   call: StateCallId,
   via: SubmitMode = "background",
+  modelOverride?: string,
 ): Promise<{ ok: true; id: string; via: SubmitMode } | { ok: false; error: string }> {
   const state = getStateBySlug(slug);
   if (!state) return { ok: false, error: `Unknown state slug: ${slug}` };
@@ -110,7 +111,7 @@ export async function startStateResearchCall(
   if (via === "background") {
     let submitted: SubmitOutput;
     try {
-      submitted = await submitStateResearchCall(call, state.name);
+      submitted = await submitStateResearchCall(call, state.name, modelOverride);
     } catch (e) {
       const msg = e instanceof Error ? e.message : String(e);
       await admin
@@ -144,7 +145,7 @@ export async function startStateResearchCall(
 
   // ----- batch mode -------------------------------------------------------
   try {
-    const batch = await submitStateResearchBatchCall(call, state.name, slug);
+    const batch = await submitStateResearchBatchCall(call, state.name, slug, modelOverride);
     await admin
       .from("state_research")
       .update({
@@ -181,6 +182,7 @@ export async function startStateResearchCall(
 export async function startAllStateResearch(
   slug: string,
   via: SubmitMode = "background",
+  modelOverride?: string,
 ): Promise<{
   ok: boolean;
   results: Array<{ call: StateCallId; ok: boolean; id?: string; error?: string }>;
@@ -188,7 +190,7 @@ export async function startAllStateResearch(
   const calls: StateCallId[] = [1, 2, 3, 4];
   const results = await Promise.all(
     calls.map(async (c) => {
-      const r = await startStateResearchCall(slug, c, via);
+      const r = await startStateResearchCall(slug, c, via, modelOverride);
       if (r.ok) return { call: c, ok: true as const, id: r.id };
       return { call: c, ok: false as const, error: r.error };
     }),

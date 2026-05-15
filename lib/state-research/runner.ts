@@ -5,10 +5,18 @@
 // Each call is independent: failures don't cascade, and re-running one call
 // doesn't redo the others.
 
-import { getStatePrompt, type StateCallId, CALL_TITLES } from "./prompts";
+import { resolveStatePrompt, type StateCallId, CALL_TITLES } from "./prompts";
 import { makeApiError } from "../case-research/api-errors";
 
 const DEFAULT_DR_MODEL = "o3-deep-research";
+
+// Models the admin UI can pick between. Both are Deep Research models with
+// the same Responses API shape; o4-mini is ~5x cheaper, lower quality.
+export type DeepResearchModel = "o3-deep-research" | "o4-mini-deep-research";
+export const ALLOWED_DR_MODELS: ReadonlySet<DeepResearchModel> = new Set([
+  "o3-deep-research",
+  "o4-mini-deep-research",
+]);
 
 // Same budget as per-case deep research — gives ~50k reasoning + ~50k output.
 const PER_CALL_MAX_OUTPUT_TOKENS = 100_000;
@@ -63,13 +71,15 @@ export class OpenAINotConfigured extends Error {
 export async function submitStateResearchCall(
   call: StateCallId,
   stateName: string,
+  modelOverride?: string,
 ): Promise<SubmitOutput> {
   const key = process.env.OPENAI_API_KEY;
   if (!key) throw new OpenAINotConfigured();
-  const model = process.env.OPENAI_DEEP_RESEARCH_MODEL || DEFAULT_DR_MODEL;
+  const model =
+    modelOverride || process.env.OPENAI_DEEP_RESEARCH_MODEL || DEFAULT_DR_MODEL;
   const body = {
     model,
-    input: getStatePrompt(call, stateName),
+    input: await resolveStatePrompt(call, stateName),
     background: true,
     tools: [{ type: "web_search_preview" }],
     max_output_tokens: PER_CALL_MAX_OUTPUT_TOKENS,

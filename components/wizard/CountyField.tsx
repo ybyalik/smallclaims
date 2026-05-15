@@ -9,6 +9,8 @@ interface AddressInput {
   zip?: string | null;
 }
 
+export type CountyLookupStatus = "idle" | "looking_up" | "matched" | "no_match";
+
 interface Props {
   // The address fields the wizard already collects. We re-derive the county
   // whenever the (debounced) combination of these changes.
@@ -23,6 +25,11 @@ interface Props {
   label?: string;
   // Disable network derivation entirely — user can still type freely.
   disableLookup?: boolean;
+  // Optional: notify the parent of lookup state changes so it can gate
+  // a submit button or show its own progress indicator.
+  onStatusChange?: (status: CountyLookupStatus) => void;
+  // Show error styling (red border + cream tint).
+  invalid?: boolean;
 }
 
 const DEBOUNCE_MS = 600;
@@ -33,13 +40,20 @@ export default function CountyField({
   onChange,
   label = "County",
   disableLookup,
+  onStatusChange,
+  invalid,
 }: Props) {
   const [derived, setDerived] = useState<string | null>(null);
-  const [status, setStatus] = useState<"idle" | "looking_up" | "matched" | "no_match">(
-    "idle",
-  );
+  const [status, setStatus] = useState<CountyLookupStatus>("idle");
+
+  // Surface status changes to the parent so it can gate a submit button.
+  useEffect(() => {
+    onStatusChange?.(status);
+  }, [status, onStatusChange]);
   const lastQueryRef = useRef<string>("");
   const inFlightRef = useRef<AbortController | null>(null);
+  const lastDerivedRef = useRef<string>("");
+  const seededInitialRef = useRef<boolean>(false);
 
   useEffect(() => {
     if (disableLookup) return;
@@ -48,6 +62,19 @@ export default function CountyField({
       setStatus("idle");
       setDerived(null);
       return;
+    }
+    // First time the effect sees a populated address: if the parent
+    // already passed a non-empty value, trust it and don't re-fetch.
+    // Keeps the field stable when the user navigates back to a step
+    // with already-filled data instead of flashing "Looking up county
+    // from address…" and re-running the network call.
+    if (!seededInitialRef.current) {
+      seededInitialRef.current = true;
+      if (value.trim().length > 0) {
+        lastQueryRef.current = sig;
+        lastDerivedRef.current = value.trim();
+        return;
+      }
     }
     if (sig === lastQueryRef.current) return;
     const t = setTimeout(async () => {
@@ -86,14 +113,13 @@ export default function CountyField({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [address.line1, address.city, address.state, address.zip, disableLookup]);
 
-  const lastDerivedRef = useRef<string>("");
-
   return (
     <div>
       <input
         value={value}
         onChange={(e) => onChange(e.target.value)}
         className="dlw-input"
+        aria-invalid={!!invalid}
         placeholder={
           status === "looking_up"
             ? "Looking up county…"

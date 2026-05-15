@@ -3,6 +3,10 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import {
+  useFormErrors,
+  ErrorSummary,
+} from "../../../../../../components/wizard/form-errors";
 import { useAutosave } from "../useAutosave";
 
 interface Props {
@@ -46,7 +50,7 @@ export default function EligibilityStep({ caseId }: Props) {
     within_sol: true,
   });
   const [saving, setSaving] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const { errors, showErrors, clear, setErrors } = useFormErrors();
 
   const allYes = QUESTIONS.every((q) => answers[q.key] === true);
   const failedQ = QUESTIONS.find((q) => answers[q.key] === false);
@@ -56,10 +60,24 @@ export default function EligibilityStep({ caseId }: Props) {
     intake_answers: { eligibility: answers, eligibility_passed: allYes },
   });
 
+  function validate(): Record<string, string> {
+    const errs: Record<string, string> = {};
+    if (!allYes) {
+      errs.eligibility =
+        "Answer Yes to all three questions, or step back and reconsider.";
+    }
+    return errs;
+  }
+
   async function continueToNext() {
-    if (!allYes || saving) return;
+    if (saving) return;
+    const errs = validate();
+    if (Object.keys(errs).length > 0) {
+      showErrors(errs);
+      return;
+    }
     setSaving(true);
-    setError(null);
+    clear();
     try {
       const res = await fetch(`/api/demand-letters/${caseId}`, {
         method: "PATCH",
@@ -74,7 +92,7 @@ export default function EligibilityStep({ caseId }: Props) {
       if (!res.ok) throw new Error("Could not save");
       router.push(`/case/${caseId}/build/recovery`);
     } catch (e) {
-      setError(e instanceof Error ? e.message : "Could not save");
+      setErrors({ _save: e instanceof Error ? e.message : "Could not save" });
       setSaving(false);
     }
   }
@@ -124,6 +142,8 @@ export default function EligibilityStep({ caseId }: Props) {
         </div>
       ) : null}
 
+      <ErrorSummary errors={errors} order={["eligibility", "_save"]} />
+
       <div className="dlw-actions">
         <Link href={`/case/${caseId}/build/state`} className="dlw-actions-back">
           ← Back
@@ -132,7 +152,6 @@ export default function EligibilityStep({ caseId }: Props) {
           {saving ? "Saving…" : "Continue ▶"}
         </button>
       </div>
-      {error ? <p style={{ color: "var(--accent)", marginTop: 12 }}>{error}</p> : null}
     </div>
   );
 }

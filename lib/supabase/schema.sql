@@ -11,22 +11,27 @@
 
 DO $$ BEGIN
   CREATE TYPE case_status AS ENUM (
-    'draft',                 -- intake started, not yet paid
-    'demand_drafted',        -- letter generated, awaiting checkout
-    'demand_paid',           -- payment captured, ready to mail or download
-    'demand_sent',           -- mail dispatched (Lob accepted)
-    'demand_delivered',      -- USPS delivery event
-    'demand_returned',       -- USPS return-to-sender or refused
-    'demand_responded',      -- defendant responded (manual mark)
-    'filing_prepared',       -- court forms generated (Phase 2)
-    'filed',                 -- filed with court (Phase 2)
-    'service_arranged',      -- process server engaged (Phase 3)
-    'served',                -- proof of service in hand (Phase 3)
-    'hearing_scheduled',     -- (Phase 3)
-    'judgment_entered',      -- (Phase 3)
-    'collection',            -- post-judgment collection active (Phase 4)
+    -- Canonical (used by new writes):
+    'draft',                 -- intake started, not yet finished
+    'intake_complete',       -- wizard signed off (kept for legacy rows; new code maps to 'active')
+    'active',                -- wizard done; product purchases drive display state
     'closed',                -- case resolved, dismissed, or abandoned
-    'settled'                -- defendant paid before/after judgment
+    'settled',               -- defendant paid before/after judgment
+    -- Legacy values (still in DB, no longer written; display label is
+    -- derived from payments + demand_letters.mail_status + intake_answers):
+    'demand_drafted',
+    'demand_paid',
+    'demand_sent',
+    'demand_delivered',
+    'demand_returned',
+    'demand_responded',
+    'filing_prepared',
+    'filed',
+    'service_arranged',
+    'served',
+    'hearing_scheduled',
+    'judgment_entered',
+    'collection'
   );
 EXCEPTION WHEN duplicate_object THEN NULL; END $$;
 

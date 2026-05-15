@@ -16,7 +16,7 @@ export const maxDuration = 30;
 
 const MAX_SUBJECT = 200;
 const MAX_MESSAGE = 10_000;
-const SUPPORT_INBOX = process.env.SUPPORT_EMAIL || "ybyalik@gmail.com";
+const SUPPORT_INBOX = process.env.SUPPORT_EMAIL || "contact@civilcase.com";
 
 function escapeHtml(s: string): string {
   return s

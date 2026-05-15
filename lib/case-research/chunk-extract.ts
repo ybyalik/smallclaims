@@ -176,7 +176,6 @@ Return ONLY the JSON.`;
     input: prompt,
     jsonSchema: EVIDENCE_PACK_NO_CLASSIFICATION_SCHEMA,
     temperature: 0,
-    maxOutputTokens: 8000,
   });
   return { data: res.data, costCents: res.costCents, model: res.model };
 }

@@ -3,7 +3,6 @@ export {
   evidencePath,
   demandLetterPath,
   filingGuidePath,
-  courtPrepPath,
   courtFormPath,
   proofOfServicePath,
   correspondencePath,

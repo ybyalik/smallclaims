@@ -16,7 +16,7 @@
 //           -> when status=completed, GET /v1/files/{output_file_id}/content
 //           -> parse the single output line into a Responses envelope
 
-import { getStatePrompt, type StateCallId } from "./prompts";
+import { resolveStatePrompt, type StateCallId } from "./prompts";
 import { makeApiError } from "../case-research/api-errors";
 
 const DEFAULT_DR_MODEL = "o3-deep-research";
@@ -96,21 +96,35 @@ export async function submitStateResearchBatchCall(
   call: StateCallId,
   stateName: string,
   slug: string,
+  modelOverride?: string,
 ): Promise<BatchSubmitResult> {
   const key = getKey();
-  const model = process.env.OPENAI_DEEP_RESEARCH_MODEL || DEFAULT_DR_MODEL;
+  const model =
+    modelOverride || process.env.OPENAI_DEEP_RESEARCH_MODEL || DEFAULT_DR_MODEL;
   const customId = `state-${slug}-call-${call}`;
+  const input = await resolveStatePrompt(call, stateName);
 
+  // The batch envelope's metadata does not propagate to spawned /v1/responses
+  // objects, so tag the inner request body directly. Without this, every
+  // resp_… ends up with metadata: {} and cannot be attributed back to a
+  // batch + slug + call.
   const line = {
     custom_id: customId,
     method: "POST",
     url: "/v1/responses",
     body: {
       model,
-      input: getStatePrompt(call, stateName),
+      input,
       tools: [{ type: "web_search_preview" }],
       max_output_tokens: PER_CALL_MAX_OUTPUT_TOKENS,
       max_tool_calls: PER_CALL_MAX_TOOL_CALLS,
+      metadata: {
+        kind: "state-research",
+        mode: "batch-jsonl",
+        slug,
+        call: String(call),
+        nonce: Date.now().toString(36),
+      },
     },
   };
   const jsonl = JSON.stringify(line) + "\n";

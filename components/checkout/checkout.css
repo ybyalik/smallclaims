@@ -1,0 +1,658 @@
+/* =========================================================================
+   Shared checkout component styles (.ck-*). Used by all product purchase
+   pages (demand-letter, filing-guide). Pairs with PaymentForm styles in
+   wizard.css.
+   ========================================================================= */
+
+.ck-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+/* ---------- HERO ---------- */
+.ck-hero {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 36px;
+  align-items: start;
+}
+.ck-eyebrow {
+  display: inline-block;
+  padding: 5px 14px;
+  background: #f0eee7;
+  color: #5a574e;
+  border-radius: 999px;
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 0 0 18px;
+}
+.ck-hero h1 {
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 34px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+  margin: 0 0 8px;
+}
+.ck-hero-lede {
+  font-size: 16px;
+  color: #3a3833;
+  line-height: 1.55;
+  margin: 0 0 14px;
+  max-width: 56ch;
+}
+.ck-hero-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.ck-hero-list li {
+  position: relative;
+  padding-left: 28px;
+  line-height: 1.5;
+}
+.ck-hero-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  color: var(--accent, #d9402e);
+  font-weight: 700;
+}
+.ck-hero-list strong {
+  display: block;
+  font-size: 15px;
+  color: var(--ink, #0e0e0e);
+  margin-bottom: 3px;
+}
+.ck-hero-list span {
+  font-size: 14px;
+  color: #5a574e;
+}
+.ck-hero-right { position: sticky; top: 24px; }
+.ck-hero-note {
+  font-size: 12.5px;
+  color: #6b6b6b;
+  margin: 12px 4px 0;
+  line-height: 1.5;
+}
+
+/* ---------- ORDER SUMMARY CARD ---------- */
+.ck-summary {
+  background: #faf9f6;
+  border: 1px solid #e2dfd6;
+  border-radius: 12px;
+  padding: 20px 22px;
+}
+.ck-summary h4 {
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #7a7770;
+}
+.ck-summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 8px 0;
+  font-size: 14px;
+  color: #3a3833;
+  border-bottom: 1px solid #f0eee7;
+}
+.ck-summary-row:last-child { border-bottom: none; }
+.ck-summary-total {
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink, #0e0e0e);
+  padding-top: 12px;
+  margin-top: 6px;
+  border-top: 1px solid #ebe9e3;
+}
+
+/* ---------- SECTIONS ---------- */
+.ck-section { margin: 0; padding: 0; }
+.ck-section-h {
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 10px;
+}
+.ck-section-sub {
+  font-family: -apple-system, system-ui, sans-serif;
+  font-size: 12px;
+  color: #9a978f;
+  font-weight: 500;
+}
+.ck-pay-section { max-width: 660px; }
+
+/* ---------- TIERS ---------- */
+.ck-tier-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.ck-tier {
+  background: #fff;
+  border: 2px solid #e8e5de;
+  border-radius: 14px;
+  padding: 22px 24px;
+  position: relative;
+  transition: border-color .15s ease;
+  cursor: pointer;
+}
+.ck-tier:hover { border-color: var(--ink, #0e0e0e); }
+.ck-tier.is-on {
+  border-color: var(--accent, #d9402e);
+  border-width: 2.5px;
+  padding: 21.5px 23.5px;
+}
+.ck-tier-ribbon {
+  position: absolute;
+  top: -10px;
+  right: 16px;
+  background: #fcd38a;
+  color: var(--ink, #0e0e0e);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+.ck-tier h4 {
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 4px;
+}
+.ck-tier-price {
+  font-family: "Newsreader", Georgia, serif;
+  font-weight: 700;
+  font-size: 32px;
+  letter-spacing: -0.02em;
+  color: var(--ink, #0e0e0e);
+  margin: 8px 0;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.ck-tier-strike {
+  font-size: 18px;
+  color: #8b8779;
+  text-decoration: line-through;
+  font-weight: 500;
+}
+.ck-tier-save {
+  display: inline-block;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  background: #e7f1ec;
+  color: #1f6e3a;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.ck-tier-tag {
+  font-size: 13px;
+  color: #5a574e;
+  margin: 0 0 14px;
+}
+.ck-tier ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13.5px;
+}
+.ck-tier ul li {
+  padding-left: 22px;
+  position: relative;
+  line-height: 1.45;
+  color: #1f1f1f;
+}
+.ck-tier ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent, #d9402e);
+  font-weight: 700;
+}
+.ck-tier-prefix {
+  font-weight: 600;
+  padding-left: 0 !important;
+  padding-top: 6px;
+  border-top: 1px solid #ebe9e3;
+}
+.ck-tier-prefix::before { content: "" !important; }
+.ck-tier-pick {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1.5px solid var(--ink, #0e0e0e);
+  background: transparent;
+  color: var(--ink, #0e0e0e);
+  cursor: pointer;
+  transition: background-color .15s ease, color .15s ease;
+}
+.ck-tier-pick:hover {
+  background: var(--ink, #0e0e0e);
+  color: #fff;
+}
+.ck-tier.is-on .ck-tier-pick {
+  background: var(--accent, #d9402e);
+  border-color: var(--accent, #d9402e);
+  color: #fff;
+  cursor: default;
+}
+
+/* ---------- ADDONS ---------- */
+/* Section is narrower than the rest of the page so addon choices feel
+   optional rather than primary. Left-aligned (not centered) so the
+   section visually anchors with the rest of the page's left edge. */
+.ck-addons-section {
+  max-width: 760px;
+  width: 100%;
+}
+.ck-addon-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.ck-addon {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: #fff;
+  border: 1.5px solid #e8e5de;
+  border-radius: 10px;
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: border-color .15s ease, background-color .15s ease;
+}
+.ck-addon:hover { border-color: #8b8779; }
+.ck-addon.is-on {
+  border-color: var(--accent, #d9402e);
+  background: #fef9f1;
+}
+.ck-addon-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.ck-addon-head-row {
+  display: grid;
+  grid-template-columns: 28px 1fr auto;
+  gap: 10px;
+  align-items: center;
+}
+.ck-addon-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: #f3f1ec;
+  color: #5a574e;
+  transition: background-color .15s ease, color .15s ease;
+}
+.ck-addon.is-on .ck-addon-icon {
+  background: var(--accent, #d9402e);
+  color: #fff;
+}
+.ck-addon-title {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--ink, #0e0e0e);
+  line-height: 1.2;
+}
+.ck-addon-price {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink, #0e0e0e);
+  white-space: nowrap;
+}
+.ck-addon-meta {
+  font-size: 12.5px;
+  color: #6b6b6b;
+  margin: 0 0 0 38px;
+  line-height: 1.4;
+}
+
+.ck-addon-info {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px 14px;
+  border: 1px dashed #d6d3c7;
+  border-radius: 10px;
+  background: #faf9f6;
+}
+.ck-addon-info-row {
+  display: grid;
+  grid-template-columns: 22px 1fr auto;
+  gap: 10px;
+  align-items: center;
+  font-size: 13px;
+  color: #5a574e;
+}
+.ck-addon-info-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background: #ebe9e3;
+  color: #8b8779;
+}
+.ck-addon-info-label strong { color: var(--ink, #0e0e0e); }
+.ck-addon-info-meta { color: #8b8779; }
+.ck-addon-info-price {
+  font-weight: 600;
+  color: var(--ink, #0e0e0e);
+  font-size: 13px;
+}
+
+@media (max-width: 720px) {
+  .ck-addon-grid { grid-template-columns: 1fr; }
+  .ck-addon-meta { margin-left: 0; }
+}
+
+/* ---------- PAYMENT BODY ---------- */
+.ck-pay-error {
+  color: var(--accent, #d9402e);
+  font-size: 14px;
+  margin: 0 0 12px;
+}
+.ck-pay-skel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.ck-pay-skel-row {
+  height: 44px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #f1efe8 0%, #e8e5dc 50%, #f1efe8 100%);
+  background-size: 200% 100%;
+  animation: ck-shimmer 1.4s ease-in-out infinite;
+}
+.ck-pay-skel-btn { height: 48px; margin-top: 6px; }
+@keyframes ck-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+.ck-pay-note {
+  font-size: 12.5px;
+  color: #6b6b6b;
+  margin: 8px 0 0;
+  line-height: 1.5;
+}
+
+/* ---------- PRODUCT-SPECIFIC QUESTIONS ---------- */
+.ck-questions-section { max-width: 760px; width: 100%; }
+.ck-question { margin-bottom: 24px; }
+.ck-question:last-child { margin-bottom: 0; }
+.ck-question-req { color: var(--accent, #d9402e); }
+.ck-question-help {
+  font-size: 13.5px;
+  color: #5a574e;
+  line-height: 1.55;
+  margin: 0 0 12px;
+  max-width: 60ch;
+}
+.ck-question-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ck-question-opt {
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  gap: 12px;
+  align-items: start;
+  background: #fff;
+  border: 1.5px solid #e8e5de;
+  border-radius: 10px;
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: border-color .15s ease, background-color .15s ease;
+}
+.ck-question-opt:hover { border-color: #8b8779; }
+.ck-question-opt.is-on {
+  border-color: var(--accent, #d9402e);
+  background: #fef9f1;
+}
+.ck-question-opt input[type="radio"] {
+  accent-color: var(--accent, #d9402e);
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+}
+.ck-question-opt strong {
+  font-size: 14.5px;
+  color: var(--ink, #0e0e0e);
+  display: block;
+  margin-bottom: 4px;
+}
+.ck-question-opt-desc {
+  font-size: 13px;
+  color: #5a574e;
+  line-height: 1.5;
+}
+.ck-question-missing {
+  font-size: 13px;
+  color: var(--accent, #d9402e);
+  margin: 8px 0 0;
+  font-weight: 500;
+}
+.ck-pay-blocked {
+  padding: 16px 20px;
+  background: #faf9f6;
+  border: 1px dashed #d6d3c7;
+  border-radius: 10px;
+  color: #5a574e;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* ---------- ORDER CONFIRMATION ---------- */
+.ck-conf {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 0 64px;
+  text-align: left;
+}
+.ck-conf-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #2f7a47;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.ck-conf-eyebrow {
+  display: inline-block;
+  padding: 5px 14px;
+  background: #f0eee7;
+  color: #5a574e;
+  border-radius: 999px;
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 0 0 14px;
+}
+.ck-conf-title {
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+  margin: 0 0 10px;
+}
+.ck-conf-sub {
+  font-size: 16px;
+  color: #3a3833;
+  line-height: 1.55;
+  margin: 0 0 24px;
+  max-width: 56ch;
+}
+.ck-conf-receipt {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 8px 14px;
+  background: #f6fbf7;
+  border: 1px solid #d4ead8;
+  border-radius: 8px;
+  color: #2f5d3a;
+  font-size: 13px;
+  margin-bottom: 28px;
+}
+.ck-conf-receipt strong {
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1f6e3a;
+}
+.ck-conf-receipt-link {
+  margin-left: 4px;
+  font-size: 12.5px;
+  color: #2f5d3a;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.ck-conf-receipt-link:hover { color: var(--ink, #0e0e0e); }
+.ck-conf-steps {
+  background: #fff;
+  border: 1px solid #ebe9e3;
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 28px;
+}
+.ck-conf-steps-h {
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #7a7770;
+  margin: 0 0 14px;
+}
+.ck-conf-steps ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.ck-conf-steps li {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: 14px;
+  align-items: start;
+}
+.ck-conf-step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--ink, #0e0e0e);
+  color: #fff;
+  font-family: "Newsreader", Georgia, serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.ck-conf-steps li strong {
+  display: block;
+  font-size: 14.5px;
+  color: var(--ink, #0e0e0e);
+  margin-bottom: 3px;
+}
+.ck-conf-steps li span {
+  font-size: 14px;
+  color: #5a574e;
+  line-height: 1.5;
+}
+.ck-conf-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* ---------- TRUST STRIP ---------- */
+.ck-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  padding: 12px 18px;
+  background: #f6fbf7;
+  border: 1px solid #d4ead8;
+  border-radius: 10px;
+}
+.ck-trust-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  color: #2f5d3a;
+  font-weight: 500;
+}
+.ck-trust-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #2f7a47;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 880px) {
+  .ck-hero { grid-template-columns: 1fr; }
+  .ck-hero-right { position: static; }
+  .ck-hero h1 { font-size: 28px; }
+}
+@media (max-width: 640px) {
+  .ck-tier-grid { grid-template-columns: 1fr; }
+  .ck-tier { padding: 18px 18px; }
+  .ck-tier h4 { font-size: 18px; }
+  .ck-tier-price { font-size: 26px; }
+}

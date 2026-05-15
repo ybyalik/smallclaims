@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import PageHead from "../../../../../components/layout/PageHead";
 
 interface Props {
   slug: string;
@@ -56,16 +56,12 @@ export default function ResearchEditor({ slug, stateName, initialMarkdown, isOve
 
   return (
     <div className="admin-page">
-      <Link href={`/admin/research/${slug}`} className="admin-back">← Back to {stateName}</Link>
-      <header className="admin-page-head">
-        <div>
-          <h1>Edit {stateName} research</h1>
-          <p>
-            Markdown. Saves to a Supabase override (the on-disk file is read-only at runtime).
-            Public state guides and the admin view both pick up your edits immediately.
-          </p>
-        </div>
-      </header>
+      <PageHead
+        variant="admin"
+        back={{ href: `/admin/research/${slug}`, label: `← Back to ${stateName}` }}
+        title={`Edit ${stateName} research`}
+        sub="Markdown. Saves to a Supabase override (the on-disk file is read-only at runtime). Public state guides and the admin view both pick up your edits immediately."
+      />
 
       <textarea
         value={markdown}

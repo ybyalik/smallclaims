@@ -17,8 +17,11 @@ import { isOfficialDomain } from "../../case-research/source-policy";
 import { OpenAINotConfigured } from "../../case-research/openai";
 import { TavilyNotConfigured } from "../../case-research/tavily";
 import { FirecrawlNotConfigured } from "../../case-research/firecrawl";
-import { submitDeepResearch, type DeepCallId } from "../../case-research/deep-research";
+import { extractStructuredPackFromCombinedFindings } from "../../case-research/deep-research";
 import { parseAllForms, type ParsedPdfForm } from "../../case-research/pdf-forms";
+import { getStateByAbbr } from "../../states";
+import { formatDisputeTypePhrase } from "../../cases/dispute-type-label";
+import { getCaseClaimType, type CaseClassification } from "../../cases/classify-claim-type";
 import crypto from "node:crypto";
 
 const COST_CAP_CENTS = 1500;
@@ -90,12 +93,21 @@ export const caseResearchRun = inngest.createFunction(
       // knowledge before any web research ran. We dropped it: shallow and deep
       // extraction now fill the classification block from research instead.
       // This stub only carries `claim_category` from the intake into prompts
-      // that need it for context (e.g. the deep research brief).
-      const classification: Classification = stubClassificationFromIntake(intake);
+      // that need it for context. We prefer the LLM-resolved canonical claim
+      // type when available so prompts see what actually happened, not just
+      // the wizard slug.
+      const caseClassification = await step.run("classify-claim-type", async () =>
+        getCaseClaimType(caseId),
+      );
+      const classification: Classification = stubClassificationFromIntake(
+        intake,
+        caseClassification,
+      );
 
-      // ----- shallow + deep submit run in parallel --------------------------
-      // Deep research is submit-only here; it can take hours and is finalized
-      // by the OpenAI webhook or the safety-net cron, not by this function.
+      // ----- shallow + deep load run in parallel ----------------------------
+      // Deep is now a synchronous load from the pre-baked state_research
+      // table plus an inline structured extraction — no OpenAI Deep Research
+      // submissions, no webhook polling, no multi-hour latency.
       const [shallowOut, deepOut] = await Promise.all([
         runShallowBranch(step, admin, jobId, intake, classification),
         runDeepBranch(step, admin, jobId, caseId, intake, classification),
@@ -151,10 +163,9 @@ export const caseResearchRun = inngest.createFunction(
           throw new Error(`cost cap exceeded: ${totalCost} cents`);
         }
 
-        // Note: deep_research_response_id_a / _b are already on the report row
-        // from deep.submit-ab. Per-call findings + extracted packs + citations
-        // land later via the webhook / cron handlers; the merge agent
-        // reconciles them once both calls succeed.
+        // Note: state_findings_md and deep_research_pack are already on the
+        // report row from runDeepBranch (deep.load-state + deep.extract).
+        // This step only writes the shallow + forms + qa results.
         await admin
           .from("case_research_reports")
           .update({
@@ -193,15 +204,12 @@ export const caseResearchRun = inngest.createFunction(
         await admin
           .from("case_research_jobs")
           .update({
-            // Job is "succeeded" even though deep research may still be running.
-            // The progress.deep.status remains "polling" until the webhook/cron
-            // finalizes it. This decouples job completion from deep latency.
             status: "succeeded",
             finished_at: new Date().toISOString(),
             model_versions: {
               stage: liveSteps > 0 ? "live" : "stub",
               ledger,
-              deep_research_submitted: !!deepOut,
+              deep_state_loaded: deepOut?.stateSlug ?? null,
               forms_parsed: formsOut.specs.length,
             },
             cost_cents: totalCost,
@@ -382,20 +390,19 @@ async function runShallowBranch(
 }
 
 interface DeepBranchResult {
-  responseIdA: string;
-  responseIdB: string;
+  stateSlug: string;
   ledger: LedgerEntry[];
 }
 
-// Submit-only deep branch with TWO parallel calls.
-//   Call A: pre-filing and filing (sections 1-11 of the original 21)
-//   Call B: hearing through collection (sections 12-21)
-//
-// Both submissions must succeed before the branch is considered submitted; if
-// either fails the whole deep branch is marked failed (no partial output).
-// Completion of each call is handled separately by the webhook + cron, which
-// finalize per-call findings and only fire `case/research.ready` once BOTH
-// calls have succeeded.
+// Deep branch is now a synchronous load from state_research instead of two
+// OpenAI Deep Research submissions.
+//   1. Resolve the case's state slug from intake.state (an abbreviation).
+//   2. Read the pre-baked state_research row.
+//   3. Concatenate the four call markdowns into one combined dossier.
+//   4. Persist the dossier on case_research_reports.state_findings_md and
+//      seed the row so finalize-customer-report can find it.
+//   5. Run the structured extraction (gpt-5-mini → deep_research_pack)
+//      inline so the rest of the pipeline has both raw and structured input.
 async function runDeepBranch(
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   step: any,
@@ -407,90 +414,438 @@ async function runDeepBranch(
   classification: Classification,
 ): Promise<DeepBranchResult | null> {
   await step.run("deep.mark-running", async () =>
-    bumpProgress(admin, jobId, "deep", { status: "running", phase: "submitting" }),
+    bumpProgress(admin, jobId, "deep", { status: "running", phase: "load-state" }),
   );
 
-  // Helper: submit one call. Returns either the response info or a "skipped"
-  // marker if keys are missing, or throws on hard failure.
-  async function submitOne(which: DeepCallId) {
-    const res = await submitDeepResearch(which, intake, classification);
-    return { which, responseId: res.responseId, model: res.model };
+  const state = getStateByAbbr(intake.state);
+  if (!state) {
+    const msg = `Unknown state code "${intake.state}" — cannot map to state_research slug`;
+    await bumpProgress(admin, jobId, "deep", { status: "failed", error: msg });
+    throw new Error(msg);
   }
 
-  const submitOut: {
-    data:
-      | {
-          responseIdA: string;
-          responseIdB: string;
-          model: string;
-        }
-      | null;
+  const loadOut: {
+    combined: string;
+    prebakedPack: Record<string, unknown> | null;
     ledger: LedgerEntry[];
-    skipReason?: string;
-  } = await step.run("deep.submit-ab", async () => {
-    try {
-      const [a, b] = await Promise.all([submitOne("a"), submitOne("b")]);
+  } = await step.run("deep.load-state", async () => {
+    const { data: sr } = await admin
+      .from("state_research")
+      .select(
+        "state_name, call_1_status, call_2_status, call_3_status, call_4_status, call_1_markdown, call_2_markdown, call_3_markdown, call_4_markdown, structured_pack",
+      )
+      .eq("slug", state.slug)
+      .maybeSingle();
 
-      // Park both response IDs on the report row so the webhook + cron can
-      // route incoming events to this job.
-      await admin
-        .from("case_research_reports")
-        .upsert({
-          job_id: jobId,
-          case_id: caseId,
-          evidence_pack: {},
-          qa_passed: false,
-          qa_notes: {},
-          deep_research_response_id_a: a.responseId,
-          deep_research_response_id_b: b.responseId,
-        });
-
-      await bumpProgress(admin, jobId, "deep", {
-        status: "polling",
-        phase: "submitted",
-        model: a.model,
-        call_a: { status: "polling", response_id: a.responseId, at: new Date().toISOString() },
-        call_b: { status: "polling", response_id: b.responseId, at: new Date().toISOString() },
-      });
-
-      return {
-        data: { responseIdA: a.responseId, responseIdB: b.responseId, model: a.model },
-        ledger: [
-          { step: "deep.submit", cents: 0, model: a.model, meta: { calls: 2 } },
-        ] as LedgerEntry[],
-      };
-    } catch (e) {
-      if (isMissingKey(e)) {
-        await bumpProgress(admin, jobId, "deep", { status: "skipped", reason: "missing_key" });
-        return {
-          data: null,
-          ledger: [{ step: "deep.submit", cents: 0 }] as LedgerEntry[],
-          skipReason: "missing_key",
-        };
-      }
-      // Hard submit failure for either call: mark deep failed (no salvage).
-      // The other call may have succeeded at OpenAI's side, but without both
-      // response IDs we can't honor the both-must-succeed contract; we
-      // intentionally let it dangle rather than try to salvage partial work.
-      const msg = e instanceof Error ? e.message : String(e);
-      console.warn("[deep.submit-ab] failed:", msg);
+    const callStatuses = [
+      sr?.call_1_status,
+      sr?.call_2_status,
+      sr?.call_3_status,
+      sr?.call_4_status,
+    ];
+    const allDone = sr && callStatuses.every((s) => s === "done");
+    if (!allDone) {
+      const msg = `state_research for "${state.slug}" is not fully populated (statuses=${JSON.stringify(callStatuses)})`;
       await bumpProgress(admin, jobId, "deep", { status: "failed", error: msg });
-      return {
-        data: null,
-        ledger: [{ step: "deep.submit", cents: 0, meta: { error: msg } }] as LedgerEntry[],
-      };
+      throw new Error(msg);
     }
+
+    const combined = combineStateMarkdowns(state.name, {
+      call1: sr.call_1_markdown ?? "",
+      call2: sr.call_2_markdown ?? "",
+      call3: sr.call_3_markdown ?? "",
+      call4: sr.call_4_markdown ?? "",
+    });
+
+    await admin.from("case_research_reports").upsert({
+      job_id: jobId,
+      case_id: caseId,
+      evidence_pack: {},
+      qa_passed: false,
+      qa_notes: {},
+      state_findings_md: combined,
+    });
+
+    return {
+      combined,
+      prebakedPack: (sr.structured_pack as Record<string, unknown> | null) ?? null,
+      ledger: [
+        {
+          step: "deep.load-state",
+          cents: 0,
+          meta: {
+            state: state.slug,
+            chars: combined.length,
+            prebaked: !!sr.structured_pack,
+          },
+        },
+      ] as LedgerEntry[],
+    };
   });
 
-  if (!submitOut.data) {
-    return null;
-  }
+  const extractOut: { ledger: LedgerEntry[] } = await step.run(
+    "deep.extract",
+    async () => {
+      await bumpProgress(admin, jobId, "deep", { status: "running", phase: "extract" });
+
+      // Fast path: pre-baked structured_pack exists on state_research.
+      // Apply case-specific tweaks deterministically and save. No LLM call.
+      if (loadOut.prebakedPack) {
+        const classification = await getCaseClaimType(intake.caseId);
+        const tweaked = applyCaseTweaksToStatePack(loadOut.prebakedPack, intake, classification);
+        await admin
+          .from("case_research_reports")
+          .update({ deep_research_pack: tweaked })
+          .eq("job_id", jobId);
+        await bumpProgress(admin, jobId, "deep", {
+          status: "succeeded",
+          phase: "done",
+          structured_extracted: true,
+          source: "prebaked",
+          chars: loadOut.combined.length,
+        });
+        return {
+          ledger: [
+            { step: "deep.extract", cents: 0, meta: { source: "prebaked" } },
+          ] as LedgerEntry[],
+        };
+      }
+
+      // Fallback: no pre-baked pack for this state yet. Run live extraction.
+      try {
+        const res = await extractStructuredPackFromCombinedFindings(
+          loadOut.combined,
+          intake,
+          classification,
+        );
+        await admin
+          .from("case_research_reports")
+          .update({ deep_research_pack: res.data })
+          .eq("job_id", jobId);
+        await bumpProgress(admin, jobId, "deep", {
+          status: "succeeded",
+          phase: "done",
+          structured_extracted: true,
+          source: "live",
+          chars: loadOut.combined.length,
+        });
+        return {
+          ledger: [
+            {
+              step: "deep.extract",
+              cents: res.costCents,
+              model: res.model,
+              meta: { source: "live" },
+            },
+          ] as LedgerEntry[],
+        };
+      } catch (e) {
+        if (isMissingKey(e)) {
+          await bumpProgress(admin, jobId, "deep", { status: "skipped", reason: "missing_key" });
+          return { ledger: [{ step: "deep.extract", cents: 0 }] as LedgerEntry[] };
+        }
+        // Soft-fail: keep the raw state findings persisted so the safety-net
+        // cron can retry extraction later via runCombinedExtractionIfReady.
+        const msg = e instanceof Error ? e.message : String(e);
+        console.warn("[deep.extract] failed:", msg);
+        await bumpProgress(admin, jobId, "deep", {
+          status: "succeeded",
+          phase: "done",
+          structured_extracted: false,
+          extraction_error: msg,
+        });
+        return { ledger: [{ step: "deep.extract", cents: 0, meta: { error: msg } }] as LedgerEntry[] };
+      }
+    },
+  );
 
   return {
-    responseIdA: submitOut.data.responseIdA,
-    responseIdB: submitOut.data.responseIdB,
-    ledger: submitOut.ledger,
+    stateSlug: state.slug,
+    ledger: [...loadOut.ledger, ...extractOut.ledger],
   };
+}
+
+// Layer the case-specific bits over a state-level pre-baked EvidencePack.
+// The state pack stores full tier breakdowns (statute_of_limitations_by_claim_type,
+// filing_fee_tiers, claim_cap_tiers, prejudgment_interest_by_claim_type) so
+// here we pick the right row based on the user's intake and stamp the
+// top-level single-value fields. No LLM call.
+function applyCaseTweaksToStatePack(
+  pack: Record<string, unknown>,
+  intake: IntakeSnapshot,
+  classification: CaseClassification | null,
+): Record<string, unknown> {
+  const out: Record<string, unknown> = { ...pack };
+
+  // Prefer the LLM-resolved primary claim type. Falls back to the static
+  // wizard-slug mapping when classification is unavailable (older cases or
+  // when the classify call failed).
+  const claimType =
+    classification?.primary_claim_type ??
+    mapDisputeTypeToClaimType(intake.disputeType);
+  const secondaryClaimTypes = classification?.secondary_claim_types ?? [];
+  // All claim types (primary + secondaries) — used for matching statutory
+  // multipliers, which can apply to any of the legal theories in play.
+  const allClaimTypes = [claimType, ...secondaryClaimTypes].filter(
+    (t): t is string => typeof t === "string" && t.length > 0,
+  );
+  const inNyc =
+    isNycCounty(intake.county) ||
+    isNycCounty(intake.defendantCounty) ||
+    isNycCounty(intake.plaintiffCounty) ||
+    isNycCounty(intake.incidentCounty);
+
+  // --- Statute of limitations -------------------------------------------
+  const solRows = (out.statute_of_limitations_by_claim_type as Array<{
+    claim_type?: string;
+    years?: number | null;
+    citation?: string;
+    when_clock_starts?: string;
+  }>) ?? [];
+  const solHit =
+    pickRowByClaimType(solRows, claimType) ?? solRows[0];
+
+  // --- Claim cap --------------------------------------------------------
+  const capRows = (out.claim_cap_tiers as Array<{
+    court_level?: string;
+    cap_cents?: number | null;
+    applies_when?: string;
+  }>) ?? [];
+  const capHit = pickClaimCapTier(capRows, { inNyc });
+  const capDollars =
+    capHit?.cap_cents != null ? Math.round(capHit.cap_cents / 100) : null;
+
+  // --- Filing fee -------------------------------------------------------
+  const feeRows = (out.filing_fee_tiers as Array<{
+    applies_to?: string;
+    amount_band?: string;
+    fee_cents?: number | null;
+  }>) ?? [];
+  const feeHit = pickFilingFeeTier(feeRows, { inNyc, amountCents: intake.amountCents });
+
+  // --- Pre-judgment interest --------------------------------------------
+  const interestRows = (out.prejudgment_interest_by_claim_type as Array<{
+    claim_type?: string;
+    rate_pct?: number | null;
+  }>) ?? [];
+  const interestHit =
+    pickRowByClaimType(interestRows, claimType) ??
+    interestRows.find((r) => r.claim_type === "money_judgment") ??
+    interestRows[0];
+
+  // --- Stamp the single-value fields ------------------------------------
+  const cls = { ...((out.classification as Record<string, unknown>) ?? {}) };
+  // Prefer the resolved canonical claim type for downstream consumers; falls
+  // back to the user's free text (for "other" cases) or the wizard slug.
+  const intakeClaimCategory =
+    classification?.primary_claim_type ??
+    (intake.disputeType === "other" && intake.disputeTypeOther
+      ? formatDisputeTypePhrase("other", intake.disputeTypeOther)
+      : intake.disputeType);
+  cls.claim_category = intakeClaimCategory || cls.claim_category || "";
+  if (secondaryClaimTypes.length > 0) {
+    cls.secondary_claim_types = secondaryClaimTypes;
+  }
+  // Make all claim types available so downstream multiplier matching can hit
+  // any of the legal theories in play.
+  if (allClaimTypes.length > 0) {
+    cls.all_claim_types = allClaimTypes;
+  }
+  if (solHit) {
+    const solCurrent = { ...((cls.statute_of_limitations as Record<string, unknown>) ?? {}) };
+    if (solHit.years != null) solCurrent.deadline = `${solHit.years} years`;
+    if (solHit.citation) solCurrent.citation = solHit.citation;
+    if (solHit.when_clock_starts) {
+      const existing = (solCurrent.notes as string | undefined) ?? "";
+      solCurrent.notes = existing
+        ? `Clock starts ${solHit.when_clock_starts}. ${existing}`
+        : `Clock starts ${solHit.when_clock_starts}.`;
+    }
+    cls.statute_of_limitations = solCurrent;
+  }
+  if (capDollars != null) {
+    cls.amount_limit_dollars = capDollars;
+    cls.amount_within_limit = intake.amountCents / 100 <= capDollars;
+    out.claim_limit_dollars = capDollars;
+  } else if (typeof cls.amount_limit_dollars === "number") {
+    cls.amount_within_limit = intake.amountCents / 100 <= (cls.amount_limit_dollars as number);
+  }
+  out.classification = cls;
+
+  if (feeHit?.fee_cents != null) {
+    out.filing_fee_cents = feeHit.fee_cents;
+  }
+
+  if (interestHit?.rate_pct != null) {
+    const recoverable = {
+      ...((out.recoverable_amounts as Record<string, unknown>) ?? {}),
+    };
+    recoverable.prejudgment_interest_rate_pct = interestHit.rate_pct;
+    out.recoverable_amounts = recoverable;
+  }
+
+  // filing_location is intentionally per-case; state pack stores the
+  // literal "(set per case)" sentinel.
+  if (intake.county) out.filing_location = intake.county;
+
+  return out;
+}
+
+// Pick the SOL / interest row that best matches the user's claim type. Uses
+// canonical labels (written_contract, property_damage, etc.) — see the
+// extraction prompt for the list.
+function pickRowByClaimType<T extends { claim_type?: string }>(
+  rows: T[],
+  claimType: string | null,
+): T | undefined {
+  if (!claimType || rows.length === 0) return undefined;
+  return rows.find((r) => (r.claim_type ?? "").toLowerCase() === claimType.toLowerCase());
+}
+
+// Walk the claim_cap_tiers array and pick the row that matches the user's
+// region. NY is the main multi-tier state today.
+function pickClaimCapTier(
+  rows: Array<{ court_level?: string; cap_cents?: number | null }>,
+  ctx: { inNyc: boolean },
+): { court_level?: string; cap_cents?: number | null } | undefined {
+  if (rows.length === 0) return undefined;
+  if (rows.length === 1) return rows[0];
+  const lower = (s?: string) => (s ?? "").toLowerCase();
+  if (ctx.inNyc) {
+    const nyc = rows.find((r) => /nyc|new york city/.test(lower(r.court_level)));
+    if (nyc) return nyc;
+  }
+  // Default for outside-NYC: prefer city/district, then town/village, then
+  // statewide / first available.
+  const cityDistrict = rows.find((r) =>
+    /city|district/.test(lower(r.court_level)) && !/nyc/.test(lower(r.court_level)),
+  );
+  if (cityDistrict) return cityDistrict;
+  const statewide = rows.find((r) => /statewide|state-wide|state\b/.test(lower(r.court_level)));
+  if (statewide) return statewide;
+  return rows[0];
+}
+
+// Walk the filing_fee_tiers array and pick the row that matches the user's
+// region + claim amount band.
+function pickFilingFeeTier(
+  rows: Array<{ applies_to?: string; amount_band?: string; fee_cents?: number | null }>,
+  ctx: { inNyc: boolean; amountCents: number },
+): { applies_to?: string; amount_band?: string; fee_cents?: number | null } | undefined {
+  if (rows.length === 0) return undefined;
+  if (rows.length === 1) return rows[0];
+  const lower = (s?: string) => (s ?? "").toLowerCase();
+
+  // Filter by region first
+  const regionMatches = rows.filter((r) => {
+    const a = lower(r.applies_to);
+    if (ctx.inNyc) return /nyc|new york city/.test(a);
+    // Outside NYC: prefer non-NYC rows
+    return !/nyc|new york city/.test(a);
+  });
+  const pool = regionMatches.length > 0 ? regionMatches : rows;
+
+  // Then pick the row whose amount_band fits the user's amount.
+  const dollars = ctx.amountCents / 100;
+  const matching = pool.find((r) => amountBandIncludes(r.amount_band, dollars));
+  if (matching) return matching;
+  // No band matched — return the first row in the region pool.
+  return pool[0];
+}
+
+// Parse strings like "any", "<= $1,000", "> $1,000", "$1,000 - $5,000",
+// "$1,001 to $5,000" and decide whether the given dollar amount fits.
+function amountBandIncludes(band: string | undefined, dollars: number): boolean {
+  if (!band) return true;
+  const s = band.toLowerCase().replace(/[$,]/g, "").trim();
+  if (s === "" || s === "any" || s === "all") return true;
+  // "<= 1000" or "≤ 1000"
+  let m = s.match(/^(<=|≤|<)\s*(\d+(?:\.\d+)?)/);
+  if (m) {
+    const n = parseFloat(m[2]);
+    return m[1] === "<" ? dollars < n : dollars <= n;
+  }
+  // ">= 1000" or "> 1000"
+  m = s.match(/^(>=|≥|>)\s*(\d+(?:\.\d+)?)/);
+  if (m) {
+    const n = parseFloat(m[2]);
+    return m[1] === ">" ? dollars > n : dollars >= n;
+  }
+  // "1000 - 5000" or "1000 to 5000"
+  m = s.match(/^(\d+(?:\.\d+)?)\s*(?:-|to|–|—)\s*(\d+(?:\.\d+)?)/);
+  if (m) {
+    const lo = parseFloat(m[1]);
+    const hi = parseFloat(m[2]);
+    return dollars >= lo && dollars <= hi;
+  }
+  return false;
+}
+
+const NYC_COUNTIES = new Set([
+  "new york",
+  "manhattan",
+  "kings",
+  "brooklyn",
+  "queens",
+  "bronx",
+  "richmond",
+  "staten island",
+]);
+
+function isNycCounty(county: string | null | undefined): boolean {
+  if (!county) return false;
+  const c = county
+    .toLowerCase()
+    .replace(/\s+county\s*$/, "")
+    .trim();
+  return NYC_COUNTIES.has(c);
+}
+
+// Map the 9 canonical wizard dispute_type values onto the canonical legal
+// claim_type labels used by the SOL master table. Each dispute_type has a
+// primary mapping; the lookup falls back to the first SOL row if no match.
+function mapDisputeTypeToClaimType(disputeType: string | null | undefined): string | null {
+  if (!disputeType) return null;
+  switch (disputeType.toLowerCase()) {
+    case "landlord":
+      return "security_deposit";
+    case "contractor":
+      return "written_contract";
+    case "employer":
+      return "wages";
+    case "auto":
+      return "property_damage";
+    case "neighbor":
+      return "property_damage";
+    case "personal_loan":
+      return "promissory_note";
+    case "roommate":
+      return "oral_contract";
+    case "online_seller":
+      return "breach_of_warranty";
+    case "refund":
+      return "consumer_protection";
+    default:
+      return null;
+  }
+}
+
+function combineStateMarkdowns(
+  stateName: string,
+  parts: { call1: string; call2: string; call3: string; call4: string },
+): string {
+  const sep = "\n\n---\n\n";
+  return [
+    `# State research — ${stateName}`,
+    "",
+    parts.call1.trim() || "(call 1 markdown missing)",
+    sep,
+    parts.call2.trim() || "(call 2 markdown missing)",
+    sep,
+    parts.call3.trim() || "(call 3 markdown missing)",
+    sep,
+    parts.call4.trim() || "(call 4 markdown missing)",
+  ].join("\n");
 }
 
 // ---------------------------------------------------------------------------
@@ -525,7 +880,7 @@ async function loadIntake(admin: any, caseId: string): Promise<IntakeSnapshot> {
   const { data, error } = await admin
     .from("cases")
     .select(
-      "id, state, county, plaintiff_county, defendant_county, incident_county, dispute_type, amount_cents, defendant_name, defendant_address, facts_narrative",
+      "id, state, county, plaintiff_county, defendant_county, incident_county, dispute_type, amount_cents, defendant_name, defendant_address, facts_narrative, intake_answers",
     )
     .eq("id", caseId)
     .single();
@@ -540,6 +895,12 @@ async function loadIntake(admin: any, caseId: string): Promise<IntakeSnapshot> {
     data.plaintiff_county ||
     data.county ||
     null;
+  const answers = (data.intake_answers ?? {}) as Record<string, unknown>;
+  const disputeTypeOther =
+    typeof answers.dispute_type_other === "string" &&
+    answers.dispute_type_other.trim().length > 0
+      ? answers.dispute_type_other.trim()
+      : null;
   return {
     caseId: data.id,
     state: data.state,
@@ -549,6 +910,7 @@ async function loadIntake(admin: any, caseId: string): Promise<IntakeSnapshot> {
     defendantCounty: data.defendant_county ?? null,
     incidentCounty: data.incident_county ?? null,
     disputeType: data.dispute_type,
+    disputeTypeOther,
     amountCents: data.amount_cents,
     defendantName: data.defendant_name,
     defendantAddress: addr,
@@ -681,9 +1043,19 @@ function hostOf(rawUrl: string): string {
 // Minimal classification carrying claim_category from the intake. Used as
 // prompt context only — the actual structured classification block of the
 // EvidencePack gets filled by shallow + deep extraction from research.
-function stubClassificationFromIntake(intake: IntakeSnapshot): Classification {
+function stubClassificationFromIntake(
+  intake: IntakeSnapshot,
+  cached: CaseClassification | null = null,
+): Classification {
+  // Prefer the LLM-resolved canonical claim type; fall back to free text for
+  // "other"; finally fall back to the wizard slug.
+  const claimCategory =
+    cached?.primary_claim_type ??
+    (intake.disputeType === "other" && intake.disputeTypeOther
+      ? formatDisputeTypePhrase("other", intake.disputeTypeOther)
+      : intake.disputeType);
   return {
-    claim_category: intake.disputeType,
+    claim_category: claimCategory,
     proper_court_type: "",
     proper_court_type_notes: "",
     amount_within_limit: false,
@@ -826,6 +1198,10 @@ function stubEvidencePack(
       bankruptcy_stay_effects: "",
       domestication_of_out_of_state_judgment: "",
     },
+    statute_of_limitations_by_claim_type: [],
+    filing_fee_tiers: [],
+    claim_cap_tiers: [],
+    prejudgment_interest_by_claim_type: [],
     defendant_collectability_signals: [],
     evidence_required_for_this_claim_type: [],
     state_specific_quirks: [],

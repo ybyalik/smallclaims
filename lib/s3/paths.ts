@@ -5,7 +5,6 @@
 //   cases/{caseId}/evidence/{uuid}.{ext}            User-uploaded evidence
 //   cases/{caseId}/demand-letter/v{N}.pdf           Generated demand letter
 //   cases/{caseId}/filing-guide/v{N}.pdf            Filing Guide PDF
-//   cases/{caseId}/court-prep/v{N}.pdf              Court Prep Pack PDF
 //   cases/{caseId}/court-forms/{formCode}.pdf       Filled court forms
 //   cases/{caseId}/proof-of-service/{uuid}.pdf      Service proofs
 //   cases/{caseId}/correspondence/{uuid}.{ext}      Defendant responses, etc.
@@ -51,11 +50,6 @@ export function demandLetterPath(caseId: string, version: number): string {
 export function filingGuidePath(caseId: string, version: number): string {
   if (!Number.isInteger(version) || version < 1) throw new Error(`Bad version: ${version}`);
   return `cases/${safeCaseId(caseId)}/filing-guide/v${version}.pdf`;
-}
-
-export function courtPrepPath(caseId: string, version: number): string {
-  if (!Number.isInteger(version) || version < 1) throw new Error(`Bad version: ${version}`);
-  return `cases/${safeCaseId(caseId)}/court-prep/v${version}.pdf`;
 }
 
 export function courtFormPath(caseId: string, formCode: string): string {

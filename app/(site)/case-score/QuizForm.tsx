@@ -27,6 +27,8 @@ interface Props {
 
 interface FormState {
   dispute_type: DisputeType | "";
+  // Filled when dispute_type === "other". Propagates to the case builder.
+  dispute_type_other: string;
   amount: string;
   state_slug: string;
   incident_date: string;
@@ -41,6 +43,7 @@ interface FormState {
 
 const INITIAL: FormState = {
   dispute_type: "",
+  dispute_type_other: "",
   amount: "",
   state_slug: "",
   incident_date: "",
@@ -50,6 +53,9 @@ const INITIAL: FormState = {
   defendant_name: "",
   brief_narrative: "",
 };
+
+const OTHER_TEXT_MIN = 8;
+const OTHER_TEXT_MAX = 240;
 
 const DRAFT_KEY = "civilcase:case-score:draft:v1";
 
@@ -131,6 +137,7 @@ export default function QuizForm({ states, stateFacts }: Props) {
     if (!ready) return;
     const answers: QuizAnswers = {
       dispute_type: form.dispute_type as DisputeType,
+      dispute_type_other: form.dispute_type_other.trim() || undefined,
       amount_dollars: parseFloat(form.amount),
       state_slug: form.state_slug,
       incident_date: form.incident_date,
@@ -160,8 +167,19 @@ export default function QuizForm({ states, stateFacts }: Props) {
 
   function validateStep(): string | null {
     switch (step) {
-      case 0:
-        return form.dispute_type ? null : "Pick the type that fits best.";
+      case 0: {
+        if (!form.dispute_type) return "Pick the type that fits best.";
+        if (form.dispute_type === "other") {
+          const t = form.dispute_type_other.trim();
+          if (t.length < OTHER_TEXT_MIN) {
+            return `Briefly describe your dispute (at least ${OTHER_TEXT_MIN} characters).`;
+          }
+          if (t.length > OTHER_TEXT_MAX) {
+            return `Keep it under ${OTHER_TEXT_MAX} characters.`;
+          }
+        }
+        return null;
+      }
       case 1: {
         const n = parseFloat(form.amount);
         if (!n || n <= 0) return "Enter the amount you're trying to recover.";
@@ -198,6 +216,7 @@ export default function QuizForm({ states, stateFacts }: Props) {
       // Compute and show result
       const answers: QuizAnswers = {
         dispute_type: form.dispute_type as DisputeType,
+        dispute_type_other: form.dispute_type_other.trim() || undefined,
         amount_dollars: parseFloat(form.amount),
         state_slug: form.state_slug,
         incident_date: form.incident_date,
@@ -294,6 +313,38 @@ export default function QuizForm({ states, stateFacts }: Props) {
                       </button>
                     ))}
                   </div>
+                  {form.dispute_type === "other" && (
+                    <div style={{ marginTop: 16 }}>
+                      <label
+                        htmlFor="cs-other"
+                        style={{ display: "block", fontSize: 14, fontWeight: 600, marginBottom: 6 }}
+                      >
+                        Describe your dispute
+                      </label>
+                      <p style={{ fontSize: 13, color: "#6b6b6b", marginBottom: 8, lineHeight: 1.5 }}>
+                        One or two short sentences. We use this in your score and carry it into your case if you continue.
+                      </p>
+                      <textarea
+                        id="cs-other"
+                        rows={3}
+                        maxLength={OTHER_TEXT_MAX}
+                        value={form.dispute_type_other}
+                        onChange={(e) => set("dispute_type_other", e.target.value)}
+                        placeholder="e.g. The airline lost my checked luggage on a domestic flight and the claim form was denied."
+                        style={{
+                          width: "100%",
+                          padding: "10px 12px",
+                          border: "1.5px solid #ebe9e3",
+                          borderRadius: 8,
+                          font: "inherit",
+                          resize: "vertical",
+                        }}
+                      />
+                      <div style={{ fontSize: 12, color: "#6b6b6b", marginTop: 4 }}>
+                        {form.dispute_type_other.trim().length}/{OTHER_TEXT_MAX}
+                      </div>
+                    </div>
+                  )}
                 </Q>
               )}
 
@@ -494,6 +545,7 @@ function Result({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           dispute_type: form.dispute_type,
+          dispute_type_other: form.dispute_type_other.trim() || null,
           amount_dollars: parseFloat(form.amount),
           state_slug: form.state_slug,
           incident_date: form.incident_date,

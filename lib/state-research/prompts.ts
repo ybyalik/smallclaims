@@ -439,6 +439,10 @@ export const CALL_TITLES: Record<StateCallId, string> = {
   4: "Hearing Through Collection",
 };
 
+// Sync helper. Returns the code-default prompt with the real state name
+// substituted. Use this for admin preview rendering and as the fallback
+// when no DB override exists. Submission paths should use the async
+// resolver below instead so they pick up edits.
 export function getStatePrompt(call: StateCallId, stateName: string): string {
   switch (call) {
     case 1:
@@ -450,4 +454,40 @@ export function getStatePrompt(call: StateCallId, stateName: string): string {
     case 4:
       return PROMPT_4(stateName);
   }
+}
+
+// Code-default prompt with the literal "[STATE NAME]" placeholder still in
+// place. Used as the seed text for the editor and as the source of truth
+// when an admin wants to reset an override.
+export function getDefaultPromptTemplate(call: StateCallId): string {
+  return getStatePrompt(call, "[STATE NAME]");
+}
+
+// Async resolver. Checks the state_research_prompts table for a saved
+// override. If present, substitutes the state name into [STATE NAME].
+// Otherwise returns the code-default prompt. Used by the runner and the
+// batch submission paths so admin edits flow through to OpenAI.
+export async function resolveStatePrompt(
+  call: StateCallId,
+  stateName: string,
+): Promise<string> {
+  try {
+    // Dynamic import avoids pulling Supabase into modules that don't need
+    // it (e.g. the static admin preview page).
+    const { createServiceRoleClient } = await import("../supabase/service-role");
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const admin = createServiceRoleClient() as any;
+    const { data } = await admin
+      .from("state_research_prompts")
+      .select("prompt_text")
+      .eq("call_id", call)
+      .maybeSingle();
+    const override = data?.prompt_text as string | undefined;
+    if (override && override.trim().length > 0) {
+      return override.replaceAll("[STATE NAME]", stateName);
+    }
+  } catch {
+    // Fall through to default on any error.
+  }
+  return getStatePrompt(call, stateName);
 }

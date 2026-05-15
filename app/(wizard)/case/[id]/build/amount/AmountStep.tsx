@@ -3,6 +3,10 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import {
+  useFormErrors,
+  ErrorSummary,
+} from "../../../../../../components/wizard/form-errors";
 import { useAutosave } from "../useAutosave";
 
 interface Props {
@@ -20,7 +24,7 @@ export default function AmountStep({ caseId, initialCents }: Props) {
   const [dollars, setDollars] = useState<number>(initialDollars);
   const [unsure, setUnsure] = useState<boolean>(false);
   const [saving, setSaving] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const { errors, showErrors, clear, setErrors } = useFormErrors();
 
   // Autosave: persists amount + unsure flag as the user edits.
   const autoDollars = unsure ? DEFAULT_DOLLARS : dollars;
@@ -45,14 +49,23 @@ export default function AmountStep({ caseId, initialCents }: Props) {
     setUnsure(false);
   }
 
+  function validate(): Record<string, string> {
+    const errs: Record<string, string> = {};
+    if (!unsure && dollars < MIN_DOLLARS) {
+      errs.amount = `Amount must be at least $${MIN_DOLLARS}.`;
+    }
+    return errs;
+  }
+
   async function continueToNext() {
     if (saving) return;
-    if (!unsure && dollars < MIN_DOLLARS) {
-      setError(`Amount must be at least $${MIN_DOLLARS}.`);
+    const errs = validate();
+    if (Object.keys(errs).length > 0) {
+      showErrors(errs);
       return;
     }
     setSaving(true);
-    setError(null);
+    clear();
     const finalDollars = unsure ? DEFAULT_DOLLARS : dollars;
     try {
       const res = await fetch(`/api/demand-letters/${caseId}`, {
@@ -66,7 +79,7 @@ export default function AmountStep({ caseId, initialCents }: Props) {
       if (!res.ok) throw new Error("Could not save");
       router.push(`/case/${caseId}/build/state`);
     } catch (e) {
-      setError(e instanceof Error ? e.message : "Could not save");
+      setErrors({ _save: e instanceof Error ? e.message : "Could not save" });
       setSaving(false);
     }
   }
@@ -89,6 +102,7 @@ export default function AmountStep({ caseId, initialCents }: Props) {
           placeholder={unsure ? "1,000" : "0"}
           aria-label="Amount in US dollars"
           autoFocus
+          aria-invalid={!!errors.amount}
         />
       </div>
 
@@ -116,6 +130,8 @@ export default function AmountStep({ caseId, initialCents }: Props) {
           : "I'm not sure of the exact amount"}
       </button>
 
+      <ErrorSummary errors={errors} order={["amount", "_save"]} />
+
       <div className="dlw-actions">
         <Link
           href={`/case/${caseId}/build/category`}
@@ -127,7 +143,6 @@ export default function AmountStep({ caseId, initialCents }: Props) {
           {saving ? "Saving…" : "Continue ▶"}
         </button>
       </div>
-      {error ? <p style={{ color: "var(--accent)", marginTop: 12 }}>{error}</p> : null}
     </div>
   );
 }

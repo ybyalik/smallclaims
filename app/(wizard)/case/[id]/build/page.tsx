@@ -9,16 +9,33 @@ interface Props {
 
 /**
  * Wizard root: routes to the right step based on what the case has filled in.
- * Phase 0 prescreen always runs first (5 steps), then Phase 1-5 (full wizard).
+ *
+ * For a `draft` case (still being built), we walk every required field in
+ * order and drop the user on the first one that's missing — handy because
+ * they're trying to make progress.
+ *
+ * For an `intake_complete` case (already finalized via "Finish & Sign"),
+ * we land on the review step. That's the recap-of-everything view the user
+ * actually wants when they click "Edit case details", and the stepper at
+ * the top lets them jump to any specific step they want to change.
  */
 export default async function WizardRoot({ params }: Props) {
   const c = await loadOwnedCase(params.id);
   if (!c) notFound();
 
+  // Finalized cases land on review (full recap + free navigation via stepper).
+  if (c.status === "intake_complete") {
+    redirect(`/case/${c.id}/build/review`);
+  }
+
   const answers = (c.intake_answers ?? {}) as Record<string, unknown>;
 
-  // Pre-screen state: walk the funnel until we hit an unfilled step
-  if (!c.dispute_type || c.dispute_type === "other") {
+  // Draft cases: walk the funnel until we hit an unfilled step.
+  if (
+    !c.dispute_type ||
+    (c.dispute_type === "other" &&
+      typeof answers.dispute_type_other !== "string")
+  ) {
     redirect(`/case/${c.id}/build/category`);
   }
   if (!c.amount_cents || c.amount_cents <= 0) {

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { listAdminUsers } from "../../../lib/admin/users";
+import PageHead from "../../../components/layout/PageHead";
 
 export const dynamic = "force-dynamic";
 
@@ -32,15 +33,11 @@ export default async function AdminUsersPage() {
 
   return (
     <div className="admin-page">
-      <header className="admin-page-head">
-        <div>
-          <h1>Users</h1>
-          <p>
-            {users.length} registered · {customers.length} customer
-            {customers.length !== 1 ? "s" : ""}
-          </p>
-        </div>
-      </header>
+      <PageHead
+        variant="admin"
+        title="Users"
+        sub={`${users.length} registered · ${customers.length} customer${customers.length !== 1 ? "s" : ""}`}
+      />
 
       <div className="admin-cards" style={{ marginBottom: 24 }}>
         <div className="admin-card">

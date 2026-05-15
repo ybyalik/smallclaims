@@ -31,19 +31,14 @@ export interface CaseResearchSourceRow {
 
 export interface CaseResearchDetail {
   job: CaseResearchJobRow;
+  // Case-level metadata that the panel needs to render properly (link back
+  // to the state guide, header chips, etc.).
+  caseState: string | null; // two-letter abbreviation as stored in cases.state
   evidencePack: Record<string, unknown> | null;
-  // Two-call deep research: each half has its own response id, raw findings
-  // markdown, and structured pack. Legacy single-call fields (deepResearchPack,
-  // deepResearchResponseId, deepResearchReportMd) remain on this interface
-  // for backward compat with admin UI panels still rendering pre-migration
-  // jobs; they're null on jobs created after the two-call rollout.
-  deepResearchResponseIdA: string | null;
-  deepResearchResponseIdB: string | null;
-  deepResearchFindingsA: string | null;
-  deepResearchFindingsB: string | null;
+  // Combined state-research dossier (the four call markdowns concatenated)
+  // and the structured pack extracted from it.
+  stateFindingsMd: string | null;
   deepResearchPack: Record<string, unknown> | null;
-  deepResearchResponseId: string | null;
-  deepResearchReportMd: string | null;
   formSpecs: Array<Record<string, unknown>> | null;
   qaPassed: boolean;
   qaNotes: Record<string, unknown> | null;
@@ -85,9 +80,16 @@ export async function loadCaseResearchLatest(caseId: string): Promise<CaseResear
   const { data: report } = await admin
     .from("case_research_reports")
     .select(
-      "evidence_pack, deep_research_pack, deep_research_response_id, deep_research_report_md, deep_research_response_id_a, deep_research_response_id_b, deep_research_findings_a, deep_research_findings_b, form_specs, qa_passed, qa_notes, customer_report_status, customer_report_html, customer_report_published_html, customer_report_published_at, merged_pack, merge_summary, overall_confidence, critical_conflict_detected",
+      "evidence_pack, deep_research_pack, state_findings_md, form_specs, qa_passed, qa_notes, customer_report_status, customer_report_html, customer_report_published_html, customer_report_published_at, merged_pack, merge_summary, overall_confidence, critical_conflict_detected",
     )
     .eq("job_id", job.id)
+    .maybeSingle();
+
+  // Pull the case row for state abbr and other case-level metadata.
+  const { data: caseRow } = await admin
+    .from("cases")
+    .select("state")
+    .eq("id", caseId)
     .maybeSingle();
 
   const { data: sourceRows } = await admin
@@ -115,14 +117,10 @@ export async function loadCaseResearchLatest(caseId: string): Promise<CaseResear
 
   return {
     job: job as CaseResearchJobRow,
+    caseState: (caseRow?.state as string | null) ?? null,
     evidencePack: report?.evidence_pack ?? null,
-    deepResearchResponseIdA: report?.deep_research_response_id_a ?? null,
-    deepResearchResponseIdB: report?.deep_research_response_id_b ?? null,
-    deepResearchFindingsA: report?.deep_research_findings_a ?? null,
-    deepResearchFindingsB: report?.deep_research_findings_b ?? null,
+    stateFindingsMd: report?.state_findings_md ?? null,
     deepResearchPack: report?.deep_research_pack ?? null,
-    deepResearchResponseId: report?.deep_research_response_id ?? null,
-    deepResearchReportMd: report?.deep_research_report_md ?? null,
     formSpecs: report?.form_specs ?? null,
     qaPassed: report?.qa_passed ?? false,
     qaNotes: report?.qa_notes ?? null,

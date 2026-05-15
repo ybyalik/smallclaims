@@ -19,16 +19,35 @@ export const metadata: Metadata = {
   },
 };
 
+const SITE_URL = "https://civilcase.com";
+
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "WebApplication",
+  "@type": ["WebApplication", "SoftwareApplication"],
+  "@id": `${SITE_URL}/case-score#app`,
   name: "CivilCase Case-Score",
-  url: "https://civilcase.com/case-score",
-  applicationCategory: "LegalService",
+  url: `${SITE_URL}/case-score`,
+  applicationCategory: "BusinessApplication",
+  applicationSubCategory: "LegalService",
+  operatingSystem: "Any (web browser)",
+  browserRequirements: "Requires JavaScript and a modern browser",
   description:
-    "Free case-strength evaluation for small-claims and civil disputes. Returns a 0-100 score, statute-of-limitations deadline, and a recommended next step.",
-  offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-  publisher: { "@type": "Organization", name: "CivilCase" },
+    "Free case-strength evaluation for small-claims and civil disputes. Answer seven questions, get a 0 to 100 score, your statute-of-limitations deadline, and a recommended next step.",
+  featureList: [
+    "Case strength scoring (0 to 100)",
+    "Statute of limitations deadline lookup by state",
+    "Recommended next step (settle, demand letter, file, consult a lawyer)",
+    "Coverage for all 50 US states",
+  ],
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+    availability: "https://schema.org/InStock",
+  },
+  publisher: { "@id": `${SITE_URL}/#organization` },
+  isPartOf: { "@id": `${SITE_URL}/#website` },
+  inLanguage: "en-US",
 };
 
 function pickSol(entries: { id: string; claim: string; years: number }[]) {

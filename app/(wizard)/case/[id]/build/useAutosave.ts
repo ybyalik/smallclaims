@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { useRouter } from "next/navigation";
 
 /**
  * Debounced autosave hook. Writes the given object to
@@ -11,8 +12,13 @@ import { useEffect, useRef } from "react";
  * - Updates the global "Changes saved" / "Saving…" indicator in the top bar.
  * - Subsequent changes debounce by `delay` ms (default 500) so each
  *   keystroke doesn't trigger a network write.
+ * - After a successful save, calls router.refresh() so server components
+ *   (notably the wizard stepper, which reads the case row to compute phase
+ *   completion) pick up the new data. Without this the stepper stays stale
+ *   until the user navigates.
  */
 export function useAutosave(caseId: string, value: Record<string, unknown>, delay = 500) {
+  const router = useRouter();
   const lastSerializedRef = useRef<string | null>(null);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -47,6 +53,9 @@ export function useAutosave(caseId: string, value: Record<string, unknown>, dela
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         lastSerializedRef.current = serialized;
         setStatus("Changes saved");
+        // Re-render server components so the stepper picks up the new
+        // case fields (phase completion, lock state, percent done).
+        router.refresh();
       } catch (e) {
         console.error("[autosave]", e);
         setStatus("Save failed — retry?");
@@ -56,7 +65,7 @@ export function useAutosave(caseId: string, value: Record<string, unknown>, dela
     return () => {
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
     };
-  }, [caseId, value, delay]);
+  }, [caseId, value, delay, router]);
 }
 
 function setStatus(text: string) {

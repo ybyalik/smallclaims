@@ -1,18 +1,20 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import type { CaseResearchDetail, CaseResearchSourceRow } from "../../../../lib/admin/case-research";
+import { getStateByAbbr } from "../../../../lib/states";
 import EvidencePackView from "./EvidencePackView";
 import CustomerReportPanel from "./CustomerReportPanel";
 
-type Tab = "customer" | "evidence" | "deep" | "sources" | "qa";
+type Tab = "customer" | "evidence" | "state" | "sources" | "qa";
 
 const BRANCH_LABELS = {
   shallow: "shallow",
-  deep: "deep research",
+  deep: "state research",
   qa: "qa",
 } as const;
 
@@ -63,50 +65,18 @@ export default function CaseResearchPanel({ caseId, detail }: Props) {
   const [tab, setTab] = useState<Tab>("customer");
   const [running, setRunning] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [pollingDeep, setPollingDeep] = useState(false);
-  const [pollOutcome, setPollOutcome] = useState<string | null>(null);
 
-  // Auto-refresh logic. Three live states:
-  //   1. Job itself is still running → poll every 4s (the shallow pipeline is
-  //      moving through phases, lots of UI updates).
-  //   2. Job succeeded but deep research is still polling on OpenAI's side →
-  //      poll every 60s (slow drumbeat; deep can take hours).
-  //   3. Everything is terminal → stop polling.
+  // Auto-refresh while the job is moving. The new pipeline has no separate
+  // long-running polling phase: deep marks succeeded synchronously when the
+  // state-research data is loaded.
   const liveStatus = detail?.job.status;
-  const deepStatus = (detail?.job.progress?.deep?.status as string | undefined) ?? null;
   useEffect(() => {
     if (liveStatus === "queued" || liveStatus === "running") {
       const timer = setTimeout(() => router.refresh(), liveStatus === "running" ? 4000 : 6000);
       return () => clearTimeout(timer);
     }
-    if (liveStatus === "succeeded" && deepStatus === "polling") {
-      const timer = setTimeout(() => router.refresh(), 60000);
-      return () => clearTimeout(timer);
-    }
     return undefined;
-  }, [liveStatus, deepStatus, detail?.job.id, detail?.job.started_at, router]);
-
-  async function pokeDeepResearch() {
-    if (pollingDeep) return;
-    setPollingDeep(true);
-    setPollOutcome(null);
-    try {
-      const res = await fetch(`/api/admin/case-research/${caseId}/poll-deep`, {
-        method: "POST",
-      });
-      const body = await res.json().catch(() => ({}));
-      if (!res.ok) {
-        setPollOutcome(`error: ${body.error || res.status}`);
-      } else {
-        setPollOutcome(body.outcome || "ok");
-        if (body.outcome === "completed") router.refresh();
-      }
-    } catch (e) {
-      setPollOutcome(`error: ${e instanceof Error ? e.message : String(e)}`);
-    } finally {
-      setPollingDeep(false);
-    }
-  }
+  }, [liveStatus, detail?.job.id, detail?.job.started_at, router]);
 
   async function rerun() {
     if (running) return;
@@ -158,21 +128,15 @@ export default function CaseResearchPanel({ caseId, detail }: Props) {
 
   const {
     job,
+    caseState,
     evidencePack,
+    stateFindingsMd,
     deepResearchPack,
-    deepResearchResponseId,
-    deepResearchReportMd,
-    deepResearchResponseIdA,
-    deepResearchResponseIdB,
-    deepResearchFindingsA,
-    deepResearchFindingsB,
     qaPassed,
     qaNotes,
     sources,
   } = detail;
-  // Job is "two-call era" if either of the new response_id slots is set.
-  // Older jobs (pre-rollout) only have the legacy single-call columns.
-  const isTwoCall = !!(deepResearchResponseIdA || deepResearchResponseIdB);
+  const stateInfo = caseState ? getStateByAbbr(caseState) : null;
   const modelVersions = (job.model_versions ?? {}) as Record<string, unknown>;
   const ledger = (modelVersions.ledger as Array<{ step: string; cents: number; model?: string }>) || [];
   const isLive = job.status === "queued" || job.status === "running";
@@ -276,7 +240,7 @@ export default function CaseResearchPanel({ caseId, detail }: Props) {
 
       {isLive ? (
         <p style={{ fontSize: 12, color: "var(--muted)", marginBottom: 14 }}>
-          Pipeline: query plan → search → fetch & extract → evidence pack → QA, in parallel with two deep research calls (A: pre-filing/filing, B: hearing/collection) → combined extraction → merge → customer report. Live step output is at{" "}
+          Pipeline: shallow research (query plan → search → fetch & extract → evidence pack → QA) in parallel with loading pre-baked state research and the structured pack, then merge → customer report. Live step output is at{" "}
           <a
             href="https://app.inngest.com"
             target="_blank"
@@ -290,7 +254,7 @@ export default function CaseResearchPanel({ caseId, detail }: Props) {
       ) : null}
 
       <div className="admin-research-tabs">
-        {(["customer", "evidence", "deep", "sources", "qa"] as Tab[]).map((t) => (
+        {(["customer", "evidence", "state", "sources", "qa"] as Tab[]).map((t) => (
           <button
             key={t}
             type="button"
@@ -301,8 +265,8 @@ export default function CaseResearchPanel({ caseId, detail }: Props) {
               ? customerTabLabel(detail)
               : t === "evidence"
                 ? "Shallow pack"
-                : t === "deep"
-                  ? `Deep research${deepResearchPack ? "" : " ·"}`
+                : t === "state"
+                  ? `State research${deepResearchPack ? "" : " ·"}`
                   : t === "sources"
                     ? `Sources (${sources.length})`
                     : `QA${qaChecksFailed ? " ⚠" : ""}`}
@@ -319,148 +283,14 @@ export default function CaseResearchPanel({ caseId, detail }: Props) {
             sources={sources}
           />
         )}
-        {tab === "deep" && (
-          <div>
-            {(deepResearchResponseIdA || deepResearchResponseIdB || deepResearchResponseId) ? (
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                  gap: 12,
-                  flexWrap: "wrap",
-                  marginBottom: 12,
-                  padding: "8px 12px",
-                  background: "var(--bg-2)",
-                  borderRadius: 8,
-                  fontSize: 12,
-                }}
-              >
-                <span style={{ color: "var(--muted)" }}>
-                  {isTwoCall ? (
-                    <>
-                      Call A:{" "}
-                      <code style={{ fontSize: 11 }}>
-                        {deepResearchResponseIdA ?? "(none)"}
-                      </code>
-                      {" · Call B: "}
-                      <code style={{ fontSize: 11 }}>
-                        {deepResearchResponseIdB ?? "(none)"}
-                      </code>
-                    </>
-                  ) : (
-                    <>
-                      OpenAI response id:{" "}
-                      <code style={{ fontSize: 11 }}>{deepResearchResponseId}</code>
-                    </>
-                  )}
-                </span>
-                <span style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                  {pollOutcome ? (
-                    <span style={{ color: "var(--muted)" }}>{pollOutcome}</span>
-                  ) : null}
-                  <button
-                    type="button"
-                    className="btn btn-cream btn-sm"
-                    onClick={pokeDeepResearch}
-                    disabled={pollingDeep}
-                  >
-                    {pollingDeep ? "Checking…" : "Check status now"}
-                  </button>
-                </span>
-              </div>
-            ) : null}
-
-            {isTwoCall ? (
-              <>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18 }}>
-                  <DeepCallColumn
-                    label="Call A — pre-filing and filing"
-                    callKey="call_a"
-                    progress={progress}
-                    findings={deepResearchFindingsA}
-                  />
-                  <DeepCallColumn
-                    label="Call B — hearing through collection"
-                    callKey="call_b"
-                    progress={progress}
-                    findings={deepResearchFindingsB}
-                  />
-                </div>
-                {deepResearchPack ? (
-                  <div style={{ marginTop: 22 }}>
-                    <h4
-                      style={{
-                        margin: "0 0 10px",
-                        fontSize: 12,
-                        letterSpacing: "0.12em",
-                        textTransform: "uppercase",
-                        color: "var(--muted)",
-                        fontWeight: 600,
-                      }}
-                    >
-                      Combined extracted fields (A + B)
-                    </h4>
-                    <EvidencePackView
-                      pack={deepResearchPack as Parameters<typeof EvidencePackView>[0]["pack"]}
-                      emptyLabel="(no combined pack yet — runs once both calls succeed)"
-                    />
-                    <details style={{ marginTop: 10 }}>
-                      <summary style={{ cursor: "pointer", color: "var(--muted)", fontSize: 13 }}>
-                        Raw JSON
-                      </summary>
-                      <pre className="admin-pre" style={{ marginTop: 8 }}>
-                        {JSON.stringify(deepResearchPack, null, 2)}
-                      </pre>
-                    </details>
-                  </div>
-                ) : null}
-              </>
-            ) : (
-              <>
-                {deepResearchReportMd ? (
-                  <div className="ev-section" style={{ padding: "20px 28px" }}>
-                    <h4 className="ev-section-title">Deep research narrative</h4>
-                    <article className="admin-research-content">
-                      <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                        {deepResearchReportMd}
-                      </ReactMarkdown>
-                    </article>
-                  </div>
-                ) : null}
-
-                <div style={{ marginTop: 18 }}>
-                  <h4
-                    style={{
-                      margin: "0 0 8px",
-                      fontSize: 12,
-                      letterSpacing: "0.12em",
-                      textTransform: "uppercase",
-                      color: "var(--muted)",
-                      fontWeight: 600,
-                    }}
-                  >
-                    Structured summary
-                  </h4>
-                  <EvidencePackView
-                    pack={deepResearchPack as Parameters<typeof EvidencePackView>[0]["pack"]}
-                    emptyLabel="Deep research did not run for this job (key missing, skipped, or still polling)."
-                  />
-                </div>
-
-                <details style={{ marginTop: 18 }}>
-                  <summary style={{ cursor: "pointer", color: "var(--muted)", fontSize: 13 }}>
-                    Show raw deep research JSON
-                  </summary>
-                  <pre className="admin-pre" style={{ marginTop: 8 }}>
-                    {deepResearchPack
-                      ? JSON.stringify(deepResearchPack, null, 2)
-                      : "(none)"}
-                  </pre>
-                </details>
-              </>
-            )}
-          </div>
+        {tab === "state" && (
+          <StateResearchView
+            stateAbbr={caseState}
+            stateSlug={stateInfo?.slug ?? null}
+            stateName={stateInfo?.name ?? null}
+            findingsMd={stateFindingsMd}
+            pack={deepResearchPack}
+          />
         )}
         {tab === "sources" && <SourcesView sources={sources} />}
         {tab === "qa" && <QaView passed={qaPassed} notes={qaNotes} />}
@@ -785,75 +615,101 @@ function QaView({
   );
 }
 
-function DeepCallColumn({
-  label,
-  callKey,
-  progress,
-  findings,
+function StateResearchView({
+  stateAbbr,
+  stateSlug,
+  stateName,
+  findingsMd,
+  pack,
 }: {
-  label: string;
-  callKey: "call_a" | "call_b";
-  progress: Record<string, Record<string, unknown>>;
-  findings: string | null;
+  stateAbbr: string | null;
+  stateSlug: string | null;
+  stateName: string | null;
+  findingsMd: string | null;
+  pack: Record<string, unknown> | null;
 }) {
-  const deep = (progress.deep ?? {}) as Record<string, unknown>;
-  const call = (deep[callKey] ?? {}) as Record<string, unknown>;
-  const status = (call.status as string | undefined) ?? "—";
-  const phase = (call.phase as string | undefined) ?? null;
-  const citations = (call.citations as number | undefined) ?? null;
-  const findingsChars = (call.findings_chars as number | undefined) ?? null;
+  const hasAnything = !!findingsMd || !!pack;
 
   return (
-    <div
-      style={{
-        border: "1px solid var(--bg-3)",
-        borderRadius: 10,
-        padding: 16,
-        background: "var(--bg-1)",
-        minWidth: 0,
-      }}
-    >
+    <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
       <div
         style={{
           display: "flex",
           justifyContent: "space-between",
-          alignItems: "baseline",
-          marginBottom: 8,
+          alignItems: "center",
+          gap: 12,
+          flexWrap: "wrap",
+          padding: "10px 14px",
+          background: "var(--bg-2)",
+          borderRadius: 8,
+          fontSize: 13,
         }}
       >
-        <h4 style={{ margin: 0, fontSize: 13 }}>{label}</h4>
-        <span
-          style={{
-            fontSize: 11,
-            color:
-              status === "succeeded"
-                ? "var(--ok)"
-                : status === "failed"
-                  ? "var(--accent)"
-                  : "var(--muted)",
-          }}
-        >
-          {status}
-          {phase && status !== "succeeded" ? ` · ${phase}` : ""}
+        <span style={{ color: "var(--muted)" }}>
+          Pre-baked state research for{" "}
+          <strong>{stateName ?? stateAbbr ?? "(unknown state)"}</strong>. Loaded
+          from the <code>state_research</code> table, no per-case OpenAI deep
+          research runs.
         </span>
+        {stateSlug ? (
+          <Link
+            className="btn btn-cream btn-sm"
+            href={`/admin/research/${stateSlug}`}
+          >
+            Open state guide →
+          </Link>
+        ) : null}
       </div>
-      <div style={{ fontSize: 11, color: "var(--muted)", marginBottom: 10 }}>
-        {citations !== null ? `${citations} citations` : ""}
-        {citations !== null && findingsChars !== null ? " · " : ""}
-        {findingsChars !== null ? `${findingsChars.toLocaleString()} chars` : ""}
-      </div>
-      {findings ? (
+
+      {!hasAnything ? (
+        <p style={{ color: "var(--muted)", fontSize: 13 }}>
+          State research has not been loaded into this case yet. If the job is
+          still running, the data will appear here once the{" "}
+          <code>deep.load-state</code> step completes.
+        </p>
+      ) : null}
+
+      {pack ? (
+        <div>
+          <h4
+            style={{
+              margin: "0 0 8px",
+              fontSize: 12,
+              letterSpacing: "0.12em",
+              textTransform: "uppercase",
+              color: "var(--muted)",
+              fontWeight: 600,
+            }}
+          >
+            Structured pack
+          </h4>
+          <EvidencePackView
+            pack={pack as Parameters<typeof EvidencePackView>[0]["pack"]}
+            emptyLabel="(structured pack not yet extracted)"
+          />
+          <details style={{ marginTop: 10 }}>
+            <summary style={{ cursor: "pointer", color: "var(--muted)", fontSize: 13 }}>
+              Raw JSON
+            </summary>
+            <pre className="admin-pre" style={{ marginTop: 8 }}>
+              {JSON.stringify(pack, null, 2)}
+            </pre>
+          </details>
+        </div>
+      ) : null}
+
+      {findingsMd ? (
         <details>
           <summary style={{ cursor: "pointer", color: "var(--muted)", fontSize: 13 }}>
-            Findings dossier
+            State findings dossier ({findingsMd.length.toLocaleString()} chars)
           </summary>
           <article className="admin-research-content" style={{ marginTop: 8 }}>
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>{findings}</ReactMarkdown>
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              {findingsMd}
+            </ReactMarkdown>
           </article>
         </details>
-      ) : (
-        <p style={{ color: "var(--muted)", fontSize: 12 }}>(no findings yet)</p>
-      )}
+      ) : null}
     </div>
   );
 }

@@ -105,7 +105,19 @@ async function lookupViaNominatim(
   input: CountyLookupInput,
 ): Promise<CountyLookupResult | null> {
   const url = new URL(NOMINATIM_URL);
-  url.searchParams.set("q", oneline);
+  // Prefer Nominatim's STRUCTURED search when we have parsed city + state.
+  // Freetext (q=) tends to match city-level data without surfacing the
+  // county in the address breakdown, especially for "Austin, TX" style
+  // inputs from the narrative step. Structured search is much more
+  // reliable at returning addr.county.
+  const city = input.city?.trim() ?? "";
+  const state = input.state?.trim() ?? "";
+  if (city && state && !input.line1?.trim()) {
+    url.searchParams.set("city", city);
+    url.searchParams.set("state", state);
+  } else {
+    url.searchParams.set("q", oneline);
+  }
   url.searchParams.set("format", "json");
   url.searchParams.set("addressdetails", "1");
   url.searchParams.set("countrycodes", "us");

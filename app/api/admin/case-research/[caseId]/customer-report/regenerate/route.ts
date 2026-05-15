@@ -13,7 +13,10 @@ import { createServiceRoleClient } from "../../../../../../../lib/supabase/servi
 import { finalizeCustomerReport } from "../../../../../../../lib/case-research/finalize-customer-report";
 
 export const runtime = "nodejs";
-export const maxDuration = 300;
+// Full pipeline (state merge + LLM writer + HTML render) regularly hits
+// 4-5 minutes. 800 is the Pro plan ceiling; gives generous headroom over
+// the 286s actually-observed run.
+export const maxDuration = 800;
 
 export async function POST(_req: NextRequest, ctx: { params: { caseId: string } }) {
   const supabase = createClient();

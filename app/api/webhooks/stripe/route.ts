@@ -9,6 +9,7 @@ import { createServiceRoleClient } from "../../../../lib/supabase/service-role";
 import { logEvent } from "../../../../lib/audit/log";
 import { sendEmail } from "../../../../lib/resend";
 import { markCasePaid } from "../../../../lib/demand-letter/mark-paid";
+import { ensureCollectionPlanForCase } from "../../../../lib/collection-plan/generate";
 
 export const runtime = "nodejs";
 
@@ -63,9 +64,31 @@ export async function POST(req: NextRequest) {
       });
 
       // Branch by product. Demand-letter products advance case status and
-      // fire the certified-mail event. The Filing Guide is purely an access
-      // unlock — no status change, no mail dispatch.
-      if (productKey === "filing_guide") {
+      // fire the certified-mail event. Filing Guide and Collection Plan are
+      // pure access unlocks (no status change, no mail dispatch).
+      if (productKey === "collection_plan") {
+        const { data: caseRow } = await admin
+          .from("cases")
+          .select("plaintiff_email, plaintiff_name")
+          .eq("id", caseId)
+          .single();
+        ensureCollectionPlanForCase(caseId).catch((err) => {
+          console.error("[webhook] ensureCollectionPlanForCase failed", err);
+        });
+        if (caseRow?.plaintiff_email) {
+          await sendEmail({
+            to: caseRow.plaintiff_email,
+            subject: "We're building your Post-Judgment Collection Plan",
+            text: `Hi ${caseRow.plaintiff_name?.split(" ")[0] || "there"},
+
+Thanks for your purchase. We're pulling your county's specific forms and fees, and we'll build your personalized collection plan over the next few minutes. We'll email you again when it's ready, and you can also watch progress on your case page.
+
+Open your case: ${process.env.NEXT_PUBLIC_SITE_URL || "https://civilcase.com"}/case/${caseId}
+
+— CivilCase`,
+          });
+        }
+      } else if (productKey === "filing_guide") {
         const { data: caseRow } = await admin
           .from("cases")
           .select("plaintiff_email, plaintiff_name, state")
@@ -80,27 +103,6 @@ export async function POST(req: NextRequest) {
 Your Filing Guide is ready. It walks you through where to file, the forms you need, fees, service of process, and what to bring on hearing day for ${caseRow.state ?? "your state"}.
 
 Open your guide: ${process.env.NEXT_PUBLIC_SITE_URL || "https://civilcase.com"}/case/${caseId}/file
-
-If you have questions, reply to this email.
-
-— CivilCase`,
-          });
-        }
-      } else if (productKey === "court_prep") {
-        const { data: caseRow } = await admin
-          .from("cases")
-          .select("plaintiff_email, plaintiff_name")
-          .eq("id", caseId)
-          .single();
-        if (caseRow?.plaintiff_email) {
-          await sendEmail({
-            to: caseRow.plaintiff_email,
-            subject: "Your CivilCase Court Prep Pack is ready",
-            text: `Hi ${caseRow.plaintiff_name?.split(" ")[0] || "there"},
-
-Your Court Prep Pack is ready. You'll find your opening statement, the questions the judge is likely to ask, your key-facts cheat sheet, and the pitfalls to avoid.
-
-Open your prep pack: ${process.env.NEXT_PUBLIC_SITE_URL || "https://civilcase.com"}/case/${caseId}/prep
 
 If you have questions, reply to this email.
 
@@ -162,20 +164,35 @@ If you have questions, reply to this email.
       const productKey = intent.metadata?.product_key;
       if (!caseId) break;
 
+      // paid_at is stamped on BOTH events so the access helper can use a
+      // single "is this row claimed?" check. status stays as "pending" until
+      // capture (after paralegal review), then flips to "succeeded".
       await admin
         .from("payments")
         .update({
           status: event.type === "payment_intent.succeeded" ? "succeeded" : "pending",
-          paid_at: event.type === "payment_intent.succeeded" ? new Date().toISOString() : null,
+          paid_at: new Date().toISOString(),
         })
         .eq("stripe_payment_intent_id", intent.id);
 
-      // Filing Guide and Court Prep don't change case status or fire mail.
-      // They're pure-access unlocks. Everything else (demand-letter products)
-      // gets the standard advance-and-mail treatment.
-      const standaloneUnlocks = new Set(["filing_guide", "court_prep"]);
+      // Filing Guide and Collection Plan are pure-access unlocks (no mail
+      // dispatch). Everything else (demand-letter products) gets the
+      // standard advance-and-mail treatment.
+      const standaloneUnlocks = new Set(["filing_guide", "collection_plan"]);
       if (!productKey || !standaloneUnlocks.has(productKey)) {
         await markCasePaid(caseId, { source: "stripe_webhook" });
+      }
+
+      // Collection Plan: trigger the background generation pipeline on first
+      // capture. The orchestrator is idempotent so a retried webhook won't
+      // double-fire. Only on succeeded (not the authorize-only event).
+      if (
+        productKey === "collection_plan" &&
+        event.type === "payment_intent.succeeded"
+      ) {
+        ensureCollectionPlanForCase(caseId).catch((err) => {
+          console.error("[webhook] ensureCollectionPlanForCase failed", err);
+        });
       }
 
       await logEvent(

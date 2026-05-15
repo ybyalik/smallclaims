@@ -12,11 +12,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "CivilCase — Get Your Money Back Without a Lawyer",
+    default: "Recover Up to $25,000 in Small Claims Court | CivilCase.com",
     template: "%s · CivilCase",
   },
   description:
-    "Resolve small claims and civil disputes, from demand to resolution. CivilCase drafts the demand letter, mails it certified, and walks you through filing and collection in all 50 states.",
+    "Recover up to $25,000 in your state's small claims court. We draft your demand letter, mail it certified, and walk you through filing, hearing, and collection.",
   keywords: [
     "small claims",
     "demand letter",
@@ -33,17 +33,60 @@ export const metadata: Metadata = {
     type: "website",
     url: SITE_URL,
     siteName: "CivilCase",
-    title: "CivilCase — Get Your Money Back Without a Lawyer",
+    title: "Recover Up to $25,000 in Small Claims Court | CivilCase.com",
     description:
-      "Resolve small claims and civil disputes, from demand to resolution. All 50 states.",
+      "Recover up to $25,000 in your state's small claims court. We draft your demand letter, mail it certified, and walk you through filing, hearing, and collection.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "CivilCase — Get Your Money Back Without a Lawyer",
+    title: "Recover Up to $25,000 in Small Claims Court | CivilCase.com",
     description:
-      "Resolve small claims and civil disputes, from demand to resolution.",
+      "Recover up to $25,000 in your state's small claims court. We draft your demand letter, mail it certified, and walk you through filing, hearing, and collection.",
   },
   robots: { index: true, follow: true },
+};
+
+// Sitewide JSON-LD: one Organization that other pages reference by @id, plus
+// a WebSite with SearchAction so Google can render a sitelinks search box
+// directly in the SERP.
+const siteJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      name: "CivilCase",
+      url: SITE_URL,
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/civilcase-logo.webp`,
+        width: 600,
+        height: 198,
+      },
+      description:
+        "Self-help platform for small claims and civil disputes. Demand letters, filing guides, and collection plans for all 50 states.",
+      foundingDate: "2026",
+      areaServed: { "@type": "Country", name: "United States" },
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: "CivilCase",
+      description:
+        "Recover up to $25,000 in your state's small claims court without hiring a lawyer.",
+      publisher: { "@id": `${SITE_URL}/#organization` },
+      inLanguage: "en-US",
+      potentialAction: {
+        "@type": "SearchAction",
+        target: {
+          "@type": "EntryPoint",
+          urlTemplate: `${SITE_URL}/blog?q={search_term_string}`,
+        },
+        "query-input": "required name=search_term_string",
+      },
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -59,6 +102,10 @@ export default function RootLayout({
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;0,6..72,700;0,6..72,800;1,6..72,500;1,6..72,600;1,6..72,700;1,6..72,800&family=Geist:wght@400;500;600;700;800&family=Caveat:wght@500;600;700&display=swap"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }}
         />
       </head>
       <body>{children}</body>

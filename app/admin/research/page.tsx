@@ -4,9 +4,15 @@
 
 import { STATES } from "../../../lib/states";
 import { createServiceRoleClient } from "../../../lib/supabase/service-role";
-import { getStatePrompt, CALL_TITLES, type StateCallId } from "../../../lib/state-research/prompts";
+import {
+  getDefaultPromptTemplate,
+  CALL_TITLES,
+  type StateCallId,
+} from "../../../lib/state-research/prompts";
 import AutoRefresh from "./AutoRefresh";
 import StateTable from "./StateTable";
+import PromptEditor from "./PromptEditor";
+import PageHead from "../../../components/layout/PageHead";
 
 export const dynamic = "force-dynamic";
 
@@ -25,6 +31,8 @@ interface StateRow {
   call_2_cost_cents: number | null;
   call_3_cost_cents: number | null;
   call_4_cost_cents: number | null;
+  structured_pack_extracted_at: string | null;
+  structured_pack_cost_cents: number | null;
   updated_at: string;
 }
 
@@ -32,7 +40,16 @@ async function loadRows(): Promise<Map<string, StateRow>> {
   try {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const admin = createServiceRoleClient() as any;
-    const { data } = await admin.from("state_research").select("*");
+    // The state_research table now holds big JSON blobs (markdown research
+    // outputs, structured packs) that can total ~21 MB across all states.
+    // The index page only renders status pills + timestamps + costs, so we
+    // select just those columns. This drops the response well under the
+    // Next.js fetch-cache 2 MB threshold and removes the cache warning.
+    const { data } = await admin
+      .from("state_research")
+      .select(
+        "slug, state_name, call_1_status, call_2_status, call_3_status, call_4_status, call_1_completed_at, call_2_completed_at, call_3_completed_at, call_4_completed_at, call_1_cost_cents, call_2_cost_cents, call_3_cost_cents, call_4_cost_cents, structured_pack_extracted_at, structured_pack_cost_cents, updated_at",
+      );
     const map = new Map<string, StateRow>();
     for (const r of (data ?? []) as StateRow[]) map.set(r.slug, r);
     return map;
@@ -41,14 +58,42 @@ async function loadRows(): Promise<Map<string, StateRow>> {
   }
 }
 
+interface PromptOverride {
+  call_id: StateCallId;
+  prompt_text: string;
+  updated_at: string;
+}
+
+async function loadPromptOverrides(): Promise<Map<StateCallId, PromptOverride>> {
+  try {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const admin = createServiceRoleClient() as any;
+    const { data } = await admin
+      .from("state_research_prompts")
+      .select("call_id, prompt_text, updated_at");
+    const map = new Map<StateCallId, PromptOverride>();
+    for (const r of (data ?? []) as PromptOverride[]) map.set(r.call_id, r);
+    return map;
+  } catch {
+    return new Map();
+  }
+}
+
 export default async function StateResearchIndex() {
   const rows = await loadRows();
+  const promptOverrides = await loadPromptOverrides();
 
   let totalDone = 0;
   let totalRunning = 0;
   let totalFailed = 0;
   let totalCostCents = 0;
+  let totalExtracted = 0;
+  let totalExtractedCostCents = 0;
   for (const r of rows.values()) {
+    if (r.structured_pack_extracted_at) {
+      totalExtracted += 1;
+      totalExtractedCostCents += r.structured_pack_cost_cents ?? 0;
+    }
     const statuses = [r.call_1_status, r.call_2_status, r.call_3_status, r.call_4_status];
     for (const s of statuses) {
       if (s === "done") totalDone += 1;
@@ -73,19 +118,21 @@ export default async function StateResearchIndex() {
   return (
     <div className="admin-page">
       <AutoRefresh enabled={anyRunning} />
-      <header className="admin-page-head">
-        <div>
-          <h1>State research</h1>
-          <p>
-            Deep-research baseline for each US state. Four calls per state, each focused on a
-            different topic cluster. Each call runs in OpenAI background mode (~10–30 min).
-          </p>
-        </div>
-        <div style={{ fontSize: 13, color: "var(--muted)", textAlign: "right" }}>
-          <div>{totalDone} calls done · {totalRunning} running · {totalFailed} failed</div>
-          <div>Total spend: ${(totalCostCents / 100).toFixed(2)}</div>
-        </div>
-      </header>
+      <PageHead
+        variant="admin"
+        title="State research"
+        sub="Deep-research baseline for each US state. Four calls per state, each focused on a different topic cluster. Each call runs in OpenAI background mode (~10-30 min)."
+        actions={
+          <div style={{ fontSize: 13, color: "var(--muted)", textAlign: "right" }}>
+            <div>{totalDone} calls done · {totalRunning} running · {totalFailed} failed</div>
+            <div>Research spend: ${(totalCostCents / 100).toFixed(2)}</div>
+            <div>
+              {totalExtracted} of {STATES.length} states extracted · $
+              {(totalExtractedCostCents / 100).toFixed(2)}
+            </div>
+          </div>
+        }
+      />
 
       <StateTable
         states={STATES.map((s) => ({ slug: s.slug, name: s.name }))}
@@ -98,6 +145,7 @@ export default async function StateResearchIndex() {
               call_3_status: r.call_3_status,
               call_4_status: r.call_4_status,
               updated_at: r.updated_at,
+              structured_pack_extracted_at: r.structured_pack_extracted_at,
             },
           ]),
         )}
@@ -105,50 +153,32 @@ export default async function StateResearchIndex() {
 
       <section style={{ marginTop: 48 }}>
         <header style={{ marginBottom: 12 }}>
-          <h2 style={{ margin: 0 }}>Prompts in use</h2>
+          <h2 style={{ margin: 0 }}>Prompts</h2>
           <p style={{ fontSize: 13, color: "var(--muted)", margin: "4px 0 0" }}>
-            Live snapshot of the four deep-research prompts pulled from{" "}
-            <code>lib/state-research/prompts.ts</code> at request time. Whenever the prompts file
-            changes and redeploys, this view updates. <code>[STATE NAME]</code> is the placeholder
-            that gets replaced with the actual state name at submit time.
+            The four deep-research prompts. Click <strong>Edit</strong> on any
+            call to save an override that the runner uses on the next submission.
+            Use <strong>Reset to default</strong> to delete the override and fall
+            back to the version in <code>lib/state-research/prompts.ts</code>.
+            <code>[STATE NAME]</code> is the literal placeholder replaced with
+            the state at submit time.
           </p>
         </header>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
           {([1, 2, 3, 4] as StateCallId[]).map((c) => {
-            const prompt = getStatePrompt(c, "[STATE NAME]");
+            const defaultText = getDefaultPromptTemplate(c);
+            const override = promptOverrides.get(c);
+            const effective = override?.prompt_text ?? defaultText;
             return (
-              <details
+              <PromptEditor
                 key={c}
-                style={{
-                  border: "1px solid var(--rule)",
-                  borderRadius: 8,
-                  padding: "12px 16px",
-                  background: "var(--card)",
-                }}
-              >
-                <summary style={{ cursor: "pointer", fontWeight: 600 }}>
-                  Call {c} — {CALL_TITLES[c]}
-                  <span style={{ fontSize: 12, color: "var(--muted)", fontWeight: 400, marginLeft: 10 }}>
-                    {prompt.length.toLocaleString()} chars · {prompt.split(/\s+/).filter(Boolean).length.toLocaleString()} words
-                  </span>
-                </summary>
-                <pre
-                  style={{
-                    background: "var(--bg-soft)",
-                    padding: 14,
-                    borderRadius: 6,
-                    maxHeight: 520,
-                    overflow: "auto",
-                    whiteSpace: "pre-wrap",
-                    fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace",
-                    fontSize: 12,
-                    marginTop: 12,
-                  }}
-                >
-                  {prompt}
-                </pre>
-              </details>
+                call={c}
+                title={CALL_TITLES[c]}
+                effective={effective}
+                defaultText={defaultText}
+                isOverride={!!override}
+                overrideUpdatedAt={override?.updated_at ?? null}
+              />
             );
           })}
         </div>

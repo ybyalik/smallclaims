@@ -23,6 +23,8 @@ import {
   type DeepCallId,
 } from "./deep-research";
 import type { Classification, IntakeSnapshot } from "./agents";
+import { formatDisputeTypePhrase } from "../cases/dispute-type-label";
+import { getCaseClaimType } from "../cases/classify-claim-type";
 import crypto from "node:crypto";
 
 interface CompleteResult {
@@ -209,9 +211,10 @@ export async function completeDeepResearchByResponseId(
   return { outcome: "completed", jobId: job.id, caseId: job.case_id, which };
 }
 
-// Idempotent: run combined extraction for a job if both deep calls have
-// succeeded but no deep_research_pack has been persisted yet. Called by the
-// cron. Returns { ran: true } if it actually did work.
+// Idempotent: run structured extraction for a job once state findings have
+// been loaded onto its report row but the deep_research_pack hasn't been
+// persisted yet. Called from the Inngest worker (inline, normal path) and
+// from the cron (safety net if the inline call failed mid-flight).
 export async function runCombinedExtractionIfReady(
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   admin: any,
@@ -219,32 +222,26 @@ export async function runCombinedExtractionIfReady(
 ): Promise<{ ran: boolean; error?: string }> {
   const { data: job } = await admin
     .from("case_research_jobs")
-    .select("id, case_id, progress")
+    .select("id, case_id")
     .eq("id", jobId)
     .maybeSingle();
   if (!job) return { ran: false };
-  const deep = (job.progress?.deep ?? {}) as Record<string, unknown>;
-  const a = (deep.call_a ?? {}) as Record<string, unknown>;
-  const b = (deep.call_b ?? {}) as Record<string, unknown>;
-  if (a.status !== "succeeded" || b.status !== "succeeded") return { ran: false };
 
   const { data: row } = await admin
     .from("case_research_reports")
-    .select("deep_research_pack, deep_research_findings_a, deep_research_findings_b")
+    .select("deep_research_pack, state_findings_md")
     .eq("job_id", job.id)
     .maybeSingle();
   if (row?.deep_research_pack) return { ran: false }; // already extracted
 
-  const findingsA = (row?.deep_research_findings_a as string | null) ?? "";
-  const findingsB = (row?.deep_research_findings_b as string | null) ?? "";
-  if (!findingsA && !findingsB) return { ran: false };
+  const stateFindings = (row?.state_findings_md as string | null) ?? "";
+  if (!stateFindings) return { ran: false };
 
   try {
     const intake = await loadIntakeForExtraction(admin, job.case_id);
     const classification = await loadClassificationForExtraction(admin, job.id, intake);
     const extracted = await extractStructuredPackFromCombinedFindings(
-      findingsA,
-      findingsB,
+      stateFindings,
       intake,
       classification,
     );
@@ -278,7 +275,7 @@ async function loadIntakeForExtraction(admin: any, caseId: string): Promise<Inta
   const { data, error } = await admin
     .from("cases")
     .select(
-      "id, state, county, plaintiff_county, defendant_county, incident_county, dispute_type, amount_cents, defendant_name, defendant_address, facts_narrative",
+      "id, state, county, plaintiff_county, defendant_county, incident_county, dispute_type, amount_cents, defendant_name, defendant_address, facts_narrative, intake_answers",
     )
     .eq("id", caseId)
     .single();
@@ -290,6 +287,12 @@ async function loadIntakeForExtraction(admin: any, caseId: string): Promise<Inta
     data.plaintiff_county ||
     data.county ||
     null;
+  const answers = (data.intake_answers ?? {}) as Record<string, unknown>;
+  const disputeTypeOther =
+    typeof answers.dispute_type_other === "string" &&
+    answers.dispute_type_other.trim().length > 0
+      ? answers.dispute_type_other.trim()
+      : null;
   return {
     caseId: data.id,
     state: data.state,
@@ -299,6 +302,7 @@ async function loadIntakeForExtraction(admin: any, caseId: string): Promise<Inta
     defendantCounty: data.defendant_county ?? null,
     incidentCounty: data.incident_county ?? null,
     disputeType: data.dispute_type,
+    disputeTypeOther,
     amountCents: data.amount_cents,
     defendantName: data.defendant_name,
     defendantAddress: addr,
@@ -319,8 +323,16 @@ async function loadClassificationForExtraction(
     .maybeSingle();
   const c = (report?.evidence_pack as { classification?: Classification } | null)?.classification;
   if (c && c.claim_category) return c;
+  // No EvidencePack classification yet — try the LLM-resolved canonical
+  // claim type, then the free text for "other", then the wizard slug.
+  const cached = await getCaseClaimType(intake.caseId);
+  const claimCategory =
+    cached?.primary_claim_type ??
+    (intake.disputeType === "other" && intake.disputeTypeOther
+      ? formatDisputeTypePhrase("other", intake.disputeTypeOther)
+      : intake.disputeType);
   return {
-    claim_category: intake.disputeType,
+    claim_category: claimCategory,
     proper_court_type: "",
     proper_court_type_notes: "",
     amount_within_limit: false,

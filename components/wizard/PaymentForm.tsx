@@ -207,8 +207,8 @@ function PaymentFormInner({ clientSecret, onSuccess, onError, disabled, submitLa
       </div>
 
       <div className="dlw-pay-trust">
-        🔒 Your payment information is securely stored. We will only charge your card
-        after our paralegal team has reviewed your case for accuracy.
+        🔒 Your payment information is securely stored. Charged immediately after you
+        click submit.
       </div>
 
       <button

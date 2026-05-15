@@ -384,8 +384,8 @@
 
 .app-case-card {
   display: grid;
-  grid-template-columns: auto 1fr auto auto auto;
-  gap: 18px;
+  grid-template-columns: 100px 1fr 180px 90px 100px 24px;
+  gap: 16px;
   align-items: center;
   padding: 18px 22px;
   background: #fff;
@@ -396,19 +396,38 @@
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
-.app-case-created {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 1px;
-  white-space: nowrap;
+/* Header row above the case list. Shares the same column track widths
+   as .app-case-card so the column labels sit directly over their data. */
+.app-case-list-head {
+  display: grid;
+  grid-template-columns: 100px 1fr 180px 90px 100px 24px;
+  gap: 16px;
+  padding: 0 22px;
+  margin-bottom: 8px;
 }
-.app-case-created-label {
+.app-case-col-label {
   font-size: 10px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   font-weight: 600;
   color: #9a978f;
+  text-align: right;
+  white-space: nowrap;
+}
+.app-case-col-label-left {
+  text-align: center;
+}
+.app-case-col-label-start {
+  text-align: left;
+}
+.app-case-col-label-center {
+  text-align: center;
+}
+
+.app-case-created {
+  display: flex;
+  justify-content: flex-end;
+  white-space: nowrap;
 }
 .app-case-created-date {
   font-size: 13px;
@@ -422,14 +441,20 @@
 }
 
 .app-case-status {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 104px;
   font-size: 11px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  padding: 5px 9px;
+  padding: 5px 8px;
   border-radius: 999px;
   white-space: nowrap;
+  text-align: center;
+  justify-self: center;
+  box-sizing: border-box;
 }
 
 .app-case-status-neutral {
@@ -463,6 +488,8 @@
   font-weight: 600;
   font-size: 17px;
   color: var(--ink, #111);
+  text-align: center;
+  font-variant-numeric: tabular-nums;
 }
 
 .app-case-chevron {
@@ -476,8 +503,36 @@
    in 2026-05-12 because it was force-flex-row-ing the drawer contents and
    hiding the user-info footer. */
 
-.app-back { display: inline-block; font-size: 13px; color: #7a7770; text-decoration: none; margin-bottom: 6px; }
-.app-back:hover { color: var(--ink, #111); }
+.app-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: #6a675e;
+  text-decoration: none;
+  padding: 6px 12px 6px 10px;
+  margin-left: -10px;
+  margin-bottom: 18px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.app-back::before {
+  content: "←";
+  font-size: 14px;
+  line-height: 1;
+  transition: transform 0.15s ease;
+}
+.app-back:hover {
+  background: #f1efe8;
+  border-color: #e2dfd6;
+  color: var(--ink, #111);
+}
+.app-back:hover::before {
+  transform: translateX(-2px);
+}
 
 .app-detail-grid { display: grid; grid-template-columns: 1fr 280px; gap: 28px; }
 .app-detail-main { background: #fff; border: 1px solid #ebe9e3; border-radius: 10px; padding: 24px 28px; }
@@ -690,120 +745,6 @@
   .filing-guide-pending-note { margin-left: 0; text-align: left; max-width: none; }
 }
 
-/* Court Prep — loading + meta + content */
-.prep-loading {
-  max-width: 620px;
-  padding: 36px 36px 40px;
-  background: #faf9f6;
-  border: 1px solid #ebe9e3;
-  border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 18px;
-}
-.prep-loading p {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #5a574e;
-  max-width: 52ch;
-  margin: 0;
-}
-.prep-error { color: var(--accent, #d9402e); }
-.prep-spinner {
-  width: 40px;
-  height: 40px;
-  border: 3px solid #ebe9e3;
-  border-top-color: var(--ink, #111);
-  border-radius: 50%;
-  animation: prep-spin 0.9s linear infinite;
-}
-@keyframes prep-spin { to { transform: rotate(360deg); } }
-
-.court-prep { max-width: 760px; }
-.court-prep-meta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 12.5px;
-  color: #7a7770;
-  margin-bottom: 12px;
-}
-.prep-regenerate {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: transparent;
-  border: 1px solid #ebe9e3;
-  color: #5a574e;
-  font-size: 12.5px;
-  padding: 5px 11px;
-  border-radius: 999px;
-  cursor: pointer;
-  transition: border-color 0.15s ease;
-}
-.prep-regenerate:hover:not(:disabled) { border-color: var(--ink, #111); color: var(--ink, #111); }
-.prep-regenerate:disabled { opacity: 0.55; cursor: not-allowed; }
-
-.prep-opening-para {
-  font-family: "Newsreader", serif;
-  font-size: 16px;
-  line-height: 1.7;
-  color: #1f1f1f;
-  margin: 0 0 16px;
-}
-.prep-q-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  counter-reset: prep-q;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-.prep-question {
-  background: #faf9f6;
-  border: 1px solid #ebe9e3;
-  border-radius: 10px;
-  padding: 16px 18px;
-  position: relative;
-  counter-increment: prep-q;
-}
-.prep-question::before {
-  content: counter(prep-q);
-  position: absolute;
-  top: 16px;
-  left: -22px;
-  width: 24px;
-  height: 24px;
-  display: grid;
-  place-items: center;
-  font-size: 11px;
-  font-weight: 700;
-  color: #7a7770;
-}
-.prep-q-head {
-  font-family: "Newsreader", serif;
-  font-size: 17px;
-  font-weight: 600;
-  color: var(--ink, #111);
-  margin-bottom: 10px;
-  line-height: 1.4;
-}
-.prep-q-why,
-.prep-q-outline {
-  font-size: 13.5px !important;
-  line-height: 1.55;
-  color: #1f1f1f;
-  margin: 6px 0 !important;
-}
-
-@media (max-width: 768px) {
-  .prep-question::before { left: 8px; }
-  .prep-question { padding-left: 38px; }
-}
-
 /* Response tracker (case file) */
 .app-rt-prompt {
   background: #faf9f6;
@@ -957,9 +898,9 @@
 }
 .app-billing-row {
   display: grid;
-  grid-template-columns: 110px 2fr 1.2fr 110px 90px;
-  gap: 16px;
-  padding: 14px 20px;
+  grid-template-columns: 110px 2fr 1.2fr 120px 140px 100px;
+  gap: 40px;
+  padding: 14px 24px;
   align-items: center;
   border-bottom: 1px solid #ebe9e3;
   font-size: 14px;
@@ -986,6 +927,42 @@
   font-size: 11px;
   color: #7a7770;
 }
+.app-billing-status-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.app-billing-receipt-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.app-billing-receipt-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink, #111);
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: 1px solid #e2dfd6;
+  background: #faf9f6;
+  white-space: nowrap;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+.app-billing-receipt-link:hover {
+  border-color: var(--ink, #111);
+  background: #fff;
+}
+.app-billing-row-header .app-billing-receipt-col {
+  font-size: 11px;
+  font-weight: 600;
+  color: #7a7770;
+}
 .app-billing-tag {
   display: inline-block;
   margin-left: 8px;
@@ -1005,9 +982,40 @@
   font-size: 13px;
 }
 .app-link:hover { text-decoration: underline; }
+/* When .app-link is applied to a <button> (e.g. the "Change" button on
+   the response tracker), strip the default browser button chrome so it
+   visually matches the anchor styling. */
+button.app-link {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: inherit;
+}
+button.app-link:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  text-decoration: none;
+}
 
 /* Settings */
 .app-settings { display: flex; flex-direction: column; gap: 16px; max-width: 720px; }
+.app-support-direct {
+  font-size: 13.5px;
+  color: #6a675e;
+  margin: 4px 4px 0;
+  text-align: center;
+}
+.app-support-direct a {
+  color: var(--ink, #111);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.app-support-direct a:hover { color: var(--accent, #d9402e); }
 .app-settings-card {
   background: #fff;
   border: 1px solid #ebe9e3;
@@ -1034,19 +1042,46 @@
   font-size: 13px;
   font-weight: 500;
 }
-.app-settings-form input {
+.app-settings-form input,
+.app-settings-form select,
+.app-settings-form textarea {
   padding: 10px 12px;
   font-size: 15px;
   border: 1px solid #d4d4d4;
   border-radius: 8px;
   background: #fff;
   font-family: inherit;
+  color: var(--ink, #111);
+  width: 100%;
+  box-sizing: border-box;
 }
-.app-settings-form input:disabled {
-  background: #f5f5f0;
+.app-settings-form textarea {
+  font-family: inherit;
+  resize: vertical;
+  min-height: 140px;
+  line-height: 1.5;
+}
+.app-settings-form select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'><path d='M1 1.5L6 6.5L11 1.5' stroke='%23555' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+}
+.app-settings-form input:disabled,
+.app-settings-form select:disabled,
+.app-settings-form textarea:disabled {
+  background-color: #f5f5f0;
   color: #7a7770;
 }
-.app-settings-form input:focus { outline: none; border-color: var(--ink, #111); box-shadow: 0 0 0 3px rgba(0,0,0,.08); }
+.app-settings-form input:focus,
+.app-settings-form select:focus,
+.app-settings-form textarea:focus {
+  outline: none;
+  border-color: var(--ink, #111);
+  box-shadow: 0 0 0 3px rgba(0,0,0,.08);
+}
 .app-settings-hint {
   font-size: 12px;
   color: #7a7770;
@@ -1282,6 +1317,10 @@
   }
   .app-page-head h1 { font-size: 26px; }
 
+  /* Mobile uses a stacked grid-area layout below, so the desktop column
+     header (Created / Amount) doesn't apply. */
+  .app-case-list-head { display: none; }
+
   /* Case card stacks better on narrow screens */
   .app-case-card {
     grid-template-columns: auto 1fr;
@@ -1309,4 +1348,449 @@
 @media (max-width: 480px) {
   .app-main { padding: 16px 12px 40px; }
   .app-page-head h1 { font-size: 22px; }
+}
+
+/* ============================================================
+   Product timeline (post-wizard "Choose your next step" page)
+   ============================================================ */
+.product-timeline-page { max-width: 880px; }
+
+.product-timeline-intro {
+  font-size: 14.5px !important;
+  line-height: 1.55;
+  color: #5a574e !important;
+  max-width: 60ch;
+  margin: 4px 0 28px !important;
+}
+
+.product-timeline-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.product-timeline-step {
+  display: grid;
+  grid-template-columns: 132px 1fr;
+  gap: 18px;
+  align-items: stretch;
+}
+
+.product-timeline-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding-top: 4px;
+}
+
+.product-timeline-badge-num {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--ink, #111);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1;
+  flex-shrink: 0;
+  font-feature-settings: "lnum", "tnum";
+  box-sizing: border-box;
+}
+/* Serif numerals render with extra ascender headroom above the glyph,
+   making them look high inside a geometrically-centered circle. Nudge
+   the number itself (not the circle) down a touch to optically center. */
+.product-timeline-badge-num > :not(svg) {
+  display: inline-block;
+  transform: translateY(2px);
+}
+
+.product-timeline-badge-num-done {
+  background: #2f7a47;
+}
+.product-timeline-badge-num-done svg {
+  display: block;
+}
+
+.product-timeline-badge-label {
+  font-size: 11.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #7a7770;
+  text-align: center;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+
+/* Vertical arrow connector from this step's badge down to the next
+   step's number. Lives inside the badge column and flex-grows to fill
+   the remaining vertical space within the step. */
+.product-timeline-arrow {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-top: 8px;
+  padding-bottom: 4px;
+  min-height: 36px;
+  width: 100%;
+}
+
+.product-timeline-arrow-line {
+  width: 2px;
+  flex: 1 1 auto;
+  min-height: 16px;
+  background: #d6d3c7;
+}
+
+.product-timeline-arrow-head {
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 8px solid #d6d3c7;
+  margin-top: -1px;
+}
+
+.product-timeline-card {
+  background: #fff;
+  border: 1px solid #ebe9e3;
+  border-radius: 12px;
+  padding: 20px 22px 18px;
+}
+
+.product-timeline-card-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.product-timeline-card-head h3 {
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+  color: var(--ink, #111);
+  line-height: 1.2;
+}
+
+.product-timeline-price {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent, #d9402e);
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+.product-timeline-pill {
+  font-size: 11.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 4px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.product-timeline-pill-done {
+  background: #e6f1ea;
+  color: #2f6a47;
+  border: 1px solid #c7e5d4;
+}
+
+.product-timeline-tagline {
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 16px;
+  font-style: italic;
+  color: #3a3833;
+  margin: 0 0 10px;
+  line-height: 1.4;
+}
+
+.product-timeline-details {
+  font-size: 14px;
+  line-height: 1.55;
+  color: #5a574e;
+  margin: 0 0 16px;
+  max-width: 60ch;
+}
+
+.product-timeline-cta { margin-top: 4px; }
+.product-timeline-cta .btn { font-size: 14px; }
+/* When a response tracker (or any extra child) is rendered inside a
+   step card, space it below the CTA so it doesn't crowd the button. */
+.product-timeline-card .app-rt-prompt,
+.product-timeline-card .app-rt-card {
+  margin-top: 14px;
+}
+
+@media (max-width: 640px) {
+  .product-timeline-step { grid-template-columns: 104px 1fr; gap: 12px; }
+  .product-timeline-badge-num { width: 40px; height: 40px; font-size: 18px; }
+  .product-timeline-badge-label { font-size: 10.5px; }
+  .product-timeline-card { padding: 16px 16px 14px; }
+  .product-timeline-card-head { flex-direction: column; gap: 4px; }
+  .product-timeline-card-head h3 { font-size: 19px; }
+  .product-timeline-arrow { min-height: 24px; }
+}
+
+/* Collection Plan — status panel + body */
+.collection-plan-status {
+  max-width: 720px;
+  margin: 24px 0;
+  padding: 24px 28px;
+  background: #faf9f6;
+  border: 1px solid #ebe9e3;
+  border-radius: 12px;
+}
+.collection-plan-status-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+}
+.collection-plan-status-row strong {
+  display: block;
+  font-size: 17px;
+  margin-bottom: 6px;
+}
+.collection-plan-status-row p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #5a574e;
+  max-width: 58ch;
+}
+.collection-plan-status-meta {
+  margin: 14px 0 0;
+  font-size: 12.5px;
+  color: #7a7770;
+}
+.collection-plan-status-failed h2 {
+  font-family: "Newsreader", serif;
+  font-size: 22px;
+  margin: 0 0 10px;
+}
+.collection-plan-status-failed p {
+  margin: 6px 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #5a574e;
+}
+.collection-plan-spinner {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border: 3px solid #ebe9e3;
+  border-top-color: var(--ink, #111);
+  border-radius: 50%;
+  animation: collection-plan-spin 0.9s linear infinite;
+}
+@keyframes collection-plan-spin { to { transform: rotate(360deg); } }
+
+.collection-plan-body {
+  max-width: 760px;
+  font-size: 15px;
+  line-height: 1.65;
+  color: #1f1f1f;
+}
+.collection-plan-body h2 {
+  font-family: "Newsreader", serif;
+  font-size: 24px;
+  margin: 28px 0 10px;
+}
+.collection-plan-body h3 {
+  font-family: "Newsreader", serif;
+  font-size: 19px;
+  margin: 20px 0 8px;
+}
+.collection-plan-body p { margin: 0 0 14px; }
+.collection-plan-body a { color: var(--ink, #111); text-decoration: underline; }
+
+/* Server-rendered Collection Plan header */
+.collection-plan-header {
+  margin: 0 0 20px;
+  padding-bottom: 14px;
+}
+.collection-plan-header-title {
+  margin: 0 0 8px;
+  font-family: "Newsreader", serif;
+  font-size: 26px;
+  line-height: 1.2;
+  color: var(--ink, #111);
+}
+.collection-plan-header-title strong {
+  font-weight: 600;
+}
+.collection-plan-header-meta {
+  margin: 2px 0;
+  font-size: 14px;
+  color: #5a574e;
+}
+
+/* Shared customer-facing disclaimer footer (research report, collection plan) */
+.customer-doc-disclaimer-rule {
+  border: 0;
+  border-top: 1px solid #ebe9e3;
+  margin: 28px 0 16px;
+}
+.customer-doc-disclaimer {
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: #7a7770;
+  max-width: 70ch;
+  font-style: italic;
+  margin: 0;
+}
+
+/* Embedded PDF product viewer (demand letter, collection plan) */
+.product-doc-view {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.product-doc-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+.product-doc-frame {
+  width: 75%;
+  align-self: center;
+  height: calc(100vh - 240px);
+  min-height: 520px;
+  border: 1px solid #ebe9e3;
+  border-radius: 8px;
+  background: #fafaf7;
+}
+
+/* Per-case product chips, shown in the Products column on case lists */
+.app-case-products {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.app-case-product-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 8px 3px 7px;
+  background: #f3f1ec;
+  border: 1px solid #ebe9e3;
+  border-radius: 999px;
+  font-size: 11.5px;
+  font-weight: 500;
+  color: #3a3730;
+  white-space: nowrap;
+  width: fit-content;
+  max-width: 100%;
+}
+.app-case-product-chip svg {
+  color: #7a7770;
+  flex-shrink: 0;
+}
+.app-case-products-empty {
+  font-size: 11.5px;
+  color: #9a978f;
+  font-style: italic;
+}
+
+/* On mobile, the existing stacked layout (line ~1307) routes any non-named
+   div into the "info" grid area. .app-case-products falls into that area
+   naturally; we just flip it to wrap horizontally instead of stacking. */
+@media (max-width: 768px) {
+  .app-case-products {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 4px 6px;
+  }
+}
+
+/* Case page head: status pill + lifecycle actions sit in a small column */
+.app-case-head-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+.app-case-lifecycle {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 4px;
+}
+.app-case-lifecycle .btn {
+  justify-content: center;
+}
+.app-detail-card-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+}
+.app-detail-card-actions .btn {
+  justify-content: center;
+}
+.app-case-lifecycle-error {
+  margin: 0;
+  font-size: 12px;
+  color: var(--accent, #d9402e);
+}
+
+.app-case-confirm {
+  padding: 12px 14px;
+  background: #faf3f1;
+  border: 1px solid #e6c3bb;
+  border-radius: 8px;
+  gap: 8px;
+}
+.app-case-confirm-title {
+  margin: 0;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--ink, #111);
+}
+.app-case-confirm-body {
+  margin: 0;
+  font-size: 13px;
+  color: #5a574e;
+  line-height: 1.45;
+}
+.app-case-confirm-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #5a574e;
+  margin-top: 4px;
+}
+.app-case-confirm-textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #d4cfc4;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 1.45;
+  background: #fff;
+  resize: vertical;
+  box-sizing: border-box;
+}
+.app-case-confirm-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+.app-case-confirm-actions .btn {
+  flex: 1 1 auto;
+  justify-content: center;
 }
