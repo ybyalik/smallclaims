@@ -112,45 +112,42 @@
 }
 .app-nav a.active .app-nav-badge { background: #fff; color: #d9402e; }
 
-/* Approximate filing-deadline pill that sits to the right of the case
-   name in dashboard list rows. Subtle outline by default, intensifies
-   as the deadline approaches; hover surfaces the exact date, the
-   underlying statute, and an "approximate" disclaimer. */
-.app-case-sol-pill {
-  display: inline-block;
-  margin-left: 8px;
-  padding: 3px 9px;
-  border-radius: 999px;
+/* First-column wrapper that stacks the status badge with a small
+   filing-deadline block underneath it. Replaces the previous pill
+   approach (the pill's hover tooltip didn't trigger cleanly inside a
+   row-wrapping Link, and the cursor: help misleadingly suggested a
+   tooltip would appear). All the info lives in the visible text now. */
+.app-case-status-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+}
+.app-case-sol {
   font-size: 11px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  vertical-align: middle;
-  white-space: nowrap;
-  cursor: help;
-  border: 1px solid transparent;
-}
-.app-case-sol-pill-normal {
-  background: #f3f1ec;
+  line-height: 1.35;
   color: #6a675e;
-  border-color: #e0ddd6;
 }
-.app-case-sol-pill-warning {
-  background: #fff4e6;
-  color: #9a4b00;
-  border-color: #f0d99a;
-}
-.app-case-sol-pill-critical {
-  background: #fde8e6;
-  color: #b1281a;
-  border-color: #f0bcb4;
-}
-.app-case-sol-pill-expired {
-  background: #f3f1ec;
+.app-case-sol-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
   color: #8a8780;
-  border-color: #e0ddd6;
+}
+.app-case-sol-distance { font-weight: 600; }
+.app-case-sol-date { font-size: 10.5px; color: #8a8780; }
+
+/* Color the distance line by urgency. Label + date stay muted gray so
+   the urgent number does the visual work. */
+.app-case-sol-normal .app-case-sol-distance { color: #4f4c46; }
+.app-case-sol-warning .app-case-sol-distance { color: #9a4b00; }
+.app-case-sol-critical .app-case-sol-distance { color: #b1281a; }
+.app-case-sol-expired .app-case-sol-distance {
+  color: #8a8780;
   font-style: italic;
-  text-transform: none;
+  font-weight: 500;
 }
 
 /* Inline action-needed bell next to a case name in the dashboard lists.
@@ -1531,10 +1528,10 @@ button.app-link:disabled {
     gap: 8px 14px;
     padding: 14px 16px;
   }
-  .app-case-card > .app-case-status { grid-area: status; justify-self: flex-start; }
+  .app-case-card > .app-case-status-cell { grid-area: status; justify-self: flex-start; align-items: flex-start; text-align: left; }
   .app-case-card > div.app-case-created { grid-area: created; justify-self: flex-end; }
   .app-case-card > div.app-case-created { flex-direction: row; gap: 6px; align-items: baseline; }
-  .app-case-card > div:not(.app-case-status):not(.app-case-amount):not(.app-case-chevron):not(.app-case-created) {
+  .app-case-card > div:not(.app-case-status-cell):not(.app-case-amount):not(.app-case-chevron):not(.app-case-created) {
     grid-area: info;
   }
   .app-case-card > .app-case-amount { grid-area: amount; justify-self: flex-end; }

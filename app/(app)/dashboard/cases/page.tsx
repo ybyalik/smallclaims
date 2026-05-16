@@ -16,8 +16,8 @@ import type { ProductKey } from "../../../../lib/stripe";
 import { listCasesWithPendingAction } from "../../../../lib/notifications";
 import {
   loadSolDeadlinesForCases,
-  formatPillLabel,
-  formatPillTooltip,
+  formatDeadlineDistance,
+  formatExpiryDate,
 } from "../../../../lib/cases/sol-deadline";
 import { Bell } from "lucide-react";
 
@@ -147,9 +147,25 @@ export default async function DashboardHome() {
               ? `${plaintiffName || "You"} vs. ${defendantName}`
               : "Untitled draft";
             const needsAction = pendingActionCases.has(c.id);
+            const dl = solDeadlines.get(c.id);
             return (
               <Link key={c.id} href={href} className="app-case-card">
-                <StatusBadge tone={status.tone}>{status.label}</StatusBadge>
+                <div className="app-case-status-cell">
+                  <StatusBadge tone={status.tone}>{status.label}</StatusBadge>
+                  {dl ? (
+                    <div className={`app-case-sol app-case-sol-${dl.urgency}`}>
+                      <div className="app-case-sol-label">Filing deadline</div>
+                      <div className="app-case-sol-distance">
+                        {dl.urgency === "expired"
+                          ? "May have run"
+                          : formatDeadlineDistance(dl)}
+                      </div>
+                      <div className="app-case-sol-date">
+                        {formatExpiryDate(dl)} (approx.)
+                      </div>
+                    </div>
+                  ) : null}
+                </div>
                 <div>
                   <div className="app-case-defendant">
                     {caption}
@@ -162,18 +178,6 @@ export default async function DashboardHome() {
                         <Bell size={14} strokeWidth={2.5} />
                       </span>
                     ) : null}
-                    {(() => {
-                      const dl = solDeadlines.get(c.id);
-                      if (!dl) return null;
-                      return (
-                        <span
-                          className={`app-case-sol-pill app-case-sol-pill-${dl.urgency}`}
-                          title={formatPillTooltip(dl)}
-                        >
-                          {formatPillLabel(dl)}
-                        </span>
-                      );
-                    })()}
                   </div>
                   <div className="app-case-meta">
                     {formatDisputeTypeShort(

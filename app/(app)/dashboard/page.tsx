@@ -15,8 +15,8 @@ import EmptyState from "../../../components/ui/EmptyState";
 import { listCasesWithPendingAction } from "../../../lib/notifications";
 import {
   loadSolDeadlinesForCases,
-  formatPillLabel,
-  formatPillTooltip,
+  formatDeadlineDistance,
+  formatExpiryDate,
 } from "../../../lib/cases/sol-deadline";
 import { Bell } from "lucide-react";
 import type { ProductKey } from "../../../lib/stripe";
@@ -274,9 +274,25 @@ export default async function DashboardHome() {
               const { label: statusLabel, tone } = deriveStatusLabel({ c });
               const badges = productBadgesForCase(paidSet);
               const needsAction = pendingActionCases.has(c.id);
+              const dl = solDeadlines.get(c.id);
               return (
                 <Link key={c.id} href={href} className="app-case-card">
-                  <StatusBadge tone={tone}>{statusLabel}</StatusBadge>
+                  <div className="app-case-status-cell">
+                    <StatusBadge tone={tone}>{statusLabel}</StatusBadge>
+                    {dl ? (
+                      <div className={`app-case-sol app-case-sol-${dl.urgency}`}>
+                        <div className="app-case-sol-label">Filing deadline</div>
+                        <div className="app-case-sol-distance">
+                          {dl.urgency === "expired"
+                            ? "May have run"
+                            : formatDeadlineDistance(dl)}
+                        </div>
+                        <div className="app-case-sol-date">
+                          {formatExpiryDate(dl)} (approx.)
+                        </div>
+                      </div>
+                    ) : null}
+                  </div>
                   <div>
                     <div className="app-case-defendant">
                       {caseTitle(c)}
@@ -289,18 +305,6 @@ export default async function DashboardHome() {
                           <Bell size={14} strokeWidth={2.5} />
                         </span>
                       ) : null}
-                      {(() => {
-                        const dl = solDeadlines.get(c.id);
-                        if (!dl) return null;
-                        return (
-                          <span
-                            className={`app-case-sol-pill app-case-sol-pill-${dl.urgency}`}
-                            title={formatPillTooltip(dl)}
-                          >
-                            {formatPillLabel(dl)}
-                          </span>
-                        );
-                      })()}
                     </div>
                     <div className="app-case-meta">
                       {formatDisputeTypeShort(
