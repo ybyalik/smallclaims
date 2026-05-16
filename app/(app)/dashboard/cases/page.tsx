@@ -16,8 +16,8 @@ import type { ProductKey } from "../../../../lib/stripe";
 import { listCasesWithPendingAction } from "../../../../lib/notifications";
 import {
   loadSolDeadlinesForCases,
-  formatDeadlineDistance,
-  formatExpiryDate,
+  formatPillLabel,
+  formatPillTooltip,
 } from "../../../../lib/cases/sol-deadline";
 import { Bell } from "lucide-react";
 
@@ -162,6 +162,18 @@ export default async function DashboardHome() {
                         <Bell size={14} strokeWidth={2.5} />
                       </span>
                     ) : null}
+                    {(() => {
+                      const dl = solDeadlines.get(c.id);
+                      if (!dl) return null;
+                      return (
+                        <span
+                          className={`app-case-sol-pill app-case-sol-pill-${dl.urgency}`}
+                          title={formatPillTooltip(dl)}
+                        >
+                          {formatPillLabel(dl)}
+                        </span>
+                      );
+                    })()}
                   </div>
                   <div className="app-case-meta">
                     {formatDisputeTypeShort(
@@ -170,26 +182,6 @@ export default async function DashboardHome() {
                     )}{" "}
                     · {c.state} · updated {formatRelative(c.updated_at)}
                   </div>
-                  {(() => {
-                    const dl = solDeadlines.get(c.id);
-                    if (!dl) return null;
-                    const label =
-                      dl.urgency === "expired"
-                        ? `Statute may have run on ${formatExpiryDate(dl)} — verify with the clerk`
-                        : `Approx. filing deadline: ${formatExpiryDate(dl)} (${formatDeadlineDistance(dl)})`;
-                    return (
-                      <div
-                        className={`app-case-deadline app-case-deadline-${dl.urgency}`}
-                        title={
-                          dl.citation
-                            ? `${dl.solYears}-year SOL · ${dl.citation}`
-                            : `${dl.solYears}-year SOL`
-                        }
-                      >
-                        {label}
-                      </div>
-                    );
-                  })()}
                 </div>
                 <div className="app-case-products-cell">
                   <ProductChipList badges={badges} emptyHint="None yet" />

@@ -178,3 +178,23 @@ export function formatExpiryDate(d: SolDeadline): string {
   });
 }
 
+// Short label for the pill itself.
+export function formatPillLabel(d: SolDeadline): string {
+  if (d.urgency === "expired") return "SOL may have run";
+  return `SOL: ${formatDeadlineDistance(d)}`;
+}
+
+// Long-form text used in the hover tooltip. Includes the exact date, the
+// state's SOL rule, the statute citation when we have one, and the
+// "approximate" disclaimer so customers don't read it as legal advice.
+export function formatPillTooltip(d: SolDeadline): string {
+  const parts: string[] = [
+    `Approximate filing deadline: ${formatExpiryDate(d)}`,
+    `${d.solYears}-year statute of limitations${
+      d.citation ? ` (${d.citation})` : ""
+    }${d.whenClockStarts ? `, clock starts ${d.whenClockStarts}` : ""}.`,
+    "Approximate only — real deadlines can shift for tolling, the discovery rule, or partial-payment restart. Verify with the clerk before filing.",
+  ];
+  return parts.join("\n\n");
+}
+
