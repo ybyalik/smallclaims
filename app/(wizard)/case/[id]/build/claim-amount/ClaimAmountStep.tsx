@@ -17,14 +17,26 @@ import {
 import { validateClaimAmountPhase } from "../../../../../../lib/cases/phase-validators";
 import { useAutosave } from "../useAutosave";
 
+interface StateMultiplier {
+  statute: string;
+  multiplier: number | null;
+  conditions: string;
+  claim_types: string[];
+}
+
 interface Props {
   caseId: string;
   initialAmountCents: number;
   initialDisputeType: DisputeType;
   initialAnswers: Record<string, unknown>;
   stateInterestRate: number;
+  stateInterestCitation: string | null;
   stateName: string | null;
   stateCapDollars: number | null;
+  // State-research-matched multipliers for this case's claim types. Empty
+  // when the per-state research hasn't been extracted yet or the case's
+  // category genuinely has no statutory multiplier in this state.
+  stateMultipliers: StateMultiplier[];
 }
 
 type CapChoice = "waive" | "civil_court" | null;
@@ -43,8 +55,10 @@ export default function ClaimAmountStep({
   initialDisputeType,
   initialAnswers,
   stateInterestRate,
+  stateInterestCitation,
   stateName,
   stateCapDollars,
+  stateMultipliers,
 }: Props) {
   const router = useRouter();
 
@@ -82,10 +96,45 @@ export default function ClaimAmountStep({
     if (!overCap && capChoice !== null) setCapChoice(null);
   }, [overCap, capChoice]);
 
-  const claimHeads = useMemo(
-    () => suggestClaimHeads(initialDisputeType),
-    [initialDisputeType]
-  );
+  // Side table mapping state-specific claim-head keys to their multiplier
+  // value, so when the user clicks Yes we can pre-fill principal*(mult-1)
+  // as the suggested extra dollar amount.
+  const stateMultiplierByKey = useMemo(() => {
+    const m = new Map<string, number | null>();
+    stateMultipliers.forEach((row, idx) => {
+      m.set(`state_multiplier_${idx}`, row.multiplier);
+    });
+    return m;
+  }, [stateMultipliers]);
+
+  const claimHeads = useMemo(() => {
+    const generic = suggestClaimHeads(initialDisputeType);
+    // If we have state-specific multipliers, replace the generic
+    // "statutory_multiplier" head with one entry per matched row so the
+    // user sees the real statute + value instead of a wishy-washy blurb.
+    if (stateMultipliers.length === 0) return generic;
+    const filtered = generic.filter((h) => h.key !== "statutory_multiplier");
+    const stateHeads = stateMultipliers.map((m, idx) => {
+      const mult = m.multiplier;
+      const multLabel =
+        mult === 2 ? "2x"
+          : mult === 3 ? "3x"
+            : mult != null ? `${mult}x`
+              : "statutory";
+      const blurbParts: string[] = [];
+      if (m.statute) blurbParts.push(`Under ${m.statute}, ${multLabel} damages may apply`);
+      else blurbParts.push(`${multLabel} damages may apply`);
+      if (m.conditions) blurbParts.push(`when ${m.conditions}`);
+      return {
+        key: `state_multiplier_${idx}`,
+        title: m.statute
+          ? `${m.statute} (${multLabel})`
+          : `Statutory multiplier (${multLabel})`,
+        blurb: `${blurbParts.join(" ")}.`,
+      };
+    });
+    return [...stateHeads, ...filtered];
+  }, [initialDisputeType, stateMultipliers]);
   const amountHint = useMemo(
     () => amountHintFor(initialDisputeType),
     [initialDisputeType]
@@ -128,10 +177,18 @@ export default function ClaimAmountStep({
       setLineItems((items) => items.filter((i) => i.key !== head.key));
       return;
     }
+    // State-specific multipliers carry a known multiplier value, so we can
+    // pre-fill the "extra" damages as principal × (multiplier - 1). The
+    // user can still edit the amount afterward.
+    const stateMult = stateMultiplierByKey.get(head.key);
+    const seedAmount =
+      stateMult != null && stateMult > 1 && amount > 0
+        ? Math.round(amount * (stateMult - 1))
+        : 0;
     setLineItems((items) =>
       items.find((i) => i.key === head.key)
         ? items
-        : [...items, { key: head.key, title: head.title, amount: 0 }]
+        : [...items, { key: head.key, title: head.title, amount: seedAmount }]
     );
   }
 
@@ -299,10 +356,23 @@ export default function ClaimAmountStep({
         {interestPreview && interestPreview.months > 0 ? (
           <div className="dlw-ai-card" style={{ marginTop: 8 }}>
             <div className="dlw-ai-card-title">Statutory interest</div>
-            Successful claimants are often entitled to pre-judgment interest at{" "}
-            <strong>{stateInterestRate}%</strong> per year. We&rsquo;ll add{" "}
-            <strong>${interestPreview.interest.toLocaleString("en-US")}</strong> for{" "}
-            {interestPreview.months} months elapsed.
+            {stateInterestCitation ? (
+              <>
+                Under <strong>{stateInterestCitation}</strong>, pre-judgment
+                interest applies at <strong>{stateInterestRate}%</strong> per
+                year. We&rsquo;ll add{" "}
+                <strong>${interestPreview.interest.toLocaleString("en-US")}</strong>{" "}
+                for {interestPreview.months} months elapsed.
+              </>
+            ) : (
+              <>
+                Successful claimants are often entitled to pre-judgment interest
+                at <strong>{stateInterestRate}%</strong> per year. We&rsquo;ll
+                add{" "}
+                <strong>${interestPreview.interest.toLocaleString("en-US")}</strong>{" "}
+                for {interestPreview.months} months elapsed.
+              </>
+            )}
           </div>
         ) : null}
       </div>
@@ -320,7 +390,16 @@ export default function ClaimAmountStep({
             Want to claim more?
           </h3>
           <p className="dlw-hint" style={{ margin: "0 0 12px" }}>
-            Optional damage categories that often apply to {categoryLabel} cases.
+            {stateMultipliers.length > 0 && stateName
+              ? `${stateName}-specific statutes that often apply to ${categoryLabel} cases.`
+              : `Optional damage categories that often apply to ${categoryLabel} cases.`}
+            {stateMultipliers.length === 0 && stateName ? (
+              <>
+                {" "}No {stateName}-specific multiplier is on file for this case
+                type, so the suggestions below are general. You can still add
+                one manually if you know of one.
+              </>
+            ) : null}
           </p>
           <div className="dlw-claim-heads">
             {claimHeads.map((head) => {
