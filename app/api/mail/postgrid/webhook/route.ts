@@ -42,9 +42,27 @@ function mapStatus(pgStatus: string | undefined, eventType: string): MailStatus 
 
 export async function POST(req: NextRequest) {
   const rawBody = await req.text();
-  const signature = req.headers.get("postgrid-webhook-signature") || "";
+  // Try both header names PostGrid has used historically. Log every header
+  // starting with "postgrid" so we can see exactly what came in when
+  // signature verification fails.
+  const signature =
+    req.headers.get("postgrid-webhook-signature") ||
+    req.headers.get("postgrid-signature") ||
+    "";
 
   if (!verifyWebhookSignature(rawBody, signature)) {
+    const postgridHeaders: Record<string, string> = {};
+    req.headers.forEach((value, key) => {
+      if (key.toLowerCase().startsWith("postgrid")) {
+        postgridHeaders[key] = value;
+      }
+    });
+    console.warn(
+      "[postgrid webhook] invalid signature. postgrid-* headers:",
+      JSON.stringify(postgridHeaders),
+      "body preview:",
+      rawBody.slice(0, 200),
+    );
     return NextResponse.json({ error: "invalid_signature" }, { status: 401 });
   }
 
