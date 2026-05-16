@@ -34,8 +34,37 @@ export default function DemandLetterPanel({ caseId, letter }: Props) {
   const [saving, setSaving] = useState(false);
   const [regenerating, setRegenerating] = useState(false);
   const [mailing, setMailing] = useState(false);
+  const [markingReady, setMarkingReady] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [info, setInfo] = useState<string | null>(null);
+
+  async function markReadyForReview() {
+    if (markingReady) return;
+    if (
+      !confirm(
+        "Mark this letter as ready for the customer to review again? Sends them an email + in-app notification. Use this after you've addressed their change request (regenerate / edit body / both).",
+      )
+    ) {
+      return;
+    }
+    setMarkingReady(true);
+    setError(null);
+    setInfo(null);
+    try {
+      const res = await fetch(
+        `/api/admin/cases/${caseId}/demand-letter/ready-for-review`,
+        { method: "POST" },
+      );
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(data.error || "Mark-ready failed");
+      setInfo("Customer notified. Letter is back in pending review.");
+      router.refresh();
+    } catch (e) {
+      setError(e instanceof Error ? e.message : "Mark-ready failed");
+    } finally {
+      setMarkingReady(false);
+    }
+  }
 
   const displayBody = editing ? editBody : serverBody;
   // `breaks: true` turns single newlines into <br> so multi-line blocks
@@ -172,6 +201,88 @@ export default function DemandLetterPanel({ caseId, letter }: Props) {
           {letter.generated_by || "—"} · {fmtDate(letter.updated_at || letter.created_at)}
         </div>
       </div>
+
+      {/* Approval state pill + (when applicable) the customer's change
+          request verbatim. Sits up top so the admin sees it before the
+          letter body and knows whether intervention is needed. */}
+      {(() => {
+        const status = letter.approval_status ?? "pending";
+        const pill = {
+          pending: { label: "Awaiting customer review", tone: "neutral" },
+          approved: { label: "Approved by customer", tone: "good" },
+          changes_requested: { label: "Customer requested changes", tone: "warn" },
+        }[status] ?? { label: status, tone: "neutral" };
+        const colors: Record<string, { bg: string; color: string; border: string }> = {
+          neutral: { bg: "#f3f1ec", color: "#6a675e", border: "#e0ddd6" },
+          good: { bg: "#e7f1ec", color: "#1f6e3a", border: "#c7e5d4" },
+          warn: { bg: "#fff4e6", color: "#9a4b00", border: "#f0d99a" },
+        };
+        const c = colors[pill.tone] ?? colors.neutral;
+        return (
+          <div style={{ marginTop: 10 }}>
+            <span
+              style={{
+                display: "inline-block",
+                padding: "4px 10px",
+                borderRadius: 999,
+                fontSize: 11.5,
+                fontWeight: 700,
+                textTransform: "uppercase",
+                letterSpacing: "0.06em",
+                background: c.bg,
+                color: c.color,
+                border: `1px solid ${c.border}`,
+              }}
+            >
+              {pill.label}
+            </span>
+            {status === "changes_requested" && letter.changes_text ? (
+              <div
+                style={{
+                  marginTop: 10,
+                  padding: "10px 14px",
+                  background: "#fffaf0",
+                  border: "1px solid #f0d99a",
+                  borderRadius: 8,
+                  fontSize: 13.5,
+                  lineHeight: 1.5,
+                }}
+              >
+                <div
+                  style={{
+                    fontSize: 11,
+                    fontWeight: 700,
+                    textTransform: "uppercase",
+                    letterSpacing: "0.06em",
+                    color: "#9a4b00",
+                    marginBottom: 4,
+                  }}
+                >
+                  Customer&rsquo;s change request
+                  {letter.changes_requested_at
+                    ? ` · ${fmtDate(letter.changes_requested_at)}`
+                    : ""}
+                </div>
+                <div style={{ whiteSpace: "pre-wrap", color: "#4f4c46" }}>
+                  {letter.changes_text}
+                </div>
+                <div style={{ marginTop: 10 }}>
+                  <button
+                    type="button"
+                    className="btn btn-dark btn-sm"
+                    onClick={markReadyForReview}
+                    disabled={markingReady || regenerating}
+                  >
+                    {markingReady
+                      ? "Notifying customer…"
+                      : "Mark ready for customer review"}
+                  </button>
+                </div>
+              </div>
+            ) : null}
+          </div>
+        );
+      })()}
 
       <div style={{ display: "flex", gap: 8, marginTop: 12, flexWrap: "wrap" }}>
         {!editing ? (

@@ -13,6 +13,7 @@ import {
 import ProductDocumentView from "../../../../../components/cases/ProductDocumentView";
 import PageHead from "../../../../../components/layout/PageHead";
 import EmptyState from "../../../../../components/ui/EmptyState";
+import LetterApprovalPanel from "./LetterApprovalPanel";
 
 export const metadata: Metadata = {
   title: "Demand Letter",
@@ -197,6 +198,18 @@ export default async function LetterPage({ params }: { params: { id: string } })
       <ProductDocumentView
         pdfUrl={`/api/demand-letter/${caseRow.id}/pdf`}
         title="Demand Letter PDF"
+      />
+      <LetterApprovalPanel
+        caseId={caseRow.id}
+        approvalStatus={
+          (letter.approval_status as
+            | "pending"
+            | "approved"
+            | "changes_requested"
+            | undefined) ?? "pending"
+        }
+        changesText={(letter.changes_text as string | null) ?? null}
+        hasMailVendorId={!!letter.mail_vendor_letter_id}
       />
     </div>
   );

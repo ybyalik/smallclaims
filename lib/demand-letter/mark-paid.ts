@@ -11,23 +11,19 @@ interface MarkCasePaidResult {
 /**
  * Idempotent post-payment hook for the demand letter product.
  *
+ * Records the payment side-effects (currently: nothing else needed) and
+ * deliberately does NOT auto-fire the PostGrid mail event. Mailing is gated
+ * behind explicit customer approval at /case/[id]/letter — the approve
+ * endpoint is what fires `case/letter.send` once the user has reviewed the
+ * generated letter.
+ *
  * Safe to call from any payment success path (Stripe webhook, admin bypass,
- * inline PaymentIntent confirm). It fires the certified-mail dispatch event;
- * dedup happens at two layers:
- *   1. Inngest dedupes events with the same id (`letter-send:${caseId}`).
- *   2. mailDemandLetter() checks demand_letters.mail_vendor_letter_id before
- *      calling PostGrid.
- *
- * case.status is no longer touched. Display state for the case is derived
- * from payments + demand_letters.mail_status + intake_answers.demand_response
- * (see lib/cases/derive-status-label.ts).
- *
- * To explicitly re-run research (admin "Re-run" button) call
- * `enqueueCaseResearch(caseId, { force: true })` instead.
+ * inline PaymentIntent confirm).
  */
 export async function markCasePaid(
   caseId: string,
-  opts: { source: "stripe_webhook" | "admin_bypass" | "inline_confirm" },
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  _opts: { source: "stripe_webhook" | "admin_bypass" | "inline_confirm" },
 ): Promise<MarkCasePaidResult> {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const admin = createServiceRoleClient() as any;
@@ -41,8 +37,8 @@ export async function markCasePaid(
     throw new Error(`markCasePaid: case ${caseId} not found`);
   }
 
-  // Already mailed? Skip the event to keep our logs clean. mailDemandLetter
-  // would also no-op, but this saves an Inngest round-trip.
+  // Has the letter already been mailed? Reported back for callers (admin
+  // bypass UI uses it to suppress a "trigger send" prompt).
   const { data: latestLetter } = await admin
     .from("demand_letters")
     .select("mail_vendor_letter_id")
@@ -52,17 +48,9 @@ export async function markCasePaid(
     .maybeSingle();
   const alreadyMailed = !!latestLetter?.mail_vendor_letter_id;
 
-  if (!alreadyMailed) {
-    await inngest.send({
-      name: "case/letter.send",
-      id: `letter-send:${caseId}`,
-      data: { caseId },
-    });
-  }
-
-  // Research is intentionally NOT auto-enqueued. While we're iterating on
-  // the pipeline, an admin clicks "Run research" / "Re-run research" on the
-  // case page. Re-enable here once the pipeline is stable.
+  // Research is intentionally NOT auto-enqueued either. While we're iterating
+  // on the pipeline, an admin clicks "Run research" / "Re-run research" on
+  // the case page. Re-enable here once the pipeline is stable.
   return {
     alreadyPaid: alreadyMailed,
     jobId: null,

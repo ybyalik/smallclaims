@@ -190,6 +190,8 @@ export type MailStatus =
   | "returned"
   | "failed";
 
+export type LetterApprovalStatus = "pending" | "approved" | "changes_requested";
+
 export interface DemandLetter {
   id: string;
   case_id: string;
@@ -206,8 +208,25 @@ export interface DemandLetter {
   sent_at: string | null;
   delivered_at: string | null;
   returned_at: string | null;
+  // Customer review gate. Mailing only fires when 'approved'.
+  approval_status: LetterApprovalStatus;
+  approved_at: string | null;
+  changes_requested_at: string | null;
+  changes_text: string | null;
   created_at: string;
   updated_at: string;
+}
+
+export interface Notification {
+  id: string;
+  user_id: string;
+  case_id: string | null;
+  type: string;
+  title: string;
+  body: string | null;
+  link: string | null;
+  read_at: string | null;
+  created_at: string;
 }
 
 export interface DemandLetterInsert {

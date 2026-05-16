@@ -1,6 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { createServiceRoleClient } from "../../../../../lib/supabase/service-role";
 import { verifyWebhookSignature } from "../../../../../lib/mail/postgrid";
+import { createNotification } from "../../../../../lib/notifications";
 import type { MailStatus } from "../../../../../lib/supabase/types";
 
 export const runtime = "nodejs";
@@ -104,10 +105,51 @@ export async function POST(req: NextRequest) {
     updates.returned_at = new Date().toISOString();
   }
 
+  const previousStatus = (letter.mail_status as string | null) ?? null;
   await admin.from("demand_letters").update(updates).eq("id", letter.id);
 
-  // case.status is no longer updated from mail events. The display label is
-  // derived from demand_letters.mail_status via derive-status-label.
+  // Customer-facing notifications when the status transitions to something
+  // meaningful. We dedupe by previous status so a redelivery of the same
+  // event doesn't fire duplicate notifications.
+  if (nextStatus !== previousStatus) {
+    const { data: caseRow } = await admin
+      .from("cases")
+      .select("id, owner_user_id, plaintiff_name, defendant_name")
+      .eq("id", letter.case_id)
+      .maybeSingle();
+    if (caseRow?.owner_user_id) {
+      const caseName = `${caseRow.plaintiff_name ?? "Plaintiff"} v. ${caseRow.defendant_name ?? "Defendant"}`;
+      const link = `/case/${caseRow.id}`;
+      if (nextStatus === "in_transit") {
+        await createNotification({
+          userId: caseRow.owner_user_id,
+          caseId: caseRow.id,
+          type: "letter_in_transit",
+          title: "Your letter is on its way",
+          body: `${caseName}: USPS picked up the letter. Delivery usually takes 3 to 7 business days.`,
+          link,
+        });
+      } else if (nextStatus === "delivered") {
+        await createNotification({
+          userId: caseRow.owner_user_id,
+          caseId: caseRow.id,
+          type: "letter_delivered",
+          title: "Your letter was delivered",
+          body: `${caseName}: USPS confirmed delivery. The defendant's response window now starts.`,
+          link,
+        });
+      } else if (nextStatus === "returned") {
+        await createNotification({
+          userId: caseRow.owner_user_id,
+          caseId: caseRow.id,
+          type: "letter_returned",
+          title: "Letter returned to sender",
+          body: `${caseName}: USPS returned the letter as undeliverable. The defendant's address may need verification.`,
+          link,
+        });
+      }
+    }
+  }
 
   return NextResponse.json({ ok: true });
 }

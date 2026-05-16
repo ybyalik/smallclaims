@@ -6,13 +6,28 @@
 import { createServiceRoleClient } from "../supabase/service-role";
 import { renderLetterPdf } from "../pdf/letter";
 import { createCertifiedLetter, type PostGridAddress } from "./postgrid";
+import { sendEmail } from "../resend";
+import { createNotification } from "../notifications";
 import type { Case, DemandLetter, PostalAddress } from "../supabase/types";
 
 interface MailDemandLetterResult {
   ok: boolean;
-  reason?: "already_mailed" | "no_letter" | "no_address" | "no_postgrid_config" | "letter_too_short";
+  reason?:
+    | "already_mailed"
+    | "no_letter"
+    | "no_address"
+    | "no_postgrid_config"
+    | "letter_too_short"
+    | "not_approved";
   letterId?: string;
   trackingNumber?: string | null;
+}
+
+interface MailDemandLetterOptions {
+  // Admin testing escape hatch: skip the approval-status guard so an admin
+  // can dispatch a letter directly from /admin/cases/[id] regardless of
+  // whether the customer has clicked Approve yet. Default false.
+  adminOverride?: boolean;
 }
 
 function toPostGridAddress(name: string, addr: PostalAddress): PostGridAddress {
@@ -32,14 +47,17 @@ function toPostGridAddress(name: string, addr: PostalAddress): PostGridAddress {
 }
 
 
-export async function mailDemandLetter(caseId: string): Promise<MailDemandLetterResult> {
+export async function mailDemandLetter(
+  caseId: string,
+  options: MailDemandLetterOptions = {},
+): Promise<MailDemandLetterResult> {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const admin = createServiceRoleClient() as any;
 
   const { data: caseRow } = await admin
     .from("cases")
     .select(
-      "id, defendant_name, defendant_address, plaintiff_name, plaintiff_address, intake_answers",
+      "id, owner_user_id, defendant_name, defendant_address, plaintiff_name, plaintiff_address, intake_answers",
     )
     .eq("id", caseId)
     .single();
@@ -47,6 +65,7 @@ export async function mailDemandLetter(caseId: string): Promise<MailDemandLetter
   const c = caseRow as Pick<
     Case,
     | "id"
+    | "owner_user_id"
     | "defendant_name"
     | "defendant_address"
     | "plaintiff_name"
@@ -81,13 +100,23 @@ export async function mailDemandLetter(caseId: string): Promise<MailDemandLetter
 
   const { data: letter } = await admin
     .from("demand_letters")
-    .select("id, version, body_md, mail_status, mail_vendor_letter_id")
+    .select(
+      "id, version, body_md, mail_status, mail_vendor_letter_id, approval_status",
+    )
     .eq("case_id", caseId)
     .order("version", { ascending: false })
     .limit(1)
     .single();
   if (!letter) return { ok: false, reason: "no_letter" };
-  const ltr = letter as Pick<DemandLetter, "id" | "version" | "body_md" | "mail_status" | "mail_vendor_letter_id">;
+  const ltr = letter as Pick<
+    DemandLetter,
+    | "id"
+    | "version"
+    | "body_md"
+    | "mail_status"
+    | "mail_vendor_letter_id"
+    | "approval_status"
+  >;
 
   // Idempotency — already mailed.
   if (ltr.mail_vendor_letter_id) {
@@ -96,6 +125,16 @@ export async function mailDemandLetter(caseId: string): Promise<MailDemandLetter
       reason: "already_mailed",
       letterId: ltr.mail_vendor_letter_id,
     };
+  }
+
+  // Approval gate — unless admin override, never dispatch a letter the
+  // customer hasn't explicitly approved. Inngest delivery + Stripe
+  // resends won't sneak past this.
+  if (!options.adminOverride && ltr.approval_status !== "approved") {
+    console.log(
+      `[send-demand-letter] case=${caseId} skipping send: approval_status=${ltr.approval_status}`,
+    );
+    return { ok: false, reason: "not_approved" };
   }
 
   if (!ltr.body_md || ltr.body_md.length < 100) {
@@ -134,6 +173,46 @@ export async function mailDemandLetter(caseId: string): Promise<MailDemandLetter
       sent_at: result.sendDate ?? new Date().toISOString(),
     })
     .eq("id", ltr.id);
+
+  // Notify the owner that the letter is on its way. Best-effort — failures
+  // don't block the mail dispatch itself.
+  if (c.owner_user_id) {
+    const caseName = `${c.plaintiff_name ?? "Plaintiff"} v. ${c.defendant_name}`;
+    const link = `/case/${caseId}/letter`;
+    const trackingLine = result.trackingNumber
+      ? `Tracking number: ${result.trackingNumber}`
+      : "Tracking number will appear in your dashboard shortly.";
+    await createNotification({
+      userId: c.owner_user_id,
+      caseId,
+      type: "letter_mailed",
+      title: "Your demand letter is in the mail",
+      body: `${caseName}: dispatched via USPS Certified Mail with return receipt. ${trackingLine}`,
+      link,
+    });
+    // Also email — pulls the owner's auth email server-side.
+    const { data: owner } = await admin.auth.admin.getUserById(c.owner_user_id);
+    const ownerEmail = owner?.user?.email ?? null;
+    if (ownerEmail) {
+      await sendEmail({
+        to: ownerEmail,
+        subject: `Your demand letter is in the mail`,
+        text: [
+          `Hi,`,
+          ``,
+          `Your demand letter for ${caseName} has been dispatched via USPS Certified Mail with return receipt.`,
+          ``,
+          trackingLine,
+          ``,
+          `You can follow the delivery status from your case dashboard:`,
+          `https://civilcase.com${link}`,
+          ``,
+          `Thanks,`,
+          `CivilCase`,
+        ].join("\n"),
+      });
+    }
+  }
 
   // case.status is no longer touched here. Mail state lives on the
   // demand_letters row (mail_status, mail_vendor_letter_id, sent_at) and is

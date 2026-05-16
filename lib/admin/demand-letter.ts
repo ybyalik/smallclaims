@@ -11,6 +11,11 @@ export interface AdminDemandLetter {
   template_key: string | null;
   generated_by: string | null;
   mail_status: string | null;
+  mail_vendor_letter_id: string | null;
+  approval_status: "pending" | "approved" | "changes_requested" | null;
+  approved_at: string | null;
+  changes_requested_at: string | null;
+  changes_text: string | null;
   created_at: string;
   updated_at: string | null;
 }
@@ -23,7 +28,7 @@ export async function loadLatestDemandLetterForAdmin(
   const { data } = await admin
     .from("demand_letters")
     .select(
-      "id, case_id, version, body_md, template_key, generated_by, mail_status, created_at, updated_at",
+      "id, case_id, version, body_md, template_key, generated_by, mail_status, mail_vendor_letter_id, approval_status, approved_at, changes_requested_at, changes_text, created_at, updated_at",
     )
     .eq("case_id", caseId)
     .order("version", { ascending: false })

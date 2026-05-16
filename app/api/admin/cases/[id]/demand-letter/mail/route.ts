@@ -40,7 +40,10 @@ export async function POST(_req: NextRequest, ctx: { params: { id: string } }) {
     return NextResponse.json({ error: guard.error }, { status: 403 });
   }
   try {
-    const result = await mailDemandLetter(ctx.params.id);
+    // Admin override: this endpoint bypasses the approval gate so we can
+    // exercise the PostGrid path on cases the customer hasn't approved
+    // yet (which is most of them during testing).
+    const result = await mailDemandLetter(ctx.params.id, { adminOverride: true });
     return NextResponse.json(result);
   } catch (e) {
     const message = e instanceof Error ? e.message : String(e);

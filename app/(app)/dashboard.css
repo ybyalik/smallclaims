@@ -94,6 +94,146 @@
   color: #7a7770;
 }
 
+/* Unread-count pill rendered next to the Notifications nav item. Sits at
+   the far right of the row so the count is easy to spot at a glance. */
+.app-nav-badge {
+  margin-left: auto;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: #d9402e;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: center;
+  white-space: nowrap;
+}
+.app-nav a.active .app-nav-badge { background: #fff; color: #d9402e; }
+
+/* Customer letter-approval gate that sits under the embedded PDF on
+   /case/[id]/letter. */
+.letter-approve-card {
+  margin-top: 18px;
+  padding: 18px 22px;
+  border-radius: 12px;
+  border: 1px solid #ebe9e3;
+  background: #fff;
+}
+.letter-approve-pending { border-color: #c8c2b3; background: #faf9f6; }
+.letter-approve-pending-edits { border-color: #f0d99a; background: #fffaf0; }
+.letter-approve-approved { border-color: #c7e5d4; background: #f0f8f3; }
+.letter-approve-mailed { border-color: #c7d3e5; background: #f0f3f8; }
+
+.letter-approve-title {
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 4px;
+  color: var(--ink, #111);
+}
+.letter-approve-body {
+  margin: 0 0 14px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #4f4c46;
+}
+.letter-approve-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.letter-approve-feedback {
+  margin-top: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.letter-approve-feedback-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #4f4c46;
+}
+.letter-approve-feedback-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d4cfc4;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.5;
+  resize: vertical;
+  box-sizing: border-box;
+}
+.letter-approve-quote {
+  margin-top: 10px;
+  padding: 10px 14px;
+  background: #fff;
+  border-left: 3px solid #d97706;
+  border-radius: 0 6px 6px 0;
+}
+.letter-approve-quote-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #8b8779;
+  margin-bottom: 4px;
+}
+.letter-approve-quote blockquote {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: #4f4c46;
+  font-style: italic;
+}
+.letter-approve-error {
+  margin: 10px 0 0;
+  font-size: 13px;
+  color: var(--accent, #d9402e);
+}
+
+/* /dashboard/notifications list */
+.app-notif-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.app-notif-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 14px 18px;
+  border: 1px solid #ebe9e3;
+  border-radius: 10px;
+  background: #fff;
+  color: var(--ink, #111);
+  text-decoration: none;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+a.app-notif-row:hover {
+  border-color: #c8c2b3;
+  background: #faf9f6;
+}
+.app-notif-body { flex: 1; min-width: 0; }
+.app-notif-title { font-weight: 600; font-size: 14.5px; }
+.app-notif-text {
+  margin: 4px 0 0;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: #5a574e;
+}
+.app-notif-when {
+  flex-shrink: 0;
+  font-size: 12px;
+  color: #8b8779;
+  white-space: nowrap;
+}
+
 .app-nav-secondary a.app-admin-link {
   color: #a3742f;
   font-weight: 600;

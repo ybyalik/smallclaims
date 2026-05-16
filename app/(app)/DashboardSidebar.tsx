@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import {
   LayoutDashboard,
   Folder,
@@ -11,6 +12,7 @@ import {
   Shield,
   Settings,
   LogOut,
+  Bell,
   type LucideIcon,
 } from "lucide-react";
 
@@ -48,6 +50,12 @@ const SERVICES: NavItem[] = [
 
 const ACCOUNT: NavItem[] = [
   {
+    label: "Notifications",
+    href: "/dashboard/notifications",
+    match: /^\/dashboard\/notifications/,
+    icon: Bell,
+  },
+  {
     label: "Billing",
     href: "/dashboard/billing",
     match: /^\/dashboard\/billing/,
@@ -69,6 +77,35 @@ export default function DashboardSidebar({ user }: SidebarProps) {
   const pathname = usePathname() || "";
   const settingsActive = /^\/dashboard\/settings/.test(pathname);
   const dashboardActive = pathname === "/dashboard";
+
+  // Poll the notifications endpoint to keep the unread badge live. Cheap
+  // query (one indexed count), runs every 60s while the dashboard is open.
+  const [unread, setUnread] = useState(0);
+  useEffect(() => {
+    if (!user) return;
+    let alive = true;
+    async function load() {
+      try {
+        const res = await fetch("/api/notifications");
+        if (!res.ok) return;
+        const data = (await res.json()) as { unreadCount: number };
+        if (alive) setUnread(data.unreadCount ?? 0);
+      } catch {
+        // network blip — try again on next tick
+      }
+    }
+    load();
+    const id = window.setInterval(load, 60_000);
+    // Refresh when window regains focus so a quick alt-tab back picks up
+    // notifications fired while the tab was inactive.
+    const onFocus = () => load();
+    window.addEventListener("focus", onFocus);
+    return () => {
+      alive = false;
+      window.clearInterval(id);
+      window.removeEventListener("focus", onFocus);
+    };
+  }, [user]);
 
   return (
     <aside className="app-side">
@@ -128,10 +165,16 @@ export default function DashboardSidebar({ user }: SidebarProps) {
         {user ? (
           ACCOUNT.map((item) => {
             const active = item.match.test(pathname);
+            const isNotifications = item.href === "/dashboard/notifications";
             return (
               <Link key={item.href} href={item.href} className={active ? "active" : ""}>
                 <NavIcon Icon={item.icon} />
                 <span>{item.label}</span>
+                {isNotifications && unread > 0 ? (
+                  <span className="app-nav-badge" aria-label={`${unread} unread`}>
+                    {unread > 99 ? "99+" : unread}
+                  </span>
+                ) : null}
               </Link>
             );
           })
