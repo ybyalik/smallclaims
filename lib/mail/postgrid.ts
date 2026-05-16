@@ -63,9 +63,15 @@ function senderAddress(): PostGridAddress | null {
   const state = process.env.POSTGRID_SENDER_STATE;
   const zip = process.env.POSTGRID_SENDER_ZIP;
   if (!line1 || !city || !state || !zip) return null;
+  // We're sending as a business, so only set companyName. PostGrid prints
+  // firstName + companyName on separate lines if both are set, which would
+  // duplicate "CivilCase" on the carrier sheet.
+  const company =
+    process.env.POSTGRID_SENDER_COMPANY ||
+    process.env.POSTGRID_SENDER_NAME ||
+    "CivilCase";
   return {
-    firstName: process.env.POSTGRID_SENDER_NAME || "CivilCase",
-    companyName: process.env.POSTGRID_SENDER_COMPANY || "CivilCase",
+    companyName: company,
     addressLine1: line1,
     addressLine2: process.env.POSTGRID_SENDER_LINE2 || null,
     city,
