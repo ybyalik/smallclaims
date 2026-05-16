@@ -112,11 +112,9 @@
 }
 .app-nav a.active .app-nav-badge { background: #fff; color: #d9402e; }
 
-/* First-column wrapper that stacks the status badge with a small
-   filing-deadline block underneath it. Replaces the previous pill
-   approach (the pill's hover tooltip didn't trigger cleanly inside a
-   row-wrapping Link, and the cursor: help misleadingly suggested a
-   tooltip would appear). All the info lives in the visible text now. */
+/* First-column wrapper: status badge on top, small SOL deadline pill
+   beneath it. Pill has its own CSS-only tooltip on hover/focus that
+   appears above the row with all the detail (date, statute, disclaimer). */
 .app-case-status-cell {
   display: flex;
   flex-direction: column;
@@ -124,30 +122,91 @@
   gap: 6px;
   text-align: center;
 }
-.app-case-sol {
-  font-size: 11px;
-  line-height: 1.35;
-  color: #6a675e;
-}
-.app-case-sol-label {
-  font-size: 10px;
+
+.app-case-sol-pill {
+  position: relative;
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-size: 10.5px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: #8a8780;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
 }
-.app-case-sol-distance { font-weight: 600; }
-.app-case-sol-date { font-size: 10.5px; color: #8a8780; }
-
-/* Color the distance line by urgency. Label + date stay muted gray so
-   the urgent number does the visual work. */
-.app-case-sol-normal .app-case-sol-distance { color: #4f4c46; }
-.app-case-sol-warning .app-case-sol-distance { color: #9a4b00; }
-.app-case-sol-critical .app-case-sol-distance { color: #b1281a; }
-.app-case-sol-expired .app-case-sol-distance {
+.app-case-sol-pill-normal {
+  background: #f3f1ec;
+  color: #6a675e;
+  border-color: #e0ddd6;
+}
+.app-case-sol-pill-warning {
+  background: #fff4e6;
+  color: #9a4b00;
+  border-color: #f0d99a;
+}
+.app-case-sol-pill-critical {
+  background: #fde8e6;
+  color: #b1281a;
+  border-color: #f0bcb4;
+}
+.app-case-sol-pill-expired {
+  background: #f3f1ec;
   color: #8a8780;
+  border-color: #e0ddd6;
   font-style: italic;
-  font-weight: 500;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+/* CSS-only tooltip. Hidden by default, appears on pill hover or focus.
+   pointer-events: none so the parent Link's click still works through
+   the tooltip area. */
+.app-case-sol-tip {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 8px);
+  transform: translateX(-50%);
+  width: 280px;
+  padding: 10px 14px;
+  background: #1f1f1f;
+  color: #fef9f1;
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: normal;
+  line-height: 1.45;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.12s ease, visibility 0.12s ease;
+  z-index: 50;
+  text-align: left;
+  white-space: normal;
+}
+.app-case-sol-tip em {
+  display: block;
+  margin-top: 6px;
+  color: #d6cfb8;
+  font-style: italic;
+}
+/* Little arrow pointing down at the pill. */
+.app-case-sol-tip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: #1f1f1f;
+}
+.app-case-sol-pill:hover .app-case-sol-tip,
+.app-case-sol-pill:focus .app-case-sol-tip,
+.app-case-sol-pill:focus-within .app-case-sol-tip {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* Inline action-needed bell next to a case name in the dashboard lists.

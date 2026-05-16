@@ -280,17 +280,36 @@ export default async function DashboardHome() {
                   <div className="app-case-status-cell">
                     <StatusBadge tone={tone}>{statusLabel}</StatusBadge>
                     {dl ? (
-                      <div className={`app-case-sol app-case-sol-${dl.urgency}`}>
-                        <div className="app-case-sol-label">Filing deadline</div>
-                        <div className="app-case-sol-distance">
-                          {dl.urgency === "expired"
-                            ? "May have run"
-                            : formatDeadlineDistance(dl)}
-                        </div>
-                        <div className="app-case-sol-date">
-                          {formatExpiryDate(dl)} (approx.)
-                        </div>
-                      </div>
+                      <span
+                        className={`app-case-sol-pill app-case-sol-pill-${dl.urgency}`}
+                        tabIndex={0}
+                        aria-describedby={`sol-tip-${c.id}`}
+                      >
+                        {dl.urgency === "expired"
+                          ? "SOL may have run"
+                          : `SOL: ${formatDeadlineDistance(dl)}`}
+                        <span
+                          id={`sol-tip-${c.id}`}
+                          className="app-case-sol-tip"
+                          role="tooltip"
+                        >
+                          <strong>Approx. filing deadline:</strong>{" "}
+                          {formatExpiryDate(dl)}
+                          <br />
+                          {dl.solYears}-year statute of limitations
+                          {dl.citation ? ` (${dl.citation})` : ""}
+                          {dl.whenClockStarts
+                            ? `, clock starts ${dl.whenClockStarts}`
+                            : ""}
+                          .
+                          <br />
+                          <em>
+                            Approximate only. Real deadlines can shift for
+                            tolling, discovery rule, or partial-payment restart.
+                            Verify with the clerk.
+                          </em>
+                        </span>
+                      </span>
                     ) : null}
                   </div>
                   <div>
