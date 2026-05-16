@@ -128,11 +128,12 @@
   vertical-align: middle;
 }
 
-/* Customer letter-approval gate that sits above the embedded PDF on
-   /case/[id]/letter. Light blush background to draw the eye to the
-   action (this is the only call-to-action on the page). */
+/* Customer letter-approval gate. Renders in two places:
+   - /case/[id]/letter — above the embedded PDF
+   - /case/[id]      — inside the demand-letter timeline step, below the CTAs
+   Top + bottom margin so both contexts get breathing room. */
 .letter-approve-card {
-  margin-bottom: 18px;
+  margin: 18px 0;
   padding: 18px 22px;
   border-radius: 12px;
   border: 1px solid #ebe9e3;
@@ -1707,7 +1708,12 @@ button.app-link:disabled {
   max-width: 60ch;
 }
 
-.product-timeline-cta { margin-top: 4px; }
+.product-timeline-cta {
+  margin-top: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
 .product-timeline-cta .btn { font-size: 14px; }
 /* When a response tracker (or any extra child) is rendered inside a
    step card, space it below the CTA so it doesn't crowd the button. */

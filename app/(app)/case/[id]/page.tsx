@@ -264,7 +264,10 @@ export default async function CasePage({ params }: { params: { id: string } }) {
                   : `/case/${c.id}/buy/demand-letter`
               }
               secondaryCta={
-                letterPaid
+                // Only show Download once the letter row actually exists in
+                // the DB. Before that, the PDF endpoint would 404 because
+                // the LLM hasn't finished generating yet.
+                letterPaid && !!ltr
                   ? {
                       href: `/api/demand-letter/${c.id}/pdf`,
                       label: "Download Letter",
