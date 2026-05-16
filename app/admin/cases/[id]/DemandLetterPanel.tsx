@@ -1,8 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { marked } from "marked";
+import TurndownService from "turndown";
+import TipTapEditor from "../../../../components/admin/TipTapEditor";
 import type { AdminDemandLetter } from "../../../../lib/admin/demand-letter";
 
 interface Props {
@@ -37,6 +39,35 @@ export default function DemandLetterPanel({ caseId, letter }: Props) {
   const [markingReady, setMarkingReady] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [info, setInfo] = useState<string | null>(null);
+
+  // Bridge: TipTap reads/writes HTML, our database stores markdown. We
+  // convert in both directions when entering and saving the editor so the
+  // PDF pipeline (which reads body_md) is unaffected.
+  const turndown = useMemo(() => {
+    const td = new TurndownService({
+      headingStyle: "atx",
+      bulletListMarker: "-",
+      codeBlockStyle: "fenced",
+      emDelimiter: "*",
+    });
+    // Preserve our PDF page-break marker as a literal comment so it survives
+    // edits and the PDF renderer still finds it.
+    td.addRule("preservePageBreakComment", {
+      filter: (node) =>
+        node.nodeType === 8 &&
+        (node.nodeValue ?? "").trim() === "PAGEBREAK",
+      replacement: () => "\n\n<!-- PAGEBREAK -->\n\n",
+    });
+    return td;
+  }, []);
+  // The "initial" HTML the TipTap editor mounts with. Computed once per
+  // edit session so retyping doesn't keep snapping content back.
+  const [editorMountKey, setEditorMountKey] = useState(0);
+  const initialHtmlForEditor = useMemo(() => {
+    if (!editing) return "";
+    return marked.parse(editBody, { async: false, breaks: true }) as string;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [editing, editorMountKey]);
 
   async function markReadyForReview() {
     if (markingReady) return;
@@ -300,6 +331,7 @@ export default function DemandLetterPanel({ caseId, letter }: Props) {
               onClick={() => {
                 setEditBody(letter.body_md);
                 setEditing(true);
+                setEditorMountKey((k) => k + 1);
                 setError(null);
                 setInfo(null);
               }}
@@ -360,25 +392,23 @@ export default function DemandLetterPanel({ caseId, letter }: Props) {
       ) : null}
 
       {editing ? (
-        <textarea
-          value={editBody}
-          onChange={(e) => setEditBody(e.target.value)}
-          rows={28}
-          style={{
-            width: "100%",
-            marginTop: 14,
-            padding: "14px 16px",
-            fontFamily: "SF Mono, Menlo, Monaco, Courier New, monospace",
-            fontSize: 13,
-            lineHeight: 1.55,
-            border: "1px solid #d4d4d4",
-            borderRadius: 8,
-            background: "#faf9f6",
-            color: "var(--ink, #111)",
-            boxSizing: "border-box",
-            resize: "vertical",
-          }}
-        />
+        <div style={{ marginTop: 14 }}>
+          <TipTapEditor
+            key={editorMountKey}
+            initialJson={null}
+            initialHtml={initialHtmlForEditor}
+            onChange={({ html }) => {
+              // Round-trip HTML -> markdown so what we save matches what
+              // the PDF renderer expects. Turndown handles most cases; we
+              // also fix up a couple of TipTap-isms it doesn't.
+              let md = turndown.turndown(html);
+              // TipTap emits empty <p></p> as a single blank line; collapse
+              // runs of blank lines to a single paragraph break.
+              md = md.replace(/\n{3,}/g, "\n\n").trim();
+              setEditBody(md);
+            }}
+          />
+        </div>
       ) : (
         <div
           className="admin-letter-preview"
