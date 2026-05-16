@@ -195,10 +195,6 @@ export default async function LetterPage({ params }: { params: { id: string } })
           </>
         }
       />
-      <ProductDocumentView
-        pdfUrl={`/api/demand-letter/${caseRow.id}/pdf`}
-        title="Demand Letter PDF"
-      />
       <LetterApprovalPanel
         caseId={caseRow.id}
         approvalStatus={
@@ -210,6 +206,10 @@ export default async function LetterPage({ params }: { params: { id: string } })
         }
         changesText={(letter.changes_text as string | null) ?? null}
         hasMailVendorId={!!letter.mail_vendor_letter_id}
+      />
+      <ProductDocumentView
+        pdfUrl={`/api/demand-letter/${caseRow.id}/pdf`}
+        title="Demand Letter PDF"
       />
     </div>
   );

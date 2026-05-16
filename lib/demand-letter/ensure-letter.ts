@@ -7,6 +7,7 @@
 import { createServiceRoleClient } from "../supabase/service-role";
 import { generateDemandLetter } from "./generate";
 import { getCaseClaimType } from "../cases/classify-claim-type";
+import { createNotification } from "../notifications";
 import type { Case, DisputeType, PostalAddress } from "../supabase/types";
 import type { DemandLetterIntake } from "./types";
 
@@ -172,5 +173,21 @@ export async function ensureDemandLetterForCase(
   }
 
   console.log(`[ensureDemandLetter] case=${caseId} created letter ${inserted.id}`);
+
+  // Tell the owner their letter is ready for review. Fires for first
+  // generation AND every regenerated version, so a customer never has to
+  // figure out "is it ready yet?" by polling the page.
+  if (caseRow.owner_user_id) {
+    const caseName = `${caseRow.plaintiff_name ?? "Plaintiff"} v. ${caseRow.defendant_name ?? "Defendant"}`;
+    await createNotification({
+      userId: caseRow.owner_user_id,
+      caseId,
+      type: "letter_ready_for_review",
+      title: "Your demand letter is ready for review",
+      body: `${caseName}: review the letter and click Approve when you're happy with it. Nothing is mailed until you approve.`,
+      link: `/case/${caseId}/letter`,
+    });
+  }
+
   return { status: "created", letterId: inserted.id };
 }

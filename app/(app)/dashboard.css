@@ -112,16 +112,17 @@
 }
 .app-nav a.active .app-nav-badge { background: #fff; color: #d9402e; }
 
-/* Customer letter-approval gate that sits under the embedded PDF on
-   /case/[id]/letter. */
+/* Customer letter-approval gate that sits above the embedded PDF on
+   /case/[id]/letter. Light blush background to draw the eye to the
+   action (this is the only call-to-action on the page). */
 .letter-approve-card {
-  margin-top: 18px;
+  margin-bottom: 18px;
   padding: 18px 22px;
   border-radius: 12px;
   border: 1px solid #ebe9e3;
   background: #fff;
 }
-.letter-approve-pending { border-color: #c8c2b3; background: #faf9f6; }
+.letter-approve-pending { border-color: #e6c3bb; background: #faf3f1; }
 .letter-approve-pending-edits { border-color: #f0d99a; background: #fffaf0; }
 .letter-approve-approved { border-color: #c7e5d4; background: #f0f8f3; }
 .letter-approve-mailed { border-color: #c7d3e5; background: #f0f3f8; }
@@ -164,6 +165,7 @@
   line-height: 1.5;
   resize: vertical;
   box-sizing: border-box;
+  background: #fff;
 }
 .letter-approve-quote {
   margin-top: 10px;
