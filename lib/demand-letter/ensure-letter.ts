@@ -186,6 +186,7 @@ export async function ensureDemandLetterForCase(
       title: "Your demand letter is ready for review",
       body: `${caseName}: review the letter and click Approve when you're happy with it. Nothing is mailed until you approve.`,
       link: `/case/${caseId}/letter`,
+      actionRequired: true,
     });
   }
 

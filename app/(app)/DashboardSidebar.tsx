@@ -78,9 +78,11 @@ export default function DashboardSidebar({ user }: SidebarProps) {
   const settingsActive = /^\/dashboard\/settings/.test(pathname);
   const dashboardActive = pathname === "/dashboard";
 
-  // Poll the notifications endpoint to keep the unread badge live. Cheap
-  // query (one indexed count), runs every 60s while the dashboard is open.
-  const [unread, setUnread] = useState(0);
+  // Poll the notifications endpoint to keep the action-needed badge live.
+  // Bell shows the count of unresolved action-required notifications, not
+  // unread — visiting /dashboard/notifications does NOT clear the badge.
+  // Only resolving the action (approving a letter, etc.) clears it.
+  const [actionable, setActionable] = useState(0);
   useEffect(() => {
     if (!user) return;
     let alive = true;
@@ -88,8 +90,8 @@ export default function DashboardSidebar({ user }: SidebarProps) {
       try {
         const res = await fetch("/api/notifications");
         if (!res.ok) return;
-        const data = (await res.json()) as { unreadCount: number };
-        if (alive) setUnread(data.unreadCount ?? 0);
+        const data = (await res.json()) as { actionableCount?: number };
+        if (alive) setActionable(data.actionableCount ?? 0);
       } catch {
         // network blip — try again on next tick
       }
@@ -170,9 +172,12 @@ export default function DashboardSidebar({ user }: SidebarProps) {
               <Link key={item.href} href={item.href} className={active ? "active" : ""}>
                 <NavIcon Icon={item.icon} />
                 <span>{item.label}</span>
-                {isNotifications && unread > 0 ? (
-                  <span className="app-nav-badge" aria-label={`${unread} unread`}>
-                    {unread > 99 ? "99+" : unread}
+                {isNotifications && actionable > 0 ? (
+                  <span
+                    className="app-nav-badge"
+                    aria-label={`${actionable} action${actionable === 1 ? "" : "s"} needed`}
+                  >
+                    {actionable > 99 ? "99+" : actionable}
                   </span>
                 ) : null}
               </Link>

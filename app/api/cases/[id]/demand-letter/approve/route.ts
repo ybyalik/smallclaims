@@ -8,6 +8,7 @@ import { NextResponse, type NextRequest } from "next/server";
 import { createClient } from "../../../../../../lib/supabase/server";
 import { createServiceRoleClient } from "../../../../../../lib/supabase/service-role";
 import { inngest } from "../../../../../../lib/inngest/client";
+import { resolveActionRequired } from "../../../../../../lib/notifications";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -68,6 +69,9 @@ export async function POST(_req: NextRequest, ctx: { params: { id: string } }) {
     id: `letter-send:${ctx.params.id}:v${letter.version}`,
     data: { caseId: ctx.params.id },
   });
+
+  // Clear the "ready for review" bell — the customer just acted on it.
+  await resolveActionRequired(user.id, ctx.params.id, "letter_ready_for_review");
 
   return NextResponse.json({ ok: true, approved_at: now });
 }

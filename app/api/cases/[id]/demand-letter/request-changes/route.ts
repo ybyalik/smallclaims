@@ -10,7 +10,7 @@ import { NextResponse, type NextRequest } from "next/server";
 import { createClient } from "../../../../../../lib/supabase/server";
 import { createServiceRoleClient } from "../../../../../../lib/supabase/service-role";
 import { sendEmail } from "../../../../../../lib/resend";
-import { createNotification } from "../../../../../../lib/notifications";
+import { createNotification, resolveActionRequired } from "../../../../../../lib/notifications";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -113,6 +113,11 @@ export async function POST(req: NextRequest, ctx: { params: { id: string } }) {
       "Our team is making the edits you asked for. You'll get another notification when the revised letter is ready for review.",
     link: `/case/${ctx.params.id}/letter`,
   });
+
+  // Asking for changes counts as taking action on the review prompt, so
+  // clear the corresponding bell. A fresh "ready for review" notification
+  // fires later when the admin marks the revision ready.
+  await resolveActionRequired(user.id, ctx.params.id, "letter_ready_for_review");
 
   return NextResponse.json({ ok: true, requested_at: now });
 }

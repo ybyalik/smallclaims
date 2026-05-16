@@ -226,6 +226,8 @@ export interface Notification {
   body: string | null;
   link: string | null;
   read_at: string | null;
+  action_required: boolean;
+  resolved_at: string | null;
   created_at: string;
 }
 

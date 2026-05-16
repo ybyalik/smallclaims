@@ -13,6 +13,8 @@ import PageHead from "../../../../components/layout/PageHead";
 import StatusBadge from "../../../../components/ui/StatusBadge";
 import EmptyState from "../../../../components/ui/EmptyState";
 import type { ProductKey } from "../../../../lib/stripe";
+import { listCasesWithPendingAction } from "../../../../lib/notifications";
+import { Bell } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Dashboard",
@@ -76,6 +78,10 @@ export default async function DashboardHome() {
 
   const payments = (paymentsData || []) as Pick<Payment, "case_id" | "product_key">[];
 
+  // Cases with unresolved action-required notifications get a bell icon
+  // next to the case name in the list.
+  const pendingActionCases = await listCasesWithPendingAction(user.id);
+
   const paidByCase = new Map<string, Set<ProductKey>>();
   for (const p of payments) {
     if (!p.product_key) continue;
@@ -132,11 +138,23 @@ export default async function DashboardHome() {
             const caption = defendantName
               ? `${plaintiffName || "You"} vs. ${defendantName}`
               : "Untitled draft";
+            const needsAction = pendingActionCases.has(c.id);
             return (
               <Link key={c.id} href={href} className="app-case-card">
                 <StatusBadge tone={status.tone}>{status.label}</StatusBadge>
                 <div>
-                  <div className="app-case-defendant">{caption}</div>
+                  <div className="app-case-defendant">
+                    {caption}
+                    {needsAction ? (
+                      <span
+                        className="app-case-action-bell"
+                        title="Action needed"
+                        aria-label="Action needed"
+                      >
+                        <Bell size={14} strokeWidth={2.5} />
+                      </span>
+                    ) : null}
+                  </div>
                   <div className="app-case-meta">
                     {formatDisputeTypeShort(
                       c.dispute_type,

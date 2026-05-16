@@ -26,6 +26,9 @@ interface CreateInput {
   title: string;
   body?: string | null;
   link?: string | null;
+  // Default false. When true, the bell + per-case bell stays lit until
+  // resolveActionRequired() is called (e.g., customer clicked Approve).
+  actionRequired?: boolean;
 }
 
 export async function createNotification(input: CreateInput): Promise<void> {
@@ -39,6 +42,7 @@ export async function createNotification(input: CreateInput): Promise<void> {
       title: input.title,
       body: input.body ?? null,
       link: input.link ?? null,
+      action_required: input.actionRequired ?? false,
     });
     if (error) {
       console.warn("[notifications] insert failed:", error.message);
@@ -52,6 +56,10 @@ export async function createNotification(input: CreateInput): Promise<void> {
 export interface NotificationListResult {
   notifications: Notification[];
   unreadCount: number;
+  // Subset of unreadCount: action-required notifications the user still
+  // hasn't resolved. This is what the sidebar bell badge keys off — opening
+  // the notifications page doesn't clear it, only taking the action does.
+  actionableCount: number;
 }
 
 export async function listNotifications(
@@ -61,24 +69,77 @@ export async function listNotifications(
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const admin = createServiceRoleClient() as any;
 
-  const [{ data: rows }, { count }] = await Promise.all([
-    admin
-      .from("notifications")
-      .select("*")
-      .eq("user_id", userId)
-      .order("created_at", { ascending: false })
-      .limit(limit),
-    admin
-      .from("notifications")
-      .select("id", { count: "exact", head: true })
-      .eq("user_id", userId)
-      .is("read_at", null),
-  ]);
+  const [{ data: rows }, { count: unreadCount }, { count: actionableCount }] =
+    await Promise.all([
+      admin
+        .from("notifications")
+        .select("*")
+        .eq("user_id", userId)
+        .order("created_at", { ascending: false })
+        .limit(limit),
+      admin
+        .from("notifications")
+        .select("id", { count: "exact", head: true })
+        .eq("user_id", userId)
+        .is("read_at", null),
+      admin
+        .from("notifications")
+        .select("id", { count: "exact", head: true })
+        .eq("user_id", userId)
+        .eq("action_required", true)
+        .is("resolved_at", null),
+    ]);
 
   return {
     notifications: (rows ?? []) as Notification[],
-    unreadCount: typeof count === "number" ? count : 0,
+    unreadCount: typeof unreadCount === "number" ? unreadCount : 0,
+    actionableCount: typeof actionableCount === "number" ? actionableCount : 0,
   };
+}
+
+// Return the set of case ids that have unresolved action-required
+// notifications for this user. Used by /dashboard and /dashboard/cases to
+// render a bell next to those case rows.
+export async function listCasesWithPendingAction(
+  userId: string,
+): Promise<Set<string>> {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const admin = createServiceRoleClient() as any;
+  const { data } = await admin
+    .from("notifications")
+    .select("case_id")
+    .eq("user_id", userId)
+    .eq("action_required", true)
+    .is("resolved_at", null)
+    .not("case_id", "is", null);
+  const set = new Set<string>();
+  for (const row of (data ?? []) as Array<{ case_id: string | null }>) {
+    if (row.case_id) set.add(row.case_id);
+  }
+  return set;
+}
+
+// Resolve all open action-required notifications for a given (user, case,
+// optional type) tuple. Called by the approve / request-changes endpoints
+// when the customer takes the action the notification was prompting.
+export async function resolveActionRequired(
+  userId: string,
+  caseId: string,
+  type?: NotificationType,
+): Promise<number> {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const admin = createServiceRoleClient() as any;
+  const now = new Date().toISOString();
+  let query = admin
+    .from("notifications")
+    .update({ resolved_at: now }, { count: "exact" })
+    .eq("user_id", userId)
+    .eq("case_id", caseId)
+    .eq("action_required", true)
+    .is("resolved_at", null);
+  if (type) query = query.eq("type", type);
+  const { count } = await query;
+  return typeof count === "number" ? count : 0;
 }
 
 export async function markNotificationsRead(

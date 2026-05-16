@@ -14,6 +14,7 @@ import { paidProductsForCase } from "../../../../lib/payments/access";
 import { reconcilePendingPayment } from "../../../../lib/payments/reconcile";
 import { deriveStatusLabel } from "../../../../lib/cases/derive-status-label";
 import CaseLifecycleActions from "./CaseLifecycleActions";
+import LetterApprovalPanel from "./letter/LetterApprovalPanel";
 import PageHead from "../../../../components/layout/PageHead";
 import StatusBadge from "../../../../components/ui/StatusBadge";
 import {
@@ -40,6 +41,11 @@ interface StepProps {
   priceLabel: string;
   ctaLabel: string;
   ctaHref: string;
+  // Optional second CTA rendered next to the primary one. Used on the
+  // demand-letter step to expose Download Letter alongside Open Letter.
+  // `download` true means render an <a> with a download attribute instead
+  // of a Next Link so the browser triggers a file download.
+  secondaryCta?: { href: string; label: string; download?: boolean };
   status: "purchased" | "ready";
   isLast?: boolean;
   // Highlight this step as the recommended next move (amber accent + pill).
@@ -61,6 +67,7 @@ function Step({
   priceLabel,
   ctaLabel,
   ctaHref,
+  secondaryCta,
   status,
   isLast,
   recommended,
@@ -117,6 +124,21 @@ function Step({
           >
             {ctaLabel}
           </Link>
+          {secondaryCta ? (
+            secondaryCta.download ? (
+              <a
+                href={secondaryCta.href}
+                className="btn btn-cream"
+                download
+              >
+                {secondaryCta.label}
+              </a>
+            ) : (
+              <Link href={secondaryCta.href} className="btn btn-cream">
+                {secondaryCta.label}
+              </Link>
+            )
+          ) : null}
         </div>
         {children}
       </div>
@@ -183,7 +205,18 @@ export default async function CasePage({ params }: { params: { id: string } }) {
       ? `${c.plaintiff_name?.trim() || "You"} vs. ${c.defendant_name}`
       : "Untitled case";
 
-  const showResponseTracker = !!ltr && letterPaid;
+  // Response tracker is for "did the defendant reply to the letter you sent"
+  // — only meaningful once PostGrid has actually dispatched the letter, so
+  // gate on mail_vendor_letter_id rather than just on the letter row existing.
+  const showResponseTracker = !!ltr?.mail_vendor_letter_id && letterPaid;
+  // Inline approval prompt: render the same Approve / Request changes
+  // controls from /case/[id]/letter inside the case timeline step when
+  // the letter is awaiting customer review.
+  const showApprovalPanel =
+    letterPaid &&
+    !!ltr &&
+    !ltr.mail_vendor_letter_id &&
+    ((ltr.approval_status as string | undefined) ?? "pending") !== "approved";
   const answers = (c.intake_answers as Record<string, unknown> | null) ?? {};
   const responseRecord = answers.demand_response as
     | { state: ResponseState; recorded_at: string }
@@ -224,14 +257,37 @@ export default async function CasePage({ params }: { params: { id: string } }) {
               tagline="Most disputes resolve here without ever going to court."
               details="We draft a firm, professional demand letter tailored to your case, send it by certified mail under the CivilCase brand, and track delivery. Tiers from $29."
               priceLabel="From $29"
-              ctaLabel={letterPaid ? "Open letter" : "Choose & buy"}
+              ctaLabel={letterPaid ? "Open Letter" : "Choose & buy"}
               ctaHref={
                 letterPaid
                   ? `/case/${c.id}/letter`
                   : `/case/${c.id}/buy/demand-letter`
               }
+              secondaryCta={
+                letterPaid
+                  ? {
+                      href: `/api/demand-letter/${c.id}/pdf`,
+                      label: "Download Letter",
+                      download: true,
+                    }
+                  : undefined
+              }
               status={letterPaid ? "purchased" : "ready"}
             >
+              {showApprovalPanel ? (
+                <LetterApprovalPanel
+                  caseId={c.id}
+                  approvalStatus={
+                    ((ltr?.approval_status as
+                      | "pending"
+                      | "approved"
+                      | "changes_requested"
+                      | undefined) ?? "pending")
+                  }
+                  changesText={(ltr?.changes_text as string | null) ?? null}
+                  hasMailVendorId={!!ltr?.mail_vendor_letter_id}
+                />
+              ) : null}
               {showResponseTracker ? (
                 <ResponseTracker
                   caseId={c.id}

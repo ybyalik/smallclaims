@@ -12,6 +12,8 @@ import ProductChipList from "../../../components/cases/ProductChipList";
 import PageHead from "../../../components/layout/PageHead";
 import StatusBadge from "../../../components/ui/StatusBadge";
 import EmptyState from "../../../components/ui/EmptyState";
+import { listCasesWithPendingAction } from "../../../lib/notifications";
+import { Bell } from "lucide-react";
 import type { ProductKey } from "../../../lib/stripe";
 
 export const metadata: Metadata = {
@@ -153,6 +155,9 @@ export default async function DashboardHome() {
 
   const recentCases = cases.slice(0, 5);
   const recentLetters = letters.slice(0, 3);
+  // Cases with unresolved action-required notifications get a bell next to
+  // the case name in the recent-cases list.
+  const pendingActionCases = await listCasesWithPendingAction(user.id);
 
   if (cases.length === 0) {
     return (
@@ -261,11 +266,23 @@ export default async function DashboardHome() {
               const paidSet = paidByCase.get(c.id) ?? new Set<ProductKey>();
               const { label: statusLabel, tone } = deriveStatusLabel({ c });
               const badges = productBadgesForCase(paidSet);
+              const needsAction = pendingActionCases.has(c.id);
               return (
                 <Link key={c.id} href={href} className="app-case-card">
                   <StatusBadge tone={tone}>{statusLabel}</StatusBadge>
                   <div>
-                    <div className="app-case-defendant">{caseTitle(c)}</div>
+                    <div className="app-case-defendant">
+                      {caseTitle(c)}
+                      {needsAction ? (
+                        <span
+                          className="app-case-action-bell"
+                          title="Action needed"
+                          aria-label="Action needed"
+                        >
+                          <Bell size={14} strokeWidth={2.5} />
+                        </span>
+                      ) : null}
+                    </div>
                     <div className="app-case-meta">
                       {formatDisputeTypeShort(
                         c.dispute_type,

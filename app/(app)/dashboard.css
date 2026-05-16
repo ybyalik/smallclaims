@@ -112,6 +112,22 @@
 }
 .app-nav a.active .app-nav-badge { background: #fff; color: #d9402e; }
 
+/* Inline action-needed bell next to a case name in the dashboard lists.
+   Sits to the right of the case caption with a small gap so the eye
+   catches it without it dominating the row. */
+.app-case-action-bell {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  margin-left: 8px;
+  border-radius: 999px;
+  background: #d9402e;
+  color: #fff;
+  vertical-align: middle;
+}
+
 /* Customer letter-approval gate that sits above the embedded PDF on
    /case/[id]/letter. Light blush background to draw the eye to the
    action (this is the only call-to-action on the page). */

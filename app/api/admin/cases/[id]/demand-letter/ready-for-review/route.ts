@@ -101,6 +101,7 @@ export async function POST(_req: NextRequest, ctx: { params: { id: string } }) {
     title: "Revised letter ready for review",
     body: `${caseName}: we made the changes you asked for. Review and approve when you're happy with it.`,
     link: `/case/${ctx.params.id}/letter`,
+    actionRequired: true,
   });
 
   return NextResponse.json({ ok: true });
