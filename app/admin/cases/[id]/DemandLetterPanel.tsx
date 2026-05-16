@@ -33,6 +33,7 @@ export default function DemandLetterPanel({ caseId, letter }: Props) {
   const [editing, setEditing] = useState<boolean>(false);
   const [saving, setSaving] = useState(false);
   const [regenerating, setRegenerating] = useState(false);
+  const [mailing, setMailing] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [info, setInfo] = useState<string | null>(null);
 
@@ -68,6 +69,39 @@ export default function DemandLetterPanel({ caseId, letter }: Props) {
       setError(e instanceof Error ? e.message : "Regenerate failed");
     } finally {
       setRegenerating(false);
+    }
+  }
+
+  async function mailViaPostgrid() {
+    if (mailing) return;
+    if (
+      !confirm(
+        "Submit this case's letter to PostGrid for certified mail? Uses the current PostGrid API key in env (test key = sandbox, live key = real mail). Idempotent — if a letter id is already stored, this is a no-op.",
+      )
+    ) {
+      return;
+    }
+    setMailing(true);
+    setError(null);
+    setInfo(null);
+    try {
+      const res = await fetch(`/api/admin/cases/${caseId}/demand-letter/mail`, {
+        method: "POST",
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(data.error || `HTTP ${res.status}`);
+      if (data.ok) {
+        setInfo(
+          `Submitted to PostGrid. letter_id=${data.letterId ?? "(stored)"} tracking=${data.trackingNumber ?? "pending"}.`,
+        );
+        router.refresh();
+      } else {
+        setError(`PostGrid skipped: ${data.reason ?? "unknown"}`);
+      }
+    } catch (e) {
+      setError(e instanceof Error ? e.message : "Mail failed");
+    } finally {
+      setMailing(false);
     }
   }
 
@@ -158,7 +192,7 @@ export default function DemandLetterPanel({ caseId, letter }: Props) {
                 setError(null);
                 setInfo(null);
               }}
-              disabled={regenerating}
+              disabled={regenerating || mailing}
             >
               Edit
             </button>
@@ -166,9 +200,18 @@ export default function DemandLetterPanel({ caseId, letter }: Props) {
               type="button"
               className="btn btn-cream btn-sm"
               onClick={regenerate}
-              disabled={regenerating}
+              disabled={regenerating || mailing}
             >
               {regenerating ? "Regenerating…" : "Regenerate"}
+            </button>
+            <button
+              type="button"
+              className="btn btn-cream btn-sm"
+              onClick={mailViaPostgrid}
+              disabled={regenerating || mailing}
+              title="Render the PDF, send to PostGrid as certified mail, save the letter id + tracking on the row."
+            >
+              {mailing ? "Sending…" : "Mail via PostGrid"}
             </button>
           </>
         ) : (
