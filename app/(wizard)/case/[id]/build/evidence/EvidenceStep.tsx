@@ -224,7 +224,7 @@ export default function EvidenceStep({
   return (
     <div className="dlw-step">
       <div className="dlw-step-eyebrow">
-        Phase 4 of 5 · <span style={{ color: "#6b6b6b" }}>(optional)</span>
+        Phase 7 of 8 · Evidence · <span style={{ color: "#6b6b6b" }}>(optional)</span>
       </div>
       <h1>Got any documents?</h1>
       <p className="dlw-sub">

@@ -30,7 +30,20 @@ export default async function WizardRoot({ params }: Props) {
 
   const answers = (c.intake_answers ?? {}) as Record<string, unknown>;
 
-  // Draft cases: walk the funnel until we hit an unfilled step.
+  // Draft cases: walk the new phase order, landing on the first phase
+  // whose required fields aren't filled yet.
+
+  // Phase 1: Eligibility — principal amount, state, three yes/no gates.
+  if (
+    !c.amount_cents ||
+    c.amount_cents <= 0 ||
+    !c.state ||
+    !answers.eligibility_passed
+  ) {
+    redirect(`/case/${c.id}/build/eligibility`);
+  }
+
+  // Phase 2: Category — dispute type (plus free-text for "other").
   if (
     !c.dispute_type ||
     (c.dispute_type === "other" &&
@@ -38,20 +51,8 @@ export default async function WizardRoot({ params }: Props) {
   ) {
     redirect(`/case/${c.id}/build/category`);
   }
-  if (!c.amount_cents || c.amount_cents <= 0) {
-    redirect(`/case/${c.id}/build/amount`);
-  }
-  if (!answers.recipient_state) {
-    redirect(`/case/${c.id}/build/state`);
-  }
-  if (!answers.eligibility_passed) {
-    redirect(`/case/${c.id}/build/eligibility`);
-  }
-  if (!answers.recovery_seen) {
-    redirect(`/case/${c.id}/build/recovery`);
-  }
 
-  // Pre-screen complete: fall into the main wizard
+  // Phase 3+: main intake.
   if (!c.defendant_name) redirect(`/case/${c.id}/build/defendant`);
   if (!c.plaintiff_name) redirect(`/case/${c.id}/build/plaintiff`);
   if (!c.facts_narrative || !answers.incident_date) {

@@ -216,7 +216,7 @@ export default function NarrativeStep({
 
   return (
     <div className="dlw-step">
-      <div className="dlw-step-eyebrow">Phase 3 of 6</div>
+      <div className="dlw-step-eyebrow">Phase 5 of 8 · What happened</div>
       <h1>What happened?</h1>
       <p className="dlw-sub">
         2 to 3 sentences is enough. We&rsquo;ll ask follow-up questions to fill in the gaps.

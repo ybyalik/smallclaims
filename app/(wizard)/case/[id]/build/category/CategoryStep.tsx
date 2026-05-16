@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { CATEGORIES } from "../../../../../../lib/demand-letter/categories";
@@ -94,7 +95,7 @@ export default function CategoryStep({
         body: JSON.stringify(body),
       });
       if (!res.ok) throw new Error("Could not save");
-      router.push(`/case/${caseId}/build/amount`);
+      router.push(`/case/${caseId}/build/defendant`);
     } catch (e) {
       setErrors({ _save: e instanceof Error ? e.message : "Could not save" });
       setSaving(false);
@@ -103,7 +104,7 @@ export default function CategoryStep({
 
   return (
     <div className="dlw-step">
-      <div className="dlw-step-eyebrow">Step 1 of 5 · Quick start</div>
+      <div className="dlw-step-eyebrow">Phase 2 of 8 · Category</div>
       <h1>What&apos;s your dispute about?</h1>
       <p className="dlw-sub">Pick the situation that fits yours best. You can change this later.</p>
 
@@ -162,7 +163,12 @@ export default function CategoryStep({
       <ErrorSummary errors={errors} order={["category", "other_text", "_save"]} />
 
       <div className="dlw-actions">
-        <span />
+        <Link
+          href={`/case/${caseId}/build/eligibility`}
+          className="dlw-actions-back"
+        >
+          ← Back
+        </Link>
         <button
           className="dlw-cta"
           onClick={continueToNext}

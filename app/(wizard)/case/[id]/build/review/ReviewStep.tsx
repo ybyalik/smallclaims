@@ -550,7 +550,7 @@ export default function ReviewStep({
       <div style={{ fontSize: 13, color: "#6b6b6b", margin: "12px 4px 0" }}>
         Need to change anything?{" "}
         <Link
-          href={`/case/${caseId}/build/state`}
+          href={`/case/${caseId}/build/eligibility`}
           style={{ textDecoration: "underline" }}
         >
           Go back to edit

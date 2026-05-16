@@ -207,7 +207,7 @@ export default function PlaintiffStep({
 
   return (
     <div className="dlw-step">
-      <div className="dlw-step-eyebrow">Phase 2 of 5</div>
+      <div className="dlw-step-eyebrow">Phase 4 of 8 · Your info</div>
       <h1>Are you sending this as an individual or a business?</h1>
       <p className="dlw-sub">
         We use these details for the letter signature and to send you case-status

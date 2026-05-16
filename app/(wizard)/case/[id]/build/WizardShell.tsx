@@ -5,8 +5,10 @@ import { usePathname } from "next/navigation";
 import type { Case } from "../../../../../lib/supabase/types";
 import {
   isComplete as phaseIsComplete,
+  validateCategoryFromCase,
   validateClaimAmountFromCase,
   validateDefendantFromCase,
+  validateEligibilityFromCase,
   validateEvidenceFromCase,
   validateNarrativeFromCase,
   validatePlaintiffFromCase,
@@ -18,6 +20,8 @@ interface Props {
 }
 
 const PHASES = [
+  { key: "eligibility", label: "Eligibility" },
+  { key: "category", label: "Category" },
   { key: "defendant", label: "Defendant" },
   { key: "plaintiff", label: "Your info" },
   { key: "narrative", label: "What happened" },
@@ -26,6 +30,10 @@ const PHASES = [
   { key: "review", label: "Review" },
 ] as const;
 
+// Legacy prescreen step keys. The standalone Quick Start track is gone —
+// Eligibility and Category have moved into the main PHASES nav, and the
+// old amount/state/recovery steps redirect to /build root which routes
+// the user to the first unfilled phase.
 const PRESCREEN_STEPS = ["category", "amount", "state", "eligibility", "recovery"] as const;
 
 // Each "section" in the nav is one phase. Completion is computed from case
@@ -35,6 +43,10 @@ const PRESCREEN_STEPS = ["category", "amount", "state", "eligibility", "recovery
 // component's Continue gate and the final finish-intake gate.
 function isPhaseComplete(c: Case, phaseKey: string): boolean {
   switch (phaseKey) {
+    case "eligibility":
+      return phaseIsComplete(validateEligibilityFromCase(c));
+    case "category":
+      return phaseIsComplete(validateCategoryFromCase(c));
     case "defendant":
       return phaseIsComplete(validateDefendantFromCase(c));
     case "plaintiff":

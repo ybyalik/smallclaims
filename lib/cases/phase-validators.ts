@@ -66,6 +66,72 @@ export function validatePrescreenFromCase(c: Case): PhaseErrors {
 }
 
 // ────────────────────────────────────────────────────────────────────────────
+// Eligibility phase (Phase 1 of the new flow). Absorbs the three yes/no
+// checks plus the principal amount + state, so we can run the small-claims
+// cap check before the user invests time in the rest of the wizard.
+// ────────────────────────────────────────────────────────────────────────────
+
+interface EligibilityInput {
+  amount_cents: number | null | undefined;
+  state: string | null | undefined;
+  eligibility_passed: boolean;
+}
+
+export function validateEligibilityPhase(input: EligibilityInput): PhaseErrors {
+  const errs: PhaseErrors = {};
+  if (!input.amount_cents || input.amount_cents <= 0) {
+    errs.amount = "Enter the amount you're claiming.";
+  }
+  if (!input.state) {
+    errs.state = "Pick the state where the other party is located.";
+  }
+  if (!input.eligibility_passed) {
+    errs.eligibility = "Confirm all three eligibility checks.";
+  }
+  return errs;
+}
+
+export function validateEligibilityFromCase(c: Case): PhaseErrors {
+  const a = (c.intake_answers ?? {}) as Record<string, unknown>;
+  return validateEligibilityPhase({
+    amount_cents: c.amount_cents,
+    state: c.state || ((a.recipient_state as string | undefined) ?? null),
+    eligibility_passed: !!a.eligibility_passed,
+  });
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// Category phase (Phase 2). Just the dispute-type pick plus the free-text
+// description when "other" is chosen.
+// ────────────────────────────────────────────────────────────────────────────
+
+interface CategoryInput {
+  dispute_type: string | null | undefined;
+  dispute_type_other: string | null | undefined;
+}
+
+export function validateCategoryPhase(input: CategoryInput): PhaseErrors {
+  const errs: PhaseErrors = {};
+  if (!input.dispute_type) {
+    errs.dispute_type = "Pick the category that fits your dispute best.";
+  } else if (input.dispute_type === "other") {
+    const t = (input.dispute_type_other ?? "").trim();
+    if (t.length < 8) {
+      errs.dispute_type = "Describe your dispute in a sentence or two.";
+    }
+  }
+  return errs;
+}
+
+export function validateCategoryFromCase(c: Case): PhaseErrors {
+  const a = (c.intake_answers ?? {}) as Record<string, unknown>;
+  return validateCategoryPhase({
+    dispute_type: c.dispute_type,
+    dispute_type_other: (a.dispute_type_other as string) ?? null,
+  });
+}
+
+// ────────────────────────────────────────────────────────────────────────────
 // Defendant phase
 // ────────────────────────────────────────────────────────────────────────────
 

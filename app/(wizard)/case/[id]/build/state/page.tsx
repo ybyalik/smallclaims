@@ -1,19 +1,10 @@
-import { notFound } from "next/navigation";
-import { loadOwnedCase } from "../../../../../../lib/demand-letter/access";
-import { listStates } from "../../../../../../lib/demand-letter/state-context";
-import StateStep from "./StateStep";
+// Legacy prescreen route. State is now collected as part of Eligibility
+// (Phase 1). Redirect to /build root so the user lands on the right phase.
+
+import { redirect } from "next/navigation";
 
 export const dynamic = "force-dynamic";
 
-interface Props {
-  params: { id: string };
-}
-
-export default async function StatePage({ params }: Props) {
-  const c = await loadOwnedCase(params.id);
-  if (!c) notFound();
-  const states = listStates();
-  const initial =
-    (c.intake_answers as Record<string, unknown> | null)?.recipient_state as string | undefined;
-  return <StateStep caseId={c.id} initialAbbr={initial ?? ""} states={states} />;
+export default function LegacyStateStep({ params }: { params: { id: string } }) {
+  redirect(`/case/${params.id}/build`);
 }

@@ -300,7 +300,7 @@ export default function DefendantStep({
 
   return (
     <div className="dlw-step">
-      <div className="dlw-step-eyebrow">Phase 1 of 5</div>
+      <div className="dlw-step-eyebrow">Phase 3 of 8 · Defendant</div>
       <h1>Who are you sending this to?</h1>
       <p className="dlw-sub">
         Pick whether the recipient is a person or a business. We&rsquo;ll set the letter
@@ -673,7 +673,7 @@ export default function DefendantStep({
 
       <div className="dlw-actions">
         <Link
-          href={`/case/${caseId}/build/recovery`}
+          href={`/case/${caseId}/build/category`}
           className="dlw-actions-back"
         >
           ← Back

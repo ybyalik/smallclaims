@@ -255,7 +255,7 @@ export default function ClaimAmountStep({
 
   return (
     <div className="dlw-step">
-      <div className="dlw-step-eyebrow">Phase 4 of 6</div>
+      <div className="dlw-step-eyebrow">Phase 6 of 8 · Amount</div>
       <h1>How much are you demanding?</h1>
       <p className="dlw-sub">
         The base amount you&rsquo;re owed, plus any extra damage categories that fit your
