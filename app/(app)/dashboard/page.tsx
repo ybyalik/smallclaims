@@ -18,7 +18,7 @@ import {
   formatDeadlineDistance,
   formatExpiryDate,
 } from "../../../lib/cases/sol-deadline";
-import { Bell } from "lucide-react";
+import { Bell, Info } from "lucide-react";
 import type { ProductKey } from "../../../lib/stripe";
 
 export const metadata: Metadata = {
@@ -281,21 +281,25 @@ export default async function DashboardHome() {
                     <StatusBadge tone={tone}>{statusLabel}</StatusBadge>
                     {dl ? (
                       <span
-                        className={`app-case-sol-pill app-case-sol-pill-${dl.urgency}`}
+                        className={`app-case-sol-icon app-case-sol-icon-${dl.urgency}`}
                         tabIndex={0}
+                        role="button"
+                        aria-label={`Filing deadline: ${dl.urgency === "expired" ? "may have run" : formatDeadlineDistance(dl)}`}
                         aria-describedby={`sol-tip-${c.id}`}
                       >
-                        {dl.urgency === "expired"
-                          ? "SOL may have run"
-                          : `SOL: ${formatDeadlineDistance(dl)}`}
+                        <Info size={14} strokeWidth={2} aria-hidden />
                         <span
                           id={`sol-tip-${c.id}`}
                           className="app-case-sol-tip"
                           role="tooltip"
                         >
-                          <strong>Approx. filing deadline:</strong>{" "}
-                          {formatExpiryDate(dl)}
+                          <strong>
+                            {dl.urgency === "expired"
+                              ? "Filing deadline may have run"
+                              : `${formatDeadlineDistance(dl)} to file`}
+                          </strong>
                           <br />
+                          Approx. {formatExpiryDate(dl)} ·{" "}
                           {dl.solYears}-year statute of limitations
                           {dl.citation ? ` (${dl.citation})` : ""}
                           {dl.whenClockStarts

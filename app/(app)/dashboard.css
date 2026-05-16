@@ -119,45 +119,35 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 12px;
   text-align: center;
 }
 
-.app-case-sol-pill {
+/* Bare info icon — sits below the status badge with extra breathing
+   room. Hover or focus to reveal the styled tooltip with all the
+   detail (date, statute, disclaimer). Icon color signals urgency at
+   a glance even before hover. */
+.app-case-sol-icon {
   position: relative;
-  display: inline-block;
-  padding: 3px 9px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
   border-radius: 999px;
-  border: 1px solid transparent;
-  font-size: 10.5px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  white-space: nowrap;
-}
-.app-case-sol-pill-normal {
-  background: #f3f1ec;
-  color: #6a675e;
-  border-color: #e0ddd6;
-}
-.app-case-sol-pill-warning {
-  background: #fff4e6;
-  color: #9a4b00;
-  border-color: #f0d99a;
-}
-.app-case-sol-pill-critical {
-  background: #fde8e6;
-  color: #b1281a;
-  border-color: #f0bcb4;
-}
-.app-case-sol-pill-expired {
-  background: #f3f1ec;
+  cursor: help;
   color: #8a8780;
-  border-color: #e0ddd6;
-  font-style: italic;
-  text-transform: none;
-  letter-spacing: normal;
+  transition: color 0.15s ease, background 0.15s ease;
 }
+.app-case-sol-icon:hover,
+.app-case-sol-icon:focus {
+  outline: none;
+  background: rgba(0, 0, 0, 0.04);
+}
+.app-case-sol-icon-normal { color: #8a8780; }
+.app-case-sol-icon-warning { color: #b45309; }
+.app-case-sol-icon-critical { color: #c0392b; }
+.app-case-sol-icon-expired { color: #8a8780; }
 
 /* CSS-only tooltip. Hidden by default, appears on pill hover or focus.
    pointer-events: none so the parent Link's click still works through
@@ -641,7 +631,10 @@ a.app-notif-row:hover {
 .app-case-card {
   display: grid;
   grid-template-columns: 100px 1fr 180px 90px 100px 24px;
-  gap: 16px;
+  /* Larger column-gap so the status cell has clear breathing room from
+     the case-name column. Row gap stays tight. */
+  column-gap: 28px;
+  row-gap: 16px;
   align-items: center;
   padding: 18px 22px;
   background: #fff;
@@ -657,7 +650,8 @@ a.app-notif-row:hover {
 .app-case-list-head {
   display: grid;
   grid-template-columns: 100px 1fr 180px 90px 100px 24px;
-  gap: 16px;
+  column-gap: 28px;
+  row-gap: 16px;
   padding: 0 22px;
   margin-bottom: 8px;
 }
