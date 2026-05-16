@@ -121,16 +121,31 @@ export default function ClaimAmountStep({
           : mult === 3 ? "3x"
             : mult != null ? `${mult}x`
               : "statutory";
+      // Human-readable title from the conditions phrase (e.g. "wrongful
+      // retention of security deposit") with the multiplier in parens.
+      // The statute citation goes into the blurb so the citation is
+      // visible but doesn't dominate the heading.
+      const conditionTitle = (m.conditions || "")
+        .trim()
+        .replace(/^./, (c) => c.toUpperCase());
+      const title = conditionTitle
+        ? `${conditionTitle} (${multLabel})`
+        : `Statutory damages (${multLabel})`;
       const blurbParts: string[] = [];
-      if (m.statute) blurbParts.push(`Under ${m.statute}, ${multLabel} damages may apply`);
-      else blurbParts.push(`${multLabel} damages may apply`);
-      if (m.conditions) blurbParts.push(`when ${m.conditions}`);
+      if (m.statute) {
+        blurbParts.push(
+          `Under ${m.statute}, you may be entitled to ${multLabel} damages.`,
+        );
+      } else {
+        blurbParts.push(`You may be entitled to ${multLabel} damages.`);
+      }
+      blurbParts.push(
+        `If this applies to your situation, click Yes and we'll add it to the demand.`,
+      );
       return {
         key: `state_multiplier_${idx}`,
-        title: m.statute
-          ? `${m.statute} (${multLabel})`
-          : `Statutory multiplier (${multLabel})`,
-        blurb: `${blurbParts.join(" ")}.`,
+        title,
+        blurb: blurbParts.join(" "),
       };
     });
     return [...stateHeads, ...filtered];
