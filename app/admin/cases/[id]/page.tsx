@@ -279,7 +279,28 @@ export default async function AdminCaseDetailPage({ params }: { params: { id: st
       )}
 
       <h2 className="admin-section-h" style={{ marginTop: 28 }}>Demand letter</h2>
-      <DemandLetterPanel caseId={params.id} letter={demandLetter} />
+      <DemandLetterPanel
+        caseId={params.id}
+        letter={demandLetter}
+        caseClassification={(() => {
+          const cls = (answers.case_classification as Record<string, unknown> | undefined) ?? null;
+          if (!cls) return null;
+          return {
+            primary_claim_type:
+              typeof cls.primary_claim_type === "string" ? cls.primary_claim_type : null,
+            secondary_claim_types: Array.isArray(cls.secondary_claim_types)
+              ? (cls.secondary_claim_types as unknown[]).filter(
+                  (s): s is string => typeof s === "string",
+                )
+              : [],
+            classified_at:
+              typeof cls.classified_at === "string" ? cls.classified_at : null,
+            model: typeof cls.model === "string" ? cls.model : null,
+            reasoning:
+              typeof cls.reasoning === "string" ? cls.reasoning : null,
+          };
+        })()}
+      />
 
       <h2 className="admin-section-h" style={{ marginTop: 28 }}>Case research</h2>
       <CaseResearchPanel caseId={params.id} detail={research} />
