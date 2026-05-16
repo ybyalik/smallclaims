@@ -35,6 +35,10 @@ export interface PostGridAddress {
 
 export interface CreateLetterInput {
   to: PostGridAddress;
+  // Optional sender override. When omitted, the env-var sender (CivilCase)
+  // is used. Set this when the plaintiff opted out of CivilCase letterhead
+  // so the envelope/carrier sheet matches the body of the letter.
+  from?: PostGridAddress;
   pdfBuffer: Buffer;
   description: string;
   metadata?: Record<string, string>;
@@ -95,7 +99,10 @@ export async function createCertifiedLetter(
   input: CreateLetterInput,
 ): Promise<PostGridLetter | null> {
   const apiKey = process.env.POSTGRID_API_KEY;
-  const from = senderAddress();
+  // Caller may supply a sender (e.g. plaintiff opted out of CivilCase
+  // letterhead, so the envelope should match the body). Fall back to the
+  // CivilCase env-var sender otherwise.
+  const from = input.from ?? senderAddress();
   if (!apiKey || !from) {
     console.warn(
       "[postgrid] not configured — skipping mail dispatch. Set POSTGRID_API_KEY and POSTGRID_SENDER_* envs.",

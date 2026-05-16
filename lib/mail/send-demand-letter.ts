@@ -31,20 +31,52 @@ function toPostGridAddress(name: string, addr: PostalAddress): PostGridAddress {
   };
 }
 
+
 export async function mailDemandLetter(caseId: string): Promise<MailDemandLetterResult> {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const admin = createServiceRoleClient() as any;
 
   const { data: caseRow } = await admin
     .from("cases")
-    .select("id, defendant_name, defendant_address, plaintiff_name")
+    .select(
+      "id, defendant_name, defendant_address, plaintiff_name, plaintiff_address, intake_answers",
+    )
     .eq("id", caseId)
     .single();
   if (!caseRow) return { ok: false, reason: "no_letter" };
-  const c = caseRow as Pick<Case, "id" | "defendant_name" | "defendant_address" | "plaintiff_name">;
+  const c = caseRow as Pick<
+    Case,
+    | "id"
+    | "defendant_name"
+    | "defendant_address"
+    | "plaintiff_name"
+    | "plaintiff_address"
+    | "intake_answers"
+  >;
 
   if (!c.defendant_name || !c.defendant_address) {
     return { ok: false, reason: "no_address" };
+  }
+
+  // The same intake-answer flag that controls the PDF letterhead (CivilCase
+  // vs plaintiff) also drives the envelope/carrier-sheet sender. "no" means
+  // the customer opted out — send the letter under the plaintiff's name and
+  // address instead of CivilCase. Anything else (including missing) keeps
+  // the CivilCase default since CivilCase letterhead is the recommended
+  // path and the PDF was generated on that assumption.
+  const answers = (c.intake_answers as Record<string, unknown> | null) ?? {};
+  const civilcaseLetterhead =
+    answers.civilcase_letterhead === "no" ? "no" : "yes";
+  let fromOverride: PostGridAddress | undefined;
+  if (
+    civilcaseLetterhead === "no" &&
+    c.plaintiff_name &&
+    c.plaintiff_address
+  ) {
+    fromOverride = toPostGridAddress(
+      c.plaintiff_name,
+      c.plaintiff_address as PostalAddress,
+    );
   }
 
   const { data: letter } = await admin
@@ -75,12 +107,14 @@ export async function mailDemandLetter(caseId: string): Promise<MailDemandLetter
 
   const result = await createCertifiedLetter({
     to: toPostGridAddress(c.defendant_name, c.defendant_address),
+    from: fromOverride,
     pdfBuffer: Buffer.from(pdfBytes),
-    description: `Demand letter — ${c.plaintiff_name ?? "plaintiff"} v. ${c.defendant_name}`,
+    description: `Demand letter, ${c.plaintiff_name ?? "plaintiff"} v. ${c.defendant_name}`,
     metadata: {
       case_id: caseId,
       demand_letter_id: ltr.id,
       version: String(ltr.version),
+      letterhead: civilcaseLetterhead,
     },
     extraService: "certified_return_receipt",
   });
