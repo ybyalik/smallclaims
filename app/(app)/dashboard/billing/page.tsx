@@ -87,6 +87,34 @@ export default async function BillingPage() {
     >
   >;
 
+  // Resolve case captions for every payment so the "Case" column links by
+  // name instead of the generic "Open case" placeholder.
+  const caseIds = Array.from(
+    new Set(payments.map((p) => p.case_id).filter((id): id is string => !!id)),
+  );
+  const caseTitles = new Map<string, string>();
+  if (caseIds.length > 0) {
+    const { data: caseRows } = await supabase
+      .from("cases")
+      .select("id, defendant_name, plaintiff_name")
+      .in("id", caseIds);
+    for (const row of (caseRows ?? []) as Array<{
+      id: string;
+      defendant_name: string | null;
+      plaintiff_name: string | null;
+    }>) {
+      const defendant = row.defendant_name?.trim() || "";
+      const plaintiff = row.plaintiff_name?.trim() || "";
+      if (defendant) {
+        caseTitles.set(row.id, `${plaintiff || "You"} vs. ${defendant}`);
+      } else if (plaintiff) {
+        caseTitles.set(row.id, plaintiff);
+      } else {
+        caseTitles.set(row.id, "Untitled case");
+      }
+    }
+  }
+
   return (
     <div>
       <PageHead title="Billing" sub="All your CivilCase payments and receipts." />
@@ -126,7 +154,7 @@ export default async function BillingPage() {
                 </div>
                 <div>
                   <Link href={`/dashboard/cases/${p.case_id}`} className="app-link">
-                    Open case →
+                    {caseTitles.get(p.case_id) ?? "Open case"}
                   </Link>
                 </div>
                 <div className="app-billing-amount">

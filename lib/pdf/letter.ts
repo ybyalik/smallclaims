@@ -1,7 +1,9 @@
 // Generate a formatted PDF from the demand-letter markdown body.
 // Uses pdf-lib (no headless browser, runs on Vercel Node runtime).
 
-import { PDFDocument, StandardFonts, rgb } from "pdf-lib";
+import { PDFDocument, StandardFonts, rgb, type PDFFont, type PDFImage, type PDFPage } from "pdf-lib";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 
 interface LetterPdfInput {
   body_md: string;
@@ -14,16 +16,21 @@ const MARGIN_LEFT = 72; // 1"
 const MARGIN_RIGHT = 72;
 const MARGIN_TOP = 72;
 const MARGIN_BOTTOM = 72;
-const LINE_HEIGHT = 14;
 const FONT_SIZE = 11;
+const LINE_HEIGHT = 15;            // tighter leading inside a paragraph
+const PARAGRAPH_GAP = 10;          // vertical space between paragraphs
+const SECTION_GAP_EXTRA = 6;       // a touch more after blank-line breaks
+const LOGO_WIDTH = 110;            // letterhead logo width in points
+const LOGO_GAP = 12;               // gap below the logo before the address
 
-// Wrap a single paragraph into lines that fit the content width.
+// Wrap a single text line into multiple lines that fit the content width.
 function wrapText(
   text: string,
-  font: { widthOfTextAtSize: (s: string, size: number) => number },
+  font: PDFFont,
   fontSize: number,
-  maxWidth: number
+  maxWidth: number,
 ): string[] {
+  if (!text) return [""];
   const words = text.split(/\s+/);
   const lines: string[] = [];
   let current = "";
@@ -33,8 +40,8 @@ function wrapText(
       current = trial;
     } else {
       if (current) lines.push(current);
-      // Word longer than maxWidth — hard break
       if (font.widthOfTextAtSize(word, fontSize) > maxWidth) {
+        // Word itself is wider than the page — hard-break on characters.
         let chunk = "";
         for (const ch of word) {
           if (font.widthOfTextAtSize(chunk + ch, fontSize) <= maxWidth) chunk += ch;
@@ -56,22 +63,72 @@ function wrapText(
 // Strip the most common markdown decorations so the PDF is plain prose.
 function stripMarkdown(md: string): string {
   return md
-    .replace(/^#{1,6}\s+/gm, "") // strip heading markers
-    .replace(/\*\*(.+?)\*\*/g, "$1") // bold
-    .replace(/\*(.+?)\*/g, "$1") // italic
-    .replace(/`(.+?)`/g, "$1") // inline code
-    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1"); // links → just the label
+    .replace(/^#{1,6}\s+/gm, "")
+    .replace(/\*\*(.+?)\*\*/g, "$1")
+    .replace(/\*(.+?)\*/g, "$1")
+    .replace(/`(.+?)`/g, "$1")
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1");
+}
+
+// Reserved marker the generator inserts between the CivilCase cover letter
+// and the demand letter so each lands on its own page.
+const PAGE_BREAK_MARKER = "<!-- PAGEBREAK -->";
+
+// Load the CivilCase letterhead logo from /public. Cached after first call
+// because PDF generation runs many times per request batch in dev. Returns
+// null if the file is missing so we degrade to text-only letterhead instead
+// of failing the entire render.
+let cachedLogoBytes: Uint8Array | null | undefined;
+function loadLogoBytes(): Uint8Array | null {
+  if (cachedLogoBytes !== undefined) return cachedLogoBytes;
+  try {
+    const buf = readFileSync(join(process.cwd(), "public", "civilcase-logo.png"));
+    cachedLogoBytes = new Uint8Array(buf);
+  } catch {
+    cachedLogoBytes = null;
+  }
+  return cachedLogoBytes;
+}
+
+// Looks like a "Re: …" subject line. We render those bold to mimic the
+// convention real legal correspondence follows.
+function isSubjectLine(line: string): boolean {
+  return /^Re:\s/i.test(line.trim());
+}
+
+// First non-blank line of the section is "CivilCase" — that's our cue to
+// place the letterhead logo at the top of the page.
+function sectionStartsWithCivilCase(section: string): boolean {
+  const lines = section.split("\n");
+  for (const ln of lines) {
+    const t = ln.trim();
+    if (!t) continue;
+    return t.toLowerCase() === "civilcase";
+  }
+  return false;
 }
 
 export async function renderLetterPdf({ body_md }: LetterPdfInput): Promise<Uint8Array> {
   const cleaned = stripMarkdown(body_md);
-  const paragraphs = cleaned.split(/\n{2,}/).map((p) => p.replace(/\n/g, " ").trim()).filter(Boolean);
+  const sections = cleaned.split(PAGE_BREAK_MARKER);
 
   const pdf = await PDFDocument.create();
-  const font = await pdf.embedFont(StandardFonts.TimesRoman);
+  const fontReg = await pdf.embedFont(StandardFonts.TimesRoman);
+  const fontBold = await pdf.embedFont(StandardFonts.TimesRomanBold);
   const contentWidth = PAGE_WIDTH - MARGIN_LEFT - MARGIN_RIGHT;
 
-  let page = pdf.addPage([PAGE_WIDTH, PAGE_HEIGHT]);
+  // Try to embed the logo once; reused on every CivilCase letterhead page.
+  let logoImage: PDFImage | null = null;
+  const logoBytes = loadLogoBytes();
+  if (logoBytes) {
+    try {
+      logoImage = await pdf.embedPng(logoBytes);
+    } catch {
+      logoImage = null;
+    }
+  }
+
+  let page: PDFPage = pdf.addPage([PAGE_WIDTH, PAGE_HEIGHT]);
   let cursor = PAGE_HEIGHT - MARGIN_TOP;
 
   function newPage() {
@@ -79,15 +136,16 @@ export async function renderLetterPdf({ body_md }: LetterPdfInput): Promise<Uint
     cursor = PAGE_HEIGHT - MARGIN_TOP;
   }
 
-  for (const para of paragraphs) {
-    // For lines that look like list bullets, keep the leading marker.
-    const isBullet = /^([-*]|\d+\.)\s/.test(para);
-    const textForRender = isBullet ? para : para;
-    const lines = wrapText(textForRender, font, FONT_SIZE, contentWidth);
-    const blockHeight = lines.length * LINE_HEIGHT + LINE_HEIGHT * 0.5;
-    if (cursor - blockHeight < MARGIN_BOTTOM) newPage();
-    for (const line of lines) {
-      page.drawText(line, {
+  function ensureSpace(needed: number) {
+    if (cursor - needed < MARGIN_BOTTOM) newPage();
+  }
+
+  function drawLine(line: string, opts: { bold?: boolean } = {}) {
+    const font = opts.bold ? fontBold : fontReg;
+    const wrapped = wrapText(line, font, FONT_SIZE, contentWidth);
+    for (const w of wrapped) {
+      ensureSpace(LINE_HEIGHT);
+      page.drawText(w, {
         x: MARGIN_LEFT,
         y: cursor,
         size: FONT_SIZE,
@@ -95,9 +153,54 @@ export async function renderLetterPdf({ body_md }: LetterPdfInput): Promise<Uint
         color: rgb(0, 0, 0),
       });
       cursor -= LINE_HEIGHT;
-      if (cursor < MARGIN_BOTTOM) newPage();
     }
-    cursor -= LINE_HEIGHT * 0.5;
+  }
+
+  for (let sectionIdx = 0; sectionIdx < sections.length; sectionIdx += 1) {
+    if (sectionIdx > 0) newPage();
+    const section = sections[sectionIdx];
+
+    // Draw the logo at the very top if this section begins with the
+    // CivilCase letterhead block.
+    const lines = section.split("\n");
+    let lineIdx = 0;
+    if (logoImage && sectionStartsWithCivilCase(section)) {
+      const scale = LOGO_WIDTH / logoImage.width;
+      const drawWidth = LOGO_WIDTH;
+      const drawHeight = logoImage.height * scale;
+      page.drawImage(logoImage, {
+        x: MARGIN_LEFT,
+        y: cursor - drawHeight,
+        width: drawWidth,
+        height: drawHeight,
+      });
+      cursor -= drawHeight + LOGO_GAP;
+
+      // Skip the literal "CivilCase" text line — the logo replaces it.
+      while (lineIdx < lines.length && !lines[lineIdx].trim()) lineIdx += 1;
+      if (
+        lineIdx < lines.length &&
+        lines[lineIdx].trim().toLowerCase() === "civilcase"
+      ) {
+        lineIdx += 1;
+      }
+    }
+
+    // Walk every line: blank = paragraph break; "Re:" prefix = bold.
+    let lastWasBlank = false;
+    for (; lineIdx < lines.length; lineIdx += 1) {
+      const raw = lines[lineIdx];
+      if (raw.trim() === "") {
+        if (!lastWasBlank) {
+          cursor -= PARAGRAPH_GAP + SECTION_GAP_EXTRA;
+          if (cursor < MARGIN_BOTTOM) newPage();
+        }
+        lastWasBlank = true;
+        continue;
+      }
+      lastWasBlank = false;
+      drawLine(raw, { bold: isSubjectLine(raw) });
+    }
   }
 
   return await pdf.save();

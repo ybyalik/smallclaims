@@ -34,6 +34,11 @@ function caseToIntake(c: Case): { intake: DemandLetterIntake | null; missing: st
     answers.lawsuit_threat_consent === "no"
       ? (answers.lawsuit_threat_consent as "yes" | "no")
       : undefined;
+  const civilcaseLetterhead =
+    answers.civilcase_letterhead === "yes" ||
+    answers.civilcase_letterhead === "no"
+      ? (answers.civilcase_letterhead as "yes" | "no")
+      : undefined;
   const disputeTypeOther =
     typeof answers.dispute_type_other === "string" &&
     answers.dispute_type_other.trim().length > 0
@@ -55,6 +60,7 @@ function caseToIntake(c: Case): { intake: DemandLetterIntake | null; missing: st
       cure_period_days: 14,
       state_specific_enhanced: false,
       lawsuit_threat_consent: consent,
+      civilcase_letterhead: civilcaseLetterhead,
       dispute_type_other: disputeTypeOther,
     },
     missing: [],
@@ -124,6 +130,27 @@ export async function ensureDemandLetterForCase(
   } catch (err) {
     console.error(`[ensureDemandLetter] case=${caseId} LLM call failed`, err);
     return { status: "skipped", letterId: null, reason: "llm_call_failed" };
+  }
+
+  // Race guard: between the initial existing-check and now, another
+  // concurrent call may have inserted a letter for this case (common when
+  // the user double-loads /letter while the first generation is in flight).
+  // Re-query just before insert so we use the existing row instead of
+  // creating a duplicate v1.
+  if (!opts.forceNew) {
+    const { data: raceWinner } = await admin
+      .from("demand_letters")
+      .select("id")
+      .eq("case_id", caseId)
+      .order("version", { ascending: false })
+      .limit(1)
+      .maybeSingle();
+    if (raceWinner?.id) {
+      console.log(
+        `[ensureDemandLetter] case=${caseId} race winner found ${raceWinner.id}, discarding fresh draft`,
+      );
+      return { status: "existing", letterId: raceWinner.id };
+    }
   }
 
   const { data: inserted, error: insertErr } = await admin

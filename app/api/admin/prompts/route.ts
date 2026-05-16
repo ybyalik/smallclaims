@@ -12,7 +12,7 @@ import { createServiceRoleClient } from "../../../../lib/supabase/service-role";
 export const runtime = "nodejs";
 
 const VALID_KEYS = new Set(["demand_letter"]);
-const VALID_ROLES = new Set(["system", "user_template"]);
+const VALID_ROLES = new Set(["system", "user_template", "cover_letter"]);
 const MAX_BODY = 50_000;
 const MAX_NOTES = 500;
 

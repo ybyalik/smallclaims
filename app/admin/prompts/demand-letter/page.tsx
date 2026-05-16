@@ -1,9 +1,14 @@
 import Link from "next/link";
 import { createServiceRoleClient } from "../../../../lib/supabase/service-role";
-import { loadActivePrompt, DEMAND_LETTER_PLACEHOLDERS } from "../../../../lib/prompts";
+import {
+  loadActivePrompt,
+  DEMAND_LETTER_PLACEHOLDERS,
+  COVER_LETTER_PLACEHOLDERS,
+} from "../../../../lib/prompts";
 import {
   FALLBACK_SYSTEM_PROMPT,
   FALLBACK_USER_TEMPLATE,
+  FALLBACK_COVER_LETTER_TEMPLATE,
 } from "../../../../lib/demand-letter/generate";
 import PromptEditor from "./PromptEditor";
 
@@ -14,12 +19,15 @@ export default async function DemandLetterPromptPage() {
   // When no DB version exists yet, seed the editor with the real in-code
   // constants so the admin can edit them as a starting point. Saving will
   // create the first DB version.
-  const [system, userTpl] = await Promise.all([
+  const [system, userTpl, coverLetter] = await Promise.all([
     loadActivePrompt("demand_letter", "system", {
       fallback: FALLBACK_SYSTEM_PROMPT,
     }),
     loadActivePrompt("demand_letter", "user_template", {
       fallback: FALLBACK_USER_TEMPLATE,
+    }),
+    loadActivePrompt("demand_letter", "cover_letter", {
+      fallback: FALLBACK_COVER_LETTER_TEMPLATE,
     }),
   ]);
 
@@ -53,7 +61,12 @@ export default async function DemandLetterPromptPage() {
         userSource={userTpl.source}
         userVersion={userTpl.version}
         userFallback={FALLBACK_USER_TEMPLATE}
+        coverBody={coverLetter.body}
+        coverSource={coverLetter.source}
+        coverVersion={coverLetter.version}
+        coverFallback={FALLBACK_COVER_LETTER_TEMPLATE}
         placeholders={DEMAND_LETTER_PLACEHOLDERS}
+        coverPlaceholders={COVER_LETTER_PLACEHOLDERS}
       />
 
       <section className="admin-prompt-history">

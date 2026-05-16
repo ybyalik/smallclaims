@@ -33,8 +33,12 @@ interface SpawnResponse {
   adminUrl: string;
 }
 
+type YesNo = "yes" | "no";
+
 export default function ScenarioRunner() {
   const [mode, setMode] = useState<Mode>("paid");
+  const [consent, setConsent] = useState<YesNo>("yes");
+  const [letterhead, setLetterhead] = useState<YesNo>("yes");
   const [busyKey, setBusyKey] = useState<string | null>(null);
   const [spawned, setSpawned] = useState<SpawnedCase[]>([]);
   const [loading, setLoading] = useState(true);
@@ -60,7 +64,13 @@ export default function ScenarioRunner() {
     setBusyKey("random");
     setError(null);
     try {
-      const res = await fetch(`/api/admin/test-scenarios?random=1&mode=${mode}`, {
+      const qs = new URLSearchParams({
+        random: "1",
+        mode,
+        consent,
+        letterhead,
+      });
+      const res = await fetch(`/api/admin/test-scenarios?${qs.toString()}`, {
         method: "POST",
       });
       if (!res.ok) {
@@ -154,6 +164,46 @@ export default function ScenarioRunner() {
               Paid (post-purchase)
             </button>
           </div>
+        </div>
+
+        {/* Demand-letter checkout-answer overrides. Mirrors the buy-form
+            questions so admins can spawn each combination without editing
+            intake_answers in Supabase by hand. */}
+        <div style={{ display: "flex", alignItems: "center", gap: 18, flexWrap: "wrap", marginBottom: 14 }}>
+          <label style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13 }}>
+            <span style={{ fontWeight: 600 }}>Small claims threat:</span>
+            <select
+              value={consent}
+              onChange={(e) => setConsent(e.target.value as YesNo)}
+              style={{
+                fontSize: 13,
+                padding: "6px 10px",
+                borderRadius: 6,
+                border: "1px solid var(--hairline)",
+                background: "#fff",
+              }}
+            >
+              <option value="yes">Yes (threaten suit)</option>
+              <option value="no">No (demand only)</option>
+            </select>
+          </label>
+          <label style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13 }}>
+            <span style={{ fontWeight: 600 }}>CivilCase letterhead:</span>
+            <select
+              value={letterhead}
+              onChange={(e) => setLetterhead(e.target.value as YesNo)}
+              style={{
+                fontSize: 13,
+                padding: "6px 10px",
+                borderRadius: 6,
+                border: "1px solid var(--hairline)",
+                background: "#fff",
+              }}
+            >
+              <option value="yes">Yes (CivilCase + cover letter)</option>
+              <option value="no">No (plaintiff letterhead)</option>
+            </select>
+          </label>
         </div>
 
         <div style={{ marginBottom: 6 }}>

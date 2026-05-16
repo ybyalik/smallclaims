@@ -1493,6 +1493,30 @@ button.app-link:disabled {
   white-space: nowrap;
 }
 
+/* Filing Kit (and any other step) highlighted as "recommended next step"
+   when the response tracker shows the defendant ignored or refused. Amber
+   accent so it reads as urgent without screaming. */
+.product-timeline-card-recommended {
+  position: relative;
+  border: 1.5px solid #d97706;
+  background: linear-gradient(180deg, #fffaf0 0%, #fff 70%);
+  box-shadow: 0 0 0 4px rgba(217, 119, 6, 0.08);
+}
+.product-timeline-recommended-pill {
+  position: absolute;
+  top: -10px;
+  left: 16px;
+  background: #d97706;
+  color: #fff;
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
 .product-timeline-pill {
   font-size: 11.5px;
   font-weight: 600;
@@ -1651,6 +1675,18 @@ button.app-link:disabled {
   font-style: italic;
   margin: 0;
 }
+
+/* Loading spinner shown on /letter while the LLM is generating */
+.letter-loading-spinner {
+  width: 32px;
+  height: 32px;
+  margin: 18px auto 0;
+  border: 3px solid #ebe9e3;
+  border-top-color: var(--ink, #111);
+  border-radius: 50%;
+  animation: letter-loading-spin 0.9s linear infinite;
+}
+@keyframes letter-loading-spin { to { transform: rotate(360deg); } }
 
 /* Embedded PDF product viewer (demand letter, collection plan) */
 .product-doc-view {

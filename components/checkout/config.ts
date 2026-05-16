@@ -169,6 +169,27 @@ export const DEMAND_LETTER_CONFIG: CheckoutConfig = {
         },
       ],
     },
+    {
+      key: "civilcase_letterhead",
+      label: "Use CivilCase letterhead and cover letter?",
+      helpText:
+        "Letters that arrive on a third-party letterhead with a formal cover note get materially higher reply rates than the same letter sent from an individual. Picking 'No' uses your own name and address on the letterhead, no cover page.",
+      required: true,
+      options: [
+        {
+          value: "yes",
+          label: "Yes (recommended for best reply rates)",
+          description:
+            "The envelope and letterhead show CivilCase as the sender, with a cover page explaining that the demand is being facilitated by CivilCase.com. The demand letter itself is still written in your voice and signed by you.",
+        },
+        {
+          value: "no",
+          label: "No, use my own letterhead",
+          description:
+            "Your name and address are at the top of the letter. No cover page. The defendant sees the letter as coming directly from you.",
+        },
+      ],
+    },
   ],
   captureMethod: "automatic",
   submitLabelBuilder: (d) => `Pay $${d}`,

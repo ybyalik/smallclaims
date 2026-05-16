@@ -4,6 +4,10 @@ import { searchEntities } from "../../../lib/sos-lookup";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
+// Cobalt does live SOS-website scraping per request; first-time lookups can
+// take 30-45s. Without this, Vercel's default 10s timeout (and similar
+// envs) would kill the request before Cobalt responds.
+export const maxDuration = 60;
 
 // POST /api/sos-lookup
 //   body: { name: string, state?: string, limit?: number }

@@ -4,6 +4,8 @@ import { useState, useTransition } from "react";
 import type { PlaceholderSpec } from "../../../../lib/prompts";
 import PromptTextarea from "../../../../components/admin/PromptTextarea";
 
+type Role = "system" | "user_template" | "cover_letter";
+
 interface Props {
   promptKey: string;
   systemBody: string;
@@ -14,7 +16,12 @@ interface Props {
   userSource: "db" | "fallback";
   userVersion: number | null;
   userFallback: string;
+  coverBody: string;
+  coverSource: "db" | "fallback";
+  coverVersion: number | null;
+  coverFallback: string;
   placeholders: PlaceholderSpec[];
+  coverPlaceholders: PlaceholderSpec[];
 }
 
 export default function PromptEditor({
@@ -27,21 +34,38 @@ export default function PromptEditor({
   userSource,
   userVersion,
   userFallback,
+  coverBody,
+  coverSource,
+  coverVersion,
+  coverFallback,
   placeholders,
+  coverPlaceholders,
 }: Props) {
   const [systemDraft, setSystemDraft] = useState(systemBody);
   const [userDraft, setUserDraft] = useState(userBody);
+  const [coverDraft, setCoverDraft] = useState(coverBody);
   const [systemNotes, setSystemNotes] = useState("");
   const [userNotes, setUserNotes] = useState("");
+  const [coverNotes, setCoverNotes] = useState("");
   const [error, setError] = useState<string | null>(null);
-  const [savedRole, setSavedRole] = useState<"system" | "user_template" | null>(null);
+  const [savedRole, setSavedRole] = useState<Role | null>(null);
   const [isPending, startTransition] = useTransition();
 
-  function save(role: "system" | "user_template") {
+  function save(role: Role) {
     setError(null);
     setSavedRole(null);
-    const body = role === "system" ? systemDraft : userDraft;
-    const notes = role === "system" ? systemNotes : userNotes;
+    const body =
+      role === "system"
+        ? systemDraft
+        : role === "user_template"
+          ? userDraft
+          : coverDraft;
+    const notes =
+      role === "system"
+        ? systemNotes
+        : role === "user_template"
+          ? userNotes
+          : coverNotes;
     startTransition(async () => {
       try {
         const res = await fetch("/api/admin/prompts", {
@@ -53,7 +77,8 @@ export default function PromptEditor({
         if (!res.ok) throw new Error(data.error || "Save failed");
         setSavedRole(role);
         if (role === "system") setSystemNotes("");
-        else setUserNotes("");
+        else if (role === "user_template") setUserNotes("");
+        else setCoverNotes("");
       } catch (e) {
         setError(e instanceof Error ? e.message : "Save failed");
       }
@@ -93,7 +118,7 @@ export default function PromptEditor({
             onClick={() => save("system")}
             disabled={isPending || systemDraft === systemBody}
           >
-            {isPending && savedRole !== "user_template" ? "Saving…" : "Save System Prompt"}
+            {isPending && savedRole === "system" ? "Saving…" : "Save System Prompt"}
           </button>
           {systemSource === "db" && systemBody !== systemFallback ? (
             <button
@@ -153,7 +178,7 @@ export default function PromptEditor({
             onClick={() => save("user_template")}
             disabled={isPending || userDraft === userBody}
           >
-            {isPending && savedRole !== "system" ? "Saving…" : "Save User Template"}
+            {isPending && savedRole === "user_template" ? "Saving…" : "Save User Template"}
           </button>
           {userSource === "db" && userBody !== userFallback ? (
             <button
@@ -180,14 +205,79 @@ export default function PromptEditor({
         </div>
       </section>
 
+      <section className="admin-prompt-panel">
+        <header>
+          <h2>Cover Letter Template</h2>
+          <p className="admin-page-sub">
+            The cover-page note that ships on top of the demand letter when
+            the plaintiff opts into CivilCase letterhead at checkout. Pure
+            template, no LLM call. Use{" "}
+            <code>{"{{plaintiff_name}}"}</code>,{" "}
+            <code>{"{{defendant_name}}"}</code>, etc. for per-case fields,
+            and wrap the conditional small-claims line in{" "}
+            <code>{"{{#if threat_consent_yes}}…{{/if}}"}</code> so it only
+            renders when the plaintiff opted into the threat.{" "}
+            <strong>
+              Source: {coverSource === "db" ? `database v${coverVersion}` : "in-code fallback"}
+            </strong>
+          </p>
+        </header>
+        <PromptTextarea
+          value={coverDraft}
+          onChange={setCoverDraft}
+          rows={18}
+        />
+        <label className="admin-prompt-notes">
+          <span>Change notes (optional)</span>
+          <input
+            type="text"
+            value={coverNotes}
+            onChange={(e) => setCoverNotes(e.target.value)}
+            placeholder="What you changed and why"
+          />
+        </label>
+        <div className="admin-prompt-actions">
+          <button
+            type="button"
+            className="btn btn-dark"
+            onClick={() => save("cover_letter")}
+            disabled={isPending || coverDraft === coverBody}
+          >
+            {isPending && savedRole === "cover_letter" ? "Saving…" : "Save Cover Letter"}
+          </button>
+          {coverSource === "db" && coverBody !== coverFallback ? (
+            <button
+              type="button"
+              className="btn btn-cream"
+              onClick={() => {
+                if (
+                  confirm(
+                    "Your saved version is out of date with the latest code default. Replace editor contents with the latest default? Click Save afterward to commit it.",
+                  )
+                ) {
+                  setCoverDraft(coverFallback);
+                }
+              }}
+              disabled={isPending}
+              title="Your saved DB version differs from the latest in-code default. Click to load the latest into the editor."
+            >
+              Load latest default
+            </button>
+          ) : null}
+          {savedRole === "cover_letter" ? (
+            <span className="admin-prompt-saved">Saved. Active on next generation.</span>
+          ) : null}
+        </div>
+      </section>
+
       {error ? <p className="admin-prompt-error">{error}</p> : null}
 
       <section className="admin-prompt-panel">
         <header>
           <h2>Available Placeholders</h2>
           <p className="admin-page-sub">
-            Use any of these inside the User Prompt Template. The generator
-            substitutes them with the actual case data at runtime. Unknown
+            Use these inside the User Prompt Template. The generator
+            substitutes them with actual case data at runtime. Unknown
             placeholders render as empty strings.
           </p>
         </header>
@@ -201,6 +291,38 @@ export default function PromptEditor({
           </thead>
           <tbody>
             {placeholders.map((p) => (
+              <tr key={p.key}>
+                <td>
+                  <code>{`{{${p.key}}}`}</code>
+                </td>
+                <td>{p.description}</td>
+                <td>
+                  <code>{p.exampleValue}</code>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </section>
+
+      <section className="admin-prompt-panel">
+        <header>
+          <h2>Cover Letter Placeholders</h2>
+          <p className="admin-page-sub">
+            Smaller surface area than the demand letter — the cover letter
+            only needs the headline case facts plus the threat-consent flag.
+          </p>
+        </header>
+        <table className="admin-prompt-placeholders">
+          <thead>
+            <tr>
+              <th>Placeholder</th>
+              <th>What it resolves to</th>
+              <th>Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            {coverPlaceholders.map((p) => (
               <tr key={p.key}>
                 <td>
                   <code>{`{{${p.key}}}`}</code>

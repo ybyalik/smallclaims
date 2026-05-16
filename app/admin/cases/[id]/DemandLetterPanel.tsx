@@ -142,6 +142,13 @@ export default function DemandLetterPanel({ caseId, letter }: Props) {
       <div style={{ display: "flex", gap: 8, marginTop: 12, flexWrap: "wrap" }}>
         {!editing ? (
           <>
+            <a
+              href={`/api/demand-letter/${caseId}/pdf`}
+              className="btn btn-cream btn-sm"
+              title="Download the current letter as PDF"
+            >
+              Download PDF
+            </a>
             <button
               type="button"
               className="btn btn-cream btn-sm"

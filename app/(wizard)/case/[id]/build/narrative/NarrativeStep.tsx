@@ -11,6 +11,7 @@ import {
 } from "../../../../../../lib/demand-letter/ai-mocks";
 import type { DisputeType } from "../../../../../../lib/supabase/types";
 import Combobox, { type ComboboxOption } from "../../../../../../components/wizard/Combobox";
+import { listStates } from "../../../../../../lib/demand-letter/state-context";
 import CountyField, {
   type CountyLookupStatus,
 } from "../../../../../../components/wizard/CountyField";
@@ -76,6 +77,13 @@ const CHIPS = [
   "My deposit wasn't returned.",
 ];
 
+const STATE_OPTIONS: ComboboxOption[] = listStates().map((s) => ({
+  value: s.abbr,
+  label: s.name,
+  sublabel: s.abbr,
+  search: s.abbr,
+}));
+
 export default function NarrativeStep({
   caseId,
   initialNarrative,
@@ -89,11 +97,28 @@ export default function NarrativeStep({
   const [incidentDate, setIncidentDate] = useState<string>(
     (initialAnswers.incident_date as string) || ""
   );
-  const [incidentLocation, setIncidentLocation] = useState<string>(
-    (initialAnswers.incident_location as string) || ""
+  // Initial city/state: prefer dedicated keys if they exist (set by this
+  // form going forward), fall back to parsing the legacy combined
+  // incident_location string so older cases still hydrate correctly.
+  const initialLegacyLoc = parseIncidentLocation(
+    (initialAnswers.incident_location as string) || "",
+  );
+  const [incidentCity, setIncidentCity] = useState<string>(
+    (initialAnswers.incident_city as string) || initialLegacyLoc.city || "",
+  );
+  const [incidentStateAbbr, setIncidentStateAbbr] = useState<string>(
+    (initialAnswers.incident_state as string) ||
+      (initialLegacyLoc.state || "").toUpperCase().slice(0, 2),
   );
   const [incidentCounty, setIncidentCounty] = useState<string>(
     (initialAnswers.incident_county as string) || ""
+  );
+  // Derived combined string, kept in sync for downstream consumers (validator,
+  // demand-letter generator, customer report) that read `incident_location`.
+  const incidentLocation = (
+    incidentCity.trim() && incidentStateAbbr.trim()
+      ? `${incidentCity.trim()}, ${incidentStateAbbr.trim().toUpperCase()}`
+      : incidentCity.trim() || incidentStateAbbr.trim()
   );
 
   const [saving, setSaving] = useState(false);
@@ -125,6 +150,8 @@ export default function NarrativeStep({
     intake_answers: {
       incident_date: incidentDate,
       incident_location: incidentLocation,
+      incident_city: incidentCity.trim() || null,
+      incident_state: incidentStateAbbr.trim().toUpperCase() || null,
       incident_county: incidentCounty,
     },
   });
@@ -166,6 +193,8 @@ export default function NarrativeStep({
           intake_answers: {
             incident_date: incidentDate,
             incident_location: incidentLocation,
+            incident_city: incidentCity.trim() || null,
+            incident_state: incidentStateAbbr.trim().toUpperCase() || null,
             incident_county: incidentCounty,
             ai_summary: summary,
             checklist,
@@ -287,13 +316,24 @@ export default function NarrativeStep({
             aria-invalid={!!errors.incidentDate}
           />
         </Field>
-        <Field label="Location (City, State)" required error={errors.incidentLocation}>
+        <Field label="City of incident" required error={errors.incidentLocation}>
           <input
-            value={incidentLocation}
-            onChange={(e) => setIncidentLocation(e.target.value)}
+            value={incidentCity}
+            onChange={(e) => setIncidentCity(e.target.value)}
             className="dlw-input"
-            placeholder="e.g., Austin, TX"
+            placeholder="e.g., Austin"
             aria-invalid={!!errors.incidentLocation}
+          />
+        </Field>
+        <Field label="State of incident" required error={errors.incidentLocation}>
+          <Combobox
+            id="incident-state"
+            value={incidentStateAbbr}
+            onChange={(v) => setIncidentStateAbbr(v.toUpperCase())}
+            options={STATE_OPTIONS}
+            ariaLabel="State of incident"
+            fullWidth
+            placeholder="Select…"
           />
         </Field>
       </div>
@@ -301,7 +341,10 @@ export default function NarrativeStep({
       <div style={{ marginTop: 22 }}>
         <Field label="Incident county" required error={errors.incidentCounty}>
           <CountyField
-            address={parseIncidentLocation(incidentLocation)}
+            address={{
+              city: incidentCity,
+              state: incidentStateAbbr,
+            }}
             value={incidentCounty}
             onChange={setIncidentCounty}
             label="Incident county"

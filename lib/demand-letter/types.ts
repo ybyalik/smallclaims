@@ -25,6 +25,11 @@ export interface DemandLetterIntake {
   // claims court" threat. "no" = letter must omit the consequence/court
   // threat and close with a seriousness note instead.
   lawsuit_threat_consent?: "yes" | "no";
+  // Whether to put CivilCase's letterhead + cover letter on the package.
+  // "yes" (default, recommended) = CivilCase letterhead at top, plus a
+  // separate cover-page note from CivilCase. "no" = plaintiff's own name and
+  // address on the letterhead, no cover letter.
+  civilcase_letterhead?: "yes" | "no";
   // Free-text description when dispute_type is "other". Plugs into the
   // letter prompt so the LLM has something concrete to anchor on instead of
   // the generic "an unresolved civil dispute" fallback.

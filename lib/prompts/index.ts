@@ -12,7 +12,7 @@
 import { createServiceRoleClient } from "../supabase/service-role";
 
 export type PromptKey = "demand_letter";
-export type PromptRole = "system" | "user_template";
+export type PromptRole = "system" | "user_template" | "cover_letter";
 
 export interface PromptTemplate {
   id: string;
@@ -55,13 +55,25 @@ export async function loadActivePrompt(
   return { body: opts.fallback, source: "fallback", version: null };
 }
 
-// Render a template with `{{var}}` placeholders. Unknown keys collapse to
+// Render a template with `{{var}}` placeholders and optional
+// `{{#if KEY}}...{{/if}}` conditional blocks (block included only when the
+// key's value is a non-empty string). Unknown variable keys collapse to
 // empty string so a typo'd placeholder doesn't crash generation.
 export function renderTemplate(template: string, ctx: Record<string, string>): string {
-  return template.replace(/\{\{\s*([a-z_][a-z0-9_]*)\s*\}\}/gi, (_match, key: string) => {
-    const value = ctx[key.toLowerCase()];
-    return value === undefined ? "" : value;
-  });
+  const withConditionals = template.replace(
+    /\{\{\s*#if\s+([a-z_][a-z0-9_]*)\s*\}\}([\s\S]*?)\{\{\s*\/if\s*\}\}/gi,
+    (_match, key: string, body: string) => {
+      const value = ctx[key.toLowerCase()];
+      return value ? body : "";
+    },
+  );
+  return withConditionals.replace(
+    /\{\{\s*([a-z_][a-z0-9_]*)\s*\}\}/gi,
+    (_match, key: string) => {
+      const value = ctx[key.toLowerCase()];
+      return value === undefined ? "" : value;
+    },
+  );
 }
 
 // List of placeholders the demand_letter user_template supports. Surfaced
@@ -87,4 +99,20 @@ export const DEMAND_LETTER_PLACEHOLDERS: PlaceholderSpec[] = [
   { key: "cure_period_days", description: "Number of days defendant has to respond", exampleValue: "14" },
   { key: "today_date", description: "Today's date in long format", exampleValue: "May 14, 2026" },
   { key: "state_law_context", description: "Full state-law context block. Includes (when available): statute-of-limitations matched to the user's claim type, statutory damage multipliers (e.g. 2x security deposit), prejudgment interest rate + statute, recoverable costs + attorney fees, demand-letter pre-suit requirements, government-tort notice deadline, small-claims jurisdictional cap, filing fees, post-judgment leverage, and explicit instructions for the LLM on how to use each section. Populated for every state via deep research.", exampleValue: "State-specific context for California:\n\nAPPLICABLE STATUTE OF LIMITATIONS (matched to this dispute type):\n- security_deposit: 2 years (Cal. Civ. Code § 1950.5)\n\nSTATUTORY DAMAGE MULTIPLIERS THAT MAY APPLY HERE:\n- Cal. Civ. Code § 1950.5(l): 2x — willful retention of security deposit\n\nIMPORTANT: If a multiplier above clearly applies..." },
+];
+
+// Placeholders the cover_letter template supports. Smaller surface area than
+// the demand letter itself because the cover letter is a static intro, not
+// a fully argued document.
+export const COVER_LETTER_PLACEHOLDERS: PlaceholderSpec[] = [
+  { key: "today_date", description: "Today's date in long format", exampleValue: "May 16, 2026" },
+  { key: "plaintiff_name", description: "Name of the plaintiff", exampleValue: "Yury Byalik" },
+  { key: "defendant_name", description: "Name of the defendant", exampleValue: "Acme Corp" },
+  { key: "defendant_address", description: "Multi-line formatted defendant address", exampleValue: "456 Oak Ave\nLos Angeles, CA 90001" },
+  {
+    key: "threat_consent_yes",
+    description:
+      "Truthy ('1') when the plaintiff opted into the small-claims threat at checkout, empty otherwise. Use inside {{#if threat_consent_yes}}...{{/if}} to include text only when the threat is on.",
+    exampleValue: "1",
+  },
 ];

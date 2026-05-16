@@ -42,6 +42,10 @@ interface StepProps {
   ctaHref: string;
   status: "purchased" | "ready";
   isLast?: boolean;
+  // Highlight this step as the recommended next move (amber accent + pill).
+  // Used by the case page when the user has recorded "no response" so the
+  // Filing Kit pops as the obvious thing to do next.
+  recommended?: boolean;
   // Optional extra content rendered inside the step card, below the CTA.
   // Used for the response tracker on the demand-letter step once the
   // letter has been purchased.
@@ -59,6 +63,7 @@ function Step({
   ctaHref,
   status,
   isLast,
+  recommended,
   children,
 }: StepProps) {
   return (
@@ -83,7 +88,16 @@ function Step({
           </span>
         ) : null}
       </div>
-      <div className="product-timeline-card">
+      <div
+        className={`product-timeline-card${
+          recommended ? " product-timeline-card-recommended" : ""
+        }`}
+      >
+        {recommended ? (
+          <span className="product-timeline-recommended-pill">
+            Recommended next step
+          </span>
+        ) : null}
         <div className="product-timeline-card-head">
           <h3>{title}</h3>
           {status === "purchased" ? (
@@ -231,17 +245,18 @@ export default async function CasePage({ params }: { params: { id: string } }) {
             <Step
               index={2}
               badge="Go to court"
-              title={`Small Claims Filing Kit${noResponseRecorded && !filingPaid ? ": your recommended next step" : ""}`}
+              title="Small Claims Filing Kit"
               tagline="Everything you need to file your case the right way the first time."
               details={`State- and county-specific filing guide. Court venue, fee schedule, required forms, service of process, and exactly what to bring on filing day.${
                 noResponseRecorded && !filingPaid
-                  ? " You marked the letter as ignored. This is the move."
+                  ? " You marked the letter as ignored or refused, this is the move."
                   : ""
               }`}
               priceLabel="$79"
               ctaLabel={filingPaid ? "Open filing kit" : "Buy Filing Kit"}
               ctaHref={filingPaid ? `/case/${c.id}/file` : `/case/${c.id}/buy/filing-guide`}
               status={filingPaid ? "purchased" : "ready"}
+              recommended={noResponseRecorded && !filingPaid}
             />
 
             <Step

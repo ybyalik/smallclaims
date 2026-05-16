@@ -126,6 +126,33 @@ export default function Combobox({
         autoComplete="off"
         disabled={disabled}
       />
+      {selected && !disabled ? (
+        <button
+          type="button"
+          className="dlw-combo-clear"
+          onClick={() => {
+            onChange("");
+            setQuery("");
+            setOpen(false);
+            inputRef.current?.focus();
+          }}
+          aria-label="Clear selection"
+          title="Clear"
+          tabIndex={-1}
+        >
+          <svg
+            viewBox="0 0 24 24"
+            width="14"
+            height="14"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+          >
+            <path d="M6 6l12 12M6 18L18 6" />
+          </svg>
+        </button>
+      ) : null}
       <button
         type="button"
         className="dlw-combo-toggle"

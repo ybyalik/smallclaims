@@ -43,6 +43,36 @@ export async function writeCustomerReport(
     currency: "USD",
   });
 
+  // Pre-filter statutory multipliers by the case's claim types so the writer
+  // doesn't have to read every state multiplier and pick the relevant ones
+  // itself. The case-research stage stamps classification.all_claim_types
+  // (primary + secondaries); a multiplier matches if any of its claim_types
+  // overlaps. Empty claim_types arrays are kept as a conservative fallback
+  // (some legacy rows lack the join key).
+  const cls = mergedPack.classification as unknown as Record<string, unknown> | undefined;
+  const caseClaimTypes = (() => {
+    const all = cls?.all_claim_types;
+    if (Array.isArray(all)) return (all as unknown[]).filter((x): x is string => typeof x === "string");
+    const primary = cls?.primary_claim_type;
+    return typeof primary === "string" && primary ? [primary] : [];
+  })();
+  const filteredPack: EvidencePack = (() => {
+    if (caseClaimTypes.length === 0) return mergedPack;
+    const lowerSet = new Set(caseClaimTypes.map((c) => c.toLowerCase()));
+    const relevant = (mergedPack.statutory_multipliers ?? []).filter((m) => {
+      const ct = m.claim_types ?? [];
+      if (ct.length === 0) return true;
+      return ct.some((c) => lowerSet.has((c ?? "").toLowerCase()));
+    });
+    return { ...mergedPack, statutory_multipliers: relevant };
+  })();
+
+  // Read the per-case prejudgment-interest rate that the case-research stage
+  // stamped onto recoverable_amounts. Surfaced as a dedicated prompt fact so
+  // the writer doesn't have to find it in the JSON dump.
+  const interestRate =
+    filteredPack.recoverable_amounts?.prejudgment_interest_rate_pct ?? null;
+
   const criticalNote = summary.critical_conflict_detected
     ? `\n\nCRITICAL CONFLICT FLAG\nThe two research branches disagreed on a fundamental aspect of this case (different court division, amount over the cap, etc.). Include a clearly visible section near the top under an H2 heading "Important: review needed" describing the disagreement in plain English so the reader knows to verify with the clerk before relying on the rest. The exact issue: ${summary.critical_conflict_notes}`
     : "";
@@ -68,8 +98,10 @@ CASE
 - Claim category: ${mergedPack.classification.claim_category}
 - Court division: ${mergedPack.classification.proper_court_type}
 
-MERGED EVIDENCE PACK (the reconciled facts you should use)
-${JSON.stringify(mergedPack, null, 2)}
+MERGED EVIDENCE PACK (the reconciled facts you should use). Note: statutory_multipliers has already been pre-filtered to those that match this case's claim type, so every entry is relevant. Do not exclude any.
+${JSON.stringify(filteredPack, null, 2)}
+
+PREJUDGMENT INTEREST RATE (already resolved for this claim type): ${interestRate !== null ? `${interestRate}% per year` : "(no rate available, omit the Prejudgment interest section)"}
 
 STATE RESEARCH FINDINGS (four sections concatenated: court structure/venue, deadlines/pre-filing, defendant ID/forms/fees/filing/service, hearing through collection)
 ${stateFindingsSlice}
@@ -108,6 +140,9 @@ ONLY include if arbitration_clause_considerations is non-empty. One paragraph in
 
 ## The deadline
 A paragraph stating the statute of limitations rule and the precise statute citation. Then, if you can compute the actual expiry date from the incident date plus the rule, state the date plainly: "Your deadline is approximately [date]." If you cannot compute, give the rule and ask the reader to compute. ALWAYS surface tolling, discovery rule, accrual specifics, and partial-payment-restart rules from classification.statute_of_limitations.notes if they have content — those are the most case-altering details.
+
+## Prejudgment interest
+ONLY include if the PREJUDGMENT INTEREST RATE fact at the top of this prompt is a real percentage (not the "no rate available" notice). One short paragraph in plain English. State the per-year rate, explain in one sentence that prejudgment interest is money the defendant owes for the time between when the debt arose and when the judge enters a judgment, and add one practical sentence on what the reader should do (request prejudgment interest in the complaint or at the hearing; many courts won't award it unless asked). If recoverable_amounts.prejudgment_interest_rate_pct is null AND no rate is in the merged pack, skip the section entirely. Do not invent a rate.
 
 ## Pre-filing requirements
 Walk through pre-filing steps with specifics. If demand_letter.required or demand_letter.recommended is true, dedicate a paragraph: what the letter must contain (use demand_letter.required_content_elements verbatim if available), the minimum days the plaintiff must wait (demand_letter.minimum_days_before_filing), whether Certified Mail and Return Receipt are required. If demand_letter.notes has content, weave it in (e.g., "Not legally required, but Certified Mail gives you proof of service"). If the defendant is or might be a government entity AND government_tort_claim_notice.required_for_government_defendants is true, add a paragraph on the tort-claim notice with the deadline_days, form_code, recipient_address, and statute. Cover any agency exhaustion or pre-suit mediation that applies. Say plainly which steps DO NOT apply, so the reader is reassured.
@@ -163,7 +198,7 @@ Three to five paragraphs. Cover the full collection toolkit using ALL populated 
 Don't list these as bullets — weave each into prose.
 
 ## State-specific rules to know
-ONLY include if state_specific_quirks or statutory_multipliers has entries. Cover statutory multipliers first as a focused paragraph: cite each statute, name the multiplier ("double damages", "treble damages"), and the conditions under which it applies ("if the landlord wilfully retained the security deposit beyond N days"). Then a paragraph on any state quirks not already covered elsewhere.
+ONLY include if state_specific_quirks or statutory_multipliers has entries. Cover statutory multipliers first as a focused paragraph. Every multiplier in the pack has already been filtered to this case's claim type, so cite ALL of them — do not omit any as irrelevant. For each: cite the statute, name the multiplier in plain English ("double damages", "treble damages"), and the conditions under which it applies ("if the landlord willfully retained the security deposit beyond N days"). End with one practical sentence on how to invoke it (typically: ask for it in the complaint and at the hearing). Then a paragraph on any state quirks not already covered elsewhere.
 
 ## Tax considerations
 ONLY include if tax_implications.recovery_taxability or form_1099_c_consideration has data. One short paragraph in plain English: whether the recovered money is taxable income (often interest portions are, compensatory portions for physical injury are not), and whether forgiving an uncollectible debt may trigger a 1099-C form on the plaintiff's tax return. Tell the reader to ask a tax professional, not their lawyer, about specifics.

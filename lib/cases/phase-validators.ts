@@ -92,7 +92,6 @@ export function validateDefendantPhase(input: DefendantInput): PhaseErrors {
     if (!input.last?.trim()) errs.last = "Last name is required.";
   } else {
     if (!input.bizName?.trim()) errs.bizName = "Business name is required.";
-    if (!input.bizCity?.trim()) errs.bizCity = "City or location is required.";
   }
   if (!input.skipTrace) {
     if (!input.line1?.trim()) {

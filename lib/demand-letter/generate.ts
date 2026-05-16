@@ -16,15 +16,16 @@ export const FALLBACK_SYSTEM_PROMPT = `You are drafting a pre-suit demand letter
 Output requirements:
 - Plain markdown only. No code fences. No HTML.
 - Length: 400-700 words. Concise, not padded. Slightly longer if a statutory multiplier or recoverable-fees note applies.
-- ADDRESS BLOCKS (plaintiff at top, defendant before "Re:"): put each line on its own line, exactly as supplied. Format:
+- ADDRESS BLOCKS (sender at top, defendant before "Re:"): put each line on its own line, exactly as supplied. Format:
     Yury Byalik
     123 Main St
     Apt 4B
     San Francisco, CA 94110
   Do NOT combine the lines with commas. Do NOT add ", " between street and city. Each line stays on its own line.
+- The SENDER block at the top is determined by the LETTERHEAD block in the user message (CivilCase letterhead vs. plaintiff's own letterhead). The signature at the bottom is always the plaintiff's name regardless of which letterhead is used.
 - Tone: firm and professional, not aggressive or threatening.
 - Structure (in this order):
-  1. Plaintiff's contact block at the top (name, address, email if provided)
+  1. Sender's contact block at the top (use the LETTERHEAD block below to decide whether this is the plaintiff or CivilCase)
   2. Date line
   3. Defendant's address block
   4. "Re:" line summarizing the dispute and amount
@@ -33,6 +34,7 @@ Output requirements:
   7. One paragraph stating the amount owed and the basis
   8. One paragraph stating the deadline to pay (the cure period). The content of the consequence statement depends on the PLAINTIFF CONSENT block below.
   9. Closing (content also depends on the PLAINTIFF CONSENT block below)
+  10. Signature line with the plaintiff's full name (always the plaintiff, even when the letterhead is CivilCase)
 - Do NOT cite any specific statute unless it appears verbatim in the State-Specific Context block below. Cite it exactly as written there (preserve section numbers and statute name).
 - Do NOT promise specific legal outcomes ("you will lose in court" is wrong; "I will file in small claims court" is fine).
 - Do NOT use the word "litigation" or "esquire" or attorney-style hedging.
@@ -65,11 +67,11 @@ The user message ends with a "Plaintiff consent" block telling you whether the p
 
 - If no consent block is present (legacy cases): default to "yes" behavior.
 
-Critical: The plaintiff is NOT an attorney. Do NOT write the letter as if it were on attorney letterhead. Write it as a self-represented individual or business owner.`;
+Critical: The plaintiff is NOT an attorney. Do NOT write the letter as if it were on attorney letterhead. Write it as a self-represented individual or business owner. CivilCase (when used on the letterhead) is a small-claims help platform, not a law firm. Do not refer to CivilCase as an attorney, counsel, or law firm. Do not have CivilCase speak in the first person inside the letter body. The letter is from the plaintiff; CivilCase is only the sender of record on the envelope and letterhead.`;
 
 export const FALLBACK_USER_TEMPLATE = `Generate a demand letter for the following situation.
 
-PLAINTIFF (the person sending the letter):
+PLAINTIFF (the person on whose behalf the demand is made):
 Name: {{plaintiff_name}}
 Address:
 {{plaintiff_address}}
@@ -97,6 +99,8 @@ TODAY'S DATE: {{today_date}}
 
 {{claim_type_block}}
 
+{{letterhead_block}}
+
 {{consent_block}}
 
 Now draft the demand letter following the structure I specified.`;
@@ -106,6 +110,57 @@ function formatAddress(addr: { line1: string; line2?: string | null; city: strin
   if (addr.line2) lines.push(addr.line2);
   lines.push(`${addr.city}, ${addr.state} ${addr.zip}`);
   return lines.join("\n");
+}
+
+// Reserved marker the PDF renderer treats as a forced page break. The cover
+// letter sits before this marker so it lands on its own page in the PDF.
+export const PAGE_BREAK_MARKER = "<!-- PAGEBREAK -->";
+
+// In-code fallback for the CivilCase cover letter. Used when no admin
+// override exists in prompt_templates(key=demand_letter, role=cover_letter).
+// Editable from /admin/prompts/demand-letter.
+export const FALLBACK_COVER_LETTER_TEMPLATE = `CivilCase
+32 N Gould St
+Sheridan, WY 82801
+
+{{today_date}}
+
+{{defendant_name}}
+{{defendant_address}}
+
+Re: Enclosed demand letter from {{plaintiff_name}}
+
+Dear {{defendant_name}}:
+
+Enclosed is a formal demand letter from {{plaintiff_name}} regarding the matter described in the attached letter. This demand is being sent and facilitated by CivilCase.com, a platform that helps individuals pursue resolution of small claims disputes.
+{{#if threat_consent_yes}}
+The plaintiff has taken the first steps toward filing a small claims action and intends to proceed if the matter is not resolved within the stated deadline.
+{{/if}}
+Please review the enclosed letter carefully and respond by the deadline stated within.
+
+Sincerely,
+
+CivilCase`;
+
+// Build the cover letter from the admin-editable template. The "static" feel
+// (everyone gets the same wording) comes from the template body itself, not
+// from hardcoded strings — change the template at /admin/prompts/demand-letter
+// to rewrite the cover letter for every future send.
+async function buildCoverLetter(
+  intake: DemandLetterIntake,
+  todayDate: string,
+): Promise<string> {
+  const tpl = await loadActivePrompt("demand_letter", "cover_letter", {
+    fallback: FALLBACK_COVER_LETTER_TEMPLATE,
+  });
+  return renderTemplate(tpl.body, {
+    today_date: todayDate,
+    plaintiff_name: intake.plaintiff_name,
+    defendant_name: intake.defendant_name,
+    defendant_address: formatAddress(intake.defendant_address),
+    threat_consent_yes:
+      intake.lawsuit_threat_consent === "no" ? "" : "1",
+  });
 }
 
 function formatDollars(amount_cents: number): string {
@@ -162,6 +217,17 @@ export async function generateDemandLetter(
         ? `Plaintiff consent: YES. The plaintiff has authorized this letter to state that a small claims action will be filed if payment is not received by the deadline. Include that consequence clearly in the deadline paragraph.`
         : `Plaintiff consent: YES (default). The deadline paragraph should state that a small claims action will be filed if payment is not received by the deadline.`;
 
+  // CivilCase letterhead is the default (recommended). Only an explicit "no"
+  // switches back to the plaintiff's own letterhead.
+  const useCivilCaseLetterhead = intake.civilcase_letterhead !== "no";
+  const letterheadBlock = useCivilCaseLetterhead
+    ? `LETTERHEAD: Use CivilCase as the sender on the letterhead at the top of the demand letter. Format the sender block exactly like this (each line on its own line):
+    CivilCase
+    32 N Gould St
+    Sheridan, WY 82801
+The body of the letter is still written in the plaintiff's first-person voice ("I", "my"). The signature line at the bottom of the letter is the plaintiff's full name (${intake.plaintiff_name}). Do NOT include CivilCase in the signature; CivilCase only appears on the letterhead. Do NOT mention CivilCase inside the body of the letter.`
+    : `LETTERHEAD: Use the plaintiff (${intake.plaintiff_name}) as the sender on the letterhead at the top of the demand letter. Use the plaintiff's address block as supplied above.`;
+
   // Build a short claim-type block for the LLM. When the classifier has
   // identified multiple legal theories, we want the letter prose to mention
   // them all so the case is described accurately.
@@ -198,6 +264,7 @@ export async function generateDemandLetter(
     state_law_context: stateCtx.contextBlock,
     consent_block: consentBlock,
     claim_type_block: claimTypeBlock,
+    letterhead_block: letterheadBlock,
   };
 
   const userPrompt = renderTemplate(userTpl.body, ctx);
@@ -211,8 +278,13 @@ export async function generateDemandLetter(
     max_tokens: 2000,
   });
 
+  const letterBody = result.text.trim();
+  const finalBody = useCivilCaseLetterhead
+    ? `${await buildCoverLetter(intake, today)}\n\n${PAGE_BREAK_MARKER}\n\n${letterBody}`
+    : letterBody;
+
   return {
-    body_md: result.text.trim(),
+    body_md: finalBody,
     template_key: stateCtx.stateEnhanced
       ? `${intake.dispute_type}_${intake.state.toLowerCase()}_v1`
       : `${intake.dispute_type}_generic_v1`,

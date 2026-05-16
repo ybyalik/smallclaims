@@ -6,6 +6,7 @@ import { notFound, redirect } from "next/navigation";
 import { createClient } from "../../lib/supabase/server";
 import { loadOwnedCase } from "../../lib/demand-letter/access";
 import { reconcilePendingPayment } from "../../lib/payments/reconcile";
+import { ensureDemandLetterForCase } from "../../lib/demand-letter/ensure-letter";
 import type { ProductKey } from "../../lib/stripe";
 import OrderConfirmation from "./OrderConfirmation";
 import type { ProductKind } from "./config";
@@ -43,6 +44,17 @@ export default async function PurchaseSuccessPage({
   if (!c) notFound();
 
   const result = await reconcilePendingPayment(c.id, productKey);
+
+  // For demand-letter purchases, kick off letter generation in parallel with
+  // the user reading the order confirmation. By the time they click through
+  // to /case/[id]/letter the letter row should already be in the database,
+  // so they don't sit on a blank iframe waiting 10-15s for the LLM.
+  // Fire-and-forget: we don't want the success page to block on it.
+  if (productKind === "demand-letter") {
+    ensureDemandLetterForCase(c.id).catch((e) => {
+      console.warn("[purchase-success] eager letter generation failed", e);
+    });
+  }
 
   return (
     <div className="app-checkout-shell">

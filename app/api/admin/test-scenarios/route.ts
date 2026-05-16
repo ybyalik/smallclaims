@@ -119,6 +119,10 @@ export async function POST(req: NextRequest) {
   const params = new URL(req.url).searchParams;
   const random = params.get("random") === "1";
   const mode = params.get("mode") === "draft" ? "draft" : "paid";
+  // Checkout-answer overrides. Default to the buy-form defaults (both "yes")
+  // so an admin who doesn't think about it gets the recommended path.
+  const lawsuitThreatConsent = params.get("consent") === "no" ? "no" : "yes";
+  const civilcaseLetterhead = params.get("letterhead") === "no" ? "no" : "yes";
 
   if (!random) {
     return NextResponse.json(
@@ -130,8 +134,12 @@ export async function POST(req: NextRequest) {
   const scenario: TestScenario = generateRandomScenario();
 
   // Tag the case so we can list/delete it later from this page.
+  // Stamp the two demand-letter checkout answers so the letter generator
+  // honors the admin's override instead of falling back to defaults.
   const intakeAnswersWithMarker = {
     ...scenario.intake_answers,
+    lawsuit_threat_consent: lawsuitThreatConsent,
+    civilcase_letterhead: civilcaseLetterhead,
     _test_scenario: true,
     _test_scenario_slug: scenario.slug,
     _test_scenario_label: scenario.label,
@@ -194,6 +202,20 @@ export async function POST(req: NextRequest) {
       paid_at: new Date().toISOString(),
       line_items: { admin_bypass: true, source: "test_scenario" },
     });
+
+    // Eager-generate the demand letter so the admin doesn't sit on a blank
+    // page waiting 10-15 seconds the first time they click "Open letter."
+    // Idempotent — does nothing if a letter already exists. Errors are
+    // swallowed because the spawn itself shouldn't fail just because the
+    // LLM hiccupped; the /letter route will retry on visit.
+    try {
+      const { ensureDemandLetterForCase } = await import(
+        "../../../../lib/demand-letter/ensure-letter"
+      );
+      await ensureDemandLetterForCase(caseRow.id);
+    } catch (e) {
+      console.warn("[test-scenarios] eager letter generation failed", e);
+    }
   }
 
   // For draft mode, jump straight into the wizard so the admin can test

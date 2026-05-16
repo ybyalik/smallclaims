@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { User, Building2, Search, CheckCircle2 } from "lucide-react";
 import type { PostalAddress } from "../../../../../../lib/supabase/types";
@@ -84,7 +84,6 @@ export default function DefendantStep({
   const [last, setLast] = useState(lastName);
 
   // Business
-  const [bizCity, setBizCity] = useState((initialAnswers.defendant_business_city as string) || "");
   const [bizName, setBizName] = useState(
     initialEntity === "business" ? initialName : ""
   );
@@ -105,6 +104,18 @@ export default function DefendantStep({
   const [sosSearching, setSosSearching] = useState(false);
   const [sosError, setSosError] = useState<string | null>(null);
   const [sosShowResults, setSosShowResults] = useState(false);
+  // Elapsed seconds while a search is in flight. Cobalt does live SOS-website
+  // scraping so a first-time lookup in a state can take 30-45s — without a
+  // visible counter the UI looks frozen.
+  const [sosElapsed, setSosElapsed] = useState(0);
+  useEffect(() => {
+    if (!sosSearching) return;
+    setSosElapsed(0);
+    const id = window.setInterval(() => {
+      setSosElapsed((s) => s + 1);
+    }, 1000);
+    return () => window.clearInterval(id);
+  }, [sosSearching]);
 
   // Shared
   const [email, setEmail] = useState(initialEmail);
@@ -141,7 +152,6 @@ export default function DefendantStep({
     intake_answers: {
       defendant_entity_type: entity,
       defendant_skip_trace_needed: skipTrace,
-      defendant_business_city: entity === "business" ? bizCity : undefined,
       defendant_business_subtype: entity === "business" ? bizSubtype : undefined,
       defendant_website: entity === "business" ? bizWebsite : undefined,
       defendant_sos_match: entity === "business" ? sosMatch : null,
@@ -151,16 +161,24 @@ export default function DefendantStep({
 
   async function runSosSearch() {
     if (!bizName.trim() || sosSearching) return;
+    // Cobalt requires a specific state — its API rejects "ALL" / nationwide.
+    // Source of truth is the State dropdown in the mailing-address block.
+    const stateHint = (() => {
+      const fromDropdown = (stateAbbr || "").trim().toUpperCase();
+      return fromDropdown.length === 2 ? fromDropdown : undefined;
+    })();
+    if (!stateHint) {
+      setSosError(
+        "Pick the defendant's state below before searching. The SOS lookup needs a state to query.",
+      );
+      setSosResults(null);
+      setSosShowResults(true);
+      return;
+    }
     setSosSearching(true);
     setSosError(null);
     setSosShowResults(true);
     try {
-      // Try to derive a state hint from the city field ("Las Vegas, NV").
-      // Fall back to no state hint, which searches across all US jurisdictions.
-      const stateHint = (() => {
-        const m = bizCity.match(/,\s*([A-Z]{2})\b/i);
-        return m ? m[1].toUpperCase() : undefined;
-      })();
       const res = await fetch("/api/sos-lookup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -215,7 +233,6 @@ export default function DefendantStep({
       first,
       last,
       bizName,
-      bizCity,
       skipTrace,
       line1,
       city,
@@ -252,7 +269,6 @@ export default function DefendantStep({
           intake_answers: {
             defendant_entity_type: entity,
             defendant_skip_trace_needed: skipTrace,
-            defendant_business_city: entity === "business" ? bizCity : undefined,
             defendant_business_subtype: entity === "business" ? bizSubtype : undefined,
             defendant_website: entity === "business" ? bizWebsite : undefined,
             secondary_defendant: hasSecondary ? secondary : null,
@@ -270,7 +286,7 @@ export default function DefendantStep({
   // Build an ordered list of error messages for the summary, matching the
   // visual order of the form so the user can scan it intuitively.
   function errorMessages(): string[] {
-    const order = ["first", "last", "bizCity", "bizName", "line1", "city", "stateAbbr", "zip", "county"];
+    const order = ["first", "last", "bizName", "line1", "city", "stateAbbr", "zip", "county"];
     const ordered = order.filter((k) => errors[k]).map((k) => errors[k]);
     if (errors._save) ordered.push(errors._save);
     return ordered;
@@ -358,20 +374,11 @@ export default function DefendantStep({
       ) : (
         <div className="dlw-fields">
           <Field
-            label="City or location"
+            label="Business name"
             required
-            error={errors.bizCity}
-            hint="We need a location before we can search for the business."
+            error={errors.bizName}
+            hint="Pick the defendant's state in the address block below, then click Verify entity to confirm the exact legal name with the Secretary of State."
           >
-            <input
-              value={bizCity}
-              onChange={(e) => setBizCity(e.target.value)}
-              className="dlw-input"
-              placeholder="e.g., Las Vegas, NV"
-              aria-invalid={!!errors.bizCity}
-            />
-          </Field>
-          <Field label="Business name" required error={errors.bizName}>
             <div className="dlw-sos-row">
               <input
                 value={bizName}
@@ -383,21 +390,51 @@ export default function DefendantStep({
                   }
                 }}
                 className="dlw-input"
-                disabled={!bizCity.trim()}
-                placeholder={bizCity ? "Type the business name…" : "Enter city first"}
+                placeholder="Type the business name…"
                 aria-invalid={!!errors.bizName}
               />
               <button
                 type="button"
                 className="dlw-sos-btn"
                 onClick={runSosSearch}
-                disabled={!bizName.trim() || !bizCity.trim() || sosSearching}
-                title="Search Secretary of State records to confirm the legal entity"
+                disabled={
+                  !bizName.trim() ||
+                  (stateAbbr || "").trim().length !== 2 ||
+                  sosSearching
+                }
+                title={
+                  (stateAbbr || "").trim().length !== 2
+                    ? "Pick the defendant's state in the address block below first."
+                    : "Search the Secretary of State records to confirm the legal entity."
+                }
               >
                 <Search size={14} strokeWidth={2} aria-hidden />
                 {sosSearching ? "Searching…" : "Verify entity"}
               </button>
             </div>
+            {!sosMatch && !sosSearching && (stateAbbr || "").trim().length !== 2 ? (
+              <p className="dlw-sos-hint">
+                Pick the defendant&rsquo;s state in the address block below to
+                enable Verify entity.
+              </p>
+            ) : null}
+
+            {sosSearching ? (
+              <div className="dlw-sos-progress" role="status" aria-live="polite">
+                <div className="dlw-sos-progress-bar">
+                  <div
+                    className="dlw-sos-progress-bar-fill"
+                    style={{
+                      width: `${Math.min(95, Math.round((sosElapsed / 45) * 100))}%`,
+                    }}
+                  />
+                </div>
+                <p>
+                  Querying the Secretary of State live. First-time lookups can
+                  take up to 45 seconds. Elapsed: {sosElapsed}s.
+                </p>
+              </div>
+            ) : null}
 
             {sosMatch ? (
               <div className="dlw-sos-confirmed">
