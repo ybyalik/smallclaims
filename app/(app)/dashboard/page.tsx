@@ -13,6 +13,11 @@ import PageHead from "../../../components/layout/PageHead";
 import StatusBadge from "../../../components/ui/StatusBadge";
 import EmptyState from "../../../components/ui/EmptyState";
 import { listCasesWithPendingAction } from "../../../lib/notifications";
+import {
+  loadSolDeadlinesForCases,
+  formatDeadlineDistance,
+  formatExpiryDate,
+} from "../../../lib/cases/sol-deadline";
 import { Bell } from "lucide-react";
 import type { ProductKey } from "../../../lib/stripe";
 
@@ -158,6 +163,8 @@ export default async function DashboardHome() {
   // Cases with unresolved action-required notifications get a bell next to
   // the case name in the recent-cases list.
   const pendingActionCases = await listCasesWithPendingAction(user.id);
+  // Rough SOL filing-deadline indicator shown under the case row.
+  const solDeadlines = await loadSolDeadlinesForCases(recentCases);
 
   if (cases.length === 0) {
     return (
@@ -290,6 +297,26 @@ export default async function DashboardHome() {
                       )}{" "}
                       · {c.state} · updated {formatRelative(c.updated_at)}
                     </div>
+                    {(() => {
+                      const dl = solDeadlines.get(c.id);
+                      if (!dl) return null;
+                      const label =
+                        dl.urgency === "expired"
+                          ? `Statute may have run on ${formatExpiryDate(dl)} — verify with the clerk`
+                          : `Approx. filing deadline: ${formatExpiryDate(dl)} (${formatDeadlineDistance(dl)})`;
+                      return (
+                        <div
+                          className={`app-case-deadline app-case-deadline-${dl.urgency}`}
+                          title={
+                            dl.citation
+                              ? `${dl.solYears}-year SOL · ${dl.citation}`
+                              : `${dl.solYears}-year SOL`
+                          }
+                        >
+                          {label}
+                        </div>
+                      );
+                    })()}
                   </div>
                   <div className="app-case-products-cell">
                     <ProductChipList badges={badges} emptyHint="None yet" />
