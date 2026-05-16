@@ -109,7 +109,12 @@ export async function createCertifiedLetter(
   );
   form.append("color", "false");
   form.append("doubleSided", "true");
-  form.append("addressPlacement", "top_first_page");
+  // Use a separate carrier sheet for the recipient address so PostGrid's
+  // auto-printed address block doesn't overlap our cover letter / letterhead.
+  // top_first_page reserves the top ~3in of page 1 for the address window;
+  // our CivilCase cover letter occupies exactly that area, which produces
+  // "Content found overlapping address region" rejections from PostGrid.
+  form.append("addressPlacement", "insert_blank_page");
   form.append("mailingClass", "first_class");
   form.append("extraService", input.extraService ?? "certified_return_receipt");
   form.append("description", input.description.slice(0, 256));
