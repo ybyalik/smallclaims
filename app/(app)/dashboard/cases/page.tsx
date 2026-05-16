@@ -155,10 +155,8 @@ export default async function DashboardHome() {
                   {dl ? (
                     <div className={`app-case-sol app-case-sol-${dl.urgency}`}>
                       <div className="app-case-sol-label">Filing deadline</div>
-                      <div className="app-case-sol-distance">
-                        {dl.urgency === "expired"
-                          ? "May have run"
-                          : formatDeadlineDistance(dl)}
+                      <div className="app-case-sol-date">
+                        {formatExpiryDate(dl)}
                         <span
                           className="app-case-sol-help"
                           tabIndex={0}
@@ -193,9 +191,6 @@ export default async function DashboardHome() {
                             </em>
                           </span>
                         </span>
-                      </div>
-                      <div className="app-case-sol-date">
-                        {formatExpiryDate(dl)}
                       </div>
                     </div>
                   ) : null}
