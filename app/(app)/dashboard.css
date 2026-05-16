@@ -123,31 +123,62 @@
   text-align: center;
 }
 
-/* Bare info icon — sits below the status badge with extra breathing
-   room. Hover or focus to reveal the styled tooltip with all the
-   detail (date, statute, disclaimer). Icon color signals urgency at
-   a glance even before hover. */
-.app-case-sol-icon {
+/* Filing-deadline text block sitting below the status badge. Label +
+   distance + exact date, with a small ? icon next to the distance.
+   Hovering the ? reveals the full tooltip (statute citation,
+   when-clock-starts, disclaimer). */
+.app-case-sol {
+  font-size: 11px;
+  line-height: 1.4;
+  color: #6a675e;
+}
+.app-case-sol-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #8a8780;
+}
+.app-case-sol-distance {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+  font-size: 11.5px;
+}
+.app-case-sol-date {
+  font-size: 10.5px;
+  color: #8a8780;
+}
+/* Color the distance line by urgency. */
+.app-case-sol-normal .app-case-sol-distance { color: #4f4c46; }
+.app-case-sol-warning .app-case-sol-distance { color: #9a4b00; }
+.app-case-sol-critical .app-case-sol-distance { color: #b1281a; }
+.app-case-sol-expired .app-case-sol-distance {
+  color: #8a8780;
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* ? help icon next to the distance text. Owns the tooltip popover. */
+.app-case-sol-help {
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 22px;
-  height: 22px;
+  width: 16px;
+  height: 16px;
   border-radius: 999px;
   cursor: help;
   color: #8a8780;
   transition: color 0.15s ease, background 0.15s ease;
 }
-.app-case-sol-icon:hover,
-.app-case-sol-icon:focus {
+.app-case-sol-help:hover,
+.app-case-sol-help:focus {
   outline: none;
-  background: rgba(0, 0, 0, 0.04);
+  color: var(--ink, #111);
+  background: rgba(0, 0, 0, 0.06);
 }
-.app-case-sol-icon-normal { color: #8a8780; }
-.app-case-sol-icon-warning { color: #b45309; }
-.app-case-sol-icon-critical { color: #c0392b; }
-.app-case-sol-icon-expired { color: #8a8780; }
 
 /* CSS-only tooltip. Hidden by default, appears on pill hover or focus.
    pointer-events: none so the parent Link's click still works through
@@ -192,9 +223,9 @@
   border: 6px solid transparent;
   border-top-color: #1f1f1f;
 }
-.app-case-sol-pill:hover .app-case-sol-tip,
-.app-case-sol-pill:focus .app-case-sol-tip,
-.app-case-sol-pill:focus-within .app-case-sol-tip {
+.app-case-sol-help:hover .app-case-sol-tip,
+.app-case-sol-help:focus .app-case-sol-tip,
+.app-case-sol-help:focus-within .app-case-sol-tip {
   opacity: 1;
   visibility: visible;
 }

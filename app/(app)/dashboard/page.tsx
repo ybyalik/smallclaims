@@ -18,7 +18,7 @@ import {
   formatDeadlineDistance,
   formatExpiryDate,
 } from "../../../lib/cases/sol-deadline";
-import { Bell, Info } from "lucide-react";
+import { Bell, HelpCircle } from "lucide-react";
 import type { ProductKey } from "../../../lib/stripe";
 
 export const metadata: Metadata = {
@@ -280,40 +280,51 @@ export default async function DashboardHome() {
                   <div className="app-case-status-cell">
                     <StatusBadge tone={tone}>{statusLabel}</StatusBadge>
                     {dl ? (
-                      <span
-                        className={`app-case-sol-icon app-case-sol-icon-${dl.urgency}`}
-                        tabIndex={0}
-                        role="button"
-                        aria-label={`Filing deadline: ${dl.urgency === "expired" ? "may have run" : formatDeadlineDistance(dl)}`}
-                        aria-describedby={`sol-tip-${c.id}`}
-                      >
-                        <Info size={14} strokeWidth={2} aria-hidden />
-                        <span
-                          id={`sol-tip-${c.id}`}
-                          className="app-case-sol-tip"
-                          role="tooltip"
-                        >
-                          <strong>
-                            {dl.urgency === "expired"
-                              ? "Filing deadline may have run"
-                              : `${formatDeadlineDistance(dl)} to file`}
-                          </strong>
-                          <br />
-                          Approx. {formatExpiryDate(dl)} ·{" "}
-                          {dl.solYears}-year statute of limitations
-                          {dl.citation ? ` (${dl.citation})` : ""}
-                          {dl.whenClockStarts
-                            ? `, clock starts ${dl.whenClockStarts}`
-                            : ""}
-                          .
-                          <br />
-                          <em>
-                            Approximate only. Real deadlines can shift for
-                            tolling, discovery rule, or partial-payment restart.
-                            Verify with the clerk.
-                          </em>
-                        </span>
-                      </span>
+                      <div className={`app-case-sol app-case-sol-${dl.urgency}`}>
+                        <div className="app-case-sol-label">Filing deadline</div>
+                        <div className="app-case-sol-distance">
+                          {dl.urgency === "expired"
+                            ? "May have run"
+                            : formatDeadlineDistance(dl)}
+                          <span
+                            className="app-case-sol-help"
+                            tabIndex={0}
+                            role="button"
+                            aria-label="Filing deadline details"
+                            aria-describedby={`sol-tip-${c.id}`}
+                          >
+                            <HelpCircle size={12} strokeWidth={2} aria-hidden />
+                            <span
+                              id={`sol-tip-${c.id}`}
+                              className="app-case-sol-tip"
+                              role="tooltip"
+                            >
+                              <strong>
+                                {dl.urgency === "expired"
+                                  ? "Filing deadline may have run"
+                                  : `${formatDeadlineDistance(dl)} to file`}
+                              </strong>
+                              <br />
+                              Approx. {formatExpiryDate(dl)} ·{" "}
+                              {dl.solYears}-year statute of limitations
+                              {dl.citation ? ` (${dl.citation})` : ""}
+                              {dl.whenClockStarts
+                                ? `, clock starts ${dl.whenClockStarts}`
+                                : ""}
+                              .
+                              <br />
+                              <em>
+                                Approximate only. Real deadlines can shift for
+                                tolling, discovery rule, or partial-payment
+                                restart. Verify with the clerk.
+                              </em>
+                            </span>
+                          </span>
+                        </div>
+                        <div className="app-case-sol-date">
+                          {formatExpiryDate(dl)}
+                        </div>
+                      </div>
                     ) : null}
                   </div>
                   <div>
