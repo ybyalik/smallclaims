@@ -133,27 +133,26 @@
   color: #6a675e;
 }
 .app-case-sol-label {
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: #8a8780;
+  letter-spacing: 0.02em;
+  color: var(--ink, #111);
 }
 .app-case-sol-date {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 12px;
+  color: #4f4c46;
 }
-/* Color the date by urgency. */
-.app-case-sol-normal .app-case-sol-date { color: #1f1f1f; }
+/* Subtle urgency color on the date itself (no bolding — bold stays on the
+   "Filing deadline" label per design). */
 .app-case-sol-warning .app-case-sol-date { color: #9a4b00; }
-.app-case-sol-critical .app-case-sol-date { color: #b1281a; }
+.app-case-sol-critical .app-case-sol-date { color: #b1281a; font-weight: 600; }
 .app-case-sol-expired .app-case-sol-date {
   color: #8a8780;
   font-style: italic;
-  font-weight: 600;
 }
 
 /* ? help icon next to the distance text. Owns the tooltip popover. */
