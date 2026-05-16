@@ -281,7 +281,7 @@ export default async function AdminCaseDetailPage({ params }: { params: { id: st
       <h2 className="admin-section-h" style={{ marginTop: 28 }}>Demand letter</h2>
       <DemandLetterPanel caseId={params.id} letter={demandLetter} />
 
-      <h2 className="admin-section-h" style={{ marginTop: 28 }}>Filing research</h2>
+      <h2 className="admin-section-h" style={{ marginTop: 28 }}>Case research</h2>
       <CaseResearchPanel caseId={params.id} detail={research} />
 
       <h2 className="admin-section-h" style={{ marginTop: 28 }}>Collection plan</h2>
