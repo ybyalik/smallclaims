@@ -30,12 +30,6 @@ const PHASES = [
   { key: "review", label: "Review" },
 ] as const;
 
-// Legacy prescreen step keys. The standalone Quick Start track is gone —
-// Eligibility and Category have moved into the main PHASES nav, and the
-// old amount/state/recovery steps redirect to /build root which routes
-// the user to the first unfilled phase.
-const PRESCREEN_STEPS = ["category", "amount", "state", "eligibility", "recovery"] as const;
-
 // Each "section" in the nav is one phase. Completion is computed from case
 // fields so the user sees real progress regardless of which order they
 // fill them in. Delegates to the shared phase validators in
@@ -66,25 +60,14 @@ function isPhaseComplete(c: Case, phaseKey: string): boolean {
   }
 }
 
-const ALL_STEPS_ORDER = [
-  ...PRESCREEN_STEPS,
-  ...PHASES.map((p) => p.key),
-] as const;
-
-type StepKey = (typeof ALL_STEPS_ORDER)[number];
+type StepKey = (typeof PHASES)[number]["key"];
 
 export default function WizardShell({ caseRow, children }: Props) {
   const pathname = usePathname() || "";
   const currentSlug = (pathname.split("/").pop() || "") as StepKey;
 
-  const isPrescreen = (PRESCREEN_STEPS as readonly string[]).includes(currentSlug);
-  const currentPrescreenIdx = PRESCREEN_STEPS.indexOf(
-    currentSlug as (typeof PRESCREEN_STEPS)[number]
-  );
   const phaseIdx = PHASES.findIndex((p) => p.key === currentSlug);
   const activePhase = phaseIdx >= 0 ? phaseIdx : -1;
-
-  const reachedIdx = computeReachedIdx(caseRow, currentSlug);
 
   const confidence = computeConfidence(caseRow);
   const confidenceBand = bandLabel(confidence);
@@ -99,26 +82,7 @@ export default function WizardShell({ caseRow, children }: Props) {
   return (
     <div className="dlw-page">
       <div className="dlw-progress-row">
-        {isPrescreen ? (
-          <div className="dlw-prescreen-progress">
-            <span className="dlw-prescreen-label">Quick start</span>
-            <div className="dlw-prescreen-dots">
-              {PRESCREEN_STEPS.map((s, i) => (
-                <span
-                  key={s}
-                  className={`dlw-dot ${i <= currentPrescreenIdx ? "is-done" : ""} ${
-                    i === currentPrescreenIdx ? "is-active" : ""
-                  }`}
-                  aria-hidden="true"
-                />
-              ))}
-            </div>
-            <span className="dlw-prescreen-count">
-              {currentPrescreenIdx + 1} of {PRESCREEN_STEPS.length}
-            </span>
-          </div>
-        ) : (
-          <ol className="dlw-phases">
+        <ol className="dlw-phases">
             {PHASES.map((phase, i) => {
               const isComplete = isPhaseComplete(caseRow, phase.key);
               const isActive = i === activePhase;
@@ -183,7 +147,6 @@ export default function WizardShell({ caseRow, children }: Props) {
               );
             })}
           </ol>
-        )}
 
         <span className="dlw-save-status" aria-live="polite" id="dlw-save-status">
           Changes saved
@@ -199,9 +162,7 @@ export default function WizardShell({ caseRow, children }: Props) {
             <div className="dlw-coach-meta">
               <strong>CivilCase</strong>
               <span className="dlw-coach-step">
-                {isPrescreen
-                  ? `Step ${currentPrescreenIdx + 1} of ${PRESCREEN_STEPS.length}`
-                  : `Step ${activePhase + 1} of ${PHASES.length}`}
+                {`Step ${Math.max(activePhase, 0) + 1} of ${PHASES.length}`}
               </span>
             </div>
             <p className="dlw-coach-line">{coachLine(currentSlug)}</p>
@@ -267,35 +228,11 @@ function categoryPicked(c: Case, answers: Record<string, unknown>): boolean {
   return typeof text === "string" && text.trim().length > 0;
 }
 
-function computeReachedIdx(c: Case, currentSlug: string): number {
-  const answers = (c.intake_answers ?? {}) as Record<string, unknown>;
-  let idx = ALL_STEPS_ORDER.indexOf("category");
-
-  if (categoryPicked(c, answers)) idx = Math.max(idx, ALL_STEPS_ORDER.indexOf("amount"));
-  if (c.amount_cents > 0) idx = Math.max(idx, ALL_STEPS_ORDER.indexOf("state"));
-  if (answers.recipient_state) idx = Math.max(idx, ALL_STEPS_ORDER.indexOf("eligibility"));
-  if (answers.eligibility_passed) idx = Math.max(idx, ALL_STEPS_ORDER.indexOf("recovery"));
-  if (answers.recovery_seen) idx = Math.max(idx, ALL_STEPS_ORDER.indexOf("defendant"));
-  if (c.defendant_name) idx = Math.max(idx, ALL_STEPS_ORDER.indexOf("plaintiff"));
-  if (c.plaintiff_name) idx = Math.max(idx, ALL_STEPS_ORDER.indexOf("narrative"));
-  if (c.facts_narrative) idx = Math.max(idx, ALL_STEPS_ORDER.indexOf("claim-amount"));
-  if (c.amount_cents > 0 && c.facts_narrative)
-    idx = Math.max(idx, ALL_STEPS_ORDER.indexOf("evidence"));
-  if (answers.evidence_skipped !== undefined || (answers.evidence_files as unknown[])?.length)
-    idx = Math.max(idx, ALL_STEPS_ORDER.indexOf("review"));
-
-  const currentIdx = ALL_STEPS_ORDER.indexOf(currentSlug as StepKey);
-  if (currentIdx >= 0) idx = Math.max(idx, currentIdx);
-  return idx;
-}
-
 function coachLine(slug: string): string {
   const map: Record<string, string> = {
+    eligibility:
+      "Quick gut check: how much, where, and is this the right tool for your situation?",
     category: "What kind of dispute is this? Pick the one that fits best.",
-    amount: "Roughly how much are you owed? You can refine this later.",
-    state: "Where is the other party located? This sets the tone of the letter.",
-    eligibility: "Quick check that this is the right tool for your situation.",
-    recovery: "Here's what your letter could put on the table.",
     defendant: "No more excuses from them. Let's get their info.",
     plaintiff: "Your voice matters. Let's make it official.",
     narrative: "Don't hold back. The more details, the stronger your case.",

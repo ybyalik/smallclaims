@@ -276,7 +276,14 @@
 .guide .wrap { max-width: 920px; }
 
 /* HERO ───────────────────────────────────────────────────────────────── */
-.g-hero {
+/* The `section.` prefix on the three top-level guide sections (.g-hero,
+   .g-glance, .g-section) is intentional — globals.css applies
+   `.site-page section { padding: var(--section-pad) 0; }` (120px vertical
+   padding) to every <section> on a marketing page. Without the bumped
+   specificity, that rule would clobber the per-section padding here and
+   the at-a-glance card would render with ~120px of phantom whitespace at
+   top and bottom. */
+section.g-hero {
   padding: 16px 0 28px;
   text-align: left;
 }
@@ -341,7 +348,7 @@
 .g-hero-cta { display: flex; gap: 10px; flex-wrap: wrap; }
 
 /* AT-A-GLANCE ────────────────────────────────────────────────────────── */
-.g-glance {
+section.g-glance {
   margin: 0 0 60px;
   padding: 22px 24px;
   background: var(--bg-2);
@@ -379,11 +386,12 @@
 }
 
 /* GENERIC SECTION ────────────────────────────────────────────────────── */
-.g-section {
+section.g-section {
   padding-top: 28px;
+  padding-bottom: 0;
   margin-top: 0;
 }
-.g-section + .g-section { padding-top: 28px; }
+section.g-section + section.g-section { padding-top: 28px; }
 .g-section-head {
   margin-bottom: 16px;
 }
@@ -1366,3 +1374,507 @@
   .form-num { justify-self: start; }
   .form-link { justify-self: start; }
 }
+
+/* ════════════════════════════════════════════════════════════════════
+   V2 STATE GUIDE — pack-driven, 12-section layout with sticky TOC.
+   Lives under .v2-guide so it never collides with the legacy .guide.
+   ════════════════════════════════════════════════════════════════════ */
+
+.v2-guide { padding-bottom: 96px; }
+.v2-wrap { max-width: 1180px; }
+
+.v2-layout {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 56px;
+  margin-top: 24px;
+}
+
+/* TOC — sticky left rail */
+.v2-toc {
+  position: sticky;
+  top: 80px;
+  align-self: start;
+  font-size: 14px;
+}
+.v2-toc-label {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+  margin: 0 0 12px;
+}
+.v2-toc ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  counter-reset: toc;
+}
+.v2-toc li {
+  counter-increment: toc;
+}
+.v2-toc a {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 4px 0;
+  line-height: 1.35;
+  transition: color 0.15s ease;
+}
+.v2-toc a:hover { color: var(--ink); }
+.v2-toc a::before {
+  content: counter(toc, decimal-leading-zero);
+  font-variant-numeric: tabular-nums;
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  min-width: 22px;
+}
+.v2-toc-cta {
+  margin-top: 24px;
+  font-size: 13px;
+  padding: 10px 16px;
+  width: 100%;
+  justify-content: center;
+}
+
+/* HERO */
+.v2-hero {
+  padding: 8px 0 36px;
+  text-align: left;
+}
+.v2-hero .eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--accent);
+}
+.v2-hero h1 {
+  font-family: "Newsreader", Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(40px, 5.5vw, 60px);
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  margin: 0 0 24px;
+  line-height: 1.02;
+}
+.v2-hero h1 em {
+  font-style: italic;
+  color: var(--accent);
+  font-weight: 600;
+}
+.v2-hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 0;
+}
+.v2-hero-stats > div {
+  background: var(--card);
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.v2-hero-stats .stat-num {
+  font-family: "Newsreader", Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(26px, 3vw, 34px);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--ink);
+}
+.v2-hero-stats .stat-lbl {
+  font-size: 12.5px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* SECTION
+   `section.` prefix overrides globals.css `.site-page section { padding: 120px 0 }`.
+   Without this bump, every section gets 120px of phantom vertical padding. */
+section.v2-section {
+  margin-top: 56px;
+  padding: 0;
+  scroll-margin-top: 90px;
+}
+section.v2-sources {
+  padding: 32px 0 0;
+}
+.v2-section-head { margin-bottom: 16px; }
+.v2-eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.v2-section h2 {
+  font-family: "Newsreader", Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(28px, 3.4vw, 38px);
+  letter-spacing: -0.022em;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.1;
+}
+
+/* PROSE — AI-generated explainer */
+.v2-prose {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--ink-2);
+  max-width: 68ch;
+  margin: 16px 0 24px;
+}
+.v2-prose p { margin: 0 0 14px; }
+.v2-prose p:last-child { margin-bottom: 0; }
+.v2-prose ul {
+  margin: 8px 0 14px;
+  padding-left: 22px;
+}
+.v2-prose li { margin: 0 0 6px; }
+.v2-prose strong { color: var(--ink); }
+
+/* CARD — structured-data container under each section */
+.v2-card {
+  background: var(--card);
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  padding: 22px 24px;
+  margin: 16px 0 0;
+}
+.v2-card + .v2-card { margin-top: 16px; }
+.v2-card-title {
+  font-family: "Newsreader", Georgia, serif;
+  font-weight: 700;
+  font-size: 18px;
+  margin: 0 0 6px;
+  color: var(--ink);
+}
+.v2-card-subhead {
+  font-family: "Newsreader", Georgia, serif;
+  font-weight: 700;
+  font-size: 15px;
+  margin: 18px 0 8px;
+  color: var(--ink);
+}
+.v2-card-sub {
+  font-size: 13.5px;
+  color: var(--muted);
+  margin: 0 0 14px;
+  line-height: 1.5;
+}
+
+/* TABLE */
+.v2-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.v2-table th {
+  text-align: left;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 0 12px 10px;
+  border-bottom: 1px solid var(--hairline);
+}
+.v2-table th:first-child { padding-left: 0; }
+.v2-table th:last-child { padding-right: 0; }
+.v2-table td {
+  padding: 12px;
+  border-bottom: 1px solid var(--hairline);
+  vertical-align: top;
+  color: var(--ink-2);
+  line-height: 1.5;
+}
+.v2-table td:first-child { padding-left: 0; }
+.v2-table td:last-child { padding-right: 0; }
+.v2-table tr:last-child td { border-bottom: none; }
+.v2-table tr:hover td { background: rgba(0,0,0,0.015); }
+.v2-table strong { color: var(--ink); font-weight: 600; }
+
+/* Key facts — used inside cards for hero-stats-style rows */
+.v2-keyfacts {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.v2-keyfacts li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--hairline);
+  font-size: 14px;
+}
+.v2-keyfacts li:last-child { border-bottom: none; }
+.v2-keyfacts li > span { color: var(--muted); }
+.v2-keyfacts li > strong {
+  color: var(--ink);
+  font-weight: 600;
+  text-align: right;
+}
+
+/* Checklist */
+.v2-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.v2-checklist li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 14px;
+  color: var(--ink-2);
+}
+.v2-checklist li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* Numbered steps (used in Collecting after-the-judgment) */
+.v2-steps {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  counter-reset: vsteps;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+.v2-steps li {
+  counter-increment: vsteps;
+  display: flex;
+  gap: 12px;
+}
+.v2-steps li::before {
+  content: counter(vsteps);
+  flex: 0 0 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Excluded claim types */
+.v2-excluded, .v2-quirks {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+.v2-excluded li { padding: 10px 12px; background: var(--bg-2); border-radius: 8px; }
+.v2-quirks li { padding-left: 20px; position: relative; }
+.v2-quirks li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: -2px;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+/* Multipliers (Section 5 / damages) */
+.v2-multipliers {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
+.v2-multipliers li {
+  padding: 14px 16px;
+  background: #fff;
+  border: 1px solid var(--hairline);
+  border-radius: 10px;
+}
+.v2-mult-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.v2-mult-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  padding: 3px 8px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.v2-mult-body {
+  font-size: 13.5px;
+  color: var(--ink-2);
+  line-height: 1.5;
+  margin: 0 0 6px;
+}
+
+/* Callouts */
+.v2-callout {
+  margin: 16px 0;
+  padding: 16px 18px;
+  border-radius: 10px;
+  font-size: 14.5px;
+  line-height: 1.55;
+}
+.v2-callout-info {
+  background: #f1efe9;
+  border: 1px solid var(--hairline);
+  color: var(--ink-2);
+}
+.v2-callout-warn {
+  background: #fbf1eb;
+  border: 1px solid #e6c3b6;
+  color: #5a3a30;
+}
+.v2-callout strong { color: var(--ink); }
+.v2-callout-list {
+  margin: 8px 0 0;
+  padding-left: 20px;
+}
+.v2-callout-list li { margin-bottom: 4px; }
+.v2-callout-foot {
+  margin: 8px 0 0;
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+/* Citations */
+.v2-cite {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* Details/summary toggle */
+.v2-details {
+  margin: 12px 0 0;
+  font-size: 14px;
+}
+.v2-details > summary {
+  cursor: pointer;
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted);
+  font-weight: 500;
+}
+.v2-details > summary::after {
+  content: "▾";
+  font-size: 10px;
+  color: var(--muted);
+}
+.v2-details[open] > summary::after { content: "▴"; }
+
+/* Sources */
+.v2-sources { margin-top: 72px; border-top: 1px solid var(--hairline); }
+.v2-source-list {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 14px;
+}
+.v2-source-list a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--hairline);
+}
+.v2-source-list a:hover { text-decoration-color: var(--accent); }
+
+/* Footer */
+.v2-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--hairline);
+  font-size: 13px;
+  color: var(--muted);
+  max-width: 70ch;
+  line-height: 1.6;
+}
+
+/* Utilities */
+.v2-muted { color: var(--muted); }
+.v2-mt-4 { margin-top: 4px; }
+.v2-mt-12 { margin-top: 12px; }
+
+/* Responsive */
+@media (max-width: 920px) {
+  .v2-layout {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .v2-toc {
+    position: static;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--hairline);
+    padding-bottom: 24px;
+  }
+  .v2-toc ol {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 6px 16px;
+  }
+  .v2-toc-cta { display: none; }
+  .v2-hero-stats { grid-template-columns: 1fr; }
+  .v2-multipliers { grid-template-columns: 1fr; }
+}
+@media (max-width: 720px) {
+  .v2-card { padding: 16px 18px; }
+  .v2-table { font-size: 13px; }
+}
+

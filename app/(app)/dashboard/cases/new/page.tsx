@@ -30,12 +30,19 @@ export default async function NewDemandLetterPage({
   } = await supabase.auth.getUser();
   if (!user) redirect("/login?next=/dashboard/cases/new");
 
-  // Reuse the case StartButton already created, if present
+  // Reuse the case StartButton already created, if present. Hand off to
+  // the wizard root so it routes the user to the first unfilled phase
+  // instead of skipping straight to a hardcoded step.
   if (searchParams.case) {
-    redirect(`/case/${searchParams.case}/build/category`);
+    redirect(`/case/${searchParams.case}/build`);
   }
 
-  // Otherwise create a fresh draft and route into the wizard
+  // Otherwise create a fresh draft and route into the wizard.
+  // state/dispute_type are NOT NULL on the schema, so we seed safe
+  // placeholders that the wizard root treats as "not filled yet":
+  //   - state="" → falsy, sends user to Eligibility
+  //   - dispute_type="other" with no dispute_type_other text → sends
+  //     user to Category
   const db = createServiceRoleClient();
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const { data, error } = await (db as any)
@@ -43,7 +50,7 @@ export default async function NewDemandLetterPage({
     .insert({
       owner_user_id: user.id,
       status: "draft",
-      state: "CA",
+      state: "",
       dispute_type: "other",
       amount_cents: 0,
       intake_version: 2,
@@ -56,5 +63,5 @@ export default async function NewDemandLetterPage({
     redirect("/dashboard/cases?error=create_failed");
   }
 
-  redirect(`/case/${data.id}/build/category`);
+  redirect(`/case/${data.id}/build`);
 }
