@@ -1375,3 +1375,189 @@ section.g-section + section.g-section { padding-top: 28px; }
   .form-link { justify-self: start; }
 }
 
+/* ════════════════════════════════════════════════════════════════════
+   STATE GUIDE V2 — pure markdown page rendered from state_guide_v2.body_md.
+   Scoped under .sgv2-page so legacy styles never collide.
+   Override `.site-page section` cascade where needed.
+   ════════════════════════════════════════════════════════════════════ */
+
+.sgv2-page { padding-bottom: 96px; }
+.sgv2-wrap { max-width: 760px; }
+
+.sgv2-article {
+  margin-top: 16px;
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--ink-2);
+}
+
+/* Page opener (H1 + standfirst + byline) */
+.sgv2-article h1 {
+  font-family: "Newsreader", Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(40px, 5.2vw, 56px);
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  color: var(--ink);
+  margin: 8px 0 20px;
+}
+
+/* Section headings — no border-top divider; spacing alone separates sections */
+.sgv2-article h2 {
+  font-family: "Newsreader", Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(26px, 3.2vw, 34px);
+  letter-spacing: -0.022em;
+  line-height: 1.15;
+  color: var(--ink);
+  margin: 64px 0 16px;
+  scroll-margin-top: 80px;
+}
+
+.sgv2-article h3 {
+  font-family: "Newsreader", Georgia, serif;
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+  color: var(--ink);
+  margin: 32px 0 12px;
+  scroll-margin-top: 80px;
+}
+
+.sgv2-article h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 20px 0 8px;
+}
+
+/* Standfirst (em following H1) */
+.sgv2-article h1 + p > em:only-child {
+  font-style: italic;
+  font-size: 19px;
+  color: var(--muted);
+}
+
+/* Body paragraphs */
+.sgv2-article p {
+  margin: 0 0 16px;
+}
+.sgv2-article strong { color: var(--ink); font-weight: 600; }
+.sgv2-article em { font-style: italic; }
+
+/* Links */
+.sgv2-article a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: var(--hairline);
+  text-underline-offset: 3px;
+}
+.sgv2-article a:hover { text-decoration-color: var(--accent); }
+
+/* Lists */
+.sgv2-article ul, .sgv2-article ol {
+  margin: 0 0 18px;
+  padding-left: 24px;
+}
+.sgv2-article li {
+  margin: 0 0 8px;
+  line-height: 1.6;
+}
+.sgv2-article li > ul, .sgv2-article li > ol {
+  margin: 8px 0 4px;
+}
+
+/* Tables — the centerpiece of the page; the brief depends on these */
+.sgv2-article table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0 24px;
+  font-size: 15px;
+  display: block;
+  overflow-x: auto;
+}
+@media (min-width: 720px) {
+  .sgv2-article table { display: table; }
+}
+.sgv2-article thead {
+  background: var(--bg-2);
+}
+.sgv2-article th {
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--hairline);
+  white-space: nowrap;
+}
+.sgv2-article td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--hairline);
+  vertical-align: top;
+  color: var(--ink-2);
+  line-height: 1.55;
+}
+.sgv2-article tr:last-child td { border-bottom: none; }
+.sgv2-article tr:hover td { background: rgba(0,0,0,0.015); }
+.sgv2-article td strong, .sgv2-article td b { color: var(--ink); font-weight: 600; }
+
+/* Blockquotes (used for callouts in the brief if the model emits them) */
+.sgv2-article blockquote {
+  margin: 18px 0;
+  padding: 14px 18px;
+  background: var(--bg-2);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  color: var(--ink-2);
+  font-size: 15.5px;
+}
+.sgv2-article blockquote p:last-child { margin-bottom: 0; }
+
+/* Horizontal rules between major sections (model may emit ---) */
+.sgv2-article hr {
+  border: 0;
+  border-top: 1px solid var(--hairline);
+  margin: 32px 0;
+}
+
+/* Inline code (statute refs, form codes) */
+.sgv2-article code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.92em;
+  background: var(--bg-2);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--ink);
+}
+.sgv2-article pre code {
+  background: transparent;
+  padding: 0;
+}
+
+/* Footer */
+.sgv2-footer {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--hairline);
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.sgv2-footer p { margin: 0 0 14px; }
+.sgv2-footer .sgv2-cta { margin-top: 18px; }
+.sgv2-footer .sgv2-cta .btn { display: inline-flex; }
+
+/* Section anchors so the TOC the model writes actually jumps cleanly */
+.sgv2-article h2[id], .sgv2-article h3[id] { scroll-margin-top: 80px; }
+
+@media (max-width: 720px) {
+  .sgv2-article { font-size: 16px; }
+  .sgv2-article table { font-size: 13.5px; }
+  .sgv2-article th, .sgv2-article td { padding: 10px 12px; }
+}
+
+

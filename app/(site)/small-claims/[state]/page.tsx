@@ -3,17 +3,22 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { STATES, getStateBySlug } from "../../../../lib/states";
 import { availableStateSlugs, loadStateGuide } from "../../../../lib/state-data";
+import { loadStateGuideV2 } from "../../../../lib/state-guide-v2/load";
 import Breadcrumbs from "../../../../components/Breadcrumbs";
 import StatuteChecker from "../../../../components/widgets/StatuteChecker";
 import FeeCalculator from "../../../../components/widgets/FeeCalculator";
 import ClaimExplorer from "../../../../components/widgets/ClaimExplorer";
+import StateGuidePage from "./StateGuidePage";
 
 // Pre-generate every state. States without data render a "coming soon" placeholder.
+// The v2 path reads from Supabase per-request, so revalidate on every load.
+// Static slugs are still pre-rendered for the legacy path.
 export function generateStaticParams() {
   return STATES.map((s) => ({ state: s.slug }));
 }
 
 export const dynamicParams = false;
+export const revalidate = 0;
 
 type Params = { params: { state: string } };
 
@@ -82,6 +87,20 @@ function ComingSoon({ stateName }: { stateName: string }) {
 export default async function StateGuide({ params }: Params) {
   const state = getStateBySlug(params.state);
   if (!state) notFound();
+
+  // v2 path: if a generated guide exists in state_guide_v2, render that
+  // markdown directly. Falls through to the legacy hand-curated path
+  // (loadStateGuide) for any slug that hasn't been generated yet.
+  const v2 = await loadStateGuideV2(params.state);
+  if (v2) {
+    return (
+      <StateGuidePage
+        state={{ slug: params.state, name: state.name }}
+        guide={v2}
+      />
+    );
+  }
+
   const g = await loadStateGuide(params.state);
   if (!g) return <ComingSoon stateName={state.name} />;
 
