@@ -70,6 +70,25 @@ function stripMarkdown(md: string): string {
     .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1");
 }
 
+// pdf-lib's StandardFonts.TimesRoman is the base-14 Times font, which has
+// limited glyph coverage (essentially ASCII + a slice of Latin-1). LLM
+// output occasionally includes typographic Unicode (non-breaking hyphen,
+// curly quotes, em-dashes) that produce blank rectangles in the PDF.
+// Normalize the common offenders to ASCII equivalents before drawing.
+function normalizeForBaseFont(text: string): string {
+  return text
+    .replace(/‑/g, "-")        // NON-BREAKING HYPHEN
+    .replace(/‐/g, "-")        // HYPHEN (non-minus)
+    .replace(/−/g, "-")        // MINUS SIGN
+    .replace(/­/g, "")         // SOFT HYPHEN (invisible)
+    .replace(/‒|–|—/g, "-")   // FIGURE/EN/EM DASH → -
+    .replace(/'|'/g, "'")      // smart single quotes
+    .replace(/"|"/g, '"')      // smart double quotes
+    .replace(/…/g, "...")      // ellipsis
+    .replace(/ /g, " ")       // narrow no-break space
+    .replace(/ /g, " ");       // thin space
+}
+
 // Reserved marker the generator inserts between the CivilCase cover letter
 // and the demand letter so each lands on its own page.
 const PAGE_BREAK_MARKER = "<!-- PAGEBREAK -->";
@@ -109,7 +128,7 @@ function sectionStartsWithCivilCase(section: string): boolean {
 }
 
 export async function renderLetterPdf({ body_md }: LetterPdfInput): Promise<Uint8Array> {
-  const cleaned = stripMarkdown(body_md);
+  const cleaned = normalizeForBaseFont(stripMarkdown(body_md));
   const sections = cleaned.split(PAGE_BREAK_MARKER);
 
   const pdf = await PDFDocument.create();

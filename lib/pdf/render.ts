@@ -13,6 +13,25 @@ const LOCAL_CHROME_PATHS = [
   "/Applications/Chromium.app/Contents/MacOS/Chromium",
 ];
 
+// Normalize Unicode glyph variants that the PDF's bundled web fonts
+// (Inter, Newsreader) don't ship. LLM-generated content occasionally
+// emits these typographic-fancy characters; in a headless Chromium
+// environment with limited font fallback, they render as "NO GLYPH"
+// placeholders inside the PDF.
+//
+// Mapping is conservative: ASCII-fy only characters that have a clear
+// equivalent. We keep curly quotes, em-dashes, section signs, etc.,
+// because Inter/Newsreader DO support those.
+function normalizeForPdf(html: string): string {
+  return html
+    .replace(/‑/g, "-")        // NON-BREAKING HYPHEN → -
+    .replace(/‐/g, "-")        // HYPHEN (non-minus variant) → -
+    .replace(/−/g, "-")        // MINUS SIGN → -
+    .replace(/­/g, "")         // SOFT HYPHEN → drop (invisible anyway)
+    .replace(/ /g, " ")   // NARROW NO-BREAK SPACE → regular NBSP
+    .replace(/ /g, " ");       // THIN SPACE → regular space
+}
+
 export async function renderHtmlToPdf(
   html: string,
   opts?: { title?: string; subtitle?: string },
@@ -20,7 +39,11 @@ export async function renderHtmlToPdf(
   const browser = await launchBrowser();
   try {
     const page = await browser.newPage();
-    const wrapped = wrapDocument(html, opts?.title ?? "Report", opts?.subtitle ?? "");
+    const wrapped = wrapDocument(
+      normalizeForPdf(html),
+      opts?.title ?? "Report",
+      opts?.subtitle ?? "",
+    );
     await page.setContent(wrapped, { waitUntil: "networkidle0", timeout: 30_000 });
     const pdf = await page.pdf({
       format: "Letter",
