@@ -3,23 +3,17 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { STATES, getStateBySlug } from "../../../../lib/states";
 import { availableStateSlugs, loadStateGuide } from "../../../../lib/state-data";
-import { loadStatePageContent } from "../../../../lib/state-page-content/load";
 import Breadcrumbs from "../../../../components/Breadcrumbs";
 import StatuteChecker from "../../../../components/widgets/StatuteChecker";
 import FeeCalculator from "../../../../components/widgets/FeeCalculator";
 import ClaimExplorer from "../../../../components/widgets/ClaimExplorer";
-import NewStateGuide from "./NewStateGuide";
 
 // Pre-generate every state. States without data render a "coming soon" placeholder.
-// v2 path (.v2-guide) reads from Supabase per-request, so the dynamic export below
-// tells Next not to fully bake the page at build time; static slugs are still
-// pre-rendered for the legacy path, then revalidated on each request.
 export function generateStaticParams() {
   return STATES.map((s) => ({ state: s.slug }));
 }
 
 export const dynamicParams = false;
-export const revalidate = 0;
 
 type Params = { params: { state: string } };
 
@@ -88,15 +82,6 @@ function ComingSoon({ stateName }: { stateName: string }) {
 export default async function StateGuide({ params }: Params) {
   const state = getStateBySlug(params.state);
   if (!state) notFound();
-
-  // v2 path: if we have a structured_pack AND generated plain-language
-  // sections in Supabase, render the new 12-section template. Falls back
-  // to the legacy hand-curated path when content hasn't been generated yet.
-  const v2 = await loadStatePageContent(params.state);
-  if (v2) {
-    return <NewStateGuide state={{ slug: params.state, name: state.name }} data={v2} />;
-  }
-
   const g = await loadStateGuide(params.state);
   if (!g) return <ComingSoon stateName={state.name} />;
 
