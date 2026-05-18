@@ -67,9 +67,13 @@ function fmtAddress(addr: unknown): string {
 export default async function AdminCaseDetailPage({ params }: { params: { id: string } }) {
   const detail = await loadAdminCase(params.id);
   if (!detail) notFound();
-  const research = await loadCaseResearchLatest(params.id);
-  const demandLetter = await loadLatestDemandLetterForAdmin(params.id);
-  const collectionPlans = await loadCollectionPlansForAdmin(params.id);
+  // Three independent loaders fan out together. Was sequential before;
+  // savings are roughly 2x on cold loads since none depend on the others.
+  const [research, demandLetter, collectionPlans] = await Promise.all([
+    loadCaseResearchLatest(params.id),
+    loadLatestDemandLetterForAdmin(params.id),
+    loadCollectionPlansForAdmin(params.id),
+  ]);
 
   const { caseRow: c, ownerEmail, ownerName, payments, documents } = detail;
   const answers = (c.intake_answers ?? {}) as Record<string, unknown>;

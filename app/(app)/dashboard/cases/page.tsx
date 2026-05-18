@@ -62,6 +62,9 @@ export default async function DashboardHome() {
   // Layout already enforces auth, but TS requires a guard.
   if (!user) return null;
 
+  // Cases first (we need the ids for the payments query). Was sequential
+  // with payments + pending-action + SOL deadlines below; now everything
+  // downstream of the case-ids list fans out in parallel.
   const { data: cases } = await supabase
     .from("cases")
     .select("*")
@@ -71,24 +74,19 @@ export default async function DashboardHome() {
   const list = (cases || []) as Case[];
   const caseIds = list.map((c) => c.id);
 
-  // Pull paid products so we can render the per-case product chips. The
-  // status pill itself no longer depends on this; it's purely lifecycle.
-  const { data: paymentsData } = caseIds.length
-    ? await supabase
-        .from("payments")
-        .select("case_id, product_key")
-        .in("case_id", caseIds)
-        .eq("status", "succeeded")
-    : { data: [] };
+  const [paymentsRes, pendingActionCases, solDeadlines] = await Promise.all([
+    caseIds.length
+      ? supabase
+          .from("payments")
+          .select("case_id, product_key")
+          .in("case_id", caseIds)
+          .eq("status", "succeeded")
+      : Promise.resolve({ data: [] }),
+    listCasesWithPendingAction(user.id),
+    loadSolDeadlinesForCases(list),
+  ]);
 
-  const payments = (paymentsData || []) as Pick<Payment, "case_id" | "product_key">[];
-
-  // Cases with unresolved action-required notifications get a bell icon
-  // next to the case name in the list.
-  const pendingActionCases = await listCasesWithPendingAction(user.id);
-
-  // Approximate SOL filing-deadline per case (rough heads-up indicator).
-  const solDeadlines = await loadSolDeadlinesForCases(list);
+  const payments = (paymentsRes.data || []) as Pick<Payment, "case_id" | "product_key">[];
 
   const paidByCase = new Map<string, Set<ProductKey>>();
   for (const p of payments) {

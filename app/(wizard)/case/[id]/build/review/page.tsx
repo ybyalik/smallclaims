@@ -10,13 +10,15 @@ interface Props {
 }
 
 export default async function ReviewPage({ params }: Props) {
-  const c = await loadOwnedCase(params.id);
-  if (!c) notFound();
-
+  // Fan out the case load and the auth check. loadOwnedCase is React.cache()'d,
+  // so if the wizard layout already loaded the case this is free anyway.
   const supabase = createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const [c, userRes] = await Promise.all([
+    loadOwnedCase(params.id),
+    supabase.auth.getUser(),
+  ]);
+  if (!c) notFound();
+  const user = userRes.data.user;
 
   return (
     <ReviewStep

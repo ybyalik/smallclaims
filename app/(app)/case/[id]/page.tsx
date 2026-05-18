@@ -11,7 +11,7 @@ import { createClient } from "../../../../lib/supabase/server";
 import type { Case, DemandLetter } from "../../../../lib/supabase/types";
 import ResponseTracker, { type ResponseState } from "./ResponseTracker";
 import { paidProductsForCase } from "../../../../lib/payments/access";
-import { reconcilePendingPayment } from "../../../../lib/payments/reconcile";
+import { reconcileAllPendingForCase } from "../../../../lib/payments/reconcile";
 import { deriveStatusLabel } from "../../../../lib/cases/derive-status-label";
 import CaseLifecycleActions from "./CaseLifecycleActions";
 import LetterApprovalPanel from "./letter/LetterApprovalPanel";
@@ -168,16 +168,13 @@ export default async function CasePage({ params }: { params: { id: string } }) {
   }
 
   // Self-heal payment state by asking Stripe directly. Webhooks aren't 100%
-  // reliable (preview deploys can't receive them at all), so this guarantees
-  // the timeline reflects what Stripe actually shows.
-  await Promise.all([
-    reconcilePendingPayment(c.id, "tier_send_letter"),
-    reconcilePendingPayment(c.id, "tier_full_pressure"),
-    reconcilePendingPayment(c.id, "filing_guide"),
-    reconcilePendingPayment(c.id, "collection_plan"),
-  ]);
-
-  const [letterRes, paidSet] = await Promise.all([
+  // reliable (preview deploys can't receive them at all). reconcileAllPendingForCase
+  // does ONE DB query upfront and only calls Stripe for rows that aren't
+  // already succeeded — so the common case (everything paid + settled) costs
+  // one quick DB read instead of 4 Stripe API roundtrips. Runs in parallel
+  // with the letter + paid-set queries below.
+  const [, letterRes, paidSet] = await Promise.all([
+    reconcileAllPendingForCase(c.id),
     supabase
       .from("demand_letters")
       .select("*")

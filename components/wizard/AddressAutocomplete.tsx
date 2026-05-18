@@ -88,13 +88,18 @@ export default function AddressAutocomplete({
     onSelectRef.current = onAddressSelect;
   });
 
-  useEffect(() => {
-    let cancelled = false;
+  // Lazy-load Maps: only fetch the script when the user actually focuses
+  // an address field. This avoids the ~140KB Maps payload (plus 4 sub-script
+  // requests) on first paint of every page that renders an address input.
+  // Once loaded, the singleton in lib/google-maps.ts keeps the script in
+  // memory for the rest of the session, so subsequent inputs attach
+  // synchronously.
+  const attachAutocomplete = () => {
+    if (autocompleteRef.current) return;
+    if (!inputRef.current) return;
     loadGoogleMaps()
       .then((maps) => {
-        if (cancelled || !inputRef.current) return;
-        // Guard against double-attaching when Strict Mode re-runs the
-        // effect or when the script resolves twice.
+        if (!inputRef.current) return;
         if (autocompleteRef.current) return;
         // Chrome's native autofill competes with Google's autocomplete on
         // address fields and can suppress Google's dropdown on first
@@ -119,17 +124,21 @@ export default function AddressAutocomplete({
       .catch((e) => {
         setLoadError(e instanceof Error ? e.message : "Maps unavailable");
       });
+  };
+
+  // Cleanup on unmount only — no eager load on country change.
+  useEffect(() => {
     return () => {
-      cancelled = true;
-      // Cleanup: detach the autocomplete listeners. Google's .pac-container
-      // (the dropdown) is body-attached and managed by Google; leaving it
-      // is fine.
       if (autocompleteRef.current) {
-        google.maps.event.clearInstanceListeners(autocompleteRef.current);
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const g = (window as any).google;
+        if (g?.maps?.event?.clearInstanceListeners) {
+          g.maps.event.clearInstanceListeners(autocompleteRef.current);
+        }
         autocompleteRef.current = null;
       }
     };
-  }, [country]);
+  }, []);
 
   return (
     <>
@@ -137,6 +146,7 @@ export default function AddressAutocomplete({
         ref={inputRef}
         value={value}
         onChange={(e) => onChange(e.target.value)}
+        onFocus={attachAutocomplete}
         className={className}
         placeholder={placeholder}
         autoComplete={autoComplete}

@@ -31,18 +31,19 @@ export default async function NewDemandLetterPage({
   if (!user) redirect("/login?next=/dashboard/cases/new");
 
   // Reuse the case StartButton already created, if present. Hand off to
-  // the wizard root so it routes the user to the first unfilled phase
-  // instead of skipping straight to a hardcoded step.
+  // the wizard root so it routes the user to the first unfilled phase.
+  // (Existing draft may have already filled some phases.)
   if (searchParams.case) {
     redirect(`/case/${searchParams.case}/build`);
   }
 
-  // Otherwise create a fresh draft and route into the wizard.
+  // Otherwise create a fresh draft and route directly into Phase 1
+  // (eligibility). Skipping /build → eligibility cuts one server hop
+  // and one dev-mode JIT compile out of the cold-start path.
+  //
   // state/dispute_type are NOT NULL on the schema, so we seed safe
-  // placeholders that the wizard root treats as "not filled yet":
-  //   - state="" → falsy, sends user to Eligibility
-  //   - dispute_type="other" with no dispute_type_other text → sends
-  //     user to Category
+  // placeholders. They're empty enough that the wizard router still
+  // treats the case as "Phase 1 incomplete".
   const db = createServiceRoleClient();
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const { data, error } = await (db as any)
@@ -63,5 +64,5 @@ export default async function NewDemandLetterPage({
     redirect("/dashboard/cases?error=create_failed");
   }
 
-  redirect(`/case/${data.id}/build`);
+  redirect(`/case/${data.id}/build/eligibility`);
 }

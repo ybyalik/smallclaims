@@ -48,9 +48,14 @@ async function loadSavedDefaults(): Promise<SavedDefaults | null> {
 }
 
 export default async function PlaintiffPage({ params }: Props) {
-  const c = await loadOwnedCase(params.id);
+  // Case load is React.cache()'d in lib/demand-letter/access.ts so this is
+  // free if the wizard layout already loaded it. Saved-defaults profile
+  // query is independent; fan them out.
+  const [c, savedDefaults] = await Promise.all([
+    loadOwnedCase(params.id),
+    loadSavedDefaults(),
+  ]);
   if (!c) notFound();
-  const savedDefaults = await loadSavedDefaults();
   return (
     <PlaintiffStep
       caseId={c.id}

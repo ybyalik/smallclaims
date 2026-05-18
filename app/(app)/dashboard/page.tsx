@@ -161,10 +161,12 @@ export default async function DashboardHome() {
   const recentCases = cases.slice(0, 5);
   const recentLetters = letters.slice(0, 3);
   // Cases with unresolved action-required notifications get a bell next to
-  // the case name in the recent-cases list.
-  const pendingActionCases = await listCasesWithPendingAction(user.id);
-  // Rough SOL filing-deadline indicator shown under the case row.
-  const solDeadlines = await loadSolDeadlinesForCases(recentCases);
+  // the case name in the recent-cases list. Loaded in parallel with the
+  // per-case SOL filing-deadline indicators below the case row.
+  const [pendingActionCases, solDeadlines] = await Promise.all([
+    listCasesWithPendingAction(user.id),
+    loadSolDeadlinesForCases(recentCases),
+  ]);
 
   if (cases.length === 0) {
     return (

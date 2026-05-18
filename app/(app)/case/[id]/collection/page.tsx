@@ -11,7 +11,7 @@ import { notFound, redirect } from "next/navigation";
 import { createClient } from "../../../../../lib/supabase/server";
 import { createServiceRoleClient } from "../../../../../lib/supabase/service-role";
 import { hasPaidForProduct } from "../../../../../lib/payments/access";
-import { reconcilePendingPayment } from "../../../../../lib/payments/reconcile";
+import { reconcileAllPendingForCase } from "../../../../../lib/payments/reconcile";
 import { ensureCollectionPlanForCase } from "../../../../../lib/collection-plan/generate";
 import CollectionPlanStatus from "./CollectionPlanStatus";
 import ProductDocumentView from "../../../../../components/cases/ProductDocumentView";
@@ -50,8 +50,11 @@ export default async function CollectionPlanPage({
     .single();
   if (!caseRow) notFound();
 
-  // Self-heal pending payments (preview deploys, dropped webhooks).
-  await reconcilePendingPayment(caseRow.id, "collection_plan");
+  // Self-heal pending payments (preview deploys, dropped webhooks). Batched
+  // helper: one DB query upfront, only hits Stripe for rows that aren't
+  // already succeeded. In the common "already paid" case this is one cheap
+  // read instead of a full Stripe roundtrip.
+  await reconcileAllPendingForCase(caseRow.id);
 
   const paid = await hasPaidForProduct(caseRow.id, "collection_plan");
   if (!paid) {
@@ -67,23 +70,25 @@ export default async function CollectionPlanPage({
     console.error("[collection page] ensureCollectionPlanForCase failed", err);
   });
 
-  const { data: plan } = await admin
-    .from("collection_plans")
-    .select("id, status, body_md, body_html, error_message, updated_at, version")
-    .eq("case_id", caseRow.id)
-    .order("version", { ascending: false })
-    .limit(1)
-    .maybeSingle();
-
-  // Count failures in the last 24 hours so we can tell the customer when
-  // we've stopped auto-retrying.
+  // Latest plan + 24h-failure-count run in parallel. Was sequential before.
   const dayAgo = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString();
-  const { count: failedCount } = await admin
-    .from("collection_plans")
-    .select("id", { count: "exact", head: true })
-    .eq("case_id", caseRow.id)
-    .eq("status", "failed")
-    .gte("updated_at", dayAgo);
+  const [planRes, failedRes] = await Promise.all([
+    admin
+      .from("collection_plans")
+      .select("id, status, body_md, body_html, error_message, updated_at, version")
+      .eq("case_id", caseRow.id)
+      .order("version", { ascending: false })
+      .limit(1)
+      .maybeSingle(),
+    admin
+      .from("collection_plans")
+      .select("id", { count: "exact", head: true })
+      .eq("case_id", caseRow.id)
+      .eq("status", "failed")
+      .gte("updated_at", dayAgo),
+  ]);
+  const plan = planRes.data;
+  const failedCount = failedRes.count;
 
   const status = (plan?.status as string | undefined) ?? "pending";
   const isReady = status === "ready" && (!!plan?.body_html || !!plan?.body_md);

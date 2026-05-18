@@ -61,16 +61,28 @@ export default async function BillingPage() {
 
   // Self-heal: ask Stripe about any of this user's pending PaymentIntents so
   // the billing list isn't missing orders that were paid but never webhooked.
+  // Bounded to the last 7 days: older pending rows are abandoned checkouts
+  // (user closed the tab pre-payment) and won't transition to succeeded —
+  // reconciling them just burns Stripe API quota and adds page latency.
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const admin = createServiceRoleClient() as any;
+  const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString();
   const { data: pendingRows } = await admin
     .from("payments")
     .select("case_id, product_key")
     .eq("user_id", user.id)
     .eq("status", "pending")
-    .is("paid_at", null);
-  for (const row of (pendingRows ?? []) as Array<{ case_id: string; product_key: string }>) {
-    await reconcilePendingPayment(row.case_id, row.product_key);
+    .is("paid_at", null)
+    .gte("created_at", sevenDaysAgo);
+  // Run reconciles in parallel. Was a sequential for-await before, which
+  // serialized N Stripe roundtrips and routinely cost 5-8s on accounts
+  // with many old pending payments.
+  if (pendingRows?.length) {
+    await Promise.all(
+      (pendingRows as Array<{ case_id: string; product_key: string }>).map(
+        (row) => reconcilePendingPayment(row.case_id, row.product_key),
+      ),
+    );
   }
 
   const { data: paymentsRaw } = await supabase

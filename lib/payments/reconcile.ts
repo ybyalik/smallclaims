@@ -131,3 +131,63 @@ export async function reconcilePendingPayment(
     amountCents: row.amount_cents,
   };
 }
+
+/**
+ * Cheap batched version of reconcilePendingPayment for the common page-load
+ * case: "we don't actually know if anything needs reconciling, just make sure
+ * we self-heal if a webhook was dropped."
+ *
+ * Strategy: ONE query for all latest payments on this case. Only call Stripe
+ * for rows where status !== 'succeeded' AND there's a stripe_payment_intent_id.
+ *
+ * On a case where every product is already paid (the common case), this is
+ * one DB query and zero Stripe calls. The old per-product reconcile made N
+ * separate DB queries even when nothing was pending — which was costing
+ * 200-400ms per case page load.
+ */
+export async function reconcileAllPendingForCase(caseId: string): Promise<void> {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const admin = createServiceRoleClient() as any;
+  const { data: rows } = await admin
+    .from("payments")
+    .select(
+      "id, stripe_payment_intent_id, status, paid_at, product_key, amount_cents, user_id, case_id, created_at",
+    )
+    .eq("case_id", caseId)
+    .order("created_at", { ascending: false });
+  if (!rows || rows.length === 0) return;
+
+  // Keep only the latest row per product_key so we don't waste Stripe calls
+  // on older superseded payment intents for the same product.
+  const seenProducts = new Set<string>();
+  const latestPerProduct: Array<{
+    id: string;
+    stripe_payment_intent_id: string | null;
+    status: string;
+    product_key: string | null;
+  }> = [];
+  for (const r of rows) {
+    const key = r.product_key ?? "_no_product";
+    if (seenProducts.has(key)) continue;
+    seenProducts.add(key);
+    latestPerProduct.push(r);
+  }
+
+  // Only Stripe-check rows that are NOT already succeeded and have an intent id.
+  const needsStripeCheck = latestPerProduct.filter(
+    (r) => r.status !== "succeeded" && !!r.stripe_payment_intent_id,
+  );
+  if (needsStripeCheck.length === 0) return;
+
+  // Defer to the single-row reconciler in parallel. Each call now does its
+  // own DB lookup again (because reconcilePendingPayment is the canonical
+  // self-heal path), but for the rare case where N > 0 the duplicate query
+  // is acceptable. The big savings is the common case where N == 0.
+  await Promise.all(
+    needsStripeCheck.map((r) =>
+      r.product_key
+        ? reconcilePendingPayment(caseId, r.product_key)
+        : Promise.resolve(null),
+    ),
+  );
+}

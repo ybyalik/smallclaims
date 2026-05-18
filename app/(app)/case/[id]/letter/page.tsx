@@ -5,7 +5,7 @@ import { createClient } from "../../../../../lib/supabase/server";
 import { createServiceRoleClient } from "../../../../../lib/supabase/service-role";
 import { ensureDemandLetterForCase } from "../../../../../lib/demand-letter/ensure-letter";
 import { hasPaidForProduct } from "../../../../../lib/payments/access";
-import { reconcilePendingPayment } from "../../../../../lib/payments/reconcile";
+import { reconcileAllPendingForCase } from "../../../../../lib/payments/reconcile";
 import {
   disputeTypeOtherFrom,
   formatDisputeTypeShort,
@@ -53,19 +53,15 @@ export default async function LetterPage({ params }: { params: { id: string } })
   // Reconcile any pending payments against Stripe first. Without this, a
   // user who paid but whose webhook didn't fire (e.g. preview deploys) would
   // be redirected back to /buy because paid_at is still null in the DB.
-  await Promise.all([
-    reconcilePendingPayment(caseRow.id, "tier_send_letter"),
-    reconcilePendingPayment(caseRow.id, "tier_full_pressure"),
+  // Batched: one DB read upfront, Stripe call only if something's actually
+  // pending. Fans out with the paid-status checks below.
+  const [, hasSendTier, hasFullTier, hasDownload] = await Promise.all([
+    reconcileAllPendingForCase(caseRow.id),
+    hasPaidForProduct(caseRow.id, "tier_send_letter"),
+    hasPaidForProduct(caseRow.id, "tier_full_pressure"),
+    hasPaidForProduct(caseRow.id, "demand_letter_download"),
   ]);
-
-  const hasLetterPaid =
-    (await hasPaidForProduct(caseRow.id, "tier_send_letter")) ||
-    (await hasPaidForProduct(caseRow.id, "tier_full_pressure")) ||
-    (await hasPaidForProduct(caseRow.id, "demand_letter_download"));
-
-  console.log(
-    `[letter-page] case=${caseRow.id} hasLetterPaid=${hasLetterPaid} isAdmin=${isAdmin}`,
-  );
+  const hasLetterPaid = hasSendTier || hasFullTier || hasDownload;
 
   if (!hasLetterPaid && !isAdmin) {
     redirect(`/case/${caseRow.id}/buy/demand-letter`);
