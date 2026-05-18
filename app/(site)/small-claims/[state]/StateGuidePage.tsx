@@ -12,6 +12,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Breadcrumbs from "../../../../components/Breadcrumbs";
 import type { StateGuideV2 } from "../../../../lib/state-guide-v2/load";
+import { buildStateGuideJsonLd } from "../../../../lib/state-guide-v2/json-ld";
 
 interface Props {
   state: { slug: string; name: string };
@@ -45,8 +46,22 @@ function MarkdownLink({ href, children, ...rest }: any) {
 }
 
 export default function StateGuidePage({ state, guide }: Props) {
+  // Article + FAQPage + BreadcrumbList schema, stitched into one @graph.
+  // FAQPage is built by parsing Section 19's H3 questions from the
+  // markdown body, so it stays in sync whenever a state is re-generated.
+  const jsonLd = buildStateGuideJsonLd({
+    stateName: state.name,
+    stateSlug: state.slug,
+    bodyMd: guide.bodyMd,
+    generatedAt: guide.generatedAt,
+  });
+
   return (
     <main className="sgv2-page" data-state={state.slug}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="wrap sgv2-wrap">
         <Breadcrumbs
           items={[
