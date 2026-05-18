@@ -6,7 +6,7 @@
   min-height: 100vh;
   background: #f7f6f3;
   color: var(--ink, #111);
-  font-family: "Geist", system-ui, sans-serif;
+  font-family: var(--font-geist), system-ui, sans-serif;
 }
 
 .app-side {
@@ -481,7 +481,7 @@ a.app-notif-row:hover {
 }
 
 .app-page-head h1 {
-  font-family: "Newsreader", serif;
+  font-family: var(--font-newsreader), serif;
   font-size: 32px;
   font-weight: 600;
   margin: 0 0 6px;
@@ -519,7 +519,7 @@ a.app-notif-row:hover {
   color: #7a7770;
 }
 .app-stat-value {
-  font-family: "Newsreader", serif;
+  font-family: var(--font-newsreader), serif;
   font-size: 28px;
   font-weight: 600;
   letter-spacing: -0.01em;
@@ -545,7 +545,7 @@ a.app-notif-row:hover {
   margin-bottom: 14px;
 }
 .app-dash-section-head h2 {
-  font-family: "Newsreader", serif;
+  font-family: var(--font-newsreader), serif;
   font-size: 20px;
   font-weight: 600;
   margin: 0;
@@ -634,7 +634,7 @@ a.app-notif-row:hover {
 }
 
 .app-empty h2 {
-  font-family: "Newsreader", serif;
+  font-family: var(--font-newsreader), serif;
   font-size: 22px;
   margin: 0 0 8px;
 }
@@ -760,7 +760,7 @@ a.app-notif-row:hover {
 }
 
 .app-case-amount {
-  font-family: "Newsreader", serif;
+  font-family: var(--font-newsreader), serif;
   font-weight: 600;
   font-size: 17px;
   color: var(--ink, #111);
@@ -812,20 +812,20 @@ a.app-notif-row:hover {
 
 .app-detail-grid { display: grid; grid-template-columns: 1fr 280px; gap: 28px; }
 .app-detail-main { background: #fff; border: 1px solid #ebe9e3; border-radius: 10px; padding: 24px 28px; }
-.app-detail-main h2 { font-family: "Newsreader", serif; font-size: 22px; font-weight: 600; margin: 0 0 6px; }
+.app-detail-main h2 { font-family: var(--font-newsreader), serif; font-size: 22px; font-weight: 600; margin: 0 0 6px; }
 .app-detail-side { display: flex; flex-direction: column; gap: 12px; }
 .app-detail-card { background: #fff; border: 1px solid #ebe9e3; border-radius: 10px; padding: 16px 18px; }
 .app-detail-card h3 { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #7a7770; margin: 0 0 8px; }
 .app-detail-card p { margin: 0; font-size: 14px; line-height: 1.5; }
-.app-amount-big { font-family: "Newsreader", serif; font-size: 28px; font-weight: 600; color: var(--ink, #111) !important; }
-.app-letter-preview { background: #faf9f6; border: 1px solid #ebe9e3; border-radius: 8px; padding: 16px 18px; margin: 14px 0; font-family: "Newsreader", serif; font-size: 14px; line-height: 1.55; color: #5a574e; white-space: pre-wrap; max-height: 320px; overflow: hidden; position: relative; }
+.app-amount-big { font-family: var(--font-newsreader), serif; font-size: 28px; font-weight: 600; color: var(--ink, #111) !important; }
+.app-letter-preview { background: #faf9f6; border: 1px solid #ebe9e3; border-radius: 8px; padding: 16px 18px; margin: 14px 0; font-family: var(--font-newsreader), serif; font-size: 14px; line-height: 1.55; color: #5a574e; white-space: pre-wrap; max-height: 320px; overflow: hidden; position: relative; }
 .app-letter-preview::after { content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 60px; background: linear-gradient(transparent, #faf9f6); }
 .app-detail-actions { display: flex; gap: 10px; margin-top: 8px; }
 
 /* Filing Guide — unpaid view */
 .filing-unpaid { max-width: 760px; }
 .filing-hero h2 {
-  font-family: "Newsreader", serif;
+  font-family: var(--font-newsreader), serif;
   font-size: 26px;
   font-weight: 600;
   margin: 0 0 12px;
@@ -886,7 +886,7 @@ a.app-notif-row:hover {
 }
 .filing-price { display: flex; flex-direction: column; }
 .filing-price-amount {
-  font-family: "Newsreader", serif;
+  font-family: var(--font-newsreader), serif;
   font-size: 32px;
   font-weight: 600;
   color: var(--ink, #111);
@@ -924,7 +924,7 @@ a.app-notif-row:hover {
   margin-bottom: 16px;
 }
 .filing-section h2 {
-  font-family: "Newsreader", serif;
+  font-family: var(--font-newsreader), serif;
   font-size: 22px;
   font-weight: 600;
   margin: 0 0 12px;
@@ -1116,7 +1116,7 @@ a.app-notif-row:hover {
 .app-service-list { list-style: none; margin: 18px 0 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
 .app-service-card { display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: center; background: #fff; border: 1px solid #ebe9e3; border-radius: 12px; padding: 20px 22px; }
 .app-service-card.app-service-soon { background: #faf9f6; opacity: 0.72; }
-.app-service-meta h3 { font-family: "Newsreader", serif; font-size: 19px; font-weight: 600; margin: 0 0 6px; color: var(--ink, #111); }
+.app-service-meta h3 { font-family: var(--font-newsreader), serif; font-size: 19px; font-weight: 600; margin: 0 0 6px; color: var(--ink, #111); }
 .app-service-meta p { margin: 0 0 8px; font-size: 14px; line-height: 1.5; color: #5a574e; max-width: 56ch; }
 .app-service-price { font-size: 12.5px; font-weight: 600; color: var(--accent); letter-spacing: 0.04em; }
 .app-service-card .btn[aria-disabled] { pointer-events: none; opacity: 0.6; }
@@ -1146,7 +1146,7 @@ a.app-notif-row:hover {
   margin-bottom: 4px;
 }
 .dl-paid-title {
-  font-family: "Newsreader", serif;
+  font-family: var(--font-newsreader), serif;
   font-size: 20px;
   font-weight: 600;
   margin: 0 0 4px;
@@ -1192,7 +1192,7 @@ a.app-notif-row:hover {
 }
 .app-billing-date { color: #5a574e; }
 .app-billing-amount {
-  font-family: "Newsreader", serif;
+  font-family: var(--font-newsreader), serif;
   font-weight: 600;
   color: var(--ink, #111);
   text-align: right;
@@ -1299,7 +1299,7 @@ button.app-link:disabled {
   padding: 22px 26px;
 }
 .app-settings-card h2 {
-  font-family: "Newsreader", serif;
+  font-family: var(--font-newsreader), serif;
   font-size: 20px;
   font-weight: 600;
   margin: 0 0 16px;
@@ -1672,7 +1672,7 @@ button.app-link:disabled {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-size: 22px;
   font-weight: 600;
   line-height: 1;
@@ -1753,7 +1753,7 @@ button.app-link:disabled {
 }
 
 .product-timeline-card-head h3 {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-size: 22px;
   font-weight: 600;
   margin: 0;
@@ -1809,7 +1809,7 @@ button.app-link:disabled {
 }
 
 .product-timeline-tagline {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-size: 16px;
   font-style: italic;
   color: #3a3833;
@@ -1881,7 +1881,7 @@ button.app-link:disabled {
   color: #7a7770;
 }
 .collection-plan-status-failed h2 {
-  font-family: "Newsreader", serif;
+  font-family: var(--font-newsreader), serif;
   font-size: 22px;
   margin: 0 0 10px;
 }
@@ -1909,12 +1909,12 @@ button.app-link:disabled {
   color: #1f1f1f;
 }
 .collection-plan-body h2 {
-  font-family: "Newsreader", serif;
+  font-family: var(--font-newsreader), serif;
   font-size: 24px;
   margin: 28px 0 10px;
 }
 .collection-plan-body h3 {
-  font-family: "Newsreader", serif;
+  font-family: var(--font-newsreader), serif;
   font-size: 19px;
   margin: 20px 0 8px;
 }
@@ -1928,7 +1928,7 @@ button.app-link:disabled {
 }
 .collection-plan-header-title {
   margin: 0 0 8px;
-  font-family: "Newsreader", serif;
+  font-family: var(--font-newsreader), serif;
   font-size: 26px;
   line-height: 1.2;
   color: var(--ink, #111);

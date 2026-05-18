@@ -1,5 +1,6 @@
 // Home hero right-side: vintage US map + case strength dashboard.
 
+import Image from "next/image";
 import { Folder, Activity, Scale } from "lucide-react";
 
 export default function HeroCaseStrength() {
@@ -37,8 +38,15 @@ export default function HeroCaseStrength() {
         </div>
       </div>
       <div className="hero-strength-main">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/vintage-map.webp" alt="" className="hero-strength-map" />
+        <Image
+          src="/vintage-map.webp"
+          alt=""
+          width={350}
+          height={212}
+          className="hero-strength-map"
+          sizes="(max-width: 720px) 100vw, 350px"
+          priority
+        />
         <div className="hero-strength-score">
           <div className="hero-strength-score-label">Case Strength</div>
           <div className="hero-strength-score-num">

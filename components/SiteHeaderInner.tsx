@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { ChevronDown, Building2, Hammer, Briefcase, Car, Trees, HandCoins, Users, ShoppingBag, Receipt } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
@@ -105,13 +106,13 @@ export default function SiteHeaderInner({ user }: { user: SiteHeaderUser | null 
     <div className="nav-shell">
       <header className="nav wrap">
         <Link className="brand" href="/" aria-label="CivilCase home">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src="/civilcase-logo.webp"
             alt="CivilCase"
-            width={600}
-            height={198}
+            width={180}
+            height={59}
             className="brand-logo"
+            priority
           />
         </Link>
         <nav className="nav-links">
@@ -366,12 +367,11 @@ export default function SiteHeaderInner({ user }: { user: SiteHeaderUser | null 
             onClick={() => setOpen(false)}
             aria-label="CivilCase home"
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src="/civilcase-logo.webp"
               alt="CivilCase"
-              width={600}
-              height={198}
+              width={180}
+              height={59}
               className="brand-logo"
             />
           </Link>

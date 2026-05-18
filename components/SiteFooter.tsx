@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function SiteFooter() {
   return (
@@ -7,12 +8,11 @@ export default function SiteFooter() {
         <div className="foot-grid">
           <div className="foot-brand">
             <Link className="brand" href="/" aria-label="CivilCase home">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src="/civilcase-logo.webp"
                 alt="CivilCase"
-                width={600}
-                height={198}
+                width={200}
+                height={66}
                 className="brand-logo brand-logo-foot"
               />
             </Link>

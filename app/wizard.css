@@ -7,7 +7,7 @@
   background: #f8f6f1;
   display: flex;
   flex-direction: column;
-  font-family: "Geist", system-ui, sans-serif;
+  font-family: var(--font-geist), system-ui, sans-serif;
   color: var(--ink, #0e0e0e);
 }
 
@@ -210,7 +210,7 @@
   color: #6b6b6b;
 }
 .dlw-conf-head strong {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-size: 22px;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -285,7 +285,7 @@
 }
 .dlw-preview-rows dd {
   margin: 0;
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   color: var(--ink, #0e0e0e);
   white-space: nowrap;
   overflow: hidden;
@@ -317,7 +317,7 @@
 }
 
 .dlw-step h1 {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-weight: 700;
   font-size: clamp(28px, 3vw, 38px);
   line-height: 1.08;
@@ -428,7 +428,7 @@
   display: grid; place-items: center;
 }
 .dlw-cat-card strong {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-size: 16px; font-weight: 700; letter-spacing: -0.01em; color: var(--ink, #0e0e0e);
   line-height: 1.2;
 }
@@ -448,7 +448,7 @@
   box-shadow: 0 2px 8px rgba(0,0,0,0.18);
 }
 .dlw-amt-input {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-size: 32px; font-weight: 700; letter-spacing: -0.02em;
   border: 1.5px solid #e8e5de; border-radius: 10px; padding: 14px 18px;
   width: 100%; text-align: right; color: var(--ink, #0e0e0e);
@@ -494,7 +494,7 @@
   margin-top: 18px; padding: 18px 22px;
   background: #fef9f1; border: 1px solid var(--accent, #d9402e); border-radius: 12px;
 }
-.dlw-elig-handoff h3 { margin: 0 0 6px; font-family: "Newsreader", Georgia, serif; font-size: 18px; }
+.dlw-elig-handoff h3 { margin: 0 0 6px; font-family: var(--font-newsreader), Georgia, serif; font-size: 18px; }
 .dlw-elig-handoff ul { margin: 8px 0 0; }
 
 /* Recovery calculator */
@@ -509,7 +509,7 @@
 }
 .dlw-recov-row:first-child { border-top: 0; }
 .dlw-recov-row span:last-child {
-  font-family: "Newsreader", Georgia, serif; font-weight: 700; letter-spacing: -0.01em;
+  font-family: var(--font-newsreader), Georgia, serif; font-weight: 700; letter-spacing: -0.01em;
 }
 .dlw-recov-row.subtotal {
   border-top: 2px solid #f0ede5; padding-top: 14px; font-weight: 600;
@@ -525,7 +525,7 @@
   color: rgba(254,249,241,0.7);
 }
 .dlw-recov-total strong {
-  font-family: "Newsreader", Georgia, serif; font-weight: 700;
+  font-family: var(--font-newsreader), Georgia, serif; font-weight: 700;
   font-size: 38px; letter-spacing: -0.02em; color: #f5b29f;
 }
 
@@ -1012,7 +1012,7 @@
   box-shadow: 0 24px 64px -20px rgba(0, 0, 0, 0.35);
 }
 .dlw-modal h3 {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-size: 22px;
   font-weight: 700;
   margin: 0 0 12px;
@@ -1193,7 +1193,7 @@
   align-items: start;
 }
 .dlw-claim-head h4 {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-size: 16px; font-weight: 700; margin: 0; color: var(--ink, #0e0e0e);
 }
 .dlw-claim-head p { font-size: 13.5px; color: #5a574e; margin: 4px 0 0; line-height: 1.45; }
@@ -1304,7 +1304,7 @@
   border: 1px solid #e8e5de;
   border-radius: 10px;
   padding: 32px 36px;
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-size: 14.5px;
   line-height: 1.6;
   color: var(--ink, #0e0e0e);
@@ -1333,7 +1333,7 @@
   border-radius: 12px;
 }
 .dlw-truth-card h3 {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-size: 18px; margin: 0 0 12px; color: var(--ink, #0e0e0e);
 }
 
@@ -1391,11 +1391,11 @@
   border-radius: 6px;
 }
 .dlw-tier h3 {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-size: 20px; font-weight: 700; margin: 0 0 4px; color: var(--ink, #0e0e0e);
 }
 .dlw-tier-price {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-weight: 700;
   font-size: 32px;
   letter-spacing: -0.02em;
@@ -1538,7 +1538,7 @@
 .dlw-addon strong { display: block; }
 .dlw-addon-meta { font-size: 12.5px; color: #6b6b6b; }
 .dlw-addon-price {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-weight: 700;
   color: var(--ink, #0e0e0e);
 }
@@ -1570,7 +1570,7 @@
   margin-top: 6px;
   padding-top: 10px;
   font-weight: 700;
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-size: 17px;
   color: var(--ink, #0e0e0e);
 }
@@ -1619,7 +1619,7 @@
   border-radius: 999px;
 }
 .dlw-auth-callout-title {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-size: 22px;
   line-height: 1.25;
   font-weight: 700;
@@ -1661,7 +1661,7 @@
 
 /* Section titles for tier / addon blocks. Replaces the inline-styled h3s. */
 .dlw-section-title {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-size: 20px;
   margin: 0 0 6px;
   display: flex;
@@ -1669,7 +1669,7 @@
   gap: 10px;
 }
 .dlw-section-sub {
-  font-family: "Geist", system-ui, sans-serif;
+  font-family: var(--font-geist), system-ui, sans-serif;
   font-size: 12.5px;
   font-weight: 400;
   color: #6b6b6b;
@@ -1688,7 +1688,7 @@
   border-radius: 999px;
   margin-left: 10px;
   vertical-align: middle;
-  font-family: "Geist", system-ui, sans-serif;
+  font-family: var(--font-geist), system-ui, sans-serif;
 }
 
 /* Stacking-style first line on Full Pressure features: subtly bolder so
@@ -1767,14 +1767,14 @@
   font-size: 11.5px;
   color: #8a857a;
   font-weight: 400;
-  font-family: "Geist", system-ui, sans-serif;
+  font-family: var(--font-geist), system-ui, sans-serif;
   letter-spacing: 0;
 }
 .dlw-breakdown .total {
   color: #6b6b6b;
   font-weight: 600;
   font-size: 13.5px;
-  font-family: "Geist", system-ui, sans-serif;
+  font-family: var(--font-geist), system-ui, sans-serif;
   letter-spacing: 0;
   text-transform: none;
 }
@@ -1999,14 +1999,14 @@
   left: 18px;
   top: 50%;
   transform: translateY(-50%);
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-weight: 700;
   font-size: 36px;
   color: var(--ink, #0e0e0e);
   pointer-events: none;
 }
 .dlw-amount-input-big {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-size: 36px;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -2228,7 +2228,7 @@
   color: #8b8779;
 }
 .dlw-sig-typed-name {
-  font-family: "Caveat", "Newsreader", Georgia, serif;
+  font-family: var(--font-caveat), var(--font-newsreader), Georgia, serif;
   font-style: italic;
   font-size: 36px;
   font-weight: 600;

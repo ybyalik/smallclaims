@@ -524,7 +524,7 @@ export default function DemandLetterPanel({
             border: "1px solid #ebe9e3",
             borderRadius: 10,
             background: "#fff",
-            fontFamily: '"Newsreader", Georgia, serif',
+            fontFamily: 'var(--font-newsreader), Georgia, serif',
             fontSize: 14.5,
             lineHeight: 1.6,
             color: "var(--ink, #111)",

@@ -20,7 +20,7 @@ export default function IfYouWinPreview() {
       <div className="wrap">
         <header style={{ marginBottom: 32 }}>
           <span className="eyebrow" style={{ color: "var(--accent)" }}>Preview · noindex</span>
-          <h1 style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 40, margin: "8px 0 8px" }}>
+          <h1 style={{ fontFamily: "var(--font-newsreader)", fontWeight: 700, fontSize: 40, margin: "8px 0 8px" }}>
             &ldquo;If you win&rdquo; right-side options
           </h1>
           <p style={{ color: "var(--ink-2)", maxWidth: "60ch" }}>
@@ -74,10 +74,10 @@ function Slot({ n, title, children }: { n: number; title: string; children: Reac
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
       <div style={{ display: "flex", alignItems: "baseline", gap: 10 }}>
-        <span style={{ fontFamily: "Geist", fontWeight: 700, color: "var(--accent)", fontSize: 12, letterSpacing: "0.16em" }}>
+        <span style={{ fontFamily: "var(--font-geist)", fontWeight: 700, color: "var(--accent)", fontSize: 12, letterSpacing: "0.16em" }}>
           {String(n).padStart(2, "0")}
         </span>
-        <h2 style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 18, margin: 0 }}>{title}</h2>
+        <h2 style={{ fontFamily: "var(--font-newsreader)", fontWeight: 700, fontSize: 18, margin: 0 }}>{title}</h2>
       </div>
       <div style={{ background: "var(--bg-2)", border: "1px solid var(--hairline)", borderRadius: 16, padding: 32, minHeight: 380, display: "flex", alignItems: "center", justifyContent: "center" }}>
         {children}
@@ -113,7 +113,7 @@ function CurrentDark() {
         <span style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", fontWeight: 700, color: "rgba(254,249,241,0.6)" }}>If you win</span>
         <span style={{ fontSize: 11, color: "rgba(254,249,241,0.5)", fontFamily: "ui-monospace, monospace" }}>{SAMPLE.meta}</span>
       </div>
-      <div style={{ display: "flex", alignItems: "flex-start", gap: 4, fontFamily: "Newsreader", fontWeight: 700, lineHeight: 1, marginBottom: 22, color: "#f5b29f", position: "relative" }}>
+      <div style={{ display: "flex", alignItems: "flex-start", gap: 4, fontFamily: "var(--font-newsreader)", fontWeight: 700, lineHeight: 1, marginBottom: 22, color: "#f5b29f", position: "relative" }}>
         <span style={{ fontSize: 36, marginTop: 6 }}>$</span>
         <span style={{ fontSize: 72, letterSpacing: "-0.04em" }}>{v.toLocaleString()}</span>
       </div>
@@ -132,7 +132,7 @@ function CreamReceipt() {
         <span style={{ fontSize: 10.5, letterSpacing: "0.2em", textTransform: "uppercase", fontWeight: 700, color: "var(--accent)" }}>If you win</span>
         <span style={{ fontSize: 10.5, color: "var(--muted)" }}>{SAMPLE.meta}</span>
       </div>
-      <div style={{ display: "flex", alignItems: "flex-start", gap: 4, fontFamily: "Newsreader", fontWeight: 700, lineHeight: 1, marginBottom: 18, color: "var(--accent)" }}>
+      <div style={{ display: "flex", alignItems: "flex-start", gap: 4, fontFamily: "var(--font-newsreader)", fontWeight: 700, lineHeight: 1, marginBottom: 18, color: "var(--accent)" }}>
         <span style={{ fontSize: 28, marginTop: 8 }}>$</span>
         <span style={{ fontSize: 64, letterSpacing: "-0.04em" }}>{v.toLocaleString()}</span>
       </div>
@@ -162,7 +162,7 @@ function Glass() {
           <span style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", fontWeight: 700, color: "var(--accent)" }}>If you win</span>
           <span style={{ fontSize: 11, color: "var(--ink-2)", fontFamily: "ui-monospace, monospace" }}>{SAMPLE.meta}</span>
         </div>
-        <div style={{ display: "flex", alignItems: "flex-start", gap: 4, fontFamily: "Newsreader", fontWeight: 700, lineHeight: 1, marginBottom: 20, color: "var(--ink)" }}>
+        <div style={{ display: "flex", alignItems: "flex-start", gap: 4, fontFamily: "var(--font-newsreader)", fontWeight: 700, lineHeight: 1, marginBottom: 20, color: "var(--ink)" }}>
           <span style={{ fontSize: 32, marginTop: 6 }}>$</span>
           <span style={{ fontSize: 68, letterSpacing: "-0.04em" }}>{v.toLocaleString()}</span>
         </div>
@@ -214,7 +214,7 @@ function SageLedger() {
         <span style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", fontWeight: 700, color: "#3d5d3f" }}>If you win</span>
         <span style={{ fontSize: 11, color: "#5a6b3a", fontFamily: "ui-monospace, monospace" }}>{SAMPLE.meta}</span>
       </div>
-      <div style={{ position: "relative", display: "flex", alignItems: "flex-start", gap: 4, fontFamily: "Newsreader", fontWeight: 700, lineHeight: 1, marginBottom: 20, color: "#3d5d3f" }}>
+      <div style={{ position: "relative", display: "flex", alignItems: "flex-start", gap: 4, fontFamily: "var(--font-newsreader)", fontWeight: 700, lineHeight: 1, marginBottom: 20, color: "#3d5d3f" }}>
         <span style={{ fontSize: 32, marginTop: 6 }}>$</span>
         <span style={{ fontSize: 68, letterSpacing: "-0.04em" }}>{v.toLocaleString()}</span>
       </div>
@@ -222,7 +222,7 @@ function SageLedger() {
         {SAMPLE.rows.map((r) => (
           <div key={r.label} style={{ display: "flex", justifyContent: "space-between" }}>
             <span style={{ color: "#5a6b3a" }}>{r.label}</span>
-            <strong style={{ color: r.emphasis === "accent" ? "var(--accent)" : "#3d5d3f", fontFamily: "Newsreader" }}>{r.value}</strong>
+            <strong style={{ color: r.emphasis === "accent" ? "var(--accent)" : "#3d5d3f", fontFamily: "var(--font-newsreader)" }}>{r.value}</strong>
           </div>
         ))}
       </div>
@@ -240,7 +240,7 @@ function PurpleGradient() {
         <span style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", fontWeight: 700, color: "rgba(255,255,255,0.85)" }}>If you win</span>
         <span style={{ fontSize: 11, color: "rgba(255,255,255,0.7)", fontFamily: "ui-monospace, monospace" }}>{SAMPLE.meta}</span>
       </div>
-      <div style={{ display: "flex", alignItems: "flex-start", gap: 4, fontFamily: "Newsreader", fontWeight: 700, lineHeight: 1, marginBottom: 20, color: "#fff" }}>
+      <div style={{ display: "flex", alignItems: "flex-start", gap: 4, fontFamily: "var(--font-newsreader)", fontWeight: 700, lineHeight: 1, marginBottom: 20, color: "#fff" }}>
         <span style={{ fontSize: 32, marginTop: 6 }}>$</span>
         <span style={{ fontSize: 72, letterSpacing: "-0.04em" }}>{v.toLocaleString()}</span>
       </div>
@@ -248,7 +248,7 @@ function PurpleGradient() {
         {SAMPLE.rows.map((r, i) => (
           <div key={r.label} style={{ display: "grid", gridTemplateColumns: "1fr auto", gap: 8, alignItems: "baseline", fontSize: 13.5 }}>
             <span style={{ color: "rgba(255,255,255,0.85)" }}>{r.label}</span>
-            <strong style={{ fontFamily: "Newsreader", fontSize: 16, color: r.emphasis === "muted" ? "rgba(255,255,255,0.4)" : "#fff" }}>{r.value}</strong>
+            <strong style={{ fontFamily: "var(--font-newsreader)", fontSize: 16, color: r.emphasis === "muted" ? "rgba(255,255,255,0.4)" : "#fff" }}>{r.value}</strong>
             <div style={{ gridColumn: "1 / -1", height: 4, background: "rgba(255,255,255,0.18)", borderRadius: 999, overflow: "hidden" }}>
               <span style={{ display: "block", height: "100%", width: r.emphasis === "muted" ? "0%" : r.emphasis === "accent" ? "100%" : "60%", background: "rgba(255,255,255,0.85)", borderRadius: 999, transformOrigin: "left", animation: `barfill 1.4s cubic-bezier(.4,0,.2,1) ${0.2 + i * 0.5}s both` }} />
             </div>
@@ -274,11 +274,11 @@ function EditorialQuote() {
           <span style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", fontWeight: 700, color: "var(--accent)" }}>If you win</span>
           <span style={{ fontSize: 11, color: "var(--muted)", fontFamily: "ui-monospace, monospace" }}>{SAMPLE.meta}</span>
         </div>
-        <div style={{ display: "flex", alignItems: "flex-start", gap: 4, fontFamily: "Newsreader", fontWeight: 700, lineHeight: 1, marginBottom: 4, color: "var(--ink)" }}>
+        <div style={{ display: "flex", alignItems: "flex-start", gap: 4, fontFamily: "var(--font-newsreader)", fontWeight: 700, lineHeight: 1, marginBottom: 4, color: "var(--ink)" }}>
           <span style={{ fontSize: 32, marginTop: 6 }}>$</span>
           <span style={{ fontSize: 72, letterSpacing: "-0.04em" }}>{v.toLocaleString()}</span>
         </div>
-        <div style={{ fontFamily: "Newsreader", fontStyle: "italic", color: "var(--ink-2)", fontSize: 15, marginBottom: 18 }}>recovered, in cash</div>
+        <div style={{ fontFamily: "var(--font-newsreader)", fontStyle: "italic", color: "var(--ink-2)", fontSize: 15, marginBottom: 18 }}>recovered, in cash</div>
         <Rows tone="light" />
         <Foot tone="light" />
       </div>
@@ -296,7 +296,7 @@ function CertifiedMail() {
         <div style={{ fontSize: 9, color: "var(--muted)", fontFamily: "ui-monospace, monospace", marginTop: 2 }}>{SAMPLE.meta.split("·")[0].trim()}</div>
       </div>
       <span style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", fontWeight: 700, color: "var(--accent)" }}>If you win</span>
-      <div style={{ display: "flex", alignItems: "flex-start", gap: 4, fontFamily: "Newsreader", fontWeight: 700, lineHeight: 1, margin: "10px 0 16px", color: "var(--ink)" }}>
+      <div style={{ display: "flex", alignItems: "flex-start", gap: 4, fontFamily: "var(--font-newsreader)", fontWeight: 700, lineHeight: 1, margin: "10px 0 16px", color: "var(--ink)" }}>
         <span style={{ fontSize: 32, marginTop: 6 }}>$</span>
         <span style={{ fontSize: 68, letterSpacing: "-0.04em" }}>{v.toLocaleString()}</span>
       </div>
@@ -314,7 +314,7 @@ function Bento() {
       <div style={{ gridColumn: "1 / -1", background: "var(--ink)", color: "#fef9f1", borderRadius: 14, padding: "20px 22px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
         <div>
           <div style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", fontWeight: 700, color: "rgba(254,249,241,0.6)" }}>If you win</div>
-          <div style={{ display: "flex", alignItems: "flex-start", gap: 4, fontFamily: "Newsreader", fontWeight: 700, lineHeight: 1, marginTop: 6, color: "#f5b29f" }}>
+          <div style={{ display: "flex", alignItems: "flex-start", gap: 4, fontFamily: "var(--font-newsreader)", fontWeight: 700, lineHeight: 1, marginTop: 6, color: "#f5b29f" }}>
             <span style={{ fontSize: 24, marginTop: 6 }}>$</span>
             <span style={{ fontSize: 56, letterSpacing: "-0.04em" }}>{v.toLocaleString()}</span>
           </div>
@@ -325,13 +325,13 @@ function Bento() {
         {SAMPLE.rows.map((r) => (
           <div key={r.label} style={{ display: "flex", justifyContent: "space-between", fontSize: 13 }}>
             <span style={{ color: "var(--ink-2)" }}>{r.label}</span>
-            <strong style={{ fontFamily: "Newsreader", color: r.emphasis === "accent" ? "var(--accent)" : "var(--ink)" }}>{r.value}</strong>
+            <strong style={{ fontFamily: "var(--font-newsreader)", color: r.emphasis === "accent" ? "var(--accent)" : "var(--ink)" }}>{r.value}</strong>
           </div>
         ))}
       </div>
       <div style={{ background: "rgba(217,64,46,0.08)", borderRadius: 14, padding: "18px 16px", display: "flex", flexDirection: "column", justifyContent: "center", gap: 6 }}>
         <div style={{ fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 700, color: "var(--accent)" }}>Trigger</div>
-        <div style={{ fontFamily: "Newsreader", fontStyle: "italic", color: "var(--ink)", fontSize: 14, lineHeight: 1.3 }}>{SAMPLE.footer}</div>
+        <div style={{ fontFamily: "var(--font-newsreader)", fontStyle: "italic", color: "var(--ink)", fontSize: 14, lineHeight: 1.3 }}>{SAMPLE.footer}</div>
       </div>
     </div>
   );
@@ -348,7 +348,7 @@ function Rows({ tone }: { tone: "light" | "dark" }) {
       {SAMPLE.rows.map((r, i) => (
         <div key={r.label} style={{ display: "grid", gridTemplateColumns: "1fr auto", gap: 8, alignItems: "baseline", fontSize: 13.5 }}>
           <span style={{ color: labelColor }}>{r.label}</span>
-          <strong style={{ fontFamily: "Newsreader", fontSize: 16, color: r.emphasis === "muted" ? labelColor : numColor }}>{r.value}</strong>
+          <strong style={{ fontFamily: "var(--font-newsreader)", fontSize: 16, color: r.emphasis === "muted" ? labelColor : numColor }}>{r.value}</strong>
           <div style={{ gridColumn: "1 / -1", height: 4, background: trackColor, borderRadius: 999, overflow: "hidden" }}>
             <span style={{ display: "block", height: "100%", width: r.emphasis === "muted" ? "0%" : r.emphasis === "accent" ? "100%" : "60%", background: r.emphasis === "accent" ? "linear-gradient(90deg, var(--accent), #f5b29f)" : fillColor, borderRadius: 999, transformOrigin: "left", animation: `barfill 1.4s cubic-bezier(.4,0,.2,1) ${0.2 + i * 0.5}s both` }} />
           </div>

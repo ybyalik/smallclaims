@@ -8,7 +8,7 @@ export default function HeroRightV2Preview() {
       <div className="wrap">
         <header style={{ marginBottom: 32 }}>
           <span className="eyebrow" style={{ color: "var(--accent)" }}>Preview · noindex · v2</span>
-          <h1 style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 40, margin: "8px 0 8px" }}>
+          <h1 style={{ fontFamily: "var(--font-newsreader)", fontWeight: 700, fontSize: 40, margin: "8px 0 8px" }}>
             Hero right-side options &mdash; v2
           </h1>
           <p style={{ color: "var(--ink-2)", maxWidth: "60ch" }}>
@@ -62,10 +62,10 @@ function Slot({ n, title, children }: { n: number; title: string; children: Reac
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
       <div style={{ display: "flex", alignItems: "baseline", gap: 10 }}>
-        <span style={{ fontFamily: "Geist", fontWeight: 700, color: "var(--accent)", fontSize: 12, letterSpacing: "0.16em" }}>
+        <span style={{ fontFamily: "var(--font-geist)", fontWeight: 700, color: "var(--accent)", fontSize: 12, letterSpacing: "0.16em" }}>
           {String(n).padStart(2, "0")}
         </span>
-        <h2 style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 18, margin: 0 }}>{title}</h2>
+        <h2 style={{ fontFamily: "var(--font-newsreader)", fontWeight: 700, fontSize: 18, margin: 0 }}>{title}</h2>
       </div>
       <div style={{ background: "var(--bg-2)", border: "1px solid var(--hairline)", borderRadius: 16, padding: 28, minHeight: 380, display: "flex", alignItems: "center", justifyContent: "center" }}>
         {children}
@@ -93,13 +93,13 @@ function RecentWins() {
     <div style={{ width: "100%", maxWidth: 360, background: "#fff", border: "1px solid var(--hairline)", borderRadius: 16, padding: 22, boxShadow: "0 18px 40px -22px rgba(31,27,22,0.18)" }}>
       <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 14 }}>
         <span style={{ width: 8, height: 8, borderRadius: "50%", background: "var(--accent)", animation: "pulseDot 1.6s ease-in-out infinite" }} />
-        <span style={{ fontFamily: "Geist", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 700, color: "var(--ink-2)" }}>Recent wins</span>
+        <span style={{ fontFamily: "var(--font-geist)", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 700, color: "var(--ink-2)" }}>Recent wins</span>
       </div>
       <div key={i} style={{ animation: "fadeUp 0.4s ease-out" }}>
-        <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 36, color: "var(--accent)", letterSpacing: "-0.02em", lineHeight: 1 }}>
+        <div style={{ fontFamily: "var(--font-newsreader)", fontWeight: 700, fontSize: 36, color: "var(--accent)", letterSpacing: "-0.02em", lineHeight: 1 }}>
           {cur.amount}
         </div>
-        <div style={{ marginTop: 8, fontFamily: "Newsreader", fontStyle: "italic", fontSize: 16, color: "var(--ink)" }}>
+        <div style={{ marginTop: 8, fontFamily: "var(--font-newsreader)", fontStyle: "italic", fontSize: 16, color: "var(--ink)" }}>
           &ldquo;{cur.label}&rdquo;
         </div>
         <div style={{ marginTop: 10, display: "flex", alignItems: "baseline", gap: 8, fontSize: 13, color: "var(--ink-2)" }}>
@@ -137,7 +137,7 @@ function Receipt() {
     <div style={{ width: "100%", maxWidth: 320, background: "#fefcf3", border: "1px solid var(--hairline)", borderRadius: 6, padding: "22px 24px", fontFamily: "ui-monospace, monospace", boxShadow: "0 18px 40px -22px rgba(31,27,22,0.22)" }}>
       <div style={{ textAlign: "center", marginBottom: 14, paddingBottom: 12, borderBottom: "1px dashed rgba(31,27,22,0.18)" }}>
         <div style={{ fontSize: 10, letterSpacing: "0.2em", color: "var(--muted)" }}>SMALL-CLAIMS RECOVERY</div>
-        <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 14, marginTop: 4, color: "var(--ink)" }}>Itemized award</div>
+        <div style={{ fontFamily: "var(--font-newsreader)", fontWeight: 700, fontSize: 14, marginTop: 4, color: "var(--ink)" }}>Itemized award</div>
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: 8, fontSize: 12 }}>
         {ROWS.map((r, idx) => (
@@ -158,7 +158,7 @@ function Receipt() {
       </div>
       <div style={{ marginTop: 14, paddingTop: 12, borderTop: "2px dashed var(--accent)", display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
         <span style={{ fontSize: 11, letterSpacing: "0.18em", color: "var(--accent)", fontWeight: 700 }}>TOTAL</span>
-        <span style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 28, color: "var(--accent)" }}>${total.toLocaleString()}</span>
+        <span style={{ fontFamily: "var(--font-newsreader)", fontWeight: 700, fontSize: 28, color: "var(--accent)" }}>${total.toLocaleString()}</span>
       </div>
     </div>
   );
@@ -183,9 +183,9 @@ function AirMail() {
             <svg viewBox="0 0 80 80" width="60" height="60" fill="none" stroke="var(--accent)" strokeWidth="1.4" strokeDasharray="2 3">
               <circle cx="40" cy="40" r="34" />
               <circle cx="40" cy="40" r="24" />
-              <text x="40" y="32" fontSize="6" fill="var(--accent)" textAnchor="middle" letterSpacing="1.4" fontFamily="Geist">CERTIFIED</text>
-              <text x="40" y="42" fontSize="9" fontWeight="700" fill="var(--accent)" textAnchor="middle" fontFamily="Geist">2026</text>
-              <text x="40" y="52" fontSize="6" fill="var(--accent)" textAnchor="middle" letterSpacing="1.4" fontFamily="Geist">APR · 21</text>
+              <text x="40" y="32" fontSize="6" fill="var(--accent)" textAnchor="middle" letterSpacing="1.4" fontFamily="var(--font-geist)">CERTIFIED</text>
+              <text x="40" y="42" fontSize="9" fontWeight="700" fill="var(--accent)" textAnchor="middle" fontFamily="var(--font-geist)">2026</text>
+              <text x="40" y="52" fontSize="6" fill="var(--accent)" textAnchor="middle" letterSpacing="1.4" fontFamily="var(--font-geist)">APR · 21</text>
             </svg>
           </div>
 
@@ -221,11 +221,11 @@ function CaseFolder() {
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 12, paddingBottom: 8, borderBottom: "1px solid var(--hairline)" }}>
             <div>
               <div style={{ fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 700, color: "var(--muted)" }}>Plaintiff</div>
-              <div style={{ fontFamily: "Newsreader", fontSize: 16, fontWeight: 700, color: "var(--ink)" }}>Tenant, J.</div>
+              <div style={{ fontFamily: "var(--font-newsreader)", fontSize: 16, fontWeight: 700, color: "var(--ink)" }}>Tenant, J.</div>
             </div>
-            <div style={{ fontFamily: "Geist", fontSize: 10, color: "var(--muted)" }}>Filed Apr 21, 2026</div>
+            <div style={{ fontFamily: "var(--font-geist)", fontSize: 10, color: "var(--muted)" }}>Filed Apr 21, 2026</div>
           </div>
-          <div style={{ fontFamily: "Newsreader", fontStyle: "italic", fontSize: 14, color: "var(--ink)", marginBottom: 12 }}>
+          <div style={{ fontFamily: "var(--font-newsreader)", fontStyle: "italic", fontSize: 14, color: "var(--ink)", marginBottom: 12 }}>
             v. Oakwood Properties LLC
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 6, fontSize: 12, color: "var(--ink-2)" }}>
@@ -250,12 +250,12 @@ function VerdictStamp() {
         <div style={{ height: 6, background: "rgba(31,27,22,0.18)", borderRadius: 3, width: "45%" }} />
       </div>
       <div style={{ position: "absolute", top: "50%", right: 24, transform: "translateY(-50%) rotate(-4deg)", border: "3px solid var(--accent)", borderRadius: 8, padding: "10px 18px", background: "rgba(217,64,46,0.08)", animation: "stampDrop 1.2s cubic-bezier(.5,1.6,.4,1) both" }}>
-        <div style={{ fontFamily: "Geist", fontSize: 11, letterSpacing: "0.22em", fontWeight: 800, color: "var(--accent)" }}>AWARDED</div>
-        <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 26, color: "var(--accent)", letterSpacing: "-0.02em", marginTop: 2 }}>$4,500</div>
+        <div style={{ fontFamily: "var(--font-geist)", fontSize: 11, letterSpacing: "0.22em", fontWeight: 800, color: "var(--accent)" }}>AWARDED</div>
+        <div style={{ fontFamily: "var(--font-newsreader)", fontWeight: 700, fontSize: 26, color: "var(--accent)", letterSpacing: "-0.02em", marginTop: 2 }}>$4,500</div>
       </div>
       <div style={{ marginTop: 28, paddingTop: 16, borderTop: "1px dashed var(--hairline)", display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
-        <div style={{ fontFamily: "Caveat", fontStyle: "italic", fontSize: 22, color: "var(--ink)" }}>Hon. R. Mendez</div>
-        <div style={{ fontFamily: "Geist", fontSize: 10, color: "var(--muted)", letterSpacing: "0.12em" }}>JUDGMENT · MAY 28</div>
+        <div style={{ fontFamily: "var(--font-caveat)", fontStyle: "italic", fontSize: 22, color: "var(--ink)" }}>Hon. R. Mendez</div>
+        <div style={{ fontFamily: "var(--font-geist)", fontSize: 10, color: "var(--muted)", letterSpacing: "0.12em" }}>JUDGMENT · MAY 28</div>
       </div>
     </div>
   );
@@ -276,8 +276,8 @@ function VerticalTimeline() {
       {STEPS.map((s, i) => (
         <div key={s.day} style={{ position: "relative", paddingBottom: i === STEPS.length - 1 ? 0 : 22 }}>
           <div style={{ position: "absolute", left: -23, top: 4, width: 10, height: 10, borderRadius: "50%", background: "var(--ink)", border: "2px solid var(--bg-2)" }} />
-          <div style={{ fontFamily: "Geist", fontSize: 10.5, letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 700, color: "var(--accent)", marginBottom: 2 }}>{s.day}</div>
-          <div style={{ fontFamily: "Newsreader", fontSize: 15, color: "var(--ink)", lineHeight: 1.3 }}>{s.label}</div>
+          <div style={{ fontFamily: "var(--font-geist)", fontSize: 10.5, letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 700, color: "var(--accent)", marginBottom: 2 }}>{s.day}</div>
+          <div style={{ fontFamily: "var(--font-newsreader)", fontSize: 15, color: "var(--ink)", lineHeight: 1.3 }}>{s.label}</div>
         </div>
       ))}
       <div style={{ marginTop: 18, paddingTop: 12, borderTop: "1px dashed rgba(31,27,22,0.12)", fontSize: 12, color: "var(--ink-2)" }}>
@@ -311,7 +311,7 @@ function StatePins() {
               animation: `pinDrop 0.5s ease-out ${i * 0.3}s both`,
             }}
           >
-            <div style={{ background: "var(--accent)", color: "#fff", padding: "4px 8px", borderRadius: 6, fontSize: 11, fontWeight: 700, fontFamily: "Geist", boxShadow: "0 6px 14px -4px rgba(217,64,46,0.5)", whiteSpace: "nowrap" }}>
+            <div style={{ background: "var(--accent)", color: "#fff", padding: "4px 8px", borderRadius: 6, fontSize: 11, fontWeight: 700, fontFamily: "var(--font-geist)", boxShadow: "0 6px 14px -4px rgba(217,64,46,0.5)", whiteSpace: "nowrap" }}>
               {p.label}
             </div>
             <div style={{ width: 0, height: 0, borderLeft: "4px solid transparent", borderRight: "4px solid transparent", borderTop: "5px solid var(--accent)", margin: "0 auto" }} />
@@ -319,7 +319,7 @@ function StatePins() {
         ))}
       </div>
       <div style={{ marginTop: 12, display: "flex", justifyContent: "space-between", alignItems: "baseline", fontSize: 12, color: "var(--ink-2)" }}>
-        <span style={{ fontFamily: "Geist", letterSpacing: "0.16em", textTransform: "uppercase", fontSize: 10.5, fontWeight: 700, color: "var(--accent)" }}>Recovery by state</span>
+        <span style={{ fontFamily: "var(--font-geist)", letterSpacing: "0.16em", textTransform: "uppercase", fontSize: 10.5, fontWeight: 700, color: "var(--accent)" }}>Recovery by state</span>
         <span style={{ fontStyle: "italic" }}>illustrative · varies</span>
       </div>
     </div>
@@ -353,8 +353,8 @@ function GlassStack() {
               marginRight: i === 2 ? 24 : 0,
             }}
           >
-            <div style={{ fontFamily: "Geist", fontSize: 10.5, letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 700, color: "var(--accent)" }}>{s.eyebrow}</div>
-            <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 32, color: "var(--ink)", letterSpacing: "-0.02em", marginTop: 2 }}>{s.value}</div>
+            <div style={{ fontFamily: "var(--font-geist)", fontSize: 10.5, letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 700, color: "var(--accent)" }}>{s.eyebrow}</div>
+            <div style={{ fontFamily: "var(--font-newsreader)", fontWeight: 700, fontSize: 32, color: "var(--ink)", letterSpacing: "-0.02em", marginTop: 2 }}>{s.value}</div>
             <div style={{ fontSize: 12, color: "var(--ink-2)", marginTop: 2 }}>{s.sub}</div>
           </div>
         ))}

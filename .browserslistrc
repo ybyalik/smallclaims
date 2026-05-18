@@ -1,0 +1,12 @@
+# Target modern browsers only. Drops Next.js polyfills for
+# Array.prototype.at, flat, flatMap, Object.fromEntries, Object.hasOwn,
+# String.prototype.trimStart/trimEnd — features that have been native in
+# every supported browser for years. PSI flagged ~12KB of dead-weight
+# polyfills shipped to modern devices.
+#
+# 99.5% global market coverage as of writing (Chrome/Edge/Safari/Firefox
+# released within the last ~2 years).
+>= 0.5%
+last 2 versions
+not dead
+not op_mini all

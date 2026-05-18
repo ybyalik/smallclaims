@@ -293,7 +293,7 @@ export default function ContactPage() {
                 we&rsquo;ll route it.
               </p>
             </div>
-            <div style={{ fontFamily: "Newsreader", fontStyle: "italic", fontSize: 22, color: "var(--muted)", textAlign: "right", lineHeight: 1.4 }}>
+            <div style={{ fontFamily: "var(--font-newsreader)", fontStyle: "italic", fontSize: 22, color: "var(--muted)", textAlign: "right", lineHeight: 1.4 }}>
               CivilCase<br />
               Attn: Customer Support<br />
               <span style={{ fontSize: 14, color: "var(--muted)" }}>(coming with public launch)</span>

@@ -8,7 +8,7 @@ export default function HeroRightPreview() {
       <div className="wrap">
         <header style={{ marginBottom: 32 }}>
           <span className="eyebrow" style={{ color: "var(--accent)" }}>Preview · noindex</span>
-          <h1 style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 40, margin: "8px 0 8px" }}>
+          <h1 style={{ fontFamily: "var(--font-newsreader)", fontWeight: 700, fontSize: 40, margin: "8px 0 8px" }}>
             Hero right-side options
           </h1>
           <p style={{ color: "var(--ink-2)", maxWidth: 60 + "ch" }}>
@@ -71,10 +71,10 @@ function Slot({ n, title, children }: { n: number; title: string; children: Reac
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
       <div style={{ display: "flex", alignItems: "baseline", gap: 10 }}>
-        <span style={{ fontFamily: "Geist", fontWeight: 700, color: "var(--accent)", fontSize: 12, letterSpacing: "0.16em" }}>
+        <span style={{ fontFamily: "var(--font-geist)", fontWeight: 700, color: "var(--accent)", fontSize: 12, letterSpacing: "0.16em" }}>
           {String(n).padStart(2, "0")}
         </span>
-        <h2 style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 18, margin: 0 }}>{title}</h2>
+        <h2 style={{ fontFamily: "var(--font-newsreader)", fontWeight: 700, fontSize: 18, margin: 0 }}>{title}</h2>
       </div>
       <div
         style={{
@@ -113,10 +113,10 @@ function CounterOption() {
   }, []);
   return (
     <div style={{ textAlign: "center" }}>
-      <div style={{ fontFamily: "Geist", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--muted)", marginBottom: 12 }}>
+      <div style={{ fontFamily: "var(--font-geist)", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--muted)", marginBottom: 12 }}>
         Recovered for our users
       </div>
-      <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 56, color: "var(--ink)", letterSpacing: "-0.02em", lineHeight: 1 }}>
+      <div style={{ fontFamily: "var(--font-newsreader)", fontWeight: 700, fontSize: 56, color: "var(--ink)", letterSpacing: "-0.02em", lineHeight: 1 }}>
         ${v.toLocaleString()}
       </div>
       <div style={{ marginTop: 14, color: "var(--ink-2)", fontSize: 14 }}>
@@ -142,8 +142,8 @@ function MeterOption() {
           style={{ animation: "meter-fill 1.6s ease-out forwards" }}
         />
       </svg>
-      <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 44, color: "var(--ink)", marginTop: -10 }}>78<span style={{ fontSize: 22, color: "var(--muted)" }}>/100</span></div>
-      <div style={{ fontFamily: "Geist", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 700, color: "var(--accent)" }}>
+      <div style={{ fontFamily: "var(--font-newsreader)", fontWeight: 700, fontSize: 44, color: "var(--ink)", marginTop: -10 }}>78<span style={{ fontSize: 22, color: "var(--muted)" }}>/100</span></div>
+      <div style={{ fontFamily: "var(--font-geist)", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 700, color: "var(--accent)" }}>
         Strong case
       </div>
       <div style={{ marginTop: 8, color: "var(--ink-2)", fontSize: 13 }}>
@@ -170,14 +170,14 @@ function StateTickerOption() {
   const cur = ENTRIES[i];
   return (
     <div style={{ textAlign: "center", width: "100%" }}>
-      <div style={{ fontFamily: "Geist", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--muted)", marginBottom: 16 }}>
+      <div style={{ fontFamily: "var(--font-geist)", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--muted)", marginBottom: 16 }}>
         State caps · live
       </div>
       <div key={i} style={{ animation: "fade-in-up 0.4s ease-out" }}>
-        <div style={{ fontFamily: "Newsreader", fontStyle: "italic", fontSize: 22, color: "var(--ink-2)" }}>
+        <div style={{ fontFamily: "var(--font-newsreader)", fontStyle: "italic", fontSize: 22, color: "var(--ink-2)" }}>
           {cur.state}
         </div>
-        <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 56, color: "var(--accent)", letterSpacing: "-0.02em", lineHeight: 1, marginTop: 4 }}>
+        <div style={{ fontFamily: "var(--font-newsreader)", fontWeight: 700, fontSize: 56, color: "var(--accent)", letterSpacing: "-0.02em", lineHeight: 1, marginTop: 4 }}>
           {cur.cap}
         </div>
       </div>
@@ -193,7 +193,7 @@ function StepFlowOption() {
   const STEPS = ["Demand", "File", "Hearing", "Won"];
   return (
     <div style={{ width: "100%" }}>
-      <div style={{ fontFamily: "Geist", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--muted)", textAlign: "center", marginBottom: 28 }}>
+      <div style={{ fontFamily: "var(--font-geist)", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--muted)", textAlign: "center", marginBottom: 28 }}>
         How it goes
       </div>
       <div style={{ position: "relative", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
@@ -202,11 +202,11 @@ function StepFlowOption() {
         {STEPS.map((s) => (
           <div key={s} style={{ position: "relative", zIndex: 1, background: "var(--bg-2)", padding: "0 6px" }}>
             <div style={{ width: 10, height: 10, borderRadius: "50%", background: "var(--ink)", margin: "0 auto" }} />
-            <div style={{ marginTop: 8, fontFamily: "Geist", fontSize: 12, fontWeight: 600, color: "var(--ink-2)" }}>{s}</div>
+            <div style={{ marginTop: 8, fontFamily: "var(--font-geist)", fontSize: 12, fontWeight: 600, color: "var(--ink-2)" }}>{s}</div>
           </div>
         ))}
       </div>
-      <div style={{ textAlign: "center", marginTop: 28, fontFamily: "Newsreader", fontWeight: 700, fontSize: 22, color: "var(--ink)" }}>
+      <div style={{ textAlign: "center", marginTop: 28, fontFamily: "var(--font-newsreader)", fontWeight: 700, fontSize: 22, color: "var(--ink)" }}>
         30–90 days <span style={{ color: "var(--muted)", fontWeight: 400 }}>typical</span>
       </div>
     </div>
@@ -225,7 +225,7 @@ function TypingLetterOption() {
   ];
   return (
     <div style={{ background: "#fefcf3", border: "1px solid var(--hairline)", borderRadius: 6, padding: "22px 26px", width: "100%", boxShadow: "0 12px 28px -16px rgba(31,27,22,0.25)", transform: "rotate(-0.4deg)" }}>
-      <div style={{ display: "flex", flexDirection: "column", gap: 8, fontFamily: "Newsreader", fontSize: 13, lineHeight: 1.55, color: "var(--ink)" }}>
+      <div style={{ display: "flex", flexDirection: "column", gap: 8, fontFamily: "var(--font-newsreader)", fontSize: 13, lineHeight: 1.55, color: "var(--ink)" }}>
         {LINES.map((l, i) => (
           <div
             key={l}
@@ -239,7 +239,7 @@ function TypingLetterOption() {
             {l}
           </div>
         ))}
-        <div style={{ fontFamily: "Caveat", fontStyle: "italic", fontSize: 22, color: "var(--accent)", marginTop: 6, opacity: 0, animation: `fade-in-up 0.6s ease-out ${LINES.length * 0.6}s forwards` }}>
+        <div style={{ fontFamily: "var(--font-caveat)", fontStyle: "italic", fontSize: 22, color: "var(--accent)", marginTop: 6, opacity: 0, animation: `fade-in-up 0.6s ease-out ${LINES.length * 0.6}s forwards` }}>
           Jordan A. Tenant
         </div>
       </div>
@@ -251,7 +251,7 @@ function TypingLetterOption() {
 function BarsOption() {
   return (
     <div style={{ width: "100%", textAlign: "center" }}>
-      <div style={{ fontFamily: "Geist", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--muted)", marginBottom: 24 }}>
+      <div style={{ fontFamily: "var(--font-geist)", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--muted)", marginBottom: 24 }}>
         Typical recovery
       </div>
       <div style={{ display: "flex", gap: 16, alignItems: "flex-end", justifyContent: "center", height: 160 }}>
@@ -261,7 +261,7 @@ function BarsOption() {
           { label: "High", h: 145, val: "$10K+", color: "var(--ink)" },
         ].map((b, i) => (
           <div key={b.label} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 6 }}>
-            <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 16, color: b.color }}>{b.val}</div>
+            <div style={{ fontFamily: "var(--font-newsreader)", fontWeight: 700, fontSize: 16, color: b.color }}>{b.val}</div>
             <div
               style={{
                 width: 38,
@@ -271,7 +271,7 @@ function BarsOption() {
                 ["--h" as string]: `${b.h}px`,
               } as React.CSSProperties}
             />
-            <div style={{ fontFamily: "Geist", fontSize: 10.5, letterSpacing: "0.16em", textTransform: "uppercase", fontWeight: 700, color: "var(--ink-2)" }}>{b.label}</div>
+            <div style={{ fontFamily: "var(--font-geist)", fontSize: 10.5, letterSpacing: "0.16em", textTransform: "uppercase", fontWeight: 700, color: "var(--ink-2)" }}>{b.label}</div>
           </div>
         ))}
       </div>
@@ -299,7 +299,7 @@ function ChipsOption() {
             border: "1px solid var(--hairline)",
             borderRadius: 999,
             padding: "10px 16px",
-            fontFamily: "Geist",
+            fontFamily: "var(--font-geist)",
             fontWeight: 600,
             fontSize: 13.5,
             color: "var(--ink-2)",
@@ -339,7 +339,7 @@ function ChecklistOption() {
               <path d="M5 12l5 5L20 7" />
             </svg>
           </span>
-          <span style={{ fontFamily: "Geist", fontWeight: 600, fontSize: 15, color: "var(--ink)" }}>{t}</span>
+          <span style={{ fontFamily: "var(--font-geist)", fontWeight: 600, fontSize: 15, color: "var(--ink)" }}>{t}</span>
         </div>
       ))}
     </div>
@@ -358,7 +358,7 @@ function GavelOption() {
           <path d="M3 21h11" />
         </svg>
       </div>
-      <div style={{ fontFamily: "Geist", fontWeight: 700, fontSize: 12, letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--ink-2)", animation: "pulse-fade 4s ease-in-out infinite" }}>
+      <div style={{ fontFamily: "var(--font-geist)", fontWeight: 700, fontSize: 12, letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--ink-2)", animation: "pulse-fade 4s ease-in-out infinite" }}>
         Built for filers
       </div>
     </div>
@@ -380,11 +380,11 @@ function QuoteOption() {
   const cur = QUOTES[i];
   return (
     <div key={i} style={{ animation: "fade-in-up 0.5s ease-out", textAlign: "left", maxWidth: 360 }}>
-      <div style={{ fontFamily: "Newsreader", fontStyle: "italic", fontSize: 19, lineHeight: 1.4, color: "var(--ink)" }}>
+      <div style={{ fontFamily: "var(--font-newsreader)", fontStyle: "italic", fontSize: 19, lineHeight: 1.4, color: "var(--ink)" }}>
         <span style={{ color: "var(--accent)", fontSize: 28, lineHeight: 1, marginRight: 4 }}>&ldquo;</span>
         {cur.q}
       </div>
-      <div style={{ marginTop: 14, fontFamily: "Geist", fontSize: 13, color: "var(--muted)" }}>
+      <div style={{ marginTop: 14, fontFamily: "var(--font-geist)", fontSize: 13, color: "var(--muted)" }}>
         — {cur.who}
       </div>
     </div>

@@ -15,7 +15,7 @@
   font-weight: 600;
 }
 .guides-hero h1 {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-weight: 700;
   font-size: clamp(36px, 5vw, 60px);
   letter-spacing: -0.025em;
@@ -216,7 +216,7 @@
   font-weight: 600;
 }
 .coming-soon h1 {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-weight: 700;
   font-size: clamp(32px, 4.5vw, 52px);
   letter-spacing: -0.02em;
@@ -297,7 +297,7 @@ section.g-hero {
   color: var(--accent);
 }
 .g-hero h1 {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-weight: 700;
   font-size: clamp(40px, 5.5vw, 60px);
   letter-spacing: -0.025em;
@@ -333,7 +333,7 @@ section.g-hero {
   gap: 4px;
 }
 .g-hero-stats .stat-num {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-weight: 700;
   font-size: clamp(28px, 3.2vw, 38px);
   letter-spacing: -0.02em;
@@ -405,7 +405,7 @@ section.g-section + section.g-section { padding-top: 28px; }
   margin-bottom: 10px;
 }
 .g-section-head h2 {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-weight: 700;
   font-size: clamp(28px, 3.2vw, 40px);
   letter-spacing: -0.02em;
@@ -434,7 +434,7 @@ section.g-section + section.g-section { padding-top: 28px; }
   max-width: 70ch;
 }
 .g-section h3 {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-weight: 700;
   font-size: 22px;
   letter-spacing: -0.01em;
@@ -442,7 +442,7 @@ section.g-section + section.g-section { padding-top: 28px; }
   margin: 24px 0 8px;
 }
 .g-section h4 {
-  font-family: "Geist", system-ui, sans-serif;
+  font-family: var(--font-geist), system-ui, sans-serif;
   font-weight: 700;
   font-size: 15px;
   color: var(--ink);
@@ -600,7 +600,7 @@ section.g-section + section.g-section { padding-top: 28px; }
 }
 .ce-claim-text h4 {
   margin: 0 0 4px !important;
-  font-family: "Geist", system-ui, sans-serif;
+  font-family: var(--font-geist), system-ui, sans-serif;
   font-size: 15px;
   font-weight: 700;
   color: var(--ink);
@@ -758,7 +758,7 @@ section.g-section + section.g-section { padding-top: 28px; }
   color: #fef9f1;
   display: grid;
   place-items: center;
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-weight: 700;
   font-size: 22px;
   flex-shrink: 0;
@@ -1006,7 +1006,7 @@ section.g-section + section.g-section { padding-top: 28px; }
   margin: 0 0 10px;
   font-size: 15.5px;
   color: var(--ink);
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-weight: 700;
 }
 .g-pitfalls p {
@@ -1040,7 +1040,7 @@ section.g-section + section.g-section { padding-top: 28px; }
 }
 .g-changes h4 {
   margin: 0 0 6px;
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-weight: 700;
   font-size: 17px;
 }
@@ -1065,7 +1065,7 @@ section.g-section + section.g-section { padding-top: 28px; }
   justify-content: space-between;
   align-items: center;
   gap: 18px;
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-weight: 700;
   font-size: 19px;
   color: var(--ink);
@@ -1075,7 +1075,7 @@ section.g-section + section.g-section { padding-top: 28px; }
 .g-faq summary::-webkit-details-marker { display: none; }
 .g-faq summary::after {
   content: "+";
-  font-family: "Geist";
+  font-family: var(--font-geist);
   font-weight: 400;
   font-size: 20px;
   color: var(--ink-2);
@@ -1227,7 +1227,7 @@ section.g-section + section.g-section { padding-top: 28px; }
 }
 .widget-head h3 {
   margin: 0 0 6px !important;
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-weight: 700;
   font-size: 22px !important;
   letter-spacing: -0.01em;
@@ -1393,7 +1393,7 @@ section.g-section + section.g-section { padding-top: 28px; }
 
 /* Page opener (H1 + standfirst + byline) */
 .sgv2-article h1 {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-weight: 700;
   font-size: clamp(40px, 5.2vw, 56px);
   letter-spacing: -0.025em;
@@ -1404,7 +1404,7 @@ section.g-section + section.g-section { padding-top: 28px; }
 
 /* Section headings — no border-top divider; spacing alone separates sections */
 .sgv2-article h2 {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-weight: 700;
   font-size: clamp(26px, 3.2vw, 34px);
   letter-spacing: -0.022em;
@@ -1415,7 +1415,7 @@ section.g-section + section.g-section { padding-top: 28px; }
 }
 
 .sgv2-article h3 {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-weight: 700;
   font-size: 22px;
   letter-spacing: -0.015em;

@@ -8,7 +8,7 @@ export default function HeroRightV3Preview() {
       <div className="wrap">
         <header style={{ marginBottom: 32 }}>
           <span className="eyebrow" style={{ color: "var(--accent)" }}>Preview · noindex · v3</span>
-          <h1 style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 40, margin: "8px 0 8px" }}>
+          <h1 style={{ fontFamily: "var(--font-newsreader)", fontWeight: 700, fontSize: 40, margin: "8px 0 8px" }}>
             Hero right-side options &mdash; category hubs
           </h1>
           <p style={{ color: "var(--ink-2)", maxWidth: "60ch" }}>
@@ -54,10 +54,10 @@ function Slot({ n, title, children }: { n: number; title: string; children: Reac
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
       <div style={{ display: "flex", alignItems: "baseline", gap: 10 }}>
-        <span style={{ fontFamily: "Geist", fontWeight: 700, color: "var(--accent)", fontSize: 12, letterSpacing: "0.16em" }}>
+        <span style={{ fontFamily: "var(--font-geist)", fontWeight: 700, color: "var(--accent)", fontSize: 12, letterSpacing: "0.16em" }}>
           {String(n).padStart(2, "0")}
         </span>
-        <h2 style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 18, margin: 0 }}>{title}</h2>
+        <h2 style={{ fontFamily: "var(--font-newsreader)", fontWeight: 700, fontSize: 18, margin: 0 }}>{title}</h2>
       </div>
       <div style={{ background: "var(--bg-2)", border: "1px solid var(--hairline)", borderRadius: 16, padding: 28, minHeight: 460, display: "flex", alignItems: "center", justifyContent: "center" }}>
         {children}
@@ -79,7 +79,7 @@ function Anatomy() {
   return (
     <div style={{ width: "100%", maxWidth: 360, background: "#fff", border: "1px solid var(--hairline)", borderRadius: 18, padding: "22px 24px", boxShadow: "0 18px 40px -22px rgba(31,27,22,0.18)" }}>
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 16, paddingBottom: 12, borderBottom: "1px solid var(--hairline)" }}>
-        <div style={{ fontFamily: "Geist", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 700, color: "var(--accent)" }}>Anatomy of a win</div>
+        <div style={{ fontFamily: "var(--font-geist)", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 700, color: "var(--accent)" }}>Anatomy of a win</div>
         <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 11.5, color: "var(--ink-2)" }}>
           <span style={{ width: 8, height: 8, borderRadius: "50%", background: "var(--accent)", animation: "pulseDot 1.6s ease-in-out infinite" }} />
           6 / 6
@@ -104,7 +104,7 @@ function Anatomy() {
       </div>
       <div style={{ marginTop: 16, paddingTop: 12, borderTop: "1px dashed var(--hairline)", display: "flex", justifyContent: "space-between", alignItems: "baseline", fontSize: 12, color: "var(--ink-2)" }}>
         <span>Avg time to judgment</span>
-        <strong style={{ color: "var(--ink)", fontFamily: "Newsreader", fontSize: 16 }}>47 days</strong>
+        <strong style={{ color: "var(--ink)", fontFamily: "var(--font-newsreader)", fontSize: 16 }}>47 days</strong>
       </div>
     </div>
   );
@@ -120,11 +120,11 @@ function RecoveryLayers() {
   const total = "$4,670";
   return (
     <div style={{ width: "100%", maxWidth: 340, background: "#fff", border: "1px solid var(--hairline)", borderRadius: 18, padding: "22px 24px", boxShadow: "0 18px 40px -22px rgba(31,27,22,0.18)" }}>
-      <div style={{ fontFamily: "Geist", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 700, color: "var(--accent)", marginBottom: 4 }}>Recovery layers</div>
+      <div style={{ fontFamily: "var(--font-geist)", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 700, color: "var(--accent)", marginBottom: 4 }}>Recovery layers</div>
       <div style={{ display: "flex", alignItems: "flex-end", gap: 14, height: 140, margin: "16px 0 18px" }}>
         {LAYERS.map((l, i) => (
           <div key={l.label} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 6, flex: 1 }}>
-            <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 14, color: l.color }}>{l.value}</div>
+            <div style={{ fontFamily: "var(--font-newsreader)", fontWeight: 700, fontSize: 14, color: l.color }}>{l.value}</div>
             <div style={{ width: "100%", background: l.color, height: l.h, borderRadius: "8px 8px 0 0", animation: `growUp 0.7s cubic-bezier(.34,1.56,.64,1) ${0.1 + i * 0.18}s both`, transformOrigin: "bottom" }} />
           </div>
         ))}
@@ -134,13 +134,13 @@ function RecoveryLayers() {
           <div key={l.label} style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 12.5 }}>
             <span style={{ width: 10, height: 10, borderRadius: 2, background: l.color }} />
             <span style={{ flex: 1, color: "var(--ink-2)" }}>{l.label}</span>
-            <strong style={{ color: "var(--ink)", fontFamily: "Newsreader" }}>{l.value}</strong>
+            <strong style={{ color: "var(--ink)", fontFamily: "var(--font-newsreader)" }}>{l.value}</strong>
           </div>
         ))}
       </div>
       <div style={{ marginTop: 14, paddingTop: 12, borderTop: "2px dashed rgba(217,64,46,0.4)", display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
         <span style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", fontWeight: 700, color: "var(--accent)" }}>Estimated total</span>
-        <span style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 28, color: "var(--accent)" }}>{total}</span>
+        <span style={{ fontFamily: "var(--font-newsreader)", fontWeight: 700, fontSize: 28, color: "var(--accent)" }}>{total}</span>
       </div>
     </div>
   );
@@ -173,8 +173,8 @@ function GlassStack() {
               marginRight: i === 2 ? 24 : 0,
             }}
           >
-            <div style={{ fontFamily: "Geist", fontSize: 10.5, letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 700, color: "var(--accent)" }}>{s.eyebrow}</div>
-            <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 32, color: "var(--ink)", letterSpacing: "-0.02em", marginTop: 2 }}>{s.value}</div>
+            <div style={{ fontFamily: "var(--font-geist)", fontSize: 10.5, letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 700, color: "var(--accent)" }}>{s.eyebrow}</div>
+            <div style={{ fontFamily: "var(--font-newsreader)", fontWeight: 700, fontSize: 32, color: "var(--ink)", letterSpacing: "-0.02em", marginTop: 2 }}>{s.value}</div>
             <div style={{ fontSize: 12, color: "var(--ink-2)", marginTop: 2 }}>{s.sub}</div>
           </div>
         ))}
@@ -193,7 +193,7 @@ function Certificate() {
           <defs>
             <path id="circ" d="M 50,50 m -38,0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0" />
           </defs>
-          <text fill="var(--accent)" fontSize="9" fontFamily="Geist" letterSpacing="3" fontWeight="700">
+          <text fill="var(--accent)" fontSize="9" fontFamily="var(--font-geist)" letterSpacing="3" fontWeight="700">
             <textPath href="#circ">CERTIFIED · SMALL CLAIMS · CIVIL · 2026 ·</textPath>
           </text>
         </svg>
@@ -205,11 +205,11 @@ function Certificate() {
       </div>
 
       <div style={{ fontSize: 10, letterSpacing: "0.32em", color: "var(--accent)", fontWeight: 700, textTransform: "uppercase" }}>State of California</div>
-      <div style={{ fontFamily: "Caveat", fontStyle: "italic", fontSize: 28, color: "var(--ink)", marginTop: 6 }}>Certificate of</div>
+      <div style={{ fontFamily: "var(--font-caveat)", fontStyle: "italic", fontSize: 28, color: "var(--ink)", marginTop: 6 }}>Certificate of</div>
       <div style={{ fontWeight: 800, fontSize: 36, color: "var(--ink)", letterSpacing: "-0.02em", lineHeight: 1, marginTop: 2 }}>Judgment</div>
       <div style={{ width: 80, height: 1, background: "var(--ink)", margin: "16px auto" }} />
       <div style={{ fontStyle: "italic", color: "var(--ink-2)", fontSize: 13.5 }}>Awarded in favor of</div>
-      <div style={{ fontFamily: "Caveat", fontSize: 26, color: "var(--ink)", marginTop: 4 }}>Tenant, J.</div>
+      <div style={{ fontFamily: "var(--font-caveat)", fontSize: 26, color: "var(--ink)", marginTop: 4 }}>Tenant, J.</div>
       <div style={{ marginTop: 10 }}>
         <div style={{ fontSize: 10.5, letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 700, color: "var(--muted)" }}>Total awarded</div>
         <div style={{ fontWeight: 800, fontSize: 32, color: "var(--accent)", letterSpacing: "-0.02em", marginTop: 2 }}>$4,500</div>
@@ -228,7 +228,7 @@ function WinsGallery() {
   ];
   return (
     <div style={{ position: "relative", width: "100%", maxWidth: 340, padding: "8px 4px" }}>
-      <div style={{ fontFamily: "Geist", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 700, color: "var(--accent)", marginBottom: 14, display: "flex", alignItems: "center", gap: 8 }}>
+      <div style={{ fontFamily: "var(--font-geist)", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 700, color: "var(--accent)", marginBottom: 14, display: "flex", alignItems: "center", gap: 8 }}>
         <span style={{ width: 8, height: 8, borderRadius: "50%", background: "var(--accent)", animation: "pulseDot 1.6s ease-in-out infinite" }} />
         Recent wins
       </div>
@@ -250,9 +250,9 @@ function WinsGallery() {
               alignItems: "baseline",
             }}
           >
-            <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 17, color: "var(--ink)" }}>{w.amount}</div>
-            <div style={{ fontFamily: "Geist", fontSize: 11, color: "var(--muted)", letterSpacing: "0.06em" }}>{w.days}</div>
-            <div style={{ fontStyle: "italic", color: "var(--ink-2)", fontSize: 13, fontFamily: "Newsreader" }}>&ldquo;{w.label}&rdquo;</div>
+            <div style={{ fontFamily: "var(--font-newsreader)", fontWeight: 700, fontSize: 17, color: "var(--ink)" }}>{w.amount}</div>
+            <div style={{ fontFamily: "var(--font-geist)", fontSize: 11, color: "var(--muted)", letterSpacing: "0.06em" }}>{w.days}</div>
+            <div style={{ fontStyle: "italic", color: "var(--ink-2)", fontSize: 13, fontFamily: "var(--font-newsreader)" }}>&ldquo;{w.label}&rdquo;</div>
             <div style={{ fontSize: 11, color: "var(--muted)", textAlign: "right" }}>{w.who}</div>
           </div>
         ))}
@@ -270,14 +270,14 @@ function PhotoOverlay() {
         <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=720&fit=crop" alt="" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(0,0,0,0.65) 100%)" }} aria-hidden />
         {/* Stamp top-left */}
-        <div style={{ position: "absolute", top: 18, left: 18, padding: "4px 10px", background: "rgba(217,64,46,0.95)", color: "#fff", fontSize: 10, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", borderRadius: 4, fontFamily: "Geist" }}>
+        <div style={{ position: "absolute", top: 18, left: 18, padding: "4px 10px", background: "rgba(217,64,46,0.95)", color: "#fff", fontSize: 10, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", borderRadius: 4, fontFamily: "var(--font-geist)" }}>
           Awarded
         </div>
       </div>
       {/* Floating card overlapping bottom-right */}
       <div style={{ position: "absolute", right: -8, bottom: -22, background: "#fff", borderRadius: 14, padding: "16px 20px", boxShadow: "0 22px 50px -22px rgba(31,27,22,0.4)", maxWidth: 220, animation: "fadeUp 0.6s ease-out 0.4s both" }}>
-        <div style={{ fontFamily: "Geist", fontSize: 10.5, letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 700, color: "var(--accent)" }}>Tenant recovery</div>
-        <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 28, color: "var(--ink)", letterSpacing: "-0.02em", marginTop: 2, lineHeight: 1 }}>$4,500</div>
+        <div style={{ fontFamily: "var(--font-geist)", fontSize: 10.5, letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 700, color: "var(--accent)" }}>Tenant recovery</div>
+        <div style={{ fontFamily: "var(--font-newsreader)", fontWeight: 700, fontSize: 28, color: "var(--ink)", letterSpacing: "-0.02em", marginTop: 2, lineHeight: 1 }}>$4,500</div>
         <div style={{ fontSize: 11.5, color: "var(--ink-2)", marginTop: 4 }}>Won in <strong style={{ color: "var(--ink)" }}>47 days</strong> · CA</div>
       </div>
     </div>

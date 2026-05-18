@@ -1,4 +1,5 @@
 import type React from "react";
+import Image from "next/image";
 import HeroCta from "../../components/HeroCta";
 import HeroCaseStrength from "../../components/HeroCaseStrength";
 import { Landmark, User, Map, ShieldCheck, Users } from "lucide-react";
@@ -311,12 +312,27 @@ export default function Home() {
               </div>
               <div className="hero-v2-social">
                 <div className="hero-v2-avatars" aria-hidden>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&crop=face" alt="" />
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=80&h=80&fit=crop&crop=face" alt="" />
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face" alt="" />
+                  <Image
+                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&crop=face"
+                    alt=""
+                    width={30}
+                    height={30}
+                    sizes="30px"
+                  />
+                  <Image
+                    src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=80&h=80&fit=crop&crop=face"
+                    alt=""
+                    width={30}
+                    height={30}
+                    sizes="30px"
+                  />
+                  <Image
+                    src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face"
+                    alt=""
+                    width={30}
+                    height={30}
+                    sizes="30px"
+                  />
                 </div>
                 <div className="hero-v2-stars">
                   <span className="stars" aria-label="4.9 out of 5 stars">
@@ -367,7 +383,7 @@ export default function Home() {
           <div style={{ display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: 56, alignItems: "center" }}>
             <div>
               <span className="eyebrow" style={{ color: "var(--accent)" }}>Why we exist</span>
-              <h2 style={{ fontFamily: "Newsreader", fontSize: "clamp(32px, 3.4vw, 46px)", fontWeight: 700, letterSpacing: "-0.02em", lineHeight: 1.05, margin: "10px 0 16px" }}>
+              <h2 style={{ fontFamily: "var(--font-newsreader)", fontSize: "clamp(32px, 3.4vw, 46px)", fontWeight: 700, letterSpacing: "-0.02em", lineHeight: 1.05, margin: "10px 0 16px" }}>
                 <em style={{ fontStyle: "italic", color: "var(--accent)" }}>77%</em> of Americans with a real legal issue never hire a lawyer.
               </h2>
               <p style={{ fontSize: 16.5, color: "var(--ink-2)", lineHeight: 1.6, marginBottom: 14, maxWidth: "55ch" }}>
@@ -415,8 +431,14 @@ export default function Home() {
                 visible.
               </div>
             </div>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img className="ps-seal" src="/seal2.webp" alt="" aria-hidden />
+            <Image
+              className="ps-seal"
+              src="/seal2.webp"
+              alt=""
+              width={130}
+              height={130}
+              aria-hidden
+            />
 
           <div className="ps-grid">
             <div className="ps-col-card ps-col-light">
@@ -471,8 +493,12 @@ export default function Home() {
             </div>
 
             <div className="ps-orb">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/cc-white-border.webp" alt="CivilCase" width={200} height={228} />
+              <Image
+                src="/cc-white-border.webp"
+                alt="CivilCase"
+                width={200}
+                height={228}
+              />
             </div>
 
             <div className="ps-col-card ps-col-dark">
@@ -566,8 +592,13 @@ export default function Home() {
               <div key={i} className="winning-card">
                 <span className="winning-x" aria-hidden>×</span>
                 <div className="winning-icon-wrap">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={`/icons/${c.icon}.webp`} alt="" />
+                  <Image
+                    src={`/icons/${c.icon}.webp`}
+                    alt=""
+                    width={110}
+                    height={105}
+                    sizes="110px"
+                  />
                 </div>
                 <h3>
                   {c.title[0]}<br />
@@ -724,11 +755,13 @@ export default function Home() {
                       <DpaIcon name="bell" />
                       <span className="dpa-dot" />
                     </span>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
+                    <Image
                       className="dpa-avatar"
                       src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=80&h=80&fit=crop&crop=face"
                       alt=""
+                      width={32}
+                      height={32}
+                      sizes="32px"
                     />
                   </div>
                 </div>
@@ -809,10 +842,12 @@ export default function Home() {
         <div className="wrap">
           <div className="ceo-grid">
             <div className="ceo-photo">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/yury.png"
+              <Image
+                src="/yury.webp"
                 alt="Yury Byalik"
+                width={320}
+                height={321}
+                sizes="(max-width: 720px) 240px, 320px"
               />
               <div className="ceo-photo-frame" aria-hidden />
             </div>
@@ -922,11 +957,11 @@ function JusticeGapCombo() {
       {/* Recovery-layers-style card with justice gap data — left, tilted left */}
       <div style={{ flexShrink: 0, transform: "rotate(-3deg)", transformOrigin: "bottom right", zIndex: 2, marginRight: -32 }}>
         <div style={{ width: 300, background: "#fff", border: "1px solid var(--hairline)", borderRadius: 18, padding: "22px 24px", boxShadow: "0 22px 44px -22px rgba(31,27,22,0.25)" }}>
-          <div style={{ fontFamily: "Geist", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 700, color: "var(--accent)", marginBottom: 4 }}>The justice gap</div>
+          <div style={{ fontFamily: "var(--font-geist)", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 700, color: "var(--accent)", marginBottom: 4 }}>The justice gap</div>
           <div style={{ display: "flex", alignItems: "flex-end", gap: 14, height: 180, margin: "20px 0 18px" }}>
             {BARS.map((b) => (
               <div key={b.label} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 6, flex: 1, justifyContent: "flex-end" }}>
-                <div style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 15, color: b.color }}>{b.pct}%</div>
+                <div style={{ fontFamily: "var(--font-newsreader)", fontWeight: 700, fontSize: 15, color: b.color }}>{b.pct}%</div>
                 <div style={{ width: "100%", background: b.color, height: b.h, borderRadius: "8px 8px 0 0" }} />
                 <div style={{ fontSize: 10, color: "var(--muted)", letterSpacing: "0.04em", textAlign: "center", lineHeight: 1.2 }}>{b.label}</div>
               </div>
@@ -941,13 +976,13 @@ function JusticeGapCombo() {
               <div key={l.label} style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 12.5 }}>
                 <span style={{ width: 10, height: 10, borderRadius: 2, background: l.color }} />
                 <span style={{ flex: 1, color: "var(--ink-2)" }}>{l.label}</span>
-                <strong style={{ color: "var(--ink)", fontFamily: "Newsreader" }}>{l.value}</strong>
+                <strong style={{ color: "var(--ink)", fontFamily: "var(--font-newsreader)" }}>{l.value}</strong>
               </div>
             ))}
           </div>
           <div style={{ marginTop: 14, paddingTop: 12, borderTop: "2px dashed rgba(217,64,46,0.4)", display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
             <span style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", fontWeight: 700, color: "var(--accent)" }}>Lawyer cost</span>
-            <span style={{ fontFamily: "Newsreader", fontWeight: 700, fontSize: 16, color: "var(--accent)" }}>$1,500&ndash;$5,000</span>
+            <span style={{ fontFamily: "var(--font-newsreader)", fontWeight: 700, fontSize: 16, color: "var(--accent)" }}>$1,500&ndash;$5,000</span>
           </div>
         </div>
       </div>
@@ -960,7 +995,7 @@ function JusticeGapCombo() {
               <defs>
                 <path id="circ-jg" d="M 50,50 m -38,0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0" />
               </defs>
-              <text fill="var(--accent)" fontSize="9" fontFamily="Geist" letterSpacing="3" fontWeight="700">
+              <text fill="var(--accent)" fontSize="9" fontFamily="var(--font-geist)" letterSpacing="3" fontWeight="700">
                 <textPath href="#circ-jg">CERTIFIED · SMALL CLAIMS · CIVIL · 2026 ·</textPath>
               </text>
             </svg>
@@ -972,11 +1007,11 @@ function JusticeGapCombo() {
           </div>
 
           <div style={{ fontSize: 10, letterSpacing: "0.32em", color: "var(--accent)", fontWeight: 700, textTransform: "uppercase" }}>State of California</div>
-          <div style={{ fontFamily: "Caveat", fontStyle: "italic", fontSize: 24, color: "var(--ink)", marginTop: 6 }}>Certificate of</div>
+          <div style={{ fontFamily: "var(--font-caveat)", fontStyle: "italic", fontSize: 24, color: "var(--ink)", marginTop: 6 }}>Certificate of</div>
           <div style={{ fontWeight: 800, fontSize: 30, color: "var(--ink)", letterSpacing: "-0.02em", lineHeight: 1, marginTop: 2 }}>Judgment</div>
           <div style={{ width: 64, height: 1, background: "var(--ink)", margin: "14px auto" }} />
           <div style={{ fontStyle: "italic", color: "var(--ink-2)", fontSize: 13 }}>Awarded in favor of</div>
-          <div style={{ fontFamily: "Caveat", fontSize: 22, color: "var(--ink)", marginTop: 4 }}>Tenant, J.</div>
+          <div style={{ fontFamily: "var(--font-caveat)", fontSize: 22, color: "var(--ink)", marginTop: 4 }}>Tenant, J.</div>
           <div style={{ marginTop: 10 }}>
             <div style={{ fontSize: 10.5, letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 700, color: "var(--muted)" }}>Total awarded</div>
             <div style={{ fontWeight: 800, fontSize: 28, color: "var(--accent)", letterSpacing: "-0.02em", marginTop: 2 }}>$4,500</div>

@@ -32,7 +32,7 @@
   margin: 0 0 18px;
 }
 .ck-hero h1 {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-size: 34px;
   font-weight: 600;
   letter-spacing: -0.015em;
@@ -93,7 +93,7 @@
   padding: 20px 22px;
 }
 .ck-summary h4 {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-size: 16px;
   font-weight: 600;
   margin: 0 0 12px;
@@ -112,7 +112,7 @@
 }
 .ck-summary-row:last-child { border-bottom: none; }
 .ck-summary-total {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-size: 18px;
   font-weight: 700;
   color: var(--ink, #0e0e0e);
@@ -124,7 +124,7 @@
 /* ---------- SECTIONS ---------- */
 .ck-section { margin: 0; padding: 0; }
 .ck-section-h {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-size: 20px;
   font-weight: 600;
   margin: 0 0 10px;
@@ -171,13 +171,13 @@
   border-radius: 6px;
 }
 .ck-tier h4 {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-size: 20px;
   font-weight: 700;
   margin: 0 0 4px;
 }
 .ck-tier-price {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-weight: 700;
   font-size: 32px;
   letter-spacing: -0.02em;
@@ -511,7 +511,7 @@
   margin: 0 0 14px;
 }
 .ck-conf-title {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-size: 32px;
   font-weight: 600;
   letter-spacing: -0.015em;
@@ -538,7 +538,7 @@
   margin-bottom: 28px;
 }
 .ck-conf-receipt strong {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-size: 18px;
   font-weight: 700;
   color: #1f6e3a;
@@ -559,7 +559,7 @@
   margin-bottom: 28px;
 }
 .ck-conf-steps-h {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-size: 16px;
   font-weight: 600;
   text-transform: uppercase;
@@ -590,7 +590,7 @@
   border-radius: 50%;
   background: var(--ink, #0e0e0e);
   color: #fff;
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-weight: 700;
   font-size: 14px;
   line-height: 1;

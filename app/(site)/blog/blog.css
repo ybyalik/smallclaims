@@ -11,7 +11,7 @@
   font-weight: 600;
 }
 .blog-header h1 {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-weight: 700;
   font-size: clamp(36px, 5vw, 60px);
   letter-spacing: -0.025em;
@@ -70,7 +70,7 @@
   font-weight: 600;
 }
 .blog-card h2 {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-weight: 700;
   font-size: 22px;
   letter-spacing: -0.01em;
@@ -97,7 +97,7 @@
   font-weight: 600;
 }
 .blog-post-head h1 {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-weight: 700;
   font-size: clamp(36px, 5.5vw, 56px);
   letter-spacing: -0.025em;
@@ -119,7 +119,7 @@
 }
 .blog-post-body { font-size: 18px; line-height: 1.7; color: var(--ink-2); }
 .blog-post-body h2 {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-weight: 700;
   font-size: 28px;
   letter-spacing: -0.015em;
@@ -127,7 +127,7 @@
   margin: 36px 0 12px;
 }
 .blog-post-body h3 {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-weight: 700;
   font-size: 22px;
   color: var(--ink);

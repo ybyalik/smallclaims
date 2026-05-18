@@ -1,5 +1,32 @@
 import type { Metadata, Viewport } from "next";
+import { Newsreader, Caveat } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
 import "./globals.css";
+
+// Self-hosted via next/font + Vercel's official geist package. Replaces
+// the legacy <link rel="stylesheet" href="fonts.googleapis.com/css2?..."
+// that blocked render for ~750ms. The font files now ship from our own
+// origin with proper cache headers.
+//
+// Each font exports a `variable` CSS custom property we attach to <html>;
+// every existing `font-family: "Newsreader"` declaration in CSS was
+// rewritten to `font-family: var(--font-newsreader)`.
+const newsreader = Newsreader({
+  subsets: ["latin"],
+  weight: ["500", "600", "700", "800"],
+  style: ["normal", "italic"],
+  display: "swap",
+  variable: "--font-newsreader",
+});
+const caveat = Caveat({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  display: "swap",
+  variable: "--font-caveat",
+});
+// Geist is exposed via Vercel's geist package; the variable is already
+// named --font-geist-sans, so we re-export it under our existing variable
+// name via className below.
 
 const SITE_URL = "https://civilcase.com";
 
@@ -95,14 +122,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={`${newsreader.variable} ${GeistSans.variable} ${caveat.variable}`}
+    >
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;0,6..72,700;0,6..72,800;1,6..72,500;1,6..72,600;1,6..72,700;1,6..72,800&family=Geist:wght@400;500;600;700;800&family=Caveat:wght@500;600;700&display=swap"
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }}

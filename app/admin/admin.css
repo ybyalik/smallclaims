@@ -22,7 +22,7 @@
   align-items: center;
   gap: 10px;
   color: #fef9f1;
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-size: 17px;
   font-weight: 600;
   letter-spacing: -0.01em;
@@ -35,7 +35,7 @@
   color: #fef9f1;
   display: grid;
   place-items: center;
-  font-family: "Geist", sans-serif;
+  font-family: var(--font-geist), sans-serif;
   font-size: 13px;
   font-weight: 700;
 }
@@ -102,7 +102,7 @@
   border-bottom: 1px solid var(--hairline);
 }
 .admin-page-head h1 {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-weight: 700;
   font-size: 32px;
   letter-spacing: -0.02em;
@@ -149,7 +149,7 @@
   font-weight: 600;
 }
 .admin-card-num {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-weight: 700;
   font-size: 36px;
   color: var(--ink);
@@ -257,7 +257,7 @@
   appearance: none;
   border: 0;
   background: transparent;
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-weight: 700;
   font-size: 36px;
   letter-spacing: -0.02em;
@@ -399,7 +399,7 @@ textarea.admin-input { resize: vertical; min-height: 80px; }
 .tiptap-content {
   padding: 20px 24px;
   min-height: 480px;
-  font-family: "Geist", system-ui, sans-serif;
+  font-family: var(--font-geist), system-ui, sans-serif;
   font-size: 17px;
   line-height: 1.7;
   color: var(--ink-2);
@@ -407,7 +407,7 @@ textarea.admin-input { resize: vertical; min-height: 80px; }
 }
 .tiptap-content:focus { outline: none; }
 .tiptap-content h1, .tiptap-content h2, .tiptap-content h3, .tiptap-content h4 {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--ink);
@@ -751,7 +751,7 @@ textarea.admin-input { resize: vertical; min-height: 80px; }
   overflow-x: auto;
 }
 .admin-research-content h1, .admin-research-content h2, .admin-research-content h3 {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-weight: 700;
   color: var(--ink);
   letter-spacing: -0.02em;
@@ -796,7 +796,7 @@ textarea.admin-input { resize: vertical; min-height: 80px; }
   box-shadow: 0 24px 48px -28px rgba(31, 27, 22, 0.2);
 }
 .admin-login-card h1 {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-weight: 700;
   font-size: 28px;
   margin: 0 0 4px;
@@ -881,7 +881,7 @@ textarea.admin-input { resize: vertical; min-height: 80px; }
    ============================================================================ */
 
 .admin-section-h {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-weight: 700;
   font-size: 18px;
   letter-spacing: -0.01em;
@@ -1035,7 +1035,7 @@ textarea.admin-input { resize: vertical; min-height: 80px; }
 }
 .admin-card-list .admin-card:hover { border-color: var(--ink, #111); }
 .admin-card-list .admin-card h2 {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-size: 18px;
   font-weight: 600;
   margin: 0 0 4px;
@@ -1062,7 +1062,7 @@ textarea.admin-input { resize: vertical; min-height: 80px; }
 }
 .admin-prompt-panel header { margin-bottom: 12px; }
 .admin-prompt-panel h2 {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-size: 20px;
   font-weight: 600;
   margin: 0 0 4px;
@@ -1221,7 +1221,7 @@ textarea.admin-input { resize: vertical; min-height: 80px; }
   max-width: 980px;
 }
 .admin-prompt-history h2 {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   font-size: 18px;
   font-weight: 600;
   margin: 0 0 12px;

@@ -227,7 +227,7 @@ export function RecoverGlobeCardVariant() {
         <circle cx="100" cy="100" r="90" fill="url(#sv-gl)" />
         <ellipse cx="100" cy="100" rx="90" ry="36" stroke="#FEF9F1" strokeOpacity=".4" fill="none" />
         <ellipse cx="100" cy="100" rx="60" ry="90" stroke="#FEF9F1" strokeOpacity=".4" fill="none" />
-        <text x="100" y="106" textAnchor="middle" fill="#1A1714" fontSize="34" fontFamily="Newsreader" fontWeight="700">CA</text>
+        <text x="100" y="106" textAnchor="middle" fill="#1A1714" fontSize="34" fontFamily="var(--font-newsreader)" fontWeight="700">CA</text>
       </svg>
     </div>
   );
