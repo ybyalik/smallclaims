@@ -98,8 +98,8 @@ export default async function CategoryTemplate({ data }: { data: CategoryHubData
             </h1>
             <p className="cat-lede">{data.hero.lede}</p>
             <div className="hero-ctas">
-              <HeroCta href="/case-score" variant="green" icon="case-score">Check my case (free)</HeroCta>
-              <HeroCta href="/demand-letter" variant="cream" icon="demand-letter">Send a demand letter</HeroCta>
+              <HeroCta href="/case-score" variant="green" icon="case-score">Check My Case (Free)</HeroCta>
+              <HeroCta href="/demand-letter" variant="cream" icon="demand-letter">Send a Demand Letter</HeroCta>
             </div>
           </div>
           <HeroStatePins />
@@ -306,9 +306,9 @@ export default async function CategoryTemplate({ data }: { data: CategoryHubData
                   Three ways to <em style={{ fontStyle: "italic", color: "#f5b29f", fontWeight: 700 }}>move forward</em>.
                 </h2>
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 14, alignItems: "stretch", position: "relative" }}>
-                  <CtaStepCard href="/demand-letter" bg="#4ad96a" tone="dark" stepNum="01" stepPos="top-left" title="Send a demand letter" titlePos="bottom-left" />
-                  <CtaStepCard href="/case-score" bg="#fff" tone="dark" stepNum="02" stepPos="bottom-right" title="Check my case" titlePos="top-left" gradient />
-                  <CtaStepCard href="/small-claims" bg="#7344ee" tone="light" stepNum="03" stepPos="top-right" title="File your claim" titlePos="bottom-right" />
+                  <CtaStepCard href="/demand-letter" bg="#4ad96a" tone="dark" stepNum="01" stepPos="top-left" title="Send a Demand Letter" titlePos="bottom-left" />
+                  <CtaStepCard href="/case-score" bg="#fff" tone="dark" stepNum="02" stepPos="bottom-right" title="Check My Case" titlePos="top-left" gradient />
+                  <CtaStepCard href="/small-claims" bg="#7344ee" tone="light" stepNum="03" stepPos="top-right" title="File Your Claim" titlePos="bottom-right" />
                 </div>
               </div>
               <div style={{ borderLeft: "1px solid #1f1f1f", padding: "20px 44px", position: "relative", alignSelf: "stretch", display: "flex", flexDirection: "column", justifyContent: "center" }}>
@@ -334,11 +334,10 @@ export default async function CategoryTemplate({ data }: { data: CategoryHubData
             <div className="cat-split-intro">
               <span className="eyebrow">FAQ</span>
               <h2>
-                Common <em>questions</em>.
+                Frequently Asked <em>Questions</em>.
               </h2>
               <p>
-                The questions {data.audienceLabel} actually ask before filing. Don&rsquo;t see yours?{" "}
-                <Link href="/contact" className="cat-text-link">Email support</Link>.
+                The questions {data.audienceLabel} actually ask before filing.
               </p>
             </div>
             <div className="cat-faq">
@@ -354,12 +353,6 @@ export default async function CategoryTemplate({ data }: { data: CategoryHubData
           </div>
         </section>
 
-        {/* DISCLAIMER */}
-        <p className="cat-disclaimer">
-          <strong>This is general legal information, not legal advice.</strong> CivilCase is not a law firm.{" "}
-          {data.disclaimerNote}{" "}
-          <Link href="/disclaimer" className="cat-text-link">Read our disclaimer</Link>.
-        </p>
       </div>
     </main>
   );

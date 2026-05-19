@@ -169,10 +169,7 @@ export default function StateGuidePage({ state, guide }: Props) {
                   month: "long",
                   day: "numeric",
                 })}
-                . We are not a law firm and do not provide legal advice. This
-                guide explains how small claims works in {state.name} based on
-                publicly available statutes and court rules. It is not a
-                substitute for the advice of an attorney.
+                .
               </p>
             </footer>
           </article>

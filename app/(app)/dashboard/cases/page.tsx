@@ -107,7 +107,7 @@ export default async function DashboardHome() {
         sub="Every dispute you're working on with CivilCase lives here."
         actions={
           <StartCaseButton className="btn btn-dark">
-            Start a new case
+            Start a New Case
           </StartCaseButton>
         }
       />
@@ -118,7 +118,7 @@ export default async function DashboardHome() {
           body="Start a case to begin building your file. You can purchase a demand letter or other services once you've added your details."
           cta={
             <StartCaseButton className="btn btn-dark">
-              Start a new case
+              Start a New Case
             </StartCaseButton>
           }
         />

@@ -45,7 +45,7 @@ const SERVICES: NavItem[] = [
     href: "/dashboard/cases",
     match: /^\/dashboard\/cases(\/.*)?$|^\/case\//,
     icon: Folder,
-    cta: { label: "Start a new case", href: "/dashboard/cases/new" },
+    cta: { label: "Start a New Case", href: "/dashboard/cases/new" },
   },
 ];
 

@@ -307,8 +307,8 @@ export default function Home() {
                 </li>
               </ul>
               <div className="hero-ctas">
-                <HeroCta href="/demand-letter" variant="green" icon="demand-letter">Start your case now</HeroCta>
-                <HeroCta href="/case-score" variant="cream" icon="case-score">Check my case strength</HeroCta>
+                <HeroCta href="/demand-letter" variant="green" icon="demand-letter">Start Your Case Now</HeroCta>
+                <HeroCta href="/case-score" variant="cream" icon="case-score">Check My Case Strength</HeroCta>
               </div>
               <div className="hero-v2-social">
                 <div className="hero-v2-avatars" aria-hidden>

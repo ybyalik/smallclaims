@@ -147,13 +147,101 @@
   box-shadow: 0 16px 40px -16px rgba(31, 27, 22, 0.2);
 }
 
+/* State guides section — map on the left, search + popular on the right. */
+.state-guides-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
+  margin-top: 16px;
+}
+.state-guides-map .usmap-shell {
+  padding: 20px 16px 16px;
+}
+.state-guides-side {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+/* Combined panel: Search + Most popular */
+.state-guides-panel {
+  background: #ffffff;
+  border: 1px solid var(--hairline);
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 8px 24px -16px rgba(60, 45, 25, 0.18);
+}
+.state-guides-panel-section { display: block; }
+.state-guides-panel-label {
+  display: block;
+  margin-bottom: 12px;
+}
+.state-guides-panel-divider {
+  height: 1px;
+  background: var(--hairline);
+  margin: 18px 0;
+}
+.state-guides-popular-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.state-guides-popular-list li a {
+  display: grid;
+  grid-template-columns: 40px 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 8px;
+  margin: 0 -8px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.state-guides-popular-abbr {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+  border-radius: 6px;
+  background: var(--bg-2);
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.state-guides-popular-name { font-weight: 500; }
+.state-guides-popular-arrow {
+  font-size: 14px;
+  color: var(--muted);
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.15s ease, transform 0.15s ease, color 0.15s ease;
+}
+.state-guides-popular-list li a:hover {
+  background: var(--bg-2);
+  color: var(--accent);
+}
+.state-guides-popular-list li a:hover .state-guides-popular-abbr {
+  background: var(--accent);
+  color: #ffffff;
+}
+.state-guides-popular-list li a:hover .state-guides-popular-arrow {
+  opacity: 1;
+  transform: translateX(0);
+  color: var(--accent);
+}
+@media (max-width: 1024px) {
+  .state-guides-grid { grid-template-columns: 1fr; }
+}
+
 /* UsMap */
 .usmap-shell {
   position: relative;
-  background: var(--card);
-  border: 1px solid var(--hairline);
-  border-radius: 18px;
-  padding: 36px 24px 20px;
+  padding: 0;
   margin-top: 8px;
 }
 .usmap-tooltip {

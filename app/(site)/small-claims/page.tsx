@@ -147,8 +147,8 @@ export default async function SmallClaimsHubPage() {
               filing fees and forms.
             </p>
             <div className="hero-ctas">
-              <HeroCta href="/case-score" variant="green" icon="case-score">Check my case (free)</HeroCta>
-              <HeroCta href="/demand-letter" variant="cream" icon="demand-letter">Send a demand letter</HeroCta>
+              <HeroCta href="/demand-letter" variant="green" icon="demand-letter">Generate a Demand Letter</HeroCta>
+              <HeroCta href="/case-score" variant="cream" icon="case-score">Check My Case Strength</HeroCta>
             </div>
           </div>
           <HeroStatePins />
@@ -211,13 +211,12 @@ export default async function SmallClaimsHubPage() {
               <h2 style={{ marginTop: 8, marginBottom: 8 }}>
                 Take the <em>case-strength quiz</em>.
               </h2>
-              <p style={{ margin: 0 }}>
-                Tell us about your situation in 90 seconds and get a strength read on your case
-                plus the right category to pursue.
+              <p style={{ margin: 0, whiteSpace: "nowrap" }}>
+                Tell us about your situation in 90 seconds and get a strength read on your case.
               </p>
             </div>
             <Link href="/case-score" className="cv2-cta-primary" style={{ flex: "0 0 auto" }}>
-              Start the quiz →
+              Check Case Score →
             </Link>
           </div>
         </section>
@@ -402,7 +401,7 @@ export default async function SmallClaimsHubPage() {
           </div>
         </section>
 
-        {/* STATE GUIDES */}
+        {/* STATE GUIDES — map on the left, search + popular states on the right */}
         <section className="cat-section">
           <div className="cat-stack-head">
             <span className="eyebrow">State-specific guides</span>
@@ -415,15 +414,62 @@ export default async function SmallClaimsHubPage() {
             </p>
           </div>
 
-          <StateSearch readySlugs={ready} />
-
-          <UsMap readySlugs={ready} />
+          <div className="state-guides-grid">
+            <div className="state-guides-map">
+              <UsMap readySlugs={ready} />
+            </div>
+            <aside className="state-guides-side">
+              <div className="state-guides-panel">
+                <div className="state-guides-panel-section">
+                  <span className="eyebrow state-guides-panel-label">Search states</span>
+                  <StateSearch readySlugs={ready} />
+                </div>
+                <div className="state-guides-panel-divider" />
+                <div className="state-guides-panel-section">
+                  <span className="eyebrow state-guides-panel-label">Most popular</span>
+                  <ul className="state-guides-popular-list">
+                    {[
+                      { slug: "california", name: "California", abbr: "CA" },
+                      { slug: "texas", name: "Texas", abbr: "TX" },
+                      { slug: "new-york", name: "New York", abbr: "NY" },
+                      { slug: "florida", name: "Florida", abbr: "FL" },
+                      { slug: "pennsylvania", name: "Pennsylvania", abbr: "PA" },
+                      { slug: "georgia", name: "Georgia", abbr: "GA" },
+                    ].map((s) => (
+                      <li key={s.slug}>
+                        <Link href={`/small-claims/${s.slug}`}>
+                          <span className="state-guides-popular-abbr">{s.abbr}</span>
+                          <span className="state-guides-popular-name">{s.name}</span>
+                          <span className="state-guides-popular-arrow" aria-hidden>→</span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </aside>
+          </div>
         </section>
 
         {/* CLOSING CTA + TESTIMONIAL — matches the dark "Three ways to move
             forward" pattern used on category pages (e.g. /small-claims/auto). */}
         <section className="cat-section">
-          <div style={{ background: "#0d0d0d", color: "#fff", padding: "32px 0", borderRadius: 20, position: "relative", overflow: "hidden" }}>
+          <div
+            style={{
+              backgroundColor: "var(--ink)",
+              backgroundImage: [
+                "radial-gradient(ellipse at 30% 20%, rgba(255, 255, 255, 0.07), transparent 55%)",
+                "radial-gradient(ellipse at 80% 80%, rgba(0, 0, 0, 0.18), transparent 60%)",
+                "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' seed='4'/><feColorMatrix values='0 0 0 0 0.95  0 0 0 0 0.93  0 0 0 0 0.85  0 0 0 0.18 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>\")",
+              ].join(", "),
+              boxShadow: "inset 0 0 80px rgba(0, 0, 0, 0.22)",
+              color: "#fff",
+              padding: "32px 0",
+              borderRadius: 20,
+              position: "relative",
+              overflow: "hidden",
+            }}
+          >
             <div style={{ display: "grid", gridTemplateColumns: "1.85fr 1fr", gap: 0, alignItems: "center" }}>
               <div style={{ padding: "12px 44px 20px" }}>
                 <span className="eyebrow" style={{ color: "rgba(254,249,241,0.65)" }}>Take the next step</span>
@@ -431,9 +477,9 @@ export default async function SmallClaimsHubPage() {
                   Three ways to <em style={{ fontStyle: "italic", color: "#f5b29f", fontWeight: 700 }}>move forward</em>.
                 </h2>
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 14, alignItems: "stretch", position: "relative" }}>
-                  <CtaStepCard href="/demand-letter" bg="#4ad96a" tone="dark" stepNum="01" stepPos="top-left" title="Send a demand letter" titlePos="bottom-left" />
-                  <CtaStepCard href="/case-score" bg="#fff" tone="dark" stepNum="02" stepPos="bottom-right" title="Check my case" titlePos="top-left" gradient />
-                  <CtaStepCard href="#state-guides" bg="#7344ee" tone="light" stepNum="03" stepPos="top-right" title="File your claim" titlePos="bottom-right" />
+                  <CtaStepCard href="/demand-letter" bg="#4ad96a" tone="dark" stepNum="01" stepPos="top-left" title="Send a Demand Letter" titlePos="bottom-left" />
+                  <CtaStepCard href="/case-score" bg="#fff" tone="dark" stepNum="02" stepPos="bottom-right" title="Check My Case" titlePos="top-left" gradient />
+                  <CtaStepCard href="#state-guides" bg="#7344ee" tone="light" stepNum="03" stepPos="top-right" title="File Your Claim" titlePos="bottom-right" />
                 </div>
               </div>
               <div style={{ borderLeft: "1px solid #1f1f1f", padding: "20px 44px", position: "relative", alignSelf: "stretch", display: "flex", flexDirection: "column", justifyContent: "center" }}>
@@ -459,7 +505,7 @@ export default async function SmallClaimsHubPage() {
             <div className="cat-split-intro">
               <span className="eyebrow">FAQ</span>
               <h2>
-                Common <em>questions</em>.
+                Frequently Asked <em>Questions</em>.
               </h2>
               <p>
                 The questions everyone asks before filing. Don&rsquo;t see yours?{" "}
@@ -559,13 +605,6 @@ export default async function SmallClaimsHubPage() {
           </div>
         </section>
 
-        {/* DISCLAIMER */}
-        <p className="cat-disclaimer">
-          <strong>This is general legal information, not legal advice.</strong> CivilCase is not a law
-          firm. State laws vary widely on caps, fees, deadlines, and procedure. Verify everything
-          against your state&rsquo;s official source before filing, or{" "}
-          <Link href="/disclaimer" className="cat-text-link">read our disclaimer</Link>.
-        </p>
       </div>
     </main>
   );

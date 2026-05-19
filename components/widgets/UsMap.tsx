@@ -54,16 +54,16 @@ export default function UsMap({ readySlugs }: { readySlugs: string[] }) {
                   style={{
                     default: {
                       fill: isReady ? "var(--accent)" : "#ECE7DC",
-                      stroke: "#FFFFFF",
-                      strokeWidth: 1,
+                      stroke: "rgba(31, 27, 22, 0.5)",
+                      strokeWidth: 0.9,
                       outline: "none",
                       cursor: "pointer",
                       transition: "fill 0.18s ease",
                     },
                     hover: {
                       fill: isReady ? "#B8331F" : "#D8CEBA",
-                      stroke: "#FFFFFF",
-                      strokeWidth: 1.4,
+                      stroke: "rgba(31, 27, 22, 0.7)",
+                      strokeWidth: 1.2,
                       outline: "none",
                       cursor: "pointer",
                     },
@@ -81,16 +81,8 @@ export default function UsMap({ readySlugs }: { readySlugs: string[] }) {
       {hover && (
         <div className="usmap-tooltip" style={{ left: pos.x + 12, top: pos.y + 12 }}>
           <span className="usmap-tooltip-name">{hover.name}</span>
-          {hover.isReady ? (
-            <span className="usmap-tooltip-status ready">Guide ready</span>
-          ) : null}
         </div>
       )}
-      <div className="usmap-legend">
-        <span>
-          <i style={{ background: "var(--accent)" }} aria-hidden="true" /> Guide ready
-        </span>
-      </div>
     </div>
   );
 }

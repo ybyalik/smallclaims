@@ -177,7 +177,7 @@ export default async function DashboardHome() {
           sub="Your case files, letters, and activity will appear here."
           actions={
             <StartCaseButton className="btn btn-dark">
-              Start a new case
+              Start a New Case
             </StartCaseButton>
           }
         />
@@ -187,7 +187,7 @@ export default async function DashboardHome() {
           body="Start a case to begin building your file. You can purchase a demand letter or other services once you've added your details."
           cta={
             <StartCaseButton className="btn btn-dark">
-              Start a new case
+              Start a New Case
             </StartCaseButton>
           }
         />
@@ -211,7 +211,7 @@ export default async function DashboardHome() {
         }
         actions={
           <StartCaseButton className="btn btn-dark">
-            Start a new case
+            Start a New Case
           </StartCaseButton>
         }
       />
@@ -392,7 +392,7 @@ export default async function DashboardHome() {
             <h3>Quick actions</h3>
             <div className="app-quick-actions">
               <StartCaseButton className="btn btn-dark btn-block">
-                Start a new case
+                Start a New Case
               </StartCaseButton>
               <Link href="/dashboard/cases" className="btn btn-outline btn-block">
                 View all cases

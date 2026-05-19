@@ -97,26 +97,20 @@ export default function StateSearch({ readySlugs }: { readySlugs: string[] }) {
       </div>
       {open && matches.length > 0 && (
         <ul className="statesearch-results" role="listbox">
-          {matches.map((s, i) => {
-            const isReady = ready.has(s.slug);
-            return (
-              <li
-                key={s.slug}
-                role="option"
-                aria-selected={i === activeIdx}
-                data-active={i === activeIdx}
-                onMouseDown={(e) => e.preventDefault()}
-                onClick={() => go(s.slug)}
-                onMouseEnter={() => setActiveIdx(i)}
-              >
-                <span className="ssr-name">{s.name}</span>
-                <span className="ssr-abbr">{s.abbr}</span>
-                {isReady ? (
-                  <span className="ssr-status ready">Ready &rarr;</span>
-                ) : null}
-              </li>
-            );
-          })}
+          {matches.map((s, i) => (
+            <li
+              key={s.slug}
+              role="option"
+              aria-selected={i === activeIdx}
+              data-active={i === activeIdx}
+              onMouseDown={(e) => e.preventDefault()}
+              onClick={() => go(s.slug)}
+              onMouseEnter={() => setActiveIdx(i)}
+            >
+              <span className="ssr-name">{s.name}</span>
+              <span className="ssr-abbr">{s.abbr}</span>
+            </li>
+          ))}
         </ul>
       )}
       {open && query.trim() && matches.length === 0 && (

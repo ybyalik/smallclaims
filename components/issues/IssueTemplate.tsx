@@ -4,7 +4,7 @@ import FeaturedUsMap from "../widgets/FeaturedUsMap";
 import CountUp from "../widgets/CountUp";
 import HeroCta from "../HeroCta";
 import { availableStateSlugs } from "../../lib/state-data";
-import { getClaimStateTable } from "../../lib/state-data/by-claim";
+import { getAllStateCaps, getClaimStateTable } from "../../lib/state-data/by-claim";
 import type { LandlordIssue, EvidenceCell } from "../../lib/landlord-issues/types";
 import type { CategoryMeta } from "../../lib/issues/categories";
 
@@ -100,6 +100,15 @@ export default async function IssueTemplate({ issue, category, siblings }: Props
   const featuredClaimRows = FEATURED_STATE_SLUGS
     .map((slug) => claimRows.find((r) => r.slug === slug))
     .filter((r): r is NonNullable<typeof r> => Boolean(r));
+
+  // Live small-claims caps across all 51 jurisdictions, used by the
+  // "What if your case is over your state's cap?" section so the range
+  // numbers stay accurate as state data changes in Supabase.
+  const allCaps = await getAllStateCaps();
+  const capValues = Array.from(allCaps.values()).map((v) => v.cap);
+  const minCap = capValues.length ? Math.min(...capValues) : 2500;
+  const maxCap = capValues.length ? Math.max(...capValues) : 25000;
+  const fmtCap = (n: number) => `$${n.toLocaleString("en-US")}`;
   // Always render the State section when claimType is set, even if the issue
   // didn't manually declare stateSection. The pack-driven data is enough on
   // its own.
@@ -165,8 +174,8 @@ export default async function IssueTemplate({ issue, category, siblings }: Props
               <strong>{issue.hero.leadStrong}</strong>{issue.hero.leadBody}
             </p>
             <div className="hero-ctas">
-              <HeroCta href="/demand-letter" variant="green" icon="demand-letter">Generate a demand letter</HeroCta>
-              <HeroCta href="/case-score" variant="cream" icon="case-score">Check my case strength</HeroCta>
+              <HeroCta href="/demand-letter" variant="green" icon="demand-letter">Generate a Demand Letter</HeroCta>
+              <HeroCta href="/case-score" variant="cream" icon="case-score">Check My Case Strength</HeroCta>
             </div>
           </div>
           <div className="cv2-hero-visual" aria-hidden="true">
@@ -263,30 +272,6 @@ export default async function IssueTemplate({ issue, category, siblings }: Props
           </div>
         </section>
 
-        {/* WHAT YOU NEED TO PROVE (optional, only renders if the issue
-            file provides the field). High SEO value for "how to prove X"
-            queries — same depth wedge as state-specific tables. */}
-        {issue.whatToProve ? (
-          <section id="what-to-prove" className="cat-section cat-section-light">
-            <div className="cat-stack-head">
-              <span className="eyebrow">What you need to prove</span>
-              <H2 parts={issue.whatToProve.h2} />
-              <p>{issue.whatToProve.lede}</p>
-            </div>
-            <ol className="cat-prove-list">
-              {issue.whatToProve.elements.map((el, i) => (
-                <li key={i} className="cat-prove-item">
-                  <span className="cat-prove-num">{i + 1}</span>
-                  <div className="cat-prove-body">
-                    <strong>{el.title}</strong>
-                    <p>{el.body}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </section>
-        ) : null}
-
         {/* BEFORE YOU SUE */}
         <section id="before" className="cv2-bento-section">
           <div className="cv2-bento09">
@@ -309,15 +294,8 @@ export default async function IssueTemplate({ issue, category, siblings }: Props
                 </ul>
                 <div className="cv2-before-actions">
                   <Link href="/demand-letter" className="cv2-before-primary">
-                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                      <path d="M12 3l1.5 4 4 1.5-4 1.5L12 14l-1.5-4-4-1.5 4-1.5z" />
-                      <path d="M19 14l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z" />
-                    </svg>
-                    Generate my demand letter
-                  </Link>
-                  <Link href="#before" className="cv2-before-secondary">
-                    Preview example
-                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    Generate My Demand Letter
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                       <path d="M5 12h14M13 6l6 6-6 6" />
                     </svg>
                   </Link>
@@ -633,55 +611,70 @@ export default async function IssueTemplate({ issue, category, siblings }: Props
           </section>
         ) : null}
 
-        {/* OVER THE CAP CALLOUT — small-claims caps vary state to state
-            ($2,500 to $25,000). Reader doesn't know their state's cap and
-            we don't know the reader's case amount, so we just point them
-            at the per-state guide where the cap is the first hero stat. */}
+        {/* OVER THE CAP CALLOUT */}
         <section id="over-cap" className="cat-section">
           <div className="cat-overcap-card">
-            <div className="cat-overcap-icon" aria-hidden="true">
-              <svg
-                viewBox="0 0 24 24"
-                width="36"
-                height="36"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.6"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M12 9v4M12 17h.01" />
-                <path d="M10.3 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
-              </svg>
-            </div>
-            <div className="cat-overcap-body">
+            <header className="cat-overcap-head">
+              <span className="cat-overcap-eyebrow">Over the cap</span>
               <h3>What if your case is over your state&rsquo;s cap?</h3>
               <p>
-                Small claims caps vary from <strong>$2,500</strong> to{" "}
-                <strong>$25,000</strong> across the country. If your claim is
-                larger than your state allows in small claims, you have two
-                options: waive the excess and stay in small claims (fast,
-                cheap, no lawyer), or file in regular civil court (slower,
-                costlier, lawyer recommended). Most plaintiffs in this
-                situation waive the excess.
+                Small claims caps vary state to state. If your claim is larger,
+                you have two options.
               </p>
-              <Link href="/small-claims" className="cat-overcap-cta">
-                Find your state&rsquo;s cap{" "}
-                <svg
-                  viewBox="0 0 24 24"
-                  width="16"
-                  height="16"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M5 12h14M13 6l6 6-6 6" />
-                </svg>
-              </Link>
+            </header>
+
+            <div className="cat-overcap-range" aria-hidden="true">
+              <div className="cat-overcap-range-ends">
+                <span>
+                  <strong>{fmtCap(minCap)}</strong>
+                  <em>lowest cap</em>
+                </span>
+                <span>
+                  <strong>{fmtCap(maxCap)}</strong>
+                  <em>highest cap</em>
+                </span>
+              </div>
+              <div className="cat-overcap-range-bar">
+                <span className="cat-overcap-range-fill" />
+              </div>
             </div>
+
+            <div className="cat-overcap-options">
+              <div className="cat-overcap-opt">
+                <span className="cat-overcap-opt-tag">Option 1</span>
+                <strong>Waive the excess</strong>
+                <p>
+                  Stay in small claims and forfeit anything above your state&rsquo;s
+                  cap. Fast, cheap, no lawyer. Most plaintiffs in this situation
+                  pick this.
+                </p>
+              </div>
+              <div className="cat-overcap-opt">
+                <span className="cat-overcap-opt-tag">Option 2</span>
+                <strong>File in civil court</strong>
+                <p>
+                  Pursue the full amount in regular civil court. Slower,
+                  costlier, lawyer recommended.
+                </p>
+              </div>
+            </div>
+
+            <Link href="/small-claims" className="cat-overcap-cta">
+              Find your state&rsquo;s cap
+              <svg
+                viewBox="0 0 24 24"
+                width="16"
+                height="16"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </Link>
           </div>
         </section>
 
@@ -725,8 +718,8 @@ export default async function IssueTemplate({ issue, category, siblings }: Props
               <H2 parts={issue.cta.h2} />
               <p>{issue.cta.body}</p>
               <div className="cv2-cta-actions">
-                <Link href="/demand-letter" className="cv2-cta-primary">Generate a demand letter →</Link>
-                <Link href="/case-score" className="cv2-cta-secondary">Check my case strength first</Link>
+                <Link href="/demand-letter" className="cv2-cta-primary">Generate a Demand Letter →</Link>
+                <Link href="/case-score" className="cv2-cta-secondary">Check My Case Strength First</Link>
               </div>
             </div>
             <div className="cv2-cta-receipt">
@@ -755,11 +748,9 @@ export default async function IssueTemplate({ issue, category, siblings }: Props
           <div className="cat-split">
             <div className="cat-split-intro">
               <span className="eyebrow">FAQ</span>
-              <h2>Frequently <em>asked</em>.</h2>
+              <h2>Frequently Asked <em>Questions</em>.</h2>
               <p>
-                The questions {category.audienceLabel} actually ask before filing.{" "}
-                <Link href="/contact" className="cat-text-link">Email support</Link>{" "}
-                if yours isn&rsquo;t here.
+                The questions {category.audienceLabel} actually ask before filing.
               </p>
             </div>
             <div className="cat-faq">

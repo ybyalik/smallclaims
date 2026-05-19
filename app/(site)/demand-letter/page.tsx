@@ -239,133 +239,12 @@ export default function DemandLetterPage() {
         </div>
       </header>
 
-      {/* WHAT'S INCLUDED — 3-column feature/letter/trust band. */}
-      <section className="dl-incl-band">
-        <div className="wrap dl-incl-grid">
-          {/* Left: features */}
-          <div className="dl-incl-left">
-            <span className="dl-incl-eyebrow">Why Demand Letters Work</span>
-            <h2 className="dl-incl-title">
-              A simple letter can create <em>serious results.</em>
-            </h2>
-            <p className="dl-incl-sub">
-              Most people resolve the issue once they realize you&rsquo;re prepared to take action.
-            </p>
-            <ul className="dl-incl-feats">
-              <li>
-                <span className="dl-incl-feat-icon"><ShieldCheck size={22} strokeWidth={1.6} /></span>
-                <div>
-                  <strong>Creates Legal Pressure</strong>
-                  <span>A formal written demand shows you are serious and prepared to escalate if necessary.</span>
-                </div>
-              </li>
-              <li>
-                <span className="dl-incl-feat-icon"><FileCheck size={22} strokeWidth={1.6} /></span>
-                <div>
-                  <strong>Often Resolves Without Court</strong>
-                  <span>Many recipients pay or respond once they understand the issue is documented and enforceable.</span>
-                </div>
-              </li>
-              <li>
-                <span className="dl-incl-feat-icon"><Folder size={22} strokeWidth={1.6} /></span>
-                <div>
-                  <strong>Builds Your Paper Trail</strong>
-                  <span>Establishes a clear timeline and shows the court you attempted to resolve the issue fairly.</span>
-                </div>
-              </li>
-            </ul>
-          </div>
-
-          {/* Middle: letter mockup */}
-          <div className="dl-incl-mid">
-            <article className="dl-incl-letter">
-              <header className="dl-incl-letter-head">
-                <div>
-                  <span className="dl-incl-letter-brand">CIVILCASE</span>
-                  <span className="dl-incl-letter-sub">DEMAND LETTER</span>
-                </div>
-                <span className="dl-incl-letter-date">May 12, 2024</span>
-              </header>
-              <div className="dl-incl-letter-rule" />
-              <div className="dl-incl-letter-body">
-                <p><strong>TO:</strong><br />
-                  ABC Construction LLC<br />
-                  123 Business Way<br />
-                  Los Angeles, CA 90001
-                </p>
-                <p><strong>RE:</strong><br />Formal Demand for Payment</p>
-                <p>
-                  This letter serves as formal notice that payment in the amount of $4,800 is
-                  due for services provided under our agreement dated March 3, 2024.
-                </p>
-                <p><strong>Payment must be received within 14 days of delivery of this letter.</strong></p>
-                <p>
-                  If this matter is not resolved, I intend to pursue all available legal remedies,
-                  including filing a claim in small claims court.
-                </p>
-              </div>
-              <span className="dl-incl-seal" aria-hidden>
-                <span className="dl-incl-seal-ring">
-                  <span className="dl-incl-seal-top">OFFICIAL</span>
-                  <span className="dl-incl-seal-bot">DEMAND LETTER</span>
-                </span>
-                <span className="dl-incl-seal-center">
-                  <span>CIVILCASE</span>
-                  <Scale size={18} strokeWidth={1.6} />
-                </span>
-              </span>
-            </article>
-          </div>
-
-          {/* Right: trust badges */}
-          <ul className="dl-incl-trust">
-            <li>
-              <span className="dl-incl-trust-icon dl-incl-trust-icon-green">
-                <CheckCircle2 size={18} strokeWidth={2.2} />
-              </span>
-              <div>
-                <strong>Generated for your case</strong>
-                <span>Personalized with your details</span>
-              </div>
-            </li>
-            <li>
-              <span className="dl-incl-trust-icon">
-                <Mail size={18} strokeWidth={1.8} />
-              </span>
-              <div>
-                <strong>Mailed via certified mail</strong>
-                <span>USPS tracking included</span>
-              </div>
-            </li>
-            <li>
-              <span className="dl-incl-trust-icon">
-                <Calendar size={18} strokeWidth={1.8} />
-              </span>
-              <div>
-                <strong>14-day response deadline</strong>
-                <span>Clearly stated in the letter</span>
-              </div>
-            </li>
-            <li>
-              <span className="dl-incl-trust-icon">
-                <ShieldCheck size={18} strokeWidth={1.8} />
-              </span>
-              <div>
-                <strong>Court-ready document</strong>
-                <span>Attorney-reviewed structure</span>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </section>
-
       {/* ========== VERSION D — Original 3-col, but third column replaced
           with Version A's fanned card stack. ========== */}
       <section className="dl-whyD-band">
         <div className="wrap dl-whyD-grid">
           {/* Left: copy only */}
           <div className="dl-whyD-left">
-            <p className="dl-ver-label">Version D — Original + Version A cards on right</p>
             <span className="dl-incl-eyebrow">Why Demand Letters Work</span>
             <h2 className="dl-incl-title">
               A simple letter can create <em>serious results.</em>
@@ -519,35 +398,197 @@ export default function DemandLetterPage() {
         </div>
       </section>
 
+      {/* FINAL CTA — dark "Ready to send your letter?" card. Moved up to
+          sit right after "Simple steps. Serious results." */}
+      <section className="dl-finalv2 dl-finalv2-dark">
+        <div className="wrap">
+          <div className="dl-finalv2-card">
+            <div className="dl-finalv2-top">
+              <Image
+                src="/icons/cta-letter.webp"
+                alt=""
+                width={96}
+                height={96}
+                className="dl-finalv2-icon-img"
+                aria-hidden
+              />
+              <div className="dl-finalv2-copy">
+                <h2>
+                  Ready to <em>send your letter?</em>
+                </h2>
+                <p>No account. No subscription. Just results.</p>
+              </div>
+              <div className="dl-finalv2-cta">
+                <StartCaseButton className="dl-finalv2-btn">
+                  Start Your Letter
+                  <ArrowRight size={18} strokeWidth={2.2} />
+                </StartCaseButton>
+                <span className="dl-finalv2-meta">
+                  Takes about 2 minutes <span className="dl-finalv2-dot">&bull;</span> From $29
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div className="dl-promise-trust">
+            <span className="dl-promise-trust-icon">
+              <ShieldCheck size={28} strokeWidth={1.8} />
+            </span>
+            <strong>Trusted by thousands.</strong>
+            <span className="dl-promise-trust-sep">Backed by results.</span>
+            <span className="dl-promise-stars" aria-label="5 out of 5 stars">
+              <Star size={18} fill="currentColor" strokeWidth={0} />
+              <Star size={18} fill="currentColor" strokeWidth={0} />
+              <Star size={18} fill="currentColor" strokeWidth={0} />
+              <Star size={18} fill="currentColor" strokeWidth={0} />
+              <Star size={18} fill="currentColor" strokeWidth={0} />
+            </span>
+            <span className="dl-promise-trust-rating">4.9/5 average rating</span>
+          </div>
+        </div>
+      </section>
+
+      {/* WHAT'S IN THE LETTER — two-column anatomy diagram with numbered
+          feature cards on the left and an annotated letter mockup on the
+          right. Annotation callouts only appear at desktop widths. */}
+      <section className="dl-what-band">
+        <div className="wrap dl-what-grid">
+          {/* Header — col 1 only */}
+          <div className="dl-what-head">
+            <span className="dl-what-eyebrow">What&rsquo;s in the Letter</span>
+            <h2 className="dl-what-title">
+              Built specifically for <em>your dispute</em>.
+            </h2>
+            <p className="dl-what-sub">
+              Every letter follows a structure courts respect: who, what, when, the law that
+              applies, the demand, and the deadline.
+            </p>
+          </div>
+
+          {/* Letter mockup — row 2 (centered, full-width) */}
+          <div className="dl-anno-wrap">
+              <article className="dl-anno-letter">
+                <header className="dl-anno-head">
+                  <div>
+                    <span className="dl-anno-brand">CIVILCASE</span>
+                    <span className="dl-anno-sub">DEMAND LETTER</span>
+                  </div>
+                  <span className="dl-anno-date">April 21, 2026</span>
+                </header>
+                <div className="dl-anno-rule" />
+
+                <div className="dl-anno-meta">
+                  <div><span>TO:</span><p>Oakwood Properties LLC</p></div>
+                  <div><span>RE:</span><p>Demand for Return of Security Deposit</p></div>
+                </div>
+
+                <p className="dl-anno-p">
+                  Pursuant to{" "}
+                  <strong className="dl-anno-mark" data-anno="law">Cal. Civ. Code § 1950.5</strong>
+                  , you were required to return my $1,500 security deposit within 21 days of
+                  move-out. That period has elapsed.
+                </p>
+
+                <p className="dl-anno-p">
+                  I demand within{" "}
+                  <strong className="dl-anno-mark" data-anno="deadline">fourteen (14) days</strong>:
+                </p>
+
+                <ul className="dl-anno-bullets">
+                  <li>Return of the $1,500 deposit in full;</li>
+                  <li>
+                    <span className="dl-anno-mark" data-anno="penalty">
+                      Statutory damages of 2x for bad-faith retention ($3,000)
+                    </span>.
+                  </li>
+                </ul>
+
+                <p className="dl-anno-p">
+                  <strong>Total demand: $4,500.00.</strong>{" "}
+                  <span className="dl-anno-mark" data-anno="next">
+                    If unresolved, I will file in Small Claims Court
+                  </span>.
+                </p>
+
+                <p className="dl-anno-sig">Jordan A. Tenant</p>
+                <p className="dl-anno-name" data-anno="evidence">Jordan A. Tenant</p>
+
+                <Image
+                  src="/icons/cc-seal-1.webp"
+                  alt=""
+                  width={120}
+                  height={120}
+                  className="dl-anno-seal-img"
+                  aria-hidden
+                />
+              </article>
+
+              {/* Annotation callouts — desktop only */}
+              <aside className="dl-anno-side" aria-hidden>
+                <div className="dl-anno-callout" data-pos="law">
+                  <strong>Specific law</strong>
+                  <span>We cite the exact statute that applies.</span>
+                </div>
+                <div className="dl-anno-callout" data-pos="penalty">
+                  <strong>Penalty calculated</strong>
+                  <span>We include any statutory multipliers you&rsquo;re owed.</span>
+                </div>
+                <div className="dl-anno-callout" data-pos="deadline">
+                  <strong>Clear deadline</strong>
+                  <span>A firm 14-day deadline is written in.</span>
+                </div>
+                <div className="dl-anno-callout" data-pos="next">
+                  <strong>Court threat</strong>
+                  <span>We name small claims court as the next step if they don&rsquo;t pay.</span>
+                </div>
+                <div className="dl-anno-callout" data-pos="evidence">
+                  <strong>Evidence referenced</strong>
+                  <span>We reference the proof you already have.</span>
+                </div>
+            </aside>
+          </div>
+
+          {/* Left footer — col 1 row 3 */}
+          <div className="dl-what-foot dl-what-foot-left">
+            <span className="dl-what-foot-icon dl-what-foot-icon-dark">
+              <ShieldCheck size={20} strokeWidth={1.8} />
+            </span>
+            <div>
+              <strong>Professional. Persuasive. Court-Ready.</strong>
+              <span>Our letters are written to create pressure and build your paper trail.</span>
+            </div>
+          </div>
+
+          {/* Right footer — col 2 row 3 */}
+          <div className="dl-what-foot dl-what-foot-cream">
+            <span className="dl-what-foot-icon dl-what-foot-icon-cream">
+              <FileText size={20} strokeWidth={1.8} />
+            </span>
+            <div>
+              <strong>100% customized to your case.</strong>
+              <span>No templates. A letter that fits your facts and your state.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* BENTO CASE STUDY — stacked cards left + new-case wizard mockup right */}
       <section className="dl-bento-band">
-        <div className="wrap dl-bento-grid">
+        <div className="wrap">
+        <div className="dl-bento-shell">
+        <div className="dl-bento-grid">
           {/* LEFT column — stacked cards */}
           <div className="dl-bento-left">
             <div className="dl-bento-card-top">
               <div>
                 <h2 className="dl-bento-title">
-                  Making every dispute a confident one
+                  Making every dispute a <em>confident one</em>
                 </h2>
                 <p className="dl-bento-body">
                   Start a case in minutes. We ask plain-language questions, cite the right
                   statute, and prepare a court-ready demand letter. You stay in control of
                   the next move.
                 </p>
-              </div>
-              <div className="dl-bento-feats">
-                <div className="dl-bento-feat">
-                  <span className="dl-bento-feat-icon">
-                    <ShieldCheck size={14} strokeWidth={2.2} />
-                  </span>
-                  <span>State-specific guidance</span>
-                </div>
-                <div className="dl-bento-feat">
-                  <span className="dl-bento-feat-icon">
-                    <Clock size={14} strokeWidth={2.2} />
-                  </span>
-                  <span>Most cases ready in 24 hours</span>
-                </div>
               </div>
             </div>
 
@@ -558,7 +599,7 @@ export default function DemandLetterPage() {
                   <span>CIVILCASE</span>
                 </div>
                 <Link href="/small-claims" className="dl-bento-cs-cta">
-                  See state guides
+                  See State Guides
                 </Link>
               </div>
               <div className="dl-bento-stats">
@@ -578,9 +619,26 @@ export default function DemandLetterPage() {
             </div>
           </div>
 
-          {/* RIGHT — full dashboard mockup: top phase strip + form + side rail */}
+          {/* RIGHT — full dashboard mockup: left sidebar + phase strip + form + side rail */}
           <div className="dl-bento-right">
             <div className="dl-bento-dash">
+              {/* Left sidebar — brand + nav */}
+              <aside className="dl-bento-dash-side" aria-hidden>
+                <div className="dl-bento-dash-brand">
+                  <span className="dl-bento-dash-brand-mark">C</span>
+                  <span className="dl-bento-dash-brand-name">CivilCase</span>
+                </div>
+                <nav className="dl-bento-dash-nav">
+                  <span><BarChart3 size={14} strokeWidth={1.8} /> Dashboard</span>
+                  <span className="is-active"><Folder size={14} strokeWidth={1.8} /> Cases</span>
+                  <span><Mail size={14} strokeWidth={1.8} /> Notifications</span>
+                  <span><FileText size={14} strokeWidth={1.8} /> Billing</span>
+                  <span><Headphones size={14} strokeWidth={1.8} /> Support</span>
+                </nav>
+              </aside>
+
+              {/* Main area (phase strip + form + rail) */}
+              <div className="dl-bento-dash-main-area">
               {/* Top phase strip */}
               <ol className="dl-bento-dash-phases">
                 <li className="is-done"><span>1</span><span>Eligibility</span></li>
@@ -688,134 +746,11 @@ export default function DemandLetterPage() {
                   </div>
                 </aside>
               </div>
+              </div>
             </div>
           </div>
         </div>
-      </section>
-
-      {/* WHAT'S IN THE LETTER — two-column anatomy diagram with numbered
-          feature cards on the left and an annotated letter mockup on the
-          right. Annotation callouts only appear at desktop widths. */}
-      <section className="dl-what-band">
-        <div className="wrap dl-what-grid">
-          {/* Header — col 1 only */}
-          <div className="dl-what-head">
-            <span className="dl-what-eyebrow">What&rsquo;s in the Letter</span>
-            <h2 className="dl-what-title">
-              Built specifically for <em>your dispute</em>.
-            </h2>
-            <p className="dl-what-sub">
-              Every letter follows a structure courts respect: who, what, when, the law that
-              applies, the demand, and the deadline.
-            </p>
-          </div>
-
-          {/* Letter mockup — row 2 (centered, full-width) */}
-          <div className="dl-anno-wrap">
-              <article className="dl-anno-letter">
-                <header className="dl-anno-head">
-                  <div>
-                    <span className="dl-anno-brand">CIVILCASE</span>
-                    <span className="dl-anno-sub">DEMAND LETTER</span>
-                  </div>
-                  <span className="dl-anno-date">April 21, 2026</span>
-                </header>
-                <div className="dl-anno-rule" />
-
-                <div className="dl-anno-meta">
-                  <div><span>TO:</span><p>Oakwood Properties LLC</p></div>
-                  <div><span>RE:</span><p>Demand for Return of Security Deposit</p></div>
-                </div>
-
-                <p className="dl-anno-p">
-                  Pursuant to{" "}
-                  <strong className="dl-anno-mark" data-anno="law">Cal. Civ. Code § 1950.5</strong>
-                  , you were required to return my $1,500 security deposit within 21 days of
-                  move-out. That period has elapsed.
-                </p>
-
-                <p className="dl-anno-p">
-                  I demand within{" "}
-                  <strong className="dl-anno-mark" data-anno="deadline">fourteen (14) days</strong>:
-                </p>
-
-                <ul className="dl-anno-bullets">
-                  <li>Return of the $1,500 deposit in full;</li>
-                  <li>
-                    <span className="dl-anno-mark" data-anno="penalty">
-                      Statutory damages of 2x for bad-faith retention ($3,000)
-                    </span>.
-                  </li>
-                </ul>
-
-                <p className="dl-anno-p">
-                  <strong>Total demand: $4,500.00.</strong>{" "}
-                  <span className="dl-anno-mark" data-anno="next">
-                    If unresolved, I will file in Small Claims Court
-                  </span>.
-                </p>
-
-                <p className="dl-anno-sig">Jordan A. Tenant</p>
-                <p className="dl-anno-name" data-anno="evidence">Jordan A. Tenant</p>
-
-                <span className="dl-anno-seal" aria-hidden>
-                  <span className="dl-anno-seal-ring">
-                    <span className="dl-anno-seal-top">OFFICIAL</span>
-                    <span className="dl-anno-seal-bot">DEMAND LETTER</span>
-                  </span>
-                  <span className="dl-anno-seal-center">
-                    <span>CIVILCASE</span>
-                    <Scale size={18} strokeWidth={1.6} />
-                  </span>
-                </span>
-              </article>
-
-              {/* Annotation callouts — desktop only */}
-              <aside className="dl-anno-side" aria-hidden>
-                <div className="dl-anno-callout" data-pos="law">
-                  <strong>Specific law</strong>
-                  <span>We cite the exact statute that applies.</span>
-                </div>
-                <div className="dl-anno-callout" data-pos="penalty">
-                  <strong>Penalty calculated</strong>
-                  <span>We include any statutory multipliers you&rsquo;re owed.</span>
-                </div>
-                <div className="dl-anno-callout" data-pos="deadline">
-                  <strong>Clear deadline</strong>
-                  <span>A firm 14-day deadline is written in.</span>
-                </div>
-                <div className="dl-anno-callout" data-pos="next">
-                  <strong>Court threat</strong>
-                  <span>We name small claims court as the next step if they don&rsquo;t pay.</span>
-                </div>
-                <div className="dl-anno-callout" data-pos="evidence">
-                  <strong>Evidence referenced</strong>
-                  <span>We reference the proof you already have.</span>
-                </div>
-            </aside>
-          </div>
-
-          {/* Left footer — col 1 row 3 */}
-          <div className="dl-what-foot dl-what-foot-left">
-            <span className="dl-what-foot-icon dl-what-foot-icon-dark">
-              <ShieldCheck size={20} strokeWidth={1.8} />
-            </span>
-            <div>
-              <strong>Professional. Persuasive. Court-Ready.</strong>
-              <span>Our letters are written to create pressure and build your paper trail.</span>
-            </div>
-          </div>
-
-          {/* Right footer — col 2 row 3 */}
-          <div className="dl-what-foot dl-what-foot-cream">
-            <span className="dl-what-foot-icon dl-what-foot-icon-cream">
-              <FileText size={20} strokeWidth={1.8} />
-            </span>
-            <div>
-              <strong>100% customized to your case.</strong>
-              <span>No templates. A letter that fits your facts and your state.</span>
-            </div>
-          </div>
+        </div>
         </div>
       </section>
 
@@ -1020,81 +955,6 @@ export default function DemandLetterPage() {
           </div>
         </section>
 
-        {/* FINAL CTA — same layout as before, dark theme to match the
-            "Move forward" cv2-cta pattern from small-claims issue pages. */}
-        <section className="dl-finalv2 dl-finalv2-dark">
-          <div className="dl-finalv2-card">
-            <div className="dl-finalv2-top">
-              <span className="dl-finalv2-icon" aria-hidden>
-                <FileText size={30} strokeWidth={1.8} />
-              </span>
-              <div className="dl-finalv2-copy">
-                <h2>
-                  Ready to <em>send your letter?</em>
-                </h2>
-                <p>No account. No subscription. Just results.</p>
-              </div>
-              <div className="dl-finalv2-cta">
-                <StartCaseButton className="dl-finalv2-btn">
-                  Start your letter
-                  <ArrowRight size={18} strokeWidth={2.2} />
-                </StartCaseButton>
-                <span className="dl-finalv2-meta">
-                  Takes about 2 minutes <span className="dl-finalv2-dot">&bull;</span> From $29
-                </span>
-              </div>
-            </div>
-
-            <div className="dl-finalv2-divider" />
-
-            <ul className="dl-finalv2-trust">
-              <li>
-                <span className="dl-finalv2-trust-icon"><ShieldCheck size={20} strokeWidth={1.8} /></span>
-                <div>
-                  <strong>State-specific</strong>
-                  <span>Built for your court.</span>
-                </div>
-              </li>
-              <li>
-                <span className="dl-finalv2-trust-icon"><Mail size={20} strokeWidth={1.8} /></span>
-                <div>
-                  <strong>Sent with proof</strong>
-                  <span>Certified mail + tracking.</span>
-                </div>
-              </li>
-              <li>
-                <span className="dl-finalv2-trust-icon"><Lock size={20} strokeWidth={1.8} /></span>
-                <div>
-                  <strong>100% Private</strong>
-                  <span>Secure and confidential.</span>
-                </div>
-              </li>
-              <li>
-                <span className="dl-finalv2-trust-icon"><Headphones size={20} strokeWidth={1.8} /></span>
-                <div>
-                  <strong>Real Support</strong>
-                  <span>U.S.-based team.</span>
-                </div>
-              </li>
-            </ul>
-          </div>
-
-          <div className="dl-promise-trust">
-            <span className="dl-promise-trust-icon">
-              <ShieldCheck size={28} strokeWidth={1.8} />
-            </span>
-            <strong>Trusted by thousands.</strong>
-            <span className="dl-promise-trust-sep">Backed by results.</span>
-            <span className="dl-promise-stars" aria-label="5 out of 5 stars">
-              <Star size={18} fill="currentColor" strokeWidth={0} />
-              <Star size={18} fill="currentColor" strokeWidth={0} />
-              <Star size={18} fill="currentColor" strokeWidth={0} />
-              <Star size={18} fill="currentColor" strokeWidth={0} />
-              <Star size={18} fill="currentColor" strokeWidth={0} />
-            </span>
-            <span className="dl-promise-trust-rating">4.9/5 average rating</span>
-          </div>
-        </section>
 
       </div>
     </main>
