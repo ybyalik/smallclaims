@@ -2,6 +2,7 @@ import type { AutoIssue } from "./types";
 
 export const dealershipUndisclosedDamage: AutoIssue = {
   slug: "dealership-undisclosed-damage",
+  claimType: "consumer_protection",
   ready: true,
   short: "Dealer undisclosed damage",
   breadcrumbLabel: "Dealer Undisclosed Damage",
@@ -103,6 +104,16 @@ export const dealershipUndisclosedDamage: AutoIssue = {
       amount: "$6,800",
       sublabel: "illustrative · varies by state UDAP and damage type",
     },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " when a dealer hid prior damage." },
+    lede: "Undisclosed damage is consumer fraud in most states. Show the damage, show they knew, show you didn't.",
+    elements: [
+      { title: "The car had prior damage", body: "CarFax or AutoCheck report showing the accident or repair history. Body-shop inspection showing repaint, replaced panels, or frame work." },
+      { title: "The dealer knew about it", body: "Vehicle history report dealers are required to pull, their inventory notes, or any inspection paperwork from when they acquired the car." },
+      { title: "They didn't disclose it to you", body: "Sales contract, window sticker, or written representations that omit or deny the damage. Texts or emails where they claimed the car was clean." },
+      { title: "The diminished value", body: "Two-quote comparison: what the car would be worth without the damage history, vs. what it's actually worth now. Salvage-history valuation tools help." },
+    ],
   },
 
   demand: {

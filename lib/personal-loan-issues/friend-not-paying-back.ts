@@ -2,6 +2,7 @@ import type { PersonalLoanIssue } from "./types";
 
 export const friendNotPayingBack: PersonalLoanIssue = {
   slug: "friend-not-paying-back",
+  claimType: "oral_contract",
   ready: true,
   short: "Friend not paying back",
   breadcrumbLabel: "Friend Not Paying Back",
@@ -52,6 +53,16 @@ export const friendNotPayingBack: PersonalLoanIssue = {
       { tag: "Layer 3", title: "Filing fees, post-judgment interest", body: "Filing fee, service-of-process cost, post-judgment interest until paid.", amount: "+ $200" },
     ],
     total: { label: "Sample total within small-claims cap", body: "$2,500 friend loan plus 2 years of pre-judgment interest, plus filing fee.", amount: "$3,200", sublabel: "illustrative · varies by state and term" },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " when a friend won't pay back a loan." },
+    lede: "Friend loans are emotionally hard but legally simple if you have the paper trail.",
+    elements: [
+      { title: "The loan happened", body: "Bank or app transfer record, cancelled check, or texts confirming the amount and date." },
+      { title: "It was a loan, not a gift", body: "Texts or emails discussing repayment, an IOU, or even a witness who heard the terms agreed." },
+      { title: "You asked them to pay back", body: "Texts, emails, or recorded conversations (where legal) showing you asked and what they said. Multiple requests over time strengthen the case." },
+      { title: "They didn't pay (or stopped paying)", body: "Bank records on your side, partial-payment records if any, and your final demand for the balance." },
+    ],
   },
 
   demand: {

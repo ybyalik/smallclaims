@@ -2,6 +2,7 @@ import type { NeighborIssue } from "./types";
 
 export const blockingDriveway: NeighborIssue = {
   slug: "blocking-driveway",
+  claimType: "trespass_to_chattels",
   ready: true,
   short: "Blocking driveway",
   breadcrumbLabel: "Blocking Driveway",
@@ -52,6 +53,16 @@ export const blockingDriveway: NeighborIssue = {
       { tag: "Layer 3", title: "Filing fees, interest", body: "Filing fee, service-of-process cost, pre-judgment interest at your state's legal rate.", amount: "+ $200" },
     ],
     total: { label: "Sample total within small-claims cap", body: "Towing costs from multiple incidents plus lost wages from missed work, plus filing fee.", amount: "$2,400", sublabel: "illustrative · varies by frequency" },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " when a neighbor blocks your driveway." },
+    lede: "Blocked driveway cases are about access rights and specific damages from being blocked.",
+    elements: [
+      { title: "Your right to the driveway", body: "Deed, plat map, or shared-driveway easement document. If the neighbor parks in your way, their property line ends at the driveway edge." },
+      { title: "The blocking happened", body: "Photos of the blocking vehicle, your driveway, and license plate. Time-stamped photos over multiple days show a pattern, not a one-off." },
+      { title: "You asked them to move it", body: "Texts, notes left on the windshield, or police calls. Save copies." },
+      { title: "Your damages from being blocked", body: "Tow fees, missed work, Uber/Lyft costs, late fees from appointments missed, or vehicle damage from forcing access. Receipts and pay stubs prove these." },
+    ],
   },
 
   demand: {

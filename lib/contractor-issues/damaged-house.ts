@@ -2,6 +2,7 @@ import type { ContractorIssue } from "./types";
 
 export const damagedHouse: ContractorIssue = {
   slug: "damaged-house",
+  claimType: "property_damage",
   ready: true,
   short: "Damaged house",
   breadcrumbLabel: "Damaged House",
@@ -103,6 +104,16 @@ export const damagedHouse: ContractorIssue = {
       amount: "$6,500",
       sublabel: "illustrative · varies by damage type and severity",
     },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " when a contractor damaged your home." },
+    lede: "Damage during work is straightforward if you have before-and-after photos. The contractor's liability follows from that.",
+    elements: [
+      { title: "The contractor was working on your property", body: "Signed contract, deposit check, or texts setting up the job. Without proof they were hired, you have no claim." },
+      { title: "The damage happened during their work", body: "Before-and-after photos with timestamps, witness statements from neighbors, or the contractor's own admission in texts/calls." },
+      { title: "The damage was caused by their work, not pre-existing", body: "Pre-existing condition photos, inspection reports from before the job, or the contractor's own scope-of-work document." },
+      { title: "The repair cost", body: "Written estimates from two other contractors. Judges weight written estimates much more than verbal." },
+    ],
   },
 
   demand: {

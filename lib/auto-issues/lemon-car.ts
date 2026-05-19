@@ -2,6 +2,7 @@ import type { AutoIssue } from "./types";
 
 export const lemonCar: AutoIssue = {
   slug: "lemon-car",
+  claimType: "consumer_protection",
   ready: true,
   short: "Lemon car",
   breadcrumbLabel: "Lemon Car",
@@ -103,6 +104,16 @@ export const lemonCar: AutoIssue = {
       amount: "$8,500",
       sublabel: "illustrative · larger refund cases need higher courts",
     },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " in a lemon-car case." },
+    lede: "Lemon-law cases usually go through your state's lemon-law administrator. But repair costs, lost use, or fraud-related damages may fit small claims.",
+    elements: [
+      { title: "The car has a defect that affects use, value, or safety", body: "Repair orders, diagnostic reports, dealer notes documenting the problem on multiple visits." },
+      { title: "The dealer/manufacturer had a reasonable chance to fix it", body: "Most state lemon laws require 3 to 4 repair attempts for the same problem. Save every repair order." },
+      { title: "The defect still isn't fixed (or keeps coming back)", body: "Current diagnostic, second mechanic's opinion, or video of the problem occurring." },
+      { title: "Your damages", body: "Diminished value of the vehicle, repair costs, rental cars, and (under most lemon laws) the option to force a buyback." },
+    ],
   },
 
   demand: {

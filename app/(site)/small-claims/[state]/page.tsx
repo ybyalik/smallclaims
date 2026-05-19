@@ -48,8 +48,8 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 
 const fmtMoney = (n: number) => "$" + n.toLocaleString("en-US");
 
-function ComingSoon({ stateName }: { stateName: string }) {
-  const ready = new Set(availableStateSlugs());
+async function ComingSoon({ stateName }: { stateName: string }) {
+  const ready = new Set(await availableStateSlugs());
   const readyStates = STATES.filter((s) => ready.has(s.slug));
   return (
     <main className="wrap" style={{ paddingBottom: 96 }}>

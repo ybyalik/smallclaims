@@ -2,6 +2,7 @@ import type { EmployerIssue } from "./types";
 
 export const firedWithoutWarning: EmployerIssue = {
   slug: "fired-without-warning",
+  claimType: "wages",
   ready: true,
   short: "Fired without warning",
   breadcrumbLabel: "Fired Without Warning",
@@ -103,6 +104,16 @@ export const firedWithoutWarning: EmployerIssue = {
       amount: "$4,700",
       sublabel: "illustrative · varies by handbook and state",
     },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " when you were fired without warning." },
+    lede: "Most US employment is 'at-will' — firing without warning is legal. But unpaid wages from the firing day are always recoverable.",
+    elements: [
+      { title: "When you were fired", body: "Termination letter, email, or witnesses. The date sets the clock for your final paycheck deadline." },
+      { title: "What hours you worked up to firing", body: "Time sheets, schedule screenshots, last week's pay stubs. Every hour worked is owed wages." },
+      { title: "What you're owed at termination", body: "Final wages, accrued vacation (in states where required), commissions earned, and any contractual severance promised in writing." },
+      { title: "The employer missed the final-pay deadline", body: "Your state's deadline (often same-day or within 72 hours for fired employees). Each day late may add a waiting-time penalty." },
+    ],
   },
 
   demand: {

@@ -2,6 +2,7 @@ import type { EmployerIssue } from "./types";
 
 export const emotionalDistress: EmployerIssue = {
   slug: "emotional-distress",
+  claimType: "personal_injury",
   ready: true,
   short: "Emotional distress",
   breadcrumbLabel: "Emotional Distress",
@@ -103,6 +104,16 @@ export const emotionalDistress: EmployerIssue = {
       amount: "$4,500",
       sublabel: "illustrative · varies by documentation and state",
     },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " in a workplace emotional-distress case." },
+    lede: "Workplace emotional-distress claims need extreme conduct AND documented harm. Vague stress doesn't win in court.",
+    elements: [
+      { title: "The conduct was extreme", body: "Document specific incidents: threats, public humiliation, discrimination, retaliation. A bad boss isn't enough; the conduct must cross into outrageous." },
+      { title: "You actually suffered distress", body: "Therapy notes, psychiatrist records, prescription history, or doctor's notes for stress-related symptoms. Self-reported is weakest." },
+      { title: "The employer knew or should have known", body: "HR complaints, written reports to managers, or witness statements showing leadership ignored the problem." },
+      { title: "Your measurable damages", body: "Therapy bills, prescription costs, missed work, and the cost of finding a new job. Pain-and-suffering numbers are harder in small claims." },
+    ],
   },
 
   demand: {

@@ -2,6 +2,7 @@ import type { EmployerIssue } from "./types";
 
 export const stolenTips: EmployerIssue = {
   slug: "stolen-tips",
+  claimType: "wages",
   ready: true,
   short: "Stolen tips",
   breadcrumbLabel: "Stolen Tips",
@@ -103,6 +104,16 @@ export const stolenTips: EmployerIssue = {
       amount: "$4,400+",
       sublabel: "illustrative · varies by state and tip-credit status",
     },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " when an employer stole your tips." },
+    lede: "Tip theft is increasingly enforceable. Federal and state law gives tipped workers explicit rights to their tips.",
+    elements: [
+      { title: "You're a tipped employee", body: "Job description, pay stubs showing tip credit, or any reference to tipped status in your employment paperwork." },
+      { title: "The tips were yours", body: "Credit-card receipts with tip lines, customer-side records (some POS systems email receipts), or your daily logs. Cash tips are harder but documented logs help." },
+      { title: "The employer took or withheld them", body: "Pay stubs showing tips deducted, manager admissions in texts, or coworker statements that tips were redirected. Mandatory tip pools with non-tipped workers are illegal under federal law." },
+      { title: "The amount", body: "Daily or weekly tip totals × the number of pay periods affected. Most states allow doubling or trebling the amount as statutory damages." },
+    ],
   },
 
   demand: {

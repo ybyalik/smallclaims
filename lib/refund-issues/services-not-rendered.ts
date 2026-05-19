@@ -2,6 +2,7 @@ import type { RefundIssue } from "./types";
 
 export const servicesNotRendered: RefundIssue = {
   slug: "services-not-rendered",
+  claimType: "consumer_protection",
   ready: true,
   short: "Services not rendered",
   breadcrumbLabel: "Services Not Rendered",
@@ -42,6 +43,16 @@ export const servicesNotRendered: RefundIssue = {
       { tag: "Layer 3", title: "Filing fees, interest", body: "Filing fee, service-of-process cost, pre-judgment interest.", amount: "+ $200" },
     ],
     total: { label: "Sample total within small-claims cap", body: "$1,600 refund plus the 2x penalty, plus filing fee.", amount: "$2,400", sublabel: "illustrative · varies by state" },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " when services weren't rendered." },
+    lede: "Service-not-rendered cases are some of the simplest: paid X, service didn't happen.",
+    elements: [
+      { title: "You paid for the service", body: "Receipt, contract, deposit invoice, or bank record. Itemize what you paid for." },
+      { title: "The service didn't happen (or didn't happen completely)", body: "Documentation that the service date passed without delivery, scope of work that wasn't completed, or the empty space where the work should have been." },
+      { title: "You followed up", body: "Texts, emails, or calls asking when the service would be delivered. Their excuses or silence build your case." },
+      { title: "The refund owed", body: "Full price paid, minus any portion of service actually delivered. Show your math." },
+    ],
   },
 
   demand: {

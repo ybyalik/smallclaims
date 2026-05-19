@@ -2,6 +2,7 @@ import type { LandlordIssue } from "./types";
 
 export const breakLease: LandlordIssue = {
   slug: "break-lease",
+  claimType: "written_contract",
   ready: true,
   short: "Break lease",
   breadcrumbLabel: "Break Lease",
@@ -104,6 +105,16 @@ export const breakLease: LandlordIssue = {
       amount: "$8,400 saved",
       sublabel: "illustrative · varies by lease term and rent",
     },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " when breaking a lease without penalty." },
+    lede: "Five legal grounds let you break a lease early. Pick yours and document it.",
+    elements: [
+      { title: "The legal ground you're using", body: "Active military deployment (federal SCRA), domestic violence (most states), uninhabitable conditions, landlord harassment, or mutual agreement." },
+      { title: "You followed the required notice procedure", body: "Most grounds require written notice with specific content. Military uses SCRA-compliant notice; DV typically needs a protective order or police report attached." },
+      { title: "You acted in good faith", body: "Paid rent through the notice period, tried to fix issues first if applicable, gave the landlord a chance to respond." },
+      { title: "Any damages the landlord still tries to claim", body: "The landlord has a duty to mitigate — actively re-rent the unit. Show they didn't, and you're off the hook for future rent." },
+    ],
   },
 
   demand: {

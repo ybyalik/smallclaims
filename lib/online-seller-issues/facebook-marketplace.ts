@@ -2,6 +2,7 @@ import type { OnlineSellerIssue } from "./types";
 
 export const facebookMarketplace: OnlineSellerIssue = {
   slug: "facebook-marketplace",
+  claimType: "consumer_protection",
   ready: true,
   short: "Facebook Marketplace seller",
   breadcrumbLabel: "Facebook Marketplace",
@@ -42,6 +43,16 @@ export const facebookMarketplace: OnlineSellerIssue = {
       { tag: "Layer 3", title: "Filing fees, interest", body: "Filing fee, service-of-process cost, pre-judgment interest.", amount: "+ $200" },
     ],
     total: { label: "Sample total within small-claims cap", body: "$1,200 refund plus 2x UDAP, plus filing fee.", amount: "$1,800", sublabel: "illustrative · Facebook has no platform alternative" },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " in a Facebook Marketplace case." },
+    lede: "Marketplace transactions usually happen in person or via Venmo/Zelle. The platform itself provides no buyer protection.",
+    elements: [
+      { title: "The seller's identity", body: "Profile screenshot, name, photos, any other identifiers. Most cases stall here — sellers delete accounts quickly. Get a phone number or address up front." },
+      { title: "The transaction", body: "Screenshots of the listing, your messages, payment record (Venmo, Zelle, PayPal). Date-stamp everything." },
+      { title: "What was wrong", body: "Photos of the item next to the listing photos. Pre-existing damage they didn't disclose, broken parts, counterfeit signs." },
+      { title: "You tried to resolve it", body: "Messages asking for a refund, their response (or silence). Without giving them a chance to make it right, judges sometimes reduce damages." },
+    ],
   },
 
   demand: {

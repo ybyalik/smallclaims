@@ -2,6 +2,7 @@ import type { LandlordIssue } from "./types";
 
 export const wrongfulEviction: LandlordIssue = {
   slug: "wrongful-eviction",
+  claimType: "property_damage",
   ready: true,
   short: "Wrongful eviction",
   breadcrumbLabel: "Wrongful Eviction",
@@ -103,6 +104,16 @@ export const wrongfulEviction: LandlordIssue = {
       amount: "$9,600",
       sublabel: "illustrative · varies by state and length of exclusion",
     },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " in a wrongful-eviction case." },
+    lede: "The landlord skipped the legal process. Show the gap between what they did and what the law required.",
+    elements: [
+      { title: "You were a lawful tenant", body: "Lease (written or oral), proof of rent payments, or any document showing the landlord accepted you as a tenant." },
+      { title: "The landlord forced you out without a court order", body: "Changed locks, removed your belongings, cut utilities, or threatened you into leaving. Photos, texts, witnesses." },
+      { title: "No proper eviction process happened", body: "No three-day notice, no unlawful-detainer filing, no court hearing, no sheriff lockout. Court records (or the absence of them) prove this." },
+      { title: "Your damages from the eviction", body: "Moving costs, hotel/Airbnb, replacement deposits, lost or damaged belongings, missed work, and the statutory penalty in your state." },
+    ],
   },
 
   demand: {

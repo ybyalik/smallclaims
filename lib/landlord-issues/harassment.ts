@@ -2,6 +2,7 @@ import type { LandlordIssue } from "./types";
 
 export const harassment: LandlordIssue = {
   slug: "harassment",
+  claimType: "personal_injury",
   ready: true,
   short: "Harassment",
   breadcrumbLabel: "Harassment",
@@ -103,6 +104,16 @@ export const harassment: LandlordIssue = {
       amount: "$8,500",
       sublabel: "illustrative · varies by state and number of acts",
     },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " in a landlord harassment case." },
+    lede: "Document the pattern. A single incident is rarely enough; repeated unauthorized conduct is what wins.",
+    elements: [
+      { title: "The harassment happened", body: "Logged incidents with dates and witnesses, threatening texts or emails, security-camera footage, or police reports." },
+      { title: "It was a pattern, not a one-off", body: "Three or more incidents over weeks or months. Calendars, journals, or text-message chains showing the timeline." },
+      { title: "It crossed a legal line", body: "Unauthorized entry without 24-hour notice, threats, retaliation after a complaint, shutting off utilities, removing belongings." },
+      { title: "Your damages", body: "Therapy bills, lost work, the cost of moving early, or the statutory per-incident penalty your state sets." },
+    ],
   },
 
   demand: {

@@ -1382,13 +1382,167 @@ section.g-section + section.g-section { padding-top: 28px; }
    ════════════════════════════════════════════════════════════════════ */
 
 .sgv2-page { padding-bottom: 96px; }
-.sgv2-wrap { max-width: 760px; }
+/* Wider container to match the rest of the site (1440px wrap default). */
+.sgv2-wrap { max-width: 1440px; }
+
+/* Article + sidebar 2-col grid. Article column is sized to its max-width
+   so the sidebar sits next to the text (not against the far right edge of
+   the wrap), and any leftover horizontal space falls to the right. */
+.sgv2-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 760px) 260px;
+  gap: 80px;
+  justify-content: start;
+  margin-top: 16px;
+}
 
 .sgv2-article {
-  margin-top: 16px;
   font-size: 17px;
   line-height: 1.65;
   color: var(--ink-2);
+  min-width: 0;
+}
+
+/* Sidebar rail */
+.sgv2-rail {
+  min-width: 0;
+}
+.sgv2-rail-sticky {
+  position: sticky;
+  top: 96px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-height: calc(100vh - 120px);
+}
+
+/* TOC card */
+.sgv2-toc-card {
+  background: var(--bg-2);
+  border-radius: 14px;
+  padding: 18px 20px;
+  flex: 0 1 auto;
+  min-height: 0;
+}
+.sgv2-toc-label {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+.sgv2-toc {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: sgv2-toc;
+}
+.sgv2-toc li {
+  counter-increment: sgv2-toc;
+  padding: 6px 0;
+  border-top: 1px solid var(--hairline);
+  font-size: 13px;
+  line-height: 1.4;
+}
+.sgv2-toc li:first-child { border-top: 0; padding-top: 0; }
+.sgv2-toc li::before {
+  content: counter(sgv2-toc, decimal-leading-zero);
+  display: inline-block;
+  width: 22px;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  vertical-align: baseline;
+}
+.sgv2-toc a {
+  color: var(--ink-2);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.sgv2-toc a:hover { color: var(--accent); }
+
+/* Expand / collapse buttons for the rest of the sections. */
+.sgv2-toc-more,
+.sgv2-toc-less {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  padding: 8px 0 4px;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-align: left;
+}
+.sgv2-toc-less { justify-content: flex-start; padding-top: 8px; }
+.sgv2-toc-more:hover,
+.sgv2-toc-less:hover { color: #b32f1f; }
+.sgv2-toc-more-chev {
+  transform: rotate(90deg);
+  color: var(--accent);
+  margin-left: auto;
+}
+.sgv2-toc-less-chev {
+  transform: rotate(-90deg);
+  color: var(--accent);
+  margin-left: auto;
+}
+.sgv2-toc-rest { margin-top: 0; }
+
+/* Sticky CTA card */
+.sgv2-cta-card {
+  background: var(--ink);
+  color: #fef9f1;
+  border-radius: 14px;
+  padding: 20px 22px;
+  flex-shrink: 0;
+}
+.sgv2-cta-card strong {
+  display: block;
+  font-family: var(--font-newsreader), Georgia, serif;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+.sgv2-cta-card p {
+  margin: 0 0 14px;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: rgba(254, 249, 241, 0.7);
+}
+.sgv2-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: var(--accent);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+}
+.sgv2-cta-btn:hover { background: #c63824; }
+
+@media (max-width: 1100px) {
+  .sgv2-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .sgv2-rail-sticky {
+    position: static;
+    max-height: none;
+  }
+  .sgv2-article { max-width: none; }
 }
 
 /* Page opener (H1 + standfirst + byline) */

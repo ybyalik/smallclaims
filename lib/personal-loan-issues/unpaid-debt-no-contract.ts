@@ -2,6 +2,7 @@ import type { PersonalLoanIssue } from "./types";
 
 export const unpaidDebtNoContract: PersonalLoanIssue = {
   slug: "unpaid-debt-no-contract",
+  claimType: "oral_contract",
   ready: true,
   short: "Unpaid debt no contract",
   breadcrumbLabel: "Unpaid Debt No Contract",
@@ -52,6 +53,16 @@ export const unpaidDebtNoContract: PersonalLoanIssue = {
       { tag: "Layer 3", title: "Filing fees, post-judgment interest", body: "Filing fee (often higher for larger claims), service-of-process cost, post-judgment interest until paid.", amount: "+ $200" },
     ],
     total: { label: "Sample total within small-claims cap", body: "$8,000 transfer plus pre-judgment interest, plus filing fee.", amount: "$8,800", sublabel: "illustrative · varies by state and term" },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " in an unpaid-debt-with-no-contract case." },
+    lede: "Without a written contract, you're relying on 'oral contract' or 'quasi-contract' theories. Both win with enough paper trail.",
+    elements: [
+      { title: "An understanding existed", body: "Texts, emails, or witnesses showing you agreed to lend, perform services, or deliver goods. Specifics about the deal matter." },
+      { title: "You performed your end", body: "Bank records, delivery proof, service completion (photos, signed delivery receipts), or witness statements." },
+      { title: "They benefited", body: "Show the value they received: the work was done, the goods were delivered, the money was used. This is the foundation of the unjust-enrichment claim." },
+      { title: "They didn't pay despite reasonable expectation", body: "Texts asking for payment, follow-ups, and their excuses or silence. The longer it goes unpaid, the stronger the case." },
+    ],
   },
 
   demand: {

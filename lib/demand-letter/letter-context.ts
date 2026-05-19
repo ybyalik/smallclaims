@@ -19,7 +19,7 @@
 // cap) for anything missing.
 
 import { createServiceRoleClient } from "../supabase/service-role";
-import { availableStateSlugs, loadStateGuide } from "../state-data";
+import { loadStateGuide } from "../state-data";
 import { STATES } from "../states";
 import { getStateContext } from "./state-context";
 import type {
@@ -234,11 +234,13 @@ export async function buildLetterStateContext(
     : (DISPUTE_CLAIM_TYPES[disputeType] ?? []);
 
   const slug = stateSlug(stateCode);
+  // Both loaders hit the same Supabase row. React.cache dedupes the underlying
+  // request so we don't pay 2x. loadStructuredPack gives us the raw fields the
+  // LLM context wants; loadStateGuide is the legacy fallback shape if for some
+  // reason buildFromPack returns nothing usable.
   const [pack, guide] = await Promise.all([
     loadStructuredPack(slug),
-    availableStateSlugs().includes(slug)
-      ? loadStateGuide(slug).catch(() => null as StateGuide | null)
-      : Promise.resolve(null as StateGuide | null),
+    loadStateGuide(slug).catch(() => null as StateGuide | null),
   ]);
 
   // Build the context block. We prefer structured_pack fields when present,

@@ -2,6 +2,7 @@ import type { RefundIssue } from "./types";
 
 export const gymMembership: RefundIssue = {
   slug: "gym-membership",
+  claimType: "consumer_protection",
   ready: true,
   short: "Gym membership refund",
   breadcrumbLabel: "Gym Membership",
@@ -42,6 +43,16 @@ export const gymMembership: RefundIssue = {
       { tag: "Layer 3", title: "Filing fees, interest", body: "Filing fee, service-of-process cost, pre-judgment interest.", amount: "+ $200" },
     ],
     total: { label: "Sample total within small-claims cap", body: "Refund of post-cancellation charges plus statutory multiplier, plus filing fee.", amount: "$1,200", sublabel: "illustrative · varies by state" },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " in a gym-membership case." },
+    lede: "Gyms are heavily regulated by state contract law. Most states require easy cancellation rights and cap cancellation fees.",
+    elements: [
+      { title: "The contract", body: "Signed membership agreement, terms-of-service screenshot, or sign-up email. Pay particular attention to cancellation terms and any auto-renewal." },
+      { title: "You followed the cancellation procedure", body: "Save the certified letter, in-person cancellation receipt, or online form confirmation. Most gyms require specific procedures." },
+      { title: "They kept charging after cancellation", body: "Credit-card or bank statements showing the unauthorized charges after the cancellation date." },
+      { title: "Your damages and any statutory remedies", body: "Refund of post-cancellation charges, plus state-specific penalties. California, New York, and others have specific gym-contract laws with statutory damages." },
+    ],
   },
 
   demand: {

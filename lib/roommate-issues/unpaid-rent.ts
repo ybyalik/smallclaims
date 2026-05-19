@@ -2,6 +2,7 @@ import type { RoommateIssue } from "./types";
 
 export const unpaidRent: RoommateIssue = {
   slug: "unpaid-rent",
+  claimType: "written_contract",
   ready: true,
   short: "Roommate unpaid rent",
   breadcrumbLabel: "Roommate Unpaid Rent",
@@ -52,6 +53,16 @@ export const unpaidRent: RoommateIssue = {
       { tag: "Layer 3", title: "Filing fees, interest after judgment", body: "Filing fee, service-of-process cost, interest that keeps running until they pay.", amount: "+ $200" },
     ],
     total: { label: "Sample total within small-claims cap", body: "3 months of roommate's $1,200 share you covered, plus interest and filing fee.", amount: "$4,200", sublabel: "illustrative · varies by rent and term" },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " when a roommate owes rent." },
+    lede: "Roommate-rent cases work like any contract case. The hard part is showing the agreement, especially if it was verbal.",
+    elements: [
+      { title: "There was an agreement about rent", body: "Roommate agreement (written), Venmo/Zelle records showing prior on-time rent, or texts agreeing to specific monthly amounts." },
+      { title: "What they owed", body: "Monthly rent share × the number of months unpaid. Include utilities or other regular costs if they were part of the agreement." },
+      { title: "You paid their share to keep the lease in good standing", body: "Bank records showing you paid the full rent (yours plus theirs) so you weren't evicted. This is what you're trying to recover." },
+      { title: "They've refused or stopped paying", body: "Texts asking for the balance, their responses (or silence), and any partial payments they did make." },
+    ],
   },
 
   demand: {

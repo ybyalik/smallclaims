@@ -2,6 +2,7 @@ import type { OnlineSellerIssue } from "./types";
 
 export const fedexPackage: OnlineSellerIssue = {
   slug: "fedex-package",
+  claimType: "consumer_protection",
   ready: true,
   short: "FedEx package",
   breadcrumbLabel: "FedEx Package",
@@ -42,6 +43,16 @@ export const fedexPackage: OnlineSellerIssue = {
       { tag: "Layer 3", title: "Filing fees, interest", body: "Filing fee, service-of-process cost, pre-judgment interest.", amount: "+ $200" },
     ],
     total: { label: "Sample total", body: "Declared value $800 plus filing fee. Without declaration, capped at $100.", amount: "$1,200", sublabel: "illustrative · varies by declaration" },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " when FedEx (or another carrier) damaged or lost a package." },
+    lede: "Carrier disputes work better through their claims system, but small claims is a backup when they deny a valid claim.",
+    elements: [
+      { title: "You shipped or received the package", body: "Tracking number, shipping receipt, and confirmation of delivery (or the failed-delivery scan)." },
+      { title: "The damage or loss", body: "Photos of the damaged item AND the packaging, taken before you opened anything if possible. For losses, the final tracking scan." },
+      { title: "The value of the contents", body: "Receipts, photos, or appraisals. Carriers limit liability to declared value, so showing what you declared (and paid for) matters." },
+      { title: "You filed a claim with the carrier first", body: "FedEx/UPS/USPS claim number, their decision, and any partial payment. Carriers usually require this before they'll talk to you." },
+    ],
   },
 
   demand: {

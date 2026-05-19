@@ -2,6 +2,7 @@ import type { EmployerIssue } from "./types";
 
 export const hostileWorkEnvironment: EmployerIssue = {
   slug: "hostile-work-environment",
+  claimType: "personal_injury",
   ready: true,
   short: "Hostile work environment",
   breadcrumbLabel: "Hostile Work Environment",
@@ -103,6 +104,16 @@ export const hostileWorkEnvironment: EmployerIssue = {
       amount: "$5,500",
       sublabel: "illustrative · varies by state and provable harm",
     },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " in a hostile-work-environment case." },
+    lede: "These claims usually go through state agencies or federal court, not small claims. But financial damages tied to the harassment may be small-claims-sized.",
+    elements: [
+      { title: "The conduct happened", body: "Logged incidents with dates and witnesses, harassing texts/emails, voicemail recordings (where legal), or HR complaint receipts." },
+      { title: "It was severe or pervasive", body: "Single isolated incidents rarely qualify. Document a pattern: multiple incidents over weeks or months." },
+      { title: "You reported it", body: "HR complaints, written notes to your manager, or texts to the owner. Save the receipt or read-receipt." },
+      { title: "Your actual damages", body: "Therapy bills, lost wages from missed work, the cost of finding a new job, or medical expenses tied to stress." },
+    ],
   },
 
   demand: {

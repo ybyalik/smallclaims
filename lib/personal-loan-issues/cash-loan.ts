@@ -2,6 +2,7 @@ import type { PersonalLoanIssue } from "./types";
 
 export const cashLoan: PersonalLoanIssue = {
   slug: "cash-loan",
+  claimType: "written_contract",
   ready: true,
   short: "Cash loan",
   breadcrumbLabel: "Cash Loan",
@@ -52,6 +53,16 @@ export const cashLoan: PersonalLoanIssue = {
       { tag: "Layer 3", title: "Filing fees, post-judgment interest", body: "Filing fee, service-of-process cost, post-judgment interest until paid.", amount: "+ $200" },
     ],
     total: { label: "Sample total within small-claims cap", body: "$2,000 cash loan plus pre-judgment interest, plus filing fee.", amount: "$2,400", sublabel: "illustrative · varies by amount and term" },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " in a cash-loan case." },
+    lede: "Cash loans are the hardest to prove. Texts, witnesses, and any followup paperwork are everything.",
+    elements: [
+      { title: "The loan happened", body: "Text or email referencing the loan (even just 'thanks for the cash' counts), bank withdrawal records on your end matching the date, or a witness." },
+      { title: "It was a loan, not a gift", body: "Texts or emails discussing repayment terms or asking when they'll pay back. Without this, judges often default to assuming gift." },
+      { title: "The amount and any agreed terms", body: "Date, amount, and whether repayment was due in installments, by a specific date, or on demand." },
+      { title: "They haven't paid back", body: "Bank records on your side showing no deposit, follow-up texts asking for repayment, and their response (or excuses)." },
+    ],
   },
 
   demand: {

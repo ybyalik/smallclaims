@@ -2,6 +2,7 @@ import type { ContractorIssue } from "./types";
 
 export const landscaperBadWork: ContractorIssue = {
   slug: "landscaper-bad-work",
+  claimType: "written_contract",
   ready: true,
   short: "Landscaper bad work",
   breadcrumbLabel: "Landscaper Bad Work",
@@ -103,6 +104,16 @@ export const landscaperBadWork: ContractorIssue = {
       amount: "$4,200",
       sublabel: "illustrative · varies by project size and damage type",
     },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " in a landscaper case." },
+    lede: "Document the original landscaping (or the agreed plan), what they did instead, and what it costs to fix.",
+    elements: [
+      { title: "The agreed scope", body: "Written estimate, signed plan, or text chain confirming what plants, materials, or design you were paying for." },
+      { title: "What they actually delivered", body: "Photos of the result, comparison to the agreed plan, and any plants/materials that died, broke, or were never installed." },
+      { title: "You let them know it wasn't right", body: "Save the text or email where you raised the problem and asked them to come back to fix it." },
+      { title: "The cost to redo or repair", body: "Written estimate from a second landscaper. For dead plants, include nursery receipts showing replacement cost." },
+    ],
   },
 
   demand: {

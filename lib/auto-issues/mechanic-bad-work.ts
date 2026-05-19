@@ -2,6 +2,7 @@ import type { AutoIssue } from "./types";
 
 export const mechanicBadWork: AutoIssue = {
   slug: "mechanic-bad-work",
+  claimType: "written_contract",
   ready: true,
   short: "Mechanic bad work",
   breadcrumbLabel: "Mechanic Bad Work",
@@ -103,6 +104,16 @@ export const mechanicBadWork: AutoIssue = {
       amount: "$4,200",
       sublabel: "illustrative · varies by repair complexity",
     },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " when a mechanic's work was bad." },
+    lede: "Show what was promised, what was delivered, and what it costs to fix.",
+    elements: [
+      { title: "What you paid them to do", body: "Repair order, written estimate, or invoice listing the work. Verbal-only requests are harder but workable with texts." },
+      { title: "What they actually did (or didn't do)", body: "A second mechanic's written diagnosis showing the work wasn't done correctly. Diagnostic codes are great evidence." },
+      { title: "You gave them a chance to fix it", body: "Save the texts or invoices where you returned for them to address the problem. Most states require notice before suing." },
+      { title: "The cost to fix it properly", body: "Second mechanic's invoice for redoing the work, plus any consequential damage (towing, rental car, missed work)." },
+    ],
   },
 
   demand: {

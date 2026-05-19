@@ -2,6 +2,7 @@ import type { LandlordIssue } from "./types";
 
 export const securityDeposit: LandlordIssue = {
   slug: "security-deposit",
+  claimType: "security_deposit",
   ready: true,
   short: "Security deposit",
   breadcrumbLabel: "Security Deposit",
@@ -103,6 +104,16 @@ export const securityDeposit: LandlordIssue = {
       amount: "$6,250",
       sublabel: "illustrative · varies by state and facts",
     },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " in a security deposit case." },
+    lede: "Four things, in order. Judges award fast on these cases because the elements are mechanical.",
+    elements: [
+      { title: "The deposit existed", body: "Lease, signed receipt, or cancelled check from move-in showing the amount and date." },
+      { title: "You moved out properly", body: "Gave notice per the lease, returned keys, and sent a written forwarding-address notice (this starts the deadline clock)." },
+      { title: "The landlord missed the deadline or kept money wrongfully", body: "Your state's return-deadline passed with no itemized list, or the deductions are for normal wear and tear or pre-existing damage." },
+      { title: "The amount you're owed", body: "The deposit (or wrongfully-withheld portion) plus your state's statutory multiplier on top." },
+    ],
   },
 
   demand: {
@@ -282,9 +293,9 @@ export const securityDeposit: LandlordIssue = {
 
   stateSection: {
     kind: "us-map",
-    h2: { pre: "Security deposit return deadlines, by ", em: "state", post: "." },
+    h2: { pre: "Security deposit rules, by ", em: "state", post: "." },
     lede:
-      "The ten highest-volume states for security-deposit small claims, highlighted in red. Cards below show each state's deadline and bad-faith penalty. Always confirm against the cited statute before filing.",
+      "The ten highest-volume states for security-deposit small claims, highlighted in red. Cards show each state's deadline to sue (statute of limitations) and the statutory penalty for wrongful withholding. Always confirm against the cited statute before filing.",
   },
 
   alternatives: {

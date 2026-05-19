@@ -2,6 +2,7 @@ import type { OnlineSellerIssue } from "./types";
 
 export const onlineSellerGeneral: OnlineSellerIssue = {
   slug: "online-seller-general",
+  claimType: "consumer_protection",
   ready: true,
   short: "Online seller (general)",
   breadcrumbLabel: "Online Seller",
@@ -51,6 +52,16 @@ export const onlineSellerGeneral: OnlineSellerIssue = {
       { tag: "Layer 3", title: "Filing fees, interest, return shipping", body: "Filing fee, return shipping you paid, pre-judgment interest at your state's legal rate.", amount: "+ $200" },
     ],
     total: { label: "Sample total within small-claims cap", body: "$1,200 refund plus 2x UDAP multiplier, plus filing fee.", amount: "$1,800", sublabel: "illustrative · varies by state" },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " in any online-seller dispute." },
+    lede: "Online-seller cases follow consumer-protection rules. Document the agreement, the delivery (or non-delivery), and the gap.",
+    elements: [
+      { title: "The agreement", body: "Listing screenshots, order confirmation, payment receipt, and any messages with the seller about specs, timing, or terms." },
+      { title: "What you received (or didn't)", body: "Photos of the delivered item against the listing description. For non-delivery, tracking history or the absence of any record." },
+      { title: "The seller's identity and address", body: "Some online sellers operate from PO boxes or out of state. You need a real address to serve them with a complaint." },
+      { title: "Your specific damages", body: "Purchase price, return shipping, replacement cost, and any consequential damages. Receipts for everything." },
+    ],
   },
 
   demand: {

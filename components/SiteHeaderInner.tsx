@@ -26,10 +26,7 @@ const FEATURED_STATES: Array<{ slug: string; name: string }> = [
   { slug: "texas", name: "Texas" },
   { slug: "new-york", name: "New York" },
   { slug: "florida", name: "Florida" },
-  { slug: "illinois", name: "Illinois" },
   { slug: "pennsylvania", name: "Pennsylvania" },
-  { slug: "ohio", name: "Ohio" },
-  { slug: "georgia", name: "Georgia" },
 ];
 
 export default function SiteHeaderInner({ user }: { user: SiteHeaderUser | null }) {
@@ -116,17 +113,9 @@ export default function SiteHeaderInner({ user }: { user: SiteHeaderUser | null 
           />
         </Link>
         <nav className="nav-links">
-          <div
-            className={`nav-mega-trigger${openMega === "sc" ? " is-open" : ""}`}
-            onMouseEnter={() => openMegaNow("sc")}
-            onMouseLeave={scheduleMegaClose}
-            onFocus={() => openMegaNow("sc")}
-          >
-            <Link href="/small-claims">
-              Small Claims
-              <ChevronDown className="nav-mega-caret" size={12} strokeWidth={2} aria-hidden />
-            </Link>
-          </div>
+          <Link href="/demand-letter">Demand Letter</Link>
+          <Link href="/small-claims">Small Claims</Link>
+          <Link href="/case-score">Case Score</Link>
           <div
             className={`nav-mega-trigger${openMega === "res" ? " is-open" : ""}`}
             onMouseEnter={() => openMegaNow("res")}
@@ -138,8 +127,6 @@ export default function SiteHeaderInner({ user }: { user: SiteHeaderUser | null 
               <ChevronDown className="nav-mega-caret" size={12} strokeWidth={2} aria-hidden />
             </Link>
           </div>
-          <Link href="/case-score">Case score</Link>
-          <Link href="/demand-letter">Demand letter</Link>
         </nav>
 
         {user ? (
@@ -232,14 +219,14 @@ export default function SiteHeaderInner({ user }: { user: SiteHeaderUser | null 
         </button>
       </header>
 
-      {/* Mega menu — Small Claims */}
+      {/* Mega menu — Resources */}
       <div
-        className={`nav-mega${openMega === "sc" ? " is-open" : ""}`}
-        onMouseEnter={() => openMegaNow("sc")}
+        className={`nav-mega${openMega === "res" ? " is-open" : ""}`}
+        onMouseEnter={() => openMegaNow("res")}
         onMouseLeave={scheduleMegaClose}
-        aria-hidden={openMega !== "sc"}
+        aria-hidden={openMega !== "res"}
       >
-        <div className="nav-mega-grid nav-mega-grid-sc">
+        <div className="nav-mega-grid nav-mega-grid-res">
           <div className="nav-mega-col">
             <div className="nav-mega-eyebrow">By dispute type</div>
             <ul className="nav-mega-list nav-mega-list-2col nav-mega-list-icons">
@@ -256,50 +243,16 @@ export default function SiteHeaderInner({ user }: { user: SiteHeaderUser | null 
                   </li>
                 );
               })}
-            </ul>
-            <Link className="nav-mega-allink" href="/small-claims" onClick={() => setOpenMega(null)}>
-              All categories →
-            </Link>
-          </div>
-          <div className="nav-mega-col">
-            <div className="nav-mega-eyebrow">Tools</div>
-            <ul className="nav-mega-list">
-              <li>
-                <Link href="/case-score" onClick={() => setOpenMega(null)}>
-                  <strong>Case score</strong>
-                  <span>Free 7-question case-strength quiz.</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/demand-letter" onClick={() => setOpenMega(null)}>
-                  <strong>Demand letter</strong>
-                  <span>Cite the statute, formatted for certified mail.</span>
+              <li className="nav-mega-allitem">
+                <Link href="/small-claims" onClick={() => setOpenMega(null)}>
+                  All categories →
                 </Link>
               </li>
             </ul>
           </div>
-          <div className="nav-mega-col nav-mega-feature">
-            <Link href="/small-claims/landlord" onClick={() => setOpenMega(null)} className="nav-mega-feature-card">
-              <div className="nav-mega-feature-eyebrow">Most popular</div>
-              <div className="nav-mega-feature-title">Sue your landlord</div>
-              <div className="nav-mega-feature-sub">Deposits, mold, wrongful eviction, habitability — and what you can recover.</div>
-              <span className="nav-mega-feature-arrow">→</span>
-            </Link>
-          </div>
-        </div>
-      </div>
-
-      {/* Mega menu — Resources */}
-      <div
-        className={`nav-mega${openMega === "res" ? " is-open" : ""}`}
-        onMouseEnter={() => openMegaNow("res")}
-        onMouseLeave={scheduleMegaClose}
-        aria-hidden={openMega !== "res"}
-      >
-        <div className="nav-mega-grid nav-mega-grid-res">
           <div className="nav-mega-col">
             <div className="nav-mega-eyebrow">State guides</div>
-            <ul className="nav-mega-list nav-mega-list-2col">
+            <ul className="nav-mega-list">
               {FEATURED_STATES.map((s) => (
                 <li key={s.slug}>
                   <Link href={`/small-claims/${s.slug}`} onClick={() => setOpenMega(null)}>{s.name}</Link>
@@ -310,37 +263,11 @@ export default function SiteHeaderInner({ user }: { user: SiteHeaderUser | null 
               All 50 states →
             </Link>
           </div>
-          <div className="nav-mega-col">
-            <div className="nav-mega-eyebrow">Blog</div>
-            <ul className="nav-mega-list">
-              <li>
-                <Link href="/blog" onClick={() => setOpenMega(null)}>
-                  <strong>Latest posts</strong>
-                  <span>Stories and updates from the small-claims trenches.</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog?topic=deposits" onClick={() => setOpenMega(null)}>
-                  <strong>Security deposits</strong>
-                  <span>Demanding, deadlines, statutory penalties.</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog?topic=filing" onClick={() => setOpenMega(null)}>
-                  <strong>Filing &amp; fees</strong>
-                  <span>Forms, costs, and county-by-county procedure.</span>
-                </Link>
-              </li>
-            </ul>
-            <Link className="nav-mega-allink" href="/blog" onClick={() => setOpenMega(null)}>
-              Visit blog →
-            </Link>
-          </div>
           <div className="nav-mega-col nav-mega-feature">
-            <Link href="/small-claims/california" onClick={() => setOpenMega(null)} className="nav-mega-feature-card">
-              <div className="nav-mega-feature-eyebrow">Featured guide</div>
-              <div className="nav-mega-feature-title">California small claims</div>
-              <div className="nav-mega-feature-sub">$12,500 limit, 30-day deadline, free filing under $1.5k. Full guide.</div>
+            <Link href="/blog" onClick={() => setOpenMega(null)} className="nav-mega-feature-card">
+              <div className="nav-mega-feature-eyebrow">Blog</div>
+              <div className="nav-mega-feature-title">Stories from the small-claims trenches</div>
+              <div className="nav-mega-feature-sub">Filing tips, statute breakdowns, and real outcomes from people who took action.</div>
               <span className="nav-mega-feature-arrow">→</span>
             </Link>
           </div>
@@ -417,10 +344,10 @@ export default function SiteHeaderInner({ user }: { user: SiteHeaderUser | null 
           <div className="nav-mobile-section">
             <span className="nav-mobile-section-label">Get started</span>
             <Link href="/demand-letter" onClick={() => setOpen(false)}>
-              Demand letter
+              Demand Letter
             </Link>
             <Link href="/case-score" onClick={() => setOpen(false)}>
-              Case score
+              Case Score
             </Link>
             <Link href="/small-claims" onClick={() => setOpen(false)}>
               Small claims by state

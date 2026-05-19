@@ -4,7 +4,7 @@ import FeaturedUsMap from "../widgets/FeaturedUsMap";
 import CountUp from "../widgets/CountUp";
 import HeroCta from "../HeroCta";
 import { availableStateSlugs } from "../../lib/state-data";
-import { getDepositStateTable } from "../../lib/deposit-state-table";
+import { getClaimStateTable } from "../../lib/state-data/by-claim";
 import type { LandlordIssue, EvidenceCell } from "../../lib/landlord-issues/types";
 import type { CategoryMeta } from "../../lib/issues/categories";
 
@@ -89,12 +89,21 @@ interface Props {
   siblings: LandlordIssue[];
 }
 
-export default function IssueTemplate({ issue, category, siblings }: Props) {
-  const ready = new Set(availableStateSlugs());
-  const depositRows = issue.stateSection?.kind === "us-map" ? getDepositStateTable() : [];
-  const featuredDepositRows = FEATURED_STATE_SLUGS
-    .map((slug) => depositRows.find((r) => r.slug === slug))
+export default async function IssueTemplate({ issue, category, siblings }: Props) {
+  const ready = new Set(await availableStateSlugs());
+
+  // When the issue declares a claimType, auto-fetch a 50-state table of
+  // deadline + statutory penalty + statute citation. This is what powers
+  // the State section on every issue page going forward; the older
+  // deposit-only us-map flow is gone.
+  const claimRows = issue.claimType ? await getClaimStateTable(issue.claimType) : [];
+  const featuredClaimRows = FEATURED_STATE_SLUGS
+    .map((slug) => claimRows.find((r) => r.slug === slug))
     .filter((r): r is NonNullable<typeof r> => Boolean(r));
+  // Always render the State section when claimType is set, even if the issue
+  // didn't manually declare stateSection. The pack-driven data is enough on
+  // its own.
+  const showStateSection = !!issue.claimType || !!issue.stateSection;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -136,24 +145,6 @@ export default function IssueTemplate({ issue, category, siblings }: Props) {
     <main className="cat-page cv2-page">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <CountUp />
-
-      <aside className="cv2-floating-toc" aria-label="On this page">
-        <span className="cv2-floating-toc-label">On this page</span>
-        <ol>
-          <li><a href="#what-counts">What counts</a></li>
-          <li><a href="#claim">What you can claim for</a></li>
-          <li><a href="#before">Before you sue</a></li>
-          <li><a href="#how">How to file</a></li>
-          <li><a href="#evidence">Evidence checklist</a></li>
-          <li><a href="#defenses">{category.defensesTocLabel}</a></li>
-          <li><a href="#outcomes">Realistic outcomes</a></li>
-          {issue.stateSection ? <li><a href="#state">State rules</a></li> : null}
-          <li><a href="#alternatives">Alternatives</a></li>
-          <li><a href="#cta">Take the next step</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#related">Related claims</a></li>
-        </ol>
-      </aside>
 
       <div className="wrap">
         <Breadcrumbs
@@ -271,6 +262,30 @@ export default function IssueTemplate({ issue, category, siblings }: Props) {
             </div>
           </div>
         </section>
+
+        {/* WHAT YOU NEED TO PROVE (optional, only renders if the issue
+            file provides the field). High SEO value for "how to prove X"
+            queries — same depth wedge as state-specific tables. */}
+        {issue.whatToProve ? (
+          <section id="what-to-prove" className="cat-section cat-section-light">
+            <div className="cat-stack-head">
+              <span className="eyebrow">What you need to prove</span>
+              <H2 parts={issue.whatToProve.h2} />
+              <p>{issue.whatToProve.lede}</p>
+            </div>
+            <ol className="cat-prove-list">
+              {issue.whatToProve.elements.map((el, i) => (
+                <li key={i} className="cat-prove-item">
+                  <span className="cat-prove-num">{i + 1}</span>
+                  <div className="cat-prove-body">
+                    <strong>{el.title}</strong>
+                    <p>{el.body}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </section>
+        ) : null}
 
         {/* BEFORE YOU SUE */}
         <section id="before" className="cv2-bento-section">
@@ -501,18 +516,50 @@ export default function IssueTemplate({ issue, category, siblings }: Props) {
         </section>
 
         {/* STATE */}
-        {issue.stateSection ? (
+        {showStateSection ? (
           <section id="state" className="cat-section">
             <div className="cat-stack-head">
               <span className="eyebrow">State-specific rules</span>
-              <H2 parts={issue.stateSection.h2} />
-              <p>{issue.stateSection.lede}</p>
+              {issue.stateSection ? (
+                <H2 parts={issue.stateSection.h2} />
+              ) : (
+                <H2
+                  parts={{
+                    pre: `${issue.breadcrumbLabel} rules, by `,
+                    em: "state",
+                    post: ".",
+                  }}
+                />
+              )}
+              <p>
+                {issue.stateSection?.lede ??
+                  `Top ${FEATURED_STATE_SLUGS.length} states by case volume, highlighted in red. Each card shows that state's deadline to sue and statutory penalty for this claim. Click through for the full state guide.`}
+              </p>
             </div>
 
             {(() => {
-              const rows = issue.stateSection.kind === "us-map"
-                ? featuredDepositRows.map((r) => ({ slug: r.slug, state: r.state, col2: r.deadline, col3: r.penalty }))
-                : issue.stateSection.rows.map((r) => ({ slug: r.slug, state: r.state, col2: r.col2, col3: r.col3 }));
+              // Resolution order:
+              //   1. Manual stateSection.rows wins if the issue file explicitly
+              //      configured per-state copy.
+              //   2. Otherwise auto-render from claimType data (the new path).
+              let rows: { slug: string; state: string; col2: string; col3: string }[];
+              if (issue.stateSection?.kind === "rows") {
+                rows = issue.stateSection.rows.map((r) => ({
+                  slug: r.slug,
+                  state: r.state,
+                  col2: r.col2,
+                  col3: r.col3,
+                }));
+              } else if (featuredClaimRows.length > 0) {
+                rows = featuredClaimRows.map((r) => ({
+                  slug: r.slug,
+                  state: r.state,
+                  col2: r.deadline,
+                  col3: r.penalty,
+                }));
+              } else {
+                rows = [];
+              }
               const tooltips: Record<string, { title: string; sub?: string }> = {};
               for (const r of rows) tooltips[r.slug] = { title: r.state, sub: r.col3 };
               const featuredSlugs = rows.map((r) => r.slug);
@@ -585,6 +632,58 @@ export default function IssueTemplate({ issue, category, siblings }: Props) {
             })()}
           </section>
         ) : null}
+
+        {/* OVER THE CAP CALLOUT — small-claims caps vary state to state
+            ($2,500 to $25,000). Reader doesn't know their state's cap and
+            we don't know the reader's case amount, so we just point them
+            at the per-state guide where the cap is the first hero stat. */}
+        <section id="over-cap" className="cat-section">
+          <div className="cat-overcap-card">
+            <div className="cat-overcap-icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                width="36"
+                height="36"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M12 9v4M12 17h.01" />
+                <path d="M10.3 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+              </svg>
+            </div>
+            <div className="cat-overcap-body">
+              <h3>What if your case is over your state&rsquo;s cap?</h3>
+              <p>
+                Small claims caps vary from <strong>$2,500</strong> to{" "}
+                <strong>$25,000</strong> across the country. If your claim is
+                larger than your state allows in small claims, you have two
+                options: waive the excess and stay in small claims (fast,
+                cheap, no lawyer), or file in regular civil court (slower,
+                costlier, lawyer recommended). Most plaintiffs in this
+                situation waive the excess.
+              </p>
+              <Link href="/small-claims" className="cat-overcap-cta">
+                Find your state&rsquo;s cap{" "}
+                <svg
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </section>
 
         {/* ALTERNATIVES */}
         <section id="alternatives" className="cat-section">

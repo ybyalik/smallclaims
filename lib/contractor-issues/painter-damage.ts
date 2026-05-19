@@ -2,6 +2,7 @@ import type { ContractorIssue } from "./types";
 
 export const painterDamage: ContractorIssue = {
   slug: "painter-damage",
+  claimType: "property_damage",
   ready: true,
   short: "Painter damage",
   breadcrumbLabel: "Painter Damage",
@@ -103,6 +104,16 @@ export const painterDamage: ContractorIssue = {
       amount: "$2,400",
       sublabel: "illustrative · varies by extent of damage",
     },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " when a painter damaged your home." },
+    lede: "Most painter damage cases turn on overspray, drips on floors, or damage to fixtures. Document the prep agreement and the result.",
+    elements: [
+      { title: "What was agreed", body: "Written scope of work, including which surfaces were to be painted and which were to be protected. Verbal-only agreements are harder but workable." },
+      { title: "What got damaged", body: "Photos of paint on floors, fixtures, exterior siding, or windows. Time-stamped before-and-after photos are gold." },
+      { title: "The damage came from their work", body: "Show prep failures, drips, or overspray that wasn't there before they started. Eyewitness accounts from neighbors help." },
+      { title: "The cleanup or repair cost", body: "Written estimate to repaint, refinish floors, or replace damaged fixtures. Receipts from any cleanup you already did." },
+    ],
   },
 
   demand: {

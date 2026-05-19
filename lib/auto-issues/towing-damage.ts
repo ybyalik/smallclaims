@@ -2,6 +2,7 @@ import type { AutoIssue } from "./types";
 
 export const towingDamage: AutoIssue = {
   slug: "towing-damage",
+  claimType: "property_damage",
   ready: true,
   short: "Towing damage",
   breadcrumbLabel: "Towing Damage",
@@ -103,6 +104,16 @@ export const towingDamage: AutoIssue = {
       amount: "$3,400",
       sublabel: "illustrative · varies by damage type and state",
     },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " when a tow truck damaged your car." },
+    lede: "Tow operators are liable for damage they cause during the tow. The hard part is proving the damage came from them, not from the original incident.",
+    elements: [
+      { title: "The tow happened", body: "Tow receipt, impound paperwork, or photos of the truck. Police tows have records you can request." },
+      { title: "The damage existed after the tow", body: "Photos at pickup from the impound lot, video walk-around, or witness present at pickup. Note damage on the release form before signing." },
+      { title: "The damage didn't exist before the tow", body: "Photos from before the tow (insurance photos, dashcam, recent service records). Pre-existing damage photos are the single most important evidence." },
+      { title: "Repair cost", body: "Body-shop estimate. Tow companies often carry liability insurance — their carrier usually settles once you have a clean estimate." },
+    ],
   },
 
   demand: {

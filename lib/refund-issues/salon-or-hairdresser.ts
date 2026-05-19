@@ -2,6 +2,7 @@ import type { RefundIssue } from "./types";
 
 export const salonOrHairdresser: RefundIssue = {
   slug: "salon-or-hairdresser",
+  claimType: "consumer_protection",
   ready: true,
   short: "Salon / hairdresser damage",
   breadcrumbLabel: "Salon / Hairdresser",
@@ -42,6 +43,16 @@ export const salonOrHairdresser: RefundIssue = {
       { tag: "Layer 3", title: "Filing fees, interest", body: "Filing fee, service-of-process cost, pre-judgment interest.", amount: "+ $200" },
     ],
     total: { label: "Sample total within small-claims cap", body: "Corrective treatments plus original service refund, plus filing fee.", amount: "$1,800", sublabel: "illustrative · varies by extent" },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " in a salon case." },
+    lede: "Salon cases turn on whether the result fell below industry standard or caused actual harm.",
+    elements: [
+      { title: "What you paid for", body: "Receipt, appointment confirmation, or texts agreeing to a specific service (cut, color, style)." },
+      { title: "What you received fell short", body: "Photos before and after, ideally compared to a reference photo you brought. Document any physical harm (burns, hair breakage, allergic reaction)." },
+      { title: "You gave them a chance to fix it", body: "Many salons offer a free correction. Save the request, their response, and the result if they attempted to fix it." },
+      { title: "Your damages", body: "Refund of the original service, cost to have it corrected at another salon, and any medical bills if injured. Document each with receipts." },
+    ],
   },
 
   demand: {

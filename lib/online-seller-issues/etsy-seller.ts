@@ -2,6 +2,7 @@ import type { OnlineSellerIssue } from "./types";
 
 export const etsySeller: OnlineSellerIssue = {
   slug: "etsy-seller",
+  claimType: "consumer_protection",
   ready: true,
   short: "Etsy seller",
   breadcrumbLabel: "Etsy Seller",
@@ -42,6 +43,16 @@ export const etsySeller: OnlineSellerIssue = {
       { tag: "Layer 3", title: "Filing fees, interest", body: "Filing fee, service-of-process cost, pre-judgment interest.", amount: "+ $200" },
     ],
     total: { label: "Sample total within small-claims cap", body: "$800 refund plus 2x UDAP, plus filing fee.", amount: "$1,400", sublabel: "illustrative · Etsy case resolves most" },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " in an Etsy seller case." },
+    lede: "Etsy disputes often involve handmade or custom items where 'as described' is fuzzy. Pin down what was agreed.",
+    elements: [
+      { title: "What you ordered (especially for custom items)", body: "Listing screenshots, message chain with the seller showing custom specs (size, color, materials, deadline)." },
+      { title: "What arrived", body: "Photos of the actual item, comparison to listing photos or message specifications. For 'made to order' items, the seller's mockup vs. final result." },
+      { title: "You opened a case with Etsy", body: "Etsy's case system handles most disputes. Save the case decision." },
+      { title: "Damages", body: "Item cost, return shipping, and any costs you incurred from not having a usable product (e.g., wedding favors that didn't arrive in time)." },
+    ],
   },
 
   demand: {

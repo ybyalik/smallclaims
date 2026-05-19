@@ -2,6 +2,7 @@ import type { PersonalLoanIssue } from "./types";
 
 export const exOrAfterBreakup: PersonalLoanIssue = {
   slug: "ex-or-after-breakup",
+  claimType: "written_contract",
   ready: true,
   short: "Ex owes money",
   breadcrumbLabel: "Ex Owes Money",
@@ -52,6 +53,16 @@ export const exOrAfterBreakup: PersonalLoanIssue = {
       { tag: "Layer 3", title: "Filing fees, post-judgment interest", body: "Filing fee, service-of-process cost. Post-judgment interest until paid.", amount: "+ $200" },
     ],
     total: { label: "Sample total within small-claims cap", body: "$4,000 in advances and paid-on-behalf expenses plus pre-judgment interest, plus filing fee.", amount: "$4,800", sublabel: "illustrative · varies by state and term" },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " when an ex owes you money." },
+    lede: "Ex-relationship debts are common in small claims. The hard part is separating jointly-held assets from one-way loans.",
+    elements: [
+      { title: "The money was yours, not joint", body: "Bank records showing the money came from your individual account, your paychecks, or your savings. Joint-account money is usually 50/50." },
+      { title: "There was a clear understanding it was a loan", body: "Texts or emails using loan language, repayment promises, or post-breakup discussions about settling up. Casual cohabitation often defaults to no obligation." },
+      { title: "What you paid for", body: "Specific bills, rent, items purchased for the relationship, or money loaned for one-time things. Itemize each with dates and amounts." },
+      { title: "They've refused to pay back", body: "Texts, emails, or recorded calls (where legal) showing the refusal after the breakup. Pre-breakup conduct usually doesn't count." },
+    ],
   },
 
   demand: {

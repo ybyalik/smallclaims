@@ -2,6 +2,7 @@ import type { EmployerIssue } from "./types";
 
 export const unsafeWorkingConditions: EmployerIssue = {
   slug: "unsafe-working-conditions",
+  claimType: "personal_injury",
   ready: true,
   short: "Unsafe working conditions",
   breadcrumbLabel: "Unsafe Working Conditions",
@@ -103,6 +104,16 @@ export const unsafeWorkingConditions: EmployerIssue = {
       amount: "$5,500",
       sublabel: "illustrative · varies by state and tenure",
     },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " in an unsafe-working-conditions case." },
+    lede: "Most safety claims go to OSHA, but worker-side damages from injuries or retaliation can land in small claims.",
+    elements: [
+      { title: "The unsafe condition existed", body: "Photos, OSHA inspection reports, coworker statements, or maintenance logs. The condition has to violate a specific safety standard." },
+      { title: "You (or coworkers) were exposed to harm", body: "Injuries, near-misses, or medical visits tied to the condition. Doctor's notes connecting symptoms to the workplace are key." },
+      { title: "The employer knew and didn't fix it", body: "Written safety complaints, dated emails, OSHA complaint receipts, or witnessed in-person complaints to supervisors." },
+      { title: "Your specific damages", body: "Medical bills, lost wages, the cost of safety gear you bought yourself, or the cost to find a safer job." },
+    ],
   },
 
   demand: {

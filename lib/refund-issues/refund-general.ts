@@ -2,6 +2,7 @@ import type { RefundIssue } from "./types";
 
 export const refundGeneral: RefundIssue = {
   slug: "refund-general",
+  claimType: "consumer_protection",
   ready: true,
   short: "Refund (general)",
   breadcrumbLabel: "Refund",
@@ -42,6 +43,16 @@ export const refundGeneral: RefundIssue = {
       { tag: "Layer 3", title: "Filing fees, interest", body: "Filing fee, service-of-process cost, pre-judgment interest.", amount: "+ $200" },
     ],
     total: { label: "Sample total within small-claims cap", body: "Refund plus UDAP multiplier plus filing fee.", amount: "$1,800", sublabel: "illustrative · varies by state" },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " in a refund case." },
+    lede: "Refund cases follow the same template regardless of what you bought: paid X, didn't get what was promised, asked for refund, refused.",
+    elements: [
+      { title: "You paid for a specific thing", body: "Receipt, credit-card statement, contract, or app purchase record. Save the original product description or service terms." },
+      { title: "What you got didn't match what was promised", body: "Photos of the product or service, comparison to the listing, or written assessment if the product is defective." },
+      { title: "You asked for a refund within the policy window", body: "Save the policy at time of purchase, your refund request (email, text, certified letter), and their response." },
+      { title: "They refused or only offered store credit", body: "The seller's response in writing. Many state consumer-protection laws override store-credit-only policies for defective products." },
+    ],
   },
 
   demand: {

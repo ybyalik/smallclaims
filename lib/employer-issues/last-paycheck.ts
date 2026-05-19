@@ -2,6 +2,7 @@ import type { EmployerIssue } from "./types";
 
 export const lastPaycheck: EmployerIssue = {
   slug: "last-paycheck",
+  claimType: "final_paycheck",
   ready: true,
   short: "Last paycheck withheld",
   breadcrumbLabel: "Last Paycheck",
@@ -103,6 +104,16 @@ export const lastPaycheck: EmployerIssue = {
       amount: "$3,800",
       sublabel: "illustrative · varies by state and tenure",
     },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " in a final-paycheck case." },
+    lede: "Most states require final pay on the last day worked or within a few days. Strict deadlines apply — and so do daily penalties.",
+    elements: [
+      { title: "Your last day of work", body: "Termination letter, resignation email, or text from a manager confirming your last day. Note whether you quit or were fired (states have different deadlines)." },
+      { title: "The wages you're owed", body: "Hours worked in your final pay period, plus any commissions, bonuses, or accrued vacation your state requires paid out (California, Massachusetts, others do)." },
+      { title: "How long they took to pay you (or that they still haven't)", body: "Most states require payment within a few days. Each day late may trigger a 'waiting-time penalty' equal to a day's wages, capped per state." },
+      { title: "Your total damages", body: "Owed wages plus waiting-time penalty plus interest. Save every email or text where you asked for the check." },
+    ],
   },
 
   demand: {

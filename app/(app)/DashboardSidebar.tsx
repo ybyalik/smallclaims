@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import StartCaseButton from "../../components/StartCaseButton";
 import {
   LayoutDashboard,
   Folder,
@@ -144,6 +145,11 @@ export default function DashboardSidebar({ user }: SidebarProps) {
           }
           const href = user ? item.href : "/demand-letter";
           const ctaHref = user ? item.cta?.href : "/demand-letter";
+          // If the CTA points at the legacy "new case" entry, render the
+          // StartCaseButton so we go through the API path instead of the
+          // server-rendered redirect page.
+          const useStartButton =
+            !!item.cta && user && item.cta.href === "/dashboard/cases/new";
           return (
             <div key={item.href} className="app-nav-group">
               <Link href={href} className={active ? "active" : ""}>
@@ -151,9 +157,15 @@ export default function DashboardSidebar({ user }: SidebarProps) {
                 <span>{item.label}</span>
               </Link>
               {item.cta ? (
-                <Link href={ctaHref!} className="app-nav-cta">
-                  + {item.cta.label}
-                </Link>
+                useStartButton ? (
+                  <StartCaseButton className="app-nav-cta">
+                    + {item.cta.label}
+                  </StartCaseButton>
+                ) : (
+                  <Link href={ctaHref!} className="app-nav-cta">
+                    + {item.cta.label}
+                  </Link>
+                )
               ) : null}
             </div>
           );

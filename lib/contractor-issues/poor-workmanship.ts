@@ -2,6 +2,7 @@ import type { ContractorIssue } from "./types";
 
 export const poorWorkmanship: ContractorIssue = {
   slug: "poor-workmanship",
+  claimType: "written_contract",
   ready: true,
   short: "Poor workmanship",
   breadcrumbLabel: "Poor Workmanship",
@@ -103,6 +104,16 @@ export const poorWorkmanship: ContractorIssue = {
       amount: "$6,800",
       sublabel: "illustrative · varies by trade and damage scope",
     },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " in a poor-workmanship case." },
+    lede: "Workmanship standards are tied to the trade. Show what a competent contractor would have delivered and what you got.",
+    elements: [
+      { title: "Agreed scope and quality", body: "Written contract, signed estimate, or industry-standard specifications. If the contract is silent, the legal default is 'workmanlike' quality." },
+      { title: "What was delivered fell short", body: "Photos, video, and ideally a written assessment from a second contractor or licensed inspector identifying the failures." },
+      { title: "You gave them notice and a chance to fix", body: "Texts, emails, or certified letters asking them to come back to address specific problems. Document each request and their response." },
+      { title: "The cost to repair or redo", body: "Written estimates from at least one (ideally two) other contractors. Include receipts for any temporary fixes you had to make." },
+    ],
   },
 
   demand: {

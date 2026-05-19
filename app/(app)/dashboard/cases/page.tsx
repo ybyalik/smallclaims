@@ -10,6 +10,7 @@ import {
 import { productBadgesForCase } from "../../../../lib/cases/format-products";
 import ProductChipList from "../../../../components/cases/ProductChipList";
 import PageHead from "../../../../components/layout/PageHead";
+import StartCaseButton from "../../../../components/StartCaseButton";
 import StatusBadge from "../../../../components/ui/StatusBadge";
 import EmptyState from "../../../../components/ui/EmptyState";
 import type { ProductKey } from "../../../../lib/stripe";
@@ -105,9 +106,9 @@ export default async function DashboardHome() {
         title="Your cases"
         sub="Every dispute you're working on with CivilCase lives here."
         actions={
-          <Link href="/dashboard/cases/new" className="btn btn-dark">
+          <StartCaseButton className="btn btn-dark">
             Start a new case
-          </Link>
+          </StartCaseButton>
         }
       />
 
@@ -116,9 +117,9 @@ export default async function DashboardHome() {
           title="No cases yet"
           body="Start a case to begin building your file. You can purchase a demand letter or other services once you've added your details."
           cta={
-            <Link href="/dashboard/cases/new" className="btn btn-dark">
+            <StartCaseButton className="btn btn-dark">
               Start a new case
-            </Link>
+            </StartCaseButton>
           }
         />
       ) : (

@@ -2,6 +2,7 @@ import type { OnlineSellerIssue } from "./types";
 
 export const ebaySeller: OnlineSellerIssue = {
   slug: "ebay-seller",
+  claimType: "consumer_protection",
   ready: true,
   short: "eBay seller",
   breadcrumbLabel: "eBay Seller",
@@ -42,6 +43,16 @@ export const ebaySeller: OnlineSellerIssue = {
       { tag: "Layer 3", title: "Filing fees, interest", body: "Filing fee, service-of-process cost, pre-judgment interest.", amount: "+ $200" },
     ],
     total: { label: "Sample total within small-claims cap", body: "Refund plus UDAP multiplier, plus filing fee.", amount: "$1,800", sublabel: "illustrative · MBG resolves most cases" },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " in an eBay seller case." },
+    lede: "eBay sellers are sometimes harder to track down than Amazon's, but small claims still applies if you have their address.",
+    elements: [
+      { title: "The listing and the purchase", body: "Screenshots of the original listing (especially the description and photos), order confirmation, and payment record." },
+      { title: "What was delivered didn't match", body: "Photos of the actual item, including any visible defects, counterfeit markers, or differences from the listing." },
+      { title: "You went through eBay resolution first", body: "Open a case in eBay's Resolution Center. Save the case ID and final decision. Most cases resolve here." },
+      { title: "The seller's legal identity and address", body: "eBay provides seller's contact info on request. If you can't get a real address, the case is harder to enforce." },
+    ],
   },
 
   demand: {

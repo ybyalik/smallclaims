@@ -67,7 +67,7 @@ function pickSol(entries: { id: string; claim: string; years: number }[]) {
 
 export default async function CaseScorePage() {
   // Build a quick-facts table from the state guides we have.
-  const slugs = availableStateSlugs();
+  const slugs = await availableStateSlugs();
   const facts: Record<string, StateFacts> = {};
   await Promise.all(
     slugs.map(async (slug) => {

@@ -2,6 +2,7 @@ import type { PersonalLoanIssue } from "./types";
 
 export const someoneOwesMeMoney: PersonalLoanIssue = {
   slug: "someone-owes-me-money",
+  claimType: "written_contract",
   ready: true,
   short: "Someone owes me money",
   breadcrumbLabel: "Someone Owes Me Money",
@@ -52,6 +53,16 @@ export const someoneOwesMeMoney: PersonalLoanIssue = {
       { tag: "Layer 3", title: "Filing fees, post-judgment interest", body: "Filing fee, service-of-process cost. Post-judgment interest accrues until paid. Some states also allow attorney fees if specified in a written contract.", amount: "+ $200" },
     ],
     total: { label: "Sample total within small-claims cap", body: "$4,000 loan plus 3 years of pre-judgment interest at 10 percent, plus filing fee.", amount: "$5,400", sublabel: "illustrative · varies by state and term" },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " when someone owes you money." },
+    lede: "General debt cases follow a simple template. Show the obligation, show the non-payment, show the amount.",
+    elements: [
+      { title: "The obligation existed", body: "Written agreement, invoice, signed receipt, or texts showing the agreed amount and reason for the debt." },
+      { title: "You did your part", body: "Delivered the goods, performed the service, or transferred the money. Receipts, delivery confirmation, or witness statements." },
+      { title: "They haven't paid", body: "Bank records on your side showing no payment, or partial payment with the balance unpaid. Follow-up requests for payment." },
+      { title: "The exact amount and any interest or penalties", body: "Principal owed, plus any interest the agreement allows, plus any late fees or statutory penalties." },
+    ],
   },
 
   demand: {

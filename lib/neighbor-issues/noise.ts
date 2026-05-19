@@ -2,6 +2,7 @@ import type { NeighborIssue } from "./types";
 
 export const noise: NeighborIssue = {
   slug: "noise",
+  claimType: "personal_injury",
   ready: true,
   short: "Neighbor noise",
   breadcrumbLabel: "Neighbor Noise",
@@ -52,6 +53,16 @@ export const noise: NeighborIssue = {
       { tag: "Layer 3", title: "Filing fees, interest", body: "Filing fee, service-of-process cost, pre-judgment interest at your state's legal rate.", amount: "+ $200" },
     ],
     total: { label: "Sample total within small-claims cap", body: "Soundproofing single bedroom plus therapy bills, plus filing fee.", amount: "$4,200", sublabel: "illustrative · varies by extent and state" },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " in a noise nuisance case." },
+    lede: "Noise cases need pattern, severity, and impact. One-off complaints rarely win.",
+    elements: [
+      { title: "The noise is excessive", body: "Decibel-meter readings (phone apps work), video/audio recordings (with timestamps), and dates/times. Compare to local noise ordinance limits." },
+      { title: "It's a pattern, not one event", body: "Log every incident over weeks or months. Calendar entries, recordings, or texts to the neighbor about each occurrence." },
+      { title: "You asked them to stop", body: "Written notice (text, email, certified letter) describing the problem and requesting a fix. Their response (or refusal) helps your case." },
+      { title: "Your specific damages", body: "Lost sleep documented by a doctor, missed work, the cost of sound-proofing, or rent reduction if you had to move. Quality-of-life impact alone is hard in small claims." },
+    ],
   },
 
   demand: {

@@ -2,6 +2,7 @@ import type { PersonalLoanIssue } from "./types";
 
 export const familyMember: PersonalLoanIssue = {
   slug: "family-member",
+  claimType: "written_contract",
   ready: true,
   short: "Family member owes money",
   breadcrumbLabel: "Family Member Owes Money",
@@ -52,6 +53,16 @@ export const familyMember: PersonalLoanIssue = {
       { tag: "Layer 3", title: "Filing fees, post-judgment interest", body: "Filing fee, service-of-process cost. Small-claims fees scale with claim amount in some states.", amount: "+ $300" },
     ],
     total: { label: "Sample total within small-claims cap", body: "$10,000 family loan plus 3 years pre-judgment interest at 4 percent, plus filing fee.", amount: "$11,500", sublabel: "illustrative · varies by state and term" },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " when a family member won't pay back a loan." },
+    lede: "Family loans win or lose on documentation. Courts often presume family money is a gift unless you prove otherwise.",
+    elements: [
+      { title: "The transfer happened", body: "Bank or app record, cancelled check, or signed transfer paperwork." },
+      { title: "It was a loan, not a gift", body: "This is the hard part. You need texts, emails, or signed documents using the word 'loan' or discussing repayment terms. Without this, courts often rule gift." },
+      { title: "The repayment terms agreed (or asked-for)", body: "Schedule, due date, or 'pay back when you can.' Even informal terms count if documented." },
+      { title: "They've refused or stopped paying", body: "Texts, emails, or recorded calls (where legal) showing the refusal. Family pressure usually doesn't sway judges; the documents do." },
+    ],
   },
 
   demand: {

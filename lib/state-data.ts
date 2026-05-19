@@ -1,51 +1,60 @@
-import { existsSync, readFileSync, readdirSync } from "node:fs";
-import { resolve } from "node:path";
+// State data loader. Reads from state_research.structured_pack in Supabase
+// and converts to the legacy StateGuide shape that the rest of the site
+// (sitemap, /small-claims index, /case-score quiz, filing kit, category
+// + issue templates) still expects.
+//
+// History: originally backed by hand-curated /data/*.ts files plus auto-
+// extracted /reports/*-evidence.json files. Both data sources were
+// replaced today by the structured_pack pipeline. This module is now the
+// single bridge between the new data and the old consumer shape.
+
+import { cache } from "react";
+import { createServiceRoleClient } from "./supabase/service-role";
+import { getStateBySlug } from "./states";
+import { packToStateGuide } from "./state-data/pack-to-guide";
 import type { StateGuide } from "./types/state-guide";
-import { evidenceToStateGuide } from "./evidence-to-state-guide";
 
-// Hand-curated state guides take priority. Add to this map as new
-// /data/<slug>.ts files land.
-const REGISTRY: Record<string, () => Promise<{ data: StateGuide }>> = {
-  delaware: () => import("../data/delaware"),
-  minnesota: () => import("../data/minnesota"),
-  texas: () => import("../data/texas"),
-  wyoming: () => import("../data/wyoming"),
-};
+// In-request dedup. The case-score quiz calls loadStateGuide for all 51
+// states in one render; without this, we'd hit Supabase 51 times for the
+// same data. The cache key is the function, not the args, so we wrap a
+// helper that takes the slug.
+const loadOne = cache(async (slug: string): Promise<StateGuide | null> => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const db = createServiceRoleClient() as any;
+  const { data, error } = await db
+    .from("state_research")
+    .select("state_name, slug, structured_pack")
+    .eq("slug", slug)
+    .maybeSingle();
+  if (error || !data || !data.structured_pack) return null;
+  const meta = getStateBySlug(slug);
+  return packToStateGuide({
+    pack: data.structured_pack,
+    state: data.state_name || meta?.name || slug,
+    slug,
+    abbr: meta?.abbr || "",
+    lastUpdated: new Date().toISOString().slice(0, 10),
+  });
+});
 
-const REPORTS_DIR = resolve(process.cwd(), "reports");
-
-function evidenceSlugs(): string[] {
-  if (!existsSync(REPORTS_DIR)) return [];
-  return readdirSync(REPORTS_DIR)
-    .filter((f) => f.endsWith("-evidence.json") && !f.endsWith(".raw.json"))
-    .map((f) => f.replace(/-evidence\.json$/, ""));
-}
-
-function loadEvidenceGuide(slug: string): StateGuide | null {
-  const path = resolve(REPORTS_DIR, `${slug}-evidence.json`);
-  if (!existsSync(path)) return null;
-  try {
-    const pack = JSON.parse(readFileSync(path, "utf8"));
-    return evidenceToStateGuide(pack);
-  } catch (e) {
-    console.error(`failed to load evidence for ${slug}:`, e);
-    return null;
-  }
-}
+const loadAllSlugs = cache(async (): Promise<string[]> => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const db = createServiceRoleClient() as any;
+  const { data } = await db
+    .from("state_research")
+    .select("slug, structured_pack");
+  if (!Array.isArray(data)) return [];
+  return data
+    .filter((r: { structured_pack: unknown }) => !!r.structured_pack)
+    .map((r: { slug: string }) => r.slug);
+});
 
 export async function loadStateGuide(slug: string): Promise<StateGuide | null> {
-  // Hand-curated wins
-  const loader = REGISTRY[slug];
-  if (loader) {
-    const mod = await loader();
-    return mod.data;
-  }
-  // Fall back to evidence pack from the research pipeline
-  return loadEvidenceGuide(slug);
+  return loadOne(slug);
 }
 
-export function availableStateSlugs(): string[] {
-  const set = new Set<string>(Object.keys(REGISTRY));
-  for (const slug of evidenceSlugs()) set.add(slug);
-  return [...set];
+// async now (was sync). Every caller already runs inside a server component
+// or async function, so adding `await` is the only change needed.
+export async function availableStateSlugs(): Promise<string[]> {
+  return loadAllSlugs();
 }

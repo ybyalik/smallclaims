@@ -2,6 +2,7 @@ import type { LandlordIssue } from "./types";
 
 export const apartmentComplex: LandlordIssue = {
   slug: "apartment-complex",
+  claimType: "property_damage",
   ready: true,
   short: "Apartment complex",
   breadcrumbLabel: "Apartment Complex",
@@ -103,6 +104,16 @@ export const apartmentComplex: LandlordIssue = {
       amount: "$4,200",
       sublabel: "illustrative · varies by state and number of claims",
     },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " when suing an apartment complex." },
+    lede: "Multi-claim cases against complexes settle faster than individual landlord cases. Lead with the strongest claim and stack the rest.",
+    elements: [
+      { title: "The legal entity that owns the complex", body: "Use your state's Secretary of State business search to find the LLC or corporation name. Misnaming the entity is the #1 reason these judgments can't be collected." },
+      { title: "The specific harms you suffered", body: "List each one with dates: withheld deposit, ignored repairs, harassment, charges for normal wear. Each is a separate claim layered together." },
+      { title: "Written notice for each habitability issue", body: "Dated letters or emails to the property manager AND the corporate office. Both addresses matter." },
+      { title: "Your damages by category", body: "Deposit, hotel stays, ruined belongings, statutory multipliers per state, and any per-incident penalties for harassment or lockout." },
+    ],
   },
 
   demand: {

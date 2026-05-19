@@ -2,6 +2,7 @@ import type { LandlordIssue } from "./types";
 
 export const unsafeConditions: LandlordIssue = {
   slug: "unsafe-conditions",
+  claimType: "property_damage",
   ready: true,
   short: "Unsafe conditions",
   breadcrumbLabel: "Unsafe Conditions",
@@ -103,6 +104,16 @@ export const unsafeConditions: LandlordIssue = {
       amount: "$6,300",
       sublabel: "illustrative · varies by injury severity and state",
     },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " in an unsafe-conditions case." },
+    lede: "These are habitability cases. The standard is whether a reasonable person would find the unit unliveable. Document the specific failures.",
+    elements: [
+      { title: "The condition exists and is a real safety problem", body: "Photos, building-inspector reports, contractor estimates. Examples that judges accept fast: no heat or hot water, broken locks, mold, sewage backup, exposed wiring." },
+      { title: "You gave the landlord written notice", body: "Dated email or letter describing each condition. Send copies to the property manager and (for big complexes) the corporate office." },
+      { title: "The landlord didn't fix it in a reasonable time", body: "Typical legal standard is 30 days; emergencies (no heat, no water) often require 24 to 72 hours." },
+      { title: "You paid rent for unliveable space", body: "The damages are usually 'rent abatement' — the difference between what you paid and what the unit was worth in its broken state." },
+    ],
   },
 
   demand: {

@@ -2,6 +2,7 @@ import type { AutoIssue } from "./types";
 
 export const mechanicTookTooLong: AutoIssue = {
   slug: "mechanic-took-too-long",
+  claimType: "written_contract",
   ready: true,
   short: "Mechanic took too long",
   breadcrumbLabel: "Mechanic Took Too Long",
@@ -103,6 +104,16 @@ export const mechanicTookTooLong: AutoIssue = {
       amount: "$3,200",
       sublabel: "illustrative · varies by delay length and state",
     },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " when a mechanic took too long." },
+    lede: "Delay cases need a clear agreed timeline and proof the delay caused you specific damages.",
+    elements: [
+      { title: "The agreed timeline", body: "Written estimate with a promised completion date, or text/email where they committed to a date. Verbal-only is harder but possible with follow-up texts." },
+      { title: "How long it actually took", body: "Drop-off date, pickup date, and every status update in between. Save texts and voicemails." },
+      { title: "The delay was unreasonable", body: "Standard repair time for that work (RepairPal estimates, manufacturer service-bulletin times). Compare promised vs. industry standard vs. actual." },
+      { title: "Your specific damages from the delay", body: "Rental car cost, Uber/Lyft expenses, missed work, or cost to take a loaner. Receipts and pay stubs prove these." },
+    ],
   },
 
   demand: {

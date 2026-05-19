@@ -190,11 +190,55 @@ export type StateSection =
     }
   | null;
 
+// Maps the issue to a claim_type used by lib/state-data/by-claim.ts to
+// auto-populate the per-state penalty + deadline table. Pulled from
+// state_research.structured_pack at render time. Values match the
+// claim_type enum the state research prompts emit.
+export type IssueClaimType =
+  | "security_deposit"
+  | "written_contract"
+  | "oral_contract"
+  | "open_account"
+  | "promissory_note"
+  | "property_damage"
+  | "personal_injury"
+  | "fraud"
+  | "wages"
+  | "final_paycheck"
+  | "conversion"
+  | "defamation"
+  | "negligence"
+  | "breach_of_warranty"
+  | "bad_check"
+  | "consumer_protection"
+  | "trespass_to_chattels"
+  | "quasi_contract";
+
+// Optional: a section the template renders if the issue claims it.
+export interface WhatToProveSection {
+  h2: H2Parts;
+  lede: string;
+  elements: { title: string; body: string }[];
+}
+
 export interface LandlordIssue {
   slug: string;
   ready: boolean;
   short: string;
   breadcrumbLabel: string;
+
+  /**
+   * Maps the issue to a claim_type used by the state research extractor.
+   * When set, the page template auto-renders a 50-state penalty + deadline
+   * table from state_research.structured_pack.
+   */
+  claimType?: IssueClaimType;
+
+  /**
+   * Optional checklist of legal elements the plaintiff must prove. Renders
+   * as a numbered "What you need to prove" section.
+   */
+  whatToProve?: WhatToProveSection;
 
   meta: { title: string; description: string };
 

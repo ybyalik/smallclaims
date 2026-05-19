@@ -2,6 +2,7 @@ import type { LandlordIssue } from "./types";
 
 export const mold: LandlordIssue = {
   slug: "mold",
+  claimType: "property_damage",
   ready: true,
   short: "Mold",
   breadcrumbLabel: "Mold",
@@ -103,6 +104,16 @@ export const mold: LandlordIssue = {
       amount: "$7,800",
       sublabel: "illustrative · varies by state and severity",
     },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " in a mold case." },
+    lede: "Habitability cases stand or fall on the paper trail. Document everything and notify the landlord in writing.",
+    elements: [
+      { title: "The mold existed and is your landlord's fault", body: "Photos with timestamps, an inspector report or doctor's note, and proof the source is a building failure (leak, ventilation) not your behavior." },
+      { title: "You gave the landlord written notice", body: "Dated letter, email, or text describing the problem and asking for a fix. Save the delivery receipt." },
+      { title: "The landlord didn't fix it in a reasonable time", body: "Typically 7 to 30 days depending on severity. Note every follow-up you made and their response (or silence)." },
+      { title: "You suffered actual damages", body: "Medical bills, ruined belongings, hotel stays, missed work, or rent paid for unliveable space." },
+    ],
   },
 
   demand: {

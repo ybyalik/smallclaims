@@ -2,6 +2,7 @@ import type { NeighborIssue } from "./types";
 
 export const treeEncroachment: NeighborIssue = {
   slug: "tree-encroachment",
+  claimType: "property_damage",
   ready: true,
   short: "Tree encroachment",
   breadcrumbLabel: "Tree Encroachment",
@@ -52,6 +53,16 @@ export const treeEncroachment: NeighborIssue = {
       { tag: "Layer 3", title: "Filing fees, replacement plants, interest", body: "Filing fee, replacement of killed plants or grass, pre-judgment interest at your state's legal rate.", amount: "+ $200" },
     ],
     total: { label: "Sample total within small-claims cap", body: "Sewer-line repair from invading roots, plus trimming costs to prevent recurrence, plus filing fee.", amount: "$4,800", sublabel: "illustrative · varies by damage type" },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " when a neighbor's tree encroached on your property." },
+    lede: "Tree cases turn on who owned the tree and whether the neighbor knew about the risk.",
+    elements: [
+      { title: "Which property the tree was on", body: "Plat map, survey, or photos showing the trunk location. The trunk's location decides ownership, not the branches or roots." },
+      { title: "The damage to your property", body: "Photos of broken fence, damaged roof, ruined plants, or interior water damage. Date-stamp everything." },
+      { title: "The neighbor knew (or should have known) the tree was a risk", body: "Arborist report, prior dead branches falling, or your earlier written warnings to the neighbor. Without notice of the risk, liability is harder." },
+      { title: "Repair cost", body: "Two written estimates: one for property repair, one for tree removal if needed. Some states allow cost-sharing." },
+    ],
   },
 
   demand: {

@@ -2,6 +2,7 @@ import type { EmployerIssue } from "./types";
 
 export const retaliation: EmployerIssue = {
   slug: "retaliation",
+  claimType: "wages",
   ready: true,
   short: "Retaliation",
   breadcrumbLabel: "Retaliation",
@@ -103,6 +104,16 @@ export const retaliation: EmployerIssue = {
       amount: "$6,500",
       sublabel: "illustrative · varies by statute and tenure",
     },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " in a retaliation case." },
+    lede: "Retaliation cases require showing cause and effect: you did something protected, the employer punished you for it.",
+    elements: [
+      { title: "You engaged in protected activity", body: "Filed a complaint, reported wage theft, asked about safety, took family leave, or testified. Save the document or witness statements showing you did this." },
+      { title: "The employer knew about it", body: "Email confirmation, manager acknowledgment, or HR ticket showing they were aware of your protected activity." },
+      { title: "An adverse action followed", body: "Firing, demotion, cut hours, transfer to bad shifts, or pay reduction. Document the change with pay stubs or schedule comparisons." },
+      { title: "Timing or other proof connects them", body: "If the adverse action happened within days or weeks of the protected activity, that timing alone is strong evidence." },
+    ],
   },
 
   demand: {

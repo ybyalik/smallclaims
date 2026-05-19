@@ -2,6 +2,7 @@ import type { OnlineSellerIssue } from "./types";
 
 export const amazonSeller: OnlineSellerIssue = {
   slug: "amazon-seller",
+  claimType: "consumer_protection",
   ready: true,
   short: "Amazon seller",
   breadcrumbLabel: "Amazon Seller",
@@ -51,6 +52,16 @@ export const amazonSeller: OnlineSellerIssue = {
       { tag: "Layer 3", title: "Filing fees, interest", body: "Filing fee, service-of-process cost, pre-judgment interest at your state's legal rate.", amount: "+ $200" },
     ],
     total: { label: "Sample total within small-claims cap", body: "$1,200 refund plus 2x UDAP, plus filing fee.", amount: "$1,800", sublabel: "illustrative · A-to-z covers most claims under $2,500" },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " in an Amazon seller case." },
+    lede: "Amazon claims work the same as any consumer-protection case: paid X, received Y, here's the gap.",
+    elements: [
+      { title: "You paid for the item", body: "Amazon order confirmation, payment receipt, and tracking info. Screenshot the full order page before disputing." },
+      { title: "What you received fell short", body: "Photos of the actual item next to its listing description. Counterfeit indicators, missing parts, wrong size, or damage." },
+      { title: "You exhausted Amazon's A-to-Z guarantee first", body: "Amazon's claim system usually resolves these. Save the rejection or partial-refund decision if you didn't get full satisfaction." },
+      { title: "Your damages", body: "Item cost, return shipping if applicable, and any consequential damage if the item caused harm (defective product injury, etc.)." },
+    ],
   },
 
   demand: {

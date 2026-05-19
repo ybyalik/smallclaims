@@ -2,6 +2,7 @@ import type { RoommateIssue } from "./types";
 
 export const unpaidBills: RoommateIssue = {
   slug: "unpaid-bills",
+  claimType: "quasi_contract",
   ready: true,
   short: "Roommate unpaid bills",
   breadcrumbLabel: "Roommate Unpaid Bills",
@@ -51,6 +52,16 @@ export const unpaidBills: RoommateIssue = {
       { tag: "Layer 3", title: "Filing fees, interest after judgment", body: "Filing fee, service-of-process cost, interest that keeps running until they pay.", amount: "+ $200" },
     ],
     total: { label: "Sample total within small-claims cap", body: "6 months of unpaid utility share plus interest, plus filing fee.", amount: "$1,800", sublabel: "illustrative · varies by bills and term" },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " when a roommate didn't pay shared bills." },
+    lede: "Shared-bill cases work like unjust-enrichment claims when there's no written agreement.",
+    elements: [
+      { title: "The bills were shared expenses", body: "Utility bills, internet, streaming subscriptions, or groceries that benefited both of you. Itemize and date each." },
+      { title: "You paid the full amount", body: "Bank records, cancelled checks, or payment-app receipts. Bills paid in your name only, but with their benefit." },
+      { title: "There was an agreement (or expectation) to split", body: "Texts referencing splitting, prior payment patterns, or roommate agreement language. Without this, you're relying on the obvious benefit they received." },
+      { title: "They've refused to pay their share", body: "Texts asking for their half, their excuses or refusal, and any partial payments." },
+    ],
   },
 
   demand: {

@@ -2,6 +2,7 @@ import type { PersonalLoanIssue } from "./types";
 
 export const verbalAgreement: PersonalLoanIssue = {
   slug: "verbal-agreement",
+  claimType: "oral_contract",
   ready: true,
   short: "Verbal agreement loan",
   breadcrumbLabel: "Verbal Agreement",
@@ -52,6 +53,16 @@ export const verbalAgreement: PersonalLoanIssue = {
       { tag: "Layer 3", title: "Filing fees, post-judgment interest", body: "Filing fee, service-of-process cost, post-judgment interest until paid.", amount: "+ $200" },
     ],
     total: { label: "Sample total within small-claims cap", body: "$3,000 verbal-agreement loan plus modest pre-judgment interest, plus filing fee.", amount: "$3,400", sublabel: "illustrative · varies by state and term" },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " in a verbal-loan case." },
+    lede: "Verbal loans are legal but harder to prove. Build a paper trail from texts and witnesses.",
+    elements: [
+      { title: "The loan was made", body: "Bank records showing the withdrawal or transfer, texts referencing the loan after the fact, or a witness who heard the agreement." },
+      { title: "It was understood as a loan", body: "Texts or emails using words like 'pay back,' 'when can you,' or 'how long do you need.' Anything beyond gift language." },
+      { title: "The repayment terms (or that it was on demand)", body: "Texts referencing a date, installment plan, or your follow-up asking for payment. If no terms were set, the default is repayment on demand." },
+      { title: "They didn't pay", body: "Bank records showing no repayment, follow-up requests, and their response (excuses, silence, or refusal)." },
+    ],
   },
 
   demand: {

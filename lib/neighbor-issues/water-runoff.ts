@@ -2,6 +2,7 @@ import type { NeighborIssue } from "./types";
 
 export const waterRunoff: NeighborIssue = {
   slug: "water-runoff",
+  claimType: "property_damage",
   ready: true,
   short: "Water runoff",
   breadcrumbLabel: "Water Runoff",
@@ -52,6 +53,16 @@ export const waterRunoff: NeighborIssue = {
       { tag: "Layer 3", title: "Filing fees, expert reports, interest", body: "Filing fee, engineer's report on water source ($300 to $800), pre-judgment interest at your state's legal rate.", amount: "+ $200" },
     ],
     total: { label: "Sample total within small-claims cap", body: "Drainage repair plus mold remediation, plus filing fee.", amount: "$5,800", sublabel: "illustrative · varies by extent" },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " in a water-runoff case." },
+    lede: "Runoff cases are technical. Get an engineer or hydrologist's opinion on cause.",
+    elements: [
+      { title: "Water is flowing onto your property", body: "Photos and video during rainfall events, water stains on your foundation, or erosion patterns. Drone or aerial photos help." },
+      { title: "It originates from the neighbor's property", body: "Engineer's report showing the path, recent grading or construction on their land that changed the flow, or admission from the neighbor." },
+      { title: "It's causing real damage", body: "Foundation cracks, flooded basement, killed plants, eroded yard, mosquito breeding. Document each with photos and dates." },
+      { title: "Repair and prevention costs", body: "Drainage installation estimate, foundation-repair estimate, landscaping replacement. Two written quotes preferred." },
+    ],
   },
 
   demand: {

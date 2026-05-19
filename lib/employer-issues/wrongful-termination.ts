@@ -2,6 +2,7 @@ import type { EmployerIssue } from "./types";
 
 export const wrongfulTermination: EmployerIssue = {
   slug: "wrongful-termination",
+  claimType: "wages",
   ready: true,
   short: "Wrongful termination",
   breadcrumbLabel: "Wrongful Termination",
@@ -103,6 +104,16 @@ export const wrongfulTermination: EmployerIssue = {
       amount: "$7,200",
       sublabel: "illustrative · varies by state and facts",
     },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " in a wrongful-termination case." },
+    lede: "Most US firings are legal under at-will employment. To win, you need a specific exception: discrimination, retaliation, or breach of contract.",
+    elements: [
+      { title: "The legal exception you're relying on", body: "Discrimination (protected class), retaliation (protected activity), public-policy violation (refusing to break the law), or breach of written contract." },
+      { title: "Documentation of the protected status or activity", body: "Membership in protected class (race, gender, age, disability), the complaint you filed, the contract clause they violated." },
+      { title: "The firing happened", body: "Termination letter or email. Save it before HR can delete your access." },
+      { title: "Connection between the protected ground and the firing", body: "Timing, statements made by managers, comparison to how other employees were treated, or HR records showing pretext." },
+    ],
   },
 
   demand: {

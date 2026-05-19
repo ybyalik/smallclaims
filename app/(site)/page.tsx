@@ -354,29 +354,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* TRUST STRIP — dark band, fixed width */}
-      <div style={{ background: "#fff", padding: "32px 0" }}>
-        <div className="wrap">
-          <div style={{ background: "#1c1917", color: "#fef9f1", borderRadius: 999, padding: "22px 80px", boxShadow: "0 18px 40px -22px rgba(31,27,22,0.32)" }}>
-            <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", alignItems: "center", justifyContent: "space-between", gap: 24, flexWrap: "wrap" }}>
-              {([
-                { name: "courthouse" as const, label: "Built for Small Claims Courts" },
-                { name: "person" as const, label: "No Lawyer Required" },
-                { name: "states" as const, label: "All 50 States" },
-                { name: "shield" as const, label: <>Secure &amp; Confidential</> },
-              ]).map((it, i) => (
-                <li key={i} style={{ display: "inline-flex", alignItems: "center", gap: 12, fontSize: 14, color: "rgba(254,249,241,0.85)", fontWeight: 500, whiteSpace: "nowrap" }}>
-                  <span style={{ width: 38, height: 38, borderRadius: 10, background: "rgba(245,178,159,0.14)", color: "#f5b29f", display: "inline-flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                    <span style={{ display: "inline-flex", transform: "scale(1.35)" }}><TrustIcon name={it.name} /></span>
-                  </span>
-                  <span>{it.label}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
-
       {/* VERSION A — Punchy / unfair-system framing + dark stats panel */}
       <section style={{ padding: "64px 0", background: "#fff" }}>
         <div className="wrap">
@@ -846,7 +823,7 @@ export default function Home() {
                 src="/yury.webp"
                 alt="Yury Byalik"
                 width={320}
-                height={321}
+                height={320}
                 sizes="(max-width: 720px) 240px, 320px"
               />
               <div className="ceo-photo-frame" aria-hidden />

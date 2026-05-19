@@ -2,6 +2,7 @@ import type { LandlordIssue } from "./types";
 
 export const afterMovingOut: LandlordIssue = {
   slug: "after-moving-out",
+  claimType: "security_deposit",
   ready: true,
   short: "After moving out",
   breadcrumbLabel: "After Moving Out",
@@ -103,6 +104,16 @@ export const afterMovingOut: LandlordIssue = {
       amount: "$4,900",
       sublabel: "illustrative · varies by claim type and state",
     },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " in an after-move-out case." },
+    lede: "Most claims after move-out are deposit-related. The clock keeps running on you even after you leave — file before your state's deadline expires.",
+    elements: [
+      { title: "The lease ended", body: "Move-out inspection report, signed surrender of keys, or any communication confirming your tenancy ended." },
+      { title: "The landlord owes you money", body: "Itemize: unreturned deposit, overpaid utilities, prorated last month's rent, or unreimbursed repairs you paid for." },
+      { title: "You provided a forwarding address", body: "Written notice to the landlord with your new address. In most states this starts the deposit-return clock." },
+      { title: "You filed within your state's deadline to sue", body: "Typically 1 to 4 years from move-out depending on the claim type. Don't sit on it — the deadline is hard." },
+    ],
   },
 
   demand: {

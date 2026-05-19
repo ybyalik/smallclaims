@@ -2,6 +2,7 @@ import type { NeighborIssue } from "./types";
 
 export const fenceDispute: NeighborIssue = {
   slug: "fence-dispute",
+  claimType: "property_damage",
   ready: true,
   short: "Fence dispute",
   breadcrumbLabel: "Fence Dispute",
@@ -52,6 +53,16 @@ export const fenceDispute: NeighborIssue = {
       { tag: "Layer 3", title: "Filing fees, survey costs, interest", body: "Filing fee, boundary survey if needed ($400 to $1,500), pre-judgment interest at your state's legal rate.", amount: "+ $200" },
     ],
     total: { label: "Sample total within small-claims cap", body: "Half cost of new shared fence plus damage from neighbor's negligence, plus filing fee.", amount: "$4,200", sublabel: "illustrative · varies by state and dispute" },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " in a fence dispute." },
+    lede: "Fence cases turn on property lines and statutory cost-sharing rules. Survey the line first.",
+    elements: [
+      { title: "Where the property line actually runs", body: "Survey, plat map, or county assessor records. Disputes often resolve once both sides see the actual line." },
+      { title: "Who paid for or owns the fence", body: "Receipts, contractor invoices, prior agreements, or deed restrictions. If it's a shared boundary fence, most states require cost-sharing." },
+      { title: "What changed and how", body: "Photos showing the fence's prior condition vs. current. Note who built, modified, or damaged it and when." },
+      { title: "Your damages", body: "Cost to repair or replace, surveyor fees if needed, and statutory damages where the neighbor willfully damaged the fence." },
+    ],
   },
 
   demand: {

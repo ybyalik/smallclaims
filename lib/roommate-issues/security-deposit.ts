@@ -2,6 +2,7 @@ import type { RoommateIssue } from "./types";
 
 export const securityDeposit: RoommateIssue = {
   slug: "security-deposit",
+  claimType: "security_deposit",
   ready: true,
   short: "Roommate security deposit",
   breadcrumbLabel: "Security Deposit",
@@ -51,6 +52,16 @@ export const securityDeposit: RoommateIssue = {
       { tag: "Layer 3", title: "Filing fees, interest after judgment", body: "Filing fee, service-of-process cost, interest that keeps running until they pay.", amount: "+ $200" },
     ],
     total: { label: "Sample total within small-claims cap", body: "$1,500 share kept by ex-roommate plus interest, plus filing fee.", amount: "$1,800", sublabel: "illustrative · varies by deposit size" },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " in a roommate security-deposit case." },
+    lede: "Roommate-to-roommate deposit cases work differently from landlord deposit cases. The departing roommate usually has to recover from the remaining roommates, not the landlord.",
+    elements: [
+      { title: "You paid into the deposit", body: "Bank record, cancelled check, or payment-app receipt showing you contributed your share to the original deposit when you moved in." },
+      { title: "Your portion wasn't returned when you left", body: "Move-out date, your share of the original deposit, and confirmation from the landlord that the deposit was either kept or returned to the remaining roommates." },
+      { title: "Any deductions for damage are not yours", body: "Photos of your room and shared spaces at move-out, witness statements, or move-in checklist showing pre-existing damage." },
+      { title: "The amount owed by the remaining roommates", body: "Your share of the deposit minus any legitimate damage you caused. Show the math." },
+    ],
   },
 
   demand: {

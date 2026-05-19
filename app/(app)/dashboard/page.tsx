@@ -11,6 +11,7 @@ import { productBadgesForCase } from "../../../lib/cases/format-products";
 import ProductChipList from "../../../components/cases/ProductChipList";
 import PageHead from "../../../components/layout/PageHead";
 import StatusBadge from "../../../components/ui/StatusBadge";
+import StartCaseButton from "../../../components/StartCaseButton";
 import EmptyState from "../../../components/ui/EmptyState";
 import { listCasesWithPendingAction } from "../../../lib/notifications";
 import {
@@ -175,9 +176,9 @@ export default async function DashboardHome() {
           title={firstName ? `Welcome, ${firstName}` : "Welcome"}
           sub="Your case files, letters, and activity will appear here."
           actions={
-            <Link href="/dashboard/cases/new" className="btn btn-dark">
+            <StartCaseButton className="btn btn-dark">
               Start a new case
-            </Link>
+            </StartCaseButton>
           }
         />
 
@@ -185,9 +186,9 @@ export default async function DashboardHome() {
           title="No cases yet"
           body="Start a case to begin building your file. You can purchase a demand letter or other services once you've added your details."
           cta={
-            <Link href="/dashboard/cases/new" className="btn btn-dark">
+            <StartCaseButton className="btn btn-dark">
               Start a new case
-            </Link>
+            </StartCaseButton>
           }
         />
       </div>
@@ -209,9 +210,9 @@ export default async function DashboardHome() {
           </>
         }
         actions={
-          <Link href="/dashboard/cases/new" className="btn btn-dark">
+          <StartCaseButton className="btn btn-dark">
             Start a new case
-          </Link>
+          </StartCaseButton>
         }
       />
 
@@ -390,9 +391,9 @@ export default async function DashboardHome() {
           <div className="app-dash-card">
             <h3>Quick actions</h3>
             <div className="app-quick-actions">
-              <Link href="/dashboard/cases/new" className="btn btn-dark btn-block">
+              <StartCaseButton className="btn btn-dark btn-block">
                 Start a new case
-              </Link>
+              </StartCaseButton>
               <Link href="/dashboard/cases" className="btn btn-outline btn-block">
                 View all cases
               </Link>

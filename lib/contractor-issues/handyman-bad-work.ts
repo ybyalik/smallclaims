@@ -2,6 +2,7 @@ import type { ContractorIssue } from "./types";
 
 export const handymanBadWork: ContractorIssue = {
   slug: "handyman-bad-work",
+  claimType: "written_contract",
   ready: true,
   short: "Handyman bad work",
   breadcrumbLabel: "Handyman Bad Work",
@@ -103,6 +104,16 @@ export const handymanBadWork: ContractorIssue = {
       amount: "$2,400",
       sublabel: "illustrative · varies by state and licensing status",
     },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " in a handyman case." },
+    lede: "Bad work means the result doesn't match the agreed scope. Show what was promised, show what was delivered, show the gap.",
+    elements: [
+      { title: "What was agreed", body: "Written estimate, text describing the job, or even a verbal agreement you can confirm with witnesses or follow-up texts." },
+      { title: "What was actually delivered", body: "Photos and video of the result. A second contractor's written assessment helps." },
+      { title: "You gave them a chance to fix it", body: "Most states require notice and an opportunity to cure before you can sue. Save the texts where you asked them to come back." },
+      { title: "The cost to redo the work properly", body: "Written estimate from another contractor showing what it will cost to make it right." },
+    ],
   },
 
   demand: {

@@ -33,7 +33,7 @@ async function publishedBlogPosts(): Promise<{ slug: string; updated: Date }[]> 
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
-  const ready = new Set(availableStateSlugs());
+  const ready = new Set(await availableStateSlugs());
 
   const stateUrls: MetadataRoute.Sitemap = STATES.filter((s) => ready.has(s.slug)).map((s) => ({
     url: `${BASE}/small-claims/${s.slug}`,

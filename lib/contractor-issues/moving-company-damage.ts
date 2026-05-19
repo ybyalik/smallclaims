@@ -2,6 +2,7 @@ import type { ContractorIssue } from "./types";
 
 export const movingCompanyDamage: ContractorIssue = {
   slug: "moving-company-damage",
+  claimType: "property_damage",
   ready: true,
   short: "Moving company damage",
   breadcrumbLabel: "Moving Company Damage",
@@ -103,6 +104,16 @@ export const movingCompanyDamage: ContractorIssue = {
       amount: "$3,800",
       sublabel: "illustrative · varies by valuation method and state",
     },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " when a moving company damaged your stuff." },
+    lede: "Movers are liable by law for damage to your belongings. The math is about value, not fault.",
+    elements: [
+      { title: "The mover handled the items", body: "Bill of lading, signed inventory list, or photo of the moving truck. Federal law requires movers to give you this paperwork." },
+      { title: "The items were damaged during the move", body: "Before-and-after photos. Note the damage on the bill of lading before signing off if you can." },
+      { title: "You filed a claim with the mover first", body: "Federal regulation requires interstate movers to honor written claims filed within 9 months. Save the certified-mail receipt." },
+      { title: "The value of what was damaged", body: "Receipts, appraisals, or replacement-cost estimates. If you bought 'full value protection' coverage, the mover owes you full replacement." },
+    ],
   },
 
   demand: {

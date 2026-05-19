@@ -2,6 +2,7 @@ import type { NeighborIssue } from "./types";
 
 export const constructionDamage: NeighborIssue = {
   slug: "construction-damage",
+  claimType: "property_damage",
   ready: true,
   short: "Construction damage",
   breadcrumbLabel: "Construction Damage",
@@ -52,6 +53,16 @@ export const constructionDamage: NeighborIssue = {
       { tag: "Layer 3", title: "Filing fees, expert reports, interest", body: "Filing fee, structural engineer's report ($300 to $1,500), pre-judgment interest at your state's legal rate.", amount: "+ $200" },
     ],
     total: { label: "Sample total within small-claims cap", body: "Foundation crack repair plus cleanup and replaced items, plus filing fee.", amount: "$6,800", sublabel: "illustrative · varies by extent" },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " when a neighbor's construction damaged your property." },
+    lede: "Construction-damage cases stand or fall on before-and-after evidence and engineering opinions.",
+    elements: [
+      { title: "Pre-construction condition of your property", body: "Photos and video from before they started. Inspection report or refinance appraisal if you happen to have one." },
+      { title: "The damage that appeared during or after their work", body: "Cracks in walls or foundation, broken pipes, settled floors, damaged landscaping. Photo each issue with timestamps." },
+      { title: "Construction caused it (not coincidence)", body: "Engineer's or contractor's written opinion linking the work (excavation, heavy equipment, vibration) to the damage. This is usually the deciding evidence." },
+      { title: "Repair cost", body: "Two written estimates from licensed contractors. Include interior repair (drywall, paint) and any structural work needed." },
+    ],
   },
 
   demand: {

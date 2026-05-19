@@ -2,6 +2,7 @@ import type { ContractorIssue } from "./types";
 
 export const movingCompanyLostItems: ContractorIssue = {
   slug: "moving-company-lost-items",
+  claimType: "property_damage",
   ready: true,
   short: "Moving company lost items",
   breadcrumbLabel: "Moving Company Lost Items",
@@ -103,6 +104,16 @@ export const movingCompanyLostItems: ContractorIssue = {
       amount: "$4,500",
       sublabel: "illustrative · varies by valuation method and contents",
     },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " when a mover lost your items." },
+    lede: "Lost items are even more straightforward than damaged ones — you just need to prove the items existed and aren't there now.",
+    elements: [
+      { title: "The items existed before the move", body: "Receipts, photos in your old place, or inventory lists you made for insurance." },
+      { title: "The mover took them", body: "Signed inventory or bill of lading listing the box or item by description." },
+      { title: "They never arrived", body: "Note missing items on the delivery checklist before signing. Photograph the truck's contents at unload if possible." },
+      { title: "The replacement cost", body: "Receipts for similar items, retail prices for replacements, or appraisals for unique pieces." },
+    ],
   },
 
   demand: {

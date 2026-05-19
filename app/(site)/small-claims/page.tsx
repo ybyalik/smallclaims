@@ -7,6 +7,7 @@ import HeroCta from "../../../components/HeroCta";
 import HeroStatePins from "../../../components/HeroStatePins";
 import UsMap from "../../../components/widgets/UsMap";
 import StateSearch from "../../../components/widgets/StateSearch";
+import CtaStepCard from "../../../components/CtaStepCard";
 
 export const metadata: Metadata = {
   title: "How to Sue in Small Claims Court",
@@ -120,8 +121,8 @@ const jsonLd = {
   ],
 };
 
-export default function SmallClaimsHubPage() {
-  const ready = availableStateSlugs();
+export default async function SmallClaimsHubPage() {
+  const ready = await availableStateSlugs();
 
   return (
     <main className="cat-page">
@@ -419,41 +420,35 @@ export default function SmallClaimsHubPage() {
           <UsMap readySlugs={ready} />
         </section>
 
-        {/* CTA CARD */}
+        {/* CLOSING CTA + TESTIMONIAL — matches the dark "Three ways to move
+            forward" pattern used on category pages (e.g. /small-claims/auto). */}
         <section className="cat-section">
-          <div className="cat-cta-card">
-            <div>
-              <span className="eyebrow" style={{ color: "rgba(254,249,241,0.65)" }}>Take the next step</span>
-              <h2 style={{ marginTop: 14 }}>
-                Three ways to <em>move forward</em>.
-              </h2>
-              <p>
-                Most disputes settle once a real demand letter arrives. If yours does not, the
-                state guide walks you through filing step by step.
-              </p>
-            </div>
-            <div className="cat-cta-row">
-              <Link href="/demand-letter" className="cat-cta-tile">
-                <div className="cat-cta-tile-icon"><Mail size={18} strokeWidth={1.8} /></div>
-                <div>
-                  <strong>Send a demand letter</strong>
-                  <span>Many disputes end here.</span>
+          <div style={{ background: "#0d0d0d", color: "#fff", padding: "32px 0", borderRadius: 20, position: "relative", overflow: "hidden" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "1.85fr 1fr", gap: 0, alignItems: "center" }}>
+              <div style={{ padding: "12px 44px 20px" }}>
+                <span className="eyebrow" style={{ color: "rgba(254,249,241,0.65)" }}>Take the next step</span>
+                <h2 style={{ fontFamily: "Newsreader, Georgia, serif", fontSize: "clamp(28px, 2.8vw, 38px)", fontWeight: 700, letterSpacing: "-0.02em", lineHeight: 1.1, margin: "14px 0 28px", color: "#fef9f1" }}>
+                  Three ways to <em style={{ fontStyle: "italic", color: "#f5b29f", fontWeight: 700 }}>move forward</em>.
+                </h2>
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 14, alignItems: "stretch", position: "relative" }}>
+                  <CtaStepCard href="/demand-letter" bg="#4ad96a" tone="dark" stepNum="01" stepPos="top-left" title="Send a demand letter" titlePos="bottom-left" />
+                  <CtaStepCard href="/case-score" bg="#fff" tone="dark" stepNum="02" stepPos="bottom-right" title="Check my case" titlePos="top-left" gradient />
+                  <CtaStepCard href="#state-guides" bg="#7344ee" tone="light" stepNum="03" stepPos="top-right" title="File your claim" titlePos="bottom-right" />
                 </div>
-              </Link>
-              <Link href="/case-score" className="cat-cta-tile">
-                <div className="cat-cta-tile-icon"><BarChart3 size={18} strokeWidth={1.8} /></div>
-                <div>
-                  <strong>Check my case</strong>
-                  <span>Free 7-question case-strength quiz.</span>
+              </div>
+              <div style={{ borderLeft: "1px solid #1f1f1f", padding: "20px 44px", position: "relative", alignSelf: "stretch", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                <div style={{ fontFamily: "Geist, system-ui, sans-serif", fontWeight: 900, fontSize: 70, lineHeight: 0.5, color: "#2a2a2a", marginBottom: 14, letterSpacing: "-0.06em" }} aria-hidden="true">
+                  &rdquo;&rdquo;
                 </div>
-              </Link>
-              <Link href="#state-guides" className="cat-cta-tile">
-                <div className="cat-cta-tile-icon"><Map size={18} strokeWidth={1.8} /></div>
+                <div style={{ width: 48, height: 1, background: "#3a3a3a", marginBottom: 14 }} />
+                <p style={{ fontFamily: "Newsreader, Georgia, serif", fontSize: 18, fontStyle: "italic", lineHeight: 1.35, letterSpacing: "-0.005em", color: "#fef9f1", margin: "0 0 16px" }}>
+                  Most disputes settle once a real demand letter arrives. If yours doesn&rsquo;t, the state guide walks you through filing step by step.
+                </p>
                 <div>
-                  <strong>File your claim</strong>
-                  <span>Step-by-step in your state.</span>
+                  <div style={{ fontFamily: "Geist, system-ui, sans-serif", fontWeight: 700, fontSize: 14, color: "#fff", marginBottom: 2 }}>CivilCase</div>
+                  <div style={{ fontSize: 12.5, color: "#9aa0a6" }}>For people taking action without a lawyer</div>
                 </div>
-              </Link>
+              </div>
             </div>
           </div>
         </section>

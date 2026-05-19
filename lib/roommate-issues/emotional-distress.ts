@@ -2,6 +2,7 @@ import type { RoommateIssue } from "./types";
 
 export const emotionalDistress: RoommateIssue = {
   slug: "emotional-distress",
+  claimType: "personal_injury",
   ready: true,
   short: "Roommate emotional distress",
   breadcrumbLabel: "Emotional Distress",
@@ -51,6 +52,16 @@ export const emotionalDistress: RoommateIssue = {
       { tag: "Layer 3", title: "Filing fees + extras", body: "Filing fee, service-of-process cost, pre-judgment interest. In rare cases, additional damages for extreme conduct.", amount: "+ $300" },
     ],
     total: { label: "Sample total within small-claims cap", body: "Therapy bills, medication, missed work, plus filing fee.", amount: "$4,500", sublabel: "illustrative · varies by extent" },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " in a roommate emotional-distress case." },
+    lede: "Roommate emotional-distress claims rarely win on their own. Pair with another claim and document everything.",
+    elements: [
+      { title: "The conduct was extreme", body: "Threats, harassment, theft, repeated invasions of privacy. General messy or annoying behavior doesn't rise to legal distress." },
+      { title: "You suffered actual harm", body: "Therapy notes, doctor's visits, sleep disruption documented in writing, or the need to find emergency housing." },
+      { title: "It was the roommate's fault", body: "Connect the dots in writing. Show the harm started or worsened after their conduct." },
+      { title: "Your specific damages", body: "Therapy bills, prescription costs, hotel stays, missed work, or the cost of moving out early. Vague pain-and-suffering numbers are hard in small claims." },
+    ],
   },
 
   demand: {

@@ -2,6 +2,7 @@ import type { AutoIssue } from "./types";
 
 export const dealershipFraud: AutoIssue = {
   slug: "dealership-fraud",
+  claimType: "fraud",
   ready: true,
   short: "Dealership fraud",
   breadcrumbLabel: "Dealership Fraud",
@@ -109,6 +110,16 @@ export const dealershipFraud: AutoIssue = {
       amount: "$8,400",
       sublabel: "illustrative · varies by state UDAP and fraud type",
     },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " in a dealership fraud case." },
+    lede: "Fraud requires showing they lied about something material, knew it was a lie, and you bought because of it.",
+    elements: [
+      { title: "The specific false statement", body: "Ad copy, text from the salesperson, written specifications, or recorded conversation (in one-party-consent states). Identify exactly what was said vs. what's true." },
+      { title: "They knew (or should have known) it was false", body: "Vehicle history reports they would have seen, prior repair records, or internal communications. Hard to prove but circumstantial evidence helps." },
+      { title: "You relied on it when buying", body: "Show the statement came before the purchase and influenced your decision. Texts asking follow-up questions about the false claim help." },
+      { title: "Your damages", body: "Difference between what you paid and the car's actual value, repair costs to fix undisclosed problems, and (in many states) triple damages for willful fraud." },
+    ],
   },
 
   demand: {

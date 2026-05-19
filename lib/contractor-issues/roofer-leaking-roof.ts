@@ -2,6 +2,7 @@ import type { ContractorIssue } from "./types";
 
 export const rooferLeakingRoof: ContractorIssue = {
   slug: "roofer-leaking-roof",
+  claimType: "written_contract",
   ready: true,
   short: "Roofer leaking roof",
   breadcrumbLabel: "Roofer Leaking Roof",
@@ -103,6 +104,16 @@ export const rooferLeakingRoof: ContractorIssue = {
       amount: "$8,500",
       sublabel: "illustrative · varies by roof size and damage extent",
     },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " when a roof you paid for leaks." },
+    lede: "Roof leaks are easy to prove and often come with warranty protections. Document the leak and the prior work.",
+    elements: [
+      { title: "They installed or repaired the roof", body: "Contract, invoice, paid receipts, or signed warranty paperwork. Most reputable roofers give a written warranty." },
+      { title: "There's an active leak", body: "Photos of water stains, drips, mold, or damaged ceiling. Note the dates and weather conditions when it leaked." },
+      { title: "The leak is from their work, not a separate issue", body: "Second roofer's written assessment is best. Note if the leak is at a seam they installed or a flashing they redid." },
+      { title: "What it costs to fix and the secondary damage", body: "Estimate to redo the work properly, plus interior repair (drywall, paint, ruined belongings). Most states allow consequential damages." },
+    ],
   },
 
   demand: {

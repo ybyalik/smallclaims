@@ -18,8 +18,8 @@ const ARROW_SVG = (
   </svg>
 );
 
-export default function CategoryTemplate({ data }: { data: CategoryHubData }) {
-  const ready = new Set(availableStateSlugs());
+export default async function CategoryTemplate({ data }: { data: CategoryHubData }) {
+  const ready = new Set(await availableStateSlugs());
   const featured = data.featuredStateSlugs
     .map((slug) => STATES.find((s) => s.slug === slug))
     .filter((s): s is NonNullable<typeof s> => Boolean(s) && ready.has(s!.slug));

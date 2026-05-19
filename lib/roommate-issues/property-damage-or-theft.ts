@@ -2,6 +2,7 @@ import type { RoommateIssue } from "./types";
 
 export const propertyDamageOrTheft: RoommateIssue = {
   slug: "property-damage-or-theft",
+  claimType: "property_damage",
   ready: true,
   short: "Roommate damage or theft",
   breadcrumbLabel: "Damage or Theft",
@@ -51,6 +52,16 @@ export const propertyDamageOrTheft: RoommateIssue = {
       { tag: "Layer 3", title: "Filing fees, interest after judgment", body: "Filing fee, service-of-process cost, interest that keeps running until they pay.", amount: "+ $200" },
     ],
     total: { label: "Sample total within small-claims cap", body: "Replacement value of damaged or taken items plus interest, plus filing fee.", amount: "$3,200", sublabel: "illustrative · varies by extent" },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " when a roommate damaged or took your property." },
+    lede: "Document what was yours, what happened to it, and that the roommate was responsible.",
+    elements: [
+      { title: "The property was yours", body: "Receipts, photos in your room/space, or witness statements. Joint-purchase items are harder; truly individual items are easier." },
+      { title: "The damage or theft happened", body: "Photos of damaged items, missing items, or evidence of theft. Date each event." },
+      { title: "The roommate was responsible", body: "Witness statements, security-camera footage, their admission in texts, or pattern of access. Process-of-elimination evidence helps." },
+      { title: "The replacement or repair cost", body: "Receipts for replacement, repair estimates, or replacement-cost research for items you can't easily replace." },
+    ],
   },
 
   demand: {

@@ -2,6 +2,7 @@ import type { NeighborIssue } from "./types";
 
 export const propertyDamage: NeighborIssue = {
   slug: "property-damage",
+  claimType: "property_damage",
   ready: true,
   short: "Neighbor property damage",
   breadcrumbLabel: "Property Damage",
@@ -92,6 +93,16 @@ export const propertyDamage: NeighborIssue = {
       amount: "$4,400",
       sublabel: "illustrative · varies by damage type",
     },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " when a neighbor damaged your property." },
+    lede: "Neighbor property-damage cases are about cause, fault, and cost. Document each in writing.",
+    elements: [
+      { title: "Your property was damaged", body: "Photos before and after, with timestamps. The clearer the contrast, the faster the case settles." },
+      { title: "The neighbor caused it", body: "Witness statements, security-camera footage, the neighbor's own admission in texts, or expert reports (arborist for tree falls, contractor for construction damage)." },
+      { title: "They were negligent or knew the risk", body: "Show prior warnings they ignored — a dead tree they knew about, ongoing construction without proper safety, a known leaky pipe shared with your property." },
+      { title: "The repair cost", body: "Two written estimates from contractors. Include any consequential damage (interior water damage from a tree fall, etc.)." },
+    ],
   },
 
   demand: {

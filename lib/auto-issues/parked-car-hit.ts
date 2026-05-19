@@ -2,6 +2,7 @@ import type { AutoIssue } from "./types";
 
 export const parkedCarHit: AutoIssue = {
   slug: "parked-car-hit",
+  claimType: "property_damage",
   ready: true,
   short: "Parked car hit",
   breadcrumbLabel: "Parked Car Hit",
@@ -103,6 +104,16 @@ export const parkedCarHit: AutoIssue = {
       amount: "$4,200",
       sublabel: "illustrative · diminished-value cases push higher",
     },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " when someone hit your parked car." },
+    lede: "Parked-car cases are usually clear liability — you weren't even in the car. The issue is identifying the driver and showing damages.",
+    elements: [
+      { title: "The defendant hit your car", body: "Police report, witness statements, security-camera footage, or a note from the driver. License plate is key if it was a hit-and-run." },
+      { title: "Your car was lawfully parked", body: "Show you weren't in a no-parking zone, weren't parked illegally, and the car was visible. Photos of the parking spot help." },
+      { title: "The damage", body: "Photos from every angle, immediately after the incident if possible. Body-shop estimate, ideally from two shops." },
+      { title: "Pre-existing condition", body: "Photos of the car before the incident (insurance photos, social media, your own phone library). Shows what's new damage vs. old." },
+    ],
   },
 
   demand: {

@@ -2,6 +2,7 @@ import type { RefundIssue } from "./types";
 
 export const defectiveProduct: RefundIssue = {
   slug: "defective-product",
+  claimType: "consumer_protection",
   ready: true,
   short: "Defective product",
   breadcrumbLabel: "Defective Product",
@@ -42,6 +43,16 @@ export const defectiveProduct: RefundIssue = {
       { tag: "Layer 3", title: "Filing fees, interest, attorney fees", body: "Filing fee, service-of-process cost, pre-judgment interest. Magnuson-Moss shifts attorney fees to manufacturer if you win.", amount: "+ $200" },
     ],
     total: { label: "Sample total within small-claims cap", body: "$1,200 refund plus 2x UDAP, plus filing fee.", amount: "$1,800", sublabel: "illustrative · varies by state" },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " in a defective-product case." },
+    lede: "Defective-product cases are state-protected. Implied warranty of merchantability gives you rights even without an explicit warranty.",
+    elements: [
+      { title: "You bought the product", body: "Receipt, credit-card statement, or order confirmation showing date, price, and seller." },
+      { title: "It's defective", body: "Photos and video of the defect, manufacturer-acknowledged defects (recalls), or expert assessment if needed." },
+      { title: "You tried to resolve with the seller and manufacturer", body: "Save the customer-service tickets, warranty claims, and their responses. Most states require giving them a chance to repair or replace." },
+      { title: "Your damages", body: "Refund of the purchase price, the cost of any repairs you paid for, and consequential damages if the defect caused other harm (a defective pressure cooker that ruined your kitchen)." },
+    ],
   },
 
   demand: {

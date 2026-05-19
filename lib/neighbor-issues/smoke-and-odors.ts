@@ -2,6 +2,7 @@ import type { NeighborIssue } from "./types";
 
 export const smokeAndOdors: NeighborIssue = {
   slug: "smoke-and-odors",
+  claimType: "property_damage",
   ready: true,
   short: "Smoke and odors",
   breadcrumbLabel: "Smoke and Odors",
@@ -52,6 +53,16 @@ export const smokeAndOdors: NeighborIssue = {
       { tag: "Layer 3", title: "Filing fees, lost rental income, interest", body: "Filing fee, lost rental income if you rent the property and tenants left. Pre-judgment interest at your state's legal rate.", amount: "+ $200" },
     ],
     total: { label: "Sample total within small-claims cap", body: "Air purification and sealing plus medical bills, plus filing fee.", amount: "$3,400", sublabel: "illustrative · varies by extent" },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " in a smoke or odor nuisance case." },
+    lede: "Nuisance cases need pattern, severity, and provable impact on your use of your property.",
+    elements: [
+      { title: "The smoke or odor was substantial", body: "Photos, videos, witness statements from family members or guests, and any air-quality measurements. Describe the smell or visibility." },
+      { title: "It was a pattern, not occasional", body: "Log dates, times, and duration. Most states require ongoing problem, not one-time event." },
+      { title: "It impaired your use of your property", body: "Could not use yard, had to keep windows closed, asthma flare-ups documented by doctor. Tie the impact to the source." },
+      { title: "You gave the neighbor notice", body: "Texts, written letters, or HOA complaints documenting that you asked them to stop and they didn't." },
+    ],
   },
 
   demand: {

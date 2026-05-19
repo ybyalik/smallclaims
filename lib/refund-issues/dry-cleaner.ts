@@ -2,6 +2,7 @@ import type { RefundIssue } from "./types";
 
 export const dryCleaner: RefundIssue = {
   slug: "dry-cleaner",
+  claimType: "consumer_protection",
   ready: true,
   short: "Dry cleaner damage",
   breadcrumbLabel: "Dry Cleaner Damage",
@@ -42,6 +43,16 @@ export const dryCleaner: RefundIssue = {
       { tag: "Layer 3", title: "Filing fees, interest", body: "Filing fee, service-of-process cost, pre-judgment interest.", amount: "+ $200" },
     ],
     total: { label: "Sample total within small-claims cap", body: "Replacement value of damaged items plus filing fee.", amount: "$800", sublabel: "illustrative · varies by item" },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " in a dry-cleaner case." },
+    lede: "Dry cleaners are bailees: they're responsible for the condition of your clothes while in their custody.",
+    elements: [
+      { title: "They had custody of the item", body: "Dry-cleaning ticket, receipt, or tag. Photo the items before drop-off if they're valuable." },
+      { title: "Damage or loss happened during their custody", body: "Photo the item at pickup. Note any damage on the receipt before signing and leaving. For losses, the missing-item slip or their admission." },
+      { title: "It wasn't pre-existing", body: "Photos before drop-off, witness statements, or receipts showing the item was recently purchased and in good condition." },
+      { title: "The value", body: "Purchase receipt, replacement cost, or appraisal for special items. Some dry cleaners try to cap liability — those caps are usually unenforceable for negligence." },
+    ],
   },
 
   demand: {

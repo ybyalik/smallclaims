@@ -2,6 +2,7 @@ import type { RoommateIssue } from "./types";
 
 export const movingOutNoNotice: RoommateIssue = {
   slug: "moving-out-no-notice",
+  claimType: "written_contract",
   ready: true,
   short: "Roommate moved out no notice",
   breadcrumbLabel: "Moved Out No Notice",
@@ -51,6 +52,16 @@ export const movingOutNoNotice: RoommateIssue = {
       { tag: "Layer 3", title: "Filing fees, interest after judgment", body: "Filing fee, service-of-process cost, interest that keeps running until they pay.", amount: "+ $200" },
     ],
     total: { label: "Sample total within small-claims cap", body: "4 months of $1,200 share you covered, plus interest and filing fee.", amount: "$5,400", sublabel: "illustrative · varies by rent and replacement timeline" },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " when a roommate left without notice." },
+    lede: "When a roommate leaves early, you're suing for the rent and bills they should have paid through the notice period.",
+    elements: [
+      { title: "Their notice obligation", body: "Lease (if both names are on it), roommate agreement specifying notice required, or texts where they agreed to give notice." },
+      { title: "How they actually left", body: "Date of departure, lack of written notice, or short-notice text. Photos of an empty room can help establish the date." },
+      { title: "Your damages from their early departure", body: "Rent and bills you covered during what should have been their notice period. Plus any extra cost to find a replacement roommate." },
+      { title: "You tried to mitigate", body: "Posted ads for a new roommate, screened applicants, and acted to limit the damages. Saving the ads and applicant emails shows effort." },
+    ],
   },
 
   demand: {

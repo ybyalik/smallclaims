@@ -2,6 +2,7 @@ import type { RoommateIssue } from "./types";
 
 export const noLease: RoommateIssue = {
   slug: "no-lease",
+  claimType: "quasi_contract",
   ready: true,
   short: "Roommate no lease",
   breadcrumbLabel: "Roommate No Lease",
@@ -51,6 +52,16 @@ export const noLease: RoommateIssue = {
       { tag: "Layer 3", title: "Filing fees, interest after judgment", body: "Filing fee, service-of-process cost, interest that keeps running until they pay.", amount: "+ $200" },
     ],
     total: { label: "Sample total within small-claims cap", body: "Multiple months of unpaid share under the unwritten agreement plus interest, plus filing fee.", amount: "$3,800", sublabel: "illustrative · varies by amount and term" },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " in a no-lease roommate dispute." },
+    lede: "Without a written lease, you're relying on patterns of behavior and oral-agreement evidence. Texts are essential.",
+    elements: [
+      { title: "There was an understanding to live together and share", body: "Texts agreeing to move in, prior rent or bill payments showing the split, or witnesses to the agreement." },
+      { title: "What the agreed split was", body: "Even informal: 'I cover rent, you cover utilities' or '50/50 on everything.' Texts, app payments, or witnesses." },
+      { title: "What they owe under that arrangement", body: "Itemize each expense they didn't pay their share of, with dates and amounts." },
+      { title: "Your demands and their refusal", body: "Texts asking for payment, their response, and the date you decided to file." },
+    ],
   },
 
   demand: {

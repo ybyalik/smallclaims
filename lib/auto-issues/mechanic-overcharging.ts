@@ -2,6 +2,7 @@ import type { AutoIssue } from "./types";
 
 export const mechanicOvercharging: AutoIssue = {
   slug: "mechanic-overcharging",
+  claimType: "written_contract",
   ready: true,
   short: "Mechanic overcharging",
   breadcrumbLabel: "Mechanic Overcharging",
@@ -103,6 +104,16 @@ export const mechanicOvercharging: AutoIssue = {
       amount: "$2,400",
       sublabel: "illustrative · varies by state and statute",
     },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " when a mechanic overcharged you." },
+    lede: "Overcharging cases work best when there's a written estimate that the final bill exceeded. Most states require written authorization for charges over 10 percent above estimate.",
+    elements: [
+      { title: "The original estimate", body: "Written estimate, text exchange, or signed authorization for the work. If the estimate was verbal, find any witnesses or follow-up texts." },
+      { title: "The final bill", body: "Final invoice showing the actual charge. Compare line-by-line to the estimate." },
+      { title: "You didn't authorize the extra charges", body: "Many states make it illegal to charge over the estimate by more than 10 percent without written authorization. Save any unanswered calls or texts where they tried to get approval." },
+      { title: "What a reasonable charge would have been", body: "Quotes from two other mechanics for the same work. Industry-standard pricing tools (RepairPal, Kelley Blue Book) help establish the market rate." },
+    ],
   },
 
   demand: {

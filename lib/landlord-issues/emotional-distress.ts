@@ -2,6 +2,7 @@ import type { LandlordIssue } from "./types";
 
 export const emotionalDistress: LandlordIssue = {
   slug: "emotional-distress",
+  claimType: "personal_injury",
   ready: true,
   short: "Emotional distress",
   breadcrumbLabel: "Emotional Distress",
@@ -103,6 +104,16 @@ export const emotionalDistress: LandlordIssue = {
       amount: "$4,500",
       sublabel: "illustrative · varies by documentation strength",
     },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " in an emotional-distress case." },
+    lede: "Emotional-distress claims succeed when paired with another tenant claim and backed by paper. Therapy notes and lost work are what move the number.",
+    elements: [
+      { title: "The landlord's conduct was extreme", body: "Document the underlying conduct (harassment, lockout, wrongful eviction). The worse the underlying claim, the bigger the distress award." },
+      { title: "You suffered real distress", body: "Therapy notes, prescription records, doctor's notes, or journal entries. Vague 'I felt bad' usually doesn't win." },
+      { title: "It was the landlord's fault", body: "Connect the dots. Show the distress started or worsened after the landlord's bad conduct." },
+      { title: "Your specific damages", body: "Therapy and medical bills, missed work, and the cost of moving early to escape the situation." },
+    ],
   },
 
   demand: {

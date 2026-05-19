@@ -2,6 +2,7 @@ import type { ContractorIssue } from "./types";
 
 export const depositAndDisappearing: ContractorIssue = {
   slug: "deposit-and-disappearing",
+  claimType: "written_contract",
   ready: true,
   short: "Deposit and disappeared",
   breadcrumbLabel: "Deposit and Disappeared",
@@ -103,6 +104,16 @@ export const depositAndDisappearing: ContractorIssue = {
       amount: "$6,500",
       sublabel: "illustrative · varies by state and licensing status",
     },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " when a contractor took the deposit and disappeared." },
+    lede: "These cases are quick wins. Show you paid, show no work was done, show they're gone.",
+    elements: [
+      { title: "You paid them", body: "Cancelled check, bank transfer record, Venmo/Zelle screenshot, or signed deposit receipt." },
+      { title: "There was a contract", body: "Written contract, signed estimate, or text-message agreement spelling out scope and deposit amount." },
+      { title: "No work (or trivial work) was done", body: "Photos showing the job site untouched, your own statement, and the timeline (deposit paid X, work was supposed to start Y, today is Z)." },
+      { title: "They stopped responding", body: "Screenshots of unanswered texts, voicemail logs, and any returned mail. Date-stamp everything." },
+    ],
   },
 
   demand: {

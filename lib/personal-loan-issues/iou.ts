@@ -2,6 +2,7 @@ import type { PersonalLoanIssue } from "./types";
 
 export const iou: PersonalLoanIssue = {
   slug: "iou",
+  claimType: "promissory_note",
   ready: true,
   short: "IOU",
   breadcrumbLabel: "IOU",
@@ -52,6 +53,16 @@ export const iou: PersonalLoanIssue = {
       { tag: "Layer 3", title: "Filing fees, post-judgment interest", body: "Filing fee, service-of-process cost, post-judgment interest accruing until paid.", amount: "+ $200" },
     ],
     total: { label: "Sample total within small-claims cap", body: "$4,000 IOU plus 3 years of pre-judgment interest at 10 percent, plus filing fee.", amount: "$5,400", sublabel: "illustrative · varies by IOU terms" },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " in an IOU case." },
+    lede: "A written IOU is one of the easiest small-claims cases. Just show the document and that it wasn't paid.",
+    elements: [
+      { title: "A written IOU exists", body: "Original or photo of the IOU. Should show the amount, the date, and the borrower's signature. Even a napkin counts if it has those elements." },
+      { title: "You gave them the money", body: "Bank record, cancelled check, Venmo/Zelle screenshot, or witness confirmation that the loan was actually funded." },
+      { title: "They haven't paid back", body: "Bank records on your side showing no repayment, or partial repayment if they paid some. Follow-up texts asking for the balance." },
+      { title: "The amount still owed", body: "Original principal minus any partial repayments, plus any interest the IOU specifies." },
+    ],
   },
 
   demand: {

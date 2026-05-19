@@ -2,6 +2,7 @@ import type { LandlordIssue } from "./types";
 
 export const pestInfestation: LandlordIssue = {
   slug: "pest-infestation",
+  claimType: "property_damage",
   ready: true,
   short: "Pest infestation",
   breadcrumbLabel: "Pest Infestation",
@@ -103,6 +104,16 @@ export const pestInfestation: LandlordIssue = {
       amount: "$5,400",
       sublabel: "illustrative · varies by pest type and severity",
     },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " in a pest-infestation case." },
+    lede: "Document the infestation, document the notice, and document the damage. Photos and dated written notice are everything.",
+    elements: [
+      { title: "The infestation existed and is significant", body: "Photos with timestamps, exterminator invoices, building-inspector reports, or video. Severity matters." },
+      { title: "It's not your fault", body: "Show conditions existed before you moved in or originate from building structure (shared walls, vents) not your housekeeping." },
+      { title: "You gave the landlord written notice", body: "Email, text, or letter dated before you took matters into your own hands. Save proof of delivery." },
+      { title: "The landlord didn't fix it in a reasonable time", body: "Two to four weeks is typical for pests. Note every follow-up and the landlord's response." },
+    ],
   },
 
   demand: {

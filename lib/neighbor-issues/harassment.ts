@@ -2,6 +2,7 @@ import type { NeighborIssue } from "./types";
 
 export const harassment: NeighborIssue = {
   slug: "harassment",
+  claimType: "personal_injury",
   ready: true,
   short: "Neighbor harassment",
   breadcrumbLabel: "Neighbor Harassment",
@@ -52,6 +53,16 @@ export const harassment: NeighborIssue = {
       { tag: "Layer 3", title: "Filing fees, emotional distress damages, interest", body: "Filing fee, service-of-process cost. In extreme cases (truly outrageous conduct), emotional-distress damages on top. Pre-judgment interest at your state's legal rate.", amount: "+ $300" },
     ],
     total: { label: "Sample total within small-claims cap", body: "Therapy bills, security upgrade to make home defensible, plus filing fees.", amount: "$5,500", sublabel: "illustrative · varies by severity" },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " in a neighbor harassment case." },
+    lede: "Pattern matters more than any single incident. Document everything.",
+    elements: [
+      { title: "The harassment happened repeatedly", body: "Log every incident with date, time, what happened, and any witnesses. Three or more incidents over weeks." },
+      { title: "It crossed a legal line", body: "Threats, trespass, vandalism, repeated unwanted contact, or surveillance. General rudeness usually doesn't qualify." },
+      { title: "Evidence of each incident", body: "Texts, voicemails, security-camera footage, witness statements, or police reports. Recordings only in states that allow one-party consent." },
+      { title: "Your specific damages", body: "Therapy bills, sleep medication, security-system installation, missed work, or the cost of moving early." },
+    ],
   },
 
   demand: {

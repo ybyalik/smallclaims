@@ -2,6 +2,7 @@ import type { ContractorIssue } from "./types";
 
 export const plumberDamage: ContractorIssue = {
   slug: "plumber-damage",
+  claimType: "property_damage",
   ready: true,
   short: "Plumber damage",
   breadcrumbLabel: "Plumber Damage",
@@ -103,6 +104,16 @@ export const plumberDamage: ContractorIssue = {
       amount: "$7,800",
       sublabel: "illustrative · varies by extent and trade",
     },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " when a plumber caused damage." },
+    lede: "Plumber cases usually involve flooding, leaks they missed, or busted pipes during work. The chain of cause matters.",
+    elements: [
+      { title: "You hired them for specific work", body: "Invoice, written estimate, or text agreement showing what they were called to do." },
+      { title: "Damage followed their work", body: "Photos of the flood, water stains, broken pipe, or related damage. Note the date relative to the work." },
+      { title: "Their work caused the damage", body: "A second plumber's written diagnosis is the strongest evidence. Statements that the original work was substandard or that the wrong pipe was tampered with." },
+      { title: "Total damages", body: "Drying, replacement of damaged drywall/floors/cabinets, the cost of a second plumber to fix it correctly, and any hotel costs if the unit became uninhabitable." },
+    ],
   },
 
   demand: {

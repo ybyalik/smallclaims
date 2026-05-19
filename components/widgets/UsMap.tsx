@@ -81,17 +81,14 @@ export default function UsMap({ readySlugs }: { readySlugs: string[] }) {
       {hover && (
         <div className="usmap-tooltip" style={{ left: pos.x + 12, top: pos.y + 12 }}>
           <span className="usmap-tooltip-name">{hover.name}</span>
-          <span className={`usmap-tooltip-status ${hover.isReady ? "ready" : "soon"}`}>
-            {hover.isReady ? "Guide ready" : "Coming soon"}
-          </span>
+          {hover.isReady ? (
+            <span className="usmap-tooltip-status ready">Guide ready</span>
+          ) : null}
         </div>
       )}
       <div className="usmap-legend">
         <span>
-          <i style={{ background: "var(--accent)" }} aria-hidden="true" /> Ready
-        </span>
-        <span>
-          <i style={{ background: "#ECE7DC", border: "1px solid #d4cdb9" }} aria-hidden="true" /> Coming soon
+          <i style={{ background: "var(--accent)" }} aria-hidden="true" /> Guide ready
         </span>
       </div>
     </div>

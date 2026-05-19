@@ -2,6 +2,7 @@ import type { NeighborIssue } from "./types";
 
 export const deadTreeFell: NeighborIssue = {
   slug: "dead-tree-fell",
+  claimType: "property_damage",
   ready: true,
   short: "Dead tree fell",
   breadcrumbLabel: "Dead Tree Fell",
@@ -52,6 +53,16 @@ export const deadTreeFell: NeighborIssue = {
       { tag: "Layer 3", title: "Filing fees, interest, expert reports", body: "Filing fee, arborist's report on tree condition ($200 to $500), pre-judgment interest at your state's legal rate.", amount: "+ $200" },
     ],
     total: { label: "Sample total within small-claims cap", body: "Roof and structural repair plus tree removal and replaced belongings, plus filing fee.", amount: "$8,500", sublabel: "illustrative · varies by damage extent" },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " when a dead tree fell on your property." },
+    lede: "Fallen-tree cases turn on whether the neighbor knew (or should have known) the tree was dead before it fell.",
+    elements: [
+      { title: "The tree fell and caused damage", body: "Photos immediately after, with the tree still on the damage. Damage to roof, fence, car, or landscaping." },
+      { title: "The tree was on the neighbor's property", body: "Plat map or photos showing the trunk's original location. Trunk location decides ownership." },
+      { title: "The tree was visibly dead or dangerous before it fell", body: "Arborist report after the fall, photos showing decay, prior dead branches, or your earlier written warnings to the neighbor. Critical evidence." },
+      { title: "Repair and removal costs", body: "Quote for removal of the tree from your property (usually $500 to $2,500), plus all repair estimates for damaged property." },
+    ],
   },
 
   demand: {

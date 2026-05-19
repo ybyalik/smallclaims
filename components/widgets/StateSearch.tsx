@@ -111,9 +111,9 @@ export default function StateSearch({ readySlugs }: { readySlugs: string[] }) {
               >
                 <span className="ssr-name">{s.name}</span>
                 <span className="ssr-abbr">{s.abbr}</span>
-                <span className={`ssr-status ${isReady ? "ready" : "soon"}`}>
-                  {isReady ? "Ready →" : "Coming soon"}
-                </span>
+                {isReady ? (
+                  <span className="ssr-status ready">Ready &rarr;</span>
+                ) : null}
               </li>
             );
           })}

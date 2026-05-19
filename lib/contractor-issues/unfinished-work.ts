@@ -2,6 +2,7 @@ import type { ContractorIssue } from "./types";
 
 export const unfinishedWork: ContractorIssue = {
   slug: "unfinished-work",
+  claimType: "written_contract",
   ready: true,
   short: "Unfinished work",
   breadcrumbLabel: "Unfinished Work",
@@ -103,6 +104,16 @@ export const unfinishedWork: ContractorIssue = {
       amount: "$5,400",
       sublabel: "illustrative · varies by project size and licensing status",
     },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " when a contractor left work unfinished." },
+    lede: "Unfinished-work cases usually settle when you bring a second contractor's written estimate to complete the job.",
+    elements: [
+      { title: "What the contract covered", body: "Signed contract or written estimate listing the scope. If only verbal, use texts, emails, or invoices that describe the scope." },
+      { title: "What got done vs. what didn't", body: "Photos and a clear list. The 75 percent / 25 percent split typically matters: judges award the unfinished portion based on the contract price." },
+      { title: "You paid for work that wasn't done", body: "Cancelled checks, bank transfers, or signed payment receipts showing what you've already paid." },
+      { title: "The cost to finish the job", body: "Written estimate from a second contractor to complete what's left. This is the most important document — it sets your damages." },
+    ],
   },
 
   demand: {

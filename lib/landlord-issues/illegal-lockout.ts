@@ -2,6 +2,7 @@ import type { LandlordIssue } from "./types";
 
 export const illegalLockout: LandlordIssue = {
   slug: "illegal-lockout",
+  claimType: "property_damage",
   ready: true,
   short: "Illegal lockout",
   breadcrumbLabel: "Illegal Lockout",
@@ -103,6 +104,16 @@ export const illegalLockout: LandlordIssue = {
       amount: "$6,800",
       sublabel: "illustrative · varies by state and length",
     },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " in an illegal-lockout case." },
+    lede: "Self-help lockouts are illegal everywhere, even when rent is overdue. The elements are simple.",
+    elements: [
+      { title: "You had a right to be there", body: "Active lease (written or oral) and proof you were paying or had keys before the lockout." },
+      { title: "The landlord locked you out without a court order", body: "New locks, padlock, removed door, or shut-off utilities. Photos of the door, texts, statements from neighbors." },
+      { title: "When and for how long", body: "Date and duration of the lockout. Some states impose per-day penalties on top of the base claim." },
+      { title: "Your costs", body: "Hotel bills, replacement items, lost work, locksmith fees if you broke back in lawfully, and statutory damages set by your state." },
+    ],
   },
 
   demand: {

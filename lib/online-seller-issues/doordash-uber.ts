@@ -2,6 +2,7 @@ import type { OnlineSellerIssue } from "./types";
 
 export const doordashUber: OnlineSellerIssue = {
   slug: "doordash-uber",
+  claimType: "consumer_protection",
   ready: true,
   short: "DoorDash / Uber / Uber Eats",
   breadcrumbLabel: "DoorDash / Uber",
@@ -42,6 +43,16 @@ export const doordashUber: OnlineSellerIssue = {
       { tag: "Layer 3", title: "Filing fees, interest", body: "Filing fee, service-of-process cost, pre-judgment interest.", amount: "+ $200" },
     ],
     total: { label: "Sample total", body: "Refund plus UDAP multiplier (often disproportionate to small order amount).", amount: "$800", sublabel: "illustrative · varies by state UDAP" },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " in a DoorDash or Uber Eats case." },
+    lede: "Most food-delivery disputes go through the app's refund process. Small claims comes in when the app refuses and you're out real money.",
+    elements: [
+      { title: "The order details", body: "Order confirmation screenshot, payment amount, items expected." },
+      { title: "What went wrong", body: "Photos of the actual delivery, what was missing, what was damaged, or the timestamps showing it never arrived." },
+      { title: "You tried the app's refund first", body: "Screenshot of your refund request, their response (typically a partial refund or denial), and the case number." },
+      { title: "The amount you're owed", body: "Item cost + tip + delivery fees + any specific damages (had to order again, had to buy a replacement meal, etc.)." },
+    ],
   },
 
   demand: {

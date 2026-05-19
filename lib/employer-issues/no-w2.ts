@@ -2,6 +2,7 @@ import type { EmployerIssue } from "./types";
 
 export const noW2: EmployerIssue = {
   slug: "no-w2",
+  claimType: "wages",
   ready: true,
   short: "No W-2",
   breadcrumbLabel: "No W-2",
@@ -103,6 +104,16 @@ export const noW2: EmployerIssue = {
       amount: "$850",
       sublabel: "illustrative · varies by costs and state",
     },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " when your employer didn't give you a W-2." },
+    lede: "Failure to issue a W-2 is a federal IRS issue first, but unpaid wages or misclassification are small-claims-sized.",
+    elements: [
+      { title: "You were an employee, not a contractor", body: "Show the relationship: set schedule, supplied tools, manager direction, expected ongoing work. The IRS 20-factor test favors employee status." },
+      { title: "The wages you earned in the tax year", body: "Pay stubs, deposit records, calendar of shifts worked. If they paid you cash and never issued a W-2, document each payment." },
+      { title: "You asked for the W-2", body: "Save the email, text, or certified letter where you requested it after January 31. Employers are required to provide W-2s by then." },
+      { title: "Your damages", body: "Tax penalties you had to pay to file without it, accountant fees, and any unpaid overtime or minimum-wage shortfall if they were also underpaying." },
+    ],
   },
 
   demand: {

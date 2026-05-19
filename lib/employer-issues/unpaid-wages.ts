@@ -2,6 +2,7 @@ import type { EmployerIssue } from "./types";
 
 export const unpaidWages: EmployerIssue = {
   slug: "unpaid-wages",
+  claimType: "wages",
   ready: true,
   short: "Unpaid wages",
   breadcrumbLabel: "Unpaid Wages",
@@ -103,6 +104,16 @@ export const unpaidWages: EmployerIssue = {
       amount: "$4,400",
       sublabel: "illustrative · varies by state and willfulness",
     },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " in an unpaid-wages case." },
+    lede: "Wage cases are mechanical: you worked, they didn't pay. Show the hours and the rate.",
+    elements: [
+      { title: "You worked for them", body: "Offer letter, W-2, 1099, pay stubs, schedule screenshots, or even text messages from a manager assigning you shifts." },
+      { title: "The hours you worked and weren't paid for", body: "Time sheets, clock-in records, schedule screenshots, or your own written log. Off-the-clock hours count if you can document them." },
+      { title: "The pay rate that applies", body: "Offer letter, employee handbook, or state minimum-wage tables. Overtime rules also apply if you worked over 40 hours in a week." },
+      { title: "The math", body: "Hours × rate, plus overtime, plus any statutory penalty (most states double the amount, some triple, when the failure was willful)." },
+    ],
   },
 
   demand: {

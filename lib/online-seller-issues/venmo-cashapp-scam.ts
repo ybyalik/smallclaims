@@ -2,6 +2,7 @@ import type { OnlineSellerIssue } from "./types";
 
 export const venmoCashappScam: OnlineSellerIssue = {
   slug: "venmo-cashapp-scam",
+  claimType: "fraud",
   ready: true,
   short: "Venmo / Cash App scam",
   breadcrumbLabel: "Venmo / Cash App Scam",
@@ -43,6 +44,16 @@ export const venmoCashappScam: OnlineSellerIssue = {
       { tag: "Layer 3", title: "Filing fees, interest", body: "Filing fee, service-of-process cost, pre-judgment interest.", amount: "+ $200" },
     ],
     total: { label: "Sample total within small-claims cap", body: "$1,200 refund plus UDAP multiplier, plus filing fee.", amount: "$1,800", sublabel: "illustrative · varies by amount" },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " in a Venmo or Cash App scam case." },
+    lede: "P2P-payment scams are increasingly winnable in small claims if you have the recipient's identity. Banks rarely refund.",
+    elements: [
+      { title: "The transaction happened", body: "Venmo or Cash App receipt with the recipient's username, name, and the amount. Save the transaction ID." },
+      { title: "It was for a specific purpose that didn't happen", body: "Screenshots of the conversation: what they promised, what you sent the money for, what they actually delivered (often nothing)." },
+      { title: "The recipient's identity", body: "Real name (the platform shows it), phone number, email, or social-media accounts. You need this to actually file a case." },
+      { title: "You tried to recover through the platform first", body: "File a Venmo/Cash App report. Save the response (usually they refuse refunds for 'authorized' payments). This shows you exhausted options." },
+    ],
   },
 
   demand: {

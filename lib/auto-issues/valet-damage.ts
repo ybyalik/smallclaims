@@ -2,6 +2,7 @@ import type { AutoIssue } from "./types";
 
 export const valetDamage: AutoIssue = {
   slug: "valet-damage",
+  claimType: "property_damage",
   ready: true,
   short: "Valet damage",
   breadcrumbLabel: "Valet Damage",
@@ -103,6 +104,16 @@ export const valetDamage: AutoIssue = {
       amount: "$2,800",
       sublabel: "illustrative · varies by damage extent",
     },
+  },
+  whatToProve: {
+    h2: { pre: "What you need to ", em: "prove", post: " when a valet damaged your car." },
+    lede: "Valet services are bailees by law — they're responsible for your car while it's in their custody.",
+    elements: [
+      { title: "The valet had custody of your car", body: "Valet ticket, credit-card receipt, or photos of you handing over the keys. Time-stamped photos before drop-off and after pickup are gold." },
+      { title: "Damage happened during their custody", body: "Photos showing the car was undamaged when you arrived and damaged when you got it back. Walk around with the attendant on pickup if possible." },
+      { title: "The amount of damage", body: "Body-shop estimates, photos of the damage, and any related expenses (rental car, towing, lost work)." },
+      { title: "Their disclaimer doesn't apply", body: "Most valet tickets say 'not responsible for damage.' Those waivers are usually unenforceable. Document the disclaimer language anyway." },
+    ],
   },
 
   demand: {
