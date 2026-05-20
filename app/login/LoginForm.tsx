@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "../../lib/supabase/client";
 import { signInWithGoogle, sendMagicLink } from "../../lib/auth/oauth";
+import { markAnonymousHandoff } from "../../lib/auth/anon-handoff";
 
 export default function LoginForm({ next, error: initialError }: { next?: string; error?: string }) {
   const router = useRouter();
@@ -18,13 +19,29 @@ export default function LoginForm({ next, error: initialError }: { next?: string
     e.preventDefault();
     setError(null);
     setLoading(true);
+    // Capture the anonymous user id before the session swaps so we can
+    // hand it to the claim endpoint after sign-in.
+    const anonId = await markAnonymousHandoff();
     const supabase = createClient();
     const { error } = await supabase.auth.signInWithPassword({ email, password });
-    setLoading(false);
     if (error) {
+      setLoading(false);
       setError(error.message);
       return;
     }
+    // Migrate any cases the anonymous user created onto this account.
+    // Failures here aren't fatal — the cron sweeps stale anonymous
+    // users in 7 days as a safety net.
+    try {
+      await fetch("/api/auth/claim-anonymous", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ anon_user_id: anonId }),
+      });
+    } catch {
+      /* best-effort */
+    }
+    setLoading(false);
     router.replace(next || "/dashboard");
     router.refresh();
   }
@@ -34,6 +51,7 @@ export default function LoginForm({ next, error: initialError }: { next?: string
     setError(null);
     setLoading(true);
     try {
+      await markAnonymousHandoff();
       await sendMagicLink(email, next);
       setMagicSent(true);
     } catch (err) {
@@ -47,6 +65,7 @@ export default function LoginForm({ next, error: initialError }: { next?: string
     setError(null);
     setLoading(true);
     try {
+      await markAnonymousHandoff();
       await signInWithGoogle(next);
     } catch (err) {
       setError(

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "../../lib/supabase/client";
 import { signInWithGoogle } from "../../lib/auth/oauth";
+import { markAnonymousHandoff } from "../../lib/auth/anon-handoff";
 
 export default function SignupForm({ next }: { next?: string }) {
   const router = useRouter();
@@ -86,6 +87,7 @@ export default function SignupForm({ next }: { next?: string }) {
     setError(null);
     setLoading(true);
     try {
+      await markAnonymousHandoff();
       await signInWithGoogle(next);
     } catch (err) {
       setError(err instanceof Error ? `Google sign-up failed: ${err.message}` : "Google sign-up failed.");
