@@ -26,7 +26,8 @@ export default async function SiteHeader() {
       data: { user: authUser },
     } = await supabase.auth.getUser();
 
-    if (authUser) {
+    const isAnon = (authUser as { is_anonymous?: boolean } | null)?.is_anonymous === true;
+    if (authUser && !isAnon) {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const { data: profile } = await (supabase as any)
         .from("profiles")

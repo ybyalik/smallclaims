@@ -19,7 +19,10 @@ export default async function LoginPage({
   const supabase = createClient();
   const { data: { user } } = await supabase.auth.getUser();
 
-  if (user) {
+  // Only real (non-anonymous) users skip the login screen. Anonymous
+  // users have a session but no account — they need to actually sign in.
+  const isAnon = (user as { is_anonymous?: boolean } | null)?.is_anonymous === true;
+  if (user && !isAnon) {
     redirect(searchParams.next || "/dashboard");
   }
 

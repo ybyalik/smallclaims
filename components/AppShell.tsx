@@ -35,9 +35,16 @@ export default async function AppShell({
     data: { user },
   } = await supabase.auth.getUser();
 
+  // Block fully logged-out visitors at the require-auth gate. Anonymous
+  // Supabase users (those who started a case without signing up) get
+  // past this so they can see /case/[id] and complete the wizard flow,
+  // but the sidebar treats them as unauthed so we don't show dashboard
+  // links they can't follow.
   if (requireAuth && !user) {
     redirect(`/login?next=${encodeURIComponent(loginNext)}`);
   }
+  const isAnon = (user as { is_anonymous?: boolean } | null)?.is_anonymous === true;
+  const isRealUser = !!user && !isAnon;
 
   let sidebarUser: {
     displayName: string;
@@ -46,7 +53,7 @@ export default async function AppShell({
     isAdmin: boolean;
   } | null = null;
 
-  if (user) {
+  if (isRealUser && user) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const { data: profile } = await (supabase as any)
       .from("profiles")

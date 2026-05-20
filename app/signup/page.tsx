@@ -19,7 +19,11 @@ export default async function SignupPage({
   const supabase = createClient();
   const { data: { user } } = await supabase.auth.getUser();
 
-  if (user) {
+  // Only real (non-anonymous) users skip the signup screen. Anonymous
+  // users have a session but no account — let them through to /signup.
+  // (For the conversion path use /finish-signup, which pre-fills email.)
+  const isAnon = (user as { is_anonymous?: boolean } | null)?.is_anonymous === true;
+  if (user && !isAnon) {
     redirect(searchParams.next || "/dashboard");
   }
 
