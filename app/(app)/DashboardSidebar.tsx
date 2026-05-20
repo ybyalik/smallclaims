@@ -208,7 +208,7 @@ export default function DashboardSidebar({ user }: SidebarProps) {
       <nav className="app-nav app-nav-secondary">
         <Link href="/small-claims" target="_blank" rel="noopener noreferrer">
           <NavIcon Icon={BookOpen} />
-          <span>State guides ↗</span>
+          <span>State Guides ↗</span>
         </Link>
         {user?.isAdmin ? (
           <Link href="/admin" className="app-admin-link">

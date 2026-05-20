@@ -27,6 +27,12 @@ export async function updateSession(request: NextRequest) {
   // Required to refresh the session cookie.
   const { data: { user } } = await supabase.auth.getUser();
 
+  // Anonymous Supabase users have a session but no email/password. They can
+  // use the wizard, but the dashboard and Account areas should treat them
+  // the same as logged-out visitors until they finish signup.
+  const isAnonymous = (user as { is_anonymous?: boolean } | null)?.is_anonymous === true;
+  const isRealUser = !!user && !isAnonymous;
+
   const url = request.nextUrl;
 
   // Browsers caching the pre-Phase-1 SiteHeader still link to
@@ -47,8 +53,9 @@ export async function updateSession(request: NextRequest) {
     }
   }
 
-  // Gate /dashboard/* on authentication.
-  if (url.pathname.startsWith("/dashboard") && !user) {
+  // Gate /dashboard/* on authentication. Anonymous users do not count;
+  // they need to finish signup or log in.
+  if (url.pathname.startsWith("/dashboard") && !isRealUser) {
     const redirectUrl = url.clone();
     redirectUrl.pathname = "/login";
     redirectUrl.searchParams.set("next", url.pathname);
@@ -57,7 +64,7 @@ export async function updateSession(request: NextRequest) {
 
   // Gate /admin/* on authentication AND admin role.
   if (url.pathname.startsWith("/admin")) {
-    if (!user) {
+    if (!isRealUser) {
       const redirectUrl = url.clone();
       redirectUrl.pathname = "/login";
       redirectUrl.searchParams.set("next", url.pathname);
@@ -79,8 +86,9 @@ export async function updateSession(request: NextRequest) {
     }
   }
 
-  // Logged-in users hitting /login or /signup go to /dashboard.
-  if (user && (url.pathname === "/login" || url.pathname === "/signup")) {
+  // Logged-in users hitting /login or /signup go to /dashboard. Anonymous
+  // users are allowed through so they can actually sign up / log in.
+  if (isRealUser && (url.pathname === "/login" || url.pathname === "/signup")) {
     const redirectUrl = url.clone();
     redirectUrl.pathname = "/dashboard";
     redirectUrl.search = "";

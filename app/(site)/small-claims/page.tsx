@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Building2, Briefcase, Hammer, Car, Trees, HandCoins, Users, ShoppingBag, Receipt, Banknote, UserX, Wallet, AlertOctagon, UserMinus, DoorOpen, Home, Volume2, Landmark, FileText, Mail, Scale, Clock, Lightbulb, BarChart3, Map } from "lucide-react";
 import { availableStateSlugs } from "../../../lib/state-data";
+import { STATES } from "../../../lib/states";
 import Breadcrumbs from "../../../components/Breadcrumbs";
 import HeroCta from "../../../components/HeroCta";
 import HeroStatePins from "../../../components/HeroStatePins";
@@ -449,6 +450,38 @@ export default async function SmallClaimsHubPage() {
               </div>
             </aside>
           </div>
+
+          {/* Full A-Z list of every state. Collapsed by default; Googlebot
+              still crawls content inside <details>, so the internal-link
+              hub still works for SEO. */}
+          <details id="all-states" className="all-states-block">
+            <summary className="all-states-summary">
+              <span>See all 51 states</span>
+              <svg
+                viewBox="0 0 24 24"
+                width="16"
+                height="16"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </summary>
+            <ul className="all-states-grid">
+              {STATES.map((s) => (
+                <li key={s.slug}>
+                  <Link href={`/small-claims/${s.slug}`}>
+                    <span className="all-states-abbr">{s.abbr}</span>
+                    <span className="all-states-name">{s.name}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </details>
         </section>
 
         {/* CLOSING CTA + TESTIMONIAL — matches the dark "Three ways to move
@@ -507,13 +540,6 @@ export default async function SmallClaimsHubPage() {
               <h2>
                 Frequently Asked <em>Questions</em>.
               </h2>
-              <p>
-                The questions everyone asks before filing. Don&rsquo;t see yours?{" "}
-                <Link href="/contact" className="cat-text-link">
-                  Email support
-                </Link>
-                .
-              </p>
             </div>
             <div className="cat-faq">
               <details>

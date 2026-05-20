@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { ChevronDown, Building2, Hammer, Briefcase, Car, Trees, HandCoins, Users, ShoppingBag, Receipt } from "lucide-react";
+import { ChevronDown, Building2, Hammer, Briefcase, Car, Trees, HandCoins, Users, ShoppingBag, Receipt, FileText, Scale, BarChart3, BookOpen } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import type { SiteHeaderUser } from "./SiteHeader";
 
@@ -113,9 +113,18 @@ export default function SiteHeaderInner({ user }: { user: SiteHeaderUser | null 
           />
         </Link>
         <nav className="nav-links">
-          <Link href="/demand-letter">Demand Letter</Link>
-          <Link href="/small-claims">Small Claims</Link>
-          <Link href="/case-score">Case Score</Link>
+          <Link href="/demand-letter">
+            <FileText className="nav-link-icon" size={16} strokeWidth={1.8} aria-hidden />
+            Demand Letter
+          </Link>
+          <Link href="/small-claims">
+            <Scale className="nav-link-icon" size={16} strokeWidth={1.8} aria-hidden />
+            Small Claims
+          </Link>
+          <Link href="/case-score">
+            <BarChart3 className="nav-link-icon" size={16} strokeWidth={1.8} aria-hidden />
+            Case Score
+          </Link>
           <div
             className={`nav-mega-trigger${openMega === "res" ? " is-open" : ""}`}
             onMouseEnter={() => openMegaNow("res")}
@@ -123,6 +132,7 @@ export default function SiteHeaderInner({ user }: { user: SiteHeaderUser | null 
             onFocus={() => openMegaNow("res")}
           >
             <Link href="/blog">
+              <BookOpen className="nav-link-icon" size={16} strokeWidth={1.8} aria-hidden />
               Resources
               <ChevronDown className="nav-mega-caret" size={12} strokeWidth={2} aria-hidden />
             </Link>

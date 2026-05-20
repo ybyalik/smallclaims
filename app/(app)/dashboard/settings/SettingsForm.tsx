@@ -257,7 +257,7 @@ export default function SettingsForm({
       {error && <p className="dl-error-inline">{error}</p>}
       <div className="app-settings-actions">
         <button type="submit" className="btn btn-dark" disabled={isPending}>
-          {isPending ? "Saving..." : "Save changes"}
+          {isPending ? "Saving..." : "Save Changes"}
         </button>
         {savedAt && (
           <span className="dl-saved-at">Saved at {savedAt.toLocaleTimeString()}</span>

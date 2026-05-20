@@ -100,7 +100,7 @@ export default async function SettingsPage() {
           </ul>
           <div className="app-settings-actions">
             <a href="/auth/signout" className="btn btn-cream">
-              Sign out
+              Sign Out
             </a>
           </div>
         </section>

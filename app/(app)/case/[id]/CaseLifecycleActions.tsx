@@ -71,7 +71,7 @@ export default function CaseLifecycleActions({ caseId, status }: Props) {
           onClick={reopen}
           disabled={busy}
         >
-          {busy ? "Reopening…" : "Reopen case"}
+          {busy ? "Reopening…" : "Reopen Case"}
         </button>
         {error ? <p className="app-case-lifecycle-error">{error}</p> : null}
       </div>
@@ -105,7 +105,7 @@ export default function CaseLifecycleActions({ caseId, status }: Props) {
             onClick={close}
             disabled={busy}
           >
-            {busy ? "Closing…" : "Confirm close"}
+            {busy ? "Closing…" : "Confirm Close"}
           </button>
           <button
             type="button"
@@ -131,7 +131,7 @@ export default function CaseLifecycleActions({ caseId, status }: Props) {
         className="btn btn-danger btn-sm"
         onClick={() => setConfirming(true)}
       >
-        Close case
+        Close Case
       </button>
       {error ? <p className="app-case-lifecycle-error">{error}</p> : null}
     </div>

@@ -152,7 +152,7 @@ export default async function LetterPage({ params }: { params: { id: string } })
                   </Link>
                 ) : null}
                 <Link href={`/case/${caseRow.id}/build`} className="btn btn-cream">
-                  Open full case details
+                  Open Full Case Details
                 </Link>
               </div>
             </>
@@ -167,7 +167,7 @@ export default async function LetterPage({ params }: { params: { id: string } })
                 and we&rsquo;ll fix it for you.
               </p>
               <Link href={`/case/${caseRow.id}`} className="btn btn-dark">
-                Open case
+                Open Case
               </Link>
             </>
           )}

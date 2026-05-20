@@ -157,14 +157,15 @@
   grid-row: 1;
   width: 40px;
   height: 40px;
-  border-radius: 50%;
-  background: var(--ink, #0e0e0e);
-  color: #fef9f1;
   display: grid;
   place-items: center;
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+.dlw-coach-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 .dlw-coach-meta {
   grid-row: 1;
@@ -234,6 +235,13 @@
   font-size: 12.5px;
   color: #6b6b6b;
   margin: 0;
+}
+/* Preview rows now nested inside the case-summary card. Hairline above
+   separates them from the progress bar / confidence band. */
+.dlw-conf-card .dlw-preview-rows {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid #e8e5de;
 }
 
 /* LIVE PREVIEW */
@@ -1962,10 +1970,9 @@
 
 /* Footer */
 .dlw-footer-flat {
-  border-top: 1px solid #e8e5de;
   padding: 16px 32px;
   margin: 0 -32px;
-  background: #fafaf7;
+  background: transparent;
 }
 .dlw-footer-flat .dlw-disclaimer {
   font-size: 11.5px;
@@ -1990,6 +1997,30 @@
 }
 
 /* Amount step (v2) — big input with chips */
+/* Compact amount field used on the eligibility step. Narrower than the
+   big standalone amount input, with a left-aligned $ prefix overlaid on
+   the input rather than stacked above it. */
+.dlw-amount-input {
+  position: relative;
+  display: inline-block;
+  max-width: 200px;
+  width: 100%;
+}
+.dlw-amount-prefix {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--muted, #8b8779);
+  pointer-events: none;
+}
+.dlw-amount-input .dlw-input {
+  padding-left: 28px;
+  width: 100%;
+}
+
 .dlw-amount-input-wrap {
   position: relative;
   max-width: 320px;

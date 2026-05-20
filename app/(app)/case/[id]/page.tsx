@@ -254,7 +254,7 @@ export default async function CasePage({ params }: { params: { id: string } }) {
               tagline="Most disputes resolve here without ever going to court."
               details="We draft a firm, professional demand letter tailored to your case, send it by certified mail under the CivilCase brand, and track delivery. Tiers from $29."
               priceLabel="From $29"
-              ctaLabel={letterPaid ? "Open Letter" : "Choose & buy"}
+              ctaLabel={letterPaid ? "Open Letter" : "Choose & Buy"}
               ctaHref={
                 letterPaid
                   ? `/case/${c.id}/letter`
@@ -309,7 +309,7 @@ export default async function CasePage({ params }: { params: { id: string } }) {
                   : ""
               }`}
               priceLabel="$79"
-              ctaLabel={filingPaid ? "Open filing kit" : "Buy Filing Kit"}
+              ctaLabel={filingPaid ? "Open Filing Kit" : "Buy Filing Kit"}
               ctaHref={filingPaid ? `/case/${c.id}/file` : `/case/${c.id}/buy/filing-guide`}
               status={filingPaid ? "purchased" : "ready"}
               recommended={noResponseRecorded && !filingPaid}
@@ -322,7 +322,7 @@ export default async function CasePage({ params }: { params: { id: string } }) {
               tagline="Won the case? Now actually collect the money."
               details="A step-by-step plan tailored to your state, your county, and what you know about the defendant. Real form codes, real fees, sequenced for THIS case."
               priceLabel="$49"
-              ctaLabel={collectionPlanPaid ? "Open plan" : "Buy Collection Plan"}
+              ctaLabel={collectionPlanPaid ? "Open Collection Plan" : "Buy Collection Plan"}
               ctaHref={
                 collectionPlanPaid
                   ? `/case/${c.id}/collection`
@@ -342,7 +342,7 @@ export default async function CasePage({ params }: { params: { id: string } }) {
             </p>
             <div className="app-detail-card-actions">
               <Link href={`/case/${c.id}/build`} className="btn btn-cream btn-sm">
-                Edit case details
+                Edit Case Details
               </Link>
               <CaseLifecycleActions caseId={c.id} status={c.status} />
             </div>

@@ -1,5 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { loadOwnedCase } from "../../../../lib/demand-letter/access";
+import { createClient } from "../../../../lib/supabase/server";
 import { createServiceRoleClient } from "../../../../lib/supabase/service-role";
 import { classificationInputsChanged } from "../../../../lib/cases/classify-claim-type";
 
@@ -100,6 +101,26 @@ export async function PATCH(req: NextRequest, ctx: { params: { id: string } }) {
   if (error) {
     console.error("[demand-letter PATCH]", error);
     return NextResponse.json({ error: "Save failed" }, { status: 500 });
+  }
+
+  // If the visitor is still anonymous and just supplied an email in the
+  // Plaintiff step, stash it on their user_metadata so we know who to
+  // upgrade them into at first checkout. Best-effort; failures here are
+  // not fatal to the save.
+  if (typeof update.plaintiff_email === "string" && update.plaintiff_email) {
+    try {
+      const supabase = createClient();
+      const { data: { user } } = await supabase.auth.getUser();
+      const isAnon = (user as { is_anonymous?: boolean } | null)?.is_anonymous === true;
+      const pending = (user?.user_metadata as { email_pending_claim?: string } | undefined)?.email_pending_claim;
+      if (isAnon && pending !== update.plaintiff_email) {
+        await supabase.auth.updateUser({
+          data: { email_pending_claim: update.plaintiff_email },
+        });
+      }
+    } catch (e) {
+      console.error("[demand-letter PATCH] stash pending email failed", e);
+    }
   }
 
   return NextResponse.json({ ok: true });

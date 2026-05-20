@@ -1434,6 +1434,16 @@ button.app-link:disabled {
   font-weight: 500 !important;
   color: var(--accent, #d9402e) !important;
   padding: 4px 12px 6px 22px !important;
+  /* StartCaseButton renders a native <button>, which carries default UA
+     border/background/font. Strip those so it renders like the plain
+     <Link> version it replaced. */
+  background: transparent;
+  border: 0;
+  appearance: none;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+  width: 100%;
 }
 .app-nav-cta:hover {
   background: rgba(217, 64, 46, 0.07) !important;

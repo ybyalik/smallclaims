@@ -5,22 +5,39 @@ import { createServiceRoleClient } from "../../../../lib/supabase/service-role";
 /**
  * POST /api/cases/create
  *
- * Same job as the legacy /dashboard/cases/new server page: ensure the user
- * is signed in, insert a fresh draft case attached to them, then hand back
- * the URL the client should navigate to. The advantage over the page
- * version is we skip one server-rendered page in the click path, so the
- * user lands on the wizard step faster.
+ * Start a new case. Two paths:
+ *
+ *   1. Already-logged-in user — attach the draft case to their existing
+ *      profile and return the wizard URL.
+ *
+ *   2. Anonymous visitor — silently mint a Supabase anonymous session,
+ *      attach the draft case to that hidden user id, and return the same
+ *      wizard URL. The visitor never sees a login screen. Their email is
+ *      captured later in the Plaintiff step and stamped onto the hidden
+ *      user's metadata so we can convert them to a real account at first
+ *      Stripe checkout.
+ *
+ * Requires "Anonymous Sign-ins" to be enabled in Supabase Auth → Providers.
+ * If anonymous sign-in fails (provider disabled, etc.) we fall back to the
+ * old "log in first" behaviour by returning auth_required.
  */
 export async function POST() {
   const supabase = createClient();
-  const {
+  let {
     data: { user },
   } = await supabase.auth.getUser();
+
+  // No user yet — try anonymous sign-in. If the project has anonymous
+  // auth disabled this will fail and we fall back to the login redirect.
   if (!user) {
-    return NextResponse.json(
-      { error: "auth_required", loginUrl: "/login?next=/dashboard/cases/new" },
-      { status: 401 }
-    );
+    const { data, error } = await supabase.auth.signInAnonymously();
+    if (error || !data.user) {
+      return NextResponse.json(
+        { error: "auth_required", loginUrl: "/login?next=/dashboard/cases/new" },
+        { status: 401 }
+      );
+    }
+    user = data.user;
   }
 
   const db = createServiceRoleClient();

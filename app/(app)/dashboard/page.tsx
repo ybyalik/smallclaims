@@ -395,10 +395,10 @@ export default async function DashboardHome() {
                 Start a New Case
               </StartCaseButton>
               <Link href="/dashboard/cases" className="btn btn-outline btn-block">
-                View all cases
+                View All Cases
               </Link>
               <Link href="/dashboard/settings" className="btn btn-outline btn-block">
-                Account settings
+                Account Settings
               </Link>
             </div>
           </div>

@@ -149,7 +149,7 @@ export default function LetterApprovalPanel({
             onClick={approve}
             disabled={busy !== null}
           >
-            {busy === "approve" ? "Approving…" : "Approve and send"}
+            {busy === "approve" ? "Approving…" : "Approve and Send"}
           </button>
           <button
             type="button"
@@ -160,7 +160,7 @@ export default function LetterApprovalPanel({
             }}
             disabled={busy !== null}
           >
-            Request changes
+            Request Changes
           </button>
         </div>
       ) : (
@@ -184,7 +184,7 @@ export default function LetterApprovalPanel({
               onClick={requestChanges}
               disabled={busy !== null || feedback.trim().length < 5}
             >
-              {busy === "request" ? "Sending…" : "Send change request"}
+              {busy === "request" ? "Sending…" : "Send Change Request"}
             </button>
             <button
               type="button"

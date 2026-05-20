@@ -12,6 +12,8 @@ import { ArrowRight } from "lucide-react";
 import Breadcrumbs from "../../../../components/Breadcrumbs";
 import type { StateGuideV2 } from "../../../../lib/state-guide-v2/load";
 import { buildStateGuideJsonLd } from "../../../../lib/state-guide-v2/json-ld";
+import { getNeighbors } from "../../../../lib/state-neighbors";
+import { getStateBySlug } from "../../../../lib/states";
 import TocExpander from "./TocExpander";
 
 interface Props {
@@ -161,17 +163,38 @@ export default function StateGuidePage({ state, guide }: Props) {
               {guide.bodyMd}
             </ReactMarkdown>
 
-            <footer className="sgv2-footer">
-              <p>
-                Last reviewed{" "}
-                {new Date(guide.generatedAt).toLocaleDateString("en-US", {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
+            <nav className="sgv2-neighbors" aria-label={`States near ${state.name}`}>
+              <div className="sgv2-neighbors-head">
+                <span className="eyebrow">Nearby states</span>
+                <h2>
+                  States near <em>{state.name}</em>.
+                </h2>
+                <p>Filing in a neighboring state? Caps, fees, and forms are all different across the line.</p>
+              </div>
+              <ul className="sgv2-neighbors-grid">
+                {getNeighbors(state.slug).map((slug) => {
+                  const s = getStateBySlug(slug);
+                  if (!s) return null;
+                  return (
+                    <li key={slug}>
+                      <Link href={`/small-claims/${slug}`} className="sgv2-neighbor-card">
+                        <span className="sgv2-neighbor-abbr">{s.abbr}</span>
+                        <span className="sgv2-neighbor-name">{s.name}</span>
+                        <span className="sgv2-neighbor-arrow" aria-hidden>
+                          <ArrowRight size={16} strokeWidth={2.2} />
+                        </span>
+                      </Link>
+                    </li>
+                  );
                 })}
-                .
+              </ul>
+              <p className="sgv2-neighbors-all">
+                <Link href="/small-claims#all-states">
+                  Browse all 51 state guides
+                  <ArrowRight size={14} strokeWidth={2.2} />
+                </Link>
               </p>
-            </footer>
+            </nav>
           </article>
 
           <aside className="sgv2-rail" aria-label="On this page">
@@ -192,7 +215,7 @@ export default function StateGuidePage({ state, guide }: Props) {
                 <strong>Ready to send your demand letter?</strong>
                 <p>Skip the back-and-forth. A formal demand often resolves the dispute before filing.</p>
                 <Link href="/demand-letter" className="sgv2-cta-btn">
-                  Start a demand letter
+                  Start a Demand Letter
                   <ArrowRight size={16} strokeWidth={2.2} />
                 </Link>
               </div>

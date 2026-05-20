@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { Case } from "../../../../../lib/supabase/types";
@@ -158,7 +159,15 @@ export default function WizardShell({ caseRow, children }: Props) {
 
         <aside className="dlw-rail" aria-label="Coach and progress">
           <div className="dlw-coach-card">
-            <div className="dlw-coach-avatar">CC</div>
+            <div className="dlw-coach-avatar">
+              <Image
+                src="/icon.png"
+                alt=""
+                width={40}
+                height={40}
+                aria-hidden
+              />
+            </div>
             <div className="dlw-coach-meta">
               <strong>CivilCase</strong>
               <span className="dlw-coach-step">
@@ -170,7 +179,7 @@ export default function WizardShell({ caseRow, children }: Props) {
 
           <div className="dlw-conf-card">
             <div className="dlw-conf-head">
-              <span className="dlw-conf-tag">Case complete</span>
+              <span className="dlw-conf-tag">Case summary</span>
               <strong>
                 {PHASES.filter((p) => isPhaseComplete(caseRow, p.key)).length}/{PHASES.length}
               </strong>
@@ -179,15 +188,7 @@ export default function WizardShell({ caseRow, children }: Props) {
               <span style={{ width: `${(PHASES.filter((p) => isPhaseComplete(caseRow, p.key)).length / PHASES.length) * 100}%` }} />
             </div>
             <p className="dlw-conf-band">{confidenceBand}</p>
-          </div>
 
-          <div className="dlw-preview-card">
-            <div className="dlw-preview-head">
-              <span className="dlw-preview-tag">Demand letter</span>
-              <span className="dlw-preview-fill">
-                {previewFillCount(caseRow)}/4
-              </span>
-            </div>
             <dl className="dlw-preview-rows">
               <div>
                 <dt>To</dt>

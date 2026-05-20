@@ -2,7 +2,7 @@
 // markdown previews and run/re-run/poll controls.
 
 import { notFound } from "next/navigation";
-import { getStateBySlug, STATES } from "../../../../lib/states";
+import { getStateBySlug } from "../../../../lib/states";
 import { createServiceRoleClient } from "../../../../lib/supabase/service-role";
 import { CALL_TITLES, type StateCallId } from "../../../../lib/state-research/prompts";
 import StateResearchControls from "./StateResearchControls";
@@ -13,10 +13,6 @@ import StructuredPackView from "./StructuredPackView";
 import PageHead from "../../../../components/layout/PageHead";
 
 export const dynamic = "force-dynamic";
-
-export function generateStaticParams() {
-  return STATES.map((s) => ({ state: s.slug }));
-}
 
 interface CallSnapshot {
   status: string | null;

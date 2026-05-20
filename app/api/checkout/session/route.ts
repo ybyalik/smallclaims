@@ -33,13 +33,15 @@ export async function POST(req: NextRequest) {
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) return NextResponse.json({ error: "auth_required" }, { status: 401 });
 
+  const isAnon = (user as { is_anonymous?: boolean } | null)?.is_anonymous === true;
+
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const admin = createServiceRoleClient() as any;
 
   // Confirm the case belongs to this user
   const { data: caseRow } = await admin
     .from("cases")
-    .select("id, owner_user_id, defendant_name")
+    .select("id, owner_user_id, defendant_name, plaintiff_email")
     .eq("id", body.caseId)
     .single();
   if (!caseRow || caseRow.owner_user_id !== user.id) {
@@ -89,23 +91,44 @@ export async function POST(req: NextRequest) {
   const origin = new URL(req.url).origin;
   const stripe = getStripe();
 
-  // Reuse customer if profile already has one
+  // Reuse customer if profile already has one. Anonymous users have no
+  // profile row, so skip the lookup and mint a fresh Stripe customer
+  // seeded with whatever email they entered in the Plaintiff step.
   let stripeCustomerId: string | null = null;
-  const { data: profileFull } = await admin
-    .from("profiles")
-    .select("stripe_customer_id, full_name")
-    .eq("user_id", user.id)
-    .single();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const profileFull: { stripe_customer_id?: string; full_name?: string } | null = isAnon
+    ? null
+    : ((await admin
+        .from("profiles")
+        .select("stripe_customer_id, full_name")
+        .eq("user_id", user.id)
+        .single()).data as any) ?? null;
   stripeCustomerId = profileFull?.stripe_customer_id || null;
   if (!stripeCustomerId) {
     const customer = await stripe.customers.create({
-      email: user.email || undefined,
+      email: user.email || caseRow.plaintiff_email || undefined,
       name: profileFull?.full_name || user.user_metadata?.full_name || undefined,
-      metadata: { supabase_user_id: user.id },
+      metadata: { supabase_user_id: user.id, is_anonymous: isAnon ? "true" : "false" },
     });
     stripeCustomerId = customer.id;
-    await admin.from("profiles").update({ stripe_customer_id: stripeCustomerId }).eq("user_id", user.id);
+    if (!isAnon) {
+      await admin
+        .from("profiles")
+        .update({ stripe_customer_id: stripeCustomerId })
+        .eq("user_id", user.id);
+    }
   }
+
+  // Anonymous users land on /finish-signup after paying so they can set a
+  // password and convert their hidden account to a real one. Real users
+  // go straight to the letter view in the dashboard.
+  const postPayUrl = `/dashboard/cases/${caseRow.id}/letter?paid=1`;
+  const successUrl = isAnon
+    ? `${origin}/finish-signup?next=${encodeURIComponent(postPayUrl)}`
+    : `${origin}${postPayUrl}`;
+  const cancelUrl = isAnon
+    ? `${origin}/case/${caseRow.id}?canceled=1`
+    : `${origin}/dashboard/cases/${caseRow.id}/letter?canceled=1`;
 
   const session = await stripe.checkout.sessions.create({
     mode: "payment",
@@ -123,18 +146,20 @@ export async function POST(req: NextRequest) {
         quantity: 1,
       },
     ],
-    success_url: `${origin}/dashboard/cases/${caseRow.id}/letter?paid=1`,
-    cancel_url: `${origin}/dashboard/cases/${caseRow.id}/letter?canceled=1`,
+    success_url: successUrl,
+    cancel_url: cancelUrl,
     metadata: {
       case_id: caseRow.id,
       user_id: user.id,
       product_key: body.product_key,
+      anon_at_checkout: isAnon ? "true" : "false",
     },
     payment_intent_data: {
       metadata: {
         case_id: caseRow.id,
         user_id: user.id,
         product_key: body.product_key,
+        anon_at_checkout: isAnon ? "true" : "false",
       },
     },
   });

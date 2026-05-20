@@ -8,8 +8,33 @@
 // lookup in lib/deposit-state-table.ts.
 
 import { cache } from "react";
+import { unstable_cache } from "next/cache";
 import { createServiceRoleClient } from "../supabase/service-role";
 import { STATES } from "../states";
+
+interface RawStateRow {
+  slug: string;
+  state_name: string | null;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  structured_pack: any;
+}
+
+// Single Supabase fetch shared across every pre-render in the build.
+// React `cache` only dedupes within one render; `unstable_cache` persists
+// across all 248 static routes so we hit Supabase once per deploy instead
+// of once per page.
+const fetchAllStateResearch = unstable_cache(
+  async (): Promise<RawStateRow[]> => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const db = createServiceRoleClient() as any;
+    const { data } = await db
+      .from("state_research")
+      .select("slug, state_name, structured_pack");
+    return Array.isArray(data) ? (data as RawStateRow[]) : [];
+  },
+  ["state_research_all_v1"],
+  { revalidate: 3600, tags: ["state_research"] },
+);
 
 export interface ClaimStateRow {
   state: string;            // "California"
@@ -100,13 +125,7 @@ function buildRow(slug: string, stateName: string, abbr: string, pack: any, clai
  */
 export const getClaimStateTable = cache(
   async (claimType: string): Promise<ClaimStateRow[]> => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const db = createServiceRoleClient() as any;
-    const { data } = await db
-      .from("state_research")
-      .select("slug, state_name, structured_pack");
-    if (!Array.isArray(data)) return [];
-
+    const data = await fetchAllStateResearch();
     const meta = new Map(STATES.map((s) => [s.slug, s] as const));
     const rows: ClaimStateRow[] = [];
     for (const r of data) {
@@ -133,13 +152,8 @@ export const getClaimStateTable = cache(
  */
 export const getAllStateCaps = cache(
   async (): Promise<Map<string, { state: string; cap: number }>> => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const db = createServiceRoleClient() as any;
-    const { data } = await db
-      .from("state_research")
-      .select("slug, state_name, structured_pack");
+    const data = await fetchAllStateResearch();
     const out = new Map<string, { state: string; cap: number }>();
-    if (!Array.isArray(data)) return out;
     for (const r of data) {
       const cap = r.structured_pack?.claim_limit_dollars;
       if (typeof cap === "number" && cap > 0) {

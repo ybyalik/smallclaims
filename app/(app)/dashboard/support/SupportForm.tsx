@@ -92,7 +92,7 @@ export default function SupportForm({ email, fullName }: Props) {
 
       <div className="app-settings-actions">
         <button type="submit" className="btn btn-dark" disabled={isPending}>
-          {isPending ? "Sending…" : "Send message"}
+          {isPending ? "Sending…" : "Send Message"}
         </button>
         {sentAt ? (
           <span className="dl-saved-at">
