@@ -88,10 +88,13 @@ export default async function DashboardHome() {
   if (!user) return null;
 
   const [casesRes, profileRes] = await Promise.all([
+    // Hide abandoned drafts (no defendant step yet) from the dashboard
+    // so accidental "Start your case" clicks don't clutter the list.
     supabase
       .from("cases")
       .select("*")
       .eq("owner_user_id", user.id)
+      .not("defendant_name", "is", null)
       .order("updated_at", { ascending: false }),
     supabase
       .from("profiles")

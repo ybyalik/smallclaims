@@ -66,10 +66,14 @@ export default async function DashboardHome() {
   // Cases first (we need the ids for the payments query). Was sequential
   // with payments + pending-action + SOL deadlines below; now everything
   // downstream of the case-ids list fans out in parallel.
+  // Hide abandoned drafts: cases where the user never reached the
+  // defendant step (defendant_name is null) shouldn't appear in their
+  // case list. The 24-hour cleanup cron sweeps the rows from the DB.
   const { data: cases } = await supabase
     .from("cases")
     .select("*")
     .eq("owner_user_id", user.id)
+    .not("defendant_name", "is", null)
     .order("updated_at", { ascending: false });
 
   const list = (cases || []) as Case[];
