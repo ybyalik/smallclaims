@@ -8,7 +8,6 @@
 // lookup in lib/deposit-state-table.ts.
 
 import { cache } from "react";
-import { unstable_cache } from "next/cache";
 import { createServiceRoleClient } from "../supabase/service-role";
 import { STATES } from "../states";
 
@@ -19,22 +18,39 @@ interface RawStateRow {
   structured_pack: any;
 }
 
-// Single Supabase fetch shared across every pre-render in the build.
-// React `cache` only dedupes within one render; `unstable_cache` persists
-// across all 248 static routes so we hit Supabase once per deploy instead
-// of once per page.
-const fetchAllStateResearch = unstable_cache(
-  async (): Promise<RawStateRow[]> => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const db = createServiceRoleClient() as any;
-    const { data } = await db
-      .from("state_research")
-      .select("slug, state_name, structured_pack");
-    return Array.isArray(data) ? (data as RawStateRow[]) : [];
-  },
-  ["state_research_all_v1"],
-  { revalidate: 3600, tags: ["state_research"] },
-);
+// Build-time snapshot, written by scripts/snapshot-state-research.ts
+// as a `prebuild` step. We require() it lazily so missing-file at dev
+// time doesn't crash the import chain — we just fall back to a live
+// Supabase fetch.
+let snapshotCache: RawStateRow[] | null = null;
+function loadSnapshot(): RawStateRow[] | null {
+  if (snapshotCache) return snapshotCache;
+  try {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const data = require("./snapshot.json");
+    if (Array.isArray(data)) {
+      snapshotCache = data as RawStateRow[];
+      return snapshotCache;
+    }
+  } catch {
+    // snapshot.json doesn't exist (first dev run, or build script skipped)
+  }
+  return null;
+}
+
+// Single fetch shared across every pre-render. Prefers the build-time
+// snapshot; falls back to a live Supabase call so dev / first build
+// without a snapshot still works.
+const fetchAllStateResearch = cache(async (): Promise<RawStateRow[]> => {
+  const snap = loadSnapshot();
+  if (snap) return snap;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const db = createServiceRoleClient() as any;
+  const { data } = await db
+    .from("state_research")
+    .select("slug, state_name, structured_pack");
+  return Array.isArray(data) ? (data as RawStateRow[]) : [];
+});
 
 export interface ClaimStateRow {
   state: string;            // "California"

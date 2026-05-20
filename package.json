@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "tsx scripts/snapshot-state-research.ts",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -46,6 +47,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "tsx": "^4.22.3",
     "typescript": "^5"
   }
 }

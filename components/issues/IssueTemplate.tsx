@@ -4,7 +4,7 @@ import FeaturedUsMap from "../widgets/FeaturedUsMap";
 import CountUp from "../widgets/CountUp";
 import HeroCta from "../HeroCta";
 import { availableStateSlugs } from "../../lib/state-data";
-import { getAllStateCaps, getClaimStateTable } from "../../lib/state-data/by-claim";
+import { getClaimStateTable } from "../../lib/state-data/by-claim";
 import type { LandlordIssue, EvidenceCell } from "../../lib/landlord-issues/types";
 import type { CategoryMeta } from "../../lib/issues/categories";
 
@@ -101,13 +101,12 @@ export default async function IssueTemplate({ issue, category, siblings }: Props
     .map((slug) => claimRows.find((r) => r.slug === slug))
     .filter((r): r is NonNullable<typeof r> => Boolean(r));
 
-  // Live small-claims caps across all 51 jurisdictions, used by the
-  // "What if your case is over your state's cap?" section so the range
-  // numbers stay accurate as state data changes in Supabase.
-  const allCaps = await getAllStateCaps();
-  const capValues = Array.from(allCaps.values()).map((v) => v.cap);
-  const minCap = capValues.length ? Math.min(...capValues) : 2500;
-  const maxCap = capValues.length ? Math.max(...capValues) : 25000;
+  // Small-claims caps for the over-the-cap range display. Hard-coded as
+  // constants so the build doesn't hit Supabase on every issue page just
+  // to render two numbers that move once a decade. If a state changes
+  // its cap, update here.
+  const minCap = 2500;
+  const maxCap = 25000;
   const fmtCap = (n: number) => `$${n.toLocaleString("en-US")}`;
   // Always render the State section when claimType is set, even if the issue
   // didn't manually declare stateSection. The pack-driven data is enough on
