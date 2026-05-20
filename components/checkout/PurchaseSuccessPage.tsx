@@ -40,6 +40,15 @@ export default async function PurchaseSuccessPage({
     redirect(`/login?next=${encodeURIComponent(successPath)}`);
   }
 
+  // Anonymous visitor just paid — convert their hidden account into a
+  // real one before they see the order confirmation. /finish-signup
+  // pre-fills the email they entered in the Plaintiff step and routes
+  // them back here once they pick a password.
+  const isAnon = (user as { is_anonymous?: boolean } | null)?.is_anonymous === true;
+  if (isAnon) {
+    redirect(`/finish-signup?next=${encodeURIComponent(successPath)}`);
+  }
+
   const c = await loadOwnedCase(caseId);
   if (!c) notFound();
 
