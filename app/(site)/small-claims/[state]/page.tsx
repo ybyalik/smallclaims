@@ -10,15 +10,16 @@ import FeeCalculator from "../../../../components/widgets/FeeCalculator";
 import ClaimExplorer from "../../../../components/widgets/ClaimExplorer";
 import StateGuidePage from "./StateGuidePage";
 
-// Pre-generate every state. States without data render a "coming soon" placeholder.
-// The v2 path reads from Supabase per-request, so revalidate on every load.
-// Static slugs are still pre-rendered for the legacy path.
+// ISR: don't pre-generate any state at deploy time. First visitor to a
+// given state triggers the build, the result is cached, and every
+// subsequent visitor sees that cached page until the next deploy.
+// Slug validity is checked in the page function via getStateBySlug.
 export function generateStaticParams() {
-  return STATES.map((s) => ({ state: s.slug }));
+  return [];
 }
 
-export const dynamicParams = false;
-export const revalidate = 0;
+export const dynamicParams = true;
+export const revalidate = false;
 
 type Params = { params: { state: string } };
 

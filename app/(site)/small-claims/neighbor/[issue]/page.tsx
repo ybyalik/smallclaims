@@ -5,10 +5,11 @@ import { NEIGHBOR_ISSUES, getNeighborIssue } from "../../../../../lib/neighbor-i
 import { NEIGHBOR_CATEGORY } from "../../../../../lib/issues/categories";
 
 export function generateStaticParams() {
-  return NEIGHBOR_ISSUES.filter((i) => i.ready).map((i) => ({ issue: i.slug }));
+  return [];
 }
 
-export const dynamicParams = false;
+export const dynamicParams = true;
+export const revalidate = false;
 
 interface Props {
   params: { issue: string };

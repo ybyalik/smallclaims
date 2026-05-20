@@ -5,10 +5,11 @@ import { ONLINE_SELLER_ISSUES, getOnlineSellerIssue } from "../../../../../lib/o
 import { ONLINE_SELLER_CATEGORY } from "../../../../../lib/issues/categories";
 
 export function generateStaticParams() {
-  return ONLINE_SELLER_ISSUES.filter((i) => i.ready).map((i) => ({ issue: i.slug }));
+  return [];
 }
 
-export const dynamicParams = false;
+export const dynamicParams = true;
+export const revalidate = false;
 
 interface Props {
   params: { issue: string };

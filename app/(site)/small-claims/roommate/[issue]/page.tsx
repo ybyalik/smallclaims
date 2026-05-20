@@ -5,10 +5,11 @@ import { ROOMMATE_ISSUES, getRoommateIssue } from "../../../../../lib/roommate-i
 import { ROOMMATE_CATEGORY } from "../../../../../lib/issues/categories";
 
 export function generateStaticParams() {
-  return ROOMMATE_ISSUES.filter((i) => i.ready).map((i) => ({ issue: i.slug }));
+  return [];
 }
 
-export const dynamicParams = false;
+export const dynamicParams = true;
+export const revalidate = false;
 
 interface Props {
   params: { issue: string };

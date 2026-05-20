@@ -5,10 +5,11 @@ import { EMPLOYER_ISSUES, getEmployerIssue } from "../../../../../lib/employer-i
 import { EMPLOYER_CATEGORY } from "../../../../../lib/issues/categories";
 
 export function generateStaticParams() {
-  return EMPLOYER_ISSUES.filter((i) => i.ready).map((i) => ({ issue: i.slug }));
+  return [];
 }
 
-export const dynamicParams = false;
+export const dynamicParams = true;
+export const revalidate = false;
 
 interface Props {
   params: { issue: string };
