@@ -23,6 +23,43 @@ export default function SignupForm({ next }: { next?: string }) {
     }
     setLoading(true);
     const supabase = createClient();
+
+    // If the visitor is currently signed in as an anonymous Supabase user
+    // (because they started a case without signing up), convert that
+    // hidden account into a real one with updateUser. This keeps the
+    // same user id so every case they've created stays attached. If we
+    // called signUp here instead, Supabase would create a brand new
+    // user and orphan the existing cases.
+    const {
+      data: { user: currentUser },
+    } = await supabase.auth.getUser();
+    const isAnon =
+      (currentUser as { is_anonymous?: boolean } | null)?.is_anonymous === true;
+
+    if (isAnon) {
+      const { error: upErr } = await supabase.auth.updateUser({
+        email,
+        password,
+        data: fullName.trim() ? { full_name: fullName.trim() } : undefined,
+      });
+      setLoading(false);
+      if (upErr) {
+        const msg = upErr.message.toLowerCase();
+        if (msg.includes("already") || msg.includes("registered")) {
+          setError(
+            "That email is already used by another account. Sign in instead to attach this case to it."
+          );
+        } else {
+          setError(upErr.message);
+        }
+        return;
+      }
+      router.replace(next || "/dashboard");
+      router.refresh();
+      return;
+    }
+
+    // Standard fresh signup (no existing anonymous session).
     const { data, error } = await supabase.auth.signUp({
       email,
       password,
