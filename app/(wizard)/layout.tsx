@@ -1,7 +1,9 @@
-// Wizard route group. The wizard is its own focused flow — it has its
-// own top bar and progress row built into WizardShell, so we don't wrap
-// in AppShell (which would add a duplicate mobile header + the
-// dashboard sidebar drawer the user shouldn't see during intake).
+import AppShell from "../../components/AppShell";
+
+// Wizard route group. Wrapped in AppShell so the dashboard sidebar
+// (with nav back to dashboard, cases, etc.) is present on both desktop
+// and mobile. WizardShell uses AppShell's mobile top bar — no separate
+// wizard-only header.
 
 export const metadata = {
   robots: { index: false, follow: false },
@@ -12,5 +14,5 @@ export default function WizardRouteGroupLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  return <AppShell requireAuth={false}>{children}</AppShell>;
 }
