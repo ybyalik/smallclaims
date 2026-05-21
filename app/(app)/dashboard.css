@@ -1667,6 +1667,12 @@ button.app-link:disabled {
     grid-row: 2;
     padding: 20px 16px 48px;
     max-width: 100%;
+    /* Grid items default to min-width: auto, which lets children grow
+       past the cell. Force the grid cell to constrain its children so
+       internal negative margins (.dlw-progress-row, .dlw-body) don't
+       create horizontal scroll. */
+    min-width: 0;
+    overflow-x: hidden;
   }
 
   .app-page-head {
