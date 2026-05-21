@@ -82,6 +82,23 @@ export default function WizardShell({ caseRow, children }: Props) {
 
   return (
     <div className="dlw-page">
+      <header className="dlw-topbar-bar">
+        <Link href="/" aria-label="CivilCase home" className="dlw-topbar-brand">
+          <Image
+            src="/civilcase-logo.webp"
+            alt="CivilCase"
+            width={180}
+            height={59}
+            className="dlw-topbar-logo"
+            priority
+          />
+        </Link>
+        <Link href="/dashboard" className="dlw-topbar-exit" aria-label="Exit wizard">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M6 6l12 12M18 6L6 18" />
+          </svg>
+        </Link>
+      </header>
       <div className="dlw-progress-row">
         <ol className="dlw-phases">
             {PHASES.map((phase, i) => {

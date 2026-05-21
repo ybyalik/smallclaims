@@ -1019,6 +1019,12 @@
   width: 100%;
   box-shadow: 0 24px 64px -20px rgba(0, 0, 0, 0.35);
 }
+@media (max-width: 480px) {
+  /* Tighter padding so form fields aren't crammed against the modal edge
+     on small phones. Backdrop already adds 16px around the modal. */
+  .dlw-modal { padding: 20px; border-radius: 14px; }
+  .dlw-modal h3 { font-size: 19px; }
+}
 .dlw-modal h3 {
   font-family: var(--font-newsreader), Georgia, serif;
   font-size: 22px;
@@ -1832,6 +1838,46 @@
   display: flex;
   flex-direction: column;
   background: transparent;
+  /* Negative margins inside (.dlw-progress-row, .dlw-body) bleed content
+     to the wrap edges. Hide horizontal overflow so they don't create a
+     full-viewport horizontal scroll on phones. */
+  overflow-x: hidden;
+}
+
+/* Top bar above the progress steps — gives the wizard a recognizable
+   header with logo + exit, so users have a way out without filling
+   everything in. */
+.dlw-topbar-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  background: #fff;
+  border-bottom: 1px solid #e8e5de;
+  position: sticky;
+  top: 0;
+  z-index: 25;
+}
+.dlw-topbar-brand { display: inline-flex; align-items: center; }
+.dlw-topbar-logo { width: 144px; height: auto; display: block; }
+.dlw-topbar-exit {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  color: var(--ink, #0e0e0e);
+  border-radius: 8px;
+  transition: background .15s ease;
+  text-decoration: none;
+}
+.dlw-topbar-exit:hover { background: #f3f1ec; }
+/* Progress row sits BELOW the new top bar — drop its sticky-to-top
+   offset so it docks under the bar instead of overlapping. */
+.dlw-topbar-bar + .dlw-progress-row { top: 64px; }
+@media (max-width: 900px) {
+  .dlw-topbar-bar { padding: 10px 16px; }
+  .dlw-topbar-logo { width: 128px; }
+  .dlw-topbar-bar + .dlw-progress-row { top: 56px; }
 }
 
 /* Progress row — sits at top of main column, sticky */

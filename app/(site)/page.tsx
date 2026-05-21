@@ -357,7 +357,7 @@ export default function Home() {
       {/* VERSION A — Punchy / unfair-system framing + dark stats panel */}
       <section style={{ padding: "64px 0", background: "#fff" }}>
         <div className="wrap">
-          <div style={{ display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: 56, alignItems: "center" }}>
+          <div className="why-exist-grid" style={{ display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: 56, alignItems: "center" }}>
             <div>
               <span className="eyebrow" style={{ color: "var(--accent)" }}>Why we exist</span>
               <h2 style={{ fontFamily: "var(--font-newsreader)", fontSize: "clamp(32px, 3.4vw, 46px)", fontWeight: 700, letterSpacing: "-0.02em", lineHeight: 1.05, margin: "10px 0 16px" }}>
@@ -930,9 +930,9 @@ function JusticeGapCombo() {
     { label: "Win when prepped", pct: 64, color: "#5a7a45", h: 108 },
   ];
   return (
-    <div style={{ position: "relative", display: "flex", justifyContent: "flex-start", alignItems: "flex-end", paddingTop: 16, paddingBottom: 28, minHeight: 480 }}>
+    <div className="justice-gap-combo" style={{ position: "relative", display: "flex", justifyContent: "flex-start", alignItems: "flex-end", paddingTop: 16, paddingBottom: 28, minHeight: 480 }}>
       {/* Recovery-layers-style card with justice gap data — left, tilted left */}
-      <div style={{ flexShrink: 0, transform: "rotate(-3deg)", transformOrigin: "bottom right", zIndex: 2, marginRight: -32 }}>
+      <div className="jg-card-wrap" style={{ flexShrink: 0, transform: "rotate(-3deg)", transformOrigin: "bottom right", zIndex: 2, marginRight: -32 }}>
         <div style={{ width: 300, background: "#fff", border: "1px solid var(--hairline)", borderRadius: 18, padding: "22px 24px", boxShadow: "0 22px 44px -22px rgba(31,27,22,0.25)" }}>
           <div style={{ fontFamily: "var(--font-geist)", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 700, color: "var(--accent)", marginBottom: 4 }}>The justice gap</div>
           <div style={{ display: "flex", alignItems: "flex-end", gap: 14, height: 180, margin: "20px 0 18px" }}>
@@ -965,7 +965,7 @@ function JusticeGapCombo() {
       </div>
 
       {/* Certificate — right, tilted right */}
-      <div style={{ flexShrink: 0, transform: "rotate(3deg)", transformOrigin: "bottom left", zIndex: 1, marginBottom: 18 }}>
+      <div className="jg-cert-wrap" style={{ flexShrink: 0, transform: "rotate(3deg)", transformOrigin: "bottom left", zIndex: 1, marginBottom: 18 }}>
         <div style={{ position: "relative", width: 290, background: "#fefcf3", border: "8px double var(--accent)", borderRadius: 4, padding: "24px 20px", textAlign: "center", fontFamily: "Newsreader, Georgia, serif", boxShadow: "0 22px 50px -28px rgba(31,27,22,0.32)" }}>
           <div style={{ position: "absolute", bottom: -22, right: -22, width: 80, height: 80 }}>
             <svg viewBox="0 0 100 100" width="80" height="80" style={{ display: "block" }}>

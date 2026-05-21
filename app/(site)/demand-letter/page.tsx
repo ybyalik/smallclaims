@@ -282,16 +282,14 @@ export default function DemandLetterPage() {
                   including filing a claim in small claims court.
                 </p>
               </div>
-              <span className="dl-incl-seal" aria-hidden>
-                <span className="dl-incl-seal-ring">
-                  <span className="dl-incl-seal-top">OFFICIAL</span>
-                  <span className="dl-incl-seal-bot">DEMAND LETTER</span>
-                </span>
-                <span className="dl-incl-seal-center">
-                  <span>CIVILCASE</span>
-                  <Scale size={18} strokeWidth={1.6} />
-                </span>
-              </span>
+              <Image
+                src="/icons/cc-seal-1.webp"
+                alt=""
+                width={120}
+                height={120}
+                className="dl-incl-seal-img"
+                aria-hidden
+              />
             </article>
           </div>
 

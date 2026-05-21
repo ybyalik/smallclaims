@@ -2,8 +2,9 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { ChevronDown, Building2, Hammer, Briefcase, Car, Trees, HandCoins, Users, ShoppingBag, Receipt, FileText, Scale, BarChart3, BookOpen } from "lucide-react";
+import { ChevronDown, Building2, Hammer, Briefcase, Car, Trees, HandCoins, Users, ShoppingBag, Receipt, FileText, Scale, BarChart3, BookOpen, LayoutDashboard, Settings, LogOut } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import type { SiteHeaderUser } from "./SiteHeader";
 
@@ -30,6 +31,9 @@ const FEATURED_STATES: Array<{ slug: string; name: string }> = [
 ];
 
 export default function SiteHeaderInner({ user }: { user: SiteHeaderUser | null }) {
+  const pathname = usePathname() || "/";
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(href + "/");
   const [open, setOpen] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
   const [openMega, setOpenMega] = useState<MegaKey | null>(null);
@@ -275,6 +279,14 @@ export default function SiteHeaderInner({ user }: { user: SiteHeaderUser | null 
           </div>
           <div className="nav-mega-col nav-mega-feature">
             <Link href="/blog" onClick={() => setOpenMega(null)} className="nav-mega-feature-card">
+              <Image
+                src="/assets/blog-menu-image.webp"
+                alt=""
+                width={400}
+                height={300}
+                className="nav-mega-feature-image"
+                aria-hidden
+              />
               <div className="nav-mega-feature-eyebrow">Blog</div>
               <div className="nav-mega-feature-title">Stories from the small-claims trenches</div>
               <div className="nav-mega-feature-sub">Filing tips, statute breakdowns, and real outcomes from people who took action.</div>
@@ -323,108 +335,123 @@ export default function SiteHeaderInner({ user }: { user: SiteHeaderUser | null 
           </button>
         </div>
 
-        {user ? (
-          <div className="nav-mobile-user">
-            {user.avatarUrl ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img src={user.avatarUrl} alt="" className="nav-user-avatar" />
-            ) : (
-              <span className="nav-user-avatar nav-user-avatar-fallback">{initial}</span>
-            )}
-            <div>
-              <strong>{user.fullName}</strong>
-              <span>{user.email}</span>
-            </div>
-          </div>
-        ) : null}
-
         <nav className="nav-mobile-links">
           {user ? (
             <div className="nav-mobile-section">
               <span className="nav-mobile-section-label">My account</span>
-              <Link href="/dashboard" onClick={() => setOpen(false)}>
+              <Link href="/dashboard" onClick={() => setOpen(false)} className={`nav-mobile-top${isActive("/dashboard") ? " active" : ""}`}>
+                <LayoutDashboard className="nav-link-icon" size={18} strokeWidth={1.8} aria-hidden />
                 Dashboard
-              </Link>
-              <Link href="/dashboard/settings" onClick={() => setOpen(false)}>
-                Settings
               </Link>
             </div>
           ) : null}
 
+          {/* Top-level items mirror the desktop nav exactly. */}
           <div className="nav-mobile-section">
-            <span className="nav-mobile-section-label">Get started</span>
-            <Link href="/demand-letter" onClick={() => setOpen(false)}>
+            <Link href="/demand-letter" onClick={() => setOpen(false)} className={`nav-mobile-top${isActive("/demand-letter") ? " active" : ""}`}>
+              <FileText className="nav-link-icon" size={18} strokeWidth={1.8} aria-hidden />
               Demand Letter
             </Link>
-            <Link href="/case-score" onClick={() => setOpen(false)}>
-              Case Score
+            <Link href="/small-claims" onClick={() => setOpen(false)} className={`nav-mobile-top${isActive("/small-claims") ? " active" : ""}`}>
+              <Scale className="nav-link-icon" size={18} strokeWidth={1.8} aria-hidden />
+              Small Claims
             </Link>
-            <Link href="/small-claims" onClick={() => setOpen(false)}>
-              Small claims by state
+            <Link href="/case-score" onClick={() => setOpen(false)} className={`nav-mobile-top${isActive("/case-score") ? " active" : ""}`}>
+              <BarChart3 className="nav-link-icon" size={18} strokeWidth={1.8} aria-hidden />
+              Case Score
             </Link>
           </div>
 
+          {/* Resources — same three groupings as the desktop mega menu. */}
           <details className="nav-mobile-section nav-mobile-group">
             <summary>
-              <span className="nav-mobile-section-label">Browse by dispute type</span>
+              <span className="nav-mobile-top">
+                <BookOpen className="nav-link-icon" size={18} strokeWidth={1.8} aria-hidden />
+                Resources
+              </span>
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" className="nav-mobile-chev">
                 <path d="M6 9l6 6 6-6" />
               </svg>
             </summary>
-            <Link href="/small-claims/landlord" onClick={() => setOpen(false)}>
-              Landlord
+
+            <span className="nav-mobile-section-label">By dispute type</span>
+            {SC_CATEGORIES.map((c) => {
+              const Icon = c.icon;
+              return (
+                <Link key={c.href} href={c.href} onClick={() => setOpen(false)} className="nav-mobile-sub">
+                  <Icon size={16} strokeWidth={1.7} aria-hidden />
+                  {c.label}
+                </Link>
+              );
+            })}
+            <Link href="/small-claims" onClick={() => setOpen(false)} className="nav-mobile-sub nav-mobile-all">
+              All categories →
             </Link>
-            <Link href="/small-claims/employer" onClick={() => setOpen(false)}>
-              Employer
+
+            <span className="nav-mobile-section-label">State guides</span>
+            {FEATURED_STATES.map((s) => (
+              <Link key={s.slug} href={`/small-claims/${s.slug}`} onClick={() => setOpen(false)} className="nav-mobile-sub">
+                {s.name}
+              </Link>
+            ))}
+            <Link href="/small-claims#states" onClick={() => setOpen(false)} className="nav-mobile-sub nav-mobile-all">
+              All 50 states →
             </Link>
-            <Link href="/small-claims/contractor" onClick={() => setOpen(false)}>
-              Contractor
-            </Link>
-            <Link href="/small-claims/auto" onClick={() => setOpen(false)}>
-              Auto
-            </Link>
-            <Link href="/small-claims/neighbor" onClick={() => setOpen(false)}>
-              Neighbor
-            </Link>
-            <Link href="/small-claims/personal-loan" onClick={() => setOpen(false)}>
-              Personal loan
-            </Link>
-            <Link href="/small-claims/roommate" onClick={() => setOpen(false)}>
-              Roommate
-            </Link>
-            <Link href="/small-claims/online-seller" onClick={() => setOpen(false)}>
-              Online seller
-            </Link>
-            <Link href="/small-claims/refund" onClick={() => setOpen(false)}>
-              Refunds
+
+            <span className="nav-mobile-section-label">Blog</span>
+            <Link href="/blog" onClick={() => setOpen(false)} className="nav-mobile-sub">
+              Read the blog
             </Link>
           </details>
         </nav>
 
-        <div className="nav-mobile-cta">
-          {user ? (
-            <a className="btn btn-cream" href="/auth/signout">
-              Sign out
-            </a>
-          ) : (
-            <>
+        {user ? (
+          <div className="nav-mobile-foot">
+            <div className="nav-mobile-foot-user">
+              {user.avatarUrl ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img src={user.avatarUrl} alt="" className="nav-mobile-foot-avatar" />
+              ) : (
+                <span className="nav-mobile-foot-avatar nav-mobile-foot-avatar-fallback">{initial}</span>
+              )}
+              <div className="nav-mobile-foot-meta">
+                <div className="nav-mobile-foot-name">{user.fullName}</div>
+                <div className="nav-mobile-foot-email">{user.email}</div>
+              </div>
+            </div>
+            <nav className="nav-mobile-foot-nav">
               <Link
-                className="btn btn-cream"
-                href="/login"
+                href="/dashboard/settings"
                 onClick={() => setOpen(false)}
+                className={`nav-mobile-foot-link${isActive("/dashboard/settings") ? " active" : ""}`}
               >
-                Sign in
+                <Settings size={14} strokeWidth={1.8} aria-hidden />
+                <span>Settings</span>
               </Link>
-              <Link
-                className="btn btn-green"
-                href="/demand-letter"
-                onClick={() => setOpen(false)}
-              >
-                Get started
-              </Link>
-            </>
-          )}
-        </div>
+              <a href="/auth/signout" className="nav-mobile-foot-link">
+                <LogOut size={14} strokeWidth={1.8} aria-hidden />
+                <span>Sign out</span>
+              </a>
+            </nav>
+          </div>
+        ) : (
+          <div className="nav-mobile-cta">
+            <Link
+              className="btn btn-cream"
+              href="/login"
+              onClick={() => setOpen(false)}
+            >
+              Sign in
+            </Link>
+            <Link
+              className="btn btn-green"
+              href="/demand-letter"
+              onClick={() => setOpen(false)}
+            >
+              Get started
+            </Link>
+          </div>
+        )}
       </aside>
     </>
   );

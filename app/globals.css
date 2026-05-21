@@ -112,9 +112,26 @@ a { color: inherit; text-decoration: none; }
 .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; }
 .brand-logo { display: block; height: auto; width: 180px; max-width: 100%; }
 .brand-logo-foot { width: 200px; }
+/* Mobile: shrink the nav logo so it doesn't kiss the top/bottom of the
+   header. Footer logo stays full size. */
+/* The hamburger appears at <=960px, so style the mobile nav across the
+   full range that uses the burger layout. The `.nav.wrap` selector beats
+   the generic `.wrap { padding: 0 32px }` mobile rule (specificity 0,2,0
+   vs 0,1,0), which would otherwise wipe out the vertical padding. */
+@media (max-width: 960px) {
+  .nav.wrap { padding: 6px 20px 6px 12px; }
+  .nav .brand-logo { width: 168px; }
+}
+@media (max-width: 720px) {
+  .nav.wrap { padding: 6px 16px 6px 10px; }
+}
+@media (max-width: 560px) {
+  .nav.wrap { padding: 8px 14px 8px 8px; }
+  .nav .brand-logo { width: 144px; }
+}
 /* Legacy fallback: still used by some surfaces that haven't been migrated. */
 .brand-mark { width: 30px; height: 30px; border-radius: 50%; background: var(--ink); color: #fef9f1; display: grid; place-items: center; font-weight: 700; font-size: 14px; font-family: var(--font-geist); }
-.nav-links { display: flex; gap: 4px; align-items: center; }
+.nav-links { display: flex; gap: 14px; align-items: center; }
 .nav-links a { display: inline-flex; align-items: center; gap: 7px; font-size: 15px; color: var(--ink-2); font-weight: 500; text-decoration: none; padding: 8px 14px; border-radius: 8px; transition: background-color .18s ease, color .18s ease; }
 .nav-links a:hover { color: var(--ink); background-color: #ffffff; box-shadow: 0 1px 3px rgba(31, 27, 22, 0.06); }
 .nav-link-icon { color: var(--muted); transition: color .18s ease; flex-shrink: 0; }
@@ -211,18 +228,49 @@ a { color: inherit; text-decoration: none; }
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
   flex: 1;
   background: var(--ink);
   color: #fef9f1;
   border-radius: 14px;
-  padding: 22px 22px 22px;
+  padding: 0 22px 22px;
   text-decoration: none;
   overflow: hidden;
-  min-height: 200px;
-  background-image: radial-gradient(circle at 80% 0%, rgba(245,178,159,0.22), transparent 60%);
+  min-height: 320px;
+}
+/* Cream top zone — covers ~45% of the card so the image (which extends
+   below the cream/dark boundary) clearly crosses into the dark zone
+   below, like the reference design. */
+.nav-mega-feature-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 45%;
+  background: #f0ebe0;
+  z-index: 0;
 }
 .nav-mega-feature-card:hover .nav-mega-feature-arrow { transform: translateX(4px); }
+.nav-mega-feature-image {
+  position: relative;
+  z-index: 1;
+  width: 95%;
+  height: auto;
+  max-height: 240px;
+  object-fit: contain;
+  align-self: center;
+  /* Image's bottom sits well below the cream/dark boundary so the
+     envelope + books visibly overlap the seam. */
+  margin: 12px auto 0;
+}
+.nav-mega-feature-card > *:not(.nav-mega-feature-image):not(.nav-mega-feature-arrow) {
+  position: relative;
+  z-index: 1;
+}
+/* Image sits at the top of the cream zone; eyebrow gets auto top margin
+   so the text block pins to the bottom of the dark zone, leaving room
+   for the image's lower elements (envelope + books) to cross over. */
+.nav-mega-feature-card .nav-mega-feature-eyebrow { margin-top: auto; }
 .nav-mega-feature-eyebrow { font-family: var(--font-geist), system-ui, sans-serif; font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700; color: rgba(254,249,241,0.6); margin-bottom: 8px; }
 .nav-mega-feature-title { font-family: var(--font-newsreader), Georgia, serif; font-weight: 700; font-size: 24px; line-height: 1.1; letter-spacing: -0.015em; color: #fef9f1; margin-bottom: 8px; }
 .nav-mega-feature-sub { font-size: 13px; color: rgba(254,249,241,0.72); line-height: 1.5; }
@@ -1370,7 +1418,36 @@ details.qa .a { margin-top: 14px; font-size: 16px; color: var(--muted); line-hei
   .tile.dark { grid-row: auto !important; min-height: 240px; }
   .receipts-grid-row { grid-template-columns: 1fr; }
   .r-1, .r-2, .r-3, .r-4, .r-5, .r-6 { grid-column: span 1; }
-  .foot-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+  /* Mobile footer:
+     - Row 1 = brand block (logo + tagline + socials) full width, centered
+     - Row 2 = Product / Company columns side by side
+     - Disclaimer + copyright + links below all centered
+  */
+  .foot-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 24px;
+  }
+  .foot-brand {
+    grid-column: 1 / -1;
+    max-width: none;
+    /* Flex column with centered children is more reliable than
+       text-align: center for centering an inline-flex Link + a block
+       paragraph + an inline-flex social row in one shot. */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .foot-brand p { margin-left: auto; margin-right: auto; }
+  .foot-col { text-align: center; }
+  .legal-disclaimer { text-align: center; }
+  .foot-bottom {
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
   .faq-side h2 { max-width: none; }
   .dash-card .score { font-size: 84px; }
   .stats-grid h2 { max-width: none; }
@@ -1391,7 +1468,6 @@ details.qa .a { margin-top: 14px; font-size: 16px; color: var(--muted); line-hei
 /* Small phone */
 @media (max-width: 560px) {
   :root { --section-pad: 32px; --hero-pad-y: 40px; }
-  .nav { padding: 16px 0; }
   .nav-cta .btn-cream { display: none; }
   .ps-card { padding: 12px; }
   .ps-col { padding: 24px; }
@@ -6244,7 +6320,7 @@ details.qa .a { margin-top: 14px; font-size: 16px; color: var(--muted); line-hei
   opacity: 0;
   pointer-events: none;
   transition: opacity .22s ease;
-  z-index: 999;
+  z-index: 40;
 }
 .nav-backdrop.is-open {
   opacity: 1;
@@ -6257,14 +6333,14 @@ details.qa .a { margin-top: 14px; font-size: 16px; color: var(--muted); line-hei
   top: 0;
   right: 0;
   bottom: 0;
-  width: min(360px, 88vw);
-  background: var(--bg);
-  z-index: 1000;
+  width: min(280px, 86vw);
+  background: #ffffff;
+  z-index: 50;
   display: flex;
   flex-direction: column;
   transform: translateX(100%);
   transition: transform .28s cubic-bezier(.4,0,.2,1);
-  box-shadow: -24px 0 60px -20px rgba(14,14,14,0.25);
+  box-shadow: -24px 0 60px -20px rgba(14,14,14,0.20);
   visibility: hidden;
 }
 .nav-mobile.is-open {
@@ -6305,40 +6381,59 @@ details.qa .a { margin-top: 14px; font-size: 16px; color: var(--muted); line-hei
 .nav-mobile-section {
   display: flex;
   flex-direction: column;
+  gap: 2px;
   padding: 8px 0;
-  border-bottom: 1px solid var(--hairline);
 }
-.nav-mobile-section:last-of-type {
-  border-bottom: 0;
+/* Hairline between sections — matches the dashboard sidebar's
+   .app-side-divider style (1px line, margin 4px 8px). */
+.nav-mobile-section + .nav-mobile-section::before {
+  content: "";
+  display: block;
+  height: 1px;
+  background: #ebe9e3;
+  margin: 4px 8px;
 }
+/* Mobile drawer styling — matches the /dashboard sidebar look: sans
+   serif (inherits), smaller font, muted gray inactive, dark hover bg,
+   compact section labels. */
 .nav-mobile-section-label {
   display: block;
-  font-size: 11px;
+  font-size: 10px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: #9a978f;
   font-weight: 700;
-  padding: 12px 24px 4px;
+  padding: 14px 20px 6px;
 }
 .nav-mobile-links a {
-  padding: 12px 24px;
-  font-family: var(--font-newsreader), Georgia, serif;
-  font-size: 18px;
+  padding: 10px 20px;
+  font-family: inherit;
+  font-size: 14.5px;
   font-weight: 500;
-  color: var(--ink);
-  letter-spacing: -0.01em;
+  color: #5a574e;
+  letter-spacing: 0;
   transition: background .15s ease, color .15s ease;
-  min-height: 44px;
+  min-height: 40px;
   display: flex;
   align-items: center;
+  gap: 10px;
+  border-radius: 0;
 }
+.nav-mobile-links a:hover,
 .nav-mobile-links a:active,
 .nav-mobile-links a:focus {
-  background: var(--bg-2);
-  color: var(--accent);
+  background: #f3f1ec;
+  color: var(--ink);
 }
+/* Active state — current page gets dark bg + white text, matching the
+   dashboard sidebar nav. */
+.nav-mobile-links a.active {
+  background: var(--ink);
+  color: #fff;
+}
+.nav-mobile-links a.active .nav-link-icon { color: #fff; }
 
-/* Collapsible group (Browse by dispute type) */
+/* Collapsible group (Resources expander) */
 .nav-mobile-group { padding: 0; }
 .nav-mobile-group summary {
   list-style: none;
@@ -6346,8 +6441,8 @@ details.qa .a { margin-top: 14px; font-size: 16px; color: var(--muted); line-hei
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 24px 12px;
-  min-height: 44px;
+  padding: 10px 20px;
+  min-height: 40px;
 }
 .nav-mobile-group summary::-webkit-details-marker { display: none; }
 .nav-mobile-group summary .nav-mobile-section-label { padding: 0; }
@@ -6358,9 +6453,39 @@ details.qa .a { margin-top: 14px; font-size: 16px; color: var(--muted); line-hei
 }
 .nav-mobile-group[open] .nav-mobile-chev { transform: rotate(180deg); }
 .nav-mobile-group a {
-  padding-left: 36px;
-  font-size: 16.5px;
-  color: var(--ink-2);
+  padding-left: 20px;
+  font-size: 14.5px;
+  color: #5a574e;
+}
+/* Top-level item with icon (mirrors desktop nav). */
+.nav-mobile-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: inherit;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: #5a574e;
+}
+.nav-mobile-top .nav-link-icon { color: #8b8779; }
+.nav-mobile-group summary .nav-mobile-top { font-size: 14.5px; color: #5a574e; }
+/* Sub-items inside the Resources expander */
+.nav-mobile-links .nav-mobile-sub {
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #7a7770;
+  padding: 8px 20px 8px 36px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 34px;
+  letter-spacing: 0;
+}
+.nav-mobile-links .nav-mobile-sub svg { color: #8b8779; flex-shrink: 0; }
+.nav-mobile-links .nav-mobile-all {
+  color: var(--accent);
+  font-weight: 600;
 }
 
 .nav-mobile-cta {
@@ -6377,6 +6502,88 @@ details.qa .a { margin-top: 14px; font-size: 16px; color: var(--muted); line-hei
   font-size: 15px;
   padding: 14px 18px;
 }
+/* Logged-in footer — mirrors the dashboard sidebar's .app-side-foot
+   pattern: avatar + name/email on top, secondary nav (Settings, Sign
+   out) below as compact rows with icons. Container has zero horizontal
+   padding; items handle their own left/right so they align with the
+   20px left-edge used by the main nav above. */
+.nav-mobile-foot {
+  margin-top: auto;
+  padding: 16px 0;
+  border-top: 1px solid #ebe9e3;
+}
+.nav-mobile-foot-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 10px;
+  padding: 0 20px;
+}
+.nav-mobile-foot-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #ebe9e3;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.nav-mobile-foot-avatar-fallback {
+  display: grid;
+  place-items: center;
+  font-weight: 600;
+  font-size: 14px;
+  color: #5a574e;
+}
+.nav-mobile-foot-meta {
+  flex: 1;
+  min-width: 0;
+}
+.nav-mobile-foot-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.nav-mobile-foot-email {
+  font-size: 12px;
+  color: #7a7770;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.nav-mobile-foot-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  margin-top: 4px;
+}
+.nav-mobile-foot-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 20px;
+  border-radius: 0;
+  color: #5a574e;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background .15s ease, color .15s ease;
+}
+.nav-mobile-foot-link:hover {
+  background: #f3f1ec;
+  color: var(--ink);
+}
+.nav-mobile-foot-link.active {
+  background: var(--ink);
+  color: #fff;
+}
+.nav-mobile-foot-link svg {
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+.nav-mobile-foot-link.active svg { opacity: 1; }
 
 /* Show hamburger and hide desktop nav links + ctas at the same breakpoint */
 @media (max-width: 960px) {
@@ -6394,6 +6601,13 @@ details.qa .a { margin-top: 14px; font-size: 16px; color: var(--muted); line-hei
   display: flex;
   align-items: center;
   gap: 8px;
+}
+/* On mobile, the user panel must hide alongside the rest of .nav-cta.
+   Source order makes `.nav-user-wrap { display: flex }` above win over
+   the earlier `.nav-cta { display: none }` at the same specificity, so
+   this explicit hide goes after the rule it needs to defeat. */
+@media (max-width: 960px) {
+  .nav-user-wrap { display: none; }
 }
 
 .nav-user-trigger {
@@ -7697,7 +7911,25 @@ details.qa .a { margin-top: 14px; font-size: 16px; color: var(--muted); line-hei
 /* Responsive */
 @media (max-width: 1100px) {
   .dl-hero-v2-grid { grid-template-columns: 1fr; gap: 48px; }
-  .dl-hero-v2-visual { order: -1; }
+  /* Visual sits BELOW the copy on stacked layout. */
+  .dl-hero-v2-visual { order: 1; }
+}
+/* Scale the fanned letter cards down so two 420px pages stop blowing
+   past the viewport on phones. transform-origin top centers the
+   shrunken composition under the copy. */
+@media (max-width: 720px) {
+  .dl-hero-v2 .ll-fan {
+    transform: scale(0.7);
+    transform-origin: top center;
+    margin-bottom: -120px;
+    padding: 14px 0;
+  }
+}
+@media (max-width: 480px) {
+  .dl-hero-v2 .ll-fan {
+    transform: scale(0.55);
+    margin-bottom: -180px;
+  }
 }
 @media (max-width: 720px) {
   .dl-hero-v2-trust { grid-template-columns: repeat(2, 1fr); }
@@ -8759,8 +8991,8 @@ details.qa .a { margin-top: 14px; font-size: 16px; color: var(--muted); line-hei
   position: absolute;
   bottom: 24px;
   right: 24px;
-  width: 120px;
-  height: 120px;
+  width: 96px;
+  height: 96px;
   object-fit: contain;
   pointer-events: none;
 }
@@ -9163,68 +9395,16 @@ details.qa .a { margin-top: 14px; font-size: 16px; color: var(--muted); line-hei
 .dl-incl-letter-body p { margin: 0 0 14px; }
 .dl-incl-letter-body p strong { font-weight: 700; }
 
-/* Official seal */
-.dl-incl-seal {
+/* Official seal — right of the TO/address block in the letter mockup */
+.dl-incl-seal-img {
   position: absolute;
-  top: 100px;
-  right: -28px;
-  width: 96px;
-  height: 96px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  top: 120px;
+  right: 24px;
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  pointer-events: none;
 }
-.dl-incl-seal-ring {
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  border: 1.5px solid #c9a961;
-  background: #ffffff;
-}
-.dl-incl-seal-ring::before,
-.dl-incl-seal-ring::after {
-  content: "";
-  position: absolute;
-  inset: 5px;
-  border-radius: 50%;
-  border: 1px dashed rgba(201, 169, 97, 0.6);
-}
-.dl-incl-seal-ring::after {
-  inset: 9px;
-  border: none;
-  background:
-    radial-gradient(circle at center, transparent 60%, rgba(201, 169, 97, 0.1) 60%);
-}
-.dl-incl-seal-top,
-.dl-incl-seal-bot {
-  position: absolute;
-  left: 0;
-  right: 0;
-  text-align: center;
-  font-size: 8px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  color: #c9a961;
-  font-family: var(--font-sans, system-ui), sans-serif;
-}
-.dl-incl-seal-top { top: 10px; }
-.dl-incl-seal-bot { bottom: 10px; }
-.dl-incl-seal-center {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  z-index: 1;
-}
-.dl-incl-seal-center span {
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: var(--ink);
-  font-family: var(--font-newsreader), Georgia, serif;
-}
-.dl-incl-seal-center svg { color: #c9a961; }
 
 /* Right: trust list — single bordered card with internal hairline dividers */
 .dl-incl-trust {
@@ -11420,4 +11600,71 @@ details.qa .a { margin-top: 14px; font-size: 16px; color: var(--muted); line-hei
   min-height: 48px;
   display: inline-flex;
   align-items: center;
+}
+
+/* ===========================================================
+   Mobile fixes for inline-grid sections that lacked breakpoints.
+   The grids these target are written with inline style props, so
+   the only way to override them is with !important (higher
+   specificity won't beat a style attribute).
+   =========================================================== */
+@media (max-width: 768px) {
+  /* Home page "Why we exist" — 1.1fr / 1fr → stack */
+  .why-exist-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  /* /small-claims "Three ways to move forward" — 1.85fr / 1fr → stack */
+  .move-forward-grid {
+    grid-template-columns: 1fr !important;
+  }
+  /* The quote panel loses its left divider when stacked */
+  .move-forward-quote {
+    border-left: 0 !important;
+    border-top: 1px solid #1f1f1f;
+    padding: 24px !important;
+  }
+}
+@media (max-width: 560px) {
+  /* CTA-step cards inside the move-forward block — 3-col → 1-col */
+  .move-forward-cards {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Hero gauge inside the home page hero animation card. 160px square
+   on desktop crowds 320px viewports — scale down on mobile. */
+@media (max-width: 720px) {
+  .hero-anim { grid-template-columns: 1fr; gap: 12px; min-height: 0; }
+  .hero-anim-gauge { width: 120px; height: 120px; }
+}
+@media (max-width: 480px) {
+  .hero-anim-gauge { width: 96px; height: 96px; }
+}
+
+/* Home page JusticeGapCombo (Why we exist visual). On desktop the two
+   cards sit side by side overlapping and tilted. On phones they need
+   to stack vertically and lose the overlap so neither overflows the
+   viewport. */
+@media (max-width: 768px) {
+  .justice-gap-combo {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 0 !important;
+    gap: 24px;
+    padding-bottom: 8px !important;
+  }
+  .justice-gap-combo .jg-card-wrap,
+  .justice-gap-combo .jg-cert-wrap {
+    transform: none !important;
+    margin: 0 !important;
+    max-width: 100%;
+  }
+  /* Cap the inner card widths so they fit on the narrowest phones. */
+  .justice-gap-combo .jg-card-wrap > div,
+  .justice-gap-combo .jg-cert-wrap > div {
+    width: 100% !important;
+    max-width: 320px;
+  }
 }

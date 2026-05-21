@@ -10,7 +10,7 @@
 }
 
 .app-side {
-  background: #fff;
+  background: #ffffff;
   border-right: 1px solid #ebe9e3;
   padding: 24px 18px;
   display: flex;
@@ -59,7 +59,7 @@
   border-radius: 6px;
   text-decoration: none;
   color: #5a574e;
-  font-size: 14px;
+  font-size: 14.5px;
   font-weight: 500;
   transition: background 0.15s ease, color 0.15s ease;
   display: flex;
@@ -1499,7 +1499,7 @@ button.app-link:disabled {
   display: none;
 }
 .app-mobile-bar-logo {
-  width: 130px;
+  width: 144px;
   height: auto;
   display: block;
 }
@@ -1547,6 +1547,18 @@ button.app-link:disabled {
   display: contents;
 }
 
+/* Drawer close button — hidden on desktop, only visible inside the
+   mobile drawer. Mobile rule sets display: grid. */
+.app-side-close { display: none; }
+
+/* Desktop spacing: the first nav block (Dashboard + services) sits a
+   touch below the brand header. Mobile drops this since the brand
+   row already has its own bottom border. */
+.app-nav-first { margin-top: 14px; }
+@media (max-width: 900px) {
+  .app-nav-first { margin-top: 0; }
+}
+
 @media (max-width: 900px) {
   .app-shell {
     grid-template-columns: 1fr;
@@ -1572,19 +1584,82 @@ button.app-link:disabled {
     position: fixed;
     top: 0;
     bottom: 0;
-    left: 0;
+    right: 0;
     width: min(280px, 86vw);
     z-index: 50;
-    transform: translateX(-100%);
-    transition: transform .28s cubic-bezier(.4, 0, .2, 1);
-    box-shadow: 24px 0 60px -20px rgba(14, 14, 14, 0.2);
+    transform: translateX(100%);
+    transition: transform .28s cubic-bezier(.4, 0, .2, 1), visibility 0s .28s;
+    box-shadow: -24px 0 60px -20px rgba(14, 14, 14, 0.20);
+    visibility: hidden;
   }
-  .app-side-wrap.is-open { transform: translateX(0); }
+  .app-side-wrap.is-open {
+    transform: translateX(0);
+    visibility: visible;
+    transition: transform .28s cubic-bezier(.4, 0, .2, 1);
+  }
 
   .app-side {
     height: 100vh;
-    border-right: 1px solid #ebe9e3;
+    border-right: 0;
+    border-left: 1px solid #ebe9e3;
     box-shadow: none;
+    /* Drop the outer 24px/18px container padding on mobile so item-level
+       padding (10px 20px) is the only horizontal indent, matching the
+       consumer drawer's text alignment exactly. */
+    padding: 0;
+    gap: 0;
+  }
+  /* Brand row inside the drawer: logo on the left, close button on
+     the right, hairline below — matching the consumer drawer. */
+  .app-side-brand {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 18px 20px;
+    margin-bottom: 0;
+    border-bottom: 1px solid #ebe9e3;
+  }
+  .app-side-brand .app-brand-logo { width: 140px; }
+  .app-side-close {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    color: var(--ink, #111);
+    border-radius: 8px;
+    transition: background .15s ease;
+    flex-shrink: 0;
+  }
+  .app-side-close:hover { background: #f3f1ec; }
+
+  /* Match consumer drawer item padding (logged-out style) on mobile. */
+  .app-nav a,
+  .app-nav-cta {
+    padding: 10px 20px !important;
+    /* Full-width hover / active background (no rounded corners on
+       mobile), matching the consumer drawer. */
+    border-radius: 0;
+  }
+  /* Section labels indent matches consumer's 20px on mobile (was 12px). */
+  .app-nav-section-label { padding: 14px 20px 6px; }
+  /* Each nav block uses the same vertical padding as a consumer section. */
+  .app-nav { padding: 8px 0; }
+  /* Dividers use the same 1px line + margin 4px 8px as consumer. */
+  .app-side-divider { margin: 4px 8px; }
+  /* Footer: container has zero horizontal padding; items align to 20px
+     from the drawer edge via their own padding, matching main nav. */
+  .app-side-foot {
+    padding: 16px 0;
+    margin-top: auto;
+  }
+  .app-user { padding: 0 20px; }
+  .app-foot-link {
+    padding: 7px 20px;
+    border-radius: 0;
   }
 
   .app-main {
