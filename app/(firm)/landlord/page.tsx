@@ -77,7 +77,7 @@ export default async function Landlord2() {
           </p>
         </div>
         <article style={{ background: C.cream, border: `1px solid ${C.line}`, borderRadius: RAD.large, padding: "32px 40px" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "auto 1fr auto", gap: 22, alignItems: "center", marginBottom: 28 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 22, alignItems: "center", marginBottom: 28 }}>
             <div style={{ width: 56, height: 56, borderRadius: "50%", background: "#fff", display: "grid", placeItems: "center", color: C.accent, boxShadow: "0 1px 0 rgba(0,0,0,0.04)" }}>
               <FileText size={26} strokeWidth={1.8} aria-hidden />
             </div>
@@ -87,11 +87,6 @@ export default async function Landlord2() {
                 Pick the one that fits your situation. Each links to a state-specific guide.
               </div>
             </div>
-            <button type="button" aria-label="Collapse" style={{ background: "transparent", border: "none", padding: 8, cursor: "pointer", color: C.muted, display: "grid", placeItems: "center" }}>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                <path d="m18 15-6-6-6 6" />
-              </svg>
-            </button>
           </div>
 
           <div style={{ background: "#fff", borderRadius: RAD.panel, padding: "10px 8px" }}>

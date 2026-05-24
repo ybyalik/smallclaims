@@ -130,48 +130,10 @@ export default async function CaseScore2() {
           </p>
         </div>
 
-        {/* Required disclosure — quiz results look like advice; this makes clear they're not. */}
-        <div
-          style={{
-            maxWidth: 720,
-            margin: "24px auto 0",
-            padding: "14px 18px",
-            background: C.cream,
-            border: `1px solid ${C.line}`,
-            borderLeft: `3px solid ${C.accent}`,
-            borderRadius: 8,
-            font: `13px/1.5 ${BODY_FONT}`,
-            color: C.muted,
-          }}
-        >
-          <strong style={{ color: C.fg }}>This is general information, not legal advice.</strong>{" "}
-          Results are based on the inputs you provide and CivilCase&rsquo;s general legal
-          information about small-claims courts. They are not tailored to your specific
-          situation, do not predict any outcome, and are not a substitute for advice from a
-          licensed attorney in your state.
-        </div>
-
         <Suspense fallback={null}>
           <QuizForm states={STATES} stateFacts={facts} />
         </Suspense>
       </div>
-
-      {/* TRUST STRIP */}
-      <section style={{ padding: `100px ${PAD_X}` }}>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 32, paddingTop: 40, borderTop: `1px solid ${C.line}` }}>
-          {[
-            ["50 states", "Statute-of-limitations and cap data for every state plus DC."],
-            ["No signup", "No email, no account. The score is yours to keep or toss."],
-            ["Plain English", "We don't use words like 'tort' or 'pecuniary' without explaining them."],
-            ["Not legal advice", "Educational tool, not a substitute for an attorney consultation."],
-          ].map(([t, d], i) => (
-            <div key={t} style={{ paddingLeft: i ? 24 : 0, borderLeft: i ? `1px solid ${C.line}` : "none" }}>
-              <div style={{ font: `600 18px/1.2 ${HEAD_FONT}`, color: C.fg, letterSpacing: "-0.005em" }}>{t}</div>
-              <p style={{ ...body, marginTop: 10, fontSize: 14 }}>{d}</p>
-            </div>
-          ))}
-        </div>
-      </section>
     </main>
   );
 }

@@ -16,9 +16,10 @@ import ClaimExplorer from "../../../../components/widgets/ClaimExplorer";
 //   1. v2 (markdown body) → FirmStateGuidePage (firm prose + firm sidebar)
 //   2. v1 (structured data) → fully re-skinned inline render below
 
-export function generateStaticParams() { return []; }
-export const dynamicParams = true;
-export const revalidate = false;
+// Layout calls Supabase auth via cookies() so this route can't be
+// statically generated; ISR with revalidate=false caused
+// "Page changed from static to dynamic at runtime" 500s in production.
+export const dynamic = "force-dynamic";
 
 type Params = { params: { state: string } };
 

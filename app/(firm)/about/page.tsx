@@ -239,45 +239,6 @@ export default function About2() {
         </div>
       </section>
 
-      {/* ─── FOUNDER (dark) ─── */}
-      <section style={{ background: C.dark, color: "#fff", padding: `140px ${PAD_X}` }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr", gap: 80, alignItems: "center" }}>
-          <div style={{ position: "relative" }}>
-            <EditorialPhoto
-              src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=640&h=800&fit=crop"
-              ratio="4 / 5"
-            />
-            <div style={{ position: "absolute", top: -20, right: -20 }}>
-              <WaxSeal size={80} label="FOUNDER" color={C.accentOnDark} />
-            </div>
-          </div>
-          <div>
-            <div style={{ ...eyebrow, color: C.accentOnDark, marginBottom: 22 }}>※ A NOTE FROM THE FOUNDER</div>
-            <h2 className="firm-h firm-h-light" style={{ font: `500 56px/1.04 ${HEAD_FONT}`, color: "#fff", letterSpacing: "-0.03em", margin: 0 }}>
-              Designed by lawyers.<br />For people <em>representing themselves.</em>
-            </h2>
-            <p style={{ font: `17px/1.65 ${BODY_FONT}`, color: "rgba(255,255,255,0.78)", marginTop: 32, maxWidth: 580 }}>
-              I spent fifteen years inside courthouses watching working people lose claims they
-              should have won. Not because the law was against them, but because no one had
-              explained the procedure in plain English. Filing a small claim isn&rsquo;t hard once
-              you know how. The system just doesn&rsquo;t make it easy.
-            </p>
-            <p style={{ font: `16px/1.65 ${BODY_FONT}`, color: "rgba(255,255,255,0.65)", marginTop: 18, maxWidth: 580 }}>
-              CivilCase is a self-help tool, not a law firm. We don&rsquo;t represent you and we
-              can&rsquo;t give legal advice about your specific case. What we built is software that
-              takes the templates, forms, and procedure licensed attorneys use every day and turns
-              them into something you can use yourself, assembled around the facts you enter and
-              the rules in your state.
-            </p>
-            <div style={{ display: "flex", alignItems: "baseline", gap: 18, marginTop: 36, paddingTop: 28, borderTop: "1px solid rgba(255,255,255,0.15)" }}>
-              <div style={{ font: `italic 28px/1 ${HEAD_FONT}`, color: C.accentOnDark }}>Yury Bystik</div>
-              <div style={{ height: 14, width: 1, background: "rgba(255,255,255,0.25)" }} />
-              <div style={{ font: `13px/1.4 ${BODY_FONT}`, color: "rgba(255,255,255,0.55)" }}>Founder · CA Bar 281044 (in business capacity, not as your attorney)</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ─── FOUR PRINCIPLES (final section, nothing after) ─── */}
       <section style={{ padding: `140px ${PAD_X}` }}>
         <div style={{ textAlign: "center", marginBottom: 80 }}>

@@ -70,12 +70,36 @@
 
 /* ── Mobile (≤ 720px): everything to 1 column, smaller padding ── */
 @media (max-width: 720px) {
-  :root { --firm-pad-x: 24px; }
+  :root { --firm-pad-x: 20px; }
 
+  /* Universal: any grid-template-columns falls to 1 column.
+     The SiteHeader's mega panels are scoped under <header>, not <main>,
+     so this collapse only affects content grids. */
   .firm-page main [style*="grid-template-columns"] {
     grid-template-columns: 1fr !important;
     gap: 24px !important;
   }
+  /* Exception: row-style link grids (category links, state-search rows)
+     are deliberately built as `auto 1fr auto` shapes where each cell is
+     a single line. Stacking them creates 3-4 visual rows per item which
+     wastes screen height. Preserve the grid layout instead. */
+  .firm-page main .firm-cat-link {
+    grid-template-columns: auto 1fr auto !important;
+    gap: 12px !important;
+  }
+  .firm-page main .firm-row-link {
+    grid-template-columns: 36px 1fr auto 18px !important;
+    gap: 10px !important;
+    padding: 12px 14px !important;
+  }
+  .firm-page main .firm-row-link [style*="font: 600 18px"] {
+    font-size: 15px !important;
+  }
+  /* 4-up grids stack 1-per-row on mobile. They were briefly 2-col to
+     preserve rhythm but the rich PROCESS step cards ("From your facts
+     to filed") feel cramped at 2-col. Let the universal 1fr above
+     apply; 480px breakpoint can still drop them back to 2-col for
+     compact stat strips. */
 
   /* Section padding eases up */
   .firm-page main section[style*="120px"] { padding-top: 64px !important; padding-bottom: 64px !important; }
@@ -94,15 +118,349 @@
     border-left: none !important;
   }
 
-  /* Header nav mega-menu chrome — hide the right-side nav on tiny screens
-     so the brand stays visible. (Real hamburger menu is a TODO.) */
-  .firm-page > header > div > nav { display: none !important; }
-  .firm-page > header > div > div:last-child { gap: 10px !important; }
+  /* Fixed-height hero right columns shrink so they don't blow up the viewport */
+  .firm-page main [style*="min-height: 580"],
+  .firm-page main [style*="min-height:580"],
+  .firm-page main [style*="min-height: 600"],
+  .firm-page main [style*="min-height:600"],
+  .firm-page main [style*="min-height: 480"],
+  .firm-page main [style*="min-height:480"],
+  .firm-page main [style*="height: 580"],
+  .firm-page main [style*="height:580"] {
+    min-height: 0 !important;
+    height: auto !important;
+  }
 
-  /* Footer columns stack */
-  .firm-page footer [style*="grid-template-columns"] {
+  /* Fixed-width visuals scale down to fit the viewport */
+  .firm-page main [style*="width: 460"],
+  .firm-page main [style*="width:460"],
+  .firm-page main [style*="width: 410"],
+  .firm-page main [style*="width:410"],
+  .firm-page main [style*="width: 400"],
+  .firm-page main [style*="width:400"],
+  .firm-page main [style*="width: 380"],
+  .firm-page main [style*="width:380"],
+  .firm-page main [style*="width: 360"],
+  .firm-page main [style*="width:360"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    transform: none !important;
+  }
+
+  /* Yury portrait + similar circle frames: cap diameter and center */
+  .firm-page main [style*="aspect-ratio:1 / 1"],
+  .firm-page main [style*="aspect-ratio: 1 / 1"] {
+    max-width: 220px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* State-guide tables overflow on narrow screens — wrap them in a
+     horizontal scroller via the wrapping article element. */
+  .firm-page main .firm-sg-article { overflow-x: auto; }
+  .firm-page main .firm-sg-article table {
+    font-size: 13px !important;
+    min-width: 480px;
+  }
+  .firm-page main .firm-sg-article thead th,
+  .firm-page main .firm-sg-article tbody td {
+    padding: 10px 12px !important;
+  }
+  .firm-page main .firm-sg-article h2 { font-size: 28px !important; margin-top: 36px !important; }
+  .firm-page main .firm-sg-article h3 { font-size: 20px !important; margin-top: 28px !important; }
+  .firm-page main .firm-sg-article { font-size: 15.5px !important; line-height: 1.7 !important; }
+
+  /* Annotated-letter grid (1.2fr / 240px callouts) → stack with no leader lines */
+  .firm-page main [style*="minmax(0, 1fr) 240px"] {
     grid-template-columns: 1fr !important;
-    gap: 32px !important;
+    column-gap: 0 !important;
+  }
+  .firm-page main .firm-anno-callout::before,
+  .firm-page main .firm-anno-callout::after { display: none !important; }
+
+  /* Demand-letter dashboard mockup (legacy dl-bento-dash CSS classes) */
+  .firm-page main .dl-bento-dash {
+    grid-template-columns: 1fr !important;
+  }
+  .firm-page main .dl-bento-dash-side { display: none !important; }
+  .firm-page main .dl-bento-dash-phases { flex-wrap: wrap !important; gap: 6px !important; padding: 12px !important; }
+  .firm-page main .dl-bento-dash-phases li { font-size: 11px !important; padding: 4px 8px !important; }
+  .firm-page main .dl-bento-dash-body { grid-template-columns: 1fr !important; }
+
+  /* Compact-row patterns (auto 60px 1fr auto, 80px 32px ...) re-flow */
+  .firm-page main [style*="80px 32px"],
+  .firm-page main [style*="auto 60px"],
+  .firm-page main [style*="120px 1fr 160px"],
+  .firm-page main [style*="90px 1fr 130px"] {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+
+  /* Time-log table inside evidence cells — keep dense columns but shrink */
+  .firm-page main [style*="1fr 50px 50px 50px"] {
+    font-size: 11px !important;
+  }
+
+  /* CTA bars built with flex (Ready to send your letter, etc.) — vertical
+     divider hides because justify-content shifts when the bar wraps.
+     Catch both direct children and nested 1-px aria-hidden lines that
+     live inside a wrapped right-block. */
+  .firm-page main [style*="space-between"][style*="flex-wrap: wrap"] > div[aria-hidden],
+  .firm-page main [style*="space-between"][style*="flex-wrap: wrap"] [aria-hidden][style*="width: 1"],
+  .firm-page main [style*="space-between"][style*="flex-wrap: wrap"] [aria-hidden][style*="width:1"] {
+    display: none !important;
+  }
+
+  /* Orphan vertical dividers when grids collapse to 1col: any inline
+     border-left becomes an orphan left line. Strip them and pull any
+     inset padding back to 0 so wrapped/stacked rows align cleanly with
+     the section's left edge. Covers PROCESS step cards, hero stat
+     strips, "cases closed / verdicts" rows, and anything else that
+     leans on a sibling border on desktop. */
+  .firm-page main [style*="border-left"] {
+    border-left: none !important;
+    padding-left: 0 !important;
+  }
+
+  /* Hero stat strips often stack as a flex row with paddingLeft inset
+     between siblings. When wrapping, drop the right padding too so
+     each cell hugs the left edge. */
+  .firm-page main [style*="flex-wrap: wrap"] > [style*="padding-left"],
+  .firm-page main [style*="flex-wrap:wrap"] > [style*="padding-left"] {
+    padding-right: 0 !important;
+  }
+
+  /* Flex-wrap rows without an explicit gap (e.g., the hero 4-stat strip)
+     end up with rows touching when items reflow. Add a row-gap fallback;
+     inline `gap` declarations override this without !important. */
+  .firm-page main [style*="flex-wrap: wrap"],
+  .firm-page main [style*="flex-wrap:wrap"] {
+    row-gap: 16px;
+  }
+
+  /* Section heading inside step cards (4-up "From your facts to filed")
+     uses inline 28px which is too large under a 1col stack. */
+  .firm-page main .firm-step [style*="font: 600 28px"] {
+    font-size: 22px !important;
+    min-height: 0 !important;
+  }
+
+  /* Dark CTA bar ("Ready to send your letter?"): vertically stacked,
+     centered, smaller heading, no orphan dividers. */
+  .firm-page main .firm-cta-bar {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center;
+    padding: 28px 22px !important;
+    gap: 20px !important;
+  }
+  .firm-page main .firm-cta-bar > div {
+    width: 100%;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 14px !important;
+    text-align: center;
+  }
+  /* The right block contains a nested div with `alignItems: flex-end`
+     (button + caption). On mobile, center that nested column too. */
+  .firm-page main .firm-cta-bar > div > div {
+    align-items: center !important;
+    text-align: center;
+  }
+  .firm-page main .firm-cta-bar h2,
+  .firm-page main .firm-cta-bar .firm-h {
+    font-size: 24px !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+    white-space: normal !important;
+  }
+
+  /* Category portrait rows ("Security deposit" + "$3K-$10K") deliberately
+     ship as a 2-col grid (`1fr 70px`) so the title and recovery range
+     sit on one line. Preserve that shape on mobile too — the universal
+     1-col override above would stack them. */
+  .firm-page main [style*="1fr 70px"] {
+    grid-template-columns: 1fr auto !important;
+    gap: 12px !important;
+  }
+  /* Hide ONLY the orphan vertical divider (the 1-px aria-hidden line
+     between the right block's content). Don't catch lucide icons that
+     also carry aria-hidden — those should stay visible. */
+  .firm-page main .firm-cta-bar [aria-hidden][style*="width: 1"],
+  .firm-page main .firm-cta-bar [aria-hidden][style*="width:1"] {
+    display: none !important;
+  }
+
+  /* Hero spec strip ("From $29 / 24 hours / USPS Certified / All 50
+     states"): on desktop it's a flex row with borderLeft separators.
+     On mobile, switch to a 2x2 grid with proper gap so icons and text
+     don't crowd each other. */
+  .firm-page main .firm-hero-stats {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    column-gap: 24px !important;
+    row-gap: 20px !important;
+  }
+  .firm-page main .firm-hero-stats > div {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    border-left: none !important;
+  }
+
+  /* ── Cross-cutting mobile fixes (apply to every firm page) ──────────
+     These cover patterns that recur across multiple pages so we don't
+     have to add a class to every single inline element. */
+
+  /* Heading-styled <div> elements (large font via `font:` shorthand)
+     don't get caught by the h1/h2 clamp above. Two ranges so big-number
+     stats stay prominent while heading-sized divs shrink. */
+  .firm-page main [style*="font: 600 28px"],
+  .firm-page main [style*="font: 500 28px"],
+  .firm-page main [style*="font: 600 30px"],
+  .firm-page main [style*="font: 700 30px"],
+  .firm-page main [style*="font: 500 32px"],
+  .firm-page main [style*="font: 600 32px"],
+  .firm-page main [style*="font: 700 32px"],
+  .firm-page main [style*="font: 500 38px"],
+  .firm-page main [style*="font: 300 40px"],
+  .firm-page main [style*="font: 500 40px"],
+  .firm-page main [style*="font: 500 44px"],
+  .firm-page main [style*="font: 600 44px"] {
+    font-size: clamp(22px, 6vw, 30px) !important;
+    line-height: 1.2 !important;
+    white-space: normal !important;
+  }
+  /* Stat numbers (46-80 px) — still prominent on mobile, just not
+     viewport-bursting. */
+  .firm-page main [style*="font: 500 46px"],
+  .firm-page main [style*="font: 400 italic 48px"],
+  .firm-page main [style*="font: 500 56px"],
+  .firm-page main [style*="font: 500 60px"],
+  .firm-page main [style*="font: 600 64px"],
+  .firm-page main [style*="font: 700 64px"],
+  .firm-page main [style*="font: 300 72px"],
+  .firm-page main [style*="font: 600 80px"] {
+    font-size: clamp(30px, 9vw, 46px) !important;
+    line-height: 1.05 !important;
+    white-space: normal !important;
+  }
+
+  /* Strip whiteSpace: nowrap on any heading on mobile so long titles
+     wrap rather than escape the viewport. */
+  .firm-page main h1,
+  .firm-page main h2,
+  .firm-page main h3,
+  .firm-page main [class*="firm-h"] {
+    white-space: normal !important;
+  }
+
+  /* Inner-panel padding shrink: many inline cards/panels use 40-80px
+     padding which feels like an empty gutter on mobile. Pull them all
+     down to ~24px. Skip 36 and lower; those are already mobile-friendly. */
+  .firm-page main [style*="padding: 80"],
+  .firm-page main [style*="padding:80"],
+  .firm-page main [style*="padding: 70"],
+  .firm-page main [style*="padding:70"],
+  .firm-page main [style*="padding: 60"],
+  .firm-page main [style*="padding:60"],
+  .firm-page main [style*="padding: 56"],
+  .firm-page main [style*="padding:56"],
+  .firm-page main [style*="padding: 50"],
+  .firm-page main [style*="padding:50"],
+  .firm-page main [style*="padding: 48"],
+  .firm-page main [style*="padding:48"],
+  .firm-page main [style*="padding: 44"],
+  .firm-page main [style*="padding:44"],
+  .firm-page main [style*="padding: 40"],
+  .firm-page main [style*="padding:40"],
+  .firm-page main [style*="padding: 38"],
+  .firm-page main [style*="padding:38"] {
+    padding: 22px !important;
+  }
+
+  /* Compact row grids (FirmIssueTemplate damages tables, etc.) that
+     should preserve their layout on mobile. */
+  .firm-page main [style*="90px 1fr 130px"] {
+    grid-template-columns: 60px 1fr auto !important;
+    gap: 10px !important;
+  }
+  .firm-page main [style*="28px 1fr auto auto"] {
+    grid-template-columns: 22px 1fr auto !important;
+    gap: 8px !important;
+  }
+  .firm-page main [style*="44px 1fr 1.4fr"] {
+    grid-template-columns: 36px 1fr !important;
+    gap: 10px !important;
+  }
+
+  /* Big serif numbers (e.g. $4.5K, $18M) scale on tiny screens */
+  .firm-page main [style*="font-size:88px"],
+  .firm-page main [style*="font-size: 88px"],
+  .firm-page main [style*="font-size:80px"],
+  .firm-page main [style*="font-size: 80px"],
+  .firm-page main [style*="font-size:96px"],
+  .firm-page main [style*="font-size: 96px"] {
+    font-size: 48px !important;
+  }
+
+  .firm-page main [style*="font-size:64px"],
+  .firm-page main [style*="font-size: 64px"] {
+    font-size: 40px !important;
+  }
+
+  /* Footer: brand spans the full top row; Product + Company sit beneath
+     as a 2-col sub-grid. Everything centered on mobile. */
+  .firm-page footer { padding-left: 24px !important; padding-right: 24px !important; text-align: center; }
+
+  .firm-page footer .firm-footer-top {
+    grid-template-columns: 1fr 1fr !important;
+    column-gap: 24px !important;
+    row-gap: 36px !important;
+  }
+  .firm-page footer .firm-footer-brand {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .firm-page footer .firm-footer-brand-p {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .firm-page footer .firm-footer-social {
+    justify-content: center;
+  }
+
+  /* Footer bottom strip: copyright on one line above; legal links below. */
+  .firm-page footer .firm-footer-bottom {
+    flex-direction: column !important;
+    gap: 10px !important;
+    align-items: center !important;
+    text-align: center;
+  }
+  .firm-page footer .firm-footer-copy { white-space: nowrap; }
+  .firm-page footer .firm-footer-legal-links { justify-content: center; }
+
+  /* Anything trying to be a 320px sidebar / aside collapses */
+  .firm-page main aside[style*="width:320"],
+  .firm-page main aside[style*="width: 320"] {
+    width: 100% !important;
+  }
+
+  /* Editorial photo gallery (3-col 1.2fr 1fr 0.9fr) stacks */
+  .firm-page main [style*="1.2fr 1fr 0.9fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Inner panel padding: the dark "your case, all in one place" panel
+     and similar cream/dark slabs use padding: 80 (or 50). On mobile that
+     creates a big empty gutter around the content. Shrink it. */
+  .firm-page main [style*="padding: 80"],
+  .firm-page main [style*="padding:80"],
+  .firm-page main [style*="padding: 50"],
+  .firm-page main [style*="padding:50"] {
+    padding: 28px !important;
   }
 }
 
@@ -117,5 +475,24 @@
 
   .firm-page main details > summary {
     gap: 12px !important;
+  }
+
+  /* 4-up grids stay as 1 column on very narrow screens too — keeps the
+     PROCESS step cards ("From your facts to filed") and similar rich
+     4-card grids spacious. Compact stat strips that benefit from 2-col
+     should use the .firm-hero-stats class instead. */
+
+  /* Stat cards: drop borders, reduce font */
+  .firm-page main [style*="font-size:46px"],
+  .firm-page main [style*="font-size: 46px"] {
+    font-size: 32px !important;
+  }
+
+  /* Pricing card padding tightens (currently 48px / 40px) */
+  .firm-page main [style*="padding: 48"],
+  .firm-page main [style*="padding:48"],
+  .firm-page main [style*="padding: 40"],
+  .firm-page main [style*="padding:40"] {
+    padding: 24px !important;
   }
 }

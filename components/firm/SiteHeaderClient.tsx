@@ -105,51 +105,70 @@ export function SiteHeaderClient({ user }: { user: SiteHeaderUser | null }) {
       .firm-mega-row:hover { background: ${C.cream}; }
       .firm-mega-row:hover .firm-mega-icon { background: rgba(184,51,31,0.14) !important; }
 
-      /* ── Mobile drawer (≤980px) ────────────────────────────────── */
-      .firm-nav-burger { display: none; background: transparent; border: none; cursor: pointer; padding: 8px; gap: 5px; flex-direction: column; }
-      .firm-nav-burger span { display: block; width: 22px; height: 2px; background: ${C.fg}; border-radius: 2px; transition: transform 0.2s ease, opacity 0.2s ease; }
+      /* ── Mobile drawer (≤980px) ──────────────────────────────────
+         Visual tokens (width, shadow, timing, active state, hover, ink color)
+         live in :root inside globals.css so the dashboard sidebar drawer
+         can consume the exact same values. Change once, both update. */
+      .firm-nav-burger {
+        display: none;
+        width: 44px; height: 44px;
+        background: transparent; border: 0; padding: 0; cursor: pointer;
+        flex-direction: column; align-items: center; justify-content: center;
+        gap: 5px;
+        border-radius: 8px;
+        transition: background 0.15s ease;
+      }
+      .firm-nav-burger:hover { background: #f3f1ec; }
+      .firm-nav-burger span { display: block; width: 22px; height: 2px; background: var(--drawer-item-color); border-radius: 2px; transition: transform 0.22s ease, opacity 0.15s ease; }
       .firm-nav-burger.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
       .firm-nav-burger.is-open span:nth-child(2) { opacity: 0; }
       .firm-nav-burger.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
       .firm-mobile-backdrop {
-        position: fixed; inset: 0; background: rgba(15,12,8,0.45);
+        position: fixed; inset: 0; background: var(--drawer-backdrop);
         opacity: 0; pointer-events: none; transition: opacity 0.2s ease;
-        z-index: 60;
+        z-index: var(--drawer-z-backdrop);
       }
       .firm-mobile-backdrop.is-open { opacity: 1; pointer-events: auto; }
 
       .firm-mobile-drawer {
-        position: fixed; top: 0; right: 0; height: 100vh; width: min(86vw, 320px);
-        background: #fff; z-index: 70;
+        position: fixed; top: 0; right: 0; height: 100vh; width: var(--drawer-width);
+        background: var(--drawer-bg); z-index: var(--drawer-z-panel);
         display: flex; flex-direction: column;
-        transform: translateX(100%); transition: transform 0.25s ease;
-        box-shadow: -8px 0 32px rgba(15,12,8,0.16);
+        transform: translateX(100%); transition: transform var(--drawer-timing);
+        box-shadow: var(--drawer-shadow);
         overflow-y: auto;
       }
       .firm-mobile-drawer.is-open { transform: translateX(0); }
-      .firm-mobile-head { display: flex; align-items: center; justify-content: space-between; padding: 18px 22px; border-bottom: 1px solid ${C.line}; }
-      .firm-mobile-close { background: transparent; border: none; cursor: pointer; padding: 6px; color: ${C.fg}; display: inline-flex; }
+      .firm-mobile-head { display: flex; align-items: center; justify-content: space-between; padding: 18px 20px; border-bottom: 1px solid var(--drawer-line); }
+      .firm-mobile-close {
+        width: 44px; height: 44px;
+        display: grid; place-items: center;
+        background: transparent; border: 0; cursor: pointer;
+        color: var(--drawer-item-color); border-radius: 8px;
+        transition: background 0.15s ease;
+      }
+      .firm-mobile-close:hover { background: #f3f1ec; }
 
       .firm-mobile-nav { padding: 14px 14px 24px; display: flex; flex-direction: column; gap: 4px; }
-      .firm-mobile-section { display: flex; flex-direction: column; gap: 2px; padding-top: 14px; margin-top: 6px; border-top: 1px solid ${C.line}; }
+      .firm-mobile-section { display: flex; flex-direction: column; gap: 2px; padding-top: 14px; margin-top: 6px; border-top: 1px solid var(--drawer-line); }
       .firm-mobile-section:first-child { padding-top: 0; margin-top: 0; border-top: none; }
-      .firm-mobile-eyebrow { font: 600 10.5px/1 ${BODY_FONT}; letter-spacing: 0.18em; text-transform: uppercase; color: ${C.muted}; padding: 8px 12px 6px; }
-      .firm-mobile-link { display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 8px; text-decoration: none; color: ${C.fg}; font: 500 15.5px/1.2 ${BODY_FONT}; }
-      .firm-mobile-link.is-active { color: ${C.accent}; background: rgba(184,51,31,0.06); }
-      .firm-mobile-link:hover { background: ${C.cream}; }
-      .firm-mobile-sub { display: flex; align-items: center; gap: 10px; padding: 9px 12px 9px 28px; border-radius: 8px; text-decoration: none; color: ${C.muted}; font: 500 14px/1.2 ${BODY_FONT}; }
-      .firm-mobile-sub:hover { color: ${C.fg}; background: ${C.cream}; }
+      .firm-mobile-eyebrow { font: 600 10.5px/1 ${BODY_FONT}; letter-spacing: 0.18em; text-transform: uppercase; color: var(--drawer-item-color-muted); padding: 8px 12px 6px; }
+      .firm-mobile-link { display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 8px; text-decoration: none; color: var(--drawer-item-color); font: 500 15.5px/1.2 ${BODY_FONT}; }
+      .firm-mobile-link.is-active { color: var(--drawer-item-color-active); background: var(--drawer-item-bg-active); }
+      .firm-mobile-link:hover { background: var(--drawer-item-bg-hover); }
+      .firm-mobile-sub { display: flex; align-items: center; gap: 10px; padding: 9px 12px 9px 28px; border-radius: 8px; text-decoration: none; color: var(--drawer-item-color-muted); font: 500 14px/1.2 ${BODY_FONT}; }
+      .firm-mobile-sub:hover { color: var(--drawer-item-color); background: var(--drawer-item-bg-hover); }
 
       .firm-mobile-group > summary { list-style: none; cursor: pointer; }
       .firm-mobile-group > summary::-webkit-details-marker { display: none; }
       .firm-mobile-group > summary .firm-mobile-chev { margin-left: auto; transition: transform 0.2s ease; }
       .firm-mobile-group[open] > summary .firm-mobile-chev { transform: rotate(180deg); }
 
-      .firm-mobile-foot { padding: 18px 22px 24px; border-top: 1px solid ${C.line}; display: flex; flex-direction: column; gap: 10px; margin-top: auto; }
+      .firm-mobile-foot { padding: 18px 22px 24px; border-top: 1px solid var(--drawer-line); display: flex; flex-direction: column; gap: 10px; margin-top: auto; }
       .firm-mobile-foot a { font: 500 14px/1 ${BODY_FONT}; text-decoration: none; padding: 12px 16px; border-radius: 999px; text-align: center; }
       .firm-mobile-foot .firm-mobile-cta-primary { background: #3D7A4A; color: #fef9f1; }
-      .firm-mobile-foot .firm-mobile-cta-ghost { color: ${C.fg}; border: 1px solid ${C.line}; }
+      .firm-mobile-foot .firm-mobile-cta-ghost { color: var(--drawer-item-color); border: 1px solid var(--drawer-line); }
 
       @media (max-width: 980px) {
         .firm-desktop-nav, .firm-desktop-auth { display: none !important; }

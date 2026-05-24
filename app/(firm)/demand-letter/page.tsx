@@ -5,6 +5,7 @@ import { BarChart3, Folder, Mail, FileText, Headphones, UserCheck, Briefcase, Ar
 import {
   C, H1, H2, eyebrow, body, PAD_X, RAD, HEAD_FONT, BODY_FONT, SERIF_FONT, italicEmCSS,
   Check, FirmBtn, LetterDisplay, FaqSection, RatingStrip,
+  FirmHeroStats, FirmProcessStrip, FirmCtaBar,
 } from "../../../components/firm";
 import { breadcrumbList, serviceSchema, jsonLdGraph } from "../../../lib/schema";
 
@@ -50,32 +51,12 @@ export default function DemandLetter2() {
               <FirmBtn href="/dashboard/cases/new">Start my letter</FirmBtn>
               <FirmBtn kind="ghost" href="/demand-letter#sample">See a sample letter</FirmBtn>
             </div>
-            <div style={{ display: "flex", flexWrap: "wrap", marginTop: 60, paddingTop: 30, borderTop: `1px solid ${C.line}` }}>
-              {[
-                { Icon: DollarSign, headline: "From $29", sub: "one-time fee" },
-                { Icon: Clock, headline: "24 hours", sub: "turnaround" },
-                { Icon: Mail, headline: "USPS Certified", sub: "tracked delivery" },
-                { Icon: MapPin, headline: "All 50 states", sub: "every jurisdiction" },
-              ].map(({ Icon, headline, sub }, i, arr) => (
-                <div
-                  key={headline}
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 14,
-                    paddingLeft: i ? 24 : 0,
-                    paddingRight: i === arr.length - 1 ? 0 : 24,
-                    borderLeft: i ? `1px solid ${C.line}` : "none",
-                  }}
-                >
-                  <Icon size={28} strokeWidth={1.7} color={C.accent} aria-hidden />
-                  <div>
-                    <div style={{ font: `700 15px/1.2 ${BODY_FONT}`, color: C.fg, marginBottom: 3 }}>{headline}</div>
-                    <div style={{ font: `13px/1.3 ${BODY_FONT}`, color: C.muted }}>{sub}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <FirmHeroStats items={[
+              { Icon: DollarSign, headline: "From $29", sub: "one-time fee" },
+              { Icon: Clock, headline: "24 hours", sub: "turnaround" },
+              { Icon: Mail, headline: "USPS Certified", sub: "tracked delivery" },
+              { Icon: MapPin, headline: "All 50 states", sub: "every jurisdiction" },
+            ]} />
           </div>
           <div style={{ position: "relative", display: "flex", justifyContent: "center", alignItems: "center", minHeight: 580 }}>
             <LetterDisplay />
@@ -321,30 +302,12 @@ export default function DemandLetter2() {
             finish in under eight minutes; their letter is in the mail within 24 hours.
           </p>
         </div>
-        <style dangerouslySetInnerHTML={{ __html: `
-          .firm-step { border-top: 4px solid transparent; transition: border-top-color 0.18s ease, background 0.18s ease; }
-          .firm-step:hover { border-top-color: ${C.accent}; background: ${C.cream}; }
-        `}} />
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 0, borderTop: `1px solid ${C.fg}`, borderBottom: `1px solid ${C.line}` }}>
-          {[
-            { Icon: MessageSquare, t: "Tell us what happened", d: "Plain-language intake. We ask the questions. You stay in your seat.", time: "~8 min" },
-            { Icon: PenLine, t: "Your letter is generated", d: "Assembled from attorney-authored templates around the facts you entered. Read it before sending.", time: "24 hours" },
-            { Icon: Send, t: "Certified mail dispatch", d: "USPS certified with tracking. Signature on delivery.", time: "2-4 days" },
-            { Icon: Scale, t: "Escalate if ignored", d: "Filing assistance, court-ready forms, court-day procedure brief.", time: "14+ days" },
-          ].map(({ Icon, t, d, time }, i) => (
-            <div key={t} className="firm-step" style={{ padding: "36px 28px", borderLeft: i ? `1px solid ${C.line}` : "none" }}>
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 22 }}>
-                <div style={{ font: `500 13px/1 ${BODY_FONT}`, color: C.accent, letterSpacing: "0.08em" }}>STEP 0{i + 1}</div>
-                <div style={{ width: 36, height: 36, borderRadius: 999, background: "rgba(184,51,31,0.10)", color: C.accent, display: "grid", placeItems: "center" }}>
-                  <Icon size={18} strokeWidth={1.8} aria-hidden />
-                </div>
-              </div>
-              <div style={{ font: `600 28px/1.22 ${HEAD_FONT}`, color: C.fg, minHeight: 52, letterSpacing: "-0.01em" }}>{t}</div>
-              <p style={{ ...body, marginTop: 12, fontSize: 14 }}>{d}</p>
-              <div style={{ marginTop: 22, font: `11px/1 ${BODY_FONT}`, letterSpacing: "0.16em", color: C.muted, textTransform: "uppercase" }}>{time}</div>
-            </div>
-          ))}
-        </div>
+        <FirmProcessStrip steps={[
+          { Icon: MessageSquare, title: "Tell us what happened", desc: "Plain-language intake. We ask the questions. You stay in your seat.", time: "~8 min" },
+          { Icon: PenLine, title: "Your letter is generated", desc: "Assembled from attorney-authored templates around the facts you entered. Read it before sending.", time: "24 hours" },
+          { Icon: Send, title: "Certified mail dispatch", desc: "USPS certified with tracking. Signature on delivery.", time: "2-4 days" },
+          { Icon: Scale, title: "Escalate if ignored", desc: "Filing assistance, court-ready forms, court-day procedure brief.", time: "14+ days" },
+        ]} />
       </section>
 
       {/* SAMPLE LETTERS */}
@@ -389,31 +352,12 @@ export default function DemandLetter2() {
 
       {/* CTA BAR */}
       <section style={{ padding: `60px ${PAD_X}` }}>
-        <div style={{ background: C.dark, color: "#fff", padding: "36px 36px", borderRadius: RAD.panel, display: "flex", alignItems: "center", justifyContent: "space-between", gap: 32, flexWrap: "wrap" }}>
-          {/* Left — icon + headline + sub */}
-          <div style={{ display: "flex", alignItems: "center", gap: 22, flex: "1 1 auto", minWidth: 0 }}>
-            <div style={{ width: 56, height: 56, borderRadius: 14, background: "#fff", color: C.dark, display: "grid", placeItems: "center", flexShrink: 0 }}>
-              <ClipboardCheck size={26} strokeWidth={1.9} aria-hidden />
-            </div>
-            <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
-              <h2 className="firm-h firm-h-light" style={{ font: `700 30px/1.15 ${HEAD_FONT}`, color: "#fff", letterSpacing: "-0.02em", margin: 0, whiteSpace: "nowrap" }}>
-                Ready to <em>send your letter</em>?
-              </h2>
-              <p style={{ font: `14px/1.5 ${BODY_FONT}`, color: "rgba(255,255,255,0.7)", margin: "6px 0 0" }}>
-                No account. No subscription. Just results.
-              </p>
-            </div>
-          </div>
-
-          {/* Right — divider + button + caption */}
-          <div style={{ display: "flex", alignItems: "center", gap: 28 }}>
-            <div aria-hidden style={{ width: 1, height: 56, background: "rgba(255,255,255,0.15)" }} />
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 8 }}>
-              <FirmBtn kind="accent" href="/dashboard/cases/new">Start Your Letter</FirmBtn>
-              <div style={{ font: `12.5px/1.4 ${BODY_FONT}`, color: "rgba(255,255,255,0.5)" }}>Takes about 5 minutes · From $29</div>
-            </div>
-          </div>
-        </div>
+        <FirmCtaBar
+          Icon={ClipboardCheck}
+          headline={<>Ready to <em>send your letter</em>?</>}
+          sub="No account. No subscription. Just results."
+          cta={{ label: "Start Your Letter", href: "/dashboard/cases/new", caption: "Takes about 5 minutes · From $29" }}
+        />
       </section>
 
       {/* DASHBOARD PANEL — your case, all in one place */}
@@ -662,9 +606,6 @@ export default function DemandLetter2() {
               </div>
             );
           })}
-        </div>
-        <div style={{ textAlign: "center", marginTop: 32, font: `13px/1.4 ${BODY_FONT}`, color: C.muted }}>
-          Refund policy · If we cannot draft your letter, we refund in full within 24 hours.
         </div>
       </section>
 

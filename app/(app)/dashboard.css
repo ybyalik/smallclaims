@@ -1636,6 +1636,9 @@ button.app-link:disabled {
   height: auto;
   display: block;
 }
+/* Hamburger, backdrop, and drawer chrome share tokens with the consumer
+   SiteHeader drawer (see :root --drawer-* in app/globals.css). Visual
+   treatment matches across both surfaces so the product feels coherent. */
 .app-mobile-burger {
   width: 44px;
   height: 44px;
@@ -1655,7 +1658,7 @@ button.app-link:disabled {
 .app-mobile-burger span {
   width: 22px;
   height: 2px;
-  background: var(--ink, #111);
+  background: var(--drawer-item-color, #0e0e0e);
   border-radius: 2px;
   transition: transform .22s ease, opacity .15s ease;
 }
@@ -1667,11 +1670,11 @@ button.app-link:disabled {
 .app-mobile-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(14, 14, 14, 0.45);
+  background: var(--drawer-backdrop, rgba(14, 14, 14, 0.45));
   opacity: 0;
   pointer-events: none;
   transition: opacity .22s ease;
-  z-index: 40;
+  z-index: var(--drawer-z-backdrop, 60);
 }
 .app-mobile-backdrop.is-open { opacity: 1; pointer-events: auto; }
 
@@ -1718,32 +1721,32 @@ button.app-link:disabled {
     top: 0;
     bottom: 0;
     right: 0;
-    width: min(280px, 86vw);
-    z-index: 50;
+    width: var(--drawer-width, min(86vw, 320px));
+    z-index: var(--drawer-z-panel, 70);
     transform: translateX(100%);
-    transition: transform .28s cubic-bezier(.4, 0, .2, 1), visibility 0s .28s;
-    box-shadow: -24px 0 60px -20px rgba(14, 14, 14, 0.20);
+    transition: transform var(--drawer-timing, .25s cubic-bezier(.4, 0, .2, 1)), visibility 0s .28s;
+    box-shadow: var(--drawer-shadow, -16px 0 44px -8px rgba(15, 12, 8, 0.18));
     visibility: hidden;
   }
   .app-side-wrap.is-open {
     transform: translateX(0);
     visibility: visible;
-    transition: transform .28s cubic-bezier(.4, 0, .2, 1);
+    transition: transform var(--drawer-timing, .25s cubic-bezier(.4, 0, .2, 1));
   }
 
   .app-side {
     height: 100vh;
+    background: var(--drawer-bg, #ffffff);
     border-right: 0;
-    border-left: 1px solid #ebe9e3;
+    border-left: 1px solid var(--drawer-line, #E2E0D8);
     box-shadow: none;
-    /* Drop the outer 24px/18px container padding on mobile so item-level
-       padding (10px 20px) is the only horizontal indent, matching the
-       consumer drawer's text alignment exactly. */
+    /* Container has 14px horizontal padding to match consumer's
+       .firm-mobile-nav; items get 12px of their own. */
     padding: 0;
     gap: 0;
   }
-  /* Brand row inside the drawer: logo on the left, close button on
-     the right, hairline below — matching the consumer drawer. */
+  /* Brand row: logo left, close button right, hairline below — matches
+     the consumer drawer's .firm-mobile-head. */
   .app-side-brand {
     display: flex;
     align-items: center;
@@ -1751,9 +1754,9 @@ button.app-link:disabled {
     gap: 12px;
     padding: 18px 20px;
     margin-bottom: 0;
-    border-bottom: 1px solid #ebe9e3;
+    border-bottom: 1px solid var(--drawer-line, #E2E0D8);
   }
-  .app-side-brand .app-brand-logo { width: 140px; }
+  .app-side-brand .app-brand-logo { height: 36px; width: auto; }
   .app-side-close {
     width: 44px;
     height: 44px;
@@ -1762,37 +1765,91 @@ button.app-link:disabled {
     background: transparent;
     border: 0;
     cursor: pointer;
-    color: var(--ink, #111);
+    color: var(--drawer-item-color, #0e0e0e);
     border-radius: 8px;
     transition: background .15s ease;
     flex-shrink: 0;
   }
   .app-side-close:hover { background: #f3f1ec; }
 
-  /* Match consumer drawer item padding (logged-out style) on mobile. */
-  .app-nav a,
+  /* Nav items match consumer drawer: 12px padding, 8px radius, full ink
+     color (no muted gray), brick wash active state. */
+  .app-nav { padding: 8px 14px; gap: 2px; }
+  .app-nav a {
+    padding: 12px !important;
+    border-radius: 8px;
+    color: var(--drawer-item-color, #0e0e0e);
+    font-size: 15.5px;
+    gap: 12px;
+  }
+  .app-nav a:hover {
+    background: var(--drawer-item-bg-hover, #FAFAF7);
+    color: var(--drawer-item-color, #0e0e0e);
+  }
+  /* "+ Start a New Case" CTA: rendered as an indented sub-item on mobile
+     to mirror .firm-mobile-sub. Override the desktop !important values. */
   .app-nav-cta {
-    padding: 10px 20px !important;
-    /* Full-width hover / active background (no rounded corners on
-       mobile), matching the consumer drawer. */
-    border-radius: 0;
+    padding: 9px 12px 9px 40px !important;
+    border-radius: 8px !important;
+    font-size: 14px !important;
+    color: var(--drawer-item-color-active, #b8331f) !important;
   }
-  /* Section labels indent matches consumer's 20px on mobile (was 12px). */
-  .app-nav-section-label { padding: 14px 20px 6px; }
-  /* Each nav block uses the same vertical padding as a consumer section. */
-  .app-nav { padding: 8px 0; }
-  /* Dividers use the same 1px line + margin 4px 8px as consumer. */
-  .app-side-divider { margin: 4px 8px; }
-  /* Footer: container has zero horizontal padding; items align to 20px
-     from the drawer edge via their own padding, matching main nav. */
+  .app-nav-cta:hover {
+    background: var(--drawer-item-bg-active, rgba(184, 51, 31, 0.06)) !important;
+    color: var(--drawer-item-color-active, #b8331f) !important;
+  }
+  .app-nav a:hover .app-nav-icon { color: var(--drawer-item-color, #0e0e0e); }
+  /* Bump icons to 18px on mobile to match consumer drawer icon scale.
+     SVGs honor the lucide `size` attribute by default, so we override
+     via CSS only inside the mobile media query. */
+  .app-nav .app-nav-icon { width: 18px !important; height: 18px !important; }
+  .app-nav a.active {
+    background: var(--drawer-item-bg-active, rgba(184, 51, 31, 0.06));
+    color: var(--drawer-item-color-active, #b8331f);
+  }
+  .app-nav a.active .app-nav-icon { color: var(--drawer-item-color-active, #b8331f); }
+  .app-nav a.active .app-nav-badge {
+    background: var(--drawer-item-color-active, #b8331f);
+    color: #fff;
+  }
+
+  /* Section label as uppercase eyebrow, matching .firm-mobile-eyebrow. */
+  .app-nav-section-label {
+    padding: 14px 22px 6px;
+    font-size: 10.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--drawer-item-color-muted, #6b6b6b);
+  }
+  .app-side-divider { margin: 6px 10px; background: var(--drawer-line, #E2E0D8); }
+
+  /* Footer: pill buttons matching .firm-mobile-foot. User card stays
+     row-based on top, then Settings + Sign out become ghost pills. */
   .app-side-foot {
-    padding: 16px 0;
+    padding: 18px 22px 24px;
     margin-top: auto;
+    border-top: 1px solid var(--drawer-line, #E2E0D8);
   }
-  .app-user { padding: 0 20px; }
+  .app-user { padding: 0; margin-bottom: 14px; }
+  .app-foot-nav { gap: 10px; }
   .app-foot-link {
-    padding: 7px 20px;
-    border-radius: 0;
+    padding: 12px 16px !important;
+    border-radius: 999px;
+    border: 1px solid var(--drawer-line, #E2E0D8);
+    color: var(--drawer-item-color, #0e0e0e);
+    font-size: 14px;
+    font-weight: 500;
+    justify-content: center;
+  }
+  .app-foot-link:hover {
+    background: var(--drawer-item-bg-hover, #FAFAF7);
+    color: var(--drawer-item-color, #0e0e0e);
+  }
+  .app-foot-link.active {
+    background: var(--drawer-item-bg-active, rgba(184, 51, 31, 0.06));
+    color: var(--drawer-item-color-active, #b8331f);
+    border-color: transparent;
   }
 
   .app-main {

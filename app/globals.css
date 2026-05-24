@@ -23,6 +23,23 @@
      here so existing `font-family: var(--font-geist)` declarations resolve
      to Geist Sans without touching every rule. */
   --font-geist: var(--font-geist-sans);
+
+  /* Mobile drawer tokens — shared by the consumer SiteHeader drawer and the
+     dashboard sidebar drawer so both surfaces feel like the same product.
+     Change once, both update. */
+  --drawer-width: min(86vw, 320px);
+  --drawer-bg: #ffffff;
+  --drawer-line: #E2E0D8;
+  --drawer-shadow: -16px 0 44px -8px rgba(15, 12, 8, 0.18);
+  --drawer-backdrop: rgba(15, 12, 8, 0.45);
+  --drawer-z-backdrop: 60;
+  --drawer-z-panel: 70;
+  --drawer-timing: 0.25s cubic-bezier(.4, 0, .2, 1);
+  --drawer-item-bg-hover: #FAFAF7;        /* C.cream */
+  --drawer-item-bg-active: rgba(184, 51, 31, 0.06);
+  --drawer-item-color-active: #b8331f;    /* C.accent */
+  --drawer-item-color: #0e0e0e;           /* C.fg */
+  --drawer-item-color-muted: #6b6b6b;
 }
 
 * { box-sizing: border-box; }
@@ -11553,6 +11570,20 @@ details.qa .a { margin-top: 14px; font-size: 16px; color: var(--muted); line-hei
   .ll-fan { padding: 24px 40px; }
   .ll-fan-back { transform: rotate(-7deg) translate(-22px, 0); }
   .ll-fan-front { transform: rotate(4deg) translate(22px, 0); }
+}
+
+/* Below 480px the 340px page + fan padding + rotation overhang escape
+   the viewport. Shrink the page and tighten the fan footprint so the
+   composition stays on screen. */
+@media (max-width: 480px) {
+  .ll-page {
+    width: 240px;
+    font-size: 7.5px;
+    padding: 20px 22px;
+  }
+  .ll-fan { padding: 12px 18px; }
+  .ll-fan-back { transform: rotate(-5deg) translate(-14px, 0); }
+  .ll-fan-front { transform: rotate(3deg) translate(14px, 0); }
 }
 
 /* ===========================================================

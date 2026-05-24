@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import {
   C, H1, H2, eyebrow, body, PAD_X, RAD, HEAD_FONT, BODY_FONT, SERIF_FONT, italicEmCSS,
   Check, ShieldLogo, FirmBtn, FaqSection, RatingStrip,
+  FirmHeroStats, FirmProcessStrip, FirmCtaBar,
 } from "../../../components/firm";
 import { breadcrumbList, serviceSchema, jsonLdGraph } from "../../../lib/schema";
 import Image from "next/image";
@@ -130,33 +131,12 @@ export default function FilingKit2() {
               <FirmBtn href="/filing-kit">Get My Filing Kit</FirmBtn>
               <FirmBtn kind="ghost" href="/filing-kit">See a sample kit</FirmBtn>
             </div>
-            {/* Spec strip — icon + bold headline + sub, hairline dividers */}
-            <div style={{ display: "flex", flexWrap: "wrap", marginTop: 60, paddingTop: 30, borderTop: `1px solid ${C.line}` }}>
-              {[
-                { Icon: DollarSign, headline: "From $79", sub: "one-time fee" },
-                { Icon: Clock, headline: "Minutes", sub: "turnaround" },
-                { Icon: MapPin, headline: "All 50 + DC", sub: "every state covered" },
-                { Icon: Building2, headline: "3,000+", sub: "counties supported" },
-              ].map(({ Icon, headline, sub }, i, arr) => (
-                <div
-                  key={headline}
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 14,
-                    paddingLeft: i ? 24 : 0,
-                    paddingRight: i === arr.length - 1 ? 0 : 24,
-                    borderLeft: i ? `1px solid ${C.line}` : "none",
-                  }}
-                >
-                  <Icon size={28} strokeWidth={1.7} color={C.accent} aria-hidden />
-                  <div>
-                    <div style={{ font: `700 15px/1.2 ${BODY_FONT}`, color: C.fg, marginBottom: 3 }}>{headline}</div>
-                    <div style={{ font: `13px/1.3 ${BODY_FONT}`, color: C.muted }}>{sub}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <FirmHeroStats items={[
+              { Icon: DollarSign, headline: "From $79", sub: "one-time fee" },
+              { Icon: Clock, headline: "Minutes", sub: "turnaround" },
+              { Icon: MapPin, headline: "All 50 + DC", sub: "every state covered" },
+              { Icon: Building2, headline: "3,000+", sub: "counties supported" },
+            ]} />
           </div>
           <div style={{ position: "relative", height: 580, display: "flex", justifyContent: "flex-end", alignItems: "center" }}>
             <div style={{ position: "absolute", top: 20, right: 60, transform: "rotate(-3deg)", width: 360 }}>
@@ -211,58 +191,25 @@ export default function FilingKit2() {
             hours.
           </p>
         </div>
-        <style dangerouslySetInnerHTML={{ __html: `
-          .firm-step { border-top: 4px solid transparent; transition: border-top-color 0.18s ease, background 0.18s ease; }
-          .firm-step:hover { border-top-color: ${C.accent}; background: ${C.cream}; }
-        `}} />
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 0, borderTop: `1px solid ${C.fg}`, borderBottom: `1px solid ${C.line}` }}>
-          {[
-            { Icon: MessageSquare, t: "Tell Us About Your Case", d: "Plaintiff, defendant, amount, state, county. We pull the live filing rules for that exact courthouse." },
-            { Icon: Briefcase, t: "We Build Your Kit", d: "Within minutes you get a personalized PDF: the right forms, the current filing fee, and a hearing-day checklist." },
-            { Icon: Building2, t: "You File", d: "Walk into the courthouse (or use the e-filing portal) with everything you need. Most filings take under an hour." },
-            { Icon: Scale, t: "Show Up Prepared", d: "On hearing day, follow the checklist: what to bring, how to present, what the judge will ask, the order of events." },
-          ].map(({ Icon, t, d }, i) => (
-            <div key={t} className="firm-step" style={{ padding: "40px 30px", borderLeft: i ? `1px solid ${C.line}` : "none" }}>
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 22 }}>
-                <div style={{ font: `500 13px/1 ${BODY_FONT}`, color: C.accent, letterSpacing: "0.08em" }}>STEP 0{i + 1}</div>
-                <div style={{ width: 36, height: 36, borderRadius: 999, background: "rgba(184,51,31,0.10)", color: C.accent, display: "grid", placeItems: "center" }}>
-                  <Icon size={18} strokeWidth={1.8} aria-hidden />
-                </div>
-              </div>
-              <div style={{ font: `600 26px/1.22 ${HEAD_FONT}`, color: C.fg, minHeight: 52, letterSpacing: "-0.01em" }}>{t}</div>
-              <p style={{ ...body, marginTop: 12, fontSize: 15 }}>{d}</p>
-            </div>
-          ))}
-        </div>
+        <FirmProcessStrip
+          cellPadding="40px 30px"
+          steps={[
+            { Icon: MessageSquare, title: "Tell Us About Your Case", desc: "Plaintiff, defendant, amount, state, county. We pull the live filing rules for that exact courthouse." },
+            { Icon: Briefcase, title: "We Build Your Kit", desc: "Within minutes you get a personalized PDF: the right forms, the current filing fee, and a hearing-day checklist." },
+            { Icon: Building2, title: "You File", desc: "Walk into the courthouse (or use the e-filing portal) with everything you need. Most filings take under an hour." },
+            { Icon: Scale, title: "Show Up Prepared", desc: "On hearing day, follow the checklist: what to bring, how to present, what the judge will ask, the order of events." },
+          ]}
+        />
       </section>
 
       {/* CTA BAR */}
       <section style={{ padding: `60px ${PAD_X}` }}>
-        <div style={{ background: C.dark, color: "#fff", padding: "36px 36px", borderRadius: RAD.panel, display: "flex", alignItems: "center", justifyContent: "space-between", gap: 32, flexWrap: "wrap" }}>
-          {/* Left — icon + headline + sub */}
-          <div style={{ display: "flex", alignItems: "center", gap: 22, flex: "1 1 auto", minWidth: 0 }}>
-            <div style={{ width: 56, height: 56, borderRadius: 14, background: "#fff", color: C.dark, display: "grid", placeItems: "center", flexShrink: 0 }}>
-              <ClipboardCheck size={26} strokeWidth={1.9} aria-hidden />
-            </div>
-            <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
-              <h2 className="firm-h firm-h-light" style={{ font: `700 30px/1.15 ${HEAD_FONT}`, color: "#fff", letterSpacing: "-0.02em", margin: 0, whiteSpace: "nowrap" }}>
-                Ready to <em>file your case</em>?
-              </h2>
-              <p style={{ font: `14px/1.5 ${BODY_FONT}`, color: "rgba(255,255,255,0.7)", margin: "6px 0 0" }}>
-                No account. No subscription. Just results.
-              </p>
-            </div>
-          </div>
-
-          {/* Right — divider + button + caption */}
-          <div style={{ display: "flex", alignItems: "center", gap: 28 }}>
-            <div aria-hidden style={{ width: 1, height: 56, background: "rgba(255,255,255,0.15)" }} />
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 8 }}>
-              <FirmBtn kind="accent" href="/filing-kit">Get My Filing Kit</FirmBtn>
-              <div style={{ font: `12.5px/1.4 ${BODY_FONT}`, color: "rgba(255,255,255,0.5)" }}>Takes about 5 minutes · From $79</div>
-            </div>
-          </div>
-        </div>
+        <FirmCtaBar
+          Icon={ClipboardCheck}
+          headline={<>Ready to <em>file your case</em>?</>}
+          sub="No account. No subscription. Just results."
+          cta={{ label: "Get My Filing Kit", href: "/filing-kit", caption: "Takes about 5 minutes · From $79" }}
+        />
       </section>
 
       {/* WHAT'S IN THE KIT — annotated cover sheet with leader-line callouts */}

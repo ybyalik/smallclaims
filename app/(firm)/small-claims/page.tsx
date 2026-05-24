@@ -13,6 +13,7 @@ import { collectionPageSchema, breadcrumbList, jsonLdGraph } from "../../../lib/
 import {
   C, H1, H2, eyebrow, body, PAD_X, RAD, HEAD_FONT, BODY_FONT, italicEmCSS,
   Arrow, FirmBtn, ThreeWaysSection, StateSearchPanel, FaqSection,
+  FirmCtaBar,
 } from "../../../components/firm";
 
 export const metadata: Metadata = {
@@ -103,7 +104,7 @@ export default async function SmallClaims2() {
         {/* One panel containing all 9 category links. Header row + 2-col
             grid of sub-items + popular chips at the bottom. */}
         <article style={{ background: C.cream, border: `1px solid ${C.line}`, borderRadius: RAD.large, padding: "32px 40px" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "auto 1fr auto", gap: 22, alignItems: "center", marginBottom: 28 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 22, alignItems: "center", marginBottom: 28 }}>
             <div style={{ width: 56, height: 56, borderRadius: "50%", background: "#fff", display: "grid", placeItems: "center", color: C.accent, boxShadow: "0 1px 0 rgba(0,0,0,0.04)" }}>
               <FileText size={26} strokeWidth={1.8} aria-hidden />
             </div>
@@ -113,11 +114,6 @@ export default async function SmallClaims2() {
                 Pick the one that fits your situation. Each links to a state-specific guide.
               </div>
             </div>
-            <button type="button" aria-label="Collapse" style={{ background: "transparent", border: "none", padding: 8, cursor: "pointer", color: C.muted, display: "grid", placeItems: "center" }}>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                <path d="m18 15-6-6-6 6" />
-              </svg>
-            </button>
           </div>
 
           {/* 2-column grid of 9 category links + 1 "View all" */}
@@ -172,16 +168,12 @@ export default async function SmallClaims2() {
 
       {/* QUIZ CTA */}
       <section style={{ padding: `120px ${PAD_X}` }}>
-        <div style={{ background: C.dark, color: "#fff", padding: "44px 56px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 32, borderRadius: RAD.panel }}>
-          <div>
-            <div style={{ ...eyebrow, color: "rgba(255,255,255,0.55)", marginBottom: 12 }}>NOT SURE WHICH FITS?</div>
-            <div className="firm-h firm-h-light" style={{ font: `600 32px/1.2 ${HEAD_FONT}`, letterSpacing: "-0.01em" }}>Take the case-strength <em>quiz</em>.</div>
-            <div style={{ font: `14px/1.4 ${BODY_FONT}`, color: "rgba(255,255,255,0.6)", marginTop: 6 }}>
-              Tell us about your situation in 90 seconds and get a strength read on your case.
-            </div>
-          </div>
-          <FirmBtn kind="accent" href="/case-score">Check Case Score</FirmBtn>
-        </div>
+        <FirmCtaBar
+          eyebrowText="NOT SURE WHICH FITS?"
+          headline={<>Take the case-strength <em>quiz</em>.</>}
+          sub="Tell us about your situation in 90 seconds and get a strength read on your case."
+          cta={{ label: "Check Case Score", href: "/case-score" }}
+        />
       </section>
 
       {/* POPULAR TOPICS · Scenarios V6 — Category portraits */}

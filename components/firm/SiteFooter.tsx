@@ -55,6 +55,7 @@ export function SiteFooter() {
       }}
     >
       <div
+        className="firm-footer-top"
         style={{
           display: "grid",
           gridTemplateColumns: "1.4fr 1fr 1fr",
@@ -64,9 +65,10 @@ export function SiteFooter() {
         }}
       >
         {/* Brand block */}
-        <div>
+        <div className="firm-footer-brand">
           <Link
             href="/"
+            className="firm-footer-brand-link"
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -76,18 +78,18 @@ export function SiteFooter() {
           >
             <Image
               src="/civil-case-logo-white.webp"
-              alt="CivilCase"
+              alt="CivilCase.com"
               width={300}
               height={60}
               style={{ height: 54, width: "auto" }}
             />
           </Link>
-          <p style={{ font: `14px/1.55 ${BODY_FONT}`, color: "rgba(255,255,255,0.6)", maxWidth: 280, margin: 0 }}>
+          <p className="firm-footer-brand-p" style={{ font: `14px/1.55 ${BODY_FONT}`, color: "rgba(255,255,255,0.6)", maxWidth: 280, margin: 0 }}>
             A self-help legal-information website and document automation tool. Templates and guides
             help everyday people prepare demand letters, small-claims filings, and post-judgment
             collection paperwork themselves.
           </p>
-          <div style={{ display: "flex", gap: 12, marginTop: 28 }}>
+          <div className="firm-footer-social" style={{ display: "flex", gap: 12, marginTop: 28 }}>
             <Link
               href="#"
               aria-label="LinkedIn"
@@ -114,7 +116,7 @@ export function SiteFooter() {
 
         {/* Link columns */}
         {FOOTER_COLS.map((col) => (
-          <div key={col.label}>
+          <div key={col.label} className="firm-footer-col">
             <div
               style={{
                 font: `600 11px/1 ${BODY_FONT}`,
@@ -151,9 +153,12 @@ export function SiteFooter() {
           font: `12px/1.55 ${BODY_FONT}`,
           color: "rgba(255,255,255,0.45)",
           maxWidth: 920,
+          marginLeft: "auto",
+          marginRight: "auto",
+          textAlign: "center",
         }}
       >
-        CivilCase is not a law firm and does not provide legal advice or legal representation. We
+        CivilCase.com is not a law firm and does not provide legal advice or legal representation. We
         publish self-help legal information and document automation tools. Use of this site does
         not create an attorney-client relationship. For legal advice about your specific situation,
         consult a licensed attorney in your state. See our{" "}
@@ -163,6 +168,7 @@ export function SiteFooter() {
 
       {/* Bottom strip */}
       <div
+        className="firm-footer-bottom"
         style={{
           display: "flex",
           justifyContent: "space-between",
@@ -174,8 +180,8 @@ export function SiteFooter() {
           color: "rgba(255,255,255,0.4)",
         }}
       >
-        <div>Copyright © 2026 CivilCase. All Rights Reserved.</div>
-        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+        <div className="firm-footer-copy">Copyright © 2026 CivilCase.com. All Rights Reserved.</div>
+        <div className="firm-footer-legal-links" style={{ display: "flex", alignItems: "center", gap: 12 }}>
           <Link href="/privacy" style={{ color: "inherit", textDecoration: "none" }}>Privacy</Link>
           <span aria-hidden style={{ opacity: 0.4 }}>|</span>
           <Link href="/terms" style={{ color: "inherit", textDecoration: "none" }}>Terms</Link>

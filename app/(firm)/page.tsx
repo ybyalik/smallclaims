@@ -17,7 +17,7 @@ export default function Home2() {
       <style dangerouslySetInnerHTML={{ __html: italicEmCSS }} />
 
       {/* ─────────────── HERO · WHITE CENTERED (variant A) ─────────────── */}
-      <section style={{ padding: "120px 80px 80px", background: "#fff" }}>
+      <section style={{ padding: `120px ${PAD_X} 80px`, background: "#fff" }}>
         <div style={{ maxWidth: 960, margin: "0 auto", textAlign: "center" }}>
           {/* avatar stack + rating, sits above the headline */}
           <div style={{ display: "inline-flex", alignItems: "center", gap: 12, marginBottom: 36 }}>
@@ -215,7 +215,7 @@ export default function Home2() {
               <div style={{ marginTop: 32, paddingTop: 24, borderTop: "1px solid rgba(255,255,255,0.15)" }}>
                 <div style={{ font: `500 17px/1 ${HEAD_FONT}`, color: "#fff" }}>Yury Byalik, Esq.</div>
                 <div style={{ font: `13px/1.4 ${BODY_FONT}`, color: "rgba(255,255,255,0.55)", marginTop: 4 }}>
-                  Founder, CivilCase · CA Bar 281044 (acting in business capacity, not as your attorney)
+                  Founder, CivilCase
                 </div>
               </div>
             </div>

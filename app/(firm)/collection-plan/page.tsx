@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import {
   C, H1, H2, eyebrow, body, PAD_X, RAD, HEAD_FONT, BODY_FONT, SERIF_FONT, italicEmCSS,
   Check, ShieldLogo, FirmBtn, FaqSection, RatingStrip,
+  FirmHeroStats, FirmProcessStrip, FirmCtaBar,
 } from "../../../components/firm";
 import { breadcrumbList, serviceSchema, jsonLdGraph } from "../../../lib/schema";
 import Image from "next/image";
@@ -108,32 +109,12 @@ export default function CollectionPlan2() {
               <FirmBtn href="/collection-plan">Get My Collection Plan</FirmBtn>
               <FirmBtn kind="ghost" href="/collection-plan">See a sample plan</FirmBtn>
             </div>
-            <div style={{ display: "flex", flexWrap: "wrap", marginTop: 60, paddingTop: 30, borderTop: `1px solid ${C.line}` }}>
-              {[
-                { Icon: DollarSign, headline: "From $49", sub: "one-time fee" },
-                { Icon: MapPin, headline: "All 50 states", sub: "every state" },
-                { Icon: Workflow, headline: "Tailored", sub: "for your case" },
-                { Icon: RotateCw, headline: "Tracked", sub: "renewals" },
-              ].map(({ Icon, headline, sub }, i, arr) => (
-                <div
-                  key={headline}
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 14,
-                    paddingLeft: i ? 24 : 0,
-                    paddingRight: i === arr.length - 1 ? 0 : 24,
-                    borderLeft: i ? `1px solid ${C.line}` : "none",
-                  }}
-                >
-                  <Icon size={28} strokeWidth={1.7} color={C.accent} aria-hidden />
-                  <div>
-                    <div style={{ font: `700 15px/1.2 ${BODY_FONT}`, color: C.fg, marginBottom: 3 }}>{headline}</div>
-                    <div style={{ font: `13px/1.3 ${BODY_FONT}`, color: C.muted }}>{sub}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <FirmHeroStats items={[
+              { Icon: DollarSign, headline: "From $49", sub: "one-time fee" },
+              { Icon: MapPin, headline: "All 50 states", sub: "every state" },
+              { Icon: Workflow, headline: "Tailored", sub: "for your case" },
+              { Icon: RotateCw, headline: "Tracked", sub: "renewals" },
+            ]} />
           </div>
           <div style={{ position: "relative", display: "flex", justifyContent: "center", alignItems: "center", minHeight: 600 }}>
             <div style={{ position: "relative", width: 460, height: 560 }}>
@@ -190,58 +171,25 @@ export default function CollectionPlan2() {
             enforcement tools.
           </p>
         </div>
-        <style dangerouslySetInnerHTML={{ __html: `
-          .firm-step { border-top: 4px solid transparent; transition: border-top-color 0.18s ease, background 0.18s ease; }
-          .firm-step:hover { border-top-color: ${C.accent}; background: ${C.cream}; }
-        `}} />
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 0, borderTop: `1px solid ${C.fg}`, borderBottom: `1px solid ${C.line}` }}>
-          {[
-            { Icon: ClipboardList, t: "Tell Us About Your Judgment", d: "State, defendant, amount, when the judgment was entered. We pull your state's enforcement playbook." },
-            { Icon: Workflow, t: "We Build Your Plan", d: "A personalized, sequenced enforcement plan. Which step first, which forms, which fees, which to skip given what you know." },
-            { Icon: Banknote, t: "Work the Sequence", d: "Judgment-debtor exam, levy, garnishment, lien, in the right order. Each step has the form, the fee, the timeline." },
-            { Icon: RotateCw, t: "Track and Renew", d: "Some collections take months. The plan tracks your judgment expiration and tells you when to renew it." },
-          ].map(({ Icon, t, d }, i) => (
-            <div key={t} className="firm-step" style={{ padding: "40px 30px", borderLeft: i ? `1px solid ${C.line}` : "none" }}>
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 22 }}>
-                <div style={{ font: `500 13px/1 ${BODY_FONT}`, color: C.accent, letterSpacing: "0.08em" }}>STEP 0{i + 1}</div>
-                <div style={{ width: 36, height: 36, borderRadius: 999, background: "rgba(184,51,31,0.10)", color: C.accent, display: "grid", placeItems: "center" }}>
-                  <Icon size={18} strokeWidth={1.8} aria-hidden />
-                </div>
-              </div>
-              <div style={{ font: `600 26px/1.22 ${HEAD_FONT}`, color: C.fg, minHeight: 52, letterSpacing: "-0.01em" }}>{t}</div>
-              <p style={{ ...body, marginTop: 12, fontSize: 15 }}>{d}</p>
-            </div>
-          ))}
-        </div>
+        <FirmProcessStrip
+          cellPadding="40px 30px"
+          steps={[
+            { Icon: ClipboardList, title: "Tell Us About Your Judgment", desc: "State, defendant, amount, when the judgment was entered. We pull your state's enforcement playbook." },
+            { Icon: Workflow, title: "We Build Your Plan", desc: "A personalized, sequenced enforcement plan. Which step first, which forms, which fees, which to skip given what you know." },
+            { Icon: Banknote, title: "Work the Sequence", desc: "Judgment-debtor exam, levy, garnishment, lien, in the right order. Each step has the form, the fee, the timeline." },
+            { Icon: RotateCw, title: "Track and Renew", desc: "Some collections take months. The plan tracks your judgment expiration and tells you when to renew it." },
+          ]}
+        />
       </section>
 
       {/* CTA BAR */}
       <section style={{ padding: `60px ${PAD_X}` }}>
-        <div style={{ background: C.dark, color: "#fff", padding: "36px 36px", borderRadius: RAD.panel, display: "flex", alignItems: "center", justifyContent: "space-between", gap: 32, flexWrap: "wrap" }}>
-          {/* Left — icon + headline + sub */}
-          <div style={{ display: "flex", alignItems: "center", gap: 22, flex: "1 1 auto", minWidth: 0 }}>
-            <div style={{ width: 56, height: 56, borderRadius: 14, background: "#fff", color: C.dark, display: "grid", placeItems: "center", flexShrink: 0 }}>
-              <Banknote size={26} strokeWidth={1.9} aria-hidden />
-            </div>
-            <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
-              <h2 className="firm-h firm-h-light" style={{ font: `700 30px/1.15 ${HEAD_FONT}`, color: "#fff", letterSpacing: "-0.02em", margin: 0, whiteSpace: "nowrap" }}>
-                Ready to <em>collect what you won</em>?
-              </h2>
-              <p style={{ font: `14px/1.5 ${BODY_FONT}`, color: "rgba(255,255,255,0.7)", margin: "6px 0 0" }}>
-                No account. No subscription. Just results.
-              </p>
-            </div>
-          </div>
-
-          {/* Right — divider + button + caption */}
-          <div style={{ display: "flex", alignItems: "center", gap: 28 }}>
-            <div aria-hidden style={{ width: 1, height: 56, background: "rgba(255,255,255,0.15)" }} />
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 8 }}>
-              <FirmBtn kind="accent" href="/collection-plan">Start My Collection Plan</FirmBtn>
-              <div style={{ font: `12.5px/1.4 ${BODY_FONT}`, color: "rgba(255,255,255,0.5)" }}>Takes about 3 minutes · $49 one-time</div>
-            </div>
-          </div>
-        </div>
+        <FirmCtaBar
+          Icon={Banknote}
+          headline={<>Ready to <em>collect what you won</em>?</>}
+          sub="No account. No subscription. Just results."
+          cta={{ label: "Start My Collection Plan", href: "/collection-plan", caption: "Takes about 3 minutes · $49 one-time" }}
+        />
       </section>
 
       {/* WHAT'S IN THE PLAN — annotated enforcement playbook with leader-line callouts */}
