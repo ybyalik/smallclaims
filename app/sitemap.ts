@@ -45,7 +45,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Issue pages use the canonical slug shape /small-claims/sue-<cat>-<slug>.
   // The directory under /small-claims/<category>/<slug>/ exists only so the
   // file lives in a clean path; next.config rewrites the slug URL to it.
-  const mkIssueUrls = (slugPrefix: string, list: { slug: string; ready: boolean }[]): MetadataRoute.Sitemap =>
+  const mkIssueUrls = (slugPrefix: string, list: readonly { slug: string; ready: boolean }[]): MetadataRoute.Sitemap =>
     list.filter((i) => i.ready).map((i) => ({
       url: `${BASE}/small-claims/sue-${slugPrefix}-${i.slug}`,
       lastModified: now,
