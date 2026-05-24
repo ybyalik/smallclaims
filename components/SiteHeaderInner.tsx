@@ -4,11 +4,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { ChevronDown, Building2, Hammer, Briefcase, Car, Trees, HandCoins, Users, ShoppingBag, Receipt, FileText, Scale, BarChart3, BookOpen, LayoutDashboard, Settings, LogOut } from "lucide-react";
+import { ChevronDown, Building2, Hammer, Briefcase, Car, Trees, HandCoins, Users, ShoppingBag, Receipt, FileText, Scale, BarChart3, BookOpen, LayoutDashboard, Settings, LogOut, Banknote, Folder } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import type { SiteHeaderUser } from "./SiteHeader";
 
-type MegaKey = "sc" | "res";
+type MegaKey = "sc" | "res" | "services";
 
 const SC_CATEGORIES: Array<{ href: string; label: string; icon: LucideIcon }> = [
   { href: "/small-claims/landlord", label: "Landlord disputes", icon: Building2 },
@@ -117,10 +117,67 @@ export default function SiteHeaderInner({ user }: { user: SiteHeaderUser | null 
           />
         </Link>
         <nav className="nav-links">
-          <Link href="/demand-letter">
-            <FileText className="nav-link-icon" size={16} strokeWidth={1.8} aria-hidden />
-            Demand Letter
-          </Link>
+          <div
+            className={`nav-mega-trigger${openMega === "services" ? " is-open" : ""}`}
+            onMouseEnter={() => openMegaNow("services")}
+            onMouseLeave={scheduleMegaClose}
+            onFocus={() => openMegaNow("services")}
+          >
+            <Link href="/demand-letter">
+              <FileText className="nav-link-icon" size={16} strokeWidth={1.8} aria-hidden />
+              Services
+              <ChevronDown className="nav-mega-caret" size={12} strokeWidth={2} aria-hidden />
+            </Link>
+            {/* Services mega — anchored under the trigger itself rather
+                than centered in the nav-shell, so it sits directly below
+                the "Services" tab. */}
+            <div
+              className={`nav-mega nav-mega-services${openMega === "services" ? " is-open" : ""}`}
+              aria-hidden={openMega !== "services"}
+            >
+              <ul className="nav-mega-services-list">
+                <li>
+                  <Link href="/demand-letter" className="nav-mega-service-row" onClick={() => setOpenMega(null)}>
+                    <span className="nav-mega-service-num" aria-hidden>1</span>
+                    <span className="nav-mega-service-avatar">
+                      <Image src="/assets/demand-letter-illustration.webp" alt="" width={64} height={64} aria-hidden />
+                    </span>
+                    <span className="nav-mega-service-text">
+                      <strong className="nav-mega-service-title nav-mega-service-title-red">Demand Letter</strong>
+                      <span className="nav-mega-service-sub">Send a formal demand letter</span>
+                    </span>
+                    <ChevronDown className="nav-mega-service-chev" size={18} strokeWidth={2} aria-hidden />
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/filing-kit" className="nav-mega-service-row" onClick={() => setOpenMega(null)}>
+                    <span className="nav-mega-service-num" aria-hidden>2</span>
+                    <span className="nav-mega-service-avatar">
+                      <Image src="/assets/filing-kit-illustration.webp" alt="" width={64} height={64} aria-hidden />
+                    </span>
+                    <span className="nav-mega-service-text">
+                      <strong className="nav-mega-service-title nav-mega-service-title-green">Filing Kit</strong>
+                      <span className="nav-mega-service-sub">Forms and filing instructions</span>
+                    </span>
+                    <ChevronDown className="nav-mega-service-chev" size={18} strokeWidth={2} aria-hidden />
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/collection-plan" className="nav-mega-service-row" onClick={() => setOpenMega(null)}>
+                    <span className="nav-mega-service-num" aria-hidden>3</span>
+                    <span className="nav-mega-service-avatar">
+                      <Image src="/assets/collection-plan-illustration.webp" alt="" width={64} height={64} aria-hidden />
+                    </span>
+                    <span className="nav-mega-service-text">
+                      <strong className="nav-mega-service-title nav-mega-service-title-green">Collection Plan</strong>
+                      <span className="nav-mega-service-sub">Enforce and collect your judgment</span>
+                    </span>
+                    <ChevronDown className="nav-mega-service-chev" size={18} strokeWidth={2} aria-hidden />
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
           <Link href="/small-claims">
             <Scale className="nav-link-icon" size={16} strokeWidth={1.8} aria-hidden />
             Small Claims
@@ -232,6 +289,7 @@ export default function SiteHeaderInner({ user }: { user: SiteHeaderUser | null 
           <span />
         </button>
       </header>
+
 
       {/* Mega menu — Resources */}
       <div
@@ -346,12 +404,33 @@ export default function SiteHeaderInner({ user }: { user: SiteHeaderUser | null 
             </div>
           ) : null}
 
-          {/* Top-level items mirror the desktop nav exactly. */}
-          <div className="nav-mobile-section">
-            <Link href="/demand-letter" onClick={() => setOpen(false)} className={`nav-mobile-top${isActive("/demand-letter") ? " active" : ""}`}>
-              <FileText className="nav-link-icon" size={18} strokeWidth={1.8} aria-hidden />
+          {/* Services first to match desktop nav order. */}
+          <details className="nav-mobile-section nav-mobile-group" open>
+            <summary>
+              <span className="nav-mobile-top">
+                <FileText className="nav-link-icon" size={18} strokeWidth={1.8} aria-hidden />
+                Services
+              </span>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" className="nav-mobile-chev">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </summary>
+            <Link href="/demand-letter" onClick={() => setOpen(false)} className="nav-mobile-sub">
+              <FileText size={16} strokeWidth={1.7} aria-hidden />
               Demand Letter
             </Link>
+            <Link href="/filing-kit" onClick={() => setOpen(false)} className="nav-mobile-sub">
+              <Scale size={16} strokeWidth={1.7} aria-hidden />
+              Filing Kit
+            </Link>
+            <Link href="/collection-plan" onClick={() => setOpen(false)} className="nav-mobile-sub">
+              <Banknote size={16} strokeWidth={1.7} aria-hidden />
+              Collection Plan
+            </Link>
+          </details>
+
+          {/* Small Claims + Case Score after Services, matching desktop. */}
+          <div className="nav-mobile-section">
             <Link href="/small-claims" onClick={() => setOpen(false)} className={`nav-mobile-top${isActive("/small-claims") ? " active" : ""}`}>
               <Scale className="nav-link-icon" size={18} strokeWidth={1.8} aria-hidden />
               Small Claims

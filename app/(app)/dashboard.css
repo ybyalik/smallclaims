@@ -337,8 +337,9 @@
 }
 .app-notif-row {
   display: flex;
-  align-items: flex-start;
-  gap: 16px;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 6px;
   padding: 14px 18px;
   border: 1px solid #ebe9e3;
   border-radius: 10px;
@@ -351,7 +352,7 @@ a.app-notif-row:hover {
   border-color: #c8c2b3;
   background: #faf9f6;
 }
-.app-notif-body { flex: 1; min-width: 0; }
+.app-notif-body { min-width: 0; }
 .app-notif-title { font-weight: 600; font-size: 14.5px; }
 .app-notif-text {
   margin: 4px 0 0;
@@ -360,10 +361,9 @@ a.app-notif-row:hover {
   color: #5a574e;
 }
 .app-notif-when {
-  flex-shrink: 0;
   font-size: 12px;
   color: #8b8779;
-  white-space: nowrap;
+  letter-spacing: 0.02em;
 }
 
 .app-nav-secondary a.app-admin-link {
@@ -1408,9 +1408,142 @@ button.app-link:disabled {
   line-height: 1.6;
 }
 
+/* Settings page entity picker — Individual / Business / Not set as
+   bordered cards with icons. Selected card gets dark ink border + tint. */
+.entity-picker {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 18px;
+}
+@media (max-width: 600px) {
+  /* Stay 3-up on phones; switch to a tighter stacked card with the
+     icon on top of the label so a 320px viewport still fits. */
+  .entity-picker { gap: 8px; }
+  .entity-card {
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 10px 4px;
+    text-align: center;
+    min-width: 0;
+  }
+  .entity-card-icon { width: 26px; height: 26px; }
+  .entity-card-icon svg { width: 14px; height: 14px; }
+  .entity-card-label { font-size: 12.5px; white-space: nowrap; }
+}
+.entity-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1.5px solid #ebe9e3;
+  border-radius: 10px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink, #111);
+  transition: border-color .15s ease, background .15s ease, box-shadow .15s ease;
+}
+.entity-card:hover { border-color: #c8c2b3; }
+.entity-card input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.entity-card-icon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: #f3f1ec;
+  color: #5a574e;
+  flex-shrink: 0;
+  transition: background .15s ease, color .15s ease;
+}
+.entity-card-label { font-size: 14.5px; }
+.entity-card.is-selected {
+  border-color: var(--ink, #111);
+  background: #fafaf7;
+  box-shadow: 0 0 0 1px var(--ink, #111);
+}
+.entity-card.is-selected .entity-card-icon {
+  background: var(--ink, #111);
+  color: #fff;
+}
+
+/* Settings page city/state/zip row.
+   Desktop: city wide + state narrow + zip on one line.
+   Mobile: city full-width on row 1, state + zip on row 2. */
+.app-settings-city-row {
+  display: grid;
+  grid-template-columns: 1fr 100px 130px;
+  gap: 10px;
+}
+@media (max-width: 600px) {
+  .app-settings-city-row {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "city city"
+      "state zip";
+  }
+  .app-settings-city-row > label:nth-child(1) { grid-area: city; }
+  .app-settings-city-row > label:nth-child(2) { grid-area: state; }
+  .app-settings-city-row > label:nth-child(3) { grid-area: zip; }
+}
+
 @media (max-width: 768px) {
-  .app-billing-row { grid-template-columns: 1fr 1fr; gap: 8px 12px; }
+  /* Stacked card layout on mobile — each payment is its own card with
+     date + amount on row 1, item name on row 2, case link on row 3,
+     status badge + receipt button on row 4. Cleaner than the previous
+     auto-flow 2x3 grid which left items at different positions per
+     row. */
+  .app-billing-row {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "date amount"
+      "item item"
+      "case case"
+      "status receipt";
+    gap: 6px 12px;
+    padding: 16px 18px;
+    align-items: start;
+  }
   .app-billing-row-header { display: none; }
+  .app-billing-date {
+    grid-area: date;
+    font-size: 13px;
+    align-self: center;
+  }
+  .app-billing-amount {
+    grid-area: amount;
+    align-self: center;
+    font-size: 15px;
+  }
+  .app-billing-item {
+    grid-area: item;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink, #111);
+    margin-top: 2px;
+  }
+  .app-billing-case {
+    grid-area: case;
+    font-size: 13.5px;
+  }
+  .app-billing-status-col {
+    grid-area: status;
+    justify-content: flex-start;
+    margin-top: 8px;
+  }
+  .app-billing-receipt-col {
+    grid-area: receipt;
+    justify-content: flex-end;
+    margin-top: 8px;
+  }
 }
 
 /* Sidebar — section labels and grouped service nav */
@@ -1688,24 +1821,23 @@ button.app-link:disabled {
      header (Created / Amount) doesn't apply. */
   .app-case-list-head { display: none; }
 
-  /* Case card stacks better on narrow screens */
+  /* Case card stacks better on narrow screens. Bottom row: products
+     chips on the left, chevron pinned to the bottom-right. */
   .app-case-card {
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 1fr auto;
     grid-template-areas:
       "status created"
       "info amount"
-      "info chevron";
+      "products chevron";
     gap: 8px 14px;
     padding: 14px 16px;
   }
   .app-case-card > .app-case-status-cell { grid-area: status; justify-self: flex-start; align-items: flex-start; text-align: left; }
-  .app-case-card > div.app-case-created { grid-area: created; justify-self: flex-end; }
-  .app-case-card > div.app-case-created { flex-direction: row; gap: 6px; align-items: baseline; }
-  .app-case-card > div:not(.app-case-status-cell):not(.app-case-amount):not(.app-case-chevron):not(.app-case-created) {
-    grid-area: info;
-  }
+  .app-case-card > div.app-case-created { grid-area: created; justify-self: flex-end; flex-direction: row; gap: 6px; align-items: baseline; }
+  .app-case-card > .app-case-info { grid-area: info; min-width: 0; }
+  .app-case-card > .app-case-products-cell { grid-area: products; margin-top: 4px; align-self: end; }
   .app-case-card > .app-case-amount { grid-area: amount; justify-self: flex-end; }
-  .app-case-card > .app-case-chevron { grid-area: chevron; justify-self: flex-end; }
+  .app-case-card > .app-case-chevron { grid-area: chevron; justify-self: flex-end; align-self: end; }
 
   .app-case-defendant { font-size: 15px; }
   .app-case-meta { font-size: 12.5px; }
@@ -2109,9 +2241,11 @@ button.app-link:disabled {
   flex-shrink: 0;
 }
 .app-case-products-empty {
+  display: inline-block;
   font-size: 11.5px;
   color: #9a978f;
   font-style: italic;
+  padding: 4px 0;
 }
 
 /* On mobile, the existing stacked layout (line ~1307) routes any non-named

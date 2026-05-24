@@ -160,11 +160,11 @@ export default async function BillingPage() {
                 <div className="app-billing-date">
                   {formatDate(p.paid_at || p.created_at)}
                 </div>
-                <div>
+                <div className="app-billing-item">
                   {PRODUCT_LABEL[p.product_key] || p.product_key}
                   {adminBypass && <span className="app-billing-tag">admin</span>}
                 </div>
-                <div>
+                <div className="app-billing-case">
                   <Link href={`/dashboard/cases/${p.case_id}`} className="app-link">
                     {caseTitles.get(p.case_id) ?? "Open case"}
                   </Link>

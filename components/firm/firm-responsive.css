@@ -1,0 +1,121 @@
+/* Responsive overrides for the (firm) route group.
+ *
+ * Inline styles can't carry media queries, so we collapse common patterns
+ * (multi-column grids, oversized hero typography) under wider-than-mobile
+ * breakpoints with attribute selectors + !important.
+ *
+ * Loaded via app/(firm)/layout.tsx; scoped to .firm-page so it never
+ * leaks to dashboard / wizard / legacy site pages.
+ */
+
+:root {
+  --firm-pad-x: max(80px, calc((100vw - 1440px) / 2));
+}
+
+/* ── Tablet (≤ 1024px): collapse 3- and 4-column grids to 2, ease padding ── */
+@media (max-width: 1024px) {
+  :root { --firm-pad-x: 48px; }
+
+  /* Heros and "1.x fr 1fr" 2-col layouts stack */
+  .firm-page main [style*="grid-template-columns:1.15fr 1fr"],
+  .firm-page main [style*="grid-template-columns: 1.15fr 1fr"],
+  .firm-page main [style*="grid-template-columns:1.05fr 1fr"],
+  .firm-page main [style*="grid-template-columns: 1.05fr 1fr"],
+  .firm-page main [style*="grid-template-columns:1.2fr 1fr"],
+  .firm-page main [style*="grid-template-columns: 1.2fr 1fr"],
+  .firm-page main [style*="grid-template-columns:1.4fr 1fr"],
+  .firm-page main [style*="grid-template-columns: 1.4fr 1fr"],
+  .firm-page main [style*="grid-template-columns:1.3fr 1fr"],
+  .firm-page main [style*="grid-template-columns: 1.3fr 1fr"],
+  .firm-page main [style*="grid-template-columns:1.1fr 1fr"],
+  .firm-page main [style*="grid-template-columns: 1.1fr 1fr"],
+  .firm-page main [style*="grid-template-columns:1fr 1.4fr"],
+  .firm-page main [style*="grid-template-columns: 1fr 1.4fr"],
+  .firm-page main [style*="grid-template-columns:1fr 1.3fr"],
+  .firm-page main [style*="grid-template-columns: 1fr 1.3fr"],
+  .firm-page main [style*="grid-template-columns:1fr 1.2fr"],
+  .firm-page main [style*="grid-template-columns: 1fr 1.2fr"],
+  .firm-page main [style*="grid-template-columns:1fr 1fr"],
+  .firm-page main [style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+
+  /* 3- and 4-column grids drop to 2 */
+  .firm-page main [style*="repeat(4, 1fr)"],
+  .firm-page main [style*="repeat(3, 1fr)"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* 5-column receipts cards drop to 2 */
+  .firm-page main [style*="repeat(5, 1fr)"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* TOC + content sidebar (legal docs / state guide) becomes single column */
+  .firm-page main [style*="grid-template-columns:280px 1fr"],
+  .firm-page main [style*="grid-template-columns: 280px 1fr"],
+  .firm-page main [style*="grid-template-columns:1fr 320px"],
+  .firm-page main [style*="grid-template-columns: 1fr 320px"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Hero h1 and section h2 shrink a touch */
+  .firm-page main h1 { font-size: clamp(34px, 6vw, 56px) !important; }
+  .firm-page main h2 { font-size: clamp(28px, 5vw, 44px) !important; }
+
+  /* Header mega menus get tighter */
+  .firm-page header nav { gap: 18px !important; }
+}
+
+/* ── Mobile (≤ 720px): everything to 1 column, smaller padding ── */
+@media (max-width: 720px) {
+  :root { --firm-pad-x: 24px; }
+
+  .firm-page main [style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  /* Section padding eases up */
+  .firm-page main section[style*="120px"] { padding-top: 64px !important; padding-bottom: 64px !important; }
+  .firm-page main section[style*="100px"] { padding-top: 56px !important; padding-bottom: 56px !important; }
+  .firm-page main section[style*="80px"] { padding-top: 48px !important; padding-bottom: 48px !important; }
+  .firm-page main section[style*="60px"] { padding-top: 40px !important; padding-bottom: 40px !important; }
+
+  /* Display heading + body type shrink */
+  .firm-page main h1 { font-size: clamp(30px, 8vw, 44px) !important; line-height: 1.1 !important; }
+  .firm-page main h2 { font-size: clamp(24px, 7vw, 34px) !important; line-height: 1.15 !important; }
+
+  /* Hero stat groups (4-up underneath the hero) drop borders so they wrap cleanly */
+  .firm-page main [style*="grid-template-columns:repeat(4, 1fr)"] > div,
+  .firm-page main [style*="grid-template-columns: repeat(4, 1fr)"] > div {
+    padding-left: 0 !important;
+    border-left: none !important;
+  }
+
+  /* Header nav mega-menu chrome — hide the right-side nav on tiny screens
+     so the brand stays visible. (Real hamburger menu is a TODO.) */
+  .firm-page > header > div > nav { display: none !important; }
+  .firm-page > header > div > div:last-child { gap: 10px !important; }
+
+  /* Footer columns stack */
+  .firm-page footer [style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+}
+
+/* ── Very narrow (≤ 480px): drop button row padding, FAQ summary alignment ── */
+@media (max-width: 480px) {
+  .firm-page main button,
+  .firm-page main a[style*="border-radius:999px"],
+  .firm-page main a[style*="border-radius: 999px"] {
+    padding: 12px 18px !important;
+    font-size: 13.5px !important;
+  }
+
+  .firm-page main details > summary {
+    gap: 12px !important;
+  }
+}

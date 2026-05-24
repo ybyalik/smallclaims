@@ -8,6 +8,7 @@ import HeroCta from "../HeroCta";
 import HeroStatePins from "../HeroStatePins";
 import CtaStepCard from "../CtaStepCard";
 import Breadcrumbs from "../Breadcrumbs";
+import FaqSection from "../FaqSection";
 import { availableStateSlugs } from "../../lib/state-data";
 import { STATES } from "../../lib/states";
 import type { CategoryHubData } from "../../lib/category-hubs/types";
@@ -70,7 +71,7 @@ export default async function CategoryTemplate({ data }: { data: CategoryHubData
         })),
         speakable: {
           "@type": "SpeakableSpecification",
-          cssSelector: ["#faq", ".cat-faq"],
+          cssSelector: ["#faq", ".dl-faqv2-list"],
         },
       },
     ],
@@ -328,32 +329,12 @@ export default async function CategoryTemplate({ data }: { data: CategoryHubData
           </div>
         </section>
 
-        {/* FAQ */}
-        <section className="cat-section">
-          <div className="cat-split">
-            <div className="cat-split-intro">
-              <span className="eyebrow">FAQ</span>
-              <h2>
-                Frequently Asked <em>Questions</em>.
-              </h2>
-              <p>
-                The questions {data.audienceLabel} actually ask before filing.
-              </p>
-            </div>
-            <div className="cat-faq">
-              {data.faqs.map((f, idx) => (
-                <details key={idx}>
-                  <summary>{f.q}</summary>
-                  <div>
-                    <p>{f.a}</p>
-                  </div>
-                </details>
-              ))}
-            </div>
-          </div>
-        </section>
-
       </div>
+
+      <FaqSection
+        faqs={data.faqs}
+        sub={`The questions ${data.audienceLabel} actually ask before filing.`}
+      />
     </main>
   );
 }

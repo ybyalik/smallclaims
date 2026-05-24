@@ -94,10 +94,6 @@ export default function FeaturedUsMap({ highlightedSlugs, tooltips }: Props) {
           {tip.sub ? <span>{tip.sub}</span> : null}
         </div>
       ) : null}
-      <div className="cv2-featured-map-legend">
-        <span><i style={{ background: "var(--accent)" }} aria-hidden="true" /> Top 10 states</span>
-        <span><i style={{ background: "#ECE7DC", border: "1px solid #d4cdb9" }} aria-hidden="true" /> Other states</span>
-      </div>
     </div>
   );
 }

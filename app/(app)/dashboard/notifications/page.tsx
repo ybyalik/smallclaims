@@ -65,11 +65,11 @@ export default async function NotificationsPage() {
             return (
               <li key={n.id}>
                 <Wrap>
+                  <div className="app-notif-when">{formatWhen(n.created_at)}</div>
                   <div className="app-notif-body">
                     <div className="app-notif-title">{n.title}</div>
                     {n.body ? <p className="app-notif-text">{n.body}</p> : null}
                   </div>
-                  <div className="app-notif-when">{formatWhen(n.created_at)}</div>
                 </Wrap>
               </li>
             );

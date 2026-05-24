@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Breadcrumbs from "../Breadcrumbs";
+import FaqSection from "../FaqSection";
 import FeaturedUsMap from "../widgets/FeaturedUsMap";
 import CountUp from "../widgets/CountUp";
 import HeroCta from "../HeroCta";
@@ -143,7 +144,7 @@ export default async function IssueTemplate({ issue, category, siblings }: Props
         })),
         speakable: {
           "@type": "SpeakableSpecification",
-          cssSelector: ["#faq", ".cat-faq"],
+          cssSelector: ["#faq", ".dl-faqv2-list"],
         },
       },
     ],
@@ -742,27 +743,14 @@ export default async function IssueTemplate({ issue, category, siblings }: Props
           </div>
         </section>
 
-        {/* FAQ */}
-        <section id="faq" className="cat-section">
-          <div className="cat-split">
-            <div className="cat-split-intro">
-              <span className="eyebrow">FAQ</span>
-              <h2>Frequently Asked <em>Questions</em>.</h2>
-              <p>
-                The questions {category.audienceLabel} actually ask before filing.
-              </p>
-            </div>
-            <div className="cat-faq">
-              {issue.faqs.map((f) => (
-                <details key={f.q}>
-                  <summary>{f.q}</summary>
-                  <div><p>{f.a}</p></div>
-                </details>
-              ))}
-            </div>
-          </div>
-        </section>
+      </div>
 
+      <FaqSection
+        faqs={issue.faqs}
+        sub={`The questions ${category.audienceLabel} actually ask before filing.`}
+      />
+
+      <div className="wrap">
         {/* RELATED */}
         <section id="related" className="cat-section">
           <div className="cat-stack-head">

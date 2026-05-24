@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { CheckCircle2, ShieldCheck, Mail, Phone, FileText, RefreshCw, Award, MapPin, FileCheck, UserCheck, ArrowRight, MessageCircle, Pencil, Send, BarChart3, Lock, Timer, Target, TrendingUp, Calendar, Gavel, Scale, Landmark, Folder, Search, Headphones, Star, Check, Clock, Home, Hammer, Briefcase, Car, ShoppingCart, Banknote, Undo2, Users } from "lucide-react";
+import { CheckCircle2, ShieldCheck, Mail, Phone, FileText, RefreshCw, Award, MapPin, FileCheck, UserCheck, ArrowRight, MessageCircle, Pencil, Send, BarChart3, Lock, Timer, Target, TrendingUp, Calendar, Gavel, Scale, Landmark, Folder, Search, Headphones, Star, Check, Clock, Home, Hammer, Briefcase, Car, ShoppingCart, Banknote, Undo2, Users, BookOpen } from "lucide-react";
 import HeroCta from "../../../components/HeroCta";
 import LetterDisplay from "./LetterDisplay";
 import StartCaseButton from "../../../components/StartCaseButton";
+import FaqSection from "../../../components/FaqSection";
 
 export const metadata: Metadata = {
   title: "Send a Professional Demand Letter — $29",
@@ -755,7 +756,7 @@ export default function DemandLetterPage() {
       {/* PRICING — two-tier comparison with featured "Full Pressure" card.
           Matches the "Choose How Hard You Want to Push" reference, minus the
           left-side escalation-path column (intentionally omitted). */}
-      <section className="dl-section-cream dl-pricing-band">
+      <section className="dl-section-cream dl-pricing-band dl-pricing-band-green">
         <div className="wrap">
           <div className="dl-price-head">
             <span className="dl-price-eyebrow">Choose Your Approach</span>
@@ -889,72 +890,37 @@ export default function DemandLetterPage() {
             </div>
           </div>
 
-          {/* Bottom trust strip — matches the under-hero pill */}
-          <ul className="dl-tbar">
+        </div>
+      </section>
+
+      {/* Trust strip — white background, headings only, separated by pipes */}
+      <section className="dl-trust-strip">
+        <div className="wrap">
+          <ul className="dl-trust-row">
             <li>
-              <span className="dl-tbar-icon"><ShieldCheck size={22} strokeWidth={1.7} /></span>
-              <div>
-                <strong>Trusted by people across the country</strong>
-                <p>Thousands have used our demand letters to get what they&rsquo;re owed.</p>
-              </div>
+              <span className="dl-trust-icon"><ShieldCheck size={18} strokeWidth={1.9} /></span>
+              <strong>Trusted by people across the country</strong>
             </li>
             <li>
-              <span className="dl-tbar-icon"><Lock size={22} strokeWidth={1.7} /></span>
-              <div>
-                <strong>Secure &amp; Private</strong>
-                <p>Your information is always protected.</p>
-              </div>
+              <span className="dl-trust-icon"><Lock size={18} strokeWidth={1.9} /></span>
+              <strong>Secure &amp; Private</strong>
             </li>
             <li>
-              <span className="dl-tbar-icon"><MapPin size={22} strokeWidth={1.7} /></span>
-              <div>
-                <strong>Used Nationwide</strong>
-                <p>State-specific letters that hold up in court.</p>
-              </div>
+              <span className="dl-trust-icon"><MapPin size={18} strokeWidth={1.9} /></span>
+              <strong>Used Nationwide</strong>
             </li>
             <li>
-              <span className="dl-tbar-icon"><Award size={22} strokeWidth={1.7} /></span>
-              <div>
-                <strong>Satisfaction Guarantee</strong>
-                <p>We stand behind our service and your results.</p>
-              </div>
+              <span className="dl-trust-icon"><Award size={18} strokeWidth={1.9} /></span>
+              <strong>Satisfaction Guarantee</strong>
             </li>
           </ul>
         </div>
       </section>
 
-      <div className="wrap">
-        {/* FAQ */}
-        <section className="cat-section">
-          <div className="cat-split">
-            <div className="cat-split-intro">
-              <span className="eyebrow">FAQ</span>
-              <h2>
-                Common <em>questions.</em>
-              </h2>
-              <p>
-                Don&rsquo;t see yours?{" "}
-                <Link href="/contact" className="cat-text-link">
-                  Email support
-                </Link>
-                .
-              </p>
-            </div>
-            <div className="cat-faq">
-              {FAQS.map((f, i) => (
-                <details key={i}>
-                  <summary>{f.q}</summary>
-                  <div>
-                    <p>{f.a}</p>
-                  </div>
-                </details>
-              ))}
-            </div>
-          </div>
-        </section>
-
-
-      </div>
+      <FaqSection
+        faqs={FAQS}
+        sub="Everything you need to know about sending a demand letter and filing your claim in small claims court."
+      />
     </main>
   );
 }

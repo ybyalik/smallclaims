@@ -81,10 +81,6 @@ export default function HeroStatePins() {
           </div>
         ))}
       </div>
-      <div className="hero-statepins-foot">
-        <span className="hero-statepins-foot-eyebrow">Recovery by state</span>
-        <span className="hero-statepins-foot-sub">illustrative &middot; varies by case</span>
-      </div>
     </div>
   );
 }

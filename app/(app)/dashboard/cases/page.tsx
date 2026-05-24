@@ -198,7 +198,7 @@ export default async function DashboardHome() {
                     </div>
                   ) : null}
                 </div>
-                <div>
+                <div className="app-case-info">
                   <div className="app-case-defendant">
                     {caption}
                     {needsAction ? (

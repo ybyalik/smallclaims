@@ -2,6 +2,7 @@
 
 import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
+import { User, Building2, CircleSlash } from "lucide-react";
 import { createClient } from "../../../../lib/supabase/client";
 import type { PostalAddress } from "../../../../lib/supabase/types";
 import AddressAutocomplete from "../../../../components/wizard/AddressAutocomplete";
@@ -140,39 +141,42 @@ export default function SettingsForm({
           these fields.
         </p>
 
-        <div style={{ display: "flex", gap: 14, marginBottom: 14, flexWrap: "wrap" }}>
-          <label
-            style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: 14 }}
-          >
+        <div className="entity-picker" role="radiogroup" aria-label="Entity type">
+          <label className={`entity-card${entityType === "individual" ? " is-selected" : ""}`}>
             <input
               type="radio"
               name="entity-type"
               checked={entityType === "individual"}
               onChange={() => setEntityType("individual")}
             />
-            Individual
+            <span className="entity-card-icon" aria-hidden>
+              <User size={20} strokeWidth={1.8} />
+            </span>
+            <span className="entity-card-label">Individual</span>
           </label>
-          <label
-            style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: 14 }}
-          >
+          <label className={`entity-card${entityType === "business" ? " is-selected" : ""}`}>
             <input
               type="radio"
               name="entity-type"
               checked={entityType === "business"}
               onChange={() => setEntityType("business")}
             />
-            Business
+            <span className="entity-card-icon" aria-hidden>
+              <Building2 size={20} strokeWidth={1.8} />
+            </span>
+            <span className="entity-card-label">Business</span>
           </label>
-          <label
-            style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: 14 }}
-          >
+          <label className={`entity-card${entityType === null ? " is-selected" : ""}`}>
             <input
               type="radio"
               name="entity-type"
               checked={entityType === null}
               onChange={() => setEntityType(null)}
             />
-            Not set
+            <span className="entity-card-icon" aria-hidden>
+              <CircleSlash size={20} strokeWidth={1.8} />
+            </span>
+            <span className="entity-card-label">Not set</span>
           </label>
         </div>
 
@@ -205,11 +209,7 @@ export default function SettingsForm({
           />
         </label>
         <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 100px 130px",
-            gap: 10,
-          }}
+          className="app-settings-city-row"
         >
           <label>
             <span>City</span>

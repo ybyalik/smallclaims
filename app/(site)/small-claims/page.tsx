@@ -9,6 +9,42 @@ import HeroStatePins from "../../../components/HeroStatePins";
 import UsMap from "../../../components/widgets/UsMap";
 import StateSearch from "../../../components/widgets/StateSearch";
 import CtaStepCard from "../../../components/CtaStepCard";
+import FaqSection from "../../../components/FaqSection";
+
+const SMALL_CLAIMS_FAQS = [
+  {
+    q: "What is small claims court?",
+    a: "A simplified court for everyday money disputes. Most state caps fall between $5,000 and $20,000. Hearings take 10 to 15 minutes. You don't need a lawyer (and in some states, like California, lawyers aren't even allowed at the initial hearing).",
+  },
+  {
+    q: "How much does it cost to file?",
+    a: "Filing fees usually run $30 to $100, depending on the state and the claim amount. Service-of-process costs run $30 to $80. The losing party often pays your filing fee back. Many states waive fees for low-income filers.",
+  },
+  {
+    q: "Do I need a lawyer?",
+    a: "No. Small claims is built for self-represented filers. In some states (California, for example) lawyers aren't even allowed at the initial hearing. The format is simple: explain what happened, show your evidence, judge decides.",
+  },
+  {
+    q: "How long does the process take?",
+    a: "30 to 90 days from filing to hearing in most states. Hearings themselves run 10 to 15 minutes. Judges often rule from the bench or send a written ruling within a few days. Collection on a judgment is separate and can take longer.",
+  },
+  {
+    q: "What can I sue for?",
+    a: "Money damages within your state's cap (usually $5,000 to $20,000). Landlord disputes, employer disputes, contractor work, auto-related damage, neighbor disputes, personal loans, roommate disputes, online seller disputes, and refund disputes are all common. Personal injury and discrimination cases usually need higher courts.",
+  },
+  {
+    q: "How do I serve the defendant?",
+    a: "Sheriff, certified mail through the clerk, or a private process server. You cannot serve it yourself. File proof of service before the hearing. For businesses, serve the registered agent (look it up on your state secretary of state website).",
+  },
+  {
+    q: "What if the defendant doesn't show up?",
+    a: "You usually win by default judgment. The court issues judgment in your favor based on your unopposed evidence. Default judgments enforce the same way as contested judgments: lien, levy, garnishment.",
+  },
+  {
+    q: "Will this affect the defendant's credit?",
+    a: "Yes if it goes to judgment. Civil judgments appear on credit reports for 7 years. The threat of a judgment hitting credit is one reason demand letters work: most defendants settle before judgment to avoid the credit hit.",
+  },
+];
 
 export const metadata: Metadata = {
   title: "How to Sue in Small Claims Court",
@@ -532,106 +568,12 @@ export default async function SmallClaimsHubPage() {
           </div>
         </section>
 
-        {/* FAQ */}
-        <section className="cat-section">
-          <div className="cat-split">
-            <div className="cat-split-intro">
-              <span className="eyebrow">FAQ</span>
-              <h2>
-                Frequently Asked <em>Questions</em>.
-              </h2>
-            </div>
-            <div className="cat-faq">
-              <details>
-                <summary>What is small claims court?</summary>
-                <div>
-                  <p>
-                    A simplified court for everyday money disputes. Most state caps fall between
-                    $5,000 and $20,000. Hearings take 10 to 15 minutes. You don&rsquo;t need a
-                    lawyer (and in some states, like California, lawyers aren&rsquo;t even allowed
-                    at the initial hearing).
-                  </p>
-                </div>
-              </details>
-              <details>
-                <summary>How much does it cost to file?</summary>
-                <div>
-                  <p>
-                    Filing fees usually run $30 to $100, depending on the state and the claim
-                    amount. Service-of-process costs run $30 to $80. The losing party often pays
-                    your filing fee back. Many states waive fees for low-income filers.
-                  </p>
-                </div>
-              </details>
-              <details>
-                <summary>Do I need a lawyer?</summary>
-                <div>
-                  <p>
-                    No. Small claims is built for self-represented filers. In some states
-                    (California, for example) lawyers aren&rsquo;t even allowed at the initial
-                    hearing. The format is simple: explain what happened, show your evidence,
-                    judge decides.
-                  </p>
-                </div>
-              </details>
-              <details>
-                <summary>How long does the process take?</summary>
-                <div>
-                  <p>
-                    30 to 90 days from filing to hearing in most states. Hearings themselves run
-                    10 to 15 minutes. Judges often rule from the bench or send a written ruling
-                    within a few days. Collection on a judgment is separate and can take longer.
-                  </p>
-                </div>
-              </details>
-              <details>
-                <summary>What can I sue for?</summary>
-                <div>
-                  <p>
-                    Money damages within your state&rsquo;s cap (usually $5,000 to $20,000).
-                    Landlord disputes, employer disputes, contractor work, auto-related damage,
-                    neighbor disputes, personal loans, roommate disputes, online seller disputes,
-                    and refund disputes are all common. Personal injury and discrimination cases
-                    usually need higher courts.
-                  </p>
-                </div>
-              </details>
-              <details>
-                <summary>How do I serve the defendant?</summary>
-                <div>
-                  <p>
-                    Sheriff, certified mail through the clerk, or a private process server. You
-                    cannot serve it yourself. File proof of service before the hearing. For
-                    businesses, serve the registered agent (look it up on your state secretary of
-                    state website).
-                  </p>
-                </div>
-              </details>
-              <details>
-                <summary>What if the defendant doesn&rsquo;t show up?</summary>
-                <div>
-                  <p>
-                    You usually win by default judgment. The court issues judgment in your favor
-                    based on your unopposed evidence. Default judgments enforce the same way as
-                    contested judgments: lien, levy, garnishment.
-                  </p>
-                </div>
-              </details>
-              <details>
-                <summary>Will this affect the defendant&rsquo;s credit?</summary>
-                <div>
-                  <p>
-                    Yes if it goes to judgment. Civil judgments appear on credit reports for 7
-                    years. The threat of a judgment hitting credit is one reason demand letters
-                    work: most defendants settle before judgment to avoid the credit hit.
-                  </p>
-                </div>
-              </details>
-            </div>
-          </div>
-        </section>
-
       </div>
+
+      <FaqSection
+        faqs={SMALL_CLAIMS_FAQS}
+        sub="The questions people actually ask before filing in small claims court."
+      />
     </main>
   );
 }
