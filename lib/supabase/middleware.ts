@@ -35,24 +35,6 @@ export async function updateSession(request: NextRequest) {
 
   const url = request.nextUrl;
 
-  // Browsers caching the pre-Phase-1 SiteHeader still link to
-  // /signup?next=/dashboard/cases/new. After the URL migration to
-  // /dashboard/cases/* and the wizard-first entry, those users
-  // should land at the public /demand-letter entry instead of getting
-  // stuck on signup. (The wizard handles both anon and authed flows.)
-  if (url.pathname === "/signup" || url.pathname === "/login") {
-    const next = url.searchParams.get("next") || "";
-    if (
-      next === "/dashboard/cases/new" ||
-      next === "/dashboard/cases/new"
-    ) {
-      const redirectUrl = url.clone();
-      redirectUrl.pathname = "/demand-letter";
-      redirectUrl.search = "";
-      return NextResponse.redirect(redirectUrl);
-    }
-  }
-
   // Gate /dashboard/* on authentication. Anonymous users do not count;
   // they need to finish signup or log in.
   if (url.pathname.startsWith("/dashboard") && !isRealUser) {

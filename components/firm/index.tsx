@@ -44,7 +44,7 @@ export const PAD_X = "var(--firm-pad-x, max(80px, calc((100vw - 1440px) / 2)))";
 export const RAD = { card: 12, panel: 16, large: 20 } as const;
 
 // ─── Typography ─────────────────────────────────────────────────────
-// Hero headline (clamp 44–72px, weight 600, /home2 spec).
+// Hero headline (clamp 44–72px, weight 600, / spec).
 export const H1: React.CSSProperties = {
   fontFamily: HEAD_FONT,
   fontWeight: 600,
@@ -241,11 +241,11 @@ export function FirmBtn({
 // Service-page subnav. Sits below the global site nav. Each item links
 // to its corresponding firm service page.
 export const SUBNAV = [
-  { id: "demand-letter", label: "Demand Letter", href: "/demand-letter2" },
-  { id: "case-score", label: "Case Score", href: "/case-score2" },
-  { id: "small-claims", label: "Small Claims Filing", href: "/small-claims2" },
-  { id: "collection", label: "Collection", href: "/collection-plan2" },
-  { id: "settlement", label: "Settlement Negotiation", href: "/contact2" },
+  { id: "demand-letter", label: "Demand Letter", href: "/demand-letter" },
+  { id: "case-score", label: "Case Score", href: "/case-score" },
+  { id: "small-claims", label: "Small Claims Filing", href: "/small-claims" },
+  { id: "collection", label: "Collection", href: "/collection-plan" },
+  { id: "settlement", label: "Settlement Negotiation", href: "/contact" },
 ] as const;
 
 export type FirmSubnavId = (typeof SUBNAV)[number]["id"];

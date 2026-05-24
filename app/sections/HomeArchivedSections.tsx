@@ -2,7 +2,7 @@
 // back into a real page later without re-deriving the markup.
 
 import UseCases from "../../components/UseCases";
-import ProcessFlow from "../(site)/ProcessFlow";
+import ProcessFlow from "./ProcessFlow";
 
 export function ArchivedDashboardSection() {
   return (

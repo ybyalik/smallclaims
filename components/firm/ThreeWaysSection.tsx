@@ -9,9 +9,9 @@ import { C, H2, eyebrow, PAD_X, RAD, BODY_FONT, HEAD_FONT } from "./index";
 type Path = { tag: string; title: string; desc: string; price: string; href: string };
 
 const DEFAULT_PATHS: Path[] = [
-  { tag: "PATH A", title: "Send a Demand Letter", desc: "Start with formal pressure. Most cases settle here.", price: "From $29", href: "/demand-letter2" },
-  { tag: "PATH B", title: "Check My Case Strength", desc: "Free 90-second read on whether to pursue.", price: "Free", href: "/case-score2" },
-  { tag: "PATH C", title: "File Your Claim", desc: "Skip ahead — county-specific filing forms drafted.", price: "From $79", href: "/filing-kit2" },
+  { tag: "PATH A", title: "Send a Demand Letter", desc: "Start with formal pressure. Most cases settle here.", price: "From $29", href: "/demand-letter" },
+  { tag: "PATH B", title: "Check My Case Strength", desc: "Free 90-second read on whether to pursue.", price: "Free", href: "/case-score" },
+  { tag: "PATH C", title: "File Your Claim", desc: "Skip ahead — county-specific filing forms drafted.", price: "From $79", href: "/filing-kit" },
 ];
 
 const PATH_BAND_COLORS = [

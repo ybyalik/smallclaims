@@ -13,21 +13,21 @@ import { C, BODY_FONT, HEAD_FONT, PAD_X } from "./index";
 // Claims content lives inside Resources, matching the legacy structure.
 
 const SERVICES = [
-  { href: "/demand-letter2", num: "01", title: "Demand Letter", sub: "Attorney-drafted, state-specific. Most disputes settle here.", Icon: Mail, price: "From $29" },
-  { href: "/filing-kit2", num: "02", title: "Filing Kit", sub: "County-specific forms, fee schedule, and hearing prep.", Icon: FileText, price: "From $79" },
-  { href: "/collection-plan2", num: "03", title: "Collection Plan", sub: "Enforce and collect on the judgment you won.", Icon: Wallet, price: "From $49" },
+  { href: "/demand-letter", num: "01", title: "Demand Letter", sub: "Attorney-drafted, state-specific. Most disputes settle here.", Icon: Mail, price: "From $29" },
+  { href: "/filing-kit", num: "02", title: "Filing Kit", sub: "County-specific forms, fee schedule, and hearing prep.", Icon: FileText, price: "From $79" },
+  { href: "/collection-plan", num: "03", title: "Collection Plan", sub: "Enforce and collect on the judgment you won.", Icon: Wallet, price: "From $49" },
 ] as const;
 
 const SC_CATEGORIES = [
-  { href: "/small-claims2/landlord", label: "Landlord disputes", Icon: Building2 },
-  { href: "/small-claims2/contractor", label: "Contractor disputes", Icon: Hammer },
-  { href: "/small-claims2/employer", label: "Employer disputes", Icon: Briefcase },
-  { href: "/small-claims2/auto", label: "Auto disputes", Icon: Car },
-  { href: "/small-claims2/neighbor", label: "Neighbor disputes", Icon: Trees },
-  { href: "/small-claims2/personal-loan", label: "Personal loan disputes", Icon: HandCoins },
-  { href: "/small-claims2/roommate", label: "Roommate disputes", Icon: Users },
-  { href: "/small-claims2/online-seller", label: "Online seller disputes", Icon: ShoppingBag },
-  { href: "/small-claims2/refund", label: "Refund disputes", Icon: Receipt },
+  { href: "/small-claims/landlord", label: "Landlord disputes", Icon: Building2 },
+  { href: "/small-claims/contractor", label: "Contractor disputes", Icon: Hammer },
+  { href: "/small-claims/employer", label: "Employer disputes", Icon: Briefcase },
+  { href: "/small-claims/auto", label: "Auto disputes", Icon: Car },
+  { href: "/small-claims/neighbor", label: "Neighbor disputes", Icon: Trees },
+  { href: "/small-claims/personal-loan", label: "Personal loan disputes", Icon: HandCoins },
+  { href: "/small-claims/roommate", label: "Roommate disputes", Icon: Users },
+  { href: "/small-claims/online-seller", label: "Online seller disputes", Icon: ShoppingBag },
+  { href: "/small-claims/refund", label: "Refund disputes", Icon: Receipt },
 ] as const;
 
 const FEATURED_STATES = [
@@ -84,7 +84,7 @@ export function SiteHeader() {
         }}
       >
         {/* Brand wordmark */}
-        <Link href="/home2" style={{ display: "inline-flex", alignItems: "center", textDecoration: "none" }}>
+        <Link href="/" style={{ display: "inline-flex", alignItems: "center", textDecoration: "none" }}>
           <Image
             src="/civilcase-logo.webp"
             alt="CivilCase"
@@ -105,7 +105,7 @@ export function SiteHeader() {
           >
             <button
               type="button"
-              style={navLinkStyle(openMega === "services" || isActive("/demand-letter2") || isActive("/filing-kit2") || isActive("/collection-plan2"))}
+              style={navLinkStyle(openMega === "services" || isActive("/demand-letter") || isActive("/filing-kit") || isActive("/collection-plan"))}
             >
               Services <ChevronDown size={12} strokeWidth={2.2} aria-hidden />
             </button>
@@ -169,7 +169,7 @@ export function SiteHeader() {
                   {/* Col 2 — Case Score feature card */}
                   <div>
                     <Link
-                      href="/case-score2"
+                      href="/case-score"
                       onClick={() => setOpenMega(null)}
                       style={{
                         display: "block",
@@ -234,13 +234,13 @@ export function SiteHeader() {
           </div>
 
           <Link
-            href="/small-claims2"
-            style={navLinkStyle(isActive("/small-claims2") && !isActive("/small-claims2/"))}
+            href="/small-claims"
+            style={navLinkStyle(isActive("/small-claims") && !isActive("/small-claims/"))}
           >
             Small Claims
           </Link>
 
-          <Link href="/case-score2" style={navLinkStyle(isActive("/case-score2"))}>Case Score</Link>
+          <Link href="/case-score" style={navLinkStyle(isActive("/case-score"))}>Case Score</Link>
 
           {/* Resources (mega) — 3-column matches the legacy site layout:
               dispute types · state guides · featured blog card */}
@@ -250,8 +250,8 @@ export function SiteHeader() {
             style={{ position: "relative" }}
           >
             <Link
-              href="/blog2"
-              style={navLinkStyle(openMega === "res" || isActive("/blog2") || isActive("/about2") || isActive("/contact2"))}
+              href="/blog"
+              style={navLinkStyle(openMega === "res" || isActive("/blog") || isActive("/about") || isActive("/contact"))}
             >
               Resources <ChevronDown size={12} strokeWidth={2.2} aria-hidden />
             </Link>
@@ -304,7 +304,7 @@ export function SiteHeader() {
                     ))}
                   </ul>
                   <Link
-                    href="/small-claims2"
+                    href="/small-claims"
                     onClick={() => setOpenMega(null)}
                     style={{ display: "inline-block", marginTop: 10, padding: "6px 10px", textDecoration: "none", color: C.accent, font: `600 13px/1.3 ${BODY_FONT}` }}
                   >
@@ -319,7 +319,7 @@ export function SiteHeader() {
                     {FEATURED_STATES.map((s) => (
                       <li key={s.slug}>
                         <Link
-                          href={`/small-claims2/${s.slug}`}
+                          href={`/small-claims/${s.slug}`}
                           onClick={() => setOpenMega(null)}
                           className="firm-mega-row"
                           style={{
@@ -339,7 +339,7 @@ export function SiteHeader() {
                     ))}
                   </ul>
                   <Link
-                    href="/small-claims2"
+                    href="/small-claims"
                     onClick={() => setOpenMega(null)}
                     style={{ display: "inline-block", marginTop: 10, padding: "6px 10px", textDecoration: "none", color: C.accent, font: `600 13px/1.3 ${BODY_FONT}` }}
                   >
@@ -350,7 +350,7 @@ export function SiteHeader() {
                 {/* Col 3 — Featured blog card */}
                 <div>
                   <Link
-                    href="/blog2"
+                    href="/blog"
                     onClick={() => setOpenMega(null)}
                     style={{
                       display: "block",
@@ -390,8 +390,8 @@ export function SiteHeader() {
               {/* About / Contact secondary row */}
               <div style={{ marginTop: 16, paddingTop: 14, borderTop: `1px solid ${C.line}`, display: "flex", gap: 8, justifyContent: "flex-start" }}>
                 {[
-                  { href: "/about2", t: "About CivilCase" },
-                  { href: "/contact2", t: "Contact us" },
+                  { href: "/about", t: "About CivilCase" },
+                  { href: "/contact", t: "Contact us" },
                 ].map((r) => (
                   <Link
                     key={r.href}
@@ -414,7 +414,7 @@ export function SiteHeader() {
             Sign in
           </Link>
           <Link
-            href="/home2"
+            href="/"
             style={{
               background: "#3D7A4A",
               color: "#fef9f1",

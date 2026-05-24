@@ -27,18 +27,18 @@ const FOOTER_COLS = [
   {
     label: "PRODUCT",
     items: [
-      { href: "/demand-letter2", label: "Demand Letter" },
-      { href: "/filing-kit2", label: "Filing Kit" },
-      { href: "/collection-plan2", label: "Collection Plan" },
-      { href: "/small-claims2", label: "Small Claims by State" },
-      { href: "/case-score2", label: "Case Score" },
+      { href: "/demand-letter", label: "Demand Letter" },
+      { href: "/filing-kit", label: "Filing Kit" },
+      { href: "/collection-plan", label: "Collection Plan" },
+      { href: "/small-claims", label: "Small Claims by State" },
+      { href: "/case-score", label: "Case Score" },
     ],
   },
   {
     label: "COMPANY",
     items: [
-      { href: "/about2", label: "About" },
-      { href: "/contact2", label: "Contact" },
+      { href: "/about", label: "About" },
+      { href: "/contact", label: "Contact" },
       { href: "/blog", label: "Blog" },
       { href: "#", label: "Press" },
     ],
@@ -75,7 +75,7 @@ export function SiteFooter() {
         {/* Brand block */}
         <div>
           <Link
-            href="/home2"
+            href="/"
             style={{
               display: "inline-flex",
               alignItems: "center",

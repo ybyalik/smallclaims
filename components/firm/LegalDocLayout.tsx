@@ -24,9 +24,9 @@ export function LegalDocLayout({
   badge,
   sections,
   ctaLabel = "Send a Demand Letter",
-  ctaHref = "/demand-letter2",
+  ctaHref = "/demand-letter",
   secondaryLabel = "About CivilCase",
-  secondaryHref = "/about2",
+  secondaryHref = "/about",
   cta,
 }: {
   eyebrowText: string;

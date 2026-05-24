@@ -11,6 +11,7 @@ import {
 import { availableStateSlugs } from "../../lib/state-data";
 import { STATES } from "../../lib/states";
 import type { CategoryHubData } from "../../lib/category-hubs/types";
+import { collectionPageSchema, articleSchema, breadcrumbList, jsonLdGraph } from "../../lib/schema";
 
 // Firm-styled equivalent of CategoryTemplate. Reads the same CategoryHubData
 // shape so every category landing page becomes a one-line wrapper:
@@ -26,15 +27,40 @@ export async function FirmCategoryTemplate({ data }: { data: CategoryHubData }) 
     .map((slug) => STATES.find((s) => s.slug === slug))
     .filter((s): s is NonNullable<typeof s> => Boolean(s) && ready.has(s!.slug));
 
+  const catUrl = `/small-claims/${data.categorySlug}`;
+  const catHeadline = `${data.hero.h1.pre}${data.hero.h1.em}${data.hero.h1.post ?? ""}`;
+  const jsonLd = jsonLdGraph(
+    collectionPageSchema({
+      name: data.breadcrumbLabel,
+      description: data.meta.description,
+      url: catUrl,
+      items: data.issues.slice(0, 12).map((it) => ({
+        name: it.title,
+        url: `${catUrl}/${it.slug}`,
+      })),
+    }),
+    articleSchema({
+      headline: data.schemaArticle.headline || catHeadline,
+      description: data.schemaArticle.description || data.meta.description,
+      url: catUrl,
+    }),
+    breadcrumbList([
+      { name: "CivilCase", url: "/" },
+      { name: "Small Claims", url: "/small-claims" },
+      { name: data.breadcrumbLabel, url: catUrl },
+    ]),
+  );
+
   return (
     <main style={{ background: C.bg, color: C.fg, font: `16px/1.5 ${BODY_FONT}` }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <style dangerouslySetInnerHTML={{ __html: italicEmCSS }} />
 
       {/* Breadcrumb */}
       <div style={{ padding: `20px ${PAD_X}`, background: C.bg, borderBottom: `1px solid ${C.line}`, font: `13px/1 ${BODY_FONT}`, color: C.muted }}>
-        <Link href="/home2" style={{ color: C.muted, textDecoration: "none" }}>CivilCase</Link>
+        <Link href="/" style={{ color: C.muted, textDecoration: "none" }}>CivilCase</Link>
         <span style={{ margin: "0 10px", opacity: 0.5 }}>/</span>
-        <Link href="/small-claims2" style={{ color: C.muted, textDecoration: "none" }}>Small Claims</Link>
+        <Link href="/small-claims" style={{ color: C.muted, textDecoration: "none" }}>Small Claims</Link>
         <span style={{ margin: "0 10px", opacity: 0.5 }}>/</span>
         <span style={{ color: C.fg, fontWeight: 500 }}>{data.breadcrumbLabel}</span>
       </div>
@@ -54,15 +80,15 @@ export async function FirmCategoryTemplate({ data }: { data: CategoryHubData }) 
               <FirmBtn kind="ghost">Send a Demand Letter</FirmBtn>
             </div>
           </div>
-          {/* Hero right side: same HeroStatePins map used on /small-claims2 */}
+          {/* Hero right side: same HeroStatePins map used on /small-claims */}
           <div>
             <HeroStatePins />
           </div>
         </div>
       </section>
 
-      {/* ISSUE PANEL (same pattern as /small-claims2 "All dispute categories"
-          and /landlord2 "All landlord disputes") */}
+      {/* ISSUE PANEL (same pattern as /small-claims "All dispute categories"
+          and /landlord "All landlord disputes") */}
       <section style={{ padding: `120px ${PAD_X}` }}>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 80, marginBottom: 56, alignItems: "end" }}>
           <div>
@@ -130,7 +156,7 @@ export async function FirmCategoryTemplate({ data }: { data: CategoryHubData }) 
                 return issue.ready ? (
                   <Link
                     key={issue.slug}
-                    href={`/small-claims2/${data.categorySlug}/${issue.slug}`}
+                    href={`/small-claims/${data.categorySlug}/${issue.slug}`}
                     className="firm-cat-link"
                     style={cellStyle}
                   >
@@ -155,7 +181,7 @@ export async function FirmCategoryTemplate({ data }: { data: CategoryHubData }) 
               {data.issues.filter((i) => i.ready).slice(0, 4).map((p) => (
                 <Link
                   key={p.slug}
-                  href={`/small-claims2/${data.categorySlug}/${p.slug}`}
+                  href={`/small-claims/${data.categorySlug}/${p.slug}`}
                   className="firm-cat-link"
                   style={{ display: "inline-flex", alignItems: "center", padding: "6px 12px", borderRadius: 999, background: "rgba(31,26,22,0.04)", border: `1px solid ${C.line}`, font: `500 12.5px/1 ${BODY_FONT}`, color: C.fg, textDecoration: "none" }}
                 >
@@ -506,7 +532,7 @@ export async function FirmCategoryTemplate({ data }: { data: CategoryHubData }) 
             <div style={{ ...eyebrow, marginBottom: 22 }}>BY STATE</div>
             <h2 className="firm-h" style={H2}>State-specific <em>rules</em>.</h2>
             <p style={{ ...body, marginTop: 22, maxWidth: 520 }}>{data.stateRulesIntro}</p>
-            <Link href="/small-claims2" style={{ display: "inline-flex", alignItems: "center", gap: 8, marginTop: 22, font: `500 14px/1 ${BODY_FONT}`, color: C.accent, textDecoration: "none" }}>
+            <Link href="/small-claims" style={{ display: "inline-flex", alignItems: "center", gap: 8, marginTop: 22, font: `500 14px/1 ${BODY_FONT}`, color: C.accent, textDecoration: "none" }}>
               See all 50 state guides <Arrow color={C.accent} />
             </Link>
           </div>
@@ -534,7 +560,7 @@ export async function FirmCategoryTemplate({ data }: { data: CategoryHubData }) 
               {featured.map((s) => (
                 <Link
                   key={s.slug}
-                  href={`/small-claims2/${s.slug}`}
+                  href={`/small-claims/${s.slug}`}
                   className="firm-card-link"
                   style={{
                     display: "flex",

@@ -42,68 +42,26 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }));
 
-  const landlordUrls: MetadataRoute.Sitemap = ISSUES.filter((i) => i.ready).map((i) => ({
-    url: `${BASE}/small-claims/sue-landlord-${i.slug}`,
-    lastModified: now,
-    changeFrequency: "monthly",
-    priority: 0.8,
-  }));
+  // Issue pages use the canonical slug shape /small-claims/sue-<cat>-<slug>.
+  // The directory under /small-claims/<category>/<slug>/ exists only so the
+  // file lives in a clean path; next.config rewrites the slug URL to it.
+  const mkIssueUrls = (slugPrefix: string, list: { slug: string; ready: boolean }[]): MetadataRoute.Sitemap =>
+    list.filter((i) => i.ready).map((i) => ({
+      url: `${BASE}/small-claims/sue-${slugPrefix}-${i.slug}`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    }));
 
-  const employerUrls: MetadataRoute.Sitemap = EMPLOYER_ISSUES.filter((i) => i.ready).map((i) => ({
-    url: `${BASE}/small-claims/sue-employer-${i.slug}`,
-    lastModified: now,
-    changeFrequency: "monthly",
-    priority: 0.8,
-  }));
-
-  const contractorUrls: MetadataRoute.Sitemap = CONTRACTOR_ISSUES.filter((i) => i.ready).map((i) => ({
-    url: `${BASE}/small-claims/sue-contractor-${i.slug}`,
-    lastModified: now,
-    changeFrequency: "monthly",
-    priority: 0.8,
-  }));
-
-  const autoUrls: MetadataRoute.Sitemap = AUTO_ISSUES.filter((i) => i.ready).map((i) => ({
-    url: `${BASE}/small-claims/sue-auto-${i.slug}`,
-    lastModified: now,
-    changeFrequency: "monthly",
-    priority: 0.8,
-  }));
-
-  const neighborUrls: MetadataRoute.Sitemap = NEIGHBOR_ISSUES.filter((i) => i.ready).map((i) => ({
-    url: `${BASE}/small-claims/sue-neighbor-${i.slug}`,
-    lastModified: now,
-    changeFrequency: "monthly",
-    priority: 0.8,
-  }));
-
-  const personalLoanUrls: MetadataRoute.Sitemap = PERSONAL_LOAN_ISSUES.filter((i) => i.ready).map((i) => ({
-    url: `${BASE}/small-claims/sue-loan-${i.slug}`,
-    lastModified: now,
-    changeFrequency: "monthly",
-    priority: 0.8,
-  }));
-
-  const roommateUrls: MetadataRoute.Sitemap = ROOMMATE_ISSUES.filter((i) => i.ready).map((i) => ({
-    url: `${BASE}/small-claims/sue-roommate-${i.slug}`,
-    lastModified: now,
-    changeFrequency: "monthly",
-    priority: 0.8,
-  }));
-
-  const onlineSellerUrls: MetadataRoute.Sitemap = ONLINE_SELLER_ISSUES.filter((i) => i.ready).map((i) => ({
-    url: `${BASE}/small-claims/sue-seller-${i.slug}`,
-    lastModified: now,
-    changeFrequency: "monthly",
-    priority: 0.8,
-  }));
-
-  const refundUrls: MetadataRoute.Sitemap = REFUND_ISSUES.filter((i) => i.ready).map((i) => ({
-    url: `${BASE}/small-claims/sue-refund-${i.slug}`,
-    lastModified: now,
-    changeFrequency: "monthly",
-    priority: 0.8,
-  }));
+  const landlordUrls = mkIssueUrls("landlord", ISSUES);
+  const employerUrls = mkIssueUrls("employer", EMPLOYER_ISSUES);
+  const contractorUrls = mkIssueUrls("contractor", CONTRACTOR_ISSUES);
+  const autoUrls = mkIssueUrls("auto", AUTO_ISSUES);
+  const neighborUrls = mkIssueUrls("neighbor", NEIGHBOR_ISSUES);
+  const personalLoanUrls = mkIssueUrls("loan", PERSONAL_LOAN_ISSUES);
+  const roommateUrls = mkIssueUrls("roommate", ROOMMATE_ISSUES);
+  const onlineSellerUrls = mkIssueUrls("seller", ONLINE_SELLER_ISSUES);
+  const refundUrls = mkIssueUrls("refund", REFUND_ISSUES);
 
   const blogPosts = await publishedBlogPosts();
   const blogUrls: MetadataRoute.Sitemap = blogPosts.map((p) => ({
@@ -136,6 +94,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE}/small-claims/refund`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
     ...refundUrls,
     { url: `${BASE}/demand-letter`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE}/filing-kit`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE}/collection-plan`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${BASE}/landlord`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
     { url: `${BASE}/blog`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
     { url: `${BASE}/about`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
     { url: `${BASE}/disclaimer`, lastModified: now, changeFrequency: "yearly", priority: 0.4 },

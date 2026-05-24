@@ -11,6 +11,7 @@ import { availableStateSlugs } from "../../lib/state-data";
 import { getClaimStateTable } from "../../lib/state-data/by-claim";
 import type { LandlordIssue, EvidenceCell } from "../../lib/landlord-issues/types";
 import type { CategoryMeta } from "../../lib/issues/categories";
+import { articleSchema, howToSchema, breadcrumbList, jsonLdGraph } from "../../lib/schema";
 import {
   C, H1, H2, eyebrow, body, PAD_X, RAD, HEAD_FONT, BODY_FONT, SERIF_FONT, italicEmCSS,
   Arrow, Check, ShieldLogo, FirmBtn, FaqSection,
@@ -65,19 +66,41 @@ export default async function FirmIssueTemplate({ issue, category, siblings }: P
   const fmtCap = (n: number) => `$${n.toLocaleString("en-US")}`;
   const showStateSection = !!issue.claimType || !!issue.stateSection;
 
-  // Map category hub href → firm equivalent (best-effort: replace /small-claims/X → /small-claims2/X).
-  const hubHref = category.hubHref.replace(/^\/small-claims\//, "/small-claims2/");
+  // Map category hub href → firm equivalent (best-effort: replace /small-claims/X → /small-claims/X).
+  const hubHref = category.hubHref.replace(/^\/small-claims\//, "/small-claims/");
+
+  const issueUrl = `${hubHref}/${issue.slug}`;
+  const headline = `${issue.hero.h1.pre}${issue.hero.h1.em}${issue.hero.h1.post ?? ""}`;
+  const jsonLd = jsonLdGraph(
+    articleSchema({
+      headline,
+      description: issue.meta?.description,
+      url: issueUrl,
+    }),
+    howToSchema({
+      name: `How to sue: ${issue.short}`,
+      description: `Step-by-step plan to ${issue.short.toLowerCase()} in small claims court.`,
+      steps: issue.fileSteps.steps.slice(0, 5).map((s) => ({ name: s.title, text: s.body })),
+    }),
+    breadcrumbList([
+      { name: "CivilCase", url: "/" },
+      { name: "Small Claims", url: "/small-claims" },
+      { name: category.hubLabel, url: hubHref },
+      { name: issue.short, url: issueUrl },
+    ]),
+  );
 
   return (
     <main style={{ background: C.bg, color: C.fg, font: `16px/1.5 ${BODY_FONT}` }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <style dangerouslySetInnerHTML={{ __html: italicEmCSS + FIRM_ISSUE_CSS }} />
       <CountUp />
 
       {/* Breadcrumb */}
       <div style={{ padding: `20px ${PAD_X}`, borderBottom: `1px solid ${C.line}`, font: `13px/1 ${BODY_FONT}`, color: C.muted }}>
-        <Link href="/home2" style={{ color: C.muted, textDecoration: "none" }}>CivilCase</Link>
+        <Link href="/" style={{ color: C.muted, textDecoration: "none" }}>CivilCase</Link>
         <span style={{ margin: "0 10px", opacity: 0.5 }}>/</span>
-        <Link href="/small-claims2" style={{ color: C.muted, textDecoration: "none" }}>Small Claims</Link>
+        <Link href="/small-claims" style={{ color: C.muted, textDecoration: "none" }}>Small Claims</Link>
         <span style={{ margin: "0 10px", opacity: 0.5 }}>/</span>
         <Link href={hubHref} style={{ color: C.muted, textDecoration: "none" }}>{category.hubLabel}</Link>
         <span style={{ margin: "0 10px", opacity: 0.5 }}>/</span>
@@ -96,8 +119,8 @@ export default async function FirmIssueTemplate({ issue, category, siblings }: P
               <strong style={{ color: C.fg }}>{issue.hero.leadStrong}</strong>{issue.hero.leadBody}
             </p>
             <div style={{ display: "flex", gap: 14, marginTop: 32 }}>
-              <Link href="/demand-letter2" style={{ textDecoration: "none" }}><FirmBtn>Generate a Demand Letter</FirmBtn></Link>
-              <Link href="/case-score2" style={{ textDecoration: "none" }}><FirmBtn kind="ghost">Check My Case Strength</FirmBtn></Link>
+              <Link href="/demand-letter" style={{ textDecoration: "none" }}><FirmBtn>Generate a Demand Letter</FirmBtn></Link>
+              <Link href="/case-score" style={{ textDecoration: "none" }}><FirmBtn kind="ghost">Check My Case Strength</FirmBtn></Link>
             </div>
           </div>
           {/* Counter card — legacy light design with count-up + bar animations */}
@@ -354,11 +377,11 @@ export default async function FirmIssueTemplate({ issue, category, siblings }: P
 
             {/* CTAs */}
             <div style={{ marginTop: "auto", paddingTop: 32, display: "flex", gap: 18, alignItems: "center", flexWrap: "wrap" }}>
-              <Link href="/demand-letter2" style={{ textDecoration: "none" }}>
+              <Link href="/demand-letter" style={{ textDecoration: "none" }}>
                 <FirmBtn kind="accent">Generate My Demand Letter</FirmBtn>
               </Link>
               <a
-                href="/demand-letter2"
+                href="/demand-letter"
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
@@ -457,7 +480,7 @@ export default async function FirmIssueTemplate({ issue, category, siblings }: P
               desc: "Not sure if it's worth pursuing? Free 90-second read on viability.",
               price: "Free",
               cta: "Run my score",
-              href: "/case-score2",
+              href: "/case-score",
             },
             {
               num: "03",
@@ -466,7 +489,7 @@ export default async function FirmIssueTemplate({ issue, category, siblings }: P
               desc: "Skip the letter — county-specific small-claims forms drafted in 48 hours.",
               price: "From $79",
               cta: "Go to filing",
-              href: "/filing-kit2",
+              href: "/filing-kit",
             },
           ].map((p) => (
             <a
@@ -922,7 +945,7 @@ export default async function FirmIssueTemplate({ issue, category, siblings }: P
                       );
                       return (
                         <li key={r.slug}>
-                          {isReady ? <Link href={`/small-claims2/${r.slug}`} style={{ textDecoration: "none", color: "inherit" }}>{inner}</Link> : <span>{inner}</span>}
+                          {isReady ? <Link href={`/small-claims/${r.slug}`} style={{ textDecoration: "none", color: "inherit" }}>{inner}</Link> : <span>{inner}</span>}
                         </li>
                       );
                     })}
@@ -931,7 +954,7 @@ export default async function FirmIssueTemplate({ issue, category, siblings }: P
               </div>
             );
           })()}
-          <Link href="/small-claims2" style={{ display: "inline-flex", alignItems: "center", gap: 8, marginTop: 22, font: `500 14px/1 ${BODY_FONT}`, color: C.accent, textDecoration: "none" }}>
+          <Link href="/small-claims" style={{ display: "inline-flex", alignItems: "center", gap: 8, marginTop: 22, font: `500 14px/1 ${BODY_FONT}`, color: C.accent, textDecoration: "none" }}>
             See rules for all 50 states <Arrow color={C.accent} />
           </Link>
         </section>
@@ -1047,7 +1070,7 @@ export default async function FirmIssueTemplate({ issue, category, siblings }: P
               <span style={{ font: `500 15px/1 ${HEAD_FONT}`, color: C.fg }}>{fmtCap(maxCap)}</span>
               <span style={{ marginLeft: 8 }}>range of state caps across the U.S.</span>
             </div>
-            <Link href="/small-claims2" style={{ textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 10, padding: "10px 16px", border: `1px solid ${C.fg}`, color: C.fg, font: `500 13px/1 ${BODY_FONT}` }}>
+            <Link href="/small-claims" style={{ textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 10, padding: "10px 16px", border: `1px solid ${C.fg}`, color: C.fg, font: `500 13px/1 ${BODY_FONT}` }}>
               Find your state&rsquo;s cap <Arrow color={C.fg} />
             </Link>
           </div>
@@ -1095,8 +1118,8 @@ export default async function FirmIssueTemplate({ issue, category, siblings }: P
             </h2>
             <p style={{ font: `15px/1.6 ${BODY_FONT}`, color: "rgba(255,255,255,0.7)", marginTop: 16, maxWidth: 460 }}>{issue.cta.body}</p>
             <div style={{ display: "flex", gap: 14, marginTop: 28 }}>
-              <Link href="/demand-letter2" style={{ textDecoration: "none" }}><FirmBtn kind="accent">Generate a Demand Letter</FirmBtn></Link>
-              <Link href="/case-score2" style={{ textDecoration: "none" }}><FirmBtn kind="ghostDark">Check Case Strength</FirmBtn></Link>
+              <Link href="/demand-letter" style={{ textDecoration: "none" }}><FirmBtn kind="accent">Generate a Demand Letter</FirmBtn></Link>
+              <Link href="/case-score" style={{ textDecoration: "none" }}><FirmBtn kind="ghostDark">Check Case Strength</FirmBtn></Link>
             </div>
           </div>
           {/* Receipt mockup */}
@@ -1141,7 +1164,7 @@ export default async function FirmIssueTemplate({ issue, category, siblings }: P
             {siblings.map((sib) => (
               <Link
                 key={sib.slug}
-                href={`/small-claims2/${category.categorySlug}/${sib.slug}`}
+                href={`/small-claims/${category.categorySlug}/${sib.slug}`}
                 className="firm-related-card"
                 style={{
                   display: "grid",

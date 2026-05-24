@@ -83,7 +83,7 @@ export function StateSearchPanel({ states }: { states: StateRow[] }) {
           {results.slice(0, 12).map((s, i, arr) => (
             <Link
               key={s.slug}
-              href={`/small-claims2/${s.slug}`}
+              href={`/small-claims/${s.slug}`}
               className="firm-row-link"
               style={{
                 display: "grid",
@@ -106,7 +106,7 @@ export function StateSearchPanel({ states }: { states: StateRow[] }) {
       )}
 
       <div style={{ marginTop: 24 }}>
-        <Link href="/small-claims2" style={{ textDecoration: "none" }}>
+        <Link href="/small-claims" style={{ textDecoration: "none" }}>
           <FirmBtn kind="ghost">See all 51 states</FirmBtn>
         </Link>
       </div>

@@ -203,9 +203,9 @@ export default function FirmStateGuidePage({ state, guide }: Props) {
 
       {/* Breadcrumb */}
       <div style={{ padding: `20px ${PAD_X}`, background: C.bg, borderBottom: `1px solid ${C.line}`, font: `13px/1 ${BODY_FONT}`, color: C.muted }}>
-        <Link href="/home2" style={{ color: C.muted, textDecoration: "none" }}>CivilCase</Link>
+        <Link href="/" style={{ color: C.muted, textDecoration: "none" }}>CivilCase</Link>
         <span style={{ margin: "0 10px", opacity: 0.5 }}>/</span>
-        <Link href="/small-claims2" style={{ color: C.muted, textDecoration: "none" }}>Small Claims</Link>
+        <Link href="/small-claims" style={{ color: C.muted, textDecoration: "none" }}>Small Claims</Link>
         <span style={{ margin: "0 10px", opacity: 0.5 }}>/</span>
         <span style={{ color: C.fg, fontWeight: 500 }}>{state.name}</span>
       </div>
@@ -248,7 +248,7 @@ export default function FirmStateGuidePage({ state, guide }: Props) {
                   return (
                     <li key={slug}>
                       <Link
-                        href={`/small-claims2/${slug}`}
+                        href={`/small-claims/${slug}`}
                         className="firm-nearby-card"
                         style={{
                           display: "grid",
@@ -275,7 +275,7 @@ export default function FirmStateGuidePage({ state, guide }: Props) {
               </ul>
               <div style={{ marginTop: 24 }}>
                 <Link
-                  href="/small-claims2"
+                  href="/small-claims"
                   style={{ display: "inline-flex", alignItems: "center", gap: 8, font: `500 14px/1 ${BODY_FONT}`, color: C.accent, textDecoration: "none" }}
                 >
                   Browse all 51 state guides <Arrow color={C.accent} />
@@ -307,7 +307,7 @@ export default function FirmStateGuidePage({ state, guide }: Props) {
               <p style={{ font: `14px/1.55 ${BODY_FONT}`, color: "rgba(255,255,255,0.7)", marginTop: 12 }}>
                 Skip the back-and-forth. A formal demand often resolves the dispute before filing.
               </p>
-              <Link href="/demand-letter2" style={{ textDecoration: "none", display: "inline-block", marginTop: 18 }}>
+              <Link href="/demand-letter" style={{ textDecoration: "none", display: "inline-block", marginTop: 18 }}>
                 <FirmBtn kind="accent">Start a Demand Letter</FirmBtn>
               </Link>
             </div>
