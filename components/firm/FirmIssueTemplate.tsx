@@ -1164,7 +1164,7 @@ export default async function FirmIssueTemplate({ issue, category, siblings }: P
             {siblings.map((sib) => (
               <Link
                 key={sib.slug}
-                href={`/small-claims/${category.categorySlug}/${sib.slug}`}
+                href={`${hubHref}/${sib.slug}`}
                 className="firm-related-card"
                 style={{
                   display: "grid",
