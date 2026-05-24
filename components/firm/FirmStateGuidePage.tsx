@@ -210,6 +210,12 @@ export default function FirmStateGuidePage({ state, guide }: Props) {
         <span style={{ color: C.fg, fontWeight: 500 }}>{state.name}</span>
       </div>
 
+      {/* Page-top caveat — every state guide is general information, not advice. */}
+      <div style={{ padding: `12px ${PAD_X}`, background: C.cream, borderBottom: `1px solid ${C.line}`, font: `italic 12.5px/1.5 ${BODY_FONT}`, color: C.muted, textAlign: "center" }}>
+        General information about {state.name} small-claims procedure. Not legal advice. Verify
+        deadlines, fees, and forms against your state court website before relying on them.
+      </div>
+
       {/* HERO STRIP */}
       <section style={{ padding: `60px ${PAD_X} 24px` }}>
         <div style={{ ...eyebrow, color: C.accent, marginBottom: 22 }}>STATE GUIDE</div>
@@ -229,6 +235,13 @@ export default function FirmStateGuidePage({ state, guide }: Props) {
             >
               {guide.bodyMd}
             </ReactMarkdown>
+
+            {/* Page-bottom legal disclaimer */}
+            <p style={{ font: `italic 13px/1.6 ${BODY_FONT}`, color: C.muted, marginTop: 64, paddingTop: 32, borderTop: `1px solid ${C.line}` }}>
+              This guide is general information about {state.name} small-claims procedure, not
+              legal advice. CivilCase is not a law firm and does not represent you. Consult a
+              licensed attorney in {state.name} for advice about your specific situation.
+            </p>
 
             {/* Neighbors */}
             <nav style={{ marginTop: 80, paddingTop: 60, borderTop: `1px solid ${C.line}` }} aria-label={`States near ${state.name}`}>

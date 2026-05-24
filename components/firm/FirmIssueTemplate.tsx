@@ -109,6 +109,12 @@ export default async function FirmIssueTemplate({ issue, category, siblings }: P
         <span style={{ color: C.fg, fontWeight: 500 }}>{issue.breadcrumbLabel}</span>
       </div>
 
+      {/* Page-top caveat — every issue page is general legal information, not advice. */}
+      <div style={{ padding: `12px ${PAD_X}`, background: C.cream, borderBottom: `1px solid ${C.line}`, font: `italic 12.5px/1.5 ${BODY_FONT}`, color: C.muted, textAlign: "center" }}>
+        General information about {category.hubLabel.toLowerCase()} in small-claims court. Not legal advice.
+        Verify deadlines, fees, and forms against your state court website before filing.
+      </div>
+
       {/* HERO */}
       <section style={{ padding: `60px ${PAD_X} 80px` }}>
         <div style={{ display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: 80, alignItems: "center" }}>
@@ -230,6 +236,11 @@ export default async function FirmIssueTemplate({ issue, category, siblings }: P
           </div>
           <p style={{ ...body, alignSelf: "end" }}>{issue.claim.lede}</p>
         </div>
+
+        <p style={{ font: `italic 13px/1.5 ${BODY_FONT}`, color: C.muted, maxWidth: 720, marginBottom: 24 }}>
+          Illustrative ranges based on statute. Your actual recovery depends on facts, evidence,
+          and the judge.
+        </p>
 
         <div style={{ display: "grid", gridTemplateColumns: "1.3fr 1fr", gap: 32, alignItems: "stretch" }}>
           {/* LEFT — bubble rows + dashed-red total stripe (no container chrome) */}
@@ -488,7 +499,7 @@ export default async function FirmIssueTemplate({ issue, category, siblings }: P
               num: "03",
               tag: "PATH C",
               title: "File Your Claim",
-              desc: "Skip the letter — county-specific small-claims forms drafted in 48 hours.",
+              desc: "Skip the letter. Get county-specific small-claims forms ready to file in 48 hours.",
               price: "From $79",
               cta: "Go to filing",
               href: "/filing-kit",
@@ -1068,7 +1079,7 @@ export default async function FirmIssueTemplate({ issue, category, siblings }: P
           {/* Range bar tucked under */}
           <div style={{ marginTop: 28, paddingTop: 18, borderTop: `1px solid ${C.line}`, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
             <div style={{ font: `13px/1 ${BODY_FONT}`, color: C.muted }}>
-              <span style={{ font: `500 15px/1 ${HEAD_FONT}`, color: C.fg }}>{fmtCap(minCap)}</span> –{" "}
+              <span style={{ font: `500 15px/1 ${HEAD_FONT}`, color: C.fg }}>{fmtCap(minCap)}</span>-{" "}
               <span style={{ font: `500 15px/1 ${HEAD_FONT}`, color: C.fg }}>{fmtCap(maxCap)}</span>
               <span style={{ marginLeft: 8 }}>range of state caps across the U.S.</span>
             </div>
@@ -1143,6 +1154,15 @@ export default async function FirmIssueTemplate({ issue, category, siblings }: P
             <p style={{ font: `italic 12px/1.5 ${SERIF_FONT}`, color: C.muted, marginTop: 14 }}>{issue.cta.receipt.note}</p>
           </div>
         </div>
+      </section>
+
+      {/* Page-bottom legal disclaimer */}
+      <section style={{ padding: `40px ${PAD_X} 0` }}>
+        <p style={{ font: `italic 13px/1.6 ${BODY_FONT}`, color: C.muted, maxWidth: 920, margin: "0 auto", textAlign: "center" }}>
+          This page is general legal information about {category.hubLabel.toLowerCase()}, not legal
+          advice. CivilCase is not a law firm and does not represent you. Consult a licensed
+          attorney in your state for advice about your specific situation.
+        </p>
       </section>
 
       <FaqSection

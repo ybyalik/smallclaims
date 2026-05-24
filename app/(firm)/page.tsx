@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import {
   C, H1, H2, eyebrow, body, PAD_X, RAD, HEAD_FONT, BODY_FONT, italicEmCSS,
-  Arrow, Check, ShieldLogo, FirmBtn, FaqSection,
+  Arrow, Check, ShieldLogo, FirmBtn,
 } from "../../components/firm";
 
 export const metadata: Metadata = {
-  title: "CivilCase — Recover what you're owed, without a lawyer",
+  title: "CivilCase: Self-help legal tools for small-claims disputes",
   description:
-    "Same Hybrid structure as /home4 but with /'s typography spec (weight 600, clamp sizes, 0.14em eyebrows, plain ink italic emphasis) and the 1600px container used by the other wide variants.",
+    "Prepare your own demand letter, small-claims filing, and post-judgment collection paperwork. Attorney-authored templates and state-specific guides for self-represented plaintiffs in all 50 states.",
   alternates: { canonical: "/" },
 };
 export default function Home2() {
@@ -37,11 +37,12 @@ export default function Home2() {
           </div>
 
           <h1 className="firm-h" style={H1}>
-            Get your money back, <em>without a lawyer.</em>
+            Handle your own small-claims case, <em>step by step.</em>
           </h1>
           <p style={{ font: `400 19px/1.6 ${BODY_FONT}`, color: C.muted, maxWidth: 640, margin: "28px auto 36px" }}>
-            CivilCase handles the repeatable with precision — demand letters, court filings, and collection —
-            so you can focus on getting paid, not paperwork.
+            CivilCase is a self-help legal-information tool. Attorney-authored templates and
+            state-specific guides help you prepare your own demand letter, file a small-claims
+            case, and collect on a judgment, without hiring a lawyer.
           </p>
           <div style={{ display: "inline-flex", gap: 12, flexWrap: "wrap", justifyContent: "center" }}>
             <FirmBtn>Start your case</FirmBtn>
@@ -58,13 +59,14 @@ export default function Home2() {
             <h2 className="firm-h" style={H2}>Specialized claims across every <em>civil dispute</em>.</h2>
           </div>
           <p style={{ ...body, alignSelf: "end" }}>
-            Whether you&rsquo;re chasing an unpaid invoice or recovering a security deposit, every CivilCase
-            letter is drafted to your jurisdiction, your facts, and the statute that applies.
+            From unpaid invoices to security deposits, every CivilCase template is state-specific,
+            originally authored by licensed attorneys, and assembled from the facts you enter.
+            You read it, you sign it, you decide whether to send it.
           </p>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 20 }}>
           {[
-            { n: "01.", t: "Security Deposits", d: "Statutory damages where landlords act in bad faith.", tag: "Recovers 2–3× deposit", img: "/assets/home2/service-demand-letter.webp" },
+            { n: "01.", t: "Security Deposits", d: "Statutory damages where landlords act in bad faith.", tag: "Recovers 2-3× deposit", img: "/assets/home2/service-demand-letter.webp" },
             { n: "02.", t: "Contractor Disputes", d: "Unpaid balances, abandoned jobs, defective work.", tag: "Mech. lien support", img: "/assets/home2/service-filing-kit.webp" },
             { n: "03.", t: "Wage Claims", d: "Final paychecks, unpaid overtime, off-the-books work.", tag: "DOL-aligned drafting", img: "/assets/home2/bento-photo.webp" },
             { n: "04.", t: "Consumer Refunds", d: "Defective goods, fraud, refused returns, dealer disputes.", tag: "Cited under your state UCL", img: "/assets/home2/service-collection-plan.webp" },
@@ -107,7 +109,7 @@ export default function Home2() {
           title: "The deposit that never came back.",
           img: "/assets/firm/ll-deposit.webp",
           desc: "You moved out clean. The landlord had 14, 21, or 30 days to itemize or return. They did neither. Most states impose 2× or 3× damages for bad-faith retention. The deposit is the floor; the statutory multiplier is what makes it a real case.",
-          range: "$1,200 – $9,000",
+          range: "$1,200-$9,000",
           statute: "21-day notice statutes · multipliers in 41 states",
           evidence: ["Signed lease", "Move-out photos", "Forwarding address proof", "Deposit receipt"],
           href: "/small-claims/sue-landlord-security-deposit",
@@ -118,8 +120,8 @@ export default function Home2() {
           tag: "LOCKOUTS",
           title: "Locked out, kept out, paid double.",
           img: "/assets/firm/ll-lockout.webp",
-          desc: "Self-help eviction is illegal in every state. Changed locks, shut-off utilities, removed your stuff — the landlord owes per-day statutory damages plus everything it cost to find shelter, replace what they tossed, and miss work to deal with it.",
-          range: "$2,500 – $15,000",
+          desc: "Self-help eviction is illegal in every state. Changed locks, shut-off utilities, removed your stuff. The landlord owes per-day statutory damages plus everything it cost to find shelter, replace what they tossed, and miss work to deal with it.",
+          range: "$2,500-$15,000",
           statute: "Per-day statutory damages (CA: $100/day · FL: 3× rent)",
           evidence: ["Lease", "Police report", "Hotel + replacement receipts", "Witness statements"],
           href: "/small-claims/sue-landlord-illegal-lockout",
@@ -196,20 +198,24 @@ export default function Home2() {
             </div>
             <div>
               <div style={{ ...eyebrow, color: "rgba(255,255,255,0.6)", marginBottom: 22 }}>A NOTE FROM OUR FOUNDER</div>
-              <h2 className="firm-h firm-h-light" style={{ ...H2, color: "#fff", fontSize: 46 }}>Built by a lawyer, so you <em>don&rsquo;t need one</em>.</h2>
+              <h2 className="firm-h firm-h-light" style={{ ...H2, color: "#fff", fontSize: 46 }}>Designed by lawyers for people who <em>represent themselves</em>.</h2>
               <p style={{ font: `16px/1.6 ${BODY_FONT}`, color: "rgba(255,255,255,0.78)", marginTop: 24, maxWidth: 620 }}>
-                I spent fifteen years inside courthouses watching working people lose claims they should have
-                won, simply because they couldn&rsquo;t afford a lawyer to walk them through the process.
+                I spent fifteen years inside courthouses watching working people lose claims they
+                should have won. Not because the law was against them, but because no one had
+                explained the procedure in plain English.
               </p>
               <p style={{ font: `16px/1.6 ${BODY_FONT}`, color: "rgba(255,255,255,0.78)", marginTop: 14, maxWidth: 620 }}>
-                We built CivilCase to flip that. Every form, every deadline, every step that a paralegal would
-                charge you $200 an hour to handle, drafted for your specific case in your specific county. You
-                bring the facts. We bring the procedure.
+                CivilCase is a self-help tool, not a law firm. We don&rsquo;t represent you and we
+                can&rsquo;t give legal advice about your specific case. What we can do is turn the
+                templates, forms, and procedure that licensed attorneys use every day into something
+                you can use yourself, drafted around the facts you give us and the rules in your
+                state. You read the document. You decide what to file. You stay in charge of your
+                case.
               </p>
               <div style={{ marginTop: 32, paddingTop: 24, borderTop: "1px solid rgba(255,255,255,0.15)" }}>
                 <div style={{ font: `500 17px/1 ${HEAD_FONT}`, color: "#fff" }}>Yury Byalik, Esq.</div>
                 <div style={{ font: `13px/1.4 ${BODY_FONT}`, color: "rgba(255,255,255,0.55)", marginTop: 4 }}>
-                  Founder &amp; CEO, CivilCase · CA Bar 281044
+                  Founder, CivilCase · CA Bar 281044 (acting in business capacity, not as your attorney)
                 </div>
               </div>
             </div>
@@ -253,22 +259,6 @@ export default function Home2() {
         </div>
       </section>
 
-      <FaqSection
-        title={<>Frequently asked <em>questions</em>.</>}
-        subtitle="Still have a question? Email hello@civilcase.com."
-        faqs={[
-          { q: "What is a demand letter?", a: "A demand letter is a formal written notice that you're owed money and intend to pursue the matter in court if it isn't resolved. It puts the other side on notice, sets a deadline, and creates a paper trail." },
-          { q: "Why does it work?", a: null },
-          { q: "Will my name and address be on the letter?", a: null },
-          { q: "Do you contact me before mailing?", a: null },
-          { q: "Can I cancel after I pay?", a: null },
-          { q: "What if they respond and offer less than I asked for?", a: null },
-          { q: "What if they ignore the letter?", a: null },
-          { q: "Do I need a lawyer to send one?", a: null },
-          { q: "What if I don't have the other person's address?", a: null },
-          { q: "Is CivilCase a law firm?", a: null },
-        ]}
-      />
     </main>
   );
 }

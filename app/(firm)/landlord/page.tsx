@@ -50,7 +50,7 @@ export default async function Landlord2() {
               <FirmBtn kind="ghost" href="/demand-letter">Send a Demand Letter</FirmBtn>
             </div>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 0, marginTop: 56, paddingTop: 30, borderTop: `1px solid ${C.line}` }}>
-              {[["Typical recovery", "$2K – $8K"], ["Statutory multiplier", "2× – 3×"], ["Timeline", "30–90 days"], ["Filing fee", "< $100"]].map(([k, v], i) => (
+              {[["Typical recovery", "$2K-$8K"], ["Statutory multiplier", "2×-3×"], ["Timeline", "30-90 days"], ["Filing fee", "< $100"]].map(([k, v], i) => (
                 <div key={k} style={{ paddingLeft: i ? 24 : 0, borderLeft: i ? `1px solid ${C.line}` : "none" }}>
                   <div style={{ ...eyebrow, color: C.muted, marginBottom: 10 }}>{k}</div>
                   <div style={{ font: `600 26px/1.1 ${HEAD_FONT}`, color: C.fg, letterSpacing: "-0.01em" }}>{v}</div>
@@ -105,7 +105,7 @@ export default async function Landlord2() {
                 { Icon: Bug, t: "Pest infestation", d: "Roaches, bed bugs, rats. Treatment costs and rent reduction.", href: "/small-claims/sue-landlord-pest-infestation" },
                 { Icon: Zap, t: "Unsafe living conditions", d: "Structural, electrical, no heat or hot water.", href: "/small-claims/sue-landlord-unsafe-conditions" },
                 { Icon: HeartCrack, t: "Emotional distress", d: "Pair with a willful tenant claim. Documented damages awarded.", href: "/small-claims/sue-landlord-emotional-distress" },
-                { Icon: Building2, t: "Apartment complex", d: "Corporate landlords settle faster. Typically $4K to $12K.", href: "/small-claims/sue-landlord-apartment-complex" },
+                { Icon: Building2, t: "Apartment complex", d: "Corporate landlords settle faster. Typically $4K-$12K.", href: "/small-claims/sue-landlord-apartment-complex" },
                 { Icon: LogOut, t: "After moving out", d: "Most states honor 1 to 4 years after move-out. Move quickly anyway.", href: "/small-claims/sue-landlord-after-moving-out" },
                 { Icon: FileX, t: "Break your lease", d: "Five legal grounds: military, DV, habitability, harassment, mutual.", href: "/small-claims/sue-landlord-break-lease" },
                 { Icon: HelpCircle, t: "Something else?", d: "Tell us about your situation in 90 seconds.", href: "/case-score" },
@@ -175,7 +175,7 @@ export default async function Landlord2() {
               <div style={{ ...eyebrow, color: "rgba(255,255,255,0.7)" }}>DOESN&rsquo;T BELONG HERE</div>
             </div>
             <div style={{ display: "grid", gap: 18 }}>
-              {[["Getting back into the unit", "That requires an emergency court order from housing court — small claims can't force the landlord to let you back in."], ["Rent-control calculations", "Handled by your local rent board, not the courts."], ["Fair-housing discrimination", "Filed with a civil-rights agency or in federal court."], ["Eviction defense", "Goes to housing court (sometimes called 'unlawful detainer' court), not small claims."]].map(([t, d], i) => (
+              {[["Getting back into the unit", "That requires an emergency court order from housing court. Small claims can't force the landlord to let you back in."], ["Rent-control calculations", "Handled by your local rent board, not the courts."], ["Fair-housing discrimination", "Filed with a civil-rights agency or in federal court."], ["Eviction defense", "Goes to housing court (sometimes called 'unlawful detainer' court), not small claims."]].map(([t, d], i) => (
                 <div key={t} style={{ display: "grid", gridTemplateColumns: "28px 1fr", gap: 18, paddingBottom: i < 3 ? 18 : 0, borderBottom: i < 3 ? "1px solid rgba(255,255,255,0.1)" : "none" }}>
                   <div style={{ font: `500 12px/1 ${BODY_FONT}`, color: "rgba(255,255,255,0.5)", letterSpacing: "0.06em" }}>{`0${i + 1}`}</div>
                   <div>
@@ -197,7 +197,7 @@ export default async function Landlord2() {
               <div style={{ ...eyebrow, marginBottom: 22 }}>DAMAGES</div>
               <h2 className="firm-h" style={H2}>What can you <em>recover</em>?</h2>
             </div>
-            <p style={body}>The math judges use. A typical security-deposit case stacks four layers on top of the deposit you are directly owed. Sample math below is based on a $1,500 deposit withheld in bad faith — your numbers will differ.</p>
+            <p style={body}>The math judges use. A typical security-deposit case stacks four layers on top of the deposit you are directly owed. Sample math below is based on a $1,500 deposit withheld in bad faith. Your numbers will differ.</p>
           </div>
           <div style={{ background: "#fff", border: `1px solid ${C.line}`, borderRadius: RAD.card, overflow: "hidden" }}>
             {[{ tag: "01", title: "Direct damages", desc: "The deposit, repair receipts, hotel and moving costs, replacement-cost photos.", amount: "$1,500", label: "BASE AMOUNT", bar: 30, accent: false }, { tag: "02", title: "Penalty on top", desc: "If the landlord kept your money without a good reason, most states let you sue for 2 or 3 times that amount as a penalty (called 'statutory damages').", amount: "+$3,000", label: "2× MULTIPLIER", bar: 60, accent: true }, { tag: "03", title: "Attorney's fees", desc: "Many state laws make the losing side pay the winner's attorney fees. That pressure alone often gets the landlord to settle before court.", amount: "+$300", label: "TYPICAL RECOVERY", bar: 6, accent: false }, { tag: "04", title: "Interest", desc: "4 to 10 percent per year, pre- and post-judgment, depending on the state.", amount: "+$150", label: "ACCRUING", bar: 3, accent: false }].map((row) => (
@@ -241,7 +241,7 @@ export default async function Landlord2() {
             </div>
             <div style={{ font: `15px/1.65 ${BODY_FONT}`, color: "rgba(255,255,255,0.7)" }}>
               Landlord cases are won on paperwork. Anything you can&rsquo;t show in writing, you&rsquo;re asking
-              the judge to just take your word for — and they usually won&rsquo;t. Your landlord has more
+              the judge to just take your word for, and they usually won&rsquo;t. Your landlord has more
               documentation than you do. Your job is to close that gap before you walk into court.
               <div style={{ marginTop: 18, font: `500 12px/1.4 ${BODY_FONT}`, color: C.accentOnDark, letterSpacing: "0.08em" }}>※ More documentation = stronger case</div>
             </div>

@@ -10,8 +10,8 @@ type Path = { tag: string; title: string; desc: string; price: string; href: str
 
 const DEFAULT_PATHS: Path[] = [
   { tag: "PATH A", title: "Send a Demand Letter", desc: "Start with formal pressure. Most cases settle here.", price: "From $29", href: "/demand-letter" },
-  { tag: "PATH B", title: "Check My Case Strength", desc: "Free 90-second read on whether to pursue.", price: "Free", href: "/case-score" },
-  { tag: "PATH C", title: "File Your Claim", desc: "Skip ahead — county-specific filing forms drafted.", price: "From $79", href: "/filing-kit" },
+  { tag: "PATH B", title: "Check My Case Strength", desc: "Free 90-second read with general information about your dispute. Not legal advice.", price: "Free", href: "/case-score" },
+  { tag: "PATH C", title: "File Your Claim", desc: "Skip ahead. Get county-specific filing forms ready to file.", price: "From $79", href: "/filing-kit" },
 ];
 
 const PATH_BAND_COLORS = [

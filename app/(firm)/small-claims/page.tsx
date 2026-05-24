@@ -26,7 +26,7 @@ export default async function SmallClaims2() {
   const ready = await availableStateSlugs();
   const jsonLd = jsonLdGraph(
     collectionPageSchema({
-      name: "Small Claims Court — Guide and Tools",
+      name: "Small Claims Court: Guide and Tools",
       description: "Plain-English guide to suing in small claims court. State-by-state rules, dispute-type playbooks, and the tools to file and collect.",
       url: "/small-claims",
       items: [
@@ -74,7 +74,7 @@ export default async function SmallClaims2() {
               <FirmBtn kind="ghost" href="/case-score">Check My Case Strength</FirmBtn>
             </div>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 0, marginTop: 56, paddingTop: 30, borderTop: `1px solid ${C.line}` }}>
-              {[["Cap", "$5K – $20K"], ["Hearing", "10–15 min"], ["Lawyer", "Not required"], ["States", "All 50"]].map(([k, v], i) => (
+              {[["Cap", "$5K-$20K"], ["Hearing", "10-15 min"], ["Lawyer", "Not required"], ["States", "All 50"]].map(([k, v], i) => (
                 <div key={k} style={{ paddingLeft: i ? 24 : 0, borderLeft: i ? `1px solid ${C.line}` : "none" }}>
                   <div style={{ ...eyebrow, color: C.muted, marginBottom: 10 }}>{k}</div>
                   <div style={{ font: `600 26px/1.1 ${HEAD_FONT}`, color: C.fg, letterSpacing: "-0.01em" }}>{v}</div>
@@ -195,8 +195,9 @@ export default async function SmallClaims2() {
             </h2>
           </div>
           <p style={{ ...body, maxWidth: 460 }}>
-            The 10 fact patterns we see most often, grouped by opponent. The category determines the statute,
-            the evidence, and the recovery math.
+            The 10 fact patterns we see most often, grouped by opponent. The category determines
+            the statute, the evidence, and the recovery math. Dollar figures show the typical
+            claim band for each issue, not a guaranteed outcome.
           </p>
         </div>
 
@@ -402,7 +403,7 @@ export default async function SmallClaims2() {
                     </svg>
                   ),
                   title: "State caps",
-                  stat: "$5K – $20K",
+                  stat: "$5K-$20K",
                   desc: "Texas $20K · California $12.5K · NY $10K. Above the cap, higher court.",
                 },
                 {
@@ -415,7 +416,7 @@ export default async function SmallClaims2() {
                     </svg>
                   ),
                   title: "Filing fees",
-                  stat: "$30 – $100",
+                  stat: "$30-$100",
                   desc: "Some states scale by claim amount. Many waive for low-income filers.",
                 },
                 {
@@ -438,7 +439,7 @@ export default async function SmallClaims2() {
                     </svg>
                   ),
                   title: "Hearing",
-                  stat: "10 – 15 min",
+                  stat: "10-15 min",
                   desc: "Lead with the dollar amount, the legal theory, and your paper trail.",
                 },
                 {
@@ -614,15 +615,15 @@ export default async function SmallClaims2() {
         subtitle="The questions people actually ask before filing in small claims court."
         faqs={[
           { q: "What is small claims court?", a: "A simplified court for everyday money disputes. Most state caps fall between $5,000 and $20,000. Hearings take 10 to 15 minutes. You don't need a lawyer (and in some states, like California, lawyers aren't even allowed at the initial hearing)." },
-          { q: "How much does it cost to file?", a: null },
-          { q: "Do I need a lawyer?", a: null },
-          { q: "How long does the process take?", a: null },
-          { q: "What can I sue for?", a: null },
-          { q: "How do I serve the defendant?", a: null },
-          { q: "What if the defendant doesn't show up?", a: null },
-          { q: "Will this affect the defendant's credit?", a: null },
-          { q: "What if I lose — can I appeal?", a: null },
-          { q: "What if they have no money to pay?", a: null },
+          { q: "How much does it cost to file?", a: "Filing fees usually run $30 to $100, depending on the state and the claim amount. Service-of-process costs run $30 to $80. The losing party often pays your filing fee back. Many states waive fees for low-income filers." },
+          { q: "Do I need a lawyer?", a: "No. Small claims is built for self-represented filers. In some states (California, for example) lawyers aren't even allowed at the initial hearing. The format is simple: explain what happened, show your evidence, judge decides." },
+          { q: "How long does the process take?", a: "30 to 90 days from filing to hearing in most states. Hearings themselves run 10 to 15 minutes. Judges often rule from the bench or send a written ruling within a few days. Collection on a judgment is separate and can take longer." },
+          { q: "What can I sue for?", a: "Money damages within your state's cap (usually $5,000 to $20,000). Landlord disputes, employer disputes, contractor work, auto-related damage, neighbor disputes, personal loans, roommate disputes, online seller disputes, and refund disputes are all common. Personal injury and discrimination cases usually need higher courts." },
+          { q: "How do I serve the defendant?", a: "Sheriff, certified mail through the clerk, or a private process server. You cannot serve it yourself. File proof of service before the hearing. For businesses, serve the registered agent (look it up on your state secretary of state website)." },
+          { q: "What if the defendant doesn't show up?", a: "You usually win by default judgment. The court issues judgment in your favor based on your unopposed evidence. Default judgments enforce the same way as contested judgments: lien, levy, garnishment." },
+          { q: "Will this affect the defendant's credit?", a: "Yes if it goes to judgment. Civil judgments appear on credit reports for 7 years. The threat of a judgment hitting credit is one reason demand letters work: most defendants settle before judgment to avoid the credit hit." },
+          { q: "What if I lose? Can I appeal?", a: "Yes in most states, usually within 30 days of the ruling. Appeals are heard in a higher court (often called superior or circuit court) and can be a full new trial or a review of the record, depending on the state. The defendant has the same appeal right, so winning at the small claims level isn't always the last word." },
+          { q: "What if they have no money to pay?", a: "Judgments stay good for 5 to 20 years depending on the state, and most states let you renew them. You can wait for their financial situation to change, then garnish wages, levy a bank account, or attach property. A recorded abstract of judgment also acts as a lien on any real estate they own or buy later." },
         ]}
       />
     </main>

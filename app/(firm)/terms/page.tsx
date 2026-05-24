@@ -26,17 +26,48 @@ const SECTIONS: LegalSection[] = [
     body: (
       <>
         <p>
-          CivilCase is a self-help legal-technology platform that helps individuals and small
-          businesses prepare procedural documents (demand letters, filing guides, post-judgment
-          collection plans) for state small-claims and civil cases.
+          CivilCase is a self-help legal-information website and document automation tool that
+          helps individuals and small businesses prepare procedural documents (demand letters,
+          filing guides, post-judgment collection plans) for state small-claims and civil cases.
         </p>
         <p>
-          CivilCase is <strong>not</strong> a law firm. We do not represent you, advocate for you in
-          court, or provide legal advice. No attorney-client relationship is created by using this
-          site, purchasing a product, or communicating with our staff. Nothing you submit through
-          the site is protected by attorney-client privilege.
+          CivilCase is <strong>not a law firm.</strong> We do not represent you, advocate for you
+          in court, or provide legal advice. No attorney-client relationship is created by using
+          this site, purchasing a product, or communicating with our staff. Nothing you submit
+          through the site is protected by attorney-client privilege or the work-product doctrine.
+        </p>
+        <p>
+          You acknowledge and agree that CivilCase does not:
+        </p>
+        <ul>
+          <li>Apply the law to the particular facts of your case.</li>
+          <li>Tell you which legal form or document is right for your situation.</li>
+          <li>Review the legal sufficiency of any document you prepare using our tools.</li>
+          <li>Draw legal conclusions, offer opinions, or make recommendations about your rights,
+            remedies, defenses, options, or legal strategy.</li>
+          <li>Predict the outcome of any matter, the amount you may recover, or the likelihood
+            of success.</li>
+          <li>Represent you, appear on your behalf in any court, or negotiate with any opposing
+            party.</li>
+        </ul>
+        <p>
+          If you need legal advice about your specific situation, consult a licensed attorney in
+          your state.
         </p>
       </>
+    ),
+  },
+  {
+    id: "self-representation",
+    title: "Self-representation acknowledgment",
+    body: (
+      <p>
+        By using CivilCase you acknowledge that you are choosing to represent yourself (appearing
+        <em> pro se</em> or <em>pro per</em>) in any matter for which you use the service. You are
+        the sole party to the dispute and the only party with authority to make legal decisions
+        about it. You read every document before signing, sending, or filing it, and you assume
+        all responsibility for the consequences of doing so.
+      </p>
     ),
   },
   {

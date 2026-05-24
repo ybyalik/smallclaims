@@ -376,7 +376,10 @@ export function LetterDoc({
 
 // Re-export the header + footer so pages can do
 //   import { SiteHeader, SiteFooter, C, ... } from "../../../components/firm"
-export { SiteHeader } from "./SiteHeader";
+// SiteHeader is a server component (it fetches the auth user). To avoid
+// dragging next/headers into every client component that imports from this
+// barrel file, consumers (just the layout) import it directly from
+// "./SiteHeader" instead of through this index.
 export { SiteFooter } from "./SiteFooter";
 export { default as LetterDisplay } from "./LetterDisplay";
 export { ThreeWaysSection } from "./ThreeWaysSection";

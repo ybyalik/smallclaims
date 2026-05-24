@@ -231,8 +231,8 @@ export default async function StateGuide2({ params }: Params) {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 0, marginTop: 40, paddingTop: 30, borderTop: `1px solid ${C.line}` }}>
           {[
             [fmtMoney(g.hero.individualLimit), "Most you can sue for"],
-            [`$${g.hero.filingFeeLow}–$${g.hero.filingFeeHigh}`, "Filing fee"],
-            [`${g.hero.typicalTimelineDays.min}–${g.hero.typicalTimelineDays.max} days`, "Typical timeline"],
+            [`$${g.hero.filingFeeLow}-$${g.hero.filingFeeHigh}`, "Filing fee"],
+            [`${g.hero.typicalTimelineDays.min}-${g.hero.typicalTimelineDays.max} days`, "Typical timeline"],
           ].map(([n, l], i) => (
             <div key={l} style={{ paddingLeft: i ? 32 : 0, borderLeft: i ? `1px solid ${C.line}` : "none" }}>
               <div style={{ font: `600 32px/1.1 ${HEAD_FONT}`, color: C.fg, letterSpacing: "-0.015em" }}>{n}</div>

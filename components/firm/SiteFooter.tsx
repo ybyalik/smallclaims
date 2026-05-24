@@ -40,15 +40,6 @@ const FOOTER_COLS = [
       { href: "/about", label: "About" },
       { href: "/contact", label: "Contact" },
       { href: "/blog", label: "Blog" },
-      { href: "#", label: "Press" },
-    ],
-  },
-  {
-    label: "LEGAL",
-    items: [
-      { href: "/privacy", label: "Privacy Policy" },
-      { href: "/terms", label: "Terms & Conditions" },
-      { href: "/disclaimer", label: "Disclaimer" },
     ],
   },
 ] as const;
@@ -66,7 +57,7 @@ export function SiteFooter() {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "1.4fr 1fr 1fr 1fr",
+          gridTemplateColumns: "1.4fr 1fr 1fr",
           gap: 60,
           paddingBottom: 56,
           borderBottom: "1px solid rgba(255,255,255,0.1)",
@@ -92,8 +83,9 @@ export function SiteFooter() {
             />
           </Link>
           <p style={{ font: `14px/1.55 ${BODY_FONT}`, color: "rgba(255,255,255,0.6)", maxWidth: 280, margin: 0 }}>
-            Demand letters, small-claims filings, and collection plans. Built so working people can recover what
-            they&rsquo;re owed without paying a retainer.
+            A self-help legal-information website and document automation tool. Templates and guides
+            help everyday people prepare demand letters, small-claims filings, and post-judgment
+            collection paperwork themselves.
           </p>
           <div style={{ display: "flex", gap: 12, marginTop: 28 }}>
             <Link
@@ -152,21 +144,43 @@ export function SiteFooter() {
         ))}
       </div>
 
+      {/* Legal-positioning disclosure */}
+      <div
+        style={{
+          paddingTop: 28,
+          font: `12px/1.55 ${BODY_FONT}`,
+          color: "rgba(255,255,255,0.45)",
+          maxWidth: 920,
+        }}
+      >
+        CivilCase is not a law firm and does not provide legal advice or legal representation. We
+        publish self-help legal information and document automation tools. Use of this site does
+        not create an attorney-client relationship. For legal advice about your specific situation,
+        consult a licensed attorney in your state. See our{" "}
+        <Link href="/disclaimer" style={{ color: "rgba(255,255,255,0.7)", textDecoration: "underline" }}>full disclaimer</Link>{" "}
+        for details.
+      </div>
+
       {/* Bottom strip */}
       <div
         style={{
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          paddingTop: 28,
+          marginTop: 20,
+          paddingTop: 20,
+          borderTop: "1px solid rgba(255,255,255,0.08)",
           font: `12px/1.5 ${BODY_FONT}`,
           color: "rgba(255,255,255,0.4)",
         }}
       >
-        <div>© 2026 CivilCase. All Rights Reserved. CivilCase is not a law firm and does not provide legal advice.</div>
-        <div style={{ display: "flex", gap: 24 }}>
+        <div>Copyright © 2026 CivilCase. All Rights Reserved.</div>
+        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
           <Link href="/privacy" style={{ color: "inherit", textDecoration: "none" }}>Privacy</Link>
+          <span aria-hidden style={{ opacity: 0.4 }}>|</span>
           <Link href="/terms" style={{ color: "inherit", textDecoration: "none" }}>Terms</Link>
+          <span aria-hidden style={{ opacity: 0.4 }}>|</span>
+          <Link href="/disclaimer" style={{ color: "inherit", textDecoration: "none" }}>Disclaimer</Link>
         </div>
       </div>
     </footer>

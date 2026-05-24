@@ -21,16 +21,16 @@ const CHANNELS = [
 ];
 
 const INBOX = [
-  { from: "Support · CivilCase", preview: "Re: Refund — sorted in 4 hours.", when: "2m", unread: true },
+  { from: "Support · CivilCase", preview: "Re: Refund. Sorted in 4 hours.", when: "2m", unread: true },
   { from: "Editorial · CivilCase", preview: "Verified your correction. Patched today.", when: "1h" },
   { from: "Partnerships · CivilCase", preview: "Looped you with a process server in TX.", when: "3h" },
   { from: "Press · CivilCase", preview: "Forwarded your interview ask.", when: "1d" },
 ];
 
 const NOT_OVER_EMAIL = [
-  ["Give legal advice", "If you're asking whether to accept a settlement or sue a specific person, the answer is 'consult a licensed attorney in your state.' We give general information, not advice on your facts."],
-  ["Review your case for free", "Our state guides are how we deliver scalable information. One-off case review isn't something we offer. The guide for your state covers what we'd tell you anyway."],
-  ["Accept service of process", "If you need to serve a defendant, hire a process server or your local sheriff. CivilCase is not an authorized agent for service."],
+  ["Give legal advice", "We can't tell you whether to accept a settlement, whether you have a case, which form to use, or what to file. Those are the kinds of questions only a licensed attorney can answer for your specific situation. CivilCase is not a law firm and our team is not your lawyer."],
+  ["Review your case", "We don't review individual cases for legal sufficiency, draw conclusions about your rights, or apply the law to your facts. Our state guides and templates are how we deliver general legal information at scale; the guide for your state covers everything we know."],
+  ["Accept service of process", "If you need to serve a defendant, hire a process server or your local sheriff. CivilCase is not an authorized agent for service of process."],
 ];
 
 const RESPONSE_TIMES = [
@@ -52,7 +52,7 @@ export default function Contact2() {
             <h1 className="firm-h" style={{ ...H1, fontSize: 72 }}>Real humans, <em>real fast</em>.</h1>
             <p style={{ font: `18px/1.55 ${BODY_FONT}`, color: C.muted, maxWidth: 540, marginTop: 28 }}>
               We answer every support email within one business day. Pick the channel that fits your
-              question — or scroll for the things we can&rsquo;t handle over email.
+              question. Or scroll for the things we can&rsquo;t handle over email.
             </p>
             <div style={{ display: "flex", gap: 14, marginTop: 36 }}>
               <FirmBtn href="mailto:support@civilcase.com">Email Support</FirmBtn>
@@ -128,7 +128,7 @@ export default function Contact2() {
             <h2 className="firm-h" style={H2}>These three are <em>off the menu</em>.</h2>
           </div>
           <p style={body}>
-            We&rsquo;re happy to send a real reply — but these aren&rsquo;t things email support can do.
+            We&rsquo;re happy to send a real reply, but these aren&rsquo;t things email support can do.
             Save yourself a round trip.
           </p>
         </div>

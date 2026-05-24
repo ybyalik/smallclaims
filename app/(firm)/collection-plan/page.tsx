@@ -17,14 +17,14 @@ export const metadata: Metadata = {
 };
 
 const FAQS: { q: string; a: string }[] = [
-  { q: "Why do I need this if I already won?", a: "Winning the case is half the battle. The court doesn't collect for you — it just hands you a piece of paper that says the defendant owes you money. Roughly 50% of small-claims winners never actually collect because they don't know the next steps. This plan walks you through them." },
-  { q: "What's in the Collection Plan?", a: "A personalized sequence of enforcement steps for your state — debtor exam, wage garnishment, bank levy, writ of execution, abstract of judgment — with the exact form codes, fees, and links to the PDFs. Plus your state's exemption catalog (what the defendant gets to keep), the defendant's claim-of-exemption playbook, satisfaction-of-judgment instructions, the judgment renewal deadline, and your county's self-help center contact." },
-  { q: "What if the defendant has no money?", a: "Judgments stay enforceable for years (typically 10 to 20, varies by state). The plan tells you your state's renewal interval so you can refile before yours expires. Recording the judgment as a lien against real estate is one of the included steps — once recorded, it follows the defendant and attaches to property they may buy or sell down the road." },
-  { q: "Do I need a lawyer to enforce a judgment?", a: "No. Every collection mechanism — judgment-debtor exam, levy, garnishment, lien — is available to self-represented plaintiffs. The forms exist for non-lawyers. The plan tells you which form, which fee, and what order to file them." },
+  { q: "Why do I need this if I already won?", a: "Winning the case is half the battle. The court doesn't collect for you. It just hands you a piece of paper that says the defendant owes you money. Roughly 50% of small-claims winners never actually collect because they don't know the next steps. This plan walks you through them." },
+  { q: "What's in the Collection Plan?", a: "A personalized sequence of enforcement steps for your state (debtor exam, wage garnishment, bank levy, writ of execution, abstract of judgment) with the exact form codes, fees, and links to the PDFs. Plus your state's exemption catalog (what the defendant gets to keep), the defendant's claim-of-exemption playbook, satisfaction-of-judgment instructions, the judgment renewal deadline, and your county's self-help center contact." },
+  { q: "What if the defendant has no money?", a: "Judgments stay enforceable for years (typically 10 to 20, varies by state). The plan tells you your state's renewal interval so you can refile before yours expires. Recording the judgment as a lien against real estate is one of the included steps. Once recorded, it follows the defendant and attaches to property they may buy or sell down the road." },
+  { q: "Do I need a lawyer to enforce a judgment?", a: "No. Every collection mechanism (judgment-debtor exam, levy, garnishment, lien) is available to self-represented plaintiffs. The forms exist for non-lawyers. The plan tells you which form, which fee, and what order to file them." },
   { q: "How long does collection take?", a: "Varies wildly. Wage garnishment on an employed defendant can start paying within 60 days. A bank levy on a known account can produce funds within 30 days. A judgment lien against real estate may not produce money until the defendant sells the property, which could be years." },
   { q: "What about interest?", a: "Most states accrue post-judgment interest at 6% to 10% per year on unpaid amounts. The plan covers your state's rate and how to claim accrued interest when you do collect." },
   { q: "Can I use this if I won outside small claims?", a: "Yes for most US civil judgments. The mechanics of post-judgment collection are largely the same across small claims, district court, and superior court. The plan focuses on small-claims judgments but the steps apply to most civil money judgments under $25,000." },
-  { q: "Is CivilCase a law firm?", a: "No. We're a document-preparation service, not a law firm, and we don't provide legal advice. The Collection Plan is informational — based on public court rules and statutes — to help you enforce your judgment." },
+  { q: "Is CivilCase a law firm?", a: "No. We're a document-preparation service, not a law firm, and we don't provide legal advice. The Collection Plan is informational, based on public court rules and statutes, to help you enforce your judgment." },
 ];
 
 function PlanDoc({ style = {} }: { style?: React.CSSProperties }) {
@@ -48,10 +48,10 @@ function PlanDoc({ style = {} }: { style?: React.CSSProperties }) {
       </div>
       <div style={{ height: 1, background: "#e7dfd0", marginBottom: 18 }} />
       <div style={{ fontSize: 12 }}>
-        <p style={{ margin: "0 0 10px 0" }}><strong style={{ fontWeight: 600 }}>Step 1 — Judgment-debtor exam</strong><br />File SC-134. Subpoena defendant for asset disclosure under oath.</p>
-        <p style={{ margin: "0 0 10px 0" }}><strong style={{ fontWeight: 600 }}>Step 2 — Bank levy</strong><br />File EJ-152. $40 fee. 30-day hold.</p>
-        <p style={{ margin: "0 0 10px 0" }}><strong style={{ fontWeight: 600 }}>Step 3 — Wage garnishment</strong><br />File WG-001. Up to 25% of disposable pay.</p>
-        <p style={{ margin: "0 0 10px 0" }}><strong style={{ fontWeight: 600 }}>Step 4 — Property lien</strong><br />File abstract of judgment with county recorder.</p>
+        <p style={{ margin: "0 0 10px 0" }}><strong style={{ fontWeight: 600 }}>Step 1. Judgment-debtor exam</strong><br />File SC-134. Subpoena defendant for asset disclosure under oath.</p>
+        <p style={{ margin: "0 0 10px 0" }}><strong style={{ fontWeight: 600 }}>Step 2. Bank levy</strong><br />File EJ-152. $40 fee. 30-day hold.</p>
+        <p style={{ margin: "0 0 10px 0" }}><strong style={{ fontWeight: 600 }}>Step 3. Wage garnishment</strong><br />File WG-001. Up to 25% of disposable pay.</p>
+        <p style={{ margin: "0 0 10px 0" }}><strong style={{ fontWeight: 600 }}>Step 4. Property lien</strong><br />File abstract of judgment with county recorder.</p>
         <p style={{ margin: "0 0 18px 0" }}><strong style={{ fontWeight: 600 }}>Renewal:</strong> Every 10 years. We remind you.</p>
       </div>
       <div style={{ position: "absolute", right: 38, bottom: 38, width: 56, height: 56, borderRadius: "50%", border: `1.5px solid ${C.accent}`, color: C.accent, display: "flex", alignItems: "center", justifyContent: "center" }}>
@@ -65,7 +65,7 @@ export default function CollectionPlan2() {
   const jsonLd = jsonLdGraph(
     serviceSchema({
       name: "Collection Plan",
-      description: "Personalized post-judgment enforcement plan: debtor exam, bank levy, wage garnishment, property lien, and renewal tracking — sequenced for your state.",
+      description: "Personalized post-judgment enforcement plan: debtor exam, bank levy, wage garnishment, property lien, and renewal tracking, sequenced for your state.",
       url: "/collection-plan",
       priceFrom: 49,
       audience: "Judgment creditors",
@@ -155,7 +155,7 @@ export default function CollectionPlan2() {
             <div style={{ ...eyebrow, marginBottom: 22 }}>WHY YOU NEED THIS</div>
             <h2 className="firm-h" style={H2}>Winning is half the battle. <em>Collecting is the other half</em>.</h2>
             <p style={{ ...body, marginTop: 22, maxWidth: 460 }}>
-              About half of small-claims winners never collect a dollar — not because the defendant
+              About half of small-claims winners never collect a dollar. Not because the defendant
               can&rsquo;t pay, but because the winner doesn&rsquo;t know how to enforce.
             </p>
             <div style={{ marginTop: 36, display: "grid", gap: 22 }}>
@@ -198,7 +198,7 @@ export default function CollectionPlan2() {
           {[
             { Icon: ClipboardList, t: "Tell Us About Your Judgment", d: "State, defendant, amount, when the judgment was entered. We pull your state's enforcement playbook." },
             { Icon: Workflow, t: "We Build Your Plan", d: "A personalized, sequenced enforcement plan. Which step first, which forms, which fees, which to skip given what you know." },
-            { Icon: Banknote, t: "Work the Sequence", d: "Judgment-debtor exam, levy, garnishment, lien — in the right order. Each step has the form, the fee, the timeline." },
+            { Icon: Banknote, t: "Work the Sequence", d: "Judgment-debtor exam, levy, garnishment, lien, in the right order. Each step has the form, the fee, the timeline." },
             { Icon: RotateCw, t: "Track and Renew", d: "Some collections take months. The plan tracks your judgment expiration and tells you when to renew it." },
           ].map(({ Icon, t, d }, i) => (
             <div key={t} className="firm-step" style={{ padding: "40px 30px", borderLeft: i ? `1px solid ${C.line}` : "none" }}>
@@ -340,7 +340,7 @@ export default function CollectionPlan2() {
             <div style={{ display: "grid", gap: 6, marginBottom: 26 }}>
               <div style={{ display: "grid", gridTemplateColumns: "82px 1fr", gap: 16, alignItems: "baseline" }}>
                 <span style={{ font: `700 12px/1 ${BODY_FONT}`, letterSpacing: "0.06em", color: C.muted }}>JUDGMENT:</span>
-                <p style={{ margin: 0, font: `15px/1.4 ${SERIF_FONT}`, color: C.fg }}>$4,500 — Smith v. Johnson</p>
+                <p style={{ margin: 0, font: `15px/1.4 ${SERIF_FONT}`, color: C.fg }}>$4,500 · Smith v. Johnson</p>
               </div>
               <div style={{ display: "grid", gridTemplateColumns: "82px 1fr", gap: 16, alignItems: "baseline" }}>
                 <span style={{ font: `700 12px/1 ${BODY_FONT}`, letterSpacing: "0.06em", color: C.muted }}>STATE:</span>
@@ -349,11 +349,11 @@ export default function CollectionPlan2() {
             </div>
 
             <p style={{ margin: "0 0 14px" }}>
-              <strong style={{ fontWeight: 700 }}>Step 1 — Judgment-debtor exam.</strong> File{" "}
+              <strong style={{ fontWeight: 700 }}>Step 1. Judgment-debtor exam.</strong> File{" "}
               <span className="firm-anno-mark">SC-134</span>. Subpoena the defendant for asset disclosure under oath.
             </p>
             <p style={{ margin: "0 0 14px" }}>
-              <strong style={{ fontWeight: 700 }}>Step 2 — Bank levy.</strong> File{" "}
+              <strong style={{ fontWeight: 700 }}>Step 2. Bank levy.</strong> File{" "}
               <span className="firm-anno-mark">EJ-152 ($40 fee)</span>. 30-day hold once served on the bank.
             </p>
             <ul style={{ listStyle: "disc", paddingLeft: 22, margin: "0 0 16px" }}>
@@ -388,7 +388,7 @@ export default function CollectionPlan2() {
               ["Sequenced for you", "Skips steps that don’t apply based on what you know about the defendant."],
               ["Exact form numbers", "State-specific codes with direct links to the right PDFs."],
               ["Exemption catalog", "What the defendant gets to keep, with dollar amounts and statutes."],
-              ["Renewal alerts", "10-year judgment clock tracked — we file before it expires."],
+              ["Renewal alerts", "10-year judgment clock tracked. Your plan flags the renewal deadline so you can file before it expires."],
               ["Pushback playbook", "Claim-of-exemption response and what triggers a hearing."],
             ].map(([t, d]) => (
               <div key={t} className="firm-anno-callout">
@@ -402,8 +402,8 @@ export default function CollectionPlan2() {
         {/* Footer cards — dark + cream pair */}
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginTop: 32, maxWidth: 1020, marginLeft: "auto", marginRight: "auto" }}>
           {[
-            { Icon: ShieldCheck, title: "Built for your state.", body: "Forms, fees, and exemptions vary state to state. Yours is the only one we draft to." },
-            { Icon: FileText, title: "Renewal tracked.", body: "10-year clock with reminders. We file the renewal before the judgment expires." },
+            { Icon: ShieldCheck, title: "Built for your state.", body: "Forms, fees, and exemptions vary state to state. Yours is the only one our templates cover." },
+            { Icon: FileText, title: "Renewal tracked.", body: "10-year clock with reminders so you can file the renewal before the judgment expires." },
           ].map(({ Icon, title, body: bodyText }) => (
             <div key={title} style={{ display: "flex", gap: 20, padding: "24px 28px", background: C.cream, borderRadius: 20, alignItems: "center" }}>
               <div style={{ width: 46, height: 46, borderRadius: 999, background: C.dark, color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
@@ -432,7 +432,7 @@ export default function CollectionPlan2() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 0, background: C.paper, border: `1px solid ${C.line}`, borderRadius: RAD.panel, padding: 40 }}>
             {[
               ["50%", "of small-claims winners never collect a dollar."],
-              ["10–20", "years most judgments stay enforceable."],
+              ["10-20", "years most judgments stay enforceable."],
               ["25%", "max federal wage-garnishment of disposable pay."],
             ].map(([n, c], i) => (
               <div key={n} style={{ padding: "0 24px", borderLeft: i ? `1px solid ${C.line}` : "none" }}>
@@ -468,7 +468,7 @@ export default function CollectionPlan2() {
             <div style={{ display: "grid", gap: 12 }}>
               {[
                 "Step-by-step plan, sequenced to your case",
-                "Debtor exam, levy, garnishment, lien — forms + fees",
+                "Debtor exam, levy, garnishment, lien (forms + fees)",
                 "State exemption catalog (what's protected)",
                 "Defendant claim-of-exemption playbook",
                 "Satisfaction of judgment + renewal deadline",

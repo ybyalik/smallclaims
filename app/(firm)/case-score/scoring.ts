@@ -214,7 +214,7 @@ export function scoreCase(a: QuizAnswers, facts: StateFacts | null): ScoreResult
       });
     } else if (remaining > 1) {
       score += 18;
-      solSummary = `${facts!.name}'s statute of limitations on this claim is roughly ${solYears} years. You have about ${remaining.toFixed(1)} years left — workable, but don't sit on it.`;
+      solSummary = `${facts!.name}'s statute of limitations on this claim is roughly ${solYears} years. You have about ${remaining.toFixed(1)} years left. Workable, but don't sit on it.`;
       factors.push({
         label: "Enough time, but the clock is meaningful",
         impact: "neutral",
@@ -223,7 +223,7 @@ export function scoreCase(a: QuizAnswers, facts: StateFacts | null): ScoreResult
     } else if (remaining > 0) {
       score += 8;
       solWarning = true;
-      solSummary = `URGENT — your statute of limitations expires in less than a year. ${facts!.name} typically allows ${solYears} years for this kind of claim, and you're nearly out of time.`;
+      solSummary = `URGENT: your statute of limitations expires in less than a year. ${facts!.name} typically allows ${solYears} years for this kind of claim, and you're nearly out of time.`;
       factors.push({
         label: "Statute of limitations is almost up",
         impact: "negative",
@@ -232,7 +232,7 @@ export function scoreCase(a: QuizAnswers, facts: StateFacts | null): ScoreResult
     } else {
       score += 0;
       solWarning = true;
-      solSummary = `Your incident date is roughly ${elapsedYears.toFixed(1)} years ago. ${facts!.name}'s statute of limitations on this kind of claim is approximately ${solYears} years — you're likely past the deadline.`;
+      solSummary = `Your incident date is roughly ${elapsedYears.toFixed(1)} years ago. ${facts!.name}'s statute of limitations on this kind of claim is approximately ${solYears} years. You're likely past the deadline.`;
       factors.push({
         label: "Statute of limitations likely expired",
         impact: "negative",
@@ -243,7 +243,7 @@ export function scoreCase(a: QuizAnswers, facts: StateFacts | null): ScoreResult
     // We don't have specific SOL data for this state/type combo
     score += 15;
     solSummary =
-      "We don't have a specific statute-of-limitations match for your claim type in this state. Most contract and property-damage claims allow 2–6 years.";
+      "We don't have a specific statute-of-limitations match for your claim type in this state. Most contract and property-damage claims allow 2 to 6 years.";
   }
 
   // ── Documentation / evidence (max 20) ──────────────────────────
@@ -290,7 +290,7 @@ export function scoreCase(a: QuizAnswers, facts: StateFacts | null): ScoreResult
       label: "No formal demand yet",
       impact: "neutral",
       detail:
-        "Sending a written demand letter first often resolves the dispute without filing — and strengthens your case if it doesn't.",
+        "Sending a written demand letter first often resolves the dispute without filing, and strengthens your case if it doesn't.",
     });
   }
 
@@ -320,7 +320,7 @@ export function scoreCase(a: QuizAnswers, facts: StateFacts | null): ScoreResult
         label: "Defendant's finances are unclear",
         impact: "neutral",
         detail:
-          "Winning is one thing — collecting is another. A debtor's exam after judgment can surface assets you didn't know existed.",
+          "Winning is one thing. Collecting is another. A debtor's exam after judgment can surface assets you didn't know existed.",
       });
       break;
     case "government":
@@ -329,7 +329,7 @@ export function scoreCase(a: QuizAnswers, facts: StateFacts | null): ScoreResult
         label: "Defendant is a government agency",
         impact: "negative",
         detail:
-          "Sovereign immunity often limits suits against the government. Special pre-suit notice deadlines (often 90–180 days) usually apply.",
+          "Sovereign immunity often limits suits against the government. Special pre-suit notice deadlines (often 90 to 180 days) usually apply.",
       });
       break;
   }

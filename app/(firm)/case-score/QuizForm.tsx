@@ -83,7 +83,7 @@ const PRIOR_OPTIONS: { value: PriorContact; label: string; blurb: string }[] = [
 const EVIDENCE_OPTIONS: { value: Evidence; label: string; blurb: string }[] = [
   { value: "strong", label: "Strong", blurb: "Signed contract, invoices, payment records." },
   { value: "some", label: "Some", blurb: "Texts, emails, or screenshots referencing the agreement." },
-  { value: "limited", label: "Limited", blurb: "Mostly verbal — my word against theirs." },
+  { value: "limited", label: "Limited", blurb: "Mostly verbal. My word against theirs." },
 ];
 
 const DEFENDANT_OPTIONS: { value: DefendantKind; label: string; blurb: string }[] = [
@@ -183,7 +183,7 @@ export default function QuizForm({ states, stateFacts }: Props) {
       case 1: {
         const n = parseFloat(form.amount);
         if (!n || n <= 0) return "Enter the amount you're trying to recover.";
-        if (n > 100000) return "Amounts over $100,000 are well outside small claims — talk to an attorney.";
+        if (n > 100000) return "Amounts over $100,000 are well outside small claims. Talk to an attorney.";
         return null;
       }
       case 2:
@@ -384,7 +384,7 @@ export default function QuizForm({ states, stateFacts }: Props) {
               )}
 
               {step === 3 && (
-                <Q label="When did the dispute happen?" sub="Approximate is fine — used to check if your statute of limitations is still good.">
+                <Q label="When did the dispute happen?" sub="Approximate is fine. Used to check if your statute of limitations is still good.">
                   <input
                     type="date"
                     value={form.incident_date}
@@ -613,7 +613,7 @@ function Result({
   const pathCopy: Record<ScoreResult["path"], { headline: string; sub: string; primary: { href: string; label: string }; secondary: { href: string; label: string } }> = {
     demand_letter_strong: {
       headline: "Send a demand letter today.",
-      sub: "Your case looks strong. About half of disputes settle once a professional demand letter shows up — no filing required.",
+      sub: "Your case looks strong. About half of disputes settle once a professional demand letter shows up. No filing required.",
       primary: { href: "/demand-letter", label: "Send a demand letter ($39)" },
       secondary: { href: `/small-claims/${stateSlug}`, label: state ? `Read the ${state.name} guide` : "Read your state's guide" },
     },
@@ -631,7 +631,7 @@ function Result({
     },
     consult_attorney_high_value: {
       headline: "Talk to an attorney first.",
-      sub: "Your claim exceeds your state's small-claims cap. The right court matters — and contingency or hourly counsel is often realistic at this dollar amount.",
+      sub: "Your claim exceeds your state's small-claims cap. The right court matters, and contingency or hourly counsel is often realistic at this dollar amount.",
       primary: { href: "/disclaimer", label: "Why we recommend an attorney" },
       secondary: { href: `/small-claims/${stateSlug}`, label: state ? `${state.name} guide for context` : "Read your state's guide" },
     },
@@ -643,7 +643,7 @@ function Result({
     },
     likely_time_barred: {
       headline: "You're likely past the deadline.",
-      sub: "Your statute of limitations appears to have run. Some claim types have discovery rules or tolling exceptions that an attorney can spot — that's the conversation to have.",
+      sub: "Your statute of limitations appears to have run. Some claim types have discovery rules or tolling exceptions that an attorney can spot. That's the conversation to have.",
       primary: { href: "/disclaimer", label: "When to consult an attorney" },
       secondary: { href: `/small-claims/${stateSlug}`, label: state ? `${state.name} statute-of-limitations details` : "Read your state's guide" },
     },

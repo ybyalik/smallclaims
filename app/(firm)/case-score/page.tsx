@@ -51,7 +51,7 @@ export default async function CaseScore2() {
 
   const jsonLd = jsonLdGraph(
     serviceSchema({
-      name: "Case Score — free small-claims assessment",
+      name: "Case Score: free small-claims assessment",
       description: "Answer seven questions and get a plain-English read on whether your dispute is worth pursuing in small claims court.",
       url: "/case-score",
       priceFrom: 0,
@@ -124,10 +124,33 @@ export default async function CaseScore2() {
           <div style={{ ...eyebrow, marginBottom: 16 }}>START THE QUIZ</div>
           <h2 className="firm-h" style={{ ...H2, fontSize: 36 }}>Tell us about <em>your dispute</em>.</h2>
           <p style={{ ...body, maxWidth: 560, margin: "16px auto 0" }}>
-            Seven questions. About 90 seconds. We&rsquo;ll show your score, your deadline, and what to do
+            Seven questions. About 90 seconds. We&rsquo;ll show a general score, your state&rsquo;s
+            statute-of-limitations deadline, and the steps most self-represented plaintiffs take
             next.
           </p>
         </div>
+
+        {/* Required disclosure — quiz results look like advice; this makes clear they're not. */}
+        <div
+          style={{
+            maxWidth: 720,
+            margin: "24px auto 0",
+            padding: "14px 18px",
+            background: C.cream,
+            border: `1px solid ${C.line}`,
+            borderLeft: `3px solid ${C.accent}`,
+            borderRadius: 8,
+            font: `13px/1.5 ${BODY_FONT}`,
+            color: C.muted,
+          }}
+        >
+          <strong style={{ color: C.fg }}>This is general information, not legal advice.</strong>{" "}
+          Results are based on the inputs you provide and CivilCase&rsquo;s general legal
+          information about small-claims courts. They are not tailored to your specific
+          situation, do not predict any outcome, and are not a substitute for advice from a
+          licensed attorney in your state.
+        </div>
+
         <Suspense fallback={null}>
           <QuizForm states={STATES} stateFacts={facts} />
         </Suspense>

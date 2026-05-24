@@ -11,7 +11,7 @@ import { breadcrumbList, serviceSchema, jsonLdGraph } from "../../../lib/schema"
 export const metadata: Metadata = {
   title: "Demand Letter · CivilCase",
   description:
-    "Attorney-drafted, state-specific demand letter. From $29. Delivered USPS Certified within 24 hours.",
+    "State-specific demand letter assembled from attorney-authored templates. From $29. Delivered USPS Certified within 24 hours.",
   alternates: { canonical: "/demand-letter" },
 };
 
@@ -19,7 +19,7 @@ export default function DemandLetter2() {
   const jsonLd = jsonLdGraph(
     serviceSchema({
       name: "Demand Letter Service",
-      description: "Attorney-drafted, state-specific demand letter. Delivered via USPS Certified mail within 24 hours.",
+      description: "State-specific demand letter assembled from attorney-authored templates. Delivered via USPS Certified mail within 24 hours.",
       url: "/demand-letter",
       priceFrom: 29,
       audience: "Self-represented plaintiffs",
@@ -43,8 +43,8 @@ export default function DemandLetter2() {
             <h1 className="firm-h" style={{ ...H1, fontSize: 68 }}>The <em>demand</em> letter.</h1>
             <p style={{ font: `18px/1.55 ${BODY_FONT}`, color: C.muted, maxWidth: 520, marginTop: 28 }}>
               A formal written notice that you are owed money, intend to pursue the matter in court if it
-              isn&rsquo;t resolved, and have the documentation to back it up. Attorney-drafted. State-specific.
-              In your mailbox within 24 hours.
+              isn&rsquo;t resolved, and have the documentation to back it up. Built from
+              attorney-authored templates and state-specific rules. In your mailbox within 24 hours.
             </p>
             <div style={{ display: "flex", gap: 14, marginTop: 36 }}>
               <FirmBtn href="/dashboard/cases/new">Start my letter</FirmBtn>
@@ -132,7 +132,7 @@ export default function DemandLetter2() {
               ))}
             </div>
             <div style={{ marginTop: 32, font: `12px/1.4 ${BODY_FONT}`, color: "rgba(255,255,255,0.45)" }}>
-              Sample · 2,341 letters dispatched Q3–Q4 2025 · Internal CivilCase outcomes data.
+              Sample · 2,341 letters dispatched Q3-Q4 2025 · Internal CivilCase outcomes data.
             </div>
           </div>
         </div>
@@ -328,8 +328,8 @@ export default function DemandLetter2() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 0, borderTop: `1px solid ${C.fg}`, borderBottom: `1px solid ${C.line}` }}>
           {[
             { Icon: MessageSquare, t: "Tell us what happened", d: "Plain-language intake. We ask the questions. You stay in your seat.", time: "~8 min" },
-            { Icon: PenLine, t: "We draft your letter", d: "Attorney-reviewed, specific to your state, statute, and facts.", time: "24 hours" },
-            { Icon: Send, t: "Certified mail dispatch", d: "USPS certified with tracking. Signature on delivery.", time: "2–4 days" },
+            { Icon: PenLine, t: "Your letter is generated", d: "Assembled from attorney-authored templates around the facts you entered. Read it before sending.", time: "24 hours" },
+            { Icon: Send, t: "Certified mail dispatch", d: "USPS certified with tracking. Signature on delivery.", time: "2-4 days" },
             { Icon: Scale, t: "Escalate if ignored", d: "Filing assistance, court-ready forms, court-day procedure brief.", time: "14+ days" },
           ].map(({ Icon, t, d, time }, i) => (
             <div key={t} className="firm-step" style={{ padding: "36px 28px", borderLeft: i ? `1px solid ${C.line}` : "none" }}>
@@ -702,7 +702,7 @@ export default function DemandLetter2() {
         title={<>Demand letter <em>questions</em>.</>}
         subtitle="The most common questions we get from first-time senders."
         faqs={[
-          { q: "Will the recipient know I wrote it?", a: "Yes — your name and return address appear on the letter. CivilCase's role is identified at the bottom as drafter, not counsel of record. We are not your attorney." },
+          { q: "Will the recipient know I wrote it?", a: "Yes. Your name and return address appear on the letter. CivilCase's role is identified at the bottom as drafter, not counsel of record. We are not your attorney." },
           { q: "Do you contact me before mailing?", a: null },
           { q: "Can I review the letter before it goes out?", a: null },
           { q: "What if I don't have the other person's address?", a: null },
@@ -710,7 +710,7 @@ export default function DemandLetter2() {
           { q: "What if they offer less than I asked for?", a: null },
           { q: "Is CivilCase a law firm?", a: null },
           { q: "Can I send a demand letter on behalf of a business?", a: null },
-          { q: "What if I'm being sued — can you send a response letter?", a: null },
+          { q: "What if I'm being sued? Can you send a response letter?", a: null },
           { q: "How is this different from a cease-and-desist?", a: null },
         ]}
       />

@@ -22,13 +22,13 @@ const FAQS: { q: string; a: string }[] = [
     q: "What's in the Filing Kit?",
     a: "A state-specific filing guide: where to file (court name + venue rules), every required form with code and link to the current PDF, the filing fee schedule and fee-waiver eligibility, pre-suit requirements (demand letter, government claim, mediation if applicable), all allowed service-of-process methods with cost and deadlines, hearing-day preparation, and the most common pitfalls that get cases dismissed.",
   },
-  { q: "Will it work for my state?", a: "Yes. We cover all 50 states plus DC. Each guide is built from your state's small-claims rules — forms, fees, statute, service methods — with county-difference notes appended where your county varies from the state default." },
+  { q: "Will it work for my state?", a: "Yes. We cover all 50 states plus DC. Each guide is built from your state's small-claims rules (forms, fees, statute, service methods) with county-difference notes appended where your county varies from the state default." },
   { q: "Do I have to use this with a CivilCase demand letter?", a: "No. The Filing Kit is sold standalone. Whether you sent your own letter, used another service, or are skipping the letter step entirely, the kit gives you everything you need to file." },
   { q: "What about service of process?", a: "The kit walks you through the three legal ways to serve the defendant in your state (sheriff, certified mail through the clerk, or process server), with the cost of each and which one is most likely to work for your specific defendant." },
-  { q: "Can you file for me?", a: "No — most states require the plaintiff to file in person or via the court's e-filing portal directly. We give you everything you need to do it yourself in under an hour, including which window in the courthouse to look for." },
+  { q: "Can you file for me?", a: "No. Most states require the plaintiff to file in person or via the court's e-filing portal directly. We give you everything you need to do it yourself in under an hour, including which window in the courthouse to look for." },
   { q: "What if I lose?", a: "Most plaintiffs who prepare properly win small claims. If the court rules against you, the loss is around $30 to $100 in filing fees (which the kit told you about up front). Many states let you appeal within 30 days, and the kit covers what that looks like." },
-  { q: "What if I win?", a: "Add the Post-Judgment Collection Plan ($49) to actually collect on your judgment. Winning is half the battle — collecting is the other half." },
-  { q: "Is CivilCase a law firm?", a: "No. We're a document-preparation service, not a law firm, and we don't provide legal advice. The Filing Kit is informational — based on public court rules and statutes — to help you represent yourself." },
+  { q: "What if I win?", a: "Add the Post-Judgment Collection Plan ($49) to actually collect on your judgment. Winning is half the battle. Collecting is the other half." },
+  { q: "Is CivilCase a law firm?", a: "No. We're a document-preparation service, not a law firm, and we don't provide legal advice. The Filing Kit is informational, based on public court rules and statutes, to help you represent yourself." },
 ];
 
 // Static Filing-Kit document mockup (analog of the demand-letter
@@ -67,13 +67,13 @@ function FilingKitDoc({ style = {} }: { style?: React.CSSProperties }) {
           SC-100 · SC-104 · SC-130
         </p>
         <p style={{ margin: "0 0 10px 0" }}>
-          Filing fee: <strong style={{ fontWeight: 600 }}>$75</strong> (claims $1,500–$5,000).
+          Filing fee: <strong style={{ fontWeight: 600 }}>$75</strong> (claims $1,500-$5,000).
         </p>
         <p style={{ margin: "0 0 10px 0" }}>
           Statute of limitations: <strong style={{ fontWeight: 600 }}>4 years</strong> from breach.
         </p>
         <p style={{ margin: "0 0 18px 0" }}>
-          <strong style={{ fontWeight: 600 }}>Hearing window: 30–70 days from filing.</strong>
+          <strong style={{ fontWeight: 600 }}>Hearing window: 30-70 days from filing.</strong>
         </p>
       </div>
       <div style={{ position: "absolute", right: 38, bottom: 38, width: 56, height: 56, borderRadius: "50%", border: `1.5px solid ${C.accent}`, color: C.accent, display: "flex", alignItems: "center", justifyContent: "center" }}>
@@ -176,7 +176,7 @@ export default function FilingKit2() {
             <div style={{ ...eyebrow, marginBottom: 22 }}>WHY THE FILING KIT WORKS</div>
             <h2 className="firm-h" style={H2}>The right paperwork is <em>half the battle</em>.</h2>
             <p style={{ ...body, marginTop: 22, maxWidth: 460 }}>
-              Most self-represented plaintiffs lose on a technicality — wrong form, wrong fee, wrong service.
+              Most self-represented plaintiffs lose on a technicality: wrong form, wrong fee, wrong service.
               The kit removes the guesswork.
             </p>
             <div style={{ marginTop: 36, display: "grid", gap: 22 }}>
@@ -207,7 +207,7 @@ export default function FilingKit2() {
             <h2 className="firm-h" style={H2}>Four steps. <em>One filing</em>.</h2>
           </div>
           <p style={{ ...body, alignSelf: "end" }}>
-            From buying the kit to walking out of the clerk&rsquo;s office with a filed case — usually under 24
+            From buying the kit to walking out of the clerk&rsquo;s office with a filed case, usually under 24
             hours.
           </p>
         </div>
@@ -371,7 +371,7 @@ export default function FilingKit2() {
 
             <p style={{ margin: "0 0 16px" }}>
               File <span className="firm-anno-mark">SC-100 (Plaintiff&rsquo;s Claim)</span> with the clerk. Filing fee:{" "}
-              <span className="firm-anno-mark">$50 for claims $1,500–$5,000</span>. Fee-waiver form FW-001 if you qualify.
+              <span className="firm-anno-mark">$50 for claims $1,500-$5,000</span>. Fee-waiver form FW-001 if you qualify.
             </p>
             <p style={{ margin: "0 0 12px" }}>
               Statute of limitations: <span className="firm-anno-mark">two years</span> from the date of the incident
@@ -384,7 +384,7 @@ export default function FilingKit2() {
               <li style={{ marginBottom: 6 }}>Proof of service (SC-104) filed before the hearing date.</li>
             </ul>
             <p style={{ margin: "0 0 24px" }}>
-              <strong style={{ fontWeight: 700 }}>Hearing: 30–70 days out.</strong>{" "}
+              <strong style={{ fontWeight: 700 }}>Hearing: 30-70 days out.</strong>{" "}
               <span className="firm-anno-mark">Bring three copies of every exhibit</span> plus your witness list.
             </p>
 
@@ -406,7 +406,7 @@ export default function FilingKit2() {
             {[
               ["Form numbers", "Exact court forms with direct links to the current PDFs."],
               ["Filing fee + waiver", "Fee schedule for your claim band, plus FW-001 eligibility."],
-              ["Statute deadline", "Hard SOL flagged in months and days — don’t miss it."],
+              ["Statute deadline", "Hard SOL flagged in months and days. Don’t miss it."],
               ["Service rules", "Who serves, when, and how to prove it back to the court."],
               ["Hearing prep", "What to bring, how many copies, what gets cases dismissed."],
             ].map(([t, d]) => (
@@ -421,8 +421,8 @@ export default function FilingKit2() {
         {/* Footer cards — dark + cream pair */}
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginTop: 32, maxWidth: 1020, marginLeft: "auto", marginRight: "auto" }}>
           {[
-            { Icon: ShieldCheck, title: "Drafted to your county.", body: "Every county has its own forms, fees, and service rules. Yours is the only one we draft to." },
-            { Icon: FileText, title: "Court-ready packet.", body: "PDFs, fees, deadlines — print, sign, walk into the clerk’s office." },
+            { Icon: ShieldCheck, title: "Built for your county.", body: "Every county has its own forms, fees, and service rules. Yours is the only one our templates cover." },
+            { Icon: FileText, title: "Court-ready packet.", body: "PDFs, fees, deadlines. Print, sign, walk into the clerk’s office." },
           ].map(({ Icon, title, body: bodyText }) => (
             <div key={title} style={{ display: "flex", gap: 20, padding: "24px 28px", background: C.cream, borderRadius: 20, alignItems: "center" }}>
               <div style={{ width: 46, height: 46, borderRadius: 999, background: C.dark, color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>

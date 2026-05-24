@@ -13,7 +13,7 @@ import { breadcrumbList, jsonLdGraph } from "../../../lib/schema";
 export const metadata: Metadata = {
   title: "About · CivilCase",
   description:
-    "CivilCase is a self-help legal-tech tool for the 87% of disputes that never see a lawyer. Demand letters, small-claims filings, and collection plans.",
+    "CivilCase is a self-help legal-information website and document automation tool for self-represented plaintiffs. We are not a law firm and do not provide legal advice.",
   alternates: { canonical: "/about" },
 };
 
@@ -108,7 +108,7 @@ export default function About2() {
       "@type": "AboutPage",
       name: "About CivilCase",
       description:
-        "CivilCase is a self-help legal-tech tool for the 87% of disputes that never see a lawyer. Demand letters, small-claims filings, and collection plans.",
+        "CivilCase is a self-help legal-information website and document automation tool for self-represented plaintiffs (pro se). We are not a law firm and do not provide legal advice.",
       url: "https://civilcase.com/about",
       mainEntity: {
         "@type": "Organization",
@@ -116,7 +116,7 @@ export default function About2() {
         url: "https://civilcase.com",
         foundingDate: "2024",
         description:
-          "Self-help legal-tech tool for civil disputes. Attorney-drafted demand letters, county-specific filing kits, and post-judgment collection plans for self-represented plaintiffs across all 50 states.",
+          "A self-help legal-information website and document automation tool for civil disputes. Attorney-authored templates and state-specific guides for self-represented plaintiffs (pro se) across all 50 states. CivilCase is not a law firm and does not provide legal advice.",
         founder: {
           "@type": "Person",
           name: "Yury Byalik",
@@ -152,17 +152,18 @@ export default function About2() {
           <Ornament size={60} />
         </div>
         <h1 className="firm-h" style={{ font: `500 96px/0.98 ${HEAD_FONT}`, letterSpacing: "-0.04em", margin: 0, maxWidth: 900, color: C.fg }}>
-          A law firm without<br />the <em>law firm.</em>
+          Lawyer-built tools<br />for people <em>representing themselves.</em>
         </h1>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, marginTop: 48, alignItems: "end" }}>
           <p style={{ font: `400 19px/1.55 ${HEAD_FONT}`, color: C.fg, margin: 0 }}>
-            We built CivilCase for the millions of people who get wronged every year for amounts a lawyer
-            would never take. A real letter. A real claim. A real recovery — without the $300/hour retainer.
+            CivilCase is a self-help legal-information website and document automation tool for
+            disputes that don&rsquo;t justify a $300/hour retainer. Attorney-authored templates,
+            state-specific guides, plain-English procedure. Not a law firm. Not your lawyer.
           </p>
           <div style={{ display: "flex", gap: 24, alignItems: "center", justifyContent: "flex-end" }}>
             <WaxSeal />
             <div style={{ font: `13px/1.6 ${BODY_FONT}`, color: C.muted, maxWidth: 200 }}>
-              Founded May 2024 in Los Angeles. Licensed in all 50 states.
+              Founded May 2024 in Los Angeles. Guides and templates covering all 50 states + DC.
             </div>
           </div>
         </div>
@@ -192,15 +193,15 @@ export default function About2() {
           <div>
             <p style={{ font: `400 24px/1.4 ${HEAD_FONT}`, color: C.fg, margin: 0, letterSpacing: "-0.005em" }}>
               <span style={{ font: `500 64px/0.6 ${HEAD_FONT}`, color: C.accent, float: "left", marginRight: 16, marginTop: 14 }}>&ldquo;</span>
-              Three out of four Americans with a real legal issue never see a lawyer. Not because they&rsquo;re
-              wrong — because the math doesn&rsquo;t work. A $1,200 dispute costs $3,000 to win. So they
-              swallow it.
+              Three out of four Americans with a real legal issue never see a lawyer. Not because
+              they&rsquo;re wrong. The math doesn&rsquo;t work. A $1,200 dispute costs
+              $3,000 to fight. So they swallow it.
             </p>
             <p style={{ font: `400 17px/1.7 ${BODY_FONT}`, color: C.muted, marginTop: 28, maxWidth: 600 }}>
-              We thought that was an inversion of justice that could be fixed with software. Three years and
-              12,000 cases later, we still do.
+              We thought that was an inversion of justice that could be fixed with software. Three
+              years and 12,000 users later, we still do.
             </p>
-            <div style={{ marginTop: 32, font: `italic 18px/1.4 ${HEAD_FONT}`, color: C.accent }}>— Yury Bystik, founder</div>
+            <div style={{ marginTop: 32, font: `italic 18px/1.4 ${HEAD_FONT}`, color: C.accent }}>Yury Bystik, founder</div>
           </div>
         </div>
       </section>
@@ -253,22 +254,25 @@ export default function About2() {
           <div>
             <div style={{ ...eyebrow, color: C.accentOnDark, marginBottom: 22 }}>※ A NOTE FROM THE FOUNDER</div>
             <h2 className="firm-h firm-h-light" style={{ font: `500 56px/1.04 ${HEAD_FONT}`, color: "#fff", letterSpacing: "-0.03em", margin: 0 }}>
-              Built by a lawyer.<br />For people who&rsquo;d rather not call one.
+              Designed by lawyers.<br />For people <em>representing themselves.</em>
             </h2>
             <p style={{ font: `17px/1.65 ${BODY_FONT}`, color: "rgba(255,255,255,0.78)", marginTop: 32, maxWidth: 580 }}>
-              I spent fifteen years inside courthouses watching working people lose claims they should have
-              won, simply because they couldn&rsquo;t afford a lawyer to walk them through the process.
-              Filing a small claim isn&rsquo;t hard once you know how. The system just doesn&rsquo;t make it
-              easy.
+              I spent fifteen years inside courthouses watching working people lose claims they
+              should have won. Not because the law was against them, but because no one had
+              explained the procedure in plain English. Filing a small claim isn&rsquo;t hard once
+              you know how. The system just doesn&rsquo;t make it easy.
             </p>
             <p style={{ font: `16px/1.65 ${BODY_FONT}`, color: "rgba(255,255,255,0.65)", marginTop: 18, maxWidth: 580 }}>
-              We built CivilCase to flip that. Every form, every deadline, every step a paralegal would charge
-              $200 an hour to handle, drafted for your specific case in your specific county.
+              CivilCase is a self-help tool, not a law firm. We don&rsquo;t represent you and we
+              can&rsquo;t give legal advice about your specific case. What we built is software that
+              takes the templates, forms, and procedure licensed attorneys use every day and turns
+              them into something you can use yourself, assembled around the facts you enter and
+              the rules in your state.
             </p>
             <div style={{ display: "flex", alignItems: "baseline", gap: 18, marginTop: 36, paddingTop: 28, borderTop: "1px solid rgba(255,255,255,0.15)" }}>
               <div style={{ font: `italic 28px/1 ${HEAD_FONT}`, color: C.accentOnDark }}>Yury Bystik</div>
               <div style={{ height: 14, width: 1, background: "rgba(255,255,255,0.25)" }} />
-              <div style={{ font: `13px/1.4 ${BODY_FONT}`, color: "rgba(255,255,255,0.55)" }}>Esq. · Founder &amp; CEO · CA Bar 281044</div>
+              <div style={{ font: `13px/1.4 ${BODY_FONT}`, color: "rgba(255,255,255,0.55)" }}>Founder · CA Bar 281044 (in business capacity, not as your attorney)</div>
             </div>
           </div>
         </div>
@@ -288,7 +292,7 @@ export default function About2() {
             { icon: "scales" as const, title: "Equal access", desc: "Justice that costs $4,000 to access isn't justice. It's a luxury good. Our work is to make it ordinary." },
             { icon: "compass" as const, title: "Plain language", desc: "No Latin. No 'whereas.' If a paralegal can say it, so can we. Lawyers wrote the system for themselves." },
             { icon: "key" as const, title: "Tools, not gatekeeping", desc: "We give people the same forms a paralegal would charge $200 to fill in. The expertise is the system." },
-            { icon: "shield" as const, title: "On your side, always", desc: "We never represent the other side. Never the landlord, never the employer, never the contractor. Only you." },
+            { icon: "shield" as const, title: "Built for plaintiffs", desc: "Our tools are written for the person bringing the claim, not the landlord, employer, or contractor on the other side. We don't represent anyone, but we only build for one side of the table." },
           ].map((v, i) => (
             <div key={v.title} style={{ padding: "48px 32px", borderRight: i < 3 ? `1px solid ${C.line}` : "none" }}>
               <ValueIcon kind={v.icon} />

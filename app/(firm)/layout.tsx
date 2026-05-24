@@ -1,4 +1,5 @@
-import { SiteHeader, SiteFooter } from "../../components/firm";
+import { SiteFooter } from "../../components/firm";
+import { SiteHeader } from "../../components/firm/SiteHeader";
 import "../../components/firm/firm-responsive.css";
 
 // Layout for the (firm) route group. Wraps every page in the firm
