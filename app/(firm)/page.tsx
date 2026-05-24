@@ -110,7 +110,7 @@ export default function Home2() {
           range: "$1,200 – $9,000",
           statute: "21-day notice statutes · multipliers in 41 states",
           evidence: ["Signed lease", "Move-out photos", "Forwarding address proof", "Deposit receipt"],
-          href: "/small-claims/landlord/security-deposit",
+          href: "/small-claims/sue-landlord-security-deposit",
           reverse: false,
         },
         {
@@ -122,7 +122,7 @@ export default function Home2() {
           range: "$2,500 – $15,000",
           statute: "Per-day statutory damages (CA: $100/day · FL: 3× rent)",
           evidence: ["Lease", "Police report", "Hotel + replacement receipts", "Witness statements"],
-          href: "/small-claims/landlord/illegal-lockout",
+          href: "/small-claims/sue-landlord-illegal-lockout",
           reverse: true,
         },
       ].map((s, idx) => {

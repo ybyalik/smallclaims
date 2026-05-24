@@ -16,7 +16,7 @@ export function generateMetadata({ params }: Props): Metadata {
   return {
     title: `${issue.meta.title} · CivilCase`,
     description: issue.meta.description,
-    alternates: { canonical: `/small-claims/personal-loan/${issue.slug}` },
+    alternates: { canonical: `/small-claims/sue-loan-${issue.slug}` },
   };
 }
 

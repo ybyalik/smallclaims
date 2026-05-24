@@ -97,17 +97,17 @@ export default async function Landlord2() {
           <div style={{ background: "#fff", borderRadius: RAD.panel, padding: "10px 8px" }}>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0 }}>
               {[
-                { Icon: Wallet, t: "Security deposit not returned", d: "Most common case. 2× or 3× penalty in many states.", href: "/small-claims/landlord/security-deposit" },
-                { Icon: Droplet, t: "Mold and habitability", d: "Medical costs, ruined property, rent abatement.", href: "/small-claims/landlord/mold" },
-                { Icon: DoorOpen, t: "Wrongful eviction", d: "Moving costs, lost property, hotel stays, statutory damages.", href: "/small-claims/landlord/wrongful-eviction" },
-                { Icon: Lock, t: "Illegal lockout", d: "Changed locks, shut-off utilities. CA $100/day, FL 3× damages.", href: "/small-claims/landlord/illegal-lockout" },
-                { Icon: ShieldAlert, t: "Landlord harassment", d: "Unauthorized entries, threats, retaliation. CA $2K/act, NYC 3× rent.", href: "/small-claims/landlord/harassment" },
-                { Icon: Bug, t: "Pest infestation", d: "Roaches, bed bugs, rats. Treatment costs and rent reduction.", href: "/small-claims/landlord/pest-infestation" },
-                { Icon: Zap, t: "Unsafe living conditions", d: "Structural, electrical, no heat or hot water.", href: "/small-claims/landlord/unsafe-conditions" },
-                { Icon: HeartCrack, t: "Emotional distress", d: "Pair with a willful tenant claim. Documented damages awarded.", href: "/small-claims/landlord/emotional-distress" },
-                { Icon: Building2, t: "Apartment complex", d: "Corporate landlords settle faster. Typically $4K to $12K.", href: "/small-claims/landlord/apartment-complex" },
-                { Icon: LogOut, t: "After moving out", d: "Most states honor 1 to 4 years after move-out. Move quickly anyway.", href: "/small-claims/landlord/after-moving-out" },
-                { Icon: FileX, t: "Break your lease", d: "Five legal grounds: military, DV, habitability, harassment, mutual.", href: "/small-claims/landlord/break-lease" },
+                { Icon: Wallet, t: "Security deposit not returned", d: "Most common case. 2× or 3× penalty in many states.", href: "/small-claims/sue-landlord-security-deposit" },
+                { Icon: Droplet, t: "Mold and habitability", d: "Medical costs, ruined property, rent abatement.", href: "/small-claims/sue-landlord-mold" },
+                { Icon: DoorOpen, t: "Wrongful eviction", d: "Moving costs, lost property, hotel stays, statutory damages.", href: "/small-claims/sue-landlord-wrongful-eviction" },
+                { Icon: Lock, t: "Illegal lockout", d: "Changed locks, shut-off utilities. CA $100/day, FL 3× damages.", href: "/small-claims/sue-landlord-illegal-lockout" },
+                { Icon: ShieldAlert, t: "Landlord harassment", d: "Unauthorized entries, threats, retaliation. CA $2K/act, NYC 3× rent.", href: "/small-claims/sue-landlord-harassment" },
+                { Icon: Bug, t: "Pest infestation", d: "Roaches, bed bugs, rats. Treatment costs and rent reduction.", href: "/small-claims/sue-landlord-pest-infestation" },
+                { Icon: Zap, t: "Unsafe living conditions", d: "Structural, electrical, no heat or hot water.", href: "/small-claims/sue-landlord-unsafe-conditions" },
+                { Icon: HeartCrack, t: "Emotional distress", d: "Pair with a willful tenant claim. Documented damages awarded.", href: "/small-claims/sue-landlord-emotional-distress" },
+                { Icon: Building2, t: "Apartment complex", d: "Corporate landlords settle faster. Typically $4K to $12K.", href: "/small-claims/sue-landlord-apartment-complex" },
+                { Icon: LogOut, t: "After moving out", d: "Most states honor 1 to 4 years after move-out. Move quickly anyway.", href: "/small-claims/sue-landlord-after-moving-out" },
+                { Icon: FileX, t: "Break your lease", d: "Five legal grounds: military, DV, habitability, harassment, mutual.", href: "/small-claims/sue-landlord-break-lease" },
                 { Icon: HelpCircle, t: "Something else?", d: "Tell us about your situation in 90 seconds.", href: "/case-score" },
               ].map((it, idx) => (
                 <a key={idx} href={it.href} className="firm-cat-link" style={{ display: "grid", gridTemplateColumns: "auto 1fr auto", gap: 14, alignItems: "center", padding: "18px 22px", textDecoration: "none", color: "inherit", borderRadius: 10 }}>

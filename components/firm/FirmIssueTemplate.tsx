@@ -11,7 +11,7 @@ import { availableStateSlugs } from "../../lib/state-data";
 import { getClaimStateTable } from "../../lib/state-data/by-claim";
 import type { LandlordIssue, EvidenceCell } from "../../lib/landlord-issues/types";
 import type { CategoryMeta } from "../../lib/issues/categories";
-import { articleSchema, howToSchema, breadcrumbList, jsonLdGraph } from "../../lib/schema";
+import { articleSchema, howToSchema, breadcrumbList, jsonLdGraph, issueUrl as buildIssueUrl } from "../../lib/schema";
 import {
   C, H1, H2, eyebrow, body, PAD_X, RAD, HEAD_FONT, BODY_FONT, SERIF_FONT, italicEmCSS,
   Arrow, Check, ShieldLogo, FirmBtn, FaqSection,
@@ -66,10 +66,12 @@ export default async function FirmIssueTemplate({ issue, category, siblings }: P
   const fmtCap = (n: number) => `$${n.toLocaleString("en-US")}`;
   const showStateSection = !!issue.claimType || !!issue.stateSection;
 
-  // Map category hub href → firm equivalent (best-effort: replace /small-claims/X → /small-claims/X).
-  const hubHref = category.hubHref.replace(/^\/small-claims\//, "/small-claims/");
-
-  const issueUrl = `${hubHref}/${issue.slug}`;
+  // Category landing href (/small-claims/landlord, etc.).
+  const hubHref = category.hubHref;
+  // Canonical issue URL: /small-claims/sue-<prefix>-<slug>. Per-category prefix
+  // map lives in lib/schema.ts so URL shape stays consistent everywhere.
+  const categorySlug = hubHref.replace(/^\/small-claims\//, "");
+  const issueUrl = buildIssueUrl(categorySlug, issue.slug);
   const headline = `${issue.hero.h1.pre}${issue.hero.h1.em}${issue.hero.h1.post ?? ""}`;
   const jsonLd = jsonLdGraph(
     articleSchema({
@@ -1164,7 +1166,7 @@ export default async function FirmIssueTemplate({ issue, category, siblings }: P
             {siblings.map((sib) => (
               <Link
                 key={sib.slug}
-                href={`${hubHref}/${sib.slug}`}
+                href={buildIssueUrl(categorySlug, sib.slug)}
                 className="firm-related-card"
                 style={{
                   display: "grid",

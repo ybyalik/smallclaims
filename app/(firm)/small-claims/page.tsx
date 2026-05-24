@@ -207,36 +207,36 @@ export default async function SmallClaims2() {
               cat: "landlord",
               img: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=900&h=720&fit=crop",
               items: [
-                { title: "for a security deposit", recovery: "$4,500", href: "/small-claims/landlord/security-deposit" },
-                { title: "for wrongful eviction", recovery: "$6,800", href: "/small-claims/landlord/wrongful-eviction" },
-                { title: "for an illegal lockout", recovery: "$5,200", href: "/small-claims/landlord/illegal-lockout" },
+                { title: "for a security deposit", recovery: "$4,500", href: "/small-claims/sue-landlord-security-deposit" },
+                { title: "for wrongful eviction", recovery: "$6,800", href: "/small-claims/sue-landlord-wrongful-eviction" },
+                { title: "for an illegal lockout", recovery: "$5,200", href: "/small-claims/sue-landlord-illegal-lockout" },
               ],
             },
             {
               cat: "employer",
               img: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&h=720&fit=crop",
               items: [
-                { title: "for wrongful termination", recovery: "$7,200", href: "/small-claims/employer/wrongful-termination" },
-                { title: "for unpaid wages", recovery: "$3,400", href: "/small-claims/employer/unpaid-wages" },
-                { title: "for retaliation", recovery: "$5,800", href: "/small-claims/employer/retaliation" },
+                { title: "for wrongful termination", recovery: "$7,200", href: "/small-claims/sue-employer-wrongful-termination" },
+                { title: "for unpaid wages", recovery: "$3,400", href: "/small-claims/sue-employer-unpaid-wages" },
+                { title: "for retaliation", recovery: "$5,800", href: "/small-claims/sue-employer-retaliation" },
               ],
             },
             {
               cat: "neighbor",
               img: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=900&h=720&fit=crop",
               items: [
-                { title: "for property damage", recovery: "$4,000", href: "/small-claims/neighbor/property-damage" },
-                { title: "for noise", recovery: "$3,200", href: "/small-claims/neighbor/noise" },
-                { title: "for a fence dispute", recovery: "$2,800", href: "/small-claims/neighbor/fence-dispute" },
+                { title: "for property damage", recovery: "$4,000", href: "/small-claims/sue-neighbor-property-damage" },
+                { title: "for noise", recovery: "$3,200", href: "/small-claims/sue-neighbor-noise" },
+                { title: "for a fence dispute", recovery: "$2,800", href: "/small-claims/sue-neighbor-fence-dispute" },
               ],
             },
             {
               cat: "contractor",
               img: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=900&h=720&fit=crop",
               items: [
-                { title: "who took a deposit and vanished", recovery: "$6,500", href: "/small-claims/contractor/deposit-and-disappearing" },
-                { title: "for unfinished work", recovery: "$4,800", href: "/small-claims/contractor/unfinished-work" },
-                { title: "for poor workmanship", recovery: "$3,900", href: "/small-claims/contractor/poor-workmanship" },
+                { title: "who took a deposit and vanished", recovery: "$6,500", href: "/small-claims/sue-contractor-deposit-and-disappearing" },
+                { title: "for unfinished work", recovery: "$4,800", href: "/small-claims/sue-contractor-unfinished-work" },
+                { title: "for poor workmanship", recovery: "$3,900", href: "/small-claims/sue-contractor-poor-workmanship" },
               ],
             },
           ].map((g) => (

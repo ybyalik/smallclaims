@@ -11,7 +11,7 @@ import {
 import { availableStateSlugs } from "../../lib/state-data";
 import { STATES } from "../../lib/states";
 import type { CategoryHubData } from "../../lib/category-hubs/types";
-import { collectionPageSchema, articleSchema, breadcrumbList, jsonLdGraph } from "../../lib/schema";
+import { collectionPageSchema, articleSchema, breadcrumbList, jsonLdGraph, issueUrl as buildIssueUrl } from "../../lib/schema";
 
 // Firm-styled equivalent of CategoryTemplate. Reads the same CategoryHubData
 // shape so every category landing page becomes a one-line wrapper:
@@ -36,7 +36,7 @@ export async function FirmCategoryTemplate({ data }: { data: CategoryHubData }) 
       url: catUrl,
       items: data.issues.slice(0, 12).map((it) => ({
         name: it.title,
-        url: `${catUrl}/${it.slug}`,
+        url: buildIssueUrl(data.categorySlug, it.slug),
       })),
     }),
     articleSchema({
@@ -156,7 +156,7 @@ export async function FirmCategoryTemplate({ data }: { data: CategoryHubData }) 
                 return issue.ready ? (
                   <Link
                     key={issue.slug}
-                    href={`/small-claims/${data.categorySlug}/${issue.slug}`}
+                    href={buildIssueUrl(data.categorySlug, issue.slug)}
                     className="firm-cat-link"
                     style={cellStyle}
                   >
@@ -181,7 +181,7 @@ export async function FirmCategoryTemplate({ data }: { data: CategoryHubData }) 
               {data.issues.filter((i) => i.ready).slice(0, 4).map((p) => (
                 <Link
                   key={p.slug}
-                  href={`/small-claims/${data.categorySlug}/${p.slug}`}
+                  href={buildIssueUrl(data.categorySlug, p.slug)}
                   className="firm-cat-link"
                   style={{ display: "inline-flex", alignItems: "center", padding: "6px 12px", borderRadius: 999, background: "rgba(31,26,22,0.04)", border: `1px solid ${C.line}`, font: `500 12.5px/1 ${BODY_FONT}`, color: C.fg, textDecoration: "none" }}
                 >

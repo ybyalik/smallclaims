@@ -5,6 +5,26 @@
 const SITE_URL = "https://civilcase.com";
 const ORG = { "@type": "Organization", name: "CivilCase", url: SITE_URL } as const;
 
+// Canonical issue URL: /small-claims/sue-<prefix>-<slug>. Two categories
+// use abbreviated prefixes (personal-loan → loan, online-seller → seller)
+// to match the existing public URLs we want to keep indexed.
+const ISSUE_PREFIX: Record<string, string> = {
+  landlord: "landlord",
+  employer: "employer",
+  contractor: "contractor",
+  auto: "auto",
+  neighbor: "neighbor",
+  "personal-loan": "loan",
+  roommate: "roommate",
+  "online-seller": "seller",
+  refund: "refund",
+};
+
+export function issueUrl(categorySlug: string, issueSlug: string): string {
+  const prefix = ISSUE_PREFIX[categorySlug] || categorySlug;
+  return `/small-claims/sue-${prefix}-${issueSlug}`;
+}
+
 export interface BreadcrumbCrumb { name: string; url: string }
 
 export function breadcrumbList(crumbs: BreadcrumbCrumb[]) {
