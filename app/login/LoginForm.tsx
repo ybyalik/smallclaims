@@ -29,6 +29,9 @@ export default function LoginForm({ next, error: initialError }: { next?: string
       setError(error.message);
       return;
     }
+    // Marker cookie read by SiteHeaderClient to paint the logged-in
+    // shell instantly on repeat visits (no avatar flash).
+    document.cookie = "cc_has_session=1; path=/; max-age=2592000; SameSite=Lax";
     // Migrate any cases the anonymous user created onto this account.
     // Failures here aren't fatal — the cron sweeps stale anonymous
     // users in 7 days as a safety net.

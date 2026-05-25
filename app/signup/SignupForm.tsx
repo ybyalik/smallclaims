@@ -55,6 +55,7 @@ export default function SignupForm({ next }: { next?: string }) {
         }
         return;
       }
+      document.cookie = "cc_has_session=1; path=/; max-age=2592000; SameSite=Lax";
       router.replace(next || "/dashboard");
       router.refresh();
       return;
@@ -79,6 +80,7 @@ export default function SignupForm({ next }: { next?: string }) {
       setNeedsVerify(true);
       return;
     }
+    document.cookie = "cc_has_session=1; path=/; max-age=2592000; SameSite=Lax";
     router.replace(next || "/dashboard");
     router.refresh();
   }

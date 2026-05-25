@@ -16,10 +16,14 @@ import ClaimExplorer from "../../../../components/widgets/ClaimExplorer";
 //   1. v2 (markdown body) → FirmStateGuidePage (firm prose + firm sidebar)
 //   2. v1 (structured data) → fully re-skinned inline render below
 
-// Layout calls Supabase auth via cookies() so this route can't be
-// statically generated; ISR with revalidate=false caused
-// "Page changed from static to dynamic at runtime" 500s in production.
-export const dynamic = "force-dynamic";
+// Static generation: every state slug builds at deploy time.
+// The (firm) layout no longer reads cookies() (auth moved to client),
+// so this route is once again statically eligible. `revalidate` keeps
+// the JSON snapshot data fresh without a redeploy if it changes.
+export function generateStaticParams() {
+  return STATES.map((s) => ({ state: s.slug }));
+}
+export const revalidate = 86400;
 
 type Params = { params: { state: string } };
 

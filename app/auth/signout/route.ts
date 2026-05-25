@@ -19,6 +19,15 @@ async function handler(req: NextRequest) {
     path: "/",
     maxAge: 0,
   });
+  // Strip the SiteHeaderClient marker so the next page paints the
+  // logged-out shell instantly instead of optimistically painting
+  // the logged-in chrome.
+  res.cookies.set("cc_has_session", "", {
+    path: "/",
+    maxAge: 0,
+    sameSite: "lax",
+    secure: process.env.NODE_ENV === "production",
+  });
   return res;
 }
 

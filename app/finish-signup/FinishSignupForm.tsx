@@ -56,6 +56,8 @@ export default function FinishSignupForm({ next, suggestedEmail }: Props) {
       return;
     }
 
+    // Marker cookie for SiteHeaderClient's instant-paint logic.
+    document.cookie = "cc_has_session=1; path=/; max-age=2592000; SameSite=Lax";
     // Supabase sends a confirmation email when you stamp a new email onto a
     // user. They still have a valid session, so we can route them forward
     // and just flag that the email needs verifying at some point.

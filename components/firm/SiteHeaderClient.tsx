@@ -47,7 +47,16 @@ const FEATURED_STATES = [
 
 type MegaKey = "services" | "res";
 
-export function SiteHeaderClient({ user }: { user: SiteHeaderUser | null }) {
+// Read the non-httpOnly cc_has_session marker cookie synchronously.
+// Set by the auth flows (login / signup / oauth callback) and cleared
+// on signout. Lets repeat visitors paint the logged-in shell without
+// waiting on /api/me.
+function readHasSessionCookie(): boolean {
+  if (typeof document === "undefined") return false;
+  return document.cookie.split("; ").some((c) => c.startsWith("cc_has_session=1"));
+}
+
+export function SiteHeaderClient() {
   const pathname = usePathname() || "/";
   const isActive = (href: string) =>
     pathname === href || pathname.startsWith(href + "/");
@@ -57,6 +66,48 @@ export function SiteHeaderClient({ user }: { user: SiteHeaderUser | null }) {
   const [open, setOpen] = useState(false); // mobile drawer
   const [userMenuOpen, setUserMenuOpen] = useState(false);
   const userMenuRef = useRef<HTMLDivElement | null>(null);
+
+  // Auth state: hydrated from /api/me on mount. To avoid a flash for
+  // repeat visitors, the cc_has_session cookie lets us optimistically
+  // render the logged-in shell on the very first client render. SSR
+  // always renders the logged-out shell to keep hydration consistent;
+  // useEffect immediately swaps to the optimistic state if the cookie
+  // says we're likely logged in, then /api/me confirms (and fills in
+  // name / avatar / admin flag) or reverts to logged-out.
+  const [user, setUser] = useState<SiteHeaderUser | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    // Optimistic: if we look logged-in per the marker cookie, show a
+    // skeleton user object immediately so the layout doesn't reflow.
+    if (readHasSessionCookie()) {
+      setUser({ email: "", fullName: "", avatarUrl: null, isAdmin: false });
+    }
+    // Confirm with the real auth probe.
+    fetch("/api/me", { credentials: "include" })
+      .then((r) => (r.ok ? r.json() : { loggedIn: false }))
+      .then((data: { loggedIn: boolean; user?: SiteHeaderUser }) => {
+        if (cancelled) return;
+        if (data.loggedIn && data.user) {
+          setUser(data.user);
+          // Re-affirm the marker cookie (30-day rolling) so future
+          // visits keep painting instantly.
+          document.cookie = "cc_has_session=1; path=/; max-age=2592000; SameSite=Lax";
+        } else {
+          setUser(null);
+          // Strip a stale marker if /api/me says we're actually
+          // logged out (e.g., session expired since last visit).
+          document.cookie = "cc_has_session=; path=/; max-age=0; SameSite=Lax";
+        }
+      })
+      .catch(() => {
+        if (cancelled) return;
+        setUser(null);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   // Close the user menu on outside click
   useEffect(() => {
@@ -70,7 +121,9 @@ export function SiteHeaderClient({ user }: { user: SiteHeaderUser | null }) {
     return () => document.removeEventListener("mousedown", onClick);
   }, [userMenuOpen]);
 
-  const initial = (user?.fullName || user?.email || "?").trim().charAt(0).toUpperCase();
+  // Skeleton initial while the optimistic-but-empty user object is in
+  // play (cc_has_session cookie present, /api/me hasn't returned yet).
+  const initial = (user?.fullName || user?.email || "?").trim().charAt(0).toUpperCase() || "·";
 
   const openMegaNow = (k: MegaKey) => {
     if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
@@ -520,8 +573,10 @@ export function SiteHeaderClient({ user }: { user: SiteHeaderUser | null }) {
           </div>
         </nav>
 
-        {/* Auth controls */}
-        <div className="firm-desktop-auth" style={{ display: "flex", alignItems: "center", gap: 18 }}>
+        {/* Auth controls. min-width reserves space so the swap between
+            logged-out CTAs and the logged-in Dashboard + avatar doesn't
+            shift the layout (avoid CLS) once /api/me hydrates state. */}
+        <div className="firm-desktop-auth" style={{ display: "flex", alignItems: "center", gap: 18, minWidth: 220, justifyContent: "flex-end" }}>
           {user ? (
             <div ref={userMenuRef} style={{ position: "relative", display: "inline-flex", alignItems: "center", gap: 12 }}>
               <Link

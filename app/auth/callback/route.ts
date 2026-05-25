@@ -55,5 +55,14 @@ export async function GET(req: NextRequest) {
   const res = NextResponse.redirect(new URL(next, req.url));
   // Clear the handoff cookie regardless of outcome so it can't linger.
   res.cookies.set(HANDOFF_COOKIE, "", { path: "/", maxAge: 0 });
+  // Set cc_has_session marker (non-httpOnly) so SiteHeaderClient can
+  // instantly paint the logged-in header on subsequent visits. The
+  // real Supabase auth cookies remain httpOnly.
+  res.cookies.set("cc_has_session", "1", {
+    path: "/",
+    maxAge: 60 * 60 * 24 * 30,
+    sameSite: "lax",
+    secure: process.env.NODE_ENV === "production",
+  });
   return res;
 }

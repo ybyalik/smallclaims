@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { FirmIssueTemplate } from "../../../../../components/firm";
-import { getOnlineSellerIssue } from "../../../../../lib/online-seller-issues";
+import { getOnlineSellerIssue, ONLINE_SELLER_ISSUES } from "../../../../../lib/online-seller-issues";
 import { ONLINE_SELLER_CATEGORY } from "../../../../../lib/issues/categories";
 
-// Layout calls Supabase auth via cookies() so this route can't be
-// statically generated; ISR with revalidate=false caused 500s.
-export const dynamic = "force-dynamic";
+export function generateStaticParams() {
+  return ONLINE_SELLER_ISSUES.filter((i) => i.ready).map((i) => ({ issue: i.slug }));
+}
+export const revalidate = 86400;
 
 type Props = { params: { issue: string } };
 
