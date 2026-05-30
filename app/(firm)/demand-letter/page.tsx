@@ -49,7 +49,6 @@ export default function DemandLetter2() {
             </p>
             <div style={{ display: "flex", gap: 14, marginTop: 36 }}>
               <FirmBtn href="/dashboard/cases/new">Start My Letter</FirmBtn>
-              <FirmBtn kind="ghost" href="/demand-letter#sample">See a Sample Letter</FirmBtn>
             </div>
             <FirmHeroStats items={[
               { Icon: DollarSign, headline: "From $29", sub: "one-time fee" },
