@@ -17,6 +17,8 @@ import { buildCollectionPlanHeader, stripDashes, stripMissingDataHedges } from "
 import { formatDisputeTypeShort } from "../cases/dispute-type-label";
 import { getCaseClaimType } from "../cases/classify-claim-type";
 import { appendDisclaimerMd, appendDisclaimerHtml } from "../cases/disclaimer";
+import { notifyAdminOfResearchFailure } from "../case-research/notify-admin-failure";
+import { notifyCustomerProductReady } from "../notifications/notify-product-ready";
 import type { CollectionPlanIntake, CountyPack, CollectionSequence } from "./types";
 
 interface EnsureResult {
@@ -36,6 +38,14 @@ interface EnsureResult {
 // Cooldown window after a failed attempt. The page won't auto-fire a new
 // attempt during this window so failures don't churn through API quota.
 const RETRY_COOLDOWN_MS = 5 * 60 * 1000; // 5 minutes
+// How long an in-progress row may sit without advancing before we treat it
+// as abandoned. The pipeline bumps updated_at at every stage transition, and
+// the slowest single stage (an LLM call) is a couple of minutes, so a gap
+// this long means the previous run was interrupted (e.g. the serverless
+// function was frozen after the response). When that happens we mark the
+// dead row failed and start a fresh version instead of returning in_progress
+// forever — which is what stranded buyers on a permanent "generating" screen.
+const STALE_INPROGRESS_MS = 12 * 60 * 1000; // 12 minutes
 // Stop auto-retrying after this many failures inside the lookback window.
 // forceNew=true (admin) bypasses both limits.
 const MAX_FAILED_VERSIONS = 3;
@@ -224,13 +234,34 @@ export async function ensureCollectionPlanForCase(
       return { status: "existing", planId: existing.id };
     }
     if (existing.status !== "failed") {
-      // A pipeline is already mid-flight (or previously crashed without
-      // updating the row). Don't double-fire.
-      return {
-        status: "in_progress",
-        planId: existing.id,
-        reason: `existing row in status=${existing.status}`,
-      };
+      // A pipeline is either genuinely mid-flight, or it crashed/froze without
+      // ever updating the row. Distinguish by staleness: if the row has kept
+      // advancing recently, a run is live — don't double-fire. If it has sat
+      // untouched past the stale window, the previous run is dead; mark it
+      // failed and fall through to start a fresh version (self-healing).
+      const lastTouch = existing.updated_at
+        ? new Date(existing.updated_at).getTime()
+        : 0;
+      const staleMs = Date.now() - lastTouch;
+      if (staleMs < STALE_INPROGRESS_MS) {
+        return {
+          status: "in_progress",
+          planId: existing.id,
+          reason: `existing row in status=${existing.status}`,
+        };
+      }
+      // Stale → abandon the dead row so it stops blocking and so the admin
+      // sweep/alert can see it. Then continue below to start a new version.
+      await admin
+        .from("collection_plans")
+        .update({
+          status: "failed",
+          error_message: `abandoned: no progress for ${Math.round(
+            staleMs / 60000,
+          )}m in status=${existing.status} (previous run likely interrupted)`,
+          updated_at: new Date().toISOString(),
+        })
+        .eq("id", existing.id);
     }
 
     // The latest row is failed. Two backoff checks before we auto-retry.
@@ -327,6 +358,15 @@ export async function ensureCollectionPlanForCase(
         updated_at: new Date().toISOString(),
       })
       .eq("id", planId);
+    // Alert the team so an admin can fix + re-run; the customer keeps seeing the
+    // "generating" status, never an error. Never throws.
+    await notifyAdminOfResearchFailure({
+      product: "Collection Plan",
+      caseId,
+      jobId: planId,
+      stage: "collection-plan-generate",
+      error: message,
+    });
     return { status: "failed", planId, reason: message };
   }
 
@@ -464,6 +504,15 @@ export async function ensureCollectionPlanForCase(
       updated_at: new Date().toISOString(),
     })
     .eq("id", planId);
+
+  // The plan just became viewable. Email the customer so they don't have to
+  // sit on the status page waiting. This runs once per successful generation
+  // (the only path that reaches status='ready'); never throws.
+  await notifyCustomerProductReady({
+    caseId,
+    product: "Collection Plan",
+    viewPath: `/case/${caseId}/collection`,
+  });
 
   return { status: "created", planId };
 }

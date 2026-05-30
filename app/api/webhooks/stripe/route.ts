@@ -10,6 +10,7 @@ import { logEvent } from "../../../../lib/audit/log";
 import { sendEmail } from "../../../../lib/resend";
 import { markCasePaid } from "../../../../lib/demand-letter/mark-paid";
 import { ensureCollectionPlanForCase } from "../../../../lib/collection-plan/generate";
+import { ensureFilingReportForCase } from "../../../../lib/case-research/ensure-filing-report";
 
 export const runtime = "nodejs";
 
@@ -97,12 +98,14 @@ Open your case: ${process.env.NEXT_PUBLIC_SITE_URL || "https://civilcase.com"}/c
         if (caseRow?.plaintiff_email) {
           await sendEmail({
             to: caseRow.plaintiff_email,
-            subject: "Your CivilCase Filing Guide is unlocked",
+            subject: "We're preparing your CivilCase Filing Kit",
             text: `Hi ${caseRow.plaintiff_name?.split(" ")[0] || "there"},
 
-Your Filing Guide is ready. It walks you through where to file, the forms you need, fees, service of process, and what to bring on hearing day for ${caseRow.state ?? "your state"}.
+Thanks for your purchase. We're now building your Filing Kit for ${caseRow.state ?? "your state"}, the court where you file, the forms you need, fees, service of process, and what to bring on hearing day, researched for your specific case.
 
-Open your guide: ${process.env.NEXT_PUBLIC_SITE_URL || "https://civilcase.com"}/case/${caseId}/file
+This takes a few minutes. We'll email you as soon as it's ready, and you can check progress here anytime:
+
+${process.env.NEXT_PUBLIC_SITE_URL || "https://civilcase.com"}/case/${caseId}/file
 
 If you have questions, reply to this email.
 
@@ -192,6 +195,18 @@ If you have questions, reply to this email.
       ) {
         ensureCollectionPlanForCase(caseId).catch((err) => {
           console.error("[webhook] ensureCollectionPlanForCase failed", err);
+        });
+      }
+
+      // Filing Kit: ensure the per-case research report exists and is published
+      // (starts research if needed, publishes a finished report, re-runs a
+      // failed one). Idempotent, so a retried webhook won't double-fire.
+      if (
+        productKey === "filing_guide" &&
+        event.type === "payment_intent.succeeded"
+      ) {
+        ensureFilingReportForCase(caseId).catch((err) => {
+          console.error("[webhook] ensureFilingReportForCase failed", err);
         });
       }
 

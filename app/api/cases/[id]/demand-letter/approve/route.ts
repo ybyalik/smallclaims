@@ -62,11 +62,15 @@ export async function POST(_req: NextRequest, ctx: { params: { id: string } }) {
     })
     .eq("id", letter.id);
 
-  // Fire the mail event. Idempotent at the Inngest layer via id, and
-  // mailDemandLetter rechecks approval_status server-side.
+  // Fire the mail event. The id includes this approval's timestamp so that a
+  // re-approval after a hand-edit (which does not bump the letter version)
+  // still sends — keying on version alone made the second approval collide
+  // with the first and get silently deduped, so the edited letter never mailed.
+  // mailDemandLetter still rechecks approval_status and the mail_vendor_letter_id
+  // guard above prevents re-mailing an already-sent letter.
   await inngest.send({
     name: "case/letter.send",
-    id: `letter-send:${ctx.params.id}:v${letter.version}`,
+    id: `letter-send:${ctx.params.id}:v${letter.version}:${now}`,
     data: { caseId: ctx.params.id },
   });
 

@@ -40,13 +40,16 @@ const loadOne = cache(async (slug: string): Promise<StateGuide | null> => {
 const loadAllSlugs = cache(async (): Promise<string[]> => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const db = createServiceRoleClient() as any;
+  // Only fetch the slug column and let the DB drop rows with no pack. Selecting
+  // structured_pack here pulled the entire packs for every state (~2.6MB), which
+  // exceeds Next's 2MB fetch-cache limit and crashed the render on /small-claims,
+  // /case-score, /landlord, and the category pages.
   const { data } = await db
     .from("state_research")
-    .select("slug, structured_pack");
+    .select("slug")
+    .not("structured_pack", "is", null);
   if (!Array.isArray(data)) return [];
-  return data
-    .filter((r: { structured_pack: unknown }) => !!r.structured_pack)
-    .map((r: { slug: string }) => r.slug);
+  return data.map((r: { slug: string }) => r.slug);
 });
 
 export async function loadStateGuide(slug: string): Promise<StateGuide | null> {

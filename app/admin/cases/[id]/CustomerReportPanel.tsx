@@ -46,7 +46,7 @@ export default function CustomerReportPanel({ caseId, detail }: Props) {
   const [error, setError] = useState<string | null>(null);
   const lastSavedRef = useRef<string>(initialHtml);
 
-  if (status === "pending" || !status) {
+  if (status === "pending" || status === "generating" || !status) {
     return (
       <div className="ev-section">
         <h4 className="ev-section-title">Customer report</h4>

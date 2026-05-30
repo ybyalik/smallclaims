@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
 import { createClient } from "../../../../../lib/supabase/server";
+import { createServiceRoleClient } from "../../../../../lib/supabase/service-role";
 import type { Case } from "../../../../../lib/supabase/types";
 import { hasPaidForProduct } from "../../../../../lib/payments/access";
-import { loadStateGuide } from "../../../../../lib/state-data";
+import { ensureFilingReportForCase } from "../../../../../lib/case-research/ensure-filing-report";
 import { STATES } from "../../../../../lib/states";
-import FilingGuideContent from "./FilingGuideContent";
+import ProductDocumentView from "../../../../../components/cases/ProductDocumentView";
+import FilingKitStatus from "./FilingKitStatus";
 import PageHead from "../../../../../components/layout/PageHead";
-import EmptyState from "../../../../../components/ui/EmptyState";
 
 export const metadata: Metadata = {
-  title: "File in court — Filing Guide",
+  title: "Your Filing Kit",
 };
 
 export const dynamic = "force-dynamic";
@@ -35,31 +36,58 @@ export default async function FilingGuidePage({ params }: { params: { id: string
     redirect(`/case/${c.id}/buy/filing-guide`);
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const admin = createServiceRoleClient() as any;
+
+  // Latest research job for this case and its auto-published report.
+  const { data: jobs } = await admin
+    .from("case_research_jobs")
+    .select("id")
+    .eq("case_id", c.id)
+    .order("version", { ascending: false })
+    .limit(1);
+  const jobId = (jobs ?? [])[0]?.id as string | undefined;
+
+  let publishedHtml = "";
+  if (jobId) {
+    const { data: report } = await admin
+      .from("case_research_reports")
+      .select("customer_report_published_html")
+      .eq("job_id", jobId)
+      .maybeSingle();
+    publishedHtml = (report?.customer_report_published_html as string | undefined) ?? "";
+  }
+
   const stateMeta = STATES.find((s) => s.abbr === c.state) ?? null;
-  const guide = stateMeta ? await loadStateGuide(stateMeta.slug) : null;
+  const stateName = stateMeta?.name ?? c.state ?? "your state";
+  const isReady = publishedHtml.length > 10;
+
+  // Safety net: paid but no published report yet (older purchase, missed
+  // webhook, or a finished-but-unpublished report). Idempotent; fire and
+  // forget — the poller picks up the published report and refreshes.
+  if (!isReady) {
+    ensureFilingReportForCase(c.id).catch((err) => {
+      console.error("[file page] ensureFilingReportForCase failed", err);
+    });
+  }
 
   return (
     <div>
       <PageHead
         back={{ href: `/case/${c.id}`, label: "Back to Case" }}
-        title="File in court"
-        sub="Your demand letter ran its course. Time to take this to small-claims court."
+        title="Your Filing Kit"
+        sub="Researched for your specific case: where to file, the forms you need, fees, service of process, and hearing-day prep."
       />
 
-      {guide ? (
-        <FilingGuideContent guide={guide} caseRow={c} />
+      {isReady ? (
+        <ProductDocumentView
+          pdfUrl={`/api/cases/${c.id}/file/report-pdf`}
+          title="Filing Kit"
+          downloadName="Filing-Kit.pdf"
+        />
       ) : (
-        <FilingGuidePendingView stateName={stateMeta?.name ?? c.state} />
+        <FilingKitStatus caseId={c.id} stateName={stateName} />
       )}
     </div>
-  );
-}
-
-function FilingGuidePendingView({ stateName }: { stateName: string }) {
-  return (
-    <EmptyState
-      title={`Filing Guide for ${stateName} is being prepared`}
-      body={`We have your payment on file. The ${stateName} Filing Guide will appear here once it's ready, we'll email you when it's live.`}
-    />
   );
 }

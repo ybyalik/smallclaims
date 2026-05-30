@@ -22,6 +22,8 @@ import { parseAllForms, type ParsedPdfForm } from "../../case-research/pdf-forms
 import { getStateByAbbr } from "../../states";
 import { formatDisputeTypePhrase } from "../../cases/dispute-type-label";
 import { getCaseClaimType, type CaseClassification } from "../../cases/classify-claim-type";
+import { finalizeCustomerReport } from "../../case-research/finalize-customer-report";
+import { notifyAdminOfResearchFailure } from "../../case-research/notify-admin-failure";
 import crypto from "node:crypto";
 
 const COST_CAP_CENTS = 1500;
@@ -218,6 +220,18 @@ export const caseResearchRun = inngest.createFunction(
           .eq("id", jobId);
       });
 
+      // ----- Merge + write + auto-publish the customer report ---------------
+      // No human review: the report becomes customer-visible immediately. If
+      // this throws, the outer catch marks the job failed and alerts the team;
+      // the customer keeps seeing "being prepared" until an admin re-runs.
+      await step.run("finalize-customer-report", async () => {
+        const result = await finalizeCustomerReport(admin, caseId, jobId, { autoPublish: true });
+        if (result.status === "skipped_no_packs") {
+          throw new Error("finalize skipped: no research packs available to merge");
+        }
+        return result;
+      });
+
       return { jobId, caseId, version, status: "succeeded" };
     } catch (e) {
       const msg = e instanceof Error ? e.message : String(e);
@@ -230,6 +244,7 @@ export const caseResearchRun = inngest.createFunction(
           updated_at: new Date().toISOString(),
         })
         .eq("id", jobId);
+      await notifyAdminOfResearchFailure({ caseId, jobId, stage: "case-research-run", error: e });
       throw e;
     }
   },

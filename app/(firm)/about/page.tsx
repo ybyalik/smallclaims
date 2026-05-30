@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/about" },
 };
 
-function WaxSeal({ size = 90, label = "EST. 2024", color = C.accent }: { size?: number; label?: string; color?: string }) {
+function WaxSeal({ size = 90, label = "EST. 2026", color = C.accent }: { size?: number; label?: string; color?: string }) {
   return (
     <div
       style={{
@@ -68,7 +68,7 @@ export default function About2() {
         "@type": "Organization",
         name: "CivilCase",
         url: "https://civilcase.com",
-        foundingDate: "2024",
+        foundingDate: "2026",
         description:
           "A self-help legal-information website and document automation tool for civil disputes. State-specific guides and templates for self-represented plaintiffs (pro se) across all 50 states. CivilCase is not a law firm and does not provide legal advice.",
         founder: {
@@ -112,7 +112,7 @@ export default function About2() {
           <div style={{ display: "flex", gap: 24, alignItems: "center", justifyContent: "flex-end" }}>
             <WaxSeal />
             <div style={{ font: `13px/1.6 ${BODY_FONT}`, color: C.muted, maxWidth: 200 }}>
-              Founded 2025. Guides and templates covering all 50 states + DC.
+              Founded 2026. Guides covering all 50 states + DC.
             </div>
           </div>
         </div>

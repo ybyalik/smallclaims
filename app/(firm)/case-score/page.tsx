@@ -91,14 +91,6 @@ export default async function CaseScore2() {
                 </div>
               ))}
             </div>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 0, marginTop: 60, paddingTop: 30, borderTop: `1px solid ${C.line}` }}>
-              {[["Price", "Free"], ["Questions", "7"], ["Time", "~90 sec"], ["Signup", "None"]].map(([k, v], i) => (
-                <div key={k} style={{ paddingLeft: i ? 24 : 0, borderLeft: i ? `1px solid ${C.line}` : "none" }}>
-                  <div style={{ ...eyebrow, color: C.muted, marginBottom: 10 }}>{k}</div>
-                  <div style={{ font: `600 26px/1.1 ${HEAD_FONT}`, color: C.fg, letterSpacing: "-0.01em" }}>{v}</div>
-                </div>
-              ))}
-            </div>
           </div>
           {/* Case-strength dashboard with US-map backdrop — ported from legacy
               home hero. CSS rules live in app/globals.css under .hero-strength*. */}

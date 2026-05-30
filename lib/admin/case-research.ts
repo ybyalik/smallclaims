@@ -44,7 +44,9 @@ export interface CaseResearchDetail {
   qaNotes: Record<string, unknown> | null;
   sources: CaseResearchSourceRow[];
   // Customer report layer
-  customerReportStatus: "pending" | "draft" | "published" | null;
+  // 'generating' is a transient internal lock used while the report is being
+  // built (see finalizeCustomerReport); customers never see it.
+  customerReportStatus: "pending" | "generating" | "draft" | "published" | null;
   customerReportHtml: string | null;
   customerReportPublishedHtml: string | null;
   customerReportPublishedAt: string | null;

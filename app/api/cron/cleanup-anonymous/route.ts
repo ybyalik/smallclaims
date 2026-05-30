@@ -68,6 +68,29 @@ export async function GET(req: NextRequest) {
         continue;
       }
 
+      // Never delete an anonymous user who has paid for anything — they own a
+      // purchased case (letter / filing kit / collection plan). Deleting them
+      // would destroy what they paid for.
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const { data: ownedCases } = await (db as any)
+        .from("cases")
+        .select("id")
+        .eq("owner_user_id", u.id);
+      const ownedIds = ((ownedCases ?? []) as Array<{ id: string }>).map((c) => c.id);
+      if (ownedIds.length > 0) {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const { data: paidRows } = await (db as any)
+          .from("payments")
+          .select("id")
+          .in("case_id", ownedIds)
+          .not("paid_at", "is", null)
+          .limit(1);
+        if (paidRows && paidRows.length > 0) {
+          skipped.push(u.id);
+          continue;
+        }
+      }
+
       // Delete the user. We rely on FK ON DELETE CASCADE from cases ->
       // auth.users to clean up their case rows. If cascade is not set up,
       // delete cases manually first.

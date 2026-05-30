@@ -9,8 +9,26 @@ interface Props {
   suggestedEmail: string;
 }
 
+// "Skip for now" keeps the visitor anonymous. Anonymous users are bounced off
+// every /dashboard/* URL to /login (see lib/supabase/middleware.ts) — where
+// they have no account — so skipping toward a dashboard page would dead-end a
+// buyer who already paid. Map the dashboard target onto its public /case
+// equivalent, which an anonymous owner can view.
+function publicSkipTarget(next: string): string {
+  const m = next.match(/^\/dashboard\/cases\/([^/?#]+)(\/[^?#]*)?(\?[^#]*)?$/);
+  if (m) {
+    const [, id, sub, qs] = m;
+    return `/case/${id}${sub || ""}${qs || ""}`;
+  }
+  // Any other /dashboard destination is unreachable while anonymous; send
+  // them home rather than into a login bounce.
+  if (next.startsWith("/dashboard")) return "/";
+  return next;
+}
+
 export default function FinishSignupForm({ next, suggestedEmail }: Props) {
   const router = useRouter();
+  const skipHref = publicSkipTarget(next);
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState(suggestedEmail);
   const [password, setPassword] = useState("");
@@ -126,7 +144,7 @@ export default function FinishSignupForm({ next, suggestedEmail }: Props) {
         {loading ? "Saving account..." : "Save Account"}
       </button>
       <p className="auth-skip">
-        <a href={next}>Skip for now</a>
+        <a href={skipHref}>Skip for now</a>
       </p>
     </form>
   );

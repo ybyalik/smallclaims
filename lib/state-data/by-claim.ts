@@ -44,12 +44,34 @@ function loadSnapshot(): RawStateRow[] | null {
 const fetchAllStateResearch = cache(async (): Promise<RawStateRow[]> => {
   const snap = loadSnapshot();
   if (snap) return snap;
+  // Live fallback: only hit when the build-time snapshot is missing (local
+  // dev, or a build that skipped the prebuild step). Select ONLY the three
+  // structured_pack fields this module actually reads, via Postgres JSON
+  // paths, instead of pulling every state's entire pack. Fetching all packs
+  // here (~2MB+) is exactly what tripped Next's 2MB data-cache limit and
+  // crashed the issue pages; trimming to three fields keeps the payload tiny
+  // and cacheable, so even this fallback can't hit that wall.
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const db = createServiceRoleClient() as any;
   const { data } = await db
     .from("state_research")
-    .select("slug, state_name, structured_pack");
-  return Array.isArray(data) ? (data as RawStateRow[]) : [];
+    .select(
+      "slug, state_name, sol:structured_pack->statute_of_limitations_by_claim_type, mult:structured_pack->statutory_multipliers, cap:structured_pack->claim_limit_dollars",
+    )
+    .not("structured_pack", "is", null);
+  if (!Array.isArray(data)) return [];
+  // Reshape the trimmed columns back into the minimal pack shape the
+  // consumers below expect (they only ever read these three fields).
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  return (data as any[]).map((r) => ({
+    slug: r.slug,
+    state_name: r.state_name,
+    structured_pack: {
+      statute_of_limitations_by_claim_type: r.sol ?? null,
+      statutory_multipliers: r.mult ?? null,
+      claim_limit_dollars: r.cap ?? null,
+    },
+  }));
 });
 
 export interface ClaimStateRow {

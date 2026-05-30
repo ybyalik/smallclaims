@@ -7,6 +7,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "../../../../../lib/supabase/server";
 import { createServiceRoleClient } from "../../../../../lib/supabase/service-role";
 import { renderLetterPdf } from "../../../../../lib/pdf/letter";
+import { hasPaidForProduct } from "../../../../../lib/payments/access";
 import { logEvent } from "../../../../../lib/audit/log";
 
 export const runtime = "nodejs";
@@ -24,19 +25,13 @@ export async function GET(req: NextRequest, { params }: { params: { caseId: stri
   // Fan out the four independent reads — case row, admin check, payment
   // check, and latest letter. Was sequential before, costing 4 roundtrips
   // before PDF render could start.
-  const [caseRes, profileRes, paymentsRes, letterRes] = await Promise.all([
+  const [caseRes, profileRes, letterRes] = await Promise.all([
     admin
       .from("cases")
       .select("id, owner_user_id, defendant_name")
       .eq("id", params.caseId)
       .single(),
     admin.from("profiles").select("is_admin").eq("user_id", user.id).single(),
-    admin
-      .from("payments")
-      .select("id")
-      .eq("case_id", params.caseId)
-      .eq("status", "succeeded")
-      .eq("product_key", "demand_letter_download"),
     admin
       .from("demand_letters")
       .select("body_md, version")
@@ -53,7 +48,18 @@ export async function GET(req: NextRequest, { params }: { params: { caseId: stri
     if (caseRow.owner_user_id !== user.id) {
       return NextResponse.json({ error: "forbidden" }, { status: 403 });
     }
-    if (!paymentsRes.data || paymentsRes.data.length === 0) {
+    // Any of the demand-letter products grants access — must match the
+    // /case/[id]/letter page's access check, which uses the same three keys.
+    // (The old check only accepted the retired demand_letter_download SKU, so
+    // tier_send_letter / tier_full_pressure buyers got a broken PDF.)
+    const paid = (
+      await Promise.all([
+        hasPaidForProduct(params.caseId, "tier_send_letter"),
+        hasPaidForProduct(params.caseId, "tier_full_pressure"),
+        hasPaidForProduct(params.caseId, "demand_letter_download"),
+      ])
+    ).some(Boolean);
+    if (!paid) {
       return NextResponse.json({ error: "payment_required" }, { status: 402 });
     }
   }

@@ -1,7 +1,6 @@
 // Convert a state_research.structured_pack record into the legacy
 // StateGuide shape that the rest of the site (sitemap, case-score quiz,
-// filing kit, category + issue templates, deposit-state-table) still
-// expects.
+// filing kit, category + issue templates) still expects.
 //
 // This is the bridge that lets us delete /data/*.ts and
 // /reports/*-evidence.json without rewriting every consumer. The

@@ -5,6 +5,7 @@ import {
   Arrow,
 } from "../../../components/firm";
 import { breadcrumbList, jsonLdGraph } from "../../../lib/schema";
+import ContactForm from "./ContactForm";
 
 // Contact page — editorial layout ported from claude design (Contact).
 // Skipped per user direction: the 3 channel boxes (Call / Write / Mail us)
@@ -15,26 +16,6 @@ export const metadata: Metadata = {
   description:
     "Questions about our guides or which service fits your dispute? Send a note. We answer most messages within one business day. CivilCase is not a law firm and does not provide legal advice.",
   alternates: { canonical: "/contact" },
-};
-
-const INPUT_STYLE: React.CSSProperties = {
-  width: "100%",
-  boxSizing: "border-box",
-  background: "#fff",
-  border: `1px solid ${C.line}`,
-  borderRadius: 8,
-  padding: "12px 14px",
-  font: `15px/1.4 ${BODY_FONT}`,
-  color: C.fg,
-  outline: "none",
-};
-
-const LABEL_STYLE: React.CSSProperties = {
-  font: `500 10px/1 ${BODY_FONT}`,
-  letterSpacing: "0.22em",
-  color: C.muted,
-  textTransform: "uppercase",
-  marginBottom: 8,
 };
 
 const FAST_PATHS = [
@@ -83,70 +64,7 @@ export default function Contact() {
               service. Stuck on a step? Not sure which tool fits your situation? Just ask.
             </p>
 
-            <form style={{ marginTop: 40, display: "grid", gap: 28 }}>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32 }}>
-                <div>
-                  <div style={LABEL_STYLE}>YOUR NAME</div>
-                  <input type="text" placeholder="Jordan Trevant" style={INPUT_STYLE} />
-                </div>
-                <div>
-                  <div style={LABEL_STYLE}>EMAIL</div>
-                  <input type="email" placeholder="you@example.com" style={INPUT_STYLE} />
-                </div>
-              </div>
-
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32 }}>
-                <div>
-                  <div style={LABEL_STYLE}>STATE</div>
-                  <input type="text" placeholder="California" style={INPUT_STYLE} />
-                </div>
-                <div>
-                  <div style={LABEL_STYLE}>TYPE OF CASE</div>
-                  <select defaultValue="" style={{ ...INPUT_STYLE, color: C.muted, appearance: "none", cursor: "pointer" }}>
-                    <option value="" disabled>Select a category…</option>
-                    <option value="landlord">Landlord dispute</option>
-                    <option value="contractor">Contractor dispute</option>
-                    <option value="employer">Employer dispute</option>
-                    <option value="auto">Auto dispute</option>
-                    <option value="neighbor">Neighbor dispute</option>
-                    <option value="personal-loan">Personal loan</option>
-                    <option value="roommate">Roommate dispute</option>
-                    <option value="online-seller">Online seller</option>
-                    <option value="refund">Refund</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-              </div>
-
-              <div>
-                <div style={LABEL_STYLE}>BRIEFLY · WHAT&rsquo;S GOING ON?</div>
-                <textarea
-                  rows={6}
-                  placeholder="A short summary. What's the dispute, what have you tried so far, and what would be most helpful from us."
-                  style={{ ...INPUT_STYLE, resize: "vertical" }}
-                />
-              </div>
-
-              <div style={{ display: "flex", justifyContent: "flex-end", marginTop: 4 }}>
-                <button
-                  type="submit"
-                  style={{
-                    background: C.dark,
-                    color: "#fff",
-                    border: "none",
-                    padding: "16px 24px",
-                    font: `500 14px/1 ${BODY_FONT}`,
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: 12,
-                    cursor: "pointer",
-                    borderRadius: 8,
-                  }}
-                >
-                  Send message <Arrow color="#fff" />
-                </button>
-              </div>
-            </form>
+            <ContactForm />
           </div>
 
           {/* Sidebar — editorial cards (skip the Hours card per direction) */}

@@ -14,30 +14,33 @@ interface StateRow {
 }
 
 // Type-ahead state search. Empty input shows the popular states; typing
-// filters the full STATES list (abbr OR name). "See all" toggles the full
-// alphabetical list. The results list is a fixed-height scroll area so the
-// panel never changes size as the result count changes.
-export function StateSearchPanel({ states }: { states: StateRow[] }) {
+// filters the full STATES list (abbr OR name). The results list is a
+// fixed-height scroll area so the panel never changes size as the result
+// count changes. The "See all" button toggles a separate server-rendered
+// A–Z directory elsewhere on the page (passed as directoryId) so all 51
+// links stay in the HTML source while hidden by default.
+export function StateSearchPanel({ states, directoryId }: { states: StateRow[]; directoryId?: string }) {
   const [query, setQuery] = useState("");
-  const [showAll, setShowAll] = useState(false);
+  const [expanded, setExpanded] = useState(false);
   const popular = useMemo(() => states.filter((s) => s.popular), [states]);
 
   const results = useMemo(() => {
     const q = query.trim().toLowerCase();
-    if (q) {
-      return states.filter(
-        (s) => s.name.toLowerCase().includes(q) || s.abbr.toLowerCase() === q || s.slug.includes(q),
-      );
-    }
-    if (showAll) return [...states].sort((a, b) => a.name.localeCompare(b.name));
-    return popular;
-  }, [query, states, popular, showAll]);
+    if (!q) return popular;
+    return states.filter(
+      (s) => s.name.toLowerCase().includes(q) || s.abbr.toLowerCase() === q || s.slug.includes(q),
+    );
+  }, [query, states, popular]);
 
-  const heading = query
-    ? `RESULTS (${results.length})`
-    : showAll
-      ? `ALL STATES (${states.length})`
-      : "MOST POPULAR";
+  const toggleDirectory = () => {
+    if (!directoryId) return;
+    const el = document.getElementById(directoryId);
+    if (!el) return;
+    const willShow = el.hidden;
+    el.hidden = !willShow;
+    setExpanded(willShow);
+    if (willShow) el.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  };
 
   return (
     <div>
@@ -81,7 +84,9 @@ export function StateSearchPanel({ states }: { states: StateRow[] }) {
         )}
       </div>
 
-      <div style={{ ...eyebrow, marginTop: 32, marginBottom: 14 }}>{heading}</div>
+      <div style={{ ...eyebrow, marginTop: 32, marginBottom: 14 }}>
+        {query ? `RESULTS (${results.length})` : "MOST POPULAR"}
+      </div>
 
       {/* Fixed-height scroll area — stable size regardless of result count. */}
       <div style={{ height: 320, overflowY: "auto", background: "#fff", border: `1px solid ${C.line}`, borderRadius: RAD.card }}>
@@ -118,10 +123,9 @@ export function StateSearchPanel({ states }: { states: StateRow[] }) {
       <div style={{ marginTop: 24 }}>
         <button
           type="button"
-          onClick={() => {
-            setQuery("");
-            setShowAll((v) => !v);
-          }}
+          onClick={toggleDirectory}
+          aria-expanded={expanded}
+          aria-controls={directoryId}
           style={{
             background: "transparent",
             color: C.fg,
@@ -135,7 +139,7 @@ export function StateSearchPanel({ states }: { states: StateRow[] }) {
             borderRadius: 999,
           }}
         >
-          {showAll && !query ? "Show Fewer" : "See All 51 States"} <Arrow color={C.fg} />
+          {expanded ? "Show Fewer" : "See All 51 States"} <Arrow color={C.fg} />
         </button>
       </div>
     </div>

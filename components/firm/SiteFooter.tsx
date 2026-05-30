@@ -91,21 +91,27 @@ export function SiteFooter() {
           </p>
           <div className="firm-footer-social" style={{ display: "flex", gap: 12, marginTop: 28 }}>
             <Link
-              href="#"
+              href="https://www.linkedin.com/company/civilcase/"
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="LinkedIn"
               style={{ width: 36, height: 36, borderRadius: 999, border: "1px solid rgba(255,255,255,0.18)", color: "rgba(255,255,255,0.7)", display: "inline-flex", alignItems: "center", justifyContent: "center", textDecoration: "none" }}
             >
               <LinkedInIcon />
             </Link>
             <Link
-              href="#"
+              href="https://x.com/civilcasecom"
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="Twitter / X"
               style={{ width: 36, height: 36, borderRadius: 999, border: "1px solid rgba(255,255,255,0.18)", color: "rgba(255,255,255,0.7)", display: "inline-flex", alignItems: "center", justifyContent: "center", textDecoration: "none" }}
             >
               <TwitterIcon />
             </Link>
             <Link
-              href="#"
+              href="https://www.facebook.com/civilcasecom"
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="Facebook"
               style={{ width: 36, height: 36, borderRadius: 999, border: "1px solid rgba(255,255,255,0.18)", color: "rgba(255,255,255,0.7)", display: "inline-flex", alignItems: "center", justifyContent: "center", textDecoration: "none" }}
             >

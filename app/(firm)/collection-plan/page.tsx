@@ -13,7 +13,7 @@ import { DollarSign, MapPin, Workflow, RotateCw, FileText, ShieldCheck, Clipboar
 export const metadata: Metadata = {
   title: "Post-Judgment Collection Plan · CivilCase",
   description:
-    "Won your small-claims case? Now actually collect. State-specific judgment-debtor exam, bank levy, wage garnishment, lien recording, and renewal calendar.",
+    "Won your small-claims case? Now actually collect. State-specific judgment-debtor exam, bank levy, wage garnishment, lien recording, and your renewal deadline.",
   alternates: { canonical: "/collection-plan" },
 };
 
@@ -25,7 +25,7 @@ const FAQS: { q: string; a: string }[] = [
   { q: "How long does collection take?", a: "Varies wildly. Wage garnishment on an employed defendant can start paying within 60 days. A bank levy on a known account can produce funds within 30 days. A judgment lien against real estate may not produce money until the defendant sells the property, which could be years." },
   { q: "What about interest?", a: "Most states accrue post-judgment interest at 6% to 10% per year on unpaid amounts. The plan covers your state's rate and how to claim accrued interest when you do collect." },
   { q: "Can I use this if I won outside small claims?", a: "Yes for most US civil judgments. The mechanics of post-judgment collection are largely the same across small claims, district court, and superior court. The plan focuses on small-claims judgments but the steps apply to most civil money judgments under $25,000." },
-  { q: "Is CivilCase a law firm?", a: "No. We're a document-preparation service, not a law firm, and we don't provide legal advice. The Collection Plan is informational, based on public court rules and statutes, to help you enforce your judgment." },
+  { q: "Is CivilCase a law firm?", a: "No. CivilCase is not a law firm and doesn't provide legal advice. The Collection Plan is informational, built from public court rules and statutes, to help you enforce your judgment." },
 ];
 
 function PlanDoc({ style = {} }: { style?: React.CSSProperties }) {
@@ -53,7 +53,7 @@ function PlanDoc({ style = {} }: { style?: React.CSSProperties }) {
         <p style={{ margin: "0 0 10px 0" }}><strong style={{ fontWeight: 600 }}>Step 2. Bank levy</strong><br />File EJ-152. $40 fee. 30-day hold.</p>
         <p style={{ margin: "0 0 10px 0" }}><strong style={{ fontWeight: 600 }}>Step 3. Wage garnishment</strong><br />File WG-001. Up to 25% of disposable pay.</p>
         <p style={{ margin: "0 0 10px 0" }}><strong style={{ fontWeight: 600 }}>Step 4. Property lien</strong><br />File abstract of judgment with county recorder.</p>
-        <p style={{ margin: "0 0 18px 0" }}><strong style={{ fontWeight: 600 }}>Renewal:</strong> Every 10 years. We remind you.</p>
+        <p style={{ margin: "0 0 18px 0" }}><strong style={{ fontWeight: 600 }}>Renewal:</strong> Every 10 years. Your deadline is flagged.</p>
       </div>
       <div style={{ position: "absolute", right: 38, bottom: 38, width: 56, height: 56, borderRadius: "50%", border: `1.5px solid ${C.accent}`, color: C.accent, display: "flex", alignItems: "center", justifyContent: "center" }}>
         <ShieldLogo size={20} color={C.accent} />
@@ -66,7 +66,7 @@ export default function CollectionPlan2() {
   const jsonLd = jsonLdGraph(
     serviceSchema({
       name: "Collection Plan",
-      description: "Personalized post-judgment enforcement plan: debtor exam, bank levy, wage garnishment, property lien, and renewal tracking, sequenced for your state.",
+      description: "Personalized post-judgment enforcement plan: debtor exam, bank levy, wage garnishment, property lien, and your renewal deadline, sequenced for your case.",
       url: "/collection-plan",
       priceFrom: 49,
       audience: "Judgment creditors",
@@ -95,7 +95,7 @@ export default function CollectionPlan2() {
             <div style={{ display: "grid", gap: 14, marginTop: 32, maxWidth: 540 }}>
               {[
                 "Sequenced step-by-step plan tailored to your case",
-                "Every enforcement form with code, fee, and link",
+                "Enforcement forms with codes, fees, and links where available",
                 "State exemption catalog: what's protected",
                 "Judgment renewal deadline + post-judgment interest rate",
               ].map((t) => (
@@ -106,14 +106,13 @@ export default function CollectionPlan2() {
               ))}
             </div>
             <div style={{ display: "flex", gap: 14, marginTop: 36 }}>
-              <FirmBtn href="/collection-plan">Get My Collection Plan</FirmBtn>
-              <FirmBtn kind="ghost" href="/collection-plan">See a Sample Plan</FirmBtn>
+              <FirmBtn href="/dashboard/cases/new">Get My Collection Plan</FirmBtn>
             </div>
             <FirmHeroStats items={[
               { Icon: DollarSign, headline: "From $49", sub: "one-time fee" },
               { Icon: MapPin, headline: "All 50 states", sub: "every state" },
               { Icon: Workflow, headline: "Tailored", sub: "for your case" },
-              { Icon: RotateCw, headline: "Tracked", sub: "renewals" },
+              { Icon: RotateCw, headline: "Renewal", sub: "deadline flagged" },
             ]} />
           </div>
           <div style={{ position: "relative", display: "flex", justifyContent: "center", alignItems: "center", minHeight: 600 }}>
@@ -174,10 +173,10 @@ export default function CollectionPlan2() {
         <FirmProcessStrip
           cellPadding="40px 30px"
           steps={[
-            { Icon: ClipboardList, title: "Tell Us About Your Judgment", desc: "State, defendant, amount, when the judgment was entered. We pull your state's enforcement playbook." },
-            { Icon: Workflow, title: "We Build Your Plan", desc: "A personalized, sequenced enforcement plan. Which step first, which forms, which fees, which to skip given what you know." },
+            { Icon: ClipboardList, title: "Tell us about your judgment", desc: "State, defendant, amount, when the judgment was entered. CivilCase pulls your state's enforcement playbook." },
+            { Icon: Workflow, title: "CivilCase builds your plan", desc: "A personalized, sequenced enforcement plan: which step first, which forms, which fees, which to skip given what you know." },
             { Icon: Banknote, title: "Work the Sequence", desc: "Judgment-debtor exam, levy, garnishment, lien, in the right order. Each step has the form, the fee, the timeline." },
-            { Icon: RotateCw, title: "Track and Renew", desc: "Some collections take months. The plan tracks your judgment expiration and tells you when to renew it." },
+            { Icon: RotateCw, title: "Know your renewal deadline", desc: "Some collections take months. Your plan explains your state's renewal deadline so you can refile before the judgment expires." },
           ]}
         />
       </section>
@@ -188,7 +187,7 @@ export default function CollectionPlan2() {
           Icon={Banknote}
           headline={<>Ready to <em>collect what you won</em>?</>}
           sub="No account. No subscription. Just results."
-          cta={{ label: "Start My Collection Plan", href: "/collection-plan", caption: "Takes about 3 minutes · $49 one-time" }}
+          cta={{ label: "Start My Collection Plan", href: "/dashboard/cases/new", caption: "Takes about 3 minutes · $49 one-time" }}
         />
       </section>
 
@@ -334,9 +333,9 @@ export default function CollectionPlan2() {
           <div style={{ display: "flex", flexDirection: "column", gap: 16, pointerEvents: "none" }}>
             {[
               ["Sequenced for you", "Skips steps that don’t apply based on what you know about the defendant."],
-              ["Exact form numbers", "State-specific codes with direct links to the right PDFs."],
+              ["Form numbers", "State and county form codes with links where they're published."],
               ["Exemption catalog", "What the defendant gets to keep, with dollar amounts and statutes."],
-              ["Renewal alerts", "10-year judgment clock tracked. Your plan flags the renewal deadline so you can file before it expires."],
+              ["Renewal deadline", "Your plan flags your state's judgment renewal deadline so you can file before it expires."],
               ["Pushback playbook", "Claim-of-exemption response and what triggers a hearing."],
             ].map(([t, d]) => (
               <div key={t} className="firm-anno-callout">
@@ -350,8 +349,8 @@ export default function CollectionPlan2() {
         {/* Footer cards — dark + cream pair */}
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginTop: 32, maxWidth: 1020, marginLeft: "auto", marginRight: "auto" }}>
           {[
-            { Icon: ShieldCheck, title: "Built for your state.", body: "Forms, fees, and exemptions vary state to state. Yours is the only one our templates cover." },
-            { Icon: FileText, title: "Renewal tracked.", body: "10-year clock with reminders so you can file the renewal before the judgment expires." },
+            { Icon: ShieldCheck, title: "Built for your state.", body: "Forms, fees, and exemptions vary state to state. CivilCase researches yours and builds the plan around it." },
+            { Icon: FileText, title: "Renewal deadline.", body: "Your plan explains your state's renewal window so you can refile before the judgment expires." },
           ].map(({ Icon, title, body: bodyText }) => (
             <div key={title} style={{ display: "flex", gap: 20, padding: "24px 28px", background: C.cream, borderRadius: 20, alignItems: "center" }}>
               <div style={{ width: 46, height: 46, borderRadius: 999, background: C.dark, color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
@@ -416,7 +415,7 @@ export default function CollectionPlan2() {
             <div style={{ display: "grid", gap: 12 }}>
               {[
                 "Step-by-step plan, sequenced to your case",
-                "Debtor exam, levy, garnishment, lien (forms + fees)",
+                "Debtor exam, levy, garnishment, lien (forms and fees where available)",
                 "State exemption catalog (what's protected)",
                 "Defendant claim-of-exemption playbook",
                 "Satisfaction of judgment + renewal deadline",
@@ -427,9 +426,9 @@ export default function CollectionPlan2() {
                 </div>
               ))}
             </div>
-            <button type="button" style={{ width: "100%", marginTop: 32, background: C.accentOnDark, color: C.dark, border: "none", padding: 16, font: `500 14px/1 ${BODY_FONT}`, cursor: "pointer", borderRadius: 999 }}>
+            <a href="/dashboard/cases/new" style={{ display: "block", boxSizing: "border-box", width: "100%", marginTop: 32, background: C.accentOnDark, color: C.dark, padding: 16, font: `500 14px/1 ${BODY_FONT}`, cursor: "pointer", borderRadius: 999, textAlign: "center", textDecoration: "none" }}>
               Get My Collection Plan →
-            </button>
+            </a>
             <p style={{ font: `13px/1.5 ${BODY_FONT}`, color: "rgba(255,255,255,0.55)", marginTop: 18, textAlign: "center" }}>
               Best for plaintiffs who&rsquo;ve won a judgment and want to actually see the money.
             </p>

@@ -12,15 +12,15 @@ import { breadcrumbList, serviceSchema, jsonLdGraph } from "../../../lib/schema"
 export const metadata: Metadata = {
   title: "Demand Letter · CivilCase",
   description:
-    "A state-specific demand letter written for your case, from the facts you enter and your state's rules. From $29. Delivered USPS Certified within 24 hours.",
+    "A state-specific demand letter written for your case, from the facts you enter and your state's rules. From $29. Delivered USPS Certified with tracking.",
   alternates: { canonical: "/demand-letter" },
 };
 
 export default function DemandLetter2() {
   const jsonLd = jsonLdGraph(
     serviceSchema({
-      name: "Demand Letter Service",
-      description: "State-specific demand letter written for your case, from the facts you enter and your state's rules. Delivered via USPS Certified mail within 24 hours.",
+      name: "Demand Letter",
+      description: "State-specific demand letter written for your case, from the facts you enter and your state's rules. Delivered via USPS Certified mail with tracking.",
       url: "/demand-letter",
       priceFrom: 29,
       audience: "Self-represented plaintiffs",
@@ -45,7 +45,7 @@ export default function DemandLetter2() {
             <p style={{ font: `18px/1.55 ${BODY_FONT}`, color: C.muted, maxWidth: 520, marginTop: 28 }}>
               A formal written notice that you are owed money, intend to pursue the matter in court if it
               isn&rsquo;t resolved, and have the documentation to back it up. Written for your case,
-              from the facts you enter and the rules in your state. In your mailbox within 24 hours.
+              from the facts you enter and the rules in your state. Sent USPS Certified once you approve it.
             </p>
             <div style={{ display: "flex", gap: 14, marginTop: 36 }}>
               <FirmBtn href="/dashboard/cases/new">Start My Letter</FirmBtn>
@@ -53,7 +53,7 @@ export default function DemandLetter2() {
             </div>
             <FirmHeroStats items={[
               { Icon: DollarSign, headline: "From $29", sub: "one-time fee" },
-              { Icon: Clock, headline: "24 hours", sub: "turnaround" },
+              { Icon: Clock, headline: "You approve", sub: "before it sends" },
               { Icon: Mail, headline: "USPS Certified", sub: "tracked delivery" },
               { Icon: MapPin, headline: "All 50 states", sub: "every jurisdiction" },
             ]} />
@@ -117,7 +117,7 @@ export default function DemandLetter2() {
       </section>
 
       {/* WHAT'S IN THE LETTER — annotated mockup ported from legacy /demand-letter */}
-      <section style={{ padding: `120px ${PAD_X}` }}>
+      <section id="sample" style={{ padding: `120px ${PAD_X}` }}>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "start", marginBottom: 60 }}>
           <div>
             <div style={{ ...eyebrow, marginBottom: 22 }}>WHAT&rsquo;S IN THE LETTER</div>
@@ -254,11 +254,11 @@ export default function DemandLetter2() {
           {/* Annotations — narrow column with leader-line callouts */}
           <div style={{ display: "flex", flexDirection: "column", gap: 16, pointerEvents: "none" }}>
             {[
-              ["Specific law", "We cite the exact statute that applies."],
-              ["Penalty calculated", "We include any statutory multipliers you’re owed."],
+              ["Specific law", "Your letter cites the exact statute that applies in your state."],
+              ["Penalty calculated", "It includes any statutory multipliers your state allows."],
               ["Clear deadline", "A firm 14-day deadline is written in."],
-              ["Court threat", "We name small claims court as the next step if they don’t pay."],
-              ["Evidence referenced", "We reference the proof you already have."],
+              ["Court threat", "It names small claims court as the next step if they don’t pay."],
+              ["Evidence referenced", "It references the proof you already have."],
             ].map(([t, d]) => (
               <div key={t} className="firm-anno-callout">
                 <strong style={{ display: "block", font: `700 13px/1.3 ${BODY_FONT}`, color: C.fg, marginBottom: 3 }}>{t}</strong>
@@ -271,7 +271,7 @@ export default function DemandLetter2() {
         {/* Footer cards — dark + cream pair */}
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginTop: 32, maxWidth: 1020, marginLeft: "auto", marginRight: "auto" }}>
           {[
-            { Icon: ShieldCheck, title: "Professional. Persuasive. Court-Ready.", body: "Our letters are written to create pressure and build your paper trail." },
+            { Icon: ShieldCheck, title: "Professional. Persuasive. Court-Ready.", body: "Each letter is built to create pressure and build your paper trail." },
             { Icon: FileText, title: "100% customized to your case.", body: "No templates. A letter that fits your facts and your state." },
           ].map(({ Icon, title, body: bodyText }) => (
             <div key={title} style={{ display: "flex", gap: 20, padding: "24px 28px", background: C.cream, borderRadius: 20, alignItems: "center" }}>
@@ -296,12 +296,12 @@ export default function DemandLetter2() {
           </div>
           <p style={{ ...body, alignSelf: "end" }}>
             We&rsquo;ve collapsed what a paralegal would charge $200/hour to do into a single intake. Most users
-            finish in under eight minutes; their letter is in the mail within 24 hours.
+            finish in under eight minutes; their letter goes out for certified mail as soon as they approve it.
           </p>
         </div>
         <FirmProcessStrip steps={[
-          { Icon: MessageSquare, title: "Tell us what happened", desc: "Plain-language intake. We ask the questions. You stay in your seat.", time: "~8 min" },
-          { Icon: PenLine, title: "Your letter is generated", desc: "Written around the facts you entered and your state's rules. Read it before sending.", time: "24 hours" },
+          { Icon: MessageSquare, title: "Tell us what happened", desc: "Plain-language intake walks you through the questions. You stay in your seat.", time: "~8 min" },
+          { Icon: PenLine, title: "Your letter is generated", desc: "Written around the facts you entered and your state's rules. Read it before sending." },
           { Icon: Send, title: "Certified mail dispatch", desc: "USPS certified with tracking. Signature on delivery.", time: "2-4 days" },
           { Icon: Scale, title: "Escalate if ignored", desc: "Filing assistance, court-ready forms, court-day procedure brief.", time: "14+ days" },
         ]} />
@@ -570,16 +570,16 @@ export default function DemandLetter2() {
         title={<>Demand letter <em>questions</em>.</>}
         subtitle="The most common questions we get from first-time senders."
         faqs={[
-          { q: "Will the recipient know I wrote it?", a: "Yes. Your name and return address appear on the letter. CivilCase's role is identified at the bottom as drafter, not counsel of record. We are not your attorney." },
-          { q: "Do you contact me before mailing?", a: null },
-          { q: "Can I review the letter before it goes out?", a: null },
-          { q: "What if I don't have the other person's address?", a: null },
-          { q: "What happens if they ignore it?", a: null },
-          { q: "What if they offer less than I asked for?", a: null },
-          { q: "Is CivilCase a law firm?", a: null },
-          { q: "Can I send a demand letter on behalf of a business?", a: null },
-          { q: "What if I'm being sued? Can you send a response letter?", a: null },
-          { q: "How is this different from a cease-and-desist?", a: null },
+          { q: "Will the recipient know I wrote it?", a: "Yes. Your name and return address appear on the letter. CivilCase is identified at the bottom as the preparer, not counsel of record, and CivilCase is not your attorney." },
+          { q: "Do you contact me before mailing?", a: "Yes. Nothing is mailed until you review the finished letter and approve it. You can request changes first, and you stay in control of exactly what goes out." },
+          { q: "Can I review the letter before it goes out?", a: "Always. Once it's generated you read the full letter and either approve it for certified mail or ask for changes. It only sends after you approve." },
+          { q: "What if I don't have the other person's address?", a: "You need a mailing address to send certified mail. If you don't have one, there's an optional skip-trace add-on that attempts to locate the recipient from the details you do have." },
+          { q: "What happens if they ignore it?", a: "Many disputes settle after a certified demand. If yours doesn't, the next step is small-claims court, you can add the Filing Kit ($79) to prepare and file your case." },
+          { q: "What if they offer less than I asked for?", a: "That's common, and it's entirely your call. Plenty of cases settle for a partial amount after the letter. You decide whether to accept, counter, or move on to filing." },
+          { q: "Is CivilCase a law firm?", a: "No. CivilCase is not a law firm and doesn't provide legal advice. It turns public court rules and the facts you enter into a court-ready demand letter, so you can act for yourself." },
+          { q: "Can I send a demand letter on behalf of a business?", a: "Yes. Enter your business as the party that's owed, and the letter goes out in the business's name with your contact details." },
+          { q: "What if I'm being sued? Can you send a response letter?", a: "Not at the moment. The demand letter is built for the person bringing the claim. If you've been sued, talk to a licensed attorney in your state about how to respond." },
+          { q: "How is this different from a cease-and-desist?", a: "A demand letter asks for money you're owed and sets a deadline to pay before you escalate to court. A cease-and-desist asks someone to stop doing something. CivilCase's letter is a money demand." },
         ]}
       />
     </main>

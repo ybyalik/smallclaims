@@ -35,8 +35,8 @@ export default function Home2() {
             once you win, without hiring a lawyer.
           </p>
           <div style={{ display: "inline-flex", gap: 12, flexWrap: "wrap", justifyContent: "center" }}>
-            <FirmBtn>Start Your Case</FirmBtn>
-            <FirmBtn kind="ghost">Check Case Strength</FirmBtn>
+            <FirmBtn href="/dashboard/cases/new">Start Your Case</FirmBtn>
+            <FirmBtn kind="ghost" href="/case-score">Check Case Strength</FirmBtn>
           </div>
         </div>
       </section>
@@ -214,9 +214,9 @@ export default function Home2() {
           tag: "THE DEMAND LETTER",
           title: "A formal demand, in their mailbox.",
           img: "/assets/home2/service-demand-letter.webp",
-          desc: "We turn your facts into a state-specific demand letter that names the law you're owed under and sets a deadline to pay. You read and approve it, then we send it USPS Certified with tracking and a signature on delivery.",
+          desc: "CivilCase turns your facts into a state-specific demand letter that names the law you're owed under and sets a deadline to pay. You read and approve it, then it goes out USPS Certified with tracking and a signature on delivery.",
           range: "From $29",
-          statute: "In the mail within 24 hours",
+          statute: "Sent once you approve it",
           evidence: ["State-specific citations", "Certified mail + tracking", "Editable before it sends", "Settlement-ready wording"],
           href: "/demand-letter",
           reverse: false,
@@ -224,12 +224,12 @@ export default function Home2() {
         {
           n: "II.",
           tag: "THE COURT FILING KIT",
-          title: "Court-ready forms for your county.",
+          title: "A filing guide built for your county.",
           img: "/assets/home2/service-filing-kit.webp",
-          desc: "If the letter is ignored, we assemble the exact small-claims forms your county requires, filled in from your facts, with a step-by-step guide to filing and what to say on court day.",
+          desc: "If the letter is ignored, CivilCase researches your court and builds a step-by-step filing guide for your case: which forms to file and where to get them, the fees, and what to say on court day.",
           range: "From $79",
-          statute: "Ready the same day",
-          evidence: ["County-specific forms", "Filled from your facts", "Filing fee + venue lookup", "Court-day prep guide"],
+          statute: "Ready in minutes",
+          evidence: ["Your court, forms & fees", "Service-of-process rules", "Court-day prep guide"],
           href: "/filing-kit",
           reverse: true,
         },
@@ -305,7 +305,7 @@ export default function Home2() {
         </div>
         <FirmProcessStrip steps={[
           { Icon: MessageSquare, title: "Tell us what happened", desc: "Plain-language intake. We ask the questions, you stay in your seat.", time: "~8 min" },
-          { Icon: FileText, title: "We build your documents", desc: "Your demand letter and any forms, drafted around your facts and your state's rules.", time: "24 hours" },
+          { Icon: FileText, title: "We build your documents", desc: "Your demand letter and any forms, drafted around your facts and your state's rules." },
           { Icon: Send, title: "Send it certified", desc: "USPS Certified with tracking and a signature on delivery.", time: "2-4 days" },
           { Icon: Scale, title: "Escalate if ignored", desc: "County-specific filing forms and a court-day guide, ready when you need them.", time: "14+ days" },
         ]} />
@@ -321,7 +321,7 @@ export default function Home2() {
           { q: "Is this legal advice?", a: "No. CivilCase is a self-help tool, not a law firm. We give you general legal information and documents built from your facts, but we do not represent you or advise on your specific case." },
           { q: "How much does it cost?", a: "A demand letter starts at $29 and a filing kit at $79. You can check your case strength for free first, with no signup or card." },
           { q: "Which states do you cover?", a: "All 50 states and DC. Your guide and forms are specific to your state's rules, dollar limits, and courts." },
-          { q: "How long does it take?", a: "Most demand letters are in the mail within 24 hours. Many disputes settle after the letter; if not, your filing kit is ready the same day you need it." },
+          { q: "How long does it take?", a: "We send your letter USPS Certified once you've reviewed and approved it. Many disputes settle after the letter; if not, your filing kit is ready when you need it." },
         ]}
       />
 

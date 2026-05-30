@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   Building2, Briefcase, Hammer, Car, Trees, HandCoins, Users, ShoppingBag, Receipt,
-  FileText, Lightbulb,
+  FileText, Lightbulb, DollarSign, Clock, Scale, MapPin,
 } from "lucide-react";
 import HeroStatePins from "../../../components/HeroStatePins";
 import UsMap from "../../../components/widgets/UsMap";
@@ -13,7 +13,7 @@ import { collectionPageSchema, breadcrumbList, jsonLdGraph } from "../../../lib/
 import {
   C, H1, H2, eyebrow, body, PAD_X, RAD, HEAD_FONT, BODY_FONT, italicEmCSS,
   Arrow, FirmBtn, ThreeWaysSection, StateSearchPanel, FaqSection,
-  FirmCtaBar,
+  FirmCtaBar, FirmHeroStats,
 } from "../../../components/firm";
 
 export const metadata: Metadata = {
@@ -74,14 +74,12 @@ export default async function SmallClaims2() {
               <FirmBtn href="/demand-letter">Generate a Demand Letter</FirmBtn>
               <FirmBtn kind="ghost" href="/case-score">Check My Case Strength</FirmBtn>
             </div>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 0, marginTop: 56, paddingTop: 30, borderTop: `1px solid ${C.line}` }}>
-              {[["Cap", "$5K-$20K"], ["Hearing", "10-15 min"], ["Lawyer", "Not required"], ["States", "All 50"]].map(([k, v], i) => (
-                <div key={k} style={{ paddingLeft: i ? 24 : 0, borderLeft: i ? `1px solid ${C.line}` : "none" }}>
-                  <div style={{ ...eyebrow, color: C.muted, marginBottom: 10 }}>{k}</div>
-                  <div style={{ font: `600 26px/1.1 ${HEAD_FONT}`, color: C.fg, letterSpacing: "-0.01em" }}>{v}</div>
-                </div>
-              ))}
-            </div>
+            <FirmHeroStats items={[
+              { Icon: DollarSign, headline: "$5K–$20K", sub: "typical cap" },
+              { Icon: Clock, headline: "10–15 min", sub: "hearing" },
+              { Icon: Scale, headline: "No lawyer", sub: "required" },
+              { Icon: MapPin, headline: "All 50 + DC", sub: "every state" },
+            ]} />
           </div>
           <div>
             <HeroStatePins />
@@ -588,14 +586,15 @@ export default async function SmallClaims2() {
                   popular: s.slug in popularCaps,
                 };
               })}
+              directoryId="all-states-az"
             />
           </div>
 
           {/* All states A–Z — server-rendered so every state-guide link is in
-              the HTML source (crawlable), not just the popular six in the
-              client search panel above. */}
-          <div style={{ marginTop: 64 }}>
-            <div style={{ ...eyebrow, marginBottom: 18 }}>OR BROWSE ALL 50 STATES + DC · A–Z</div>
+              the HTML source (crawlable). Hidden by default; the "See All 51
+              States" button in the search panel toggles it via its id. */}
+          <div id="all-states-az" hidden style={{ marginTop: 64 }}>
+            <div style={{ ...eyebrow, marginBottom: 18 }}>ALL 50 STATES + DC · A–Z</div>
             <div
               style={{
                 background: "#fff",

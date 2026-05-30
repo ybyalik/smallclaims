@@ -116,8 +116,7 @@ export async function POST(req: NextRequest, ctx: { params: { id: string } }) {
       totalCents,
     });
   } catch (err) {
-    const message = err instanceof Error ? err.message : "Stripe call failed";
     console.error("[collection-plan/payment-intent] route failed", err);
-    return NextResponse.json({ error: message }, { status: 500 });
+    return NextResponse.json({ error: "We couldn't start checkout. Please try again in a moment." }, { status: 500 });
   }
 }

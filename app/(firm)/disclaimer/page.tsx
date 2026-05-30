@@ -29,7 +29,7 @@ const SECTIONS: LegalSection[] = [
     body: (
       <>
         <p>
-          The state guides, articles, FAQs, document templates, and other content on CivilCase are
+          The state guides, articles, FAQs, generated documents, and other content on CivilCase are
           general legal information published for educational purposes. They are not legal advice
           and are not a substitute for the judgment of a licensed attorney considering the specific
           facts of your situation.
@@ -79,11 +79,11 @@ const SECTIONS: LegalSection[] = [
     title: "Document automation, not custom drafting",
     body: (
       <p>
-        Our document tools assemble templates using the answers you provide. The templates were
-        originally drafted by licensed attorneys, but they are not customized for your specific
-        case and no attorney reviews your individual matter before, during, or after document
-        generation. CivilCase is not your lawyer simply because we generated a document for you.
-        Read every document carefully before signing, sending, or filing it.
+        CivilCase generates your documents automatically from public court rules, statutes, and the
+        facts you enter. They are general legal information, not legal advice, are not customized by
+        an attorney, and no attorney reviews your individual matter before, during, or after a
+        document is generated. CivilCase is not your lawyer simply because it generated a document
+        for you. Read every document carefully before signing, sending, or filing it.
       </p>
     ),
   },

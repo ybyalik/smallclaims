@@ -14,22 +14,22 @@ import { DollarSign, Clock, MapPin, Building2, FileText, ShieldCheck, MessageSqu
 export const metadata: Metadata = {
   title: "Filing Kit · CivilCase",
   description:
-    "A state- and county-specific filing kit: the right forms, fee schedule, service-of-process rules, statute of limitations, and hearing prep. File in under an hour.",
+    "CivilCase researches your court and builds a personalized small-claims filing guide for your case: which forms to file and where to get them, the fee schedule, service rules, statute of limitations, and hearing prep. File in under an hour.",
   alternates: { canonical: "/filing-kit" },
 };
 
 const FAQS: { q: string; a: string }[] = [
   {
     q: "What's in the Filing Kit?",
-    a: "A state-specific filing guide: where to file (court name + venue rules), every required form with code and link to the current PDF, the filing fee schedule and fee-waiver eligibility, pre-suit requirements (demand letter, government claim, mediation if applicable), all allowed service-of-process methods with cost and deadlines, hearing-day preparation, and the most common pitfalls that get cases dismissed.",
+    a: "A personalized filing guide for your case: where to file (court name + venue rules), which forms you need with codes and links to the current PDFs where the court publishes them, the filing fee schedule and fee-waiver eligibility, pre-suit requirements (demand letter, government claim, mediation if applicable), all allowed service-of-process methods with cost and deadlines, hearing-day preparation, and the most common pitfalls that get cases dismissed.",
   },
-  { q: "Will it work for my state?", a: "Yes. We cover all 50 states plus DC. Each guide is built from your state's small-claims rules (forms, fees, statute, service methods) with county-difference notes appended where your county varies from the state default." },
-  { q: "Do I have to use this with a CivilCase demand letter?", a: "No. The Filing Kit is sold standalone. Whether you sent your own letter, used another service, or are skipping the letter step entirely, the kit gives you everything you need to file." },
-  { q: "What about service of process?", a: "The kit walks you through the three legal ways to serve the defendant in your state (sheriff, certified mail through the clerk, or process server), with the cost of each and which one is most likely to work for your specific defendant." },
-  { q: "Can you file for me?", a: "No. Most states require the plaintiff to file in person or via the court's e-filing portal directly. We give you everything you need to do it yourself in under an hour, including which window in the courthouse to look for." },
-  { q: "What if I lose?", a: "Most plaintiffs who prepare properly win small claims. If the court rules against you, the loss is around $30 to $100 in filing fees (which the kit told you about up front). Many states let you appeal within 30 days, and the kit covers what that looks like." },
+  { q: "Will it work for my state?", a: "Yes, all 50 states plus DC. CivilCase researches your state's small-claims rules (forms, fees, statute, service methods) and tailors the guide to your county where it differs from the state default." },
+  { q: "Do I have to use this with a CivilCase demand letter?", a: "No. The Filing Kit is sold standalone. Whether you sent your own letter, used another service, or are skipping the letter step entirely, the guide gives you everything you need to know to file." },
+  { q: "What about service of process?", a: "The guide walks you through the legal ways to serve the defendant in your state (sheriff, certified mail through the clerk, or process server), with the cost of each and which one is most likely to work for your specific defendant." },
+  { q: "Can you file for me?", a: "No. Most states require the plaintiff to file in person or via the court's e-filing portal directly. The guide gives you everything you need to do it yourself, including which window in the courthouse to look for." },
+  { q: "What if I lose?", a: "Most plaintiffs who prepare properly win small claims. If the court rules against you, the loss is around $30 to $100 in filing fees (which the guide flags up front). Many states let you appeal within 30 days, and the guide covers what that looks like." },
   { q: "What if I win?", a: "Add the Post-Judgment Collection Plan ($49) to actually collect on your judgment. Winning is half the battle. Collecting is the other half." },
-  { q: "Is CivilCase a law firm?", a: "No. We're a document-preparation service, not a law firm, and we don't provide legal advice. The Filing Kit is informational, based on public court rules and statutes, to help you represent yourself." },
+  { q: "Is CivilCase a law firm?", a: "No. CivilCase is not a law firm and doesn't provide legal advice. The Filing Kit is informational, built from public court rules and statutes, to help you represent yourself." },
 ];
 
 // Static Filing-Kit document mockup (analog of the demand-letter
@@ -88,7 +88,7 @@ export default function FilingKit2() {
   const jsonLd = jsonLdGraph(
     serviceSchema({
       name: "Small Claims Filing Kit",
-      description: "County-specific filing kit with the right forms, current filing fees, service rules, and a hearing-day checklist.",
+      description: "A personalized small-claims filing guide CivilCase builds for your case and county: which forms to file and where to get them, current filing fees, service rules, and a hearing-day checklist.",
       url: "/filing-kit",
       priceFrom: 79,
       audience: "Self-represented plaintiffs",
@@ -111,12 +111,13 @@ export default function FilingKit2() {
             <RatingStrip style={{ marginBottom: 24 }} />
             <h1 className="firm-h" style={{ ...H1, fontSize: 68 }}>File your case the <em>right way</em>.</h1>
             <p style={{ font: `18px/1.55 ${BODY_FONT}`, color: C.muted, maxWidth: 540, marginTop: 28 }}>
-              Every small-claims court has its own forms, fees, and service rules. The Filing Kit packages all
-              of it into one place for your exact county. File in under an hour. Show up to court prepared.
+              Every small-claims court has its own forms, fees, and service rules. CivilCase researches
+              yours and builds a step-by-step filing guide for your case: what to file, where to get each form,
+              and what the clerk expects. File in under an hour. Show up to court prepared.
             </p>
             <div style={{ display: "grid", gap: 14, marginTop: 32, maxWidth: 540 }}>
               {[
-                "Every form with code and link for your state",
+                "Your state's required forms, with codes and links where available",
                 "Filing fee schedule + fee-waiver eligibility",
                 "All allowed service-of-process methods",
                 "Venue rules, hearing prep, common pitfalls",
@@ -128,8 +129,7 @@ export default function FilingKit2() {
               ))}
             </div>
             <div style={{ display: "flex", gap: 14, marginTop: 36 }}>
-              <FirmBtn href="/filing-kit">Get My Filing Kit</FirmBtn>
-              <FirmBtn kind="ghost" href="/filing-kit">See a Sample Kit</FirmBtn>
+              <FirmBtn href="/dashboard/cases/new">Get My Filing Kit</FirmBtn>
             </div>
             <FirmHeroStats items={[
               { Icon: DollarSign, headline: "From $79", sub: "one-time fee" },
@@ -163,9 +163,9 @@ export default function FilingKit2() {
             </p>
             <div style={{ marginTop: 36, display: "grid", gap: 22 }}>
               {[
-                ["Personalized to Your Court", "Not a generic template. The kit is built around the exact courthouse where you'll file."],
-                ["Right Forms, Right Order", "We know which form comes first and which the clerk will reject without. No second trip."],
-                ["Hearing-Day Game Plan", "The judge will ask the same questions every time. We tell you what they are and how to answer them."],
+                ["Personalized to your court", "Not a generic template. CivilCase researches the court where you'll file and builds the guide around your case and county."],
+                ["The right forms, in order", "Your kit maps which forms your court needs and the order to file them, with links to the current PDFs, so you're not guessing at the counter."],
+                ["Hearing-day game plan", "Small-claims hearings follow a predictable script. The guide walks you through what the judge typically asks and how to be ready."],
               ].map(([t, d], i) => (
                 <div key={t} style={{ paddingBottom: 22, borderBottom: i < 2 ? `1px solid ${C.line}` : "none" }}>
                   <div style={{ display: "flex", alignItems: "baseline", gap: 14 }}>
@@ -196,10 +196,10 @@ export default function FilingKit2() {
         <FirmProcessStrip
           cellPadding="40px 30px"
           steps={[
-            { Icon: MessageSquare, title: "Tell Us About Your Case", desc: "Plaintiff, defendant, amount, state, county. We pull the live filing rules for that exact courthouse." },
-            { Icon: Briefcase, title: "We Build Your Kit", desc: "Within minutes you get a personalized PDF: the right forms, the current filing fee, and a hearing-day checklist." },
-            { Icon: Building2, title: "You File", desc: "Walk into the courthouse (or use the e-filing portal) with everything you need. Most filings take under an hour." },
-            { Icon: Scale, title: "Show Up Prepared", desc: "On hearing day, follow the checklist: what to bring, how to present, what the judge will ask, the order of events." },
+            { Icon: MessageSquare, title: "Tell us about your case", desc: "Plaintiff, defendant, amount, state, county. CivilCase pulls the live filing rules for your court and county." },
+            { Icon: Briefcase, title: "CivilCase builds your kit", desc: "In a few minutes you get a personalized PDF for your case: which forms to file and where to get them, the current filing fee, service rules, and a hearing-day checklist. We email you the moment it's ready." },
+            { Icon: Building2, title: "You file", desc: "Walk into the courthouse (or use the e-filing portal) with everything you need to know. Most filings take under an hour." },
+            { Icon: Scale, title: "Show up prepared", desc: "On hearing day, follow the checklist: what to bring, how to present, what the judge typically asks, the order of events." },
           ]}
         />
       </section>
@@ -210,7 +210,7 @@ export default function FilingKit2() {
           Icon={ClipboardCheck}
           headline={<>Ready to <em>file your case</em>?</>}
           sub="No account. No subscription. Just results."
-          cta={{ label: "Get My Filing Kit", href: "/filing-kit", caption: "Takes about 5 minutes · From $79" }}
+          cta={{ label: "Get My Filing Kit", href: "/dashboard/cases/new", caption: "Takes about 5 minutes · From $79" }}
         />
       </section>
 
@@ -219,10 +219,10 @@ export default function FilingKit2() {
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "start", marginBottom: 60 }}>
           <div>
             <div style={{ ...eyebrow, marginBottom: 22 }}>WHAT&rsquo;S IN THE KIT</div>
-            <h2 className="firm-h" style={H2}>Built specifically for <em>your courthouse</em>.</h2>
+            <h2 className="firm-h" style={H2}>Built specifically for <em>your case</em>.</h2>
           </div>
           <p style={body}>
-            Every kit follows the same structure: the right forms, the exact fee, the service rules, the
+            Every kit follows the same structure: which forms to file, the fee, the service rules, the
             deadline, and the hearing-day plan.
           </p>
         </div>
@@ -337,8 +337,8 @@ export default function FilingKit2() {
               <span className="firm-anno-mark">Bring three copies of every exhibit</span> plus your witness list.
             </p>
 
-            <p style={{ margin: "32px 0 4px", font: `italic 22px/1 ${SERIF_FONT}`, color: C.accent }}>Filing packet · ready</p>
-            <p style={{ margin: 0, font: `12px/1 ${BODY_FONT}`, color: C.muted }}>Drafted for your county clerk</p>
+            <p style={{ margin: "32px 0 4px", font: `italic 22px/1 ${SERIF_FONT}`, color: C.accent }}>Filing guide · ready</p>
+            <p style={{ margin: 0, font: `12px/1 ${BODY_FONT}`, color: C.muted }}>Researched for your county court</p>
 
             <Image
               src="/icons/cc-seal-1.webp"
@@ -353,7 +353,7 @@ export default function FilingKit2() {
           {/* Annotations — narrow column with leader-line callouts */}
           <div style={{ display: "flex", flexDirection: "column", gap: 16, pointerEvents: "none" }}>
             {[
-              ["Form numbers", "Exact court forms with direct links to the current PDFs."],
+              ["Form numbers", "Court form numbers with links to the current PDFs where published."],
               ["Filing fee + waiver", "Fee schedule for your claim band, plus FW-001 eligibility."],
               ["Statute deadline", "Hard SOL flagged in months and days. Don’t miss it."],
               ["Service rules", "Who serves, when, and how to prove it back to the court."],
@@ -370,8 +370,8 @@ export default function FilingKit2() {
         {/* Footer cards — dark + cream pair */}
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginTop: 32, maxWidth: 1020, marginLeft: "auto", marginRight: "auto" }}>
           {[
-            { Icon: ShieldCheck, title: "Built for your county.", body: "Every county has its own forms, fees, and service rules. Yours is the only one our templates cover." },
-            { Icon: FileText, title: "Court-ready packet.", body: "PDFs, fees, deadlines. Print, sign, walk into the clerk’s office." },
+            { Icon: ShieldCheck, title: "Built for your county.", body: "Every county has its own forms, fees, and service rules. CivilCase researches yours and builds the guide around it." },
+            { Icon: FileText, title: "Everything in one place.", body: "The forms you need with links, the fees, the deadlines, and how to serve, ready to take to the clerk's office." },
           ].map(({ Icon, title, body: bodyText }) => (
             <div key={title} style={{ display: "flex", gap: 20, padding: "24px 28px", background: C.cream, borderRadius: 20, alignItems: "center" }}>
               <div style={{ width: 46, height: 46, borderRadius: 999, background: C.dark, color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
@@ -409,7 +409,7 @@ export default function FilingKit2() {
             <div style={{ display: "grid", gap: 12 }}>
               {[
                 "Where to file: court name + venue rules",
-                "Every required form with code & PDF link",
+                "Required forms with codes and PDF links where available",
                 "Filing fee schedule + fee-waiver eligibility",
                 "Pre-suit requirements (demand, gov claim, mediation)",
                 "All allowed service-of-process methods",
@@ -420,9 +420,9 @@ export default function FilingKit2() {
                 </div>
               ))}
             </div>
-            <button type="button" style={{ width: "100%", marginTop: 32, background: C.accentOnDark, color: C.dark, border: "none", padding: 16, font: `500 14px/1 ${BODY_FONT}`, cursor: "pointer", borderRadius: 999 }}>
+            <a href="/dashboard/cases/new" style={{ display: "block", boxSizing: "border-box", width: "100%", marginTop: 32, background: C.accentOnDark, color: C.dark, padding: 16, font: `500 14px/1 ${BODY_FONT}`, cursor: "pointer", borderRadius: 999, textAlign: "center", textDecoration: "none" }}>
               Get My Filing Kit →
-            </button>
+            </a>
             <p style={{ font: `13px/1.5 ${BODY_FONT}`, color: "rgba(255,255,255,0.55)", marginTop: 18, textAlign: "center" }}>
               Best for when the demand letter was ignored or you&rsquo;re ready to skip straight to court.
             </p>

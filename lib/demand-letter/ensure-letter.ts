@@ -8,6 +8,7 @@ import { createServiceRoleClient } from "../supabase/service-role";
 import { generateDemandLetter } from "./generate";
 import { getCaseClaimType } from "../cases/classify-claim-type";
 import { createNotification } from "../notifications";
+import { notifyCustomerProductReady } from "../notifications/notify-product-ready";
 import type { Case, DisputeType, PostalAddress } from "../supabase/types";
 import type { DemandLetterIntake } from "./types";
 
@@ -189,6 +190,15 @@ export async function ensureDemandLetterForCase(
       actionRequired: true,
     });
   }
+
+  // Also email the customer (the in-app bell only helps if they're logged in
+  // and looking). Fires once per generated version, same as the bell above.
+  await notifyCustomerProductReady({
+    caseId,
+    product: "Demand Letter",
+    viewPath: `/case/${caseId}/letter`,
+    reviewRequired: true,
+  });
 
   return { status: "created", letterId: inserted.id };
 }

@@ -8,6 +8,7 @@
 import { marked } from "marked";
 import { mergeResearchPacks, type MergeSummary } from "./merge";
 import { writeCustomerReport, appendDisclaimerFooter } from "./customer-report";
+import { notifyCustomerProductReady } from "../notifications/notify-product-ready";
 import type { EvidencePack, IntakeSnapshot } from "./agents";
 
 interface LedgerEntry extends Record<string, unknown> {
@@ -18,9 +19,28 @@ interface LedgerEntry extends Record<string, unknown> {
 }
 
 export interface FinalizeResult {
-  status: "draft" | "skipped_published" | "skipped_no_packs";
+  status: "draft" | "published" | "skipped_published" | "skipped_no_packs";
   jobId: string;
   caseId: string;
+}
+
+// Release a 'generating' lock back to 'pending' so a later call can retry.
+// No-op if the row isn't ours anymore (e.g. it got published meanwhile, or
+// the lock was never acquired because the enum value isn't migrated yet).
+async function releaseGeneratingLock(
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  admin: any,
+  jobId: string,
+): Promise<void> {
+  try {
+    await admin
+      .from("case_research_reports")
+      .update({ customer_report_status: "pending" })
+      .eq("job_id", jobId)
+      .eq("customer_report_status", "generating");
+  } catch (e) {
+    console.warn("[finalize] failed to release generating lock", e);
+  }
 }
 
 export async function finalizeCustomerReport(
@@ -28,6 +48,10 @@ export async function finalizeCustomerReport(
   admin: any,
   caseId: string,
   jobId: string,
+  // autoPublish: skip the admin review/publish step and make the report
+  // immediately customer-visible. Used by the on-purchase pipeline; the admin
+  // regenerate path leaves it false so a human can still review a draft.
+  opts: { autoPublish?: boolean } = {},
 ): Promise<FinalizeResult> {
   // Skip if a published report already exists.
   const { data: existing } = await admin
@@ -40,8 +64,54 @@ export async function finalizeCustomerReport(
     return { status: "skipped_published", jobId, caseId };
   }
 
+  // Concurrency lock. The file page can briefly fire two overlapping
+  // ensure -> finalize calls (the purchase webhook and the buyer's first page
+  // load) around the same time; without a lock both would run the expensive
+  // merge + writer and burn duplicate LLM tokens. Atomically claim the row by
+  // flipping 'pending' -> 'generating'; only the claimer proceeds. Customers
+  // never see this status (readiness is keyed off the published HTML).
+  //
+  // Resilient by design: if the 'generating' enum value hasn't been migrated
+  // yet, or the claim errors for any reason, we log and fall through UNLOCKED
+  // so generation still works. That makes this safe to deploy before or after
+  // the migration.
+  let locked = false;
+  try {
+    const { data: claimed, error: claimErr } = await admin
+      .from("case_research_reports")
+      .update({ customer_report_status: "generating" })
+      .eq("job_id", jobId)
+      .eq("customer_report_status", "pending")
+      .select("job_id");
+    if (claimErr) throw claimErr;
+    if (!claimed || claimed.length === 0) {
+      // The row isn't 'pending': another run already claimed it (generating),
+      // it's published, or an unpublished draft already exists. Don't dup work.
+      return { status: "skipped_published", jobId, caseId };
+    }
+    locked = true;
+  } catch (e) {
+    console.warn("[finalize] generating-lock unavailable, proceeding unlocked", e);
+  }
+
+  try {
+    return await finalizeCustomerReportLocked(admin, caseId, jobId, opts);
+  } catch (err) {
+    if (locked) await releaseGeneratingLock(admin, jobId);
+    throw err;
+  }
+}
+
+async function finalizeCustomerReportLocked(
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  admin: any,
+  caseId: string,
+  jobId: string,
+  opts: { autoPublish?: boolean } = {},
+): Promise<FinalizeResult> {
   const ctx = await loadContext(admin, caseId, jobId);
   if (!ctx) {
+    await releaseGeneratingLock(admin, jobId);
     return { status: "skipped_no_packs", jobId, caseId };
   }
 
@@ -88,6 +158,13 @@ export async function finalizeCustomerReport(
     return { status: "skipped_published", jobId, caseId };
   }
 
+  const publishFields = opts.autoPublish
+    ? {
+        customer_report_status: "published",
+        customer_report_published_html: html,
+        customer_report_published_at: new Date().toISOString(),
+      }
+    : { customer_report_status: "draft" };
   await admin
     .from("case_research_reports")
     .update({
@@ -98,7 +175,7 @@ export async function finalizeCustomerReport(
       customer_report_checklist_md: writeRes.data.checklist_md,
       customer_report_guide_md: guideWithFooter,
       customer_report_html: html,
-      customer_report_status: "draft",
+      ...publishFields,
     })
     .eq("job_id", jobId);
 
@@ -141,7 +218,19 @@ export async function finalizeCustomerReport(
     })
     .eq("id", jobId);
 
-  return { status: "draft", jobId, caseId };
+  // Auto-published reports are customer-visible the moment this returns, with
+  // no human in the loop — email the buyer so they know it's ready. The
+  // skipped_published guards above mean we only get here on a real first
+  // publish, so this fires once. Never throws.
+  if (opts.autoPublish) {
+    await notifyCustomerProductReady({
+      caseId,
+      product: "Filing Kit",
+      viewPath: `/case/${caseId}/file`,
+    });
+  }
+
+  return { status: opts.autoPublish ? "published" : "draft", jobId, caseId };
 }
 
 interface FinalizationContext {
