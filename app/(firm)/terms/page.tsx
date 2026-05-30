@@ -309,7 +309,7 @@ export default function Terms2() {
       lede="The contract between you and CivilCase. Plain language where possible. Lawyer language where required."
       lastUpdated="May 13, 2026"
       sections={SECTIONS}
-      secondaryLabel="Privacy policy"
+      secondaryLabel="Privacy Policy"
       secondaryHref="/privacy"
       cta={{
         title: <>Ready to <em>get started</em>?</>,

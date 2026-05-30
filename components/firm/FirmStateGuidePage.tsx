@@ -1,9 +1,11 @@
 import Link from "next/link";
+import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { CheckCircle2, ShieldCheck } from "lucide-react";
 import {
   C, H2, eyebrow, body, PAD_X, RAD, HEAD_FONT, BODY_FONT, italicEmCSS,
-  Arrow, FirmBtn,
+  Arrow,
 } from "./index";
 import type { StateGuideV2 } from "../../lib/state-guide-v2/load";
 import { buildStateGuideJsonLd } from "../../lib/state-guide-v2/json-ld";
@@ -314,15 +316,43 @@ export default function FirmStateGuidePage({ state, guide }: Props) {
 
             {/* CTA card */}
             <div style={{ background: C.dark, color: "#fff", borderRadius: RAD.card, padding: 28 }}>
-              <div style={{ font: `600 19px/1.3 ${HEAD_FONT}`, color: "#fff", letterSpacing: "-0.005em" }}>
-                Ready to send your demand letter?
+              <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+                <div style={{ width: 50, height: 50, borderRadius: "50%", background: "transparent", border: "1px solid rgba(255,255,255,0.18)", display: "grid", placeItems: "center", flexShrink: 0 }}>
+                  <Image src="/icons/letter-icon.webp" alt="" width={34} height={14} aria-hidden />
+                </div>
+                <div className="firm-h firm-h-light" style={{ font: `700 18px/1.2 ${HEAD_FONT}`, color: "#fff", letterSpacing: "-0.01em" }}>
+                  Ready to send your <em style={{ fontWeight: 700 }}>demand letter</em>?
+                </div>
               </div>
-              <p style={{ font: `14px/1.55 ${BODY_FONT}`, color: "rgba(255,255,255,0.7)", marginTop: 12 }}>
+
+              <div style={{ height: 1, background: "rgba(255,255,255,0.12)", margin: "20px 0" }} />
+
+              <p style={{ font: `14px/1.6 ${BODY_FONT}`, color: "rgba(255,255,255,0.7)", margin: 0 }}>
                 Skip the back-and-forth. A formal demand often resolves the dispute before filing.
               </p>
-              <Link href="/demand-letter" style={{ textDecoration: "none", display: "inline-block", marginTop: 18 }}>
-                <FirmBtn kind="accent">Start a Demand Letter</FirmBtn>
+
+              <div style={{ display: "flex", flexDirection: "column", gap: 12, marginTop: 20 }}>
+                {["State-specific to your dispute", "Delivered in as little as 24 hours"].map((t) => (
+                  <div key={t} style={{ display: "flex", alignItems: "center", gap: 11 }}>
+                    <CheckCircle2 size={19} strokeWidth={1.8} color={C.accentOnDark} aria-hidden style={{ flexShrink: 0 }} />
+                    <span style={{ font: `13.5px/1.35 ${BODY_FONT}`, color: "rgba(255,255,255,0.9)" }}>{t}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div style={{ height: 1, background: "rgba(255,255,255,0.12)", margin: "20px 0" }} />
+
+              <Link
+                href="/demand-letter"
+                style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10, background: C.accentOnDark, color: C.dark, borderRadius: 999, padding: "14px 20px", font: `600 14.5px/1 ${BODY_FONT}`, textDecoration: "none" }}
+              >
+                Start a Demand Letter <Arrow color={C.dark} />
               </Link>
+
+              <div style={{ display: "flex", alignItems: "center", gap: 8, marginTop: 14, font: `12.5px/1.4 ${BODY_FONT}`, color: "rgba(255,255,255,0.5)" }}>
+                <ShieldCheck size={14} strokeWidth={1.8} aria-hidden style={{ flexShrink: 0 }} />
+                Secure and private.
+              </div>
             </div>
           </aside>
         </div>

@@ -492,7 +492,7 @@ export default async function FirmIssueTemplate({ issue, category, siblings }: P
               title: "Check My Case Strength",
               desc: "Not sure if it's worth pursuing? Free 90-second read on viability.",
               price: "Free",
-              cta: "Run my score",
+              cta: "Run My Score",
               href: "/case-score",
             },
             {
@@ -501,7 +501,7 @@ export default async function FirmIssueTemplate({ issue, category, siblings }: P
               title: "File Your Claim",
               desc: "Skip the letter. Get county-specific small-claims forms ready to file in 48 hours.",
               price: "From $79",
-              cta: "Go to filing",
+              cta: "Go to Filing",
               href: "/filing-kit",
             },
           ].map((p) => (

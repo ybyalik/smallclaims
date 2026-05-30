@@ -1,10 +1,14 @@
 import type { LucideIcon } from "lucide-react";
 import type { ReactNode } from "react";
+import Image from "next/image";
 import { C, BODY_FONT, HEAD_FONT, RAD, eyebrow, FirmBtn } from "./index";
 
 export interface FirmCtaBarProps {
   /** Optional square icon shown in the white tile on the left. */
   Icon?: LucideIcon;
+  /** Optional image (e.g. /icons/letter-icon.webp) shown in the white tile.
+   *  Takes precedence over Icon when set. */
+  iconSrc?: string;
   /** Optional uppercase eyebrow above the headline. */
   eyebrowText?: string;
   /** Headline string or JSX (e.g. with <em> for italic emphasis). */
@@ -26,7 +30,7 @@ export interface FirmCtaBarProps {
 //
 // Mobile behavior (vertical stack, centered text, divider hidden, smaller
 // heading) lives in firm-responsive.css under .firm-cta-bar.
-export function FirmCtaBar({ Icon, eyebrowText, headline, sub, cta }: FirmCtaBarProps) {
+export function FirmCtaBar({ Icon, iconSrc, eyebrowText, headline, sub, cta }: FirmCtaBarProps) {
   return (
     <div
       className="firm-cta-bar"
@@ -44,9 +48,13 @@ export function FirmCtaBar({ Icon, eyebrowText, headline, sub, cta }: FirmCtaBar
     >
       {/* Left — optional icon + eyebrow + headline + sub */}
       <div style={{ display: "flex", alignItems: "center", gap: 22, flex: "1 1 auto", minWidth: 0 }}>
-        {Icon ? (
-          <div style={{ width: 56, height: 56, borderRadius: 14, background: "#fff", color: C.dark, display: "grid", placeItems: "center", flexShrink: 0 }}>
-            <Icon size={26} strokeWidth={1.9} aria-hidden />
+        {iconSrc ? (
+          <div style={{ width: 56, height: 56, borderRadius: "50%", background: "transparent", border: "1px solid rgba(255,255,255,0.18)", display: "grid", placeItems: "center", flexShrink: 0 }}>
+            <Image src={iconSrc} alt="" width={42} height={17} aria-hidden />
+          </div>
+        ) : Icon ? (
+          <div style={{ width: 56, height: 56, borderRadius: "50%", background: "transparent", border: "1px solid rgba(255,255,255,0.18)", display: "grid", placeItems: "center", flexShrink: 0 }}>
+            <Icon size={26} strokeWidth={1.9} color={C.accentOnDark} aria-hidden />
           </div>
         ) : null}
         <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>

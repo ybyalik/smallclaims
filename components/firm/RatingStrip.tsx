@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { C, BODY_FONT } from "./index";
 
-// Avatar stack + "Rated 4.9/5 from 2,300+ users" line. Pulled from the
-// home2 hero so service pages can show the same trust strip above their h1.
+// Avatar stack + "Rated 4.9/5" line. Pulled from the home2 hero so service
+// pages can show the same trust strip above their h1.
 
 const AVATARS = [
   "/assets/home2/avatar-1.webp",
@@ -37,7 +37,7 @@ export function RatingStrip({ style }: { style?: React.CSSProperties }) {
         <svg width="14" height="14" viewBox="0 0 24 24" fill={C.fg} aria-hidden>
           <path d="M12 2l2.39 7.36H22l-6.18 4.49L18.21 22 12 17.27 5.79 22l2.39-8.15L2 9.36h7.61z" />
         </svg>
-        Rated <strong style={{ color: C.fg, fontWeight: 700 }}>4.9/5</strong> from 2,300+ users
+        Rated <strong style={{ color: C.fg, fontWeight: 700 }}>4.9/5</strong>
       </span>
     </div>
   );

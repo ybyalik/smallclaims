@@ -247,8 +247,8 @@ export default async function StateGuide2({ params }: Params) {
         </div>
 
         <div style={{ display: "flex", gap: 14, marginTop: 36 }}>
-          <a href="#what-to-sue-for" style={{ textDecoration: "none" }}><FirmBtn>See what you can sue for</FirmBtn></a>
-          <a href="#fee-calculator" style={{ textDecoration: "none" }}><FirmBtn kind="ghost">Calculate my filing fee</FirmBtn></a>
+          <a href="#what-to-sue-for" style={{ textDecoration: "none" }}><FirmBtn>See What You Can Sue For</FirmBtn></a>
+          <a href="#fee-calculator" style={{ textDecoration: "none" }}><FirmBtn kind="ghost">Calculate My Filing Fee</FirmBtn></a>
         </div>
       </section>
 

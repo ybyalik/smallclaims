@@ -58,7 +58,7 @@ export function SiteFooter() {
         className="firm-footer-top"
         style={{
           display: "grid",
-          gridTemplateColumns: "1.4fr 1fr 1fr",
+          gridTemplateColumns: "1.9fr 1fr 1fr",
           gap: 60,
           paddingBottom: 56,
           borderBottom: "1px solid rgba(255,255,255,0.1)",
@@ -84,10 +84,10 @@ export function SiteFooter() {
               style={{ height: 54, width: "auto" }}
             />
           </Link>
-          <p className="firm-footer-brand-p" style={{ font: `14px/1.55 ${BODY_FONT}`, color: "rgba(255,255,255,0.6)", maxWidth: 280, margin: 0 }}>
-            A self-help legal-information website and document automation tool. Templates and guides
-            help everyday people prepare demand letters, small-claims filings, and post-judgment
-            collection paperwork themselves.
+          <p className="firm-footer-brand-p" style={{ font: `14px/1.55 ${BODY_FONT}`, color: "rgba(255,255,255,0.6)", maxWidth: 340, margin: 0 }}>
+            A self-help tool, not a law firm. We help everyday people prepare their own demand
+            letters, small-claims filings, and collection paperwork, built around the rules in
+            their state.
           </p>
           <div className="firm-footer-social" style={{ display: "flex", gap: 12, marginTop: 28 }}>
             <Link
@@ -152,7 +152,7 @@ export function SiteFooter() {
           paddingTop: 28,
           font: `12px/1.55 ${BODY_FONT}`,
           color: "rgba(255,255,255,0.45)",
-          maxWidth: 920,
+          maxWidth: 1040,
           marginLeft: "auto",
           marginRight: "auto",
           textAlign: "center",

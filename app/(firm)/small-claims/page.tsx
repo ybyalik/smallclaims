@@ -306,7 +306,7 @@ export default async function SmallClaims2() {
               { label: "Recover money owed", href: "/small-claims/personal-loan" },
               { label: "Sue a roommate", href: "/small-claims/roommate" },
               { label: "Sue an online seller", href: "/small-claims/online-seller" },
-              { label: "Get a refund", href: "/small-claims/refund" },
+              { label: "Get a Refund", href: "/small-claims/refund" },
             ].map((g) => (
               <a
                 key={g.label}
@@ -590,6 +590,44 @@ export default async function SmallClaims2() {
               })}
             />
           </div>
+
+          {/* All states A–Z — server-rendered so every state-guide link is in
+              the HTML source (crawlable), not just the popular six in the
+              client search panel above. */}
+          <div style={{ marginTop: 64 }}>
+            <div style={{ ...eyebrow, marginBottom: 18 }}>OR BROWSE ALL 50 STATES + DC · A–Z</div>
+            <div
+              style={{
+                background: "#fff",
+                border: `1px solid ${C.line}`,
+                borderRadius: RAD.card,
+                overflow: "hidden",
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
+              }}
+            >
+              {[...STATES].sort((a, b) => a.name.localeCompare(b.name)).map((s) => (
+                <Link
+                  key={s.slug}
+                  href={`/small-claims/${s.slug}`}
+                  className="firm-row-link"
+                  style={{
+                    display: "flex",
+                    alignItems: "baseline",
+                    gap: 10,
+                    padding: "12px 16px",
+                    font: `500 15px/1.3 ${BODY_FONT}`,
+                    color: C.fg,
+                    textDecoration: "none",
+                    borderTop: `1px solid ${C.line}`,
+                  }}
+                >
+                  <span style={{ color: C.accent, font: `600 11.5px/1 ${BODY_FONT}`, minWidth: 24 }}>{s.abbr}</span>
+                  {s.name}
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -603,6 +641,7 @@ export default async function SmallClaims2() {
       />
 
       <FaqSection
+        id="faq"
         title={<>Small claims <em>questions</em>.</>}
         subtitle="The questions people actually ask before filing in small claims court."
         faqs={[

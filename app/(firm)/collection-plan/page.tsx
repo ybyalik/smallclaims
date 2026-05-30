@@ -84,7 +84,7 @@ export default function CollectionPlan2() {
 
       {/* HERO */}
       <section style={{ padding: `80px ${PAD_X} 100px` }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1.05fr 1fr", gap: 80, alignItems: "center" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1.15fr 1fr", gap: 48, alignItems: "center" }}>
           <div>
             <RatingStrip style={{ marginBottom: 24 }} />
             <h1 className="firm-h" style={{ ...H1, fontSize: 68 }}>Won your case? <em>Now actually collect.</em></h1>
@@ -107,7 +107,7 @@ export default function CollectionPlan2() {
             </div>
             <div style={{ display: "flex", gap: 14, marginTop: 36 }}>
               <FirmBtn href="/collection-plan">Get My Collection Plan</FirmBtn>
-              <FirmBtn kind="ghost" href="/collection-plan">See a sample plan</FirmBtn>
+              <FirmBtn kind="ghost" href="/collection-plan">See a Sample Plan</FirmBtn>
             </div>
             <FirmHeroStats items={[
               { Icon: DollarSign, headline: "From $49", sub: "one-time fee" },

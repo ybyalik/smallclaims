@@ -17,6 +17,7 @@ export function FaqSection({
   subtitle,
   cta,
   background,
+  id,
 }: {
   faqs: Faq[];
   eyebrowText?: string;
@@ -24,6 +25,7 @@ export function FaqSection({
   subtitle?: ReactNode;
   cta?: ReactNode;
   background?: string;
+  id?: string;
 }) {
   // FAQPage JSON-LD — emitted automatically so every FAQ-bearing page is
   // crawlable as a FAQ rich result. Only includes Q/A pairs that have answers.
@@ -40,7 +42,7 @@ export function FaqSection({
   };
 
   return (
-    <section style={{ padding: `120px ${PAD_X}`, ...(background ? { background } : {}) }}>
+    <section id={id} style={{ padding: `120px ${PAD_X}`, ...(background ? { background } : {}) }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 80 }}>
         <div>

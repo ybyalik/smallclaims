@@ -13,7 +13,7 @@ import { breadcrumbList, jsonLdGraph } from "../../../lib/schema";
 export const metadata: Metadata = {
   title: "Contact · CivilCase",
   description:
-    "Questions about our guides, templates, or which service fits your dispute? Send a note. We answer most messages within one business day. CivilCase is not a law firm and does not provide legal advice.",
+    "Questions about our guides or which service fits your dispute? Send a note. We answer most messages within one business day. CivilCase is not a law firm and does not provide legal advice.",
   alternates: { canonical: "/contact" },
 };
 
@@ -38,8 +38,8 @@ const LABEL_STYLE: React.CSSProperties = {
 };
 
 const FAST_PATHS = [
-  { tag: "QUICK", title: "Check your case strength", desc: "Free 90-second read on whether to pursue. No account needed.", cta: "Run my score", href: "/case-score" },
-  { tag: "GUIDES", title: "State-by-state filing", desc: "Filing fees, caps, forms, and service rules for all 50 states.", cta: "Find your state", href: "/small-claims" },
+  { tag: "QUICK", title: "Check your case strength", desc: "Free 90-second read on whether to pursue. No account needed.", cta: "Run My Score", href: "/case-score" },
+  { tag: "GUIDES", title: "State-by-state filing", desc: "Filing fees, caps, forms, and service rules for all 50 states.", cta: "Find Your State", href: "/small-claims" },
   { tag: "ANSWERS", title: "Common questions", desc: "Cost, timeline, evidence, hearing prep, collection. Answered.", cta: "Browse FAQ", href: "/small-claims#faq" },
 ];
 
@@ -64,7 +64,7 @@ export default function Contact() {
             Send us a <em>note.</em>
           </h1>
           <p style={{ font: `19px/1.55 ${BODY_FONT}`, color: C.muted, marginTop: 32, maxWidth: 720 }}>
-            Questions about our guides, templates, or which service fits your dispute? Drop us a
+            Questions about our guides or which service fits your dispute? Drop us a
             note. We answer most messages within one business day. We can&rsquo;t give legal advice,
             but we can help you find the right starting point.
           </p>
@@ -79,7 +79,7 @@ export default function Contact() {
             <div style={{ ...eyebrow, marginBottom: 16 }}>GET IN TOUCH · BY EMAIL</div>
             <h2 className="firm-h" style={{ ...H2, fontSize: 44 }}>Tell us <em>what you need</em>.</h2>
             <p style={{ ...body, marginTop: 16, maxWidth: 540 }}>
-              The more specific, the better we can point you to the right guide, template, or
+              The more specific, the better we can point you to the right guide or
               service. Stuck on a step? Not sure which tool fits your situation? Just ask.
             </p>
 
@@ -158,19 +158,7 @@ export default function Contact() {
                 A real reply within <em>one business day.</em>
               </div>
               <p style={{ font: `13.5px/1.6 ${BODY_FONT}`, color: "rgba(255,255,255,0.7)", margin: "12px 0 0" }}>
-                Written by a real person on our team who has read your message. Not a chatbot. Not a templated auto-reply.
-              </p>
-            </div>
-
-            {/* What not to send */}
-            <div style={{ border: `1px solid ${C.line}`, padding: "24px 26px", background: C.bg }}>
-              <div style={{ ...eyebrow, color: C.muted, marginBottom: 14 }}>ONE NOTE</div>
-              <div style={{ font: `500 18px/1.25 ${HEAD_FONT}`, color: C.fg, letterSpacing: "-0.015em" }}>
-                Don&rsquo;t send the only copy of anything.
-              </div>
-              <p style={{ ...body, fontSize: 13.5, margin: "10px 0 0" }}>
-                Send copies. Keep originals. We can usually tell you what to keep before you mail
-                anything sensitive.
+                Written by a real person on our team who has read your message. Not a chatbot. Not a canned auto-reply.
               </p>
             </div>
           </aside>

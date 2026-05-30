@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { Search, X } from "lucide-react";
-import { C, BODY_FONT, HEAD_FONT, RAD, eyebrow, Arrow, FirmBtn } from "./index";
+import { C, BODY_FONT, HEAD_FONT, RAD, eyebrow, Arrow } from "./index";
 
 interface StateRow {
   abbr: string;
@@ -13,20 +13,31 @@ interface StateRow {
   popular?: boolean;
 }
 
-// Type-ahead state search. When the input is empty we show the popular
-// states; when the user types we filter against the full STATES list
-// (matches abbreviation OR name).
+// Type-ahead state search. Empty input shows the popular states; typing
+// filters the full STATES list (abbr OR name). "See all" toggles the full
+// alphabetical list. The results list is a fixed-height scroll area so the
+// panel never changes size as the result count changes.
 export function StateSearchPanel({ states }: { states: StateRow[] }) {
   const [query, setQuery] = useState("");
+  const [showAll, setShowAll] = useState(false);
   const popular = useMemo(() => states.filter((s) => s.popular), [states]);
 
   const results = useMemo(() => {
     const q = query.trim().toLowerCase();
-    if (!q) return popular;
-    return states.filter(
-      (s) => s.name.toLowerCase().includes(q) || s.abbr.toLowerCase() === q || s.slug.includes(q),
-    );
-  }, [query, states, popular]);
+    if (q) {
+      return states.filter(
+        (s) => s.name.toLowerCase().includes(q) || s.abbr.toLowerCase() === q || s.slug.includes(q),
+      );
+    }
+    if (showAll) return [...states].sort((a, b) => a.name.localeCompare(b.name));
+    return popular;
+  }, [query, states, popular, showAll]);
+
+  const heading = query
+    ? `RESULTS (${results.length})`
+    : showAll
+      ? `ALL STATES (${states.length})`
+      : "MOST POPULAR";
 
   return (
     <div>
@@ -70,17 +81,16 @@ export function StateSearchPanel({ states }: { states: StateRow[] }) {
         )}
       </div>
 
-      <div style={{ ...eyebrow, marginTop: 32, marginBottom: 14 }}>
-        {query ? `RESULTS (${results.length})` : "MOST POPULAR"}
-      </div>
+      <div style={{ ...eyebrow, marginTop: 32, marginBottom: 14 }}>{heading}</div>
 
-      {results.length === 0 ? (
-        <div style={{ background: "#fff", border: `1px solid ${C.line}`, borderRadius: RAD.card, padding: "20px 18px", font: `14px/1.5 ${BODY_FONT}`, color: C.muted }}>
-          No states match &ldquo;{query}&rdquo;. Try a state name or two-letter code.
-        </div>
-      ) : (
-        <div style={{ display: "grid", gap: 0, background: "#fff", border: `1px solid ${C.line}`, borderRadius: RAD.card, overflow: "hidden" }}>
-          {results.slice(0, 12).map((s, i, arr) => (
+      {/* Fixed-height scroll area — stable size regardless of result count. */}
+      <div style={{ height: 320, overflowY: "auto", background: "#fff", border: `1px solid ${C.line}`, borderRadius: RAD.card }}>
+        {results.length === 0 ? (
+          <div style={{ padding: "20px 18px", font: `14px/1.5 ${BODY_FONT}`, color: C.muted }}>
+            No states match &ldquo;{query}&rdquo;. Try a state name or two-letter code.
+          </div>
+        ) : (
+          results.map((s, i, arr) => (
             <Link
               key={s.slug}
               href={`/small-claims/${s.slug}`}
@@ -98,17 +108,35 @@ export function StateSearchPanel({ states }: { states: StateRow[] }) {
             >
               <div style={{ font: `500 12px/1 ${BODY_FONT}`, color: C.accent, letterSpacing: "0.06em" }}>{s.abbr}</div>
               <div style={{ font: `600 18px/1.2 ${HEAD_FONT}`, color: C.fg, letterSpacing: "-0.005em" }}>{s.name}</div>
-              {s.cap && <div style={{ font: `12px/1 ${BODY_FONT}`, color: C.muted }}>{s.cap}</div>}
+              <div style={{ font: `12px/1 ${BODY_FONT}`, color: C.muted }}>{s.cap ?? ""}</div>
               <Arrow color={C.muted} />
             </Link>
-          ))}
-        </div>
-      )}
+          ))
+        )}
+      </div>
 
       <div style={{ marginTop: 24 }}>
-        <Link href="/small-claims" style={{ textDecoration: "none" }}>
-          <FirmBtn kind="ghost">See all 51 states</FirmBtn>
-        </Link>
+        <button
+          type="button"
+          onClick={() => {
+            setQuery("");
+            setShowAll((v) => !v);
+          }}
+          style={{
+            background: "transparent",
+            color: C.fg,
+            border: `1px solid ${C.fg}`,
+            padding: "14px 22px",
+            font: `500 14px/1 ${BODY_FONT}`,
+            cursor: "pointer",
+            display: "inline-flex",
+            alignItems: "center",
+            gap: 10,
+            borderRadius: 999,
+          }}
+        >
+          {showAll && !query ? "Show Fewer" : "See All 51 States"} <Arrow color={C.fg} />
+        </button>
       </div>
     </div>
   );

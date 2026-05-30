@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { BarChart3, Folder, Mail, FileText, Headphones, UserCheck, Briefcase, ArrowRight, ShieldCheck, Target, TrendingUp, CheckCircle2, DollarSign, Clock, MapPin, ClipboardCheck, MessageSquare, PenLine, Send, Scale } from "lucide-react";
+import { BarChart3, Folder, Mail, FileText, Headphones, UserCheck, Briefcase, ArrowRight, ShieldCheck, Target, TrendingUp, CheckCircle2, DollarSign, Clock, MapPin, MessageSquare, PenLine, Send, Scale } from "lucide-react";
 import {
   C, H1, H2, eyebrow, body, PAD_X, RAD, HEAD_FONT, BODY_FONT, SERIF_FONT, italicEmCSS,
   Check, FirmBtn, LetterDisplay, FaqSection, RatingStrip,
@@ -12,7 +12,7 @@ import { breadcrumbList, serviceSchema, jsonLdGraph } from "../../../lib/schema"
 export const metadata: Metadata = {
   title: "Demand Letter · CivilCase",
   description:
-    "State-specific demand letter assembled from attorney-authored templates. From $29. Delivered USPS Certified within 24 hours.",
+    "A state-specific demand letter written for your case, from the facts you enter and your state's rules. From $29. Delivered USPS Certified within 24 hours.",
   alternates: { canonical: "/demand-letter" },
 };
 
@@ -20,7 +20,7 @@ export default function DemandLetter2() {
   const jsonLd = jsonLdGraph(
     serviceSchema({
       name: "Demand Letter Service",
-      description: "State-specific demand letter assembled from attorney-authored templates. Delivered via USPS Certified mail within 24 hours.",
+      description: "State-specific demand letter written for your case, from the facts you enter and your state's rules. Delivered via USPS Certified mail within 24 hours.",
       url: "/demand-letter",
       priceFrom: 29,
       audience: "Self-represented plaintiffs",
@@ -38,18 +38,18 @@ export default function DemandLetter2() {
 
       {/* HERO */}
       <section style={{ padding: `80px ${PAD_X} 100px` }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1.05fr 1fr", gap: 80, alignItems: "center" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1.15fr 1fr", gap: 48, alignItems: "center" }}>
           <div>
             <RatingStrip style={{ marginBottom: 24 }} />
             <h1 className="firm-h" style={{ ...H1, fontSize: 68 }}>The <em>demand</em> letter.</h1>
             <p style={{ font: `18px/1.55 ${BODY_FONT}`, color: C.muted, maxWidth: 520, marginTop: 28 }}>
               A formal written notice that you are owed money, intend to pursue the matter in court if it
-              isn&rsquo;t resolved, and have the documentation to back it up. Built from
-              attorney-authored templates and state-specific rules. In your mailbox within 24 hours.
+              isn&rsquo;t resolved, and have the documentation to back it up. Written for your case,
+              from the facts you enter and the rules in your state. In your mailbox within 24 hours.
             </p>
             <div style={{ display: "flex", gap: 14, marginTop: 36 }}>
-              <FirmBtn href="/dashboard/cases/new">Start my letter</FirmBtn>
-              <FirmBtn kind="ghost" href="/demand-letter#sample">See a sample letter</FirmBtn>
+              <FirmBtn href="/dashboard/cases/new">Start My Letter</FirmBtn>
+              <FirmBtn kind="ghost" href="/demand-letter#sample">See a Sample Letter</FirmBtn>
             </div>
             <FirmHeroStats items={[
               { Icon: DollarSign, headline: "From $29", sub: "one-time fee" },
@@ -111,9 +111,6 @@ export default function DemandLetter2() {
                   <div style={{ font: `12.5px/1.4 ${BODY_FONT}`, color: "rgba(255,255,255,0.65)", marginTop: 10 }}>{l}</div>
                 </div>
               ))}
-            </div>
-            <div style={{ marginTop: 32, font: `12px/1.4 ${BODY_FONT}`, color: "rgba(255,255,255,0.45)" }}>
-              Sample · 2,341 letters dispatched Q3-Q4 2025 · Internal CivilCase outcomes data.
             </div>
           </div>
         </div>
@@ -304,57 +301,17 @@ export default function DemandLetter2() {
         </div>
         <FirmProcessStrip steps={[
           { Icon: MessageSquare, title: "Tell us what happened", desc: "Plain-language intake. We ask the questions. You stay in your seat.", time: "~8 min" },
-          { Icon: PenLine, title: "Your letter is generated", desc: "Assembled from attorney-authored templates around the facts you entered. Read it before sending.", time: "24 hours" },
+          { Icon: PenLine, title: "Your letter is generated", desc: "Written around the facts you entered and your state's rules. Read it before sending.", time: "24 hours" },
           { Icon: Send, title: "Certified mail dispatch", desc: "USPS certified with tracking. Signature on delivery.", time: "2-4 days" },
           { Icon: Scale, title: "Escalate if ignored", desc: "Filing assistance, court-ready forms, court-day procedure brief.", time: "14+ days" },
         ]} />
       </section>
 
-      {/* SAMPLE LETTERS */}
-      <section style={{ padding: `0 ${PAD_X}`, background: C.paper }}>
-        <div style={{ padding: "100px 0" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 80, marginBottom: 60 }}>
-            <div>
-              <div style={{ ...eyebrow, marginBottom: 22 }}>SAMPLE EXCERPTS</div>
-              <h2 className="firm-h" style={H2}>Three letters. <em>Three outcomes</em>.</h2>
-            </div>
-            <p style={{ ...body, alignSelf: "end" }}>
-              Excerpts pulled from real CivilCase letters that resolved before filing. Names and amounts are
-              unchanged; identifying details have been redacted with consent.
-            </p>
-          </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
-            {[
-              { tag: "Security Deposit", state: "California", code: "Civ. Code § 1950.5", excerpt: "Pursuant to Cal. Civ. Code § 1950.5, you were required to return my $1,200 security deposit within 21 days of move-out. That period has elapsed. I demand within fourteen (14) days: return of the $1,200 deposit in full, statutory damages of 2× for bad-faith retention ($2,400). Total demand: $4,200.", outcome: "Paid in 4 days." },
-              { tag: "Unpaid Contractor", state: "Texas", code: "Tex. Prop. Code § 53.052", excerpt: "On March 14, 2025 you agreed in writing to complete kitchen renovation work for $9,800. As of this date, work remains incomplete and four (4) months have passed since your last on-site presence. I demand return of the $4,200 paid for unperformed work, or completion within 14 days, after which I will perfect a mechanic's lien.", outcome: "Settled $4,200." },
-              { tag: "Final Wages", state: "New York", code: "NY Lab. Law § 191", excerpt: "Under NY Lab. Law § 191, final wages were due on the regular payday following separation. My final paycheck dated 10/22 has not been issued. I demand within fourteen (14) days: payment of $1,820 in earned wages, liquidated damages of 100% ($1,820 additional), and interest. Failure will be filed with the NY DOL.", outcome: "DOL filing avoided." },
-            ].map((s) => (
-              <div key={s.tag} style={{ background: "#fff", border: `1px solid ${C.line}`, borderRadius: RAD.card, overflow: "hidden" }}>
-                <div style={{ padding: "20px 22px", borderBottom: `1px solid ${C.line}`, background: C.bg }}>
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
-                    <div style={{ ...eyebrow, color: C.accent }}>{s.tag}</div>
-                    <div style={{ font: `12px/1 ${BODY_FONT}`, color: C.muted }}>{s.state}</div>
-                  </div>
-                  <div style={{ font: `500 18px/1.3 ${HEAD_FONT}`, color: C.fg, marginTop: 12, letterSpacing: "-0.005em" }}>{s.code}</div>
-                </div>
-                <div style={{ padding: "26px 22px" }}>
-                  <div style={{ font: `13.5px/1.7 ${SERIF_FONT}`, color: C.fg, fontStyle: "italic" }}>&ldquo;{s.excerpt}&rdquo;</div>
-                  <div style={{ marginTop: 22, paddingTop: 16, borderTop: `1px solid ${C.line}`, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                    <div style={{ ...eyebrow, color: C.muted }}>Outcome</div>
-                    <div style={{ font: `500 14px/1 ${HEAD_FONT}`, color: C.accent }}>{s.outcome}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CTA BAR */}
       <section style={{ padding: `60px ${PAD_X}` }}>
         <FirmCtaBar
-          Icon={ClipboardCheck}
-          headline={<>Ready to <em>send your letter</em>?</>}
+          iconSrc="/icons/letter-icon.webp"
+          headline={<>Ready to <em style={{ fontWeight: 700 }}>send your letter</em>?</>}
           sub="No account. No subscription. Just results."
           cta={{ label: "Start Your Letter", href: "/dashboard/cases/new", caption: "Takes about 5 minutes · From $29" }}
         />
@@ -606,36 +563,6 @@ export default function DemandLetter2() {
               </div>
             );
           })}
-        </div>
-      </section>
-
-      {/* TESTIMONIALS (dark) */}
-      <section style={{ background: C.darkPanel, color: "#fff", padding: `120px ${PAD_X}` }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 80, marginBottom: 56 }}>
-          <div>
-            <div style={{ ...eyebrow, color: "rgba(255,255,255,0.6)", marginBottom: 22 }}>THE LETTERS THAT WORKED</div>
-            <h2 className="firm-h firm-h-light" style={{ ...H2, color: "#fff" }}>Three letters from <em>last quarter</em>.</h2>
-            <p style={{ font: `16px/1.6 ${BODY_FONT}`, color: "rgba(255,255,255,0.7)", marginTop: 22, maxWidth: 420 }}>
-              Resolved without filing. Verified against bank records and confirmed by the plaintiff.
-            </p>
-          </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 0 }}>
-            {[
-              { who: "Maya R.", where: "Brooklyn, NY", amt: "$2,800", days: "12 DAYS", quote: "I'd been chasing the deposit for six weeks on my own. CivilCase put a demand letter on his desk and he wired it back the next morning." },
-              { who: "Daniel P.", where: "Austin, TX", amt: "$4,200", days: "11 DAYS", quote: "Two lawyers had already taken $1,800 of mine for nothing. CivilCase finished it in eleven days for the price of a stamp." },
-              { who: "Marcos W.", where: "Phoenix, AZ", amt: "$6,750", days: "JUDGMENT", quote: "My ex-employer thought ignoring me would be cheaper than paying my final check. The court disagreed. So did the bank levy." },
-            ].map((c, i) => (
-              <div key={c.who} style={{ padding: "0 24px", borderLeft: i ? "1px solid rgba(255,255,255,0.12)" : "none" }}>
-                <div style={{ font: `500 11px/1 ${BODY_FONT}`, color: C.accentOnDark, letterSpacing: "0.16em", marginBottom: 18 }}>{c.days}</div>
-                <div style={{ font: `500 38px/1 ${HEAD_FONT}`, letterSpacing: "-0.015em" }}>{c.amt}</div>
-                <p style={{ font: `14.5px/1.6 ${BODY_FONT}`, color: "rgba(255,255,255,0.78)", marginTop: 24, fontStyle: "italic" }}>&ldquo;{c.quote}&rdquo;</p>
-                <div style={{ marginTop: 22, paddingTop: 16, borderTop: "1px solid rgba(255,255,255,0.12)" }}>
-                  <div style={{ font: `500 13.5px/1 ${BODY_FONT}`, color: "#fff" }}>{c.who}</div>
-                  <div style={{ font: `12px/1.4 ${BODY_FONT}`, color: "rgba(255,255,255,0.5)", marginTop: 4 }}>{c.where}</div>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 

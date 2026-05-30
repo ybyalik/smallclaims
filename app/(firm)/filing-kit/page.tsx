@@ -106,7 +106,7 @@ export default function FilingKit2() {
 
       {/* HERO */}
       <section style={{ padding: `80px ${PAD_X} 100px` }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1.05fr 1fr", gap: 80, alignItems: "center" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1.15fr 1fr", gap: 48, alignItems: "center" }}>
           <div>
             <RatingStrip style={{ marginBottom: 24 }} />
             <h1 className="firm-h" style={{ ...H1, fontSize: 68 }}>File your case the <em>right way</em>.</h1>
@@ -129,7 +129,7 @@ export default function FilingKit2() {
             </div>
             <div style={{ display: "flex", gap: 14, marginTop: 36 }}>
               <FirmBtn href="/filing-kit">Get My Filing Kit</FirmBtn>
-              <FirmBtn kind="ghost" href="/filing-kit">See a sample kit</FirmBtn>
+              <FirmBtn kind="ghost" href="/filing-kit">See a Sample Kit</FirmBtn>
             </div>
             <FirmHeroStats items={[
               { Icon: DollarSign, headline: "From $79", sub: "one-time fee" },
@@ -138,12 +138,14 @@ export default function FilingKit2() {
               { Icon: Building2, headline: "3,000+", sub: "counties supported" },
             ]} />
           </div>
-          <div style={{ position: "relative", height: 580, display: "flex", justifyContent: "flex-end", alignItems: "center" }}>
-            <div style={{ position: "absolute", top: 20, right: 60, transform: "rotate(-3deg)", width: 360 }}>
-              <FilingKitDoc />
-            </div>
-            <div style={{ position: "absolute", top: 70, right: 0, transform: "rotate(2deg)", width: 360, opacity: 0.95 }}>
-              <FilingKitDoc />
+          <div style={{ position: "relative", display: "flex", justifyContent: "center", alignItems: "center", minHeight: 580 }}>
+            <div style={{ position: "relative", width: 400, height: 560 }}>
+              <div style={{ position: "absolute", top: 20, left: 30, transform: "rotate(-3deg)", width: 360 }}>
+                <FilingKitDoc />
+              </div>
+              <div style={{ position: "absolute", top: 70, left: -10, transform: "rotate(2deg)", width: 360, opacity: 0.95 }}>
+                <FilingKitDoc />
+              </div>
             </div>
           </div>
         </div>

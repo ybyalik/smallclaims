@@ -20,8 +20,9 @@ export function FirmHeroStats({ items }: FirmHeroStatsProps) {
     <div
       className="firm-hero-stats"
       style={{
-        display: "flex",
-        flexWrap: "wrap",
+        display: "grid",
+        gridTemplateColumns: "repeat(4, 1fr)",
+        alignItems: "start",
         marginTop: 60,
         paddingTop: 30,
         borderTop: `1px solid ${C.line}`,
@@ -33,18 +34,19 @@ export function FirmHeroStats({ items }: FirmHeroStatsProps) {
           style={{
             display: "flex",
             alignItems: "center",
-            gap: 14,
-            paddingLeft: i ? 24 : 0,
-            paddingRight: i === arr.length - 1 ? 0 : 24,
+            gap: 11,
+            minWidth: 0,
+            paddingLeft: i ? 16 : 0,
+            paddingRight: i === arr.length - 1 ? 0 : 16,
             borderLeft: i ? `1px solid ${C.line}` : "none",
           }}
         >
-          <Icon size={28} strokeWidth={1.7} color={C.accent} aria-hidden />
-          <div>
+          <Icon size={24} strokeWidth={1.7} color={C.accent} aria-hidden style={{ flexShrink: 0 }} />
+          <div style={{ minWidth: 0 }}>
             <div style={{ font: `700 15px/1.2 ${BODY_FONT}`, color: C.fg, marginBottom: 3 }}>
               {headline}
             </div>
-            <div style={{ font: `13px/1.3 ${BODY_FONT}`, color: C.muted }}>{sub}</div>
+            <div style={{ font: `12.5px/1.3 ${BODY_FONT}`, color: C.muted }}>{sub}</div>
           </div>
         </div>
       ))}

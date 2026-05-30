@@ -614,20 +614,20 @@ function Result({
     demand_letter_strong: {
       headline: "Send a demand letter today.",
       sub: "Your case looks strong. About half of disputes settle once a professional demand letter shows up. No filing required.",
-      primary: { href: "/demand-letter", label: "Send a demand letter ($39)" },
+      primary: { href: "/demand-letter", label: "Send a Demand Letter ($39)" },
       secondary: { href: `/small-claims/${stateSlug}`, label: state ? `Read the ${state.name} guide` : "Read your state's guide" },
     },
     demand_then_file: {
       headline: "Try a demand letter first. Be ready to file.",
       sub: "Your case is workable. A demand letter is the cheap, low-risk first move; if there's no response, small claims is realistic.",
-      primary: { href: "/demand-letter", label: "Send a demand letter ($39)" },
+      primary: { href: "/demand-letter", label: "Send a Demand Letter ($39)" },
       secondary: { href: `/small-claims/${stateSlug}`, label: state ? `${state.name} small-claims guide` : "Read your state's guide" },
     },
     borderline_consider_costs: {
       headline: "It's borderline. Weigh the cost vs the recovery.",
       sub: "The case is workable but the score is not strong. Filing fees, your time, and the chance of collecting all matter at this level.",
       primary: { href: `/small-claims/${stateSlug}`, label: state ? `${state.name} small-claims guide` : "Read your state's guide" },
-      secondary: { href: "/demand-letter", label: "Try a demand letter first" },
+      secondary: { href: "/demand-letter", label: "Try a Demand Letter First" },
     },
     consult_attorney_high_value: {
       headline: "Talk to an attorney first.",

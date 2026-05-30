@@ -263,7 +263,7 @@ export default async function Landlord2() {
             <div style={{ ...eyebrow, marginBottom: 22 }}>BY STATE</div>
             <h2 className="firm-h" style={H2}>State-specific <em>rules</em>.</h2>
             <p style={{ ...body, marginTop: 22, maxWidth: 420 }}>Landlord-tenant rules vary state by state. Deposit return deadlines, statutory damages, and repair-and-deduct procedures are different in every state. Pick yours for the exact statute, deadline, and form numbers.</p>
-            <div style={{ marginTop: 32 }}><FirmBtn kind="ghost" href="/small-claims">See all 50 state guides</FirmBtn></div>
+            <div style={{ marginTop: 32 }}><FirmBtn kind="ghost" href="/small-claims">See All 50 State Guides</FirmBtn></div>
           </div>
           <div>
             <div style={{ marginBottom: 24 }}>
