@@ -57,14 +57,26 @@ export async function writeCustomerReport(
     return typeof primary === "string" && primary ? [primary] : [];
   })();
   const filteredPack: EvidencePack = (() => {
-    if (caseClaimTypes.length === 0) return mergedPack;
-    const lowerSet = new Set(caseClaimTypes.map((c) => c.toLowerCase()));
-    const relevant = (mergedPack.statutory_multipliers ?? []).filter((m) => {
-      const ct = m.claim_types ?? [];
-      if (ct.length === 0) return true;
-      return ct.some((c) => lowerSet.has((c ?? "").toLowerCase()));
-    });
-    return { ...mergedPack, statutory_multipliers: relevant };
+    let base: EvidencePack = mergedPack;
+    if (caseClaimTypes.length > 0) {
+      const lowerSet = new Set(caseClaimTypes.map((c) => c.toLowerCase()));
+      const relevant = (mergedPack.statutory_multipliers ?? []).filter((m) => {
+        const ct = m.claim_types ?? [];
+        if (ct.length === 0) return true;
+        return ct.some((c) => lowerSet.has((c ?? "").toLowerCase()));
+      });
+      base = { ...mergedPack, statutory_multipliers: relevant };
+    }
+    // Post-judgment collection/enforcement and tax data belong to the separate
+    // Collection Plan product. Strip them from the JSON the writer sees so this
+    // Filing Kit report can't pull them in. recoverable_amounts stays: it feeds
+    // prejudgment interest and the "What to ask for" damages itemization.
+    const stripped = { ...base } as Record<string, unknown>;
+    delete stripped.collection_details;
+    delete stripped.post_judgment_steps;
+    delete stripped.defendant_collectability_signals;
+    delete stripped.tax_implications;
+    return stripped as unknown as EvidencePack;
   })();
 
   // Read the per-case prejudgment-interest rate that the case-research stage
@@ -84,7 +96,7 @@ export async function writeCustomerReport(
     ? `\n\nLOW-CONFIDENCE SECTIONS\nThe research was weaker for these sections; mention plainly in the relevant paragraphs that the reader should verify with the clerk before acting: ${lowConfidenceSections.join(", ")}`
     : "";
 
-  const prompt = `You are writing a single procedural-research report for one specific US small-claims plaintiff. The reader is a regular person, not a lawyer or paralegal. Your job is to give them, in plain English, everything they need to file this case themselves and follow it through to collection.
+  const prompt = `You are writing a single procedural-research report for one specific US small-claims plaintiff. The reader is a regular person, not a lawyer or paralegal. Your job is to give them, in plain English, everything they need to file this case themselves and see it through the hearing and judgment. Collecting the judgment afterward is a separate product and is out of scope for this report.
 
 CASE
 - Plaintiff facts: ${(intake.factsNarrative ?? "(not provided)").slice(0, 2000)}
@@ -133,7 +145,10 @@ ONLY include this section if the CRITICAL CONFLICT FLAG block above is present. 
 A paragraph naming the courthouse, division, and address. Explain in one sentence why this courthouse is the right one — quote or paraphrase classification.venue_rule ("File in the county where the defendant resides…") and apply it to this case's three counties (plaintiff/defendant/incident). If classification.proper_court_type_notes has data, use that as the explanation for why this division and not another. If the address is not known, say so plainly and tell them to call the clerk.
 
 ## Whether your case fits in this court
-Two short paragraphs. First: state the claim limit for this division and confirm the amount in dispute fits. Second: any subject-matter exclusions that could move the case out of this division (housing court, district court, etc.) and why this case is or is not affected. If frequency_caps has data, include a sentence quoting/paraphrasing it ("This state limits each plaintiff to..."). If claim_splitting_prohibited is true, mention that too.
+Two to three short paragraphs. First: state the claim limit for this division and confirm the amount in dispute fits. If claim_cap_tiers has more than one entry, name the tier that applies to THIS case and mention a higher or special cap (for example a municipal-plaintiff exception or an auto property-damage exception) only when it could actually matter to this reader. Second: the subject-matter exclusions from excluded_claim_types that a reader with this kind of dispute might trip over, and say plainly whether this case is affected (housing court, title to real estate, defamation, equitable relief, etc.). Third: if frequency_caps has data, quote or paraphrase it ("This state limits each plaintiff to..."), and if claim_splitting_prohibited is true, explain in one sentence that the reader cannot break a single dispute into several smaller suits to get under the cap.
+
+## Naming the right defendant
+One to two paragraphs. Naming the defendant wrong is one of the most common reasons a case is dismissed or a judgment turns out to be uncollectable, so be specific. Explain how to identify the defendant correctly for this case: an individual by full legal name; a business by its exact registered entity (the LLC or corporation, or the real owner behind a "doing business as" name), not just the storefront or brand. Tell the reader how to confirm it (the state's business-entity or Secretary of State search, the lease or signed contract, the name on a receipt or invoice). If classification.notes explains who may appear on behalf of a business (for example that a corporation or LLC may be represented by a non-lawyer officer or employee), include it. If the defendant could be a government entity, point back to the pre-filing notice requirement.
 
 ## Arbitration and forum-selection clauses
 ONLY include if arbitration_clause_considerations is non-empty. One paragraph in plain English: explain whether the kind of contract the plaintiff signed (lease, service agreement, etc.) might contain an arbitration clause that knocks the case out of small claims, and what to look for. Tell them to read their contract for an "Arbitration" or "Dispute Resolution" section. End with a sentence on whether small claims is typically a carve-out.
@@ -156,10 +171,13 @@ Use a markdown table because forms genuinely tabulate well:
 
 If a form has no official form code (the code field is null or empty), leave the Form code cell completely empty. Do not write a comma, dash, "N/A", or any other placeholder in it.
 
-Follow the table with one to two paragraphs explaining how to fill out the main complaint form: what each section asks for, and how the reader should describe their dispute (one or two sentences, the amount, the legal basis if relevant).
+Follow the table with a fuller walkthrough (three to five short paragraphs) of how to complete the main complaint or statement-of-claim form, field by field: the parties (tie back to naming the defendant correctly), the plaintiff's contact details, how to describe the dispute in two or three plain sentences (what was promised or owed, what went wrong, what is owed now), where and how to enter the dollar amount, the date the claim arose, and how and where to sign and date. Call out the spots people most often get wrong on this form (signing in the wrong place, leaving the amount blank, a vague or rambling description). Keep it specific to the forms named in the table above.
+
+## What to ask for
+Two to four short paragraphs (a tight labeled breakdown is acceptable here, since amounts itemize cleanly) on how to build the total dollar figure the reader claims, so they neither leave money on the table nor blow past the cap. Cover only the pieces that apply to THIS case: the principal (the actual amount owed or lost); prejudgment interest, if a rate was provided above, noting it is usually requested in the complaint and often must be asked for explicitly; recoverable costs from recoverable_amounts.costs_recoverable (for example the filing fee, the service-of-process fee, witness and mileage fees), which are added on top and typically awarded to the winner; attorney's fees ONLY if recoverable_amounts.attorney_fees.available is true, in which case state the statute or condition (recoverable_amounts.attorney_fees.conditions) and note that most small-claims plaintiffs represent themselves, so this usually applies only where a statute or the contract allows it. If a statutory multiplier applies to this claim type, note that the base claim plus the multiplier can exceed the small-claims cap, and give the reader their options (waive the excess to stay in small claims, or file in a higher court); cross-reference the "State-specific rules" section rather than repeating the statute detail here.
 
 ## Filing fee and how to pay
-A paragraph with the headline filing fee dollar amount, plus filing_fee_notes if it has content (the notes often explain bracketed pricing or what counts as a "claim"). Add any other fees from fee_schedule worth knowing (service fee, motion fee, jury demand fee). Name the accepted payment methods and the check_payee. If fee_schedule.fee_waiver.available is true, add a sentence explaining who qualifies (use eligibility_criteria text) and link the form (form_url) by form code. Do not bullet this.
+A paragraph stating the filing fee for THIS case. If filing_fee_tiers has bands, name the band the case's amount falls into and give that exact fee, then mention the next band so the reader sees how it scales. Include filing_fee_notes if it has content (often explains bracketed pricing or what counts as a "claim"). Add any other fees from fee_schedule worth knowing (service fee, motion fee, jury demand fee). Name the accepted payment methods and the check_payee. If fee_schedule.fee_waiver.available is true, add a sentence explaining who qualifies (use eligibility_criteria text) and link the form (form_url) by form code. Do not bullet this.
 
 ## How to file
 Walk through every method available in this county as prose, not bullets. If e-filing is available, name the portal (efile_portal.name), link it (efile_portal.url), and say whether an account is required. Mention accepted file types if relevant. If in-person, give the courthouse hours if known. If mail, give the mailing address.
@@ -167,8 +185,8 @@ Walk through every method available in this county as prose, not bullets. If e-f
 ## How to serve the defendant
 For each entry in service_methods that has allowed=true, write a short paragraph: how the method works, the cost (in dollars), the deadline relative to the hearing, the proof-of-service form code. Cover sheriff service, certified mail, personal service by a non-party adult, alternate service, publication, and any other method present. Use service_requirements for any free-form notes that don't fit a single method.
 
-## Evidence to bring
-This section MAY use a focused bullet list because the reader will literally pack a folder. Group the bullets by category (the contract or agreement, payment records, communications, photos, witness names). Eight to fifteen bullets max, each one specific to this claim type.
+## Evidence to bring and how to present it
+Start from evidence_required_for_this_claim_type when it has entries, and tailor each item to this dispute (name the actual agreement, the actual payments, the actual photos, not generic categories). This section MAY use a focused bullet list because the reader will literally pack a folder: group by category (the agreement, payment records, communications, photos, witness names), eight to fifteen bullets max, each specific to this claim type. Then a short closing paragraph (not bullets) on how to present it: how many copies to bring (hearing_logistics.copies_required), the accepted exhibit format (hearing_logistics.exhibit_format, for example printed copies for the court and the other side, or eFiled PDFs), labeling exhibits, and bringing an extra copy for the defendant. If a key witness will not come voluntarily, point to the subpoena process named in the hearing section.
 
 ## Court-annexed mediation
 Include if court_mediation has any populated field (available true OR when, process has data). One paragraph: when in the timeline mediation is offered (court_mediation.when), whether it is free (court_mediation.free), how to opt in (court_mediation.process), and a frank sentence on why it can save time and money. Skip the section ONLY if all of court_mediation is empty.
@@ -183,27 +201,13 @@ Three to four short paragraphs covering ALL populated hearing_logistics fields. 
 ONLY include if counterclaim_transfer_threshold has data. One short paragraph: what happens if the defendant files a counterclaim that exceeds the small-claims cap (does the case transfer to a higher court, does plaintiff lose small-claims simplicity, etc.).
 
 ## After the hearing
-A paragraph covering the judgment, the appeal window in days (appeal_details.window_days), explicitly who can appeal (appeal_details.who_can_appeal — e.g. "Either party," not just "the defendant"), the type of appeal (appeal_details.type, e.g. "trial de novo" means a brand-new trial in a higher court), the motion-to-vacate deadline if the defendant defaulted (motion_to_vacate_default_window_days), and how to file Satisfaction of Judgment if the defendant pays.
-
-## Collecting your money
-Three to five paragraphs. Cover the full collection toolkit using ALL populated collection_details fields:
-- post_judgment_steps (the recommended sequence)
-- abstract_of_judgment_process (how to record a lien on real property)
-- bank_levy_process (how to levy a bank account)
-- debtors_exam_process (how to question a defendant about assets)
-- wage_garnishment_cap_pct (state cap percent on wages)
-- exemption_details when present, with specific dollar amounts ("homestead exemption is $X, motor vehicle exemption is $Y")
-- federal_vs_state_exemption_rule (whether the debtor must elect one set or can mix)
-- judgment_renewal_years (how long the judgment is good and the renewal procedure)
-- bankruptcy_stay_effects (one sentence on what happens if the defendant files bankruptcy)
-- domestication_of_out_of_state_judgment (only if relevant to this case, e.g. cross-state defendant)
-Don't list these as bullets — weave each into prose.
+A paragraph covering what happens once the case is decided: when and how the judgment is entered, the appeal window in days (appeal_details.window_days), explicitly who can appeal (appeal_details.who_can_appeal, for example "Either party," not just "the defendant"), the type of appeal (appeal_details.type, for example "trial de novo," which means a brand-new trial in a higher court), and the motion-to-vacate deadline if the defendant defaulted (motion_to_vacate_default_window_days). If the reader wins, add ONE sentence noting that actually collecting the judgment (liens, levies, wage garnishment) is a separate process not covered in this report. Do not explain how to collect.
 
 ## State-specific rules to know
 ONLY include if state_specific_quirks or statutory_multipliers has entries. Cover statutory multipliers first as a focused paragraph. Every multiplier in the pack has already been filtered to this case's claim type, so cite ALL of them — do not omit any as irrelevant. For each: cite the statute, name the multiplier in plain English ("double damages", "treble damages"), and the conditions under which it applies ("if the landlord willfully retained the security deposit beyond N days"). End with one practical sentence on how to invoke it (typically: ask for it in the complaint and at the hearing). Then a paragraph on any state quirks not already covered elsewhere.
 
-## Tax considerations
-ONLY include if tax_implications.recovery_taxability or form_1099_c_consideration has data. One short paragraph in plain English: whether the recovered money is taxable income (often interest portions are, compensatory portions for physical injury are not), and whether forgiving an uncollectible debt may trigger a 1099-C form on the plaintiff's tax return. Tell the reader to ask a tax professional, not their lawyer, about specifics.
+## Common mistakes that get cases dismissed
+A focused section on the avoidable errors that most often sink a small-claims case, tailored to THIS dispute. This MAY be a short bullet list since it reads as a checklist; keep each to a sentence or two. Cover only the ones that actually apply: suing the wrong legal entity (cross-reference naming the defendant); filing in the wrong court or after the deadline; claiming more than the cap, or splitting one dispute into several suits to get under it (if claim_splitting_prohibited is true); a claim type that does not belong in small claims at all (draw from excluded_claim_types); skipping a required pre-suit step (the demand letter or government notice where required); defective service of process; and showing up without the right evidence or enough copies. Frame each as "avoid this," never as a prediction about whether the reader will win.
 
 ## Things to verify before filing
 A short paragraph noting that fees, deadlines, and forms can change. Tell the reader plainly to call the clerk before they pay or mail anything important. If the merged pack has unknowns, weave the most important ones into this paragraph as questions to ask the clerk.
@@ -220,7 +224,7 @@ WRITING STYLE — strict
 - Computed dates: if statute of limitations is "6 years from breach" and incident date is ${caseFacts.incidentDate ?? "n/a"}, write the actual expiry date in the prose ("Your deadline is approximately [date]") rather than making the reader do math.
 - Inline citations: where the merged pack has a URL for a form, statute, or court page, link it inline as a Markdown link. Do not use [#N] reference markers. Do not write "Source:" footnotes.
 - No throat-clearing. Start every section with substance. Do not write "In this section, we will discuss..." or "It's worth noting that...".
-- No length cap, but no padding. Aim for what a paying customer needs and nothing more. A reasonable target is 1,500 to 2,500 words across all sections.
+- No length cap, but no padding. Aim for what a paying customer needs and nothing more. A reasonable target is 2,500 to 3,500 words across all sections.
 
 WHAT NOT TO INCLUDE
 - No table of contents.
@@ -228,6 +232,8 @@ WHAT NOT TO INCLUDE
 - No disclaimer language. A standard disclaimer footer is appended separately.
 - No "About this report", "How to use this report", or meta-commentary.
 - No marketing voice ("CivilCase walks you through", "we'll guide you").
+- No post-judgment collection or enforcement content. Do NOT explain how to collect a judgment: no debtor's exams, bank levies, wage garnishment, liens or abstracts of judgment, exemptions, judgment renewal, bankruptcy effects, or out-of-state domestication. That is a separate product. You may note in ONE sentence (in "After the hearing") that collecting the judgment is a separate process, but never teach it.
+- No tax advice or taxability discussion. Do not cover whether a recovery is taxable or 1099-C consequences.
 
 Begin the report now. The very first character of your output must be the start of the header block, with the case-memo definition list of bold keys.`;
 
