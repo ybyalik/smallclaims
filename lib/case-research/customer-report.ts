@@ -154,6 +154,8 @@ Use a markdown table because forms genuinely tabulate well:
 |-----------|------|--------------|-----------------|
 | ... | ... | ... | [link](url) |
 
+If a form has no official form code (the code field is null or empty), leave the Form code cell completely empty. Do not write a comma, dash, "N/A", or any other placeholder in it.
+
 Follow the table with one to two paragraphs explaining how to fill out the main complaint form: what each section asks for, and how the reader should describe their dispute (one or two sentences, the amount, the legal basis if relevant).
 
 ## Filing fee and how to pay

@@ -18,6 +18,21 @@ interface LedgerEntry extends Record<string, unknown> {
   meta?: Record<string, unknown>;
 }
 
+// The report writer sometimes drops a bare comma into a table cell when a
+// form has no form code (the `code` field is null/empty in the research
+// data). A cell whose only content is a comma is never meaningful, so we
+// blank it out for every state. These run on the generated markdown and on
+// the rendered HTML so both stored representations are clean.
+export function stripCommaOnlyCells(md: string): string {
+  // Markdown table cell containing only a comma, e.g. "| , |" or "|,|".
+  return md.replace(/(\|)[^\S\r\n]*,[^\S\r\n]*(?=\|)/g, "$1 ");
+}
+export function stripCommaOnlyCellsHtml(html: string): string {
+  // Rendered cell whose entire content is a comma (with optional whitespace
+  // or &nbsp;), e.g. "<td>,</td>".
+  return html.replace(/<td>(?:&nbsp;|\s)*,(?:&nbsp;|\s)*<\/td>/gi, "<td></td>");
+}
+
 export interface FinalizeResult {
   status: "draft" | "published" | "skipped_published" | "skipped_no_packs";
   jobId: string;
@@ -142,11 +157,11 @@ async function finalizeCustomerReportLocked(
   // The guide is now the entire report (checklist_md is empty in the new
   // single-document design); concatenate only if checklist_md is non-empty
   // to stay forward compatible if the writer ever returns one again.
-  const guideWithFooter = appendDisclaimerFooter(writeRes.data.guide_md);
+  const guideWithFooter = appendDisclaimerFooter(stripCommaOnlyCells(writeRes.data.guide_md));
   const fullMd = writeRes.data.checklist_md
-    ? `${writeRes.data.checklist_md}\n\n${guideWithFooter}`
+    ? `${stripCommaOnlyCells(writeRes.data.checklist_md)}\n\n${guideWithFooter}`
     : guideWithFooter;
-  const html = marked.parse(fullMd, { async: false }) as string;
+  const html = stripCommaOnlyCellsHtml(marked.parse(fullMd, { async: false }) as string);
 
   // Re-check status right before write (someone may have published in the meantime).
   const { data: nowExisting } = await admin
