@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import {
-  C, H2, PAD_X, HEAD_FONT, BODY_FONT, italicEmCSS,
-  ShieldLogo,
+  C, H2, PAD_X, HEAD_FONT, BODY_FONT, eyebrow, italicEmCSS,
+  ShieldLogo, Arrow,
 } from "../../../components/firm";
 import { breadcrumbList, jsonLdGraph } from "../../../lib/schema";
 
 // About CivilCase — editorial layout matching the design source
-// (redesign-civilcase/project/about-page.jsx). Ends after the photo
-// collage; nothing below that.
+// (redesign-civilcase/project/about-page.jsx). The photo collage is
+// followed by a short founder credit that links to /about/yury-byalik.
 
 export const metadata: Metadata = {
   title: "About · CivilCase",
@@ -144,7 +144,7 @@ export default function About2() {
       </section>
 
       {/* ─── PHOTO COLLAGE — three sizes ─── */}
-      <section style={{ padding: `0 ${PAD_X} 140px` }}>
+      <section style={{ padding: `0 ${PAD_X} 40px` }}>
         <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr 0.9fr", gap: 16 }}>
           <EditorialPhoto
             src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=720&h=960&fit=crop"
@@ -165,6 +165,60 @@ export default function About2() {
               src="https://images.unsplash.com/photo-1589994965851-a8f479c573a9?w=600&h=800&fit=crop"
               ratio="3 / 4"
             />
+          </div>
+        </div>
+      </section>
+
+      {/* ─── FOUNDER CREDIT ─── */}
+      <section style={{ padding: `0 ${PAD_X} 130px` }}>
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: 40,
+            alignItems: "center",
+            borderTop: `1px solid ${C.line}`,
+            paddingTop: 56,
+          }}
+        >
+          <a
+            href="/about/yury-byalik"
+            aria-label="Meet the founder, Yury Byalik"
+            style={{
+              position: "relative",
+              width: 128,
+              height: 128,
+              borderRadius: "50%",
+              overflow: "hidden",
+              flexShrink: 0,
+              border: `1px solid ${C.line}`,
+              display: "block",
+            }}
+          >
+            <Image src="/yury.webp" alt="Yury Byalik" fill sizes="128px" style={{ objectFit: "cover" }} />
+          </a>
+          <div style={{ flex: "1 1 320px" }}>
+            <span style={eyebrow}>Founder</span>
+            <h2 className="firm-h" style={{ ...H2, fontSize: "clamp(28px, 3vw, 40px)", marginTop: 10 }}>
+              Yury Byalik, <em>J.D.</em>
+            </h2>
+            <p style={{ font: `400 18px/1.6 ${BODY_FONT}`, color: C.muted, margin: "12px 0 20px", maxWidth: 620 }}>
+              CivilCase was founded by Yury Byalik, J.D., who holds a law degree from Widener University
+              School of Law. He writes and speaks on access to justice for people who represent themselves.
+            </p>
+            <a
+              href="/about/yury-byalik"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 8,
+                font: `500 15px/1 ${BODY_FONT}`,
+                color: C.accent,
+                textDecoration: "none",
+              }}
+            >
+              Meet the founder <Arrow color={C.accent} />
+            </a>
           </div>
         </div>
       </section>
