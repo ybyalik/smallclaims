@@ -14,6 +14,17 @@ import { ensureFilingReportForCase } from "../../../../lib/case-research/ensure-
 
 export const runtime = "nodejs";
 
+// A failed database write inside a webhook must NOT be swallowed. If we return
+// HTTP 200 to Stripe after a failed save, Stripe considers the event handled
+// and never retries it, so the payment is silently lost. Throwing here bubbles
+// up to the handler's catch, which returns 500 so Stripe re-delivers the event.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function assertDbWrite(error: any, context: string) {
+  if (error) {
+    throw new Error(`[stripe webhook] ${context} failed: ${error.message ?? error}`);
+  }
+}
+
 export async function POST(req: NextRequest) {
   const sig = req.headers.get("stripe-signature");
   const secret = process.env.STRIPE_WEBHOOK_SECRET;
@@ -34,6 +45,7 @@ export async function POST(req: NextRequest) {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const admin = createServiceRoleClient() as any;
 
+  try {
   switch (event.type) {
     case "checkout.session.completed": {
       const session = event.data.object as Stripe.Checkout.Session;
@@ -42,16 +54,44 @@ export async function POST(req: NextRequest) {
       const productKey = session.metadata?.product_key;
       if (!caseId || !userId) break;
 
-      // Update the pending payment row to succeeded
-      await admin
+      // Update the pending payment row to succeeded. We .select() the affected
+      // rows so we can tell the difference between "saved" and "matched nothing"
+      // (which happens if the checkout-time insert failed): the latter would
+      // otherwise record the payment nowhere.
+      const paymentIntentId =
+        typeof session.payment_intent === "string" ? session.payment_intent : null;
+      const { data: updatedRows, error: updateErr } = await admin
         .from("payments")
         .update({
           status: "succeeded",
           paid_at: new Date().toISOString(),
-          stripe_payment_intent_id:
-            typeof session.payment_intent === "string" ? session.payment_intent : null,
+          stripe_payment_intent_id: paymentIntentId,
         })
-        .eq("stripe_checkout_session_id", session.id);
+        .eq("stripe_checkout_session_id", session.id)
+        .select("id");
+      assertDbWrite(updateErr, "checkout.session.completed payment update");
+
+      if (!updatedRows || updatedRows.length === 0) {
+        // No pending row existed (checkout-time insert must have failed).
+        // Record the payment now from the session metadata so the customer's
+        // purchase is not lost. Fail loud if this insert also errors.
+        console.error(
+          "[stripe webhook] checkout.session.completed matched no payment row; inserting fallback",
+          { session_id: session.id, case_id: caseId, product_key: productKey },
+        );
+        const { error: insertErr } = await admin.from("payments").insert({
+          case_id: caseId,
+          user_id: userId,
+          stripe_checkout_session_id: session.id,
+          stripe_payment_intent_id: paymentIntentId,
+          amount_cents: session.amount_total ?? 0,
+          currency: (session.currency ?? "usd").toUpperCase(),
+          status: "succeeded",
+          paid_at: new Date().toISOString(),
+          product_key: productKey ?? null,
+        });
+        assertDbWrite(insertErr, "checkout.session.completed fallback insert");
+      }
 
       // Audit (every product)
       await logEvent("payment.succeeded", { case_id: caseId, actor_user_id: userId }, {
@@ -149,10 +189,11 @@ If you have questions, reply to this email.
     case "checkout.session.expired":
     case "checkout.session.async_payment_failed": {
       const session = event.data.object as Stripe.Checkout.Session;
-      await admin
+      const { error: failErr } = await admin
         .from("payments")
         .update({ status: "failed" })
         .eq("stripe_checkout_session_id", session.id);
+      assertDbWrite(failErr, "checkout.session failed update");
       break;
     }
 
@@ -170,13 +211,36 @@ If you have questions, reply to this email.
       // paid_at is stamped on BOTH events so the access helper can use a
       // single "is this row claimed?" check. status stays as "pending" until
       // capture (after paralegal review), then flips to "succeeded".
-      await admin
+      const { data: piUpdatedRows, error: piUpdateErr } = await admin
         .from("payments")
         .update({
           status: event.type === "payment_intent.succeeded" ? "succeeded" : "pending",
           paid_at: new Date().toISOString(),
         })
-        .eq("stripe_payment_intent_id", intent.id);
+        .eq("stripe_payment_intent_id", intent.id)
+        .select("id");
+      assertDbWrite(piUpdateErr, "payment_intent payment update");
+
+      if (!piUpdatedRows || piUpdatedRows.length === 0) {
+        // No pending row for this intent (the create-time insert must have
+        // failed). Record it now from the intent metadata so the purchase is
+        // not lost.
+        console.error(
+          "[stripe webhook] payment_intent matched no payment row; inserting fallback",
+          { intent_id: intent.id, case_id: caseId, product_key: productKey },
+        );
+        const { error: piInsertErr } = await admin.from("payments").insert({
+          case_id: caseId,
+          user_id: intent.metadata?.user_id ?? null,
+          stripe_payment_intent_id: intent.id,
+          amount_cents: intent.amount ?? 0,
+          currency: (intent.currency ?? "usd").toUpperCase(),
+          status: event.type === "payment_intent.succeeded" ? "succeeded" : "pending",
+          paid_at: new Date().toISOString(),
+          product_key: productKey ?? null,
+        });
+        assertDbWrite(piInsertErr, "payment_intent fallback insert");
+      }
 
       // Filing Guide and Collection Plan are pure-access unlocks (no mail
       // dispatch). Everything else (demand-letter products) gets the
@@ -229,11 +293,22 @@ If you have questions, reply to this email.
 
     case "charge.refunded": {
       const charge = event.data.object as Stripe.Charge;
-      if (typeof charge.payment_intent === "string") {
-        await admin
+      // Stripe fires charge.refunded for PARTIAL refunds too. Only revoke the
+      // customer's access when the charge is fully refunded, otherwise a small
+      // partial refund (e.g. refunding one add-on) would strip access to
+      // everything they paid for. `charge.refunded` is true only when the full
+      // amount is back; we also compare amounts as a belt-and-braces check.
+      const fullyRefunded =
+        charge.refunded === true ||
+        (typeof charge.amount === "number" &&
+          typeof charge.amount_refunded === "number" &&
+          charge.amount_refunded >= charge.amount);
+      if (typeof charge.payment_intent === "string" && fullyRefunded) {
+        const { error: refundErr } = await admin
           .from("payments")
           .update({ status: "refunded", refunded_at: new Date().toISOString() })
           .eq("stripe_payment_intent_id", charge.payment_intent);
+        assertDbWrite(refundErr, "charge.refunded update");
       }
       break;
     }
@@ -241,6 +316,12 @@ If you have questions, reply to this email.
     default:
       // Ignore unsubscribed events
       break;
+  }
+  } catch (err) {
+    // A DB write (or other critical step) failed. Return 500 so Stripe retries
+    // the event later instead of dropping the payment on the floor.
+    console.error("[stripe webhook] handler error, asking Stripe to retry", err);
+    return NextResponse.json({ error: "handler_error" }, { status: 500 });
   }
 
   return NextResponse.json({ received: true });

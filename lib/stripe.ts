@@ -69,7 +69,34 @@ export async function findOrCreatePaymentIntent(args: {
     } catch (err) {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const code = (err as any)?.code;
-      console.warn("[findOrCreatePaymentIntent] update failed, creating new", code);
+      console.warn("[findOrCreatePaymentIntent] update failed", code);
+      // The update can fail because the customer has ALREADY paid or
+      // authorized this intent — Stripe rejects amount changes on intents in
+      // succeeded / requires_capture / processing. In that case the local row
+      // points at a REAL charge and must never be deleted, or the customer
+      // pays and we lose all record of it. Re-check the true intent status and
+      // reuse it untouched so the webhook / reconcile can stamp paid_at.
+      try {
+        const current = await stripe.paymentIntents.retrieve(
+          existing.stripe_payment_intent_id,
+        );
+        if (
+          current.status === "succeeded" ||
+          current.status === "requires_capture" ||
+          current.status === "processing"
+        ) {
+          return { intent: current, reused: true };
+        }
+      } catch (retrieveErr) {
+        // Intent no longer retrievable (e.g. deleted in a test/live mode
+        // switch). Fall through to create a fresh one and drop the stale row.
+        console.warn(
+          "[findOrCreatePaymentIntent] retrieve failed after update error",
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          (retrieveErr as any)?.code,
+        );
+      }
+      // The intent is genuinely unusable AND unpaid — safe to replace the row.
       await args.admin.from("payments").delete().eq("id", existing.id);
     }
   }

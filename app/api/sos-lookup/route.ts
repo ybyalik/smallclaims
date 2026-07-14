@@ -39,11 +39,17 @@ export async function POST(req: NextRequest) {
   }
   const state = body.state && /^[A-Z]{2}$/i.test(body.state) ? body.state.toUpperCase() : undefined;
 
-  const result = await searchEntities({
-    name: body.name,
-    state,
-    limit: body.limit,
-  });
-
-  return NextResponse.json(result);
+  try {
+    const result = await searchEntities({
+      name: body.name,
+      state,
+      limit: body.limit,
+    });
+    return NextResponse.json(result);
+  } catch (e) {
+    // Business lookup is a convenience, never a hard dependency. Degrade to an
+    // empty result rather than surfacing a 500 to the customer.
+    console.error("[sos-lookup] searchEntities failed", e);
+    return NextResponse.json({ matches: [], is_authoritative: false, provider: null });
+  }
 }

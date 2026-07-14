@@ -207,6 +207,33 @@ export default function ReviewStep({
   const [caseIssues, setCaseIssues] = useState<CaseValidationIssue[]>([]);
   const { errors, showErrors, clear, setErrors } = useFormErrors();
 
+  // Preserve the signature + attestation across the signup redirect. An
+  // anonymous visitor who signs and then gets bounced to /signup would
+  // otherwise return to an empty form and have to sign again.
+  const SIG_DRAFT_KEY = `cc_sig_draft_${caseId}`;
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    // Never override a signature the server already has.
+    if (existingSignatureTypedName || existingSignatureImage) return;
+    try {
+      const raw = window.localStorage.getItem(SIG_DRAFT_KEY);
+      if (!raw) return;
+      const d = JSON.parse(raw) as {
+        typedName?: string;
+        drawnSig?: string | null;
+        truth?: boolean;
+        sigMode?: SigMode;
+      };
+      if (d.sigMode) setSigMode(d.sigMode);
+      if (typeof d.typedName === "string") setTypedName(d.typedName);
+      if (d.drawnSig) setDrawnSig(d.drawnSig);
+      if (typeof d.truth === "boolean") setTruth(d.truth);
+    } catch {
+      /* ignore a malformed draft */
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   // Setup canvas for drawing
   useEffect(() => {
     if (sigMode !== "draw") return;
@@ -283,6 +310,15 @@ export default function ReviewStep({
     }
     clear();
     if (!isAuthenticated) {
+      // Stash the signature so it survives the round trip through /signup.
+      try {
+        window.localStorage.setItem(
+          SIG_DRAFT_KEY,
+          JSON.stringify({ typedName, drawnSig, truth, sigMode }),
+        );
+      } catch {
+        /* ignore storage errors */
+      }
       // Send anon users to signup with a return to this step.
       router.push(
         `/signup?next=${encodeURIComponent(`/case/${caseId}/build/review`)}`,
@@ -323,6 +359,11 @@ export default function ReviewStep({
           return;
         }
         throw new Error(data.error || "Could not save signature");
+      }
+      try {
+        window.localStorage.removeItem(SIG_DRAFT_KEY);
+      } catch {
+        /* ignore */
       }
       router.push(data.redirectUrl || `/case/${caseId}`);
     } catch (e) {

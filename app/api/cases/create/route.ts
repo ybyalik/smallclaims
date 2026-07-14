@@ -1,6 +1,26 @@
-import { NextResponse } from "next/server";
+import { NextResponse, type NextRequest } from "next/server";
 import { createClient } from "../../../../lib/supabase/server";
 import { createServiceRoleClient } from "../../../../lib/supabase/service-role";
+
+// Best-effort per-instance rate limit. This endpoint mints an anonymous
+// account + a case row with no prior auth, so an unthrottled script could spam
+// junk users/cases. Per serverless instance and reset on cold start, so not a
+// hard guarantee, but it blunts a single fast abuser at zero infra cost.
+const RATE_WINDOW_MS = 60_000;
+const RATE_MAX = 10;
+const rateHits = new Map<string, number[]>();
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const recent = (rateHits.get(ip) ?? []).filter((t) => now - t < RATE_WINDOW_MS);
+  recent.push(now);
+  rateHits.set(ip, recent);
+  if (rateHits.size > 5000) {
+    for (const [k, v] of rateHits) {
+      if (v.every((t) => now - t > RATE_WINDOW_MS)) rateHits.delete(k);
+    }
+  }
+  return recent.length > RATE_MAX;
+}
 
 /**
  * POST /api/cases/create
@@ -21,7 +41,18 @@ import { createServiceRoleClient } from "../../../../lib/supabase/service-role";
  * If anonymous sign-in fails (provider disabled, etc.) we fall back to the
  * old "log in first" behaviour by returning auth_required.
  */
-export async function POST() {
+export async function POST(req: NextRequest) {
+  const ip =
+    (req.headers.get("x-forwarded-for") || "").split(",")[0].trim() ||
+    req.headers.get("x-real-ip") ||
+    "unknown";
+  if (isRateLimited(ip)) {
+    return NextResponse.json(
+      { error: "rate_limited", message: "Please slow down and try again in a moment." },
+      { status: 429 },
+    );
+  }
+
   const supabase = createClient();
   let {
     data: { user },

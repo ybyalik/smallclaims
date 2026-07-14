@@ -20,6 +20,7 @@ import { appendDisclaimerMd, appendDisclaimerHtml } from "../cases/disclaimer";
 import { notifyAdminOfResearchFailure } from "../case-research/notify-admin-failure";
 import { notifyCustomerProductReady } from "../notifications/notify-product-ready";
 import type { CollectionPlanIntake, CountyPack, CollectionSequence } from "./types";
+import { buildCollectionPlanIntake } from "./intake";
 
 interface EnsureResult {
   status:
@@ -318,15 +319,26 @@ export async function ensureCollectionPlanForCase(
   }
   const c = caseRow as CaseRow;
 
-  const intakeFromAnswers = ((c.intake_answers ?? {}) as Record<string, unknown>)
-    .collection_plan_intake as CollectionPlanIntake | undefined;
-  if (!intakeFromAnswers) {
+  // Build the intake from the customer's LIVE collection answers, not the
+  // snapshot captured at page load (which is taken before they answer the
+  // three questions and would otherwise treat every answer as "no"). The
+  // judgment amount comes from the confirmed snapshot when present, else the
+  // case amount.
+  const answers = (c.intake_answers ?? {}) as Record<string, unknown>;
+  const snapshot = answers.collection_plan_intake as CollectionPlanIntake | undefined;
+  const judgmentCents =
+    (typeof snapshot?.judgment_amount_cents === "number" &&
+    snapshot.judgment_amount_cents > 0
+      ? snapshot.judgment_amount_cents
+      : c.amount_cents) ?? 0;
+  if (judgmentCents <= 0) {
     return {
       status: "skipped",
       planId: null,
-      reason: "intake missing (collection_plan_intake not on case)",
+      reason: "intake missing (no judgment amount)",
     };
   }
+  const intakeFromAnswers = buildCollectionPlanIntake(answers, judgmentCents);
 
   const county = pickCounty(c);
   if (!county) {

@@ -78,11 +78,25 @@ export function computeSolDeadlineFromPack(
   if (!match || match.years == null) return null;
 
   const expiry = new Date(incidentDate);
-  expiry.setFullYear(expiry.getFullYear() + match.years);
+  expiry.setUTCFullYear(expiry.getUTCFullYear() + match.years);
 
+  // Compare whole calendar days, not instants. A limitations period runs
+  // THROUGH the end of the anniversary day, so filing is still valid all of
+  // that day. The incident date parses to midnight UTC; comparing it against
+  // an instant (Date.now()) made daysRemaining go negative at 00:00 UTC on the
+  // anniversary — i.e. it showed "SOL may have run" during the entire final
+  // valid day (and even the prior evening in US time zones). Flooring "now" to
+  // its own UTC midnight makes the anniversary day read as 0 days remaining
+  // ("today") and only flips to expired once that day has fully passed.
   const msPerDay = 24 * 60 * 60 * 1000;
-  const daysRemaining = Math.floor(
-    (expiry.getTime() - Date.now()) / msPerDay,
+  const now = new Date();
+  const todayUtcMidnight = Date.UTC(
+    now.getUTCFullYear(),
+    now.getUTCMonth(),
+    now.getUTCDate(),
+  );
+  const daysRemaining = Math.round(
+    (expiry.getTime() - todayUtcMidnight) / msPerDay,
   );
   const urgency: SolUrgency =
     daysRemaining < 0

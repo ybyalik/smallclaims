@@ -40,9 +40,10 @@ export async function POST(_req: NextRequest, ctx: { params: { id: string } }) {
     return NextResponse.json({ error: guard.error }, { status: 403 });
   }
   try {
-    // Admin override: this endpoint bypasses the approval gate so we can
-    // exercise the PostGrid path on cases the customer hasn't approved
-    // yet (which is most of them during testing).
+    // Admin override: skips the approval gate so we can exercise the PostGrid
+    // path without a customer approval. The worker only honors this on
+    // TEST-scenario cases; on a real customer case the approval + payment gates
+    // still apply (it will return not_approved / not_paid rather than mailing).
     const result = await mailDemandLetter(ctx.params.id, { adminOverride: true });
     return NextResponse.json(result);
   } catch (e) {

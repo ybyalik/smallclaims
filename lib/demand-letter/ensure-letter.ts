@@ -9,6 +9,7 @@ import { generateDemandLetter } from "./generate";
 import { getCaseClaimType } from "../cases/classify-claim-type";
 import { createNotification } from "../notifications";
 import { notifyCustomerProductReady } from "../notifications/notify-product-ready";
+import { notifyAdminOfResearchFailure } from "../case-research/notify-admin-failure";
 import type { Case, DisputeType, PostalAddress } from "../supabase/types";
 import type { DemandLetterIntake } from "./types";
 
@@ -16,6 +17,19 @@ interface EnsureResult {
   status: "created" | "existing" | "skipped";
   letterId: string | null;
   reason?: string;
+}
+
+// The letter page calls ensureDemandLetter on every load, so a persistent
+// generation failure would otherwise alert the team on each refresh. Throttle
+// to at most one alert per case per hour (best-effort, per serverless instance).
+const ALERT_THROTTLE_MS = 60 * 60 * 1000;
+const lastGenFailureAlert = new Map<string, number>();
+function shouldAlertGenFailure(caseId: string): boolean {
+  const now = Date.now();
+  const last = lastGenFailureAlert.get(caseId) ?? 0;
+  if (now - last < ALERT_THROTTLE_MS) return false;
+  lastGenFailureAlert.set(caseId, now);
+  return true;
 }
 
 function caseToIntake(c: Case): { intake: DemandLetterIntake | null; missing: string[] } {
@@ -131,6 +145,17 @@ export async function ensureDemandLetterForCase(
     draft = await generateDemandLetter(intake);
   } catch (err) {
     console.error(`[ensureDemandLetter] case=${caseId} LLM call failed`, err);
+    // Alert the team. Otherwise a paid customer whose letter keeps failing to
+    // generate just sees "hold tight" on every page load with nobody notified,
+    // until they email support. Throttled + never throws.
+    if (shouldAlertGenFailure(caseId)) {
+      await notifyAdminOfResearchFailure({
+        product: "Demand Letter",
+        caseId,
+        stage: "ensure_letter:generate",
+        error: err,
+      });
+    }
     return { status: "skipped", letterId: null, reason: "llm_call_failed" };
   }
 

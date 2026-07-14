@@ -22,6 +22,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { createServiceRoleClient } from "../../../../lib/supabase/service-role";
 import { enqueueCaseResearch } from "../../../../lib/demand-letter/mark-paid";
 import { notifyAdminOfResearchFailure } from "../../../../lib/case-research/notify-admin-failure";
+import { ensureFilingReportForCase } from "../../../../lib/case-research/ensure-filing-report";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -50,6 +51,7 @@ export async function GET(req: NextRequest) {
 
   const filing: { jobId: string; caseId: string; action: string }[] = [];
   const collection: { planId: string; caseId: string; status: string }[] = [];
+  const stuckReports: { jobId: string; caseId: string; action: string }[] = [];
 
   // ---- Filing Kit: stuck research jobs ----------------------------------
   try {
@@ -137,10 +139,75 @@ export async function GET(req: NextRequest) {
     console.error("[sweep] collection-plan sweep failed", e);
   }
 
+  // ---- Filing Kit: customer reports stuck in "generating" ---------------
+  // The finalize step claims the report row (pending -> generating) and only
+  // releases it on a thrown error. If the serverless function is frozen mid-run
+  // (multi-minute merge + writer LLM calls), the lock is never released and the
+  // customer is stranded on a permanent "Building your Filing Kit" screen with
+  // no email and no alert. Detect those, reset the lock, and re-run.
+  try {
+    const { data: generatingReports } = await db
+      .from("case_research_reports")
+      .select("job_id, case_id, customer_report_status")
+      .eq("customer_report_status", "generating")
+      .limit(50);
+
+    let healed = 0;
+    for (const rep of (generatingReports ?? []) as Array<{
+      job_id: string;
+      case_id: string;
+    }>) {
+      // The report row has no updated_at; use the underlying job's updated_at
+      // as the staleness signal. A live finalize belongs to a job that just
+      // succeeded, so a job untouched past the stale window means the run died.
+      const { data: job } = await db
+        .from("case_research_jobs")
+        .select("updated_at")
+        .eq("id", rep.job_id)
+        .maybeSingle();
+      const jobUpdated = job?.updated_at ? new Date(job.updated_at).getTime() : 0;
+      if (now - jobUpdated < FILING_STALE_MS) continue; // plausibly still running
+
+      // Release the lock so finalize can re-claim it.
+      await db
+        .from("case_research_reports")
+        .update({ customer_report_status: "pending" })
+        .eq("job_id", rep.job_id)
+        .eq("customer_report_status", "generating");
+
+      let action = "reset_to_pending";
+      // Heal a bounded number inline (each finalize is a couple of minutes; the
+      // rest recover on the next sweep or the customer's next page load).
+      if (healed < 3) {
+        try {
+          await ensureFilingReportForCase(rep.case_id);
+          action = "regenerated";
+          healed++;
+        } catch (e) {
+          console.error("[sweep] stuck-report regenerate failed", rep.case_id, e);
+        }
+      }
+      await notifyAdminOfResearchFailure({
+        product: "Filing Kit report",
+        caseId: rep.case_id,
+        jobId: rep.job_id,
+        stage: "sweep:stuck_generating",
+        error: new Error(
+          `Filing Kit customer report was stuck in "generating" (finalize interrupted). Action: ${action}.`,
+        ),
+      });
+      stuckReports.push({ jobId: rep.job_id, caseId: rep.case_id, action });
+    }
+  } catch (e) {
+    console.error("[sweep] stuck-report sweep failed", e);
+  }
+
   return NextResponse.json({
     filing_swept: filing.length,
     collection_swept: collection.length,
+    reports_swept: stuckReports.length,
     filing,
     collection,
+    stuckReports,
   });
 }

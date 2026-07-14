@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useTransition } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { User, Building2, CircleSlash } from "lucide-react";
 import { createClient } from "../../../../lib/supabase/client";
@@ -41,10 +41,16 @@ export default function SettingsForm({
   const [county, setCounty] = useState(initialCounty);
   const [savedAt, setSavedAt] = useState<Date | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [isPending, startTransition] = useTransition();
+  // Real in-flight guard. useTransition's isPending does NOT wait for an async
+  // action's promise in React 18, so it can't prevent a double-submit while the
+  // save request is still in flight — this explicit flag does.
+  const [saving, setSaving] = useState(false);
 
   async function save() {
+    if (saving) return;
+    setSaving(true);
     setError(null);
+    try {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const supabase = createClient() as any;
     const {
@@ -75,19 +81,23 @@ export default function SettingsForm({
       })
       .eq("user_id", user.id);
     if (dbErr) {
-      setError(dbErr.message);
+      console.error("[settings] profile update failed", dbErr);
+      setError("We couldn't save your changes just now. Please try again.");
       return;
     }
     await supabase.auth.updateUser({ data: { full_name: fullName.trim() } });
     setSavedAt(new Date());
     router.refresh();
+    } finally {
+      setSaving(false);
+    }
   }
 
   return (
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        startTransition(save);
+        save();
       }}
       className="app-settings-form"
     >
@@ -256,8 +266,8 @@ export default function SettingsForm({
 
       {error && <p className="dl-error-inline">{error}</p>}
       <div className="app-settings-actions">
-        <button type="submit" className="btn btn-dark" disabled={isPending}>
-          {isPending ? "Saving..." : "Save Changes"}
+        <button type="submit" className="btn btn-dark" disabled={saving}>
+          {saving ? "Saving..." : "Save Changes"}
         </button>
         {savedAt && (
           <span className="dl-saved-at">Saved at {savedAt.toLocaleTimeString()}</span>

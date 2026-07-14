@@ -114,6 +114,20 @@ export async function GET(_req: NextRequest, ctx: { params: { id: string } }) {
     });
   }
 
+  // Line-item prices are reconstructed from the current catalog, but the total
+  // is what the customer actually paid. If the catalog price changed since the
+  // purchase, the itemized lines would no longer add up to the real total and
+  // the receipt would be wrong/misleading. In that case collapse to a single
+  // line at the amount actually charged so the receipt is internally consistent.
+  const itemsSum = lineItems.reduce((s, it) => s + it.amountCents, 0);
+  if (itemsSum !== payment.amount_cents) {
+    lineItems.length = 0;
+    lineItems.push({
+      name: labelFor(payment.product_key) || "CivilCase service",
+      amountCents: payment.amount_cents,
+    });
+  }
+
   // Short, user-friendly receipt number (last 8 chars of payment uuid).
   const receiptNumber = `CC-${payment.id.replace(/-/g, "").slice(-8).toUpperCase()}`;
 

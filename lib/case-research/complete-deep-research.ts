@@ -25,7 +25,12 @@ import {
 import type { Classification, IntakeSnapshot } from "./agents";
 import { formatDisputeTypePhrase } from "../cases/dispute-type-label";
 import { getCaseClaimType } from "../cases/classify-claim-type";
+import { notifyAdminOfResearchFailure } from "./notify-admin-failure";
 import crypto from "node:crypto";
+
+// Stop re-running (and re-billing) the structured extraction after this many
+// failed attempts; alert the team instead of looping forever.
+const MAX_EXTRACTION_ATTEMPTS = 5;
 
 interface CompleteResult {
   outcome:
@@ -222,7 +227,7 @@ export async function runCombinedExtractionIfReady(
 ): Promise<{ ran: boolean; error?: string }> {
   const { data: job } = await admin
     .from("case_research_jobs")
-    .select("id, case_id")
+    .select("id, case_id, progress")
     .eq("id", jobId)
     .maybeSingle();
   if (!job) return { ran: false };
@@ -236,6 +241,29 @@ export async function runCombinedExtractionIfReady(
 
   const stateFindings = (row?.state_findings_md as string | null) ?? "";
   if (!stateFindings) return { ran: false };
+
+  // Cap retries. Without this, a persistently-failing extraction (bad input,
+  // model/schema error) is re-selected by the poll cron every few minutes and
+  // billed forever. After MAX_EXTRACTION_ATTEMPTS we stop calling the model,
+  // mark the job as given-up, and alert the team once.
+  const deepProgress = ((job.progress ?? {}) as Record<string, Record<string, unknown>>)
+    .deep ?? {};
+  const attempts = Number(deepProgress.extraction_attempts ?? 0);
+  const gaveUp = deepProgress.extraction_gave_up === true;
+  if (gaveUp) return { ran: false, error: "extraction_gave_up" };
+  if (attempts >= MAX_EXTRACTION_ATTEMPTS) {
+    await patchDeepTopLevel(admin, job.id, { extraction_gave_up: true });
+    await notifyAdminOfResearchFailure({
+      product: "Filing Kit research",
+      caseId: job.case_id,
+      jobId: job.id,
+      stage: "deep_extraction:max_attempts",
+      error: new Error(
+        `Deep-research structured extraction failed ${attempts} times; stopped auto-retrying. Regenerate manually.`,
+      ),
+    });
+    return { ran: false, error: "extraction_max_attempts" };
+  }
 
   try {
     const intake = await loadIntakeForExtraction(admin, job.case_id);
@@ -263,6 +291,7 @@ export async function runCombinedExtractionIfReady(
       phase: "done",
       structured_extracted: false,
       extraction_error: msg,
+      extraction_attempts: attempts + 1,
     });
     return { ran: false, error: msg };
   }

@@ -13,19 +13,51 @@
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { writeFileSync, mkdirSync } from "node:fs";
+import { writeFileSync, mkdirSync, existsSync, readFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { createClient } from "@supabase/supabase-js";
 
 const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
-if (!url || !key) {
-  console.warn("[snapshot] SUPABASE env vars not set; skipping snapshot");
-  process.exit(0);
+const outPath = resolve(__dirname, "../lib/state-data/snapshot.json");
+
+// How many rows already exist in a snapshot on disk (0 if none / unreadable).
+function existingSnapshotCount(): number {
+  try {
+    if (!existsSync(outPath)) return 0;
+    const parsed = JSON.parse(readFileSync(outPath, "utf8"));
+    return Array.isArray(parsed) ? parsed.length : 0;
+  } catch {
+    return 0;
+  }
 }
 
-const supabase: any = createClient(url, key, {
+// The issue/state pages render legal data (filing deadlines, damage caps) from
+// this snapshot. Shipping ~80 pages with EMPTY legal data is worse than a
+// blocked deploy, so when we can't produce good data and have no usable
+// snapshot to fall back on, fail the build loudly instead of silently
+// publishing broken pages.
+function bailOrKeepStale(reason: string): never {
+  const existing = existingSnapshotCount();
+  if (existing > 0) {
+    console.warn(
+      `[snapshot] ${reason} — keeping existing snapshot of ${existing} rows (stale).`,
+    );
+    process.exit(0);
+  }
+  console.error(
+    `[snapshot] ${reason} — and no existing snapshot to fall back on. ` +
+      `Failing the build rather than shipping legal pages with missing data.`,
+  );
+  process.exit(1);
+}
+
+if (!url || !key) {
+  bailOrKeepStale("SUPABASE env vars not set");
+}
+
+const supabase: any = createClient(url as string, key as string, {
   auth: { persistSession: false, autoRefreshToken: false },
 });
 
@@ -37,11 +69,15 @@ async function run() {
 
   if (error) {
     console.error("[snapshot] Supabase error:", error);
-    process.exit(0); // don't fail the build, just leave the snapshot stale
+    bailOrKeepStale("Supabase query failed");
   }
 
   const rows = Array.isArray(data) ? data : [];
-  const outPath = resolve(__dirname, "../lib/state-data/snapshot.json");
+  if (rows.length === 0) {
+    // Never overwrite a good snapshot with an empty one, and never ship empty.
+    bailOrKeepStale("query returned zero state rows");
+  }
+
   mkdirSync(dirname(outPath), { recursive: true });
   writeFileSync(outPath, JSON.stringify(rows, null, 0));
   console.log(
@@ -51,5 +87,5 @@ async function run() {
 
 run().catch((err) => {
   console.error("[snapshot] failed:", err);
-  process.exit(0); // never block the build
+  bailOrKeepStale("snapshot script threw");
 });

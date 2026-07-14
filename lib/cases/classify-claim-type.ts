@@ -207,8 +207,19 @@ export async function getCaseClaimType(
     return null;
   }
 
+  // Re-read intake_answers RIGHT BEFORE writing. The `answers` we read above is
+  // now seconds stale (the LLM call is slow) and other writers touch this same
+  // JSON blob in that window (wizard autosave, the response route, close/reopen).
+  // Merging into the freshly-read copy shrinks the clobber window from seconds
+  // to milliseconds so we don't silently revert the customer's other edits.
+  const { data: freshRow } = await admin
+    .from("cases")
+    .select("intake_answers")
+    .eq("id", caseId)
+    .maybeSingle();
+  const freshAnswers = (freshRow?.intake_answers ?? answers) as Record<string, unknown>;
   const merged = {
-    ...(answers as Record<string, unknown>),
+    ...freshAnswers,
     case_classification: result,
   };
   const { error: updateErr } = await admin

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "../../lib/supabase/client";
+import { friendlyAuthError } from "../../lib/auth/friendly-auth-error";
 
 interface Props {
   next: string;
@@ -69,7 +70,7 @@ export default function FinishSignupForm({ next, suggestedEmail }: Props) {
           "That email is already used by another account. Sign in instead to attach this case to it."
         );
       } else {
-        setError(updateErr.message);
+        setError(friendlyAuthError(updateErr.message));
       }
       return;
     }

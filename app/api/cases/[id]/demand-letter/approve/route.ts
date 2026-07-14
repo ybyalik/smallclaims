@@ -9,9 +9,17 @@ import { createClient } from "../../../../../../lib/supabase/server";
 import { createServiceRoleClient } from "../../../../../../lib/supabase/service-role";
 import { inngest } from "../../../../../../lib/inngest/client";
 import { resolveActionRequired } from "../../../../../../lib/notifications";
+import { paidProductsForCase } from "../../../../../../lib/payments/access";
+import type { ProductKey } from "../../../../../../lib/stripe";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
+
+const DEMAND_LETTER_TIERS: readonly ProductKey[] = [
+  "tier_send_letter",
+  "tier_full_pressure",
+  "demand_letter_download",
+];
 
 export async function POST(_req: NextRequest, ctx: { params: { id: string } }) {
   const supabase = createClient();
@@ -27,11 +35,24 @@ export async function POST(_req: NextRequest, ctx: { params: { id: string } }) {
 
   const { data: caseRow } = await admin
     .from("cases")
-    .select("id, owner_user_id")
+    .select("id, owner_user_id, intake_answers")
     .eq("id", ctx.params.id)
     .maybeSingle();
   if (!caseRow || caseRow.owner_user_id !== user.id) {
     return NextResponse.json({ error: "not_found" }, { status: 404 });
+  }
+
+  // Approving a letter queues a real, billed certified-mail dispatch, so the
+  // customer must have paid for a demand-letter tier first. (Test-scenario
+  // cases are exempt.) The mail worker re-checks this too, but rejecting here
+  // avoids stamping an unpaid letter "approved" and gives a clear response.
+  const isTestCase =
+    (caseRow.intake_answers as Record<string, unknown> | null)?._test_scenario === true;
+  if (!isTestCase) {
+    const paid = await paidProductsForCase(ctx.params.id, DEMAND_LETTER_TIERS);
+    if (paid.size === 0) {
+      return NextResponse.json({ error: "payment_required" }, { status: 402 });
+    }
   }
 
   const { data: letter } = await admin

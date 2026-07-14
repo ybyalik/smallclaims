@@ -28,9 +28,12 @@ export async function GET(req: NextRequest) {
   const { error } = await supabase.auth.exchangeCodeForSession(code);
 
   if (error) {
-    return NextResponse.redirect(
-      new URL(`/login?error=${encodeURIComponent(error.message)}`, req.url)
-    );
+    // Don't leak the raw Supabase exchange error (e.g. "both auth code and code
+    // verifier should be non-empty") onto the login page. Pass a stable code
+    // the login form turns into a friendly message. This commonly happens when
+    // a sign-in link is opened on a different device than it was requested on.
+    console.error("[auth/callback] exchange failed", error.message);
+    return NextResponse.redirect(new URL("/login?error=signin_link_invalid", req.url));
   }
 
   // Run the claim logic. Failures here should never block the redirect —

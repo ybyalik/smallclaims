@@ -45,6 +45,10 @@ export interface CreateLetterInput {
   // Always certified return-receipt for our use case. Surfaced as a knob
   // so test scripts can override.
   extraService?: "certified" | "certified_return_receipt";
+  // Stable key so a retried dispatch (timeout / crash between the API call
+  // and saving the result) does not create a SECOND physical letter. PostGrid
+  // returns the original letter for a repeated Idempotency-Key.
+  idempotencyKey?: string;
 }
 
 export interface PostGridLetter {
@@ -137,9 +141,14 @@ export async function createCertifiedLetter(
     }
   }
 
+  const headers: Record<string, string> = { "x-api-key": apiKey };
+  if (input.idempotencyKey) {
+    headers["Idempotency-Key"] = input.idempotencyKey;
+  }
+
   const resp = await fetch(`${BASE_URL}/letters`, {
     method: "POST",
-    headers: { "x-api-key": apiKey },
+    headers,
     body: form,
   });
 

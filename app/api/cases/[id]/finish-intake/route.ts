@@ -134,7 +134,10 @@ export async function POST(req: NextRequest, ctx: { params: { id: string } }) {
       .eq("id", ctx.params.id);
     if (updateErr) {
       console.error("[finish-intake] db update failed", updateErr);
-      return NextResponse.json({ error: `Save failed: ${updateErr.message}` }, { status: 500 });
+      return NextResponse.json(
+        { error: "We couldn't save your case just now. Please try again in a moment." },
+        { status: 500 },
+      );
     }
   }
 

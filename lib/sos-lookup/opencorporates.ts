@@ -77,7 +77,15 @@ export async function searchOpenCorporates(
     return { matches: [], is_authoritative: false, provider: "opencorporates" };
   }
 
-  const body = (await resp.json()) as OcSearchResponse;
+  let body: OcSearchResponse;
+  try {
+    // Guard against a 200 response that isn't actually JSON (error page / WAF
+    // challenge) so a parse failure degrades to empty instead of a raw 500.
+    body = (await resp.json()) as OcSearchResponse;
+  } catch (e) {
+    console.error("[sos-lookup/opencorporates] non-JSON response:", e);
+    return { matches: [], is_authoritative: false, provider: "opencorporates" };
+  }
   const matches: EntityMatch[] = (body.results?.companies ?? []).map(({ company: c }) => ({
     provider_id: `${c.jurisdiction_code}:${c.company_number}`,
     provider: "opencorporates",

@@ -67,22 +67,41 @@ export async function POST(
   const existingAnswers = (caseRow.intake_answers as Record<string, unknown> | null) ?? {};
   const update: Record<string, unknown> = {};
 
+  // A draft hasn't cleared the finish-intake gate (all required fields +
+  // signature). Close/reopen must not be a back door that flips a half-finished
+  // draft to "active" and skips that validation. Drafts must finish intake first.
+  if (caseRow.status === "draft") {
+    return NextResponse.json(
+      { error: "invalid_state", message: "Finish your case before closing or reopening it." },
+      { status: 409 },
+    );
+  }
+
   if (body.action === "close") {
+    if (caseRow.status === "closed") {
+      return NextResponse.json({ ok: true, status: "closed" });
+    }
     update.status = "closed";
     const reason = typeof body.reason === "string" ? body.reason.trim().slice(0, 500) : "";
     update.intake_answers = {
       ...existingAnswers,
+      // Remember what to restore on reopen so a settled case doesn't silently
+      // become "active" again.
+      status_before_close: caseRow.status,
       closed_at: new Date().toISOString(),
       closed_reason: reason || null,
       closed_by: isAdmin ? "admin" : "owner",
     };
   } else {
-    // reopen → back to active, clear the close metadata
-    update.status = "active";
+    // reopen → restore the status the case had before it was closed (settled or
+    // active), defaulting to active. Clear the close metadata.
+    const before = existingAnswers.status_before_close;
+    update.status = before === "settled" ? "settled" : "active";
     const next = { ...existingAnswers };
     delete next.closed_at;
     delete next.closed_reason;
     delete next.closed_by;
+    delete next.status_before_close;
     update.intake_answers = next;
   }
 

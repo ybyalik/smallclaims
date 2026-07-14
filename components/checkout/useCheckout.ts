@@ -84,19 +84,38 @@ export function useCheckout({
   const [answers, setAnswers] = useState<Record<string, string>>(initialAnswers);
   const [savingAnswer, setSavingAnswer] = useState(false);
 
+  const [answerError, setAnswerError] = useState<string | null>(null);
+
   async function setAnswer(key: string, value: string) {
+    const prevAnswers = answers;
     setAnswers((prev) => ({ ...prev, [key]: value }));
     setSavingAnswer(true);
+    setAnswerError(null);
     try {
-      await fetch(`/api/demand-letters/${caseId}`, {
+      const res = await fetch(`/api/demand-letters/${caseId}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           intake_answers: { [key]: value },
         }),
       });
+      // A non-OK response means the answer never reached the database. Roll
+      // back the local selection and surface a message so the customer does
+      // not pay believing an unsaved choice was recorded (which would make the
+      // document generate from defaults, e.g. silently including the small
+      // claims threat).
+      if (!res.ok) {
+        setAnswers(prevAnswers);
+        setAnswerError(
+          "We couldn't save that answer. Please check your connection and try again.",
+        );
+      }
     } catch (e) {
       console.error("[useCheckout] could not save answer", e);
+      setAnswers(prevAnswers);
+      setAnswerError(
+        "We couldn't save that answer. Please check your connection and try again.",
+      );
     } finally {
       setSavingAnswer(false);
     }
@@ -126,10 +145,24 @@ export function useCheckout({
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(body),
         });
+        // Session died (signed out elsewhere, cookies cleared). Send the
+        // customer to log in and come back, rather than showing a raw code.
+        if (res.status === 401) {
+          if (!cancelled) {
+            router.push(
+              `/login?next=${encodeURIComponent(window.location.pathname)}`,
+            );
+          }
+          return;
+        }
         const data = (await res.json()) as { clientSecret?: string; error?: string };
         if (cancelled) return;
         if (!res.ok || !data.clientSecret) {
-          throw new Error(data.error || "Could not start checkout.");
+          // Never surface raw server codes (e.g. "invalid_judgment_amount") to
+          // the customer. Show a friendly, actionable message instead.
+          throw new Error(
+            "We couldn't start checkout. Please refresh the page and try again, or contact support if it keeps happening.",
+          );
         }
         setClientSecret(data.clientSecret);
       } catch (e) {
@@ -168,6 +201,7 @@ export function useCheckout({
     answers,
     setAnswer,
     savingAnswer,
+    answerError,
     missingRequiredAnswers,
     questionsReady,
     clientSecret,

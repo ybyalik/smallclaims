@@ -51,7 +51,23 @@ export async function claimAnonymousCases(opts: {
   // Collect candidate source ids.
   const sourceIds = new Set<string>();
   if (candidateAnonUserId && candidateAnonUserId !== destinationUserId) {
-    sourceIds.add(candidateAnonUserId);
+    // The candidate id comes from a client-supplied body/cookie value with no
+    // strong ownership proof, so it must not be trusted blindly — otherwise a
+    // logged-in user who guesses/learns another anonymous visitor's id could
+    // steal their case and delete their account. Guard: if that anon user
+    // stashed a pending-claim email, it MUST match the caller's email. A fresh
+    // same-browser anon has no email yet, which is the legitimate handoff case.
+    const { data: candWrap } = await adminAuth.getUserById(candidateAnonUserId);
+    const candUser = candWrap?.user;
+    if (candUser && candUser.is_anonymous === true) {
+      const pending = candUser.user_metadata?.email_pending_claim;
+      const ownsIt =
+        typeof pending === "string" && pending.trim()
+          ? !!destinationEmail &&
+            pending.toLowerCase() === destinationEmail.toLowerCase()
+          : true; // no pending email → same-browser handoff, allowed
+      if (ownsIt) sourceIds.add(candidateAnonUserId);
+    }
   }
 
   // Email fallback: scan auth users for any anonymous accounts that

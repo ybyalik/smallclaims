@@ -24,10 +24,21 @@ export interface SendEmailOpts {
   replyTo?: string;
 }
 
-export async function sendEmail(opts: SendEmailOpts): Promise<void> {
+export interface SendEmailResult {
+  ok: boolean;
+  error?: string;
+}
+
+// Sends an email and reports whether it actually went out. IMPORTANT: the
+// Resend SDK does NOT throw on API errors (bad key, unverified from-domain,
+// rate limit) — it resolves with `{ error }`. We must inspect that, otherwise
+// a failed send looks like a success. Still never throws, so callers that
+// don't care can ignore the result; callers that must not lose the message
+// (contact/support forms) should check `.ok`.
+export async function sendEmail(opts: SendEmailOpts): Promise<SendEmailResult> {
   try {
     const resend = getResend();
-    await resend.emails.send({
+    const { error } = await resend.emails.send({
       from: FROM_EMAIL,
       to: opts.to,
       subject: opts.subject,
@@ -35,8 +46,14 @@ export async function sendEmail(opts: SendEmailOpts): Promise<void> {
       html: opts.html,
       replyTo: opts.replyTo,
     });
+    if (error) {
+      console.error("[resend] send returned error:", error);
+      return { ok: false, error: error.message ?? String(error) };
+    }
+    return { ok: true };
   } catch (err) {
-    // Email failures shouldn't block business flows, but should be logged.
+    // Network-level or config failure. Log; report failure to the caller.
     console.error("[resend] send failed:", err);
+    return { ok: false, error: err instanceof Error ? err.message : String(err) };
   }
 }

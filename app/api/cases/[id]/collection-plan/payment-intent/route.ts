@@ -6,6 +6,7 @@ import {
   findOrCreatePaymentIntent,
   resolveStripeCustomerId,
 } from "../../../../../../lib/stripe";
+import { buildCollectionPlanIntake } from "../../../../../../lib/collection-plan/intake";
 
 export const runtime = "nodejs";
 
@@ -39,13 +40,6 @@ export async function POST(req: NextRequest, ctx: { params: { id: string } }) {
     }
 
     const intakeAnswers = (caseRow.intake_answers ?? {}) as Record<string, unknown>;
-    const knowsEmployer = intakeAnswers.collection_knows_employer === "yes";
-    const knowsRealProperty = intakeAnswers.collection_knows_real_property === "yes";
-    const knowsBank = intakeAnswers.collection_knows_bank === "yes";
-    const userNotes =
-      typeof intakeAnswers.collection_plan_notes === "string"
-        ? (intakeAnswers.collection_plan_notes as string).trim().slice(0, 600) || null
-        : null;
 
     // Use case.amount_cents as the judgment amount placeholder. Users can
     // later edit this on the report itself if the actual judgment differs.
@@ -57,13 +51,11 @@ export async function POST(req: NextRequest, ctx: { params: { id: string } }) {
       );
     }
 
-    const collectionIntake = {
-      judgment_amount_cents: judgmentCents,
-      knows_employer: knowsEmployer,
-      knows_real_property: knowsRealProperty,
-      knows_bank: knowsBank,
-      notes: userNotes,
-    };
+    // Snapshot the intake for progress display. The generation pipeline
+    // re-derives this from the live answers at generation time, so a snapshot
+    // captured here before the customer answers is not what the plan is built
+    // from (see lib/collection-plan/generate.ts).
+    const collectionIntake = buildCollectionPlanIntake(intakeAnswers, judgmentCents);
 
     await admin
       .from("cases")

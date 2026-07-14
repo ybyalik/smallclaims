@@ -14,12 +14,11 @@
 // here. It's an admin-only manual action via the Regenerate route until the
 // pricing tier that bundles Case Plan ships.
 //
-// Schedule: every 15 minutes via vercel.json.
+// Schedule: every 5 minutes via vercel.json.
 //
-// Authentication: open to any caller. The work is idempotent and doesn't
-// expose data — re-running the cron just hits OpenAI for known polling
-// response IDs. Vercel's cron auth header has been unreliable across
-// versions, so we don't gate on it.
+// Authentication: gated on CRON_SECRET (Vercel Cron sends it as
+// Authorization: Bearer <secret>), matching the other cron routes, so random
+// callers can't drive OpenAI work on our account.
 
 import { NextResponse, type NextRequest } from "next/server";
 import { createServiceRoleClient } from "../../../../lib/supabase/service-role";
@@ -37,7 +36,15 @@ export const dynamic = "force-dynamic";
 
 const PER_RUN_LIMIT = 50;
 
-export async function GET(_req: NextRequest) {
+export async function GET(req: NextRequest) {
+  const expected = process.env.CRON_SECRET;
+  if (!expected) {
+    return NextResponse.json({ error: "CRON_SECRET not set" }, { status: 500 });
+  }
+  if ((req.headers.get("authorization") || "") !== `Bearer ${expected}`) {
+    return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  }
+
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const admin = createServiceRoleClient() as any;
 

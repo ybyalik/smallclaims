@@ -55,7 +55,7 @@ export async function POST(req: NextRequest, ctx: { params: { id: string } }) {
   // a no-op (admin should regenerate first).
   const { data: latest } = await admin
     .from("demand_letters")
-    .select("id")
+    .select("id, mail_vendor_letter_id, mail_status")
     .eq("case_id", ctx.params.id)
     .order("version", { ascending: false })
     .limit(1)
@@ -64,6 +64,20 @@ export async function POST(req: NextRequest, ctx: { params: { id: string } }) {
     return NextResponse.json(
       { error: "No demand letter exists yet. Click Regenerate first." },
       { status: 404 },
+    );
+  }
+
+  // Never overwrite the text of a letter that has already been physically
+  // mailed — that would destroy the record of what the defendant actually
+  // received (this is a legal document). To revise a mailed letter, regenerate
+  // a new version instead. Mirrors the ready-for-review route's guard.
+  if (latest.mail_vendor_letter_id) {
+    return NextResponse.json(
+      {
+        error:
+          "This letter has already been mailed and can't be edited. Regenerate a new version to make changes.",
+      },
+      { status: 409 },
     );
   }
 

@@ -255,6 +255,9 @@ export default function CheckoutShell({
               </div>
             );
           })}
+          {s.answerError ? (
+            <p className="ck-pay-error">{s.answerError}</p>
+          ) : null}
         </section>
       ) : null}
 

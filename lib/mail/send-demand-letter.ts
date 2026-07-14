@@ -8,7 +8,16 @@ import { renderLetterPdf } from "../pdf/letter";
 import { createCertifiedLetter, type PostGridAddress } from "./postgrid";
 import { sendEmail } from "../resend";
 import { createNotification } from "../notifications";
+import { paidProductsForCase } from "../payments/access";
+import type { ProductKey } from "../stripe";
 import type { Case, DemandLetter, PostalAddress } from "../supabase/types";
+
+// The demand-letter tiers whose purchase authorizes physical mailing.
+const DEMAND_LETTER_TIERS: readonly ProductKey[] = [
+  "tier_send_letter",
+  "tier_full_pressure",
+  "demand_letter_download",
+];
 
 interface MailDemandLetterResult {
   ok: boolean;
@@ -18,7 +27,8 @@ interface MailDemandLetterResult {
     | "no_address"
     | "no_postgrid_config"
     | "letter_too_short"
-    | "not_approved";
+    | "not_approved"
+    | "not_paid";
   letterId?: string;
   trackingNumber?: string | null;
 }
@@ -77,6 +87,31 @@ export async function mailDemandLetter(
     return { ok: false, reason: "no_address" };
   }
 
+  // Test scenarios (spawned from the admin panel) are exempt from the payment
+  // and approval gates so the team can exercise the mail path in sandbox. Every
+  // real customer case must clear both gates.
+  const answersForGate = (c.intake_answers as Record<string, unknown> | null) ?? {};
+  const isTestCase = answersForGate._test_scenario === true;
+
+  // PAYMENT GATE. A physical certified letter costs real money to send and
+  // goes out under the CivilCase brand. Never mail one for a case that has not
+  // paid for a demand-letter tier. This is the single chokepoint for all mail
+  // dispatch (customer approve + admin mail both land here), so a direct API
+  // call that skips the buy page still cannot trigger free mail.
+  if (!isTestCase) {
+    const paid = await paidProductsForCase(caseId, DEMAND_LETTER_TIERS);
+    if (paid.size === 0) {
+      console.warn(
+        `[send-demand-letter] case=${caseId} skipping send: no paid demand-letter tier`,
+      );
+      return { ok: false, reason: "not_paid" };
+    }
+  }
+
+  // Admin override only applies to test cases — it must never let an admin (or
+  // a forged request) bypass customer approval on a real customer's case.
+  const adminOverride = options.adminOverride === true && isTestCase;
+
   // The same intake-answer flag that controls the PDF letterhead (CivilCase
   // vs plaintiff) also drives the envelope/carrier-sheet sender. "no" means
   // the customer opted out — send the letter under the plaintiff's name and
@@ -118,7 +153,10 @@ export async function mailDemandLetter(
     | "approval_status"
   >;
 
-  // Idempotency — already mailed.
+  // Idempotency — already mailed. Check EVERY version of this letter, not just
+  // the latest: after an admin Regenerate a fresh version exists with no
+  // PostGrid id, and checking only the latest would let a second "Mail" click
+  // send a duplicate certified letter for the same case.
   if (ltr.mail_vendor_letter_id) {
     return {
       ok: true,
@@ -126,11 +164,24 @@ export async function mailDemandLetter(
       letterId: ltr.mail_vendor_letter_id,
     };
   }
+  const { data: mailedVersions } = await admin
+    .from("demand_letters")
+    .select("mail_vendor_letter_id")
+    .eq("case_id", caseId)
+    .not("mail_vendor_letter_id", "is", null)
+    .limit(1);
+  if (Array.isArray(mailedVersions) && mailedVersions.length > 0) {
+    return {
+      ok: true,
+      reason: "already_mailed",
+      letterId: mailedVersions[0].mail_vendor_letter_id as string,
+    };
+  }
 
-  // Approval gate — unless admin override, never dispatch a letter the
-  // customer hasn't explicitly approved. Inngest delivery + Stripe
+  // Approval gate — unless admin override (test cases only), never dispatch a
+  // letter the customer hasn't explicitly approved. Inngest delivery + Stripe
   // resends won't sneak past this.
-  if (!options.adminOverride && ltr.approval_status !== "approved") {
+  if (!adminOverride && ltr.approval_status !== "approved") {
     console.log(
       `[send-demand-letter] case=${caseId} skipping send: approval_status=${ltr.approval_status}`,
     );
@@ -156,6 +207,10 @@ export async function mailDemandLetter(
       letterhead: civilcaseLetterhead,
     },
     extraService: "certified_return_receipt",
+    // Stable per-letter key: if this step re-runs after a timeout/crash before
+    // the marker below was saved, PostGrid returns the SAME letter instead of
+    // printing and mailing a second one.
+    idempotencyKey: `demand-letter:${ltr.id}`,
   });
 
   if (!result) {
@@ -164,7 +219,11 @@ export async function mailDemandLetter(
     return { ok: false, reason: "no_postgrid_config" };
   }
 
-  await admin
+  // Persist the "already mailed" marker. If this write fails we must NOT report
+  // success silently: the letter went out but nothing recorded it, and a retry
+  // would (absent the idempotency key above) mail again. Throw so the Inngest
+  // step retries — the idempotency key makes that retry safe.
+  const { error: markErr } = await admin
     .from("demand_letters")
     .update({
       mail_vendor_letter_id: result.id,
@@ -173,6 +232,11 @@ export async function mailDemandLetter(
       sent_at: result.sendDate ?? new Date().toISOString(),
     })
     .eq("id", ltr.id);
+  if (markErr) {
+    throw new Error(
+      `[send-demand-letter] mailed letter ${result.id} for case ${caseId} but failed to save marker: ${markErr.message ?? markErr}`,
+    );
+  }
 
   // Notify the owner that the letter is on its way. Best-effort — failures
   // don't block the mail dispatch itself.

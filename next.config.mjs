@@ -40,6 +40,30 @@ const nextConfig = {
       { source: "/small-claims/refund/:issue", destination: "/small-claims/sue-refund-:issue", permanent: true },
     ];
   },
+  async headers() {
+    // Baseline security headers on every response. We deliberately avoid a
+    // full Content-Security-Policy here (it would need careful allowlisting for
+    // Stripe, Google Maps, fonts, etc. and could break checkout), but these
+    // three are safe and close the biggest gaps: clickjacking (framing our
+    // pages), MIME sniffing, and referrer leakage.
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          // Stops other sites from embedding our pages in an iframe
+          // (clickjacking). We frame Stripe, not the other way around, so
+          // SAMEORIGIN is safe.
+          { key: "X-Frame-Options", value: "SAMEORIGIN" },
+          { key: "Content-Security-Policy", value: "frame-ancestors 'self'" },
+          // Stops the browser from guessing a different content type than we
+          // send (defends against MIME-sniffing attacks).
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          // Don't leak full URLs (which can contain case ids) to other sites.
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+        ],
+      },
+    ];
+  },
   async rewrites() {
     return [
       // The canonical slug URL /small-claims/sue-<category>-<slug> serves

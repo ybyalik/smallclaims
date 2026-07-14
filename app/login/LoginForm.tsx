@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { createClient } from "../../lib/supabase/client";
 import { signInWithGoogle, sendMagicLink } from "../../lib/auth/oauth";
 import { markAnonymousHandoff } from "../../lib/auth/anon-handoff";
+import { friendlyAuthError } from "../../lib/auth/friendly-auth-error";
 
 export default function LoginForm({ next, error: initialError }: { next?: string; error?: string }) {
   const router = useRouter();
@@ -12,7 +13,9 @@ export default function LoginForm({ next, error: initialError }: { next?: string
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(initialError ?? null);
+  const [error, setError] = useState<string | null>(
+    initialError ? friendlyAuthError(initialError) : null,
+  );
   const [magicSent, setMagicSent] = useState(false);
 
   async function onPasswordSubmit(e: React.FormEvent) {
@@ -26,7 +29,7 @@ export default function LoginForm({ next, error: initialError }: { next?: string
     const { error } = await supabase.auth.signInWithPassword({ email, password });
     if (error) {
       setLoading(false);
-      setError(error.message);
+      setError(friendlyAuthError(error.message));
       return;
     }
     // Marker cookie read by SiteHeaderClient to paint the logged-in
@@ -58,7 +61,7 @@ export default function LoginForm({ next, error: initialError }: { next?: string
       await sendMagicLink(email, next);
       setMagicSent(true);
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Could not send magic link.");
+      setError(err instanceof Error ? friendlyAuthError(err.message) : "Could not send magic link.");
     } finally {
       setLoading(false);
     }
@@ -71,11 +74,7 @@ export default function LoginForm({ next, error: initialError }: { next?: string
       await markAnonymousHandoff();
       await signInWithGoogle(next);
     } catch (err) {
-      setError(
-        err instanceof Error
-          ? `Google sign-in failed: ${err.message}`
-          : "Google sign-in failed."
-      );
+      setError(err instanceof Error ? friendlyAuthError(err.message) : "Google sign-in failed.");
       setLoading(false);
     }
   }

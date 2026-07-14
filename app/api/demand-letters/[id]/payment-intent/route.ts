@@ -8,6 +8,23 @@ import {
   resolveStripeCustomerId,
   type ProductKey,
 } from "../../../../../lib/stripe";
+import { hasPaidForProduct } from "../../../../../lib/payments/access";
+
+// Only these product keys are valid demand-letter tiers; only these are valid
+// add-ons. Restricting here stops a client from passing, say, "filing_guide"
+// or another tier as an add-on and being charged for the wrong thing.
+const VALID_TIERS: ReadonlySet<ProductKey> = new Set<ProductKey>([
+  "tier_send_letter",
+  "tier_full_pressure",
+  "demand_letter_download",
+]);
+const VALID_ADDONS: ReadonlySet<ProductKey> = new Set<ProductKey>([
+  "addon_expedite",
+  "addon_overnight",
+  "addon_skip_trace",
+  "addon_voice_of_justice",
+  "addon_case_brief",
+]);
 
 /**
  * POST /api/demand-letters/[id]/payment-intent
@@ -44,16 +61,27 @@ export async function POST(req: NextRequest, ctx: { params: { id: string } }) {
     } catch {
       return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
     }
-    if (!body.tier || !PRODUCTS[body.tier]) {
+    if (!body.tier || !VALID_TIERS.has(body.tier)) {
       return NextResponse.json({ error: "Invalid tier" }, { status: 400 });
     }
     const tierProduct = PRODUCTS[body.tier];
 
-    const addonKeys = (body.addons ?? []).filter((k) => PRODUCTS[k]);
+    // Keep only valid add-ons and de-duplicate, so a repeated key can't be
+    // billed twice.
+    const addonKeys = Array.from(
+      new Set((body.addons ?? []).filter((k) => VALID_ADDONS.has(k))),
+    );
     const addons = addonKeys.map((k) => ({ key: k, ...PRODUCTS[k] }));
 
     const totalCents =
       tierProduct.amount_cents + addons.reduce((s, a) => s + a.amount_cents, 0);
+
+    // Guard against a second charge for a tier the customer already owns (e.g.
+    // if a transient error made the buy page reappear). Reuse of an unpaid
+    // pending intent is fine; a fresh charge for an already-paid tier is not.
+    if (await hasPaidForProduct(caseRow.id, body.tier)) {
+      return NextResponse.json({ error: "already_paid" }, { status: 409 });
+    }
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const admin = createServiceRoleClient() as any;
@@ -81,6 +109,7 @@ export async function POST(req: NextRequest, ctx: { params: { id: string } }) {
       metadata: {
         case_id: caseRow.id,
         user_id: user.id,
+        product_key: body.tier,
         tier: body.tier,
         addons: addonKeys.join(","),
       },

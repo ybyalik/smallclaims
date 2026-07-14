@@ -41,6 +41,17 @@ function mapStatus(pgStatus: string | undefined, eventType: string): MailStatus 
   return "queued";
 }
 
+// Progression rank so out-of-order webhooks can't move a letter backwards
+// (e.g. a late letter.created after delivery must not reset "delivered" to
+// "queued"). Terminal states share the top rank.
+const STATUS_RANK: Record<string, number> = {
+  queued: 0,
+  in_transit: 1,
+  delivered: 2,
+  returned: 2,
+  failed: 2,
+};
+
 export async function POST(req: NextRequest) {
   const rawBody = await req.text();
   // Try both header names PostGrid has used historically. Log every header
@@ -95,17 +106,28 @@ export async function POST(req: NextRequest) {
   }
 
   const nextStatus = mapStatus(event.data?.object?.status, event.type);
+  const previousStatus = (letter.mail_status as string | null) ?? null;
+
+  // Ignore out-of-order / backward events: never regress a letter's status
+  // (which would also re-fire delivery notifications and overwrite delivered_at).
+  const prevRank = previousStatus ? (STATUS_RANK[previousStatus] ?? 0) : -1;
+  const nextRank = STATUS_RANK[nextStatus] ?? 0;
+  if (nextRank < prevRank) {
+    return NextResponse.json({ ok: true, ignored: "out_of_order" });
+  }
+
   const updates: Record<string, string | null> = { mail_status: nextStatus };
   if (event.data?.object?.trackingNumber) {
     updates.tracking_number = event.data.object.trackingNumber;
   }
-  if (nextStatus === "delivered") {
+  // Only stamp the timestamp when actually entering the state (not on a
+  // duplicate event), so delivered_at/returned_at reflect the first delivery.
+  if (nextStatus === "delivered" && previousStatus !== "delivered") {
     updates.delivered_at = new Date().toISOString();
-  } else if (nextStatus === "returned") {
+  } else if (nextStatus === "returned" && previousStatus !== "returned") {
     updates.returned_at = new Date().toISOString();
   }
 
-  const previousStatus = (letter.mail_status as string | null) ?? null;
   await admin.from("demand_letters").update(updates).eq("id", letter.id);
 
   // Customer-facing notifications when the status transitions to something

@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { createClient } from "../../lib/supabase/client";
 import { signInWithGoogle } from "../../lib/auth/oauth";
 import { markAnonymousHandoff } from "../../lib/auth/anon-handoff";
+import { friendlyAuthError } from "../../lib/auth/friendly-auth-error";
 
 export default function SignupForm({ next }: { next?: string }) {
   const router = useRouter();
@@ -51,7 +52,7 @@ export default function SignupForm({ next }: { next?: string }) {
             "That email is already used by another account. Sign in instead to attach this case to it."
           );
         } else {
-          setError(upErr.message);
+          setError(friendlyAuthError(upErr.message));
         }
         return;
       }
@@ -72,7 +73,7 @@ export default function SignupForm({ next }: { next?: string }) {
     });
     setLoading(false);
     if (error) {
-      setError(error.message);
+      setError(friendlyAuthError(error.message));
       return;
     }
     // If email confirmation is required, Supabase returns a user but no session.
@@ -92,7 +93,7 @@ export default function SignupForm({ next }: { next?: string }) {
       await markAnonymousHandoff();
       await signInWithGoogle(next);
     } catch (err) {
-      setError(err instanceof Error ? `Google sign-up failed: ${err.message}` : "Google sign-up failed.");
+      setError(err instanceof Error ? friendlyAuthError(err.message) : "Google sign-up failed.");
       setLoading(false);
     }
   }

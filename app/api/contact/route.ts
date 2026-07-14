@@ -47,7 +47,40 @@ function recipients(): string[] {
     .filter(Boolean);
 }
 
+// Best-effort per-instance rate limit. This is a first line of defense against
+// a script hammering the public endpoint (which would flood the inbox and burn
+// the Resend quota). It's per serverless instance and resets on cold start, so
+// it is NOT a substitute for a durable, shared-store limiter — but it meaningfully
+// slows a single attacker hitting a warm instance and costs nothing.
+const RATE_WINDOW_MS = 60_000;
+const RATE_MAX = 5;
+const rateHits = new Map<string, number[]>();
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const recent = (rateHits.get(ip) ?? []).filter((t) => now - t < RATE_WINDOW_MS);
+  recent.push(now);
+  rateHits.set(ip, recent);
+  if (rateHits.size > 5000) {
+    for (const [k, v] of rateHits) {
+      if (v.every((t) => now - t > RATE_WINDOW_MS)) rateHits.delete(k);
+    }
+  }
+  return recent.length > RATE_MAX;
+}
+
+function clientIp(req: NextRequest): string {
+  const fwd = req.headers.get("x-forwarded-for") || "";
+  return fwd.split(",")[0].trim() || req.headers.get("x-real-ip") || "unknown";
+}
+
 export async function POST(req: NextRequest) {
+  if (isRateLimited(clientIp(req))) {
+    return NextResponse.json(
+      { error: "You're sending messages too quickly. Please wait a minute and try again." },
+      { status: 429 },
+    );
+  }
+
   let body: Record<string, unknown>;
   try {
     body = (await req.json()) as Record<string, unknown>;
@@ -106,19 +139,25 @@ export async function POST(req: NextRequest) {
     </div>
   `;
 
-  try {
-    for (const to of recipients()) {
-      await sendEmail({
+  // Send to each recipient and check the actual outcome. If NOTHING got
+  // through, tell the visitor honestly and point them at a direct address so
+  // their message isn't silently lost (sendEmail does not throw on API errors).
+  const sendResults = await Promise.all(
+    recipients().map((to) =>
+      sendEmail({
         to,
         subject,
         text: textBody,
         html: htmlBody,
         // Only set Reply-To when we have a valid address to reply to.
         replyTo: email || undefined,
-      });
-    }
-  } catch (err) {
-    console.error("[contact] sendEmail failed", err);
+      }),
+    ),
+  );
+  if (!sendResults.some((r) => r.ok)) {
+    console.error("[contact] all sends failed", {
+      errors: sendResults.map((r) => r.error),
+    });
     return NextResponse.json(
       { error: "We couldn't send your message right now. Please email us directly at contact@civilcase.com." },
       { status: 502 },

@@ -9,6 +9,15 @@
 import { createServiceRoleClient } from "../supabase/service-role";
 import { sendEmail } from "../resend";
 
+function escapeHtml(s: string): string {
+  return s
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 interface NotifyInput {
   caseId: string;
   // Human product name, e.g. "Filing Kit" or "Collection Plan".
@@ -57,6 +66,8 @@ export async function notifyCustomerProductReady(input: NotifyInput): Promise<vo
       .trim()
       .split(/\s+/)[0];
     const hi = firstName ? `Hi ${firstName},` : "Hi,";
+    // Customer-supplied name must be escaped before going into HTML.
+    const hiHtml = firstName ? `Hi ${escapeHtml(firstName)},` : "Hi,";
 
     const readyLine = input.reviewRequired
       ? `Your ${input.product} is ready to review.`
@@ -83,7 +94,7 @@ CivilCase is not a law firm and does not provide legal advice.`;
 
     const html = `
       <div style="font-family: system-ui, sans-serif; max-width: 560px; margin: 0 auto; color: #0e0e0e;">
-        <p style="font-size: 15px; line-height: 1.5;">${hi}</p>
+        <p style="font-size: 15px; line-height: 1.5;">${hiHtml}</p>
         <p style="font-size: 15px; line-height: 1.5;">${readyLine.replace(input.product, `<strong>${input.product}</strong>`)}</p>
         <p style="margin: 24px 0;">
           <a href="${url}" style="background: #0e0e0e; color: #fff; text-decoration: none; padding: 13px 22px; border-radius: 8px; font-size: 14px; display: inline-block;">${ctaLabel}</a>

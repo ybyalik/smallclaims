@@ -118,12 +118,18 @@ export default function EvidenceStep({
     }
   }
 
-  // Autosave: persists evidence file list (and per-file kind/description
+  // Only files that actually finished uploading (have an s3Key) count as
+  // evidence. A failed or still-uploading file has no s3Key and must NOT be
+  // persisted, otherwise the review page shows "Evidence (2)" for documents
+  // the letter team can never open.
+  const uploadedFiles = files.filter((f) => f.s3Key);
+
+  // Autosave: persists the evidence file list (and per-file kind/description
    // edits) as the user adds, removes, or annotates files.
   useAutosave(caseId, {
     intake_answers: {
-      evidence_files: files,
-      evidence_skipped: files.length === 0,
+      evidence_files: uploadedFiles,
+      evidence_skipped: uploadedFiles.length === 0,
     },
   });
 
@@ -208,8 +214,8 @@ export default function EvidenceStep({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           intake_answers: {
-            evidence_files: skip ? [] : files,
-            evidence_skipped: skip || files.length === 0,
+            evidence_files: skip ? [] : uploadedFiles,
+            evidence_skipped: skip || uploadedFiles.length === 0,
           },
         }),
       });
@@ -376,7 +382,8 @@ export default function EvidenceStep({
                             <>
                               {" · "}
                               <span style={{ color: "var(--accent, #d9402e)" }}>
-                                Upload failed: {local?.error}
+                                Upload didn&rsquo;t finish — remove it and try
+                                again. It won&rsquo;t be attached to your case.
                               </span>
                             </>
                           ) : null}

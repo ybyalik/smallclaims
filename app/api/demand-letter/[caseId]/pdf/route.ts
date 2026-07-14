@@ -34,7 +34,7 @@ export async function GET(req: NextRequest, { params }: { params: { caseId: stri
     admin.from("profiles").select("is_admin").eq("user_id", user.id).single(),
     admin
       .from("demand_letters")
-      .select("body_md, version")
+      .select("body_md, version, updated_at")
       .eq("case_id", params.caseId)
       .order("version", { ascending: false })
       .limit(1)
@@ -67,16 +67,29 @@ export async function GET(req: NextRequest, { params }: { params: { caseId: stri
   const letter = letterRes.data;
   if (!letter) return NextResponse.json({ error: "letter_not_found" }, { status: 404 });
 
-  // ETag based on letter version: the browser can short-circuit re-fetches
-  // when the user re-opens /letter without us re-rendering the PDF on the
-  // server. Lifecycle: each new letter version (rare) bumps the ETag.
-  const etag = `W/"letter-${params.caseId}-v${letter.version}"`;
+  // ETag based on letter version AND updated_at: the browser can short-circuit
+  // re-fetches when the user re-opens /letter without us re-rendering the PDF.
+  // Including updated_at is essential — a hand-edit changes body_md WITHOUT
+  // bumping the version, and keying the ETag on version alone would serve the
+  // customer a stale (pre-edit) PDF forever, so they could approve text they
+  // never saw.
+  const editedAt = letter.updated_at ? new Date(letter.updated_at).getTime() : 0;
+  const etag = `W/"letter-${params.caseId}-v${letter.version}-${editedAt}"`;
   const ifNoneMatch = req.headers.get("if-none-match");
   if (ifNoneMatch === etag) {
     return new NextResponse(null, { status: 304, headers: { ETag: etag } });
   }
 
-  const pdfBytes = await renderLetterPdf({ body_md: letter.body_md });
+  let pdfBytes: Uint8Array;
+  try {
+    pdfBytes = await renderLetterPdf({ body_md: letter.body_md });
+  } catch (err) {
+    console.error("[demand-letter/pdf] render failed", params.caseId, err);
+    return NextResponse.json(
+      { error: "We couldn't generate your letter PDF. Please try again in a moment or contact support." },
+      { status: 500 },
+    );
+  }
 
   await logEvent("document.downloaded", {
     case_id: params.caseId,

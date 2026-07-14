@@ -82,13 +82,27 @@ export async function POST(req: NextRequest) {
     </div>
   `;
 
-  await sendEmail({
+  const result = await sendEmail({
     to: SUPPORT_INBOX,
     subject: finalSubject,
     text: textBody,
     html: htmlBody,
     replyTo: user.email,
   });
+  // Don't tell the customer "sent" if the email never went out — they'd wait
+  // for a reply that never comes. (sendEmail returns ok=false instead of
+  // throwing on API errors like a bad key or unverified domain.)
+  if (!result.ok) {
+    console.error("[support] send failed", { userId: user.id, error: result.error });
+    return NextResponse.json(
+      {
+        error:
+          "We couldn't send your message right now. Please email us directly at " +
+          SUPPORT_INBOX + ".",
+      },
+      { status: 502 },
+    );
+  }
 
   return NextResponse.json({ ok: true });
 }

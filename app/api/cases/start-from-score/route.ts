@@ -94,7 +94,12 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Unknown state" }, { status: 400 });
   }
   const dollars = Number(answers.amount_dollars);
-  if (!Number.isFinite(dollars) || dollars <= 0) {
+  // Upper bound as well as lower. amount_cents is a 32-bit INTEGER column
+  // (~$21.4M max); an unbounded value overflows the insert into a generic 500.
+  // No small-claims case is anywhere near this, so cap at a sane ceiling and
+  // return a clean 400 instead.
+  const MAX_DOLLARS = 1_000_000;
+  if (!Number.isFinite(dollars) || dollars <= 0 || dollars > MAX_DOLLARS) {
     return NextResponse.json({ error: "Invalid amount" }, { status: 400 });
   }
 

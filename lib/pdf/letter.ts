@@ -70,13 +70,19 @@ function stripMarkdown(md: string): string {
     .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1");
 }
 
-// pdf-lib's StandardFonts.TimesRoman is the base-14 Times font, which has
-// limited glyph coverage (essentially ASCII + a slice of Latin-1). LLM
-// output occasionally includes typographic Unicode (non-breaking hyphen,
-// curly quotes, em-dashes) that produce blank rectangles in the PDF.
-// Normalize the common offenders to ASCII equivalents before drawing.
+// pdf-lib's StandardFonts.TimesRoman is the base-14 Times font, which can only
+// encode WinAnsi (CP-1252) characters. drawText / widthOfTextAtSize THROW on
+// anything else, so a customer named "Michał", a Turkish "ş", an emoji, or an
+// arrow in the story would crash the whole PDF (500 on download, and the
+// mailing job exhausts its retries). We must guarantee every character is
+// encodable, never throw.
+//
+// Strategy: map the common typographic offenders to ASCII, transliterate a few
+// non-decomposing Latin letters, strip diacritics via Unicode decomposition
+// (so "ş" -> "s", "é" -> "e"), then replace anything still outside the WinAnsi
+// range with "?" as a last resort. Whitespace (newlines/tabs) is preserved.
 function normalizeForBaseFont(text: string): string {
-  return text
+  const mapped = text
     .replace(/‑/g, "-")        // NON-BREAKING HYPHEN
     .replace(/‐/g, "-")        // HYPHEN (non-minus)
     .replace(/−/g, "-")        // MINUS SIGN
@@ -86,7 +92,25 @@ function normalizeForBaseFont(text: string): string {
     .replace(/"|"/g, '"')      // smart double quotes
     .replace(/…/g, "...")      // ellipsis
     .replace(/ /g, " ")       // narrow no-break space
-    .replace(/ /g, " ");       // thin space
+    .replace(/ /g, " ")        // thin space
+    // Non-decomposing Latin letters (NFD won't split these).
+    .replace(/Ł/g, "L").replace(/ł/g, "l")
+    .replace(/Ø/g, "O").replace(/ø/g, "o")
+    .replace(/Æ/g, "AE").replace(/æ/g, "ae")
+    .replace(/Œ/g, "OE").replace(/œ/g, "oe")
+    .replace(/Đ/g, "D").replace(/đ/g, "d")
+    .replace(/Ð/g, "D").replace(/ð/g, "d")
+    .replace(/Þ/g, "Th").replace(/þ/g, "th")
+    .replace(/ß/g, "ss");
+
+  // Strip combining diacritical marks (é -> e, ş -> s, ñ -> n, ü -> u, …).
+  const stripped = mapped.normalize("NFD").replace(/[̀-ͯ]/g, "");
+
+  // Final safety net: keep printable ASCII, the Latin-1 supplement (which
+  // WinAnsi covers), and whitespace; replace anything else (emoji, CJK,
+  // arrows, math symbols) with "?" so drawText can never throw.
+  // eslint-disable-next-line no-control-regex
+  return stripped.replace(/[^\x20-\x7E\xA0-\xFF\n\r\t]/g, "?");
 }
 
 // Reserved marker the generator inserts between the CivilCase cover letter

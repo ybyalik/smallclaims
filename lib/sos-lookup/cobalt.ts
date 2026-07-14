@@ -95,7 +95,16 @@ export async function searchCobalt(
     return { matches: [], is_authoritative: false, provider: "cobalt" };
   }
 
-  const body = (await resp.json()) as CobaltSearchResponse;
+  let body: CobaltSearchResponse;
+  try {
+    // A provider can return HTML (an error page, a WAF challenge) with a 200.
+    // Parsing that as JSON throws; catch it here so the lookup degrades to an
+    // empty result like every other failure, instead of a raw 500.
+    body = (await resp.json()) as CobaltSearchResponse;
+  } catch (e) {
+    console.error("[sos-lookup/cobalt] non-JSON response:", e);
+    return { matches: [], is_authoritative: false, provider: "cobalt" };
+  }
   const limit = Math.max(1, Math.min(input.limit ?? 5, 20));
 
   // Top match(es) get the full record. Alternatives have less data but still

@@ -14,15 +14,26 @@ export async function hasPaidForProduct(
 ): Promise<boolean> {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const admin = createServiceRoleClient() as any;
-  const { data } = await admin
-    .from("payments")
-    .select("id")
-    .eq("case_id", caseId)
-    .eq("product_key", productKey)
-    .not("paid_at", "is", null)
-    .neq("status", "refunded")
-    .limit(1);
-  return Array.isArray(data) && data.length > 0;
+  // Retry once on a DB error: a transient blip must NOT be silently read as
+  // "unpaid", which would deny a paying customer their product and re-show the
+  // buy page (inviting an accidental second purchase). We fail closed only
+  // after two failed attempts, and always log loudly so it is not invisible.
+  for (let attempt = 0; attempt < 2; attempt++) {
+    const { data, error } = await admin
+      .from("payments")
+      .select("id")
+      .eq("case_id", caseId)
+      .eq("product_key", productKey)
+      .not("paid_at", "is", null)
+      .neq("status", "refunded")
+      .limit(1);
+    if (!error) return Array.isArray(data) && data.length > 0;
+    console.error(
+      `[hasPaidForProduct] payments query failed (attempt ${attempt + 1})`,
+      { caseId, productKey, error: error.message ?? error },
+    );
+  }
+  return false;
 }
 
 export async function paidProductsForCase(
@@ -32,16 +43,25 @@ export async function paidProductsForCase(
   if (productKeys.length === 0) return new Set();
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const admin = createServiceRoleClient() as any;
-  const { data } = await admin
-    .from("payments")
-    .select("product_key")
-    .eq("case_id", caseId)
-    .not("paid_at", "is", null)
-    .neq("status", "refunded")
-    .in("product_key", productKeys as unknown as string[]);
   const set = new Set<ProductKey>();
-  for (const row of (data ?? []) as Array<{ product_key: string }>) {
-    set.add(row.product_key as ProductKey);
+  for (let attempt = 0; attempt < 2; attempt++) {
+    const { data, error } = await admin
+      .from("payments")
+      .select("product_key")
+      .eq("case_id", caseId)
+      .not("paid_at", "is", null)
+      .neq("status", "refunded")
+      .in("product_key", productKeys as unknown as string[]);
+    if (!error) {
+      for (const row of (data ?? []) as Array<{ product_key: string }>) {
+        set.add(row.product_key as ProductKey);
+      }
+      return set;
+    }
+    console.error(
+      `[paidProductsForCase] payments query failed (attempt ${attempt + 1})`,
+      { caseId, error: error.message ?? error },
+    );
   }
   return set;
 }

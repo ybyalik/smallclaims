@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useTransition } from "react";
+import { useState } from "react";
 
 interface Props {
   email: string;
@@ -20,14 +20,18 @@ export default function SupportForm({ email, fullName }: Props) {
   const [message, setMessage] = useState("");
   const [sentAt, setSentAt] = useState<Date | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [isPending, startTransition] = useTransition();
+  // Real in-flight guard: useTransition's isPending doesn't wait for the async
+  // fetch to resolve in React 18, so it wouldn't stop a double-submit.
+  const [sending, setSending] = useState(false);
 
   async function send() {
+    if (sending) return;
     setError(null);
     if (!message.trim()) {
       setError("Message can't be empty.");
       return;
     }
+    setSending(true);
     try {
       const res = await fetch("/api/support", {
         method: "POST",
@@ -35,11 +39,13 @@ export default function SupportForm({ email, fullName }: Props) {
         body: JSON.stringify({ subject, message }),
       });
       const data = await res.json().catch(() => ({}));
-      if (!res.ok) throw new Error(data.error || "Failed to send");
+      if (!res.ok) throw new Error(data.error || "We couldn't send your message. Please try again.");
       setSentAt(new Date());
       setMessage("");
     } catch (e) {
-      setError(e instanceof Error ? e.message : "Failed to send");
+      setError(e instanceof Error ? e.message : "We couldn't send your message. Please try again.");
+    } finally {
+      setSending(false);
     }
   }
 
@@ -47,7 +53,7 @@ export default function SupportForm({ email, fullName }: Props) {
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        startTransition(send);
+        send();
       }}
       className="app-settings-form"
     >
@@ -91,8 +97,8 @@ export default function SupportForm({ email, fullName }: Props) {
       {error ? <p className="dl-error-inline">{error}</p> : null}
 
       <div className="app-settings-actions">
-        <button type="submit" className="btn btn-dark" disabled={isPending}>
-          {isPending ? "Sending…" : "Send Message"}
+        <button type="submit" className="btn btn-dark" disabled={sending}>
+          {sending ? "Sending…" : "Send Message"}
         </button>
         {sentAt ? (
           <span className="dl-saved-at">

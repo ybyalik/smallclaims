@@ -1,140 +1,22 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { loadOwnedCase } from "../../../../../lib/demand-letter/access";
-import { createClient } from "../../../../../lib/supabase/server";
-import { createServiceRoleClient } from "../../../../../lib/supabase/service-role";
-import { getStripe, PRODUCTS, resolveStripeCustomerId, type ProductKey } from "../../../../../lib/stripe";
 
 /**
- * POST /api/demand-letters/[id]/checkout
+ * POST /api/demand-letters/[id]/checkout — DISABLED.
  *
- * Creates a Stripe Checkout Session in AUTHORIZATION-ONLY mode (capture_method
- * = "manual"). The card is authorized when the user submits but not captured
- * until paralegal review approves the case. This is what the spec calls
- * "Authorization-only — not a charge."
+ * This was a legacy hosted Stripe Checkout Session in AUTHORIZATION-ONLY mode
+ * (capture_method = "manual"). It is no longer used by any UI: the live demand
+ * letter flow uses the inline Stripe Elements PaymentIntent route
+ * (/api/demand-letters/[id]/payment-intent) with automatic capture.
  *
- * Body: { tier: ProductKey, addons: ProductKey[] }
- * Returns: { url } for client redirect.
- *
- * Auth: requires an authenticated user. The wizard's sign-up wall converts
- * anonymous flows to authenticated ones before this endpoint is called.
+ * It was actively unsafe to leave enabled: the card was only authorized (never
+ * captured anywhere in the codebase), yet the webhook's checkout.session.completed
+ * handler marked the payment "succeeded" and emailed the customer that their
+ * letter was being mailed. The 7-day authorization would then expire and the
+ * business would never collect the money. Disabled to close that hole.
  */
-export async function POST(req: NextRequest, ctx: { params: { id: string } }) {
-  try {
-    const supabase = createClient();
-    const {
-      data: { user },
-    } = await supabase.auth.getUser();
-    if (!user) {
-      return NextResponse.json({ error: "auth_required" }, { status: 401 });
-    }
-
-    const caseRow = await loadOwnedCase(ctx.params.id);
-    if (!caseRow) {
-      return NextResponse.json({ error: "Not found" }, { status: 404 });
-    }
-
-    let body: { tier?: ProductKey; addons?: ProductKey[] };
-    try {
-      body = (await req.json()) as { tier?: ProductKey; addons?: ProductKey[] };
-    } catch {
-      return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
-    }
-
-    if (!body.tier || !PRODUCTS[body.tier]) {
-      return NextResponse.json({ error: "Invalid tier" }, { status: 400 });
-    }
-    const tierProduct = PRODUCTS[body.tier];
-
-    const addonKeys = (body.addons ?? []).filter((k) => PRODUCTS[k]);
-    const addons = addonKeys.map((k) => ({ key: k, ...PRODUCTS[k] }));
-
-    const lineItems = [
-      {
-        price_data: {
-          currency: tierProduct.currency,
-          product_data: {
-            name: tierProduct.name,
-            description: tierProduct.description,
-          },
-          unit_amount: tierProduct.amount_cents,
-        },
-        quantity: 1,
-      },
-      ...addons.map((a) => ({
-        price_data: {
-          currency: a.currency,
-          product_data: { name: a.name, description: a.description },
-          unit_amount: a.amount_cents,
-        },
-        quantity: 1,
-      })),
-    ];
-
-    const totalCents =
-      tierProduct.amount_cents + addons.reduce((s, a) => s + a.amount_cents, 0);
-
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const admin = createServiceRoleClient() as any;
-    const { data: profile } = await admin
-      .from("profiles")
-      .select("stripe_customer_id, full_name")
-      .eq("user_id", user.id)
-      .single();
-    const stripe = getStripe();
-
-    const stripeCustomerId = await resolveStripeCustomerId({
-      userId: user.id,
-      userEmail: user.email,
-      storedCustomerId: profile?.stripe_customer_id,
-      fullName: profile?.full_name,
-      admin,
-    });
-
-    const origin = new URL(req.url).origin;
-
-    const session = await stripe.checkout.sessions.create({
-      mode: "payment",
-      customer: stripeCustomerId,
-      line_items: lineItems,
-      success_url: `${origin}/dashboard/cases/${caseRow.id}?submitted=1`,
-      cancel_url: `${origin}/case/${caseRow.id}/build/review?canceled=1`,
-      metadata: {
-        case_id: caseRow.id,
-        user_id: user.id,
-        tier: body.tier,
-        addons: addonKeys.join(","),
-      },
-      payment_intent_data: {
-        capture_method: "manual",
-        metadata: {
-          case_id: caseRow.id,
-          user_id: user.id,
-          tier: body.tier,
-          addons: addonKeys.join(","),
-        },
-      },
-    });
-
-    await admin.from("payments").insert({
-      case_id: caseRow.id,
-      user_id: user.id,
-      stripe_checkout_session_id: session.id,
-      stripe_customer_id: stripeCustomerId,
-      amount_cents: totalCents,
-      currency: "USD",
-      status: "pending",
-      product_key: body.tier,
-      line_items: {
-        tier: body.tier,
-        addons: addonKeys,
-        capture_method: "manual",
-      },
-    });
-
-    return NextResponse.json({ url: session.url });
-  } catch (err) {
-    const message = err instanceof Error ? err.message : "Stripe call failed";
-    console.error("[demand-letters/checkout] route failed", err);
-    return NextResponse.json({ error: message }, { status: 500 });
-  }
+export async function POST(_req: NextRequest, _ctx: { params: { id: string } }) {
+  return NextResponse.json(
+    { error: "This checkout method is no longer available." },
+    { status: 410 },
+  );
 }

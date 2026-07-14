@@ -27,7 +27,13 @@ export async function GET(req: NextRequest, ctx: { params: { id: string } }) {
   }
 
   try {
-    const url = await getPresignedDownloadUrl(key, { ttlSeconds: 5 * 60 });
+    // Force a download disposition (attachment) rather than letting the object
+    // render inline. The upload allowlist can't be enforced at the S3 layer
+    // (presigned PUTs don't sign Content-Type), so a user could store an
+    // HTML/SVG file; serving it as an attachment stops it executing in the
+    // browser when viewed. Filename is the object's last path segment.
+    const filename = key.split("/").pop() || "evidence";
+    const url = await getPresignedDownloadUrl(key, { ttlSeconds: 5 * 60, filename });
     return NextResponse.json({ url });
   } catch (e) {
     console.error("[evidence url]", e);

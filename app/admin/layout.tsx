@@ -1,6 +1,8 @@
 import "./admin.css";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { createClient } from "../../lib/supabase/server";
+import { createServiceRoleClient } from "../../lib/supabase/service-role";
 import SignOutButton from "../../components/admin/SignOutButton";
 import AdminShellLayout from "../../components/admin/AdminShellLayout";
 import ResponsiveTableLabels from "../../components/admin/ResponsiveTableLabels";
@@ -11,11 +13,24 @@ export const metadata = {
 };
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
-  // Auth + is_admin check happens in middleware. By the time this layout
-  // renders we know the user is authenticated and admin.
+  // Defense in depth: re-verify auth + is_admin HERE, not just in middleware.
+  // Relying on middleware alone is risky (e.g. CVE-2025-29927 lets a crafted
+  // header skip middleware on vulnerable Next.js versions), and every admin
+  // page reads data with the RLS-bypassing service-role client, so a bypass
+  // would expose real customer data. This server check gates the whole surface.
   const supabase = createClient();
   const { data } = await supabase.auth.getUser();
-  const email = data.user?.email;
+  const user = data.user;
+  if (!user) redirect("/login?next=/admin");
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const svc = createServiceRoleClient() as any;
+  const { data: profile } = await svc
+    .from("profiles")
+    .select("is_admin")
+    .eq("user_id", user.id)
+    .maybeSingle();
+  if (!profile?.is_admin) redirect("/");
+  const email = user.email;
 
   const sidebar = (
     <aside className="admin-side">

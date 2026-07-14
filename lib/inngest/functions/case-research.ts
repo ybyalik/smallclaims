@@ -153,7 +153,20 @@ export const caseResearchRun = inngest.createFunction(
       });
 
       // ----- Persist final artifacts + ledger ------------------------------
-      await step.run("persist-final", async () => {
+      const persistResult = await step.run("persist-final", async () => {
+        // If the stuck-job sweep canceled this job while this run was frozen
+        // or waiting (behind concurrency / between retries), a duplicate
+        // replacement run was already started. Do NOT resurrect the canceled
+        // job to "succeeded" or publish a second customer report — bail out.
+        const { data: jobNow } = await admin
+          .from("case_research_jobs")
+          .select("status")
+          .eq("id", jobId)
+          .maybeSingle();
+        if (jobNow?.status === "canceled") {
+          return { canceled: true };
+        }
+
         const ledger: LedgerEntry[] = [
           ...shallowOut.ledger,
           ...(deepOut?.ledger ?? []),
@@ -218,7 +231,14 @@ export const caseResearchRun = inngest.createFunction(
             updated_at: new Date().toISOString(),
           })
           .eq("id", jobId);
+        return { canceled: false };
       });
+
+      // The job was canceled out from under this run (replacement already
+      // running). Stop here so we don't publish a duplicate report.
+      if (persistResult?.canceled) {
+        return { jobId, caseId, version, status: "canceled" };
+      }
 
       // ----- Merge + write + auto-publish the customer report ---------------
       // No human review: the report becomes customer-visible immediately. If
