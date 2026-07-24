@@ -112,8 +112,14 @@ export interface PostalAddress {
   line1: string;
   line2?: string | null;
   city: string;
-  state: string; // 2-letter
+  // 2-letter US state for domestic addresses; free-form region/province for
+  // international ones (may be empty — many countries have no state concept).
+  state: string;
+  // 5-digit ZIP for domestic; free-form postal code for international.
   zip: string;
+  // Missing/null/"US" = United States. Any other value marks an international
+  // address (plaintiffs can live abroad; defendants are always US).
+  country?: string | null;
 }
 
 export interface Case {

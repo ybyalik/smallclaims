@@ -15,6 +15,7 @@
 // form uses so the per-field error display works without a translation layer.
 
 import type { Case, PostalAddress } from "../supabase/types";
+import { isInternationalCountry } from "./address";
 
 export type PhaseErrors = Record<string, string>;
 
@@ -225,6 +226,10 @@ interface PlaintiffInput {
   stateAbbr?: string;
   zip?: string;
   county?: string;
+  // Non-empty, non-US value = the plaintiff lives abroad. Their address then
+  // uses a free-form region + postal code and needs no county (venue is
+  // driven by the dispute state and the defendant, not the plaintiff's home).
+  country?: string;
 }
 
 export function validatePlaintiffPhase(input: PlaintiffInput): PhaseErrors {
@@ -241,6 +246,17 @@ export function validatePlaintiffPhase(input: PlaintiffInput): PhaseErrors {
   if (!input.phone?.trim()) errs.phone = "Phone is required.";
   if (!input.line1?.trim()) errs.line1 = "Street address is required.";
   if (!input.city?.trim()) errs.city = "City is required.";
+
+  if (isInternationalCountry(input.country)) {
+    // International plaintiff: region is optional (many countries don't have
+    // one), the postal code is free-form, and county doesn't apply.
+    const postal = input.zip?.trim() ?? "";
+    if (postal.length < 2 || postal.length > 12) {
+      errs.zip = "Postal code is required.";
+    }
+    return errs;
+  }
+
   if (!input.stateAbbr) errs.stateAbbr = "State is required.";
   if (!input.zip || !/^\d{5}(-\d{4})?$/.test(input.zip.trim())) {
     errs.zip = "Valid ZIP is required.";
@@ -279,6 +295,7 @@ export function validatePlaintiffFromCase(c: Case): PhaseErrors {
     county:
       ((c as { plaintiff_county?: string | null }).plaintiff_county ?? undefined) ||
       undefined,
+    country: addr?.country ?? undefined,
   });
 }
 

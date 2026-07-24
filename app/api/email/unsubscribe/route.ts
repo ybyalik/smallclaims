@@ -17,7 +17,7 @@ function page(title: string, body: string): NextResponse {
     `<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${title} · CivilCase</title></head>
 <body style="font-family: system-ui, -apple-system, sans-serif; background: #fafaf7; color: #0e0e0e; display: flex; min-height: 100vh; align-items: center; justify-content: center; margin: 0;">
 <div style="max-width: 440px; padding: 40px; text-align: center;">
-<p style="font-weight: 700; letter-spacing: 0.16em; font-size: 13px; color: #b8331f;">CIVILCASE</p>
+<p style="margin: 0 0 8px;"><img src="/civilcase-logo.png" alt="CivilCase" width="150" height="50" style="border: 0;" /></p>
 <h1 style="font-size: 24px; margin: 12px 0;">${title}</h1>
 <p style="line-height: 1.6; color: #444;">${body}</p>
 </div></body></html>`,

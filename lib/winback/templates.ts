@@ -58,11 +58,15 @@ export function renderWinback(
 }
 
 // Shared shell so every email in the sequence looks consistent. Body content
-// is dropped into a 560px column with the CivilCase wordmark up top and the
+// is dropped into a 560px column with the CivilCase logo up top and the
 // legally-required unsubscribe footer at the bottom.
+//
+// The logo must be an ABSOLUTE prod URL (emails are opened far away from our
+// server) and a PNG (webp doesn't render in some Outlook clients). Rendered at
+// 150px from the 600px source so it stays sharp on retina screens.
 function shell(inner: string): string {
   return `<div style="font-family: system-ui, -apple-system, sans-serif; max-width: 560px; margin: 0 auto; color: #0e0e0e; line-height: 1.55; font-size: 15px;">
-<p style="font-weight: 700; letter-spacing: 0.16em; font-size: 13px; color: #b8331f;">CIVILCASE</p>
+<p style="margin: 0 0 18px;"><a href="https://civilcase.com" style="text-decoration: none;"><img src="https://civilcase.com/civilcase-logo.png" alt="CivilCase" width="150" height="50" style="display: block; border: 0; outline: none;" /></a></p>
 ${inner}
 <p style="margin-top: 28px;">— The CivilCase team</p>
 <hr style="border: none; border-top: 1px solid #e2e0d8; margin: 28px 0 12px;" />

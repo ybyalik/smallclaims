@@ -43,6 +43,7 @@ interface AddressShape {
   city?: string;
   state?: string;
   zip?: string;
+  country?: string | null;
 }
 
 // Drop fields that bloat the raw dump without adding debug value.
@@ -59,7 +60,7 @@ function stripHeavyFields(obj: Record<string, unknown>): Record<string, unknown>
 function fmtAddress(addr: unknown): string {
   if (!addr || typeof addr !== "object") return "—";
   const a = addr as AddressShape;
-  return [a.line1, a.line2, [a.city, a.state, a.zip].filter(Boolean).join(", ")]
+  return [a.line1, a.line2, [a.city, a.state, a.zip, a.country].filter(Boolean).join(", ")]
     .filter(Boolean)
     .join(" · ");
 }

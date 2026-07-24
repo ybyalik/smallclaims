@@ -53,7 +53,7 @@ function fmtAddress(a: PostalAddress | null): string {
   const lines: string[] = [];
   if (a.line1) lines.push(String(a.line1));
   if (a.line2) lines.push(String(a.line2));
-  const cityLine = [a.city, a.state, a.zip].filter(Boolean).join(", ");
+  const cityLine = [a.city, a.state, a.zip, a.country].filter(Boolean).join(", ");
   if (cityLine) lines.push(cityLine);
   return lines.join("\n") || "—";
 }

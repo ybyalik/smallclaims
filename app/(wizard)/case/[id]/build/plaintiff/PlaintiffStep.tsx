@@ -17,6 +17,7 @@ import {
   Field,
 } from "../../../../../../components/wizard/form-errors";
 import { validatePlaintiffPhase } from "../../../../../../lib/cases/phase-validators";
+import { isInternationalCountry } from "../../../../../../lib/cases/address";
 import { useAutosave } from "../useAutosave";
 
 const BIZ_TYPES: ComboboxOption[] = [
@@ -99,6 +100,12 @@ export default function PlaintiffStep({
   const [stateAbbr, setStateAbbr] = useState(initialAddress?.state ?? "");
   const [zip, setZip] = useState(initialAddress?.zip ?? "");
   const [county, setCounty] = useState(initialCounty ?? "");
+  // International plaintiffs (living outside the US) get free-form region /
+  // postal code / country fields instead of the US state + ZIP + county trio.
+  const [abroad, setAbroad] = useState<boolean>(
+    isInternationalCountry(initialAddress?.country),
+  );
+  const [country, setCountry] = useState(initialAddress?.country ?? "");
   const [saving, setSaving] = useState(false);
   const { errors, showErrors, clear, setErrors } = useFormErrors();
   const [countyStatus, setCountyStatus] = useState<CountyLookupStatus>("idle");
@@ -114,8 +121,8 @@ export default function PlaintiffStep({
     plaintiff_address:
       !line1 && !city && !stateAbbr && !zip
         ? null
-        : { line1, city, state: stateAbbr, zip },
-    plaintiff_county: county.trim() || null,
+        : { line1, city, state: stateAbbr, zip, country: abroad ? country.trim() || null : null },
+    plaintiff_county: abroad ? null : county.trim() || null,
     intake_answers: {
       plaintiff_entity_type: entity,
       plaintiff_business_subtype: entity === "business" ? bizSubtype : undefined,
@@ -128,7 +135,13 @@ export default function PlaintiffStep({
   }
   function buildAddress(): PostalAddress | null {
     if (!line1 && !city && !stateAbbr && !zip) return null;
-    return { line1, city, state: stateAbbr, zip };
+    return {
+      line1,
+      city,
+      state: stateAbbr,
+      zip,
+      country: abroad ? country.trim() || null : null,
+    };
   }
 
   function validate(): Record<string, string> {
@@ -144,6 +157,7 @@ export default function PlaintiffStep({
       stateAbbr,
       zip,
       county,
+      country: abroad ? country : undefined,
     });
   }
 
@@ -164,7 +178,7 @@ export default function PlaintiffStep({
           plaintiff_email: email.trim(),
           plaintiff_phone: phone.trim(),
           plaintiff_address: buildAddress(),
-          plaintiff_county: county.trim() || null,
+          plaintiff_county: abroad ? null : county.trim() || null,
           intake_answers: {
             plaintiff_entity_type: entity,
             plaintiff_business_subtype: entity === "business" ? bizSubtype : undefined,
@@ -196,6 +210,8 @@ export default function PlaintiffStep({
       setCity(savedDefaults.address.city ?? "");
       setStateAbbr(savedDefaults.address.state ?? "");
       setZip(savedDefaults.address.zip ?? "");
+      setCountry(savedDefaults.address.country ?? "");
+      setAbroad(isInternationalCountry(savedDefaults.address.country));
     }
     if (savedDefaults.county) setCounty(savedDefaults.county);
   }
@@ -203,7 +219,7 @@ export default function PlaintiffStep({
   // Only treat the lookup as blocking when the county field is EMPTY.
   // A background re-lookup while the field is already populated must not
   // gray out the Continue button.
-  const isCountyLookingUp = countyStatus === "looking_up" && !county.trim();
+  const isCountyLookingUp = !abroad && countyStatus === "looking_up" && !county.trim();
 
   return (
     <div className="dlw-step">
@@ -334,6 +350,25 @@ export default function PlaintiffStep({
           </Field>
         </div>
 
+        <label className="dlw-check" style={{ display: "flex", alignItems: "center", gap: 8, margin: "4px 0 10px", fontSize: 14 }}>
+          <input
+            type="checkbox"
+            checked={abroad}
+            onChange={(e) => {
+              const on = e.target.checked;
+              setAbroad(on);
+              if (on) {
+                // The US state pick + county don't apply to a foreign address.
+                setStateAbbr("");
+                setCounty("");
+              } else {
+                setCountry("");
+              }
+            }}
+          />
+          I live outside the United States
+        </label>
+
         <Field label="Street address" required error={errors.line1}>
           <AddressAutocomplete
             value={line1}
@@ -351,49 +386,96 @@ export default function PlaintiffStep({
             }}
           />
         </Field>
-        <div className="dlw-field-row dlw-field-row-3">
-          <Field label="City" required error={errors.city}>
-            <input
-              value={city}
-              onChange={(e) => setCity(e.target.value)}
-              className="dlw-input"
-              autoComplete="address-level2"
-              aria-invalid={!!errors.city}
-            />
-          </Field>
-          <Field label="State" required error={errors.stateAbbr}>
-            <Combobox
-              id="plaintiff-state"
-              value={stateAbbr}
-              onChange={setStateAbbr}
-              options={STATE_OPTIONS}
-              ariaLabel="State"
-              fullWidth
-              placeholder="Select…"
-            />
-          </Field>
-          <Field label="ZIP" required error={errors.zip}>
-            <input
-              value={zip}
-              onChange={(e) => setZip(e.target.value)}
-              className="dlw-input"
-              autoComplete="postal-code"
-              inputMode="numeric"
-              maxLength={10}
-              aria-invalid={!!errors.zip}
-            />
-          </Field>
-        </div>
-        <Field label="County" required error={errors.county}>
-          <CountyField
-            address={{ line1, city, state: stateAbbr, zip }}
-            value={county}
-            onChange={setCounty}
-            label="Plaintiff county"
-            onStatusChange={setCountyStatus}
-            invalid={!!errors.county}
-          />
-        </Field>
+        {abroad ? (
+          <>
+            <div className="dlw-field-row dlw-field-row-3">
+              <Field label="City" required error={errors.city}>
+                <input
+                  value={city}
+                  onChange={(e) => setCity(e.target.value)}
+                  className="dlw-input"
+                  autoComplete="address-level2"
+                  aria-invalid={!!errors.city}
+                />
+              </Field>
+              <Field label="State / Province / Region" error={errors.stateAbbr}>
+                <input
+                  value={stateAbbr}
+                  onChange={(e) => setStateAbbr(e.target.value)}
+                  className="dlw-input"
+                  autoComplete="address-level1"
+                  placeholder="Optional"
+                />
+              </Field>
+              <Field label="Postal code" required error={errors.zip}>
+                <input
+                  value={zip}
+                  onChange={(e) => setZip(e.target.value)}
+                  className="dlw-input"
+                  autoComplete="postal-code"
+                  maxLength={12}
+                  aria-invalid={!!errors.zip}
+                />
+              </Field>
+            </div>
+            <Field label="Country" required error={errors.country}>
+              <input
+                value={country}
+                onChange={(e) => setCountry(e.target.value)}
+                className="dlw-input"
+                autoComplete="country-name"
+                placeholder="e.g. Brazil"
+                aria-invalid={!!errors.country}
+              />
+            </Field>
+          </>
+        ) : (
+          <>
+            <div className="dlw-field-row dlw-field-row-3">
+              <Field label="City" required error={errors.city}>
+                <input
+                  value={city}
+                  onChange={(e) => setCity(e.target.value)}
+                  className="dlw-input"
+                  autoComplete="address-level2"
+                  aria-invalid={!!errors.city}
+                />
+              </Field>
+              <Field label="State" required error={errors.stateAbbr}>
+                <Combobox
+                  id="plaintiff-state"
+                  value={stateAbbr}
+                  onChange={setStateAbbr}
+                  options={STATE_OPTIONS}
+                  ariaLabel="State"
+                  fullWidth
+                  placeholder="Select…"
+                />
+              </Field>
+              <Field label="ZIP" required error={errors.zip}>
+                <input
+                  value={zip}
+                  onChange={(e) => setZip(e.target.value)}
+                  className="dlw-input"
+                  autoComplete="postal-code"
+                  inputMode="numeric"
+                  maxLength={10}
+                  aria-invalid={!!errors.zip}
+                />
+              </Field>
+            </div>
+            <Field label="County" required error={errors.county}>
+              <CountyField
+                address={{ line1, city, state: stateAbbr, zip }}
+                value={county}
+                onChange={setCounty}
+                label="Plaintiff county"
+                onStatusChange={setCountyStatus}
+                invalid={!!errors.county}
+              />
+            </Field>
+          </>
+        )}
       </div>
 
       <ErrorSummary
@@ -409,6 +491,7 @@ export default function PlaintiffStep({
           "stateAbbr",
           "zip",
           "county",
+          "country",
           "_save",
         ]}
       />

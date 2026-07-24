@@ -6,6 +6,7 @@
 
 import { complete } from "../openrouter";
 import { STATES } from "../states";
+import { isInternationalCountry } from "../cases/address";
 import { loadActivePrompt, renderTemplate } from "../prompts";
 import { buildLetterStateContext } from "./letter-context";
 import { formatDisputeTypePhrase } from "../cases/dispute-type-label";
@@ -105,10 +106,23 @@ TODAY'S DATE: {{today_date}}
 
 Now draft the demand letter following the structure I specified.`;
 
-function formatAddress(addr: { line1: string; line2?: string | null; city: string; state: string; zip: string }): string {
+function formatAddress(addr: {
+  line1: string;
+  line2?: string | null;
+  city: string;
+  state: string;
+  zip: string;
+  country?: string | null;
+}): string {
   const lines = [addr.line1];
   if (addr.line2) lines.push(addr.line2);
-  lines.push(`${addr.city}, ${addr.state} ${addr.zip}`);
+  // International plaintiff addresses may have no region; don't print a
+  // dangling comma-space in that case.
+  const cityLine = addr.state
+    ? `${addr.city}, ${addr.state} ${addr.zip}`
+    : `${addr.city} ${addr.zip}`;
+  lines.push(cityLine.trim());
+  if (isInternationalCountry(addr.country)) lines.push((addr.country as string).trim());
   return lines.join("\n");
 }
 

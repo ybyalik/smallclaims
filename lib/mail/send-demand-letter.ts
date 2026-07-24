@@ -11,6 +11,7 @@ import { createNotification } from "../notifications";
 import { paidProductsForCase } from "../payments/access";
 import type { ProductKey } from "../stripe";
 import type { Case, DemandLetter, PostalAddress } from "../supabase/types";
+import { isInternationalCountry } from "../cases/address";
 
 // The demand-letter tiers whose purchase authorizes physical mailing.
 const DEMAND_LETTER_TIERS: readonly ProductKey[] = [
@@ -122,10 +123,16 @@ export async function mailDemandLetter(
   const civilcaseLetterhead =
     answers.civilcase_letterhead === "no" ? "no" : "yes";
   let fromOverride: PostGridAddress | undefined;
+  // The plaintiff's own address can be the envelope sender ONLY when it's a
+  // US address. An international plaintiff (lives abroad) always mails under
+  // the CivilCase return address: USPS certified mail wants a domestic return
+  // address, and toPostGridAddress assumes US formatting. The letter BODY
+  // still shows their real (foreign) contact address either way.
   if (
     civilcaseLetterhead === "no" &&
     c.plaintiff_name &&
-    c.plaintiff_address
+    c.plaintiff_address &&
+    !isInternationalCountry((c.plaintiff_address as PostalAddress).country)
   ) {
     fromOverride = toPostGridAddress(
       c.plaintiff_name,
