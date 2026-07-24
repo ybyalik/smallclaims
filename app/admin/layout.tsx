@@ -45,6 +45,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
         <Link href="/admin/users">Users</Link>
         <Link href="/admin/cases">Cases</Link>
         <Link href="/admin/blog">Blog</Link>
+        <Link href="/admin/winback">Winback emails</Link>
         <Link href="/admin/research">State research</Link>
         <Link href="/admin/prompts">AI prompts</Link>
         <Link href="/admin/test-scenarios">Test scenarios</Link>

@@ -22,6 +22,8 @@ export interface SendEmailOpts {
   text: string;
   html?: string;
   replyTo?: string;
+  // Extra SMTP headers, e.g. List-Unsubscribe for the winback sequence.
+  headers?: Record<string, string>;
 }
 
 export interface SendEmailResult {
@@ -45,6 +47,7 @@ export async function sendEmail(opts: SendEmailOpts): Promise<SendEmailResult> {
       text: opts.text,
       html: opts.html,
       replyTo: opts.replyTo,
+      headers: opts.headers,
     });
     if (error) {
       console.error("[resend] send returned error:", error);

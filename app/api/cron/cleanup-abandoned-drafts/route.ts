@@ -10,6 +10,11 @@
 // updated_at) is left alone too — someone might still be filling out
 // step 1 or 2 right now.
 //
+// NEVER deleted: any draft with a plaintiff_email. Those are reachable
+// leads — the winback email sequence needs the case (and its resume
+// link) to stay alive. Owner decision 2026-07-24: no automatic deletion,
+// ever, for anything that has an email.
+//
 // Triggered by Vercel Cron (vercel.json). Protected by CRON_SECRET.
 
 import { NextRequest, NextResponse } from "next/server";
@@ -35,14 +40,17 @@ export async function GET(req: NextRequest) {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const db = createServiceRoleClient() as any;
 
-  // Delete every draft with no defendant_name that hasn't been touched
-  // in the last STALE_HOURS hours. status='draft' guards against ever
-  // touching a paid/active case that somehow lost its defendant_name.
+  // Delete every draft with no defendant_name AND no plaintiff_email that
+  // hasn't been touched in the last STALE_HOURS hours. status='draft' guards
+  // against ever touching a paid/active case that somehow lost its
+  // defendant_name; the plaintiff_email guard keeps winback-able leads alive
+  // forever.
   const { data: deleted, error } = await db
     .from("cases")
     .delete()
     .eq("status", "draft")
     .is("defendant_name", null)
+    .is("plaintiff_email", null)
     .lt("updated_at", cutoff)
     .select("id");
 

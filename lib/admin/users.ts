@@ -143,17 +143,25 @@ export async function listAdminCases(): Promise<AdminCaseRow[]> {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const admin = createServiceRoleClient() as any;
   // Narrow select: the admin list view renders only id, status, dispute_type,
-  // state, amount_cents, defendant_name, owner_user_id, intake_complete, and
-  // the timestamps. The full row carries large JSONB columns (intake_answers,
+  // state, amount_cents, defendant_name, owner_user_id, and the timestamps.
+  // The full row carries large JSONB columns (intake_answers,
   // tracking_progress, etc.) that aren't displayed — pulling them all cost ~3x
   // the bytes on cold loads.
-  const { data: cases } = await admin
+  const { data: cases, error: casesErr } = await admin
     .from("cases")
     .select(
-      "id, owner_user_id, status, dispute_type, state, amount_cents, defendant_name, defendant_address, plaintiff_name, intake_complete, intake_complete_at, created_at, updated_at",
+      "id, owner_user_id, status, dispute_type, state, amount_cents, defendant_name, defendant_address, plaintiff_name, created_at, updated_at",
     )
     .order("updated_at", { ascending: false })
     .limit(500);
+  // Fail LOUD on a query error. This select once referenced columns that don't
+  // exist in prod (intake_complete / intake_complete_at); the error was
+  // discarded, so the admin page confidently rendered "0 cases" while the
+  // table held real customers. An exception is better than a silent lie.
+  if (casesErr) {
+    console.error("[admin/listAdminCases] cases query failed:", casesErr);
+    throw new Error(`Admin cases query failed: ${casesErr.message ?? casesErr}`);
+  }
   if (!cases || cases.length === 0) return [];
 
   const userIds = Array.from(

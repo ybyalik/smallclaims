@@ -65,12 +65,24 @@ export async function GET(req: NextRequest) {
       id: string;
       created_at: string;
       is_anonymous?: boolean;
+      user_metadata?: { email_pending_claim?: unknown };
     }>;
     if (users.length === 0) break;
     scanned += users.length;
 
     for (const u of users) {
       if (u.is_anonymous !== true) continue;
+      // Never delete an anon user we can still reach by email: a stashed
+      // pending-claim email means they typed their address into the wizard.
+      // Owner decision 2026-07-24: anything with an email is kept forever
+      // (the winback sequence needs the account + cases alive).
+      if (
+        typeof u.user_metadata?.email_pending_claim === "string" &&
+        u.user_metadata.email_pending_claim.trim()
+      ) {
+        skipped.push(u.id);
+        continue;
+      }
       const created = new Date(u.created_at);
       if (created > cutoff) {
         skipped.push(u.id);
@@ -88,15 +100,27 @@ export async function GET(req: NextRequest) {
     }
   }
 
-  // Phase 2: apply the payment + activity guards, then delete.
+  // Phase 2: apply the email + payment + activity guards, then delete.
   for (const u of candidates) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const { data: ownedCases } = await (db as any)
       .from("cases")
-      .select("id, updated_at")
+      .select("id, updated_at, plaintiff_email")
       .eq("owner_user_id", u.id);
-    const owned = (ownedCases ?? []) as Array<{ id: string; updated_at: string | null }>;
+    const owned = (ownedCases ?? []) as Array<{
+      id: string;
+      updated_at: string | null;
+      plaintiff_email: string | null;
+    }>;
     const ownedIds = owned.map((c) => c.id);
+
+    // Never delete an anon user whose case carries an email address — that is
+    // a reachable lead the winback sequence emails. Deleting the user would
+    // cascade-delete the case and kill the resume link.
+    if (owned.some((c) => c.plaintiff_email)) {
+      skipped.push(u.id);
+      continue;
+    }
 
     // Never delete an anonymous user who is still ACTIVELY working. Account age
     // alone is the wrong signal: a visitor who keeps coming back to their case
