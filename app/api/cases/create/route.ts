@@ -53,6 +53,17 @@ export async function POST(req: NextRequest) {
     );
   }
 
+  // Optional bot-check token from the client (present when Turnstile is
+  // configured). Supabase requires it on anonymous sign-in once Captcha is
+  // enabled in the dashboard; older callers that send no body are tolerated.
+  let captchaToken: string | undefined;
+  try {
+    const body = (await req.json()) as { captchaToken?: unknown } | null;
+    if (body && typeof body.captchaToken === "string") captchaToken = body.captchaToken;
+  } catch {
+    /* no / invalid JSON body — fine */
+  }
+
   const supabase = createClient();
   let {
     data: { user },
@@ -61,7 +72,9 @@ export async function POST(req: NextRequest) {
   // No user yet — try anonymous sign-in. If the project has anonymous
   // auth disabled this will fail and we fall back to the login redirect.
   if (!user) {
-    const { data, error } = await supabase.auth.signInAnonymously();
+    const { data, error } = await supabase.auth.signInAnonymously(
+      captchaToken ? { options: { captchaToken } } : undefined,
+    );
     if (error || !data.user) {
       return NextResponse.json(
         { error: "auth_required", loginUrl: "/login?next=/dashboard/cases/new" },

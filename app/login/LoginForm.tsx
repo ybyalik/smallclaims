@@ -1,11 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "../../lib/supabase/client";
 import { signInWithGoogle, sendMagicLink } from "../../lib/auth/oauth";
 import { markAnonymousHandoff } from "../../lib/auth/anon-handoff";
 import { friendlyAuthError } from "../../lib/auth/friendly-auth-error";
+import Turnstile, { captchaConfigured, type TurnstileHandle } from "../../components/Turnstile";
 
 export default function LoginForm({ next, error: initialError }: { next?: string; error?: string }) {
   const router = useRouter();
@@ -17,18 +18,43 @@ export default function LoginForm({ next, error: initialError }: { next?: string
     initialError ? friendlyAuthError(initialError) : null,
   );
   const [magicSent, setMagicSent] = useState(false);
+  const captchaTokenRef = useRef<string | null>(null);
+  const turnstileRef = useRef<TurnstileHandle>(null);
+
+  // Wait briefly for the invisible Turnstile to produce a token (it solves
+  // within ~1s of load). Returns undefined if captcha isn't configured or the
+  // token never arrives — Supabase then decides based on its own setting.
+  async function getCaptchaToken(): Promise<string | undefined> {
+    if (!captchaConfigured()) return undefined;
+    const start = Date.now();
+    while (!captchaTokenRef.current && Date.now() - start < 2500) {
+      await new Promise((r) => setTimeout(r, 100));
+    }
+    return captchaTokenRef.current ?? undefined;
+  }
+  // Reset the single-use token after a failed attempt so a retry gets a fresh one.
+  function resetCaptcha() {
+    turnstileRef.current?.reset();
+    captchaTokenRef.current = null;
+  }
 
   async function onPasswordSubmit(e: React.FormEvent) {
     e.preventDefault();
     setError(null);
     setLoading(true);
+    const captchaToken = await getCaptchaToken();
     // Capture the anonymous user id before the session swaps so we can
     // hand it to the claim endpoint after sign-in.
     const anonId = await markAnonymousHandoff();
     const supabase = createClient();
-    const { error } = await supabase.auth.signInWithPassword({ email, password });
+    const { error } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+      options: { captchaToken },
+    });
     if (error) {
       setLoading(false);
+      resetCaptcha();
       setError(friendlyAuthError(error.message));
       return;
     }
@@ -56,11 +82,13 @@ export default function LoginForm({ next, error: initialError }: { next?: string
     e.preventDefault();
     setError(null);
     setLoading(true);
+    const captchaToken = await getCaptchaToken();
     try {
       await markAnonymousHandoff();
-      await sendMagicLink(email, next);
+      await sendMagicLink(email, next, captchaToken);
       setMagicSent(true);
     } catch (err) {
+      resetCaptcha();
       setError(err instanceof Error ? friendlyAuthError(err.message) : "Could not send magic link.");
     } finally {
       setLoading(false);
@@ -168,6 +196,16 @@ export default function LoginForm({ next, error: initialError }: { next?: string
           </button>
         </form>
       )}
+
+      <Turnstile
+        ref={turnstileRef}
+        onToken={(t) => {
+          captchaTokenRef.current = t;
+        }}
+        onExpire={() => {
+          captchaTokenRef.current = null;
+        }}
+      />
     </>
   );
 }

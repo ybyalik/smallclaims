@@ -1,11 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "../../lib/supabase/client";
 import { signInWithGoogle } from "../../lib/auth/oauth";
 import { markAnonymousHandoff } from "../../lib/auth/anon-handoff";
 import { friendlyAuthError } from "../../lib/auth/friendly-auth-error";
+import Turnstile, { captchaConfigured, type TurnstileHandle } from "../../components/Turnstile";
 
 export default function SignupForm({ next }: { next?: string }) {
   const router = useRouter();
@@ -15,6 +16,20 @@ export default function SignupForm({ next }: { next?: string }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [needsVerify, setNeedsVerify] = useState(false);
+  const captchaTokenRef = useRef<string | null>(null);
+  const turnstileRef = useRef<TurnstileHandle>(null);
+
+  // Wait briefly for the invisible Turnstile to produce a token (it solves
+  // within ~1s of load). Returns undefined if captcha isn't configured or the
+  // token never arrives — Supabase then decides based on its own setting.
+  async function getCaptchaToken(): Promise<string | undefined> {
+    if (!captchaConfigured()) return undefined;
+    const start = Date.now();
+    while (!captchaTokenRef.current && Date.now() - start < 2500) {
+      await new Promise((r) => setTimeout(r, 100));
+    }
+    return captchaTokenRef.current ?? undefined;
+  }
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -63,16 +78,22 @@ export default function SignupForm({ next }: { next?: string }) {
     }
 
     // Standard fresh signup (no existing anonymous session).
+    // Bot check: attach the Turnstile token (the door the spam came through).
+    const captchaToken = await getCaptchaToken();
     const { data, error } = await supabase.auth.signUp({
       email,
       password,
       options: {
         data: { full_name: fullName },
         emailRedirectTo: `${window.location.origin}/auth/callback${next ? `?next=${encodeURIComponent(next)}` : ""}`,
+        captchaToken,
       },
     });
     setLoading(false);
     if (error) {
+      // The single-use token was consumed; reset so a retry gets a fresh one.
+      turnstileRef.current?.reset();
+      captchaTokenRef.current = null;
       setError(friendlyAuthError(error.message));
       return;
     }
@@ -152,6 +173,15 @@ export default function SignupForm({ next }: { next?: string }) {
           <span className="auth-hint">8 characters minimum</span>
         </label>
         {error && <p className="auth-error">{error}</p>}
+        <Turnstile
+          ref={turnstileRef}
+          onToken={(t) => {
+            captchaTokenRef.current = t;
+          }}
+          onExpire={() => {
+            captchaTokenRef.current = null;
+          }}
+        />
         <button type="submit" disabled={loading} className="btn btn-dark btn-full">
           {loading ? "Creating account..." : "Create account"}
         </button>

@@ -19,12 +19,16 @@ export async function signInWithGoogle(next?: string): Promise<void> {
   if (error) throw error;
 }
 
-export async function sendMagicLink(email: string, next?: string): Promise<void> {
+export async function sendMagicLink(
+  email: string,
+  next?: string,
+  captchaToken?: string,
+): Promise<void> {
   const supabase = createClient();
   const callback = `${window.location.origin}/auth/callback${next ? `?next=${encodeURIComponent(next)}` : ""}`;
   const { error } = await supabase.auth.signInWithOtp({
     email,
-    options: { emailRedirectTo: callback },
+    options: { emailRedirectTo: callback, captchaToken },
   });
   if (error) throw error;
 }
