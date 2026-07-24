@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useRef, useState, useTransition } from "react";
+import { useEffect, useRef, useState, useTransition } from "react";
 import Turnstile, { captchaConfigured, type TurnstileHandle } from "./Turnstile";
 
 /**
@@ -35,11 +35,20 @@ export default function StartCaseButton({
   const tokenRef = useRef<string | null>(null);
   const turnstileRef = useRef<TurnstileHandle>(null);
 
+  // Only logged-OUT visitors trigger the anonymous sign-in that Supabase gates
+  // behind Captcha. A logged-in user's case-create reuses their session, so we
+  // skip the widget entirely for them (no token needed, and no bot-check
+  // clutter on the dashboard). cc_has_session is the marker cookie set on login.
+  const [loggedIn, setLoggedIn] = useState(false);
+  useEffect(() => {
+    setLoggedIn(/(?:^|;\s*)cc_has_session=1(?:;|$)/.test(document.cookie));
+  }, []);
+
   // Wait briefly for the invisible Turnstile to produce a token (it solves
-  // within ~1s of page load). Returns the token, or null if unconfigured or it
+  // within ~1s of page load). Returns the token, or null if unneeded or it
   // never arrives — the server tolerates a missing token when Captcha is off.
   async function waitForToken(maxMs = 2500): Promise<string | null> {
-    if (!captchaConfigured()) return null;
+    if (!captchaConfigured() || loggedIn) return null;
     const start = Date.now();
     while (!tokenRef.current && Date.now() - start < maxMs) {
       await new Promise((r) => setTimeout(r, 100));
@@ -95,15 +104,17 @@ export default function StartCaseButton({
       >
         {children}
       </button>
-      <Turnstile
-        ref={turnstileRef}
-        onToken={(t) => {
-          tokenRef.current = t;
-        }}
-        onExpire={() => {
-          tokenRef.current = null;
-        }}
-      />
+      {!loggedIn && (
+        <Turnstile
+          ref={turnstileRef}
+          onToken={(t) => {
+            tokenRef.current = t;
+          }}
+          onExpire={() => {
+            tokenRef.current = null;
+          }}
+        />
+      )}
     </>
   );
 }
