@@ -11,6 +11,7 @@ import { sendEmail } from "../../../../lib/resend";
 import { markCasePaid } from "../../../../lib/demand-letter/mark-paid";
 import { ensureCollectionPlanForCase } from "../../../../lib/collection-plan/generate";
 import { ensureFilingReportForCase } from "../../../../lib/case-research/ensure-filing-report";
+import { notifyAdminOfOrder } from "../../../../lib/notifications/notify-admin-order";
 
 export const runtime = "nodejs";
 
@@ -102,6 +103,17 @@ export async function POST(req: NextRequest) {
           amount_total: session.amount_total,
           currency: session.currency,
         },
+      });
+
+      // Notify the team a new order came in. Placed right after the payment is
+      // recorded (before product branching) so an admin is alerted even if a
+      // downstream generation step fails. Never throws.
+      await notifyAdminOfOrder({
+        caseId,
+        productKey,
+        amountCents: session.amount_total,
+        currency: session.currency,
+        addons: session.metadata?.addons,
       });
 
       // Branch by product. Demand-letter products advance case status and
@@ -240,6 +252,20 @@ If you have questions, reply to this email.
           product_key: productKey ?? null,
         });
         assertDbWrite(piInsertErr, "payment_intent fallback insert");
+      }
+
+      // Notify the team a new order came in — only on actual capture
+      // (payment_intent.succeeded = money received), never on a mere authorize.
+      // Placed right after the payment is recorded so the alert fires even if a
+      // downstream generation step fails. Never throws.
+      if (event.type === "payment_intent.succeeded") {
+        await notifyAdminOfOrder({
+          caseId,
+          productKey,
+          amountCents: intent.amount,
+          currency: intent.currency,
+          addons: intent.metadata?.addons,
+        });
       }
 
       // Filing Guide and Collection Plan are pure-access unlocks (no mail
