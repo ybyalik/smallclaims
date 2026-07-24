@@ -179,8 +179,22 @@ function disputeTypeLabel(t: string, customText: string | null = null): string {
   return formatDisputeTypePhrase(t, customText);
 }
 
+// Optional revision context. When present, the model is asked to REVISE the
+// previous letter using the customer's change-request feedback instead of
+// drafting blind from the intake alone.
+export interface LetterRevisionContext {
+  // The customer's change-request text, verbatim (already length-capped at
+  // intake by the request-changes route).
+  customer_feedback: string;
+  // The previous letter's markdown body (cover letter + page-break marker
+  // stripped by the caller if present; passing the full body is also fine,
+  // the prompt tells the model to ignore the cover page).
+  previous_letter_md: string;
+}
+
 export async function generateDemandLetter(
   intake: DemandLetterIntake,
+  revision?: LetterRevisionContext,
 ): Promise<DemandLetterDraft> {
   // Build the rich state-law context. When the case has a resolved canonical
   // claim type (from the classifier), use it for SOL/interest/multiplier
@@ -267,7 +281,33 @@ The body of the letter is still written in the plaintiff's first-person voice ("
     letterhead_block: letterheadBlock,
   };
 
-  const userPrompt = renderTemplate(userTpl.body, ctx);
+  let userPrompt = renderTemplate(userTpl.body, ctx);
+
+  // Revision mode: append the previous letter + the customer's feedback so the
+  // model rewrites rather than redrafts blind. Appended AFTER the rendered
+  // template (instead of via a placeholder) so admin-edited templates in the
+  // prompt_templates table keep working without needing a new variable.
+  if (revision) {
+    userPrompt += `
+
+REVISION REQUEST — THIS IS A REWRITE, NOT A FRESH DRAFT.
+The plaintiff reviewed the previous letter (below) and asked for changes. Redraft the letter so it fully incorporates their feedback while still following every structural and legal rule above.
+
+Rules for the rewrite:
+- Treat the plaintiff's feedback as the most accurate statement of the facts. Where it conflicts with the FACTS block above, the feedback wins.
+- Keep everything that was correct in the previous letter (parties, addresses, amount, deadline, statute citations from the State-specific context) unless the feedback changes it.
+- Do not mention that this is a revision, do not reference "your feedback" or the previous letter in the output. The output is simply the letter.
+
+PREVIOUS LETTER (for reference; if it starts with a CivilCase cover page, ignore that page and only consider the demand letter itself):
+---
+${revision.previous_letter_md}
+---
+
+PLAINTIFF'S CHANGE-REQUEST FEEDBACK (verbatim):
+---
+${revision.customer_feedback}
+---`;
+  }
 
   const result = await complete({
     messages: [

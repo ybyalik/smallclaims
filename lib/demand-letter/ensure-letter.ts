@@ -92,7 +92,7 @@ export async function ensureDemandLetterForCase(
 
   const { data: existing } = await admin
     .from("demand_letters")
-    .select("id, version")
+    .select("id, version, approval_status, changes_text, changes_requested_at, body_md")
     .eq("case_id", caseId)
     .order("version", { ascending: false })
     .limit(1)
@@ -107,6 +107,20 @@ export async function ensureDemandLetterForCase(
   }
 
   const nextVersion = existing?.version ? existing.version + 1 : 1;
+
+  // Revision mode: when regenerating a letter the customer requested changes
+  // on, feed their feedback + the previous letter into the model so the new
+  // version actually addresses their comments instead of redrafting blind.
+  const revision =
+    opts.forceNew &&
+    existing?.approval_status === "changes_requested" &&
+    typeof existing.changes_text === "string" &&
+    existing.changes_text.trim()
+      ? {
+          customer_feedback: existing.changes_text as string,
+          previous_letter_md: (existing.body_md as string) ?? "",
+        }
+      : undefined;
 
   const { data: caseRow, error: caseErr } = await admin
     .from("cases")
@@ -139,10 +153,12 @@ export async function ensureDemandLetterForCase(
     intake.secondary_claim_types = classification.secondary_claim_types;
   }
 
-  console.log(`[ensureDemandLetter] case=${caseId} starting LLM generation`);
+  console.log(
+    `[ensureDemandLetter] case=${caseId} starting LLM generation${revision ? " (revision from customer feedback)" : ""}`,
+  );
   let draft;
   try {
-    draft = await generateDemandLetter(intake);
+    draft = await generateDemandLetter(intake, revision);
   } catch (err) {
     console.error(`[ensureDemandLetter] case=${caseId} LLM call failed`, err);
     // Alert the team. Otherwise a paid customer whose letter keeps failing to
@@ -189,6 +205,18 @@ export async function ensureDemandLetterForCase(
       template_key: draft.template_key,
       generated_by: draft.generated_by,
       mail_status: "draft",
+      // A revision draft stays in the changes_requested state (with the
+      // feedback carried over for the admin panel) until an admin reviews it
+      // and clicks "Mark ready for review" — which flips it to pending and
+      // notifies the customer. Prevents an unreviewed AI rewrite from being
+      // announced to the customer.
+      ...(revision
+        ? {
+            approval_status: "changes_requested",
+            changes_text: existing?.changes_text ?? null,
+            changes_requested_at: existing?.changes_requested_at ?? null,
+          }
+        : {}),
     })
     .select("id")
     .single();
@@ -199,6 +227,12 @@ export async function ensureDemandLetterForCase(
   }
 
   console.log(`[ensureDemandLetter] case=${caseId} created letter ${inserted.id}`);
+
+  // Revision drafts are NOT announced to the customer here. The admin reviews
+  // the rewrite first; "Mark ready for review" sends the notification + email.
+  if (revision) {
+    return { status: "created", letterId: inserted.id };
+  }
 
   // Tell the owner their letter is ready for review. Fires for first
   // generation AND every regenerated version, so a customer never has to

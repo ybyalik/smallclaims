@@ -125,7 +125,9 @@ export default function DemandLetterPanel({
     if (regenerating) return;
     if (
       !confirm(
-        "Regenerate the demand letter? This deletes the current letter row and runs the LLM with the latest code + prompts. Takes about 10-30 seconds.",
+        letter?.approval_status === "changes_requested"
+          ? "Regenerate the demand letter? The customer's change-request feedback will be fed into the rewrite. The new version stays un-announced until you click \"Mark ready for review\". Takes about 10-30 seconds."
+          : "Regenerate the demand letter? This creates a new version using the latest code + prompts (old versions are kept). Takes about 10-30 seconds.",
       )
     ) {
       return;
