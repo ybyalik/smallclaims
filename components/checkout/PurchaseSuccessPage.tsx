@@ -6,6 +6,7 @@ import { notFound, redirect } from "next/navigation";
 import { createClient } from "../../lib/supabase/server";
 import { loadOwnedCase } from "../../lib/demand-letter/access";
 import { reconcilePendingPayment } from "../../lib/payments/reconcile";
+import { waitUntil } from "@vercel/functions";
 import { ensureDemandLetterForCase } from "../../lib/demand-letter/ensure-letter";
 import type { ProductKey } from "../../lib/stripe";
 import OrderConfirmation from "./OrderConfirmation";
@@ -58,11 +59,16 @@ export default async function PurchaseSuccessPage({
   // the user reading the order confirmation. By the time they click through
   // to /case/[id]/letter the letter row should already be in the database,
   // so they don't sit on a blank iframe waiting 10-15s for the LLM.
-  // Fire-and-forget: we don't want the success page to block on it.
+  // Fire-and-forget, but kept alive with waitUntil: on Vercel a serverless
+  // function is frozen as soon as the response is sent, so a bare promise
+  // would be killed mid-generation and the letter would only appear when the
+  // customer opens /case/[id]/letter (which awaits the same call).
   if (productKind === "demand-letter") {
-    ensureDemandLetterForCase(c.id).catch((e) => {
-      console.warn("[purchase-success] eager letter generation failed", e);
-    });
+    waitUntil(
+      ensureDemandLetterForCase(c.id).catch((e) => {
+        console.warn("[purchase-success] eager letter generation failed", e);
+      }),
+    );
   }
 
   return (

@@ -1,6 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { createServiceRoleClient } from "../../../../../lib/supabase/service-role";
-import { verifyWebhookSignature } from "../../../../../lib/mail/postgrid";
+import { verifyWebhookDelivery } from "../../../../../lib/mail/postgrid";
 import { createNotification } from "../../../../../lib/notifications";
 import type { MailStatus } from "../../../../../lib/supabase/types";
 
@@ -17,18 +17,27 @@ export const dynamic = "force-dynamic";
 // Signature header: Postgrid-Webhook-Signature (HMAC-SHA256 hex of raw
 // body using POSTGRID_WEBHOOK_SECRET).
 
+interface PostGridLetterObject {
+  id: string;
+  status?: string;
+  trackingNumber?: string | null;
+  sendDate?: string | null;
+  metadata?: Record<string, string>;
+}
+
+// PostGrid puts the letter itself in `data`; older code expected a
+// Stripe-style `data.object`. Accept both.
 interface PostGridWebhookEvent {
   type: string;
-  data: {
-    object: {
-      id: string;
-      status?: string;
-      trackingNumber?: string | null;
-      sendDate?: string | null;
-      metadata?: Record<string, string>;
-    };
-  };
-  createdAt: string;
+  data?: (PostGridLetterObject & { object?: PostGridLetterObject }) | null;
+  createdAt?: string;
+}
+
+function letterOf(event: PostGridWebhookEvent): PostGridLetterObject | null {
+  const d = event.data;
+  if (!d) return null;
+  if (d.object && d.object.id) return d.object;
+  return d.id ? d : null;
 }
 
 // PostGrid letter status → our internal MailStatus.
@@ -54,15 +63,16 @@ const STATUS_RANK: Record<string, number> = {
 
 export async function POST(req: NextRequest) {
   const rawBody = await req.text();
-  // Try both header names PostGrid has used historically. Log every header
-  // starting with "postgrid" so we can see exactly what came in when
-  // signature verification fails.
+  // PostGrid signs JSON deliveries in the PostGrid-Signature header and sends
+  // JWT deliveries as the body itself. Log every postgrid-* header when a
+  // delivery does not verify so the format can be seen.
   const signature =
-    req.headers.get("postgrid-webhook-signature") ||
     req.headers.get("postgrid-signature") ||
-    "";
+    req.headers.get("postgrid-webhook-signature") ||
+    null;
 
-  if (!verifyWebhookSignature(rawBody, signature)) {
+  const verified = verifyWebhookDelivery(rawBody, signature);
+  if (!verified) {
     const postgridHeaders: Record<string, string> = {};
     req.headers.forEach((value, key) => {
       if (key.toLowerCase().startsWith("postgrid")) {
@@ -78,14 +88,9 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "invalid_signature" }, { status: 401 });
   }
 
-  let event: PostGridWebhookEvent;
-  try {
-    event = JSON.parse(rawBody) as PostGridWebhookEvent;
-  } catch {
-    return NextResponse.json({ error: "invalid_body" }, { status: 400 });
-  }
-
-  const letterId = event.data?.object?.id;
+  const event = verified as unknown as PostGridWebhookEvent;
+  const letterObj = letterOf(event);
+  const letterId = letterObj?.id;
   if (!letterId) {
     return NextResponse.json({ error: "missing_letter_id" }, { status: 400 });
   }
@@ -105,7 +110,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: true, ignored: "letter_not_found" });
   }
 
-  const nextStatus = mapStatus(event.data?.object?.status, event.type);
+  const nextStatus = mapStatus(letterObj?.status, event.type);
   const previousStatus = (letter.mail_status as string | null) ?? null;
 
   // Ignore out-of-order / backward events: never regress a letter's status
@@ -117,8 +122,8 @@ export async function POST(req: NextRequest) {
   }
 
   const updates: Record<string, string | null> = { mail_status: nextStatus };
-  if (event.data?.object?.trackingNumber) {
-    updates.tracking_number = event.data.object.trackingNumber;
+  if (letterObj?.trackingNumber) {
+    updates.tracking_number = letterObj.trackingNumber;
   }
   // Only stamp the timestamp when actually entering the state (not on a
   // duplicate event), so delivered_at/returned_at reflect the first delivery.

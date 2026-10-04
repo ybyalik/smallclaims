@@ -201,22 +201,65 @@ function appendAddress(form: FormData, prefix: string, addr: PostGridAddress): v
   }
 }
 
-/**
- * Verify a PostGrid webhook signature. PostGrid signs the raw request body
- * with HMAC-SHA256 using the webhook secret and sends the digest in the
- * `Postgrid-Webhook-Signature` header. Returns true when signatures match.
- */
-export function verifyWebhookSignature(rawBody: string, signature: string): boolean {
-  const secret = process.env.POSTGRID_WEBHOOK_SECRET;
-  if (!secret || !signature) return false;
-  const computed = crypto.createHmac("sha256", secret).update(rawBody).digest("hex");
-  // timingSafeEqual requires equal-length buffers; bail early on mismatch.
-  if (computed.length !== signature.length) return false;
+function safeEqual(a: string, b: string): boolean {
+  if (a.length !== b.length) return false;
   try {
-    return crypto.timingSafeEqual(Buffer.from(computed), Buffer.from(signature));
+    return crypto.timingSafeEqual(Buffer.from(a), Buffer.from(b));
   } catch {
     return false;
   }
 }
 
-export const postgrid = { isConfigured, createCertifiedLetter, verifyWebhookSignature };
+/**
+ * Verify a PostGrid webhook delivery. PostGrid sends either:
+ *  - a JSON body with a `PostGrid-Signature: t=<unix>,v1=<hex>` header, where
+ *    v1 is HMAC-SHA256(secret, `${t}.${rawBody}`) in hex; or
+ *  - a JWT as the whole body (HS256, signed with the webhook secret), whose
+ *    claims carry `type` and `data`.
+ * Returns the event object when the delivery is genuine, otherwise null.
+ */
+export function verifyWebhookDelivery(rawBody: string, signatureHeader: string | null): Record<string, unknown> | null {
+  const secret = process.env.POSTGRID_WEBHOOK_SECRET;
+  if (!secret) return null;
+  const body = rawBody.trim();
+
+  // JWT body: three base64url parts.
+  if (/^[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+$/.test(body)) {
+    const [h, p, sig] = body.split(".");
+    const expected = crypto.createHmac("sha256", secret).update(`${h}.${p}`).digest("base64url");
+    if (!safeEqual(expected, sig)) return null;
+    try {
+      const header = JSON.parse(Buffer.from(h, "base64url").toString("utf8")) as { alg?: string };
+      if (header.alg && header.alg !== "HS256") return null;
+      return JSON.parse(Buffer.from(p, "base64url").toString("utf8")) as Record<string, unknown>;
+    } catch {
+      return null;
+    }
+  }
+
+  // JSON body with a signed header.
+  if (!signatureHeader) return null;
+  const parts = Object.fromEntries(
+    signatureHeader.split(",").map((kv) => {
+      const i = kv.indexOf("=");
+      return [kv.slice(0, i).trim(), kv.slice(i + 1).trim()];
+    }),
+  ) as Record<string, string>;
+  const t = parts.t;
+  const v1 = parts.v1;
+  if (!t || !v1) return null;
+  const computed = crypto.createHmac("sha256", secret).update(`${t}.${rawBody}`).digest("hex");
+  if (!safeEqual(computed, v1.toLowerCase())) return null;
+  try {
+    return JSON.parse(rawBody) as Record<string, unknown>;
+  } catch {
+    return null;
+  }
+}
+
+/** Kept for older callers: true when the delivery verifies. */
+export function verifyWebhookSignature(rawBody: string, signature: string): boolean {
+  return verifyWebhookDelivery(rawBody, signature || null) !== null;
+}
+
+export const postgrid = { isConfigured, createCertifiedLetter, verifyWebhookSignature, verifyWebhookDelivery };

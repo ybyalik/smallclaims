@@ -23,6 +23,7 @@ import { createServiceRoleClient } from "../../../../lib/supabase/service-role";
 import { enqueueCaseResearch } from "../../../../lib/demand-letter/mark-paid";
 import { notifyAdminOfResearchFailure } from "../../../../lib/case-research/notify-admin-failure";
 import { ensureFilingReportForCase } from "../../../../lib/case-research/ensure-filing-report";
+import { ensureDemandLetterForCase } from "../../../../lib/demand-letter/ensure-letter";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -52,6 +53,60 @@ export async function GET(req: NextRequest) {
   const filing: { jobId: string; caseId: string; action: string }[] = [];
   const collection: { planId: string; caseId: string; status: string }[] = [];
   const stuckReports: { jobId: string; caseId: string; action: string }[] = [];
+  const missingLetters: { caseId: string; action: string }[] = [];
+
+  // ---- Demand Letter: paid, but no letter was ever written ---------------
+  // The letter is normally written right after checkout (kept alive with
+  // waitUntil) or when the customer opens /case/[id]/letter. If both are
+  // interrupted (payment confirmed late by the webhook, customer closed the
+  // tab mid-write), the customer is left on "drafting your letter" forever.
+  // Catch those here and write the letter; a few minutes after payment is
+  // enough to let the normal path finish first.
+  try {
+    const paidCutoff = new Date(now - 3 * 60 * 1000).toISOString();
+    const { data: paidRows } = await db
+      .from("payments")
+      .select("case_id, paid_at")
+      .eq("status", "succeeded")
+      .in("product_key", ["tier_send_letter", "tier_full_pressure", "demand_letter_download"])
+      .lt("paid_at", paidCutoff)
+      .gt("paid_at", new Date(now - 14 * 24 * 60 * 60 * 1000).toISOString())
+      .limit(100);
+    const caseIds = Array.from(new Set(((paidRows ?? []) as Array<{ case_id: string }>).map((r) => r.case_id)));
+    if (caseIds.length) {
+      const { data: letters } = await db
+        .from("demand_letters")
+        .select("case_id")
+        .in("case_id", caseIds);
+      const withLetter = new Set(((letters ?? []) as Array<{ case_id: string }>).map((r) => r.case_id));
+      let written = 0;
+      for (const caseId of caseIds) {
+        if (withLetter.has(caseId)) continue;
+        if (written >= 3) {
+          missingLetters.push({ caseId, action: "deferred_to_next_sweep" });
+          continue;
+        }
+        let action = "written";
+        try {
+          const r = await ensureDemandLetterForCase(caseId);
+          action = r.status === "created" ? "written" : `skipped:${r.reason ?? r.status}`;
+          written++;
+        } catch (e) {
+          action = "write_failed";
+          console.error("[sweep] missing-letter write failed", caseId, e);
+        }
+        await notifyAdminOfResearchFailure({
+          product: "Demand Letter",
+          caseId,
+          stage: "sweep:paid_without_letter",
+          error: new Error(`A paid case had no demand letter. Action: ${action}.`),
+        });
+        missingLetters.push({ caseId, action });
+      }
+    }
+  } catch (e) {
+    console.error("[sweep] missing-letter sweep failed", e);
+  }
 
   // ---- Filing Kit: stuck research jobs ----------------------------------
   try {
@@ -206,8 +261,10 @@ export async function GET(req: NextRequest) {
     filing_swept: filing.length,
     collection_swept: collection.length,
     reports_swept: stuckReports.length,
+    letters_swept: missingLetters.length,
     filing,
     collection,
     stuckReports,
+    missingLetters,
   });
 }
