@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Newsreader, Caveat } from "next/font/google";
 import { GeistSans } from "geist/font/sans";
 import "./globals.css";
+import Script from "next/script";
 
 // Self-hosted via next/font + Vercel's official geist package. Replaces
 // the legacy <link rel="stylesheet" href="fonts.googleapis.com/css2?..."
@@ -131,6 +132,14 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }}
         />
+        {/* Google Analytics 4 (gtag.js). Loads after the page is interactive so it never blocks render. */}
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-8VM1Y3YMCB" strategy="afterInteractive" />
+        <Script id="ga4-init" strategy="afterInteractive">{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-8VM1Y3YMCB');
+        `}</Script>
       </head>
       <body>{children}</body>
     </html>
